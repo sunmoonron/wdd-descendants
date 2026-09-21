@@ -1,0 +1,34 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "base_ce": 3.0032687187194824,
+ "identified_true_writes_per_token": 11.430908203125,
+ "remove": {
+  "identified_true_writes": {
+   "dce": 0.16643142700195312,
+   "energy": 0.06289006024599075
+  },
+  "energy_matched_random_unidentified": {
+   "dce": 0.10622358322143555,
+   "energy": 0.06465718895196915
+  },
+  "same_count_largest_unidentified": {
+   "dce": 0.1683635711669922,
+   "energy": 0.09241103380918503
+  },
+  "top3_block0_part": {
+   "dce": 0.012645721435546875,
+   "energy": 0.0145323621109128
+  },
+  "top3_later_part": {
+   "dce": 2.4962220191955566,
+   "energy": 0.04299478605389595
+  },
+  "top3_all": {
+   "dce": 2.721522331237793,
+   "energy": 0.07103358209133148
+  }
+ },
+ "_exp": "e165_readable_smollm2",
+ "_time": "2026-09-19 07:03:09"
+}

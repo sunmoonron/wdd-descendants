@@ -1,0 +1,105 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "future": 8,
+ "per_family": {
+  "wdd_writes": {
+   "identity": {
+    "dim": 16,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.23608943819999695
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.38168734312057495
+   },
+   "reconstruction": {
+    "dim": 768,
+    "full": 0.9999998849592449
+   },
+   "gain": 1.018015742301941
+  },
+  "random": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.20698660612106323
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3607290983200073
+   },
+   "reconstruction": {
+    "dim": 768,
+    "full": 0.9999998818110828
+   },
+   "gain": 1.072110891342163
+  },
+  "cov_matched_random": {
+   "identity": {
+    "dim": 32,
+    "full": 0.7417108416557312
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.33129793405532837
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.3466445207595825
+   },
+   "reconstruction": {
+    "dim": 768,
+    "full": 0.9999998845424886
+   },
+   "gain": 3.490694999694824
+  },
+  "attention_writes": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9925276041030884
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1860484778881073
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.32140880823135376
+   },
+   "reconstruction": {
+    "dim": 768,
+    "full": 0.9999998799997734
+   },
+   "gain": 1.1274982690811157
+  },
+  "later_mlp_writes": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.25201600790023804
+   },
+   "future": {
+    "dim": 64,
+    "full": 0.37699657678604126
+   },
+   "reconstruction": {
+    "dim": 768,
+    "full": 0.999999883574226
+   },
+   "gain": 0.9510395526885986
+  }
+ },
+ "_exp": "e304_families_gpt2",
+ "_time": "2026-09-19 18:13:49"
+}

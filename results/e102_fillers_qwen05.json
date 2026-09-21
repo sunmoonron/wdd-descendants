@@ -1,0 +1,27 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "token_atoms_share_of_support": 0.3633356988430023,
+ "top200_token_fillers_share_of_token_selections": 0.014924745095873406,
+ "token_fillers": {
+  "train_count_median": 0.0,
+  "frac_unseen": 0.875,
+  "emb_norm_median": 0.4553779661655426,
+  "emb_norm_median_all": 0.46074768900871277
+ },
+ "spurious_mlp_share_of_mlp_selections": 0.7104864716529846,
+ "top200_mlp_fillers_share_of_spurious": 0.11232676518072705,
+ "n_distinct_spurious_mlp": 59204,
+ "after_pruning_400_fillers": {
+  "recall": 0.40244799852371216,
+  "fvu64": 0.23099371790885925,
+  "token_share_of_support": 0.37749773263931274,
+  "true_atoms_removed": 0.05973072350025177
+ },
+ "before": {
+  "recall": 0.46340271830558777,
+  "fvu64": 0.21648453176021576
+ },
+ "_exp": "e102_fillers_qwen05",
+ "_time": "2026-09-19 04:05:21"
+}

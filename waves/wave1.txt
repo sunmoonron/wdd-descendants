@@ -1,0 +1,43 @@
+python e05_neuron_observability.py gpt2
+python e05_neuron_observability.py smollm2
+python e05_neuron_observability.py qwen05
+python e05_neuron_observability.py pythia410
+python e05_neuron_observability.py olmo1b
+python e01_layer_sweep.py gpt2
+python e01_layer_sweep.py smollm2
+python e01_layer_sweep.py qwen05
+python e01_layer_sweep.py pythia410
+python e01_layer_sweep.py olmo1b
+python e01_layer_sweep.py gpt2_rand
+python e02_delta_wdd.py gpt2
+python e02_delta_wdd.py smollm2
+WDD_N=4096 python e02_delta_wdd.py qwen05
+WDD_N=4096 python e02_delta_wdd.py pythia410
+WDD_N=4096 python e02_delta_wdd.py olmo1b
+python e03_dictionary_theory.py gpt2
+python e03_dictionary_theory.py smollm2
+python e03_dictionary_theory.py qwen05
+python e03_dictionary_theory.py pythia410
+python e03_dictionary_theory.py olmo1b
+python e06_energy_accounting.py gpt2
+python e06_energy_accounting.py smollm2
+python e06_energy_accounting.py qwen05
+python e06_energy_accounting.py pythia410
+python e06_energy_accounting.py olmo1b
+python e04_solvers.py gpt2
+python e04_solvers.py smollm2
+python e04_solvers.py qwen05
+python e04_solvers.py pythia410
+python e04_solvers.py olmo1b
+python e00_gate.py smollm2
+python e00_gate.py qwen05
+python e00_gate.py pythia410
+python e00_gate.py olmo1b
+python e00_gate.py gpt2_rand
+python e00_gate.py pythia410_step0
+python e00_gate.py pythia410_step1000
+python e00_gate.py pythia410_step4000
+python e00_gate.py pythia410_step16000
+python e00_gate.py pythia410_step32000
+python e00_gate.py pythia410_step64000
+python e07_gauge.py smollm2

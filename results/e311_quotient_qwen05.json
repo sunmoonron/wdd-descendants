@@ -1,0 +1,72 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "N": 150,
+ "geometry": {
+  "3": {
+   "spearman_phys_vs_func": 0.12931230664253235,
+   "spearman_phys_vs_injected": 0.7426495552062988,
+   "spearman_readout_vs_func": 0.08104699850082397
+  },
+  "4": {
+   "spearman_phys_vs_func": 0.20573562383651733,
+   "spearman_phys_vs_injected": 0.5413960814476013,
+   "spearman_readout_vs_func": 0.14017532765865326
+  },
+  "6": {
+   "spearman_phys_vs_func": 0.27658674120903015,
+   "spearman_phys_vs_injected": 0.32629871368408203,
+   "spearman_readout_vs_func": 0.2521621286869049
+  },
+  "12": {
+   "spearman_phys_vs_func": 0.32571712136268616,
+   "spearman_phys_vs_injected": 0.2522587180137634,
+   "spearman_readout_vs_func": 0.36936235427856445
+  },
+  "14": {
+   "spearman_phys_vs_func": 0.33439716696739197,
+   "spearman_phys_vs_injected": 0.2501196563243866,
+   "spearman_readout_vs_func": 0.41303011775016785
+  },
+  "22": {
+   "spearman_phys_vs_func": 0.6596971750259399,
+   "spearman_phys_vs_injected": 0.1324445754289627,
+   "spearman_readout_vs_func": 0.7797168493270874
+  }
+ },
+ "contraction": {
+  "3->4": {
+   "median": 0.9954906105995178,
+   "frac_below_one": 0.5143624544143677
+  },
+  "4->6": {
+   "median": 0.9970068335533142,
+   "frac_below_one": 0.5106040239334106
+  },
+  "6->12": {
+   "median": 0.9940201640129089,
+   "frac_below_one": 0.5228635668754578
+  },
+  "12->14": {
+   "median": 0.9939433932304382,
+   "frac_below_one": 0.5251901745796204
+  },
+  "14->22": {
+   "median": 0.8819831013679504,
+   "frac_below_one": 0.9011185765266418
+  }
+ },
+ "multiplicity": {
+  "functionally_close_pairs": 559,
+  "of_which_physically_far_at_injection": 0.42933809757232666,
+  "of_which_physically_far_at_L": 0.25581395626068115,
+  "of_which_cross_family": 0.633273720741272,
+  "cross_family_baseline": 0.6711409687995911,
+  "prank_physical_injected": 126.04434204101562,
+  "prank_physical_L": 57.55527877807617,
+  "prank_functional": 64.06967163085938
+ },
+ "_exp": "e311_quotient_qwen05",
+ "_time": "2026-09-19 18:49:40"
+}

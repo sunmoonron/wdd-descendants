@@ -1,0 +1,34 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "N": 4096,
+ "top1": {
+  "write": 1.0,
+  "increment_omp": 0.9982864260673523,
+  "increment_dual": 0.9995104670524597,
+  "state_omp": 0.6827417612075806,
+  "state_dual": 0.8190943002700806
+ },
+ "top3": {
+  "write": 1.0,
+  "increment_omp": 0.9926560521125793,
+  "increment_dual": 0.9946144819259644,
+  "state_omp": 0.5082823634147644,
+  "state_dual": 0.6637290716171265
+ },
+ "top8": {
+  "write": 1.0,
+  "increment_omp": 0.9650551080703735,
+  "increment_dual": 0.9733476638793945,
+  "state_omp": 0.3207772374153137,
+  "state_dual": 0.46845167875289917
+ },
+ "energy_share_of_top8_recovered": {
+  "write": 1.0,
+  "increment_dual": 0.9948515295982361,
+  "state_dual": 0.7860608100891113,
+  "state_omp": 0.36155056953430176
+ },
+ "_exp": "e131_survival_smollm2",
+ "_time": "2026-09-19 06:07:50"
+}

@@ -1,0 +1,35 @@
+{
+ "model": "gpt2",
+ "b0": 1,
+ "L": 6,
+ "n_erased": 13,
+ "frac_erased": 0.00634765625,
+ "largest_drop_level_hist": {
+  "2": 0.0,
+  "3": 0.38461539149284363,
+  "4": 0.0,
+  "5": 0.6153846383094788,
+  "6": 0.0
+ },
+ "share_of_cancellation_top1_median": 0.00648230966180563,
+ "share_top5_median": 0.02030424028635025,
+ "top_opposer_block_hist": {
+  "2": 0.3076923191547394,
+  "3": 0.07692307978868484,
+  "4": 0.0,
+  "5": 0.6153846383094788,
+  "6": 0.0
+ },
+ "most_common_opposer": {
+  "block": 5,
+  "neuron": 2956,
+  "share_of_erased_tokens": 0.4615384638309479
+ },
+ "opposition_vs_reinforcement_median": {
+  "total_opposing_over_c": 11.669529914855957,
+  "total_reinforcing_over_c": 11.190037727355957,
+  "net_later_mlp_over_c": -0.28918465971946716
+ },
+ "_exp": "e141_eraser_gpt2",
+ "_time": "2026-09-19 06:14:28"
+}

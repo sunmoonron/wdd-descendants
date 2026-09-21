@@ -1,0 +1,28 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "K": 21,
+ "per_input": {
+  "core16": {
+   "head_norms": 0.16366729814908787,
+   "mlp_activation_pcs": 0.615488164927073,
+   "sparsity": 0.0063724658871628925,
+   "neuron_recruitment_overlap": 0.2014458179473877
+  },
+  "pca64": {
+   "head_norms": 0.24105015671319152,
+   "mlp_activation_pcs": 0.8226764233421401,
+   "sparsity": 0.014610423837963404,
+   "neuron_recruitment_overlap": 0.21783925592899323
+  },
+  "random16": {
+   "head_norms": 0.05579089634963652,
+   "mlp_activation_pcs": 0.20119110305559507,
+   "sparsity": -0.010566385391409527,
+   "neuron_recruitment_overlap": 0.11873861402273178
+  }
+ },
+ "recruitment_baseline": 0.03016848862171173,
+ "_exp": "e341_internals_olmo1b",
+ "_time": "2026-09-19 23:27:36"
+}

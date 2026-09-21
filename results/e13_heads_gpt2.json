@@ -1,0 +1,26 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "N": 8192,
+ "dominant_head": {
+  "selected_frac": 0.20291095972061157,
+  "atoms_when_selected_mean": 1.3098251819610596,
+  "energy_captured_median": 0.010503379628062248,
+  "dom_head_share_of_att_energy": 0.06057371944189072,
+  "rank_of_selected_atoms_median": 19.0,
+  "head_write_energy_in_top_r_svd": {
+   "1": 0.18752807869265478,
+   "4": 0.37498542020718256,
+   "16": 0.6227856636047363
+  },
+  "selected_frac_oneshot": 0.3562867045402527
+ },
+ "energy": {
+  "att_atoms_share_of_support": 0.2097335159778595,
+  "att_atoms_share_of_recon_energy": 0.18254634737968445,
+  "true_att_share_of_state": 0.8444308638572693,
+  "cos_recatt_trueatt_median": 0.22180688381195068
+ },
+ "_exp": "e13_heads_gpt2",
+ "_time": "2026-09-19 01:16:09"
+}

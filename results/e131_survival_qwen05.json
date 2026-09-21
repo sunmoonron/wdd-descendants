@@ -1,0 +1,34 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "N": 4096,
+ "top1": {
+  "write": 1.0,
+  "increment_omp": 0.9811505675315857,
+  "increment_dual": 0.9764994382858276,
+  "state_omp": 0.46340271830558777,
+  "state_dual": 0.6208078861236572
+ },
+ "top3": {
+  "write": 1.0,
+  "increment_omp": 0.9703794717788696,
+  "increment_dual": 0.9694818258285522,
+  "state_omp": 0.3582211434841156,
+  "state_dual": 0.5289269685745239
+ },
+ "top8": {
+  "write": 1.0,
+  "increment_omp": 0.9451958537101746,
+  "increment_dual": 0.941585123538971,
+  "state_omp": 0.2427784651517868,
+  "state_dual": 0.39504286646842957
+ },
+ "energy_share_of_top8_recovered": {
+  "write": 1.0,
+  "increment_dual": 0.9725191593170166,
+  "state_dual": 0.5113844275474548,
+  "state_omp": 0.3485881984233856
+ },
+ "_exp": "e131_survival_qwen05",
+ "_time": "2026-09-19 06:09:34"
+}

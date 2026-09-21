@@ -1,0 +1,45 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "results": {
+  "4": {
+   "A_pred_cos": 0.8546571135520935,
+   "A_baseline_cos": 0.08714625239372253,
+   "A_pertoken_cos": 0.5797003507614136,
+   "B_predicted_descendant_provenance": 0.883634626865387,
+   "B_chance": 0.041666666666666664,
+   "C_inverse_provenance": 0.8632359504699707,
+   "C_inverse_cos": 0.3280400037765503,
+   "C_native_atom_on_footprint": 0.8191933035850525,
+   "E_gram_spearman": 0.6198198795318604,
+   "E_gram_rel_frobenius": 0.3462526798248291
+  },
+  "6": {
+   "A_pred_cos": 0.7335283756256104,
+   "A_baseline_cos": 0.0984475314617157,
+   "A_pertoken_cos": 0.3893440365791321,
+   "B_predicted_descendant_provenance": 0.6847473382949829,
+   "B_chance": 0.041666666666666664,
+   "C_inverse_provenance": 0.7185906171798706,
+   "C_inverse_cos": 0.18457278609275818,
+   "C_native_atom_on_footprint": 0.7528975009918213,
+   "E_gram_spearman": 0.5658173561096191,
+   "E_gram_rel_frobenius": 0.4118247330188751
+  },
+  "D": {
+   "cos_composed_vs_direct": 0.7415319681167603,
+   "provenance_composed": 0.7209086418151855,
+   "provenance_direct": 0.6847473382949829
+  },
+  "F": {
+   "a": 0.019732551649212837,
+   "b": 0.030495760962367058,
+   "a_plus_b": 0.9481409192085266,
+   "a_minus_b": 0.0016307893674820662
+  }
+ },
+ "_exp": "e248_operator_gpt2",
+ "_time": "2026-09-19 14:06:05"
+}

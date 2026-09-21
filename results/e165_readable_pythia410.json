@@ -1,0 +1,34 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "base_ce": 3.1321699619293213,
+ "identified_true_writes_per_token": 10.1416015625,
+ "remove": {
+  "identified_true_writes": {
+   "dce": 0.06428146362304688,
+   "energy": 0.03788755089044571
+  },
+  "energy_matched_random_unidentified": {
+   "dce": 0.022477149963378906,
+   "energy": 0.038566574454307556
+  },
+  "same_count_largest_unidentified": {
+   "dce": 0.07656192779541016,
+   "energy": 0.08318030089139938
+  },
+  "top3_block0_part": {
+   "dce": 0.0005984306335449219,
+   "energy": 0.0
+  },
+  "top3_later_part": {
+   "dce": 0.0568387508392334,
+   "energy": 0.040116146206855774
+  },
+  "top3_all": {
+   "dce": 0.058724164962768555,
+   "energy": 0.04566928371787071
+  }
+ },
+ "_exp": "e165_readable_pythia410",
+ "_time": "2026-09-19 07:11:46"
+}

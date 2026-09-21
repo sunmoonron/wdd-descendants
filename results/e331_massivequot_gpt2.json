@@ -1,0 +1,87 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "channels": [
+  64,
+  447,
+  373
+ ],
+ "per_family": {
+  "massive_channels_1.0x": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9205979704856873
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.139291912317276
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.447243332862854
+   },
+   "gain": 1.081755518913269,
+   "evenness": -0.9316589832305908,
+   "logit_response": 28.391210556030273
+  },
+  "massive_channels_4.0x": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9176079630851746
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.3631991744041443
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.49513691663742065
+   },
+   "gain": 1.2632644176483154,
+   "evenness": -0.6447938680648804,
+   "logit_response": 194.93275451660156
+  },
+  "random_1.0x": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.20359334349632263
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.34328535199165344
+   },
+   "gain": 1.094069004058838,
+   "evenness": -0.9661873579025269,
+   "logit_response": 28.87112808227539
+  },
+  "random_4.0x": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 4,
+    "full": 0.3678291440010071
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.42826133966445923
+   },
+   "gain": 1.2147670984268188,
+   "evenness": -0.6081873178482056,
+   "logit_response": 175.18309020996094
+  }
+ },
+ "overlaps": {
+  "massive_channels_1.0x_vs_random_1x": 0.11188139021396637,
+  "massive_channels_4.0x_vs_random_1x": 0.12923666834831238,
+  "random_1.0x_vs_random_1x": 0.9998950958251953,
+  "random_4.0x_vs_random_1x": 0.4199744462966919
+ },
+ "_exp": "e331_massivequot_gpt2",
+ "_time": "2026-09-19 20:59:52"
+}

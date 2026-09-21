@@ -1,0 +1,34 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "N": 4096,
+ "top1": {
+  "write": 0.9999999403953552,
+  "increment_omp": 0.9426048398017883,
+  "increment_dual": 0.9671326279640198,
+  "state_omp": 0.4711797833442688,
+  "state_dual": 0.6693646907806396
+ },
+ "top3": {
+  "write": 1.0,
+  "increment_omp": 0.9116179943084717,
+  "increment_dual": 0.9468563199043274,
+  "state_omp": 0.362276166677475,
+  "state_dual": 0.5500776767730713
+ },
+ "top8": {
+  "write": 0.9999999403953552,
+  "increment_omp": 0.8408756256103516,
+  "increment_dual": 0.8996197581291199,
+  "state_omp": 0.24193646013736725,
+  "state_dual": 0.40817388892173767
+ },
+ "energy_share_of_top8_recovered": {
+  "write": 1.0,
+  "increment_dual": 0.9217170476913452,
+  "state_dual": 0.500862181186676,
+  "state_omp": 0.31372544169425964
+ },
+ "_exp": "e131_survival_pythia410",
+ "_time": "2026-09-19 06:12:34"
+}

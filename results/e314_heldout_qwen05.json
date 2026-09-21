@@ -1,0 +1,50 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 28,
+ "observables": [
+  "entropy_change",
+  "next_token_logprob_change",
+  "top1_prob_change",
+  "attention_norm_change_last_block",
+  "next_token_state_change_norm",
+  "next_token_state_direction"
+ ],
+ "per_input": {
+  "core16": {
+   "entropy_change": 0.33910277485847473,
+   "next_token_logprob_change": 0.12640835344791412,
+   "top1_prob_change": 0.1945490837097168,
+   "attention_norm_change_last_block": 0.4770214557647705,
+   "next_token_state_change_norm": 0.5951734781265259,
+   "next_token_state_direction": 0.47456175088882446
+  },
+  "pca64": {
+   "entropy_change": 0.30238085985183716,
+   "next_token_logprob_change": 0.17025479674339294,
+   "top1_prob_change": 0.17967066168785095,
+   "attention_norm_change_last_block": 0.4578287601470947,
+   "next_token_state_change_norm": 0.5772584676742554,
+   "next_token_state_direction": 0.4756866693496704
+  },
+  "random16": {
+   "entropy_change": 0.17240451276302338,
+   "next_token_logprob_change": 0.15057353675365448,
+   "top1_prob_change": 0.09945984184741974,
+   "attention_norm_change_last_block": 0.22370672225952148,
+   "next_token_state_change_norm": 0.34439826011657715,
+   "next_token_state_direction": 0.38299188017845154
+  },
+  "norm_only": {
+   "entropy_change": 0.1470312923192978,
+   "next_token_logprob_change": 0.07148393988609314,
+   "top1_prob_change": 0.028317764401435852,
+   "attention_norm_change_last_block": 0.05948353558778763,
+   "next_token_state_change_norm": 0.6204538941383362,
+   "next_token_state_direction": 0.3265846371650696
+  }
+ },
+ "_exp": "e314_heldout_qwen05",
+ "_time": "2026-09-19 19:10:47"
+}

@@ -1,0 +1,21 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "NT": 8192,
+ "overlap_imp_vs_ledger_top3": 0.3871663510799408,
+ "top1_imp_is_ledger_top1": 0.31506848335266113,
+ "wdd_finds": {
+  "imp_top1_omp": 0.4378669261932373,
+  "imp_top1_dual": 0.567270040512085,
+  "imp_top3_omp": 0.3178408443927765,
+  "imp_top3_dual": 0.44610241055488586,
+  "ledger_top1_omp": 0.6664628386497498,
+  "ledger_top1_dual": 0.811276912689209
+ },
+ "spearman_recovered_coef_vs_grad_importance": 0.31323057413101196,
+ "spearman_true_coef_vs_grad_importance": 0.6311347484588623,
+ "spearman_prominence_vs_grad_sensitivity_real_writes": -0.0011851824820041656,
+ "share_of_loss_attribution_in_wdd_support": 0.008472555316984653,
+ "_exp": "e156_grad_smollm2",
+ "_time": "2026-09-19 06:19:48"
+}

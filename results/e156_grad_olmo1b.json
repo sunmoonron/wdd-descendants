@@ -1,0 +1,21 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "NT": 8192,
+ "overlap_imp_vs_ledger_top3": 0.3229166865348816,
+ "top1_imp_is_ledger_top1": 0.2437293529510498,
+ "wdd_finds": {
+  "imp_top1_omp": 0.483298659324646,
+  "imp_top1_dual": 0.5576899647712708,
+  "imp_top3_omp": 0.39834412932395935,
+  "imp_top3_dual": 0.4772625267505646,
+  "ledger_top1_omp": 0.6991312503814697,
+  "ledger_top1_dual": 0.825400710105896
+ },
+ "spearman_recovered_coef_vs_grad_importance": 0.24948085844516754,
+ "spearman_true_coef_vs_grad_importance": 0.5219804644584656,
+ "spearman_prominence_vs_grad_sensitivity_real_writes": 0.028084993362426758,
+ "share_of_loss_attribution_in_wdd_support": 0.009107572957873344,
+ "_exp": "e156_grad_olmo1b",
+ "_time": "2026-09-19 06:28:13"
+}

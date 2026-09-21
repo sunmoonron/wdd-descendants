@@ -1,0 +1,39 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "per_eps": {
+  "0.0": {
+   "accuracy": 0.9879195094108582,
+   "state_change": 0.0,
+   "dce": 0.0
+  },
+  "0.001": {
+   "accuracy": 0.9879195094108582,
+   "state_change": 0.005101804155856371,
+   "dce": 0.0014553070068359375,
+   "footprint_cos_to_unperturbed": 0.999968409538269
+  },
+  "0.01": {
+   "accuracy": 0.9879195094108582,
+   "state_change": 0.05101233348250389,
+   "dce": 0.06138110160827637,
+   "footprint_cos_to_unperturbed": 0.9968627691268921
+  },
+  "0.03": {
+   "accuracy": 0.9865772128105164,
+   "state_change": 0.15312689542770386,
+   "dce": 0.39044690132141113,
+   "footprint_cos_to_unperturbed": 0.9722224473953247
+  },
+  "0.1": {
+   "accuracy": 0.9798657894134521,
+   "state_change": 0.5165673494338989,
+   "dce": 2.5180838108062744,
+   "footprint_cos_to_unperturbed": 0.7378767728805542
+  }
+ },
+ "_exp": "e233_robust_pythia410",
+ "_time": "2026-09-19 12:57:36"
+}

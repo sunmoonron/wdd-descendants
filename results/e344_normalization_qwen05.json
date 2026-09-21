@@ -1,0 +1,44 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "per_variant": {
+  "standard": {
+   "dim": 16,
+   "own": 0.11554936319589615,
+   "random": 0.06193096190690994,
+   "identity": 0.8488371968269348,
+   "gain": 0.7974432706832886,
+   "logit_response": 33.18696975708008,
+   "overlap_with_standard": 0.9998703002929688
+  },
+  "norm_preserving": {
+   "dim": 16,
+   "own": 0.11650486290454865,
+   "random": 0.060446061193943024,
+   "identity": 0.8016610741615295,
+   "gain": 0.8061385154724121,
+   "logit_response": 33.52481460571289,
+   "overlap_with_standard": 0.3936566114425659
+  },
+  "norm_only_x2": {
+   "dim": 32,
+   "own": 0.3250133991241455,
+   "random": 0.21023279428482056,
+   "identity": 0.07375414669513702,
+   "gain": 8.736112594604492,
+   "logit_response": 341.81719970703125,
+   "overlap_with_standard": 0.1927613615989685
+  },
+  "amplitude_x4": {
+   "dim": 16,
+   "own": 0.20684219896793365,
+   "random": 0.14956387877464294,
+   "identity": 0.7634550929069519,
+   "gain": 3.4642221927642822,
+   "logit_response": 150.56825256347656,
+   "overlap_with_standard": 0.35601621866226196
+  }
+ },
+ "_exp": "e344_normalization_qwen05",
+ "_time": "2026-09-19 23:27:15"
+}

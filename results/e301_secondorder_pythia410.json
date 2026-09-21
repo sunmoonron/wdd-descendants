@@ -1,0 +1,106 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "per_neuron": {
+  "largest": {
+   "neuron": 1560,
+   "coef": 2.247523307800293,
+   "own": {
+    "state": {
+     "quadratic_over_linear": 0.44602882862091064,
+     "r2_linear": 0.8321337550878525,
+     "r2_quadratic": 0.982632951810956
+    },
+    "logits": {
+     "quadratic_over_linear": 0.6544468998908997,
+     "r2_linear": 0.7756702601909637,
+     "r2_quadratic": 0.9688584078103304
+    },
+    "evenness_state": -0.8736792802810669,
+    "evenness_logits": -0.7833783030509949
+   },
+   "foreign": {
+    "state": {
+     "quadratic_over_linear": 0.4851589500904083,
+     "r2_linear": 0.6257050633430481,
+     "r2_quadratic": 0.9537034705281258
+    },
+    "logits": {
+     "quadratic_over_linear": 0.3433513939380646,
+     "r2_linear": 0.6891763806343079,
+     "r2_quadratic": 0.887385256588459
+    },
+    "evenness_state": -0.4408746659755707,
+    "evenness_logits": -0.722141444683075
+   }
+  },
+  "typical_a": {
+   "neuron": 2463,
+   "coef": 1.5088849067687988,
+   "own": {
+    "state": {
+     "quadratic_over_linear": 0.09610824286937714,
+     "r2_linear": 0.9881144473329186,
+     "r2_quadratic": 0.9999465266737388
+    },
+    "logits": {
+     "quadratic_over_linear": 0.10593239963054657,
+     "r2_linear": 0.9858275130391121,
+     "r2_quadratic": 0.9999181712555583
+    },
+    "evenness_state": -0.9797190427780151,
+    "evenness_logits": -0.9753947257995605
+   },
+   "foreign": {
+    "state": {
+     "quadratic_over_linear": 0.15095829963684082,
+     "r2_linear": 0.9725093599408865,
+     "r2_quadratic": 0.9998826344744884
+    },
+    "logits": {
+     "quadratic_over_linear": 0.19707827270030975,
+     "r2_linear": 0.9586263261735439,
+     "r2_quadratic": 0.9997376039391384
+    },
+    "evenness_state": -0.9561757445335388,
+    "evenness_logits": -0.9263923764228821
+   }
+  },
+  "typical_b": {
+   "neuron": 3125,
+   "coef": 1.5053880214691162,
+   "own": {
+    "state": {
+     "quadratic_over_linear": 0.14655941724777222,
+     "r2_linear": 0.9736243840306997,
+     "r2_quadratic": 0.9989769184030592
+    },
+    "logits": {
+     "quadratic_over_linear": 0.23528486490249634,
+     "r2_linear": 0.9223682954907417,
+     "r2_quadratic": 0.9952966547571123
+    },
+    "evenness_state": -0.946123480796814,
+    "evenness_logits": -0.8652621507644653
+   },
+   "foreign": {
+    "state": {
+     "quadratic_over_linear": 0.5048888921737671,
+     "r2_linear": 0.8373583853244781,
+     "r2_quadratic": 0.9927884447388351
+    },
+    "logits": {
+     "quadratic_over_linear": 0.8102237582206726,
+     "r2_linear": 0.7815424203872681,
+     "r2_quadratic": 0.9742544889450073
+    },
+    "evenness_state": -0.7383260726928711,
+    "evenness_logits": -0.7519484162330627
+   }
+  }
+ },
+ "_exp": "e301_secondorder_pythia410",
+ "_time": "2026-09-19 18:16:07"
+}

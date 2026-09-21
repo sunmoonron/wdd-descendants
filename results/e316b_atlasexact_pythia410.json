@@ -1,0 +1,64 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "prank": 11.2271728515625,
+ "class_sizes": [
+  231,
+  238,
+  341,
+  316,
+  228,
+  255,
+  293,
+  172,
+  234,
+  240,
+  359,
+  194,
+  336,
+  264,
+  230,
+  165
+ ],
+ "within_class_cos": 0.5737089514732361,
+ "class_ablation": {
+  "heavy": {
+   "coherence": 0.28693777322769165,
+   "cos_pred_actual": 0.24787753820419312,
+   "core_norm_per_weight": 0.023420430719852448
+  },
+  "other": {
+   "coherence": 0.27744510769844055,
+   "cos_pred_actual": 0.2940637469291687,
+   "core_norm_per_weight": 0.025305069983005524
+  },
+  "random": {
+   "coherence": 0.20174604654312134,
+   "cos_pred_actual": 0.1968117207288742,
+   "core_norm_per_weight": 0.02268572337925434
+  },
+  "n": 64
+ },
+ "substitution": {
+  "same_class": {
+   "logit_restoration": -0.4365924596786499,
+   "core_restoration": -0.048009634017944336,
+   "z_cos": 0.7916293144226074
+  },
+  "random": {
+   "logit_restoration": -0.03852725028991699,
+   "core_restoration": -0.0007055997848510742,
+   "z_cos": 0.00425516813993454
+  }
+ },
+ "attribution": {
+  "ledger_to_core": 0.2145010381937027,
+  "atlas_logits": 0.005546966101974249,
+  "direct_logit": 0.045800767838954926,
+  "transport_readout": 0.030954807996749878
+ },
+ "_exp": "e316b_atlasexact_pythia410",
+ "_time": "2026-09-19 19:47:59"
+}

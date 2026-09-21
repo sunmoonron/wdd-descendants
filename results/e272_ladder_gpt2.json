@@ -1,0 +1,75 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "per_level": {
+  "3": {
+   "reconstruction": 768,
+   "identity": 32,
+   "function": 32,
+   "behaviour": 8,
+   "full": {
+    "reconstruction": -0.0003080923628473453,
+    "identity": 0.9570093750953674,
+    "function": 0.4475055932998657,
+    "behaviour": 0.5970734357833862
+   },
+   "fvu_at_32": 0.26655408967681604
+  },
+  "4": {
+   "reconstruction": 768,
+   "identity": 32,
+   "function": 32,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": -0.00029801086032810176,
+    "identity": 0.9925233721733093,
+    "function": 0.4456947445869446,
+    "behaviour": 0.6045880913734436
+   },
+   "fvu_at_32": 0.38009686433232026
+  },
+  "6": {
+   "reconstruction": 768,
+   "identity": 64,
+   "function": 32,
+   "behaviour": 32,
+   "full": {
+    "reconstruction": -0.0003141785471172387,
+    "identity": 0.9710280895233154,
+    "function": 0.43351614475250244,
+    "behaviour": 0.6390203237533569
+   },
+   "fvu_at_32": 0.498841994831671
+  },
+  "8": {
+   "reconstruction": 768,
+   "identity": 128,
+   "function": 16,
+   "behaviour": 8,
+   "full": {
+    "reconstruction": -0.0003042533874635378,
+    "identity": 0.9327102899551392,
+    "function": 0.42954200506210327,
+    "behaviour": 0.6313061714172363
+   },
+   "fvu_at_32": 0.536315965176936
+  },
+  "10": {
+   "reconstruction": 768,
+   "identity": 256,
+   "function": 16,
+   "behaviour": 4,
+   "full": {
+    "reconstruction": -0.0003098357350315162,
+    "identity": 0.832710325717926,
+    "function": 0.4259805977344513,
+    "behaviour": 0.624030351638794
+   },
+   "fvu_at_32": 0.5467681923494024
+  }
+ },
+ "_exp": "e272_ladder_gpt2",
+ "_time": "2026-09-19 15:21:46"
+}

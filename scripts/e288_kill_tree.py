@@ -1,0 +1,42 @@
+"""e288: the kill-tree core, one model per run, mid depth L and future lf = L+2. (1) Are the causal subspaces one
+subspace? Top-16 supervised subspaces for identity (between-class scatter), function (PLS to logit footprints),
+future descendant (PLS to the future) and removal KL (supervised PCA), pairwise energy overlaps against chance
+16/D. (2) Cross-observable transfer: every observable decoded from every subspace (16 dims) and from random and
+covariance-matched random subspaces. (3) Adversarial split controls: the four observables decoded from the K-dim
+centroid span, from a covariance-matched random K-dim subspace and from a permuted-label centroid span. (4) Does
+the token-specific remainder carry its own future? kNN from the remainder at L to the remainder at lf against a
+shuffled baseline. (5) Closure: is the causal subspace transported into itself? Overlap of T(L->lf)-transported
+subspaces with the subspaces recomputed at lf, against stationarity (untransported) and chance."""
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from func_common import *
+tag = sys.argv[1]; c = Cache(tag); L = mid(c); model, tok, fam = load_model(c.name); arch = Arch(model, fam); NS = 16; ids_seq = c.s["eval_ids"][:NS].to(DEV); NT = NS * CTX; NB = c.NB; b = 2; D = c.D; lf = L + 2 if L + 2 < NB - 1 else NB - 2; d = 16
+led, tn, tc = dominant(model, arch, c, ids_seq, b); run = make_runner_logits(model, arch, c, ids_seq, [L, lf], NT, b); S0 = run(); typ = typical_mask(S0[L]); big = tc.abs() >= tc.abs().quantile(0.5); idx, lab_i, keep = classes(tn, typ & big, 20); K = len(keep)
+S0i = run(positions=idx); S1i = run(tn, positions=idx); dl = S0i["lg"] - S1i["lg"]; lp0, lp1 = torch.log_softmax(S0i["lg"], -1), torch.log_softmax(S1i["lg"], -1); kl = (lp0.exp() * (lp0 - lp1)).sum(1); dl = dl - dl.mean(1, keepdim=True); dln = unit(dl); F = (S0i[L] - S1i[L])[idx]; Fr = (S0i[lf] - S1i[lf])[idx]; Ff = unit(Fr)
+torch.manual_seed(0); split = torch.rand(len(idx), device=DEV) < 0.5; tr, te = torch.nonzero(split)[:, 0], torch.nonzero(~split)[:, 0]
+G = dl[tr] @ dl[tr].T; evg, Vg = torch.linalg.eigh(G); Z = Vg.flip(1)[:, :256] * evg.flip(0)[:256].clamp_min(0).sqrt()[None]; Z = Z - Z.mean(0, keepdim=True)
+def subspaces(X, Xfut, labels, klv, Zs):
+    Xc = X - X.mean(0, keepdim=True); cents = torch.stack([Xc[labels == k].mean(0) for k in range(K)]); w = torch.bincount(labels, minlength=K).float(); Sb = (cents * w[:, None]).T @ cents / w.sum(); S_id = torch.linalg.eigh(Sb)[1].flip(1)[:, :d]
+    S_fn = torch.linalg.svd(Xc.T @ Zs, full_matrices=False)[0][:, :d]; out = {"identity": S_id, "function": S_fn}
+    if Xfut is not None: Xf = Xfut - Xfut.mean(0, keepdim=True); out["future"] = torch.linalg.svd(Xc.T @ Xf, full_matrices=False)[0][:, :d]
+    kc = klv - klv.mean(); out["kl"] = torch.linalg.eigh(Xc.T @ (kc[:, None] * Xc))[1].flip(1)[:, :d]; return out
+S_L = subspaces(F[tr], Ff[tr], lab_i[tr], kl[tr], Z); S_L["random"] = torch.linalg.qr(torch.randn(D, d, device=DEV))[0]; Fc_tr = F[tr] - F[tr].mean(0, keepdim=True); zc = torch.randn(d, len(tr), device=DEV) / len(tr) ** 0.5; S_L["cov_random"] = torch.linalg.qr((zc @ Fc_tr).T)[0]
+inside = lambda A, B: ((B.T @ A) ** 2).sum().item() / A.shape[1]; names = ["identity", "function", "future", "kl"]; overlap = {a: {bb: inside(S_L[a], S_L[bb]) for bb in names} for a in names}; overlap_random = {a: inside(S_L[a], S_L["random"]) for a in names}
+def knn(Ptr, Pte, target, k=5):
+    nn = torch.cdist(Pte, Ptr).topk(k, dim=1, largest=False).indices; return target[tr][nn].mean(1)
+def scores(P):
+    Ptr, Pte = P[tr], P[te]; a_ = knn(Ptr, Pte, kl); ra = a_.argsort().argsort().float(); rb = kl[te].argsort().argsort().float()
+    return dict(identity=accuracy(Pte, centroids(Ptr, lab_i[tr], K), lab_i[te]), function=((unit(knn(Ptr, Pte, dln)) * dln[te]).sum(1)).median().item(), future=((unit(knn(Ptr, Pte, Ff)) * Ff[te]).sum(1)).median().item(), kl=torch.corrcoef(torch.stack([ra, rb]))[0, 1].item())
+transfer = {src: scores(F @ S) for src, S in S_L.items()}; full = scores(F)
+Cd = centroids(F[tr], lab_i[tr], K); Q = torch.linalg.qr(Cd.T)[0]; zk = torch.randn(K, len(tr), device=DEV) / len(tr) ** 0.5; Qcov = torch.linalg.qr((zk @ Fc_tr).T)[0]; perm = lab_i[tr][torch.randperm(len(tr), device=DEV)]; Qperm = torch.linalg.qr(centroids(F[tr], perm, K).T)[0]
+controls = {"centroid_span": scores(F @ Q), "cov_matched_random_K": scores(F @ Qcov), "permuted_label_span": scores(F @ Qperm)}; energy = {nm: ((F[te] @ Qm) ** 2).sum().item() / (F[te] ** 2).sum().item() for nm, Qm in (("centroid_span", Q), ("cov_matched_random_K", Qcov), ("permuted_label_span", Qperm))}
+rem_L = F - (F @ Q) @ Q.T; Cf = centroids(Fr[tr], lab_i[tr], K); Qf = torch.linalg.qr(Cf.T)[0]; rem_f = unit(Fr - (Fr @ Qf) @ Qf.T); rem_future = ((unit(knn(rem_L[tr], rem_L[te], rem_f)) * rem_f[te]).sum(1)).median().item(); sh = torch.randperm(len(te), device=DEV); rem_future_shuffled = ((unit(knn(rem_L[tr], rem_L[te], rem_f))[sh] * rem_f[te]).sum(1)).median().item(); rem_energy = ((rem_L[te] ** 2).sum() / (F[te] ** 2).sum()).item()
+pool = torch.nonzero(typ)[:, 0]; s_inj = tc.abs().median(); torch.manual_seed(5); Vr = unit(torch.randn(1024, D, device=DEV)); X = []; Y = []
+for p in range(2):
+    a = torch.randint(0, 1024, (len(pool),), device=DEV); inj = torch.zeros(NT, D, device=DEV); inj[pool] = s_inj * Vr[a]; S2 = run(inject=inj, inject_block=L + 1); X.append(Vr[a]); Y.append((S2[lf] - S0[lf])[pool] / s_inj)
+X, Y = torch.cat(X), torch.cat(Y); Gx = X.T @ X; T = torch.linalg.solve(Gx + 1e-2 * Gx.diagonal().mean() * torch.eye(D, device=DEV), X.T @ Y)
+S_f = subspaces(Fr[tr], None, lab_i[tr], kl[tr], Z); closure = {}
+for nm in ("identity", "function", "kl"):
+    St = torch.linalg.qr(T.T @ S_L[nm])[0]; closure[nm] = dict(transported_vs_future=inside(St, S_f[nm]), stationary_vs_future=inside(S_L[nm], S_f[nm]), transported_vs_random=inside(St, S_L["random"]), chance=d / D)
+res = dict(model=tag, b=b, L=L, future=lf, K=K, D=D, d=d, overlap=overlap, overlap_random=overlap_random, chance=d / D, transfer=transfer, full=full, split_controls=controls, split_energy=energy, remainder_future=rem_future, remainder_future_shuffled=rem_future_shuffled, remainder_energy=rem_energy, closure=closure)
+log(f"{tag} (K {K}, D {D}, chance {d / D:.3f}): (1) overlaps id-fn {overlap['identity']['function']:.2f}, id-fut {overlap['identity']['future']:.2f}, id-kl {overlap['identity']['kl']:.2f}, fn-fut {overlap['function']['future']:.2f}, fn-kl {overlap['function']['kl']:.2f}, fut-kl {overlap['future']['kl']:.2f}; vs random " + "/".join(f"{overlap_random[a]:.3f}" for a in names) + " | (2) transfer (rows: subspace used; identity/function/future/kl): " + "; ".join(f"{src}: " + "/".join(f"{transfer[src][o]:.2f}" for o in names) for src in ("identity", "function", "future", "kl", "random", "cov_random")) + f"; full " + "/".join(f"{full[o]:.2f}" for o in names) + " | (3) split controls: " + "; ".join(f"{nm} (energy {energy[nm]:.2f}): " + "/".join(f"{controls[nm][o]:.2f}" for o in names) for nm in controls) + f" | (4) remainder ({rem_energy:.2f} of energy) predicts its own future {rem_future:.2f} vs shuffled {rem_future_shuffled:.2f} | (5) closure: " + "; ".join(f"{nm} transported {v['transported_vs_future']:.2f} stationary {v['stationary_vs_future']:.2f} random {v['transported_vs_random']:.3f}" for nm, v in closure.items()))
+record(f"e288_killtree_{tag}", res, f"overlaps id-fn {overlap['identity']['function']:.2f} id-fut {overlap['identity']['future']:.2f} id-kl {overlap['identity']['kl']:.2f} fn-fut {overlap['function']['future']:.2f} fn-kl {overlap['function']['kl']:.2f} fut-kl {overlap['future']['kl']:.2f} (chance {d / D:.3f}) | transfer from function subspace id/fn/fut/kl " + "/".join(f"{transfer['function'][o]:.2f}" for o in names) + " vs own " + "/".join(f"{transfer[o][o]:.2f}" for o in names) + " vs random " + "/".join(f"{transfer['random'][o]:.2f}" for o in names) + " | controls span/cov-random/permuted: " + " ".join("/".join(f"{controls[nm][o]:.2f}" for o in names) for nm in controls) + f" | remainder future {rem_future:.2f} vs {rem_future_shuffled:.2f} | closure id {closure['identity']['transported_vs_future']:.2f} (stationary {closure['identity']['stationary_vs_future']:.2f}) fn {closure['function']['transported_vs_future']:.2f} ({closure['function']['stationary_vs_future']:.2f}) kl {closure['kl']['transported_vs_future']:.2f} ({closure['kl']['stationary_vs_future']:.2f})")

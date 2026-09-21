@@ -1,0 +1,31 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "K": 23,
+ "knn_functional_similarity": {
+  "descendant": 0.4852132201194763,
+  "write": 0.32429298758506775,
+  "random": 0.34046971797943115,
+  "descendant_excl_massive": 0.4899423122406006,
+  "write_excl_massive": 0.324744313955307
+ },
+ "gram_spearman": {
+  "desc_logit": 0.5348040461540222,
+  "write_logit": -0.04269205033779144
+ },
+ "heldout_functional_prediction_cos": {
+  "descendant": 0.5003000497817993,
+  "write": 0.4101390242576599,
+  "random": 0.4260699450969696
+ },
+ "conditional": {
+  "func_sim_dissimilar_writes_similar_descendants": 0.490872859954834,
+  "func_sim_dissimilar_writes_dissimilar_descendants": 0.20585192739963531,
+  "func_sim_similar_writes": 0.310975044965744,
+  "func_sim_all": 0.31154540181159973,
+  "n_pairs_lo_w_hi_d": 30
+ },
+ "_exp": "e255_funcnn_smollm2",
+ "_time": "2026-09-19 14:25:05"
+}

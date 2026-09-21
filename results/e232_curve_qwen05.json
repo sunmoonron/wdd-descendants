@@ -1,0 +1,75 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "per_level": {
+  "3": {
+   "K": 63,
+   "n_test": 843,
+   "native_read": 0.871886134147644,
+   "state_centroid": 0.7912218570709229,
+   "footprint_centroid": 0.9810202121734619,
+   "mi_state_bits": 5.021724224090576,
+   "mi_footprint_bits": 5.634956359863281,
+   "log2K": 5.977279923499917,
+   "chance": 0.015873015873015872
+  },
+  "4": {
+   "K": 63,
+   "n_test": 843,
+   "native_read": 0.6334519982337952,
+   "state_centroid": 0.717674970626831,
+   "footprint_centroid": 0.944246768951416,
+   "mi_state_bits": 4.745414733886719,
+   "mi_footprint_bits": 5.473276138305664,
+   "log2K": 5.977279923499917,
+   "chance": 0.015873015873015872
+  },
+  "6": {
+   "K": 63,
+   "n_test": 843,
+   "native_read": 0.36417555809020996,
+   "state_centroid": 0.6856465339660645,
+   "footprint_centroid": 0.880189836025238,
+   "mi_state_bits": 4.592947959899902,
+   "mi_footprint_bits": 5.165500640869141,
+   "log2K": 5.977279923499917,
+   "chance": 0.015873015873015872
+  },
+  "8": {
+   "K": 63,
+   "n_test": 843,
+   "native_read": 0.2526690363883972,
+   "state_centroid": 0.5966785550117493,
+   "footprint_centroid": 0.8647686839103699,
+   "mi_state_bits": 4.264772415161133,
+   "mi_footprint_bits": 5.097261428833008,
+   "log2K": 5.977279923499917,
+   "chance": 0.015873015873015872
+  },
+  "12": {
+   "K": 63,
+   "n_test": 843,
+   "native_read": 0.16370107233524323,
+   "state_centroid": 0.48991698026657104,
+   "footprint_centroid": 0.8018980026245117,
+   "mi_state_bits": 3.9830403327941895,
+   "mi_footprint_bits": 4.834284782409668,
+   "log2K": 5.977279923499917,
+   "chance": 0.015873015873015872
+  },
+  "22": {
+   "K": 64,
+   "n_test": 853,
+   "native_read": 0.011723329313099384,
+   "state_centroid": 0.17467761039733887,
+   "footprint_centroid": 0.49355214834213257,
+   "mi_state_bits": 2.865847110748291,
+   "mi_footprint_bits": 3.6915767192840576,
+   "log2K": 6.0,
+   "chance": 0.015625
+  }
+ },
+ "_exp": "e232_curve_qwen05",
+ "_time": "2026-09-19 12:51:53"
+}

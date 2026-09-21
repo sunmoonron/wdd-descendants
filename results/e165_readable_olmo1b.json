@@ -1,0 +1,34 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "base_ce": 2.655524730682373,
+ "identified_true_writes_per_token": 23.503173828125,
+ "remove": {
+  "identified_true_writes": {
+   "dce": 0.5673513412475586,
+   "energy": 0.1601971834897995
+  },
+  "energy_matched_random_unidentified": {
+   "dce": 3.1584649085998535,
+   "energy": 0.1622854620218277
+  },
+  "same_count_largest_unidentified": {
+   "dce": 3.1122026443481445,
+   "energy": 0.21778233349323273
+  },
+  "top3_block0_part": {
+   "dce": 0.02614879608154297,
+   "energy": 0.025909317657351494
+  },
+  "top3_later_part": {
+   "dce": 0.5821504592895508,
+   "energy": 0.060265183448791504
+  },
+  "top3_all": {
+   "dce": 0.7214798927307129,
+   "energy": 0.10215391218662262
+  }
+ },
+ "_exp": "e165_readable_olmo1b",
+ "_time": "2026-09-19 07:14:24"
+}

@@ -1,0 +1,57 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 21,
+ "results": {
+  "4": {
+   "A_pred_cos": 0.5767300128936768,
+   "A_baseline_cos": 0.07856287062168121,
+   "A_pertoken_cos": 0.33750832080841064,
+   "B_predicted_descendant_provenance": 0.3572761118412018,
+   "B_chance": 0.047619047619047616,
+   "C_inverse_provenance": 0.35820895433425903,
+   "C_inverse_cos": -0.20034632086753845,
+   "C_native_atom_on_footprint": 0.3572761118412018,
+   "E_gram_spearman": 0.514884889125824,
+   "E_gram_rel_frobenius": 0.27598023414611816
+  },
+  "6": {
+   "A_pred_cos": 0.47744494676589966,
+   "A_baseline_cos": 0.07859975844621658,
+   "A_pertoken_cos": 0.20936135947704315,
+   "B_predicted_descendant_provenance": 0.30503731966018677,
+   "B_chance": 0.047619047619047616,
+   "C_inverse_provenance": 0.3367537260055542,
+   "C_inverse_cos": -0.08909916877746582,
+   "C_native_atom_on_footprint": 0.3507462739944458,
+   "E_gram_spearman": 0.4448835253715515,
+   "E_gram_rel_frobenius": 0.3198956847190857
+  },
+  "8": {
+   "A_pred_cos": 0.41397345066070557,
+   "A_baseline_cos": 0.07830936461687088,
+   "A_pertoken_cos": 0.15422028303146362,
+   "B_predicted_descendant_provenance": 0.21548506617546082,
+   "B_chance": 0.047619047619047616,
+   "C_inverse_provenance": 0.2518656551837921,
+   "C_inverse_cos": -0.055909235030412674,
+   "C_native_atom_on_footprint": 0.3227611780166626,
+   "E_gram_spearman": 0.4264640808105469,
+   "E_gram_rel_frobenius": 0.3517211973667145
+  },
+  "D": {
+   "cos_composed_vs_direct": 0.5364943742752075,
+   "provenance_composed": 0.28358209133148193,
+   "provenance_direct": 0.30503731966018677
+  },
+  "F": {
+   "a": 0.017618270590901375,
+   "b": 0.02202283777296543,
+   "a_plus_b": 0.9603588581085205,
+   "a_minus_b": 0.0
+  }
+ },
+ "_exp": "e248_operator_olmo1b",
+ "_time": "2026-09-19 14:06:49"
+}

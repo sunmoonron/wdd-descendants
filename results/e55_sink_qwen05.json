@@ -1,0 +1,36 @@
+{
+ "model": "qwen05",
+ "levels": {
+  "21": {
+   "n_sink": 32,
+   "channel": 62,
+   "in_med": 1711.0,
+   "out_med": 47.5625,
+   "att_med": 0.20654296875,
+   "mlp_med": -1661.672119140625,
+   "frac_removed": 0.9721288681030273,
+   "att_share_of_removal": -0.00012340575631242245,
+   "mlp_share_of_removal": 1.0002063512802124,
+   "top_mlp_neurons": [
+    [
+     567,
+     -1052.1102294921875
+    ],
+    [
+     3486,
+     -323.734619140625
+    ],
+    [
+     3435,
+     -257.743896484375
+    ]
+   ],
+   "sink_norm_ratio_in": 31.32440948486328,
+   "sink_norm_ratio_out": 0.8741351366043091
+  },
+  "22": "no sinks at input",
+  "23": "no sinks at input"
+ },
+ "_exp": "e55_sink_qwen05",
+ "_time": "2026-09-19 03:59:42"
+}

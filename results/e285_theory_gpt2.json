@@ -1,0 +1,99 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "gain_by_direction": {
+  "top8": {
+   "gain": 0.782444953918457,
+   "cos_to_predicted_output": 0.7080312967300415,
+   "operator_sv": 1.66275155544281
+  },
+  "mid8": {
+   "gain": 0.5183799862861633,
+   "cos_to_predicted_output": 0.7547772526741028,
+   "operator_sv": 0.5091961622238159
+  },
+  "bottom8": {
+   "gain": 0.3496231436729431,
+   "cos_to_predicted_output": -0.005369283724576235,
+   "operator_sv": 0.004236689303070307
+  },
+  "random8": {
+   "gain": 0.5692266821861267,
+   "cos_to_predicted_output": 0.7136751413345337,
+   "operator_sv": 0.699975311756134
+  }
+ },
+ "pair_cosines": {
+  "top8": {
+   "measured": 0.8304787874221802,
+   "predicted": 0.8401332497596741,
+   "rho": 1.3660675287246704
+  },
+  "bottom8": {
+   "measured": 0.5394441485404968,
+   "predicted": 0.5916932821273804,
+   "rho": 0.6472938060760498
+  },
+  "random8": {
+   "measured": 0.744537353515625,
+   "predicted": 0.7549803256988525,
+   "rho": 1.0153757333755493
+  }
+ },
+ "additivity": {
+  "constant_total_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5829263925552368,
+   "cos": 0.8127292394638062
+  },
+  "constant_per_write_norm_m1": {
+   "total_norm": 0.99999992006784,
+   "additivity_error": 0.582926332950592,
+   "cos": 0.8127292990684509
+  },
+  "constant_total_norm_m2": {
+   "total_norm": 1.00000007993216,
+   "additivity_error": 0.5926260352134705,
+   "cos": 0.8054907321929932
+  },
+  "constant_per_write_norm_m2": {
+   "total_norm": 1.3847752735298497,
+   "additivity_error": 0.5968965888023376,
+   "cos": 0.8023207187652588
+  },
+  "constant_total_norm_m4": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5388953685760498,
+   "cos": 0.842495322227478
+  },
+  "constant_per_write_norm_m4": {
+   "total_norm": 1.9746910801864241,
+   "additivity_error": 0.5492833256721497,
+   "cos": 0.8364815711975098
+  },
+  "constant_total_norm_m8": {
+   "total_norm": 1.0,
+   "additivity_error": 0.4453355371952057,
+   "cos": 0.8954761624336243
+  },
+  "constant_per_write_norm_m8": {
+   "total_norm": 2.888403913830254,
+   "additivity_error": 0.4963069260120392,
+   "cos": 0.8699671030044556
+  },
+  "constant_total_norm_m16": {
+   "total_norm": 1.0,
+   "additivity_error": 0.15554200112819672,
+   "cos": 0.987846851348877
+  },
+  "constant_per_write_norm_m16": {
+   "total_norm": 4.003995968541579,
+   "additivity_error": 0.4068325161933899,
+   "cos": 0.9160884618759155
+  }
+ },
+ "rms_sv": 0.699975311756134,
+ "_exp": "e285_theory_gpt2",
+ "_time": "2026-09-19 16:46:41"
+}

@@ -1,0 +1,105 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "future": 14,
+ "per_family": {
+  "wdd_writes": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9939758777618408
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.11827561259269714
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.1414608359336853
+   },
+   "reconstruction": {
+    "dim": 1024,
+    "full": 0.999999744565481
+   },
+   "gain": 0.6841700673103333
+  },
+  "random": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9993596076965332
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.11670345067977905
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.22325024008750916
+   },
+   "reconstruction": {
+    "dim": 1024,
+    "full": 0.9999997692425396
+   },
+   "gain": 0.6980265378952026
+  },
+  "cov_matched_random": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.13766488432884216
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.2517678141593933
+   },
+   "reconstruction": {
+    "dim": 1024,
+    "full": 0.9999997635298687
+   },
+   "gain": 0.7883479595184326
+  },
+  "attention_writes": {
+   "identity": {
+    "dim": 32,
+    "full": 0.9746714234352112
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.11387423425912857
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.1500445157289505
+   },
+   "reconstruction": {
+    "dim": 1024,
+    "full": 0.9999997626557792
+   },
+   "gain": 0.6659744381904602
+  },
+  "later_mlp_writes": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9941803812980652
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.10975931584835052
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.1708172857761383
+   },
+   "reconstruction": {
+    "dim": 1024,
+    "full": 0.999999748932885
+   },
+   "gain": 0.6712440848350525
+  }
+ },
+ "_exp": "e304_families_pythia410",
+ "_time": "2026-09-19 18:13:52"
+}

@@ -1,0 +1,36 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "results": {
+  "omp": {
+   "neuron_recall": 0.6306688189506531,
+   "block_recall": 0.9964110851287842,
+   "block_control": 0.9727569222450256,
+   "best_atom_exact": 0.6306688189506531,
+   "best_atom_same_block": 0.053833603858947754,
+   "best_atom_other": 0.3154975473880768,
+   "best_atom_cos": 0.9999998807907104,
+   "block_energy_rho": 0.357142835855484,
+   "block_energy_rho_control": -0.357142835855484,
+   "head_recall": 0.7333333492279053,
+   "head_control": 0.10000000894069672,
+   "n_att": 30
+  },
+  "dual": {
+   "neuron_recall": 0.7977161407470703,
+   "block_recall": 0.9169657230377197,
+   "block_control": 0.6489396095275879,
+   "best_atom_exact": 0.7977161407470703,
+   "best_atom_same_block": 0.024143556132912636,
+   "best_atom_other": 0.1781402975320816,
+   "best_atom_cos": 1.0,
+   "block_energy_rho": 0.178571417927742,
+   "block_energy_rho_control": -0.035714291036129,
+   "head_recall": 0.20000001788139343,
+   "head_control": 0.0,
+   "n_att": 30
+  }
+ },
+ "_exp": "e218_hier_gpt2",
+ "_time": "2026-09-19 12:21:57"
+}

@@ -1,0 +1,28 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "most_prominent": {
+  "rank_median": 4.0,
+  "rank_q90": 473.19970703125,
+  "frac_rank0": 0.1936352550983429,
+  "frac_rank_lt3": 0.41958385705947876,
+  "relmag_median": 0.5524995923042297,
+  "recall": {
+   "omp": 0.9167687296867371,
+   "dual": 0.9833537936210632,
+   "lasso": 1.0
+  }
+ },
+ "largest_intact": {
+  "frac_tokens_with_intact_write": 1.0,
+  "recall": {
+   "omp": 0.5809057950973511,
+   "dual": 0.7586291432380676,
+   "lasso": 0.7603427767753601
+  },
+  "relmag_median": 1.0,
+  "frac_rank0": 0.5581395626068115
+ },
+ "_exp": "e119_target_qwen05",
+ "_time": "2026-09-19 04:24:35"
+}

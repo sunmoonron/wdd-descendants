@@ -1,0 +1,76 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "N": 8192,
+ "identity_check": 0.00017750263214111328,
+ "recall": 0.7028383016586304,
+ "auc_omp": {
+  "raw_surv": 0.7704678773880005,
+  "centered_surv": 0.809327244758606,
+  "dc_term": 0.575808048248291,
+  "prominence": 0.8721571564674377,
+  "abs_coef": 0.673765242099762
+ },
+ "auc_oneshot": {
+  "raw_surv": 0.898474931716919,
+  "centered_surv": 0.9186867475509644,
+  "prominence": 0.9805144667625427
+ },
+ "survival": {
+  "raw_median": 0.834010660648346,
+  "centered_median": 0.818379282951355,
+  "dc_median": -0.002616782672703266,
+  "frac_raw_erased": 0.03841448575258255,
+  "frac_centered_erased": 0.041472963988780975
+ },
+ "contributions_median": {
+  "emb": 0.01651526242494583,
+  "earlier_att": 0.0,
+  "earlier_mlp": 0.04821589216589928,
+  "same_att": 0.08744816482067108,
+  "same_mlp_other": 0.05424785614013672,
+  "later_att": -0.09081051498651505,
+  "later_mlp": -0.4408515393733978
+ },
+ "contributions_mean": {
+  "emb": 0.046918079257011414,
+  "earlier_att": 0.058863624930381775,
+  "earlier_mlp": 0.16607773303985596,
+  "same_att": 0.11548992991447449,
+  "same_mlp_other": 0.12557920813560486,
+  "later_att": -0.07323797792196274,
+  "later_mlp": -0.5448102951049805
+ },
+ "who_erases_raw_erased": {
+  "emb": -0.003741986583918333,
+  "earlier_att": -0.049662601202726364,
+  "earlier_mlp": 0.0813748762011528,
+  "same_att": -0.0029346910305321217,
+  "same_mlp_other": 0.0992560088634491,
+  "later_att": -0.3816138505935669,
+  "later_mlp": -0.6676527857780457
+ },
+ "n_raw_erased": 314,
+ "centered_erased_but_raw_intact": {
+  "n": 6,
+  "frac_of_typical": 0.0007340347510762513,
+  "recall": 0.0,
+  "dc_median": 1.216422200202942
+ },
+ "dc_atom": {
+  "recall_centered": 0.7028383016586304,
+  "recall_raw_no_dc": 0.7033276557922363,
+  "recall_raw_with_dc": 0.70589679479599,
+  "dc_selected_frac": 0.9202880859375,
+  "dc_selected_first": 0.3887939453125,
+  "fvu64_centered": 0.43070095777511597,
+  "fvu64_raw_with_dc": 0.4320690929889679,
+  "fvu64_raw_no_dc": 0.4522510766983032,
+  "recall_on_centered_erased_raw_intact": {
+   "centered": 0.0,
+   "raw_with_dc": 0.0
+  }
+ },
+ "_exp": "e08_cancel_olmo1b",
+ "_time": "2026-09-19 01:08:05"
+}

@@ -1,0 +1,51 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "per_level": {
+  "12": {
+   "core_transfer": {
+    "function_cross": 0.11690425351262093,
+    "function_own": 0.14890092313289643,
+    "function_random": 0.08075151592493057,
+    "identity_cross": 0.33820687755942347,
+    "identity_own": 0.5635010600090027,
+    "identity_random": 0.41974824368953706
+   },
+   "metric_transfer": {
+    "euclid": 0.40497791171073916,
+    "own_metric": 0.5662222504615784,
+    "cross_metric": 0.4285424441099167
+   }
+  },
+  "22": {
+   "core_transfer": {
+    "function_cross": 0.29243318289518355,
+    "function_own": 0.33548933267593384,
+    "function_random": 0.142946857213974,
+    "identity_cross": 0.058472357131540774,
+    "identity_own": 0.07726036235690117,
+    "identity_random": 0.09954147636890412
+   },
+   "metric_transfer": {
+    "euclid": 0.4393661141395569,
+    "own_metric": 0.5845225095748902,
+    "cross_metric": 0.5601236239075661
+   }
+  }
+ },
+ "superposition": {
+  "functionally_similar": {
+   "n": 12,
+   "cos": 0.9869485398133596,
+   "rel_error": 0.16680878400802612
+  },
+  "functionally_dissimilar": {
+   "n": 12,
+   "cos": 0.9877307961384455,
+   "rel_error": 0.16215581695238748
+  }
+ },
+ "_exp": "e312_transfer_qwen05",
+ "_time": "2026-09-19 18:57:37"
+}

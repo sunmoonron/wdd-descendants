@@ -1,0 +1,51 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "per_level": {
+  "8": {
+   "core_transfer": {
+    "function_cross": 0.07156613301485777,
+    "function_own": 0.11959591060876847,
+    "function_random": 0.04838499054312706,
+    "identity_cross": 0.17804746180772782,
+    "identity_own": 0.5108740568161011,
+    "identity_random": 0.2015462726354599
+   },
+   "metric_transfer": {
+    "euclid": 0.2598451882600784,
+    "own_metric": 0.6067000269889832,
+    "cross_metric": 0.2615931725129485
+   }
+  },
+  "14": {
+   "core_transfer": {
+    "function_cross": 0.2216816373169422,
+    "function_own": 0.26996911466121676,
+    "function_random": 0.070024374127388,
+    "identity_cross": 0.05823486018925905,
+    "identity_own": 0.0674961656332016,
+    "identity_random": 0.0678949274122715
+   },
+   "metric_transfer": {
+    "euclid": 0.3063762843608856,
+    "own_metric": 0.6008844196796417,
+    "cross_metric": 0.5413378208875657
+   }
+  }
+ },
+ "superposition": {
+  "functionally_similar": {
+   "n": 12,
+   "cos": 0.9848724206288656,
+   "rel_error": 0.18933501094579697
+  },
+  "functionally_dissimilar": {
+   "n": 12,
+   "cos": 0.9894492079814275,
+   "rel_error": 0.15069060400128365
+  }
+ },
+ "_exp": "e312_transfer_olmo1b",
+ "_time": "2026-09-19 18:53:23"
+}

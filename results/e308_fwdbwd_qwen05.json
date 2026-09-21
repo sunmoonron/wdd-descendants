@@ -1,0 +1,47 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 28,
+ "overlaps": {
+  "forward_core_vs_backward": 0.040883634239435196,
+  "identity_core_vs_backward": 0.03260993957519531,
+  "descendant_pca_vs_backward": 0.03715377673506737,
+  "activation_pca_vs_backward": 0.06501448899507523,
+  "random_vs_backward": 0.019466616213321686,
+  "chance": 0.017857142857142856
+ },
+ "first_order": {
+  "correlation_over_tokens_and_directions": 0.3569406270980835,
+  "median_per_token_cos": 0.6685724854469299
+ },
+ "decoding": {
+  "intersection8": {
+   "identity": 0.4906103312969208,
+   "function": 0.40697064995765686,
+   "kl": 0.5175875425338745
+  },
+  "forward_core8": {
+   "identity": 0.5070422887802124,
+   "function": 0.3969268202781677,
+   "kl": 0.5142242908477783
+  },
+  "backward8": {
+   "identity": 0.2887324094772339,
+   "function": 0.2576303482055664,
+   "kl": 0.22880688309669495
+  },
+  "random8": {
+   "identity": 0.21596243977546692,
+   "function": 0.2112291157245636,
+   "kl": 0.21841570734977722
+  },
+  "full": {
+   "identity": 0.8521127104759216,
+   "function": 0.4186542332172394,
+   "kl": 0.49917420744895935
+  }
+ },
+ "_exp": "e308_fwdbwd_qwen05",
+ "_time": "2026-09-19 18:37:15"
+}

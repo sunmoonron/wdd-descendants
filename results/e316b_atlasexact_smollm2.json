@@ -1,0 +1,64 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "K": 23,
+ "prank": 6.928051471710205,
+ "class_sizes": [
+  602,
+  0,
+  0,
+  119,
+  73,
+  0,
+  101,
+  0,
+  0,
+  134,
+  121,
+  0,
+  93,
+  88,
+  110,
+  95
+ ],
+ "within_class_cos": 0.5079256892204285,
+ "class_ablation": {
+  "heavy": {
+   "coherence": 0.3536709249019623,
+   "cos_pred_actual": 0.1280524730682373,
+   "core_norm_per_weight": 0.05894690379500389
+  },
+  "other": {
+   "coherence": 0.20767851173877716,
+   "cos_pred_actual": 0.10232827067375183,
+   "core_norm_per_weight": 0.2753814458847046
+  },
+  "random": {
+   "coherence": 0.24018904566764832,
+   "cos_pred_actual": 0.23823891580104828,
+   "core_norm_per_weight": 0.0647217407822609
+  },
+  "n": 64
+ },
+ "substitution": {
+  "same_class": {
+   "logit_restoration": -0.2863945960998535,
+   "core_restoration": -0.1552596092224121,
+   "z_cos": 0.7583499550819397
+  },
+  "random": {
+   "logit_restoration": -0.01899874210357666,
+   "core_restoration": 0.0,
+   "z_cos": 0.0
+  }
+ },
+ "attribution": {
+  "ledger_to_core": 0.21996602416038513,
+  "atlas_logits": 0.004867830313742161,
+  "direct_logit": 0.03359714522957802,
+  "transport_readout": 0.013148253783583641
+ },
+ "_exp": "e316b_atlasexact_smollm2",
+ "_time": "2026-09-19 19:46:46"
+}

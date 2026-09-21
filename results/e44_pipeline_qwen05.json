@@ -1,0 +1,40 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "N": 8192,
+ "K": 64,
+ "variants": {
+  "global_omp64": {
+   "recall1": 0.46086105704307556,
+   "recall3": 0.03742661327123642,
+   "real_share_of_mlp_atoms": 0.2891083359718323,
+   "mlp_share_of_support": 0.5445663928985596,
+   "sign_agree_real": 0.9286147952079773,
+   "med_rel_err": 0.4892776310443878,
+   "spurious_coef_mass": 0.640251636505127,
+   "fvu_full_state": 0.21664762496948242
+  },
+  "delta_equal": {
+   "recall1": 0.9784735441207886,
+   "recall3": 0.8910225033760071,
+   "real_share_of_mlp_atoms": 0.8050892353057861,
+   "mlp_share_of_support": 0.7956282496452332,
+   "sign_agree_real": 0.8541725277900696,
+   "med_rel_err": 0.6180608868598938,
+   "spurious_coef_mass": 0.1379467099905014,
+   "fvu_full_state": 0.6559573411941528
+  },
+  "delta_energy": {
+   "recall1": 0.980430543422699,
+   "recall3": 0.9041095972061157,
+   "real_share_of_mlp_atoms": 0.7879936099052429,
+   "mlp_share_of_support": 0.7938230037689209,
+   "sign_agree_real": 0.8508778214454651,
+   "med_rel_err": 0.6291087865829468,
+   "spurious_coef_mass": 0.15275585651397705,
+   "fvu_full_state": 0.632509171962738
+  }
+ },
+ "_exp": "e44_pipeline_qwen05",
+ "_time": "2026-09-19 03:25:38"
+}

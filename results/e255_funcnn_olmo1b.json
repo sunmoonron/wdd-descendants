@@ -1,0 +1,31 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 21,
+ "knn_functional_similarity": {
+  "descendant": 0.3973158895969391,
+  "write": 0.2986565828323364,
+  "random": 0.3000580966472626,
+  "descendant_excl_massive": 0.42004212737083435,
+  "write_excl_massive": 0.30913567543029785
+ },
+ "gram_spearman": {
+  "desc_logit": 0.30873194336891174,
+  "write_logit": -0.05323800817131996
+ },
+ "heldout_functional_prediction_cos": {
+  "descendant": 0.49040335416793823,
+  "write": 0.44643035531044006,
+  "random": 0.49040335416793823
+ },
+ "conditional": {
+  "func_sim_dissimilar_writes_similar_descendants": 0.41753265261650085,
+  "func_sim_dissimilar_writes_dissimilar_descendants": 0.26209479570388794,
+  "func_sim_similar_writes": 0.29745182394981384,
+  "func_sim_all": 0.29656317830085754,
+  "n_pairs_lo_w_hi_d": 28
+ },
+ "_exp": "e255_funcnn_olmo1b",
+ "_time": "2026-09-19 14:25:00"
+}

@@ -1,0 +1,51 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "per_level": {
+  "4": {
+   "cross_function_mean": 0.06007611099630594,
+   "cross_function_min": 0.029374973848462105,
+   "cross_identity_mean": 0.03953041285276413,
+   "within_function_mean": 0.5987690627574921,
+   "within_identity_mean": 0.8532484292984008,
+   "wdd_function_vs": {
+    "random": 0.043724335730075836,
+    "cov_random": 0.03207346796989441,
+    "attention": 0.04075890779495239,
+    "later_mlp": 0.043464295566082
+   },
+   "chance": 0.020833333333333332
+  },
+  "6": {
+   "cross_function_mean": 0.15631190165877343,
+   "cross_function_min": 0.11787202954292297,
+   "cross_identity_mean": 0.05103816539049148,
+   "within_function_mean": 0.5309729099273681,
+   "within_identity_mean": 0.8010502815246582,
+   "wdd_function_vs": {
+    "random": 0.13885536789894104,
+    "cov_random": 0.13353796303272247,
+    "attention": 0.1315879225730896,
+    "later_mlp": 0.12378745526075363
+   },
+   "chance": 0.020833333333333332
+  },
+  "10": {
+   "cross_function_mean": 0.5494690716266633,
+   "cross_function_min": 0.5067514181137085,
+   "cross_identity_mean": 0.06607874035835266,
+   "within_function_mean": 0.6657164394855499,
+   "within_identity_mean": 0.5831351459026337,
+   "wdd_function_vs": {
+    "random": 0.5915915369987488,
+    "cov_random": 0.5130499601364136,
+    "attention": 0.5067514181137085,
+    "later_mlp": 0.6064122915267944
+   },
+   "chance": 0.020833333333333332
+  }
+ },
+ "_exp": "e306_familycores_gpt2",
+ "_time": "2026-09-19 18:34:05"
+}

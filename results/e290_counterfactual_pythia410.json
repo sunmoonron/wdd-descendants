@@ -1,0 +1,56 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "per_neuron": {
+  "largest": {
+   "neuron": 1560,
+   "coef": 2.247523307800293,
+   "n_own": 74,
+   "0.5": {
+    "own_vs_natural": 0.8897439241409302,
+    "own_vs_foreign": 0.17528928816318512,
+    "foreign_vs_natural": 0.1375242918729782,
+    "own_vs_linear": 0.08637881278991699,
+    "foreign_vs_linear": 0.14788132905960083,
+    "own_norm_per_coef": 0.5136079788208008,
+    "foreign_norm_per_coef": 0.8273524045944214
+   },
+   "1.0": {
+    "own_vs_natural": 0.8143077492713928,
+    "own_vs_foreign": 0.19164015352725983,
+    "foreign_vs_natural": 0.13002116978168488,
+    "own_vs_linear": 0.07478081434965134,
+    "foreign_vs_linear": 0.11649513244628906,
+    "own_norm_per_coef": 0.5346370339393616,
+    "foreign_norm_per_coef": 0.8210070133209229
+   }
+  },
+  "typical": {
+   "neuron": 2463,
+   "coef": 1.5088849067687988,
+   "n_own": 32,
+   "0.5": {
+    "own_vs_natural": 0.9544171094894409,
+    "own_vs_foreign": 0.5196634531021118,
+    "foreign_vs_natural": 0.49137386679649353,
+    "own_vs_linear": 0.19836953282356262,
+    "foreign_vs_linear": 0.29348069429397583,
+    "own_norm_per_coef": 0.5324265956878662,
+    "foreign_norm_per_coef": 0.7571976780891418
+   },
+   "1.0": {
+    "own_vs_natural": 0.9465688467025757,
+    "own_vs_foreign": 0.5171387791633606,
+    "foreign_vs_natural": 0.48486289381980896,
+    "own_vs_linear": 0.1967000961303711,
+    "foreign_vs_linear": 0.2874920666217804,
+    "own_norm_per_coef": 0.5331336855888367,
+    "foreign_norm_per_coef": 0.7660846710205078
+   }
+  }
+ },
+ "_exp": "e290_counterfactual_pythia410",
+ "_time": "2026-09-19 17:39:01"
+}

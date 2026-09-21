@@ -1,0 +1,24 @@
+"""e259: does descendant similarity predict functional similarity after controlling for write similarity? K block-2
+candidates; Gram matrices of write vectors (W), descendant centroids at L (D) and logit footprints (F). (1) The 2x2
+design: pairs split at the median of W-similarity and of D-similarity; mean functional similarity per cell; (2) partial
+Spearman of D-similarity with F-similarity controlling for W-similarity, and the reverse; (3) same-descendant /
+different-writer pairs: the 10 pairs with the lowest W-similarity among the top-quartile D-similarity pairs, and the
+fraction whose functional similarity exceeds the median of all pairs; (4) the same excluding the largest neuron."""
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from func_common import *
+tag = sys.argv[1]; c = Cache(tag); L = mid(c); model, tok, fam = load_model(c.name); arch = Arch(model, fam); NS = 12; ids_seq = c.s["eval_ids"][:NS].to(DEV); NT = NS * CTX; b = 2; D = c.D; lab = c.d["lab"]; A = c.d["A"]; R = A[(lab["type"] == T_MLP) & (lab["block"] == b)].float().to(DEV)
+led, tn, tc = dominant(model, arch, c, ids_seq, b); run = make_runner_logits(model, arch, c, ids_seq, [L], NT, b); S0 = run(); typ = typical_mask(S0[L]); big = tc.abs() >= tc.abs().quantile(0.5); idx, lab_i, keep = classes(tn, typ & big, 20); K = len(keep)
+S0 = run(positions=idx); S1 = run(tn, positions=idx); F = S0[L] - S1[L]; dl = S0["lg"] - S1["lg"]; dl = dl - dl.mean(1, keepdim=True)
+Cd = unit(centroids(F[idx], lab_i, K)); Cl = unit(centroids(dl, lab_i, K)); Rw = unit(R[keep]); Gd, Gl, Gw = Cd @ Cd.T, Cl @ Cl.T, Rw @ Rw.T; med = torch.stack([tc[idx][lab_i == k].median().abs() for k in range(K)]); M = med.argmax()
+def analyse(mask_neurons):
+    ks = torch.nonzero(mask_neurons)[:, 0]; Kn = len(ks); iu = torch.triu_indices(Kn, Kn, 1, device=DEV); a, bb = ks[iu[0]], ks[iu[1]]; gw, gd, gl = Gw[a, bb], Gd[a, bb], Gl[a, bb]
+    def ranks(x): return x.argsort().argsort().float()
+    rw, rd, rl = ranks(gw), ranks(gd), ranks(gl); C = torch.corrcoef(torch.stack([rw, rd, rl])); r_wd, r_wl, r_dl = C[0, 1].item(), C[0, 2].item(), C[1, 2].item()
+    partial_dl_w = (r_dl - r_wd * r_wl) / math.sqrt(max((1 - r_wd ** 2) * (1 - r_wl ** 2), 1e-9)); partial_wl_d = (r_wl - r_wd * r_dl) / math.sqrt(max((1 - r_wd ** 2) * (1 - r_dl ** 2), 1e-9))
+    hw, hd = gw > gw.median(), gd > gd.median(); cells = {"hiW_hiD": gl[hw & hd].mean().item(), "hiW_loD": gl[hw & ~hd].mean().item(), "loW_hiD": gl[~hw & hd].mean().item(), "loW_loD": gl[~hw & ~hd].mean().item()}
+    topd = gd >= gd.quantile(0.75); cand = torch.nonzero(topd)[:, 0]; sel = cand[gw[cand].argsort()[:10]]; same_desc_diff_writer = dict(n=int(len(sel)), mean_w_sim=gw[sel].mean().item(), mean_d_sim=gd[sel].mean().item(), mean_func_sim=gl[sel].mean().item(), frac_above_median_func=(gl[sel] > gl.median()).float().mean().item(), median_func_all=gl.median().item())
+    return dict(K=Kn, spearman=dict(w_d=r_wd, w_l=r_wl, d_l=r_dl), partial=dict(d_l_given_w=partial_dl_w, w_l_given_d=partial_wl_d), cells=cells, same_descendant_different_writer=same_desc_diff_writer)
+res = dict(all=analyse(torch.ones(K, dtype=torch.bool, device=DEV)), excl_largest=analyse(torch.arange(K, device=DEV) != M))
+r = res["all"]
+log(f"{tag} (K {K}): Spearman W-D {r['spearman']['w_d']:+.2f}, W-L {r['spearman']['w_l']:+.2f}, D-L {r['spearman']['d_l']:+.2f} | partial D-L given W {r['partial']['d_l_given_w']:+.2f}, W-L given D {r['partial']['w_l_given_d']:+.2f} | functional similarity by cell: hiW/hiD {r['cells']['hiW_hiD']:.3f}, hiW/loD {r['cells']['hiW_loD']:.3f}, loW/hiD {r['cells']['loW_hiD']:.3f}, loW/loD {r['cells']['loW_loD']:.3f} | same-descendant/different-writer top-10 pairs: W-sim {r['same_descendant_different_writer']['mean_w_sim']:.2f}, D-sim {r['same_descendant_different_writer']['mean_d_sim']:.2f}, functional similarity {r['same_descendant_different_writer']['mean_func_sim']:.3f} (all-pairs median {r['same_descendant_different_writer']['median_func_all']:.3f}), above median in {r['same_descendant_different_writer']['frac_above_median_func']:.2f} | excluding the largest neuron: partial D-L given W {res['excl_largest']['partial']['d_l_given_w']:+.2f}, loW/hiD {res['excl_largest']['cells']['loW_hiD']:.3f} vs loW/loD {res['excl_largest']['cells']['loW_loD']:.3f}")
+record(f"e259_matched_{tag}", dict(model=tag, b=b, L=L, **res), f"K {K}: partial Spearman D-L given W {r['partial']['d_l_given_w']:+.2f} (W-L given D {r['partial']['w_l_given_d']:+.2f}); cells hiW/hiD {r['cells']['hiW_hiD']:.2f} hiW/loD {r['cells']['hiW_loD']:.2f} loW/hiD {r['cells']['loW_hiD']:.2f} loW/loD {r['cells']['loW_loD']:.2f}; same-descendant/different-writer pairs func {r['same_descendant_different_writer']['mean_func_sim']:.2f} vs median {r['same_descendant_different_writer']['median_func_all']:.2f}")

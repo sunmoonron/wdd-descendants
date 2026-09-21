@@ -1,0 +1,71 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "always": {
+  "n": 66,
+  "kurtosis_med": 0.34870219230651855,
+  "top10_conc_med": 0.0008882997208274901,
+  "frac_function_or_punct": 0.21212121212121213,
+  "examples": [
+   "hard",
+   "5",
+   "alan",
+   "down",
+   "naments",
+   " strugg",
+   "outheastern",
+   " to"
+  ],
+  "recall_mean": 0.9923465847969055
+ },
+ "never": {
+  "n": 15,
+  "kurtosis_med": 0.28467440605163574,
+  "top10_conc_med": 0.0007657813839614391,
+  "frac_function_or_punct": 0.3333333333333333,
+  "examples": [
+   " uter",
+   ",",
+   "manent",
+   "emetery",
+   "vier",
+   "\ufffd",
+   "!\u201d",
+   " and"
+  ],
+  "recall_mean": 0.021109316498041153
+ },
+ "middle": {
+  "n": 5,
+  "kurtosis_med": 0.2327108383178711,
+  "top10_conc_med": 0.0009548327652737498,
+  "frac_function_or_punct": 0.2,
+  "examples": [
+   "ERV",
+   "outheastern",
+   "upon",
+   "charted",
+   " "
+  ],
+  "recall_mean": 0.48589831590652466
+ },
+ "all": {
+  "n": 123,
+  "kurtosis_med": 0.3176283836364746,
+  "top10_conc_med": 0.000896513694897294,
+  "frac_function_or_punct": 0.21138211382113822,
+  "examples": [
+   "hard",
+   "ed",
+   "5",
+   "alan",
+   "down",
+   "naments",
+   " strugg",
+   "outheastern"
+  ],
+  "recall_mean": 0.7029521465301514
+ },
+ "_exp": "e40_vocab_smollm2",
+ "_time": "2026-09-19 03:04:48"
+}

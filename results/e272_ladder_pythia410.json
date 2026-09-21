@@ -1,0 +1,88 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "per_level": {
+  "3": {
+   "reconstruction": 256,
+   "identity": 4,
+   "function": 32,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": 0.019530220892711947,
+    "identity": 1.0,
+    "function": 0.252469003200531,
+    "behaviour": 0.3803229033946991
+   },
+   "fvu_at_32": 0.17504642967114836
+  },
+  "4": {
+   "reconstruction": 1024,
+   "identity": 8,
+   "function": 16,
+   "behaviour": 64,
+   "full": {
+    "reconstruction": 0.03966942939840934,
+    "identity": 1.0,
+    "function": 0.25259262323379517,
+    "behaviour": 0.37388601899147034
+   },
+   "fvu_at_32": 0.30046245343287203
+  },
+  "6": {
+   "reconstruction": 1024,
+   "identity": 16,
+   "function": 16,
+   "behaviour": 8,
+   "full": {
+    "reconstruction": 0.07993933223150884,
+    "identity": 1.0,
+    "function": 0.2473015934228897,
+    "behaviour": 0.33055511116981506
+   },
+   "fvu_at_32": 0.49993463720644393
+  },
+  "12": {
+   "reconstruction": 1024,
+   "identity": 64,
+   "function": 32,
+   "behaviour": 8,
+   "full": {
+    "reconstruction": 0.12471854196126964,
+    "identity": 0.9879195094108582,
+    "function": 0.2180631458759308,
+    "behaviour": 0.3216498792171478
+   },
+   "fvu_at_32": 0.6616354364418594
+  },
+  "17": {
+   "reconstruction": 1024,
+   "identity": 128,
+   "function": 32,
+   "behaviour": 8,
+   "full": {
+    "reconstruction": 0.11611877003464632,
+    "identity": 0.8228188157081604,
+    "function": 0.21777203679084778,
+    "behaviour": 0.3574729859828949
+   },
+   "fvu_at_32": 0.61385614260759
+  },
+  "22": {
+   "reconstruction": 1024,
+   "identity": 256,
+   "function": 64,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": 0.10670500286092544,
+    "identity": 0.5073825716972351,
+    "function": 0.2331686019897461,
+    "behaviour": 0.3813023567199707
+   },
+   "fvu_at_32": 0.5767057297410132
+  }
+ },
+ "_exp": "e272_ladder_pythia410",
+ "_time": "2026-09-19 15:21:48"
+}

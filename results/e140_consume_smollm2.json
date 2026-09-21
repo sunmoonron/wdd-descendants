@@ -1,0 +1,32 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "read_strength_next_block": {
+  "median": 1.0184645652770996,
+  "random_direction_median": 0.9994858503341675,
+  "own_block": 1.0047852993011475,
+  "plus2": 1.0065150260925293,
+  "plus3": 1.0087203979492188
+ },
+ "auc_read_next_for": {
+  "erased": 0.31655094027519226,
+  "identified": 0.5453416705131531
+ },
+ "spearman_read_next_vs": {
+  "raw_survival": -0.2539806365966797,
+  "prominence": -0.2469269037246704,
+  "abs_coef": 0.1083221584558487
+ },
+ "neuron_level": {
+  "n": 109,
+  "spearman_recall_vs_read": -0.15611156821250916,
+  "spearman_survival_vs_read": -0.33198031783103943
+ },
+ "gate_read_next": {
+  "median": 1.0320007801055908,
+  "auc_erased": 0.2811685800552368,
+  "auc_identified": 0.6557055711746216
+ },
+ "_exp": "e140_consume_smollm2",
+ "_time": "2026-09-19 06:21:24"
+}

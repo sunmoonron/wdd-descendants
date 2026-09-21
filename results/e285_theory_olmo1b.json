@@ -1,0 +1,99 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "gain_by_direction": {
+  "top8": {
+   "gain": 0.5018706321716309,
+   "cos_to_predicted_output": 0.6784393191337585,
+   "operator_sv": 0.9078966379165649
+  },
+  "mid8": {
+   "gain": 0.26729846000671387,
+   "cos_to_predicted_output": -0.008642606437206268,
+   "operator_sv": 4.964424442732707e-05
+  },
+  "bottom8": {
+   "gain": 0.2557857036590576,
+   "cos_to_predicted_output": 0.005268174689263105,
+   "operator_sv": 1.1865872551197754e-07
+  },
+  "random8": {
+   "gain": 0.2597625255584717,
+   "cos_to_predicted_output": 0.4267534613609314,
+   "operator_sv": 0.2710724472999573
+  }
+ },
+ "pair_cosines": {
+  "top8": {
+   "measured": 0.9046600461006165,
+   "predicted": 0.912826418876648,
+   "rho": 1.9714499711990356
+  },
+  "bottom8": {
+   "measured": 0.7439666986465454,
+   "predicted": 0.7551589012145996,
+   "rho": 1.0159345865249634
+  },
+  "random8": {
+   "measured": 0.7353560328483582,
+   "predicted": 0.7627933025360107,
+   "rho": 1.0403283834457397
+  }
+ },
+ "additivity": {
+  "constant_total_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.7511459589004517,
+   "cos": 0.6617314219474792
+  },
+  "constant_per_write_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.7511459589004517,
+   "cos": 0.6617314219474792
+  },
+  "constant_total_norm_m2": {
+   "total_norm": 1.0,
+   "additivity_error": 0.7142073512077332,
+   "cos": 0.7015131711959839
+  },
+  "constant_per_write_norm_m2": {
+   "total_norm": 1.42705487050732,
+   "additivity_error": 0.7292039394378662,
+   "cos": 0.6853100061416626
+  },
+  "constant_total_norm_m4": {
+   "total_norm": 1.0,
+   "additivity_error": 0.7815603017807007,
+   "cos": 0.6380926370620728
+  },
+  "constant_per_write_norm_m4": {
+   "total_norm": 1.976308136747198,
+   "additivity_error": 0.8403658866882324,
+   "cos": 0.5522522926330566
+  },
+  "constant_total_norm_m8": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5376089215278625,
+   "cos": 0.8449417352676392
+  },
+  "constant_per_write_norm_m8": {
+   "total_norm": 2.818975942674721,
+   "additivity_error": 0.7973915338516235,
+   "cos": 0.605549693107605
+  },
+  "constant_total_norm_m16": {
+   "total_norm": 1.0,
+   "additivity_error": 0.3388254940509796,
+   "cos": 0.9458640813827515
+  },
+  "constant_per_write_norm_m16": {
+   "total_norm": 4.032478787982229,
+   "additivity_error": 0.8109834790229797,
+   "cos": 0.5950856804847717
+  }
+ },
+ "rms_sv": 0.2710724472999573,
+ "_exp": "e285_theory_olmo1b",
+ "_time": "2026-09-19 16:47:20"
+}

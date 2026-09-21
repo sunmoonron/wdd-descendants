@@ -1,0 +1,190 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "future": 17,
+ "per_family": {
+  "alpha_0.0": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9211387634277344
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.10291175544261932
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.2840576767921448
+   },
+   "physical_prank": 224.35824584960938,
+   "gain": 1.1990406513214111,
+   "logit_response": 16.033857345581055,
+   "manifold_fraction": 7.0391990014684325e-09
+  },
+  "alpha_0.1": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9259138703346252
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.10341508686542511
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.28739088773727417
+   },
+   "physical_prank": 227.25775146484375,
+   "gain": 1.1912274360656738,
+   "logit_response": 15.810478210449219,
+   "manifold_fraction": 0.007603087462484837
+  },
+  "alpha_0.25": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9417218565940857
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1006198525428772
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.31227728724479675
+   },
+   "physical_prank": 222.01255798339844,
+   "gain": 1.2070499658584595,
+   "logit_response": 15.969294548034668,
+   "manifold_fraction": 0.04743547365069389
+  },
+  "alpha_0.5": {
+   "identity": {
+    "dim": 16,
+    "full": 0.981188178062439
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.11437378823757172
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3758310079574585
+   },
+   "physical_prank": 200.97177124023438,
+   "gain": 1.2060450315475464,
+   "logit_response": 15.541730880737305,
+   "manifold_fraction": 0.18931613862514496
+  },
+  "alpha_0.75": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9970996379852295
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.11387595534324646
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.45323437452316284
+   },
+   "physical_prank": 156.3762969970703,
+   "gain": 1.2359282970428467,
+   "logit_response": 15.60552978515625,
+   "manifold_fraction": 0.4256562888622284
+  },
+  "alpha_1.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9990082383155823
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.13552209734916687
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.5589577555656433
+   },
+   "physical_prank": 94.84921264648438,
+   "gain": 1.2396279573440552,
+   "logit_response": 15.03341007232666,
+   "manifold_fraction": 0.761252760887146
+  },
+  "heavy_tailed": {
+   "identity": {
+    "dim": 32,
+    "full": 0.8931788802146912
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1158258244395256
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.298885703086853
+   },
+   "physical_prank": 219.7223663330078,
+   "gain": 1.198351263999939,
+   "logit_response": 15.749216079711914,
+   "manifold_fraction": 0.09573326259851456
+  },
+  "sparse5": {
+   "identity": {
+    "dim": 32,
+    "full": 0.8397312760353088
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.12317056953907013
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.30735570192337036
+   },
+   "physical_prank": 179.751220703125,
+   "gain": 1.2228939533233643,
+   "logit_response": 15.910082817077637,
+   "manifold_fraction": 0.11579528450965881
+  },
+  "lowrank4": {
+   "identity": {
+    "dim": 4,
+    "full": 0.7662162184715271
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.10888735204935074
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3835717737674713
+   },
+   "physical_prank": 119.50275421142578,
+   "gain": 1.186894416809082,
+   "logit_response": 15.576038360595703,
+   "manifold_fraction": 0.11564741283655167
+  },
+  "shuffled_states": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9404409527778625
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.10498310625553131
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.34791481494903564
+   },
+   "physical_prank": 205.47438049316406,
+   "gain": 1.2103164196014404,
+   "logit_response": 15.831694602966309,
+   "manifold_fraction": 0.10734957456588745
+  }
+ },
+ "_exp": "e310_manifold_smollm2",
+ "_time": "2026-09-19 18:48:32"
+}

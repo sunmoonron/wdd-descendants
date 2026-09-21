@@ -1,0 +1,44 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "per_variant": {
+  "standard": {
+   "dim": 32,
+   "own": 0.07544103264808655,
+   "random": 0.04587426781654358,
+   "identity": 0.4086378514766693,
+   "gain": 1.2003618478775024,
+   "logit_response": 15.919709205627441,
+   "overlap_with_standard": 0.9998745322227478
+  },
+  "norm_preserving": {
+   "dim": 32,
+   "own": 0.08098962903022766,
+   "random": 0.04636972025036812,
+   "identity": 0.45548170804977417,
+   "gain": 1.2128410339355469,
+   "logit_response": 15.51294231414795,
+   "overlap_with_standard": 0.23748041689395905
+  },
+  "norm_only_x2": {
+   "dim": 16,
+   "own": 0.43495410680770874,
+   "random": 0.3030824065208435,
+   "identity": 0.06245847046375275,
+   "gain": 24.765073776245117,
+   "logit_response": 350.63330078125,
+   "overlap_with_standard": 0.21721312403678894
+  },
+  "amplitude_x4": {
+   "dim": 16,
+   "own": 0.1584416776895523,
+   "random": 0.10753564536571503,
+   "identity": 0.38073086738586426,
+   "gain": 5.155728816986084,
+   "logit_response": 70.2309799194336,
+   "overlap_with_standard": 0.274827778339386
+  }
+ },
+ "_exp": "e344_normalization_smollm2",
+ "_time": "2026-09-19 23:28:22"
+}

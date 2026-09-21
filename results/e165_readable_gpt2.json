@@ -1,0 +1,34 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "base_ce": 3.5774896144866943,
+ "identified_true_writes_per_token": 13.54296875,
+ "remove": {
+  "identified_true_writes": {
+   "dce": 0.2064058780670166,
+   "energy": 0.10470394045114517
+  },
+  "energy_matched_random_unidentified": {
+   "dce": 0.09136128425598145,
+   "energy": 0.11003249883651733
+  },
+  "same_count_largest_unidentified": {
+   "dce": 0.20170068740844727,
+   "energy": 0.19487453997135162
+  },
+  "top3_block0_part": {
+   "dce": 0.06222677230834961,
+   "energy": 0.027780385687947273
+  },
+  "top3_later_part": {
+   "dce": 0.06465792655944824,
+   "energy": 0.03035857528448105
+  },
+  "top3_all": {
+   "dce": 0.15813875198364258,
+   "energy": 0.07492057234048843
+  }
+ },
+ "_exp": "e165_readable_gpt2",
+ "_time": "2026-09-19 06:57:41"
+}

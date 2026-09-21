@@ -1,0 +1,44 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "future": 10,
+ "K": 21,
+ "q_energy": 0.5947199463844299,
+ "per_kind": {
+  "q_leftover": {
+   "logit_response": 21.469194412231445,
+   "kl": 0.004721479956060648,
+   "later_norm_per_injection": 0.867531955242157,
+   "later_in_z": 0.03016318567097187,
+   "persistence": 0.5766135454177856,
+   "cross_token": 0.18074901401996613
+  },
+  "z_causal": {
+   "logit_response": 24.809215545654297,
+   "kl": 0.0056607164442539215,
+   "later_norm_per_injection": 0.9331926107406616,
+   "later_in_z": 0.2825239598751068,
+   "persistence": 0.614112913608551,
+   "cross_token": 0.17735303938388824
+  },
+  "full_descendant": {
+   "logit_response": 22.86402702331543,
+   "kl": 0.004874151200056076,
+   "later_norm_per_injection": 0.8952242136001587,
+   "later_in_z": 0.11469712108373642,
+   "persistence": 0.5841783285140991,
+   "cross_token": 0.1791466474533081
+  },
+  "random": {
+   "logit_response": 20.9259033203125,
+   "kl": 0.004067533649504185,
+   "later_norm_per_injection": 0.8626767992973328,
+   "later_in_z": 0.023393839597702026,
+   "persistence": 0.6167011857032776,
+   "cross_token": 0.16013695299625397
+  }
+ },
+ "_exp": "e295_remainder_olmo1b",
+ "_time": "2026-09-19 17:51:58"
+}

@@ -1,0 +1,49 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "K": 35,
+ "per_input": {
+  "core16": {
+   "identity": 0.5740922689437866,
+   "function": 0.17262504994869232,
+   "future": 0.2582303583621979,
+   "token_identity": 0.6918367147445679,
+   "token_chance": 0.02,
+   "position": 0.13666808605194092,
+   "sequence": 0.10281280428171158,
+   "sequence_chance": 0.0625
+  },
+  "complement_pca64": {
+   "identity": 0.8891069889068604,
+   "function": 0.2122405469417572,
+   "future": 0.34789830446243286,
+   "token_identity": 0.7387754917144775,
+   "token_chance": 0.02,
+   "position": 0.08559729158878326,
+   "sequence": 0.23181377351284027,
+   "sequence_chance": 0.0625
+  },
+  "random64": {
+   "identity": 0.7154072523117065,
+   "function": 0.16892856359481812,
+   "future": 0.2583805024623871,
+   "token_identity": 0.8163264989852905,
+   "token_chance": 0.02,
+   "position": 0.16678684949874878,
+   "sequence": 0.15615907311439514,
+   "sequence_chance": 0.0625
+  },
+  "full": {
+   "identity": 0.983316957950592,
+   "function": 0.20754362642765045,
+   "future": 0.3409601151943207,
+   "token_identity": 0.9346938133239746,
+   "token_chance": 0.02,
+   "position": 0.1994878351688385,
+   "sequence": 0.31910768151283264,
+   "sequence_chance": 0.0625
+  }
+ },
+ "_exp": "e346_discarded_pythia410",
+ "_time": "2026-09-19 23:14:35"
+}

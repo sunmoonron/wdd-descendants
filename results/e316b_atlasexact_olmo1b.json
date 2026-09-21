@@ -1,0 +1,64 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 21,
+ "prank": 10.847832679748535,
+ "class_sizes": [
+  660,
+  372,
+  647,
+  574,
+  325,
+  261,
+  670,
+  416,
+  356,
+  477,
+  1006,
+  497,
+  355,
+  406,
+  797,
+  373
+ ],
+ "within_class_cos": 0.6370739340782166,
+ "class_ablation": {
+  "heavy": {
+   "coherence": 0.1733819991350174,
+   "cos_pred_actual": 0.16689243912696838,
+   "core_norm_per_weight": 0.016860373318195343
+  },
+  "other": {
+   "coherence": 0.17542514204978943,
+   "cos_pred_actual": 0.180681049823761,
+   "core_norm_per_weight": 0.018081627786159515
+  },
+  "random": {
+   "coherence": 0.24005897343158722,
+   "cos_pred_actual": 0.2997630536556244,
+   "core_norm_per_weight": 0.02493179962038994
+  },
+  "n": 64
+ },
+ "substitution": {
+  "same_class": {
+   "logit_restoration": -0.5893071889877319,
+   "core_restoration": -0.1198585033416748,
+   "z_cos": 0.8081635236740112
+  },
+  "random": {
+   "logit_restoration": -0.06811237335205078,
+   "core_restoration": -0.03256845474243164,
+   "z_cos": 0.19530662894248962
+  }
+ },
+ "attribution": {
+  "ledger_to_core": 0.22373172640800476,
+  "atlas_logits": 0.014335066080093384,
+  "direct_logit": 0.032458897680044174,
+  "transport_readout": 0.014487788081169128
+ },
+ "_exp": "e316b_atlasexact_olmo1b",
+ "_time": "2026-09-19 19:50:19"
+}

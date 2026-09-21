@@ -1,0 +1,56 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "per_neuron": {
+  "largest": {
+   "neuron": 191,
+   "coef": 10.332262992858887,
+   "n_own": 20,
+   "0.5": {
+    "own_vs_natural": 0.9201787710189819,
+    "own_vs_foreign": 0.6306906342506409,
+    "foreign_vs_natural": 0.5721617937088013,
+    "own_vs_linear": 0.4952976107597351,
+    "foreign_vs_linear": 0.6221048831939697,
+    "own_norm_per_coef": 0.8373627662658691,
+    "foreign_norm_per_coef": 0.9608832597732544
+   },
+   "1.0": {
+    "own_vs_natural": 0.9004880785942078,
+    "own_vs_foreign": 0.6469565629959106,
+    "foreign_vs_natural": 0.570730984210968,
+    "own_vs_linear": 0.4904508590698242,
+    "foreign_vs_linear": 0.6031253933906555,
+    "own_norm_per_coef": 0.8165280222892761,
+    "foreign_norm_per_coef": 0.9758413434028625
+   }
+  },
+  "typical": {
+   "neuron": 1344,
+   "coef": 8.168685913085938,
+   "n_own": 117,
+   "0.5": {
+    "own_vs_natural": 0.9510729908943176,
+    "own_vs_foreign": 0.7451202273368835,
+    "foreign_vs_natural": 0.7778794169425964,
+    "own_vs_linear": 0.589203953742981,
+    "foreign_vs_linear": 0.7556344270706177,
+    "own_norm_per_coef": 1.4594556093215942,
+    "foreign_norm_per_coef": 1.0576012134552002
+   },
+   "1.0": {
+    "own_vs_natural": 0.930234968662262,
+    "own_vs_foreign": 0.7654557228088379,
+    "foreign_vs_natural": 0.7972496151924133,
+    "own_vs_linear": 0.5803562998771667,
+    "foreign_vs_linear": 0.7498351335525513,
+    "own_norm_per_coef": 1.4291411638259888,
+    "foreign_norm_per_coef": 1.1076854467391968
+   }
+  }
+ },
+ "_exp": "e290_counterfactual_gpt2",
+ "_time": "2026-09-19 17:39:10"
+}

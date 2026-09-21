@@ -1,0 +1,27 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "token_atoms_share_of_support": 0.1709863394498825,
+ "top200_token_fillers_share_of_token_selections": 0.04727788892490304,
+ "token_fillers": {
+  "train_count_median": 1.0,
+  "frac_unseen": 0.3999999761581421,
+  "emb_norm_median": 3.365108013153076,
+  "emb_norm_median_all": 3.947258949279785
+ },
+ "spurious_mlp_share_of_mlp_selections": 0.6579805612564087,
+ "top200_mlp_fillers_share_of_spurious": 0.07534605717026695,
+ "n_distinct_spurious_mlp": 21473,
+ "after_pruning_400_fillers": {
+  "recall": 0.6146879196166992,
+  "fvu64": 0.1826065629720688,
+  "token_share_of_support": 0.16922812163829803,
+  "true_atoms_removed": 0.08029375970363617
+ },
+ "before": {
+  "recall": 0.6362301111221313,
+  "fvu64": 0.1794368028640747
+ },
+ "_exp": "e102_fillers_gpt2",
+ "_time": "2026-09-19 04:03:35"
+}

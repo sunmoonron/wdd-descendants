@@ -1,0 +1,47 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 21,
+ "overlaps": {
+  "forward_core_vs_backward": 0.033401958644390106,
+  "identity_core_vs_backward": 0.029829859733581543,
+  "descendant_pca_vs_backward": 0.033359453082084656,
+  "activation_pca_vs_backward": 0.035587090998888016,
+  "random_vs_backward": 0.008119944483041763,
+  "chance": 0.0078125
+ },
+ "first_order": {
+  "correlation_over_tokens_and_directions": 0.35874125361442566,
+  "median_per_token_cos": 0.5751350522041321
+ },
+ "decoding": {
+  "intersection8": {
+   "identity": 0.7178988456726074,
+   "function": 0.43213921785354614,
+   "kl": 0.3796999454498291
+  },
+  "forward_core8": {
+   "identity": 0.7412451505661011,
+   "function": 0.44053494930267334,
+   "kl": 0.39238229393959045
+  },
+  "backward8": {
+   "identity": 0.5194552540779114,
+   "function": 0.29816243052482605,
+   "kl": 0.3770520091056824
+  },
+  "random8": {
+   "identity": 0.27626457810401917,
+   "function": 0.25241565704345703,
+   "kl": 0.23630088567733765
+  },
+  "full": {
+   "identity": 0.966926097869873,
+   "function": 0.37723201513290405,
+   "kl": 0.46037232875823975
+  }
+ },
+ "_exp": "e308_fwdbwd_olmo1b",
+ "_time": "2026-09-19 18:37:41"
+}

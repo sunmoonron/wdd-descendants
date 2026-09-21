@@ -1,0 +1,36 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "results": {
+  "omp": {
+   "neuron_recall": 0.45497551560401917,
+   "block_recall": 0.9337683320045471,
+   "block_control": 0.8874388337135315,
+   "best_atom_exact": 0.45497551560401917,
+   "best_atom_same_block": 0.03833605349063873,
+   "best_atom_other": 0.5066884160041809,
+   "best_atom_cos": 0.3355746567249298,
+   "block_energy_rho": -0.0824175775051117,
+   "block_energy_rho_control": 0.0714285671710968,
+   "head_recall": NaN,
+   "head_control": NaN,
+   "n_att": 0
+  },
+  "dual": {
+   "neuron_recall": 0.6158238053321838,
+   "block_recall": 0.5172920227050781,
+   "block_control": 0.3672104477882385,
+   "best_atom_exact": 0.6158238053321838,
+   "best_atom_same_block": 0.03523654118180275,
+   "best_atom_other": 0.3489396274089813,
+   "best_atom_cos": 0.9999999403953552,
+   "block_energy_rho": -0.05494505167007446,
+   "block_energy_rho_control": 0.05494505167007446,
+   "head_recall": NaN,
+   "head_control": NaN,
+   "n_att": 0
+  }
+ },
+ "_exp": "e218_hier_qwen05",
+ "_time": "2026-09-19 12:21:49"
+}

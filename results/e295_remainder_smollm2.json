@@ -1,0 +1,44 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "future": 17,
+ "K": 23,
+ "q_energy": 0.001629197271540761,
+ "per_kind": {
+  "q_leftover": {
+   "logit_response": 51.064212799072266,
+   "kl": 0.012416286394000053,
+   "later_norm_per_injection": 0.9780187606811523,
+   "later_in_z": 0.05381118878722191,
+   "persistence": 0.8079028129577637,
+   "cross_token": 0.20289680361747742
+  },
+  "z_causal": {
+   "logit_response": 50.68269729614258,
+   "kl": 0.011622265912592411,
+   "later_norm_per_injection": 0.9729325175285339,
+   "later_in_z": 0.6114305853843689,
+   "persistence": 0.8362297415733337,
+   "cross_token": 0.20876528322696686
+  },
+  "full_descendant": {
+   "logit_response": 51.03346633911133,
+   "kl": 0.012264257296919823,
+   "later_norm_per_injection": 0.9715299010276794,
+   "later_in_z": 0.22834311425685883,
+   "persistence": 0.8205295205116272,
+   "cross_token": 0.2022506445646286
+  },
+  "random": {
+   "logit_response": 48.25316619873047,
+   "kl": 0.011537609621882439,
+   "later_norm_per_injection": 0.9672407507896423,
+   "later_in_z": 0.07370461523532867,
+   "persistence": 0.7779325842857361,
+   "cross_token": 0.20159728825092316
+  }
+ },
+ "_exp": "e295_remainder_smollm2",
+ "_time": "2026-09-19 17:52:11"
+}

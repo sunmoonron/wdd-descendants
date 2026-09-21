@@ -1,0 +1,51 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "per_level": {
+  "12": {
+   "core_transfer": {
+    "function_cross": 0.07186034861952066,
+    "function_own": 0.10511092841625214,
+    "function_random": 0.043430968374013904,
+    "identity_cross": 0.18165527023375033,
+    "identity_own": 0.5304672420024872,
+    "identity_random": 0.23902852237224578
+   },
+   "metric_transfer": {
+    "euclid": 0.4264498114585876,
+    "own_metric": 0.7361669421195984,
+    "cross_metric": 0.5318143963813782
+   }
+  },
+  "22": {
+   "core_transfer": {
+    "function_cross": 0.15197781547904016,
+    "function_own": 0.17568496763706207,
+    "function_random": 0.07850980907678604,
+    "identity_cross": 0.044734520465135576,
+    "identity_own": 0.048253071308135984,
+    "identity_random": 0.06364997327327729
+   },
+   "metric_transfer": {
+    "euclid": 0.44310263991355897,
+    "own_metric": 0.7613442301750183,
+    "cross_metric": 0.7466790437698364
+   }
+  }
+ },
+ "superposition": {
+  "functionally_similar": {
+   "n": 12,
+   "cos": 0.9959629078706106,
+   "rel_error": 0.0920357337842385
+  },
+  "functionally_dissimilar": {
+   "n": 12,
+   "cos": 0.9957421620686849,
+   "rel_error": 0.09479144836465518
+  }
+ },
+ "_exp": "e312_transfer_pythia410",
+ "_time": "2026-09-19 18:51:11"
+}

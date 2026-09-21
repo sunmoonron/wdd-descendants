@@ -1,0 +1,76 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "N": 8192,
+ "identity_check": 0.0001780986785888672,
+ "recall": 0.47242650389671326,
+ "auc_omp": {
+  "raw_surv": 0.8055364489555359,
+  "centered_surv": 0.8136342167854309,
+  "dc_term": 0.4969039559364319,
+  "prominence": 0.8946913480758667,
+  "abs_coef": 0.6251984238624573
+ },
+ "auc_oneshot": {
+  "raw_surv": 0.8474388122558594,
+  "centered_surv": 0.8844414949417114,
+  "prominence": 0.9801234006881714
+ },
+ "survival": {
+  "raw_median": 1.179126501083374,
+  "centered_median": 1.16489577293396,
+  "dc_median": 0.008537782356142998,
+  "frac_raw_erased": 0.056495100259780884,
+  "frac_centered_erased": 0.05992647260427475
+ },
+ "contributions_median": {
+  "emb": 0.005116126500070095,
+  "earlier_att": 0.41291892528533936,
+  "earlier_mlp": 0.34479236602783203,
+  "same_att": 0.03413231670856476,
+  "same_mlp_other": -0.079037606716156,
+  "later_att": 0.1279309093952179,
+  "later_mlp": -1.1057062149047852
+ },
+ "contributions_mean": {
+  "emb": 0.006454496178776026,
+  "earlier_att": 0.5147026777267456,
+  "earlier_mlp": 0.4985356628894806,
+  "same_att": 0.06461934745311737,
+  "same_mlp_other": 0.1476215273141861,
+  "later_att": 0.18745949864387512,
+  "later_mlp": -1.2238500118255615
+ },
+ "who_erases_raw_erased": {
+  "emb": -0.002203279174864292,
+  "earlier_att": -0.19432510435581207,
+  "earlier_mlp": 0.19980648159980774,
+  "same_att": -0.049342118203639984,
+  "same_mlp_other": -0.015667591243982315,
+  "later_att": -0.30608028173446655,
+  "later_mlp": -0.8162162899971008
+ },
+ "n_raw_erased": 461,
+ "centered_erased_but_raw_intact": {
+  "n": 18,
+  "frac_of_typical": 0.002205882454290986,
+  "recall": 0.0555555559694767,
+  "dc_median": 0.8370276689529419
+ },
+ "dc_atom": {
+  "recall_centered": 0.47242650389671326,
+  "recall_raw_no_dc": 0.41887256503105164,
+  "recall_raw_with_dc": 0.4786764979362488,
+  "dc_selected_frac": 0.98974609375,
+  "dc_selected_first": 0.974609375,
+  "fvu64_centered": 0.2999984323978424,
+  "fvu64_raw_with_dc": 0.30156779289245605,
+  "fvu64_raw_no_dc": 0.36859068274497986,
+  "recall_on_centered_erased_raw_intact": {
+   "centered": 0.0555555559694767,
+   "raw_with_dc": 0.0555555559694767
+  }
+ },
+ "_exp": "e08_cancel_pythia410",
+ "_time": "2026-09-19 04:20:17"
+}

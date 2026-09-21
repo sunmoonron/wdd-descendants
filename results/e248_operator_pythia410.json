@@ -1,0 +1,57 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "results": {
+  "4": {
+   "A_pred_cos": 0.7699552178382874,
+   "A_baseline_cos": 0.010811036452651024,
+   "A_pertoken_cos": 0.5329176783561707,
+   "B_predicted_descendant_provenance": 1.0,
+   "B_chance": 0.034482758620689655,
+   "C_inverse_provenance": 1.0,
+   "C_inverse_cos": 0.4290916621685028,
+   "C_native_atom_on_footprint": 1.0,
+   "E_gram_spearman": 0.6896120309829712,
+   "E_gram_rel_frobenius": 0.2403089851140976
+  },
+  "6": {
+   "A_pred_cos": 0.6001366376876831,
+   "A_baseline_cos": 0.038350269198417664,
+   "A_pertoken_cos": 0.31013229489326477,
+   "B_predicted_descendant_provenance": 0.9926075339317322,
+   "B_chance": 0.034482758620689655,
+   "C_inverse_provenance": 1.0,
+   "C_inverse_cos": 0.2506136894226074,
+   "C_native_atom_on_footprint": 0.9932795763015747,
+   "E_gram_spearman": 0.5664575695991516,
+   "E_gram_rel_frobenius": 0.3338804841041565
+  },
+  "12": {
+   "A_pred_cos": 0.42076754570007324,
+   "A_baseline_cos": 0.04410528391599655,
+   "A_pertoken_cos": 0.15669599175453186,
+   "B_predicted_descendant_provenance": 0.586693525314331,
+   "B_chance": 0.034482758620689655,
+   "C_inverse_provenance": 0.8030914068222046,
+   "C_inverse_cos": 0.0991010069847107,
+   "C_native_atom_on_footprint": 0.8548387289047241,
+   "E_gram_spearman": 0.47780749201774597,
+   "E_gram_rel_frobenius": 0.43098923563957214
+  },
+  "D": {
+   "cos_composed_vs_direct": 0.5586634874343872,
+   "provenance_composed": 0.9986559152603149,
+   "provenance_direct": 0.9926075339317322
+  },
+  "F": {
+   "a": 0.07352941483259201,
+   "b": 0.06862745434045792,
+   "a_plus_b": 0.8566993474960327,
+   "a_minus_b": 0.0011437908979132771
+  }
+ },
+ "_exp": "e248_operator_pythia410",
+ "_time": "2026-09-19 14:05:54"
+}

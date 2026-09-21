@@ -1,0 +1,28 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "K": 29,
+ "per_input": {
+  "core16": {
+   "head_norms": 0.08519205303387367,
+   "mlp_activation_pcs": 0.5962361171730088,
+   "sparsity": -0.015370554259762192,
+   "neuron_recruitment_overlap": 0.12390939891338348
+  },
+  "pca64": {
+   "head_norms": 0.13080065451612366,
+   "mlp_activation_pcs": 0.798163636875725,
+   "sparsity": -0.05836933668360711,
+   "neuron_recruitment_overlap": 0.14307886362075806
+  },
+  "random16": {
+   "head_norms": 0.004587496183451112,
+   "mlp_activation_pcs": 0.11194416995965961,
+   "sparsity": -0.024678047538554848,
+   "neuron_recruitment_overlap": 0.10314597189426422
+  }
+ },
+ "recruitment_baseline": 0.028984898701310158,
+ "_exp": "e341_internals_pythia410",
+ "_time": "2026-09-19 23:26:27"
+}

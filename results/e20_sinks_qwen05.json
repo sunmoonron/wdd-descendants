@@ -1,0 +1,45 @@
+{
+ "model": "qwen05",
+ "levels": {
+  "2": {
+   "n_sink": 32,
+   "positions": [
+    0
+   ],
+   "norm_ratio_med": 82.73164367675781,
+   "fvu1": 0.0007270606583915651,
+   "fvu2": 0.0005997548578307033,
+   "fvu8": 0.000310700066620484,
+   "first_atom": {
+    "type": 2,
+    "block": 2,
+    "index": 813,
+    "share_of_sinks": 1.0
+   },
+   "first_atom_is_true_dominant": 1.0,
+   "top_channel": 62,
+   "top_channel_share": 0.9645089507102966
+  },
+  "12": {
+   "n_sink": 32,
+   "positions": [
+    0
+   ],
+   "norm_ratio_med": 102.00900268554688,
+   "fvu1": 0.00350880715996027,
+   "fvu2": 0.0027381631080061197,
+   "fvu8": 0.0021775641944259405,
+   "first_atom": {
+    "type": 2,
+    "block": 3,
+    "index": 2247,
+    "share_of_sinks": 1.0
+   },
+   "first_atom_is_true_dominant": 0.0,
+   "top_channel": 62,
+   "top_channel_share": 0.9725525975227356
+  }
+ },
+ "_exp": "e20_sinks_qwen05",
+ "_time": "2026-09-19 02:23:56"
+}

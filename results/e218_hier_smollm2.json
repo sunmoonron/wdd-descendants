@@ -1,0 +1,36 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "results": {
+  "omp": {
+   "neuron_recall": 0.6856443881988525,
+   "block_recall": 0.9442088007926941,
+   "block_control": 0.788906991481781,
+   "best_atom_exact": 0.6856443881988525,
+   "best_atom_same_block": 0.024632953107357025,
+   "best_atom_other": 0.2897226810455322,
+   "best_atom_cos": 0.9999999403953552,
+   "block_energy_rho": 0.2294117659330368,
+   "block_energy_rho_control": 0.09117647260427475,
+   "head_recall": 0.21052631735801697,
+   "head_control": 0.07894736528396606,
+   "n_att": 38
+  },
+  "dual": {
+   "neuron_recall": 0.8212071657180786,
+   "block_recall": 0.8843393325805664,
+   "block_control": 0.5698205232620239,
+   "best_atom_exact": 0.8212071657180786,
+   "best_atom_same_block": 0.006525285542011261,
+   "best_atom_other": 0.17226754128932953,
+   "best_atom_cos": 1.0,
+   "block_energy_rho": 0.24705882370471954,
+   "block_energy_rho_control": 0.1823529452085495,
+   "head_recall": 0.1315789520740509,
+   "head_control": 0.0,
+   "n_att": 38
+  }
+ },
+ "_exp": "e218_hier_smollm2",
+ "_time": "2026-09-19 12:22:07"
+}

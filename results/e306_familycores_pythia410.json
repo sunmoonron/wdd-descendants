@@ -1,0 +1,51 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "per_level": {
+  "4": {
+   "cross_function_mean": 0.02481418810784817,
+   "cross_function_min": 0.020095862448215485,
+   "cross_identity_mean": 0.021549933962523936,
+   "within_function_mean": 0.44684171080589297,
+   "within_identity_mean": 0.863218343257904,
+   "wdd_function_vs": {
+    "random": 0.020095862448215485,
+    "cov_random": 0.02978609874844551,
+    "attention": 0.025324977934360504,
+    "later_mlp": 0.024296363815665245
+   },
+   "chance": 0.015625
+  },
+  "12": {
+   "cross_function_mean": 0.2467674732208252,
+   "cross_function_min": 0.20006230473518372,
+   "cross_identity_mean": 0.06524061150848866,
+   "within_function_mean": 0.2964237630367279,
+   "within_identity_mean": 0.7480328559875489,
+   "wdd_function_vs": {
+    "random": 0.25429975986480713,
+    "cov_random": 0.21700018644332886,
+    "attention": 0.29630857706069946,
+    "later_mlp": 0.2770698368549347
+   },
+   "chance": 0.015625
+  },
+  "22": {
+   "cross_function_mean": 0.5690043687820434,
+   "cross_function_min": 0.5530627965927124,
+   "cross_identity_mean": 0.11385754644870758,
+   "within_function_mean": 0.5689886569976806,
+   "within_identity_mean": 0.36716917157173157,
+   "wdd_function_vs": {
+    "random": 0.5779419541358948,
+    "cov_random": 0.5605822801589966,
+    "attention": 0.5794222354888916,
+    "later_mlp": 0.5687198042869568
+   },
+   "chance": 0.015625
+  }
+ },
+ "_exp": "e306_familycores_pythia410",
+ "_time": "2026-09-19 18:34:06"
+}

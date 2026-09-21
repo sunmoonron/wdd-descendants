@@ -1,0 +1,44 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "per_variant": {
+  "normal": {
+   "dim": 16,
+   "own": 0.1893700510263443,
+   "gain": 1.0692089796066284,
+   "overlap_with_normal": 0.9998902082443237,
+   "centroid_cos_with_normal": 1.0,
+   "identity": 0.979069709777832,
+   "logit_response": 28.090784072875977
+  },
+  "attention_frozen": {
+   "dim": 16,
+   "own": 0.25895291566848755,
+   "gain": 0.8528922200202942,
+   "overlap_with_normal": 0.615285336971283,
+   "centroid_cos_with_normal": 0.9604712724685669,
+   "identity": 0.9999999403953552,
+   "logit_response": 20.781347274780273
+  },
+  "mlp_frozen": {
+   "dim": 8,
+   "own": 0.24851100146770477,
+   "gain": 1.3290985822677612,
+   "overlap_with_normal": 0.36916032433509827,
+   "centroid_cos_with_normal": 0.8022537231445312,
+   "identity": 0.9990032911300659,
+   "logit_response": 36.04824447631836
+  },
+  "both_frozen": {
+   "dim": 1,
+   "own": 0.3376152515411377,
+   "gain": 1.0,
+   "overlap_with_normal": 0.34141063690185547,
+   "centroid_cos_with_normal": 0.7867755889892578,
+   "identity": 0.9999999403953552,
+   "logit_response": 22.927011489868164
+  }
+ },
+ "_exp": "e351_comptransport_gpt2",
+ "_time": "2026-09-19 23:17:46"
+}

@@ -1,0 +1,64 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 28,
+ "prank": 10.352958679199219,
+ "class_sizes": [
+  1007,
+  285,
+  339,
+  283,
+  252,
+  327,
+  347,
+  231,
+  166,
+  314,
+  204,
+  234,
+  223,
+  244,
+  151,
+  257
+ ],
+ "within_class_cos": 0.5715994834899902,
+ "class_ablation": {
+  "heavy": {
+   "coherence": 0.409661203622818,
+   "cos_pred_actual": 0.05486367642879486,
+   "core_norm_per_weight": 0.0397225096821785
+  },
+  "other": {
+   "coherence": 0.22250449657440186,
+   "cos_pred_actual": 0.28121304512023926,
+   "core_norm_per_weight": 0.04231862351298332
+  },
+  "random": {
+   "coherence": 0.21646204590797424,
+   "cos_pred_actual": 0.27205947041511536,
+   "core_norm_per_weight": 0.036270007491111755
+  },
+  "n": 64
+ },
+ "substitution": {
+  "same_class": {
+   "logit_restoration": -0.26170647144317627,
+   "core_restoration": -0.1983424425125122,
+   "z_cos": 0.7875716686248779
+  },
+  "random": {
+   "logit_restoration": -0.0008124113082885742,
+   "core_restoration": 0.0,
+   "z_cos": 0.08795006573200226
+  }
+ },
+ "attribution": {
+  "ledger_to_core": 0.24284613132476807,
+  "atlas_logits": 0.008846736513078213,
+  "direct_logit": 0.02063877135515213,
+  "transport_readout": 0.010653797537088394
+ },
+ "_exp": "e316b_atlasexact_qwen05",
+ "_time": "2026-09-19 19:48:32"
+}

@@ -1,0 +1,114 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 21,
+ "per_neuron": {
+  "largest": {
+   "neuron": 6084,
+   "coef": 0.7240994572639465,
+   "natural_vs_transplant": 0.10640910267829895,
+   "natural_vs_linear": 0.035216107964515686,
+   "natural_vs_write": 0.09734213352203369,
+   "transplant_vs_linear": 0.4041612148284912,
+   "freeze_attention": {
+    "vs_transplant": 0.12023557722568512,
+    "vs_linear": 0.05594155564904213,
+    "vs_write": 0.13532964885234833,
+    "norm_per_coef": 2.2367618083953857
+   },
+   "freeze_mlp": {
+    "vs_transplant": 0.40387099981307983,
+    "vs_linear": 0.1939966082572937,
+    "vs_write": 0.7051701545715332,
+    "norm_per_coef": 1.1940747499465942
+   },
+   "freeze_both": {
+    "vs_transplant": 0.49445468187332153,
+    "vs_linear": 0.24665099382400513,
+    "vs_write": 1.0,
+    "norm_per_coef": 1.0
+   },
+   "scan": {
+    "3": {
+     "vs_transplant": 0.17760249972343445,
+     "vs_natural": 0.708100438117981
+    },
+    "4": {
+     "vs_transplant": 0.19280213117599487,
+     "vs_natural": 0.6482937335968018
+    },
+    "5": {
+     "vs_transplant": 0.13497385382652283,
+     "vs_natural": 0.6936830282211304
+    },
+    "6": {
+     "vs_transplant": 0.1437540054321289,
+     "vs_natural": 0.6929261684417725
+    },
+    "7": {
+     "vs_transplant": 0.1342269331216812,
+     "vs_natural": 0.7013028860092163
+    },
+    "8": {
+     "vs_transplant": 0.13296912610530853,
+     "vs_natural": 0.6860446333885193
+    }
+   }
+  },
+  "typical": {
+   "neuron": 943,
+   "coef": 0.4878724217414856,
+   "natural_vs_transplant": 0.22322967648506165,
+   "natural_vs_linear": 0.11428508162498474,
+   "natural_vs_write": 0.1725749969482422,
+   "transplant_vs_linear": 0.27135083079338074,
+   "freeze_attention": {
+    "vs_transplant": 0.2809499502182007,
+    "vs_linear": 0.14509141445159912,
+    "vs_write": 0.2419608235359192,
+    "norm_per_coef": 1.014662742614746
+   },
+   "freeze_mlp": {
+    "vs_transplant": 0.33652880787849426,
+    "vs_linear": 0.17473816871643066,
+    "vs_write": 0.6096649169921875,
+    "norm_per_coef": 1.4001976251602173
+   },
+   "freeze_both": {
+    "vs_transplant": 0.37262189388275146,
+    "vs_linear": 0.2650248408317566,
+    "vs_write": 1.0,
+    "norm_per_coef": 0.9996556043624878
+   },
+   "scan": {
+    "3": {
+     "vs_transplant": 0.2459617555141449,
+     "vs_natural": 0.5051296949386597
+    },
+    "4": {
+     "vs_transplant": 0.20593011379241943,
+     "vs_natural": 0.4897128939628601
+    },
+    "5": {
+     "vs_transplant": 0.256664901971817,
+     "vs_natural": 0.48490920662879944
+    },
+    "6": {
+     "vs_transplant": 0.23277530074119568,
+     "vs_natural": 0.5165042877197266
+    },
+    "7": {
+     "vs_transplant": 0.2396550178527832,
+     "vs_natural": 0.4797842800617218
+    },
+    "8": {
+     "vs_transplant": 0.22672289609909058,
+     "vs_natural": 0.4702399671077728
+    }
+   }
+  }
+ },
+ "_exp": "e284_carrier_olmo1b",
+ "_time": "2026-09-19 16:25:37"
+}

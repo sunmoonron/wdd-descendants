@@ -1,0 +1,72 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "N": 150,
+ "geometry": {
+  "3": {
+   "spearman_phys_vs_func": 0.17034099996089935,
+   "spearman_phys_vs_injected": 0.8953149318695068,
+   "spearman_readout_vs_func": 0.07007413357496262
+  },
+  "4": {
+   "spearman_phys_vs_func": 0.19407299160957336,
+   "spearman_phys_vs_injected": 0.8074384927749634,
+   "spearman_readout_vs_func": 0.08700467646121979
+  },
+  "6": {
+   "spearman_phys_vs_func": 0.23679251968860626,
+   "spearman_phys_vs_injected": 0.6580893397331238,
+   "spearman_readout_vs_func": 0.14506448805332184
+  },
+  "15": {
+   "spearman_phys_vs_func": 0.2936468720436096,
+   "spearman_phys_vs_injected": 0.35752439498901367,
+   "spearman_readout_vs_func": 0.2654213309288025
+  },
+  "17": {
+   "spearman_phys_vs_func": 0.2936234474182129,
+   "spearman_phys_vs_injected": 0.34807121753692627,
+   "spearman_readout_vs_func": 0.3335060179233551
+  },
+  "28": {
+   "spearman_phys_vs_func": 0.6136247515678406,
+   "spearman_phys_vs_injected": 0.2090127170085907,
+   "spearman_readout_vs_func": 0.7979262471199036
+  }
+ },
+ "contraction": {
+  "3->4": {
+   "median": 0.9987486600875854,
+   "frac_below_one": 0.5040715932846069
+  },
+  "4->6": {
+   "median": 1.0014640092849731,
+   "frac_below_one": 0.4946756362915039
+  },
+  "6->15": {
+   "median": 0.999122679233551,
+   "frac_below_one": 0.5035346746444702
+  },
+  "15->17": {
+   "median": 1.0008769035339355,
+   "frac_below_one": 0.49709174036979675
+  },
+  "17->28": {
+   "median": 0.9121508002281189,
+   "frac_below_one": 0.8201342225074768
+  }
+ },
+ "multiplicity": {
+  "functionally_close_pairs": 559,
+  "of_which_physically_far_at_injection": 0.37745973467826843,
+  "of_which_physically_far_at_L": 0.24865831434726715,
+  "of_which_cross_family": 0.6779963970184326,
+  "cross_family_baseline": 0.6711409687995911,
+  "prank_physical_injected": 115.10398864746094,
+  "prank_physical_L": 40.80727005004883,
+  "prank_functional": 54.093650817871094
+ },
+ "_exp": "e311_quotient_smollm2",
+ "_time": "2026-09-19 18:49:54"
+}

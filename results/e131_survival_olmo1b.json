@@ -1,0 +1,34 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "N": 4096,
+ "top1": {
+  "write": 1.0,
+  "increment_omp": 0.9975520372390747,
+  "increment_dual": 0.9990208745002747,
+  "state_omp": 0.7052631974220276,
+  "state_dual": 0.8342717885971069
+ },
+ "top3": {
+  "write": 1.0,
+  "increment_omp": 0.9809057712554932,
+  "increment_dual": 0.9875969290733337,
+  "state_omp": 0.6150143146514893,
+  "state_dual": 0.7354549169540405
+ },
+ "top8": {
+  "write": 1.0,
+  "increment_omp": 0.9082619547843933,
+  "increment_dual": 0.9214504361152649,
+  "state_omp": 0.47432681918144226,
+  "state_dual": 0.5854345560073853
+ },
+ "energy_share_of_top8_recovered": {
+  "write": 1.0,
+  "increment_dual": 0.9704613089561462,
+  "state_dual": 0.7328476309776306,
+  "state_omp": 0.6156277060508728
+ },
+ "_exp": "e131_survival_olmo1b",
+ "_time": "2026-09-19 06:21:59"
+}

@@ -1,0 +1,21 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "NT": 8192,
+ "overlap_imp_vs_ledger_top3": 0.3545735776424408,
+ "top1_imp_is_ledger_top1": 0.2747064530849457,
+ "wdd_finds": {
+  "imp_top1_omp": 0.31873777508735657,
+  "imp_top1_dual": 0.46917808055877686,
+  "imp_top3_omp": 0.23638291656970978,
+  "imp_top3_dual": 0.3766307830810547,
+  "ledger_top1_omp": 0.4726027250289917,
+  "ledger_top1_dual": 0.6439579129219055
+ },
+ "spearman_recovered_coef_vs_grad_importance": 0.2242048978805542,
+ "spearman_true_coef_vs_grad_importance": 0.6004320979118347,
+ "spearman_prominence_vs_grad_sensitivity_real_writes": 0.004565047100186348,
+ "share_of_loss_attribution_in_wdd_support": 0.0039035468362271786,
+ "_exp": "e156_grad_qwen05",
+ "_time": "2026-09-19 06:22:53"
+}

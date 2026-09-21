@@ -1,0 +1,28 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "K": 28,
+ "per_input": {
+  "core16": {
+   "head_norms": 0.1236122317425149,
+   "mlp_activation_pcs": 0.4754067131112518,
+   "sparsity": 0.0893127559664566,
+   "neuron_recruitment_overlap": 0.19811959564685822
+  },
+  "pca64": {
+   "head_norms": 0.19782539368993868,
+   "mlp_activation_pcs": 0.6741026219030828,
+   "sparsity": 0.03395745040789144,
+   "neuron_recruitment_overlap": 0.22409361600875854
+  },
+  "random16": {
+   "head_norms": 0.04059983417063329,
+   "mlp_activation_pcs": 0.11380308347560453,
+   "sparsity": -0.04635834186495913,
+   "neuron_recruitment_overlap": 0.1336580067873001
+  }
+ },
+ "recruitment_baseline": 0.057156383991241455,
+ "_exp": "e341_internals_qwen05",
+ "_time": "2026-09-19 23:27:04"
+}

@@ -1,0 +1,27 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "recall": 0.7052850723266602,
+ "n_miss": 4818,
+ "miss_aliased_by_top1": 0.17372353374958038,
+ "miss_aliased_by_top3_any": 0.33125779032707214,
+ "hit_has_top1_partner_too": 0.17823070287704468,
+ "alias_coef": {
+  "sign_agree": 0.9641577005386353,
+  "med_ratio": 1.6950312852859497,
+  "med_rel_err": 0.7685866355895996,
+  "partner_cos_med": 0.3486446738243103
+ },
+ "null_random_same_type_in_support": 0.00020755500008817762,
+ "partner_type_hist": {
+  "0": 0.14985470473766327,
+  "1": 0.0,
+  "2": 0.7743877172470093,
+  "3": 0.07575757801532745,
+  "4": 0.0
+ },
+ "partner_same_block_frac": 0.31963470578193665,
+ "recall_with_alias_credit": 0.7564839735747492,
+ "_exp": "e41_alias_olmo1b",
+ "_time": "2026-09-19 03:05:55"
+}

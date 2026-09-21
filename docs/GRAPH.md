@@ -1,0 +1,299 @@
+# Hypothesis graph of the WDD mapping sprint (sessions 1 to 4, 2026-09-19)
+
+Format: `H<n>` hypothesis → experiments that tested it → status → what it spawned. Status words: SURVIVES (not falsified under the tests run), KILLED (falsified), NARROWED (true only in a restricted form), ARTIFACT (result retracted), OPEN (untested or pending). Experiment numbers refer to `scripts/eNN_*.py` and the matching lines in `results/FINDINGS.log`; FINDINGS.md has every number.
+
+## Root
+
+- H0 WDD is classical sparse approximation over a fixed, non-learned, provenance-labelled dictionary, and the label is what distinguishes it from any other sparse code. → e01 to e10 (reproduction gate, decoder comparisons, dictionary types), e63 (exact recovery condition), e158 (MDL) → SURVIVES. Spawned H1, H2, H3, H7, H9.
+
+## Reading: what the decoder recovers
+
+- H1 Identification is a prominence phenomenon: a write is read iff its projection on the state exceeds the level's competitor level. → e12 to e20 (law), e47/e119 (non-circular target), e129 (held-out, zero-parameter), e178 (dual law), e198 (across depth: Spearman 0.90 to 1.00) → SURVIVES, with the audit framing (definitional one-shot form; the content is that OMP tracks it and the level is covariance-determined). Spawned H1a, H1b, H6.
+  - H1a The competitor level is sqrt(2 ln m / d). → audit → KILLED; replaced by the k-th order statistic of covariance-matched random directions (SURVIVES).
+  - H1b The reading threshold is the k-th extreme of a per-atom Gaussian null (parameter-free). → e204 (k = 64 matches within ±0.5 z in 4/5), e205 (no collapse across k in 3/5) → KILLED as a law, NARROWED to "the per-atom z-score is the right statistic; the threshold is empirical".
+- H2 Decoder hierarchy: OMP reconstructs best, projection/dual identifies provenance best, function follows reconstruction. → e02, e44, e102, e154 (reweighted l1), e144/e159 (increment-guided), e189 (support instability: OMP Jaccard 0.03 to 0.14, dual 0.57 to 0.82) → SURVIVES. Spawned H8.
+- H3 Identifiability is a property of the neuron, orthogonal to importance. → e46, e130 (amplitude phenotype), e160 (per-write ablation), e170 (not the massive channels) → SURVIVES. Spawned H3a, H3b.
+  - H3a Never-neurons are a static geometric class (large null std, small self-gain). → e206 → KILLED.
+  - H3b Never-neurons are readable in their own increments; the loss is at accumulation. → e131, e147 → SURVIVES (4/5; GPT-2 loses within the block).
+
+## Three quantities
+
+- H4 Provenance match, causal footprint and functional importance are three different per-token quantities. → e152, e156, e160, e165 (function of identified vs unidentified: 4/5, OLMo reverses), e208 (footprint), e211 (reading uncorrelated with footprint, Spearman −0.09 to +0.03 in 4/5) → SURVIVES. Spawned H4a.
+  - H4a An identified atom is the cause of its direction's presence. → e208 (8 to 19% of the direction at the mid layer depends on the write), e211 → KILLED. The label names who wrote a direction, not what caused its presence.
+
+## Erasure → contraction (session 3, the main new line)
+
+- H5 A direct-contribution "erasure matrix" reveals who cancels whom. → e173 (five models, Pile caches, random init, Pythia checkpoints), e141 → SURVIVES as a description (two topologies, learned, data-invariant). Spawned H5a to H5e.
+  - H5a The next block erases the previous block's writes (a wired mechanism). → e183 (ablation never restores survival, 5/5), e186 (later blocks take over) → KILLED.
+  - H5b Cancellation is carried by dedicated eraser neurons or negative aliases. → e185 (crowd: top neuron 1 to 3%, cos ~0), e187 (no anti-aligned-row signature) → KILLED.
+  - H5c Cancellation is the MLP output bias. → e192 (2 to 13%) → KILLED.
+  - H5d Cancellation is proportional to the write (gain-like). → e191 (constant relative cancellation in Qwen, OLMo, GPT-2; additive in Pythia; saturating in SmolLM2) → NARROWED. Spawned H6.
+  - H5e Canceller blocks are the unreadable blocks. → e199 → KILLED.
+- H6 Every trained block is a generic linear contraction of its input ALONG ANY GIVEN DIRECTION (diagonal gain −0.16 to −0.42, direction-independent, learned), while conserving the perturbation's energy (see H6g/H6h: a decorrelation, not a damping). → e194 (write direction = random direction, linear over 0.25 to 1×), e207 (zero at init, grows with training, fades late, block 0 expands), e210 (derived block by block from normalization gain × Jacobian trace, 5/5), e209 (anti-aligned read/write vectors in GELU models; sign in the active neurons for gated), e213 (gain ∝ 1/‖state‖, 5/5) → SURVIVES. Spawned H6a to H6e (session 4).
+  - H6a The gain is the same for real writes, attention writes, principal directions, embeddings and random directions, and zero along the state's own direction; linear from 0.001 to 1× the norm. → e214 → NARROWED: independent within 0.2 in Qwen, OLMo, Pythia, SmolLM2; zero along the state direction (4/5, OLMo explained by its large attention writes); the lowest-variance principal direction is barely damped (the contraction lives in the occupied subspace); GPT-2 damps its own write directions and the top principal direction 3 to 4× more than random (write-specific cancellation). Linear over three decades (0.001 to 0.1× the norm), weaker at 1×. Spawned H6f.
+  - H6f The contraction's strength follows the state's spectrum (strong along high-variance directions, absent along low-variance ones). → e220 → KILLED as a monotone law (Spearman −0.52 to +0.69). NARROWED: the top principal direction is damped hardest in GPT-2, Qwen and Pythia, the next few top directions weakly, the bulk moderately, and only the covariance's null direction escapes; OLMo damps uniformly.
+  - H6b Multi-block survival of an arbitrary perturbation is the product of single-block gains. → e194 (two blocks), e215 → OPEN (running).
+  - H6c The 1/‖state‖ dependence is caused by the normalization's per-token scale. → e216 → SURVIVES: with the scale frozen the correlation vanishes in 5/5 (+0.47 to +0.55 → −0.10 to +0.03), cleanly in the GELU models; in the gated models the frozen scale moves the MLP off its operating point (Qwen median gain +242, OLMo +18), so only the correlation is interpretable there.
+  - H6d The contraction is born before step 1000 of training. → e217 (Pythia steps 1 to 512, 2000, 3000) → NARROWED: nothing up to step 512 (indistinguishable from init), cosine −0.037 at step 1000, −0.157 at 2000, −0.212 at 3000; born as the learning-rate warmup ends (1430 steps); the read/write anti-alignment leads the gain (70% vs 20% of final at step 2000). Pythia's dedicated block-5 canceller (e173) exists at step 1000, before the generic decorrelation: specific before generic.
+  - H6e The residual toy reproduces the contraction. → e190 → KILLED (the six-block autoencoder only reinforces).
+- H7 Provenance persists because later blocks re-write directions, not because writes are passive. → e188/e193 (survival 2 to 3× longer than passive decay), e208 (the write-dependent part decays as the contraction predicts; causal half-life 1.5 to 2 blocks), e212 (late-born writes keep 2 to 4× more) → SURVIVES.
+
+## Certificates and the prior
+
+- H8 Spurious atoms come in two kinds, noise-driven (OMP) and geometry-driven (dual), each with its own certificate. → e189 (known-null atoms selected at the clean rate), e196 (selection prior predicts real selection, dual up to 0.89), e202 (prior atoms are the workhorses), e195 (stability selection certifies OMP 5/5), e200 (per-atom z-score certifies the dual 5/5, transfers to the Pile), e203 (certified atoms track for two levels) → SURVIVES. Spawned H8a, H8b.
+  - H8a A residual-based self-certificate separates real from spurious. → e180 → KILLED.
+  - H8b Dropping the null-selected atoms is a certificate. → e200 → KILLED (recall collapses).
+  - H8c Coarser provenance labels (block, head) are reliably observable where neuron labels are not. → e218 → KILLED for MLP block labels (block-level recall exceeds its control by 0.03 to 0.31, below the 0.2 threshold in 3/5 and above it only in GPT-2 and SmolLM2; misses are not right-block-wrong-neuron: the closest support atom is from the same block in only 2 to 5% of them). NARROWED for attention: the top head of block L is identified by its own OV atom in 73% (GPT-2) and 100% (Pythia) of tokens under OMP against controls of 5 to 10%.
+
+## Where a write's energy goes (session 5)
+
+- H13 A write's energy, conserved while its direction is lost (H6g/H6h), goes somewhere accountable. → e223 (exact residual identity, residual 0.000) → SURVIVES: footprint = −write + MLP responses of every later block + attention responses of every later block. Spawned H13a to H13d.
+  - H13a It is redistributed among other known writers. → e223 → SURVIVES, in the most diffuse form: the delta-ledger has an effective number of writers of 400 to 1500 per intervening block growing linearly with depth (up to 5,000 to 11,000), top successor 1 to 8%, equal shares per block, half on already-active neurons. Attention carries a part of comparable size that partially cancels the MLP part.
+  - H13b It is concentrated into a learned dynamical subspace (writes funnelled into shared directions). → e224 (distinct real writes' footprints stay orthogonal, cosine ≤ 0.11; random perturbations do converge, 0.3 to 0.5), e225 (the footprint cloud's effective dimension is as large as or larger than the writes' and comparable to the state's, growing with depth; random-direction footprints shrink with depth) → KILLED for real writes; off-manifold perturbations are funnelled.
+  - H13c It is transformed into a functionally equivalent representation in different coordinates. → e223 (Mahalanobis footprint roughly conserved, 0.6 to 1.8, while Euclidean grows), e224 (logit effects of distinct writes only weakly related, 0.06 to 0.46) → PARTIAL: the write's distinguishability against the state distribution is conserved, and distinct writes stay functionally distinct, but no single 'functional direction' replaces the neuron.
+  - H13d It is genuinely lost. → e223 → KILLED as energy (every unit is accounted for by named writers and heads); SURVIVES as identity (the ledger is near-maximal entropy, so no per-writer reading can recover the origin).
+
+## Transport of descendants (session 6)
+
+- H14 Descendants are transported linearly (additive across writes, homogeneous in the write's size). → e226 → NARROWED: linear in Pythia (errors 0.05 to 0.12) and GPT-2 (0.12 to 0.20), mildly nonlinear in OLMo (0.11 to 0.26), additive but inhomogeneous in Qwen (halving a write changes its footprint by 0.8 to 0.9), non-additive in SmolLM2 (1.3 to 1.9); nonlinearity follows the massive-activation neurons; opposing pairs interact more than reinforcing ones.
+- H15 Transport is carried by one path, MLP chains or attention, additively. → e228 → KILLED: the interaction residual is 0.35 to 0.92 two blocks after the write and 1.1 to 2.8 at the mid layer; attention-only transport overshoots (1.4 to 9× the write) and the MLP responses cancel part of it; MLP-only transport is the closer approximation to the descendant's direction. Transport alternates and interacts.
+- H16 A neuron keeps a recognisable descendant signature after its direction is gone (provenance is invertible from footprints). → e227 → SURVIVES: within-neuron footprint cosine 0.20 to 0.31 vs 0.01 to 0.12 between neurons; source neuron identified from the footprint in 88 to 98% of tokens (chance 3 to 6%), source block in 84 to 95% (chance 33%). Spawned H16a, H16b.
+  - H16a The signature is readable from the state without intervention (a descendant dictionary). → e230 → SURVIVES with a split: 37 to 66% source identification from the state in four models (chance 3 to 4%), better than the neuron's own atom in the damped gated models (Qwen, OLMo, SmolLM2), worse in the GELU models where the write's own direction survives longer; ceiling from the footprint 79 to 99%.
+  - H16b WDD's reading predicts a write's behavioural influence. → e227 (Spearman of removal KL with readability at L −0.16 to +0.24, with |coefficient| +0.06 to +0.30) → KILLED.
+- H17 Dispersal is learned, not architectural. → e229 → SURVIVES: at initialisation a write is transmitted verbatim along its own direction (along-component 1.00, footprint cloud of the writes' own dimension); the along-component falls to 0.79, 0.53, 0.41, 0.33 at steps 2000, 16000, 64000 and final; Mahalanobis conservation and the absence of collisions hold at every checkpoint; the footprint cloud passes through a transient low-dimensional phase at step 2000 before expanding past the writes' dimension.
+
+## Attacking the descendant signature (session 7)
+
+- H18 The descendant signature is contextual activation statistics, not a property of the write. → e231 (transplants of the neuron's write vector into foreign states classify as that neuron in 0.89 to 0.97 of tokens at four blocks in GPT-2, Pythia, OLMo, SmolLM2, 0.55 in Qwen; 0.25 to 0.71 at the mid layer; magnitude-invariant; random directions at chance) → KILLED at four blocks, NARROWED at the mid layer, where about half of the natural identifiability is vector-driven and half comes from the states the neuron naturally fires in. Spawned H18a.
+  - H18a The signature depends on the operating point (write magnitude). → e231 (0.5× and 2× give identical accuracy) → KILLED.
+  - H18b Signatures superpose. → e231 (two injected vectors both recovered in the top two centroids in 0.55 to 0.83 of tokens at four blocks, 0.04 to 0.33 at the mid layer) → SURVIVES early, fades with depth.
+- H19 There is a depthwise crossover from the native coordinate to the descendant signature, then to neither. → e232 → SURVIVES: crossover at two blocks (Qwen), four blocks (OLMo, Pythia), from the first block in GPT-2; SmolLM2 keeps the native read ahead until the end. The intervention footprint keeps 4.7 to 5.6 of 5.6 to 6.0 bits through the mid layer and loses about half in the last two blocks, where provenance is finally scrambled.
+- H20 The signature is a brittle coincidence of the exact weights. → e233 → KILLED: identification is unchanged with every weight perturbed by 3% of its RMS (state moved 8 to 15%) and survives at 10% perturbation (state moved 28 to 56%, model degraded) in Pythia and OLMo (0.98), GPT-2 (0.87), partially in Qwen (0.56) and SmolLM2 (0.48).
+- H21 The signature transfers across corpora without refitting. → e234 → SURVIVES for GPT-2 (WikiText-fitted centroids identify Pile sources at 0.95, chance 0.07; reverse 0.83); SmolLM2 weak: 0.35 / 0.27 against within-corpus 0.61 / 0.45, chance 0.08.
+- H22 The identity is carried by one path (MLP chain or attention). → e235 → KILLED: both paths carry it; MLP-only transport preserves the full-footprint signature in 5/5 (0.68 to 1.00), attention-only preserves it in the GELU models and OLMo (0.91 to 0.94) and carries a different but self-consistent neuron-specific signature in Qwen and SmolLM2 (0.88 / 0.62 self, 0.15 / 0.10 against the full centroids).
+
+## Transported coordinates (session 8)
+
+- H23 Transporting the native dictionary through the network (one atom per token, averaged over contexts) restores state-level provenance at depth where native WDD fails. → e236 → KILLED in the models run so far: the transported dictionary decodes the dominant write worse than the native one at the mid layer in GPT-2 (dual 0.89 → 0.62) and Pythia (0.68 → 0.48) and no better in Qwen (0.51 → 0.49), much worse in OLMo (0.82 → 0.37) and slightly worse in SmolLM2 (0.78 → 0.74): killed in 5/5. e240: coherence rises only in the gated models (Qwen 0.15 → 0.23, SmolLM2 0.17 → 0.27) and not where the failure is largest (OLMo 0.16 → 0.13); the token-averaged image is a blurred version of each token's descendant, sharp enough for classification among tens of candidates, not for a 64-sparse competition among tens of thousands of atoms.
+- H24 Transport is angle-preserving within a state (an isometry on injected directions). → e238 → SURVIVES in 5/5: descendant cosines equal initial cosines within ±0.02 from 0.99 down to 0 at every level to the mid layer; no resolution limit beyond the initial separation. The geometry of natural descendant centroids follows the write vectors' geometry only in the GELU models (Spearman +0.55, +0.31), not in the gated ones (context dominates the centroids).
+- H25 Provenance capacity from the state saturates at a small number of sources. → e237 → KILLED up to 128 candidates: state bits keep growing with log2 K (Qwen 5.1 to 5.6 bits at K = 128 through four blocks, OLMo 4.9, Pythia 4.0, GPT-2 3.0 at K = 64); the footprint carries 6.0 to 6.4 of 7 bits at every depth to six blocks; only SmolLM2's mid layer collapses (0.8 bits).
+- H26 The signature is imposed by the downstream network rather than carried by the vector. → e239 (Pythia final vs step 16000: vectors cos 0.74, centroids cos 0.54; final vectors through the step-16000 network classified by either checkpoint's centroids at 1.00; step-16000 vectors through the final network at 0.99 / 0.93) → KILLED: the signature follows the vector and the transport is stable from step 16000 on.
+
+## Compositionality, prediction, training order (session 9)
+
+- H27 The provenance code is compositional: several simultaneous writes remain individually decodable and their descendants add. → e241 → SURVIVES with limits: additive within 0.5 up to eight writes in 5/5 (sixteen in the GELU models and SmolLM2); eight injected identities recovered from the mixture at 0.61 to 0.88 two blocks out (chance 0.28 to 0.38) in 5/5, and at the mid layer at 1.5 to 2× chance in GPT-2, Pythia and OLMo only.
+- H28 An unseen neuron's descendant is predictable from its write vector alone (the transport is the decoder). → e242 → SURVIVES: zero-shot identification from the transplant image equals the natural-centroid standard two blocks out in 5/5 and at the mid layer everywhere except the massive-activation block-2 neurons of Qwen and SmolLM2 (0.44 and 0.39 against 0.85 and 0.71).
+- H29 Training orders the phenomena: transport isometry and identity at initialisation; readability and dispersal at warmup end; a transient funnel; an expanded descendant chart; late final-layer scrambling. → e243 → SURVIVES as measured on Pythia (native +4 readability 0.01 → 0.18 → 0.38 → 0.40 → 0.37 → 0.32; along-survival 1.00 → 0.97 → 0.64 → 0.53 → 0.41 → 0.34; pair cosine 0.75 at every step; footprint bits at +4 4.6 → 3.9 → 3.4 → 4.2 → 4.5 → 4.7; penultimate-block footprint bits 4.6 → 3.9 → 3.3 → 3.8 → 3.3 → 2.3; footprint dimension 70 → 73 → 58 → 162 → 186 → 223).
+- H30 The GELU-versus-gated split in centroid geometry comes from a more context-variable MLP linearisation in gated models. → e244 → KILLED: the factor's relative deviation is 1.23 and 1.86 in the GELU models and 1.16 to 1.46 in the gated ones; the split follows the massive-activation neurons instead (e242).
+
+## The recoverability frontier (session 10, self-directed)
+
+- H31 Transport is compositional where decomposition is not: the identity of the largest of many superposed writes survives in the descendant while the native dictionary cannot read it. → e245 → SURVIVES in GPT-2 and Pythia (largest of 64 heavy-tailed writes identified from the mixture at 0.92 and 0.84 against chance 0.02; native dual read 0.00 to 0.01 at every k); Qwen 0.72 and SmolLM2 0.46 at k = 64 (native 0.00 to 0.03); OLMo unfinished at close.
+  - H31a The native failure on injected writes is a prominence effect, not foreignness. → e247 → SURVIVES (Pythia: native recall 0.06 → 0.52 → 0.99 → 1.00 at 1× to 8× magnitude while identity stays 1.00; natural writes of the same prominence read the same).
+  - H31b The transported code is neuron-specific rather than vector-specific. → e245 (random unit vectors behave exactly like neuron writes: top-1 1.00 at k = 1, 0.06 to 0.07 at k = 16) → KILLED: the code is vector-specific.
+  - H31c The context-independent part of a descendant is large. → e245 (coherent fraction 0.46 → 0.29 in GPT-2, 0.35 → 0.07 in Pythia from two blocks to the mid layer, the same for random vectors) → NARROWED: small at depth, yet sufficient for 64-way identification.
+- H32 The descendant chart can be built without data (random-token inputs). → e246 → SURVIVES on Pythia (random-token images identify natural footprints at 1.00 two blocks out and 0.93 at the mid layer, against 1.00 / 0.95 for text images; image cosine 0.91 / 0.77); the other models were queued at close.
+
+## Characterising the transported object (session 11, self-directed)
+
+- H33 The native-to-descendant crossover depth is predictable from single-block gains (passive survival prod(1+g) < 0.5). → local analysis of e215 and e232 → SURVIVES in Pythia (6 vs 6) and Qwen (4 vs 4), within a level in OLMo (4 vs 6); fails where a chart is anomalous (GPT-2's prior-dominated dual loses from the first block; SmolLM2's state-level signature never wins before the end).
+- H34 Provenance survives in a few dimensions. → e249 → KILLED as 'tiny': 90% of full identification needs 32 to 64 random dimensions (8 to 32 principal components) two blocks out and 128 to 256 (32 to 128 components) at the mid layer.
+- H35 The native coordinate is lost at a specific sub-operation. → e249 → SURVIVES: the along-direction component is unchanged by the attention residual add and drops at every MLP add; the descendant identity is unchanged by both through block 6 in 5/5.
+- H36 Massive-activation neurons are a failure of transport. → e250 → KILLED: they are transported as linearly and angle-preservingly as matched normal neurons; what differs is that their natural descendant points away from their transplanted image (cos −0.45 to −0.75 in Qwen, OLMo, SmolLM2), because their natural effect runs through the sink mechanism that a transplanted copy does not trigger. They are the boundary of vector-determined transport.
+- H37 An explicit linear transport operator, fitted by the analysis from random injections, predicts held-out descendants, gives zero-shot provenance for natural footprints, inverts descendants back to write space, composes across segments and preserves the Gram matrix; and the code transports vectors, not neuron identities (a+b test). → e248 → SURVIVES with a split: the random-fitted ridge operator predicts held-out random directions' descendants (cos 0.58 to 0.94 two blocks out), preserves the Gram matrix partially (Spearman 0.5 to 0.8), composes across segments as well as the direct operator, and the a+b test says vectors are transported, not neuron identities (0.83 to 0.96 in 5/5); zero-shot provenance and inversion from the random-fitted map work in the GELU models (Pythia 1.00, GPT-2 0.88 two blocks out) and not in Qwen, where real writes and random directions are transported differently (e224, e242). Decodable, not linearly reconstructible (inverse cosine 0.1 to 0.4).
+
+## Recoding, regimes, function (session 12, from the six-experiment program)
+
+- H38 The birth-transport-scrambling regimes change at one block (a representation phase transition). → e252 → KILLED: the observables are staggered (along-component halves at blocks 4 to 8, the state-level descendant chart at 10 to 16, the intervention footprint only in the last one to three blocks or never) and angle preservation never breaks, at any level, in 5/5. What looks like scrambling in the last blocks is a loss of the natural descendant's distinctness, not of the isometry.
+- H39 Whitened footprint energy is a conserved quantity. → e252 → NARROWED: conserved to the mid layer, then growing in the amplifying models (GPT-2 2.6, Qwen 8.5, SmolLM2 9.6 at the last block), dipping and recovering in Pythia, flat in OLMo.
+- H40 Downstream, the descendant is better coded by dense coordinates than by the sparse native dictionary (a sparse-to-distributed recoding). → e251 → SURVIVES for provenance at equal budget (32 coefficients at the mid layer: descendant basis 0.70 to 0.90 vs native sparse code 0.03 to 0.67 vs random 0.49 to 0.66; all 1.00 at birth) and NARROWED for reconstruction (no 8-coefficient code reconstructs the descendant, native and dense equal within 0.1).
+- H41 Descendant geometry predicts functional geometry better than neuron identity does. → e254 → SURVIVES in 5/5 (Gram Spearman with the logit-footprint Gram +0.23 to +0.61 for descendants vs −0.02 to +0.37 for write vectors; per-token agreement with the functional identity 0.49 to 0.60 for the descendant vs 0.02 to 0.21 for the native atom in the gated models). The logit footprint itself identifies the source at 0.52 to 0.60.
+- H42 A single contextual variable (the neuron's own natural activation, the sink route) explains the massive neurons' context-dependent transport. → e253 → KILLED: the transplant's match to the natural descendant is flat across the neuron's own activation quartiles and uncorrelated with it (Spearman −0.06 to +0.11), only mildly related to norm and position, and at the mid layer near zero or negative in every context; the massive neuron's natural effect is cross-token (the sink it creates changes other positions), not a within-token state variable.
+- Not run: the residual-stream rotation with compensated weights (not a symmetry of pre-norm transformers with elementwise norm gains; the exact symmetry, neuron permutation, is the gauge invariance already on record), and the transport-defect map (covered by e226, e241, e250).
+
+## Descendants and function (session 13, from the five-experiment list)
+
+- H43 Descendant geometry organises neurons by downstream function better than write geometry. → e255 → SURVIVES: descendant neighbours share logit footprints more than write neighbours in 5/5 and more than random neighbours in 4/5; pairs with dissimilar writes but similar descendants are functionally similar in 5/5 (functional convergence without convergence at birth); held-out nearest-neighbour prediction of logit footprints transfers in Qwen, SmolLM2 and Pythia and not in GPT-2 or OLMo.
+- H44 The functional footprint composes as the state descendant does. → e256 → SURVIVES: logit additivity errors equal the state's within 0.03 at every m in 5/5; identity is far less legible in function space (single-write logit identification 0.15 to 0.52; chance from an 8-write mixture).
+- H45 The massive neurons' anomaly is a cross-token route (their effect migrates to receiver positions). → e257 → KILLED: 0.89 to 1.00 of their footprint energy stays at the source position and receivers do not identify them. Their anomaly is unexplained by any variable tested (own activation, norm, position, cross-token spread). Side result: cross-position provenance exists in GPT-2 (receivers identify a normal neuron at 0.46) and not in the other models.
+- H46 Descendant-function coupling emerges during training after dispersal. → e258 → KILLED: the coupling is highest at initialisation (Spearman +0.84, a linear network), is broken by training (+0.14 at step 64000) and partly rebuilt by the end (+0.31).
+- H47 One perturbation, three questions, three coordinates: who wrote it (native atom), what it became (descendant), what it affected (logit footprint) are answered best by three different coordinates. → sessions 6 to 13 → SURVIVES as the organising statement (table in SYNTHESIS.md).
+
+## The descendant as functional coordinate (session 14)
+
+- H48 Descendant similarity predicts functional similarity after controlling for write similarity. → e259 → SURVIVES in 5/5 (partial Spearman +0.29 to +0.60; the reverse −0.06 to +0.16; the 2×2 cells follow the descendant; same-descendant/different-writer pairs above the functional median in 5/5).
+- H49 Functional geometry moves from write space into descendant space with depth. → e260 → SURVIVES in 5/5 (descendant-logit Spearman rises from the write-logit value at birth to +0.65 to +0.88 near the top; descendant-write decays over the same depths).
+- H50 Function needs fewer descendant dimensions than identity. → e263 → SURVIVES (function saturates by 8 to 32 dimensions, identity needs 32 to 128); and the descendant predicts a token's functional footprint better than the neuron label does (above the identity oracle in 5/5).
+- H51 Neurons with similar descendants are interchangeable under intervention. → e262 → KILLED (substitution worsens the removal effect in Pythia, GPT-2, OLMo and is neutral in Qwen, SmolLM2).
+- H52 The neurons that compensate for a removed write are its descendant-space neighbours. → e261 → KILLED (compensators are a diffuse crowd only weakly aligned with either the write or its descendant; GPT-2 and Pythia lean to the write).
+
+## What kind of object a descendant is (session 15)
+
+- H53 Logit-footprint neighbours are descendant neighbours (few many-to-one maps). → e265 → SURVIVES in 5/5 (0.31 to 0.75 vs chance 0.18 to 0.25; many-to-one share 3 to 12%).
+- H54 The coordinate change has an empirical depth. → e265 → SURVIVES: the write-space neighbour is lost in descendant space at levels 3 to 6 (never in GPT-2) and the logit-space neighbour is found there at levels 2 to 4.
+- H55 A write's causal importance is predictable from its descendant in few dimensions. → e265 → SURVIVES moderately (Spearman with the removal KL 0.33 to 0.64, saturating by 32 dimensions; readability never predicted importance).
+- H56 One operation (attention or the MLP) builds the functional organisation of descendants. → e266 → KILLED as universal: attention in Pythia, OLMo and SmolLM2, the MLP in GPT-2 and Qwen; the largest increment is right after the write or at the very end.
+- H57 A write's successors form a stable lineage rather than a shared hub graph. → e267 → SURVIVES (within-neuron split Jaccard 0.53 to 0.76, between-neuron 0.01 to 0.08, hubs carry 0 to 3%).
+- H58 Descendant-similar neurons have interacting or redundant effects. → e264 → KILLED: at co-active tokens their removal effects are independent (interaction ~0) and uncorrelated (cosine ~0), and their per-token descendants are near-orthogonal; aggregate descendant similarity is a centroid-level property, which explains H51's failure.
+
+## Sufficiency and causal carriage (session 16)
+
+- H59 The descendant is a sufficient statistic for the write's functional effect (adding the write vector does not improve prediction). → e268 → SURVIVES in 5/5 at every depth (gain at most +0.01; adding the write hurts by 0.02 to 0.10 in the last blocks).
+- H60 Depth quotients write identity into functional classes (functional distance tracks descendant distance where write distance is uninformative). → e268 → SURVIVES modestly (high-D/low-W pairs: relative distance in write 1.01 to 1.08, descendant 0.81 to 0.98, function 0.80 to 0.99).
+- H61 Identity bits exceed function bits exceed behaviour bits at depth. → e268 → SURVIVES broadly (identity dimensions grow to 128 to 256 with depth; function stays at 16 to 32; behaviour at 4 to 32).
+- H62 The descendant causally carries the write's effect: injected directly, it reproduces the write's natural logit effect where the write vector in a foreign context does not. → e269 → SURVIVES in 5/5 (cosine 0.28 to 0.62 vs −0.29 to +0.16); injected-descendant effect geometry follows descendant geometry (Spearman +0.38 to +0.76).
+- H63 The descendant geometry is stable across tokens, corpora and training. → e270 → SURVIVES across tokens (Jaccard 0.43 to 0.69, chance 0.11 to 0.15) and corpora (0.50, 0.53), moderately across checkpoints (0.40 vs step 64000, 0.27 vs 16000; write-space 0.77, 0.45).
+
+## Parameterisation and the capacity ladder (session 17)
+
+- H64 The descendant coordinate parameterises the intervention effect continuously (effects interpolate linearly along descendant segments, and effect distance tracks descendant distance). → e271 → SURVIVES in 5/5 (interpolant effects at cosine 0.99 to 1.00 to the linear interpolation; effect-distance vs descendant-distance Spearman +0.47 to +0.88 with slope about 1).
+- H65 Reconstruction needs far more dimensions than identity, function or behaviour. → e272 → SURVIVES in 5/5 (reconstruction needs the full basis; identity 4 to 256 growing with depth; function 8 to 64; behaviour mostly 8 to 32).
+
+## Kernel, nesting and the transport law (session 18)
+
+- H66 Function is a quotient of the descendant: descendant space has functional null directions (equivalence classes). → e273, e273b → KILLED in 5/5 (relative functional response to a fixed descendant displacement is 0.31 to 0.53 along top, middle and bottom principal components and random directions alike, ratio 1.2 to 1.4; directions toward other descendants only 15 to 30% higher; GPT-2's bottom-PC response of 2.6× is the massive-activation channel 447, which carries 0.103 of the bottom PCs' energy against 0.004 chance).
+- H67 The identity, function and behaviour subspaces of the descendant are nested. → e274 → NARROWED: identity and function share a leading core (function energy inside identity 0.48 to 0.76 at 8 dimensions, chance ≤ 0.014) and rotate apart beyond it (0.39 to 0.47 at 32 dimensions); the linear behaviour direction lies outside both in 4/5 (inside function in SmolLM2, 0.48 to 0.77), read with the caveat that the removal KL is quadratic in the logit change.
+- H68 The massive neuron is the extreme tail of the one linear transport law. → e275, e275b → KILLED where testable (SmolLM2's massive neuron: descendant anti-parallel to sign(coef)·T w, cosine −0.64, rank 1/23, z +7.6 against a bulk within 0.77 to 0.98); the non-massive largest-coefficient neurons of the other four models sit inside the bulk (z −0.4 to +1.6).
+- H69 The linear transport law fits best the neurons whose write direction survives most. → e275b → SURVIVES in 5/5 (Spearman between residual and along-survival −0.40 to −0.78); no relation with coefficient size or identifiability.
+- H70 The corpus-averaged linear transport reproduces the natural descendant direction. → e248, e275b → NARROWED: at mid depth the sign-corrected T w meets the natural descendant at cosine 0.07 to 0.47 only (nearest-centroid provenance in e248 was relative alignment); the per-write transplant image (e242) is the better predictor (0.44 to 0.73).
+
+## Leverage, budget, amplitude and rotation (session 19)
+
+- H71 Downstream components are tuned to the descendants of the model's own writes (natural descendants out-lever random-vector descendants and covariance-matched directions). → e276 → KILLED in 5/5 as a magnitude claim (logit-response ratio 0.94 to 1.18 vs random-vector descendants, 0.65 to 1.14 vs covariance-matched; KL 1.0 to 2.0 and 0.36 to 1.32); the descendant's effect is direction-specific (H62) and magnitude-generic; the raw write direction at level L has random leverage (0.98 to 1.05).
+- H72 Provenance survives on a small consistent component while the remainder is token-specific and not linearly readable from context, which is why no transported dictionary decomposes the state. → e277 → SURVIVES in 5/5 (coherent fraction 0.61 to 0.82 one block after birth, 0.16 to 0.33 at mid depth, 0.05 to 0.14 late, with identification 0.89 to 1.00 at mid depth and 0.49 to 0.83 late; remainder R² from the state ≤ 0.10 at mid depth in 4/5; SmolLM2 keeps 0.19 to 0.27 from the birth context).
+- H73 The massive neuron lies beyond the linear range of the transport law (an amplitude effect). → e278 → KILLED (its transplant obeys the law at 0.1× to 10×, cosine 0.56 to 0.72, self-consistency 0.78 to 1.00 through operating-point shifts of 1.05 to 10.1; its natural descendant is anti-parallel at every amplitude, −0.56 to −0.90) → NARROWED to context-bound: the anomaly is the natural removal response at the write's own token, developing between +2 blocks (agreement 0.99, e250) and mid depth (−0.75), not the vector, its amplitude (e278), its activation or position (e253), or a cross-token route (e257).
+- H74 Ordinary writes have amplitude-invariant descendants. → e278 → NARROWED to about the natural amplitude (self-consistency 0.78 to 0.99 at 1×; 0.08 to 0.80 at 10× with operating-point shifts of only 1.2 to 2.3).
+- H75 There is a coordinate transition at depth. → e279 → NARROWED to two rotation zones, the 1 to 5 blocks after birth (identity subspace kept 0.38 to 0.69 per block) and the last block (0.43 to 0.70), with a stable middle (0.65 to 0.91) and one mild dip (SmolLM2 block 10, 0.46); identification collapses late without rotation, by loss of coherent energy (H72); the function subspace rotates in step with the identity subspace.
+
+## The descendant as a dynamical state variable (session 20)
+
+- H76 An interpolated descendant injected where neither endpoint is written follows the interpolation of the endpoint trajectories through the rest of the network (no snapping). → e280 → SURVIVES in 5/5 (cosine 0.97 to 1.00 at every later level and at the logits; fitted position equal to the true one within 0.01; 95 to 100% of the response in the endpoint plane).
+- H77 The transport law composes functionally. → e281 → SURVIVES in 5/5 (composed prediction's effect vs the actual image's effect 0.43 to 0.81, direct fit 0.44 to 0.74, random 0.00; composed at least as good as direct in 4/5).
+- H78 A whitened (Mahalanobis) metric makes transport more isometric than the Euclidean one. → e282 → KILLED (gain spread and pair-cosine preservation worse whitened at every level in 5/5).
+- H79 Transport is an isometry specifically on the manifold of actual writes. → e282 → KILLED and reversed in gain (writes' gain spread 0.08 to 0.41 vs 0.02 to 0.07 for random directions, whose constancy is concentration of measure over an operator with singular spread 11 to 50); the isometry on writes is angular (pair cosines, e238, e282).
+- H80 The descendant is a state variable: its future is predicted by its present through the data-free operator, not by its origin. → e283 → SURVIVES in 5/5 (per-token cosine to the future descendant 0.43 to 0.78 at +2 and 0.25 to 0.61 at +4 vs 0.03 to 0.12 for the write and 0.00 for a random vector; the state adds ≤ +0.16; the predicted future centroid reproduces the future effect at 0.59 to 0.85).
+- H81 The massive neuron's context-bound reaction has a single carrier. → e284, e284b → SURVIVES for SmolLM2 (the MLP of block 10, frozen at the neuron's own tokens, flips the natural footprint from −0.67 to +0.52 against the transplant image; all attention frozen −0.66; both-frozen sanity 1.00 in 10/10); ordinary neurons' reactions are small and spread; block 10 is also SmolLM2's one mid-depth coordinate rotation (H75).
+
+## Theory (session 21)
+
+- H82 The transport's gain follows the fitted operator's spectrum: top singular directions > random > middle ≥ bottom, with random directions near the root-mean-square gain and no exact null direction. → e285 → SURVIVES in 5/5 (gains 0.33 to 1.12 / 0.26 to 0.57 / 0.22 to 0.52 / 0.16 to 0.35).
+- H83 Pair-cosine preservation is gain concentration, not isometry: cos_out = cos θ · ρ / sqrt(cos²θ · ρ² + sin²θ) with ρ the gain ratio of the pair's base direction to a random direction. → e285 → SURVIVES quantitatively (15/15 within 0.07; random pairs preserved at ρ ≈ 1, top pairs raised to 0.81 to 0.93, bottom pairs lowered to 0.40 to 0.74).
+- H84 The additivity error of superposed writes depends on the total injected norm, not on their number. → e285, e285b → OPEN (reference construction confounded by cross-token coherence; what is seen: direction agreement improves with the number of superposed writes at constant norm, 0.95 to 0.97 at sixteen, and degrades with amplitude, 0.50 to 0.77 at four times natural).
+
+## The compression test (session 22)
+
+- H85 Downstream observables of a write are functions of its descendant with progressively smaller required dimension: reconstruction > provenance > function > behaviour. → e286 → NARROWED to two rungs (reconstruction 512 to 1024 directions; future descendant 8 to 32, identity 16 to 32 with a ceiling of K − 1, function 8 to 32, behaviour 8 to 32, all from the same descendant with one decoder family; inside the causal rung the ordering is mild, behaviour smallest in 3/5).
+
+## Shared versus token-specific read-out (session 23)
+
+- H86 The low-rank causal read-out lives in the shared transport term (the span of the class centroids), and the token-specific term is causally redundant. → e287, e288 → NARROWED: the centroid span reaches the full score (e287), but so do a covariance-matched random K-dimensional subspace and a permuted-label span for function, future and KL (e288); the read-out lives in the high-variance, low-rank part of the descendant cloud, and only source identity is specific to the shared term. The token-specific remainder is redundant for the four observables but carries its own future (0.09 to 0.28).
+
+## The kill-tree (session 24)
+
+- H87 Identity, function, future and behaviour are read from one causal subspace. → e288 → NARROWED: identity, function and future share 0.35 to 0.73 of their 16-dimensional energy (chance ≤ 0.028) and each decodes all four observables near its own score; the KL subspace is less aligned (0.12 to 0.61); a covariance-matched random subspace matches them on everything but identity.
+- H88 The causal coordinate is manipulable one direction at a time. → e289 → SURVIVES in 5/5 (paired logit response +0.14 to +0.34 on the diagonal, 40/40 positive, off-diagonal 0.00, random 0.03 to 0.04).
+- H89 Adding the massive direction at its own tokens reproduces the natural footprint (the coherent-reaction reading). → e290 → KILLED and replaced: the own-token addition obeys the first-order law (+0.55 to the foreign addition, +0.66 to the linear law) and is anti-parallel to the natural removal footprint (−0.90); the response at the massive neuron's own tokens is even in the deviation from its natural amount (a set point).
+- H90 The causal subspace is transported into itself. → e288 → NARROWED to stationarity: overlap over two blocks 0.30 to 0.82 without transport and never higher with it; the residual transport is near the identity on the subspace.
+- H91 The two rungs are learned: at initialisation the descendant is low-dimensional and fully predictive; dispersal makes it full-dimensional within the first four thousand steps while the causal dimension grows slowly. → e291 → SURVIVES (reconstruction 64 → 256 → 1024 directions by step 4000; identity 4 → 32, function 2 → 32, future 2 → 16, KL 4 → 8 over training; span fraction 0.93 → 0.28).
+- H92 The token-specific remainder is a transported state of its own. → e288 → SURVIVES weakly (its future predicted at 0.09 to 0.28, shuffled 0.00).
+
+## The four questions (session 25)
+
+- H93 The causal coordinate dictates the entire logit response to an intervention. → e292 → NARROWED: selective (paired directions hit at three to four times chance, and only they) but partial (full-vector cosine 0.09 to 0.33; 19 to 39% of the response energy in the paired span); generalises to unseen neurons with loss (0.05 to 0.24) and not to directions outside the cloud (0.01 to 0.08).
+- H94 The causal core transports as a coherent object. → e293 → SURVIVES (fixed basis, two blocks: R² 0.89 to 0.96, gain 0.64 to 1.16, spread 1.3 to 2.7, Procrustes residual ≤ 0.17, off-diagonal ≤ 0.04, rotation ≤ 0.11).
+- H95 The observables share one nested predictive hierarchy rather than separate latents. → e294 → SURVIVES (joint rank = largest individual rank in 4/5, far below the sum); with the caveat that the linear future needs about 128 directions, an intermediate scale.
+- H96 The leftover dimensions of the descendant are a second state variable. → e295 → KILLED at this resolution (indistinguishable from a random vector under intervention on the logits, the KL, the later core and other tokens; carried by the near-identity transport, e288, but unread).
+
+## The literature-derived program (session 26)
+
+- H97 Under a causal metric the descendant cloud is low-rank and its geometry is the functional geometry. → e296 → SURVIVES in 5/5 (Spearman with held-out functional geometry up from 0.35 to 0.65 Euclidean to 0.52 to 0.82 causal; participation rank down 1.5 to 5×).
+- H98 Individual causal coordinates persist as themselves across blocks (channels, not just a subspace). → e296 → SURVIVES (self-correlation 0.90 to 0.97 vs best other 0.23 to 0.34; self wins 16/16 in 5/5).
+- H99 The physical dimension explodes within a few blocks of birth while the causal dimensions creep (the layerwise analogue of training). → e297 → SURVIVES (reconstruction 128 to 256 at block 3, 512 to 1024 by block 4 to 8; identity 8 → 32 slowly; function 8 to 32 mostly flat; future 8 to 16; KL 4 to 32).
+- H100 The causal core predicts attention routing. → e298 → NARROWED to weak (R² 0.09 to 0.16 for per-head output changes, two to five times a random projection, below the descendant's top-64 PCs at 0.13 to 0.24; attention probabilities unavailable).
+- H101 The perturbation propagates as a low-rank spatiotemporal wave. → e299 → NARROWED to the massive channel (rank one in Qwen, OLMo, SmolLM2; random-like spectrum in GPT-2, Pythia); the impulse response is mostly local (15 to 41% of the energy at later tokens by mid depth).
+- H102 The core is a property of the network's receptor geometry, not of the writes' geometry. → e300 → SURVIVES (cores of 116 to 200 neurons in a 6 to 8-dimensional effective space with |cos| 0.22 to 0.28 against 0.02 to 0.04 for writes; write similarity does not predict core similarity, 0.00 to 0.08).
+- H103 The massive neuron's own-token response is even in the deviation (a set point); all other responses are odd. → e301 → SURVIVES (evenness +0.88 vs −0.69 to −0.98 for every other neuron and context).
+- H104 Causal coordinates are linear, independent channels. → e302 → SURVIVES (linear R² ≥ 0.82 in 39/40, saturation 0.88 to 1.26, interactions weak, uniform and rank one, self-interaction the largest).
+- H105 The core coordinate of a write is computable from the write. → e303 → SURVIVES in the GELU models (cosine 0.53 to 0.71, identification 0.52 to 0.66 at chance 0.03 to 0.05), WEAK in the gated models (0.25 to 0.32).
+- H106 The dimensionality hierarchy is special to WDD writes. → e304 → KILLED (the same ladder for random, covariance-matched, attention and later-MLP directions).
+
+## What P_ℓ is (session 27)
+
+- H107 The causal core is an invariant or singular subspace of the transport operator (a dynamical subspace). → e305 → KILLED (overlaps with T's top input and output spaces, the update's spaces, the slowest and fastest modes all at chance 0.008 to 0.028; gain of core directions equal to random directions').
+- H108 The causal core is the read-out's high-gain subspace (a read-out bottleneck). → e305, e308 → KILLED (chance overlap with the forward-estimated G's top space and with the true backward sensitivity subspace).
+- H109 Physically unrelated perturbation families share one functional coordinate system. → e306 → SURVIVES with depth (cross-family function-core overlap 0.02 to 0.06 two blocks after injection, 0.14 to 0.32 at mid depth, 0.44 to 0.57 near the end against within-family reliability 0.51 to 0.67); identity cores stay family-specific.
+- H110 Channels keep their identities across all depths. → e307 → SURVIVES (identity assignment at every block in 4/5, gain 0.96 to 1.07, self-R² 0.83 to 0.89, mixing 0.02 to 0.06, no births or deaths outside SmolLM2's massive channel).
+- H111 Forward transport modes and backward sensitivity modes coincide. → e308 → KILLED (overlap 0.03 to 0.07); the first-order identity with the true Jacobian holds at per-token cosine 0.58 to 0.67 (correlation 0.36 to 0.45; SmolLM2 0.45 and −0.02).
+- H112 P_ℓ is the dominant-variance subspace of the model's own perturbation cloud, carried by near-identity transport and read by a near-isotropic read-out. → e288, e296, e305, e306, e307, e308 → SURVIVES as the only reading consistent with all of them.
+
+## The quotient picture (session 28)
+
+- H113 The causal coordinate is the subspace of high residual variance or of a component's output variance. → e309 → KILLED (core in the state's top-64 at 0.21 to 0.34, in components' at ≤ 0.22, in its own cloud's at 0.93 to 0.95).
+- H114 The perturbation cloud is a curved manifold, locally low-dimensional. → e309 → SURVIVES in 3/5 clearly (local rank 26 to 30 vs global 105 to 130), mildly in GPT-2 (22 vs 31), artifact in SmolLM2.
+- H115 The low-dimensional functional coordinate requires proximity to the natural manifold. → e310 → KILLED (orthogonal, heavy-tailed, sparse, low-rank and shuffled perturbations show the same ladder; proximity changes gain, image rank and future coherence only).
+- H116 The network collapses physically different perturbations into functional equivalence classes independent of physical proximity and family. → e311 → SURVIVES (physical-functional Spearman rising from 0.06 to 0.17 to 0.37 to 0.66 with depth; functionally closest pairs physically far at 38 to 48% against a 50% baseline and cross-family at 63 to 68% against 67%; no contraction through the middle, 0.88 to 0.95 at the last step).
+- H117 The converged functional coordinate system transfers across perturbation distributions. → e312 → SURVIVES near the output (cores 85 to 90% of own, metrics equal to own), PARTIAL at mid depth (60 to 75%, metrics at the Euclidean level); identity never transfers.
+- H118 Functionally equivalent but physically unrelated perturbations interact when superposed. → e312 → KILLED (cosine 0.98 to 1.00, error 0.09 to 0.19, same as dissimilar pairs).
+
+## WDD and the quotient (session 29)
+
+- H119 The functional coordinate of a joint perturbation is the WDD-ledger-weighted sum of the atoms' coordinates (Z c). → e313 → SURVIVES (cosine 0.54 to 0.68 in GPT-2, Pythia and OLMo, 0.30 to 0.34 in Qwen and SmolLM2, random −0.03 to +0.04; better in the coarse coordinate than in full dimension, 0.16 to 0.43); the quotient is additive on unrelated atoms (0.78 to 0.97).
+- H120 The coordinate predicts observables it was not built from. → e314 → NARROWED (attention-norm and cross-token observables at the full-descendant level and twice random; entropy modestly; behavioural scalars no).
+- H121 The coordinate's dynamics under intervention are predicted without refitting. → e315 → SURVIVES for the state (future core coordinate 0.95 to 0.99), PARTIAL for the logits (0.13 to 0.32), with the KL even in 40/40 direction-signs.
+
+## The application study (session 30)
+
+- H122 Neurons with the same functional coordinate form functional units whose joint ablation is coherent. → e316, e316b → KILLED (class coherence 0.15 to 0.41 against 0.18 to 0.24 random; predicted-vs-actual no better than random).
+- H123 Coordinate-equivalent neurons are substitutable, within or across blocks. → e316, e316b → KILLED (logit restoration −0.19 to −0.59; core restoration −0.20 to +0.12).
+- H124 The quotient improves attribution of joint effects at the output over direct logit attribution and an averaged-Jacobian lens. → e316, e316b → KILLED (atlas 0.00 to 0.14, direct 0.01 to 0.16, lens 0.00 to 0.02; all poor). What survives: the ledger predicts the joint coordinate (0.21 to 0.38 for arbitrary neurons, 0.30 to 0.68 for candidates; H119).
+
+## The quotient program, part 1 (session 31)
+
+- H125 The quotient is universal across observables. → e317, e335 → SURVIVES (cross-observable overlap 0.37 to 0.45 at reliability 0.38 to 0.51; transfer 0.89 to 1.13 of own; a blind PCA-16 basis matches own for logits, future and KL).
+- H126 The quotient's dimension is a property of the map, not of the observable's resolution. → e319 → SURVIVES (dimension min(r, 8 to 16)).
+- H127 The birth-level quotient carries the same function as the mid-level one in a different subspace. → e322 → SURVIVES (decoding 0.24 to 0.42 vs 0.21 to 0.45; overlap 0.05 to 0.12).
+- H128 Channels persist over the whole depth. → e320, e321 → NARROWED (in a fixed basis, GPT-2, Pythia, OLMo yes; Qwen and SmolLM2 no; with refitted bases only the subspace persists).
+- H129 The read-out from the coordinate is nonlinear while the coordinate is linear. → e323 → SURVIVES (kNN on 16 coordinates ≥ linear on the full descendant).
+- H130 The quotient is homogeneous, additive and flat. → e325, e326, e327, e337 → SURVIVES in the coordinate (homogeneity 0.75 to 1.00, additivity error 0.08 to 0.15, midpoints on the average 0.73 to 0.86); at the logits equivalence is weak.
+- H131 Equivalence is preserved by transport. → e328 → NARROWED (0.55 to 0.79 two blocks on, decaying toward random at the last block).
+- H132 The causal dimension expands beyond the linear range. → e329, e330 → KILLED (it collapses and the quotient rotates; all responses converge at 8×).
+- H133 Massive-channel perturbations share the ordinary quotient. → e331 → KILLED (own quotient, overlap 0.11 to 0.25; even response at 4× in OLMo).
+- H134 WDD atoms are a privileged basis of the quotient. → e332 → KILLED (rank, sparsity and concentration equal to random directions).
+- H135 The sparse ledger determines a block's functional coordinate. → e333 → KILLED (top atoms −0.24 to +0.30; the full ledger 0.14 to 0.40).
+- H136 Functional classes carry vocabulary meaning. → e334 → KILLED.
+- H137 There is a null space and equivalence classes are its cosets. → e336 → KILLED (no null directions; differences of equivalent atoms are full-strength).
+- H138 Fibres of the quotient have geometric structure. → e338 → KILLED (equal to random sets).
+
+## The quotient program, part 2 (session 31)
+
+- H139 The coordinate is largely implicit in the state and the source. → e339 → SURVIVES (R² 0.54 to 0.67 from the state alone, 0.45 to 0.74 from the source identity, 0.65 to 0.73 combined; SmolLM2 excepted).
+- H140 The supervised quotient adds target-specific information beyond the cloud's dominant directions. → e340, e347 → KILLED (shuffled-target quotient scores equal; PCA = PLS = CCA = kernel PCA).
+- H141 The later MLPs read the coordinate; attention barely does. → e341 → SURVIVES (MLP activation-change PCs R² 0.48 to 0.62; head norms 0.09 to 0.16).
+- H142 A perturbation family exists for which the quotient fails. → e342 → KILLED at 1× and 4× (minimum advantage 1.11).
+- H143 The quotient is context-general. → e343 → SURVIVES across positions and texts; NARROWED for token class (punctuation-and-number tokens have a narrower, asymmetric quotient).
+- H144 The response along core directions is linear to well beyond the natural amplitude. → e345 → SURVIVES (3× to 10×, Pythia beyond 30×; negligible curvature).
+- H145 The discarded dimensions are causally empty. → e346 → KILLED (they decode identity, function, future and token identity as well as the core).
+- H146 The core component carries the logit effect. → e348 → KILLED (1 to 6% restoration vs 15 to 18% for the physical descendant).
+- H147 The quotient, the cross-family convergence and the off-manifold funnel are born together in training. → e349 → SURVIVES (all by step 4000; function dimension 2 → 8 → 16 → 32).
+- H148 Attention transports a token's own image; MLPs damp it. → e351 → NARROWED (attention frozen: image unchanged at 0.90 to 0.96; MLPs frozen: gain 1.3 to 2.7 and image changed; both frozen: the identity path).
+- H149 The cross-token spread is attention alone and widens to the whole context. → e352 → SURVIVES (0.00 with attention frozen; 0.36 to 0.75 of the energy at other tokens by the last level, width 168 to 320 tokens).
+- H150 The coordinates form an algebra beyond pairs. → e353 → NARROWED (third-order residuals small; dense superposition leaves the linear range through the total norm).
+- H151 The low dimension is a kernel phenomenon. → e355 → NARROWED (functional kernel rank 4 to 22 with a long tail; coordinates align at 0.09 to 0.47).
+- H152 The same direction has one coordinate across contexts. → e356 → KILLED (coherence 0.25 to 0.41, unexplained by the state).
+
+## Attention, sinks, embeddings
+
+- H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
+- H10 The centering mean's sink contamination changes identification. → e120, e126 → KILLED (gap −0.01 to 0.03, recall unchanged; the sink atom is a first pick in 38 to 60% of typical supports, a caveat not a change).
+
+## Zero-sum computation
+
+- H11 A measurable fraction of MLP write energy never reaches the state (within-block and cross-block cancellation). → e141, e173 (GPT-2 within-block 0.5 to 0.7), e219 → NARROWED to GPT-2: its blocks keep 31 to 51% of their neurons' write energy; Qwen, OLMo, Pythia and SmolLM2 are constructive (coherence ratios 1.08 to 1.18, block 0 and the last block 2 to 4).
+
+## Training dynamics
+
+- H12 Erasure structure, the contraction, and read/write anti-alignment are learned, early, and in a fixed order. → e173 (checkpoints), e207, e209 (alignment 0 at init, −0.04 at step 1000, −0.18 at 4000), e217 → SURVIVES for "learned and early"; the order is OPEN (e217).
+
+## Artifacts retracted (never counted)
+
+- S1c, S1d per-token partner atoms overwrote shared rows; S1b near-orthogonal cancellers needed 8× energy (replaced by S1e, S1f, S2 v2). e54 attention-DC magnitude N-fold. e61 linear null-space measure trivially ~97%. e116 own-span energy trivially 1.0. e207 "LN vs weights" split (the post-norm gain is the through-norm gain divided by the normalization scale; e210 is the right decomposition). e275 unsigned transport residuals (superseded by e275b, which carries the coefficient sign).

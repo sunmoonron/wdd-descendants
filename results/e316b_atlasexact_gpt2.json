@@ -1,0 +1,64 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "prank": 11.600884437561035,
+ "class_sizes": [
+  249,
+  253,
+  185,
+  226,
+  272,
+  126,
+  143,
+  161,
+  149,
+  133,
+  196,
+  192,
+  177,
+  301,
+  178,
+  131
+ ],
+ "within_class_cos": 0.6009407043457031,
+ "class_ablation": {
+  "heavy": {
+   "coherence": 0.14802196621894836,
+   "cos_pred_actual": 0.3622400164604187,
+   "core_norm_per_weight": 0.036091148853302
+  },
+  "other": {
+   "coherence": 0.22122187912464142,
+   "cos_pred_actual": 0.350852906703949,
+   "core_norm_per_weight": 0.04525081813335419
+  },
+  "random": {
+   "coherence": 0.20153766870498657,
+   "cos_pred_actual": 0.39193248748779297,
+   "core_norm_per_weight": 0.04158268868923187
+  },
+  "n": 64
+ },
+ "substitution": {
+  "same_class": {
+   "logit_restoration": -0.22143089771270752,
+   "core_restoration": 0.11864185333251953,
+   "z_cos": 0.8227843046188354
+  },
+  "random": {
+   "logit_restoration": -0.029459834098815918,
+   "core_restoration": -0.008873581886291504,
+   "z_cos": 0.05913084000349045
+  }
+ },
+ "attribution": {
+  "ledger_to_core": 0.38236916065216064,
+  "atlas_logits": 0.030018504709005356,
+  "direct_logit": 0.16467221081256866,
+  "transport_readout": 0.05806794762611389
+ },
+ "_exp": "e316b_atlasexact_gpt2",
+ "_time": "2026-09-19 19:46:43"
+}

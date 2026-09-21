@@ -1,0 +1,47 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "overlaps": {
+  "forward_core_vs_backward": 0.037537261843681335,
+  "identity_core_vs_backward": 0.038558267056941986,
+  "descendant_pca_vs_backward": 0.033175162971019745,
+  "activation_pca_vs_backward": 0.05649365484714508,
+  "random_vs_backward": 0.01592174358665943,
+  "chance": 0.015625
+ },
+ "first_order": {
+  "correlation_over_tokens_and_directions": 0.45404496788978577,
+  "median_per_token_cos": 0.6454505920410156
+ },
+ "decoding": {
+  "intersection8": {
+   "identity": 0.5333333611488342,
+   "function": 0.19587290287017822,
+   "kl": 0.42221641540527344
+  },
+  "forward_core8": {
+   "identity": 0.41224491596221924,
+   "function": 0.16115540266036987,
+   "kl": 0.36272865533828735
+  },
+  "backward8": {
+   "identity": 0.35374149680137634,
+   "function": 0.13448455929756165,
+   "kl": 0.18352486193180084
+  },
+  "random8": {
+   "identity": 0.2530612349510193,
+   "function": 0.0887439176440239,
+   "kl": 0.24712875485420227
+  },
+  "full": {
+   "identity": 0.9836734533309937,
+   "function": 0.21150565147399902,
+   "kl": 0.3707582950592041
+  }
+ },
+ "_exp": "e308_fwdbwd_pythia410",
+ "_time": "2026-09-19 18:36:43"
+}

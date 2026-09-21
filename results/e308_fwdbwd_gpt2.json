@@ -1,0 +1,47 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "overlaps": {
+  "forward_core_vs_backward": 0.03354736417531967,
+  "identity_core_vs_backward": 0.02451780065894127,
+  "descendant_pca_vs_backward": 0.03364601731300354,
+  "activation_pca_vs_backward": 0.19791147112846375,
+  "random_vs_backward": 0.02331388369202614,
+  "chance": 0.020833333333333332
+ },
+ "first_order": {
+  "correlation_over_tokens_and_directions": 0.43795543909072876,
+  "median_per_token_cos": 0.6144033670425415
+ },
+ "decoding": {
+  "intersection8": {
+   "identity": 0.628808856010437,
+   "function": 0.38486507534980774,
+   "kl": 0.6310921311378479
+  },
+  "forward_core8": {
+   "identity": 0.6592797636985779,
+   "function": 0.37979090213775635,
+   "kl": 0.6011435389518738
+  },
+  "backward8": {
+   "identity": 0.3841181993484497,
+   "function": 0.30524060130119324,
+   "kl": 0.5409420728683472
+  },
+  "random8": {
+   "identity": 0.419205904006958,
+   "function": 0.27281439304351807,
+   "kl": 0.5365917682647705
+  },
+  "full": {
+   "identity": 0.9824561476707458,
+   "function": 0.4286479949951172,
+   "kl": 0.6532727479934692
+  }
+ },
+ "_exp": "e308_fwdbwd_gpt2",
+ "_time": "2026-09-19 18:36:56"
+}

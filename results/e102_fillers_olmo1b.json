@@ -1,0 +1,27 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "token_atoms_share_of_support": 0.1591106355190277,
+ "top200_token_fillers_share_of_token_selections": 0.028262841421732052,
+ "token_fillers": {
+  "train_count_median": 0.0,
+  "frac_unseen": 0.574999988079071,
+  "emb_norm_median": 0.2311212569475174,
+  "emb_norm_median_all": 0.19463801383972168
+ },
+ "spurious_mlp_share_of_mlp_selections": 0.48330560326576233,
+ "top200_mlp_fillers_share_of_spurious": 0.09513805941967769,
+ "n_distinct_spurious_mlp": 69046,
+ "after_pruning_400_fillers": {
+  "recall": 0.7172582745552063,
+  "fvu64": 0.4400440752506256,
+  "token_share_of_support": 0.15863296389579773,
+  "true_atoms_removed": 0.003427172778174281
+ },
+ "before": {
+  "recall": 0.7052631974220276,
+  "fvu64": 0.4303402900695801
+ },
+ "_exp": "e102_fillers_olmo1b",
+ "_time": "2026-09-19 04:07:57"
+}

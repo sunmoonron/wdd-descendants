@@ -1,0 +1,59 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "L2": 9,
+ "K": 24,
+ "injection_norm": 9.66089916229248,
+ "per_kind": {
+  "natural_descendant": {
+   "logit_response": 34.6347541809082,
+   "kl": 0.0053998385556042194,
+   "state_response": 1.149488925933838
+  },
+  "random_vector_descendant": {
+   "logit_response": 33.79764175415039,
+   "kl": 0.005389504134654999,
+   "state_response": 1.187010645866394
+  },
+  "write_vector": {
+   "logit_response": 32.20550537109375,
+   "kl": 0.004916898440569639,
+   "state_response": 1.118404746055603
+  },
+  "random": {
+   "logit_response": 32.96930694580078,
+   "kl": 0.005445584654808044,
+   "state_response": 1.159226655960083
+  },
+  "covariance_matched_random": {
+   "logit_response": 52.949771881103516,
+   "kl": 0.01479802280664444,
+   "state_response": 1.617293119430542
+  }
+ },
+ "ratios": {
+  "natural_over_random_vector_descendant": {
+   "logit_response": 1.0247683679484831,
+   "kl": 1.0019175086781675,
+   "state_response": 0.9683897359613239
+  },
+  "natural_over_write_vector": {
+   "logit_response": 1.0754296130994685,
+   "kl": 1.0982204779846194,
+   "state_response": 1.0277933189999977
+  },
+  "natural_over_random": {
+   "logit_response": 1.0505150817348177,
+   "kl": 0.991599414552589,
+   "state_response": 0.9915998049422179
+  },
+  "natural_over_covariance_matched_random": {
+   "logit_response": 0.6541058242645329,
+   "kl": 0.3649027053249063,
+   "state_response": 0.710748665237987
+  }
+ },
+ "_exp": "e276_leverage_gpt2",
+ "_time": "2026-09-19 16:05:31"
+}

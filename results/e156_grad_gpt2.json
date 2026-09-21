@@ -1,0 +1,21 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "NT": 8192,
+ "overlap_imp_vs_ledger_top3": 0.2226155698299408,
+ "top1_imp_is_ledger_top1": 0.15007337927818298,
+ "wdd_finds": {
+  "imp_top1_omp": 0.26235324144363403,
+  "imp_top1_dual": 0.6012719869613647,
+  "imp_top3_omp": 0.20980104804039001,
+  "imp_top3_dual": 0.4994699954986572,
+  "ledger_top1_omp": 0.665239691734314,
+  "ledger_top1_dual": 0.8118884563446045
+ },
+ "spearman_recovered_coef_vs_grad_importance": 0.3156348168849945,
+ "spearman_true_coef_vs_grad_importance": 0.594758927822113,
+ "spearman_prominence_vs_grad_sensitivity_real_writes": 0.03180206939578056,
+ "share_of_loss_attribution_in_wdd_support": 0.010632786899805069,
+ "_exp": "e156_grad_gpt2",
+ "_time": "2026-09-19 06:17:47"
+}

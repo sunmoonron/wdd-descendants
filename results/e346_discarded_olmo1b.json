@@ -1,0 +1,49 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "K": 28,
+ "per_input": {
+  "core16": {
+   "identity": 0.7683923840522766,
+   "function": 0.42889404296875,
+   "future": 0.45029354095458984,
+   "token_identity": 0.6014109253883362,
+   "token_chance": 0.02,
+   "position": 0.4340514838695526,
+   "sequence": 0.19863013923168182,
+   "sequence_chance": 0.0625
+  },
+  "complement_pca64": {
+   "identity": 0.7247956395149231,
+   "function": 0.3853013515472412,
+   "future": 0.45998984575271606,
+   "token_identity": 0.5767195820808411,
+   "token_chance": 0.02,
+   "position": 0.3636409044265747,
+   "sequence": 0.36986303329467773,
+   "sequence_chance": 0.0625
+  },
+  "random64": {
+   "identity": 0.7547683715820312,
+   "function": 0.3443671762943268,
+   "future": 0.390595942735672,
+   "token_identity": 0.6543209552764893,
+   "token_chance": 0.02,
+   "position": 0.23009522259235382,
+   "sequence": 0.26301372051239014,
+   "sequence_chance": 0.0625
+  },
+  "full": {
+   "identity": 0.9632152318954468,
+   "function": 0.34560883045196533,
+   "future": 0.43589022755622864,
+   "token_identity": 0.8483244776725769,
+   "token_chance": 0.02,
+   "position": 0.3893148899078369,
+   "sequence": 0.48767125606536865,
+   "sequence_chance": 0.0625
+  }
+ },
+ "_exp": "e346_discarded_olmo1b",
+ "_time": "2026-09-19 23:15:43"
+}

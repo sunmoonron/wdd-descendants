@@ -1,0 +1,40 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "N": 8192,
+ "K": 64,
+ "variants": {
+  "global_omp64": {
+   "recall1": 0.47242650389671326,
+   "recall3": 0.046078432351350784,
+   "real_share_of_mlp_atoms": 0.29260846972465515,
+   "mlp_share_of_support": 0.5300570726394653,
+   "sign_agree_real": 0.8078811168670654,
+   "med_rel_err": 0.3124234676361084,
+   "spurious_coef_mass": 0.6758694648742676,
+   "fvu_full_state": 0.2999984323978424
+  },
+  "delta_equal": {
+   "recall1": 0.8447304368019104,
+   "recall3": 0.42058825492858887,
+   "real_share_of_mlp_atoms": 0.7603003978729248,
+   "mlp_share_of_support": 0.5532903075218201,
+   "sign_agree_real": 0.7842053174972534,
+   "med_rel_err": 0.3469058573246002,
+   "spurious_coef_mass": 0.20641587674617767,
+   "fvu_full_state": 0.7593224048614502
+  },
+  "delta_energy": {
+   "recall1": 0.8654412031173706,
+   "recall3": 0.4808823764324188,
+   "real_share_of_mlp_atoms": 0.7705711126327515,
+   "mlp_share_of_support": 0.5820044875144958,
+   "sign_agree_real": 0.8037617206573486,
+   "med_rel_err": 0.34861454367637634,
+   "spurious_coef_mass": 0.1967826783657074,
+   "fvu_full_state": 0.7310913801193237
+  }
+ },
+ "_exp": "e44_pipeline_pythia410",
+ "_time": "2026-09-19 03:25:27"
+}

@@ -1,0 +1,48 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "results": {
+  "omp_s0.1": {
+   "frac_stable": 0.16742274165153503,
+   "precision_stable": 0.5758378505706787,
+   "precision_unstable": 0.13735534250736237,
+   "precision_base": 0.21076729893684387,
+   "dominant_recall_any": 0.6362301111221313,
+   "dominant_recall_stable": 0.5835985541343689,
+   "stable_rate_real": 0.4574160873889923,
+   "stable_rate_spurious": 0.08997900784015656
+  },
+  "omp_s0.3": {
+   "frac_stable": 0.08722460269927979,
+   "precision_stable": 0.7048324942588806,
+   "precision_unstable": 0.16355453431606293,
+   "precision_base": 0.21076729893684387,
+   "dominant_recall_any": 0.6362301111221313,
+   "dominant_recall_stable": 0.525091826915741,
+   "stable_rate_real": 0.2916901111602783,
+   "stable_rate_spurious": 0.032621391117572784
+  },
+  "dual_s0.1": {
+   "frac_stable": 0.9299954175949097,
+   "precision_stable": 0.33321404457092285,
+   "precision_unstable": 0.31165993213653564,
+   "precision_base": 0.3317051827907562,
+   "dominant_recall_any": 0.8007344007492065,
+   "dominant_recall_stable": 0.7877601385116577,
+   "stable_rate_real": 0.934225857257843,
+   "stable_rate_spurious": 0.9278956651687622
+  },
+  "dual_s0.3": {
+   "frac_stable": 0.8063226938247681,
+   "precision_stable": 0.3357178568840027,
+   "precision_unstable": 0.3149994909763336,
+   "precision_base": 0.3317051827907562,
+   "dominant_recall_any": 0.8007344007492065,
+   "dominant_recall_stable": 0.7662178874015808,
+   "stable_rate_real": 0.8160768151283264,
+   "stable_rate_spurious": 0.8014812469482422
+  }
+ },
+ "_exp": "e195_stability_gpt2",
+ "_time": "2026-09-19 09:11:01"
+}

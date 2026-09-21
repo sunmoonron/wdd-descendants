@@ -1,0 +1,72 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "N": 150,
+ "geometry": {
+  "3": {
+   "spearman_phys_vs_func": 0.16282133758068085,
+   "spearman_phys_vs_injected": 0.865497887134552,
+   "spearman_readout_vs_func": 0.06783097237348557
+  },
+  "4": {
+   "spearman_phys_vs_func": 0.18752987682819366,
+   "spearman_phys_vs_injected": 0.7840787768363953,
+   "spearman_readout_vs_func": 0.13121892511844635
+  },
+  "6": {
+   "spearman_phys_vs_func": 0.28522789478302,
+   "spearman_phys_vs_injected": 0.614919126033783,
+   "spearman_readout_vs_func": 0.23579393327236176
+  },
+  "12": {
+   "spearman_phys_vs_func": 0.38071706891059875,
+   "spearman_phys_vs_injected": 0.35261648893356323,
+   "spearman_readout_vs_func": 0.5089574456214905
+  },
+  "14": {
+   "spearman_phys_vs_func": 0.3921298384666443,
+   "spearman_phys_vs_injected": 0.31088075041770935,
+   "spearman_readout_vs_func": 0.5068601965904236
+  },
+  "22": {
+   "spearman_phys_vs_func": 0.40444523096084595,
+   "spearman_phys_vs_injected": 0.1473577916622162,
+   "spearman_readout_vs_func": 0.7285910844802856
+  }
+ },
+ "contraction": {
+  "3->4": {
+   "median": 0.9997782707214355,
+   "frac_below_one": 0.5003132224082947
+  },
+  "4->6": {
+   "median": 0.996977686882019,
+   "frac_below_one": 0.5113199353218079
+  },
+  "6->12": {
+   "median": 0.999921977519989,
+   "frac_below_one": 0.500223696231842
+  },
+  "12->14": {
+   "median": 0.9944427609443665,
+   "frac_below_one": 0.5244742631912231
+  },
+  "14->22": {
+   "median": 0.9525595307350159,
+   "frac_below_one": 0.7143624424934387
+  }
+ },
+ "multiplicity": {
+  "functionally_close_pairs": 559,
+  "of_which_physically_far_at_injection": 0.42397135496139526,
+  "of_which_physically_far_at_L": 0.22182467579841614,
+  "of_which_cross_family": 0.635062575340271,
+  "cross_family_baseline": 0.6711409687995911,
+  "prank_physical_injected": 127.3332290649414,
+  "prank_physical_L": 93.05542755126953,
+  "prank_functional": 60.280391693115234
+ },
+ "_exp": "e311_quotient_pythia410",
+ "_time": "2026-09-19 18:49:24"
+}

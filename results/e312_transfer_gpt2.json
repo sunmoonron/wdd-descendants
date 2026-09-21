@@ -1,0 +1,51 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "per_level": {
+  "6": {
+   "core_transfer": {
+    "function_cross": 0.16473665460944176,
+    "function_own": 0.2230479598045349,
+    "function_random": 0.13484024107456208,
+    "identity_cross": 0.292053509876132,
+    "identity_own": 0.675773873925209,
+    "identity_random": 0.4559959679841995
+   },
+   "metric_transfer": {
+    "euclid": 0.3245005220174789,
+    "own_metric": 0.5582709312438965,
+    "cross_metric": 0.2201732113957405
+   }
+  },
+  "10": {
+   "core_transfer": {
+    "function_cross": 0.3145287990570068,
+    "function_own": 0.3444124758243561,
+    "function_random": 0.16291074454784393,
+    "identity_cross": 0.07340399045497178,
+    "identity_own": 0.11929882913827897,
+    "identity_random": 0.148433405905962
+   },
+   "metric_transfer": {
+    "euclid": 0.3402978777885437,
+    "own_metric": 0.5689652323722839,
+    "cross_metric": 0.4204545706510544
+   }
+  }
+ },
+ "superposition": {
+  "functionally_similar": {
+   "n": 12,
+   "cos": 0.9924768259127935,
+   "rel_error": 0.1266142837703228
+  },
+  "functionally_dissimilar": {
+   "n": 12,
+   "cos": 0.9913974006970724,
+   "rel_error": 0.13602286453048387
+  }
+ },
+ "_exp": "e312_transfer_gpt2",
+ "_time": "2026-09-19 18:50:58"
+}

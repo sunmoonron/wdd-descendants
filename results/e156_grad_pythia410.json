@@ -1,0 +1,21 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "NT": 8192,
+ "overlap_imp_vs_ledger_top3": 0.2979329526424408,
+ "top1_imp_is_ledger_top1": 0.2457108050584793,
+ "wdd_finds": {
+  "imp_top1_omp": 0.3238970637321472,
+  "imp_top1_dual": 0.46127453446388245,
+  "imp_top3_omp": 0.23039215803146362,
+  "imp_top3_dual": 0.35375818610191345,
+  "ledger_top1_omp": 0.500735342502594,
+  "ledger_top1_dual": 0.6803922057151794
+ },
+ "spearman_recovered_coef_vs_grad_importance": 0.3435375392436981,
+ "spearman_true_coef_vs_grad_importance": 0.6793349981307983,
+ "spearman_prominence_vs_grad_sensitivity_real_writes": 0.0022072289139032364,
+ "share_of_loss_attribution_in_wdd_support": 0.0023138944525271654,
+ "_exp": "e156_grad_pythia410",
+ "_time": "2026-09-19 06:24:11"
+}

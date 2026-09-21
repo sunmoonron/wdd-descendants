@@ -1,0 +1,24 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "n_neurons": 96,
+ "within_neuron_auc_prominence": 0.8204643955352171,
+ "between_r2": {
+  "mean_prominence": 0.6445097327232361,
+  "mean_abs_coef": 0.012827038764953613,
+  "coherence": 0.010503888130187988,
+  "write_norm": 0.01618051528930664,
+  "prominence_plus_geometry": 0.6687926054000854,
+  "geometry_only": 0.02396523952484131
+ },
+ "matched_pairs_same_neuron": {
+  "n_pairs": 126294,
+  "higher_prominence_wins": 0.060517522605982865,
+  "ties": 0.9232188385829889,
+  "loses": 0.016263638811028235
+ },
+ "residual_between_neuron_sd_after_prominence": 0.23778025805950165,
+ "between_neuron_sd_raw": 0.40984055399894714,
+ "_exp": "e130_phenotype_qwen05",
+ "_time": "2026-09-19 06:08:49"
+}

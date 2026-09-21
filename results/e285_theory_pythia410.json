@@ -1,0 +1,99 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "gain_by_direction": {
+  "top8": {
+   "gain": 0.33382391929626465,
+   "cos_to_predicted_output": 0.3871673345565796,
+   "operator_sv": 1.5371416807174683
+  },
+  "mid8": {
+   "gain": 0.22153374552726746,
+   "cos_to_predicted_output": 0.39780813455581665,
+   "operator_sv": 0.2554433345794678
+  },
+  "bottom8": {
+   "gain": 0.17281731963157654,
+   "cos_to_predicted_output": 0.013166944496333599,
+   "operator_sv": 0.0008194561814889312
+  },
+  "random8": {
+   "gain": 0.265514999628067,
+   "cos_to_predicted_output": 0.45577093958854675,
+   "operator_sv": 0.5181941390037537
+  }
+ },
+ "pair_cosines": {
+  "top8": {
+   "measured": 0.814414918422699,
+   "predicted": 0.8291865587234497,
+   "rho": 1.3082478046417236
+  },
+  "bottom8": {
+   "measured": 0.514976441860199,
+   "predicted": 0.580712616443634,
+   "rho": 0.629081130027771
+  },
+  "random8": {
+   "measured": 0.7226063013076782,
+   "predicted": 0.7516814470291138,
+   "rho": 1.0051466226577759
+  }
+ },
+ "additivity": {
+  "constant_total_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.6513324975967407,
+   "cos": 0.7644455432891846
+  },
+  "constant_per_write_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.6513324975967407,
+   "cos": 0.7644455432891846
+  },
+  "constant_total_norm_m2": {
+   "total_norm": 1.0,
+   "additivity_error": 0.6117978096008301,
+   "cos": 0.7993510961532593
+  },
+  "constant_per_write_norm_m2": {
+   "total_norm": 1.4079198034172666,
+   "additivity_error": 0.6147677898406982,
+   "cos": 0.7965712547302246
+  },
+  "constant_total_norm_m4": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5396282076835632,
+   "cos": 0.8454826474189758
+  },
+  "constant_per_write_norm_m4": {
+   "total_norm": 2.041884838582749,
+   "additivity_error": 0.5439543128013611,
+   "cos": 0.8417933583259583
+  },
+  "constant_total_norm_m8": {
+   "total_norm": 1.0,
+   "additivity_error": 0.44660764932632446,
+   "cos": 0.8965318202972412
+  },
+  "constant_per_write_norm_m8": {
+   "total_norm": 2.8183795474740525,
+   "additivity_error": 0.4584927260875702,
+   "cos": 0.8891782760620117
+  },
+  "constant_total_norm_m16": {
+   "total_norm": 1.0,
+   "additivity_error": 0.24496473371982574,
+   "cos": 0.971040666103363
+  },
+  "constant_per_write_norm_m16": {
+   "total_norm": 3.9765143046250624,
+   "additivity_error": 0.3419089913368225,
+   "cos": 0.939831018447876
+  }
+ },
+ "rms_sv": 0.5181941390037537,
+ "_exp": "e285_theory_pythia410",
+ "_time": "2026-09-19 16:46:45"
+}

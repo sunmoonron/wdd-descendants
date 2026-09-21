@@ -1,0 +1,190 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "future": 14,
+ "per_family": {
+  "alpha_0.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9996737241744995
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1240370124578476
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.23510251939296722
+   },
+   "physical_prank": 400.98486328125,
+   "gain": 0.6868223547935486,
+   "logit_response": 15.210149765014648,
+   "manifold_fraction": 9.898154296195116e-09
+  },
+  "alpha_0.1": {
+   "identity": {
+    "dim": 8,
+    "full": 0.999344527721405
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1227845549583435
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.23829491436481476
+   },
+   "physical_prank": 396.78533935546875,
+   "gain": 0.6871888637542725,
+   "logit_response": 15.295693397521973,
+   "manifold_fraction": 0.005151296965777874
+  },
+  "alpha_0.25": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9996711015701294
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.12108197808265686
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.23723600804805756
+   },
+   "physical_prank": 387.005859375,
+   "gain": 0.6982241868972778,
+   "logit_response": 15.368674278259277,
+   "manifold_fraction": 0.032213009893894196
+  },
+  "alpha_0.5": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.12305152416229248
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.23122446238994598
+   },
+   "physical_prank": 379.5058898925781,
+   "gain": 0.7138887643814087,
+   "logit_response": 15.970375061035156,
+   "manifold_fraction": 0.1289573311805725
+  },
+  "alpha_0.75": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.12580668926239014
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.2421942502260208
+   },
+   "physical_prank": 370.3800354003906,
+   "gain": 0.7481595873832703,
+   "logit_response": 16.79958724975586,
+   "manifold_fraction": 0.2902390956878662
+  },
+  "alpha_1.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9996718168258667
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.12112613022327423
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.2446747124195099
+   },
+   "physical_prank": 344.8490905761719,
+   "gain": 0.7899179458618164,
+   "logit_response": 17.81258201599121,
+   "manifold_fraction": 0.5149542689323425
+  },
+  "heavy_tailed": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9993521571159363
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.11907584965229034
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.23193104565143585
+   },
+   "physical_prank": 402.22393798828125,
+   "gain": 0.7055004835128784,
+   "logit_response": 15.638243675231934,
+   "manifold_fraction": 0.059943363070487976
+  },
+  "sparse5": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9993348717689514
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.11522513628005981
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.21238139271736145
+   },
+   "physical_prank": 400.50469970703125,
+   "gain": 0.6953190565109253,
+   "logit_response": 15.281828880310059,
+   "manifold_fraction": 0.056921783834695816
+  },
+  "lowrank4": {
+   "identity": {
+    "dim": 4,
+    "full": 0.9027732610702515
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.13985353708267212
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.2680031955242157
+   },
+   "physical_prank": 139.19862365722656,
+   "gain": 0.701262891292572,
+   "logit_response": 15.404120445251465,
+   "manifold_fraction": 0.0531250424683094
+  },
+  "shuffled_states": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9750738143920898
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.12863154709339142
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.24236643314361572
+   },
+   "physical_prank": 339.96337890625,
+   "gain": 0.6997278332710266,
+   "logit_response": 15.529308319091797,
+   "manifold_fraction": 0.06070038676261902
+  }
+ },
+ "_exp": "e310_manifold_pythia410",
+ "_time": "2026-09-19 18:47:35"
+}

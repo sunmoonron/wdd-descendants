@@ -1,0 +1,44 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "per_variant": {
+  "normal": {
+   "dim": 32,
+   "own": 0.07544103264808655,
+   "gain": 1.2003618478775024,
+   "overlap_with_normal": 0.9998745322227478,
+   "centroid_cos_with_normal": 1.0,
+   "identity": 0.4086378514766693,
+   "logit_response": 15.919709205627441
+  },
+  "attention_frozen": {
+   "dim": 32,
+   "own": 0.09399250149726868,
+   "gain": 0.9870628714561462,
+   "overlap_with_normal": 0.4527938663959503,
+   "centroid_cos_with_normal": 0.9619768857955933,
+   "identity": 0.7302325367927551,
+   "logit_response": 11.342266082763672
+  },
+  "mlp_frozen": {
+   "dim": 16,
+   "own": 0.44254863262176514,
+   "gain": 2.6900691986083984,
+   "overlap_with_normal": 0.05383891612291336,
+   "centroid_cos_with_normal": 0.2813383936882019,
+   "identity": 0.10697674006223679,
+   "logit_response": 40.78783416748047
+  },
+  "both_frozen": {
+   "dim": 1,
+   "own": 0.15831899642944336,
+   "gain": 1.0,
+   "overlap_with_normal": 0.046054668724536896,
+   "centroid_cos_with_normal": 0.4734482169151306,
+   "identity": 0.9999999403953552,
+   "logit_response": 8.88466739654541
+  }
+ },
+ "_exp": "e351_comptransport_smollm2",
+ "_time": "2026-09-19 23:19:16"
+}

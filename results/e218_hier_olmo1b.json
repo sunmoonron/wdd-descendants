@@ -1,0 +1,36 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "results": {
+  "omp": {
+   "neuron_recall": 0.7006036639213562,
+   "block_recall": 0.9866209626197815,
+   "block_control": 0.9740577340126038,
+   "best_atom_exact": 0.7006036639213562,
+   "best_atom_same_block": 0.037852831184864044,
+   "best_atom_other": 0.26154348254203796,
+   "best_atom_cos": 0.9999999403953552,
+   "block_energy_rho": 0.3166666328907013,
+   "block_energy_rho_control": -0.09999999403953552,
+   "head_recall": 0.0,
+   "head_control": 0.0,
+   "n_att": 1
+  },
+  "dual": {
+   "neuron_recall": 0.8301517367362976,
+   "block_recall": 0.9151574373245239,
+   "block_control": 0.8949257731437683,
+   "best_atom_exact": 0.8301517367362976,
+   "best_atom_same_block": 0.019905367866158485,
+   "best_atom_other": 0.14994288980960846,
+   "best_atom_cos": 1.0,
+   "block_energy_rho": 0.3166666328907013,
+   "block_energy_rho_control": 0.03333333134651184,
+   "head_recall": 0.0,
+   "head_control": 0.0,
+   "n_att": 1
+  }
+ },
+ "_exp": "e218_hier_olmo1b",
+ "_time": "2026-09-19 12:21:44"
+}

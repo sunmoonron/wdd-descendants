@@ -1,0 +1,47 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "K": 23,
+ "overlaps": {
+  "forward_core_vs_backward": 0.06544089317321777,
+  "identity_core_vs_backward": 0.04491513967514038,
+  "descendant_pca_vs_backward": 0.06379546970129013,
+  "activation_pca_vs_backward": 0.07116829603910446,
+  "random_vs_backward": 0.024979326874017715,
+  "chance": 0.027777777777777776
+ },
+ "first_order": {
+  "correlation_over_tokens_and_directions": -0.018918385729193687,
+  "median_per_token_cos": 0.4506673812866211
+ },
+ "decoding": {
+  "intersection8": {
+   "identity": 0.37828370928764343,
+   "function": 0.3404363989830017,
+   "kl": 0.35581105947494507
+  },
+  "forward_core8": {
+   "identity": 0.43957966566085815,
+   "function": 0.3326030373573303,
+   "kl": 0.31936487555503845
+  },
+  "backward8": {
+   "identity": 0.25218912959098816,
+   "function": 0.22815454006195068,
+   "kl": 0.24635356664657593
+  },
+  "random8": {
+   "identity": 0.25744307041168213,
+   "function": 0.20545056462287903,
+   "kl": 0.2429414838552475
+  },
+  "full": {
+   "identity": 0.6935201287269592,
+   "function": 0.39634352922439575,
+   "kl": 0.4202198088169098
+  }
+ },
+ "_exp": "e308_fwdbwd_smollm2",
+ "_time": "2026-09-19 18:37:55"
+}

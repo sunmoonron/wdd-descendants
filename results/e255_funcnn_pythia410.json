@@ -1,0 +1,31 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "knn_functional_similarity": {
+  "descendant": 0.1542215347290039,
+  "write": 0.11896646022796631,
+  "random": 0.17460577189922333,
+  "descendant_excl_massive": 0.1559986174106598,
+  "write_excl_massive": 0.11747951805591583
+ },
+ "gram_spearman": {
+  "desc_logit": 0.3052554726600647,
+  "write_logit": 0.10137426108121872
+ },
+ "heldout_functional_prediction_cos": {
+  "descendant": 0.33972620964050293,
+  "write": 0.28042787313461304,
+  "random": 0.2967914342880249
+ },
+ "conditional": {
+  "func_sim_dissimilar_writes_similar_descendants": 0.17917369306087494,
+  "func_sim_dissimilar_writes_dissimilar_descendants": 0.051901210099458694,
+  "func_sim_similar_writes": 0.14443139731884003,
+  "func_sim_all": 0.12077731639146805,
+  "n_pairs_lo_w_hi_d": 39
+ },
+ "_exp": "e255_funcnn_pythia410",
+ "_time": "2026-09-19 14:24:42"
+}

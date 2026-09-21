@@ -1,0 +1,28 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "most_prominent": {
+  "rank_median": 3.0,
+  "rank_q90": 919.0,
+  "frac_rank0": 0.30820074677467346,
+  "frac_rank_lt3": 0.47686660289764404,
+  "relmag_median": 0.7330986857414246,
+  "recall": {
+   "omp": 0.7451652884483337,
+   "dual": 0.9698898792266846,
+   "lasso": 0.9929009079933167
+  }
+ },
+ "largest_intact": {
+  "frac_tokens_with_intact_write": 1.0,
+  "recall": {
+   "omp": 0.643574059009552,
+   "dual": 0.8139535188674927,
+   "lasso": 0.8565483689308167
+  },
+  "relmag_median": 1.0,
+  "frac_rank0": 0.9720930457115173
+ },
+ "_exp": "e119_target_gpt2",
+ "_time": "2026-09-19 04:20:34"
+}

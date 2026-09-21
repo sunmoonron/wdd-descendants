@@ -1,0 +1,101 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "inverse": {
+  "frac_L_neighbours_in_D5": 0.5833333134651184,
+  "chance": 0.21739130434782608,
+  "mean_D_sim_of_L_neighbours": 0.1486664116382599,
+  "mean_D_sim_random": 0.12172243744134903,
+  "many_to_one_share": 0.07246376811594203
+ },
+ "tracking": {
+  "2": {
+   "w_neighbour_rank_in_D": 0.0,
+   "l_neighbour_rank_in_D": 5.0
+  },
+  "3": {
+   "w_neighbour_rank_in_D": 3.0,
+   "l_neighbour_rank_in_D": 3.0
+  },
+  "4": {
+   "w_neighbour_rank_in_D": 3.0,
+   "l_neighbour_rank_in_D": 4.0
+  },
+  "5": {
+   "w_neighbour_rank_in_D": 2.0,
+   "l_neighbour_rank_in_D": 4.0
+  },
+  "6": {
+   "w_neighbour_rank_in_D": 1.0,
+   "l_neighbour_rank_in_D": 2.0
+  },
+  "7": {
+   "w_neighbour_rank_in_D": 1.0,
+   "l_neighbour_rank_in_D": 3.0
+  },
+  "8": {
+   "w_neighbour_rank_in_D": 3.0,
+   "l_neighbour_rank_in_D": 2.0
+  },
+  "9": {
+   "w_neighbour_rank_in_D": 2.0,
+   "l_neighbour_rank_in_D": 1.0
+  },
+  "10": {
+   "w_neighbour_rank_in_D": 3.0,
+   "l_neighbour_rank_in_D": 1.0
+  },
+  "11": {
+   "w_neighbour_rank_in_D": 6.0,
+   "l_neighbour_rank_in_D": 3.0
+  }
+ },
+ "first_w_over": null,
+ "first_l_under": 2,
+ "capacity": {
+  "1": {
+   "causal_kl_spearman": 0.42052412033081055,
+   "identity": 0.02242990769445896
+  },
+  "2": {
+   "causal_kl_spearman": 0.4903636872768402,
+   "identity": 0.2046729028224945
+  },
+  "4": {
+   "causal_kl_spearman": 0.5801929235458374,
+   "identity": 0.4224299192428589
+  },
+  "8": {
+   "causal_kl_spearman": 0.5867427587509155,
+   "identity": 0.5121495723724365
+  },
+  "16": {
+   "causal_kl_spearman": 0.6081129908561707,
+   "identity": 0.6579439640045166
+  },
+  "32": {
+   "causal_kl_spearman": 0.6328420042991638,
+   "identity": 0.8121495842933655
+  },
+  "64": {
+   "causal_kl_spearman": 0.6653271317481995,
+   "identity": 0.9102804064750671
+  },
+  "128": {
+   "causal_kl_spearman": 0.6342242360115051,
+   "identity": 0.9401869177818298
+  },
+  "256": {
+   "causal_kl_spearman": 0.6446044445037842,
+   "identity": 0.955140233039856
+  },
+  "768": {
+   "causal_kl_spearman": 0.6390203237533569,
+   "identity": 0.9710280895233154
+  }
+ },
+ "_exp": "e265_track_gpt2",
+ "_time": "2026-09-19 14:46:06"
+}

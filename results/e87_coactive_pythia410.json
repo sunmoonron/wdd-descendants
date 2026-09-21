@@ -1,0 +1,24 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "top3_signed_cos": {
+  "median": 0.029287520796060562,
+  "mean": 0.06878630071878433,
+  "frac_cancel_below_m0p3": 0.006740196142345667,
+  "frac_reinforce_above_0p3": 0.06711601465940475,
+  "frac_abs_below_0p1": 0.7209967374801636
+ },
+ "top8_signed_cos": {
+  "median": 0.018208259716629982,
+  "frac_cancel_below_m0p3": 0.004735644441097975,
+  "frac_reinforce_above_0p3": 0.028803396970033646
+ },
+ "top1_vs_attention_signed_cos": {
+  "median": 0.05182591453194618,
+  "frac_cancel": 0.000367647095117718,
+  "frac_reinforce": 0.0009803922148421407
+ },
+ "top12_pair_signed_cos_median": 0.036546915769577026,
+ "_exp": "e87_coactive_pythia410",
+ "_time": "2026-09-19 04:00:26"
+}

@@ -1,0 +1,190 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "future": 8,
+ "per_family": {
+  "alpha_0.0": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.24651195108890533
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.39281269907951355
+   },
+   "physical_prank": 189.7746124267578,
+   "gain": 0.981295645236969,
+   "logit_response": 25.50861167907715,
+   "manifold_fraction": 9.400158873518194e-09
+  },
+  "alpha_0.1": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.23648491501808167
+   },
+   "future": {
+    "dim": 64,
+    "full": 0.3749834895133972
+   },
+   "physical_prank": 200.54071044921875,
+   "gain": 1.0223921537399292,
+   "logit_response": 26.535017013549805,
+   "manifold_fraction": 0.006603318732231855
+  },
+  "alpha_0.25": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9987244606018066
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1727110743522644
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3167429268360138
+   },
+   "physical_prank": 224.15110778808594,
+   "gain": 1.2138216495513916,
+   "logit_response": 33.24971008300781,
+   "manifold_fraction": 0.04114827513694763
+  },
+  "alpha_0.5": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9705215692520142
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.18642671406269073
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.28513121604919434
+   },
+   "physical_prank": 181.7984161376953,
+   "gain": 1.744055151939392,
+   "logit_response": 56.25224304199219,
+   "manifold_fraction": 0.16395458579063416
+  },
+  "alpha_0.75": {
+   "identity": {
+    "dim": 16,
+    "full": 0.8970025181770325
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.24846771359443665
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.2987719178199768
+   },
+   "physical_prank": 157.94949340820312,
+   "gain": 2.444286584854126,
+   "logit_response": 94.201904296875,
+   "manifold_fraction": 0.36843863129615784
+  },
+  "alpha_1.0": {
+   "identity": {
+    "dim": 32,
+    "full": 0.7703412175178528
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.32215338945388794
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.31528380513191223
+   },
+   "physical_prank": 156.3192138671875,
+   "gain": 3.3249640464782715,
+   "logit_response": 139.86627197265625,
+   "manifold_fraction": 0.6618283987045288
+  },
+  "heavy_tailed": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9986833333969116
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.21750400960445404
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3746117353439331
+   },
+   "physical_prank": 206.23873901367188,
+   "gain": 1.039610505104065,
+   "logit_response": 28.30528450012207,
+   "manifold_fraction": 0.08449757844209671
+  },
+  "sparse5": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.2705603539943695
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.40665608644485474
+   },
+   "physical_prank": 184.03480529785156,
+   "gain": 0.975678563117981,
+   "logit_response": 25.458887100219727,
+   "manifold_fraction": 0.0761747732758522
+  },
+  "lowrank4": {
+   "identity": {
+    "dim": 4,
+    "full": 0.9713448882102966
+   },
+   "function": {
+    "dim": 32,
+    "full": 0.23113292455673218
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.38625669479370117
+   },
+   "physical_prank": 50.844783782958984,
+   "gain": 1.0603982210159302,
+   "logit_response": 27.38703155517578,
+   "manifold_fraction": 0.08235017955303192
+  },
+  "shuffled_states": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.2332969307899475
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3694574236869812
+   },
+   "physical_prank": 136.94918823242188,
+   "gain": 1.057706356048584,
+   "logit_response": 28.186969757080078,
+   "manifold_fraction": 0.08282770961523056
+  }
+ },
+ "_exp": "e310_manifold_gpt2",
+ "_time": "2026-09-19 18:47:34"
+}

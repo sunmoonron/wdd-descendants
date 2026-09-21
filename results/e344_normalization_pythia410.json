@@ -1,0 +1,44 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "per_variant": {
+  "standard": {
+   "dim": 32,
+   "own": 0.09218153357505798,
+   "random": 0.03896515071392059,
+   "identity": 0.818030595779419,
+   "gain": 0.6966766715049744,
+   "logit_response": 15.41844654083252,
+   "overlap_with_standard": 0.9998995065689087
+  },
+  "norm_preserving": {
+   "dim": 32,
+   "own": 0.09899191558361053,
+   "random": 0.040241651237010956,
+   "identity": 0.8632734417915344,
+   "gain": 0.6978635787963867,
+   "logit_response": 15.511030197143555,
+   "overlap_with_standard": 0.3338134288787842
+  },
+  "norm_only_x2": {
+   "dim": 16,
+   "own": 0.44041770696640015,
+   "random": 0.32959437370300293,
+   "identity": 0.05921490117907524,
+   "gain": 9.781717300415039,
+   "logit_response": 240.68934631347656,
+   "overlap_with_standard": 0.11803041398525238
+  },
+  "amplitude_x4": {
+   "dim": 32,
+   "own": 0.14582663774490356,
+   "random": 0.08703871071338654,
+   "identity": 0.7877578139305115,
+   "gain": 2.898296594619751,
+   "logit_response": 66.19330596923828,
+   "overlap_with_standard": 0.31789731979370117
+  }
+ },
+ "_exp": "e344_normalization_pythia410",
+ "_time": "2026-09-19 23:26:26"
+}

@@ -1,0 +1,105 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "future": 17,
+ "per_family": {
+  "wdd_writes": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9677523970603943
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.11976484209299088
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3435230255126953
+   },
+   "reconstruction": {
+    "dim": 512,
+    "full": 0.9999999356057804
+   },
+   "gain": 1.1855970621109009
+  },
+  "random": {
+   "identity": {
+    "dim": 16,
+    "full": 0.9803858399391174
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.11117260903120041
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3487823009490967
+   },
+   "reconstruction": {
+    "dim": 512,
+    "full": 0.9999999396417045
+   },
+   "gain": 1.2011518478393555
+  },
+  "cov_matched_random": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9977094531059265
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.15107227861881256
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.5594701766967773
+   },
+   "reconstruction": {
+    "dim": 512,
+    "full": 0.9999999441235168
+   },
+   "gain": 1.230124592781067
+  },
+  "attention_writes": {
+   "identity": {
+    "dim": 32,
+    "full": 0.9206714630126953
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.09894071519374847
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.31423458456993103
+   },
+   "reconstruction": {
+    "dim": 512,
+    "full": 0.9999999397973013
+   },
+   "gain": 1.227379560470581
+  },
+  "later_mlp_writes": {
+   "identity": {
+    "dim": 32,
+    "full": 0.8987554311752319
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.09700784087181091
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.2791646718978882
+   },
+   "reconstruction": {
+    "dim": 512,
+    "full": 0.9999999372401387
+   },
+   "gain": 1.1463165283203125
+  }
+ },
+ "_exp": "e304_families_smollm2",
+ "_time": "2026-09-19 18:14:30"
+}

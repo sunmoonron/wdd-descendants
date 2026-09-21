@@ -1,0 +1,44 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "per_variant": {
+  "normal": {
+   "dim": 16,
+   "own": 0.08129161596298218,
+   "gain": 0.7107617259025574,
+   "overlap_with_normal": 0.9998610019683838,
+   "centroid_cos_with_normal": 1.0,
+   "identity": 0.7228314876556396,
+   "logit_response": 12.6940279006958
+  },
+  "attention_frozen": {
+   "dim": 16,
+   "own": 0.08193492144346237,
+   "gain": 0.6242436170578003,
+   "overlap_with_normal": 0.2965131998062134,
+   "centroid_cos_with_normal": 0.9004871845245361,
+   "identity": 0.9946826100349426,
+   "logit_response": 10.192449569702148
+  },
+  "mlp_frozen": {
+   "dim": 4,
+   "own": 0.27719646692276,
+   "gain": 1.4869298934936523,
+   "overlap_with_normal": 0.02921825647354126,
+   "centroid_cos_with_normal": 0.46315109729766846,
+   "identity": 0.7032236456871033,
+   "logit_response": 25.828874588012695
+  },
+  "both_frozen": {
+   "dim": 1,
+   "own": 0.11380242556333542,
+   "gain": 1.0,
+   "overlap_with_normal": 0.04782953858375549,
+   "centroid_cos_with_normal": 0.513400673866272,
+   "identity": 1.0,
+   "logit_response": 12.067809104919434
+  }
+ },
+ "_exp": "e351_comptransport_olmo1b",
+ "_time": "2026-09-19 23:18:56"
+}

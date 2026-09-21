@@ -1,0 +1,43 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "per_level": {
+  "6": {
+   "natural": 0.9096478223800659,
+   "chance": 0.027777777777777776,
+   "n_test": 653,
+   "n_foreign": 4894,
+   "transplant_x1": 0.5474050045013428,
+   "transplant_x0.5": 0.5449529886245728,
+   "transplant_x2": 0.552104651927948,
+   "random_max_share": 0.17981201471189212,
+   "random_acc": 0.023906825110316277,
+   "pair_both_in_top2": 0.12484675645828247,
+   "pair_one_in_top1": 0.599305272102356,
+   "within_cos_transplant": 0.17386473715305328,
+   "between_cos_transplant": 0.01081164926290512,
+   "within_cos_natural": 0.5119996070861816,
+   "between_cos_natural": 0.23355920612812042
+  },
+  "12": {
+   "natural": 0.8820827007293701,
+   "chance": 0.027777777777777776,
+   "n_test": 653,
+   "n_foreign": 4894,
+   "transplant_x1": 0.3602370321750641,
+   "transplant_x0.5": 0.3530854284763336,
+   "transplant_x2": 0.3641193211078644,
+   "random_max_share": 0.1085002043318349,
+   "random_acc": 0.027789130806922913,
+   "pair_both_in_top2": 0.05700858309864998,
+   "pair_one_in_top1": 0.43400081992149353,
+   "within_cos_transplant": 0.14482273161411285,
+   "between_cos_transplant": 0.008004154078662395,
+   "within_cos_natural": 0.3397890627384186,
+   "between_cos_natural": 0.17375093698501587
+  }
+ },
+ "_exp": "e231_sigsource_qwen05",
+ "_time": "2026-09-19 12:51:08"
+}

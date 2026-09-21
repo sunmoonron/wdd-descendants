@@ -1,0 +1,24 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 28,
+ "similar": {
+  "n_tokens": 201,
+  "mean_desc_sim": 0.746493399143219,
+  "mean_write_sim": -0.016133658587932587,
+  "repair_logits": 0.003645956516265869,
+  "repair_state": -0.003072381019592285,
+  "cos_sub_rm_logits": 0.998609185218811
+ },
+ "control": {
+  "n_tokens": 256,
+  "mean_desc_sim": 0.30236873030662537,
+  "mean_write_sim": -0.018903518095612526,
+  "repair_logits": -0.014284253120422363,
+  "repair_state": -0.028827309608459473,
+  "cos_sub_rm_logits": 0.9951443672180176
+ },
+ "_exp": "e262_interchange_qwen05",
+ "_time": "2026-09-19 14:37:54"
+}

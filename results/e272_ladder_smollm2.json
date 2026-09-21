@@ -1,0 +1,88 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "K": 23,
+ "per_level": {
+  "3": {
+   "reconstruction": 256,
+   "identity": 8,
+   "function": 32,
+   "behaviour": 64,
+   "full": {
+    "reconstruction": -0.00012211190018640572,
+    "identity": 0.9500000476837158,
+    "function": 0.3697378933429718,
+    "behaviour": 0.4287262260913849
+   },
+   "fvu_at_32": 0.006054883653661136
+  },
+  "4": {
+   "reconstruction": 256,
+   "identity": 16,
+   "function": 16,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": -0.0001230169022119476,
+    "identity": 0.9383333325386047,
+    "function": 0.37173062562942505,
+    "behaviour": 0.3971107006072998
+   },
+   "fvu_at_32": 0.014213885128601778
+  },
+  "6": {
+   "reconstruction": 576,
+   "identity": 32,
+   "function": 16,
+   "behaviour": 128,
+   "full": {
+    "reconstruction": -0.0001210182256308201,
+    "identity": 0.9300000071525574,
+    "function": 0.38495030999183655,
+    "behaviour": 0.41443535685539246
+   },
+   "fvu_at_32": 0.028988319497739945
+  },
+  "15": {
+   "reconstruction": 576,
+   "identity": 128,
+   "function": 16,
+   "behaviour": 32,
+   "full": {
+    "reconstruction": -9.356967679918782e-05,
+    "identity": 0.7333333492279053,
+    "function": 0.382015585899353,
+    "behaviour": 0.4047108590602875
+   },
+   "fvu_at_32": 0.0017411923261397844
+  },
+  "22": {
+   "reconstruction": 576,
+   "identity": 128,
+   "function": 32,
+   "behaviour": 8,
+   "full": {
+    "reconstruction": -9.699275719099454e-05,
+    "identity": 0.596666693687439,
+    "function": 0.42427706718444824,
+    "behaviour": 0.38355061411857605
+   },
+   "fvu_at_32": 0.005771765957706676
+  },
+  "28": {
+   "reconstruction": 576,
+   "identity": 128,
+   "function": 32,
+   "behaviour": 32,
+   "full": {
+    "reconstruction": -0.00012615011019723177,
+    "identity": 0.49166667461395264,
+    "function": 0.5185209512710571,
+    "behaviour": 0.5550368428230286
+   },
+   "fvu_at_32": 0.011897420591185925
+  }
+ },
+ "_exp": "e272_ladder_smollm2",
+ "_time": "2026-09-19 15:22:12"
+}

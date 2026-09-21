@@ -1,0 +1,44 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "per_variant": {
+  "standard": {
+   "dim": 16,
+   "own": 0.1893700510263443,
+   "random": 0.10978316515684128,
+   "identity": 0.979069709777832,
+   "gain": 1.0692089796066284,
+   "logit_response": 28.090784072875977,
+   "overlap_with_standard": 0.9998902082443237
+  },
+  "norm_preserving": {
+   "dim": 16,
+   "own": 0.18453766405582428,
+   "random": 0.10559636354446411,
+   "identity": 0.9671096205711365,
+   "gain": 1.0707180500030518,
+   "logit_response": 27.96831703186035,
+   "overlap_with_standard": 0.5280144214630127
+  },
+  "norm_only_x2": {
+   "dim": 32,
+   "own": 0.3383161127567291,
+   "random": 0.26312869787216187,
+   "identity": 0.06312292069196701,
+   "gain": 8.82625961303711,
+   "logit_response": 191.92662048339844,
+   "overlap_with_standard": 0.09047184139490128
+  },
+  "amplitude_x4": {
+   "dim": 8,
+   "own": 0.3819413185119629,
+   "random": 0.25981563329696655,
+   "identity": 0.7405315041542053,
+   "gain": 4.74359130859375,
+   "logit_response": 166.61593627929688,
+   "overlap_with_standard": 0.354914128780365
+  }
+ },
+ "_exp": "e344_normalization_gpt2",
+ "_time": "2026-09-19 23:26:46"
+}

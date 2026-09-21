@@ -1,0 +1,151 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 28,
+ "per_neuron": {
+  "largest": {
+   "0.1": {
+    "neuron": 3575,
+    "coef": 0.3498693108558655,
+    "cos_linear": 0.5219792127609253,
+    "cos_natural": 0.21533174812793732,
+    "cos_first": 1.0,
+    "operating_point_shift": 1.000267505645752,
+    "image_norm_per_coef": 0.7069042921066284
+   },
+   "0.3": {
+    "neuron": 3575,
+    "coef": 1.0496079921722412,
+    "cos_linear": 0.5281518697738647,
+    "cos_natural": 0.19216318428516388,
+    "cos_first": 0.9944607019424438,
+    "operating_point_shift": 1.004813551902771,
+    "image_norm_per_coef": 0.6980119943618774
+   },
+   "1.0": {
+    "neuron": 3575,
+    "coef": 3.4986929893493652,
+    "cos_linear": 0.5238611698150635,
+    "cos_natural": 0.1446273922920227,
+    "cos_first": 0.930783748626709,
+    "operating_point_shift": 1.059385895729065,
+    "image_norm_per_coef": 0.6840991377830505
+   },
+   "3.0": {
+    "neuron": 3575,
+    "coef": 10.496078491210938,
+    "cos_linear": 0.47500455379486084,
+    "cos_natural": 0.12396220862865448,
+    "cos_first": 0.7459700703620911,
+    "operating_point_shift": 1.4584978818893433,
+    "image_norm_per_coef": 0.6762058138847351
+   },
+   "10.0": {
+    "neuron": 3575,
+    "coef": 34.98693084716797,
+    "cos_linear": 0.24667151272296906,
+    "cos_natural": 0.3511423170566559,
+    "cos_first": 0.47557464241981506,
+    "operating_point_shift": 3.6870241165161133,
+    "image_norm_per_coef": 0.5844970345497131
+   }
+  },
+  "typical_a": {
+   "0.1": {
+    "neuron": 3605,
+    "coef": 0.16552536189556122,
+    "cos_linear": 0.3316676914691925,
+    "cos_natural": 0.13363514840602875,
+    "cos_first": 1.0,
+    "operating_point_shift": 0.9998825192451477,
+    "image_norm_per_coef": 1.0745428800582886
+   },
+   "0.3": {
+    "neuron": 3605,
+    "coef": 0.49657610058784485,
+    "cos_linear": 0.336268812417984,
+    "cos_natural": 0.11403432488441467,
+    "cos_first": 0.9856988191604614,
+    "operating_point_shift": 1.0005736351013184,
+    "image_norm_per_coef": 1.0368472337722778
+   },
+   "1.0": {
+    "neuron": 3605,
+    "coef": 1.6552536487579346,
+    "cos_linear": 0.2963704764842987,
+    "cos_natural": 0.03397262096405029,
+    "cos_first": 0.7960663437843323,
+    "operating_point_shift": 1.0121811628341675,
+    "image_norm_per_coef": 0.9721497297286987
+   },
+   "3.0": {
+    "neuron": 3605,
+    "coef": 4.965761184692383,
+    "cos_linear": 0.19274817407131195,
+    "cos_natural": -0.13555435836315155,
+    "cos_first": 0.3976251780986786,
+    "operating_point_shift": 1.1172363758087158,
+    "image_norm_per_coef": 0.9485845565795898
+   },
+   "10.0": {
+    "neuron": 3605,
+    "coef": 16.552536010742188,
+    "cos_linear": 0.17525304853916168,
+    "cos_natural": -0.0918634682893753,
+    "cos_first": 0.2631443738937378,
+    "operating_point_shift": 1.9480310678482056,
+    "image_norm_per_coef": 0.8330777287483215
+   }
+  },
+  "typical_b": {
+   "0.1": {
+    "neuron": 48,
+    "coef": 0.16194842755794525,
+    "cos_linear": 0.41018152236938477,
+    "cos_natural": 0.10426165163516998,
+    "cos_first": 1.0,
+    "operating_point_shift": 0.999681830406189,
+    "image_norm_per_coef": 1.0468721389770508
+   },
+   "0.3": {
+    "neuron": 48,
+    "coef": 0.48584529757499695,
+    "cos_linear": 0.44151973724365234,
+    "cos_natural": 0.0633493959903717,
+    "cos_first": 0.9859154224395752,
+    "operating_point_shift": 0.9998337626457214,
+    "image_norm_per_coef": 1.0334416627883911
+   },
+   "1.0": {
+    "neuron": 48,
+    "coef": 1.619484305381775,
+    "cos_linear": 0.48533815145492554,
+    "cos_natural": -0.05397387966513634,
+    "cos_first": 0.821874737739563,
+    "operating_point_shift": 1.0090402364730835,
+    "image_norm_per_coef": 1.021956205368042
+   },
+   "3.0": {
+    "neuron": 48,
+    "coef": 4.858452796936035,
+    "cos_linear": 0.4311848282814026,
+    "cos_natural": -0.25091367959976196,
+    "cos_first": 0.4479300081729889,
+    "operating_point_shift": 1.1087712049484253,
+    "image_norm_per_coef": 1.0877020359039307
+   },
+   "10.0": {
+    "neuron": 48,
+    "coef": 16.194843292236328,
+    "cos_linear": 0.25019514560699463,
+    "cos_natural": -0.25112223625183105,
+    "cos_first": 0.2290784865617752,
+    "operating_point_shift": 1.9216605424880981,
+    "image_norm_per_coef": 0.8962497711181641
+   }
+  }
+ },
+ "_exp": "e278_amplitude_qwen05",
+ "_time": "2026-09-19 16:04:25"
+}

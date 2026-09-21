@@ -1,0 +1,24 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "top3_signed_cos": {
+  "median": 0.038492389023303986,
+  "mean": 0.06318768113851547,
+  "frac_cancel_below_m0p3": 0.0008153946837410331,
+  "frac_reinforce_above_0p3": 0.031270384788513184,
+  "frac_abs_below_0p1": 0.738339900970459
+ },
+ "top8_signed_cos": {
+  "median": 0.020637866109609604,
+  "frac_cancel_below_m0p3": 0.0011619373690336943,
+  "frac_reinforce_above_0p3": 0.012929829768836498
+ },
+ "top1_vs_attention_signed_cos": {
+  "median": -0.0024220235645771027,
+  "frac_cancel": 0.00648238742724061,
+  "frac_reinforce": 0.005748532246798277
+ },
+ "top12_pair_signed_cos_median": 0.048704177141189575,
+ "_exp": "e87_coactive_qwen05",
+ "_time": "2026-09-19 03:59:22"
+}

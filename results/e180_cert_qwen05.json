@@ -1,0 +1,29 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "level": 0.1327340304851532,
+ "decoders": {
+  "omp": {
+   "flag_rate": 0.9968199729919434,
+   "base_real": 0.6490948796272278,
+   "base_dominant": 0.14505870640277863,
+   "precision_real": 0.6499386503067485,
+   "recall_real": 0.9981156962502356,
+   "precision_dominant": 0.14552147239263805,
+   "recall_dominant": 1.0,
+   "real_rate_when_unflagged": 0.38461539149284363
+  },
+  "dual": {
+   "flag_rate": 0.9990215301513672,
+   "base_real": 0.28889432549476624,
+   "base_dominant": 0.016389433294534683,
+   "precision_real": 0.28868756121449557,
+   "recall_real": 0.9983065198983911,
+   "precision_dominant": 0.016405484818805095,
+   "recall_dominant": 1.0,
+   "real_rate_when_unflagged": 0.5
+  }
+ },
+ "_exp": "e180_cert_qwen05",
+ "_time": "2026-09-19 07:00:09"
+}

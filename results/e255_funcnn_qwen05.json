@@ -1,0 +1,31 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 28,
+ "knn_functional_similarity": {
+  "descendant": 0.5416012406349182,
+  "write": 0.41339680552482605,
+  "random": 0.39252209663391113,
+  "descendant_excl_massive": 0.5414450764656067,
+  "write_excl_massive": 0.4145697057247162
+ },
+ "gram_spearman": {
+  "desc_logit": 0.6022356152534485,
+  "write_logit": 0.08232377469539642
+ },
+ "heldout_functional_prediction_cos": {
+  "descendant": 0.6586699485778809,
+  "write": 0.5042645335197449,
+  "random": 0.5239059925079346
+ },
+ "conditional": {
+  "func_sim_dissimilar_writes_similar_descendants": 0.5123269557952881,
+  "func_sim_dissimilar_writes_dissimilar_descendants": 0.31214243173599243,
+  "func_sim_similar_writes": 0.40137362480163574,
+  "func_sim_all": 0.38857901096343994,
+  "n_pairs_lo_w_hi_d": 43
+ },
+ "_exp": "e255_funcnn_qwen05",
+ "_time": "2026-09-19 14:24:54"
+}

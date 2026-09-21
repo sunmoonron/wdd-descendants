@@ -1,0 +1,44 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "per_variant": {
+  "normal": {
+   "dim": 16,
+   "own": 0.11554936319589615,
+   "gain": 0.7974432706832886,
+   "overlap_with_normal": 0.9998703002929688,
+   "centroid_cos_with_normal": 1.0,
+   "identity": 0.8488371968269348,
+   "logit_response": 33.18696975708008
+  },
+  "attention_frozen": {
+   "dim": 16,
+   "own": 0.10193224251270294,
+   "gain": 0.86181640625,
+   "overlap_with_normal": 0.4029918909072876,
+   "centroid_cos_with_normal": 0.9499655961990356,
+   "identity": 0.6767441630363464,
+   "logit_response": 35.1522331237793
+  },
+  "mlp_frozen": {
+   "dim": 8,
+   "own": 0.2033655047416687,
+   "gain": 1.4978200197219849,
+   "overlap_with_normal": 0.09545531868934631,
+   "centroid_cos_with_normal": 0.4194793999195099,
+   "identity": 0.7870431542396545,
+   "logit_response": 50.35047912597656
+  },
+  "both_frozen": {
+   "dim": 1,
+   "own": 0.11617283523082733,
+   "gain": 1.0,
+   "overlap_with_normal": 0.07054303586483002,
+   "centroid_cos_with_normal": 0.4129263162612915,
+   "identity": 0.9999999403953552,
+   "logit_response": 26.73501968383789
+  }
+ },
+ "_exp": "e351_comptransport_qwen05",
+ "_time": "2026-09-19 23:18:16"
+}

@@ -1,0 +1,59 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "N": 4096,
+ "gaussian": {
+  "30": {
+   "recall": 0.6854345202445984,
+   "fvu_clean_from_noisy_support": 0.11281123012304306
+  },
+  "20": {
+   "recall": 0.6847001314163208,
+   "fvu_clean_from_noisy_support": 0.11875156313180923
+  },
+  "10": {
+   "recall": 0.6646267175674438,
+   "fvu_clean_from_noisy_support": 0.17022863030433655
+  },
+  "6": {
+   "recall": 0.6372093558311462,
+   "fvu_clean_from_noisy_support": 0.23526272177696228
+  },
+  "3": {
+   "recall": 0.5850673317909241,
+   "fvu_clean_from_noisy_support": 0.31014740467071533
+  },
+  "0": {
+   "recall": 0.5023255944252014,
+   "fvu_clean_from_noisy_support": 0.40386974811553955
+  },
+  "-3": {
+   "recall": 0.4097919464111328,
+   "fvu_clean_from_noisy_support": 0.5076634287834167
+  }
+ },
+ "mixture": {
+  "0.1": {
+   "recall_own": 0.6847001314163208,
+   "recall_foreign": 0.022521421313285828,
+   "fvu_clean": 0.11823106557130814
+  },
+  "0.25": {
+   "recall_own": 0.6741738319396973,
+   "recall_foreign": 0.08323133736848831,
+   "fvu_clean": 0.1452818512916565
+  },
+  "0.5": {
+   "recall_own": 0.6376989483833313,
+   "recall_foreign": 0.30477356910705566,
+   "fvu_clean": 0.2121548056602478
+  },
+  "1.0": {
+   "recall_own": 0.5339045524597168,
+   "recall_foreign": 0.5395349264144897,
+   "fvu_clean": 0.3441474735736847
+  }
+ },
+ "_exp": "e18_noise_smollm2",
+ "_time": "2026-09-19 02:17:57"
+}

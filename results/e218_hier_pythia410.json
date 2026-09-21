@@ -1,0 +1,36 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "results": {
+  "omp": {
+   "neuron_recall": 0.469117671251297,
+   "block_recall": 0.9496732354164124,
+   "block_control": 0.9127451181411743,
+   "best_atom_exact": 0.469117671251297,
+   "best_atom_same_block": 0.05098039284348488,
+   "best_atom_other": 0.4799019694328308,
+   "best_atom_cos": 0.4781469702720642,
+   "block_energy_rho": 0.25824174284935,
+   "block_energy_rho_control": 0.021978020668029785,
+   "head_recall": 1.0,
+   "head_control": 0.0476190485060215,
+   "n_att": 21
+  },
+  "dual": {
+   "neuron_recall": 0.6679738759994507,
+   "block_recall": 0.5580065250396729,
+   "block_control": 0.4614379107952118,
+   "best_atom_exact": 0.6679738759994507,
+   "best_atom_same_block": 0.033006537705659866,
+   "best_atom_other": 0.29901960492134094,
+   "best_atom_cos": 0.9999999403953552,
+   "block_energy_rho": 0.38461536169052124,
+   "block_energy_rho_control": 0.04945054650306702,
+   "head_recall": 0.6190476417541504,
+   "head_control": 0.0,
+   "n_att": 21
+  }
+ },
+ "_exp": "e218_hier_pythia410",
+ "_time": "2026-09-19 12:21:59"
+}

@@ -1,0 +1,40 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 15,
+ "per_m": {
+  "1": {
+   "logit_norm_ratio": 1.0,
+   "logit_recall_at_m": 0.5227043032646179,
+   "state_recall_at_m": 0.9949545860290527,
+   "chance": 0.06666666666666667
+  },
+  "2": {
+   "logit_additivity": 0.20403023064136505,
+   "state_additivity": 0.1853742003440857,
+   "logit_norm_ratio": 1.1248674682034705,
+   "logit_recall_at_m": 0.43970736861228943,
+   "state_recall_at_m": 0.9550958275794983,
+   "chance": 0.13333333333333333
+  },
+  "4": {
+   "logit_additivity": 0.27843403816223145,
+   "state_additivity": 0.25307103991508484,
+   "logit_norm_ratio": 1.3062204903526782,
+   "logit_recall_at_m": 0.44046416878700256,
+   "state_recall_at_m": 0.8742431998252869,
+   "chance": 0.26666666666666666
+  },
+  "8": {
+   "logit_additivity": 0.3778676986694336,
+   "state_additivity": 0.33742427825927734,
+   "logit_norm_ratio": 1.7744199684672648,
+   "logit_recall_at_m": 0.6026110053062439,
+   "state_recall_at_m": 0.8381054401397705,
+   "chance": 0.5333333333333333
+  }
+ },
+ "_exp": "e256_funcadd_gpt2",
+ "_time": "2026-09-19 14:25:53"
+}

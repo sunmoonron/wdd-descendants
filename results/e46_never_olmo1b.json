@@ -1,0 +1,51 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "N": 4096,
+ "recall": {
+  "omp": 0.7052631974220276,
+  "dual_oneshot": 0.8342717885971069,
+  "oneshot": 0.7806609869003296,
+  "lasso": 0.8232558369636536,
+  "union": 0.8624235391616821
+ },
+ "n_never": 0,
+ "n_always": 13,
+ "never_under": {
+  "omp": NaN,
+  "dual_oneshot": NaN,
+  "oneshot": NaN,
+  "lasso": NaN,
+  "union": NaN
+ },
+ "always_under": {
+  "omp": 0.9787393808364868,
+  "dual_oneshot": 0.9794014692306519,
+  "oneshot": 0.9637193083763123,
+  "lasso": 0.9940508008003235,
+  "union": 0.9962486028671265
+ },
+ "icc": {
+  "omp": 0.938746099597352,
+  "dual_oneshot": 0.9246900738757092,
+  "oneshot": 0.9392791564453387,
+  "lasso": 0.9323681740131811,
+  "union": 0.9206705706993663
+ },
+ "frac_never": {
+  "omp": 0.0,
+  "dual_oneshot": 0.05000000074505806,
+  "oneshot": 0.10000000149011612,
+  "lasso": 0.0,
+  "union": 0.0
+ },
+ "never_rescued_frac": {
+  "omp": NaN,
+  "dual_oneshot": NaN,
+  "oneshot": NaN,
+  "lasso": NaN,
+  "union": NaN
+ },
+ "_exp": "e46_never_olmo1b",
+ "_time": "2026-09-19 03:38:52"
+}

@@ -1,0 +1,25 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 36,
+ "geometry": {
+  "spearman_euclid_vs_functional": 0.6533154249191284,
+  "spearman_causal_metric_vs_functional": 0.8161973357200623,
+  "participation_rank_euclid": 96.12358856201172,
+  "participation_rank_causal": 63.467159271240234
+ },
+ "angles": {
+  "activation_vs_descendant": 0.18166640400886536,
+  "activation_vs_sensitivity": 0.016921015456318855,
+  "descendant_vs_sensitivity": 0.009434765204787254,
+  "chance": 0.017857142857142856
+ },
+ "alignment": {
+  "self_correlation_median": 0.9110060334205627,
+  "best_other_median": 0.22730682790279388,
+  "self_wins": 1.0
+ },
+ "_exp": "e296_geometry_qwen05",
+ "_time": "2026-09-19 18:12:08"
+}

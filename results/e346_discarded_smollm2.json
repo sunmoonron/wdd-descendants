@@ -1,0 +1,49 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "K": 30,
+ "per_input": {
+  "core16": {
+   "identity": 0.42718446254730225,
+   "function": 0.33640745282173157,
+   "future": 0.48008304834365845,
+   "token_identity": 0.4629921317100525,
+   "token_chance": 0.02,
+   "position": 0.2989819347858429,
+   "sequence": 0.17668269574642181,
+   "sequence_chance": 0.0625
+  },
+  "complement_pca64": {
+   "identity": 0.6650485396385193,
+   "function": 0.3611372709274292,
+   "future": 0.5283777713775635,
+   "token_identity": 0.7228346467018127,
+   "token_chance": 0.02,
+   "position": 0.40445730090141296,
+   "sequence": 0.48557692766189575,
+   "sequence_chance": 0.0625
+  },
+  "random64": {
+   "identity": 0.5388349294662476,
+   "function": 0.32652246952056885,
+   "future": 0.4921526312828064,
+   "token_identity": 0.5527558922767639,
+   "token_chance": 0.02,
+   "position": 0.304670512676239,
+   "sequence": 0.19711539149284363,
+   "sequence_chance": 0.0625
+  },
+  "full": {
+   "identity": 0.6953883767127991,
+   "function": 0.378102570772171,
+   "future": 0.5468999147415161,
+   "token_identity": 0.6456692814826965,
+   "token_chance": 0.02,
+   "position": 0.3426334261894226,
+   "sequence": 0.296875,
+   "sequence_chance": 0.0625
+  }
+ },
+ "_exp": "e346_discarded_smollm2",
+ "_time": "2026-09-19 23:16:01"
+}

@@ -1,0 +1,99 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "gain_by_direction": {
+  "top8": {
+   "gain": 0.8075440526008606,
+   "cos_to_predicted_output": 0.7401304244995117,
+   "operator_sv": 1.7302426099777222
+  },
+  "mid8": {
+   "gain": 0.23977170884609222,
+   "cos_to_predicted_output": 0.10796336829662323,
+   "operator_sv": 0.18401257693767548
+  },
+  "bottom8": {
+   "gain": 0.16447560489177704,
+   "cos_to_predicted_output": 0.0028905244544148445,
+   "operator_sv": 0.0006572791608050466
+  },
+  "random8": {
+   "gain": 0.4061899483203888,
+   "cos_to_predicted_output": 0.6153674125671387,
+   "operator_sv": 0.5844323039054871
+  }
+ },
+ "pair_cosines": {
+  "top8": {
+   "measured": 0.9036897420883179,
+   "predicted": 0.9034175276756287,
+   "rho": 1.858232855796814
+  },
+  "bottom8": {
+   "measured": 0.4022170305252075,
+   "predicted": 0.4044141173362732,
+   "rho": 0.3899727761745453
+  },
+  "random8": {
+   "measured": 0.7106417417526245,
+   "predicted": 0.7487600445747375,
+   "rho": 0.9962329864501953
+  }
+ },
+ "additivity": {
+  "constant_total_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.6090618968009949,
+   "cos": 0.7931228876113892
+  },
+  "constant_per_write_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.6090618968009949,
+   "cos": 0.7931228876113892
+  },
+  "constant_total_norm_m2": {
+   "total_norm": 1.0,
+   "additivity_error": 0.61893230676651,
+   "cos": 0.7870455980300903
+  },
+  "constant_per_write_norm_m2": {
+   "total_norm": 1.404903217727906,
+   "additivity_error": 0.6271016001701355,
+   "cos": 0.7809649705886841
+  },
+  "constant_total_norm_m4": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5286830067634583,
+   "cos": 0.8499225378036499
+  },
+  "constant_per_write_norm_m4": {
+   "total_norm": 2.0029409810322316,
+   "additivity_error": 0.542657196521759,
+   "cos": 0.8411946892738342
+  },
+  "constant_total_norm_m8": {
+   "total_norm": 1.0,
+   "additivity_error": 0.3415720760822296,
+   "cos": 0.9401936531066895
+  },
+  "constant_per_write_norm_m8": {
+   "total_norm": 2.8286637656403992,
+   "additivity_error": 0.42429599165916443,
+   "cos": 0.9055357575416565
+  },
+  "constant_total_norm_m16": {
+   "total_norm": 1.0,
+   "additivity_error": 0.29743504524230957,
+   "cos": 0.9598953723907471
+  },
+  "constant_per_write_norm_m16": {
+   "total_norm": 3.9309260471048058,
+   "additivity_error": 0.6117653250694275,
+   "cos": 0.8098801970481873
+  }
+ },
+ "rms_sv": 0.5844323039054871,
+ "_exp": "e285_theory_qwen05",
+ "_time": "2026-09-19 16:47:06"
+}

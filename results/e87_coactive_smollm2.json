@@ -1,0 +1,24 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "top3_signed_cos": {
+  "median": 0.05348366126418114,
+  "mean": 0.0693511813879013,
+  "frac_cancel_below_m0p3": 0.018468689173460007,
+  "frac_reinforce_above_0p3": 0.05707762762904167,
+  "frac_abs_below_0p1": 0.6579419374465942
+ },
+ "top8_signed_cos": {
+  "median": 0.03685662895441055,
+  "frac_cancel_below_m0p3": 0.009264921769499779,
+  "frac_reinforce_above_0p3": 0.030066221952438354
+ },
+ "top1_vs_attention_signed_cos": {
+  "median": 0.06711415946483612,
+  "frac_cancel": 0.003669275902211666,
+  "frac_reinforce": 0.014554794877767563
+ },
+ "top12_pair_signed_cos_median": 0.05828699469566345,
+ "_exp": "e87_coactive_smollm2",
+ "_time": "2026-09-19 03:58:29"
+}

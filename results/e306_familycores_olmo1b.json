@@ -1,0 +1,51 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "per_level": {
+  "4": {
+   "cross_function_mean": 0.028135926835238932,
+   "cross_function_min": 0.02274218387901783,
+   "cross_identity_mean": 0.016275207698345184,
+   "within_function_mean": 0.2692991316318512,
+   "within_identity_mean": 0.8315611124038697,
+   "wdd_function_vs": {
+    "random": 0.023500265553593636,
+    "cov_random": 0.0371815524995327,
+    "attention": 0.025039546191692352,
+    "later_mlp": 0.03192019462585449
+   },
+   "chance": 0.0078125
+  },
+  "8": {
+   "cross_function_mean": 0.1413833662867546,
+   "cross_function_min": 0.12354184687137604,
+   "cross_identity_mean": 0.03937243465334177,
+   "within_function_mean": 0.23975193798542022,
+   "within_identity_mean": 0.7514394283294678,
+   "wdd_function_vs": {
+    "random": 0.12354184687137604,
+    "cov_random": 0.14887511730194092,
+    "attention": 0.14843694865703583,
+    "later_mlp": 0.12728846073150635
+   },
+   "chance": 0.0078125
+  },
+  "14": {
+   "cross_function_mean": 0.44010685980319975,
+   "cross_function_min": 0.3990042209625244,
+   "cross_identity_mean": 0.08535462468862534,
+   "within_function_mean": 0.5141271829605103,
+   "within_identity_mean": 0.37361466884613037,
+   "wdd_function_vs": {
+    "random": 0.3990042209625244,
+    "cov_random": 0.43058082461357117,
+    "attention": 0.43480756878852844,
+    "later_mlp": 0.4193057417869568
+   },
+   "chance": 0.0078125
+  }
+ },
+ "_exp": "e306_familycores_olmo1b",
+ "_time": "2026-09-19 18:35:11"
+}

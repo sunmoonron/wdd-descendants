@@ -1,0 +1,27 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "recall": 0.47515472769737244,
+ "n_miss": 8566,
+ "miss_aliased_by_top1": 0.08673826605081558,
+ "miss_aliased_by_top3_any": 0.19133783876895905,
+ "hit_has_top1_partner_too": 0.04706640541553497,
+ "alias_coef": {
+  "sign_agree": 0.9650067090988159,
+  "med_ratio": 3.2485640048980713,
+  "med_rel_err": 2.358445405960083,
+  "partner_cos_med": 0.36320191621780396
+ },
+ "null_random_same_type_in_support": 0.000466962403152138,
+ "partner_type_hist": {
+  "0": 0.012374503538012505,
+  "1": 0.0,
+  "2": 0.951435923576355,
+  "3": 0.03618958592414856,
+  "4": 0.0
+ },
+ "partner_same_block_frac": 0.4319402277469635,
+ "recall_with_alias_credit": 0.52067887997059,
+ "_exp": "e41_alias_pythia410",
+ "_time": "2026-09-19 03:05:37"
+}

@@ -1,0 +1,88 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 28,
+ "per_level": {
+  "3": {
+   "reconstruction": 256,
+   "identity": 32,
+   "function": 32,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": 0.0733290327200975,
+    "identity": 0.9891774654388428,
+    "function": 0.39308005571365356,
+    "behaviour": 0.4669354259967804
+   },
+   "fvu_at_32": 0.32038808716047873
+  },
+  "4": {
+   "reconstruction": 256,
+   "identity": 32,
+   "function": 64,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": 0.11733903451198913,
+    "identity": 0.9653679728507996,
+    "function": 0.41736069321632385,
+    "behaviour": 0.49433302879333496
+   },
+   "fvu_at_32": 0.4133748543640059
+  },
+  "6": {
+   "reconstruction": 256,
+   "identity": 32,
+   "function": 16,
+   "behaviour": 8,
+   "full": {
+    "reconstruction": 0.1397305420875945,
+    "identity": 0.9350649118423462,
+    "function": 0.4231111407279968,
+    "behaviour": 0.4943673014640808
+   },
+   "fvu_at_32": 0.4835437516964991
+  },
+  "12": {
+   "reconstruction": 896,
+   "identity": 64,
+   "function": 32,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": 0.21227213316585514,
+    "identity": 0.887445867061615,
+    "function": 0.4411114454269409,
+    "behaviour": 0.5405158996582031
+   },
+   "fvu_at_32": 0.6461064896295203
+  },
+  "17": {
+   "reconstruction": 896,
+   "identity": 128,
+   "function": 32,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": 0.23262437421577575,
+    "identity": 0.7337662577629089,
+    "function": 0.4409477114677429,
+    "behaviour": 0.548009991645813
+   },
+   "fvu_at_32": 0.6920985993725397
+  },
+  "22": {
+   "reconstruction": 896,
+   "identity": 128,
+   "function": 16,
+   "behaviour": 16,
+   "full": {
+    "reconstruction": 0.262601184459774,
+    "identity": 0.5735930800437927,
+    "function": 0.4798576533794403,
+    "behaviour": 0.5708197355270386
+   },
+   "fvu_at_32": 0.7524523623998034
+  }
+ },
+ "_exp": "e272_ladder_qwen05",
+ "_time": "2026-09-19 15:22:01"
+}

@@ -1,0 +1,26 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "N": 8192,
+ "dominant_head": {
+  "selected_frac": 0.019202543422579765,
+  "atoms_when_selected_mean": 1.0318471193313599,
+  "energy_captured_median": 0.014313814230263233,
+  "dom_head_share_of_att_energy": 0.05249469354748726,
+  "rank_of_selected_atoms_median": 21.0,
+  "head_write_energy_in_top_r_svd": {
+   "1": 0.11434173995459622,
+   "4": 0.26835767775774,
+   "16": 0.5833899080753326
+  },
+  "selected_frac_oneshot": 0.02238258346915245
+ },
+ "energy": {
+  "att_atoms_share_of_support": 0.09165927767753601,
+  "att_atoms_share_of_recon_energy": 0.07890971750020981,
+  "true_att_share_of_state": 1.4805024862289429,
+  "cos_recatt_trueatt_median": 0.12066418677568436
+ },
+ "_exp": "e13_heads_qwen05",
+ "_time": "2026-09-19 01:16:55"
+}

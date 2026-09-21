@@ -1,0 +1,167 @@
+{
+ "model": "pythia410_step1000",
+ "L": 12,
+ "recall": 0.03118896484375,
+ "auc": {
+  "survival": 0.9151976704597473,
+  "prominence": 0.5608806610107422,
+  "abs_coef": 0.607232928276062,
+  "coherence_all": 0.4501737058162689,
+  "coherence_mlp": 0.4448860287666321,
+  "write_norm": 0.5456702709197998,
+  "firing_freq": 0.47213995456695557,
+  "age": 0.44597458839416504
+ },
+ "neuron_level": {
+  "n_neurons_ge20": 67,
+  "n_neurons_total": 6130,
+  "var_between": 0.009313104674220085,
+  "var_binomial": 0.0008957863901741803,
+  "icc": 0.9038144183374384,
+  "frac_always": 0.0,
+  "frac_never": 0.8507462739944458,
+  "spearman_recall_vs": {
+   "survival": 0.4254130721092224,
+   "coherence": -0.2705722749233246,
+   "count": 0.17842605710029602
+  }
+ },
+ "least_identifiable": [
+  {
+   "block": 0,
+   "neuron": 722,
+   "n": 23,
+   "recall": 0.0,
+   "survival": 0.5335620641708374,
+   "coherence": 0.14655369520187378
+  },
+  {
+   "block": 0,
+   "neuron": 1474,
+   "n": 46,
+   "recall": 0.0,
+   "survival": 1.5061557292938232,
+   "coherence": 0.14960625767707825
+  },
+  {
+   "block": 0,
+   "neuron": 1644,
+   "n": 36,
+   "recall": 0.0,
+   "survival": 2.7685036659240723,
+   "coherence": 0.13889726996421814
+  },
+  {
+   "block": 0,
+   "neuron": 1857,
+   "n": 42,
+   "recall": 0.0,
+   "survival": 3.115149736404419,
+   "coherence": 0.14753738045692444
+  },
+  {
+   "block": 0,
+   "neuron": 3093,
+   "n": 24,
+   "recall": 0.0,
+   "survival": 2.0006754398345947,
+   "coherence": 0.27664104104042053
+  },
+  {
+   "block": 0,
+   "neuron": 3640,
+   "n": 20,
+   "recall": 0.0,
+   "survival": 1.974198579788208,
+   "coherence": 0.1482543647289276
+  },
+  {
+   "block": 1,
+   "neuron": 1346,
+   "n": 20,
+   "recall": 0.0,
+   "survival": 5.017712593078613,
+   "coherence": 0.1332150399684906
+  },
+  {
+   "block": 1,
+   "neuron": 2628,
+   "n": 34,
+   "recall": 0.0,
+   "survival": 3.122380018234253,
+   "coherence": 0.14975561201572418
+  }
+ ],
+ "most_identifiable": [
+  {
+   "block": 3,
+   "neuron": 4021,
+   "n": 50,
+   "recall": 0.10000000149011612,
+   "survival": 5.472761631011963,
+   "coherence": 0.17377696931362152
+  },
+  {
+   "block": 12,
+   "neuron": 1737,
+   "n": 27,
+   "recall": 0.1111111119389534,
+   "survival": 5.132320404052734,
+   "coherence": 0.22673319280147552
+  },
+  {
+   "block": 9,
+   "neuron": 987,
+   "n": 26,
+   "recall": 0.11538461595773697,
+   "survival": 5.5701704025268555,
+   "coherence": 0.2171560674905777
+  },
+  {
+   "block": 3,
+   "neuron": 1984,
+   "n": 25,
+   "recall": 0.11999999731779099,
+   "survival": 5.055840015411377,
+   "coherence": 0.15585464239120483
+  },
+  {
+   "block": 7,
+   "neuron": 1337,
+   "n": 25,
+   "recall": 0.11999999731779099,
+   "survival": 2.8622665405273438,
+   "coherence": 0.17565414309501648
+  },
+  {
+   "block": 12,
+   "neuron": 879,
+   "n": 39,
+   "recall": 0.12820513546466827,
+   "survival": 5.326940059661865,
+   "coherence": 0.1978435218334198
+  },
+  {
+   "block": 4,
+   "neuron": 772,
+   "n": 27,
+   "recall": 0.14814814925193787,
+   "survival": 5.161060810089111,
+   "coherence": 0.2403310388326645
+  },
+  {
+   "block": 8,
+   "neuron": 2985,
+   "n": 27,
+   "recall": 0.7407407164573669,
+   "survival": 9.69711685180664,
+   "coherence": 0.15662528574466705
+  }
+ ],
+ "top1_concentration": {
+  "most_frequent_share": 0.01751708984375,
+  "n_distinct": 6130
+ },
+ "_exp": "e05_neuron_pythia410_step1000",
+ "_time": "2026-09-19 01:28:44"
+}

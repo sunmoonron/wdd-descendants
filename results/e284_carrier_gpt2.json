@@ -1,0 +1,98 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "per_neuron": {
+  "largest": {
+   "neuron": 191,
+   "coef": 10.332262992858887,
+   "natural_vs_transplant": 0.427629292011261,
+   "natural_vs_linear": 0.3312992453575134,
+   "natural_vs_write": 0.42263978719711304,
+   "transplant_vs_linear": 0.6366234421730042,
+   "freeze_attention": {
+    "vs_transplant": 0.5018689036369324,
+    "vs_linear": 0.39456719160079956,
+    "vs_write": 0.5145319104194641,
+    "norm_per_coef": 0.9119229316711426
+   },
+   "freeze_mlp": {
+    "vs_transplant": 0.5171473026275635,
+    "vs_linear": 0.42939305305480957,
+    "vs_write": 0.8362869620323181,
+    "norm_per_coef": 1.141444206237793
+   },
+   "freeze_both": {
+    "vs_transplant": 0.6077626347541809,
+    "vs_linear": 0.47713935375213623,
+    "vs_write": 1.0,
+    "norm_per_coef": 1.0000003576278687
+   },
+   "scan": {
+    "3": {
+     "vs_transplant": 0.4243693947792053,
+     "vs_natural": 0.6898701190948486
+    },
+    "4": {
+     "vs_transplant": 0.4443504214286804,
+     "vs_natural": 0.6920018792152405
+    },
+    "5": {
+     "vs_transplant": 0.48329538106918335,
+     "vs_natural": 0.6974804401397705
+    },
+    "6": {
+     "vs_transplant": 0.5021709203720093,
+     "vs_natural": 0.7150255441665649
+    }
+   }
+  },
+  "typical": {
+   "neuron": 1344,
+   "coef": 8.168685913085938,
+   "natural_vs_transplant": 0.5933347344398499,
+   "natural_vs_linear": 0.4550287127494812,
+   "natural_vs_write": 0.538273274898529,
+   "transplant_vs_linear": 0.7699551582336426,
+   "freeze_attention": {
+    "vs_transplant": 0.6786758899688721,
+    "vs_linear": 0.5401255488395691,
+    "vs_write": 0.6639319062232971,
+    "norm_per_coef": 1.3648046255111694
+   },
+   "freeze_mlp": {
+    "vs_transplant": 0.6847127676010132,
+    "vs_linear": 0.5648518800735474,
+    "vs_write": 0.8109923601150513,
+    "norm_per_coef": 1.3217650651931763
+   },
+   "freeze_both": {
+    "vs_transplant": 0.7972357869148254,
+    "vs_linear": 0.6873890161514282,
+    "vs_write": 1.0,
+    "norm_per_coef": 0.9999998807907104
+   },
+   "scan": {
+    "3": {
+     "vs_transplant": 0.6400062441825867,
+     "vs_natural": 0.7423336505889893
+    },
+    "4": {
+     "vs_transplant": 0.6599324941635132,
+     "vs_natural": 0.7832895517349243
+    },
+    "5": {
+     "vs_transplant": 0.6419562697410583,
+     "vs_natural": 0.7869448661804199
+    },
+    "6": {
+     "vs_transplant": 0.636132001876831,
+     "vs_natural": 0.745909571647644
+    }
+   }
+  }
+ },
+ "_exp": "e284_carrier_gpt2",
+ "_time": "2026-09-19 16:26:00"
+}

@@ -1,0 +1,56 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 21,
+ "per_neuron": {
+  "largest": {
+   "neuron": 6084,
+   "coef": 0.7240994572639465,
+   "n_own": 29,
+   "0.5": {
+    "own_vs_natural": 0.7371423840522766,
+    "own_vs_foreign": 0.12253035604953766,
+    "foreign_vs_natural": 0.1107477992773056,
+    "own_vs_linear": 0.08233776688575745,
+    "foreign_vs_linear": 0.3628239929676056,
+    "own_norm_per_coef": 1.621211290359497,
+    "foreign_norm_per_coef": 0.9108247756958008
+   },
+   "1.0": {
+    "own_vs_natural": 0.630817174911499,
+    "own_vs_foreign": 0.14473946392536163,
+    "foreign_vs_natural": 0.10932423174381256,
+    "own_vs_linear": 0.09637401252985,
+    "foreign_vs_linear": 0.3630048632621765,
+    "own_norm_per_coef": 1.4274340867996216,
+    "foreign_norm_per_coef": 0.9676297307014465
+   }
+  },
+  "typical": {
+   "neuron": 943,
+   "coef": 0.4878724217414856,
+   "n_own": 58,
+   "0.5": {
+    "own_vs_natural": 0.738864004611969,
+    "own_vs_foreign": 0.4029496908187866,
+    "foreign_vs_natural": 0.3438114821910858,
+    "own_vs_linear": 0.26431477069854736,
+    "foreign_vs_linear": 0.2661297917366028,
+    "own_norm_per_coef": 0.7390763163566589,
+    "foreign_norm_per_coef": 1.262450933456421
+   },
+   "1.0": {
+    "own_vs_natural": 0.7179309129714966,
+    "own_vs_foreign": 0.38361045718193054,
+    "foreign_vs_natural": 0.3397247791290283,
+    "own_vs_linear": 0.26037272810935974,
+    "foreign_vs_linear": 0.23387457430362701,
+    "own_norm_per_coef": 0.7138223052024841,
+    "foreign_norm_per_coef": 1.3594621419906616
+   }
+  }
+ },
+ "_exp": "e290_counterfactual_olmo1b",
+ "_time": "2026-09-19 17:39:37"
+}

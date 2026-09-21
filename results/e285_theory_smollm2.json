@@ -1,0 +1,99 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "gain_by_direction": {
+  "top8": {
+   "gain": 1.1179417371749878,
+   "cos_to_predicted_output": 0.9068552255630493,
+   "operator_sv": 1.7258192300796509
+  },
+  "mid8": {
+   "gain": 0.29289525747299194,
+   "cos_to_predicted_output": 0.1524350643157959,
+   "operator_sv": 0.23086364567279816
+  },
+  "bottom8": {
+   "gain": 0.24926701188087463,
+   "cos_to_predicted_output": -0.001064211130142212,
+   "operator_sv": 0.0017163058510050178
+  },
+  "random8": {
+   "gain": 0.5086938142776489,
+   "cos_to_predicted_output": 0.750277042388916,
+   "operator_sv": 0.6202747821807861
+  }
+ },
+ "pair_cosines": {
+  "top8": {
+   "measured": 0.928217351436615,
+   "predicted": 0.9372066855430603,
+   "rho": 2.3698360919952393
+  },
+  "bottom8": {
+   "measured": 0.44578856229782104,
+   "predicted": 0.511729896068573,
+   "rho": 0.525292694568634
+  },
+  "random8": {
+   "measured": 0.7570453882217407,
+   "predicted": 0.7675343155860901,
+   "rho": 1.0559958219528198
+  }
+ },
+ "additivity": {
+  "constant_total_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5219084024429321,
+   "cos": 0.8544191718101501
+  },
+  "constant_per_write_norm_m1": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5219084024429321,
+   "cos": 0.8544191718101501
+  },
+  "constant_total_norm_m2": {
+   "total_norm": 1.0,
+   "additivity_error": 0.5321945548057556,
+   "cos": 0.853377640247345
+  },
+  "constant_per_write_norm_m2": {
+   "total_norm": 1.4214021685730078,
+   "additivity_error": 0.5511165261268616,
+   "cos": 0.8417379856109619
+  },
+  "constant_total_norm_m4": {
+   "total_norm": 1.0,
+   "additivity_error": 0.4854050874710083,
+   "cos": 0.8779686689376831
+  },
+  "constant_per_write_norm_m4": {
+   "total_norm": 2.0746967197868025,
+   "additivity_error": 0.5326268076896667,
+   "cos": 0.8515158295631409
+  },
+  "constant_total_norm_m8": {
+   "total_norm": 1.0000000629688899,
+   "additivity_error": 0.41359952092170715,
+   "cos": 0.9201196432113647
+  },
+  "constant_per_write_norm_m8": {
+   "total_norm": 2.8227638582247887,
+   "additivity_error": 0.5116280913352966,
+   "cos": 0.8709918260574341
+  },
+  "constant_total_norm_m16": {
+   "total_norm": 1.0,
+   "additivity_error": 0.2301928848028183,
+   "cos": 0.9731897115707397
+  },
+  "constant_per_write_norm_m16": {
+   "total_norm": 4.061898670714139,
+   "additivity_error": 0.43872952461242676,
+   "cos": 0.9003018736839294
+  }
+ },
+ "rms_sv": 0.6202747821807861,
+ "_exp": "e285_theory_smollm2",
+ "_time": "2026-09-19 16:47:22"
+}

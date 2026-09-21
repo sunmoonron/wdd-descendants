@@ -1,0 +1,40 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 12,
+ "per_m": {
+  "1": {
+   "logit_norm_ratio": 1.0,
+   "logit_recall_at_m": 0.1787109375,
+   "state_recall_at_m": 0.99755859375,
+   "chance": 0.08333333333333333
+  },
+  "2": {
+   "logit_additivity": 0.2544390559196472,
+   "state_additivity": 0.23306049406528473,
+   "logit_norm_ratio": 1.1118254799059903,
+   "logit_recall_at_m": 0.2587890625,
+   "state_recall_at_m": 0.982666015625,
+   "chance": 0.16666666666666666
+  },
+  "4": {
+   "logit_additivity": 0.39811816811561584,
+   "state_additivity": 0.3646937906742096,
+   "logit_norm_ratio": 1.474474766229284,
+   "logit_recall_at_m": 0.382568359375,
+   "state_recall_at_m": 0.914306640625,
+   "chance": 0.3333333333333333
+  },
+  "8": {
+   "logit_additivity": 0.5831908583641052,
+   "state_additivity": 0.5603030920028687,
+   "logit_norm_ratio": 2.0824747551114475,
+   "logit_recall_at_m": 0.68048095703125,
+   "state_recall_at_m": 0.89404296875,
+   "chance": 0.6666666666666666
+  }
+ },
+ "_exp": "e256_funcadd_olmo1b",
+ "_time": "2026-09-19 14:26:20"
+}

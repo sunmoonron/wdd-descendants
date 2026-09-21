@@ -1,0 +1,48 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "results": {
+  "omp_s0.1": {
+   "frac_stable": 0.35645654797554016,
+   "precision_stable": 0.6682655215263367,
+   "precision_unstable": 0.19780918955802917,
+   "precision_base": 0.36550644040107727,
+   "dominant_recall_any": 0.7052631974220276,
+   "dominant_recall_stable": 0.6516523957252502,
+   "stable_rate_real": 0.6517193913459778,
+   "stable_rate_spurious": 0.18636740744113922
+  },
+  "omp_s0.3": {
+   "frac_stable": 0.20464351773262024,
+   "precision_stable": 0.7989420294761658,
+   "precision_unstable": 0.25398436188697815,
+   "precision_base": 0.36550644040107727,
+   "dominant_recall_any": 0.7052631974220276,
+   "dominant_recall_stable": 0.6058751940727234,
+   "stable_rate_real": 0.44731995463371277,
+   "stable_rate_spurious": 0.06484729796648026
+  },
+  "dual_s0.1": {
+   "frac_stable": 0.930102527141571,
+   "precision_stable": 0.5522524118423462,
+   "precision_unstable": 0.5431213974952698,
+   "precision_base": 0.5516141653060913,
+   "dominant_recall_any": 0.8342717885971069,
+   "dominant_recall_stable": 0.8266830444335938,
+   "stable_rate_real": 0.931178629398346,
+   "stable_rate_spurious": 0.9287786483764648
+  },
+  "dual_s0.3": {
+   "frac_stable": 0.8086023926734924,
+   "precision_stable": 0.5504231452941895,
+   "precision_unstable": 0.5566458106040955,
+   "precision_base": 0.5516141653060913,
+   "dominant_recall_any": 0.8342717885971069,
+   "dominant_recall_stable": 0.8070991635322571,
+   "stable_rate_real": 0.8068564534187317,
+   "stable_rate_spurious": 0.8107501864433289
+  }
+ },
+ "_exp": "e195_stability_olmo1b",
+ "_time": "2026-09-19 07:21:48"
+}

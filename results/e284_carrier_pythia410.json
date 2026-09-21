@@ -1,0 +1,146 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 29,
+ "per_neuron": {
+  "largest": {
+   "neuron": 1560,
+   "coef": 2.247523307800293,
+   "natural_vs_transplant": 0.09776943922042847,
+   "natural_vs_linear": 0.05771811679005623,
+   "natural_vs_write": 0.1073848307132721,
+   "transplant_vs_linear": 0.1840442717075348,
+   "freeze_attention": {
+    "vs_transplant": 0.1370735615491867,
+    "vs_linear": 0.06470200419425964,
+    "vs_write": 0.13287243247032166,
+    "norm_per_coef": 0.38025930523872375
+   },
+   "freeze_mlp": {
+    "vs_transplant": 0.13972774147987366,
+    "vs_linear": 0.10310808569192886,
+    "vs_write": 0.34671151638031006,
+    "norm_per_coef": 2.144610643386841
+   },
+   "freeze_both": {
+    "vs_transplant": 0.27541977167129517,
+    "vs_linear": 0.10728634893894196,
+    "vs_write": 1.0,
+    "norm_per_coef": 0.9999998807907104
+   },
+   "scan": {
+    "3": {
+     "vs_transplant": 0.13807779550552368,
+     "vs_natural": 0.3570387363433838
+    },
+    "4": {
+     "vs_transplant": 0.1494196653366089,
+     "vs_natural": 0.5201030969619751
+    },
+    "5": {
+     "vs_transplant": 0.10366606712341309,
+     "vs_natural": 0.5590882301330566
+    },
+    "6": {
+     "vs_transplant": 0.11534354090690613,
+     "vs_natural": 0.6090123653411865
+    },
+    "7": {
+     "vs_transplant": 0.12402136623859406,
+     "vs_natural": 0.618725061416626
+    },
+    "8": {
+     "vs_transplant": 0.11629654467105865,
+     "vs_natural": 0.6422110795974731
+    },
+    "9": {
+     "vs_transplant": 0.11558270454406738,
+     "vs_natural": 0.6588443517684937
+    },
+    "10": {
+     "vs_transplant": 0.11976754665374756,
+     "vs_natural": 0.6472477912902832
+    },
+    "11": {
+     "vs_transplant": 0.09414316713809967,
+     "vs_natural": 0.6341156959533691
+    },
+    "12": {
+     "vs_transplant": 0.09472361207008362,
+     "vs_natural": 0.6212068796157837
+    }
+   }
+  },
+  "typical": {
+   "neuron": 2463,
+   "coef": 1.5088849067687988,
+   "natural_vs_transplant": 0.2805784344673157,
+   "natural_vs_linear": 0.11026793718338013,
+   "natural_vs_write": 0.2236853837966919,
+   "transplant_vs_linear": 0.24980293214321136,
+   "freeze_attention": {
+    "vs_transplant": 0.3543359041213989,
+    "vs_linear": 0.13929885625839233,
+    "vs_write": 0.31712082028388977,
+    "norm_per_coef": 0.5032889246940613
+   },
+   "freeze_mlp": {
+    "vs_transplant": 0.3028485178947449,
+    "vs_linear": 0.12685716152191162,
+    "vs_write": 0.6383793354034424,
+    "norm_per_coef": 1.436622142791748
+   },
+   "freeze_both": {
+    "vs_transplant": 0.43585339188575745,
+    "vs_linear": 0.1963886022567749,
+    "vs_write": 1.0,
+    "norm_per_coef": 0.9999999403953552
+   },
+   "scan": {
+    "3": {
+     "vs_transplant": 0.2835847735404968,
+     "vs_natural": 0.5662710666656494
+    },
+    "4": {
+     "vs_transplant": 0.2877023220062256,
+     "vs_natural": 0.5467009544372559
+    },
+    "5": {
+     "vs_transplant": 0.29688113927841187,
+     "vs_natural": 0.577675998210907
+    },
+    "6": {
+     "vs_transplant": 0.2734261155128479,
+     "vs_natural": 0.6090046167373657
+    },
+    "7": {
+     "vs_transplant": 0.29972201585769653,
+     "vs_natural": 0.6407678127288818
+    },
+    "8": {
+     "vs_transplant": 0.294070303440094,
+     "vs_natural": 0.6294392347335815
+    },
+    "9": {
+     "vs_transplant": 0.29120156168937683,
+     "vs_natural": 0.6236515045166016
+    },
+    "10": {
+     "vs_transplant": 0.28958845138549805,
+     "vs_natural": 0.6058199405670166
+    },
+    "11": {
+     "vs_transplant": 0.27688413858413696,
+     "vs_natural": 0.5966867208480835
+    },
+    "12": {
+     "vs_transplant": 0.27858203649520874,
+     "vs_natural": 0.6005607843399048
+    }
+   }
+  }
+ },
+ "_exp": "e284_carrier_pythia410",
+ "_time": "2026-09-19 16:26:01"
+}

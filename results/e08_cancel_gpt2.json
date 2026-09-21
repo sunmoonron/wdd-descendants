@@ -1,0 +1,76 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "N": 8192,
+ "identity_check": 0.00021338462829589844,
+ "recall": 0.6352739930152893,
+ "auc_omp": {
+  "raw_surv": 0.43017709255218506,
+  "centered_surv": 0.7018201351165771,
+  "dc_term": 0.6770957112312317,
+  "prominence": 0.838395893573761,
+  "abs_coef": 0.7350636720657349
+ },
+ "auc_oneshot": {
+  "raw_surv": 0.6156319975852966,
+  "centered_surv": 0.8815588355064392,
+  "prominence": 0.9761342406272888
+ },
+ "survival": {
+  "raw_median": 2.363602638244629,
+  "centered_median": 1.6590391397476196,
+  "dc_median": 0.6893008351325989,
+  "frac_raw_erased": 0.013820938766002655,
+  "frac_centered_erased": 0.04880136996507645
+ },
+ "contributions_median": {
+  "emb": 0.009447578340768814,
+  "earlier_att": 0.0,
+  "earlier_mlp": 0.0,
+  "same_att": 0.32547569274902344,
+  "same_mlp_other": -0.1153377890586853,
+  "later_att": 0.19649943709373474,
+  "later_mlp": 0.33979395031929016
+ },
+ "contributions_mean": {
+  "emb": 0.011764036491513252,
+  "earlier_att": 0.28792479634284973,
+  "earlier_mlp": 0.300404816865921,
+  "same_att": 0.4354635775089264,
+  "same_mlp_other": -0.20770010352134705,
+  "later_att": 0.25026047229766846,
+  "later_mlp": 0.3694668710231781
+ },
+ "who_erases_raw_erased": {
+  "emb": -0.009478332474827766,
+  "earlier_att": -0.23476214706897736,
+  "earlier_mlp": -0.09909075498580933,
+  "same_att": -0.25316208600997925,
+  "same_mlp_other": -0.8083564639091492,
+  "later_att": -0.2725014388561249,
+  "later_mlp": -0.10032875090837479
+ },
+ "n_raw_erased": 113,
+ "centered_erased_but_raw_intact": {
+  "n": 326,
+  "frac_of_typical": 0.039872799068689346,
+  "recall": 0.00920245423913002,
+  "dc_median": 4.821818828582764
+ },
+ "dc_atom": {
+  "recall_centered": 0.6352739930152893,
+  "recall_raw_no_dc": 0.6649950742721558,
+  "recall_raw_with_dc": 0.6499511003494263,
+  "dc_selected_frac": 0.989013671875,
+  "dc_selected_first": 0.988037109375,
+  "fvu64_centered": 0.17950081825256348,
+  "fvu64_raw_with_dc": 0.18160362541675568,
+  "fvu64_raw_no_dc": 0.20497645437717438,
+  "recall_on_centered_erased_raw_intact": {
+   "centered": 0.00920245423913002,
+   "raw_with_dc": 0.0061349691823124886
+  }
+ },
+ "_exp": "e08_cancel_gpt2",
+ "_time": "2026-09-19 01:05:22"
+}

@@ -1,0 +1,49 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "K": 36,
+ "per_input": {
+  "core16": {
+   "identity": 0.5329249501228333,
+   "function": 0.3875764012336731,
+   "future": 0.5399598479270935,
+   "token_identity": 0.5284403562545776,
+   "token_chance": 0.02,
+   "position": 0.5139526128768921,
+   "sequence": 0.4406779706478119,
+   "sequence_chance": 0.0625
+  },
+  "complement_pca64": {
+   "identity": 0.7274119853973389,
+   "function": 0.3003459572792053,
+   "future": 0.49872347712516785,
+   "token_identity": 0.7045871615409851,
+   "token_chance": 0.02,
+   "position": 0.4331974983215332,
+   "sequence": 0.5053929090499878,
+   "sequence_chance": 0.0625
+  },
+  "random64": {
+   "identity": 0.664624810218811,
+   "function": 0.3151063919067383,
+   "future": 0.5011630058288574,
+   "token_identity": 0.6000000238418579,
+   "token_chance": 0.02,
+   "position": 0.36194637417793274,
+   "sequence": 0.4653312861919403,
+   "sequence_chance": 0.0625
+  },
+  "full": {
+   "identity": 0.8422664999961853,
+   "function": 0.3696325421333313,
+   "future": 0.5637890100479126,
+   "token_identity": 0.8238531947135925,
+   "token_chance": 0.02,
+   "position": 0.5406036376953125,
+   "sequence": 0.7195686101913452,
+   "sequence_chance": 0.0625
+  }
+ },
+ "_exp": "e346_discarded_qwen05",
+ "_time": "2026-09-19 23:15:10"
+}

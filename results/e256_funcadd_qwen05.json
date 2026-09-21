@@ -1,0 +1,40 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "K": 16,
+ "per_m": {
+  "1": {
+   "logit_norm_ratio": 1.0,
+   "logit_recall_at_m": 0.25244140625,
+   "state_recall_at_m": 0.98291015625,
+   "chance": 0.0625
+  },
+  "2": {
+   "logit_additivity": 0.27164191007614136,
+   "state_additivity": 0.260586142539978,
+   "logit_norm_ratio": 1.077711803108533,
+   "logit_recall_at_m": 0.2509765625,
+   "state_recall_at_m": 0.902587890625,
+   "chance": 0.125
+  },
+  "4": {
+   "logit_additivity": 0.3502194583415985,
+   "state_additivity": 0.35989612340927124,
+   "logit_norm_ratio": 1.2468468409197073,
+   "logit_recall_at_m": 0.332275390625,
+   "state_recall_at_m": 0.801025390625,
+   "chance": 0.25
+  },
+  "8": {
+   "logit_additivity": 0.4485067129135132,
+   "state_additivity": 0.48686158657073975,
+   "logit_norm_ratio": 1.41865026387372,
+   "logit_recall_at_m": 0.54937744140625,
+   "state_recall_at_m": 0.787109375,
+   "chance": 0.5
+  }
+ },
+ "_exp": "e256_funcadd_qwen05",
+ "_time": "2026-09-19 14:26:13"
+}

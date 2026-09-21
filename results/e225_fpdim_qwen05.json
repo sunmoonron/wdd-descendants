@@ -1,0 +1,45 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "per_level": {
+  "3": {
+   "dim_write_footprint": 82.4806137084961,
+   "dim_random_footprint": 45.72932052612305,
+   "dim_writes": 66.12775421142578,
+   "dim_state": 97.29821014404297,
+   "top10pc_share_write_fp": 0.24350011348724365,
+   "top10pc_share_random_fp": 0.17601968348026276,
+   "top10pc_share_writes": 0.11147774010896683
+  },
+  "4": {
+   "dim_write_footprint": 85.50481414794922,
+   "dim_random_footprint": 90.38973236083984,
+   "dim_writes": 66.12775421142578,
+   "dim_state": 87.43719482421875,
+   "top10pc_share_write_fp": 0.2682547867298126,
+   "top10pc_share_random_fp": 0.1995970606803894,
+   "top10pc_share_writes": 0.09945627301931381
+  },
+  "6": {
+   "dim_write_footprint": 84.65086364746094,
+   "dim_random_footprint": 103.02645874023438,
+   "dim_writes": 66.12775421142578,
+   "dim_state": 76.35612487792969,
+   "top10pc_share_write_fp": 0.3020140528678894,
+   "top10pc_share_random_fp": 0.271371066570282,
+   "top10pc_share_writes": 0.09163179248571396
+  },
+  "12": {
+   "dim_write_footprint": 144.73789978027344,
+   "dim_random_footprint": 30.0454044342041,
+   "dim_writes": 66.12775421142578,
+   "dim_state": 72.19168853759766,
+   "top10pc_share_write_fp": 0.3061337172985077,
+   "top10pc_share_random_fp": 0.27075499296188354,
+   "top10pc_share_writes": 0.08857576549053192
+  }
+ },
+ "_exp": "e225_fpdim_qwen05",
+ "_time": "2026-09-19 12:32:31"
+}

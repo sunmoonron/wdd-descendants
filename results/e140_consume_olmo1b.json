@@ -1,0 +1,32 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "read_strength_next_block": {
+  "median": 1.0222645998001099,
+  "random_direction_median": 0.9998995661735535,
+  "own_block": 1.023346185684204,
+  "plus2": 1.0183119773864746,
+  "plus3": 1.0011463165283203
+ },
+ "auc_read_next_for": {
+  "erased": 0.4944457411766052,
+  "identified": 0.4734574556350708
+ },
+ "spearman_read_next_vs": {
+  "raw_survival": 0.04391270503401756,
+  "prominence": 0.03013494983315468,
+  "abs_coef": -0.07420942932367325
+ },
+ "neuron_level": {
+  "n": 85,
+  "spearman_recall_vs_read": -0.045065466314554214,
+  "spearman_survival_vs_read": 0.0474301278591156
+ },
+ "gate_read_next": {
+  "median": 1.0033016204833984,
+  "auc_erased": 0.5133221745491028,
+  "auc_identified": 0.5258865356445312
+ },
+ "_exp": "e140_consume_olmo1b",
+ "_time": "2026-09-19 06:22:17"
+}

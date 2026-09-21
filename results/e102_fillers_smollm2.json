@@ -1,0 +1,27 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "token_atoms_share_of_support": 0.08539093285799026,
+ "top200_token_fillers_share_of_token_selections": 0.07867821494113961,
+ "token_fillers": {
+  "train_count_median": 3.0,
+  "frac_unseen": 0.25,
+  "emb_norm_median": 2.5688390731811523,
+  "emb_norm_median_all": 3.1308209896087646
+ },
+ "spurious_mlp_share_of_mlp_selections": 0.7545155882835388,
+ "top200_mlp_fillers_share_of_spurious": 0.08424527000986483,
+ "n_distinct_spurious_mlp": 24556,
+ "after_pruning_400_fillers": {
+  "recall": 0.46340271830558777,
+  "fvu64": 0.12784770131111145,
+  "token_share_of_support": 0.08940866589546204,
+  "true_atoms_removed": 0.2665850818157196
+ },
+ "before": {
+  "recall": 0.6827417612075806,
+  "fvu64": 0.11221221089363098
+ },
+ "_exp": "e102_fillers_smollm2",
+ "_time": "2026-09-19 04:03:57"
+}

@@ -1,0 +1,190 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "future": 14,
+ "per_family": {
+  "alpha_0.0": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.11253543198108673
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.4162982404232025
+   },
+   "physical_prank": 232.0775909423828,
+   "gain": 0.786935031414032,
+   "logit_response": 33.2723274230957,
+   "manifold_fraction": 1.141842265184323e-08
+  },
+  "alpha_0.1": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.11541019380092621
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.42400607466697693
+   },
+   "physical_prank": 225.5868377685547,
+   "gain": 0.7782747745513916,
+   "logit_response": 32.31376647949219,
+   "manifold_fraction": 0.005623305682092905
+  },
+  "alpha_0.25": {
+   "identity": {
+    "dim": 8,
+    "full": 0.999354898929596
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.11604731529951096
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.4498561918735504
+   },
+   "physical_prank": 215.18026733398438,
+   "gain": 0.7980256080627441,
+   "logit_response": 33.49580764770508,
+   "manifold_fraction": 0.03510348126292229
+  },
+  "alpha_0.5": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.1492980718612671
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.5114896893501282
+   },
+   "physical_prank": 174.5314178466797,
+   "gain": 0.8387584686279297,
+   "logit_response": 35.046573638916016,
+   "manifold_fraction": 0.14022456109523773
+  },
+  "alpha_0.75": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1536620855331421
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.5902001857757568
+   },
+   "physical_prank": 126.40547180175781,
+   "gain": 0.9012039303779602,
+   "logit_response": 36.63996124267578,
+   "manifold_fraction": 0.31538626551628113
+  },
+  "alpha_1.0": {
+   "identity": {
+    "dim": 4,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.19764474034309387
+   },
+   "future": {
+    "dim": 4,
+    "full": 0.6634436845779419
+   },
+   "physical_prank": 86.75408935546875,
+   "gain": 0.9833071827888489,
+   "logit_response": 38.863739013671875,
+   "manifold_fraction": 0.5628646016120911
+  },
+  "heavy_tailed": {
+   "identity": {
+    "dim": 32,
+    "full": 0.9813084602355957
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.13826113939285278
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.3826202154159546
+   },
+   "physical_prank": 146.06320190429688,
+   "gain": 0.7972263693809509,
+   "logit_response": 34.136329650878906,
+   "manifold_fraction": 0.08731326460838318
+  },
+  "sparse5": {
+   "identity": {
+    "dim": 32,
+    "full": 0.8726384043693542
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.14550212025642395
+   },
+   "future": {
+    "dim": 32,
+    "full": 0.31641244888305664
+   },
+   "physical_prank": 148.69097900390625,
+   "gain": 0.807339072227478,
+   "logit_response": 34.027462005615234,
+   "manifold_fraction": 0.07751826196908951
+  },
+  "lowrank4": {
+   "identity": {
+    "dim": 4,
+    "full": 0.9448662400245667
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.14433413743972778
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.4788053631782532
+   },
+   "physical_prank": 67.68267822265625,
+   "gain": 0.8010365962982178,
+   "logit_response": 33.62125015258789,
+   "manifold_fraction": 0.0708303228020668
+  },
+  "shuffled_states": {
+   "identity": {
+    "dim": 8,
+    "full": 1.0
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.11807632446289062
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.4911103844642639
+   },
+   "physical_prank": 166.34036254882812,
+   "gain": 0.8165730834007263,
+   "logit_response": 33.6967887878418,
+   "manifold_fraction": 0.08174294233322144
+  }
+ },
+ "_exp": "e310_manifold_qwen05",
+ "_time": "2026-09-19 18:48:15"
+}

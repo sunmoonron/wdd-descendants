@@ -1,0 +1,59 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "L2": 15,
+ "K": 28,
+ "injection_norm": 5.67510986328125,
+ "per_kind": {
+  "natural_descendant": {
+   "logit_response": 205.30435180664062,
+   "kl": 0.07502708584070206,
+   "state_response": 1.0358619689941406
+  },
+  "random_vector_descendant": {
+   "logit_response": 174.36709594726562,
+   "kl": 0.03756473958492279,
+   "state_response": 1.0533055067062378
+  },
+  "write_vector": {
+   "logit_response": 153.6634063720703,
+   "kl": 0.04659756273031235,
+   "state_response": 0.8538070917129517
+  },
+  "random": {
+   "logit_response": 146.02569580078125,
+   "kl": 0.041572682559490204,
+   "state_response": 0.8447949290275574
+  },
+  "covariance_matched_random": {
+   "logit_response": 180.31939697265625,
+   "kl": 0.0568995401263237,
+   "state_response": 0.9991422891616821
+  }
+ },
+ "ratios": {
+  "natural_over_random_vector_descendant": {
+   "logit_response": 1.1774259970971326,
+   "kl": 1.9972742169844664,
+   "state_response": 0.9834392418903758
+  },
+  "natural_over_write_vector": {
+   "logit_response": 1.336065343426856,
+   "kl": 1.610107513024408,
+   "state_response": 1.2132271786545379
+  },
+  "natural_over_random": {
+   "logit_response": 1.4059467457476222,
+   "kl": 1.8047208219806081,
+   "state_response": 1.2261697287725442
+  },
+  "natural_over_covariance_matched_random": {
+   "logit_response": 1.1385594409334294,
+   "kl": 1.318588615551779,
+   "state_response": 1.036751201736509
+  }
+ },
+ "_exp": "e276_leverage_qwen05",
+ "_time": "2026-09-19 16:05:53"
+}

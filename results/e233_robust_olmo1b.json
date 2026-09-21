@@ -1,0 +1,39 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "K": 21,
+ "per_eps": {
+  "0.0": {
+   "accuracy": 0.9854280352592468,
+   "state_change": 0.0,
+   "dce": 0.0
+  },
+  "0.001": {
+   "accuracy": 0.9854280352592468,
+   "state_change": 0.0027851364575326443,
+   "dce": 8.821487426757812e-06,
+   "footprint_cos_to_unperturbed": 0.9999838471412659
+  },
+  "0.01": {
+   "accuracy": 0.9854280352592468,
+   "state_change": 0.02781485952436924,
+   "dce": 0.0009911060333251953,
+   "footprint_cos_to_unperturbed": 0.9983848333358765
+  },
+  "0.03": {
+   "accuracy": 0.9836065769195557,
+   "state_change": 0.08336099237203598,
+   "dce": 0.00935816764831543,
+   "footprint_cos_to_unperturbed": 0.98542320728302
+  },
+  "0.1": {
+   "accuracy": 0.9763205647468567,
+   "state_change": 0.2821003794670105,
+   "dce": 0.12294864654541016,
+   "footprint_cos_to_unperturbed": 0.8427302837371826
+  }
+ },
+ "_exp": "e233_robust_olmo1b",
+ "_time": "2026-09-19 12:58:06"
+}

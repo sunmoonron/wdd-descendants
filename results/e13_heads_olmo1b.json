@@ -1,0 +1,26 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "N": 8192,
+ "dominant_head": {
+  "selected_frac": 0.23623685538768768,
+  "atoms_when_selected_mean": 1.4262040853500366,
+  "energy_captured_median": 0.07596036791801453,
+  "dom_head_share_of_att_energy": 0.05573127046227455,
+  "rank_of_selected_atoms_median": 14.0,
+  "head_write_energy_in_top_r_svd": {
+   "1": 0.12353083152587699,
+   "4": 0.2471323102317025,
+   "16": 0.48510443847791285
+  },
+  "selected_frac_oneshot": 0.16332273185253143
+ },
+ "energy": {
+  "att_atoms_share_of_support": 0.13469728827476501,
+  "att_atoms_share_of_recon_energy": 0.08526177704334259,
+  "true_att_share_of_state": 2.617591619491577,
+  "cos_recatt_trueatt_median": 0.09479165077209473
+ },
+ "_exp": "e13_heads_olmo1b",
+ "_time": "2026-09-19 01:17:22"
+}

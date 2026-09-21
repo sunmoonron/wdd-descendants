@@ -1,0 +1,32 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "by_b0": {
+  "0": {
+   "target_blocks": "1..12",
+   "peeled_energy_over_state": 0.7841344475746155,
+   "state_recall_omp": 0.37845778465270996,
+   "state_recall_dual": 0.5199510455131531,
+   "state_fvu64": 0.2238684594631195,
+   "state_prom_med": 0.1360575556755066,
+   "peeled_recall_omp": 0.287148118019104,
+   "peeled_recall_dual": 0.41933906078338623,
+   "peeled_fvu64": 0.22522267699241638,
+   "peeled_prom_med": 0.11750100553035736
+  },
+  "1": {
+   "target_blocks": "2..12",
+   "peeled_energy_over_state": 0.6282936930656433,
+   "state_recall_omp": 0.38971850275993347,
+   "state_recall_dual": 0.529253363609314,
+   "state_fvu64": 0.22714072465896606,
+   "state_prom_med": 0.13578608632087708,
+   "peeled_recall_omp": 0.2521419823169708,
+   "peeled_recall_dual": 0.3591187298297882,
+   "peeled_fvu64": 0.22812944650650024,
+   "peeled_prom_med": 0.10488393902778625
+  }
+ },
+ "_exp": "e168_peel_qwen05",
+ "_time": "2026-09-19 06:34:32"
+}

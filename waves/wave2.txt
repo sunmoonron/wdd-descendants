@@ -1,0 +1,69 @@
+python e08_cancellation.py gpt2
+python e08_cancellation.py smollm2
+python e08_cancellation.py qwen05
+python e08_cancellation.py pythia410
+python e08_cancellation.py olmo1b
+python e11_peeling.py gpt2
+python e11_peeling.py smollm2
+python e11_peeling.py qwen05
+python e11_peeling.py pythia410
+python e11_peeling.py olmo1b
+python e09_residual_alignment.py gpt2
+python e09_residual_alignment.py smollm2
+python e09_residual_alignment.py qwen05
+python e09_residual_alignment.py pythia410
+python e09_residual_alignment.py olmo1b
+python e12_shrinkage.py gpt2
+python e12_shrinkage.py smollm2
+python e12_shrinkage.py qwen05
+python e12_shrinkage.py pythia410
+python e12_shrinkage.py olmo1b
+python e13_heads.py gpt2
+python e13_heads.py smollm2
+python e13_heads.py qwen05
+python e13_heads.py pythia410
+python e13_heads.py olmo1b
+python e10_phase.py gpt2
+python e10_phase.py smollm2
+python e10_phase.py qwen05
+python e10_phase.py pythia410
+python e10_phase.py olmo1b
+python e06_energy_accounting.py pythia410_step0
+WDD_N=4096 python e02_delta_wdd.py pythia410_step0
+python e05_neuron_observability.py pythia410_step0
+python e06_energy_accounting.py pythia410_step1000
+WDD_N=4096 python e02_delta_wdd.py pythia410_step1000
+python e05_neuron_observability.py pythia410_step1000
+python e06_energy_accounting.py pythia410_step4000
+WDD_N=4096 python e02_delta_wdd.py pythia410_step4000
+python e05_neuron_observability.py pythia410_step4000
+python e06_energy_accounting.py pythia410_step16000
+WDD_N=4096 python e02_delta_wdd.py pythia410_step16000
+python e05_neuron_observability.py pythia410_step16000
+python e06_energy_accounting.py pythia410_step32000
+WDD_N=4096 python e02_delta_wdd.py pythia410_step32000
+python e05_neuron_observability.py pythia410_step32000
+python e06_energy_accounting.py pythia410_step64000
+WDD_N=4096 python e02_delta_wdd.py pythia410_step64000
+python e05_neuron_observability.py pythia410_step64000
+WDD_CORPUS=pile python build_cache.py gpt2 gpt2_pile
+WDD_CORPUS=pile python build_cache.py smollm2 smollm2_pile
+python e05_neuron_observability.py olmo1b
+python e02_delta_wdd.py gpt2
+python e02_delta_wdd.py smollm2
+WDD_N=4096 python e02_delta_wdd.py qwen05
+WDD_N=4096 python e02_delta_wdd.py pythia410
+WDD_N=4096 python e02_delta_wdd.py olmo1b
+python e25_ledger_sparsity.py gpt2
+python e25_ledger_sparsity.py gpt2_rand
+python e25_ledger_sparsity.py smollm2
+python e25_ledger_sparsity.py qwen05
+python e25_ledger_sparsity.py pythia410
+python e25_ledger_sparsity.py olmo1b
+python e25_ledger_sparsity.py pythia410_step0
+python e25_ledger_sparsity.py pythia410_step1000
+python e25_ledger_sparsity.py pythia410_step4000
+python e25_ledger_sparsity.py pythia410_step16000
+python e25_ledger_sparsity.py pythia410_step32000
+python e25_ledger_sparsity.py pythia410_step64000
+python e01_layer_sweep.py qwen05

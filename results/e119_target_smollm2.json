@@ -1,0 +1,28 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "most_prominent": {
+  "rank_median": 34.0,
+  "rank_q90": 755.599853515625,
+  "frac_rank0": 0.1911872774362564,
+  "frac_rank_lt3": 0.319461464881897,
+  "relmag_median": 0.22507639229297638,
+  "recall": {
+   "omp": 0.6648715138435364,
+   "dual": 0.9858017563819885,
+   "lasso": 0.9694002866744995
+  }
+ },
+ "largest_intact": {
+  "frac_tokens_with_intact_write": 1.0,
+  "recall": {
+   "omp": 0.7001224160194397,
+   "dual": 0.8364749550819397,
+   "lasso": 0.8545899987220764
+  },
+  "relmag_median": 1.0,
+  "frac_rank0": 0.9226438403129578
+ },
+ "_exp": "e119_target_smollm2",
+ "_time": "2026-09-19 04:21:28"
+}

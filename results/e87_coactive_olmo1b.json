@@ -1,0 +1,24 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "top3_signed_cos": {
+  "median": 0.025306906551122665,
+  "mean": 0.048923663794994354,
+  "frac_cancel_below_m0p3": 0.0030176984146237373,
+  "frac_reinforce_above_0p3": 0.0172498170286417,
+  "frac_abs_below_0p1": 0.799975574016571
+ },
+ "top8_signed_cos": {
+  "median": 0.015527707524597645,
+  "frac_cancel_below_m0p3": 0.0019399489974603057,
+  "frac_reinforce_above_0p3": 0.017455171793699265
+ },
+ "top1_vs_attention_signed_cos": {
+  "median": 0.0024632804561406374,
+  "frac_cancel": 0.0029361392371356487,
+  "frac_reinforce": 0.022510400041937828
+ },
+ "top12_pair_signed_cos_median": 0.02846519649028778,
+ "_exp": "e87_coactive_olmo1b",
+ "_time": "2026-09-19 04:02:00"
+}

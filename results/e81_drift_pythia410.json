@@ -1,0 +1,47 @@
+{
+ "L": 12,
+ "final_dict": {
+  "fvu32": 0.49953290820121765,
+  "recall": 0.4711797833442688
+ },
+ "by_ckpt": {
+  "step4000": {
+   "atom_cos_with_final_median": 0.3511979877948761,
+   "atom_cos_q10": 0.26580825448036194,
+   "fvu32_final_states": 0.5589841604232788,
+   "recall_final_states": 0.08879077434539795,
+   "fvu32_own_states_own_dict": 0.4569421410560608,
+   "fvu32_own_states_final_dict": 0.5080230832099915,
+   "recall_own_states_final_dict": 0.090576171875
+  },
+  "step16000": {
+   "atom_cos_with_final_median": 0.6121259927749634,
+   "atom_cos_q10": 0.542604386806488,
+   "fvu32_final_states": 0.5300804972648621,
+   "recall_final_states": 0.3284277617931366,
+   "fvu32_own_states_own_dict": 0.534705400466919,
+   "fvu32_own_states_final_dict": 0.5331766605377197,
+   "recall_own_states_final_dict": 0.34829530119895935
+  },
+  "step32000": {
+   "atom_cos_with_final_median": 0.7760154008865356,
+   "atom_cos_q10": 0.7293527722358704,
+   "fvu32_final_states": 0.514203667640686,
+   "recall_final_states": 0.4314446747303009,
+   "fvu32_own_states_own_dict": 0.5229918956756592,
+   "fvu32_own_states_final_dict": 0.5234950184822083,
+   "recall_own_states_final_dict": 0.43659552931785583
+  },
+  "step64000": {
+   "atom_cos_with_final_median": 0.9340173602104187,
+   "atom_cos_q10": 0.9185383319854736,
+   "fvu32_final_states": 0.5026584267616272,
+   "recall_final_states": 0.4638214111328125,
+   "fvu32_own_states_own_dict": 0.5125623941421509,
+   "fvu32_own_states_final_dict": 0.515087366104126,
+   "recall_own_states_final_dict": 0.503556489944458
+  }
+ },
+ "_exp": "e81_drift_pythia410",
+ "_time": "2026-09-19 04:09:13"
+}

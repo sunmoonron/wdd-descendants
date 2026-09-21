@@ -1,0 +1,31 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "knn_functional_similarity": {
+  "descendant": 0.49833083152770996,
+  "write": 0.31219714879989624,
+  "random": 0.3824969530105591,
+  "descendant_excl_massive": 0.4894930124282837,
+  "write_excl_massive": 0.3077835738658905
+ },
+ "gram_spearman": {
+  "desc_logit": 0.5393165349960327,
+  "write_logit": 0.40904900431632996
+ },
+ "heldout_functional_prediction_cos": {
+  "descendant": 0.6210057735443115,
+  "write": 0.6062999367713928,
+  "random": 0.6135510802268982
+ },
+ "conditional": {
+  "func_sim_dissimilar_writes_similar_descendants": 0.407003790140152,
+  "func_sim_dissimilar_writes_dissimilar_descendants": 0.13354149460792542,
+  "func_sim_similar_writes": 0.4277229309082031,
+  "func_sim_all": 0.30460280179977417,
+  "n_pairs_lo_w_hi_d": 11
+ },
+ "_exp": "e255_funcnn_gpt2",
+ "_time": "2026-09-19 14:24:39"
+}

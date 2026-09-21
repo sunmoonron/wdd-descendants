@@ -1,0 +1,40 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "K": 18,
+ "per_m": {
+  "1": {
+   "logit_norm_ratio": 1.0,
+   "logit_recall_at_m": 0.15087890625,
+   "state_recall_at_m": 0.880859375,
+   "chance": 0.05555555555555555
+  },
+  "2": {
+   "logit_additivity": 0.2016679048538208,
+   "state_additivity": 0.18935397267341614,
+   "logit_norm_ratio": 1.2415589477459752,
+   "logit_recall_at_m": 0.18701171875,
+   "state_recall_at_m": 0.702880859375,
+   "chance": 0.1111111111111111
+  },
+  "4": {
+   "logit_additivity": 0.3047187328338623,
+   "state_additivity": 0.27574434876441956,
+   "logit_norm_ratio": 1.518383692153678,
+   "logit_recall_at_m": 0.2711181640625,
+   "state_recall_at_m": 0.605224609375,
+   "chance": 0.2222222222222222
+  },
+  "8": {
+   "logit_additivity": 0.3922915458679199,
+   "state_additivity": 0.3675583302974701,
+   "logit_norm_ratio": 1.8541565441934014,
+   "logit_recall_at_m": 0.46905517578125,
+   "state_recall_at_m": 0.6541748046875,
+   "chance": 0.4444444444444444
+  }
+ },
+ "_exp": "e256_funcadd_smollm2",
+ "_time": "2026-09-19 14:26:25"
+}

@@ -1,0 +1,28 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "K": 24,
+ "per_input": {
+  "core16": {
+   "head_norms": 0.15804703551811927,
+   "mlp_activation_pcs": 0.5570271270067291,
+   "sparsity": 0.05027161551269543,
+   "neuron_recruitment_overlap": 0.14827686548233032
+  },
+  "pca64": {
+   "head_norms": 0.2394051285409553,
+   "mlp_activation_pcs": 0.6681584639553837,
+   "sparsity": 0.06460555144470481,
+   "neuron_recruitment_overlap": 0.17219626903533936
+  },
+  "random16": {
+   "head_norms": 0.05576723154876928,
+   "mlp_activation_pcs": 0.26094146926154715,
+   "sparsity": 0.01843713632618138,
+   "neuron_recruitment_overlap": 0.12719042599201202
+  }
+ },
+ "recruitment_baseline": 0.022459112107753754,
+ "_exp": "e341_internals_gpt2",
+ "_time": "2026-09-19 23:26:44"
+}

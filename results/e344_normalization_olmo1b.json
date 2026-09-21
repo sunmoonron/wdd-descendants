@@ -1,0 +1,44 @@
+{
+ "model": "olmo1b",
+ "L": 8,
+ "per_variant": {
+  "standard": {
+   "dim": 16,
+   "own": 0.08129161596298218,
+   "random": 0.03588473051786423,
+   "identity": 0.7228314876556396,
+   "gain": 0.7107617259025574,
+   "logit_response": 12.6940279006958,
+   "overlap_with_standard": 0.9998610019683838
+  },
+  "norm_preserving": {
+   "dim": 16,
+   "own": 0.08087113499641418,
+   "random": 0.032031551003456116,
+   "identity": 0.7431040406227112,
+   "gain": 0.7048748731613159,
+   "logit_response": 12.761482238769531,
+   "overlap_with_standard": 0.1822023242712021
+  },
+  "norm_only_x2": {
+   "dim": 32,
+   "own": 0.2708260118961334,
+   "random": 0.15147161483764648,
+   "identity": 0.061814554035663605,
+   "gain": 5.0238165855407715,
+   "logit_response": 90.99519348144531,
+   "overlap_with_standard": 0.09676438570022583
+  },
+  "amplitude_x4": {
+   "dim": 8,
+   "own": 0.3039708733558655,
+   "random": 0.1843927800655365,
+   "identity": 0.2884679138660431,
+   "gain": 3.3172290325164795,
+   "logit_response": 69.40093994140625,
+   "overlap_with_standard": 0.1690007746219635
+  }
+ },
+ "_exp": "e344_normalization_olmo1b",
+ "_time": "2026-09-19 23:28:01"
+}

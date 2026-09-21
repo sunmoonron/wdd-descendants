@@ -1,0 +1,107 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "K": 23,
+ "per_direction": {
+  "0": {
+   "logit_cos_plus": 0.011312516406178474,
+   "logit_cos_minus": -0.007639504037797451,
+   "future_core_cos_plus": 0.9983460307121277,
+   "future_core_cos_minus": 0.9980778694152832,
+   "kl_plus": 0.006357252597808838,
+   "kl_minus": 0.008027443662285805,
+   "entropy_plus": -0.022860169410705566,
+   "entropy_minus": 0.055832862854003906,
+   "cross_plus": 0.9675296545028687
+  },
+  "1": {
+   "logit_cos_plus": 0.10511016845703125,
+   "logit_cos_minus": 0.06404560059309006,
+   "future_core_cos_plus": 0.9066359996795654,
+   "future_core_cos_minus": 0.9093846082687378,
+   "kl_plus": 0.025295153260231018,
+   "kl_minus": 0.026156388223171234,
+   "entropy_plus": 0.05394697189331055,
+   "entropy_minus": -0.002945423126220703,
+   "cross_plus": 0.9771258234977722
+  },
+  "2": {
+   "logit_cos_plus": 0.1176958680152893,
+   "logit_cos_minus": 0.13196691870689392,
+   "future_core_cos_plus": 0.9720385074615479,
+   "future_core_cos_minus": 0.9710760116577148,
+   "kl_plus": 0.024448998272418976,
+   "kl_minus": 0.028045356273651123,
+   "entropy_plus": 0.08009529113769531,
+   "entropy_minus": -0.027246475219726562,
+   "cross_plus": 0.9799230098724365
+  },
+  "3": {
+   "logit_cos_plus": 0.10238008201122284,
+   "logit_cos_minus": 0.12040116637945175,
+   "future_core_cos_plus": 0.790311872959137,
+   "future_core_cos_minus": 0.8212488293647766,
+   "kl_plus": 0.028954461216926575,
+   "kl_minus": 0.029536236077547073,
+   "entropy_plus": 0.13593530654907227,
+   "entropy_minus": -0.07885151356458664,
+   "cross_plus": 0.9763680100440979
+  },
+  "4": {
+   "logit_cos_plus": 0.29716819524765015,
+   "logit_cos_minus": 0.2931954860687256,
+   "future_core_cos_plus": 0.9791787266731262,
+   "future_core_cos_minus": 0.9797357320785522,
+   "kl_plus": 0.028663258999586105,
+   "kl_minus": 0.02835562452673912,
+   "entropy_plus": 0.006904118694365025,
+   "entropy_minus": 0.03660207986831665,
+   "cross_plus": 0.9852280616760254
+  },
+  "5": {
+   "logit_cos_plus": 0.13879957795143127,
+   "logit_cos_minus": 0.13846710324287415,
+   "future_core_cos_plus": 0.9749324917793274,
+   "future_core_cos_minus": 0.9770737290382385,
+   "kl_plus": 0.027813689783215523,
+   "kl_minus": 0.022646555677056313,
+   "entropy_plus": -0.00519561767578125,
+   "entropy_minus": 0.07304573059082031,
+   "cross_plus": 0.9754390120506287
+  },
+  "6": {
+   "logit_cos_plus": 0.23026400804519653,
+   "logit_cos_minus": 0.22417137026786804,
+   "future_core_cos_plus": 0.9757681488990784,
+   "future_core_cos_minus": 0.9770014882087708,
+   "kl_plus": 0.03514581918716431,
+   "kl_minus": 0.031297292560338974,
+   "entropy_plus": 0.1139211654663086,
+   "entropy_minus": -0.02624988555908203,
+   "cross_plus": 0.9829087257385254
+  },
+  "7": {
+   "logit_cos_plus": 0.13519689440727234,
+   "logit_cos_minus": 0.13701361417770386,
+   "future_core_cos_plus": 0.9755860567092896,
+   "future_core_cos_minus": 0.9779300093650818,
+   "kl_plus": 0.02687905728816986,
+   "kl_minus": 0.028178207576274872,
+   "entropy_plus": 0.1563425064086914,
+   "entropy_minus": -0.08568072319030762,
+   "cross_plus": 0.9859812259674072
+  }
+ },
+ "logit_cos_median": 0.13196691870689392,
+ "logit_cos_min": -0.007639504037797451,
+ "future_core_cos_median": 0.9755860567092896,
+ "future_core_cos_min": 0.790311872959137,
+ "entropy_sign_flips": 0.875,
+ "kl_positive_both": 1.0,
+ "kl_vs_random": 1.0062447756676536,
+ "cross_token": 0.9788129404187202,
+ "cross_token_random": 0.9792641028761864,
+ "_exp": "e315_multiobs_smollm2",
+ "_time": "2026-09-19 19:10:22"
+}

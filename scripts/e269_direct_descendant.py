@@ -1,0 +1,23 @@
+"""e269: the causal test of descendant geometry. Each candidate's descendant centroid at L (natural, unit) is
+injected DIRECTLY at the input of block L+1 at foreign tokens, scaled to the median natural footprint norm; the
+logit footprints of these direct-descendant injections give a Gram over candidates. Compared: (a) with the descendant
+Gram (do effects of injected descendants follow descendant geometry?), (b) with the natural logit-footprint Gram,
+(c) per candidate, the cosine between the injected descendant's logit effect and the neuron's natural logit footprint
+(does injecting the descendant reproduce the write's effect?); and (d) the same for injecting the write vectors at
+block 3 (natural transport). Also for the high-D / low-W pairs: cosine of the two direct-descendant logit effects."""
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from func_common import *
+tag = sys.argv[1]; c = Cache(tag); L = mid(c); model, tok, fam = load_model(c.name); arch = Arch(model, fam); NS = 12; ids_seq = c.s["eval_ids"][:NS].to(DEV); NT = NS * CTX; b = 2; D = c.D; lab = c.d["lab"]; A = c.d["A"]; R = A[(lab["type"] == T_MLP) & (lab["block"] == b)].float().to(DEV)
+led, tn, tc = dominant(model, arch, c, ids_seq, b); run = make_runner_logits(model, arch, c, ids_seq, [L], NT, b); S0 = run(); typ = typical_mask(S0[L]); big = tc.abs() >= tc.abs().quantile(0.5); idx, lab_i, keep = classes(tn, typ & big, 20); K = len(keep)
+S0i = run(positions=idx); S1i = run(tn, positions=idx); F = S0i[L] - S1i[L]; dl_nat = S0i["lg"] - S1i["lg"]; dl_nat = dl_nat - dl_nat.mean(1, keepdim=True); Cl_nat = unit(centroids(dl_nat, lab_i, K)); Cd = unit(centroids(F[idx], lab_i, K)); fnorm = F[idx].norm(dim=1).median(); Rw = unit(R[keep]); Gd, Gw, Gl = Cd @ Cd.T, Rw @ Rw.T, Cl_nat @ Cl_nat.T; med = torch.stack([tc[idx][lab_i == k].median() for k in range(K)])
+foreign = torch.nonzero(typ & ~torch.isin(tn, keep))[:, 0][:2048]; NF = len(foreign); S0f = run(positions=foreign); base = S0f["lg"]
+def inject_set(vectors, scales, block):
+    acc = torch.zeros(K, base.shape[1], device=DEV); cnt = torch.zeros(K, device=DEV); torch.manual_seed(0)
+    for p in range(3):
+        a = torch.randint(0, K, (NF,), device=DEV); inj = torch.zeros(NT, D, device=DEV); inj[foreign] = scales[a][:, None] * vectors[a]; S2 = run(positions=foreign, inject=inj, inject_block=block); d = S2["lg"] - base; d = d - d.mean(1, keepdim=True); acc.index_add_(0, a, d); cnt.index_add_(0, a, torch.ones(NF, device=DEV))
+    return unit(acc / cnt.clamp_min(1)[:, None])
+Cl_dd = inject_set(Cd, torch.full((K,), fnorm.item(), device=DEV), L + 1); Cl_w = inject_set(R[keep], med, b + 1); G_dd, G_w = Cl_dd @ Cl_dd.T, Cl_w @ Cl_w.T
+iu = torch.triu_indices(K, K, 1, device=DEV); gw, gd = Gw[iu[0], iu[1]], Gd[iu[0], iu[1]]; sel = (gd > gd.quantile(0.75)) & (gw < gw.median())
+res = dict(K=K, spearman_directdesc_effects_vs_D=gram_spearman(G_dd, Gd), spearman_directdesc_effects_vs_naturalF=gram_spearman(G_dd, Gl), spearman_directdesc_effects_vs_W=gram_spearman(G_dd, Gw), spearman_writeinj_effects_vs_naturalF=gram_spearman(G_w, Gl), spearman_writeinj_effects_vs_D=gram_spearman(G_w, Gd), cos_directdesc_vs_natural_effect=((Cl_dd * Cl_nat).sum(1)).median().item(), cos_writeinj_vs_natural_effect=((Cl_w * Cl_nat).sum(1)).median().item(), hiD_loW_pairs_directdesc_effect_cos=G_dd[iu[0], iu[1]][sel].mean().item() if sel.any() else float("nan"), all_pairs_directdesc_effect_cos=G_dd[iu[0], iu[1]].mean().item(), n_pairs=int(sel.sum()))
+log(f"{tag} (K {K}): effects of DIRECTLY injected descendants follow descendant geometry at Spearman {res['spearman_directdesc_effects_vs_D']:+.2f}, natural-effect geometry {res['spearman_directdesc_effects_vs_naturalF']:+.2f}, write geometry {res['spearman_directdesc_effects_vs_W']:+.2f} | injected descendant reproduces the neuron's natural logit effect at cos {res['cos_directdesc_vs_natural_effect']:.2f} (injecting the write vector at block 3: {res['cos_writeinj_vs_natural_effect']:.2f}) | high-D/low-W pairs: cos of their direct-descendant effects {res['hiD_loW_pairs_directdesc_effect_cos']:.2f} vs all pairs {res['all_pairs_directdesc_effect_cos']:.2f}")
+record(f"e269_directdesc_{tag}", dict(model=tag, b=b, L=L, **res), f"K {K}: direct-descendant effects vs D {res['spearman_directdesc_effects_vs_D']:+.2f}, vs natural F {res['spearman_directdesc_effects_vs_naturalF']:+.2f}, vs W {res['spearman_directdesc_effects_vs_W']:+.2f}; reproduces natural effect cos {res['cos_directdesc_vs_natural_effect']:.2f} (write injection {res['cos_writeinj_vs_natural_effect']:.2f}); hiD/loW pairs effect cos {res['hiD_loW_pairs_directdesc_effect_cos']:.2f} vs all {res['all_pairs_directdesc_effect_cos']:.2f}")

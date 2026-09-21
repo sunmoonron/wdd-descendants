@@ -1,0 +1,40 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "K": 21,
+ "per_m": {
+  "1": {
+   "logit_norm_ratio": 1.0,
+   "logit_recall_at_m": 0.2861328125,
+   "state_recall_at_m": 0.96728515625,
+   "chance": 0.047619047619047616
+  },
+  "2": {
+   "logit_additivity": 0.17449462413787842,
+   "state_additivity": 0.15178468823432922,
+   "logit_norm_ratio": 1.0084952050019047,
+   "logit_recall_at_m": 0.276611328125,
+   "state_recall_at_m": 0.87841796875,
+   "chance": 0.09523809523809523
+  },
+  "4": {
+   "logit_additivity": 0.2389315366744995,
+   "state_additivity": 0.21322093904018402,
+   "logit_norm_ratio": 1.1167218364700835,
+   "logit_recall_at_m": 0.3116455078125,
+   "state_recall_at_m": 0.7786865234375,
+   "chance": 0.19047619047619047
+  },
+  "8": {
+   "logit_additivity": 0.3443087041378021,
+   "state_additivity": 0.303781121969223,
+   "logit_norm_ratio": 1.2979413991660023,
+   "logit_recall_at_m": 0.44903564453125,
+   "state_recall_at_m": 0.7431640625,
+   "chance": 0.38095238095238093
+  }
+ },
+ "_exp": "e256_funcadd_pythia410",
+ "_time": "2026-09-19 14:25:53"
+}

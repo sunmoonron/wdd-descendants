@@ -1,0 +1,27 @@
+{
+ "model": "qwen05",
+ "L": 23,
+ "recall": 0.2430419921875,
+ "n_miss": 12402,
+ "miss_aliased_by_top1": 0.014513787813484669,
+ "miss_aliased_by_top3_any": 0.07821319252252579,
+ "hit_has_top1_partner_too": 0.0477147176861763,
+ "alias_coef": {
+  "sign_agree": 0.9722222685813904,
+  "med_ratio": 2.070608615875244,
+  "med_rel_err": 1.1631841659545898,
+  "partner_cos_med": 0.5439592003822327
+ },
+ "null_random_same_type_in_support": 0.00032252862001769245,
+ "partner_type_hist": {
+  "0": 0.010079019702970982,
+  "1": 0.0,
+  "2": 0.4086437523365021,
+  "3": 0.5812771916389465,
+  "4": 0.0
+ },
+ "partner_same_block_frac": 0.5249959826469421,
+ "recall_with_alias_credit": 0.2540283203125,
+ "_exp": "e41_alias_qwen05_L23",
+ "_time": "2026-09-19 03:45:23"
+}

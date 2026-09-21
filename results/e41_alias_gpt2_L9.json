@@ -1,0 +1,27 @@
+{
+ "model": "gpt2",
+ "L": 9,
+ "recall": 0.23838062584400177,
+ "n_miss": 12454,
+ "miss_aliased_by_top1": 0.028665490448474884,
+ "miss_aliased_by_top3_any": 0.0639152079820633,
+ "hit_has_top1_partner_too": 0.07619292289018631,
+ "alias_coef": {
+  "sign_agree": 0.83753502368927,
+  "med_ratio": 2.1185803413391113,
+  "med_rel_err": 1.7752608060836792,
+  "partner_cos_med": 0.5753801465034485
+ },
+ "null_random_same_type_in_support": 0.0011241368483752012,
+ "partner_type_hist": {
+  "0": 0.009233981370925903,
+  "1": 0.0,
+  "2": 0.253332257270813,
+  "3": 0.7374337911605835,
+  "4": 0.0
+ },
+ "partner_same_block_frac": 0.08896740525960922,
+ "recall_with_alias_credit": 0.2602128180039139,
+ "_exp": "e41_alias_gpt2_L9",
+ "_time": "2026-09-19 03:42:52"
+}

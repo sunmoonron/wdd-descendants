@@ -1,0 +1,40 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "N": 8192,
+ "K": 64,
+ "variants": {
+  "global_omp64": {
+   "recall1": 0.6352739930152893,
+   "recall3": 0.12267612665891647,
+   "real_share_of_mlp_atoms": 0.3411671221256256,
+   "mlp_share_of_support": 0.6172849535942078,
+   "sign_agree_real": 0.8852775692939758,
+   "med_rel_err": 0.44835519790649414,
+   "spurious_coef_mass": 0.5706660747528076,
+   "fvu_full_state": 0.17950081825256348
+  },
+  "delta_equal": {
+   "recall1": 0.7875488996505737,
+   "recall3": 0.3488258421421051,
+   "real_share_of_mlp_atoms": 0.7350608110427856,
+   "mlp_share_of_support": 0.7282385230064392,
+   "sign_agree_real": 0.9026279449462891,
+   "med_rel_err": 0.20977920293807983,
+   "spurious_coef_mass": 0.21036821603775024,
+   "fvu_full_state": 0.44725197553634644
+  },
+  "delta_energy": {
+   "recall1": 0.7799657583236694,
+   "recall3": 0.32399705052375793,
+   "real_share_of_mlp_atoms": 0.7937740087509155,
+   "mlp_share_of_support": 0.6485922932624817,
+   "sign_agree_real": 0.8962218165397644,
+   "med_rel_err": 0.3037857711315155,
+   "spurious_coef_mass": 0.17016412317752838,
+   "fvu_full_state": 0.461473673582077
+  }
+ },
+ "_exp": "e44_pipeline_gpt2",
+ "_time": "2026-09-19 03:21:20"
+}

@@ -1,0 +1,44 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "per_variant": {
+  "normal": {
+   "dim": 32,
+   "own": 0.09218153357505798,
+   "gain": 0.6966766715049744,
+   "overlap_with_normal": 0.9998995065689087,
+   "centroid_cos_with_normal": 1.0,
+   "identity": 0.818030595779419,
+   "logit_response": 15.41844654083252
+  },
+  "attention_frozen": {
+   "dim": 16,
+   "own": 0.16629749536514282,
+   "gain": 0.501039981842041,
+   "overlap_with_normal": 0.4714304804801941,
+   "centroid_cos_with_normal": 0.9591596126556396,
+   "identity": 0.9970059394836426,
+   "logit_response": 10.122779846191406
+  },
+  "mlp_frozen": {
+   "dim": 8,
+   "own": 0.24827085435390472,
+   "gain": 2.0034308433532715,
+   "overlap_with_normal": 0.07516231387853622,
+   "centroid_cos_with_normal": 0.4997045695781708,
+   "identity": 0.3582834303379059,
+   "logit_response": 45.78250503540039
+  },
+  "both_frozen": {
+   "dim": 1,
+   "own": 0.2830103039741516,
+   "gain": 1.0,
+   "overlap_with_normal": 0.11541710793972015,
+   "centroid_cos_with_normal": 0.5431051254272461,
+   "identity": 0.9999999403953552,
+   "logit_response": 16.66929054260254
+  }
+ },
+ "_exp": "e351_comptransport_pythia410",
+ "_time": "2026-09-19 23:17:29"
+}

@@ -1,0 +1,48 @@
+{
+ "model": "pythia410",
+ "L": 12,
+ "results": {
+  "omp_s0.1": {
+   "frac_stable": 0.1540808081626892,
+   "precision_stable": 0.390980988740921,
+   "precision_unstable": 0.11267465353012085,
+   "precision_base": 0.155556321144104,
+   "dominant_recall_any": 0.4711797833442688,
+   "dominant_recall_stable": 0.41550156474113464,
+   "stable_rate_real": 0.3872724175453186,
+   "stable_rate_spurious": 0.11112422496080399
+  },
+  "omp_s0.3": {
+   "frac_stable": 0.07278252393007278,
+   "precision_stable": 0.5187193751335144,
+   "precision_unstable": 0.12704959511756897,
+   "precision_base": 0.155556321144104,
+   "dominant_recall_any": 0.4711797833442688,
+   "dominant_recall_stable": 0.3505028188228607,
+   "stable_rate_real": 0.2427012175321579,
+   "stable_rate_spurious": 0.041481535881757736
+  },
+  "dual_s0.1": {
+   "frac_stable": 0.8411898612976074,
+   "precision_stable": 0.26145610213279724,
+   "precision_unstable": 0.21936388313770294,
+   "precision_base": 0.2547714114189148,
+   "dominant_recall_any": 0.6693646907806396,
+   "dominant_recall_stable": 0.6502329707145691,
+   "stable_rate_real": 0.8632609844207764,
+   "stable_rate_spurious": 0.833644449710846
+  },
+  "dual_s0.3": {
+   "frac_stable": 0.5982991456985474,
+   "precision_stable": 0.2648402154445648,
+   "precision_unstable": 0.23977485299110413,
+   "precision_base": 0.2547714114189148,
+   "dominant_recall_any": 0.6693646907806396,
+   "dominant_recall_stable": 0.6031395196914673,
+   "stable_rate_real": 0.6219444274902344,
+   "stable_rate_spurious": 0.5902155041694641
+  }
+ },
+ "_exp": "e195_stability_pythia410",
+ "_time": "2026-09-19 07:21:54"
+}

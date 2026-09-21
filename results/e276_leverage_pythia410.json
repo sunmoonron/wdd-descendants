@@ -1,0 +1,59 @@
+{
+ "model": "pythia410",
+ "b": 2,
+ "L": 12,
+ "L2": 15,
+ "K": 29,
+ "injection_norm": 1.0524544715881348,
+ "per_kind": {
+  "natural_descendant": {
+   "logit_response": 15.210721969604492,
+   "kl": 0.0009418753907084465,
+   "state_response": 0.8970792293548584
+  },
+  "random_vector_descendant": {
+   "logit_response": 15.865790367126465,
+   "kl": 0.0008898349478840828,
+   "state_response": 0.9521996974945068
+  },
+  "write_vector": {
+   "logit_response": 14.372533798217773,
+   "kl": 0.0008746590465307236,
+   "state_response": 0.8652795553207397
+  },
+  "random": {
+   "logit_response": 14.025945663452148,
+   "kl": 0.0008512567728757858,
+   "state_response": 0.8676480650901794
+  },
+  "covariance_matched_random": {
+   "logit_response": 16.430532455444336,
+   "kl": 0.0011873366311192513,
+   "state_response": 0.9476794600486755
+  }
+ },
+ "ratios": {
+  "natural_over_random_vector_descendant": {
+   "logit_response": 0.9587118963276321,
+   "kl": 1.058483253493369,
+   "state_response": 0.942112491439889
+  },
+  "natural_over_write_vector": {
+   "logit_response": 1.0583187476303348,
+   "kl": 1.0768486239802035,
+   "state_response": 1.036750751636945
+  },
+  "natural_over_random": {
+   "logit_response": 1.0844703333793424,
+   "kl": 1.1064527422513484,
+   "state_response": 1.0339206245583226
+  },
+  "natural_over_covariance_matched_random": {
+   "logit_response": 0.9257595279308399,
+   "kl": 0.7932673565546285,
+   "state_response": 0.9466061755825982
+  }
+ },
+ "_exp": "e276_leverage_pythia410",
+ "_time": "2026-09-19 16:05:31"
+}

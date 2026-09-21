@@ -1,0 +1,134 @@
+{
+ "model": "qwen05",
+ "L": 12,
+ "per_amplitude": {
+  "0.25": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.11224719882011414
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.46441128849983215
+   },
+   "quotient_overlap_with_1x": 1.0,
+   "physical_prank": 204.7914581298828,
+   "linearity_cos": 1.0,
+   "gain": 0.8057441115379333
+  },
+  "0.5": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.11444508284330368
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.4639185070991516
+   },
+   "quotient_overlap_with_1x": 1.0,
+   "physical_prank": 204.60153198242188,
+   "linearity_cos": 0.9996951222419739,
+   "gain": 0.8055883646011353
+  },
+  "1.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.11935466527938843
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.4637940526008606
+   },
+   "quotient_overlap_with_1x": 1.0,
+   "physical_prank": 204.40887451171875,
+   "linearity_cos": 0.997276782989502,
+   "gain": 0.8066057562828064
+  },
+  "2.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9996677041053772
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.1376049518585205
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.4648365378379822
+   },
+   "quotient_overlap_with_1x": 0.8440216779708862,
+   "physical_prank": 204.6226348876953,
+   "linearity_cos": 0.9849550724029541,
+   "gain": 0.8194291591644287
+  },
+  "4.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.999335527420044
+   },
+   "function": {
+    "dim": 16,
+    "full": 0.20766359567642212
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.4757273495197296
+   },
+   "quotient_overlap_with_1x": 0.5464118719100952,
+   "physical_prank": 206.80926513671875,
+   "linearity_cos": 0.9327044486999512,
+   "gain": 0.8622565865516663
+  },
+  "8.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.33675551414489746
+   },
+   "future": {
+    "dim": 16,
+    "full": 0.5178301930427551
+   },
+   "quotient_overlap_with_1x": 0.30796992778778076,
+   "physical_prank": 193.67454528808594,
+   "linearity_cos": 0.7783786058425903,
+   "gain": 0.9927167892456055
+  },
+  "16.0": {
+   "identity": {
+    "dim": 8,
+    "full": 0.9999999403953552
+   },
+   "function": {
+    "dim": 8,
+    "full": 0.5059727430343628
+   },
+   "future": {
+    "dim": 8,
+    "full": 0.7058132290840149
+   },
+   "quotient_overlap_with_1x": 0.2738444209098816,
+   "physical_prank": 111.90364837646484,
+   "linearity_cos": 0.6233164072036743,
+   "gain": 0.9589179754257202
+  }
+ },
+ "_exp": "e329_ampdim_qwen05",
+ "_time": "2026-09-19 20:47:57"
+}

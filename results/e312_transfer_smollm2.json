@@ -1,0 +1,51 @@
+{
+ "model": "smollm2",
+ "b": 2,
+ "L": 15,
+ "per_level": {
+  "15": {
+   "core_transfer": {
+    "function_cross": 0.08993949852883816,
+    "function_own": 0.110357266664505,
+    "function_random": 0.06950466483831405,
+    "identity_cross": 0.3225085362792015,
+    "identity_own": 0.5021762132644654,
+    "identity_random": 0.34299168884754183
+   },
+   "metric_transfer": {
+    "euclid": 0.3909184694290161,
+    "own_metric": 0.6311775326728821,
+    "cross_metric": 0.4697972245514393
+   }
+  },
+  "28": {
+   "core_transfer": {
+    "function_cross": 0.2778892531991005,
+    "function_own": 0.3180666625499725,
+    "function_random": 0.1455645203590393,
+    "identity_cross": 0.04650956597179175,
+    "identity_own": 0.05039765164256096,
+    "identity_random": 0.054831513017416
+   },
+   "metric_transfer": {
+    "euclid": 0.5141359508037567,
+    "own_metric": 0.6656022310256958,
+    "cross_metric": 0.6607854560017585
+   }
+  }
+ },
+ "superposition": {
+  "functionally_similar": {
+   "n": 12,
+   "cos": 0.9940605213244756,
+   "rel_error": 0.11389375415941079
+  },
+  "functionally_dissimilar": {
+   "n": 12,
+   "cos": 0.9938610593477885,
+   "rel_error": 0.11490037230153878
+  }
+ },
+ "_exp": "e312_transfer_smollm2",
+ "_time": "2026-09-19 18:52:26"
+}

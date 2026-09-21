@@ -1,0 +1,59 @@
+{
+ "model": "olmo1b",
+ "b": 2,
+ "L": 8,
+ "L2": 11,
+ "K": 21,
+ "injection_norm": 0.6893852353096008,
+ "per_kind": {
+  "natural_descendant": {
+   "logit_response": 29.66562843322754,
+   "kl": 0.008621251210570335,
+   "state_response": 0.9547536969184875
+  },
+  "random_vector_descendant": {
+   "logit_response": 31.439958572387695,
+   "kl": 0.006357626523822546,
+   "state_response": 0.9638445973396301
+  },
+  "write_vector": {
+   "logit_response": 24.002281188964844,
+   "kl": 0.0053424108773469925,
+   "state_response": 0.7977508902549744
+  },
+  "random": {
+   "logit_response": 23.540000915527344,
+   "kl": 0.0048567187041044235,
+   "state_response": 0.794954776763916
+  },
+  "covariance_matched_random": {
+   "logit_response": 29.181339263916016,
+   "kl": 0.007987461984157562,
+   "state_response": 0.9293171763420105
+  }
+ },
+ "ratios": {
+  "natural_over_random_vector_descendant": {
+   "logit_response": 0.9435644886403104,
+   "kl": 1.3560487043813918,
+   "state_response": 0.9905680848902043
+  },
+  "natural_over_write_vector": {
+   "logit_response": 1.2359503748696372,
+   "kl": 1.613737956233646,
+   "state_response": 1.196806808467907
+  },
+  "natural_over_random": {
+   "logit_response": 1.2602220594502882,
+   "kl": 1.7751184978624555,
+   "state_response": 1.2010163657423096
+  },
+  "natural_over_covariance_matched_random": {
+   "logit_response": 1.0165958513737705,
+   "kl": 1.079348011629957,
+   "state_response": 1.027371193844281
+  }
+ },
+ "_exp": "e276_leverage_olmo1b",
+ "_time": "2026-09-19 16:06:00"
+}

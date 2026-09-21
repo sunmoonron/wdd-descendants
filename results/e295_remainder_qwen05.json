@@ -1,0 +1,44 @@
+{
+ "model": "qwen05",
+ "b": 2,
+ "L": 12,
+ "future": 14,
+ "K": 28,
+ "q_energy": 0.5004564523696899,
+ "per_kind": {
+  "q_leftover": {
+   "logit_response": 136.44345092773438,
+   "kl": 0.03561273589730263,
+   "later_norm_per_injection": 0.8685399889945984,
+   "later_in_z": 0.07951338589191437,
+   "persistence": 0.6714609861373901,
+   "cross_token": 0.23826971650123596
+  },
+  "z_causal": {
+   "logit_response": 150.3537139892578,
+   "kl": 0.04205559194087982,
+   "later_norm_per_injection": 0.9318326115608215,
+   "later_in_z": 0.5358687043190002,
+   "persistence": 0.7448080778121948,
+   "cross_token": 0.2178424447774887
+  },
+  "full_descendant": {
+   "logit_response": 145.35887145996094,
+   "kl": 0.039521604776382446,
+   "later_norm_per_injection": 0.9052588939666748,
+   "later_in_z": 0.3145940601825714,
+   "persistence": 0.7122803926467896,
+   "cross_token": 0.21769972145557404
+  },
+  "random": {
+   "logit_response": 127.20055389404297,
+   "kl": 0.03063018247485161,
+   "later_norm_per_injection": 0.8566743731498718,
+   "later_in_z": 0.06715362519025803,
+   "persistence": 0.6177440881729126,
+   "cross_token": 0.22635844349861145
+  }
+ },
+ "_exp": "e295_remainder_qwen05",
+ "_time": "2026-09-19 17:51:53"
+}

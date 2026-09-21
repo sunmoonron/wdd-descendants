@@ -1,0 +1,50 @@
+{
+ "model": "gpt2",
+ "b": 2,
+ "L": 6,
+ "K": 24,
+ "observables": [
+  "entropy_change",
+  "next_token_logprob_change",
+  "top1_prob_change",
+  "attention_norm_change_last_block",
+  "next_token_state_change_norm",
+  "next_token_state_direction"
+ ],
+ "per_input": {
+  "core16": {
+   "entropy_change": 0.20033176243305206,
+   "next_token_logprob_change": 0.06057898327708244,
+   "top1_prob_change": 0.07851099967956543,
+   "attention_norm_change_last_block": 0.4094485342502594,
+   "next_token_state_change_norm": 0.4267983138561249,
+   "next_token_state_direction": 0.1707569658756256
+  },
+  "pca64": {
+   "entropy_change": 0.21247157454490662,
+   "next_token_logprob_change": 0.04649900645017624,
+   "top1_prob_change": 0.07394779473543167,
+   "attention_norm_change_last_block": 0.44588902592658997,
+   "next_token_state_change_norm": 0.4274829626083374,
+   "next_token_state_direction": 0.19290149211883545
+  },
+  "random16": {
+   "entropy_change": 0.1450250893831253,
+   "next_token_logprob_change": 0.07579904794692993,
+   "top1_prob_change": 0.07737300544977188,
+   "attention_norm_change_last_block": 0.327006071805954,
+   "next_token_state_change_norm": 0.37307655811309814,
+   "next_token_state_direction": 0.1516377031803131
+  },
+  "norm_only": {
+   "entropy_change": 0.021732967346906662,
+   "next_token_logprob_change": 0.07267869263887405,
+   "top1_prob_change": -0.02779349684715271,
+   "attention_norm_change_last_block": 0.1711144894361496,
+   "next_token_state_change_norm": 0.35372328758239746,
+   "next_token_state_direction": 0.09122071415185928
+  }
+ },
+ "_exp": "e314_heldout_gpt2",
+ "_time": "2026-09-19 19:10:33"
+}

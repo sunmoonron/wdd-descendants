@@ -1,0 +1,76 @@
+{
+ "model": "gpt2",
+ "L": 6,
+ "rows": [
+  {
+   "block": 0,
+   "n": 4590,
+   "recall_omp": 0.7222222685813904,
+   "recall_dual": 0.9200435876846313,
+   "cancellation_delivered": 0.3100530505180359,
+   "reinforcement_delivered": 5.279670715332031,
+   "own_cancellation": 0.0775674432516098
+  },
+  {
+   "block": 1,
+   "n": 730,
+   "recall_omp": 0.5,
+   "recall_dual": 0.7109588980674744,
+   "cancellation_delivered": 0.8527837991714478,
+   "reinforcement_delivered": 1.841935634613037,
+   "own_cancellation": 0.6355158686637878
+  },
+  {
+   "block": 2,
+   "n": 773,
+   "recall_omp": 0.2923673987388611,
+   "recall_dual": 0.4566623568534851,
+   "cancellation_delivered": 0.8036565780639648,
+   "reinforcement_delivered": 1.5354771614074707,
+   "own_cancellation": 0.6718325018882751
+  },
+  {
+   "block": 3,
+   "n": 424,
+   "recall_omp": 0.3466981053352356,
+   "recall_dual": 0.4952830374240875,
+   "cancellation_delivered": 0.7546674609184265,
+   "reinforcement_delivered": 1.7869325876235962,
+   "own_cancellation": 0.5655856728553772
+  },
+  {
+   "block": 4,
+   "n": 118,
+   "recall_omp": 0.7033898234367371,
+   "recall_dual": 0.7118644118309021,
+   "cancellation_delivered": 0.5071473121643066,
+   "reinforcement_delivered": 1.5478508472442627,
+   "own_cancellation": 0.2579919993877411
+  },
+  {
+   "block": 5,
+   "n": 632,
+   "recall_omp": 0.6851266026496887,
+   "recall_dual": 0.7088607549667358,
+   "cancellation_delivered": 0.6388237476348877,
+   "reinforcement_delivered": 1.5614657402038574,
+   "own_cancellation": 0.3590947389602661
+  },
+  {
+   "block": 6,
+   "n": 909,
+   "recall_omp": 0.6875687837600708,
+   "recall_dual": 0.7634763717651367,
+   "cancellation_delivered": 0.7072724103927612,
+   "reinforcement_delivered": 1.4969384670257568,
+   "own_cancellation": 0.42033523321151733
+  }
+ ],
+ "spearman": {
+  "cancel_omp": -0.8571428656578064,
+  "cancel_dual": -0.6428571939468384,
+  "reinforce_dual": 0.2142857164144516
+ },
+ "_exp": "e199_cancread_gpt2",
+ "_time": "2026-09-19 07:27:51"
+}

@@ -1,0 +1,28 @@
+{
+ "model": "smollm2",
+ "L": 15,
+ "K": 23,
+ "per_input": {
+  "core16": {
+   "head_norms": 0.15419550782645297,
+   "mlp_activation_pcs": 0.01601971646800293,
+   "sparsity": 0.9446050719274383,
+   "neuron_recruitment_overlap": 0.20864583551883698
+  },
+  "pca64": {
+   "head_norms": 0.1663661200603178,
+   "mlp_activation_pcs": 0.06189993958012319,
+   "sparsity": 0.9453501667515952,
+   "neuron_recruitment_overlap": 0.2381249964237213
+  },
+  "random16": {
+   "head_norms": 0.1534794168245086,
+   "mlp_activation_pcs": 0.011833088021276583,
+   "sparsity": 0.9451920350070998,
+   "neuron_recruitment_overlap": 0.18130208551883698
+  }
+ },
+ "recruitment_baseline": 0.0832812488079071,
+ "_exp": "e341_internals_smollm2",
+ "_time": "2026-09-19 23:27:56"
+}
