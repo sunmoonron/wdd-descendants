@@ -1,0 +1,570 @@
+{
+ "model": "qwen05",
+ "readers": [
+  [
+   16,
+   3
+  ],
+  [
+   9,
+   13
+  ],
+  [
+   11,
+   12
+  ],
+  [
+   16,
+   2
+  ]
+ ],
+ "previous_token_heads": [
+  [
+   0,
+   11
+  ],
+  [
+   0,
+   13
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   9
+  ],
+  [
+   2,
+   0
+  ],
+  [
+   2,
+   3
+  ],
+  [
+   2,
+   9
+  ],
+  [
+   2,
+   11
+  ],
+  [
+   3,
+   7
+  ],
+  [
+   6,
+   4
+  ],
+  [
+   8,
+   7
+  ],
+  [
+   8,
+   8
+  ],
+  [
+   8,
+   12
+  ],
+  [
+   10,
+   2
+  ],
+  [
+   12,
+   8
+  ],
+  [
+   12,
+   12
+  ],
+  [
+   15,
+   2
+  ],
+  [
+   18,
+   3
+  ],
+  [
+   19,
+   3
+  ],
+  [
+   19,
+   11
+  ]
+ ],
+ "induction": {
+  "16.3": {
+   "exact_top3": [
+    [
+     15,
+     2
+    ],
+    [
+     15,
+     4
+    ],
+    [
+     8,
+     7
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     15,
+     2
+    ],
+    [
+     15,
+     4
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     2,
+     12
+    ]
+   ],
+   "exact_truth_share": 0.4926099479198456,
+   "wdd_truth_share": 0.015216141007840633,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 2,
+   "plain_wdd_rank_best_truth": 6,
+   "spearman_wdd_vs_exact": 0.16007794439792633,
+   "n_upstream_heads": 224,
+   "exact_mlp_share": -0.0014472685288637877,
+   "exact_emb_share": -0.0006367233581840992,
+   "wdd_mlp_share": 0.23263006936758757,
+   "wdd_emb_share": 0.1696443259716034,
+   "exact_total_share": 1.0000000417967385,
+   "wdd_fve": 0.7646718621253967,
+   "n_truth_upstream": 17
+  },
+  "9.13": {
+   "exact_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     8,
+     3
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     2,
+     12
+    ],
+    [
+     8,
+     11
+    ]
+   ],
+   "exact_truth_share": 0.7817294597625732,
+   "wdd_truth_share": 0.1303035318851471,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.12189576029777527,
+   "n_upstream_heads": 126,
+   "exact_mlp_share": 0.049928295658901334,
+   "exact_emb_share": 5.1554361562011763e-05,
+   "wdd_mlp_share": 0.1747346892952919,
+   "wdd_emb_share": 0.21991848945617676,
+   "exact_total_share": 1.00000004102003,
+   "wdd_fve": 0.7734755873680115,
+   "n_truth_upstream": 13
+  },
+  "11.12": {
+   "exact_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     2,
+     12
+    ]
+   ],
+   "exact_truth_share": 0.7876170873641968,
+   "wdd_truth_share": 0.10562829673290253,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.22335197031497955,
+   "n_upstream_heads": 154,
+   "exact_mlp_share": 0.0890851088333875,
+   "exact_emb_share": -0.00016472660354338586,
+   "wdd_mlp_share": 0.19390007015317678,
+   "wdd_emb_share": 0.2182653397321701,
+   "exact_total_share": 1.0000000458485374,
+   "wdd_fve": 0.7711255550384521,
+   "n_truth_upstream": 14
+  },
+  "16.2": {
+   "exact_top3": [
+    [
+     15,
+     2
+    ],
+    [
+     15,
+     4
+    ],
+    [
+     8,
+     7
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     15,
+     2
+    ],
+    [
+     15,
+     4
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     2,
+     12
+    ]
+   ],
+   "exact_truth_share": 0.4926099479198456,
+   "wdd_truth_share": 0.015216141007840633,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 2,
+   "plain_wdd_rank_best_truth": 6,
+   "spearman_wdd_vs_exact": 0.16007794439792633,
+   "n_upstream_heads": 224,
+   "exact_mlp_share": -0.0014472685288637877,
+   "exact_emb_share": -0.0006367233581840992,
+   "wdd_mlp_share": 0.23263006936758757,
+   "wdd_emb_share": 0.1696443259716034,
+   "exact_total_share": 1.0000000417967385,
+   "wdd_fve": 0.7646718621253967,
+   "n_truth_upstream": 17
+  }
+ },
+ "control": {
+  "16.13": {
+   "exact_top3": [
+    [
+     15,
+     2
+    ],
+    [
+     15,
+     4
+    ],
+    [
+     8,
+     7
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     15,
+     4
+    ],
+    [
+     15,
+     2
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     2,
+     12
+    ]
+   ],
+   "exact_truth_share": 0.3096945285797119,
+   "wdd_truth_share": 0.010196749120950699,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 3,
+   "plain_wdd_rank_best_truth": 6,
+   "spearman_wdd_vs_exact": 0.13039399683475494,
+   "n_upstream_heads": 224,
+   "exact_mlp_share": 0.13417844916693866,
+   "exact_emb_share": -0.0005413669859990478,
+   "wdd_mlp_share": 0.2480589570477605,
+   "wdd_emb_share": 0.13240545988082886
+  },
+  "9.6": {
+   "exact_top3": [
+    [
+     6,
+     1
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     13
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     2,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     11
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     2,
+     12
+    ],
+    [
+     8,
+     11
+    ]
+   ],
+   "exact_truth_share": 0.053751975297927856,
+   "wdd_truth_share": 0.003348651574924588,
+   "exact_rank_best_truth": 9,
+   "wdd_reader_rank_best_truth": 5,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.26163625717163086,
+   "n_upstream_heads": 126,
+   "exact_mlp_share": 0.7468454092741013,
+   "exact_emb_share": 0.0003743175766430795,
+   "wdd_mlp_share": 0.20088451077754144,
+   "wdd_emb_share": 0.060256876051425934
+  },
+  "11.6": {
+   "exact_top3": [
+    [
+     9,
+     11
+    ],
+    [
+     10,
+     12
+    ],
+    [
+     10,
+     3
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     2,
+     1
+    ],
+    [
+     10,
+     12
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     8,
+     7
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     2,
+     12
+    ]
+   ],
+   "exact_truth_share": 0.049658726900815964,
+   "wdd_truth_share": 0.0025795495603233576,
+   "exact_rank_best_truth": 20,
+   "wdd_reader_rank_best_truth": 12,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.12351381033658981,
+   "n_upstream_heads": 154,
+   "exact_mlp_share": 0.7914158962666988,
+   "exact_emb_share": 0.0021663042716681957,
+   "wdd_mlp_share": 0.31404444482177496,
+   "wdd_emb_share": 0.13278809189796448
+  },
+  "16.1": {
+   "exact_top3": [
+    [
+     15,
+     2
+    ],
+    [
+     15,
+     4
+    ],
+    [
+     8,
+     7
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     15,
+     2
+    ],
+    [
+     15,
+     4
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     3,
+     3
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     2,
+     12
+    ]
+   ],
+   "exact_truth_share": 0.4926099479198456,
+   "wdd_truth_share": 0.015216141007840633,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 2,
+   "plain_wdd_rank_best_truth": 6,
+   "spearman_wdd_vs_exact": 0.16007794439792633,
+   "n_upstream_heads": 224,
+   "exact_mlp_share": -0.0014472685288637877,
+   "exact_emb_share": -0.0006367233581840992,
+   "wdd_mlp_share": 0.23263006936758757,
+   "wdd_emb_share": 0.1696443259716034
+  }
+ },
+ "summary": {
+  "induction_exact_best_truth_rank_mean": 1.0,
+  "induction_wdd_best_truth_rank_mean": 1.5,
+  "induction_plain_best_truth_rank_mean": 3.5,
+  "induction_spearman_mean": 0.16635090485215187,
+  "control_exact_best_truth_rank_mean": 7.75,
+  "induction_exact_truth_share_mean": 0.6386416107416153,
+  "control_exact_truth_share_mean": 0.22642879467457533
+ },
+ "_exp": "e375_readerwdd_qwen05",
+ "_time": "2026-09-23 21:45:59"
+}

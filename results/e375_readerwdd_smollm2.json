@@ -1,0 +1,546 @@
+{
+ "model": "smollm2",
+ "readers": [
+  [
+   18,
+   6
+  ],
+  [
+   18,
+   7
+  ],
+  [
+   17,
+   3
+  ],
+  [
+   17,
+   4
+  ]
+ ],
+ "previous_token_heads": [
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   1
+  ],
+  [
+   10,
+   4
+  ],
+  [
+   10,
+   5
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   11,
+   8
+  ],
+  [
+   13,
+   1
+  ],
+  [
+   16,
+   0
+  ],
+  [
+   17,
+   8
+  ],
+  [
+   19,
+   3
+  ],
+  [
+   19,
+   8
+  ],
+  [
+   22,
+   1
+  ]
+ ],
+ "induction": {
+  "18.6": {
+   "exact_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     11,
+     1
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ]
+   ],
+   "exact_truth_share": 0.606621265411377,
+   "wdd_truth_share": 0.09611331671476364,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.41556477546691895,
+   "n_upstream_heads": 162,
+   "exact_mlp_share": 0.18762651400174946,
+   "exact_emb_share": -0.0008831750601530075,
+   "wdd_mlp_share": 0.2359726275317371,
+   "wdd_emb_share": 0.03773363307118416,
+   "exact_total_share": 1.000000081136477,
+   "wdd_fve": 0.8723616600036621,
+   "n_truth_upstream": 11
+  },
+  "18.7": {
+   "exact_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     11,
+     1
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ]
+   ],
+   "exact_truth_share": 0.606621265411377,
+   "wdd_truth_share": 0.09611331671476364,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.41556477546691895,
+   "n_upstream_heads": 162,
+   "exact_mlp_share": 0.18762651400174946,
+   "exact_emb_share": -0.0008831750601530075,
+   "wdd_mlp_share": 0.2359726275317371,
+   "wdd_emb_share": 0.03773363307118416,
+   "exact_total_share": 1.000000081136477,
+   "wdd_fve": 0.8723616600036621,
+   "n_truth_upstream": 11
+  },
+  "17.3": {
+   "exact_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     11,
+     1
+    ],
+    [
+     15,
+     3
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     16,
+     0
+    ]
+   ],
+   "exact_truth_share": 0.5328981280326843,
+   "wdd_truth_share": 0.04611508548259735,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 3,
+   "spearman_wdd_vs_exact": 0.2923518717288971,
+   "n_upstream_heads": 153,
+   "exact_mlp_share": 0.21318466775119305,
+   "exact_emb_share": -0.0005045327707193792,
+   "wdd_mlp_share": 0.24395290296524763,
+   "wdd_emb_share": 0.04322802275419235,
+   "exact_total_share": 1.0000000500637611,
+   "wdd_fve": 0.8705856800079346,
+   "n_truth_upstream": 10
+  },
+  "17.4": {
+   "exact_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     11,
+     1
+    ],
+    [
+     15,
+     3
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     16,
+     0
+    ]
+   ],
+   "exact_truth_share": 0.5328981280326843,
+   "wdd_truth_share": 0.04611508548259735,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 3,
+   "spearman_wdd_vs_exact": 0.2923518717288971,
+   "n_upstream_heads": 153,
+   "exact_mlp_share": 0.21318466775119305,
+   "exact_emb_share": -0.0005045327707193792,
+   "wdd_mlp_share": 0.24395290296524763,
+   "wdd_emb_share": 0.04322802275419235,
+   "exact_total_share": 1.0000000500637611,
+   "wdd_fve": 0.8705856800079346,
+   "n_truth_upstream": 10
+  }
+ },
+ "control": {
+  "18.8": {
+   "exact_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     11,
+     1
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     17,
+     8
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ]
+   ],
+   "exact_truth_share": 0.606621265411377,
+   "wdd_truth_share": 0.09611331671476364,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.41556477546691895,
+   "n_upstream_heads": 162,
+   "exact_mlp_share": 0.18762651400174946,
+   "exact_emb_share": -0.0008831750601530075,
+   "wdd_mlp_share": 0.2359726275317371,
+   "wdd_emb_share": 0.03773363307118416
+  },
+  "18.3": {
+   "exact_top3": [
+    [
+     15,
+     3
+    ],
+    [
+     15,
+     5
+    ],
+    [
+     15,
+     4
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     14,
+     1
+    ],
+    [
+     16,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     16,
+     0
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ]
+   ],
+   "exact_truth_share": -0.0009634385351091623,
+   "wdd_truth_share": 0.0012887907214462757,
+   "exact_rank_best_truth": 38,
+   "wdd_reader_rank_best_truth": 3,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.1776120811700821,
+   "n_upstream_heads": 162,
+   "exact_mlp_share": 0.566515437734779,
+   "exact_emb_share": 0.001720587955787778,
+   "wdd_mlp_share": 0.08079413732048124,
+   "wdd_emb_share": 0.011154942214488983
+  },
+  "17.6": {
+   "exact_top3": [
+    [
+     15,
+     3
+    ],
+    [
+     15,
+     4
+    ],
+    [
+     15,
+     5
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     16,
+     6
+    ],
+    [
+     16,
+     1
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     16,
+     0
+    ]
+   ],
+   "exact_truth_share": 0.01073523610830307,
+   "wdd_truth_share": 0.0041286232881248,
+   "exact_rank_best_truth": 30,
+   "wdd_reader_rank_best_truth": 9,
+   "plain_wdd_rank_best_truth": 3,
+   "spearman_wdd_vs_exact": 0.18202927708625793,
+   "n_upstream_heads": 153,
+   "exact_mlp_share": 0.4427456945340964,
+   "exact_emb_share": 0.0006991277332417667,
+   "wdd_mlp_share": 0.15192007215227932,
+   "wdd_emb_share": 0.010611740872263908
+  },
+  "17.0": {
+   "exact_top3": [
+    [
+     15,
+     3
+    ],
+    [
+     15,
+     5
+    ],
+    [
+     15,
+     4
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     16,
+     6
+    ],
+    [
+     16,
+     1
+    ],
+    [
+     6,
+     4
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     16,
+     0
+    ]
+   ],
+   "exact_truth_share": 0.03473725542426109,
+   "wdd_truth_share": 0.004452322144061327,
+   "exact_rank_best_truth": 13,
+   "wdd_reader_rank_best_truth": 14,
+   "plain_wdd_rank_best_truth": 3,
+   "spearman_wdd_vs_exact": 0.18254192173480988,
+   "n_upstream_heads": 153,
+   "exact_mlp_share": 0.45840067497920245,
+   "exact_emb_share": 0.0013818178558722138,
+   "wdd_mlp_share": 0.1319149888586253,
+   "wdd_emb_share": 0.01590455323457718
+  }
+ },
+ "summary": {
+  "induction_exact_best_truth_rank_mean": 1.0,
+  "induction_wdd_best_truth_rank_mean": 1.0,
+  "induction_plain_best_truth_rank_mean": 2.0,
+  "induction_spearman_mean": 0.353958323597908,
+  "control_exact_best_truth_rank_mean": 20.5,
+  "induction_exact_truth_share_mean": 0.5697596967220306,
+  "control_exact_truth_share_mean": 0.162782579602208
+ },
+ "_exp": "e375_readerwdd_smollm2",
+ "_time": "2026-09-23 21:45:37"
+}

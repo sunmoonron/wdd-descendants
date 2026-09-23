@@ -108,3 +108,12 @@ The phase-2 agenda was anchored on CarolusRenniusVitellius, "What if not Circuit
 - Representational drift in neuroscience (for example Driscoll et al. 2017, Cell; Rule, O'Leary and Harvey 2019, Current Opinion in Neurobiology). Stable behaviour over drifting single-unit tuning; the source of the post's framing. The phase-2 drift measurements (e360, e362) compare units by a basis-free logit signature so that implementation drift (write direction) and function drift (signature) can be separated, which is Bushnaq's distinction.
 
 Sources: https://www.lesswrong.com/posts/mMERyrvEJ4xbiozie/what-if-not-circuits ; https://arxiv.org/abs/2504.18274 ; https://arxiv.org/abs/2601.12703 ; https://arxiv.org/abs/2508.00331 ; https://arxiv.org/abs/2411.07071 ; https://timaeus.co/research/2025-04-25-susceptibilities/
+
+## 12. Phase 3 (readers, readouts, stitching, toys; added 2026-09-23, session 33)
+
+- Elhage et al. (2021, "A Mathematical Framework for Transformer Circuits"): Q-, K- and V-composition and composition scores between heads. e375's reader-weighted provenance is a data-driven, state-only counterpart: WDD reads which writers' atoms are in the state, the reader's input map says which of them the reader uses.
+- Wang et al. (2022, IOI) and Olsson et al. (2022): the ground-truth edges (previous-token to induction via keys; S-inhibition to name movers via queries) used to grade e375.
+- Michel, Levy and Neubig (2019, "Are Sixteen Heads Really Better than One?") and head-dropout regularisers such as DropHead (Zhou et al. 2020): head redundancy and training noise; e379 shows in toys that head dropout manufactures super-additive redundancy that converged, noise-free training does not produce.
+- McGrath et al. (2023) and Rushing and Nanda (2024) on self-repair: e377 and e382 add a measurement caveat to loss-based readings of backup behaviour: the convexity of cross-entropy makes additive logit effects super-additive on the loss, and the circuit/readout split of a loss interaction is path dependent.
+- Lenc and Vedaldi (2015) and Bansal, Nakkiran and Barak (2021, "Revisiting model stitching"): model stitching with a learned affine layer. e378 applies it across training time within one model: late lower parts are not swappable raw, and an affine map repairs about half of the penalty.
+- Jensen (1906): the convexity inequality behind e382; the softmax readout is a log-sum-exp (Gibbs free energy), convex in the logits.

@@ -1,0 +1,518 @@
+{
+ "model": "olmo1b",
+ "readers": [
+  [
+   4,
+   12
+  ],
+  [
+   12,
+   8
+  ],
+  [
+   12,
+   10
+  ],
+  [
+   2,
+   11
+  ]
+ ],
+ "previous_token_heads": [
+  [
+   0,
+   5
+  ],
+  [
+   0,
+   6
+  ],
+  [
+   0,
+   12
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   1,
+   7
+  ],
+  [
+   3,
+   7
+  ],
+  [
+   11,
+   10
+  ]
+ ],
+ "induction": {
+  "4.12": {
+   "exact_top3": [
+    [
+     3,
+     7
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "exact_truth_share": 0.2223648577928543,
+   "wdd_truth_share": 0.033502597361803055,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 2,
+   "plain_wdd_rank_best_truth": 2,
+   "spearman_wdd_vs_exact": 0.35764652490615845,
+   "n_upstream_heads": 64,
+   "exact_mlp_share": 0.7158358544111252,
+   "exact_emb_share": 0.0047762528993189335,
+   "wdd_mlp_share": 0.15166696546657477,
+   "wdd_emb_share": 0.017994288355112076,
+   "exact_total_share": 1.0000000742147677,
+   "wdd_fve": 0.5891782641410828,
+   "n_truth_upstream": 6
+  },
+  "12.8": {
+   "exact_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     10,
+     10
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     14
+    ]
+   ],
+   "exact_truth_share": 0.207422137260437,
+   "wdd_truth_share": 0.06415887922048569,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.27384164929389954,
+   "n_upstream_heads": 192,
+   "exact_mlp_share": 1.3834158182144165,
+   "exact_emb_share": 0.006288884673267603,
+   "wdd_mlp_share": 0.10669038665946573,
+   "wdd_emb_share": 0.009512484073638916,
+   "exact_total_share": 1.0000000467248356,
+   "wdd_fve": 0.6123867630958557,
+   "n_truth_upstream": 7
+  },
+  "12.10": {
+   "exact_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     13
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     14
+    ]
+   ],
+   "exact_truth_share": 0.22929581999778748,
+   "wdd_truth_share": 0.07013607025146484,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.21054477989673615,
+   "n_upstream_heads": 192,
+   "exact_mlp_share": 1.4324594046920538,
+   "exact_emb_share": 0.006941873114556074,
+   "wdd_mlp_share": 0.07713739748578519,
+   "wdd_emb_share": 0.007205798756331205,
+   "exact_total_share": 1.000000093052222,
+   "wdd_fve": 0.6123867630958557,
+   "n_truth_upstream": 7
+  },
+  "2.11": {
+   "exact_top3": [
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "exact_truth_share": 0.3494161367416382,
+   "wdd_truth_share": 0.08042802661657333,
+   "exact_rank_best_truth": 1,
+   "wdd_reader_rank_best_truth": 2,
+   "plain_wdd_rank_best_truth": 2,
+   "spearman_wdd_vs_exact": 0.46664226055145264,
+   "n_upstream_heads": 32,
+   "exact_mlp_share": 0.395953431725502,
+   "exact_emb_share": 0.0034653926268219948,
+   "wdd_mlp_share": 0.21595998480916023,
+   "wdd_emb_share": 0.02953648380935192,
+   "exact_total_share": 1.000000081199687,
+   "wdd_fve": 0.6181304454803467,
+   "n_truth_upstream": 5
+  }
+ },
+ "control": {
+  "4.14": {
+   "exact_top3": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     12
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     3,
+     4
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     13
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "exact_truth_share": -0.02560657635331154,
+   "wdd_truth_share": 0.0006259169313125312,
+   "exact_rank_best_truth": 13,
+   "wdd_reader_rank_best_truth": 9,
+   "plain_wdd_rank_best_truth": 2,
+   "spearman_wdd_vs_exact": 0.06561355292797089,
+   "n_upstream_heads": 64,
+   "exact_mlp_share": 0.9802732616662979,
+   "exact_emb_share": 0.006225517950952053,
+   "wdd_mlp_share": 0.26259870268404484,
+   "wdd_emb_share": 0.013167708180844784
+  },
+  "12.6": {
+   "exact_top3": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     12
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     11,
+     14
+    ],
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     14
+    ]
+   ],
+   "exact_truth_share": 0.03957812860608101,
+   "wdd_truth_share": 0.002831494202837348,
+   "exact_rank_best_truth": 9,
+   "wdd_reader_rank_best_truth": 2,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.30163371562957764,
+   "n_upstream_heads": 192,
+   "exact_mlp_share": 1.8987990319728851,
+   "exact_emb_share": 0.009888916276395321,
+   "wdd_mlp_share": 0.10243594540224876,
+   "wdd_emb_share": -0.0022135560866445303
+  },
+  "12.14": {
+   "exact_top3": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     11,
+     14
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     14
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     14
+    ]
+   ],
+   "exact_truth_share": 0.054479628801345825,
+   "wdd_truth_share": 0.009502069093286991,
+   "exact_rank_best_truth": 6,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 1,
+   "spearman_wdd_vs_exact": 0.275796502828598,
+   "n_upstream_heads": 192,
+   "exact_mlp_share": 1.7730383509770036,
+   "exact_emb_share": 0.007081469986587763,
+   "wdd_mlp_share": 0.13679340423550457,
+   "wdd_emb_share": 0.0023439947981387377
+  },
+  "2.15": {
+   "exact_top3": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     12
+    ],
+    [
+     1,
+     9
+    ]
+   ],
+   "wdd_reader_top3": [
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "plain_wdd_top3": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "exact_truth_share": -0.04969768971204758,
+   "wdd_truth_share": 0.00531500019133091,
+   "exact_rank_best_truth": 8,
+   "wdd_reader_rank_best_truth": 1,
+   "plain_wdd_rank_best_truth": 2,
+   "spearman_wdd_vs_exact": 0.106671541929245,
+   "n_upstream_heads": 32,
+   "exact_mlp_share": 0.8763410747051239,
+   "exact_emb_share": 0.007136964704841375,
+   "wdd_mlp_share": 0.22944990545511246,
+   "wdd_emb_share": 0.00872148759663105
+  }
+ },
+ "summary": {
+  "induction_exact_best_truth_rank_mean": 1.0,
+  "induction_wdd_best_truth_rank_mean": 1.5,
+  "induction_plain_best_truth_rank_mean": 1.5,
+  "induction_spearman_mean": 0.3271688036620617,
+  "control_exact_best_truth_rank_mean": 9.0,
+  "induction_exact_truth_share_mean": 0.25212473794817924,
+  "control_exact_truth_share_mean": 0.00468837283551693
+ },
+ "_exp": "e375_readerwdd_olmo1b",
+ "_time": "2026-09-23 21:46:00"
+}
