@@ -309,11 +309,17 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H173 The removal knee is made by the softmax readout on moving logits. → e374 → SURVIVES for most heads (linear-logit prediction 0.10-0.34 against measured 0.04-0.30), with internal sub-linearity in GPT-2 and Qwen and internal prominence crossings matching the linear prediction in OLMo.
 - H174 Near-twin writes make super-additive (backup) pairs, composition makes sub-additive (series) pairs. → e376 → KILLED on the loss (write cosine rho -0.11 to +0.22; composition rho positive in 9 of 10).
 - H175 The sign of a pairwise ablation interaction is a property of the circuit. → e377, e382 → KILLED (26-48% of pairs change sign between loss and logit; with additive logits the loss alone makes 97-100% of pairs super-additive; the readout/circuit split is path dependent).
-- H176 Induction circuits add redundancy after they work (phase 2's H169). → e380 → KILLED as stated (joint over sum on the logit 0.49-0.93 at every Pythia checkpoint; the loss's 0.69 to 3.61 growth is readout convexity).
-- H177 Redundancy is manufactured by training noise. → e379 → SURVIVES in toys (head dropout 0.2: joint over sum 3.79 loss / 1.31 logit; every converged no-dropout variant 0.20-0.62 on the logit).
+- H176 Induction circuits add redundancy after they work (phase 2's H169). → e380 → KILLED as stated under zero-ablation (joint over sum on the logit 0.49-0.93 at every Pythia checkpoint; the loss's 0.69 to 3.61 growth is readout convexity); → e384 → under mean-ablation Pythia's final circuit keeps 1.72 on the centred logit, so some redundancy is real in Pythia, several-fold smaller than the loss shows.
+- H177 Redundancy is manufactured by training noise. → e379 → SURVIVES in toys (head dropout 0.2: joint over sum 3.79 loss / 1.31 logit; every converged no-dropout variant 0.20-0.62 on the logit; contested by prior work, see H184).
 - H178 First-order selection vanishes at convergence while use does not. → e379 → SURVIVES under manipulation (converged t -0.1 to +2.2 against use 1.3-5.1 nats; unconverged t +5 to +8; selection-use rho +0.89 to +0.94 far from an optimum).
 - H179 Co-selection marks circuits under construction. → e379 → SURVIVES under manipulation (high while building, near zero once converged, high throughout in runs that never converge).
 - H180 Lower-layer implementation settles before function, so lower parts are swappable late in training. → e378 → KILLED (step-63000 lower part costs the final upper part 0.28-0.42 nats, more than the whole late gain; halves co-adapt; an affine map repairs about half).
+
+- H181 The KL interaction of two ablations measures circuit additivity. → e383 → KILLED (it equals the Fisher inner product of the single logit effects, per-token correlation 0.73-0.98); e264's additivity survives in logit space (0.019-0.042).
+- H182 Induction circuits are redundant (joint over sum above 1) on a linear readout. → e384 → NARROWED (centred logit 0.79-0.94 in GPT-2, SmolLM2, Qwen, OLMo; 1.72 in Pythia under mean-ablation, 0.91 under zero-ablation; the loss inflates the ratio 1.4-5.3x).
+- H183 Readers draw preferentially on writes that WDD can identify in the state. → e385 → SURVIVES in aggregate (1.33-1.46x beyond write size in all five models, in every size quintile), not as a per-edge predictor (AUC 0.51-0.56).
+- H184 Self-repair requires training noise. → e386 → SURVIVES in toys only (annealed no-dropout runs repair 0-19% or less; head dropout 32-49%; constant learning rate 26%); contested by prior work in real models trained without dropout (McGrath et al. 2023; Rushing and Nanda 2024) and consistent with Pythia's logit-space redundancy (e384).
+- H185 Reader-weighted provenance is new. → literature check → KILLED for the exact hook-based split (standard; Franco and Crovella 2025), NARROWED to WDD's state-only approximation.
 
 ## Attention, sinks, embeddings
 

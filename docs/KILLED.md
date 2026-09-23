@@ -271,3 +271,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - CORRECTION of phase 2 (H169, e365): "induction circuits keep adding redundancy after they work" holds only on the loss; on the logit the top-8 joint ablation is sub-additive at every Pythia checkpoint (0.49-0.93) (e380). Phase 2's super-additivity readings in e357 and e365 are loss-readout statements, not redundancy statements.
 - "Lower-layer implementation settles before function, so lower parts are swappable late in training": the step-63000 lower part costs the final upper part 0.28-0.42 nats and old upper parts reject the final lower part (e378).
 - "Reader-weighted WDD is a reliable general edge finder": top-1 on strong edges 0.02-0.69 across models (e381); it is reliable on the distinctive induction edge (e375).
+
+## Session 34 kills and corrections (phase 3b)
+- "The KL interaction of two ablations measures whether the circuit adds": it equals the Fisher inner product of the two single logit effects (per-token correlation 0.73-0.98) (e383). e264's additivity survives in logit space; its control-pair "redundancy" in GPT-2 and Pythia is retracted as a readout overlap.
+- CORRECTION of the phase-3 correction: "the induction circuit is never redundant in logit space" holds under zero-ablation (e380) and for four of five models under mean-ablation; Pythia's final circuit keeps joint over sum 1.72 on the centred logit under mean-ablation (e384).
+- "Reader-weighted provenance is a new circuit-discovery capability": the exact split of a head's query or key input over upstream components is standard (ARENA; Franco and Crovella 2025); only WDD's state-only approximation is new, and the exact split beats it.
+- Scope note on "redundancy and self-repair come from training noise" (e379, e386): a toy-model statement; real models trained without dropout show self-repair (McGrath et al. 2023; Rushing and Nanda 2024), and Pythia keeps logit-space redundancy (e384).
