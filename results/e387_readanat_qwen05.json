@@ -1,0 +1,60 @@
+{
+ "model": "qwen05",
+ "rev": null,
+ "k_curve": {
+  "8": {
+   "captured_input": 0.22850908125197453,
+   "captured_norm": 0.14416088540237035,
+   "preference": 1.5850976540146673,
+   "preference_orthogonal": 1.255462189522416
+  },
+  "16": {
+   "captured_input": 0.28121888981558396,
+   "captured_norm": 0.19532268828664817,
+   "preference": 1.4397656118826185,
+   "preference_orthogonal": 1.180010707916699
+  },
+  "32": {
+   "captured_input": 0.33631093139778334,
+   "captured_norm": 0.257296475393324,
+   "preference": 1.3070949801534262,
+   "preference_orthogonal": 1.1065649747671737
+  },
+  "64": {
+   "captured_input": 0.39358609748937484,
+   "captured_norm": 0.32574458275572404,
+   "preference": 1.2082659799273627,
+   "preference_orthogonal": 1.052345929786255
+  },
+  "128": {
+   "captured_input": 0.4382003743074309,
+   "captured_norm": 0.3779272851324622,
+   "preference": 1.1594832962479626,
+   "preference_orthogonal": 1.0295958307539994
+  },
+  "256": {
+   "captured_input": 0.48127492950220935,
+   "captured_norm": 0.42032507024106935,
+   "preference": 1.145006480879628,
+   "preference_orthogonal": 1.033806977594593
+  }
+ },
+ "preference_by_alignment_quintile_k64": [
+  1.0377681255340576,
+  1.0350475311279297,
+  1.045113444328308,
+  1.0702024698257446,
+  1.1148028373718262
+ ],
+ "fan_in_participation_ratio_median": 31.57025146484375,
+ "fan_in_components_for_50pct_median": 14.0,
+ "fan_in_components_for_80pct_median": 50.0,
+ "input_from": {
+  "heads": 0.5993313748363606,
+  "mlp": 0.398752350788119,
+  "emb": 0.0019162743755204523
+ },
+ "n_reader_inputs": 985320,
+ "_exp": "e387_readanat_qwen05",
+ "_time": "2026-09-23 23:32:51"
+}

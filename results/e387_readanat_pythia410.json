@@ -1,0 +1,60 @@
+{
+ "model": "pythia410",
+ "rev": null,
+ "k_curve": {
+  "8": {
+   "captured_input": 0.22682015090413432,
+   "captured_norm": 0.14204938841701106,
+   "preference": 1.5967696406989358,
+   "preference_orthogonal": 1.3623926252269682
+  },
+  "16": {
+   "captured_input": 0.29217571542715076,
+   "captured_norm": 0.203797471888386,
+   "preference": 1.4336572123287523,
+   "preference_orthogonal": 1.270346707730825
+  },
+  "32": {
+   "captured_input": 0.36676271947529826,
+   "captured_norm": 0.281752938806649,
+   "preference": 1.3017174586668168,
+   "preference_orthogonal": 1.1904852491924143
+  },
+  "64": {
+   "captured_input": 0.43722881135733055,
+   "captured_norm": 0.3593541614623473,
+   "preference": 1.216707243845687,
+   "preference_orthogonal": 1.1380329851920188
+  },
+  "128": {
+   "captured_input": 0.4859042769513985,
+   "captured_norm": 0.4138038999038744,
+   "preference": 1.174238031744681,
+   "preference_orthogonal": 1.112424854797593
+  },
+  "256": {
+   "captured_input": 0.5257029427103393,
+   "captured_norm": 0.45667974802925687,
+   "preference": 1.15114135229106,
+   "preference_orthogonal": 1.0995957424750165
+  }
+ },
+ "preference_by_alignment_quintile_k64": [
+  0.9794159531593323,
+  0.9863882660865784,
+  0.988286554813385,
+  1.0221132040023804,
+  1.1481406688690186
+ ],
+ "fan_in_participation_ratio_median": 32.54880142211914,
+ "fan_in_components_for_50pct_median": 14.0,
+ "fan_in_components_for_80pct_median": 55.0,
+ "input_from": {
+  "heads": 0.5745277569779711,
+  "mlp": 0.42317926507103565,
+  "emb": 0.0022929779509932137
+ },
+ "n_reader_inputs": 1126080,
+ "_exp": "e387_readanat_pythia410",
+ "_time": "2026-09-23 23:30:20"
+}

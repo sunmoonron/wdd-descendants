@@ -281,3 +281,24 @@ e365b quotient drift, residual vs basis-free (overlap with final; chance 0.06): 
 2026-09-23 23:03:48 e385_readprominent_qwen05: preference ratio 1.33 (quintiles 1.14 1.21 1.26 1.33 1.35) AUC id 0.51 norm 0.88 both 0.87
 2026-09-23 23:03:50 e384_logitreread_olmo1b: induction loss j/s 1.92 S +0.80 | induction logit j/s 0.90 S +0.21 | induction centred j/s 0.91 S +0.21 | applicable loss I 0.50/0.13 | applicable logit I 0.45/0.11 | applicable centred I 0.45/0.11
 2026-09-23 23:03:55 e385_readprominent_olmo1b: preference ratio 1.46 (quintiles 1.06 1.14 1.29 1.34 1.33) AUC id 0.55 norm 0.89 both 0.88
+2026-09-23 23:16:40 e387_readanat_gpt2: k64 captured 0.47 pref 1.38 orth 1.16 | k256 captured 0.69 | fan-in PR 16.8 n50 8
+2026-09-23 23:28:28 e387_readanat_smollm2: k64 captured 0.48 pref 1.17 orth 1.05 | k256 captured 0.67 | fan-in PR 28.0 n50 11
+2026-09-23 23:30:20 e387_readanat_pythia410: k64 captured 0.44 pref 1.22 orth 1.14 | k256 captured 0.53 | fan-in PR 32.5 n50 14
+2026-09-23 23:31:09 e387_readanat_pythia410_step0: k64 captured 0.55 pref 1.71 orth 1.01 | k256 captured 0.64 | fan-in PR 29.4 n50 9
+2026-09-23 23:32:51 e387_readanat_qwen05: k64 captured 0.39 pref 1.21 orth 1.05 | k256 captured 0.48 | fan-in PR 31.6 n50 14
+2026-09-23 23:33:59 e387_readanat_olmo1b: k64 captured 0.52 pref 1.56 orth 1.27 | k256 captured 0.63 | fan-in PR 20.4 n50 8
+2026-09-23 23:36:36 e388_wddsae_gpt2: mid level loss recovered: k8 WDD 0.52 rot 0.19 PCA 0.13 k16 WDD 0.73 rot 0.36 PCA 0.26 k32 WDD 0.88 rot 0.67 PCA 0.37 k64 WDD 0.96 rot 0.92 PCA 0.51
+2026-09-23 23:39:07 e388_wddsae_smollm2: mid level loss recovered: k8 WDD 0.72 rot 0.29 PCA 0.28 k16 WDD 0.87 rot 0.58 PCA 0.43 k32 WDD 0.95 rot 0.87 PCA 0.60 k64 WDD 0.99 rot 0.97 PCA 0.76
+2026-09-23 23:43:04 e387_readanat_pythia410_step512: k64 captured 0.73 pref 1.75 orth 1.10 | k256 captured 0.79 | fan-in PR 19.0 n50 7
+2026-09-23 23:43:18 e388_wddsae_pythia410: mid level loss recovered: k8 WDD 0.37 rot 0.16 PCA 0.12 k16 WDD 0.57 rot 0.29 PCA 0.21 k32 WDD 0.78 rot 0.48 PCA 0.32 k64 WDD 0.92 rot 0.79 PCA 0.46
+2026-09-23 23:43:39 e387_readanat_pythia410_step1000: k64 captured 0.64 pref 1.70 orth 1.09 | k256 captured 0.71 | fan-in PR 25.9 n50 9
+2026-09-23 23:46:36 e388_wddsae_qwen05: mid level loss recovered: k8 WDD 0.69 rot 0.24 PCA 0.28 k16 WDD 0.83 rot 0.56 PCA 0.34 k32 WDD 0.94 rot 0.87 PCA 0.44 k64 WDD 0.98 rot 0.97 PCA 0.60
+2026-09-23 23:46:38 e387_readanat_pythia410_step4000: k64 captured 0.48 pref 1.37 orth 1.08 | k256 captured 0.56 | fan-in PR 37.4 n50 14
+2026-09-23 23:46:52 e387_readanat_pythia410_step16000: k64 captured 0.43 pref 1.21 orth 1.08 | k256 captured 0.53 | fan-in PR 39.3 n50 16
+2026-09-23 23:47:37 e388_wddsae_olmo1b: mid level loss recovered: k8 WDD 0.31 rot 0.02 PCA 0.11 k16 WDD 0.58 rot 0.08 PCA 0.16 k32 WDD 0.79 rot 0.26 PCA 0.22 k64 WDD 0.91 rot 0.70 PCA 0.29
+2026-09-23 23:48:10 e389_whichatoms_gpt2: all: k8 0.52 k32 0.88 | embeddings: k8 0.37 k32 0.68 | writes: k8 0.50 k32 0.86 | mlp: k8 0.51 k32 0.85 | heads: k8 0.21 k32 0.64 | rotated_all: k8 0.19 k32 0.67
+2026-09-23 23:48:10 e389_whichatoms_smollm2: all: k8 0.72 k32 0.95 | embeddings: k8 0.25 k32 0.82 | writes: k8 0.72 k32 0.95 | mlp: k8 0.72 k32 0.95 | heads: k8 0.12 k32 0.76 | rotated_all: k8 0.29 k32 0.87
+2026-09-23 23:48:14 e389_whichatoms_pythia410: all: k8 0.37 k32 0.78 | embeddings: k8 0.08 k32 0.46 | writes: k8 0.37 k32 0.77 | mlp: k8 0.33 k32 0.73 | heads: k8 -0.02 k32 0.36 | rotated_all: k8 0.16 k32 0.48
+2026-09-23 23:48:52 e389_whichatoms_qwen05: all: k8 0.69 k32 0.94 | embeddings: k8 0.22 k32 0.83 | writes: k8 0.69 k32 0.93 | mlp: k8 0.69 k32 0.93 | heads: k8 0.13 k32 0.62 | rotated_all: k8 0.24 k32 0.87
+2026-09-23 23:49:00 e389_whichatoms_olmo1b: all: k8 0.31 k32 0.79 | embeddings: k8 0.03 k32 0.25 | writes: k8 0.31 k32 0.78 | mlp: k8 0.32 k32 0.78 | heads: k8 0.01 k32 0.18 | rotated_all: k8 0.02 k32 0.26
+2026-09-23 23:50:21 e390_provenance_pythia410: step0: k8 0.14 k32 0.54 | step1000: k8 0.17 k32 0.56 | step4000: k8 -0.00 k32 0.47 | step16000: k8 0.21 k32 0.64 | step33000: k8 0.29 k32 0.71 | step63000: k8 0.33 k32 0.73 | final: k8 0.33 k32 0.73

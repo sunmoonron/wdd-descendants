@@ -21,12 +21,12 @@ License: MIT for the code (`scripts/`), CC BY 4.0 for the result files and docum
 | `scripts/sched2.py`, `prefetch.py`, `waitrun.sh`, `pythia_revs.txt`, `olmo_revs.txt` | Phase 2's job scheduler, checkpoint prefetcher, dependency waiter and checkpoint lists. |
 | `results/e357_*.json` to `results/e373_*.json`, `results/FINDINGS_phase2.log`, `results/e365/*.pt` | Phase-2 results, the phase-2 findings log, and the top-16 quotient bases with their logit-image summaries at 13 Pythia checkpoints. |
 | `RUNLIST_phase2.txt` | Every phase-2 run in the order the scheduler completed it. |
-| `scripts/e374_*.py` to `scripts/e386_*.py`, `scripts/p3_common.py`, `results/e374_*.json` to `results/e386_*.json`, `RUNLIST_phase3.txt` | Phase 3: reader maps, scale mechanics, interaction readouts, stitching and toy transformers. |
+| `scripts/e374_*.py` to `scripts/e390_*.py`, `scripts/p3_common.py`, `results/e374_*.json` to `results/e390_*.json`, `RUNLIST_phase3.txt` | Phase 3: reader maps, scale mechanics, interaction readouts, stitching and toy transformers. |
 | `RUNLIST.txt` | Every run that produced a result, as `python <script> <model-or-revision>`, in recorded order (1,430 lines). Replaying it reproduces the repository. |
 | `waves/` | The job files that were launched in parallel, for the record of what ran together. |
 | `docs/FINDINGS.md` | The chronological narrative, session by session, with the numbers. |
 | `docs/SYNTHESIS.md` | What each round established, the closing statements, and where everything is. |
-| `docs/GRAPH.md` | The hypothesis graph, H0 to H185: each hypothesis, the experiments that tested it, and its status (survives, narrowed, killed, open). |
+| `docs/GRAPH.md` | The hypothesis graph, H0 to H190: each hypothesis, the experiments that tested it, and its status (survives, narrowed, killed, open). |
 | `docs/KILLED.md` | Every hypothesis killed, with the experiment and the number that killed it, and the artifacts retracted. |
 | `docs/THEORY.md` | The first-order transport theory, its derived predictions tagged by what they rest on, the tests of the new predictions, and the corrections the later rounds forced. |
 | `docs/RELATED_WORK.md` | The literature placement and the priority check against the closest 2025 and 2026 work. |
@@ -190,9 +190,9 @@ python scripts/e360b_drift_analysis.py
 
 Two measurement notes. The drift signatures were computed with TF32 matmuls, which e360e shows agree with fp32 at cosine 1.00 for the same token assignment. Their raw cross-checkpoint cosines must be read against the reliability ceilings of e360d and e362d, because a single neuron's signature is estimated from about 36 tokens and early-layer signatures are strongly context-dependent late in training.
 
-## Phase 3: readers, readouts and toys (e374 to e386)
+## Phase 3: readers, readouts and toys (e374 to e390)
 
-A third round on the same day, one to five minutes per run, aimed at mechanisms and at the program's own conclusions rather than more models or checkpoints. It includes the program's first training: 13 tiny attention-only transformers trained from scratch in about four minutes each, to manufacture phenomena instead of only observing them. Details: `docs/FINDINGS.md` (session 33), hypotheses H170 to H185, `docs/THEORY.md` section 3j, `docs/RELATED_WORK.md` sections 12 and 13, `RUNLIST_phase3.txt`.
+A third round on the same day, one to five minutes per run, aimed at mechanisms and at the program's own conclusions rather than more models or checkpoints. It includes the program's first training: 13 tiny attention-only transformers trained from scratch in about four minutes each, to manufacture phenomena instead of only observing them. Details: `docs/FINDINGS.md` (session 33), hypotheses H170 to H190, `docs/THEORY.md` sections 3j and 3k, `docs/RELATED_WORK.md` sections 12 to 14, `RUNLIST_phase3.txt`.
 
 | Experiment | Question | Answer |
 | --- | --- | --- |
@@ -207,6 +207,9 @@ A third round on the same day, one to five minutes per run, aimed at mechanisms 
 | e384 | Does phase 2's induction redundancy survive on a linear readout? | The loss inflates it 1.4-5.3x; on the centred logit the circuit is additive or sub-additive in four models and redundant only in Pythia (1.72) |
 | e385 | Do readers draw on the writes WDD can identify? | Yes in aggregate: 1.33-1.46x more than write size predicts, in all five models; not a per-edge predictor |
 | e386 | Does self-repair need training noise (toys)? | Annealed no-dropout toys repair 0-19%; head dropout 32-49%; a constant learning rate 26% |
+| e387 | How sparse is reading, and is the reader preference for identifiable writes deep? | Half of a reader input comes from 8-14 components; the preference is mostly shared alignment with the state (present at initialisation), genuine only in GPT-2 and OLMo |
+| e388 | Judged as a sparse autoencoder, is WDD's reconstruction functionally faithful? | 64 atoms keep 84-99% of the loss; at 8 atoms 31-88% against -10 to 35% for a rotated copy of the dictionary and 11-40% for PCA |
+| e389, e390 | Which atoms carry that, and is it provenance? | The model's own MLP write rows; rows from checkpoints that differ (cosine 0.35 or less) do no better than random |
 
 These results correct phase 2: its super-additivity readings (e357, e365) are mostly statements about the loss readout; on logits real redundancy remains only in Pythia. A literature check (docs/RELATED_WORK.md section 13) found the exact reader-input split behind e375 to be standard (Franco and Crovella 2025), selection vanishing at convergence to be classical pruning knowledge, and self-repair documented in real models trained without dropout; the loss-versus-logit sign-flip measurement, block swaps across training checkpoints of one language model, and the readout-versus-trajectory split of removal curves were not found in prior work.
 

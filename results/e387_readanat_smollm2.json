@@ -1,0 +1,60 @@
+{
+ "model": "smollm2",
+ "rev": null,
+ "k_curve": {
+  "8": {
+   "captured_input": 0.2429775728684603,
+   "captured_norm": 0.15366835954650415,
+   "preference": 1.5811815365604187,
+   "preference_orthogonal": 1.1995946198599736
+  },
+  "16": {
+   "captured_input": 0.30630641113617096,
+   "captured_norm": 0.21865601537079918,
+   "preference": 1.4008597504931815,
+   "preference_orthogonal": 1.132209232218573
+  },
+  "32": {
+   "captured_input": 0.38709582890789473,
+   "captured_norm": 0.30785763928662635,
+   "preference": 1.2573858157454876,
+   "preference_orthogonal": 1.0776370479811352
+  },
+  "64": {
+   "captured_input": 0.4770727929583922,
+   "captured_norm": 0.4094035969128505,
+   "preference": 1.1652872533505034,
+   "preference_orthogonal": 1.0451477382957226
+  },
+  "128": {
+   "captured_input": 0.5656305836031357,
+   "captured_norm": 0.4999431157337483,
+   "preference": 1.1313898837730374,
+   "preference_orthogonal": 1.04703620030279
+  },
+  "256": {
+   "captured_input": 0.6666653515591745,
+   "captured_norm": 0.5918938888873341,
+   "preference": 1.1263257892599614,
+   "preference_orthogonal": 1.0684306392649074
+  }
+ },
+ "preference_by_alignment_quintile_k64": [
+  1.0060724020004272,
+  0.9942070245742798,
+  1.003238320350647,
+  1.0360522270202637,
+  1.0891809463500977
+ ],
+ "fan_in_participation_ratio_median": 27.961380004882812,
+ "fan_in_components_for_50pct_median": 11.0,
+ "fan_in_components_for_80pct_median": 39.0,
+ "input_from": {
+  "heads": 0.5598793778255897,
+  "mlp": 0.43775142082807356,
+  "emb": 0.0023692013463366963
+ },
+ "n_reader_inputs": 798660,
+ "_exp": "e387_readanat_smollm2",
+ "_time": "2026-09-23 23:28:28"
+}

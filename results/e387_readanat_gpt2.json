@@ -1,0 +1,60 @@
+{
+ "model": "gpt2",
+ "rev": null,
+ "k_curve": {
+  "8": {
+   "captured_input": 0.2541246159178678,
+   "captured_norm": 0.14464272354448515,
+   "preference": 1.7569125476243626,
+   "preference_orthogonal": 1.2460001392805378
+  },
+  "16": {
+   "captured_input": 0.3190003796127203,
+   "captured_norm": 0.1995201758853179,
+   "preference": 1.5988377024891878,
+   "preference_orthogonal": 1.2047966719674925
+  },
+  "32": {
+   "captured_input": 0.39166411498773473,
+   "captured_norm": 0.2653509728154352,
+   "preference": 1.4760229097036575,
+   "preference_orthogonal": 1.180067977404677
+  },
+  "64": {
+   "captured_input": 0.4691017568264794,
+   "captured_norm": 0.33950879694793057,
+   "preference": 1.3817072224447373,
+   "preference_orthogonal": 1.162590076644737
+  },
+  "128": {
+   "captured_input": 0.5640358125034926,
+   "captured_norm": 0.4374307001574783,
+   "preference": 1.289428959376732,
+   "preference_orthogonal": 1.1420128195409551
+  },
+  "256": {
+   "captured_input": 0.694792582657396,
+   "captured_norm": 0.5830829227826559,
+   "preference": 1.1915845165583416,
+   "preference_orthogonal": 1.109991045291545
+  }
+ },
+ "preference_by_alignment_quintile_k64": [
+  1.2294169664382935,
+  1.1841621398925781,
+  1.1727924346923828,
+  1.1648741960525513,
+  1.1750940084457397
+ ],
+ "fan_in_participation_ratio_median": 16.778846740722656,
+ "fan_in_components_for_50pct_median": 8.0,
+ "fan_in_components_for_80pct_median": 25.0,
+ "input_from": {
+  "heads": 0.686728893210901,
+  "mlp": 0.30209045928122363,
+  "emb": 0.011180647507875405
+ },
+ "n_reader_inputs": 403920,
+ "_exp": "e387_readanat_gpt2",
+ "_time": "2026-09-23 23:16:40"
+}

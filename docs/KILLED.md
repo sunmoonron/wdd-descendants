@@ -277,3 +277,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - CORRECTION of the phase-3 correction: "the induction circuit is never redundant in logit space" holds under zero-ablation (e380) and for four of five models under mean-ablation; Pythia's final circuit keeps joint over sum 1.72 on the centred logit under mean-ablation (e384).
 - "Reader-weighted provenance is a new circuit-discovery capability": the exact split of a head's query or key input over upstream components is standard (ARENA; Franco and Crovella 2025); only WDD's state-only approximation is new, and the exact split beats it.
 - Scope note on "redundancy and self-repair come from training noise" (e379, e386): a toy-model statement; real models trained without dropout show self-repair (McGrath et al. 2023; Rushing and Nanda 2024), and Pythia keeps logit-space redundancy (e384).
+
+## Session 35 kills and narrowings (fresh-slate pass)
+- "Readers' preference for WDD-identifiable writes shows the model organises writes to be read": most of it is geometry shared with the state, present at initialisation (raw 1.71 in Pythia at step 0); a genuine part remains only in GPT-2 and OLMo (e387).
+- "WDD's functional advantage over a random dictionary comes from the embeddings": the MLP write rows carry it (e389).
+- "Any trained MLP rows would do as well as the model's own": rows from a trained checkpoint at cosine 0.35 to the final rows do no better than random (e390).

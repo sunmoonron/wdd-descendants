@@ -321,6 +321,12 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H184 Self-repair requires training noise. → e386 → SURVIVES in toys only (annealed no-dropout runs repair 0-19% or less; head dropout 32-49%; constant learning rate 26%); contested by prior work in real models trained without dropout (McGrath et al. 2023; Rushing and Nanda 2024) and consistent with Pythia's logit-space redundancy (e384).
 - H185 Reader-weighted provenance is new. → literature check → KILLED for the exact hook-based split (standard; Franco and Crovella 2025), NARROWED to WDD's state-only approximation.
 
+- H186 Readers' preference for WDD-identifiable writes is learned computational organisation. → e387 → NARROWED (raw preference present at initialisation, 1.71; after removing alignment with the state 1.05-1.27, and within alignment quintiles about 1 in SmolLM2, Qwen and Pythia; genuine only in GPT-2 and OLMo).
+- H187 Reading is sparse (few writers per reader input). → e387 → NARROWED (half of an input from 8-14 components, 80% from 25-55; concentrated before the induction transition, 7 components at Pythia step 512, and spreading after).
+- H188 WDD's k-sparse reconstruction preserves the model's computation (the SAE test). → e388 → SURVIVES (loss recovered 0.84-0.99 at k = 64 and 0.31-0.88 at k = 8 across five models and three depths, far above a rotated dictionary and PCA at small k).
+- H189 WDD's functional advantage comes from the embeddings. → e389 → KILLED (MLP write rows alone match the full dictionary; embeddings alone 0.03-0.37, head bases -0.02 to 0.21).
+- H190 WDD's functional advantage is provenance, not generic trained geometry. → e390 → SURVIVES (Pythia: rows from checkpoints with cosine 0.93 to the final rows match the model's own; rows at cosine 0.35 or less, trained or not, do no better than random).
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
