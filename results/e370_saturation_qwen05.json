@@ -1,0 +1,33 @@
+{
+ "model": "qwen05",
+ "applicable": {
+  "n": 695,
+  "mean_loss": 0.5707967877388,
+  "mean_p": 0.7501832842826843,
+  "share_p_above_0p9": 0.5510791540145874,
+  "mean_one_minus_p": 0.24981670081615448
+ },
+ "other": {
+  "n": 7465,
+  "mean_loss": 3.219010353088379,
+  "mean_p": 0.25980547070503235,
+  "share_p_above_0p9": 0.07823174446821213,
+  "mean_one_minus_p": 0.7401944994926453
+ },
+ "e368": {
+  "induction_applicable": 0.009322131052613258,
+  "induction_rest": -0.0005436205537989736,
+  "others_applicable": 0.0011090707266703248,
+  "others_rest": 0.00028536131139844656
+ },
+ "e369": {
+  "induction_applicable": 0.008084849454462528,
+  "induction_rest": 0.0006778106326237321,
+  "others_applicable": 0.00015745172277092934,
+  "others_rest": 0.005076190922409296
+ },
+ "gradient_to_ablation_ratio_induction": 1.153037060877837,
+ "gradient_to_ablation_ratio_others": 7.043878003696857,
+ "_exp": "e370_saturation_qwen05",
+ "_time": "2026-09-23 18:43:35"
+}

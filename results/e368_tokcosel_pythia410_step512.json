@@ -1,0 +1,76 @@
+{
+ "model": "pythia410",
+ "rev": "step512",
+ "n_tokens": 8160,
+ "share_applicable": 0.0835784301161766,
+ "induction_heads": [],
+ "previous_heads": [
+  [
+   5,
+   2
+  ]
+ ],
+ "n_windows": 112,
+ "induction": null,
+ "previous": null,
+ "induction_plus_previous": null,
+ "applicable_contrast_induction_mean": null,
+ "applicable_contrast_other_mean": -0.01498094480484724,
+ "auc_contrast_finds_induction_heads": null,
+ "pcs": [
+  {
+   "var_share": 0.04526882246136665,
+   "auc_applicable": 0.508327066898346,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.0356515571475029,
+   "auc_applicable": 0.5197170972824097,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.0309915691614151,
+   "auc_applicable": 0.5096664726734161,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.02693428099155426,
+   "auc_applicable": 0.5096429586410522,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.021466528996825218,
+   "auc_applicable": 0.5554463267326355,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.019423622637987137,
+   "auc_applicable": 0.6411273777484894,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.017974838614463806,
+   "auc_applicable": 0.5270843207836151,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.016510626301169395,
+   "auc_applicable": 0.5110946893692017,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.014750830829143524,
+   "auc_applicable": 0.5154674649238586,
+   "induction_loading_share": null
+  },
+  {
+   "var_share": 0.014248142018914223,
+   "auc_applicable": 0.5239202380180359,
+   "induction_loading_share": null
+  }
+ ],
+ "best_pc_auc": 0.6411273777484894,
+ "best_pc": 5,
+ "_exp": "e368_tokcosel_pythia410_step512",
+ "_time": "2026-09-23 18:05:26"
+}

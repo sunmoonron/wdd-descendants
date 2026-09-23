@@ -1,0 +1,109 @@
+{
+ "model": "pythia410",
+ "rev": "step512",
+ "n_heads": 384,
+ "induction_heads": [],
+ "previous_heads": [
+  [
+   5,
+   2
+  ]
+ ],
+ "ablation_top8": [
+  [
+   19,
+   3
+  ],
+  [
+   4,
+   5
+  ],
+  [
+   17,
+   11
+  ],
+  [
+   22,
+   1
+  ],
+  [
+   21,
+   4
+  ],
+  [
+   0,
+   2
+  ],
+  [
+   19,
+   1
+  ],
+  [
+   4,
+   4
+  ]
+ ],
+ "overlap_ablation_induction": 0,
+ "mean_induction_content": 0.08406352996826172,
+ "natural": {
+  "induction": null,
+  "previous": null,
+  "ablation_top8": {
+   "raw": {
+    "value": 0.043004360049963,
+    "random_mean": 0.015049919889879675,
+    "random_z": 1.0330863782463588,
+    "layer_matched_mean": 0.018297005894073664,
+    "layer_matched_z": 0.8289415547017531
+   },
+   "global_removed": {
+    "value": 0.049898453056812286,
+    "random_mean": 0.008292270343044948,
+    "random_z": 1.8271357463038442,
+    "layer_matched_mean": 0.001090717516344739,
+    "layer_matched_z": 2.3465326751250375
+   },
+   "loss_partialled": {
+    "value": 0.037522878497838974,
+    "random_mean": 0.013548364181988291,
+    "random_z": 0.8673735213934435,
+    "layer_matched_mean": 0.010767259480780922,
+    "layer_matched_z": 1.0660234041213996
+   },
+   "corr_with_induction_content": -0.08402010798454285,
+   "content_corr_random_mean": -0.026337946015410126,
+   "content_corr_random_sd": 0.12966388463974
+  },
+  "induction_plus_previous": null
+ },
+ "mixed": {
+  "induction": null,
+  "previous": null,
+  "ablation_top8": {
+   "raw": {
+    "value": 0.10230321437120438,
+    "random_mean": 0.07114447515366919,
+    "random_z": 0.2561925827971138,
+    "layer_matched_mean": 0.06708423905598465,
+    "layer_matched_z": 0.30014733976835023
+   },
+   "global_removed": {
+    "value": 0.037618737667798996,
+    "random_mean": 0.015451433949947387,
+    "random_z": 0.9292264619068049,
+    "layer_matched_mean": 0.013550057323791408,
+    "layer_matched_z": 1.0996747526134392
+   },
+   "loss_partialled": {
+    "value": 0.032469768077135086,
+    "random_mean": 0.011640867934474955,
+    "random_z": 0.9513348772757101,
+    "layer_matched_mean": 0.008736714023611966,
+    "layer_matched_z": 1.054758265204923
+   }
+  },
+  "induction_plus_previous": null
+ },
+ "_exp": "e363_coselctrl_pythia410_step512",
+ "_time": "2026-09-23 17:24:16"
+}

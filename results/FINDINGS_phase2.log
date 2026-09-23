@@ -1,0 +1,209 @@
+2026-09-23 16:38:38 e358_ioictrl_gpt2: LD 3.10 acc 0.98 | heads I top/random 0.22/0.03 signed -0.01 ARI known 0.24 known-in-top16 10 NA 0.30/0.05 | natural I 0.14/0.11 | neurons I 0.12/0.02
+2026-09-23 16:39:26 e359_cosel_gpt2: natural: global 0.04 modes>null 7 Q 0.113/0.063 same-layer 0.35/0.08 ind-heads corr +0.01 vs -0.01 || mixed: global 0.41 modes>null 10 Q 0.307/0.063 same-layer 0.25/0.08 ind-heads corr +0.14 vs +0.15
+2026-09-23 16:41:49 e359_cosel_smollm2: natural: global 0.02 modes>null 8 Q 0.066/0.053 same-layer 0.62/0.03 ind-heads corr +0.04 vs -0.01 || mixed: global 0.32 modes>null 12 Q 0.274/0.054 same-layer 0.12/0.03 ind-heads corr +0.81 vs +0.02
+2026-09-23 16:44:39 e359_cosel_pythia410: natural: global 0.03 modes>null 10 Q 0.111/0.054 same-layer 0.57/0.04 ind-heads corr +0.01 vs -0.01 || mixed: global 0.39 modes>null 13 Q 0.282/0.047 same-layer 0.20/0.04 ind-heads corr +0.76 vs -0.00
+2026-09-23 16:45:28 e363_coselctrl_gpt2: IND 8 PRV 8 | natural: induction gr z +2.2/+2.0 content -0.06, previous gr z +1.7/+1.7 content +0.06, ablation_top8 gr z -0.6/-0.5 content -0.15
+2026-09-23 16:47:55 e358_ioictrl_smollm2: LD 4.68 acc 1.00 | heads I top/random 0.16/0.04 signed -0.03 NA 0.26/0.12 | natural I 0.15/0.10 | neurons I 0.06/0.01
+2026-09-23 16:50:34 e357_indctrl_gpt2: heads-on-induction I top/random 0.41/0.15 signed +0.21 ARI 0.15 NA 1.18/0.19 | same-heads-on-natural I 0.17/0.13 ARI 0.15 | natural-selected I 0.25/0.11 | neurons ind I 0.26/0.01 nat I 0.08/0.02
+2026-09-23 16:51:45 e363_coselctrl_smollm2: IND 8 PRV 8 | natural: induction gr z +6.5/+4.9 content -0.31, previous gr z +0.5/+0.6 content -0.06, ablation_top8 gr z +7.5/+6.9 content -0.29
+2026-09-23 16:54:09 e366_condnat_gpt2: applicable: I 0.21/0.13 NA 0.24 single +0.021/-0.005 | matched_random: I 0.15/0.10 NA 0.18 single +0.002/-0.002 | all: I 0.19/0.12 NA 0.20 single +0.006/+0.001
+2026-09-23 16:54:25 e368_tokcosel_gpt2: IND 8 | induction token z +2.8/+3.1 window z +2.4 previous token z -0.7/-0.1 window z -2.6 | AUC heads 0.4053308963775635 best-PC AUC 0.57
+2026-09-23 16:54:45 e368_tokcosel_smollm2: IND 8 | induction token z +15.0/+8.3 window z +6.4 previous token z +4.4/+6.3 window z +1.8 | AUC heads 0.8664122223854065 best-PC AUC 0.61
+2026-09-23 16:55:25 e361_depth_gpt2_2: b2->L5: dim 16 full 0.44 pls16 0.41 pca16 0.40 rand16 0.37 shuf16 0.41 | overlap 0.53/0.47 | comp/core fn 0.38/0.41 id 0.83/0.78 | ledger 0.67/-0.04
+2026-09-23 16:56:03 e361_depth_gpt2_3: b3->L6: dim 16 full 0.30 pls16 0.27 pca16 0.25 rand16 0.19 shuf16 0.25 | overlap 0.47/0.31 | comp/core fn 0.30/0.27 id 0.90/0.80 | ledger 0.67/-0.12
+2026-09-23 16:56:42 e361_depth_gpt2_6: b6->L9: dim 16 full 0.67 pls16 0.64 pca16 0.62 rand16 0.57 shuf16 0.63 | overlap 0.58/0.46 | comp/core fn 0.63/0.64 id 0.88/0.96 | ledger 0.82/-0.08
+2026-09-23 16:57:19 e361_depth_gpt2_8: b8->L10: dim 16 full 0.66 pls16 0.60 pca16 0.60 rand16 0.50 shuf16 0.57 | overlap 0.41/0.42 | comp/core fn 0.58/0.60 id 0.30/0.63 | ledger 0.79/0.13
+2026-09-23 16:58:03 e361_depth_smollm2_2: b2->L9: dim 16 full 0.38 pls16 0.36 pca16 0.37 rand16 0.29 shuf16 0.35 | overlap 0.45/0.34 | comp/core fn 0.36/0.36 id 0.75/0.66 | ledger 0.49/0.04
+2026-09-23 16:59:43 e366_condnat_smollm2: applicable: I 0.41/0.12 NA 0.68 single +0.047/+0.002 | matched_random: I 0.19/0.10 NA 0.26 single +0.004/+0.007 | all: I 0.27/0.11 NA 0.38 single +0.011/+0.005
+2026-09-23 17:00:10 e369_tokabl_gpt2: IND 8 | induction token z +5.3/+4.2 window z +4.6 previous token z +3.4/+2.4 window z +1.6 | AUC heads 0.8170955777168274 best-PC AUC 0.65
+2026-09-23 17:00:14 e358_ioictrl_pythia410: LD 3.93 acc 1.00 | heads I top/random 0.13/0.03 signed -0.02 NA 0.18/0.04 | natural I 0.09/0.07 | neurons I 0.04/0.08
+2026-09-23 17:00:54 e361_depth_smollm2_7: b7->L14: dim 16 full 0.31 pls16 0.30 pca16 0.28 rand16 0.24 shuf16 0.29 | overlap 0.55/0.15 | comp/core fn 0.29/0.30 id 0.92/0.90 | ledger 0.67/-0.04
+2026-09-23 17:02:10 e360_drift_step16: eval loss 10.261
+2026-09-23 17:03:07 e360_drift_step256: eval loss 7.531
+2026-09-23 17:03:46 e357_indctrl_smollm2: heads-on-induction I top/random 0.42/0.13 signed +0.31 ARI 0.22 NA 0.38/0.22 | same-heads-on-natural I 0.19/0.14 ARI 0.03 | natural-selected I 0.32/0.14 | neurons ind I 0.11/0.01 nat I 0.12/0.01
+2026-09-23 17:03:57 e369_tokabl_smollm2: IND 8 | induction token z +11.6/+9.2 window z +3.2 previous token z +5.6/+4.6 window z +1.2 | AUC heads 0.9680343270301819 best-PC AUC 0.66
+2026-09-23 17:04:01 e370_saturation_gpt2: applicable p 0.65 (p>0.9 0.38) vs other p 0.17 | ind heads grad -0.0020 abl +0.0184
+2026-09-23 17:04:09 e370_saturation_smollm2: applicable p 0.72 (p>0.9 0.45) vs other p 0.23 | ind heads grad +0.0195 abl +0.0235
+2026-09-23 17:04:50 e361_depth_smollm2_15: b15->L22: dim 16 full 0.32 pls16 0.33 pca16 0.30 rand16 0.18 shuf16 0.30 | overlap 0.57/0.26 | comp/core fn 0.31/0.33 id 0.86/0.78 | ledger 0.72/0.06
+2026-09-23 17:05:20 e358_ioictrl_qwen05: LD 6.19 acc 1.00 | heads I top/random 0.14/0.10 signed -0.02 NA 0.23/0.11 | natural I 0.09/0.13 | neurons I 0.33/0.01
+2026-09-23 17:05:33 e361_depth_smollm2_21: b21->L28: dim 16 full 0.73 pls16 0.71 pca16 0.70 rand16 0.66 shuf16 0.71 | overlap 0.56/0.32 | comp/core fn 0.69/0.71 id 0.85/0.86 | ledger 0.85/0.08
+2026-09-23 17:05:49 e370b selection vs use: gpt2: Spearman(selection, use) over heads all +0.36 applicable +0.17; median |t| selection 2.1 vs use 2.0; heads with use t>3 0.30, selection |t|>3 0.38; induction heads selection -0.0014 vs use +0.0035 (applicable -0.0020 vs +0.0184) | smollm2: Spearman(selection, use) over heads all +0.39 applicable +0.37; median |t| selection 1.3 vs use 2.5; heads with use t>3 0.36, selection |t|>3 0.14; induction heads selection -0.0002 vs use +0.0024 (applicable +0.0195 vs +0.0235)
+2026-09-23 17:08:05 e365_inddev_step1000: gain 7.86 prefix 0.86 I 0.23/0.02 signed +0.08 NA 0.38 | qdim 8 full 0.74 | image gain ratio 1.89 overlap-with-random 0.47
+2026-09-23 17:10:24 e360_drift_step0: eval loss 11.059
+2026-09-23 17:11:37 e359_cosel_qwen05: natural: global 0.03 modes>null 9 Q 0.077/0.061 same-layer 0.74/0.04 ind-heads corr -0.01 vs -0.02 || mixed: global 0.31 modes>null 25 Q 0.255/0.057 same-layer 0.40/0.04 ind-heads corr +0.15 vs +0.01
+2026-09-23 17:13:01 e360_drift_step1: eval loss 11.059
+2026-09-23 17:14:12 e360_drift_step2: eval loss 11.057
+2026-09-23 17:14:41 e363_coselctrl_pythia410: IND 8 PRV 8 | natural: induction gr z +2.4/+2.6 content +0.00, previous gr z +7.3/+6.2 content +0.05, ablation_top8 gr z +0.6/+0.5 content +0.05
+2026-09-23 17:15:20 e360_drift_step4: eval loss 10.966
+2026-09-23 17:16:27 e360_drift_step8: eval loss 10.689
+2026-09-23 17:23:26 e359_cosel_olmo1b: natural: global 0.06 modes>null 11 Q 0.136/0.060 same-layer 0.34/0.06 ind-heads corr +0.02 vs +0.01 || mixed: global 0.33 modes>null 14 Q 0.317/0.049 same-layer 0.26/0.06 ind-heads corr +0.22 vs -0.02
+2026-09-23 17:23:42 e357_indctrl_pythia410: heads-on-induction I top/random 0.40/0.05 signed +0.50 ARI 0.16 NA 1.75/0.07 | same-heads-on-natural I 0.12/0.06 ARI 0.15 | natural-selected I 0.23/0.08 | neurons ind I 0.09/0.06 nat I 0.07/0.04
+2026-09-23 17:24:16 e363_coselctrl_pythia410_step512: IND 0 PRV 1 | natural: ablation_top8 gr z +1.8/+2.3 content -0.08
+2026-09-23 17:26:39 e363_coselctrl_pythia410_step1000: IND 8 PRV 5 | natural: induction gr z +5.0/+4.0 content -0.12, previous gr z +4.1/+2.8 content +0.09, ablation_top8 gr z +6.7/+6.6 content -0.07
+2026-09-23 17:26:48 e366_condnat_pythia410: applicable: I 0.21/0.05 NA 0.49 single +0.010/-0.002 | matched_random: I 0.12/0.04 NA 0.22 single +0.006/-0.000 | all: I 0.16/0.05 NA 0.28 single +0.009/+0.001
+2026-09-23 17:28:57 e371_scalehess_gpt2: induction: singles 1st/2nd R2 -0.28/-1.17; interaction~H rho +0.17 R2 0.00 (top rho +0.14); cosel~H rho +0.05, cosel~interaction rho +0.07 | natural: singles 1st/2nd R2 -0.16/-0.13; interaction~H rho +0.11 R2 -0.03 (top rho +0.15); cosel~H rho +0.18, cosel~interaction rho +0.06
+2026-09-23 17:31:07 e363_coselctrl_qwen05: IND 8 PRV 8 | natural: induction gr z +8.5/+9.1 content -0.12, previous gr z +4.5/+4.4 content -0.18, ablation_top8 gr z -2.4/-1.9 content +0.02
+2026-09-23 17:33:20 e371_scalehess_smollm2: induction: singles 1st/2nd R2 -0.25/0.04; interaction~H rho +0.31 R2 -0.03 (top rho +0.31); cosel~H rho +0.37, cosel~interaction rho +0.30 | natural: singles 1st/2nd R2 -0.41/0.64; interaction~H rho +0.53 R2 0.19 (top rho +0.45); cosel~H rho +0.25, cosel~interaction rho +0.23
+2026-09-23 17:34:08 e357_indctrl_qwen05: heads-on-induction I top/random 0.94/0.10 signed +0.73 ARI -0.01 NA 0.55/0.14 | same-heads-on-natural I 0.33/0.08 ARI -0.11 | natural-selected I 0.41/0.11 | neurons ind I 0.15/0.01 nat I 0.07/0.01
+2026-09-23 17:42:25 e363_coselctrl_pythia410_step2000: IND 8 PRV 8 | natural: induction gr z +8.3/+7.2 content -0.09, previous gr z +4.9/+4.6 content +0.15, ablation_top8 gr z +5.2/+4.3 content -0.05
+2026-09-23 17:42:34 e363_coselctrl_pythia410_step3000: IND 8 PRV 8 | natural: induction gr z +10.8/+9.2 content -0.22, previous gr z +6.6/+6.4 content +0.08, ablation_top8 gr z +6.2/+6.6 content -0.13
+2026-09-23 17:43:34 e360_drift_step32: eval loss 9.909
+2026-09-23 17:44:41 e360_drift_step64: eval loss 9.457
+2026-09-23 17:44:57 e363_coselctrl_pythia410_step4000: IND 8 PRV 8 | natural: induction gr z +9.4/+8.4 content -0.16, previous gr z +5.6/+4.9 content -0.01, ablation_top8 gr z +6.2/+6.1 content -0.19
+2026-09-23 17:45:05 e363_coselctrl_pythia410_step8000: IND 8 PRV 8 | natural: induction gr z +11.1/+9.8 content -0.07, previous gr z +8.4/+6.6 content +0.13, ablation_top8 gr z +6.0/+6.3 content -0.03
+2026-09-23 17:45:39 e360_drift_step128: eval loss 8.515
+2026-09-23 17:46:32 e360_drift_step512: eval loss 6.736
+2026-09-23 17:47:01 e363_coselctrl_pythia410_step16000: IND 8 PRV 8 | natural: induction gr z +11.0/+11.1 content -0.13, previous gr z +6.1/+4.7 content +0.22, ablation_top8 gr z +5.4/+5.4 content -0.18
+2026-09-23 17:47:22 e360_drift_step1000: eval loss 5.251
+2026-09-23 17:47:27 e371_scalehess_pythia410: induction: singles 1st/2nd R2 0.22/0.74; interaction~H rho +0.33 R2 -0.05 (top rho +0.06); cosel~H rho +0.37, cosel~interaction rho +0.32 | natural: singles 1st/2nd R2 -0.50/-3.39; interaction~H rho +0.48 R2 0.04 (top rho +0.47); cosel~H rho +0.18, cosel~interaction rho +0.17
+2026-09-23 17:47:48 e366_condnat_qwen05: applicable: I 0.36/0.08 NA 0.64 single +0.017/-0.001 | matched_random: I 0.27/0.07 NA 0.31 single +0.031/+0.001 | all: I 0.29/0.08 NA 0.33 single +0.030/+0.002
+2026-09-23 17:48:09 e360_drift_step2000: eval loss 4.268
+2026-09-23 17:48:18 e360_drift_step3000: eval loss 4.019
+2026-09-23 17:51:12 e368_tokcosel_pythia410: IND 8 | induction token z +4.8/+3.4 window z +2.6 previous token z +6.2/+5.7 window z +4.9 | AUC heads 0.524268627166748 best-PC AUC 0.63
+2026-09-23 17:51:36 e360_drift_step4000: eval loss 3.853
+2026-09-23 17:52:31 e360_drift_step6000: eval loss 3.705
+2026-09-23 17:54:52 e371_scalehess_qwen05: induction: singles 1st/2nd R2 -0.26/-0.20; interaction~H rho +0.15 R2 -0.04 (top rho +0.20); cosel~H rho +0.17, cosel~interaction rho +0.05 | natural: singles 1st/2nd R2 -0.18/-0.26; interaction~H rho +0.35 R2 -0.01 (top rho +0.17); cosel~H rho +0.05, cosel~interaction rho +0.17
+2026-09-23 17:55:27 e363_coselctrl_pythia410_step33000: IND 8 PRV 8 | natural: induction gr z +6.5/+5.9 content -0.13, previous gr z +8.3/+6.5 content +0.15, ablation_top8 gr z -0.5/-0.5 content -0.11
+2026-09-23 17:55:54 e360_drift_step8000: eval loss 3.631
+2026-09-23 17:56:23 e368_tokcosel_qwen05: IND 8 | induction token z +8.4/+5.7 window z +6.7 previous token z +8.5/+13.3 window z +3.3 | AUC heads 0.8761432766914368 best-PC AUC 0.60
+2026-09-23 17:56:53 e360_drift_step10000: eval loss 3.563
+2026-09-23 17:57:23 e358_ioictrl_olmo1b: LD 3.59 acc 1.00 | heads I top/random 0.22/0.06 signed -0.09 NA 0.28/0.05 | natural I 0.20/0.10 | neurons I 0.04/0.01
+2026-09-23 17:57:49 e360_drift_step13000: eval loss 3.534
+2026-09-23 17:58:49 e360_drift_step16000: eval loss 3.461
+2026-09-23 18:00:40 e361_depth_pythia410_2: b2->L8: dim 16 full 0.24 pls16 0.23 pca16 0.24 rand16 0.16 shuf16 0.24 | overlap 0.56/0.27 | comp/core fn 0.23/0.23 id 0.95/0.86 | ledger 0.66/-0.07
+2026-09-23 18:02:10 e361_depth_pythia410_6: b6->L12: dim 16 full 0.25 pls16 0.25 pca16 0.25 rand16 0.14 shuf16 0.24 | overlap 0.45/0.22 | comp/core fn 0.25/0.25 id 0.82/0.77 | ledger 0.70/-0.01
+2026-09-23 18:03:33 e361_depth_pythia410_12: b12->L18: dim 32 full 0.61 pls16 0.54 pca16 0.51 rand16 0.46 shuf16 0.52 | overlap 0.55/0.41 | comp/core fn 0.53/0.54 id 0.74/0.78 | ledger 0.81/-0.01
+2026-09-23 18:03:33 e369_tokabl_pythia410: IND 8 | induction token z +7.6/+5.1 window z +2.5 previous token z +6.9/+4.7 window z +2.5 | AUC heads 0.5345744490623474 best-PC AUC 0.65
+2026-09-23 18:04:50 e365_inddev_step0: gain -0.00 prefix 0.01 I 0.11/0.07 signed -0.02 NA 0.08 | qdim 2 full 0.99 | image gain ratio 1.00 overlap-with-random 0.12
+2026-09-23 18:04:55 e361_depth_pythia410_17: b17->L22: dim 32 full 0.68 pls16 0.59 pca16 0.59 rand16 0.57 shuf16 0.58 | overlap 0.45/0.42 | comp/core fn 0.65/0.59 id 0.27/0.67 | ledger 0.81/-0.25
+2026-09-23 18:05:26 e368_tokcosel_pythia410_step512: IND 0 |  | AUC heads None best-PC AUC 0.64
+2026-09-23 18:07:56 e368_tokcosel_pythia410_step1000: IND 8 | induction token z +7.5/+5.0 window z +4.5 previous token z +7.5/+4.1 window z +3.2 | AUC heads 0.8560505509376526 best-PC AUC 0.66
+2026-09-23 18:08:01 e365_inddev_step64: gain -0.00 prefix 0.01 I 0.09/0.03 signed -0.01 NA 0.07 | qdim 2 full 1.00 | image gain ratio 1.08 overlap-with-random 0.14
+2026-09-23 18:08:24 e368_tokcosel_pythia410_step2000: IND 8 | induction token z +9.9/+7.3 window z +3.4 previous token z +8.4/+5.2 window z +3.8 | AUC heads 0.8666888475418091 best-PC AUC 0.66
+2026-09-23 18:08:28 e368_tokcosel_pythia410_step4000: IND 8 | induction token z +18.4/+10.0 window z +10.8 previous token z +9.7/+5.9 window z +5.3 | AUC heads 0.9142287373542786 best-PC AUC 0.65
+2026-09-23 18:09:01 e368_tokcosel_pythia410_step16000: IND 8 | induction token z +16.4/+15.1 window z +9.1 previous token z +12.2/+8.9 window z +6.3 | AUC heads 0.8311170339584351 best-PC AUC 0.63
+2026-09-23 18:09:51 e368_tokcosel_pythia410_step33000: IND 8 | induction token z +9.3/+8.6 window z +6.3 previous token z +9.8/+7.5 window z +2.8 | AUC heads 0.7579787373542786 best-PC AUC 0.63
+2026-09-23 18:10:11 e370_saturation_pythia410: applicable p 0.67 (p>0.9 0.41) vs other p 0.23 | ind heads grad +0.0013 abl +0.0059
+2026-09-23 18:11:39 e365_inddev_step128: gain -0.01 prefix 0.01 I 0.08/0.04 signed -0.01 NA 0.07 | qdim 1 full 0.99 | image gain ratio 1.17 overlap-with-random 0.16
+2026-09-23 18:12:05 e360_drift_step20000: eval loss 3.441
+2026-09-23 18:12:07 e369_tokabl_qwen05: IND 8 | induction token z +12.1/+11.6 window z +6.1 previous token z +11.0/+8.6 window z +2.9 | AUC heads 0.7602896094322205 best-PC AUC 0.64
+2026-09-23 18:12:56 e365_inddev_step256: gain -0.02 prefix 0.01 I 0.04/0.03 signed +0.00 NA 0.03 | qdim 1 full 0.99 | image gain ratio 1.33 overlap-with-random 0.26
+2026-09-23 18:13:04 e360_drift_step24000: eval loss 3.450
+2026-09-23 18:13:08 e360_drift_step28000: eval loss 3.394
+2026-09-23 18:13:59 e360_drift_step38000: eval loss 3.363
+2026-09-23 18:14:00 e360_drift_step33000: eval loss 3.370
+2026-09-23 18:14:10 e365_inddev_step512: gain -0.01 prefix 0.01 I 0.02/0.02 signed -0.00 NA 0.02 | qdim 2 full 0.91 | image gain ratio 1.71 overlap-with-random 0.41
+2026-09-23 18:14:46 e360_drift_step43000: eval loss 3.330
+2026-09-23 18:14:48 e360_drift_step48000: eval loss 3.345
+2026-09-23 18:15:43 e365_inddev_step2000: gain 10.95 prefix 0.90 I 0.38/0.02 signed +0.29 NA 0.28 | qdim 8 full 0.55 | image gain ratio 1.38 overlap-with-random 0.39
+2026-09-23 18:16:17 e365_inddev_step3000: gain 11.10 prefix 0.94 I 0.51/0.02 signed +0.27 NA 0.33 | qdim 16 full 0.47 | image gain ratio 1.24 overlap-with-random 0.42
+2026-09-23 18:17:23 e365_inddev_step4000: gain 11.08 prefix 0.96 I 0.59/0.02 signed +0.39 NA 0.61 | qdim 16 full 0.44 | image gain ratio 1.23 overlap-with-random 0.43
+2026-09-23 18:18:01 e360_drift_step53000: eval loss 3.324
+2026-09-23 18:18:02 e360_drift_step58000: eval loss 3.312
+2026-09-23 18:18:05 e360_drift_step63000: eval loss 3.328
+2026-09-23 18:18:38 e360_drift_step68000: eval loss 3.286
+2026-09-23 18:18:44 e360_drift_step78000: eval loss 3.284
+2026-09-23 18:18:48 e360_drift_step73000: eval loss 3.287
+2026-09-23 18:19:15 e360_drift_step83000: eval loss 3.277
+2026-09-23 18:20:07 e360_drift_step93000: eval loss 3.247
+2026-09-23 18:20:29 e360_drift_step98000: eval loss 3.243
+2026-09-23 18:21:16 e360_drift_step103000: eval loss 3.249
+2026-09-23 18:21:35 e360_drift_step88000: eval loss 3.268
+2026-09-23 18:22:39 e360_drift_step108000: eval loss 3.235
+2026-09-23 18:22:43 e360_drift_step113000: eval loss 3.237
+2026-09-23 18:22:51 e360_drift_step118000: eval loss 3.247
+2026-09-23 18:23:23 e360_drift_step123000: eval loss 3.219
+2026-09-23 18:23:32 e357_indctrl_olmo1b: heads-on-induction I top/random 0.88/0.10 signed +0.82 ARI 0.18 NA 0.56/0.14 | same-heads-on-natural I 0.47/0.13 ARI -0.10 | natural-selected I 0.36/0.10 | neurons ind I 0.23/0.01 nat I 0.08/0.01
+2026-09-23 18:24:00 e360_drift_step133000: eval loss 3.223
+2026-09-23 18:24:33 e360_drift_step138000: eval loss 3.226
+2026-09-23 18:24:53 e360_drift_step143000: eval loss 3.213
+2026-09-23 18:25:41 e361_depth_qwen05_2: b2->L8: dim 16 full 0.44 pls16 0.42 pca16 0.41 rand16 0.35 shuf16 0.41 | overlap 0.49/0.31 | comp/core fn 0.39/0.42 id 0.81/0.72 | ledger 0.33/-0.02
+2026-09-23 18:27:28 e360_drift_step128000: eval loss 3.228
+2026-09-23 18:28:37 e361_depth_qwen05_6: b6->L12: dim 16 full 0.33 pls16 0.30 pca16 0.29 rand16 0.22 shuf16 0.30 | overlap 0.51/0.22 | comp/core fn 0.28/0.30 id 0.90/0.91 | ledger 0.79/-0.01
+2026-09-23 18:28:53 e360b_drift_analysis: 46 checkpoints; step 0: loss 11.06, top-1 agree 0.00 | b2 sig 0.00 write 0.24 (raw 0.10) fgeo -0.00 wgeo 0.02 attr 0.04 top5% 0.03; b8 sig -0.00 write 0.23 (raw 0.05) fgeo 0.00 wgeo 0.01 attr 0.04 top5% 0.02; b16 sig -0.00 write 0.26 (raw 0.06) fgeo 0.00 wgeo 0.00 attr 0.02 top5% 0.03; | step 1000: loss 5.25, top-1 agree 0.35 | b2 sig 0.02 write 0.27 (raw 0.16) fgeo 0.01 wgeo 0.08 attr 0.31 top5% 0.11; b8 sig 0.04 write 0.25 (raw 0.10) fgeo 0.02 wgeo 0.04 attr 0.08 top5% 0.07; b16 sig 0.07 write 0.29 (raw 0.12) fgeo 0.03 wgeo 0.04 attr 0.23 top5% 0.07; | step 33000: loss 3.37, top-1 agree 0.73 | b2 sig 0.23 write 0.84 (raw 0.84) fgeo 0.11 wgeo 0.78 attr 0.88 top5% 0.43; b8 sig 0.40 write 0.77 (raw 0.76) fgeo 0.24 wgeo 0.66 attr 0.83 top5% 0.42; b16 sig 0.65 write 0.80 (raw 0.79) fgeo 0.48 wgeo 0.63 attr 0.83 top5% 0.48; | step 88000: loss 3.27, top-1 agree 0.82 | b2 sig 0.29 write 0.98 (raw 0.98) fgeo 0.15 wgeo 0.97 attr 0.95 top5% 0.59; b8 sig 0.62 write 0.98 (raw 0.98) fgeo 0.45 wgeo 0.97 attr 0.96 top5% 0.69; b16 sig 0.91 write 0.98 (raw 0.98) fgeo 0.82 wgeo 0.95 attr 0.95 top5% 0.71; | step 138000: loss 3.23, top-1 agree 0.88 | b2 sig 0.28 write 1.00 (raw 1.00) fgeo 0.15 wgeo 1.00 attr 0.98 top5% 0.72; b8 sig 0.64 write 1.00 (raw 1.00) fgeo 0.48 wgeo 1.00 attr 0.99 top5% 0.82; b16 sig 0.95 write 1.00 (raw 1.00) fgeo 0.89 wgeo 1.00 attr 0.99 top5% 0.86; | late dissociation b2 rho -0.06 b8 rho -0.26 b16 rho +0.24
+2026-09-23 18:29:05 e371_scalehess_olmo1b: induction: singles 1st/2nd R2 -0.27/-0.17; interaction~H rho +0.18 R2 -0.03 (top rho +0.20); cosel~H rho +0.32, cosel~interaction rho +0.10 | natural: singles 1st/2nd R2 -0.24/-0.67; interaction~H rho +0.34 R2 -0.02 (top rho +0.17); cosel~H rho +0.04, cosel~interaction rho +0.07
+2026-09-23 18:29:53 e361_depth_qwen05_12: b12->L18: dim 16 full 0.30 pls16 0.30 pca16 0.29 rand16 0.14 shuf16 0.30 | overlap 0.49/0.17 | comp/core fn 0.27/0.30 id 0.86/0.83 | ledger 0.65/-0.13
+2026-09-23 18:29:54 e360c turnover/speciation e360 (46 ckpts): step0: b2 top5 0.05 dead 0.00 split 3.68/merge 3.82 (null 3.67) knn 0.01; b8 top5 0.03 dead 0.00 split 3.71/merge 3.83 (null 3.67) knn 0.01; b16 top5 0.06 dead 0.00 split 3.75/merge 3.79 (null 3.77) knn 0.01; | step1: b2 top5 0.05 dead 0.00 split 3.69/merge 3.83 (null 3.65) knn 0.01; b8 top5 0.03 dead 0.00 split 3.70/merge 3.82 (null 3.68) knn 0.01; b16 top5 0.06 dead 0.00 split 3.78/merge 3.82 (null 3.76) knn 0.01; | step1000: b2 top5 0.20 dead 0.00 split 3.65/merge 3.73 (null 3.67) knn 0.01; b8 top5 0.13 dead 0.00 split 3.70/merge 3.76 (null 3.68) knn 0.02; b16 top5 0.14 dead 0.00 split 3.73/merge 3.68 (null 3.78) knn 0.01; | step33000: b2 top5 0.60 dead 0.00 split 3.60/merge 3.58 (null 3.66) knn 0.02; b8 top5 0.59 dead 0.00 split 3.44/merge 3.42 (null 3.67) knn 0.06; b16 top5 0.65 dead 0.00 split 3.45/merge 3.44 (null 3.77) knn 0.14; | step88000: b2 top5 0.74 dead 0.00 split 3.51/merge 3.55 (null 3.66) knn 0.02; b8 top5 0.82 dead 0.00 split 3.26/merge 3.16 (null 3.67) knn 0.14; b16 top5 0.83 dead 0.00 split 3.16/merge 3.18 (null 3.80) knn 0.43; | step138000: b2 top5 0.84 dead 0.00 split 3.52/merge 3.50 (null 3.66) knn 0.03; b8 top5 0.90 dead 0.00 split 3.19/merge 3.18 (null 3.70) knn 0.14; b16 top5 0.93 dead 0.00 split 3.20/merge 3.22 (null 3.78) knn 0.55; | first entry of final top-5% (median step): b2 83000 b8 48000 b16 24000
+2026-09-23 18:30:28 e368_tokcosel_olmo1b: IND 5 | induction token z +7.7/+5.9 window z +2.7 previous token z -0.2/+0.1 window z -1.4 | AUC heads 0.9633466005325317 best-PC AUC 0.60
+2026-09-23 18:33:11 e361_depth_qwen05_17: b17->L22: dim 16 full 0.73 pls16 0.69 pca16 0.69 rand16 0.68 shuf16 0.70 | overlap 0.51/0.22 | comp/core fn 0.67/0.69 id 0.75/0.94 | ledger 0.87/-0.04
+2026-09-23 18:33:42 e365_inddev_step8000: gain 11.05 prefix 0.97 I 0.58/0.03 signed +0.68 NA 1.49 | qdim 16 full 0.40 | image gain ratio 1.17 overlap-with-random 0.43
+2026-09-23 18:34:45 e365_inddev_step16000: gain 10.94 prefix 0.98 I 0.57/0.04 signed +0.76 NA 2.01 | qdim 16 full 0.30 | image gain ratio 1.12 overlap-with-random 0.42
+2026-09-23 18:35:49 e361_depth_olmo1b_2: b2->L6: dim 8 full 0.42 pls16 0.43 pca16 0.41 rand16 0.30 shuf16 0.42 | overlap 0.46/0.25 | comp/core fn 0.40/0.43 id 0.86/0.90 | ledger 0.65/-0.04
+2026-09-23 18:36:14 e365_inddev_step33000: gain 10.93 prefix 0.98 I 0.59/0.48 signed +0.73 NA 1.87 | qdim 32 full 0.30 | image gain ratio 1.09 overlap-with-random 0.41
+2026-09-23 18:36:16 e365_inddev_step143000: gain 10.82 prefix 0.98 I 0.65/0.02 signed +0.94 NA 1.75 | qdim 16 full 0.22 | image gain ratio 1.11 overlap-with-random 0.56
+e365b quotient drift, residual vs basis-free (overlap with final; chance 0.06): step0: resid 0.02 image 0.06 map 0.07 rand-image 0.06 gain x1.0 ind -0.0; step64: resid 0.01 image 0.06 map 0.07 rand-image 0.07 gain x1.1 ind -0.0; step128: resid 0.02 image 0.07 map 0.06 rand-image 0.07 gain x1.2 ind -0.01; step256: resid 0.02 image 0.14 map 0.11 rand-image 0.15 gain x1.3 ind -0.02; step512: resid 0.02 image 0.24 map 0.16 rand-image 0.33 gain x1.7 ind -0.01; step1000: resid 0.02 image 0.27 map 0.18 rand-image 0.39 gain x1.9 ind 7.86; step2000: resid 0.03 image 0.27 map 0.18 rand-image 0.46 gain x1.4 ind 10.95; step3000: resid 0.04 image 0.28 map 0.17 rand-image 0.50 gain x1.2 ind 11.1; step4000: resid 0.05 image 0.30 map 0.18 rand-image 0.54 gain x1.2 ind 11.08; step8000: resid 0.08 image 0.33 map 0.19 rand-image 0.62 gain x1.2 ind 11.05; step16000: resid 0.11 image 0.36 map 0.21 rand-image 0.66 gain x1.1 ind 10.94; step33000: resid 0.17 image 0.39 map 0.25 rand-image 0.70 gain x1.1 ind 10.93; step143000: resid 1.00 image 1.00 map 1.00 rand-image 1.00 gain x1.1 ind 10.82
+2026-09-23 18:36:50 e364_cosel_pythia410_step1000: natural: global 0.03 modes>null 11 Q 0.112/0.055 same-layer 0.19/0.04 ind-heads corr +0.01 vs -0.01 || mixed: global 0.49 modes>null 10 Q 0.292/0.051 same-layer 0.12/0.04 ind-heads corr +0.81 vs +0.03
+2026-09-23 18:38:00 e361_depth_olmo1b_8: b8->L12: dim 16 full 0.44 pls16 0.46 pca16 0.43 rand16 0.32 shuf16 0.43 | overlap 0.48/0.27 | comp/core fn 0.42/0.46 id 0.82/0.86 | ledger 0.68/0.01
+2026-09-23 18:38:00 e361_depth_olmo1b_4: b4->L8: dim 16 full 0.43 pls16 0.40 pca16 0.39 rand16 0.27 shuf16 0.40 | overlap 0.51/0.23 | comp/core fn 0.31/0.40 id 0.88/0.76 | ledger 0.75/0.01
+2026-09-23 18:38:57 e364_cosel_pythia410_step4000: natural: global 0.03 modes>null 9 Q 0.093/0.062 same-layer 0.33/0.04 ind-heads corr -0.01 vs -0.01 || mixed: global 0.42 modes>null 15 Q 0.271/0.050 same-layer 0.03/0.04 ind-heads corr +0.30 vs +0.00
+2026-09-23 18:40:05 e361_depth_olmo1b_11: b11->L14: dim 8 full 0.65 pls16 0.61 pca16 0.60 rand16 0.50 shuf16 0.61 | overlap 0.58/0.21 | comp/core fn 0.59/0.61 id 0.75/0.94 | ledger 0.92/-0.05
+2026-09-23 18:40:44 e362_drift_olmo1b_step0-tokens0B: eval loss 11.304
+2026-09-23 18:41:54 e364_cosel_pythia410_step16000: natural: global 0.03 modes>null 9 Q 0.085/0.063 same-layer 0.51/0.04 ind-heads corr +0.00 vs +0.02 || mixed: global 0.41 modes>null 13 Q 0.272/0.046 same-layer 0.13/0.04 ind-heads corr +0.35 vs -0.01
+2026-09-23 18:43:19 e362_drift_olmo1b_step1000-tokens2B: eval loss 6.197
+2026-09-23 18:43:35 e370_saturation_qwen05: applicable p 0.75 (p>0.9 0.55) vs other p 0.26 | ind heads grad +0.0093 abl +0.0081
+2026-09-23 18:44:18 e364_cosel_pythia410_step33000: natural: global 0.03 modes>null 9 Q 0.077/0.058 same-layer 0.41/0.04 ind-heads corr +0.02 vs -0.01 || mixed: global 0.42 modes>null 12 Q 0.304/0.053 same-layer 0.16/0.04 ind-heads corr +0.58 vs -0.04
+2026-09-23 18:45:51 e362_drift_olmo1b_step2000-tokens4B: eval loss 4.900
+2026-09-23 18:46:37 e363_coselctrl_olmo1b: IND 5 PRV 7 | natural: induction gr z +1.5/+1.1 content -0.02, previous gr z -0.5/-0.2 content -0.07, ablation_top8 gr z +1.1/+1.0 content -0.08
+2026-09-23 18:46:51 e364_cosel_pythia410_step63000: natural: global 0.03 modes>null 9 Q 0.104/0.057 same-layer 0.59/0.04 ind-heads corr +0.02 vs -0.02 || mixed: global 0.41 modes>null 11 Q 0.281/0.053 same-layer 0.57/0.04 ind-heads corr +0.61 vs -0.04
+2026-09-23 18:47:17 e369_tokabl_olmo1b: IND 5 | induction token z +6.5/+6.4 window z +3.2 previous token z +3.5/+1.9 window z +1.3 | AUC heads 0.9426294565200806 best-PC AUC 0.63
+2026-09-23 18:47:49 e362_drift_olmo1b_step4000-tokens8B: eval loss 4.090
+2026-09-23 18:48:22 e364_cosel_pythia410_step93000: natural: global 0.02 modes>null 10 Q 0.093/0.062 same-layer 0.52/0.04 ind-heads corr +0.01 vs +0.01 || mixed: global 0.40 modes>null 12 Q 0.303/0.054 same-layer 0.25/0.04 ind-heads corr +0.66 vs -0.02
+2026-09-23 18:49:53 e366_condnat_olmo1b: applicable: I 0.50/0.13 NA 0.80 single +0.009/-0.000 | matched_random: I 0.33/0.11 NA 0.62 single +0.038/+0.006 | all: I 0.44/0.11 NA 0.63 single +0.029/+0.004
+2026-09-23 18:49:59 e364_cosel_pythia410_step123000: natural: global 0.03 modes>null 10 Q 0.095/0.063 same-layer 0.55/0.04 ind-heads corr +0.04 vs +0.00 || mixed: global 0.40 modes>null 14 Q 0.273/0.054 same-layer 0.15/0.04 ind-heads corr +0.78 vs +0.00
+2026-09-23 18:50:15 e370_saturation_olmo1b: applicable p 0.75 (p>0.9 0.55) vs other p 0.30 | ind heads grad +0.0153 abl +0.0164
+2026-09-23 18:51:16 e362_drift_olmo1b_step16000-tokens33B: eval loss 3.373
+2026-09-23 18:51:29 e364_cosel_pythia410_step143000: natural: global 0.03 modes>null 10 Q 0.111/0.054 same-layer 0.57/0.04 ind-heads corr +0.01 vs -0.01 || mixed: global 0.39 modes>null 13 Q 0.282/0.047 same-layer 0.20/0.04 ind-heads corr +0.76 vs -0.00
+2026-09-23 18:51:43 e364b_persistence: natural: 1000: stab 0.00 (null 0.00) ARI -0.01 strength 0.08; 4000: stab 0.03 (null 0.00) ARI 0.00 strength 0.31; 16000: stab 0.13 (null -0.00) ARI 0.00 strength 0.49; 33000: stab 0.24 (null -0.00) ARI 0.04 strength 0.62; 63000: stab 0.40 (null 0.00) ARI 0.03 strength 0.69; 93000: stab 0.63 (null 0.01) ARI 0.09 strength 0.84; 123000: stab 0.75 (null 0.01) ARI 0.16 strength 0.90; 143000: stab 1.00 (null 0.01) ARI 1.00 strength 1.00; ind-heads corr by step 1000:+0.01 4000:-0.00 16000:+0.02 33000:+0.01 63000:+0.01 93000:+0.02 123000:+0.02 143000:+0.01 || mixed: 1000: stab -0.00 (null -0.00) ARI 0.00 strength 0.15; 4000: stab 0.01 (null -0.00) ARI 0.02 strength 0.22; 16000: stab 0.09 (null 0.00) ARI 0.04 strength 0.52; 33000: stab 0.21 (null 0.00) ARI 0.08 strength 0.68; 63000: stab 0.47 (null -0.00) ARI 0.21 strength 0.81; 93000: stab 0.68 (null -0.00) ARI 0.16 strength 0.89; 123000: stab 0.81 (null 0.01) ARI 0.28 strength 0.94; 143000: stab 1.00 (null 0.00) ARI 1.00 strength 1.00; ind-heads corr by step 1000:+0.00 4000:-0.09 16000:+0.07 33000:+0.30 63000:+0.51 93000:+0.64 123000:+0.64 143000:+0.76
+2026-09-23 18:53:39 e362_drift_olmo1b_step32000-tokens67B: eval loss 3.206
+2026-09-23 18:54:53 e362_drift_olmo1b_step128000-tokens268B: eval loss 3.031
+2026-09-23 18:54:59 e362_drift_olmo1b_step64000-tokens134B: eval loss 3.055
+2026-09-23 18:55:36 e362_drift_olmo1b_step8000-tokens16B: eval loss 3.635
+2026-09-23 18:56:40 e362_drift_olmo1b_step256000-tokens536B: eval loss 2.980
+2026-09-23 18:58:59 e362_drift_olmo1b_step550000-tokens1153B: eval loss 2.940
+2026-09-23 18:59:51 e362_drift_olmo1b_step700000-tokens1467B: eval loss 2.901
+2026-09-23 19:01:24 e362_drift_olmo1b_step850000-tokens1781B: eval loss 2.890
+2026-09-23 19:02:11 e362_drift_olmo1b_step1000000-tokens2096B: eval loss 2.867
+2026-09-23 19:04:32 e360_drift_step143000_1: eval loss 3.213
+2026-09-23 19:04:48 e360_drift_step33000_1: eval loss 3.370
+2026-09-23 19:05:11 e360_drift_step1000_1: eval loss 5.251
+2026-09-23 19:05:21 e360d signature ceilings (two seeds, same weights): step1000: b2 sig 0.93 fgeo 0.81 knn 0.386 b8 sig 0.98 fgeo 0.93 knn 0.616 b16 sig 1.00 fgeo 0.99 knn 0.808 | step33000: b2 sig 0.48 fgeo 0.29 knn 0.053 b8 sig 0.77 fgeo 0.60 knn 0.195 b16 sig 0.96 fgeo 0.92 knn 0.594 | step143000: b2 sig 0.28 fgeo 0.13 knn 0.022 b8 sig 0.64 fgeo 0.48 knn 0.137 b16 sig 0.95 fgeo 0.90 knn 0.550 || corrected vs final: step0: b2 sig 0.00 fgeo -0.00 write 0.24 b8 sig -0.00 fgeo 0.01 write 0.23 b16 sig -0.00 fgeo 0.00 write 0.26 | step512: b2 sig 0.04 fgeo 0.02 write 0.25 b8 sig 0.02 fgeo 0.02 write 0.23 b16 sig 0.03 fgeo 0.01 write 0.26 | step1000: b2 sig 0.05 fgeo 0.03 write 0.27 b8 sig 0.05 fgeo 0.03 write 0.25 b16 sig 0.07 fgeo 0.03 write 0.29 | step2000: b2 sig 0.10 fgeo 0.03 write 0.34 b8 sig 0.09 fgeo 0.03 write 0.29 b16 sig 0.14 fgeo 0.08 write 0.35 | step4000: b2 sig 0.16 fgeo 0.06 write 0.47 b8 sig 0.13 fgeo 0.05 write 0.37 b16 sig 0.23 fgeo 0.12 write 0.43 | step8000: b2 sig 0.24 fgeo 0.15 write 0.59 b8 sig 0.21 fgeo 0.09 write 0.47 b16 sig 0.34 fgeo 0.19 write 0.53 | step16000: b2 sig 0.34 fgeo 0.24 write 0.72 b8 sig 0.33 fgeo 0.19 write 0.60 b16 sig 0.48 fgeo 0.30 write 0.65 | step33000: b2 sig 0.63 fgeo 0.54 write 0.84 b8 sig 0.57 fgeo 0.44 write 0.77 b16 sig 0.68 fgeo 0.53 write 0.80 | step63000: b2 sig 0.77 fgeo 0.71 write 0.95 b8 sig 0.79 fgeo 0.71 write 0.93 b16 sig 0.87 fgeo 0.79 write 0.93 | step93000: b2 sig 1.02 fgeo 1.13 write 0.99 b8 sig 0.97 fgeo 0.94 write 0.98 b16 sig 0.96 fgeo 0.94 write 0.98 | step123000: b2 sig 1.02 fgeo 1.02 write 1.00 b8 sig 0.99 fgeo 1.00 write 1.00 b16 sig 0.99 fgeo 0.99 write 1.00 | step138000: b2 sig 0.99 fgeo 1.10 write 1.00 b8 sig 0.99 fgeo 1.00 write 1.00 b16 sig 1.00 fgeo 1.00 write 1.00
+2026-09-23 19:05:28 e362_drift_olmo1b_step1400000-tokens2935B: eval loss 2.802
+2026-09-23 19:07:17 e360_drift_step143000_1_fp32: eval loss 3.213
+2026-09-23 19:07:49 e360_drift_step143000_2_fp32: eval loss 3.213
+2026-09-23 19:08:10 e360_drift_step143000_2: eval loss 3.213
+2026-09-23 19:09:15 e362_drift_olmo1b_step1150000-tokens2410B: eval loss 2.837
+2026-09-23 19:10:05 e362_drift_olmo1b_step1454000-tokens3048B: eval loss 2.746
+2026-09-23 19:11:30 e362_drift_olmo1b_step400000-tokens838B: eval loss 2.956
+2026-09-23 19:13:01 e362_drift_olmo1b_step1300000-tokens2725B: eval loss 2.819
+2026-09-23 19:14:54 e362b_drift_olmo1b: 19 checkpoints; step 0: loss 11.30, top-1 agree 0.00 | b2 sig 0.00 write 0.30 (raw 0.01) fgeo 0.00 wgeo 0.00 attr -0.01 top5% 0.02; b5 sig 0.00 write 0.23 (raw 0.01) fgeo 0.00 wgeo 0.00 attr 0.01 top5% 0.03; b10 sig 0.00 write 0.18 (raw 0.01) fgeo 0.00 wgeo 0.00 attr 0.02 top5% 0.03; | step 8000: loss 3.63, top-1 agree 0.53 | b2 sig 0.02 write 0.26 (raw 0.07) fgeo 0.00 wgeo 0.08 attr 0.17 top5% 0.13; b5 sig 0.01 write 0.24 (raw 0.06) fgeo 0.00 wgeo 0.02 attr 0.10 top5% 0.08; b10 sig 0.07 write 0.27 (raw 0.09) fgeo 0.02 wgeo 0.05 attr 0.19 top5% 0.11; | step 256000: loss 2.98, top-1 agree 0.70 | b2 sig 0.08 write 0.52 (raw 0.46) fgeo 0.03 wgeo 0.38 attr 0.73 top5% 0.43; b5 sig 0.11 write 0.49 (raw 0.44) fgeo 0.02 wgeo 0.28 attr 0.60 top5% 0.37; b10 sig 0.35 write 0.52 (raw 0.48) fgeo 0.17 wgeo 0.35 attr 0.70 top5% 0.39; | step 1000000: loss 2.87, top-1 agree 0.78 | b2 sig 0.17 write 0.92 (raw 0.91) fgeo 0.10 wgeo 0.86 attr 0.91 top5% 0.68; b5 sig 0.28 write 0.93 (raw 0.92) fgeo 0.11 wgeo 0.85 attr 0.93 top5% 0.60; b10 sig 0.73 write 0.93 (raw 0.92) fgeo 0.51 wgeo 0.87 attr 0.94 top5% 0.68; | step 1400000: loss 2.80, top-1 agree 0.82 | b2 sig 0.18 write 0.98 (raw 0.98) fgeo 0.08 wgeo 0.96 attr 0.95 top5% 0.74; b5 sig 0.30 write 0.98 (raw 0.98) fgeo 0.13 wgeo 0.96 attr 0.96 top5% 0.72; b10 sig 0.78 write 0.98 (raw 0.98) fgeo 0.58 wgeo 0.96 attr 0.97 top5% 0.77; | late dissociation b2 rho -0.26 b5 rho -0.21 b10 rho +0.11
+2026-09-23 19:15:25 e360c turnover/speciation e362_olmo1b (19 ckpts): step0: b2 top5 0.04 dead 0.00 split 3.65/merge 3.81 (null 3.64) knn 0.01; b5 top5 0.05 dead 0.00 split 3.62/merge 3.83 (null 3.61) knn 0.01; b10 top5 0.05 dead 0.00 split 3.74/merge 3.83 (null 3.74) knn 0.01; | step1000: b2 top5 0.04 dead 0.00 split 3.66/merge 3.75 (null 3.63) knn 0.01; b5 top5 0.09 dead 0.00 split 3.60/merge 3.71 (null 3.60) knn 0.01; b10 top5 0.11 dead 0.00 split 3.69/merge 3.66 (null 3.72) knn 0.02; | step8000: b2 top5 0.23 dead 0.00 split 3.66/merge 3.62 (null 3.64) knn 0.01; b5 top5 0.16 dead 0.00 split 3.62/merge 3.69 (null 3.59) knn 0.01; b10 top5 0.20 dead 0.00 split 3.72/merge 3.69 (null 3.74) knn 0.02; | step256000: b2 top5 0.60 dead 0.00 split 3.66/merge 3.71 (null 3.67) knn 0.01; b5 top5 0.54 dead 0.00 split 3.59/merge 3.63 (null 3.59) knn 0.01; b10 top5 0.56 dead 0.00 split 3.63/merge 3.66 (null 3.76) knn 0.06; | step1000000: b2 top5 0.81 dead 0.00 split 3.56/merge 3.55 (null 3.65) knn 0.02; b5 top5 0.75 dead 0.00 split 3.52/merge 3.64 (null 3.61) knn 0.03; b10 top5 0.81 dead 0.00 split 3.31/merge 3.31 (null 3.74) knn 0.18; | step1400000: b2 top5 0.85 dead 0.00 split 3.60/merge 3.64 (null 3.67) knn 0.02; b5 top5 0.84 dead 0.00 split 3.53/merge 3.56 (null 3.61) knn 0.04; b10 top5 0.87 dead 0.00 split 3.19/merge 3.23 (null 3.72) knn 0.22; | first entry of final top-5% (median step): b2 400000 b5 550000 b10 400000
+2026-09-23 19:22:43 e360e signature precision test (final checkpoint, median per-neuron cosine per block 2/8/16): fp32_seed1_vs_seed2 0.28 0.64 0.95 | tf32_vs_fp32_seed1 1.00 1.00 1.00 | tf32_vs_fp32_seed2 1.00 1.00 1.00 | tf32_seed1_vs_seed2 0.29 0.64 0.95 | tf32_default_vs_seed1 0.28 0.64 0.95
+2026-09-23 19:26:16 e362_drift_olmo1b_step32000-tokens67B_1: eval loss 3.206
+2026-09-23 19:26:58 e362_drift_olmo1b_step1454000-tokens3048B_1: eval loss 2.746
+2026-09-23 19:27:36 e372_scalepath_gpt2: induction: shape top 0.18 rand 0.41 quad/actual 0.19; joint shape 0.26 quad/actual 0.09 joint/sum 3.08 | natural: shape top 0.04 rand 0.36 quad/actual 0.03; joint shape 0.09 quad/actual 0.06 joint/sum 0.44
+2026-09-23 19:28:33 e372_scalepath_smollm2: induction: shape top 0.17 rand 0.57 quad/actual 0.40; joint shape 0.59 quad/actual 0.32 joint/sum 0.69 | natural: shape top 0.18 rand 0.33 quad/actual 0.53; joint shape 0.24 quad/actual 0.54 joint/sum 3.01
+2026-09-23 19:28:33 e362_drift_olmo1b_step550000-tokens1153B_1: eval loss 2.940
+2026-09-23 19:28:39 e362d OLMo signature ceilings (two seeds, same weights): step32000: b2 0.53 b5 0.75 b10 0.93 | step550000: b2 0.31 b5 0.53 b10 0.88 | step1454000: b2 0.17 b5 0.29 b10 0.80 || corrected vs final: step1000: b2 sig 0.01 write 0.29 b5 sig 0.01 write 0.23 b10 sig 0.03 write 0.20 | step8000: b2 sig 0.07 write 0.26 b5 sig 0.03 write 0.24 b10 sig 0.08 write 0.27 | step32000: b2 sig 0.10 write 0.29 b5 sig 0.05 write 0.26 b10 sig 0.13 write 0.29 | step128000: b2 sig 0.18 write 0.39 b5 sig 0.13 write 0.34 b10 sig 0.27 write 0.39 | step256000: b2 sig 0.27 write 0.52 b5 sig 0.23 write 0.49 b10 sig 0.41 write 0.52 | step400000: b2 sig 0.46 write 0.65 b5 sig 0.40 write 0.64 b10 sig 0.56 write 0.64 | step550000: b2 sig 0.53 write 0.75 b5 sig 0.51 write 0.76 b10 sig 0.66 write 0.75 | step700000: b2 sig 0.62 write 0.82 b5 sig 0.60 write 0.83 b10 sig 0.75 write 0.83 | step1000000: b2 sig 0.75 write 0.92 b5 sig 0.74 write 0.93 b10 sig 0.87 write 0.93 | step1300000: b2 sig 1.06 write 0.97 b5 sig 1.05 write 0.97 b10 sig 0.97 write 0.97 | step1400000: b2 sig 1.06 write 0.98 b5 sig 1.05 write 0.98 b10 sig 0.98 write 0.98
+2026-09-23 19:32:56 e372_scalepath_pythia410: induction: shape top 0.30 rand 0.43 quad/actual 0.65; joint shape 0.19 quad/actual 0.19 joint/sum 2.85 | natural: shape top 0.20 rand 0.24 quad/actual 0.51; joint shape 0.12 quad/actual 0.06 joint/sum 1.68
+2026-09-23 19:36:42 e369_tokabl_pythia410_step1000: IND 8 | induction token z +21.5/+15.4 window z +5.7 previous token z +12.8/+7.4 window z +1.7 | AUC heads 0.8866356611251831 best-PC AUC 0.70
+2026-09-23 19:38:41 e372_scalepath_qwen05: induction: shape top 0.04 rand 0.37 quad/actual 0.07; joint shape 0.15 quad/actual 0.04 joint/sum 1.44 | natural: shape top 0.28 rand 0.29 quad/actual 0.03; joint shape 0.42 quad/actual 0.03 joint/sum 0.90
+2026-09-23 19:40:44 e372_scalepath_olmo1b: induction: shape top 0.12 rand 0.50 quad/actual 0.15; joint shape 0.84 quad/actual 0.41 joint/sum 0.47 | natural: shape top 0.17 rand 0.46 quad/actual 0.30; joint shape 0.35 quad/actual 0.01 joint/sum 0.89
+2026-09-23 19:41:19 e369_tokabl_pythia410_step33000: IND 8 | induction token z +16.5/+15.4 window z +2.7 previous token z +8.9/+5.8 window z +5.3 | AUC heads 0.8899601101875305 best-PC AUC 0.70
+2026-09-23 19:41:21 e369_tokabl_pythia410_step16000: IND 8 | induction token z +21.4/+16.6 window z +7.2 previous token z +6.7/+4.2 window z +7.1 | AUC heads 0.6635638475418091 best-PC AUC 0.67
+2026-09-23 19:41:21 e369_tokabl_pythia410_step4000: IND 8 | induction token z +22.8/+16.3 window z +10.0 previous token z +7.1/+2.6 window z +2.6 | AUC heads 0.9092420339584351 best-PC AUC 0.70
+2026-09-23 19:45:09 e368_tokcosel_olmo1b_step16000-tokens33B: IND 4 | induction token z +8.4/+7.9 window z +2.6 previous token z +5.6/+3.7 window z +4.1 | AUC heads 0.9414682388305664 best-PC AUC 0.60
+2026-09-23 19:48:06 e363_coselctrl_olmo1b_step16000-tokens33B: IND 4 PRV 7 | natural: induction gr z +5.9/+5.0 content -0.06, previous gr z +5.5/+5.4 content +0.07, ablation_top8 gr z +3.8/+3.9 content +0.01
+2026-09-23 19:48:12 e368_tokcosel_olmo1b_step4000-tokens8B: IND 1 | previous token z +5.0/+3.1 window z +5.6 | AUC heads 1.0 best-PC AUC 0.66
+2026-09-23 19:48:30 e368_tokcosel_olmo1b_step1000-tokens2B: IND 0 |  | AUC heads None best-PC AUC 0.64
+2026-09-23 19:49:54 e368_tokcosel_olmo1b_step64000-tokens134B: IND 5 | induction token z +4.0/+2.5 window z +1.1 previous token z +4.0/+3.1 window z +3.1 | AUC heads 0.649402379989624 best-PC AUC 0.59
+2026-09-23 19:49:59 e368_tokcosel_olmo1b_step256000-tokens536B: IND 6 | induction token z +5.6/+4.9 window z +1.8 previous token z +3.8/+2.5 window z -0.2 | AUC heads 0.8553333282470703 best-PC AUC 0.62
+2026-09-23 19:53:20 e368_tokcosel_olmo1b_step1000000-tokens2096B: IND 6 | induction token z +5.7/+4.8 window z +2.7 previous token z +3.6/+2.9 window z -2.0 | AUC heads 0.909333348274231 best-PC AUC 0.61
+2026-09-23 19:59:03 e363_coselctrl_olmo1b_step4000-tokens8B: IND 1 PRV 7 | natural: previous gr z +7.4/+7.1 content +0.05, ablation_top8 gr z +0.7/+1.1 content -0.16
+2026-09-23 19:59:54 e363_coselctrl_olmo1b_step1000-tokens2B: IND 0 PRV 0 | natural: ablation_top8 gr z -0.4/+0.3 content +0.11
+2026-09-23 20:01:41 e363_coselctrl_olmo1b_step64000-tokens134B: IND 5 PRV 8 | natural: induction gr z +4.0/+3.3 content +0.02, previous gr z +2.7/+2.7 content +0.08, ablation_top8 gr z +5.2/+4.9 content +0.02
+2026-09-23 20:01:59 e363_coselctrl_olmo1b_step256000-tokens536B: IND 6 PRV 7 | natural: induction gr z +3.4/+3.2 content +0.10, previous gr z +0.2/+0.2 content +0.12, ablation_top8 gr z +5.2/+4.2 content +0.20
+2026-09-23 20:02:47 e363_coselctrl_olmo1b_step1000000-tokens2096B: IND 6 PRV 7 | natural: induction gr z +2.4/+1.6 content -0.02, previous gr z +0.3/+0.3 content -0.04, ablation_top8 gr z +1.4/+1.4 content +0.11
+2026-09-23 20:05:50 e373_qneedsind_step4000: intact: dim 16 full 0.44 prank 60.9 | induction_top8_ablated: dim 16 full 0.50 prank 47.6 | random8_ablated: dim 16 full 0.45 prank 52.9
+2026-09-23 20:05:50 e373_qneedsind_step143000: intact: dim 16 full 0.22 prank 108.5 | induction_top8_ablated: dim 16 full 0.23 prank 104.6 | random8_ablated: dim 16 full 0.21 prank 103.7
+2026-09-23 20:05:50 e373_qneedsind_step1000: intact: dim 8 full 0.74 prank 19.7 | induction_top8_ablated: dim 4 full 0.86 prank 13.3 | random8_ablated: dim 8 full 0.74 prank 19.6
+2026-09-23 20:07:56 e373_qneedsind_step2000: intact: dim 8 full 0.55 prank 39.1 | induction_top8_ablated: dim 16 full 0.66 prank 27.6 | random8_ablated: dim 8 full 0.55 prank 39.0

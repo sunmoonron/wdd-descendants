@@ -1,0 +1,33 @@
+{
+ "model": "pythia410",
+ "applicable": {
+  "n": 682,
+  "mean_loss": 0.8055034279823303,
+  "mean_p": 0.6707330346107483,
+  "share_p_above_0p9": 0.4120234549045563,
+  "mean_one_minus_p": 0.3292669653892517
+ },
+ "other": {
+  "n": 7478,
+  "mean_loss": 3.4158506393432617,
+  "mean_p": 0.22861827909946442,
+  "share_p_above_0p9": 0.059909068048000336,
+  "mean_one_minus_p": 0.7713817358016968
+ },
+ "e368": {
+  "induction_applicable": 0.0013038422912359238,
+  "induction_rest": -0.0010088152484968305,
+  "others_applicable": -0.0016764166066423059,
+  "others_rest": 0.00011665360943879932
+ },
+ "e369": {
+  "induction_applicable": 0.005948921199887991,
+  "induction_rest": -9.147777018370107e-05,
+  "others_applicable": -0.0015359333483502269,
+  "others_rest": 0.003166111884638667
+ },
+ "gradient_to_ablation_ratio_induction": 0.21917289663552328,
+ "gradient_to_ablation_ratio_others": -1.0914644235330748,
+ "_exp": "e370_saturation_pythia410",
+ "_time": "2026-09-23 18:10:11"
+}

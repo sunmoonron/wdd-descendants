@@ -1,0 +1,193 @@
+{
+ "model": "pythia410",
+ "rev": "step1000",
+ "n_tokens": 4080,
+ "share_applicable": 0.09166666865348816,
+ "induction_heads": [
+  [
+   11,
+   14
+  ],
+  [
+   10,
+   9
+  ],
+  [
+   10,
+   3
+  ],
+  [
+   8,
+   6
+  ],
+  [
+   8,
+   9
+  ],
+  [
+   11,
+   1
+  ],
+  [
+   8,
+   7
+  ],
+  [
+   9,
+   0
+  ]
+ ],
+ "previous_heads": [
+  [
+   5,
+   2
+  ],
+  [
+   4,
+   9
+  ],
+  [
+   5,
+   9
+  ],
+  [
+   3,
+   1
+  ],
+  [
+   5,
+   8
+  ]
+ ],
+ "n_windows": 56,
+ "induction": {
+  "token_raw": {
+   "value": 0.15810741484165192,
+   "random_mean": 0.0061391619965434074,
+   "random_z": 17.694099706548982,
+   "layer_matched_mean": 0.01183906476944685,
+   "layer_matched_z": 11.376616784819321
+  },
+  "token_global_removed": {
+   "value": 0.18726065754890442,
+   "random_mean": 0.0069703105837106705,
+   "random_z": 21.534611899778575,
+   "layer_matched_mean": 0.011200640350580215,
+   "layer_matched_z": 15.369544849511913
+  },
+  "window64_raw": {
+   "value": 0.183671236038208,
+   "random_mean": 0.0034871846437454224,
+   "random_z": 5.718162670429611,
+   "layer_matched_mean": 0.004595618695020676,
+   "layer_matched_z": 5.417095644663776
+  }
+ },
+ "previous": {
+  "token_raw": {
+   "value": 0.1732497215270996,
+   "random_mean": 0.006613815203309059,
+   "random_z": 11.4912416856995,
+   "layer_matched_mean": 0.03295920789241791,
+   "layer_matched_z": 6.666102822994626
+  },
+  "token_global_removed": {
+   "value": 0.1684984266757965,
+   "random_mean": 0.004985400475561619,
+   "random_z": 12.754042745649901,
+   "layer_matched_mean": 0.030069487169384956,
+   "layer_matched_z": 7.3705214136300325
+  },
+  "window64_raw": {
+   "value": 0.09248640388250351,
+   "random_mean": 0.0025613976176828146,
+   "random_z": 1.7324956978389756,
+   "layer_matched_mean": 0.028121301904320717,
+   "layer_matched_z": 1.1183086595565077
+  }
+ },
+ "induction_plus_previous": {
+  "token_raw": {
+   "value": 0.12871842086315155,
+   "random_mean": 0.0066860211081802845,
+   "random_z": 23.596605835577776,
+   "layer_matched_mean": 0.008725876919925213,
+   "layer_matched_z": 16.984216956506035
+  },
+  "token_global_removed": {
+   "value": 0.1567036509513855,
+   "random_mean": 0.006514332722872496,
+   "random_z": 31.00229646209689,
+   "layer_matched_mean": 0.011040479876101017,
+   "layer_matched_z": 23.012994157756754
+  },
+  "window64_raw": {
+   "value": 0.13902945816516876,
+   "random_mean": 0.005076367408037186,
+   "random_z": 6.38683090512949,
+   "layer_matched_mean": 0.004207027610391378,
+   "layer_matched_z": 7.037526535748225
+  }
+ },
+ "applicable_contrast_induction_mean": -0.6251727342605591,
+ "applicable_contrast_other_mean": 0.03007349744439125,
+ "auc_contrast_finds_induction_heads": 0.8866356611251831,
+ "pcs": [
+  {
+   "var_share": 0.02404143661260605,
+   "auc_applicable": 0.6759287714958191,
+   "induction_loading_share": 0.13711248338222504
+  },
+  {
+   "var_share": 0.018376996740698814,
+   "auc_applicable": 0.696039229631424,
+   "induction_loading_share": 0.09035433828830719
+  },
+  {
+   "var_share": 0.014020144939422607,
+   "auc_applicable": 0.5820745825767517,
+   "induction_loading_share": 0.03681240975856781
+  },
+  {
+   "var_share": 0.012068848125636578,
+   "auc_applicable": 0.575985312461853,
+   "induction_loading_share": 0.019120583310723305
+  },
+  {
+   "var_share": 0.011040003038942814,
+   "auc_applicable": 0.571885883808136,
+   "induction_loading_share": 0.053153760731220245
+  },
+  {
+   "var_share": 0.01043369434773922,
+   "auc_applicable": 0.5333481431007385,
+   "induction_loading_share": 0.005682934541255236
+  },
+  {
+   "var_share": 0.009660722687840462,
+   "auc_applicable": 0.649094820022583,
+   "induction_loading_share": 0.039362311363220215
+  },
+  {
+   "var_share": 0.00941234640777111,
+   "auc_applicable": 0.6239845156669617,
+   "induction_loading_share": 0.0645136907696724
+  },
+  {
+   "var_share": 0.009216856211423874,
+   "auc_applicable": 0.5422807931900024,
+   "induction_loading_share": 0.029521457850933075
+  },
+  {
+   "var_share": 0.008971468545496464,
+   "auc_applicable": 0.6477701961994171,
+   "induction_loading_share": 0.03617413714528084
+  }
+ ],
+ "best_pc_auc": 0.696039229631424,
+ "best_pc": 1,
+ "ari_token_clusters_vs_attention_labels": 0.27063522251806765,
+ "ari_window64_clusters_vs_attention_labels": 0.007163172864215712,
+ "_exp": "e369_tokabl_pythia410_step1000",
+ "_time": "2026-09-23 19:36:42"
+}

@@ -1,0 +1,150 @@
+{
+ "model": "gpt2",
+ "n_heads": 144,
+ "induction": {
+  "base_loss": 0.14939962327480316,
+  "top_heads": [
+   [
+    5,
+    1
+   ],
+   [
+    1,
+    10
+   ],
+   [
+    5,
+    9
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    9
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    7,
+    6
+   ],
+   [
+    0,
+    7
+   ],
+   [
+    0,
+    10
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    1,
+    3
+   ]
+  ],
+  "single_effect_top_mean": 0.19313889741897583,
+  "single_effect_random_mean": -0.002393088536337018,
+  "single_first_order_spearman": 0.5600000023841858,
+  "single_first_order_r2": -0.2784561746996854,
+  "single_second_order_spearman": 0.5243478417396545,
+  "single_second_order_r2": -1.1672215594496946,
+  "interaction_vs_hessian_spearman_all": 0.16554902493953705,
+  "interaction_vs_hessian_r2_all": 0.004800051269322814,
+  "interaction_vs_hessian_spearman_top": 0.14418119192123413,
+  "interaction_vs_hessian_r2_top": -0.2721414623620608,
+  "interaction_abs_mean_top": 0.22484628856182098,
+  "hessian_offdiag_abs_mean_top": 0.03895502910017967,
+  "coselection_vs_hessian_spearman": 0.04651588946580887,
+  "coselection_vs_interaction_spearman": 0.0675840824842453,
+  "coselection_vs_hessian_spearman_top": -0.27059805393218994,
+  "coselection_vs_interaction_spearman_top": 0.11353721469640732,
+  "n_chunks": 48,
+  "gradient_top_mean": -0.02118276245892048,
+  "hessian_diag_top_mean": -0.024325670674443245
+ },
+ "natural": {
+  "base_loss": 3.924398899078369,
+  "top_heads": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    10
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    7
+   ],
+   [
+    0,
+    9
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    5,
+    1
+   ],
+   [
+    11,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    8,
+    2
+   ],
+   [
+    5,
+    9
+   ],
+   [
+    0,
+    3
+   ]
+  ],
+  "single_effect_top_mean": 0.4530639946460724,
+  "single_effect_random_mean": 0.007517655845731497,
+  "single_first_order_spearman": 0.45304349064826965,
+  "single_first_order_r2": -0.16344507668789765,
+  "single_second_order_spearman": 0.6504347920417786,
+  "single_second_order_r2": -0.12907389543421366,
+  "interaction_vs_hessian_spearman_all": 0.11435510963201523,
+  "interaction_vs_hessian_r2_all": -0.025498616861512557,
+  "interaction_vs_hessian_spearman_top": 0.15353302657604218,
+  "interaction_vs_hessian_r2_top": -0.10830882322819346,
+  "interaction_abs_mean_top": 0.2445569485425949,
+  "hessian_offdiag_abs_mean_top": 0.015120548196136951,
+  "coselection_vs_hessian_spearman": 0.18400023877620697,
+  "coselection_vs_interaction_spearman": 0.05724633112549782,
+  "coselection_vs_hessian_spearman_top": 0.31635528802871704,
+  "coselection_vs_interaction_spearman_top": -0.003277319483458996,
+  "n_chunks": 64,
+  "gradient_top_mean": -0.011058286763727665,
+  "hessian_diag_top_mean": 0.1157832145690918
+ },
+ "_exp": "e371_scalehess_gpt2",
+ "_time": "2026-09-23 17:28:57"
+}

@@ -1,6 +1,6 @@
 # What a write becomes: the descendant and quotient program on Weight-Dictionary Decomposition
 
-Ronish Bhatt ([ORCID 0009-0000-8835-5380](https://orcid.org/0009-0000-8835-5380)), September 2026. Companion to [Weight-Dictionary Decomposition](https://github.com/sunmoonron/weight-dictionary-decomposition) (WDD), which reads a transformer's residual state as a sparse combination of the model's own write vectors. This repository holds the follow-on program: 356 experiments, 1,430 recorded runs on five small models, that follow one WDD write through the network and ask what it becomes, plus the theory that the results support and the literature they sit in. No model was trained; every run is forward passes, ablations, injections and closed-form fits, one to five minutes each on one GPU.
+Ronish Bhatt ([ORCID 0009-0000-8835-5380](https://orcid.org/0009-0000-8835-5380)), September 2026. Companion to [Weight-Dictionary Decomposition](https://github.com/sunmoonron/weight-dictionary-decomposition) (WDD), which reads a transformer's residual state as a sparse combination of the model's own write vectors. This repository holds the follow-on program: 356 experiments, 1,430 recorded runs on five small models, that follow one WDD write through the network and ask what it becomes, plus the theory that the results support and the literature they sit in. No model was trained; every run is forward passes, ablations, injections and closed-form fits, one to five minutes each on one GPU. A second round (phase 2, e357 to e373, about 255 runs) tests the program's tools against known circuits, the co-selection proposal of the LessWrong post "What if not Circuits?", and per-neuron drift across Pythia and OLMo training; it is summarised below.
 
 The short version of the result: a neuron's write is the model's own perturbation of its residual stream. Downstream computation expands that perturbation physically (hundreds of dimensions) while its causally relevant content becomes compressible (tens of dimensions), and that compressibility is a property of the residual stream's response to any perturbation, not of the write. The compressed content is not carried by a privileged subspace: any moderate-dimensional high-variance projection of the perturbation cloud carries it, there is no null space and no equivalence-class structure, and the WDD atoms are not a special basis of it. WDD remains a clean birth coordinate and instrument; it is not the functional dictionary. The negative results are part of the result.
 
@@ -17,11 +17,15 @@ License: MIT for the code (`scripts/`), CC BY 4.0 for the result files and docum
 | `results/*.json` (1,458 files) | Every recorded result, one JSON per script and model or checkpoint revision, with the numbers behind every claim in the documents. |
 | `results/FINDINGS.log` | One line per run in the order recorded: timestamp, experiment, and the headline numbers. |
 | `results/e349_quotient_*.pt` | The 16-dimensional quotient bases of Pythia-410m at six training checkpoints. |
+| `scripts/e357_*.py` to `scripts/e373_*.py`, `scripts/pc_common.py` | Phase 2: positive controls, co-selection, drift, curvature (see the phase-2 section). `pc_common.py` holds the ablation, induction and IOI helpers. |
+| `scripts/sched2.py`, `prefetch.py`, `waitrun.sh`, `pythia_revs.txt`, `olmo_revs.txt` | Phase 2's job scheduler, checkpoint prefetcher, dependency waiter and checkpoint lists. |
+| `results/e357_*.json` to `results/e373_*.json`, `results/FINDINGS_phase2.log`, `results/e365/*.pt` | Phase-2 results, the phase-2 findings log, and the top-16 quotient bases with their logit-image summaries at 13 Pythia checkpoints. |
+| `RUNLIST_phase2.txt` | Every phase-2 run in the order the scheduler completed it. |
 | `RUNLIST.txt` | Every run that produced a result, as `python <script> <model-or-revision>`, in recorded order (1,430 lines). Replaying it reproduces the repository. |
 | `waves/` | The job files that were launched in parallel, for the record of what ran together. |
 | `docs/FINDINGS.md` | The chronological narrative, session by session, with the numbers. |
 | `docs/SYNTHESIS.md` | What each round established, the closing statements, and where everything is. |
-| `docs/GRAPH.md` | The hypothesis graph, H0 to H152: each hypothesis, the experiments that tested it, and its status (survives, narrowed, killed, open). |
+| `docs/GRAPH.md` | The hypothesis graph, H0 to H169: each hypothesis, the experiments that tested it, and its status (survives, narrowed, killed, open). |
 | `docs/KILLED.md` | Every hypothesis killed, with the experiment and the number that killed it, and the artifacts retracted. |
 | `docs/THEORY.md` | The first-order transport theory, its derived predictions tagged by what they rest on, the tests of the new predictions, and the corrections the later rounds forced. |
 | `docs/RELATED_WORK.md` | The literature placement and the priority check against the closest 2025 and 2026 work. |
@@ -156,6 +160,34 @@ with the causal information in d low-dimensional and its coordinates not unique.
 ## Where this sits in the literature
 
 `docs/RELATED_WORK.md` places the program against its nearest neighbours and states what is and is not new. First-order transport, Green-function propagation, composition and the local linear regime belong to Transformer Field Theory (Olivieri and Pérez Rodríguez, 2026); the learned spectral bottleneck of the residual Jacobian to Fernando and Guitchounts (2025, 2026); the causal-dimensionality wedge to Sarkar and Deka (2026); the averaged read-out to the Jacobian lens (Transformer Circuits, 2026); linear transport of learned features between layers to Activation Transport Operators (Szablewski, 2025); weight-space neuron description to ROTATE (2026) and parameter decomposition to SPD and VPD. What this program adds is the native-write anchor through that machinery, the separation of a write's identity, its transported descendant and its functional effect, the equivalence structure the read-out induces on arbitrary perturbations measured by held-out prediction and intervention, its acquisition off the natural manifold and its convergence across families, its independence from the operators' spectra, the equation z = Zc tested by joint ablation, and the negative results above, in the scope of five small models.
+
+## Phase 2: circuits, co-selection and drift (e357 to e373)
+
+A second round, run on 23 September 2026 on one rented A100 80 GB, anchored on the LessWrong post [What if not Circuits?](https://www.lesswrong.com/posts/mMERyrvEJ4xbiozie/what-if-not-circuits) and its comments. It asks whether the program's unit-level tools see known circuits, whether the post's co-selection signal finds them, how neurons drift across training, and whether the quotient results depend on the depth of the writer. Same five models, same constraints (no training, forward and backward passes only), about 255 runs. Details and every number: `docs/FINDINGS.md` (session 32), `docs/SYNTHESIS.md`, hypotheses H153 to H169 in `docs/GRAPH.md`, `docs/THEORY.md` section 3i, `docs/RELATED_WORK.md` section 11.
+
+| Experiment | Question | Answer |
+| --- | --- | --- |
+| e357, e358 | Do pairwise ablation interaction and joint non-additivity detect the induction and IOI circuits? | Yes, in all five models (top heads 1.4 to 9 times random interaction; GPT-2's IOI top twelve contain ten published heads) |
+| e357, e358, e366 | Do the same statistics see those circuits in natural-text averages? | Barely (1 to 4 times random); scoring at the positions the circuit serves recovers part of the signal. The program's earlier natural-text negatives (e264, e302) are statements about averages, not about the absence of circuits |
+| e359, e363, e368, e369 | Does co-selection (the post's per-batch gradient signal) find the circuits? | Weakly at batch level (strong in SmolLM2 and Qwen), better at token level (three of five), and finite ablation co-effects do better than gradients (GPT-2: AUC 0.82 against 0.41) |
+| e370, e370b | Does first-order selection measure use? | No: at a trained optimum every unit's mean selection vanishes while its use does not |
+| e363, e368, e364b on Pythia checkpoints | When is a circuit co-selected? | Co-selection of the induction circuit appears when it forms (step 1000), peaks while it is refined (3000 to 16000), and fades by the end; co-selection structure as a whole is re-formed throughout training |
+| e371, e372 | Do local quantities (gradient, curvature, co-selection) reproduce ablation-level circuit structure? | No: interactions are 2 to 50 times the local curvature and weakly ranked by it; the loss along an important head's scale is flat near full strength and rises only near zero |
+| e360, e362 (+ b, c, d, e) | How do neurons drift across Pythia (46 checkpoints) and OLMo (19 checkpoints) training, in a basis-free logit signature? | Implementation (write vector) settles before function (reliability-corrected signature) in both models; early-layer neurons' logit effects become strongly context-dependent over training; important neurons turn over late; no speciation at this resolution |
+| e361 | Are the quotient results a block-2 artefact? | No: all hold at four birth depths in all five models |
+| e365, e365b | How does the quotient relate to circuit formation across training? | It is born with the induction transition (dimension 2 to 8, gain peak) and does not persist through training even in function space |
+| e373 | Does the quotient's growth need the induction circuit? | Partly, and only early: removing the induction heads removes about a third of the descendant cloud's spread at steps 1000 to 2000 and none at the end |
+
+Running phase 2. The scripts are in `scripts/` with the same conventions as phase 1 (`pc_common.py` holds the shared ablation, induction and IOI helpers). The box ran them through `scripts/sched2.py`, a GPU/CPU job scheduler that reads `queue_gpu.txt` and `queue_cpu.txt` (one command per line), skips jobs whose result file exists, launches GPU jobs while measured plus declared memory leaves room, requeues out-of-memory failures with a larger declared need, and adopts running jobs after a restart; `scripts/prefetch.py` downloads training checkpoints ahead of the drift runs and deletes them once no queued job names them; `scripts/waitrun.sh` holds a CPU analysis until its GPU series is complete. `RUNLIST_phase2.txt` lists every phase-2 run in order. A single run needs nothing but the script:
+
+```bash
+python scripts/e357_induction_control.py gpt2
+python scripts/e360_drift.py step33000
+python scripts/e362_drift_general.py olmo1b step550000-tokens1153B
+python scripts/e360b_drift_analysis.py
+```
+
+Two measurement notes. The drift signatures were computed with TF32 matmuls, which e360e shows agree with fp32 at cosine 1.00 for the same token assignment. Their raw cross-checkpoint cosines must be read against the reliability ceilings of e360d and e362d, because a single neuron's signature is estimated from about 36 tokens and early-layer signatures are strongly context-dependent late in training.
 
 ## Scope and caveats
 

@@ -1,0 +1,150 @@
+{
+ "model": "olmo1b",
+ "n_heads": 256,
+ "induction": {
+  "base_loss": 0.2624160349369049,
+  "top_heads": [
+   [
+    1,
+    12
+   ],
+   [
+    0,
+    12
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    11
+   ],
+   [
+    2,
+    11
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    11,
+    10
+   ],
+   [
+    0,
+    7
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    0,
+    4
+   ],
+   [
+    4,
+    12
+   ]
+  ],
+  "single_effect_top_mean": 2.1458728313446045,
+  "single_effect_random_mean": 0.007666642311960459,
+  "single_first_order_spearman": 0.21913044154644012,
+  "single_first_order_r2": -0.2654263292059704,
+  "single_second_order_spearman": 0.6843478083610535,
+  "single_second_order_r2": -0.17252328532181793,
+  "interaction_vs_hessian_spearman_all": 0.18315492570400238,
+  "interaction_vs_hessian_r2_all": -0.03251146132646543,
+  "interaction_vs_hessian_spearman_top": 0.19741153717041016,
+  "interaction_vs_hessian_r2_top": -0.03615252206999986,
+  "interaction_abs_mean_top": 1.526777744293213,
+  "hessian_offdiag_abs_mean_top": 0.22854921221733093,
+  "coselection_vs_hessian_spearman": 0.3204120993614197,
+  "coselection_vs_interaction_spearman": 0.09651460498571396,
+  "coselection_vs_hessian_spearman_top": 0.3856590986251831,
+  "coselection_vs_interaction_spearman_top": 0.12050934135913849,
+  "n_chunks": 48,
+  "gradient_top_mean": -0.02580372430384159,
+  "hessian_diag_top_mean": 0.6711035370826721
+ },
+ "natural": {
+  "base_loss": 2.880728006362915,
+  "top_heads": [
+   [
+    1,
+    12
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    15,
+    11
+   ],
+   [
+    0,
+    6
+   ],
+   [
+    9,
+    10
+   ],
+   [
+    13,
+    2
+   ],
+   [
+    4,
+    7
+   ],
+   [
+    13,
+    0
+   ],
+   [
+    0,
+    12
+   ],
+   [
+    5,
+    14
+   ]
+  ],
+  "single_effect_top_mean": 0.2187032848596573,
+  "single_effect_random_mean": 0.004148662090301514,
+  "single_first_order_spearman": 0.2460869550704956,
+  "single_first_order_r2": -0.24351564369857215,
+  "single_second_order_spearman": 0.6278260350227356,
+  "single_second_order_r2": -0.6660861903973778,
+  "interaction_vs_hessian_spearman_all": 0.34350767731666565,
+  "interaction_vs_hessian_r2_all": -0.02424860959445252,
+  "interaction_vs_hessian_spearman_top": 0.17215321958065033,
+  "interaction_vs_hessian_r2_top": -0.2867416498459794,
+  "interaction_abs_mean_top": 0.05686485767364502,
+  "hessian_offdiag_abs_mean_top": 0.011985423974692822,
+  "coselection_vs_hessian_spearman": 0.04330018162727356,
+  "coselection_vs_interaction_spearman": 0.06843795627355576,
+  "coselection_vs_hessian_spearman_top": 0.015301115810871124,
+  "coselection_vs_interaction_spearman_top": 0.13274188339710236,
+  "n_chunks": 64,
+  "gradient_top_mean": 0.0005474768695421517,
+  "hessian_diag_top_mean": 0.015118543989956379
+ },
+ "_exp": "e371_scalehess_olmo1b",
+ "_time": "2026-09-23 18:29:05"
+}

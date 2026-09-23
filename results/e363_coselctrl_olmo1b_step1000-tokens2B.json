@@ -1,0 +1,104 @@
+{
+ "model": "olmo1b",
+ "rev": "step1000-tokens2B",
+ "n_heads": 256,
+ "induction_heads": [],
+ "previous_heads": [],
+ "ablation_top8": [
+  [
+   0,
+   3
+  ],
+  [
+   0,
+   13
+  ],
+  [
+   0,
+   15
+  ],
+  [
+   0,
+   8
+  ],
+  [
+   1,
+   11
+  ],
+  [
+   1,
+   15
+  ],
+  [
+   0,
+   1
+  ],
+  [
+   2,
+   10
+  ]
+ ],
+ "overlap_ablation_induction": 0,
+ "mean_induction_content": 0.08406352996826172,
+ "natural": {
+  "induction": null,
+  "previous": null,
+  "ablation_top8": {
+   "raw": {
+    "value": -0.008921648375689983,
+    "random_mean": 0.01095501176889229,
+    "random_z": -0.8527515451354829,
+    "layer_matched_mean": -0.013115860365869593,
+    "layer_matched_z": 0.21721892077393515
+   },
+   "global_removed": {
+    "value": -0.005567916668951511,
+    "random_mean": 0.000668153502028872,
+    "random_z": -0.399220138840193,
+    "layer_matched_mean": -0.01135504564299481,
+    "layer_matched_z": 0.2994304459310372
+   },
+   "loss_partialled": {
+    "value": -0.010951204225420952,
+    "random_mean": 0.013939301097707357,
+    "random_z": -1.0342657258735037,
+    "layer_matched_mean": -0.01386443776351598,
+    "layer_matched_z": 0.1497798161120753
+   },
+   "corr_with_induction_content": 0.10537375509738922,
+   "content_corr_random_mean": 0.027413380938814954,
+   "content_corr_random_sd": 0.11804801225662231
+  },
+  "induction_plus_previous": null
+ },
+ "mixed": {
+  "induction": null,
+  "previous": null,
+  "ablation_top8": {
+   "raw": {
+    "value": 0.0036093848757445812,
+    "random_mean": 0.002475731709091633,
+    "random_z": 0.021113005417783687,
+    "layer_matched_mean": -0.01564873031922616,
+    "layer_matched_z": 0.6755268294562161
+   },
+   "global_removed": {
+    "value": -0.0006304127746261656,
+    "random_mean": 0.01187162302507204,
+    "random_z": -0.6623564708134096,
+    "layer_matched_mean": -0.016730014816876065,
+    "layer_matched_z": 1.0070294199094363
+   },
+   "loss_partialled": {
+    "value": -0.0009050965309143066,
+    "random_mean": 0.007355178576144681,
+    "random_z": -0.4040386017316663,
+    "layer_matched_mean": -0.01630957908811979,
+    "layer_matched_z": 0.9997374518737964
+   }
+  },
+  "induction_plus_previous": null
+ },
+ "_exp": "e363_coselctrl_olmo1b_step1000-tokens2B",
+ "_time": "2026-09-23 19:59:54"
+}

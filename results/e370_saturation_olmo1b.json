@@ -1,0 +1,33 @@
+{
+ "model": "olmo1b",
+ "applicable": {
+  "n": 682,
+  "mean_loss": 0.5605437755584717,
+  "mean_p": 0.7493236660957336,
+  "share_p_above_0p9": 0.5483871102333069,
+  "mean_one_minus_p": 0.25067630410194397
+ },
+ "other": {
+  "n": 7478,
+  "mean_loss": 2.876729726791382,
+  "mean_p": 0.30011314153671265,
+  "share_p_above_0p9": 0.10163145512342453,
+  "mean_one_minus_p": 0.6998868584632874
+ },
+ "e368": {
+  "induction_applicable": 0.015298649668693542,
+  "induction_rest": -0.00020468808361329138,
+  "others_applicable": 0.00038385330117307603,
+  "others_rest": -0.0002469806931912899
+ },
+ "e369": {
+  "induction_applicable": 0.01644253544509411,
+  "induction_rest": 0.0017020910745486617,
+  "others_applicable": -0.0011418710928410292,
+  "others_rest": 0.00725239934399724
+ },
+ "gradient_to_ablation_ratio_induction": 0.9304313023851889,
+ "gradient_to_ablation_ratio_others": 0.336161676724849,
+ "_exp": "e370_saturation_olmo1b",
+ "_time": "2026-09-23 18:50:15"
+}

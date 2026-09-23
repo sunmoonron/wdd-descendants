@@ -250,3 +250,16 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Attention transports a token's own image": freezing attention leaves the image at cosine 0.90 to 0.96; freezing the MLPs changes it to 0.28 to 0.80 and doubles the gain (e351).
 - "The context variation of a direction's coordinate is readable from the state": R² −0.16 to −0.36 (e356).
 - "The functional kernel is fully captured by the coordinates": alignment 0.09 to 0.47, with a 41-to-71-eigenvalue tail (e355).
+
+## Session 32 kills and reopenings (phase 2)
+- "First-order selection (the gradient along a unit's own write) measures the unit's use": at a trained optimum every head's mean selection is about zero while its ablation effect is positive; GPT-2's induction heads: selection -0.002, ablation +0.018 at the positions they serve (e370, e370b).
+- "Co-selection structure is a persistent object across training": agreement with the final co-selection matrix 0.00-0.24 through step 33000, communities never persist (e364b).
+- "Co-selection communities are circuits": after the global mode, co-selection structure is mostly layer structure (top-100 correlations same-layer 0.34-0.74 against 0.03-0.08 chance) with modularity barely above shuffled (e359).
+- "Local curvature and co-selection reproduce ablation interactions": interactions are 2.4-48x the Hessian's and ranked by it at 0.11-0.53 (e371).
+- "A neuron's function is more stable than its implementation (drift with stable function)": in Pythia the write settles first and the reliability-corrected logit signature follows (e360, e360d).
+- "Early-layer neurons have a context-free logit effect": two token samples agree at 0.28 at the end of training in block 2 (0.93 at step 1000) (e360d, e360e).
+- "Features speciate during training": splits and merges balance at every checkpoint (e360c).
+- "The quotient results hold only for block-2 writers": they hold at four birth depths in all five models (e361).
+- "The functional coordinate persists through training in function space": its logit image is no closer to the final quotient's than to a random direction's (e365b).
+- REOPENED, as blind-spot results: "Causal coordinates interact with circuit-like structure" (e302) and "descendant-similar neurons are redundant or coupled circuits" (e264) were measured as natural-text population averages, which e357, e358 and e366 show are largely blind to known circuits. They remain true of population averages; they no longer count as evidence against circuits.
+- Retracted before counting: e359's mixed-batch induction test (circular head selection; superseded by e363); e360's raw late signature and late-dissociation statistics (below the reliability ceiling; replaced by the ceiling-corrected curves of e360d).

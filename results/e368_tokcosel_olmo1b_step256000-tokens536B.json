@@ -1,0 +1,193 @@
+{
+ "model": "olmo1b",
+ "rev": "step256000-tokens536B",
+ "n_tokens": 8160,
+ "share_applicable": 0.0835784301161766,
+ "induction_heads": [
+  [
+   4,
+   12
+  ],
+  [
+   2,
+   11
+  ],
+  [
+   12,
+   8
+  ],
+  [
+   12,
+   10
+  ],
+  [
+   2,
+   7
+  ],
+  [
+   13,
+   1
+  ]
+ ],
+ "previous_heads": [
+  [
+   11,
+   10
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   3,
+   7
+  ],
+  [
+   0,
+   5
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   1,
+   7
+  ],
+  [
+   0,
+   12
+  ]
+ ],
+ "n_windows": 112,
+ "induction": {
+  "token_raw": {
+   "value": 0.06682613492012024,
+   "random_mean": 0.0012001499999314547,
+   "random_z": 5.100885366220898,
+   "layer_matched_mean": 0.0009103146730922163,
+   "layer_matched_z": 6.452488003334159
+  },
+  "token_global_removed": {
+   "value": 0.052608076483011246,
+   "random_mean": -0.00025884812930598855,
+   "random_z": 5.598552175173742,
+   "layer_matched_mean": 0.0018657440086826682,
+   "layer_matched_z": 4.904029027418519
+  },
+  "window64_raw": {
+   "value": 0.05666443333029747,
+   "random_mean": 0.002648270921781659,
+   "random_z": 1.7918647881595837,
+   "layer_matched_mean": 0.0097164586186409,
+   "layer_matched_z": 1.6585937258375387
+  }
+ },
+ "previous": {
+  "token_raw": {
+   "value": 0.029645897448062897,
+   "random_mean": 0.0018674704479053617,
+   "random_z": 2.8975821608854964,
+   "layer_matched_mean": -0.00022481207270175219,
+   "layer_matched_z": 2.762086160896401
+  },
+  "token_global_removed": {
+   "value": 0.029789675027132034,
+   "random_mean": -0.0006738810334354639,
+   "random_z": 3.7698579405254384,
+   "layer_matched_mean": 0.0016403731424361467,
+   "layer_matched_z": 2.508068344571551
+  },
+  "window64_raw": {
+   "value": -0.006211428437381983,
+   "random_mean": -0.00039734505116939545,
+   "random_z": -0.24569534998147494,
+   "layer_matched_mean": 0.0011666479986160994,
+   "layer_matched_z": -0.2673405752850218
+  }
+ },
+ "induction_plus_previous": {
+  "token_raw": {
+   "value": 0.017969241365790367,
+   "random_mean": 0.0007012899732217193,
+   "random_z": 3.8333476074348822,
+   "layer_matched_mean": 0.00044256405089981854,
+   "layer_matched_z": 3.791311544183018
+  },
+  "token_global_removed": {
+   "value": 0.016612615436315536,
+   "random_mean": 0.00022010653628967702,
+   "random_z": 3.9897494730412935,
+   "layer_matched_mean": 0.0013093783054500818,
+   "layer_matched_z": 3.104775400744161
+  },
+  "window64_raw": {
+   "value": 0.007765109650790691,
+   "random_mean": -0.0005759685300290585,
+   "random_z": 0.6918121259399369,
+   "layer_matched_mean": 0.0004580046224873513,
+   "layer_matched_z": 0.5412111697542341
+  }
+ },
+ "applicable_contrast_induction_mean": -0.14743360877037048,
+ "applicable_contrast_other_mean": -0.01045867707580328,
+ "auc_contrast_finds_induction_heads": 0.8553333282470703,
+ "pcs": [
+  {
+   "var_share": 0.021805956959724426,
+   "auc_applicable": 0.5145529508590698,
+   "induction_loading_share": 0.022760426625609398
+  },
+  {
+   "var_share": 0.01715354435145855,
+   "auc_applicable": 0.6229597330093384,
+   "induction_loading_share": 0.07022556662559509
+  },
+  {
+   "var_share": 0.01268147025257349,
+   "auc_applicable": 0.518765926361084,
+   "induction_loading_share": 0.020437229424715042
+  },
+  {
+   "var_share": 0.011647835373878479,
+   "auc_applicable": 0.5040666460990906,
+   "induction_loading_share": 0.007664978038519621
+  },
+  {
+   "var_share": 0.011005958542227745,
+   "auc_applicable": 0.5026527643203735,
+   "induction_loading_share": 0.007628816645592451
+  },
+  {
+   "var_share": 0.010730129666626453,
+   "auc_applicable": 0.5061917901039124,
+   "induction_loading_share": 0.06489719450473785
+  },
+  {
+   "var_share": 0.010158411227166653,
+   "auc_applicable": 0.5445919930934906,
+   "induction_loading_share": 0.01940036378800869
+  },
+  {
+   "var_share": 0.009700533002614975,
+   "auc_applicable": 0.5228211879730225,
+   "induction_loading_share": 0.02785344421863556
+  },
+  {
+   "var_share": 0.009257636964321136,
+   "auc_applicable": 0.500644713640213,
+   "induction_loading_share": 0.052073389291763306
+  },
+  {
+   "var_share": 0.009176341816782951,
+   "auc_applicable": 0.5135374665260315,
+   "induction_loading_share": 0.005691547878086567
+  }
+ ],
+ "best_pc_auc": 0.6229597330093384,
+ "best_pc": 1,
+ "ari_token_clusters_vs_attention_labels": 0.2299400175037889,
+ "ari_window64_clusters_vs_attention_labels": -0.02462508520790724,
+ "_exp": "e368_tokcosel_olmo1b_step256000-tokens536B",
+ "_time": "2026-09-23 19:49:59"
+}

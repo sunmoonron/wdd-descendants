@@ -1,0 +1,33 @@
+{
+ "model": "gpt2",
+ "applicable": {
+  "n": 737,
+  "mean_loss": 0.7495493292808533,
+  "mean_p": 0.6531730890274048,
+  "share_p_above_0p9": 0.37584802508354187,
+  "mean_one_minus_p": 0.3468269407749176
+ },
+ "other": {
+  "n": 7423,
+  "mean_loss": 3.9733986854553223,
+  "mean_p": 0.1718205362558365,
+  "share_p_above_0p9": 0.039202477782964706,
+  "mean_one_minus_p": 0.8281794786453247
+ },
+ "e368": {
+  "induction_applicable": -0.0020108441822230816,
+  "induction_rest": -0.0013546969275921583,
+  "others_applicable": 0.002243843162432313,
+  "others_rest": 0.0013036653399467468
+ },
+ "e369": {
+  "induction_applicable": 0.018393520265817642,
+  "induction_rest": 0.0018039363203570247,
+  "others_applicable": 0.0032027210108935833,
+  "others_rest": 0.004628057591617107
+ },
+ "gradient_to_ablation_ratio_induction": -0.109323509212101,
+ "gradient_to_ablation_ratio_others": 0.700605252471324,
+ "_exp": "e370_saturation_gpt2",
+ "_time": "2026-09-23 17:04:01"
+}
