@@ -1,0 +1,34 @@
+{
+ "base": "qwen05",
+ "instruct": "Qwen/Qwen2.5-0.5B-Instruct",
+ "level": 12,
+ "chat_len": 256,
+ "texts": {
+  "natural": {
+   "base_states:base_words": 0.8459388613700867,
+   "base_states:instruct_words": 0.8434624075889587,
+   "base_states:rotated": 0.5612485408782959,
+   "instruct_states:base_words": 0.8310515880584717,
+   "instruct_states:instruct_words": 0.8287733793258667,
+   "instruct_states:rotated": 0.5389902591705322
+  },
+  "chat": {
+   "base_states:base_words": 0.8514577746391296,
+   "base_states:instruct_words": 0.8456773161888123,
+   "base_states:rotated": 0.514919102191925,
+   "instruct_states:base_words": 0.9288187026977539,
+   "instruct_states:instruct_words": 0.9440087080001831,
+   "instruct_states:rotated": 0.6157684326171875
+  }
+ },
+ "drift": {
+  "median_cos": 0.9972339868545532,
+  "p01_cos": 0.995090126991272,
+  "frac_below_099": 0.0,
+  "enrichment_changed_in_chat": 0.48275861144065857,
+  "share_chat_uses_on_changed": 0.005147058982402086,
+  "share_nat_uses_on_changed": 0.01066176500171423
+ },
+ "_exp": "e431_finetune_qwen05",
+ "_time": "2026-09-24 18:57:36"
+}

@@ -945,3 +945,50 @@ SESSION 42 (the user's question: is WDD novel at all, and what does it unlock th
   - What generalises across all five architectures is the self-description layer: absent at initialisation (e401), word-level rather than second-order at the end of training, Zipf-like in usage, with the variance concentrated in directions the readers do not weigh above chance. The duality holds in three of five.
   - What does not generalise is the claim that native words read hidden content better than established readers. It holds for a recalled entity in the two larger gated models (OLMo-1B, Qwen2.5-7B), reverses in Pythia (value vectors win), and fails for context features in every model, where no vocabulary-space reader works.
   - WDD's defensible new ground is therefore the instrument and the property it measures, the self-description of trained networks, rather than a general-purpose better lens.
+
+SESSION 43 (the three proposed follow-ups on self-description, plus fresh angles the instrument enables that 400+ experiments had not touched; e427-e431 and e428b, 6 scripts, 28 runs; the user rightly flagged that the scheduler's memory reservations were about 3 times too large and left most of the 40 GB card idle, since corrected).
+- e427 SELF-DESCRIPTION AND CAPABILITY (Pythia 70m, 160m, 410m, 1b, 1.4b; same data and tokenizer; loss recovered at k = 16, middle depth).
+  - Advantage of own words over their rotation, final checkpoint (loss / advantage): 70m 4.09 / 0.17, 160m 3.60 / 0.27, 410m 3.08 / 0.25, 1b 2.83 / 0.40, 1.4b 2.73 / 0.33. Rank correlation of loss and advantage across sizes -0.8.
+  - At step 1000 the advantage is 0.03, 0.07, 0.14, 0.31 and 0.35. Small models build self-describability gradually as their loss falls; the 1b and 1.4b models have most of it by step 1000, when their loss is still 4.8-4.9. So it is not a function of loss alone.
+  - Pre-registered (larger models, larger advantage): confirmed with two inversions (160m above 410m, 1b above 1.4b).
+- e428 / e428b SELF-DESCRIPTION USAGE AS AN IMPORTANCE SCORE (MLP neurons of blocks 0..L ranked seven ways; the top N mean-ablated together; loss increase on held-out text at N = 64 / 256).
+
+  | Model | Usage | Spread (std x norm) | Deviation | Taylor | Magnitude | Weight norm | Random |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.32 / 0.57 | 0.69 / 1.42 | 0.23 / 0.75 | 0.16 / 0.39 | 0.09 / 0.40 | 0.54 / 2.25 | 0.00 / 0.01 |
+  | SmolLM2 | 2.14 / 5.22 | 2.02 / 2.82 | 0.89 / 2.20 | 0.81 / 2.11 | 0.32 / 2.15 | 0.02 / 0.08 | 0.01 / 0.03 |
+  | Pythia | 0.09 / 1.20 | 0.36 / 0.62 | 0.05 / 0.07 | 0.05 / 0.16 | 0.02 / 0.06 | 0.02 / 0.02 | 0.00 / 0.00 |
+  | Qwen-0.5B | 0.10 / 0.29 | 0.06 / 0.22 | 0.03 / 0.09 | 0.06 / 0.15 | 0.02 / 0.06 | 0.01 / 0.02 | 0.00 / 0.00 |
+  | OLMo | -0.00 / 0.04 | 0.11 / 0.21 | 0.09 / 0.17 | 0.11 / 0.15 | 0.08 / 0.15 | 1.81 / 1.33 | 0.00 / 0.00 |
+
+  - Usage's top neurons overlap the other rankings by only 0.00-0.29.
+  - Usage is the best score in SmolLM2 and Qwen-0.5B at both N, and in Pythia at N = 256 (spread at N = 64). It loses in GPT-2 (spread and weight norm) and fails in OLMo, where weight norm finds the super-weight neurons (the user's finding that they are their block's highest-norm rows).
+  - Pre-registered (usage above magnitude and weight norm): confirmed in SmolLM2, Pythia and Qwen-0.5B; refuted in GPT-2 and OLMo. e428b (usage above deviation and spread): confirmed in SmolLM2 and Qwen-0.5B, split in Pythia, refuted in GPT-2 and OLMo.
+- e429 THE DUALITY ACROSS DEPTHS AND READER SETS (quarter, half and three quarters of the depth).
+  - With the downstream readers' attention input rows included, loss gradients are better described by the readers' words and states by the writers' words at all three depths in all five models.
+  - With MLP input rows alone: GPT-2 at no depth, SmolLM2 and Qwen-0.5B at two, Pythia and OLMo at three.
+  - GPT-2's earlier failure (e426) was the incomplete reader set: its errors reach the state mostly through attention (at its middle depth, errors: writers 0.147, MLP readers 0.093, all readers 0.198).
+  - Pre-registered (duality at some depth in all five with all readers): confirmed, at every depth.
+- e430 SELF-DESCRIPTION AS A SIGNAL ABOUT THE INPUT (fresh angle).
+  - Self-description advantage (rotated minus own fraction unexplained, 16 words) on natural text, the model's own generations, shuffled natural text, random tokens and Python source:
+
+    | Model | Natural | Generated | Shuffled | Random | Code |
+    | --- | --- | --- | --- | --- | --- |
+    | GPT-2 | 0.227 | 0.234 | 0.216 | 0.195 | 0.201 |
+    | SmolLM2 | 0.191 | 0.187 | 0.197 | 0.157 | 0.179 |
+    | Pythia | 0.113 | 0.116 | 0.103 | 0.085 | 0.103 |
+    | Qwen-0.5B | 0.146 | 0.138 | 0.171 | 0.113 | 0.129 |
+    | OLMo | 0.184 | 0.170 | 0.213 | 0.215 | 0.170 |
+
+  - Within natural text, rank correlation of the per-position advantage with the next-token loss is +0.21, +0.06, 0.00, +0.08, +0.10.
+  - Pre-registered: natural highest and random lowest, refuted (random lowest in four, highest in OLMo; shuffled at or above natural in three); generations at least as describable as human text, three of five; worse-predicted positions described worse, refuted (zero or positive correlations).
+  - Self-description is not a usable novelty or uncertainty signal.
+- e431 INSTRUCTION FINE-TUNING AND THE NATIVE VOCABULARY (fresh angle; Qwen2.5-0.5B and SmolLM2-135M against their instruct versions).
+  - Median MLP write-row cosine 0.9972 and 0.9974; no row below 0.99.
+  - Each model's states are described as well by the other's words as by its own, at k = 16 on the instruct model's states: natural 0.83 / 0.83 (Qwen), 0.88 / 0.88 (SmolLM2); chat 0.94 / 0.93, 0.84 / 0.86; rotation 0.54-0.62.
+  - The 1% most-changed words are used more in chat descriptions in SmolLM2 (1.36 times) and less in Qwen (0.48 times).
+  - Pre-registered: rows barely move (confirmed); mutual intelligibility (confirmed); changed words enriched in chat (one of two).
+- Reading.
+  - Two of the fresh angles held. Where a model's own self-description tells us something new, it is about the model rather than the input: larger models self-describe better and build it earlier (e427), and in three of five models the neurons it uses to describe itself are the ones it can least lose (e428).
+  - The forward-backward duality is general once the reader set is complete (e429).
+  - Two fresh angles failed: self-description is not a signal of novelty or uncertainty in the input (e430), and instruction tuning leaves the native vocabulary essentially unchanged and mutually intelligible (e431). This last is a clean negative, and a useful one for model diffing: the changes are below the vocabulary's resolution.

@@ -328,3 +328,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "WDD is a better lens in general": model-dependent for recalled entities (better in OLMo-1B and Qwen2.5-7B, worse than value vectors in Pythia, worse than the plain lens in GPT-2) and blind, like every vocabulary-space reader, to context features (e423, e424, e421b).
 - "The previous-token word is causally used for induction": no such word exists in the native readout at key positions, so the test has no content (e425).
 - "The forward-backward duality holds in every model": three of five; reversed in GPT-2 (e426).
+
+## Session 43 kills
+- "Self-description is a training-free novelty or uncertainty signal": random tokens are the most self-describable input in OLMo, shuffled text is as describable as natural text, and badly predicted positions are not described worse (e430).
+- "Instruction fine-tuning changes the native vocabulary": median row cosine 0.997, full mutual intelligibility (e431).
+- "Self-description usage is a better importance score everywhere": it fails in OLMo and GPT-2, where norm-dominant neurons (super weights and massive-activation writers) carry the damage (e428, e428b).
+- "The forward-backward duality fails in GPT-2": an artefact of leaving out attention readers (e429).

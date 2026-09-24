@@ -393,6 +393,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H235 States speak the writers' language and errors the readers'. → e426 → NARROWED (states: all five; errors: three of five; GPT-2 reversed, Qwen-0.5B tied).
 - H236 Native-word usage is Zipf-like and steeper than a rotated vocabulary's. → e426 → SURVIVES in all five.
 
+## Self-description as an instrument, extended (session 43)
+
+- H237 Self-description tracks capability. → e427 → SURVIVES across Pythia sizes (advantage 0.17 to 0.40 as loss falls from 4.09 to 2.83, rank correlation -0.8). NARROWED within runs: the largest models have most of it at step 1000.
+- H238 Self-description usage is a free importance score. → e428, e428b → SURVIVES in SmolLM2 and Qwen-0.5B (above Taylor, spread, deviation and magnitude), split in Pythia. KILLED in GPT-2 (spread and weight norm better) and OLMo (weight norm finds the super-weight neurons; usage worst).
+- H239 States speak the writers' language and errors the readers'. → e429 → SURVIVES in all five models at all three depths once attention readers are included (revises H235).
+- H240 Self-description is a novelty or uncertainty signal. → e430 → KILLED (random tokens lowest in four models but highest in OLMo; shuffled text as describable as natural text; no negative correlation with loss).
+- H241 Instruction fine-tuning rewrites the native vocabulary. → e431 → KILLED (row cosine 0.997; base and instruct words describe each other's states equally well); chat-specific drift in one of two models.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

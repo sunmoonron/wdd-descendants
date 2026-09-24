@@ -1,0 +1,34 @@
+{
+ "base": "smollm2",
+ "instruct": "HuggingFaceTB/SmolLM2-135M-Instruct",
+ "level": 15,
+ "chat_len": 256,
+ "texts": {
+  "natural": {
+   "base_states:base_words": 0.8741288781166077,
+   "base_states:instruct_words": 0.8776721358299255,
+   "base_states:rotated": 0.6619323492050171,
+   "instruct_states:base_words": 0.8821148872375488,
+   "instruct_states:instruct_words": 0.8821321129798889,
+   "instruct_states:rotated": 0.552405595779419
+  },
+  "chat": {
+   "base_states:base_words": 0.8177246451377869,
+   "base_states:instruct_words": 0.8124556541442871,
+   "base_states:rotated": 0.5106281042098999,
+   "instruct_states:base_words": 0.8590946197509766,
+   "instruct_states:instruct_words": 0.8432050347328186,
+   "instruct_states:rotated": 0.6144987940788269
+  }
+ },
+ "drift": {
+  "median_cos": 0.9973992705345154,
+  "p01_cos": 0.9941785931587219,
+  "frac_below_099": 0.00020345053053461015,
+  "enrichment_changed_in_chat": 1.3571428060531616,
+  "share_chat_uses_on_changed": 0.006985294166952372,
+  "share_nat_uses_on_changed": 0.005147058982402086
+ },
+ "_exp": "e431_finetune_smollm2",
+ "_time": "2026-09-24 18:57:45"
+}
