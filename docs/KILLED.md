@@ -323,3 +323,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 41 kills (established lenses)
 - "The native-word lens is just Geva et al.'s value-vector reading": the actual largest writes surface the hidden bridge worse than the plain lens; the native re-description surfaces it best (e421).
 - "The super weights are the native language's function words": not in Qwen2.5-7B's middle-depth descriptions of positions after the first (e422).
+
+## Session 42 kills (what WDD unlocks)
+- "WDD is a better lens in general": model-dependent for recalled entities (better in OLMo-1B and Qwen2.5-7B, worse than value vectors in Pythia, worse than the plain lens in GPT-2) and blind, like every vocabulary-space reader, to context features (e423, e424, e421b).
+- "The previous-token word is causally used for induction": no such word exists in the native readout at key positions, so the test has no content (e425).
+- "The forward-backward duality holds in every model": three of five; reversed in GPT-2 (e426).

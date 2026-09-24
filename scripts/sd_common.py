@@ -78,7 +78,7 @@ def reader_rows(arch, blocks):
     rows = []
     for b in blocks:
         l = arch.layers[b]; ln = l.ln_2 if arch.fam == "gpt2" else l.post_attention_layernorm
-        g = ln.weight.detach().float(); W = arch.rdir(b).to(g.device) * g[None]
+        w = getattr(ln, "weight", None); g = w.detach().float() if w is not None else torch.ones(arch.D, device=DEV); W = arch.rdir(b).to(g.device) * g[None]
         if "rms" not in type(ln).__name__.lower(): W = W - W.mean(-1, keepdim=True)
         rows.append(W)
     return unitr(torch.cat(rows))
@@ -94,7 +94,7 @@ def reader_gram(model, arch, blocks, unembed=True):
     the norm centres), each module normalised to unit trace (one vote per module). Returns (all readers, unembedding)."""
     mods = []
     def add(W, ln):
-        g = ln.weight.detach().float(); W = W.detach().float() * g[None]
+        w = getattr(ln, "weight", None); g = w.detach().float() if w is not None else torch.ones(W.shape[-1], device=DEV); W = W.detach().float() * g[None]
         if "rms" not in type(ln).__name__.lower(): W = W - W.mean(-1, keepdim=True)
         Gm = (W.T @ W).double(); mods.append(Gm / Gm.trace())
     for b in blocks:

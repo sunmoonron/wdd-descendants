@@ -385,6 +385,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H230 The native-word lens is the value-vector (sub-update) reading. → e421 → KILLED. The 16 largest actual writes read the two-hop bridge at the subject token worse than even the plain lens (country first 0.15 against 0.44); the native re-description reads it best (0.63).
 - H231 The super weights are the native language's most used words. → e422 → KILLED in Qwen2.5-7B. The super neuron's write is a huge-direction word (0.92 in M) but is never used at positions after the first; the most used words are ordinary MLP rows.
 
+## What WDD unlocks, tested on five models (session 42)
+
+- H232 Native words read hidden content better than established readers, in general. → e421b, e423, e424, e425 → KILLED as a general claim. It SURVIVES for recalled entities in the larger gated models (OLMo-1B: top 20 0.51 against 0.21 lens and 0.40 actual writes; Qwen2.5-7B e421b); it is reversed in Pythia (actual writes 0.76 against 0.24); and no vocabulary-space reader surfaces context features (previous tokens) in any model.
+- H233 At the end of training self-description is word-level in every architecture. → e426 → SURVIVES (second-order shares below one half in all five; GPT-2 weakest).
+- H234 The directions holding the variance are not the ones readers weigh. → e426 → SURVIVES in all five (readers' trace at 1-7 times chance on directions holding 24-87% of the variance).
+- H235 States speak the writers' language and errors the readers'. → e426 → NARROWED (states: all five; errors: three of five; GPT-2 reversed, Qwen-0.5B tied).
+- H236 Native-word usage is Zipf-like and steeper than a rotated vocabulary's. → e426 → SURVIVES in all five.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

@@ -906,3 +906,42 @@ SESSION 41 (the user's prompt: seen in hindsight, the superweight surgery paper 
   - Most WDD results have established names: sparse coding, Jacobian lenses and transport, the Hydra effect and self-repair, Optimal Brain Damage, privileged bases, SAE evaluation, massive activations and super weights, the distributional simplicity bias, universality and representational convergence, the chain rule, the logit lens and value vectors.
   - Two things did not reduce to their neighbours in direct tests. First, reading the state through the model's own vocabulary: e421, where both the sum and the actual writes miss what the re-description shows. Second, the native vocabulary as a common yardstick, with provenance, in which these phenomena can be measured together and linked.
   - One proposed link failed its direct test: the super weights are not the native language's most used words (e422).
+
+SESSION 42 (the user's question: is WDD novel at all, and what does it unlock that is new? The findings map onto known phenomena, session 41. The method's candidate unlocks were put to the five original models: e421b, e423-e426, 5 scripts plus lr_common.py, 26 runs).
+- e421b THE FAIR VERSION OF e421 (Qwen2.5-7B). With each component's write centred on its natural-text mean before ranking, the 16 largest actual writes still rank the country first 0.15 and put the bridge in the top 20 0.02, against 0.63 and 0.21 for the native words. The native advantage in that model is not an artefact of massive-activation writes (pre-registered: confirmed).
+- e424 RECALLED ATTRIBUTE AT THE SUBJECT TOKEN, five models ("<landmark> is located in the country of", kept when answered; best depth).
+
+  | Model | n | Lens (country first / top 20) | Native | Actual writes | Rotated |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | 13 | 0.62 / 0.08 | 0.15 / 0.00 | 0.00 / 0.00 | 0.15 |
+  | SmolLM2 | 43 | 0.02 / 0.00 | 0.05 / 0.00 | 0.02 / 0.00 | 0.05 |
+  | Qwen-0.5B | 45 | 0.02 / 0.00 | 0.02 / 0.00 | 0.07 / 0.00 | 0.02 |
+  | Pythia-410m | 34 | 0.15 / 0.12 | 0.24 / 0.00 | 0.76 / 0.76 | 0.09 |
+  | OLMo-1B | 53 | 0.53 / 0.21 | 0.60 / 0.51 | 0.58 / 0.40 | 0.11 |
+
+  - The reader that sees the attribute depends on the model. The native words lead in OLMo-1B (and in Qwen2.5-7B, e421b); the established value-vector reading leads in Pythia; the plain lens in GPT-2; nothing reads it in SmolLM2 or Qwen-0.5B.
+  - Pre-registered (native ahead where n >= 30): confirmed in OLMo only; refuted in Pythia; untestable in SmolLM2 and Qwen-0.5B.
+- e423 CONTEXT AND ANTICIPATION (natural text, 1,440 positions, three depths).
+  - The previous token, the one before, and the token after next are not surfaced by any reader beyond a frequency baseline. At mid-depth, the previous token in the top 10: lens 0.00-0.07, native 0.00-0.02, actual writes 0.00-0.04, rotated 0.00-0.01, against 0.25-0.27 for "the 10 most frequent tokens".
+  - Previous-token information is written for key matching, not for the output vocabulary, so every reader that goes through the unembedding is blind to it, native words included.
+  - Pre-registered (native surfaces t-1 above the lens and actual writes): refuted in all five.
+- e425 CAUSAL ROLE OF THE PREVIOUS-TOKEN WORD (repeated random sequences; key positions; quarter and half depth). A native word whose readout contains the previous token exists at 0.00-0.01 of key positions in every model, so removing such words changes nothing (induction loss changes of 0.000-0.003, random-word removals 0.000-0.006). Unanswerable with this readout.
+- e426 THE SELF-DESCRIPTION FINDINGS ON ALL FIVE MODELS (final checkpoints, middle depth).
+  - (a) Vocabulary, not accent. Shares of the own-minus-rotation gap at k = 16 carried by covA / mix8: SmolLM2 0.02 / 0.42, GPT-2 0.28 / 0.44, Pythia 0.03 / -0.12, Qwen-0.5B -0.22 / 0.14, OLMo 0.00 / 0.11. Own words recover 0.59-0.87 against 0.08-0.64 for the rotations. Pre-registered (both below one half): confirmed in all five, most weakly in GPT-2.
+  - (b) The directions that hold the variance are not the ones the readers weigh. The states' top-8 principal directions hold 0.24-0.87 of the variance (Pythia 0.87, OLMo 0.48, SmolLM2 0.29, GPT-2 0.25, Qwen-0.5B 0.24). The downstream readers' Gram (weights only) puts 0.010-0.059 of its trace there, about 1-7 times the chance level of 8/D, and the unembedding 0.004-0.030. Pre-registered: confirmed in all five.
+  - (c) The forward-backward duality, as advantage over rotation (fraction unexplained):
+
+    | Model | States: writers / readers | Errors: writers / readers |
+    | --- | --- | --- |
+    | SmolLM2 | 0.207 / 0.050 | 0.029 / 0.041 |
+    | GPT-2 | 0.263 / 0.058 | 0.149 / 0.096 |
+    | Pythia | 0.095 / 0.054 | 0.019 / 0.062 |
+    | Qwen-0.5B | 0.168 / 0.039 | 0.053 / 0.050 |
+    | OLMo | 0.189 / 0.067 | 0.039 / 0.069 |
+
+    States favour the writers in all five. Errors favour the readers in three (Pythia, OLMo, SmolLM2), tie in Qwen-0.5B and favour the writers in GPT-2. Pre-registered: confirmed in three of five.
+  - (d) Zipf-like usage. Rank-frequency slope, own against rotated: SmolLM2 -0.74 / -0.40, GPT-2 -0.64 / -0.30, Pythia -0.67 / -0.34, Qwen-0.5B -0.67 / -0.37, OLMo -0.59 / -0.27. Pre-registered: confirmed in all five.
+- Reading.
+  - What generalises across all five architectures is the self-description layer: absent at initialisation (e401), word-level rather than second-order at the end of training, Zipf-like in usage, with the variance concentrated in directions the readers do not weigh above chance. The duality holds in three of five.
+  - What does not generalise is the claim that native words read hidden content better than established readers. It holds for a recalled entity in the two larger gated models (OLMo-1B, Qwen2.5-7B), reverses in Pythia (value vectors win), and fails for context features in every model, where no vocabulary-space reader works.
+  - WDD's defensible new ground is therefore the instrument and the property it measures, the self-description of trained networks, rather than a general-purpose better lens.

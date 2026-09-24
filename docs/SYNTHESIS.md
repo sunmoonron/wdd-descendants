@@ -397,6 +397,21 @@ What stays unique after the mapping:
 - Reading a state as a sparse re-description in the model's own vocabulary. In the one place tested directly it surfaces an intermediate that neither the whole-state lens nor the established decomposition into actual writes shows (e421).
 - The native vocabulary as a single weight-derived yardstick with provenance, in which the table's phenomena can be measured together, and some of them from weights alone.
 
+## Session 42: what WDD unlocks, on five models
+
+- Is WDD novel? As an instrument, yes. Its findings mostly coincide with known phenomena, which is what a sound new instrument should show. The question is what it measures or reads that others cannot.
+- Tested as a reader of hidden content, it is not a general improvement:
+  - it leads for recalled entities in OLMo-1B and Qwen2.5-7B (even against centred actual writes);
+  - it loses to the value-vector reading in Pythia and to the plain lens in GPT-2;
+  - like every reader that goes through the output vocabulary, it cannot see context features.
+- Tested as a measurement of the model's own structure, the self-description layer holds in all five architectures:
+  - absent at initialisation;
+  - word-level at the end of training;
+  - Zipf-like word usage;
+  - the variance concentrated in directions the readers do not weigh above chance;
+  - states in the writers' words and errors in the readers' in three of five.
+- That is the foundation: the native vocabulary as an instrument for a property of trained networks (how their own weights describe their computation) that was not measured before.
+
 ## What the whole program established (ten rounds, e01 to e247)
 
 WDD is classical sparse approximation over the model's own write directions, and its label means "this neuron wrote this direction". Reading a write from the state is a prominence phenomenon: it works at the write's birth, degrades with a causal half-life of about two blocks, and depends on the context re-writing the direction; identified atoms are 1.6 to 2.9 times more functional per unit energy than unidentified ones in four models, and the reading says nothing about whether the write caused the direction's presence. Two certificates, stability selection for OMP and a per-atom null-model z-score for the projection reading, make the reading usable. Every trained block is, along any direction, a learned linear contraction that is really the diagonal of a near-isometric, strongly mixing map: a write's energy is conserved or amplified while its direction is scattered, exactly accountably, into thousands of later writers and into attention. The scattered descendant is an angle-preserving, compositional, magnitude-independent image of the write vector, present as an isometry from initialisation and populated with dispersal by training, carrying 6 to 6.4 of 7 recoverable bits under the tested decoders through the middle of the network, robust to weight noise, portable across corpora and checkpoints, predictable for unseen neurons and for random vectors alike, and destroyed only in the last two blocks. It is a classification coordinate, not a decomposition basis: transporting the native dictionary does not restore sparse reading, and the native chart fails on transported writes for the same reason it fails on unmaintained natural ones, prominence. The exceptions throughout are the massive-activation neurons, not the architecture family. The descendant is a sufficient statistic for the write's functional effect and the vector that causally carries it when injected; it organises neurons by function at the population level without making them interchangeable at the token level; and the dimensions the network spends on who grow with depth while what and how much stay compressed; the effect of an intervention is a near-linear function of its position in descendant space, and no small basis reconstructs the descendant itself.
