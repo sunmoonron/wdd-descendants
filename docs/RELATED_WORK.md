@@ -162,3 +162,17 @@ Sources: https://arxiv.org/abs/2410.11179 ; https://arxiv.org/abs/2502.18147 ; h
 - Massive activations as biases and attention sinks: Sun et al. 2024 (arXiv 2402.17762). e408 shows that the readers' weights and the unembedding place almost no trace on these directions, and e414 that the most used native words point into them.
 
 Sources: https://arxiv.org/abs/2509.26643 ; https://arxiv.org/abs/2402.17762 ; https://transformer-circuits.pub/2023/monosemantic-features
+
+## 17. The workspace agenda (added 2026-09-24, session 40)
+
+- WorkspaceBench (LessWrong 2026, "WorkspaceBench: evaluating interpretability methods for the global workspace"; code at github.com/camilablank/workspace-bench): 3,356 questions in 27-28 families (basic readouts, multihop, multilingual, poetry, typos, computational intermediates, safety, associations, anti-bag-of-words, hallucination), scored by LLM judges against Qwen-3.6-27B.
+  - It compares the logit lens, the J-lens (Jacobian), the R-lens, the tuned lens, natural-language autoencoders, SAEs, Patchscopes, a template lens and an Oracle Lens.
+  - Its findings: single-token readers cannot reach much of the workspace, and text-generating readers hallucinate.
+  - Its open problems: no ground truth for workspace content, hallucination, adaptation to smaller models, and the lack of a good multi-token J-lens.
+  - Session 40 used tasks with known intermediates and exact scoring instead. The J-lens and tuned lens were not implemented here, which is a limit of the comparison.
+- Two-hop recall: Biran et al. 2024 ("Hopping Too Late", arXiv 2406.12775) locate the bridge entity at the subject tokens in early-middle layers and the second hop later, at the last position. e415 and e420 fit that picture: at the last position the bridge appears only late; at the subject token the native words carry it at blocks 12-20.
+- Logit lens (nostalgebraist 2020) and tuned lens (Belrose et al. 2023, arXiv 2303.08112): the baselines the native-word lens is compared with, the first directly and the second only by citation.
+- Suppression of the non-answer name resembles the negative name movers of the IOI circuit (Wang et al. 2022, arXiv 2211.00593), seen here as signed native words (e417).
+- Massive activations (Sun et al. 2024): the 7B state's top-8 directions (97% of the variance) are presumably those. e419 measures their non-local functional weight (29% of the loss from the 8 directions alone).
+
+Sources: https://www.lesswrong.com/posts/Zeg2JztbdhguL48uH/workspacebench-evaluating-interpretability-methods-for-the ; https://github.com/camilablank/workspace-bench ; https://arxiv.org/abs/2406.12775 ; https://arxiv.org/abs/2303.08112 ; https://arxiv.org/abs/2211.00593

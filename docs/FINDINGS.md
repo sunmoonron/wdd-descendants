@@ -841,3 +841,50 @@ SESSION 39 (a second round of the external review, triaged; the small experiment
   - The weights alone know that those directions carry almost no local function.
   - For the review's decomposition: the atom-specific structure belongs to the writers alone, and the readers contribute only an accent.
   - False friends are the writers of the huge directions caught halfway through their formation (Pythia-410m, where those directions are largest). The accent-to-vocabulary transition holds at every size tried.
+
+SESSION 40 (2026-09-24, day 2; new anchor: WorkspaceBench, LessWrong 2026, "evaluating interpretability methods for the global workspace". Its harness needs LLM judges via OpenRouter and is gated on Qwen-3.6-27B, so it was used as an agenda: can a reader surface intermediate variables the model computes without stating them, without hallucinating? Setup: the offered 2x A100 box never accepted SSH, so everything ran on a single A100 40GB with Qwen2.5-7B in bf16 and a memory-lean native vocabulary (ws_common.py: unit rows ordered by block, a layer's vocabulary is a prefix view, about 760k words up to block 26). Tasks with known intermediates, scored by exact match; each reader ranks tokens at one position: the logit lens, the logit lens of the state minus the natural-text mean, a PCA lens (16 principal parts, each read and max-pooled), the native-word lens (16 OMP words of the model's own vocabulary, each word times its coefficient read by the logit lens, max-pooled) and a rotated-vocabulary control. e415-e420, 6 scripts, 7 runs.)
+- e415 TWO-HOP BRIDGES AT THE FINAL POSITION.
+  - Setup: "The capital / official language / currency of the country where <landmark> is located is"; 56 landmarks, three relations, few-shot. 133 of 167 prompts pass the gate (two-hop answer and one-hop bridge both correct).
+  - Through block 20 no reader surfaces the bridge country: bridge in the top 50 at most 0.01, and the true country ranked first among the 45 candidate countries 0.02-0.05, at chance.
+  - At blocks 24 / 26, bridge in the top 20: plain lens 0.58 / 0.64, centred 0.56 / 0.62, native 0.51 / 0.56, PCA 0.00, rotated 0.00. Country first: 0.96 / 0.92 (lens) and 0.93 / 0.89 (native). Wrong countries almost never appear (0-0.03).
+  - At the final position the bridge appears only as late as the answer, and the plain lens reads it at least as well. Pre-registered (native above the lenses at middle depth): refuted, since nothing reads it there; rotated at zero: confirmed.
+  - What the native words add at blocks 24 / 26:
+    - the bridge sits in some word's own top 5 in 0.77 / 0.80 of prompts;
+    - the bridge and the answer are carried by distinct words at once in 0.25 / 0.49;
+    - removing the bridge-carrying word lowers the answer's log-probability by 0.16 / 0.15 nats, against 0.01 / 0.02 for a random other selected word (n = 102 / 107). Pre-registered causal check: confirmed.
+  - The 16-word native description at the last position keeps the answer top-1 in 0.92 of prompts at block 4, 0.65 at block 20 and 0.85 / 0.75 at blocks 24 / 26. PCA falls from 0.82 to 0.00; rotated words range 0.26-0.86 early and 0.00 late.
+- e420 THE SAME READERS AT THE SUBJECT'S LAST TOKEN (where two-hop recall resolves the bridge).
+  - At blocks 12-20 the native lens puts the bridge in its top 20 for 0.13 / 0.21 / 0.16 / 0.11 / 0.17 of prompts (blocks 12, 14, 16, 18, 20), in the top 50 for up to 0.30. The plain and centred lenses manage 0.00-0.01, and PCA and rotated words 0.00.
+  - Country first among candidates: native 0.50-0.63, lens 0.41-0.44, centred 0.28-0.51, PCA 0.02-0.08, rotated 0.02-0.07. Country in the top 3: native 0.60-0.82, lens 0.52-0.65.
+  - Late (blocks 24-26) the lens overtakes: country first 0.76-0.80 against 0.50-0.53.
+  - The lens ranks the country well among countries but buries it under generic tokens in the full vocabulary. The native decomposition isolates it in a word of its own.
+  - Pre-registered (native above the lenses at middle depth): confirmed at the subject position.
+  - Removing the bridge word at the subject position alone does not change the answer (about 0.00 nats, n 26-51), and single-position splices there keep the answer in 0.95-1.00 of prompts. The information is redundant across positions, and the causal check was refuted at this position.
+  - More words do not help: with 32 or 64 native words the best bridge-in-top-20 is 0.19 (block 14) and country first 0.51-0.64, the same as with 16. When the bridge is carried by a native word, it is among the first 16 chosen.
+- e417 ROLES (anti-bag-of-words).
+  - Setup: "In the final, Alice beat Bob. The winner was", "Alice is taller than Bob. The shorter one is", and buying/selling and sending/receiving. 240 prompts, all answered correctly.
+  - Pairwise accuracy (answer name scored above the other), all readers: 0.44-0.55 through block 20; at blocks 22 / 24 / 26 lens 0.77 / 0.91 / 0.88, centred 0.80 / 0.97 / 0.92, native 0.65 / 0.93 / 0.85, PCA about 0.50, rotated 0.55-0.61.
+  - Roles are resolved late and the native lens does not resolve them earlier (pre-registered: refuted).
+  - It shows how they are resolved. At blocks 22 / 24 / 26 the word carrying the other name has a negative logit (it suppresses that name) in 0.25 / 0.36 / 0.18 of prompts, the word carrying the answer in 0.14 / 0.00 / 0.01. Through block 20 both are 0.30-0.46, symmetric. Pre-registered (other name more often on a suppressing word): confirmed at the resolving blocks.
+  - The carrying words come from the same blocks for both names: provenance does not encode the role.
+- e416 ARITHMETIC INTERMEDIATES (inconclusive).
+  - Setup: "a=3;b=a+4;c=b-2;c=", all digits distinct. 52 of 109 chains answered correctly.
+  - Rank of the hidden b among the ten digits is noise for every reader: b in the top 3 between 0.00 and 0.52 across blocks, chance 0.30, rotated words up to 0.44.
+  - Fabrication (share of a reader's top-3 digits appearing nowhere in the chain; chance 0.50): lens 0.29-0.50, native 0.36-0.65, higher than the lens at most blocks, PCA 0.61-0.73.
+  - Removing the b word: -0.06 against -0.02 nats at block 24.
+  - The model is not capable enough on this format for a test. Pre-registered: none met.
+- e418 SELF-DESCRIPTION AT 7B (middle depth, block 14; 490k native words; 4 sequences).
+  - Loss recovered at k = 4 / 8 / 16 / 32 / 64, Euclidean pursuit:
+    - own 0.52 / 0.67 / 0.79 / 0.89 / 0.94;
+    - rotation 0.07 / 0.14 / 0.26 / 0.44 / 0.72;
+    - Gaussian words with the states' covariance (half as many words) 0.53 / 0.66 / 0.75 / 0.85 / 0.92.
+  - The native advantage over rotation survives scale and is larger than at 1.2B or below. Here the native words match or beat the covariance-drawn words (in Pythia the covariance-drawn words won).
+  - The states' top-8 principal directions hold 0.97 of the variance and 0.003 of the Fisher trace.
+  - Under the Fisher-metric pursuit the native words fall to 0.38 / 0.48 / 0.55 / 0.65 / 0.77 (rotation 0.19-0.45, covariance-drawn 0.53-0.84): the local functional metric is a poor selection metric at 7B.
+  - Pre-registered (own above rotation under both metrics; huge-direction split present): confirmed.
+- e419 THE HUGE DIRECTIONS KEPT EXACT AT 7B (as e404 condition B).
+  - Keeping only the top-8 principal part of every state exact, everything else at its mean, recovers 0.29 of the loss by itself, although it holds 0.3% of the local Fisher trace.
+  - With it exact and the rest described, Euclidean: own 0.64 / 0.74 / 0.84 / 0.91 / 0.95, rotation 0.36 / 0.41 / 0.49 / 0.59 / 0.75, covariance-drawn 0.61 / 0.72 / 0.81 / 0.89 / 0.94.
+  - Fisher: own 0.51 / 0.56 / 0.62 / 0.70 / 0.80, rotation 0.41-0.57, covariance-drawn 0.59-0.87.
+  - Pre-registered (Fisher at least as good as Euclidean once the huge directions are exact): refuted. Own above rotation under both: confirmed.
+  - At 7B the local Fisher metric (estimated from about 4,000 positions in 3,584 dimensions) is not a usable selection metric even beyond the top-8 directions.

@@ -274,6 +274,26 @@ Details: `docs/FINDINGS.md` (session 39), hypotheses H211 to H222, `docs/THEORY.
 | e413 | Does the native vocabulary cover in-context computation? | Yes. In-context copying on unseen random sequences is kept at least as well as natural-text prediction |
 | e414 | What are the word frequencies of the native language? | Zipf-like (slopes about -0.65 against -0.33 for rotated words). The most used words point into the huge directions and carry little function on their own in Pythia |
 
+## The workspace agenda on a 7B model (e415 to e420)
+
+This session was anchored on WorkspaceBench (LessWrong 2026), which asks for readers that surface a model's hidden intermediate variables without hallucinating. Its harness needs LLM judges and a 27B model, so here it is used as an agenda: Qwen2.5-7B, tasks with known intermediates, and exact scoring. Each reader ranks tokens at one position:
+
+- the logit lens;
+- a centred logit lens;
+- a PCA lens;
+- the native-word lens: the state as 16 of the model's own write directions, each read out separately;
+- a rotated-vocabulary control.
+
+Details: `docs/FINDINGS.md` (session 40), hypotheses H223 to H229.
+
+| Experiment | Question | Answer |
+| --- | --- | --- |
+| e420 | At the subject's token, in middle layers, can native words surface a two-hop bridge ("France" for the Eiffel Tower) that lenses miss? | Yes. The bridge is in the top 20 for 0.11-0.21 of prompts against 0.00-0.01 for the logit lens, with the true country ranked first among countries 0.50-0.63 against 0.41-0.44. Rotated words and principal parts never surface it. More than 16 words does not help |
+| e415 | And at the final position? | Only late (blocks 24-26), where the plain lens reads it at least as well. There bridge and answer sit in separate native words, and removing the bridge word costs the answer 0.15 nats against 0.01 for another word |
+| e417 | Can a reader tell who did what (roles)? | Only late, for every reader. The native words show the resolution as suppression of the other name |
+| e416 | Arithmetic intermediates and fabricated digits? | Inconclusive: the model solves too few chains |
+| e418, e419 | Does self-description hold at 7B? | Yes, and more strongly (0.79 against 0.26 at 16 words). The top 8 directions hold 97% of the variance and 0.3% of the local Fisher trace, yet kept exact alone they recover 29% of the loss |
+
 ## Scope and caveats
 
 Five models under 1.1B parameters, block-2 writers for most runs, one corpus (wikitext-2, with a Pile check), tokens in typical-norm range (attention-sink positions excluded), perturbations at the natural amplitude unless a sweep says otherwise, and decoders limited to nearest-centroid, kNN, ridge and closed-form kernels so that nothing is trained. Every number is a median over held-out tokens unless the script says otherwise. Retracted artifacts and superseded designs are listed in `docs/KILLED.md`; an unsigned transport residual (e275) and a mis-designed additivity reference (e285 part 3) were corrected by e275b and e285b, and a cross-token measure in e315 was discarded for dense injection. The one large outage of the run, two hours without network mid-program, did not lose results because the launcher is resume-safe.

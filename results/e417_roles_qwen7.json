@@ -1,0 +1,289 @@
+{
+ "model": "qwen7",
+ "n": 240,
+ "k": 16,
+ "layers": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26
+ ],
+ "readers": {
+  "lens@4": {
+   "pairwise": 0.4958333671092987
+  },
+  "lens_centred@4": {
+   "pairwise": 0.5083333849906921
+  },
+  "pca16@4": {
+   "pairwise": 0.5041667222976685
+  },
+  "native16@4": {
+   "pairwise": 0.4791666865348816
+  },
+  "rotated16@4": {
+   "pairwise": 0.5208333730697632
+  },
+  "lens@6": {
+   "pairwise": 0.48750001192092896
+  },
+  "lens_centred@6": {
+   "pairwise": 0.48750001192092896
+  },
+  "pca16@6": {
+   "pairwise": 0.5125000476837158
+  },
+  "native16@6": {
+   "pairwise": 0.4541666805744171
+  },
+  "rotated16@6": {
+   "pairwise": 0.4375000298023224
+  },
+  "lens@8": {
+   "pairwise": 0.5166667103767395
+  },
+  "lens_centred@8": {
+   "pairwise": 0.491666704416275
+  },
+  "pca16@8": {
+   "pairwise": 0.5083333849906921
+  },
+  "native16@8": {
+   "pairwise": 0.5208333730697632
+  },
+  "rotated16@8": {
+   "pairwise": 0.5541666746139526
+  },
+  "lens@10": {
+   "pairwise": 0.5083333849906921
+  },
+  "lens_centred@10": {
+   "pairwise": 0.4958333671092987
+  },
+  "pca16@10": {
+   "pairwise": 0.4833333492279053
+  },
+  "native16@10": {
+   "pairwise": 0.5125000476837158
+  },
+  "rotated16@10": {
+   "pairwise": 0.5250000357627869
+  },
+  "lens@12": {
+   "pairwise": 0.5291666984558105
+  },
+  "lens_centred@12": {
+   "pairwise": 0.4958333671092987
+  },
+  "pca16@12": {
+   "pairwise": 0.5
+  },
+  "native16@12": {
+   "pairwise": 0.5041667222976685
+  },
+  "rotated16@12": {
+   "pairwise": 0.4958333671092987
+  },
+  "lens@14": {
+   "pairwise": 0.5
+  },
+  "lens_centred@14": {
+   "pairwise": 0.5041667222976685
+  },
+  "pca16@14": {
+   "pairwise": 0.4958333671092987
+  },
+  "native16@14": {
+   "pairwise": 0.5208333730697632
+  },
+  "rotated16@14": {
+   "pairwise": 0.4583333432674408
+  },
+  "lens@16": {
+   "pairwise": 0.5041667222976685
+  },
+  "lens_centred@16": {
+   "pairwise": 0.4958333671092987
+  },
+  "pca16@16": {
+   "pairwise": 0.491666704416275
+  },
+  "native16@16": {
+   "pairwise": 0.5041667222976685
+  },
+  "rotated16@16": {
+   "pairwise": 0.46666669845581055
+  },
+  "lens@18": {
+   "pairwise": 0.5250000357627869
+  },
+  "lens_centred@18": {
+   "pairwise": 0.5166667103767395
+  },
+  "pca16@18": {
+   "pairwise": 0.5
+  },
+  "native16@18": {
+   "pairwise": 0.4791666865348816
+  },
+  "rotated16@18": {
+   "pairwise": 0.5208333730697632
+  },
+  "lens@20": {
+   "pairwise": 0.5
+  },
+  "lens_centred@20": {
+   "pairwise": 0.4958333671092987
+  },
+  "pca16@20": {
+   "pairwise": 0.5166667103767395
+  },
+  "native16@20": {
+   "pairwise": 0.4750000238418579
+  },
+  "rotated16@20": {
+   "pairwise": 0.5125000476837158
+  },
+  "lens@22": {
+   "pairwise": 0.7708333730697632
+  },
+  "lens_centred@22": {
+   "pairwise": 0.7958333492279053
+  },
+  "pca16@22": {
+   "pairwise": 0.5125000476837158
+  },
+  "native16@22": {
+   "pairwise": 0.6500000357627869
+  },
+  "rotated16@22": {
+   "pairwise": 0.5541666746139526
+  },
+  "lens@24": {
+   "pairwise": 0.9125000238418579
+  },
+  "lens_centred@24": {
+   "pairwise": 0.9708333611488342
+  },
+  "pca16@24": {
+   "pairwise": 0.5
+  },
+  "native16@24": {
+   "pairwise": 0.9333333969116211
+  },
+  "rotated16@24": {
+   "pairwise": 0.6083333492279053
+  },
+  "lens@26": {
+   "pairwise": 0.8791667222976685
+  },
+  "lens_centred@26": {
+   "pairwise": 0.9166666865348816
+  },
+  "pca16@26": {
+   "pairwise": 0.5
+  },
+  "native16@26": {
+   "pairwise": 0.8500000238418579
+  },
+  "rotated16@26": {
+   "pairwise": 0.6000000238418579
+  }
+ },
+ "signs": {
+  "4": {
+   "answer_on_suppressing": 0.40000003576278687,
+   "other_on_suppressing": 0.3750000298023224,
+   "answer_block": 2.2125000953674316,
+   "other_block": 2.2791666984558105,
+   "same_word": 0.15000000596046448
+  },
+  "6": {
+   "answer_on_suppressing": 0.3916666805744171,
+   "other_on_suppressing": 0.32500001788139343,
+   "answer_block": 4.220833778381348,
+   "other_block": 4.441667079925537,
+   "same_word": 0.12083333730697632
+  },
+  "8": {
+   "answer_on_suppressing": 0.30000001192092896,
+   "other_on_suppressing": 0.3333333432674408,
+   "answer_block": 6.058333873748779,
+   "other_block": 6.337500095367432,
+   "same_word": 0.10833334177732468
+  },
+  "10": {
+   "answer_on_suppressing": 0.38333335518836975,
+   "other_on_suppressing": 0.3708333671092987,
+   "answer_block": 7.258333683013916,
+   "other_block": 7.279167175292969,
+   "same_word": 0.08750000596046448
+  },
+  "12": {
+   "answer_on_suppressing": 0.4125000238418579,
+   "other_on_suppressing": 0.45000001788139343,
+   "answer_block": 7.8041672706604,
+   "other_block": 8.08750057220459,
+   "same_word": 0.1041666716337204
+  },
+  "14": {
+   "answer_on_suppressing": 0.4583333432674408,
+   "other_on_suppressing": 0.4541666805744171,
+   "answer_block": 9.270833969116211,
+   "other_block": 8.950000762939453,
+   "same_word": 0.0833333358168602
+  },
+  "16": {
+   "answer_on_suppressing": 0.45000001788139343,
+   "other_on_suppressing": 0.45000001788139343,
+   "answer_block": 9.716667175292969,
+   "other_block": 9.729166984558105,
+   "same_word": 0.07083334028720856
+  },
+  "18": {
+   "answer_on_suppressing": 0.42916667461395264,
+   "other_on_suppressing": 0.4375000298023224,
+   "answer_block": 11.541666984558105,
+   "other_block": 11.416666984558105,
+   "same_word": 0.06666667014360428
+  },
+  "20": {
+   "answer_on_suppressing": 0.3375000059604645,
+   "other_on_suppressing": 0.34166669845581055,
+   "answer_block": 17.304166793823242,
+   "other_block": 17.316667556762695,
+   "same_word": 0.125
+  },
+  "22": {
+   "answer_on_suppressing": 0.14166668057441711,
+   "other_on_suppressing": 0.2458333522081375,
+   "answer_block": 20.812501907348633,
+   "other_block": 20.637500762939453,
+   "same_word": 0.19583334028720856
+  },
+  "24": {
+   "answer_on_suppressing": 0.0,
+   "other_on_suppressing": 0.36250001192092896,
+   "answer_block": 22.33333396911621,
+   "other_block": 22.475000381469727,
+   "same_word": 0.07916667312383652
+  },
+  "26": {
+   "answer_on_suppressing": 0.008333333767950535,
+   "other_on_suppressing": 0.17500001192092896,
+   "answer_block": 24.183334350585938,
+   "other_block": 24.616668701171875,
+   "same_word": 0.02500000223517418
+  }
+ },
+ "_exp": "e417_roles_qwen7",
+ "_time": "2026-09-24 17:47:56"
+}

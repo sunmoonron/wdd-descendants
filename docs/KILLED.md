@@ -311,3 +311,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "False friends are a Pythia-family property": none at 70m or 160m (e409).
 - "False friends coincide with the cross-seed divergence phase": the divergence is at steps 256-2000, the window at 4000-8000 (literature timing).
 - "Readers describe the errors better than writers at every stage": at step 1000 the writers do (e412).
+
+## Session 40 kills and narrowings (the workspace agenda)
+- "The native-word lens reads a two-hop bridge earlier than the logit lens at the final position": nothing reads it there before block 22, and late the plain lens is at least as good (e415). It does at the subject's last token (e420).
+- "The bridge word at the subject position is causally necessary": removing it there changes nothing (e420).
+- "Native words resolve roles earlier": all readers are at chance through block 20 (e417).
+- "The native lens fabricates less": for digits it fabricates more than the plain lens at most blocks (e416; the task itself was beyond the model).
+- "The huge directions carry little function": locally yes (Fisher), but kept exact alone they recover 29% of the loss at 7B (e419).
+- "A Fisher-metric pursuit gives a better functional description" (true in Pythia, e400): false at 7B, with or without the huge directions held exact (e418, e419).

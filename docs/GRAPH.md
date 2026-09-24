@@ -370,6 +370,16 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H221 The most used native words are the writers of the huge directions, function words of the native language. → e414 → SURVIVES in part: they point into the top principal directions (29-47% of their norm) and cost 0.03 (Pythia) to 0.10 (GPT-2) when dropped.
 - H222 Accretion is directional in both families. → e410 → SURVIVES (80% of pairs in Pythia, 100% in OLMo, null-relative), distinct from the superset property, which OLMo's final vocabulary lacks.
 
+## The workspace agenda (session 40, WorkspaceBench-inspired, Qwen2.5-7B)
+
+- H223 The native-word lens surfaces a two-hop bridge at middle depth where lenses cannot. → e415, e420 → KILLED at the final position (nothing reads the bridge there before block 22; late, the plain lens reads it at least as well). SURVIVES at the subject's last token (bridge in the top 20 for 0.11-0.21 of prompts at blocks 12-20 against 0.00-0.01 for the lenses; country first 0.50-0.63 against 0.41-0.44).
+- H224 The native word that carries an intermediate is causally used. → e415, e420 → SURVIVES at the final position (removing it costs the answer 0.15-0.16 nats against 0.01-0.02). KILLED at the subject position (no effect; the information is redundant across positions).
+- H225 Native words hold several workspace variables in separate words. → e415 → SURVIVES late (bridge and answer in distinct words in 0.25-0.49 of prompts at blocks 24-26).
+- H226 The native lens resolves roles earlier than lenses. → e417 → KILLED (all readers at chance through block 20). A narrower claim SURVIVES: at the resolving blocks the other name sits on suppressing words and the answer name almost never does.
+- H227 The native lens reads arithmetic intermediates and fabricates less. → e416 → UNTESTED in practice (the model solves 52 of 109 chains; noise). Fabrication is higher than the plain lens at most blocks.
+- H228 Self-describability survives scale (7B). → e418 → SURVIVES (own 0.79 against rotation 0.26 at k = 16; 0.94 at k = 64).
+- H229 The huge directions are functionally light. → e418, e419 → KILLED as a general statement. Locally light (0.3% of the Fisher trace at 7B, holding 97% of the variance), but kept exact alone they recover 29% of the loss. The local Fisher metric fails as a selection metric at 7B.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
