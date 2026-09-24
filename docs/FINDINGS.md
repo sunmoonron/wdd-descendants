@@ -1285,3 +1285,93 @@ SESSION 45 (a new angle, prompted by the user: "suppose WDD existed ten years ag
     - a low-rate native codec (the index cost wins below about 256 bits);
     - a Euclidean self-description objective (it moves variance, not function).
     Each points at what would have to be built instead: dense translation, higher-rate codecs, and functional training objectives.
+
+SESSION 46 (the user asked for thirty more minutes of experiments, relaying an external review's list of what was still open; e451-e455 with e452b, 6 scripts, 14 runs on one A100 40GB, about 30 minutes of GPU time, 2026-09-24 22:43-23:13 box time; two e452 runs were restarted after the WikiText-2 download failed and fell back to too little data).
+
+- Weighing the review.
+  - It had read the README as pushed before this session ("356 experiments", "no model was trained"), so two of its four open items were already done:
+    - freezing writer or reader rows while training (e444, e444b, e449; session 45);
+    - a public SAE at matched sparsity (e403, Bloom's GPT-2 residual SAE).
+  - Its other two were open and sharper than anything run so far:
+    - whether concept words are causal handles with a specific downstream effect (e448e measured only a generic loss cost);
+    - whether a function-preserving re-implementation keeps the vocabulary.
+  - One question from the program itself was added: do concept words correspond across model sizes, where ordinary words do not (e445, e448d)?
+- e451 CONCEPT WORDS AS CAUSAL HANDLES (few-shot translation of a noun into English from English, French, Spanish and German sentences; e448d's concept words; interventions at the middle depth at the noun's tokens; readout restricted to the 24 nouns).
+
+  | Model (concept nouns) | baseline acc | used at noun / answer | remove: specificity (other, random) | swap: target log-prob (random) | swap: answers moved |
+  | --- | --- | --- | --- | --- | --- |
+  | SmolLM2 (7) | 0.63-1.00 | 0.86-1.00 / 0.00 | -1.07 (-0.22, -0.17) | +1.84 (+0.62) | 0.19 (fr 0.29, es 0.37, de 0.09, en 0.00) |
+  | Qwen-0.5B (15) | 0.99-1.00 | 0.76-0.83 / 0.00 | -0.40 (-0.12, -0.09) | +1.72 (+0.43) | 0.00 |
+  | Qwen-7B (22) | 1.00 | 0.89-0.96 / 0.00 | -0.12 (-0.03, -0.00) | +1.56 (+0.12) | 0.00 |
+
+  - Specificity is the change in the correct noun's log-probability minus the mean change of the other nouns.
+  - Removing the concept word is 3-6 times as specific as removing a matched other word (SmolLM2 -1.07 against -0.22, Qwen-0.5B -0.40 against -0.12, Qwen-7B -0.12 against -0.03), and more specific still than removing a random direction of the same size.
+  - Swapping in another noun's concept word raises that noun 3-13 times as much as an equal-size random direction.
+  - At one depth the effect changes answers only in SmolLM2. Removal lowers its French, Spanish and German accuracy from 0.63-0.91 to 0.37-0.74.
+  - Concept words are never used at the answer position, and interventions there do little (a swap there raises the target by +0.05 to +0.34 nats).
+  - All pre-registered guesses held (the baseline guess was for Qwen-0.5B).
+- e454 THE CATEGORY READOUT (the same interventions, but the model names the noun's category: animal, person, place, food, drink, plant, sky or object; swaps use a noun of a different category, or of the same category as a control).
+  - Qwen-0.5B (baseline 0.69-0.82). A different-category swap raises the target category's log-probability by +0.58, against +0.23 for random, and moves 6% of non-English answers there (random 4%). A same-category swap changes 5%, no more than removal (7%) or random (9%).
+  - Qwen-7B (baseline 0.93-0.99): +0.41 against -0.03, and 3% of answers moved (random 0%).
+  - SmolLM2 cannot do the task (baseline 0.08-0.27), so its result is uninformative.
+  - At one depth, then, the concept word is a strong lexical handle and a weak property handle.
+- e455 THE SAME INTERVENTIONS AT EVERY BLOCK FROM 0 TO THE MIDDLE, at the noun's tokens (so no later read of those positions sees the original concept word; the swap uses the target's typical coefficient at each block).
+
+  | Model | translation: answers moved by swap, non-English (English) | random | remove: accuracy | category: moved by swap (random) |
+  | --- | --- | --- | --- | --- |
+  | SmolLM2 | 0.71 (0.57) | 0.00 (0.14) | 0.13 | 0.00 (0.00), baseline too low |
+  | Qwen-0.5B | 0.67 (0.80) | 0.01 (0.03) | 0.90 | 0.39 (0.11) |
+  | Qwen-7B | 0.94 (0.87) | 0.03 (0.02) | 0.88 | 0.78 (0.13) |
+
+  - The concept word, one MLP write row, carries the noun downstream.
+    - Swapped at every depth, it redirects 67-94% of translations to the swapped-in noun, English copies included (57-87%).
+    - In the Qwen models it moves 39-78% of category answers to the target's category.
+  - Removing it alone rarely breaks the Qwen models (accuracy 0.88-0.90), so other carriers exist. In SmolLM2, removal breaks most translations (0.13).
+  - The weak single-depth effects of e451 and e454 are explained by propagation: the concept is re-written or read before the middle layer. This is phase 1's finding that a direction's later presence is mostly re-writing (e208), now for a semantic direction.
+  - Pre-registered: all held, including that category answers move less than translations.
+- e452 A FUNCTION-PRESERVING RE-IMPLEMENTATION (the middle block's MLP retrained from scratch to reproduce its own input-output map on 410k tokens of WikiText-2 train, then swapped in; the family test is the block's rows alone against their rotation at k = 4).
+
+  | Model | variant | block error (relative) | loss change | advantage over rotation (share of the original's) | share of the 16 words | best abs cosine with original rows (median) |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | original | - | - | 0.101 | 0.138 (rotated 0.082) | - |
+  | GPT-2 | fresh (two seeds) | 0.35 | +0.021, +0.023 | 0.054, 0.055 (0.54) | 0.066 | 0.26 (seeds with each other 0.22) |
+  | GPT-2 | frozen writers | 0.66 | +0.048 | -0.001 (0) | 0.011 | 0.13 |
+  | GPT-2 | frozen readers | 0.70 | +0.051 | 0.010 (0.10) | 0.023 | 0.19 |
+  | SmolLM2 | original | - | - | 0.075 | 0.090 (rotated 0.035) | - |
+  | SmolLM2 | fresh (two seeds) | 0.18 | +0.016, +0.014 | 0.046, 0.047 (0.61) | 0.057 | 0.28 (0.25) |
+  | SmolLM2 | frozen writers | 0.33 | +0.027 | 0.000 (0) | 0.017 | 0.14 |
+  | SmolLM2 | frozen readers | 0.81 | +0.070 | 0.014 (0.18) | 0.035 | 0.20 |
+
+  - The function does not determine the vocabulary. Re-implemented blocks keep the model's loss within 0.02 nats, but with different rows (median best |cos| 0.26-0.28 with the originals, 3-7% above 0.9). Two fresh seeds differ from each other as much (0.22-0.25). This is session 37's private-languages result at the block level, with the function held fixed.
+  - Both vocabularies describe the same states. The new rows do as well on the original model's states, and the original rows still describe the new model's states (advantage 0.095 against 0.101 in GPT-2).
+  - Fitting a block's function by training its writers makes words, but only about half as good as the original: 54-61% of the advantage at k = 4, 44-52% at k = 16.
+  - Frozen random writer rows reproduce the function almost as well (+0.027 to +0.048 nats) but are not words at all (advantage 0.000 and -0.001; 1-2% of the description). This is session 45's "written, not spoken" at language-model scale with the function fixed, and more sharply than in the toys (0.69-0.75 against 0.74).
+  - Frozen random readers leave weak words (10-18%) and a worse fit (+0.05 to +0.07 nats).
+  - The whole dictionary's description barely changes in any variant (GPT-2 loss recovered 0.73-0.75, SmolLM2 0.87-0.88): other blocks' words cover the replaced block.
+  - Pre-registered: fresh within 0.1 nats, new rows, and at least half the advantage held; frozen writers under a third held; frozen readers keeping half was refuted.
+- e452b WHY ONLY HALF? (the fresh re-implementation, then 1500 more steps on the model's own next-token loss with only this block moving, or 6000 more distillation steps as a control for more training).
+
+  | Model | after distillation | + next-token training | + more distillation |
+  | --- | --- | --- | --- |
+  | GPT-2: share of the original advantage, k = 4 (k = 16) | 0.54 (0.44) | 0.52 (0.47) | 0.71 (0.64) |
+  | GPT-2: loss change against the original model | +0.021 | -0.287 | +0.018 |
+  | SmolLM2: share, k = 4 (k = 16) | 0.61 (0.51) | 0.70 (0.71) | 0.77 (0.71) |
+  | SmolLM2: loss change | +0.016 | -0.163 | +0.012 |
+
+  - Most of the gap is the quality of the fit. More distillation raises the advantage to 0.71-0.77 of the original's. The block's error falls from 0.18-0.35 to 0.15-0.29, and the rows move slightly toward the original ones (median best |cos| 0.26-0.28 to 0.32).
+  - Next-token training of the block alone adapts the model to WikiText: its loss falls 0.16-0.29 nats below the original's, and the block's output moves far from the original (relative error 1.4-2.3). The rows become no more word-like in GPT-2 (0.52), and only as much as with more distillation in SmolLM2 (0.70).
+  - So the end-to-end objective adds nothing beyond fitting.
+  - Caveat to e452. An exact fit of an MLP's function would pin its rows up to permutation and scale; these fits are approximate. "The function does not determine the vocabulary" holds at the fit that matters for the loss (within 0.02 nats), not in the limit.
+  - Pre-registered: next-token training reaching three quarters was refuted in both models. More distillation not reaching it held in GPT-2 (0.71) and was refuted in SmolLM2 (0.77).
+- e453 DO CONCEPT WORDS CORRESPOND ACROSS SIZES? (Qwen2.5-0.5B block 12 to Qwen2.5-7B block 14; ridge maps fitted on WikiText-2 states, which align token by token because the tokenizer is shared; 14 nouns have a concept word in both.)
+  - The maps explain 0.37 (0.5B to 7B) and 0.63 (7B to 0.5B) of held-out variance.
+  - Among the 14 shared nouns, a mapped 0.5B concept word is most aligned with 7B's concept word for the same noun in 11 of 14 (0.79; reverse 0.86; chance 0.07). Adding the other nouns' sentences to the fit (leave one noun out) gives 0.71 and 0.86.
+  - The alignment itself is weak: mean |cos| 0.08 (reverse 0.18). The partner is the nearest of 7B's 490k atoms for 1 of 14 nouns.
+  - Mapped concept words align with any 7B atom less than mapped random used words do (best |cos| 0.14 against 0.23).
+  - Concept words correspond across sizes at the level of concepts, not as shared words. This is e445's result (partners above chance, no word table) for the most semantic words too.
+  - Pre-registered: R^2 over a half refuted; identification over a half held; nearest-at-most-a-quarter held; concept above random refuted.
+- Reading.
+  - The review's sharpest question has an answer. Concept words are not correlated provenance. Swapped at every depth, one MLP write row redirects both the noun a model produces (67-94%) and a property it reports (39-78% in the Qwen models).
+  - A single-depth test understates this, because the concept is carried forward by re-writing and early reads.
+  - The vocabulary is not a function of the computation: the same function is implemented with different words, and a block whose writers are frozen at random implements it with no words at all.
+  - Trained writers become words, even under a local objective, but only half as good as the original's.

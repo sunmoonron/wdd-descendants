@@ -410,3 +410,9 @@ e448d	16_vision_round	S45	supported (3 models)	scripts/e448d_concept_words.py	re
 e448e	16_vision_round	S45	supported (small in Qwen)	scripts/e448e_rosetta_causal.py	results/e448e_*.json	Does removing a Rosetta word matter, in every language?
 e449	16_vision_round	S45	supported (with e449b)	scripts/e449_written_or_spoken_lm.py	results/e449_*.json	Is the vocabulary written or spoken in a small sequence model?
 e450	16_vision_round	S45	narrowed (only at 256-512 bits)	scripts/e450_native_codec.py	results/e450_*.json	Is the native vocabulary a better codec than PCA at equal bits?
+e451	16_vision_round	S46	supported (single depth weak)	scripts/e451_concept_handles.py	results/e451_*.json	Are concept words causal handles for translating their noun?
+e452	16_vision_round	S46	supported (function does not fix words)	scripts/e452_reimplemented_block.py	results/e452_*.json	Does a block's function fix its vocabulary; do trained writers make words?
+e452b	16_vision_round	S46	refuted (fit quality, not objective)	scripts/e452b_endtoend_block.py	results/e452b_*.json	Is the half-sized advantage the missing end-to-end training?
+e453	16_vision_round	S46	narrowed (concept level)	scripts/e453_concept_correspondence.py	results/e453_*.json	Do concept words correspond across Qwen sizes under a dense map?
+e454	16_vision_round	S46	refuted (at one depth; see e455)	scripts/e454_concept_properties.py	results/e454_*.json	Does a concept word carry its category at one depth?
+e455	16_vision_round	S46	established (3 models)	scripts/e455_concept_persistent.py	results/e455_*.json	Does swapping the concept word at every depth redirect the model?

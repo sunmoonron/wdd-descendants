@@ -428,6 +428,22 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H261 The vocabulary is spoken (activations organise around whatever writers exist). → e444, e444b, e449, e449b → KILLED. Writer rows frozen at random are barely used as words (0.69-0.75 against 0.74 rotated); trained rows are (0.08-0.25 against 0.89-0.93 in grokking); the description moves to trained writers.
 - H262 Self-describability can be trained in cheaply. → e447, e447b → NARROWED. Euclidean self-describability can be trained in (fraction unexplained at k 16 down 9% for +0.008 nats, 41% for +0.28, 80% for +0.91). Functional self-describability does not follow (loss recovered by 16 own words 0.75 -> 0.67-0.73). The words do not move, only the states. SPAWNED: train on the functional objective.
 
+## Causal tests of concept words and a re-implemented block (session 46)
+
+- H263 Concept words are correlated provenance, not causal handles for their concept. → e451, e455 → KILLED for translation and, in the Qwen models, for the category.
+  - At one depth, removal is 3-6 times as specific as removing a matched other word, and a swap raises the target 3-13 times as much as random, but answers change only in SmolLM2.
+  - Swapped at every block up to the middle, one MLP row redirects 67-94% of translations (random 0-3%) and 39-78% of category answers in the Qwen models.
+  - REVISES H257: native words carry meaning causally.
+- H264 One depth suffices to intervene on a concept. → e451, e454 against e455 → KILLED. The concept is re-written or read before the middle layer. This is e208's re-writing, now for a semantic direction.
+- H265 The concept word is the noun's only carrier. → e455 → KILLED in the Qwen models, where removal at every depth leaves accuracy at 0.88-0.90. SURVIVES in SmolLM2, where accuracy falls to 0.13.
+- H266 A block's function determines its vocabulary. → e452 → KILLED. Re-implementations match the function within 0.02 nats with new rows: median best |cos| 0.26-0.28 with the originals, and 0.22-0.25 between two seeds.
+- H267 Words are written by training the writers even when the function is held fixed. → e452 → SURVIVES.
+  - Frozen random writer rows reproduce the function but are not words (advantage 0.000).
+  - Trained writer rows are words, at 54-61% of the original's advantage.
+  - Frozen random readers leave weak words (10-18%).
+- H268 The re-implementation's half-sized advantage is the missing end-to-end objective. → e452b → KILLED. Next-token training of the block leaves 0.52-0.70 of the original's advantage, while more distillation gives 0.71-0.77. The gap is fit quality, and the rows drift toward the originals (median best |cos| 0.26-0.28 to 0.32) as the fit improves.
+- H269 Concept words are the words two model sizes share. → e453 → NARROWED to the concept level. Identification among 14 shared nouns is 0.79 (reverse 0.86, chance 0.07), but the mapped words are nearly orthogonal (|cos| 0.08) and are the nearest atom for only 1 of 14.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

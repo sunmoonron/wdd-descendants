@@ -1,4 +1,4 @@
-# Atlas of the WDD program: 411 experiments by technical area
+# Atlas of the WDD program: 417 experiments by technical area
 
 This is the entry point to the whole program. It is small enough to paste into a new chat as context. It gives:
 
@@ -19,12 +19,12 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 - **Models.**
   - The main five: GPT-2 small, Pythia-410m, Qwen2.5-0.5B, OLMo-1B-0724 and SmolLM2-135M.
   - Also used: Pythia training checkpoints and sizes from 70m to 1b, a random-init GPT-2, Qwen2.5-7B, and toy models trained from scratch.
-- **Scale.** 411 experiment scripts (e00-e450 plus variants), 45 sessions, 2026-09-19 to 2026-09-24, one GPU. Most runs take 1-5 minutes.
-- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 113 established, 95 supported, 49 narrowed, 24 mixed, 103 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
+- **Scale.** 417 experiment scripts (e00-e455 plus variants), 46 sessions, 2026-09-19 to 2026-09-24, one GPU. Most runs take 1-5 minutes.
+- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 114 established, 97 supported, 50 narrowed, 24 mixed, 105 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
 - **Scope.** Negative results are kept. No claim is more general than these models.
 - **Phase 1** (sessions 1-31, e00-e356): when a write can be read back from the state; why it fades; what it becomes downstream (the descendant); and what part of that matters causally (the quotient).
 - **Phase 2** (session 32, e357-e373): the program's tools tested on known circuits, the co-selection proposal of "What if not Circuits?", and drift over training.
-- **Phase 3** (sessions 33-45, e374-e450): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, and a backcast "vision" round that trained models from scratch.
+- **Phase 3** (sessions 33-46, e374-e455): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, and causal tests of concept words and of a re-implemented block (session 46).
 - **Terms.**
   - *Identification (recall)*: the dominant true write is in the decoder's support.
   - *Prominence*: the write's projection on the centred state, over the state's norm.
@@ -60,7 +60,7 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 | 13 | [Readers, readouts, stitching](atlas/13_readers_readouts.md) | 15: e374-e390, S33-S35 | Loss convexity biases interaction measures, so read them on logits. WDD plus a reader's metric finds induction edges. The 64-atom code keeps 84-99% of the loss, through provenance. |
 | 14 | [Self-description: the native vocabulary](atlas/14_native_vocabulary.md) | 40: e391-e443, S36-S44 | 32-64 own words keep 90% of the loss. The vocabulary is learned: a per-block accent early, words from step 4000-16000. It survives covariance, lexicon and Gaussian-state controls. It is private across seeds. |
 | 15 | [A 7B workspace agenda and established lenses](atlas/15_workspace_lenses.md) | 12: e415-e425, S40-S42 | At 7B, native words surface a hidden two-hop bridge that the logit lens misses. It is not a better reader in general. Most results have established names; the instrument is what is new. |
-| 16 | [The vision round: a decade of WDD, backcast](atlas/16_vision_round.md) | 13: e444-e450, S45 | The vocabulary is written by training the writers. Concept words hold across languages (7 / 15 / 22 of 24 nouns). Word tables do not translate between models. A Euclidean design term and a low-rate codec fail. |
+| 16 | [The vision round and its causal follow-ups](atlas/16_vision_round.md) | 19: e444-e455, S45-S46 | The vocabulary is written by training the writers, and the same function can be re-implemented with different words. Concept words hold across languages (7 / 15 / 22 of 24 nouns) and are causal handles: swapped at every depth they redirect 67-94% of translations. Word tables do not translate between models. |
 
 ## How the areas connect
 
@@ -146,20 +146,22 @@ Sinks (10) are a side branch that corrected several phase-3 numbers. The toys (1
     - M is an early identity channel, and removing it costs 2-4 times its quadratic prediction (e433, e441). [10]
 15. At 7B, native words surface a hidden two-hop bridge in the middle layers: 0.11-0.21 against 0.00-0.01 for the lens (e420). The native lens is not better in general (e423-e425). [15]
 16. The vocabulary is written.
-    - Frozen random writer rows are barely used as words (e444b, e449).
+    - Frozen random writer rows are barely used as words (e444b, e449). At language-model scale with the function held fixed, they are not used at all (e452).
+    - A re-implemented block computes the same function with different words (e452).
     - Concept words hold across four languages and grow with scale (e448d).
-    - Words do not translate one to one between models (e445). [16]
+    - Concept words are causal handles. Swapped at every depth they redirect 67-94% of translations, and 39-78% of the Qwen models' category answers (e455).
+    - Words do not translate one to one between models, concept words included (e445, e453). [16]
 
 ## Threads that cross areas
 
 | Thread | Path through the program |
 | --- | --- |
 | Training dynamics | Neuron and law checkpoints (e05, e58: 02) → atom drift (e81: 12) → contraction born at warmup's end (e217: 05) → quotient born by step 4000, with the induction transition (e349: 09; e365, e373: 12) → neurons drift and co-selection is re-formed (e360-e364: 12) → halves co-adapt late (e378: 13) → self-description emerges (e395, e401, e405, e409: 14) → accent to words, steps 4000-16000 (e436, e443: 14) → training from scratch with frozen writers (e444, e449: 16) |
-| The ladder of controls | rotated dictionary (e00: 01) → random-init dictionary (e80: 01) → covariance-matched competitors (e118, e127: 02) → covA, span, mix8, Fisher pursuit, a learned SAE (e399-e405: 14) → sinks kept exact (e437: 10) → per-block covA and mix8 (e443: 14) → lexicon removed, Gaussian states, context-only target (e439, e435, e440: 14) → frozen writers trained from scratch (e444b, e449: 16) |
-| Readability versus function | readable is not important (e59, e59b: 02) → function follows reconstruction (e105: 01) → identified writes carry more function per unit energy in 4 of 5 models (e152, e165: 03) → the descendant carries function (e268, e269: 07) → the functional coordinate lives in the ledger's small-coefficient tail (e333: 09) → yet 64 own words keep the loss, by provenance (e388-e390: 13) → a re-description, not the largest writes (e391: 14) |
+| The ladder of controls | rotated dictionary (e00: 01) → random-init dictionary (e80: 01) → covariance-matched competitors (e118, e127: 02) → covA, span, mix8, Fisher pursuit, a learned SAE (e399-e405: 14) → sinks kept exact (e437: 10) → per-block covA and mix8 (e443: 14) → lexicon removed, Gaussian states, context-only target (e439, e435, e440: 14) → frozen writers trained from scratch (e444b, e449: 16) → the function held fixed, writers frozen or retrained (e452: 16) |
+| Readability versus function | readable is not important (e59, e59b: 02) → function follows reconstruction (e105: 01) → identified writes carry more function per unit energy in 4 of 5 models (e152, e165: 03) → the descendant carries function (e268, e269: 07) → the functional coordinate lives in the ledger's small-coefficient tail (e333: 09) → yet 64 own words keep the loss, by provenance (e388-e390: 13) → a re-description, not the largest writes (e391: 14) → a concept word swapped at every depth redirects the model (e455: 16) |
 | Sinks and massive activations | sink neuron and last-block removal (e20, e55: 10) → sink in the centring mean (e89, e120, e126: 10) → massive neurons as the boundary of descendant laws (e250, e275b, e284b: 06, 07) → set point (e290: 08) → huge directions and false friends (e404, e411: 14; e418, e419: 15) → sink hygiene and the knee (e432-e441: 10) |
 | Loss versus logit readout | natural-text interaction negatives (e264, e302: 07, 08) → circuits by pairwise ablation (e357-e372: 12) → the knee is the softmax, signs flip (e374, e377: 13) → redundancy re-read on logits (e380, e383, e384: 13) |
-| Private versus shared vocabularies | seeds keep private languages; a shared functional subspace (e398: 14) → stages are mutually intelligible (e396, e402: 14) → no word-level translation between sizes (e445: 16) → concept words shared across human languages within one model (e448-e448e: 16) |
+| Private versus shared vocabularies | seeds keep private languages; a shared functional subspace (e398: 14) → stages are mutually intelligible (e396, e402: 14) → no word-level translation between sizes (e445: 16) → concept words shared across human languages within one model (e448-e448e: 16) → one function, re-implemented with other words (e452: 16) → concept words correspond across sizes only at the concept level (e453: 16) |
 
 ## Corrections that supersede earlier claims
 
@@ -212,7 +214,7 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
   - Phase 2: S32 e357-e373.
   - Phase 3:
     - S33 e374-e382; S34 e383-e386; S35 e387-e390; S36 e391-e394; S37 e395-e398b; S38 e399-e406; S39 e407-e414;
-    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450.
+    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b.
 
 ## Open directions
 
@@ -229,3 +231,5 @@ Two standing negatives bound the claims:
 
 - WDD atoms are a birth and provenance coordinate, not the functional basis (area 09).
 - Native words are not the best sparse vocabulary: a learned SAE wins at small k (e403).
+
+Session 46 adds one direction: steering with native words. A concept word swapped across depth redirects both the noun and its category (e455). A comparison with dense steering vectors is the natural next test.

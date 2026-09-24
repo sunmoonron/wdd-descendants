@@ -358,3 +358,12 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Native words are more interpretable than neurons by token-level proxies, and more than rotated words": more token-explainable than their neurons in five of five models, but rotated words score higher in four of five; such proxies reward lexicality (e446).
 - "Self-description is a reliable early signal of generalisation": the word-level part leads in two of four generalising runs, not in the frozen variants (e444).
 - "Rosetta words are invisible to activation analysis": their neurons fire on the concept (e448c).
+
+## Session 46 kills (causal tests of concept words; a re-implemented block)
+- "Concept words are correlated provenance, not causal handles": swapped at every block up to the middle, one MLP write row redirects 67-94% of translations and, in the Qwen models, 39-78% of category answers (random 0-3% and 11-13%) (e455).
+- "One depth is enough to test a concept word causally": single-depth swaps change no answers in the Qwen models (e451, e454), and multi-depth swaps change most (e455).
+- "The concept word is the noun's only carrier": removing it at every depth leaves Qwen's accuracy at 0.88-0.90 (e455; SmolLM2 0.13).
+- "A block's function determines its vocabulary": re-implementations keep the loss within 0.02 nats with new rows (median best |cos| 0.26-0.28; two seeds 0.22-0.25) (e452).
+- "Frozen readers keep the vocabulary when the function is fixed": trained writers behind frozen random readers keep 10-18% of the advantage (e452; the pre-registered guess was at least half).
+- "The re-implemented rows lack the original's word advantage because they lack end-to-end training": next-token training of the block adds nothing beyond more distillation (0.52-0.70 against 0.71-0.77 of the original's advantage) (e452b).
+- "Concept words are shared words between model sizes": a mapped concept word is the other model's nearest atom for 1 of 14 nouns, at |cos| 0.08, although it identifies the right concept in 11 of 14 (e453).
