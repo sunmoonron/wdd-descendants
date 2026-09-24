@@ -237,6 +237,28 @@ Details: `docs/FINDINGS.md` (sessions 36 and 37), hypotheses H191 to H201, `docs
 
 Scope: sessions 36 and 37 use the middle depth and three sequences of 512 tokens. Session 37 uses Pythia-410m checkpoints and three seeds only. Differences of 0.05 or less at k = 16 are within the spread of random rotations.
 
+## An external review's controls (e399 to e406)
+
+A review relayed by the user raised five questions:
+
+- Is the own words' advantage just alignment with where the states vary?
+- Would any operator's directions do as well?
+- What is the description length when the words are chosen for function?
+- How do the own words compare with a learned dictionary?
+- Do the results replicate?
+
+Details: `docs/FINDINGS.md` (session 38), hypotheses H202 to H210, `docs/THEORY.md` section 3l, figure `results/e402_map_k16.png`.
+
+| Experiment | Question | Answer |
+| --- | --- | --- |
+| e399, e405 | Is the own words' advantage second-order alignment with the states? | Early in training, mostly yes: until about step 8000, vocabularies with the same second moment or span do nearly as well (an accent). From step 16000, no: they fall to the rotation level and the individual words carry the advantage |
+| e399 | Would any operator's directions do? | Downstream readers' input directions carry part of it (+0.09 to +0.20 over their rotation, against +0.15 to +0.27 for the writers). The writing blocks' own input directions do not |
+| e400 | What is the functional description length, with words chosen under the network's Fisher metric? | Small-k function rises (0.24 to 0.41 at 4 words) but the 90% length is unchanged. Under this pursuit the own advantage grows through training (0.04, 0.09, 0.24 at steps 1000, 16000 and the end). The final state's top-8 directions hold 86% of the variance and 1.5% of the Fisher trace |
+| e401 | Does "training creates self-describability" replicate? | Yes: it is absent at initialisation in five architectures at three depths, and present at every OLMo checkpoint |
+| e402, e406 | With a proper null, where are the false friends? | In Pythia, only words from steps 4000-8000 on states from step 33000; later words read earlier states as well or better. None in OLMo |
+| e404 | What makes a false friend? | The target's few huge directions: with them handled exactly, the step-4000 words beat random words |
+| e403 | How do the own words compare with a learned SAE (GPT-2)? | The SAE is far better at 4-8 words. The own words reach about two thirds of its advantage at 16-32, overtake it at 64, and keep more function per unit of variance explained. Random words drawn from the states' covariance also beat the own words at 16 |
+
 ## Scope and caveats
 
 Five models under 1.1B parameters, block-2 writers for most runs, one corpus (wikitext-2, with a Pile check), tokens in typical-norm range (attention-sink positions excluded), perturbations at the natural amplitude unless a sweep says otherwise, and decoders limited to nearest-centroid, kNN, ridge and closed-form kernels so that nothing is trained. Every number is a median over held-out tokens unless the script says otherwise. Retracted artifacts and superseded designs are listed in `docs/KILLED.md`; an unsigned transport residual (e275) and a mis-designed additivity reference (e285 part 3) were corrected by e275b and e285b, and a cross-token measure in e315 was discarded for dense injection. The one large outage of the run, two hours without network mid-program, did not lose results because the launcher is resume-safe.

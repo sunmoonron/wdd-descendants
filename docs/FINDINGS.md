@@ -646,3 +646,108 @@ SESSION 37 (the "purer direction": self-description length and private languages
 - e398 PRIVATE LANGUAGES ACROSS INDIVIDUALS (the standard Pythia-410m run and PolyPythia seeds 1 and 2, final checkpoints, six ordered pairs, loss recovered at k = 16, mean over pairs). Own words 0.59, own rotated 0.36. The other individual's vocabulary as is 0.36; translated by the orthogonal map that best aligns the two input-embedding matrices 0.36 (that map aligns the embeddings themselves at R2 -0.10: the two lexicons are not rotations of each other), by the one aligning the unembeddings 0.37 (R2 0.24); by an orthogonal map fitted on paired residual states (8 other sequences, levels 3, 6, 9, 12) 0.48 against 0.37 for random words through the same map; by a ridge-linear state map 0.66, above the own words. At k = 64 everything lies within 0.88-0.93. The orthogonal state map aligns the two individuals' held-out states at R2 0.04-0.13 (negative when the standard run, whose states are larger, is the source), the linear map at 0.28-0.38, yet the translated state itself spliced in recovers 0.48-0.81 (orthogonal) and 0.67-0.82 (linear) of the loss; the embedding-fitted map gives -0.03 to -0.17. Pre-registered: raw at the random level (confirmed); state translation recovering most of the own-minus-random gap at k = 64 (the k = 64 gap is 0.04, too small to judge; at k = 16 the orthogonal translation recovers half); lexicon translation between random and state translation (refuted: at the random level).
 - e398b THE LINEAR MAP'S CONTROL. Random words pushed through the same ridge-linear state map recover 0.59 at k = 16 (two rotations, 0.59 and 0.59), equal to the target's own words; the target's own words and its rotated words through its own self-map stay at 0.59 and 0.37. The subspace of one network's state that another network's state predicts linearly is small in variance (R2 0.28-0.38) and large in function: random directions confined to it describe the state as well as the network's own words. The translated words add 0.07 over random words through the linear map and 0.11 through the orthogonal map, a third to a half of the own words' advantage (0.23). Pre-registered criterion (control within 0.05 of the translation): 0.07, just outside; the linear translation's margin over the own words is this 0.07.
 - Reading. A network's own weights are a vocabulary in which its computation has a short description, and training makes them so: at initialisation the own vocabulary is exactly as good as a random rotation of itself, by step 256 it is better, and from the induction transition on 16 own words keep 0.12-0.30 more of the loss than rotated ones. The description length stays at 32-64 words while the writing becomes denser, so at the end the model's writing is more than 64 times redundant with respect to its own shortest description at the middle depth. Within one run the vocabulary grows by accretion and converges, with one stage (step 4000) whose words are false friends for the later model. Across individuals the language is mostly private: the shared tokens do not translate it, a third to a half of the own-word advantage survives the best translation, and what two individuals share linearly is where the function is.
+
+SESSION 38 (an external review, relayed by the user, weighed item by item, and the controls it asked for, run as small experiments; e399-e406, 8 scripts plus sd_common, 26 runs; 8 sequences with bootstrap intervals over sequences unless stated).
+- TRIAGE OF THE REVIEW.
+  - Accepted and tested:
+    - second-order / projection artefact (e399);
+    - a coordinate system shared with the operators that act on the state (e399 readers);
+    - a functional description length with function-aware selection (e400);
+    - a learned-dictionary reference at equal size (e403);
+    - a per-target null for the checkpoint matrix (e402);
+    - replication across architectures, depths and a second family (e401, e406);
+    - more sequences and several rotation seeds;
+    - citation of Herrmann, Csordás and Schmidhuber 2025;
+    - keeping write sparsity, Euclidean re-description and functional description apart.
+  - Not accepted:
+    - "leakage" as a general threat. The evaluation runs through downstream weights that are not in the dictionary. The one concrete shortcut, the current-token embedding, is ruled out by MLP rows alone (e389, e399).
+    - the reading of e398 as "the translated vocabulary equals the target's". e398b: the fitted linear map lifts random words to the own level, and the translated words add 0.07.
+    - a step-0 row in the functional matrix. There is no function to preserve at initialisation: the clean-to-mean gap is 0.01 nats.
+  - Deferred: a 20-30-paper novelty matrix, to a write-up.
+- e401 REPLICATION.
+  - At a random initialisation of all five architectures, at a quarter, half and three quarters of the depth, own and rotated FVU agree within 0.004 (SmolLM2, Pythia, Qwen), 0.009 (OLMo) and 0.014 (GPT-2). GPT-2's exception is at a quarter depth, where the state still carries its token and position embeddings verbatim.
+  - Trained, rotated minus own FVU at k = 16 is at least 0.14-0.57 at every depth.
+  - OLMo-1B across training, loss recovered at k = 16, own against the mean of three rotations: step 1000 0.71 / 0.29, 4000 0.63 / 0.27, 16000 0.43 / 0.15, 64000 0.70 / 0.06, 256000 0.84 / 0.26, 1454000 0.66 / 0.08. Training creates self-describability in a second family.
+- e399 WHAT MAKES THE OWN WORDS GOOD (Pythia, middle depth; loss recovered at k = 16 at steps 1000 / 16000 / 143000).
+  - own 0.83 / 0.67 / 0.60; three rotations 0.69-0.70 / 0.44-0.46 / 0.30-0.32.
+  - covA (Gaussian words with the own vocabulary's second moment) 0.78 / 0.46 / 0.33.
+  - mix8 (signed sums of 8 own words of one family) 0.81 / 0.49 / 0.29.
+  - covX (Gaussian words with the states' covariance, fitted on other text) 0.94 / 0.79 / 0.74; covX_sqrt 0.92 / 0.75 / 0.69.
+  - MLP rows only: writers 0.81 / 0.62 / 0.56 against their rotation 0.66 / 0.41 / 0.29. Downstream readers (input rows of later blocks, gain-scaled and centred) 0.74 / 0.57 / 0.41 against 0.65 / 0.41 / 0.21. Readers of the writing blocks 0.67 / 0.45 / 0.15.
+  - Pre-registered (final checkpoint): covA at the rotation level (confirmed); mix8 at the rotation level (confirmed); writers well above their rotation (confirmed); covX below own in loss recovered (refuted: covX is above own at every checkpoint). At step 1000 covA and mix8 were not at the rotation level (refuted there).
+- e405 FROM ACCENT TO VOCABULARY. The share of the own-minus-rotation gap at k = 16 carried by covA / mix8:
+
+  | Step | covA | mix8 |
+  | --- | --- | --- |
+  | 256 | 0.44 | 0.66 |
+  | 512 | 0.88 | 1.34 |
+  | 1000 | 0.62 | 0.85 |
+  | 2000 | 0.70 | 0.79 |
+  | 4000 | 0.53 | 0.68 |
+  | 8000 | 0.41 | 0.45 |
+  | 16000 | 0.05 | 0.18 |
+  | 63000 | 0.21 | 0.25 |
+  | 143000 | 0.07 | -0.07 |
+
+  Early, the own vocabulary's advantage is mostly its second moment and span, an accent. From step 16000 it is carried by the individual words. Pre-registered window 2000-8000: partly (the fall begins after step 2000 and completes between 8000 and 16000).
+- e400 FUNCTIONAL DESCRIPTION LENGTH (words chosen under the network's Fisher metric at the middle depth, normalised, 1% ridge).
+  - The states' top-8 principal directions hold 0.22 / 0.52 / 0.86 of the variance at steps 1000 / 16000 / 143000 and 0.042 / 0.017 / 0.015 of the Fisher trace (Fisher participation ratio 189 / 500 / 456): the huge directions that appear during training carry almost no local sensitivity.
+  - Loss recovered at k = 16, Euclidean / Fisher: own 0.83 / 0.89, 0.67 / 0.74, 0.60 / 0.73; rotations 0.70 / 0.85, 0.44 / 0.65, 0.31 / 0.49; covX 0.94 / 0.95, 0.79 / 0.80, 0.74 / 0.75. The own-minus-rotation gap under the functional pursuit is 0.04 / 0.09 / 0.24, against 0.13 / 0.23 / 0.29 Euclidean.
+  - At k = 4 the functional pursuit lifts the own words 0.53 to 0.70, 0.33 to 0.44 and 0.24 to 0.41. The 90% length is unchanged (32 at step 1000, 64 at 16000 and at the end).
+  - The step-4000 words on the final states: Euclidean -0.37 / 0.11 at k = 4 / 16, Fisher -0.10 / 0.27, against their rotation 0.06 / 0.20 and 0.20 / 0.54. On the step-16000 states under Fisher: 0.59 against 0.65.
+  - Pre-registered (final checkpoint): a shorter self-description (refuted); the own advantage persisting at half its size or more (confirmed: 0.24 of 0.29); the false friends vanishing under the Fisher metric (refuted: they deepen).
+- e404 THE FALSE FRIENDS ARE MEDIATED BY THE HUGE DIRECTIONS (final states; M = the states' top-8 principal subspace, fitted on other text). Loss recovered at k = 4 / 16 under three conditions: A, the whole state described; B, the M part kept exactly and the rest described with words projected off M; C, the M part at its mean.
+
+  | Vocabulary | A | B | C |
+  | --- | --- | --- | --- |
+  | own | 0.24 / 0.60 | 0.47 / 0.73 | 0.18 / 0.43 |
+  | rotation | 0.08 / 0.32 | 0.33 / 0.56 | 0.06 / 0.23 |
+  | step-4000 words | -0.37 / 0.11 | 0.39 / 0.65 | 0.10 / 0.33 |
+  | their rotation | 0.06 / 0.20 | 0.33 / 0.56 | 0.06 / 0.23 |
+  | own-word mixtures | -0.13 / 0.29 | 0.35 / 0.59 | 0.07 / 0.26 |
+
+  - With the huge directions handled exactly, the step-4000 words are partial friends (above their rotation) and nothing is below zero. Pre-registered for mediation: confirmed.
+  - Share of the picked words' squared norm in M: own 0.050, step-4000 0.016, mixtures 0.020, rotations 0.010.
+  - The huge directions matter at large displacement: set to their mean (C) they cost the own description 0.17 at k = 16 and 0.16 at k = 64, though they carry 1.5% of the local sensitivity.
+  - About 40% of the final own-minus-rotation gap at k = 16 is the own vocabulary's ability to write the huge directions exactly (0.28 under A, 0.17 under B). The rest is word-level description of the function-carrying part, where own words also beat own-word mixtures (0.73 against 0.59).
+- e402 THE INTELLIGIBILITY MAP WITH ITS NULL (ten Pythia checkpoints, every vocabulary on every checkpoint's states, 4 sequences, three rotations of the target's own vocabulary as the null).
+  - Later vocabularies read earlier states as well as or better than the earlier model's own words: step-256 states 0.97 with the final vocabulary against 0.87 with their own; step-512 states 0.88 against 0.82.
+  - False-friend cells (below every rotation): the step-4000 words on the states of steps 33000 (k = 8), 63000 and 143000 (k = 8 and 16), and the step-8000 words on the final states (k = 16, 0.28 against 0.30).
+  - On the final states the sources rank 1000 (0.42) > 2000 (0.32) > 4000 (0.10) < 8000 (0.28) < 16000 (0.48): a window of misleading stages around step 4000, while older words are merely generic.
+  - Pre-registered (false friends only from sources between steps 1000 and 16000, on later targets): confirmed. Figure results/e402_map_k16.png.
+- e403 A LEARNED REFERENCE (GPT-2 small, the state after block 6, the all-ones component removed because every reader's norm removes it).
+  - Loss recovered at k = 4 / 8 / 16 / 32 / 64:
+
+    | Vocabulary | k4 | k8 | k16 | k32 | k64 | FVU at k64 |
+    | --- | --- | --- | --- | --- | --- | --- |
+    | own (78k words) | 0.35 | 0.54 | 0.75 | 0.89 | 0.96 | 0.18 |
+    | own rotations (both) | 0.10 | 0.20 | 0.38 | 0.68 | 0.92 | |
+    | own subset of the SAE's size | 0.28 | 0.46 | 0.66 | 0.84 | 0.94 | |
+    | own MLP rows | 0.35 | 0.55 | 0.73 | 0.87 | 0.95 | |
+    | Bloom's residual SAE decoder (24576) | 0.79 | 0.84 | 0.88 | 0.91 | 0.93 | 0.10 |
+    | SAE decoder, rotated | 0.10 | 0.17 | 0.32 | 0.59 | 0.86 | |
+
+  - The own words achieve 0.35, 0.51, 0.67, 0.64 and 0.63 of the learned decoder's advantage over its rotation. They overtake it at k = 64.
+  - At matched variance explained they keep more of the function: own at FVU 0.18 keeps 0.96, the SAE at FVU 0.21 keeps 0.88. Two rotations of one vocabulary agree to 0.01, so the rotation null is tight for a fixed vocabulary; the e397 spread (0.19-0.32) was between vocabularies.
+  - Pre-registered (learned decoder at least as good at every k): refuted at k = 64.
+- e406 DO FALSE FRIENDS EXIST IN OLMO? The e402 map for OLMo-1B: vocabularies of steps 1000, 4000, 16000, 64000, 256000 and 1454000 on each of those checkpoints' middle-depth states, 4 sequences, three rotations of the target's own vocabulary as the null.
+  - No false-friend cells anywhere, including the targets whose states have a few huge directions (top-8 variance share 0.63 at step 64000 and 0.61 at the end; 0.16-0.28 elsewhere).
+  - k = 16, own words / best other vocabulary / null:
+
+    | States of step | Own | Best other | Null |
+    | --- | --- | --- | --- |
+    | 1000 | 0.71 | 0.75 (step 4000) | 0.29-0.30 |
+    | 4000 | 0.63 | 0.65 | 0.27 |
+    | 16000 | 0.43 | 0.55 (step 256000) | 0.14-0.15 |
+    | 64000 | 0.70 | 0.79 (step 256000) | 0.04-0.09 |
+    | 256000 | 0.84 | 0.80 (end) | 0.25-0.26 |
+    | end | 0.66 | 0.54 (step 256000) | 0.08 |
+
+  - Accretion holds through step 256000, whose words read the step-16000 and step-64000 states better than their own words do. It fails for the final checkpoint, whose words read early states worse than their own (0.61 against 0.71 at step 1000, 0.55 against 0.63 at 4000, 0.40 against 0.43 at 16000).
+  - Pre-registered: accretion (partly: not for the final vocabulary); false friends only where the targets have huge directions (consistent, but none appear at all).
+  - On this evidence the false friends are a property of Pythia's step-2000 to 8000 stage, not a general consequence of huge directions. OLMo's checkpoint grid is coarser and could miss a narrow band.
+- Reading.
+  - The review's strongest challenge, that the own words might be good only because they are aligned with where the states vary, is right about early training and wrong about late training. Until about step 8000 the advantage is mostly an accent (second moment and span). A functional pursuit leaves only 0.04 of it at step 1000.
+  - From step 16000 it is word-level: vocabularies with the same second moment or span are at the rotation level. It survives a function-aware pursuit (0.24 at the end), in two families, and is absent at initialisation in five architectures.
+  - The transition coincides with the appearance of a few huge, locally insensitive directions in the state and with the window of false friends, whose harm is mediated by those directions (Pythia; OLMo shows no false friends on its checkpoint grid, e406, and its final vocabulary breaks accretion).
+  - The own words are not the best sparse vocabulary. Words drawn from the states' covariance beat them at k = 16 (by 0.02-0.06 under the functional pursuit), and a learned SAE beats them at k = 4-32 in GPT-2. What sets the own words apart is that they need no activations and that their descriptions keep more function per unit of variance explained.

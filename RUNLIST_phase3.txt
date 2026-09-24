@@ -124,3 +124,24 @@ python e396_mutual_intelligibility.py
 python e397_false_friends.py
 python e398_private_language_seeds.py
 python e398b_linear_map_control.py
+python e399_what_makes_own_words.py step1000
+python e399_what_makes_own_words.py step16000
+python e399_what_makes_own_words.py step143000
+python e400_functional_pursuit.py step1000
+python e400_functional_pursuit.py step16000
+python e400_functional_pursuit.py step143000
+python e401_replicate_emergence.py init gpt2
+python e401_replicate_emergence.py init smollm2
+python e401_replicate_emergence.py init pythia410
+python e401_replicate_emergence.py init qwen05
+python e401_replicate_emergence.py init olmo1b
+python e401_replicate_emergence.py olmo step1000-tokens2B step4000-tokens8B step16000-tokens33B
+python e401_replicate_emergence.py olmo step64000-tokens134B step256000-tokens536B step1454000-tokens3048B
+python e402_intelligibility_map.py
+python e403_learned_reference.py
+python e404_false_friend_mechanism.py
+python e405_accent_to_vocabulary.py step256 step512 step2000
+python e405_accent_to_vocabulary.py step4000 step8000 step63000
+python e406_olmo_map.py step1000-tokens2B step16000-tokens33B step256000-tokens536B
+python e406_olmo_map.py step4000-tokens8B step64000-tokens134B step1454000-tokens3048B
+python plot_e402_map.py   # local, after syncing results

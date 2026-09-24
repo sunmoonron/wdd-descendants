@@ -341,6 +341,20 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H200 Individuals share their words up to a state-fitted map. → e398, e398b → NARROWED (a third to a half of the own-word advantage crosses: +0.11 over random words through the orthogonal map, +0.07 through the linear map).
 - H201 What two individuals share linearly is where the function is. → e398b → SURVIVES at k = 16 (random words confined to the linearly shared subspace describe the state as well as the network's own words, 0.59 and 0.59; the translated state recovers 0.67-0.82 of the loss at state R2 0.28-0.38). Consistent with SVCCA (Raghu et al. 2017).
 
+## The review's controls (session 38)
+
+- H202 The own vocabulary's advantage over its rotation is second-order alignment with the states (second moment, span). → e399, e405, e400 → SURVIVES early and KILLED late.
+  - Early: up to step 8000, covariance- and span-matched words carry 41-88% and 45-134% of the gap at k = 16, and under a functional pursuit only 0.04 of the gap remains at step 1000.
+  - Late: from step 16000 both controls are at the rotation level, and the gap under the functional pursuit is 0.24 at the end.
+- H203 The own words are the best sparse vocabulary for the states. → e399, e400, e403 → KILLED. Random words drawn from the states' covariance beat them at k = 16 at every checkpoint (by 0.11-0.14 Euclidean, 0.02-0.06 under the functional pursuit), and a learned SAE beats them at k = 4-32 in GPT-2. NARROWED to: the own words need no activations, overtake the SAE at k = 64, and keep more function per variance explained.
+- H204 The advantage belongs to a coordinate system shared by writers and readers. → e399 → NARROWED. Downstream readers' input directions beat their rotation by 0.09 / 0.16 / 0.20 at k = 16 (steps 1000 / 16000 / end), against 0.15 / 0.21 / 0.27 for the writers; the writing blocks' own input directions do not beat theirs.
+- H205 A function-aware pursuit shortens the self-description. → e400 → KILLED for the 90% length (32, 64, 64 unchanged), SURVIVES at small k (the own words at k = 4 rise from 0.24 to 0.41 at the end).
+- H206 False friends come from Euclidean variance-chasing. → e400 → KILLED. They deepen under the Fisher metric: 0.27 against 0.54 at k = 16.
+- H207 False friends are mediated by the target's few huge directions. → e404 → SURVIVES. With the top-8 principal subspace handled exactly, the step-4000 words beat their rotation (0.65 against 0.56 at k = 16) and nothing is below zero.
+- H208 Self-describability is absent at initialisation in every architecture and learned in more than one family. → e401 → SURVIVES. At initialisation own and rotated FVU agree within 0.004-0.014 in five architectures at three depths; trained OLMo's own words beat the rotations at every checkpoint.
+- H209 Misleading words come from a band of intermediate stages. → e402, e406 → SURVIVES in Pythia only. Sources 4000 and 8000 mislead on targets from step 33000, and sources 1000 and earlier are generic, not misleading. OLMo (steps 1000-1454000) has no false-friend cell, even where its states have huge directions.
+- H210 Accretion: later vocabularies read earlier states at least as well as the earlier model's own words. → e402, e406 → SURVIVES in Pythia (step-256 states 0.97 with the final words against 0.87 with their own). NARROWED in OLMo: it holds through step 256000, but the final checkpoint's words read early states worse than their own (0.61 against 0.71).
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

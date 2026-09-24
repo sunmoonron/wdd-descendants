@@ -293,3 +293,13 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The step-4000 vocabulary fails because its geometry is degenerate": its effective rank and rotation are ordinary; the failure is carried by its orientation (e397).
 - "The shared tokens fix a common coordinate system across seeds": the two embedding matrices are not rotations of each other (R2 -0.10) and the lexicon-fitted map translates nothing (e398).
 - "A state-fitted linear map translates one network's words into another's, even better than the network's own words": random words through the same map already match the own words (0.59); the translation adds 0.07 (e398b). Feature transfers through fitted linear maps need random-direction controls.
+
+## Session 38 kills and narrowings (the review's controls)
+- "The own-word advantage is word-level at every stage": at step 1000 most of it is the vocabulary's second moment and span (0.62 and 0.85 of the gap at k = 16), and a functional pursuit leaves 0.04 of it (e399, e400, e405).
+- "The network's own words are the best sparse vocabulary for its states": words drawn from the states' covariance beat them at k = 16 at every checkpoint, and a learned SAE beats them at k = 4-32 in GPT-2 (e399, e400, e403).
+- "Choosing words by function shortens the self-description": the 90% length is unchanged (e400).
+- "False friends are an artefact of Euclidean variance-chasing": they deepen under the Fisher metric. They are mediated by the target's few huge directions: handled exactly, the step-4000 words are partial friends (e400, e404).
+- "Evaluation leakage explains self-describability" (review): not accepted as stated. The one concrete shortcut, the current-token embedding, is ruled out by MLP rows alone (e389, e399).
+- "The translated vocabulary equals the target's" (review's reading of e398): the fitted linear map lifts random words to the own level; the translated words add 0.07 (e398b).
+- "False friends are a general consequence of huge directions in the state": OLMo has huge directions at steps 64000 and 1454000 and no false-friend cells (e406); on the evidence so far the finding is Pythia-specific.
+- "Accretion is universal": OLMo's final vocabulary reads early states worse than their own words (e406).
