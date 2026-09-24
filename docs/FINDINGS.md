@@ -1,4 +1,4 @@
-# WDD mapping sprint (2026-09-19, vast.ai A100 #3: ssh -p 11041 root@80.188.223.202)
+# WDD mapping sprint (2026-09-19, vast.ai A100)
 Box layout: /workspace/wdd/{scripts,cache,results,logs}; results/FINDINGS.log one line per experiment; agg.py prints tables.
 Caches: gpt2, smollm2, qwen05, pythia410 (=step143000), olmo1b (0724), gpt2_rand (random init), pythia410_step{0,1000,4000,16000,32000,64000}; 16,384 wikitext-test states, 64 train seqs for centering. (pile caches gpt2_pile/smollm2_pile queued)
 Gate: new pipeline reproduces the paper's GPT-2 L6 numbers within 0.01.
@@ -992,3 +992,154 @@ SESSION 43 (the three proposed follow-ups on self-description, plus fresh angles
   - Two of the fresh angles held. Where a model's own self-description tells us something new, it is about the model rather than the input: larger models self-describe better and build it earlier (e427), and in three of five models the neurons it uses to describe itself are the ones it can least lose (e428).
   - The forward-backward duality is general once the reader set is complete (e429).
   - Two fresh angles failed: self-description is not a signal of novelty or uncertainty in the input (e430), and instruction tuning leaves the native vocabulary essentially unchanged and mutually intelligible (e431). This last is a clean negative, and a useful one for model diffing: the changes are below the vocabulary's resolution.
+
+SESSION 44 (a survey of all 400+ experiments for results never connected to WDD, then bridging experiments chosen to discriminate between explanations rather than extend earlier runs; e432-e443 with e437b and e392b, 16 scripts, 73 runs on one A100 40GB).
+- THE SURVEY (`survey/uncharted_map.md`). Five agents read e000-e431 in groups of ten. For each group they listed what it established and the results never linked to the current picture, and proposed one connecting experiment with a novelty probability. The orphans fall into five basins:
+  - the huge directions M as a hub (about 40% of the mass): phase 1's sinks and massive channels, phase 2's set point, normalisation and knee, phase 3's false friends, Fisher lightness and compounding replacement model;
+  - where the vocabulary lives (about 25%): lexical or contextual, increments or states, own path or broadcast;
+  - statistical or dynamical privilege (about 15%): own writes are generic levers yet privileged describers; is usage geometry?;
+  - development (about 12%);
+  - applications (about 8%).
+  The agents' single most likely pick (p 0.45) was a confound: phase 1 always excluded positions above 10 times the median norm, and phase 3 never did.
+- e432 WHAT ARE THE HUGE DIRECTIONS? (five accounts tested in one pass per model; M = top-8 principal directions at middle depth).
+  - Sinks. Pythia-410m has one sink per sequence at middle depth: the token "\n\n\n", at 41 times the median norm. These six positions hold 0.83 of the centred variance. OLMo has one position (" don", 46 times) holding 0.44. GPT-2, SmolLM2 and Qwen-0.5B have none after position 0.
+    - At typical positions M holds 0.21, 0.26, 0.17, 0.21 and 0.10 of the variance (GPT-2, SmolLM2, Pythia, Qwen-0.5B, OLMo). The reported 0.86 (Pythia) and 0.48 (OLMo) were the sinks.
+    - The subspace itself is the same with or without them (overlap 0.87-0.88): the sinks are extreme points along M.
+    - Replacing the sink states by the typical mean state costs nothing (-0.001 and +0.005 nats).
+  - Removing M at typical positions costs +0.94, +1.05, +0.72, +1.07 and +0.33 nats, against +4.5 to +7.2 for the whole state.
+    - Per unit of variance this is 3.5-5.0 nats, the whole state's average (4.5-7.2). Principal directions 33-40 cost 0.6-0.9 per unit.
+    - Under ablation, M is not function-light.
+  - The knee. The quadratic fitted at a = 1 +- 0.25 under-predicts the cost of removing M by 2.0, 2.8, 2.1, 3.8 and 2.9 times. The ratio falls with variance rank: 1.3-1.9 for directions 9-16, 1.1 for 33-40, 1.0 for random directions.
+    - A random 8-dimensional displacement with M's energy costs 4-12 times less and stays quadratic (1.1-1.3).
+    - The non-local function of M is real and belongs to its directions, not to the size of the move.
+  - Killed:
+    - set point: the per-position odd part exceeds the even part 16-29 times along M;
+    - normalisation ballast: rescaling the state to the ablated norm costs +0.000 to +0.010, while the ablated direction at the original norm costs the full amount;
+    - temperature knob: the output norm changes by under 5%.
+  - Carriage. The next block keeps 0.93-1.14 of a halving of M (OLMo 0.70) but only 0.52-0.76 of a halving along a random direction. A removal along M is not repaired downstream; one along lower-variance directions partly is.
+  - Pre-registered: H4 half (sinks hold over half the variance in Pythia; M from all positions is still M), H0's knee confirmed with controls quadratic, H1 set point killed, H2 ballast killed, H5 temperature killed.
+- e437 THE SINK CHECK OF EARLIER CLAIMS (all positions against sinks kept exact; five models).
+  - Self-description is unchanged: own words 0.75, 0.87, 0.59, 0.83 and 0.67 at k = 16 either way. Pythia's rotation rises 0.33 to 0.35 and its mix8 share from -0.12 to 0.18. Zipf slopes move by at most 0.02.
+  - The Fisher trace per unit variance of M at typical positions: GPT-2 0.57, SmolLM2 0.08, Pythia 0.09 (0.017 when sink variance was counted), Qwen-0.5B 0.08, OLMo 0.10 (0.020).
+    - Locally light survives in four models at about a tenth of the average sensitivity, not the 57 times reported for Pythia.
+    - GPT-2's M is not light.
+  - False friends were sinks.
+    - With the sinks kept exact, the step-4000 words recover +0.15 at k = 4 on the final model's states, against their rotation's +0.08. Before, they were at -0.37, below zero.
+    - With M also exact: 0.39 against 0.34.
+    - A mis-described sink did the damage. Replacing a sink by the typical mean is harmless; describing it with four step-4000 words is not. How later positions read the mis-described sink was not measured.
+  - Pre-registered: self-description stable (confirmed apart from Pythia's controls); Fisher ratio at least three times larger without sinks (Pythia and OLMo, confirmed); false friends survive (refuted).
+- e433 IS M THE IDENTITY CHANNEL? (token and position means from 64 other sequences; typical positions; out-of-sample share of variance explained).
+
+  | Model | M: token / position / both / block-0 state | whole state: token / block-0 state | cost of removing M's token part / within-token part (energy share) |
+  | --- | --- | --- | --- |
+  | GPT-2 | 0.31 / 0.42 / 0.73 / 0.91 | 0.26 / 0.59 | +0.80 (0.36) / +0.65 (0.69) |
+  | SmolLM2 | 0.59 / 0.00 / 0.58 / 0.84 | 0.37 / 0.55 | +0.81 (0.60) / +0.23 (0.41) |
+  | Pythia | 0.45 / 0.00 / 0.44 / 0.65 | 0.22 / 0.36 | +0.48 (0.51) / +0.11 (0.55) |
+  | Qwen-0.5B | 0.53 / 0.00 / 0.52 / 0.78 | 0.30 / 0.50 | +0.71 (0.55) / +0.19 (0.47) |
+  | OLMo | 0.48 / 0.00 / 0.47 / 0.72 | 0.13 / 0.21 | +0.30 (0.57) / +0.04 (0.52) |
+
+  - M is the most lexical subspace and the one most predictable from the state after block 0 (0.65-0.91 against 0.21-0.59 for the whole state). In GPT-2 it also carries position. M is the early-written identity channel, carried to the middle of the network.
+  - Within M, the token part costs 2.4-6.6 times more per unit energy than the within-token part.
+  - Both parts show the knee (token 1.6-3.2, within-token 1.3-2.9). The knee is not categorical decoding of identity.
+  - Pre-registered: token over half of M (two of five); over twice directions 33-40 (none: 1.3-1.9 times); position ahead in GPT-2 (confirmed); token part carries two thirds of the cost (three of five); only the token part has the knee (refuted).
+- e438 / e441 WHERE THE KNEE LIVES (removing M with the later blocks' nonlinearities frozen one at a time; knee in parentheses).
+
+  | Model | live | patterns frozen (P) | P + linear MLPs | P + MLPs + norm scales (linear map) | linear MLPs only |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | +0.89 (1.9) | +0.32 (2.0) | +0.24 (1.5) | +0.27 (0.9) | +0.76 (2.1) |
+  | SmolLM2 | +0.92 (2.7) | +0.51 (2.5) | +0.69 (3.0) | +1.23 (1.4) | +2.10 (6.4) |
+  | Pythia | +0.63 (1.9) | +0.31 (1.9) | +0.27 (1.5) | +0.29 (1.2) | +0.43 (1.3) |
+  | Qwen-0.5B | +0.96 (3.9) | +0.55 (3.0) | +1.01 (5.0) | +1.75 (1.9) | +1.54 (5.7) |
+  | OLMo | +0.27 (2.3) | +0.19 (2.3) | +0.53 (5.7) | +0.92 (2.0) | +0.47 (3.8) |
+
+  - Removing M moves the later attention patterns 2.1-3.1 times as much as the matched random displacement. Freezing the patterns removes 28-64% of the cost but not the knee: the knee is not the softmax (refuted).
+  - In the GELU models (GPT-2, Pythia) the linear network is quadratic (0.9-1.2).
+  - In the gated models, linearising the MLPs makes removing M 1.4-3.5 times worse. The gates absorb large moves along M. The linear network's remaining superquadratic cost (1.4-2.0) is presumably the cross-entropy's own higher-order terms at logit shifts that large (not tested).
+  - The knee has no single seat.
+  - The linearised network reproduces the clean loss exactly at the clean state (|dL| below 1e-5).
+- e434 DOES THE NETWORK KEEP ITS OWN WORDS? (single-direction pushes of a quarter of the median state norm; share carried by the next block).
+  - Median retention: own words most used 0.71-0.93, never used 0.71-0.90, rotated 0.73-0.91, covariance directions 0.71-0.94, top principal directions 0.74-0.94.
+  - Across own words, retention follows the variance share. The partial correlation with usage, given the variance share, is 0.03-0.18.
+  - Pre-registered (most-used words kept more, beyond variance): refuted. The network does not preferentially keep what is said in its own words.
+- e435 SPARSE STRUCTURE OR COVARIANCE? (the states changed, the vocabulary kept; own-over-rotation fraction-unexplained advantage at k = 16, share of the real one in parentheses).
+
+  | Model | real | Gaussian, same covariance | principal coordinates shuffled | token means + Gaussian noise |
+  | --- | --- | --- | --- | --- |
+  | GPT-2 | +0.240 | +0.099 (0.41) | +0.099 (0.41) | +0.154 (0.64) |
+  | SmolLM2 | +0.185 | +0.083 (0.45) | +0.083 (0.45) | +0.125 (0.68) |
+  | Pythia | +0.086 | +0.024 (0.28) | +0.024 (0.28) | +0.037 (0.43) |
+  | Qwen-0.5B | +0.145 | +0.045 (0.31) | +0.045 (0.31) | +0.089 (0.62) |
+  | OLMo | +0.186 | +0.028 (0.15) | +0.028 (0.15) | +0.058 (0.31) |
+
+  - 55-85% of the advantage needs the states' non-Gaussian joint structure. Heavy-tailed marginals add nothing (shuffled equals Gaussian).
+  - The Zipf slope of own-word usage is the same or steeper on the Gaussian states (-0.67 to -0.80 against -0.58 to -0.74). Zipf-like usage is geometry (dictionary and covariance), not a property of text.
+  - Pre-registered: Gaussian under half (confirmed, five of five); word-level part under a quarter on Gaussian (one of five); token identity alone over half (three of five).
+- e439 IS THE NATIVE VOCABULARY THE LEXICON? (dictionary without the token rows, position rows and block-0 MLP rows; own-over-rotation gap in loss recovered at k = 16).
+  - Full / without the lexicon / lexicon only: GPT-2 +0.371 / +0.359 / +0.303; SmolLM2 +0.232 / +0.226 / +0.244; Pythia +0.245 / +0.263 / +0.051; Qwen-0.5B +0.284 / +0.322 / +0.204; OLMo +0.590 / +0.573 / +0.091.
+  - Pythia's checkpoints: step 1000 +0.134 / +0.167 / -0.002, step 4000 +0.133 / +0.149 / +0.013, step 16000 +0.205 / +0.222 / +0.024.
+  - Descriptions contain the current token's own embedding row at 0-4% of positions (OLMo 23%), yet token rows are 3-18% of all picks. Other tokens' rows serve as generic directions.
+  - Pre-registered: removing the lexicon halves the gap (refuted, five of five and at every checkpoint); descriptions name the current token (refuted). The native vocabulary is not the lexicon, and its emergence is not the lexicon's growth.
+- e440 A NATIVE VOCABULARY FOR CONTEXT (the state minus its token's mean, described with the other part exact).
+
+  | Model | context share of variance | non-lexicon own / rotation / covA / mix8 (k = 16) | covA / mix8 share | lexical part: all own / lexicon / rotation |
+  | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.74 | 0.71 / 0.30 / 0.43 / 0.55 | 0.32 / 0.61 | 0.86 / 0.83 / 0.47 |
+  | SmolLM2 | 0.62 | 0.78 / 0.62 / 0.62 / 0.66 | 0.05 / 0.25 | 0.90 / 0.87 / 0.68 |
+  | Pythia | 0.78 | 0.63 / 0.38 / 0.42 / 0.46 | 0.15 / 0.30 | 0.64 / 0.49 / 0.42 |
+  | Qwen-0.5B | 0.69 | 0.76 / 0.53 / 0.48 / 0.55 | -0.23 / 0.07 | 0.91 / 0.83 / 0.61 |
+  | OLMo | 0.87 | 0.66 / 0.14 / 0.15 / 0.24 | 0.03 / 0.19 | 0.80 / 0.59 / 0.30 |
+
+  - What context adds to a token is described by the model's non-lexical words well above rotation (+0.16 to +0.52) and at the word level (covA share -0.23 to 0.32).
+  - Pre-registered: non-lexicon words beat rotation on context (confirmed, five of five); the context vocabulary is second-order (refuted, five of five); the lexicon alone gives 90% on the lexical part (GPT-2, SmolLM2, Qwen-0.5B; not Pythia or OLMo).
+- e443 A UNION OF PER-BLOCK ACCENTS? (Gaussian words with each block's own second moment, and mixtures within each block; share of the own-over-rotation gap at k = 16).
+  - End of training: per-block Gaussian words carry 0.28 (GPT-2), 0.33 (SmolLM2), 0.09 (Pythia), -0.14 (Qwen-0.5B) and 0.01 (OLMo). The pooled versions carry 0.28, 0.02, 0.06, -0.22 and 0.00.
+  - Pythia across training: per-block Gaussian words carry 0.82 at step 1000, 0.70 at 4000, 0.32 at 16000 and 0.09 at the end. Pooled: 0.61, 0.53, 0.26, 0.06.
+  - Pre-registered (per-block accents over half at the end): refuted.
+  - The accent-to-vocabulary transition (e399, e405) is sharper than reported: early in training the advantage is which block wrote a component and with what second moment (0.82). It becomes specific words between steps 4000 and 16000.
+- e436 INCREMENTS AGAINST STATES (the middle block's own increment in its own words; shares of the gap at k = 16).
+
+  | Model / checkpoint | increment k = 16: own / rotation / covA / mix8 | increment shares covA / mix8 | state shares covA / mix8 | MLP write participation ratio |
+  | --- | --- | --- | --- | --- |
+  | Pythia step 1000 | 0.50 / 0.19 / 0.38 / 0.49 | 0.61 / 0.98 | 0.61 / 0.86 | 374 of 4096 |
+  | Pythia step 4000 | 0.60 / 0.28 / 0.32 / 0.36 | 0.13 / 0.25 | 0.53 / 0.66 | 217 |
+  | Pythia step 16000 | 0.48 / 0.20 / 0.28 / 0.30 | 0.27 / 0.36 | 0.07 / 0.18 | 216 |
+  | Pythia final | 0.36 / 0.17 / 0.25 / 0.25 | 0.40 / 0.42 | 0.03 / -0.12 | 322 |
+  | GPT-2 | 0.64 / 0.28 / 0.52 / 0.59 | 0.65 / 0.85 | 0.28 / 0.44 | 111 of 3072 |
+  | SmolLM2 | 0.66 / 0.34 / 0.48 / 0.60 | 0.43 / 0.80 | 0.02 / 0.42 | 86 of 1536 |
+  | Qwen-0.5B | 0.54 / 0.30 / 0.46 / 0.46 | 0.66 / 0.69 | -0.22 / 0.14 | 213 of 4864 |
+  | OLMo | 0.42 / 0.14 / 0.23 / 0.31 | 0.31 / 0.60 | 0.00 / 0.11 | 199 of 8192 |
+
+  - In Pythia the words appear in the block's own increment first: word-level at step 4000, while the state is still an accent. The state follows by step 16000.
+  - At the end of training the increment is less word-level than the state in every model (mix8 share 0.42-0.85 against -0.12 to 0.44). The words that describe a state are not the words that wrote it, as e391 found for the actual writes.
+  - The actual MLP writes grow sparser from step 1000 to 4000-16000 (participation ratio 374 to 216) and denser again by the end (322). This reconciles phase 1 (training makes the ledger sparser, measured up to step 64000) with phase 3 (the end-of-training writing is denser).
+  - Pre-registered: increments word-level at step 1000 while states are an accent (refuted at step 1000, where both are accents; holds at step 4000); increments word-level at every checkpoint (Pythia at 4000-16000 only, and no model at the end).
+- e442 SELF-DESCRIPTION ACROSS THE LIGHT CONE (descriptions spliced at a random tenth of the positions per pass; recovery of the self path and of the broadcast path).
+
+  | Model | self: own / rotation | broadcast: own / rotation | all positions: own / rotation |
+  | --- | --- | --- | --- |
+  | GPT-2 | 0.87 / 0.53 | 0.91 / 0.51 | 0.73 / 0.36 |
+  | SmolLM2 | 0.91 / 0.77 | 0.79 / 0.59 | 0.86 / 0.61 |
+  | Pythia | 0.71 / 0.51 | 0.42 / 0.24 | 0.57 / 0.35 |
+  | Qwen-0.5B | 0.92 / 0.73 | 0.76 / 0.54 | 0.83 / 0.56 |
+  | OLMo | 0.81 / 0.29 | 0.79 / 0.47 | 0.66 / 0.08 |
+
+  - The own-word advantage holds on both paths: self +0.14 to +0.52, broadcast +0.17 to +0.41.
+  - Pre-registered (larger on broadcast): three of five.
+- e392b THE REPLACEMENT MODEL WITH THE SINKS EXACT (every block's output replaced during the forward pass by its k-sparse description; 2 sequences).
+  - Excess loss at k = 64 / 128, every position described against sinks passed through exactly:
+    - GPT-2: +2.23 / +0.49 either way (no sinks);
+    - Pythia: +5.34 / +3.53 against +5.30 / +3.51 (two sink positions per block from block 5 to 21);
+    - OLMo: +5.58 / +4.11 either way (no sinks in these two sequences).
+  - The compounding is not a sink effect. Pythia and OLMo compound the most, and they are also the two models whose single-layer 16-word description is weakest (0.59 and 0.67, against 0.75-0.87). That link is a reading, not a test.
+  - Pre-registered (sinks exact brings Pythia and OLMo below 1.5 nats at k = 128): refuted.
+- e437b THE 7B NUMBERS UNDER THE SINK CHECK (Qwen2.5-7B, middle depth; the same text as e418).
+  - e418's "the top-8 principal directions hold 0.97 of the variance" was one position in the 4 fitting sequences: the token " series", 221 times the median norm, which alone holds 0.97 of that text's variance.
+  - The evaluation text has no sinks. There, M holds 0.11 of the variance, the same subspace (overlap 0.91), with 0.0044 of the Fisher trace (chance 0.0022; per unit variance 0.04).
+  - Self-description is unchanged: k = 4 / 16, own 0.52 / 0.79 against rotation 0.07 / 0.26.
+  - e419's finding that M kept exact alone recovers 0.29 of the loss now reads as a subspace holding 11% of the variance and carrying 29% of the function.
+- Reading.
+  - Three corrections. Pythia's "0.86 of the variance in 8 directions" and its false friends were one sink token per sequence. OLMo's 0.48 was one outlier, and Qwen2.5-7B's 0.97 was one sink token in the fitting text. The replacement model's compounding is not a sink effect.
+  - M, correctly measured, is a normal-sized (10-26%), early-written channel that carries token identity (and position in GPT-2). Downstream it is carried rather than repaired, and it is read by attention. Removing it costs its share of function, superquadratically.
+  - The native vocabulary came through four new deflationary controls. It is not the lexicon, not a union of per-block accents at the end of training, and not a property of the states' covariance. It also exists for what context adds to a token.
+  - Two analogies lost their content. Zipf-like usage is geometry. The network does not preferentially keep its own words.
+  - One new developmental fact: the early accent is a per-block accent, and the words appear between steps 4000 and 16000.

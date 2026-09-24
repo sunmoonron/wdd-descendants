@@ -292,7 +292,27 @@ Details: `docs/FINDINGS.md` (session 40), hypotheses H223 to H229.
 | e415 | And at the final position? | Only late (blocks 24-26), where the plain lens reads it at least as well. There bridge and answer sit in separate native words, and removing the bridge word costs the answer 0.15 nats against 0.01 for another word |
 | e417 | Can a reader tell who did what (roles)? | Only late, for every reader. The native words show the resolution as suppression of the other name |
 | e416 | Arithmetic intermediates and fabricated digits? | Inconclusive: the model solves too few chains |
-| e418, e419 | Does self-description hold at 7B? | Yes, and more strongly (0.79 against 0.26 at 16 words). The top 8 directions hold 97% of the variance and 0.3% of the local Fisher trace, yet kept exact alone they recover 29% of the loss |
+| e418, e419 | Does self-description hold at 7B? | Yes, and more strongly (0.79 against 0.26 at 16 words). The top 8 directions were reported to hold 97% of the variance; that was one sink token in the fitting text (corrected by e437b: 11% at ordinary positions). Kept exact alone they recover 29% of the loss |
+
+## A survey of the whole program, and the bridges it suggested (e432 to e443)
+
+Five agents read all 400+ experiments in groups of ten and listed every result never connected to the native-vocabulary picture (`docs/uncharted_map.md`). About 40% of the mass pointed at one hub, the few highest-variance directions (M). The rest pointed at where the vocabulary lives, whether its privilege is statistical, development, and applications. The experiments below were each built to decide between competing explanations. Details: `docs/FINDINGS.md` (session 44), hypotheses H242 to H256.
+
+| Experiment | Question | Answer |
+| --- | --- | --- |
+| e432, e437, e437b | Is M's huge variance share a sink artefact? (Phase 1 excluded positions above 10x the median norm; phase 3 did not) | Yes. In Pythia-410m one "\n\n\n" token per sequence held 0.83 of the variance; in Qwen2.5-7B one " series" token held 0.97 of the fitting text's. At ordinary positions M holds 10-26% (11% at 7B), in the same directions |
+| e437 | Do the false friends survive with the sinks exact? | No. With the sinks kept exact the step-4000 words beat their rotation (+0.15 against +0.08 at k = 4): the false friends were mis-described sinks |
+| e432 | What is M's function: a set point, normalisation ballast, a temperature knob, or just large variance? | None of these. Removing M costs the average per unit of variance, 2-4 times its local quadratic prediction, while a random move of the same size stays quadratic |
+| e438, e441 | Where does that knee come from? | No single seat: attention carries a third to two thirds of the cost; in gated models the MLPs absorb large moves |
+| e433 | Is M the token-identity channel? | Partly: the most lexical subspace, 65-91% predictable from the state after block 0, position-bearing in GPT-2. The knee is not lexical |
+| e434 | Does the network keep what is said in its own words? | No: retention follows variance, not usage |
+| e435 | Is self-description only alignment with the states' covariance? | No: Gaussian states with the same covariance keep 15-45% of the advantage. Zipf-like usage is geometry, reproduced by the Gaussian states |
+| e439 | Is the native vocabulary the lexicon (token, position and block-0 rows)? | No, in all five and at every checkpoint; descriptions almost never name the current token |
+| e440 | Is there a native vocabulary for what context adds to a token? | Yes, word-level in all five |
+| e443 | Is the late vocabulary a union of per-block accents? | No at the end (at most 0.33 of the gap), but 0.82 at step 1000: the early accent is per block, and the words appear between steps 4000 and 16000 |
+| e436 | Do words appear in a block's increment before the state? | Yes at step 4000 in Pythia; at the end increments are less word-level than states |
+| e442 | Does the advantage live on the self path or the broadcast path? | Both |
+| e392b | Does the replacement model compound through the sinks? | No: the compounding is real |
 
 ## Scope and caveats
 

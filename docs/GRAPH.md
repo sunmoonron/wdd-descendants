@@ -401,6 +401,24 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H240 Self-description is a novelty or uncertainty signal. → e430 → KILLED (random tokens lowest in four models but highest in OLMo; shuffled text as describable as natural text; no negative correlation with loss).
 - H241 Instruction fine-tuning rewrites the native vocabulary. → e431 → KILLED (row cosine 0.997; base and instruct words describe each other's states equally well); chat-specific drift in one of two models.
 
+## The huge directions and the native vocabulary under new controls (session 44)
+
+- H242 The huge directions' variance share is a sink artefact (the survey's top pick). → e432, e437 → SURVIVES for Pythia (one "\n\n\n" per sequence holds 0.83 of the variance; M is 0.17 at typical positions, not 0.86) and OLMo (0.48 → 0.10), and for Qwen2.5-7B (0.97 was one " series" token at 221 times the median norm in the fitting text; 0.11 without it, e437b). NARROWED: the subspace is the same with or without sinks (overlap 0.87-0.91). GPT-2, SmolLM2 and Qwen-0.5B have no sinks after position 0.
+- H243 False friends are mediated by M (e404). → e437 → KILLED as stated. They were mis-described sinks: with the sinks exact, the step-4000 words are above their rotation at k = 4 (+0.15 against +0.08).
+- H244 M is a set point, normalisation ballast, or a temperature knob. → e432 → KILLED, all three (odd part 16-29 times the even part; the norm-only change costs nothing; output norm within 5%).
+- H245 M's non-local function is a property of the move's size, not of its directions. → e432 → KILLED. A random displacement of the same energy is quadratic and costs 4-12 times less; M's removal is 2-4 times its quadratic prediction, and the knee grades with variance rank.
+- H246 The knee is the attention softmax. → e438 → KILLED. Freezing patterns removes 28-64% of the cost but not the knee.
+- H247 The knee is MLP gating. → e441 → NARROWED. In GELU models the linear network is quadratic; in gated models the MLPs absorb large moves (linearising them costs 1.4-3.5 times more). No single seat.
+- H248 M is the identity channel. → e433 → SURVIVES in part. It is the most lexical subspace (token 0.31-0.59 against 0.13-0.37 for the whole state; plus position in GPT-2) and the most predictable from block 0 (0.65-0.91). The token part carries 2.4-6.6 times more cost per unit energy. KILLED: the knee is not lexical (the within-token part has it too).
+- H249 The network keeps what is said in its own words. → e434 → KILLED. Retention follows variance share; usage adds 0.03-0.18 partial correlation.
+- H250 The self-description advantage is alignment with the states' covariance. → e435 → KILLED. Gaussian states with the same covariance keep 15-45% of it. SPAWNED: Zipf-like usage is geometry (reproduced by the Gaussian states).
+- H251 The native vocabulary is the lexicon (token rows, position rows, block-0 MLP rows). → e439 → KILLED at every checkpoint and in all five; descriptions almost never name the current token.
+- H252 What context adds to a token is described only to second order. → e440 → KILLED. Non-lexicon own words beat rotation by +0.16 to +0.52 on the context part, at the word level (covA share -0.23 to 0.32).
+- H253 The word-level vocabulary is a union of per-block accents. → e443 → KILLED at the end of training (per-block Gaussian words carry -0.14 to 0.33). SURVIVES early: 0.82 at step 1000, 0.70 at 4000, 0.32 at 16000, 0.09 at the end. REVISES H(accent → vocabulary): the early accent is per block.
+- H254 Increments are word-level before states are (e02 × e405). → e436 → SURVIVES at step 4000 in Pythia (the middle block's increment is word-level, shares 0.13/0.25, while the state is an accent, 0.53/0.66); KILLED at step 1000 (both accents). At the end the increment is less word-level than the state in all five. SPAWNED: the actual writes are sparsest mid-training (participation ratio 374 → 216 → 322).
+- H255 The self-description advantage lives on the broadcast path. → e442 → NARROWED. Both paths: self +0.14 to +0.52, broadcast +0.17 to +0.41; larger on broadcast in three of five.
+- H256 The replacement model compounds through the sinks. → e392b → KILLED in Pythia (excess at k 128 +3.53 with every position described, +3.51 with the sinks exact; GPT-2 has none, +0.49 either way). OLMo +4.11 either way (no sinks in its two sequences). The compounding is real, not a sink effect.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

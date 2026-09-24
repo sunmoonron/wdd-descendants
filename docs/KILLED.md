@@ -334,3 +334,20 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Instruction fine-tuning changes the native vocabulary": median row cosine 0.997, full mutual intelligibility (e431).
 - "Self-description usage is a better importance score everywhere": it fails in OLMo and GPT-2, where norm-dominant neurons (super weights and massive-activation writers) carry the damage (e428, e428b).
 - "The forward-backward duality fails in GPT-2": an artefact of leaving out attention readers (e429).
+
+## Session 44 kills (the survey's bridges)
+- "The huge directions hold 86% of Pythia's variance (48% of OLMo's)": one sink position per sequence held it ("\n\n\n", 41 times the median norm; OLMo's " don", 46 times). At typical positions M holds 0.10-0.26 in all five models (e432).
+- "At 7B the huge directions hold 97% of the variance": one token in the fitting text (" series", 221 times the median norm). Without it they hold 11% (e437b).
+- "The replacement model compounds through the sinks": sinks exact changes nothing (e392b).
+- "False friends are mediated by the huge directions": they were mis-described sinks. With the sinks exact, the step-4000 words beat their rotation at k = 4 (e437).
+- "M is function-light": locally, per unit variance, yes in four models (Fisher about 0.1 of average), not in GPT-2 (0.57). Under ablation it costs the average per unit variance, 2-4 times its quadratic prediction (e432, e437).
+- "M is a set point", "normalisation ballast", "a temperature knob" (e432).
+- "The knee is the size of the move": a random move of the same energy stays quadratic (e432).
+- "The knee is the softmax": freezing attention patterns removes 28-64% of the cost but not the knee (e438).
+- "The knee is categorical identity decoding": M's within-token part has the knee too (e433).
+- "The network keeps its own words": retention follows variance, not usage (e434).
+- "Self-description is alignment with the covariance": Gaussian states with the same covariance keep 15-45% (e435).
+- "Zipf-like usage is a property of the native language": Gaussian states reproduce the slope (e435).
+- "The native vocabulary is the lexicon": removing token rows, position rows and block-0 MLP rows leaves the gap, at every checkpoint (e439).
+- "Context is described only to second order": word-level in all five (e440).
+- "The late vocabulary is a union of per-block accents": 0.09 or less of the gap in three models at the end, although 0.82 at step 1000 (e443).
