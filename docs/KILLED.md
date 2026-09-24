@@ -319,3 +319,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The native lens fabricates less": for digits it fabricates more than the plain lens at most blocks (e416; the task itself was beyond the model).
 - "The huge directions carry little function": locally yes (Fisher), but kept exact alone they recover 29% of the loss at 7B (e419).
 - "A Fisher-metric pursuit gives a better functional description" (true in Pythia, e400): false at 7B, with or without the huge directions held exact (e418, e419).
+
+## Session 41 kills (established lenses)
+- "The native-word lens is just Geva et al.'s value-vector reading": the actual largest writes surface the hidden bridge worse than the plain lens; the native re-description surfaces it best (e421).
+- "The super weights are the native language's function words": not in Qwen2.5-7B's middle-depth descriptions of positions after the first (e422).

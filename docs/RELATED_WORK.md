@@ -176,3 +176,12 @@ Sources: https://arxiv.org/abs/2509.26643 ; https://arxiv.org/abs/2402.17762 ; h
 - Massive activations (Sun et al. 2024): the 7B state's top-8 directions (97% of the variance) are presumably those. e419 measures their non-local functional weight (29% of the loss from the 8 directions alone).
 
 Sources: https://www.lesswrong.com/posts/Zeg2JztbdhguL48uH/workspacebench-evaluating-interpretability-methods-for-the ; https://github.com/camilablank/workspace-bench ; https://arxiv.org/abs/2406.12775 ; https://arxiv.org/abs/2303.08112 ; https://arxiv.org/abs/2211.00593
+
+## 18. Established lenses on the whole program (added 2026-09-24, session 41)
+
+- Value vectors in vocabulary space: Geva, Caciularu, Wang and Goldberg 2022 (EMNLP 2022, arXiv 2203.14680) decompose each feed-forward update into sub-updates (activation-weighted value vectors) that promote concepts in the vocabulary. Dar et al. 2022 analyse transformer weights in embedding space. A 2026 paper (arXiv 2604.06005) disentangles MLP neuron weights in vocabulary space, still to be read. e421 tests the sub-update reading directly against the native re-description.
+- Distributional simplicity bias: Belrose, Pope, Quirke, Mallen and Fern 2024 (ICML 2024, arXiv 2402.04362): networks learn low-order statistics first. Transformer learning dynamics: arXiv 2410.19637. The accent-to-vocabulary transition (e399, e405, e409) is the same ordering in weight space.
+- Super weights: Yu et al. 2024 (arXiv 2411.07191). Massive activations: Sun et al. 2024 (arXiv 2402.17762). Attention sinks: Xiao et al. 2023 (arXiv 2309.17453). The user's own OLMo super-weight study (memory notes, Aug 2026) and superweight surgery paper: a trained row patch nearly orthogonal to the original row repairs 93% of the damage from zeroing one weight.
+- The Hydra effect: McGrath et al. 2023 (arXiv 2307.15771), self-repair after ablation; Rushing and Nanda 2024.
+
+Sources: https://arxiv.org/abs/2203.14680 ; https://arxiv.org/abs/2402.04362 ; https://arxiv.org/abs/2410.19637 ; https://arxiv.org/abs/2604.06005

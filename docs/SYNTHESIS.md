@@ -368,6 +368,35 @@ The nearest traditions are the Transformer Circuits view of the residual stream 
 - At 7B, self-describability holds and is larger (0.79 against 0.26 at 16 words).
 - The huge directions reach an extreme: 97% of the variance, 0.3% of the local Fisher trace. Yet kept exact alone they recover 29% of the loss, so local functional metrics mislead at this scale.
 
+## Session 41: the whole program through established lenses
+
+The user's observation about their own superweight surgery paper applies to this program. There, a trained row patch nearly orthogonal to the original row repaired 93% of the damage from zeroing one weight, which is function re-realised by another route: the Hydra effect. Most WDD results likewise have established names. The table gives each result's established counterpart and what, if anything, WDD adds.
+
+| WDD result | Established name | What WDD adds |
+| --- | --- | --- |
+| A state is a sparse sum of the model's own writes; the prominence law (phase 1) | Sparse coding and compressed-sensing identifiability | A dictionary that comes with the model, every atom labelled by its writer |
+| A write's downstream effect is low-dimensional and first-order (descendants, quotient) | Jacobian lenses, transport operators, "transformers are secretly linear" | Transport measured per write, with provenance |
+| Backups and super-additive pairs (phase 2) | The Hydra effect and self-repair (McGrath 2023; Rushing and Nanda 2024) | Most loss-level super-additivity is readout convexity; logit-level redundancy only in Pythia's induction circuit |
+| Selection vanishing at convergence | Optimal Brain Damage (LeCun et al. 1990) | none |
+| Readers prefer identifiable writes | Privileged bases, shared geometry | mostly geometry, present at initialisation |
+| 64 own words keep 84-99% of the loss | SAE evaluation by loss recovered; random-decoder baselines | a dictionary that needs no activations; more function per unit of variance than a learned SAE (e403) |
+| The code is a re-description, not the largest writes (e391) | Value-vector / sub-update reading (Geva et al. 2022) reads the actual writes | at the subject token the re-description surfaces a hidden bridge that both the actual writes and the logit lens miss (e421) |
+| Self-describability is learned, absent at initialisation | weights adapt to what they process | the quantitative own-versus-rotation measure across five architectures |
+| An accent first, a vocabulary later | The distributional simplicity bias (Belrose et al. 2024): low-order statistics are learned first | the same ordering seen in weight space |
+| Huge directions: most of the variance, almost no local sensitivity, much non-local function | Massive activations (Sun et al. 2024), attention sinks, super weights (Yu et al. 2024) | the split between variance, local Fisher and non-local function; they mediate false friends |
+| False friends | the formation of massive-activation writers during training (the user's OLMo super-weight lifecycle) | precursors readable from weights alone (e411) |
+| Mutual intelligibility and accretion across checkpoints | representational convergence across training (SVCCA; SAE-Track) | a functional test and a directional asymmetry |
+| Private languages across seeds; a shared functional subspace | universality and convergent learning; SVCCA; stitching | shared function with different vocabularies |
+| Errors in the readers' words, states in the writers' | the chain rule; updates as activation-weighted gradients | the swap from writers to readers during training |
+| Zipf-like word usage | heavy-tailed SAE feature frequencies | none beyond the measurement |
+| Roles resolved by suppressing the other name | negative name movers and suppression heads | visible as signed native words |
+| Super weights as the most used words (tested, e422) | super weights and massive activations | refuted: the super neuron's word is a huge-direction word but is not used at positions after the first |
+
+What stays unique after the mapping:
+
+- Reading a state as a sparse re-description in the model's own vocabulary. In the one place tested directly it surfaces an intermediate that neither the whole-state lens nor the established decomposition into actual writes shows (e421).
+- The native vocabulary as a single weight-derived yardstick with provenance, in which the table's phenomena can be measured together, and some of them from weights alone.
+
 ## What the whole program established (ten rounds, e01 to e247)
 
 WDD is classical sparse approximation over the model's own write directions, and its label means "this neuron wrote this direction". Reading a write from the state is a prominence phenomenon: it works at the write's birth, degrades with a causal half-life of about two blocks, and depends on the context re-writing the direction; identified atoms are 1.6 to 2.9 times more functional per unit energy than unidentified ones in four models, and the reading says nothing about whether the write caused the direction's presence. Two certificates, stability selection for OMP and a per-atom null-model z-score for the projection reading, make the reading usable. Every trained block is, along any direction, a learned linear contraction that is really the diagonal of a near-isometric, strongly mixing map: a write's energy is conserved or amplified while its direction is scattered, exactly accountably, into thousands of later writers and into attention. The scattered descendant is an angle-preserving, compositional, magnitude-independent image of the write vector, present as an isometry from initialisation and populated with dispersal by training, carrying 6 to 6.4 of 7 recoverable bits under the tested decoders through the middle of the network, robust to weight noise, portable across corpora and checkpoints, predictable for unseen neurons and for random vectors alike, and destroyed only in the last two blocks. It is a classification coordinate, not a decomposition basis: transporting the native dictionary does not restore sparse reading, and the native chart fails on transported writes for the same reason it fails on unmaintained natural ones, prominence. The exceptions throughout are the massive-activation neurons, not the architecture family. The descendant is a sufficient statistic for the write's functional effect and the vector that causally carries it when injected; it organises neurons by function at the population level without making them interchangeable at the token level; and the dimensions the network spends on who grow with depth while what and how much stay compressed; the effect of an intervention is a near-linear function of its position in descendant space, and no small basis reconstructs the descendant itself.

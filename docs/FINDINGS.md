@@ -888,3 +888,21 @@ SESSION 40 (2026-09-24, day 2; new anchor: WorkspaceBench, LessWrong 2026, "eval
   - Fisher: own 0.51 / 0.56 / 0.62 / 0.70 / 0.80, rotation 0.41-0.57, covariance-drawn 0.59-0.87.
   - Pre-registered (Fisher at least as good as Euclidean once the huge directions are exact): refuted. Own above rotation under both: confirmed.
   - At 7B the local Fisher metric (estimated from about 4,000 positions in 3,584 dimensions) is not a usable selection metric even beyond the top-8 directions.
+
+SESSION 41 (the user's prompt: seen in hindsight, the superweight surgery paper is the Hydra effect; read the whole WDD program through the established lenses and ask what, if anything, stays unique; two direct tests of the program's strongest claims against their established counterparts; e421-e422, 2 scripts, 2 runs, Qwen2.5-7B).
+- e421 NATIVE WORDS AGAINST THE ACTUAL SUB-UPDATES (the established value-vector reading of Geva et al. 2022).
+  - Setup: at the subject's last token of the two-hop prompts (133 gated), at blocks 10-20. The 16 largest actual writes (every MLP neuron's activation times its write column, every head's output, the embedding) were each read by the logit lens and max-pooled. They were all MLP neurons, so the Geva-only reading gave the same numbers.
+  - Bridge in the top 20: 0.02 at every block; country first among candidates 0.14-0.15.
+  - Plain logit lens: 0.00-0.01 and 0.31-0.44. Native words: 0.05-0.21 and 0.34-0.63.
+  - The established decomposition into actual writes reads the bridge worse than the plain lens, and the native re-description reads it best. The hidden step is carried neither by the sum nor by the largest actual contributions, but by a sparse re-description in the model's own vocabulary (e391: mostly not the largest writes).
+  - Pre-registered (native above both actual-write readings): confirmed.
+- e422 THE SUPER WEIGHT AS A NATIVE WORD.
+  - Qwen2.5-7B's super neuron: block 4, neuron 13448, maximum activation 478 against a median of 0.68. Its super weight is down_proj[458, 13448] = -0.66, writing channel 458, the largest massive channel at block 14 (|x| up to 11,840; next 2570, 2718, 2730).
+  - Its write column is a huge-direction word: 0.92 of its norm lies in the states' top-8 principal subspace (95% of the variance), 0.88 on the massive channels.
+  - It is never used in the 16-word descriptions of positions after the first. The massive activation sits mainly at the first token, which the descriptions exclude. Where channel 458 appears later, a block-14 head direction with massive-channel share 0.91 is chosen instead (the 5th most used word).
+  - The most used native words at block 14 are ordinary MLP rows (M-share 0.04-0.20; top-10 mean 0.18).
+  - Pre-registered: the super neuron's write among the 10 most used words, refuted; more than half its norm in M, confirmed; M concentrated on the massive channels, unscored (the statistic used, the mean share over eight principal directions, 0.12, is what a single top direction on channel 458 would give).
+- Reading (the program through established lenses; the full table is in SYNTHESIS).
+  - Most WDD results have established names: sparse coding, Jacobian lenses and transport, the Hydra effect and self-repair, Optimal Brain Damage, privileged bases, SAE evaluation, massive activations and super weights, the distributional simplicity bias, universality and representational convergence, the chain rule, the logit lens and value vectors.
+  - Two things did not reduce to their neighbours in direct tests. First, reading the state through the model's own vocabulary: e421, where both the sum and the actual writes miss what the re-description shows. Second, the native vocabulary as a common yardstick, with provenance, in which these phenomena can be measured together and linked.
+  - One proposed link failed its direct test: the super weights are not the native language's most used words (e422).

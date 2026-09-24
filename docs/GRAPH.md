@@ -380,6 +380,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H228 Self-describability survives scale (7B). → e418 → SURVIVES (own 0.79 against rotation 0.26 at k = 16; 0.94 at k = 64).
 - H229 The huge directions are functionally light. → e418, e419 → KILLED as a general statement. Locally light (0.3% of the Fisher trace at 7B, holding 97% of the variance), but kept exact alone they recover 29% of the loss. The local Fisher metric fails as a selection metric at 7B.
 
+## Established lenses (session 41)
+
+- H230 The native-word lens is the value-vector (sub-update) reading. → e421 → KILLED. The 16 largest actual writes read the two-hop bridge at the subject token worse than even the plain lens (country first 0.15 against 0.44); the native re-description reads it best (0.63).
+- H231 The super weights are the native language's most used words. → e422 → KILLED in Qwen2.5-7B. The super neuron's write is a huge-direction word (0.92 in M) but is never used at positions after the first; the most used words are ordinary MLP rows.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
