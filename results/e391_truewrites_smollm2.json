@@ -1,0 +1,151 @@
+{
+ "model": "smollm2",
+ "level": 15,
+ "clean": 3.0016562938690186,
+ "all_at_mean": 9.637555122375488,
+ "n_neurons": 24576,
+ "n_heads": 144,
+ "variants": {
+  "largest_all": {
+   "8": {
+    "recovered": 0.1803173264577483,
+    "loss": 8.440987586975098,
+    "share_kept_from_heads": 0.6443248532289628,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.3763499678816247,
+    "loss": 7.140134811401367,
+    "share_kept_from_heads": 0.6742090671885193,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": 0.5446309965333568,
+    "loss": 6.023438930511475,
+    "share_kept_from_heads": 0.6760844748858448,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.6529185864666938,
+    "loss": 5.304853439331055,
+    "share_kept_from_heads": 0.6201178245270711,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.7402403990058268,
+    "loss": 4.7253947257995605,
+    "share_kept_from_heads": 0.489226598173516,
+    "share_kept_from_emb": 0.00011721298108284409
+   },
+   "256": {
+    "recovered": 0.8151607354110917,
+    "loss": 4.228230953216553,
+    "share_kept_from_heads": 0.32749816536203524,
+    "share_kept_from_emb": 0.0019365622961513371
+   },
+   "1024": {
+    "recovered": 0.9240620577525717,
+    "loss": 3.50557279586792,
+    "share_kept_from_heads": 0.1077104482632094,
+    "share_kept_from_emb": 0.0009765625
+   }
+  },
+  "largest_neurons": {
+   "8": {
+    "recovered": 0.17957633493535385,
+    "loss": 8.445904731750488,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.27733569427373866,
+    "loss": 7.797183513641357,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": 0.3996772605388206,
+    "loss": 6.985337257385254,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.5221776312321891,
+    "loss": 6.1724371910095215,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.6382135838361811,
+    "loss": 5.402434349060059,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "256": {
+    "recovered": 0.7132503289173846,
+    "loss": 4.904498100280762,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "1024": {
+    "recovered": 0.7888052363209297,
+    "loss": 4.403123378753662,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   }
+  },
+  "random_all": {
+   "8": {
+    "recovered": 0.0002588296609450006,
+    "loss": 9.63583755493164,
+    "share_kept_from_heads": 0.0041585127201565555,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 7.372549476112454e-05,
+    "loss": 9.637065887451172,
+    "share_kept_from_heads": 0.005952380952380952,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": -0.0004029752189282519,
+    "loss": 9.640229225158691,
+    "share_kept_from_heads": 0.006400848010437051,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.0007401292359060261,
+    "loss": 9.632643699645996,
+    "share_kept_from_heads": 0.005656800391389432,
+    "share_kept_from_emb": 3.057729941291585e-05
+   },
+   "128": {
+    "recovered": 0.0018894134105740827,
+    "loss": 9.625017166137695,
+    "share_kept_from_heads": 0.005881033920417482,
+    "share_kept_from_emb": 4.0769732550554466e-05
+   },
+   "256": {
+    "recovered": -0.008702626384522216,
+    "loss": 9.695304870605469,
+    "share_kept_from_heads": 0.005740887964774951,
+    "share_kept_from_emb": 3.822162426614481e-05
+   },
+   "1024": {
+    "recovered": -0.0013056454579041257,
+    "loss": 9.646219253540039,
+    "share_kept_from_heads": 0.005735791748206132,
+    "share_kept_from_emb": 4.522892204827136e-05
+   }
+  }
+ },
+ "wdd_e388": {
+  "8": 0.7159784920161333,
+  "16": 0.8652860071179693,
+  "32": 0.9503049935193891,
+  "64": 0.9875869772880312,
+  "128": 0.9989608110907447
+ },
+ "_exp": "e391_truewrites_smollm2",
+ "_time": "2026-09-24 00:21:59"
+}

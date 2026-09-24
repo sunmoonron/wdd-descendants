@@ -282,3 +282,14 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Readers' preference for WDD-identifiable writes shows the model organises writes to be read": most of it is geometry shared with the state, present at initialisation (raw 1.71 in Pythia at step 0); a genuine part remains only in GPT-2 and OLMo (e387).
 - "WDD's functional advantage over a random dictionary comes from the embeddings": the MLP write rows carry it (e389).
 - "Any trained MLP rows would do as well as the model's own": rows from a trained checkpoint at cosine 0.35 to the final rows do no better than random (e390).
+
+## Sessions 36 and 37 kills and narrowings (the vision chain; self-description and private languages)
+- "WDD's code is the few largest writers": the largest actual writes recover 0.53-0.79 at 64 and 0.75-0.92 at 1024, against WDD's 0.91-0.99 at 64; most of WDD's MLP atoms are not among the top writers (e391, e393).
+- "WDD's advantage over the true writes is only the refit": refitting the true top writes' coefficients closes part of the gap, not all of it; the support matters (e393).
+- "A training-free replacement model from the model's own words": errors compound when every layer is replaced; +2.05 to +5.32 nats at 64 atoms per layer, +0.43 to +3.77 at 128 (e392).
+- "WDD atoms are sparse attribution nodes": effects spread over 13-16 of 32 atoms, linear attribution weak (Spearman 0.33-0.67) (e394).
+- "Any network's weights describe its states better than random directions": not at initialisation; the property is learned (e395).
+- "Each training stage has a private language": false for the late stages, which are interchangeable (e396).
+- "The step-4000 vocabulary fails because its geometry is degenerate": its effective rank and rotation are ordinary; the failure is carried by its orientation (e397).
+- "The shared tokens fix a common coordinate system across seeds": the two embedding matrices are not rotations of each other (R2 -0.10) and the lexicon-fitted map translates nothing (e398).
+- "A state-fitted linear map translates one network's words into another's, even better than the network's own words": random words through the same map already match the own words (0.59); the translation adds 0.07 (e398b). Feature transfers through fitted linear maps need random-direction controls.

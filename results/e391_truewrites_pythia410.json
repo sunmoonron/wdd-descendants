@@ -1,0 +1,151 @@
+{
+ "model": "pythia410",
+ "level": 12,
+ "clean": 3.0482656955718994,
+ "all_at_mean": 8.146479606628418,
+ "n_neurons": 53248,
+ "n_heads": 208,
+ "variants": {
+  "largest_all": {
+   "8": {
+    "recovered": 0.2895073243295203,
+    "loss": 6.670509338378906,
+    "share_kept_from_heads": 0.9366438356164384,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.4054441332433635,
+    "loss": 6.07943868637085,
+    "share_kept_from_heads": 0.9099804305283757,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": 0.48688044343059744,
+    "loss": 5.66425895690918,
+    "share_kept_from_heads": 0.8698018590998043,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.5327212964001755,
+    "loss": 5.4305524826049805,
+    "share_kept_from_heads": 0.7891797129810828,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.5707583604691833,
+    "loss": 5.236631393432617,
+    "share_kept_from_heads": 0.639101231245923,
+    "share_kept_from_emb": 0.001141552511415525
+   },
+   "256": {
+    "recovered": 0.6259736556185789,
+    "loss": 4.955132007598877,
+    "share_kept_from_heads": 0.4423745311480757,
+    "share_kept_from_emb": 0.0027315720808871492
+   },
+   "1024": {
+    "recovered": 0.7543972188970923,
+    "loss": 4.300401210784912,
+    "share_kept_from_heads": 0.16584299066373123,
+    "share_kept_from_emb": 0.0009765625
+   }
+  },
+  "largest_neurons": {
+   "8": {
+    "recovered": 0.13233939373419426,
+    "loss": 7.471785068511963,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.1906608280727641,
+    "loss": 7.174449920654297,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": 0.26529131699413083,
+    "loss": 6.7939677238464355,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.32860651777619326,
+    "loss": 6.471173286437988,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.3753314185511334,
+    "loss": 6.232959747314453,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "256": {
+    "recovered": 0.3979401087541543,
+    "loss": 6.1176958084106445,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "1024": {
+    "recovered": 0.35203182048329973,
+    "loss": 6.351746082305908,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   }
+  },
+  "random_all": {
+   "8": {
+    "recovered": -9.147257232798491e-05,
+    "loss": 8.14694595336914,
+    "share_kept_from_heads": 0.004647749510763209,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.000639559764395461,
+    "loss": 8.143218994140625,
+    "share_kept_from_heads": 0.0036285061969993475,
+    "share_kept_from_emb": 4.0769732550554466e-05
+   },
+   "32": {
+    "recovered": 0.0004697088529970759,
+    "loss": 8.144084930419922,
+    "share_kept_from_heads": 0.0037304305283757336,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.0013322447037216944,
+    "loss": 8.139687538146973,
+    "share_kept_from_heads": 0.003771200260926288,
+    "share_kept_from_emb": 2.0384866275277233e-05
+   },
+   "128": {
+    "recovered": 0.004297340294664207,
+    "loss": 8.124570846557617,
+    "share_kept_from_heads": 0.0041075505544683625,
+    "share_kept_from_emb": 5.096216568819308e-06
+   },
+   "256": {
+    "recovered": 0.008196241777347622,
+    "loss": 8.104693412780762,
+    "share_kept_from_heads": 0.003990337573385519,
+    "share_kept_from_emb": 1.0192433137638617e-05
+   },
+   "1024": {
+    "recovered": 0.02949195450558303,
+    "loss": 7.996123313903809,
+    "share_kept_from_heads": 0.003983330275603392,
+    "share_kept_from_emb": 1.3377568493150684e-05
+   }
+  }
+ },
+ "wdd_e388": {
+  "8": 0.36859179671020637,
+  "16": 0.565255183147154,
+  "32": 0.780339748841979,
+  "64": 0.9226849929826061,
+  "128": 0.985964630365408
+ },
+ "_exp": "e391_truewrites_pythia410",
+ "_time": "2026-09-24 00:22:03"
+}

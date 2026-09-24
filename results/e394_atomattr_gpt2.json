@@ -1,0 +1,26 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "K": 32,
+ "effect_participation_ratio_median": 12.798055648803711,
+ "atoms_for_80pct_median": 13.0,
+ "linear_vs_ablation_spearman_median": 0.32917889952659607,
+ "effect_share_by_type": {
+  "mlp": 0.720923867882013,
+  "heads": 0.1625349606808979,
+  "token_emb": 0.11546748392970893,
+  "pos_emb": 0.0006338566153402489,
+  "bias": 0.00043983727772779703
+ },
+ "atom_share_by_type": {
+  "mlp": 0.6610907316207886,
+  "heads": 0.19935663044452667,
+  "token_emb": 0.1379595696926117,
+  "pos_emb": 0.001072303974069655,
+  "bias": 0.0005208333604969084
+ },
+ "mean_abs_effect": 0.3134244382381439,
+ "sum_effects_vs_full_removal": null,
+ "_exp": "e394_atomattr_gpt2",
+ "_time": "2026-09-24 00:25:08"
+}

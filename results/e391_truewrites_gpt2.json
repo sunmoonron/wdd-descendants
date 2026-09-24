@@ -1,0 +1,151 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "clean": 3.5975828170776367,
+ "all_at_mean": 7.958702564239502,
+ "n_neurons": 21504,
+ "n_heads": 84,
+ "variants": {
+  "largest_all": {
+   "8": {
+    "recovered": 0.3169657632448791,
+    "loss": 6.576376914978027,
+    "share_kept_from_heads": 0.6678897586431833,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.47582252697948413,
+    "loss": 5.8835835456848145,
+    "share_kept_from_heads": 0.6747390737116764,
+    "share_kept_from_emb": 4.0769732550554466e-05
+   },
+   "32": {
+    "recovered": 0.6654349349453872,
+    "loss": 5.056661128997803,
+    "share_kept_from_heads": 0.6457517938682322,
+    "share_kept_from_emb": 0.0029150358773646443
+   },
+   "64": {
+    "recovered": 0.7852908577595873,
+    "loss": 4.533955097198486,
+    "share_kept_from_heads": 0.5764126712328768,
+    "share_kept_from_emb": 0.011588796477495108
+   },
+   "128": {
+    "recovered": 0.8558810469923729,
+    "loss": 4.226102828979492,
+    "share_kept_from_heads": 0.4559839774951076,
+    "share_kept_from_emb": 0.0078125
+   },
+   "256": {
+    "recovered": 0.8747426587845458,
+    "loss": 4.143845081329346,
+    "share_kept_from_heads": 0.2928082191780822,
+    "share_kept_from_emb": 0.00390625
+   },
+   "1024": {
+    "recovered": 0.8697550856222291,
+    "loss": 4.1655964851379395,
+    "share_kept_from_heads": 0.08191403701891715,
+    "share_kept_from_emb": 0.0009765625
+   }
+  },
+  "largest_neurons": {
+   "8": {
+    "recovered": 0.27783951136303126,
+    "loss": 6.747011184692383,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.3408939997469913,
+    "loss": 6.472023010253906,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": 0.4154811576864072,
+    "loss": 6.146739482879639,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.49511132327589175,
+    "loss": 5.799462795257568,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.5173394594820363,
+    "loss": 5.702523231506348,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "256": {
+    "recovered": 0.5238823691103727,
+    "loss": 5.6739888191223145,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "1024": {
+    "recovered": 0.4688956214517691,
+    "loss": 5.913792610168457,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   }
+  },
+  "random_all": {
+   "8": {
+    "recovered": 0.0008255037130719661,
+    "loss": 7.955102443695068,
+    "share_kept_from_heads": 0.003424657534246575,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.0015745799962846867,
+    "loss": 7.951835632324219,
+    "share_kept_from_heads": 0.0041585127201565555,
+    "share_kept_from_emb": 8.153946510110893e-05
+   },
+   "32": {
+    "recovered": 0.0016668614709645197,
+    "loss": 7.951433181762695,
+    "share_kept_from_heads": 0.0039750489236790604,
+    "share_kept_from_emb": 8.153946510110893e-05
+   },
+   "64": {
+    "recovered": 0.0027472326218074463,
+    "loss": 7.94672155380249,
+    "share_kept_from_heads": 0.003669275929549902,
+    "share_kept_from_emb": 7.134703196347032e-05
+   },
+   "128": {
+    "recovered": -0.0047552294020149505,
+    "loss": 7.979440689086914,
+    "share_kept_from_heads": 0.003786488910632746,
+    "share_kept_from_emb": 4.0769732550554466e-05
+   },
+   "256": {
+    "recovered": 0.00904380319510392,
+    "loss": 7.919261455535889,
+    "share_kept_from_heads": 0.0038731245923026743,
+    "share_kept_from_emb": 5.351027397260274e-05
+   },
+   "1024": {
+    "recovered": 0.019093299523033794,
+    "loss": 7.875434398651123,
+    "share_kept_from_heads": 0.0038406362116764512,
+    "share_kept_from_emb": 3.567351598173516e-05
+   }
+  }
+ },
+ "wdd_e388": {
+  "8": 0.5218613975340226,
+  "16": 0.7275671661399736,
+  "32": 0.8757850242971068,
+  "64": 0.9582072161266392,
+  "128": 0.9921057512199689
+ },
+ "_exp": "e391_truewrites_gpt2",
+ "_time": "2026-09-24 00:21:10"
+}

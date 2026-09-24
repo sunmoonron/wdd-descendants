@@ -1,0 +1,151 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "clean": 2.8368752002716064,
+ "all_at_mean": 8.816325187683105,
+ "n_neurons": 63232,
+ "n_heads": 182,
+ "variants": {
+  "largest_all": {
+   "8": {
+    "recovered": 0.13632975700479805,
+    "loss": 8.001148223876953,
+    "share_kept_from_heads": 0.6832191780821918,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.233259492534001,
+    "loss": 7.4215617179870605,
+    "share_kept_from_heads": 0.7075587084148728,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": 0.36300350671028614,
+    "loss": 6.645763874053955,
+    "share_kept_from_heads": 0.7115745270711024,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.5281894299003044,
+    "loss": 5.658042907714844,
+    "share_kept_from_heads": 0.691984670580561,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.6608324500468129,
+    "loss": 4.86491060256958,
+    "share_kept_from_heads": 0.6175289465101109,
+    "share_kept_from_emb": 2.0384866275277233e-05
+   },
+   "256": {
+    "recovered": 0.7695330924127233,
+    "loss": 4.214940547943115,
+    "share_kept_from_heads": 0.4595182036855838,
+    "share_kept_from_emb": 0.002815659654272668
+   },
+   "1024": {
+    "recovered": 0.9043658576954342,
+    "loss": 3.408714771270752,
+    "share_kept_from_heads": 0.15106842180365296,
+    "share_kept_from_emb": 0.0009765625
+   }
+  },
+  "largest_neurons": {
+   "8": {
+    "recovered": 0.2721899696211639,
+    "loss": 7.188778877258301,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.39195281621168987,
+    "loss": 6.472662925720215,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "32": {
+    "recovered": 0.49249656025640887,
+    "loss": 5.871466636657715,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.5845734333172605,
+    "loss": 5.320897579193115,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.6599345899467182,
+    "loss": 4.870279312133789,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "256": {
+    "recovered": 0.7066816094702509,
+    "loss": 4.590757846832275,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   },
+   "1024": {
+    "recovered": 0.7791251793138424,
+    "loss": 4.157585144042969,
+    "share_kept_from_heads": 0.0,
+    "share_kept_from_emb": 0.0
+   }
+  },
+  "random_all": {
+   "8": {
+    "recovered": 0.00017049692637024843,
+    "loss": 8.815305709838867,
+    "share_kept_from_heads": 0.0030169602087410305,
+    "share_kept_from_emb": 0.0
+   },
+   "16": {
+    "recovered": 0.0009875743387133566,
+    "loss": 8.810420036315918,
+    "share_kept_from_heads": 0.002527723418134377,
+    "share_kept_from_emb": 4.0769732550554466e-05
+   },
+   "32": {
+    "recovered": 0.0008099002732536217,
+    "loss": 8.811482429504395,
+    "share_kept_from_heads": 0.0029965753424657533,
+    "share_kept_from_emb": 0.0
+   },
+   "64": {
+    "recovered": 0.0005829431860460785,
+    "loss": 8.81283950805664,
+    "share_kept_from_heads": 0.0028334964122635354,
+    "share_kept_from_emb": 0.0
+   },
+   "128": {
+    "recovered": 0.0023340056319010433,
+    "loss": 8.802369117736816,
+    "share_kept_from_heads": 0.002711187214611872,
+    "share_kept_from_emb": 2.0384866275277233e-05
+   },
+   "256": {
+    "recovered": 0.003397657644962958,
+    "loss": 8.796009063720703,
+    "share_kept_from_heads": 0.002795274787997391,
+    "share_kept_from_emb": 1.0192433137638617e-05
+   },
+   "1024": {
+    "recovered": 0.010974324143764317,
+    "loss": 8.750704765319824,
+    "share_kept_from_heads": 0.002875540198956295,
+    "share_kept_from_emb": 1.2103514350945857e-05
+   }
+  }
+ },
+ "wdd_e388": {
+  "8": 0.6888971624626906,
+  "16": 0.8325436477459207,
+  "32": 0.9369265036454906,
+  "64": 0.978890779716943,
+  "128": 0.9970486478837068
+ },
+ "_exp": "e391_truewrites_qwen05",
+ "_time": "2026-09-24 00:22:04"
+}

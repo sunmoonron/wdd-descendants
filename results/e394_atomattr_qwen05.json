@@ -1,0 +1,26 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "K": 32,
+ "effect_participation_ratio_median": 16.75828742980957,
+ "atoms_for_80pct_median": 15.0,
+ "linear_vs_ablation_spearman_median": 0.39699414372444153,
+ "effect_share_by_type": {
+  "mlp": 0.723631987530607,
+  "heads": 0.06668903219926654,
+  "token_emb": 0.20967894656566352,
+  "pos_emb": 0.0,
+  "bias": 0.0
+ },
+ "atom_share_by_type": {
+  "mlp": 0.6376838684082031,
+  "heads": 0.083455890417099,
+  "token_emb": 0.27886030077934265,
+  "pos_emb": 0.0,
+  "bias": 0.0
+ },
+ "mean_abs_effect": 0.16644233465194702,
+ "sum_effects_vs_full_removal": null,
+ "_exp": "e394_atomattr_qwen05",
+ "_time": "2026-09-24 00:35:37"
+}

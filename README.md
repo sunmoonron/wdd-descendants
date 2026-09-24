@@ -213,6 +213,30 @@ A third round on the same day, one to five minutes per run, aimed at mechanisms 
 
 These results correct phase 2: its super-additivity readings (e357, e365) are mostly statements about the loss readout; on logits real redundancy remains only in Pythia. A literature check (docs/RELATED_WORK.md section 13) found the exact reader-input split behind e375 to be standard (Franco and Crovella 2025), selection vanishing at convergence to be classical pruning knowledge, and self-repair documented in real models trained without dropout; the loss-versus-logit sign-flip measurement, block swaps across training checkpoints of one language model, and the readout-versus-trajectory split of removal curves were not found in prior work.
 
+## Self-description length and private languages (e391 to e398b)
+
+Two further chains the same night:
+
+- The first asked what WDD's sparse code is a code of.
+- The second looked for a purer direction than the sparse-autoencoder comparison. It treats a network's own weights as its vocabulary and asks three things:
+  - How short is the network's description of itself?
+  - How does that change through training?
+  - Can one network's words describe another network's states?
+
+Details: `docs/FINDINGS.md` (sessions 36 and 37), hypotheses H191 to H201, `docs/THEORY.md` section 3l, `docs/RELATED_WORK.md` section 15, `RUNLIST_phase3.txt`.
+
+| Experiment | Question | Answer |
+| --- | --- | --- |
+| e391, e393 | Is WDD's sparse code the state's few largest actual writes? | No. The 64 largest writes keep 53-79% of the loss and 1024 keep 75-92%, against 91-99% for 64 of WDD's words. Most of WDD's MLP atoms are not top writers, and refitting the true writes' coefficients closes only part of the gap |
+| e392 | Can the model's own words replace every layer at once? | No. Errors compound: +0.43 to +3.77 nats at 128 atoms per layer |
+| e394 | Are WDD's atoms sparse causal nodes? | No. Effects spread over 13-16 of 32 atoms; gradient-times-coefficient ranks them at Spearman 0.33-0.67 |
+| e395 | How many of its own words does a network need to describe itself, and does training create that? | 32-64 own words give 90% of the function throughout Pythia's training, while the writing grows denser: the 4096 largest writes keep 84% at the end. At initialisation the own vocabulary is exactly as good as a random rotation of itself |
+| e396 | Can one training stage's vocabulary describe another stage's states? | Later words read earlier states, and from step 33000 the vocabularies are interchangeable. Early words read late states worse |
+| e397 | Why do the step-4000 words fail on the final model? | False friends. They capture three times the variance of random words, yet at 4-8 words they leave the function worse than the mean state. Their rotation is harmless, and the cause is neither numerical nor geometric |
+| e398, e398b | Can one individual's words describe another's (PolyPythia seeds)? | Not as is, and not through the shared tokens: the two embedding matrices are not rotations of each other. A state-fitted translation carries a third to a half of the own-word advantage. Random words pushed through a fitted linear map already match the network's own words, so the shared subspace carries the function |
+
+Scope: sessions 36 and 37 use the middle depth and three sequences of 512 tokens. Session 37 uses Pythia-410m checkpoints and three seeds only. Differences of 0.05 or less at k = 16 are within the spread of random rotations.
+
 ## Scope and caveats
 
 Five models under 1.1B parameters, block-2 writers for most runs, one corpus (wikitext-2, with a Pile check), tokens in typical-norm range (attention-sink positions excluded), perturbations at the natural amplitude unless a sweep says otherwise, and decoders limited to nearest-centroid, kNN, ridge and closed-form kernels so that nothing is trained. Every number is a median over held-out tokens unless the script says otherwise. Retracted artifacts and superseded designs are listed in `docs/KILLED.md`; an unsigned transport residual (e275) and a mis-designed additivity reference (e285 part 3) were corrected by e275b and e285b, and a cross-token measure in e315 was discarded for dense injection. The one large outage of the run, two hours without network mid-program, did not lose results because the launcher is resume-safe.

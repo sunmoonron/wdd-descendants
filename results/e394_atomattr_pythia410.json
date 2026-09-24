@@ -1,0 +1,26 @@
+{
+ "model": "pythia410",
+ "level": 12,
+ "K": 32,
+ "effect_participation_ratio_median": 18.043174743652344,
+ "atoms_for_80pct_median": 16.0,
+ "linear_vs_ablation_spearman_median": 0.6693548560142517,
+ "effect_share_by_type": {
+  "mlp": 0.6285104224557094,
+  "heads": 0.14701345309291586,
+  "token_emb": 0.21648370498289515,
+  "pos_emb": 0.0,
+  "bias": 0.007992410303077128
+ },
+ "atom_share_by_type": {
+  "mlp": 0.5871936678886414,
+  "heads": 0.14234068989753723,
+  "token_emb": 0.26813727617263794,
+  "pos_emb": 0.0,
+  "bias": 0.0023284314665943384
+ },
+ "mean_abs_effect": 0.1785198301076889,
+ "sum_effects_vs_full_removal": null,
+ "_exp": "e394_atomattr_pythia410",
+ "_time": "2026-09-24 00:35:21"
+}

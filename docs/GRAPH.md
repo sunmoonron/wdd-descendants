@@ -327,6 +327,20 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H189 WDD's functional advantage comes from the embeddings. → e389 → KILLED (MLP write rows alone match the full dictionary; embeddings alone 0.03-0.37, head bases -0.02 to 0.21).
 - H190 WDD's functional advantage is provenance, not generic trained geometry. → e390 → SURVIVES (Pythia: rows from checkpoints with cosine 0.93 to the final rows match the model's own; rows at cosine 0.35 or less, trained or not, do no better than random).
 
+## The vision chain and self-description (sessions 36 and 37)
+
+- H191 WDD's sparse code is a sparse subset of the actual writes (the few largest writers). → e391, e393 → KILLED (the largest actual writes recover 0.53-0.79 at k = 64 against WDD's 0.91-0.99, and 0.75-0.92 at k = 1024; 20-37% of WDD's MLP atoms are among the true top-k neuron writes at k = 8, 11-27% at k = 64; the code is a re-description over the writer vocabulary).
+- H192 WDD beats the largest actual writes only through its coefficients (the refit absorbs the tail). → e393 → NARROWED (refit raises 0.53-0.79 to 0.68-0.89 at k = 64; WDD's own support stays above: directions and coefficients both matter).
+- H193 The model's own words give a training-free replacement model at every layer. → e392 → KILLED at k up to 64 (excess 2.05-5.32 nats), NARROWED at 128 (+0.43 GPT-2, +0.53 SmolLM2, +1.28 Qwen, +3.26 Pythia, +3.77 OLMo; rotated +1.82 to +6.07).
+- H194 WDD atoms are sparse causal nodes with linear attributions. → e394 → KILLED (effects spread over 13-16 of 32 atoms; gradient-times-coefficient against ablation Spearman 0.33-0.67).
+- H195 Self-describability (the own vocabulary beating its own rotation) is a property of any weight geometry. → e395 → KILLED (identical FVU at every k at step 0; the functional advantage is present by step 256 and grows through the induction transition).
+- H196 Self-description length grows as the computation gets richer. → e395 → NARROWED (32 to 64 own words, while a rotated vocabulary goes from 32 to 128 and the largest actual writes fall short of 90% at 4096: the description stays short while the writing grows dense).
+- H197 Each training stage speaks a private language. → e396 → KILLED for the late stages (from step 33000 the vocabularies are interchangeable within 0.03), NARROWED to an asymmetry (late words read early states; early words read late states worse) and one stage of false friends (step 4000).
+- H198 The step-4000 anomaly is an impoverished geometry. → e397 → KILLED (effective rank 848, ordinary; its rotation behaves like every rotation; condition number 1.6; float64 identical). The false-friends reading SURVIVES at small k (below the mean state at 4-8 words while capturing three times the variance of random words; helpful again at 32-64).
+- H199 Individuals trained on the same data share an internal language up to the rotation fixed by their shared tokens. → e398 → KILLED (lexicon-translated words at the random level; the two embedding matrices are not rotations of each other, R2 -0.10).
+- H200 Individuals share their words up to a state-fitted map. → e398, e398b → NARROWED (a third to a half of the own-word advantage crosses: +0.11 over random words through the orthogonal map, +0.07 through the linear map).
+- H201 What two individuals share linearly is where the function is. → e398b → SURVIVES at k = 16 (random words confined to the linearly shared subspace describe the state as well as the network's own words, 0.59 and 0.59; the translated state recovers 0.67-0.82 of the loss at state R2 0.28-0.38). Consistent with SVCCA (Raghu et al. 2017).
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

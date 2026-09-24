@@ -302,3 +302,36 @@ e365b quotient drift, residual vs basis-free (overlap with final; chance 0.06): 
 2026-09-23 23:48:52 e389_whichatoms_qwen05: all: k8 0.69 k32 0.94 | embeddings: k8 0.22 k32 0.83 | writes: k8 0.69 k32 0.93 | mlp: k8 0.69 k32 0.93 | heads: k8 0.13 k32 0.62 | rotated_all: k8 0.24 k32 0.87
 2026-09-23 23:49:00 e389_whichatoms_olmo1b: all: k8 0.31 k32 0.79 | embeddings: k8 0.03 k32 0.25 | writes: k8 0.31 k32 0.78 | mlp: k8 0.32 k32 0.78 | heads: k8 0.01 k32 0.18 | rotated_all: k8 0.02 k32 0.26
 2026-09-23 23:50:21 e390_provenance_pythia410: step0: k8 0.14 k32 0.54 | step1000: k8 0.17 k32 0.56 | step4000: k8 -0.00 k32 0.47 | step16000: k8 0.21 k32 0.64 | step33000: k8 0.29 k32 0.71 | step63000: k8 0.33 k32 0.73 | final: k8 0.33 k32 0.73
+2026-09-24 00:21:10 e391_truewrites_gpt2: largest_all: k8 0.32 k32 0.67 k256 0.87 | largest_neurons: k8 0.28 k32 0.42 k256 0.52 | random_all: k8 0.00 k32 0.00 k256 0.01
+2026-09-24 00:21:59 e391_truewrites_smollm2: largest_all: k8 0.18 k32 0.54 k256 0.82 | largest_neurons: k8 0.18 k32 0.40 k256 0.71 | random_all: k8 0.00 k32 -0.00 k256 -0.01
+2026-09-24 00:22:03 e391_truewrites_pythia410: largest_all: k8 0.29 k32 0.49 k256 0.63 | largest_neurons: k8 0.13 k32 0.27 k256 0.40 | random_all: k8 -0.00 k32 0.00 k256 0.01
+2026-09-24 00:22:04 e391_truewrites_qwen05: largest_all: k8 0.14 k32 0.36 k256 0.77 | largest_neurons: k8 0.27 k32 0.49 k256 0.71 | random_all: k8 0.00 k32 0.00 k256 0.00
+2026-09-24 00:22:28 e391_truewrites_olmo1b: largest_all: k8 0.28 k32 0.50 k256 0.85 | largest_neurons: k8 0.29 k32 0.53 k256 0.78 | random_all: k8 0.00 k32 0.00 k256 0.00
+2026-09-24 00:23:02 e392_replacement_gpt2: k16: WDD +4.22 rot +4.78 | k32: WDD +3.63 rot +4.77 | k64: WDD +2.05 rot +4.26 | k128: WDD +0.43 rot +1.82
+2026-09-24 00:24:07 e393_supportcoef_gpt2: actual k8 0.32 k16 0.48 k32 0.67 k64 0.79 k128 0.86 | refit k8 0.43 k16 0.64 k32 0.79 k64 0.89 k128 0.94
+2026-09-24 00:25:08 e394_atomattr_gpt2: PR 12.8 n80 13 lin-vs-abl rho +0.33 mlp effect share 0.72
+2026-09-24 00:32:00 e392_replacement_smollm2: k16: WDD +5.19 rot +5.53 | k32: WDD +5.08 rot +5.44 | k64: WDD +3.70 rot +5.22 | k128: WDD +0.53 rot +2.37
+2026-09-24 00:33:48 e392_replacement_pythia410: k16: WDD +5.36 rot +5.93 | k32: WDD +5.14 rot +5.86 | k64: WDD +5.09 rot +5.25 | k128: WDD +3.26 rot +4.95
+2026-09-24 00:34:07 e393_supportcoef_smollm2: actual k8 0.18 k16 0.38 k32 0.54 k64 0.65 k128 0.74 | refit k8 0.36 k16 0.58 k32 0.75 k64 0.85 k128 0.92
+2026-09-24 00:34:33 e393_supportcoef_pythia410: actual k8 0.29 k16 0.41 k32 0.49 k64 0.53 k128 0.57 | refit k8 0.26 k16 0.41 k32 0.55 k64 0.68 k128 0.78
+2026-09-24 00:35:03 e393_supportcoef_qwen05: actual k8 0.14 k16 0.23 k32 0.36 k64 0.53 k128 0.66 | refit k8 0.21 k16 0.40 k32 0.57 k64 0.74 k128 0.85
+2026-09-24 00:35:04 e392_replacement_olmo1b: k16: WDD +5.98 rot +9.62 | k32: WDD +5.72 rot +8.76 | k64: WDD +5.32 rot +7.48 | k128: WDD +3.77 rot +6.07
+2026-09-24 00:35:19 e394_atomattr_smollm2: PR 16.4 n80 15 lin-vs-abl rho +0.41 mlp effect share 0.83
+2026-09-24 00:35:21 e394_atomattr_pythia410: PR 18.0 n80 16 lin-vs-abl rho +0.67 mlp effect share 0.63
+2026-09-24 00:35:33 e393_supportcoef_olmo1b: actual k8 0.28 k16 0.38 k32 0.50 k64 0.66 k128 0.78 | refit k8 0.18 k16 0.31 k32 0.49 k64 0.69 k128 0.85
+2026-09-24 00:35:37 e394_atomattr_qwen05: PR 16.8 n80 15 lin-vs-abl rho +0.40 mlp effect share 0.72
+2026-09-24 00:35:59 e394_atomattr_olmo1b: PR 16.9 n80 15 lin-vs-abl rho +0.54 mlp effect share 0.86
+2026-09-24 00:37:11 e395_selfdesc_pythia410_final: k90 own 64 rotated 128 actual None | gap 5.10
+2026-09-24 00:38:38 e395_selfdesc_pythia410_step0: k90 own 8 rotated 256 actual None | gap 0.01
+2026-09-24 00:40:03 e395_selfdesc_pythia410_step256: k90 own 32 rotated 32 actual 4096 | gap 0.83
+2026-09-24 00:40:10 e395_selfdesc_pythia410_step512: k90 own 32 rotated 32 actual 4096 | gap 1.12
+2026-09-24 00:41:30 e395_selfdesc_pythia410_step1000: k90 own 32 rotated 64 actual 4096 | gap 3.43
+2026-09-24 00:41:41 e395_selfdesc_pythia410_step2000: k90 own 64 rotated 64 actual 4096 | gap 4.88
+2026-09-24 00:42:58 e395_selfdesc_pythia410_step4000: k90 own 64 rotated 64 actual 4096 | gap 5.64
+2026-09-24 00:43:13 e395_selfdesc_pythia410_step16000: k90 own 64 rotated 128 actual None | gap 4.82
+2026-09-24 00:44:09 e395_selfdesc_pythia410_step63000: k90 own 64 rotated 128 actual None | gap 5.00
+2026-09-24 00:45:14 e392_replacement_qwen05: k16: WDD +5.35 rot +5.64 | k32: WDD +5.29 rot +5.69 | k64: WDD +4.43 rot +5.69 | k128: WDD +1.28 rot +2.46
+2026-09-24 00:46:24 e396_intelligibility_pythia410: k16 diag 0.81 0.75 0.65 0.63 0.62 0.55 | k64 diag 0.97 0.96 0.94 0.94 0.94 0.92
+2026-09-24 00:54:38 e397_falsefriends_pythia410: k16 on final states: 1000 0.44/rot 0.31 4000 0.13/rot 0.21 16000 0.46/rot 0.19 63000 0.56/rot 0.21 143000 0.55/rot 0.32 | (a) false friends if 4000_rot >= ~0.3
+2026-09-24 00:57:14 e398_seeds_pythia410: k16: own 0.59 rot 0.36 raw 0.36 lexicon 0.36 lexicon_out 0.37 state_orth 0.48 state_lin 0.66 control 0.37 | k64: own 0.92 rot 0.88 raw 0.88 lexicon 0.88 lexicon_out 0.88 state_orth 0.90 state_lin 0.93 control 0.89
+2026-09-24 00:59:09 e398b_linctrl_pythia410: k16: own_lin 0.59 own_rot_lin 0.37 state_lin 0.66 control_lin 0.59 control_lin2 0.59 | k64: own_lin 0.92 own_rot_lin 0.87 state_lin 0.93 control_lin 0.92 control_lin2 0.92

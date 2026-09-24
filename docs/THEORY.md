@@ -131,6 +131,29 @@ Three results change the picture of section 3i.
 
 WDD was built as an identification method: which writers are in the state. Judged instead as a sparse code of the state that the rest of the network must run on, it is functionally faithful and the faithfulness is provenance. At 8 to 32 atoms, the reconstruction over the model's own MLP write rows keeps far more of the next-token loss than OMP over a rotated copy of the same dictionary (same Gram matrix), than PCA, or than embeddings or head bases alone (e388, e389); only rows that are nearly the ones that wrote the state do this (e390). At 64 to 128 atoms every overcomplete dictionary reconstructs well, which is the regime where random-baseline sanity checks of learned sparse autoencoders also find random decoders competitive (Korznikov et al. 2026). The reading side is less sparse than the writing side: a reader input draws half its content from 8 to 14 components (e387), a sparse reading at 64 atoms sees about half of what readers take in, and the apparent preference of readers for identifiable writes is mostly shared alignment with the state.
 
+## 3l. Self-description length (e391 to e398b)
+
+Let V_θ be network θ's unit write directions up to depth ℓ: token embeddings, MLP write rows, and orthonormal bases of the head output subspaces. A k-word description of a state x is μ + Σ_{i∈S} c_i v_i, with |S| = k and v_i ∈ V_θ; the support comes from OMP and the coefficients from least squares. Its adequacy R_θ(k; V) is the loss recovered when the description replaces the state in θ's forward pass (1 at the clean state, 0 at the mean state). Define:
+
+    SDL_q(θ)  = min{ k : R_θ(k; V_θ) ≥ q }                       self-description length
+    W_q(θ)    = min{ k : the k largest actual writes reach q }   write length (the rest at their means)
+    ρ_q(θ)    = W_q / SDL_q                                      writing redundancy
+    M_ij(k)   = R_θj(k; V_θi)                                    mutual intelligibility
+
+This is two-part MDL (Rissanen 1978) with a codebook the network already carries. The codebook's cost is the network's own parameters, already paid, so the description length is the data part alone. A random rotation of V_θ has the same cost and the same Gram matrix, so the difference between the two is provenance. The Kolmogorov analogue is a description length relative to a reference machine, where the machine is the network and its words are its own writers.
+
+In this language:
+
+- SDL_0.9 is 32-64 own words at the middle depth in all five models (e388) and throughout Pythia's training (e395).
+- W_0.9 is at least 1024 (e391), and above 4096 at the end of Pythia's training (e395).
+- The property is learned: at initialisation V_θ cannot be told apart from its rotation.
+- Across training, M_ij is asymmetric (later vocabularies also do the earlier words' work) and converges.
+- Across seeds, M_ij is at the random level unless the vocabulary is translated, and translation carries a third to a half of the provenance advantage.
+
+Why a partly aligned vocabulary can do worse than a random one (false friends, e397). The splice runs the network at μ + P_S(x − μ), where P_S projects onto the span of the chosen words. In L2 this is never worse than μ, but the loss is not L2. Suppose the state's large-variance directions come in combinations whose parts are large and whose sum is what the network reads, for instance a massive activation and the components that compensate it. Then a subspace holding one part without its partners moves the read combination far from its mean. A vocabulary aligned with the large directions but not with their partners would do exactly this: the step-4000 words capture three times the variance of random words at k = 4. A random vocabulary captures too little of either to matter. This is a candidate mechanism, not tested.
+
+A shared-subspace reading of e398b. Let W_ij be the ridge map from network i's states to network j's. Its image concentrates on the directions of j's state that i's state predicts. Random words mapped through W_ij describe j's states as well as j's own words at k = 16. So j's function concentrates in the part of its state that an independently trained network also represents, which SVCCA observed in vision networks (Raghu et al. 2017).
+
 ## 4. What the theory does not derive
 
 The numerical values (gains, coherent fractions, the depth at which κ crosses K / D_eff); which component reacts and why; the training trajectory (why dispersal, erasure and late scrambling are learned); the sizes of the identity, function and behaviour subspaces beyond the statement that function is low-rank because G_ℓ is effectively low-rank on the descendant cloud (e272, e274); and anything about the massive activation's role for the model.
