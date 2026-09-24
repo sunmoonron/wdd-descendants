@@ -1,0 +1,44 @@
+# 13. Readers, readouts and stitching (S33-S35)
+
+**Question.** Does WDD, read through a downstream reader, find circuit edges; how does the loss readout bias interaction measurements; and is WDD's sparse code faithful to the computation?
+**Established.** Read through a downstream head's input map, WDD's state-only code ranks the previous-token head first or second for all 20 induction heads tested, without intervention (e375), but it is an unreliable general edge finder (e381) and the exact split it approximates is standard. Cross-entropy's convexity biases every interaction read on the loss (e382): the removal knee is mostly the softmax (e374), 26-48% of pair signs flip between loss and logit (e377), phase 2's growing induction redundancy is readout convexity (e380), and on the centred logit the circuit is redundant only in Pythia (e384). Late in Pythia training the lower and upper halves still co-adapt (e378). WDD's k-sparse code keeps 84-99% of the loss at 64 atoms and beats a rotated dictionary and PCA at 8-32 atoms (e388), carried by the MLP rows (e389) and needing rows close to the actual writers (e390); readers' preference for identifiable writes is mostly geometry (e385, e387).
+**Start here:** e375, e377, e382, e384, e388 · **Sessions:** S33, S34, S35 · **Scripts:** `scripts/e374_*.py` to `e390_*.py` (e379 and e386 belong to area 11)
+
+## Experiments
+
+| id | question | result | status | links |
+| --- | --- | --- | --- | --- |
+| e374 | Is the head-removal knee a degenerate direction of the loss? | No: even-part exponent 2.0-2.1 in all 5 (ordinary quadratic); linearly moving logits predict shape 0.10-0.34 vs measured 0.04-0.30, so the softmax readout makes most of the knee | refuted (knee mostly readout) | ← e371 e372 · → e377 |
+| e375 | Does reader-weighted WDD recover known circuit edges without intervention? | Previous-token head ranked 1 in 14 of 20 induction readers, 2 in 6 (5 models; plain WDD worse); GPT-2's S-inhibition edge for 2 of 3 name movers; shares underestimated 5-30x | supported (novelty narrowed by literature check) | ← e358 e363 · → e381 e385 |
+| e376 | Do near-twin writes make backups and composition make series? | Not on the loss: signed interaction vs write cosine rho -0.11 to +0.22, vs WDD confusability -0.19 to +0.27; composition goes with super-additivity in 9 of 10 conditions | refuted (on the loss; see e377) | ← none · → e377 |
+| e377 | Does an interaction's sign depend on the readout? | Yes: super-additive pairs 0.44-0.77 on the loss, 0.14-0.32 on the centred logit (sub-additive 0.30-0.61); 26-48% of pairs change sign between loss and logit | established (5 models) | ← e374 e376 · → e380 e382 |
+| e378 | Are lower parts swappable late in Pythia training? | No: the final upper part under the step-63000 lower part loses 0.28-0.42 nats, more than the 0.115 late gain; the halves co-adapt; an affine map repairs about half | refuted | ← e360 e360d · → none |
+| e380 | Is phase 2's growing induction redundancy real on the logit? | No: on the loss joint/sum rises 0.69 to 3.61 (Pythia); on the correct logit 0.49-0.93 at every checkpoint (zero-ablation); mean-ablation leaves 1.72 at the end (e384) | refuted (zero-ablation; e384 narrows) | ← e365 e377 · → e384 |
+| e381 | Is reader-weighted WDD a reliable general edge finder? | No: top-1 on strong edges 0.23 GPT-2, 0.14 SmolLM2, 0.58 Pythia, 0.69 Qwen, 0.02 OLMo vs chance 0.005-0.034 (plain WDD lower); top-3 overlap 0.18-0.47 | narrowed (above chance in 4 of 5) | ← e375 · → e385 |
+| e382 | How much of a loss interaction is readout convexity (Jensen)? | Additive logits alone would make 97-100% of top pairs super-additive on the loss; circuit term -0.10 to -3.42 at the joint point, +0.15 to +1.29 at intact: path dependent | established (5 models) | ← e374 e377 · → e383 |
+| e383 | Does e264's KL interaction measure whether a circuit adds? | No: it equals the Fisher inner product of the single logit effects (per-token r 0.73-0.98); e264's pairs are additive in logit space (0.019-0.042); control-pair redundancy retracted | refuted (e264's additivity stands) | ← e264 e382 · → none |
+| e384 | Do e357's redundancy and e366's contrast survive a linear readout? | The loss inflates joint/sum 1.4-5.3x: centred logit 0.79-0.94 in 4 models, 1.72 in Pythia (mean-ablation); e366's applicable-position contrast survives (top 0.16-0.45 vs random 0.05-0.20) | narrowed (redundant only in Pythia) | ← e357 e366 e380 · → e386 |
+| e385 | Do readers draw preferentially on writes WDD can identify? | In aggregate: identified writes carry 1.33-1.46x their norm share of reader input (all 5, every size quintile); per-edge AUC 0.51-0.56 adds nothing to norm; mostly geometry (e387) | narrowed (by e387) | ← e56 e375 · → e387 |
+| e387 | Is readers' preference for identifiable writes learned; how sparse is reading? | Mostly geometry: raw preference 1.71 at Pythia's initialisation; state-orthogonal 1.05-1.27, genuine only in GPT-2 and OLMo; half an input from 8-14 components; 64 atoms cover 39-52% | narrowed | ← e385 · → none |
+| e388 | Does WDD's k-sparse reconstruction preserve the computation (the SAE test)? | Yes: loss recovered 0.31-0.88 at k=8 and 0.84-0.99 at k=64 (5 models, 3 depths) vs rotated -0.10 to 0.35 and PCA-8 0.11-0.40; equal atoms, not bits (e450) | established (small k; PCA at equal atoms) | ← none · → e389 e390 e391 e450 |
+| e389 | Does WDD's small-k advantage come from the embeddings? | No: MLP write rows alone match the full dictionary at k=8 (within 0.04, all 5); embeddings alone 0.03-0.37, head bases -0.02 to 0.21, rotated dictionary 0.02-0.29 | refuted (MLP rows carry it) | ← e388 · → e390 e399 |
+| e390 | Is the advantage provenance or generic trained geometry? | Provenance (Pythia): step-63000 rows (cosine 0.93) match own (0.33/0.73 at k=8/32), step-0 rows 0.14/0.54; step-4000 rows' -0.00/0.47 resembles e397's false friends, later traced to Pythia's sink (e437) | supported (Pythia only; see e437) | ← e388 e389 e81 · → none |
+
+## How the results flow
+
+- `e371 → e372 → e374 → e377 → e382`: phase 2's removal knee is ordinary curvature at full strength plus the softmax reading moving logits; the same convexity flips a quarter to a half of pair signs between loss and logit, and the Jensen split shows the loss interaction has no unique split into circuit and readout, so interactions should be read on logits.
+- `e376 → e377`: write geometry (near-twins, composition) fails to predict interaction sign on the loss, which prompted the readout test.
+- `e365 → e380 → e384`: phase 2's redundancy growth disappears on the logit under zero-ablation; under e357's mean-ablation Pythia's final circuit keeps 1.72 while the other four models stay at 0.79-0.94 (KILLED's correction of the correction).
+- `e264 → e383` and `e357, e366 → e384`: the S34 audit re-read every interaction measured on a convex readout; e264's additivity stands, its control-pair redundancy is retracted, and e366's conditional contrast survives.
+- `e375 → e381 → e385 → e387`: reader-weighted WDD finds the distinctive induction edge; general edges only above chance; readers prefer identifiable writes in aggregate, mostly for geometric reasons already present at initialisation.
+- `e360 → e378`: stitching tests phase 2's "implementation settles first" causally and kills its swappability reading.
+- `e388 → e389 → e390`: WDD passes the SAE test at small k, the MLP rows carry the advantage, and only rows near the actual writers keep it; e391 and e395 (S36-S37) reuse the splice as their yardstick, and e450 re-compares with PCA at equal bits.
+
+## Links to other areas
+
+- [12 Circuits](12_circuits_coselection_drift.md): e374, e377, e380, e382 and e384 re-read phase 2's loss-based interactions (e357, e365, e366, e371, e372); e378 tests e360's settle-first reading.
+- [07 Descendants II](07_descendants_function.md): e383 finds e264's KL interaction is a Fisher overlap; its additivity stands and its control-pair redundancy is retracted.
+- [11 Toys](11_toys_synthetic.md): e379 and e386 found redundancy and self-repair only with training noise; Pythia's logit-space redundancy (e384) and prior work make that a toy statement.
+- [02 Readability law](02_readability_law.md): e385 tests the prominence law (e56) from the reader's side; e387 finds most of the effect is shared alignment with the state.
+- [14 Native vocabulary](14_native_vocabulary.md): e388's splice is the yardstick of self-description (e391, e395); e389 with e399 rules out embedding leakage; e390's step-4000 dip resembles e397's false friends, which e437 ([10 Sinks](10_sinks_huge_directions.md)) traced to a mis-described sink.
+- [16 Vision round](16_vision_round.md): e450 compares at equal bits: the native code beats PCA only at 256-512 bits, so e388's PCA margin is an equal-atoms statement.

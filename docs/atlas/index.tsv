@@ -1,0 +1,412 @@
+id	area	session	status	script	results	question
+s1	11_toys_synthetic	S1	supported (synthetic)	scripts/s1_synthetic.py	results/s1_*.json	Is WDD identification just generic sparse recovery?
+s1b	11_toys_synthetic	S1	retracted (replaced by s1e)	scripts/s1b_diffuse.py	results/s1b_*.json	Does diffuse cancellation reproduce the real one-shot >= OMP regime?
+s1c	11_toys_synthetic	S1	retracted (replaced by s1e, s1f)	scripts/s1c_cancellers.py	results/s1c_*.json	Which canceller configurations defeat OMP?
+s1d	11_toys_synthetic	S1	retracted (replaced by s1e, s1f)	scripts/s1d_reinforcers.py	results/s1d_*.json	Do reinforcing partners let OMP explain the write away?
+s1e	11_toys_synthetic	S1	supported (synthetic)	scripts/s1e_partners.py	results/s1e_*.json	With appended partner atoms, which structures reproduce one-shot >= OMP?
+s1f	11_toys_synthetic	S1	supported (synthetic; narrowed by e181)	scripts/s1f_majority.py	results/s1f_*.json	Does heavy reinforcement by later writers hide the original writer?
+s2	11_toys_synthetic	S1	supported (v2; synthetic)	scripts/s2_layered.py	results/s2_*.json	Does cross-block sharing defeat state reading; can reconstruction certify provenance?
+e00	01_method	S1	tool (gate passed)	scripts/e00_gate.py	results/e00_*.json	Does the new pipeline reproduce the paper's GPT-2 L6 numbers?
+e01	01_method	S1	established	scripts/e01_layer_sweep.py	results/e01_*.json	How do FVU and identification change with depth?
+e02	03_increments_depth_targets	S1	established (baseline caveat: audit)	scripts/e02_delta_wdd.py	results/e02_*.json	Is a block's write readable from its own increment?
+e03	01_method	S1	established	scripts/e03_dictionary_theory.py	results/e03_*.json	Which data-free dictionary property explains the weight-vs-rotated gap?
+e04	01_method	S1	established (5 models)	scripts/e04_solvers.py	results/e04_*.json	Which sparse solver identifies the dominant write best?
+e05	02_readability_law	S1	established (audit: one key mislabelled)	scripts/e05_neuron_observability.py	results/e05_*.json	Is identifiability a property of the neuron or the token?
+e06	05_cancellation_contraction	S1	established	scripts/e06_energy_accounting.py	results/e06_*.json	Is the state the exact sum of writes, and do writes reinforce?
+e07	01_method	S1	established (exact)	scripts/e07_gauge.py	results/e07_*.json	Is WDD invariant under the gated-MLP neuron gauge?
+e08	05_cancellation_contraction	S1	established (Pythia rerun after NeoX bias fix)	scripts/e08_cancellation.py	results/e08_*.json	Who cancels a dominant write, and which survival predicts identification?
+e09	01_method	S1	established	scripts/e09_residual_alignment.py	results/e09_*.json	Is alignment left in the k=64 OMP residual?
+e10	01_method	S1	established	scripts/e10_phase.py	results/e10_*.json	Is identification limited by budget k or dictionary size m?
+e11	03_increments_depth_targets	S1	mixed (v1 retracted)	scripts/e11_peeling.py	results/e11_*.json	Do attention writes interfere with reading MLP writes?
+e12	01_method	S1	narrowed (by e52)	scripts/e12_shrinkage.py	results/e12_*.json	Can a fitted calibration remove coefficient error?
+e13	04_attention	S1	refuted (5 models)	scripts/e13_heads.py	results/e13_*.json	Do static head SVD atoms read attention writes?
+e15	01_method	S1	null	scripts/e15_composition.py	results/e15_*.json	Are read directions sparse in earlier blocks' write atoms?
+e16	01_method	S1	supported (3 models)	scripts/e16_atoms_over_atoms.py	results/e16_*.json	How sparse is each atom in the other atoms?
+e17	01_method	S1	supported (diagnostic)	scripts/e17_diagnostics.py	results/e17_*.json	Where does recall fail: position, frequency, sign or birth block?
+e18	01_method	S1	tool (instrument check)	scripts/e18_noise.py	results/e18_*.json	How robust is identification to noise and foreign-state mixing?
+e20	10_sinks_huge_directions	S1	established (Pythia partial)	scripts/e20_sinks.py	results/e20_*.json	Which atoms reconstruct the sink states?
+e21	03_increments_depth_targets	S1	established (not erasure in GPT-2/SmolLM2)	scripts/e21_lifetime.py	results/e21_*.json	How long does a write stay identifiable as depth grows?
+e22	03_increments_depth_targets	S1	established	scripts/e22_birth_matrix.py	results/e22_*.json	Is the depth collapse late-born writes or erased old writes?
+e23	02_readability_law	S1	refuted	scripts/e23_context_copy.py	results/e23_*.json	Are selected token-embedding atoms attention copies of context tokens?
+e24	02_readability_law	S1	supported (2 models)	scripts/e24_transfer.py	results/e24_*.json	Does a neuron's identifiability transfer from WikiText to the Pile?
+e25	03_increments_depth_targets	S1	established (trajectory: e436)	scripts/e25_ledger_sparsity.py	results/e25_*.json	How sparse is the true-write ledger, and is that learned?
+e30	02_readability_law	S1	refuted (one dose; killed for time)	scripts/e30_injection.py	results/e30_*.json	Is the never-identified class a magnitude effect?
+e40	02_readability_law	S1	refuted	scripts/e40_vocab.py	results/e40_*.json	Do readable and unreadable neurons differ in vocabulary space?
+e41	02_readability_law	S1	narrowed (audit null: GPT-2 only)	scripts/e41_alias.py	results/e41_*.json	When the dominant write is missed, is it read under an alias?
+e42	02_readability_law	S1	supported	scripts/e42_dict_ablation.py	results/e42_*.json	Which atom types do the explaining-away?
+e43	01_method	S1	supported (2 models)	scripts/e43_pca_levels.py	results/e43_*.json	Does the weight dictionary beat PCA at every depth?
+e44	03_increments_depth_targets	S1	established (budget caveat: audit)	scripts/e44_delta_pipeline.py	results/e44_*.json	Does the increment pipeline beat global OMP at a matched budget?
+e45	01_method	S1	established	scripts/e45_solver2.py	results/e45_*.json	Can one solver identify like LASSO and reconstruct like OMP?
+e46	02_readability_law	S1	mixed (groups n=4-7)	scripts/e46_never_by_solver.py	results/e46_*.json	Is the never-identified class solver-limited or state-limited?
+e47	03_increments_depth_targets	S1	superseded by e119	scripts/e47_targets.py	results/e47_*.json	Which target should identification be scored against?
+e48	01_method	S1	refuted	scripts/e48_errorbars.py	results/e48_*.json	Do least-squares standard errors predict coefficient error?
+e49	03_increments_depth_targets	S1	established	scripts/e49_dual_layers.py	results/e49_*.json	Is the depth collapse a solver artifact or a state property?
+e51	01_method	S1	established	scripts/e51_recall_curve.py	results/e51_*.json	At which greedy step is the dominant write picked?
+e52	01_method	S1	established	scripts/e52_within_neuron.py	results/e52_*.json	Does the recovered coefficient track the true one within a neuron?
+e53	04_attention	S1	supported (GPT-2)	scripts/e53_ov_atoms.py	results/e53_*.json	Do per-head OV value atoms read a head's write?
+e54	04_attention	S1	mixed (magnitude corrected by audit)	scripts/e54_attention_dc.py	results/e54_*.json	How much of each head's write is a constant (DC) part?
+e55	10_sinks_huge_directions	S1	established	scripts/e55_sink_killer.py	results/e55_*.json	Which component removes the sink in the last blocks?
+e56	02_readability_law	S1	established (framing: audit)	scripts/e56_prominence_curve.py	results/e56_*.json	Does identification follow a write's prominence?
+e57	02_readability_law	S1	superseded by e127 (audit)	scripts/e57_threshold_law.py	results/e57_*.json	Does the 50% recall crossing sit at the dictionary's noise floor?
+e58	02_readability_law	S1	narrowed (audit)	scripts/e58_law_test.py	results/e58_*.json	Does the floor predict identification at every level, out of sample?
+e59	02_readability_law	S1	refuted (audit: small groups)	scripts/e59_importance.py	results/e59_*.json	Are readable neurons the causally important ones?
+e59b	02_readability_law	S1	refuted	scripts/e59b_importance_rank.py	results/e59b_*.json	Does ablation cost rank with a neuron's identification rate?
+e60	02_readability_law	S1	established (causal for OMP)	scripts/e60_intervene.py	results/e60_*.json	Is prominence causal for identification at the token level?
+e61	01_method	S1	retracted (trivial measure)	scripts/e61_nullspace.py	results/e61_*.json	How much ledger energy lies in the dictionary's null space?
+e62	02_readability_law	S1	supported	scripts/e62_threshold_offset.py	results/e62_*.json	Which competitor level sets the identification threshold?
+e63	01_method	S1	established	scripts/e63_spark.py	results/e63_*.json	Is the identification ceiling a non-uniqueness of the true support?
+e65	01_method	S1	established	scripts/e65_wiener.py	results/e65_*.json	How much of each write is linearly readable from the state?
+e74	01_method	S1	established	scripts/e74_residual_ledger.py	results/e74_*.json	What does the k=64 OMP residual contain?
+e76	03_increments_depth_targets	S1	refuted	scripts/e76_recovered_survival.py	results/e76_*.json	Does WDD's own survival reading track a write's true fate?
+e77	03_increments_depth_targets	S1	mixed	scripts/e77_targeted.py	results/e77_*.json	Is the limit other blocks' atoms or cancellation?
+e80	01_method	S1	supported (GPT-2)	scripts/e80_wrong_model.py	results/e80_*.json	Is provenance the trained checkpoint's or the architecture's?
+e81	12_circuits_coselection_drift	S1	supported (Pythia only)	scripts/e81_ckpt_drift.py	results/e81_*.json	How stable are MLP write directions late in Pythia training?
+e87	05_cancellation_contraction	S1	refuted	scripts/e87_coactive.py	results/e87_*.json	Do a token's dominant writes cancel each other?
+e89	10_sinks_huge_directions	S1	mixed (sparse in 2/5)	scripts/e89_mean_atoms.py	results/e89_*.json	What is the centring mean made of?
+e93	01_method	S1	supported (4 of 5)	scripts/e93_iht.py	results/e93_*.json	Does hard-thresholding pursuit repeat the identification-reconstruction trade-off?
+e95	01_method	S1	supported (2 models)	scripts/e95_calib_transfer.py	results/e95_*.json	Does the coefficient calibration transfer across corpora?
+e101	01_method	S1	refuted	scripts/e101_coselection.py	results/e101_*.json	Does support co-selection recover true co-firing structure?
+e102	01_method	S1	refuted	scripts/e102_fillers.py	results/e102_*.json	Is there a fixed set of filler atoms to prune?
+e104	03_increments_depth_targets	S1	null	scripts/e104_increment_over_past.py	results/e104_*.json	Does a block re-write directions that earlier blocks own?
+e105	01_method	S1	established	scripts/e105_splice.py	results/e105_*.json	Which reading preserves the model's function when spliced back?
+e106	03_increments_depth_targets	S1	supported (GPT-2 narrated)	scripts/e106_increment_residual.py	results/e106_*.json	What does increment reading leave unexplained?
+e114	03_increments_depth_targets	S1	mixed (random-floor form)	scripts/e114_increment_law.py	results/e114_*.json	Does the random-floor law hold inside block increments?
+e116	01_method	S1	supported (own-span column retracted)	scripts/e116_late_atoms.py	results/e116_*.json	Where do MLP write directions live relative to other atoms?
+e117	03_increments_depth_targets	S1	mixed	scripts/e117_extended_embedding.py	results/e117_*.json	Is the block-0 MLP write an extended token embedding?
+e118	02_readability_law	S1	established	scripts/e118_aniso_floor.py	results/e118_*.json	Is the 'structured competition' just the state covariance?
+e119	03_increments_depth_targets	S1	established (audit follow-up)	scripts/e119_target_rank.py	results/e119_*.json	How well is a non-circular target read?
+e120	10_sinks_huge_directions	S1	refuted (a caveat, not a change)	scripts/e120_typical_centering.py	results/e120_*.json	Does the sink-contaminated centring mean change identification?
+e122	01_method	S1	established	scripts/e122_second_pass.py	results/e122_*.json	Does a second OMP pass on the residual find true writes?
+e126	10_sinks_huge_directions	S1	supported	scripts/e126_sink_atom_in_typical.py	results/e126_*.json	Does the sink neuron's atom sit in typical supports?
+e127	02_readability_law	S2	established	scripts/e127_corrected_law.py	results/e127_*.json	Does a covariance-matched 64th-order threshold remove the law's bias?
+e128	03_increments_depth_targets	S2	established	scripts/e128_honest_depth.py	results/e128_*.json	How does reading the largest surviving write change with depth?
+e129	02_readability_law	S2	established	scripts/e129_heldout_law.py	results/e129_*.json	Does the corrected law hold held out, with zero parameters?
+e130	02_readability_law	S2	established	scripts/e130_neuron_phenotype.py	results/e130_*.json	What does 'identifiability is a neuron property' mean?
+e131	03_increments_depth_targets	S2	established	scripts/e131_survival_curve.py	results/e131_*.json	Where is provenance lost: at the write, increment or state?
+e132	04_attention	S2	supported (GPT-2 pilot)	scripts/e132_attn_chain.py	results/e132_*.json	Does WDD track attention-mediated changes of downstream MLP writes?
+e140	05_cancellation_contraction	S2	mixed	scripts/e140_consumption.py	results/e140_*.json	Are erased writes the ones the next block reads?
+e141	05_cancellation_contraction	S2	established (diffuse)	scripts/e141_eraser.py	results/e141_*.json	Is cancellation concentrated in one opposing neuron?
+e142	12_circuits_coselection_drift	S2	supported (Pythia; log only)	scripts/e142_phenotype_training.py	results/e142_*.json	Is a neuron's identifiability stable across late Pythia checkpoints?
+e143	04_attention	S2	supported (GPT-2)	scripts/e143_increment_ov.py	results/e143_*.json	Do value atoms make attention attributable inside the block increment?
+e144	03_increments_depth_targets	S2	established	scripts/e144_guided.py	results/e144_*.json	Does restricting state OMP to increment-nominated atoms help?
+e145	04_attention	S2	refuted	scripts/e145_head_subspaces.py	results/e145_*.json	Do MLP write directions live inside single head output subspaces?
+e146	03_increments_depth_targets	S2	established	scripts/e146_token_vs_context.py	results/e146_*.json	How much of the dominant write does the token id decide?
+e147	03_increments_depth_targets	S2	established (4/5)	scripts/e147_increment_phenotype.py	results/e147_*.json	Are state-level never-neurons readable in their own increments?
+e150	04_attention	S2	refuted	scripts/e150_hookfree_attention.py	results/e150_*.json	Can attention patterns be read from hidden states without hooks?
+e151	01_method	S2	established	scripts/e151_support_code.py	results/e151_*.json	Does the 64-atom support preserve the state's predictive geometry?
+e152	03_increments_depth_targets	S2	established	scripts/e152_functional_split.py	results/e152_*.json	Which part of WDD's reconstruction costs most when removed?
+e153	11_toys_synthetic	S2	supported (toy)	scripts/e153_toy_superposition.py	results/e153_*.json	Does the prominence law hold in the superposition toy?
+e154	01_method	S2	supported	scripts/e154_reweighted.py	results/e154_*.json	Does reweighted l1 fix LASSO's shrinkage without losing identification?
+e155	02_readability_law	S2	mixed	scripts/e155_confidence.py	results/e155_*.json	Are writes more readable when the model is confident?
+e156	03_increments_depth_targets	S2	established	scripts/e156_gradient.py	results/e156_*.json	Are the loss-sensitive writes the ones WDD reads?
+e157	01_method	S2	mixed	scripts/e157_last_level.py	results/e157_*.json	At the last level, does WDD act as a logit lens?
+e158	01_method	S2	mixed	scripts/e158_mdl.py	results/e158_*.json	Is the model's dictionary a shorter code than PCA?
+e159	03_increments_depth_targets	S2	established	scripts/e159_guided_front.py	results/e159_*.json	What does increment-guided decoding cost in function?
+e160	03_increments_depth_targets	S2	established	scripts/e160_perwrite_ablation.py	results/e160_*.json	Do single-write ablations match first-order attribution?
+e161	02_readability_law	S2	supported (GPT-2, SmolLM2)	scripts/e161_uncertainty.py	results/e161_*.json	Why are uncertain tokens more readable?
+e162	03_increments_depth_targets	S2	supported (weak in Qwen)	scripts/e162_differential.py	results/e162_*.json	Does differencing two contexts of a token expose contextual writes?
+e165	03_increments_depth_targets	S2	narrowed (4/5; OLMo reverses)	scripts/e165_readable_vs_unreadable.py	results/e165_*.json	Do identified writes carry more function than unidentified ones?
+e166	03_increments_depth_targets	S2	established	scripts/e166_stream_recon.py	results/e166_*.json	How much function do summed increment reconstructions keep?
+e167	03_increments_depth_targets	S2	established	scripts/e167_predict_survival.py	results/e167_*.json	Does the law predict the provenance-survival curve without fitting?
+e168	03_increments_depth_targets	S2	refuted	scripts/e168_peel_increments.py	results/e168_*.json	Does peeling off early increments help read later writes?
+e169	01_method	S2	supported (2 models)	scripts/e169_code_budget.py	results/e169_*.json	How small a support preserves the predictive geometry?
+e170	10_sinks_huge_directions	S2	refuted	scripts/e170_offchannel.py	results/e170_*.json	Is GPT-2's within-block unreadability the massive-channel dynamics?
+e171	11_toys_synthetic	S2	refuted	scripts/e171_toy_twolayer.py	results/e171_*.json	Does one extra residual block decouple readability from importance?
+e172	02_readability_law	S2	tool	scripts/e172_certificate.py	results/e172_*.json	Can per-neuron observability be tabulated as a certificate?
+e173	05_cancellation_contraction	S2	narrowed (direct effect only; e183, e194)	scripts/e173_erasure_matrix.py	results/e173_*.json	Which blocks cancel which blocks' writes (the erasure matrix)?
+e174	11_toys_synthetic	S2	refuted	scripts/e174_toy_redundancy.py	results/e174_*.json	Do twin re-writes (the s1f regime) decouple readability from importance?
+e175	11_toys_synthetic	S2	supported (toy)	scripts/e175_toy_multiblock.py	results/e175_*.json	Does depth (many residual blocks) reproduce the real phenomenology?
+e176	11_toys_synthetic	S2	supported (toy)	scripts/e176_toy_survival.py	results/e176_*.json	Is the toy's lost provenance aliased by twins or swamped?
+e177	11_toys_synthetic	S2	supported (toy)	scripts/e177_toy_guided.py	results/e177_*.json	Can increment-guided decoding undo the swamping?
+e178	02_readability_law	S2	established	scripts/e178_dual_law.py	results/e178_*.json	Does the law predict the dual decoder's reading?
+e180	02_readability_law	S2	refuted	scripts/e180_self_certificate.py	results/e180_*.json	Can a residual-based self-certificate flag real atoms without the ledger?
+e181	02_readability_law	S2	established (GPT-2 aliases)	scripts/e181_miss_anatomy.py	results/e181_*.json	Are missed writes aliased by a twin or swamped?
+e183	05_cancellation_contraction	S3	refuted (wired eraser)	scripts/e183_eraser_ablation.py	results/e183_*.json	Does ablating the next block's MLP restore cancelled writes?
+e185	05_cancellation_contraction	S3	refuted (dedicated erasers)	scripts/e185_canceller_anatomy.py	results/e185_*.json	Is the canceller a few dedicated neurons or a crowd?
+e186	05_cancellation_contraction	S3	supported (3 models)	scripts/e186_hydra_eraser.py	results/e186_*.json	When the next block's MLP is ablated, who cancels instead?
+e187	05_cancellation_contraction	S3	mixed (GPT-2 within-block)	scripts/e187_static_eraser.py	results/e187_*.json	Is the cancellation topology visible in the weights alone?
+e188	05_cancellation_contraction	S3	superseded by e193	scripts/e188_survival_distance.py	results/e188_*.json	How does a write's raw survival change with depth?
+e189	02_readability_law	S3	supported (3 models)	scripts/e189_null_atoms.py	results/e189_*.json	Are atoms of an ablated block still selected (known-null control)?
+e190	11_toys_synthetic	S3	refuted (H6e killed)	scripts/e190_toy_erasure.py	results/e190_*.json	Does the six-block toy reproduce erasure or the contraction?
+e191	05_cancellation_contraction	S3	narrowed (gain-like in 3/5)	scripts/e191_cancel_magnitude.py	results/e191_*.json	Is cancellation proportional to the write's size (gain-like)?
+e192	05_cancellation_contraction	S3	refuted	scripts/e192_bias_eraser.py	results/e192_*.json	Is Pythia's constant-offset cancellation the MLP output bias?
+e193	05_cancellation_contraction	S3	established	scripts/e193_centered_survival.py	results/e193_*.json	Does the depth profile of survival hold on centred states?
+e194	05_cancellation_contraction	S3	established (reframed by e221)	scripts/e194_linear_response.py	results/e194_*.json	Is the next-block cancellation a local linear gain?
+e195	02_readability_law	S3	established	scripts/e195_stability_selection.py	results/e195_*.json	Does stability selection under input noise certify real atoms?
+e196	02_readability_law	S3	supported (strength varies)	scripts/e196_selection_prior.py	results/e196_*.json	Does selection on covariance-matched noise predict selection on real states?
+e197	05_cancellation_contraction	S3	mixed	scripts/e197_echo.py	results/e197_*.json	Is the damping readable as a negative echo atom?
+e198	03_increments_depth_targets	S3	established	scripts/e198_reading_depth.py	results/e198_*.json	At which level is a write best read?
+e199	05_cancellation_contraction	S3	refuted	scripts/e199_canceller_readability.py	results/e199_*.json	Are the canceller blocks the unreadable blocks?
+e200	02_readability_law	S3	established (z-score; atom filter refuted)	scripts/e200_null_certificate.py	results/e200_*.json	Can a per-atom null model certify the dual reading?
+e202	02_readability_law	S3	established	scripts/e202_prior_atoms.py	results/e202_*.json	What are the atoms the dictionary selects on pure noise?
+e203	03_increments_depth_targets	S3	established	scripts/e203_stability_depth.py	results/e203_*.json	Does a stable atom stay readable at later levels?
+e204	02_readability_law	S3	superseded by e205	scripts/e204_zlaw_extreme.py	results/e204_*.json	Is the reading threshold the k-th extreme of the null z-scores?
+e205	02_readability_law	S3	refuted (parameter-free threshold)	scripts/e205_zlaw_collapse.py	results/e205_*.json	Do recall curves in z minus z_k collapse across k?
+e206	02_readability_law	S3	refuted	scripts/e206_never_neurons_z.py	results/e206_*.json	Are never-read neurons a static geometric class?
+e207	05_cancellation_contraction	S3	established (LN/weights split retracted; e210)	scripts/e207_contraction_origin.py	results/e207_*.json	Where does the generic contraction come from, and when does it appear?
+e208	05_cancellation_contraction	S3	established	scripts/e208_maintenance_causal.py	results/e208_*.json	Is a write's later presence along its direction caused by the write?
+e209	05_cancellation_contraction	S3	mixed (clean in GELU; see e210)	scripts/e209_inout_alignment.py	results/e209_*.json	Are each neuron's read and write vectors anti-aligned?
+e210	05_cancellation_contraction	S3	established	scripts/e210_jacobian_trace.py	results/e210_*.json	Can the contraction be derived from weights and pre-activations?
+e211	03_increments_depth_targets	S3	refuted (kills H4a)	scripts/e211_reading_vs_dependence.py	results/e211_*.json	Does reading an atom mean its write caused the direction?
+e212	05_cancellation_contraction	S3	supported (4/5)	scripts/e212_late_halflife.py	results/e212_*.json	Do late-born writes keep their causal footprint longer?
+e213	05_cancellation_contraction	S3	established (cause: e216)	scripts/e213_gain_vs_norm.py	results/e213_*.json	Is the per-token contraction inversely proportional to the state norm?
+e214	05_cancellation_contraction	S4	narrowed (band 0.2, not 0.05)	scripts/e214_direction_lottery.py	results/e214_*.json	Is the contraction the same along every direction?
+e215	05_cancellation_contraction	S4	narrowed (three blocks)	scripts/e215_composition.py	results/e215_*.json	Is multi-block survival the product of single-block gains?
+e216	05_cancellation_contraction	S4	established (gated: correlation only)	scripts/e216_frozen_norm.py	results/e216_*.json	Is the 1/norm dependence the normalisation's per-token scale?
+e217	05_cancellation_contraction	S4	narrowed (born at steps 512-2000)	scripts/e217_contraction_birth.py	results/e217_*.json	When in training is the contraction born?
+e218	03_increments_depth_targets	S4	refuted (MLP blocks; heads observable)	scripts/e218_hierarchical_provenance.py	results/e218_*.json	Are block or head labels observable where neuron labels fail?
+e219	05_cancellation_contraction	S4	narrowed (GPT-2 only)	scripts/e219_zero_sum.py	results/e219_*.json	How much MLP write energy never reaches the state?
+e220	05_cancellation_contraction	S4	refuted (monotone law)	scripts/e220_spectral_profile.py	results/e220_*.json	Does the contraction's strength follow the state's spectrum?
+e221	06_descendants_fate_transport	S4	established	scripts/e221_perturbation_fate.py	results/e221_*.json	Does a random perturbation lose energy or only its direction?
+e222	06_descendants_fate_transport	S4	established	scripts/e222_write_energy_fate.py	results/e222_*.json	Does a zeroed real write fade by loss or by decorrelation?
+e223	06_descendants_fate_transport	S5	established	scripts/e223_footprint_ledger.py	results/e223_*.json	Where exactly does a zeroed write's energy go?
+e224	06_descendants_fate_transport	S5	established	scripts/e224_collision.py	results/e224_*.json	Do distinct writes stay separate downstream or merge into shared directions?
+e225	06_descendants_fate_transport	S5	established (4 models)	scripts/e225_footprint_dimension.py	results/e225_*.json	Is the footprint cloud high-dimensional or funnelled into a subspace?
+e226	06_descendants_fate_transport	S6	narrowed	scripts/e226_additivity.py	results/e226_*.json	Do two writes' descendants add and scale linearly?
+e227	06_descendants_fate_transport	S6	established	scripts/e227_descendant_identity.py	results/e227_*.json	Does a neuron keep a recognisable descendant after its direction fades?
+e228	06_descendants_fate_transport	S6	established	scripts/e228_path_decomposition.py	results/e228_*.json	Are descendants carried by MLPs, attention, or both interacting?
+e229	06_descendants_fate_transport	S6	supported (Pythia)	scripts/e229_dispersal_training.py	results/e229_*.json	Is dispersal architectural or learned?
+e230	06_descendants_fate_transport	S6	mixed	scripts/e230_descendant_dictionary.py	results/e230_*.json	Can the descendant signature be read from the state itself?
+e231	06_descendants_fate_transport	S7	established	scripts/e231_signature_source.py	results/e231_*.json	Is the signature the write vector's image or its context's?
+e232	06_descendants_fate_transport	S7	supported (end narrowed: e252)	scripts/e232_provenance_curve.py	results/e232_*.json	When does the descendant chart overtake the native read?
+e233	06_descendants_fate_transport	S7	established	scripts/e233_weight_robustness.py	results/e233_*.json	Is the signature robust to perturbing every weight?
+e234	06_descendants_fate_transport	S7	supported (SmolLM2 weak)	scripts/e234_cross_corpus.py	results/e234_*.json	Does the signature transfer across corpora without refitting?
+e235	06_descendants_fate_transport	S7	established	scripts/e235_path_identity.py	results/e235_*.json	Which transport path carries the neuron's identity?
+e236	06_descendants_fate_transport	S8	refuted	scripts/e236_transported_wdd.py	results/e236_*.json	Does a transported native dictionary restore sparse reading at depth?
+e237	06_descendants_fate_transport	S8	established	scripts/e237_capacity.py	results/e237_*.json	Does provenance capacity keep growing with the number of candidates?
+e238	06_descendants_fate_transport	S8	narrowed (e282, e285)	scripts/e238_separation_geometry.py	results/e238_*.json	Does transport preserve the angle between nearby writes?
+e239	06_descendants_fate_transport	S8	supported (Pythia)	scripts/e239_cross_checkpoint.py	results/e239_*.json	Does the signature belong to the vector or the downstream network?
+e240	06_descendants_fate_transport	S8	supported	scripts/e240_transported_coherence.py	results/e240_*.json	Why does the transported dictionary decode worse than the native one?
+e241	06_descendants_fate_transport	S9	established (mid: 3/5)	scripts/e241_superposition.py	results/e241_*.json	Do several simultaneous writes stay individually decodable?
+e242	06_descendants_fate_transport	S9	established	scripts/e242_zero_shot.py	results/e242_*.json	Can an unseen neuron's descendant be predicted from its write vector?
+e243	06_descendants_fate_transport	S9	supported (Pythia)	scripts/e243_phase_diagram.py	results/e243_*.json	In what order does training build readability, dispersal and scrambling?
+e244	06_descendants_fate_transport	S9	refuted	scripts/e244_linearization_variability.py	results/e244_*.json	Does gating make the MLP linearisation more context-dependent?
+e245	06_descendants_fate_transport	S10	established	scripts/e245_frontier.py	results/e245_*.json	Is transport compositional where sparse decomposition is not?
+e246	06_descendants_fate_transport	S10	supported (4 models: logs)	scripts/e246_datafree_chart.py	results/e246_*.json	Can the descendant chart be built without any data?
+e247	06_descendants_fate_transport	S10	established	scripts/e247_injected_prominence.py	results/e247_*.json	Is the native chart's failure on injected writes a prominence effect?
+e248	06_descendants_fate_transport	S11	narrowed (e275b)	scripts/e248_transport_operator.py	results/e248_*.json	Can one fitted linear operator transport, compose and invert descendants?
+e249	06_descendants_fate_transport	S11	established	scripts/e249_dimension_location.py	results/e249_*.json	How many dimensions carry provenance, and where is the native coordinate lost?
+e250	06_descendants_fate_transport	S11	supported (mechanism: e257, e290)	scripts/e250_massive_boundary.py	results/e250_*.json	Where do massive-activation neurons depart from vector transport?
+e251	07_descendants_function	S12	narrowed (provenance only)	scripts/e251_sparse_vs_dense.py	results/e251_*.json	Is the descendant recoded from sparse to dense coordinates?
+e252	07_descendants_function	S12	refuted	scripts/e252_phase_profile.py	results/e252_*.json	Do birth, transport and scrambling regimes change at one block?
+e253	07_descendants_function	S12	refuted	scripts/e253_massive_state_variable.py	results/e253_*.json	Does a within-token variable explain the massive neuron's anomaly?
+e254	07_descendants_function	S12	established	scripts/e254_functional_bridge.py	results/e254_*.json	Does descendant geometry predict logit-footprint geometry?
+e255	07_descendants_function	S13	established	scripts/e255_functional_neighbours.py	results/e255_*.json	Are descendant-space neighbours also functional neighbours?
+e256	07_descendants_function	S13	established	scripts/e256_functional_additivity.py	results/e256_*.json	Does the logit footprint compose like the state descendant?
+e257	07_descendants_function	S13	refuted	scripts/e257_receiver_provenance.py	results/e257_*.json	Does the massive neuron's effect migrate to other positions?
+e258	07_descendants_function	S13	refuted (Pythia only)	scripts/e258_coupling_training.py	results/e258_*.json	When does descendant-function coupling appear during training (Pythia)?
+e259	07_descendants_function	S14	established	scripts/e259_matched_pairs.py	results/e259_*.json	Does descendant similarity predict function with write similarity controlled?
+e260	07_descendants_function	S14	established	scripts/e260_depthwise_geometry.py	results/e260_*.json	Where in depth does functional geometry move into descendant space?
+e261	07_descendants_function	S14	refuted	scripts/e261_compensation_neighbourhood.py	results/e261_*.json	Are the neurons compensating a removed write its descendant neighbours?
+e262	07_descendants_function	S14	refuted	scripts/e262_interchangeability.py	results/e262_*.json	Are neurons with similar descendants interchangeable under substitution?
+e263	07_descendants_function	S14	narrowed (e286)	scripts/e263_functional_dimension.py	results/e263_*.json	How many descendant dimensions does function need versus identity?
+e264	07_descendants_function	S15	refuted (population averages)	scripts/e264_interaction_classes.py	results/e264_*.json	Do descendant-similar neurons interact at co-active tokens?
+e265	07_descendants_function	S15	established	scripts/e265_neighbourhood_tracking.py	results/e265_*.json	Are functional neighbours descendant neighbours; when does the coordinate change?
+e266	07_descendants_function	S15	mixed	scripts/e266_transition_split.py	results/e266_*.json	Does attention or the MLP build the descendant-logit correspondence?
+e267	07_descendants_function	S15	established	scripts/e267_lineage.py	results/e267_*.json	Do a write's successors form stable lineages or a hub graph?
+e268	07_descendants_function	S16	established (ladder narrowed, e286)	scripts/e268_sufficiency.py	results/e268_*.json	Is the descendant a sufficient statistic for the write's function?
+e269	07_descendants_function	S16	established	scripts/e269_direct_descendant.py	results/e269_*.json	Does the injected descendant causally carry the write's effect?
+e270	07_descendants_function	S16	supported	scripts/e270_neighbourhood_stability.py	results/e270_*.json	Is descendant neighbourhood geometry stable across tokens, corpora, training?
+e271	07_descendants_function	S17	established	scripts/e271_descendant_interpolation.py	results/e271_*.json	Do intervention effects vary continuously with descendant position?
+e272	07_descendants_function	S17	narrowed (e286)	scripts/e272_capacity_ladder.py	results/e272_*.json	How many dimensions do reconstruction, identity, function, behaviour need?
+e273	07_descendants_function	S18	refuted	scripts/e273_functional_null.py	results/e273_*.json	Does descendant space have functionally null directions?
+e273b	07_descendants_function	S18	supported	scripts/e273b_bottom_pc_channels.py	results/e273b_*.json	What makes GPT-2's bottom descendant PCs functionally sensitive?
+e274	07_descendants_function	S18	narrowed	scripts/e274_subspace_nesting.py	results/e274_*.json	Are identity, function and behaviour subspaces nested?
+e275	07_descendants_function	S18	superseded by e275b	scripts/e275_transport_residual.py	results/e275_*.json	Is the massive neuron the tail of the linear transport law?
+e275b	07_descendants_function	S18	refuted (tail of the law)	scripts/e275b_transport_residual_signed.py	results/e275b_*.json	Does the signed transport law predict natural descendants?
+e276	07_descendants_function	S19	refuted (magnitude)	scripts/e276_leverage.py	results/e276_*.json	Is the downstream network tuned to its own writes' descendants?
+e277	07_descendants_function	S19	established	scripts/e277_budget.py	results/e277_*.json	Why does provenance survive while transported-atom decomposition fails?
+e278	07_descendants_function	S19	refuted (amplitude)	scripts/e278_amplitude.py	results/e278_*.json	Is the massive neuron's anomaly an amplitude effect?
+e279	07_descendants_function	S19	narrowed	scripts/e279_core_depth.py	results/e279_*.json	Is there a coordinate transition at depth, or continuous drift?
+e280	07_descendants_function	S20	established	scripts/e280_trajectory.py	results/e280_*.json	Does an interpolated descendant snap back to a natural regime?
+e281	07_descendants_function	S20	established	scripts/e281_functional_composition.py	results/e281_*.json	Does the fitted transport law compose functionally?
+e282	07_descendants_function	S20	refuted	scripts/e282_metric.py	results/e282_*.json	Under which metric is transport closest to an isometry?
+e283	07_descendants_function	S20	established	scripts/e283_state_variable.py	results/e283_*.json	Is the descendant a state variable for its own future?
+e284	07_descendants_function	S20	supported (refined by e284b)	scripts/e284_reaction_carrier.py	results/e284_*.json	Which downstream block carries the massive neuron's reaction?
+e284b	07_descendants_function	S20	supported (SmolLM2)	scripts/e284b_carrier_components.py	results/e284b_*.json	Which single component carries the massive neuron's reaction?
+e285	07_descendants_function	S21	established (part 3 superseded by e285b)	scripts/e285_theory_predictions.py	results/e285_*.json	Do the transport theory's gain and pair-cosine predictions hold?
+e285b	07_descendants_function	S21	null (open)	scripts/e285b_additivity_norm.py	results/e285b_*.json	Does additivity error depend on total norm rather than write count?
+e286	08_causal_coordinate	S22	narrowed (two rungs)	scripts/e286_compression_ladder.py	results/e286_*.json	How many directions does each observable of the descendant need?
+e287	08_causal_coordinate	S23	superseded by e288	scripts/e287_shared_vs_specific_readout.py	results/e287_*.json	Is the causal read-out the shared (centroid-span) part of the descendant?
+e288	08_causal_coordinate	S24	narrowed (H86, H87, H90)	scripts/e288_kill_tree.py	results/e288_*.json	Is there one causal subspace, specific to the shared term, self-transported?
+e289	08_causal_coordinate	S24	supported (selective)	scripts/e289_coordinate_steering.py	results/e289_*.json	Does one injected coordinate move only its paired logit direction?
+e290	08_causal_coordinate	S24	refuted (a set point instead)	scripts/e290_massive_counterfactual.py	results/e290_*.json	Does extra massive write at its own tokens reproduce the natural footprint?
+e291	08_causal_coordinate	S24	supported (Pythia only)	scripts/e291_training_causal_dims.py	results/e291_*.json	When in training does the low-dimensional causal coordinate appear?
+e292	08_causal_coordinate	S25	narrowed (incomplete)	scripts/e292_break_steering.py	results/e292_*.json	Does the coordinate dictate the whole logit change of an injection?
+e293	08_causal_coordinate	S25	established (two blocks)	scripts/e293_core_dynamics.py	results/e293_*.json	Does the causal core transport as a coherent object over blocks?
+e294	08_causal_coordinate	S25	supported (nested; three scales)	scripts/e294_common_dimension.py	results/e294_*.json	Do the observables share one nested predictive subspace, and how large?
+e295	08_causal_coordinate	S25	refuted (see e346)	scripts/e295_remainder_intervention.py	results/e295_*.json	Do the leftover descendant dimensions act as a second state variable?
+e296	08_causal_coordinate	S26	supported	scripts/e296_causal_geometry.py	results/e296_*.json	Is the cloud low-rank under a causal metric; do coordinates persist?
+e297	08_causal_coordinate	S26	established	scripts/e297_layerwise_dims.py	results/e297_*.json	How do physical and causal dimensions change with depth?
+e298	08_causal_coordinate	S26	narrowed (weak)	scripts/e298_attention_routing.py	results/e298_*.json	Does the causal core predict attention routing?
+e299	08_causal_coordinate	S26	narrowed (massive channel)	scripts/e299_propagation.py	results/e299_*.json	Does the perturbation propagate as a low-rank wave; how local?
+e300	08_causal_coordinate	S26	supported	scripts/e300_cross_neuron_geometry.py	results/e300_*.json	Across hundreds of neurons, is the core set by write geometry?
+e301	08_causal_coordinate	S26	supported	scripts/e301_second_order.py	results/e301_*.json	Is the response to scaling a write odd (linear) or even?
+e302	08_causal_coordinate	S26	supported (circuit kill reopened)	scripts/e302_dose_interaction.py	results/e302_*.json	Are causal coordinates linear, and do they interact like circuits?
+e303	08_causal_coordinate	S26	mixed	scripts/e303_predict_core.py	results/e303_*.json	Can a neuron's core coordinate be predicted from its write alone?
+e304	08_causal_coordinate	S26	refuted (ladder is generic)	scripts/e304_families.py	results/e304_*.json	Is the two-rung dimensionality ladder special to WDD writes?
+e305	08_causal_coordinate	S27	refuted (H107, H108)	scripts/e305_operator_identification.py	results/e305_*.json	Is the causal core a spectral subspace of transport or read-out?
+e306	08_causal_coordinate	S27	supported (near the output)	scripts/e306_family_cores.py	results/e306_*.json	Do unrelated perturbation families share one coordinate system?
+e307	08_causal_coordinate	S27	narrowed (e320, e321)	scripts/e307_channels.py	results/e307_*.json	Do individual causal channels keep their identity across all depths?
+e308	08_causal_coordinate	S27	refuted (no shared space)	scripts/e308_forward_backward.py	results/e308_*.json	Do the forward causal core and backward sensitivity subspace coincide?
+e309	08_causal_coordinate	S28	refuted (H113; curvature in 3/5)	scripts/e309_cloud_origin.py	results/e309_*.json	Is the core the residual's high-variance subspace; is the cloud curved?
+e310	08_causal_coordinate	S28	refuted (funnel is generic)	scripts/e310_manifold_sweep.py	results/e310_*.json	Does the funnel require perturbations near the natural manifold?
+e311	08_causal_coordinate	S28	supported (many-to-one)	scripts/e311_quotient.py	results/e311_*.json	Does physical geometry come to match functional geometry with depth?
+e312	08_causal_coordinate	S28	supported (near the output)	scripts/e312_transfer.py	results/e312_*.json	Does the converged coordinate system transfer across families?
+e313	08_causal_coordinate	S29	supported	scripts/e313_ledger_to_function.py	results/e313_*.json	Does the WDD ledger predict a joint ablation's coordinate (z = Zc)?
+e314	08_causal_coordinate	S29	narrowed (not behavioural scalars)	scripts/e314_heldout_observables.py	results/e314_*.json	Does the coordinate predict observables it was not built from?
+e315	08_causal_coordinate	S29	supported (state; logits partial)	scripts/e315_multi_observable_intervention.py	results/e315_*.json	Is the coordinate's intervention response predicted without refitting?
+e316	08_causal_coordinate	S30	refuted (H122-H124)	scripts/e316_atlas.py	results/e316_*.json	Does a neuron atlas give functional units, substitutes or attribution?
+e316b	08_causal_coordinate	S30	refuted (H122-H124)	scripts/e316b_atlas_exact.py	results/e316b_*.json	Do exact per-neuron coordinates rescue the atlas's application?
+e317	09_quotient_program	S31	established (e361 re-checks)	scripts/e317_observable_quotients.py	results/e317_*.json	Is the quotient observable-relative or one object?
+e318	09_quotient_program	S31	supported	scripts/e318_horizon_quotients.py	results/e318_*.json	Does the future-state quotient converge to the logit quotient with horizon?
+e319	09_quotient_program	S31	established	scripts/e319_observable_resolution.py	results/e319_*.json	Does the observable's resolution set the quotient's dimension?
+e320	09_quotient_program	S31	mixed (H128 narrowed)	scripts/e320_long_horizon_channels.py	results/e320_*.json	Do channels keep their identity to the last block (fixed basis)?
+e321	09_quotient_program	S31	refuted (subspace persists)	scripts/e321_recomputed_channel_identity.py	results/e321_*.json	Do single coordinates persist when the basis is refitted per level?
+e322	09_quotient_program	S31	supported	scripts/e322_birth_quotient.py	results/e322_*.json	Is the birth-level quotient the same object as the mid-level one?
+e323	09_quotient_program	S31	supported	scripts/e323_nonlinear_decoders.py	results/e323_*.json	Is the read-out from the coordinate nonlinear?
+e324	09_quotient_program	S31	refuted	scripts/e324_local_quotients.py	results/e324_*.json	Do region-specific local quotients beat the global one?
+e325	09_quotient_program	S31	supported (coordinate only)	scripts/e325_equivalence_curvature.py	results/e325_*.json	Do midpoints of equivalent, distant atoms keep the average coordinate?
+e326	09_quotient_program	S31	supported (coordinate only)	scripts/e326_equivalence_algebra.py	results/e326_*.json	Are sums of equivalent pairs equivalent (a+b ~ a'+b')?
+e327	09_quotient_program	S31	supported (coordinate only)	scripts/e327_scalar_sign_algebra.py	results/e327_*.json	Is the coordinate homogeneous under scaling and sign flips?
+e328	09_quotient_program	S31	narrowed	scripts/e328_equivalence_transport.py	results/e328_*.json	Is equivalence preserved by transport to later levels?
+e329	09_quotient_program	S31	refuted (it collapses)	scripts/e329_amplitude_dimension.py	results/e329_*.json	Does the causal dimension expand beyond the linear range?
+e330	09_quotient_program	S31	refuted (with e329)	scripts/e330_amplitude_equivalence.py	results/e330_*.json	Does atom equivalence survive 4x and 8x amplitude?
+e331	09_quotient_program	S31	refuted	scripts/e331_massive_direction_quotient.py	results/e331_*.json	Do massive-channel perturbations share the ordinary quotient?
+e332	09_quotient_program	S31	refuted	scripts/e332_functional_dictionary.py	results/e332_*.json	Are WDD atoms a privileged basis of the quotient?
+e333	09_quotient_program	S31	refuted	scripts/e333_mlp_write_quotient.py	results/e333_*.json	Do the top ledger atoms carry a block's functional coordinate?
+e334	09_quotient_program	S31	refuted	scripts/e334_atom_class_semantics.py	results/e334_*.json	Do functional classes of atoms carry vocabulary meaning?
+e335	09_quotient_program	S31	established (with e317)	scripts/e335_universal_quotient.py	results/e335_*.json	Does a basis fitted to no observable match the own quotients?
+e336	09_quotient_program	S31	refuted	scripts/e336_null_space_cosets.py	results/e336_*.json	Is equivalence a coset of a null space?
+e337	09_quotient_program	S31	established	scripts/e337_homomorphism.py	results/e337_*.json	Is F(a+b) = F(a) + F(b) across families at natural amplitude?
+e338	09_quotient_program	S31	refuted	scripts/e338_fibre_geometry.py	results/e338_*.json	Do the quotient's fibres have geometric structure?
+e339	09_quotient_program	S31	supported (4/5)	scripts/e339_state_alone.py	results/e339_*.json	Is the coordinate implicit in the state and the source?
+e340	09_quotient_program	S31	refuted (e361 re-checks)	scripts/e340_leakage_audits.py	results/e340_*.json	Does supervision add target-specific information (leakage audit)?
+e341	09_quotient_program	S31	supported (4/5)	scripts/e341_component_internals.py	results/e341_*.json	What reads the coordinate downstream?
+e342	09_quotient_program	S31	established (scores modest)	scripts/e342_adversarial_destruction.py	results/e342_*.json	Can any perturbation family break the quotient?
+e343	09_quotient_program	S31	supported (token class narrower)	scripts/e343_token_topology.py	results/e343_*.json	Does the quotient depend on position, text or token class?
+e344	09_quotient_program	S31	supported	scripts/e344_normalization.py	results/e344_*.json	Do norm changes or the injection point alter the quotient?
+e345	09_quotient_program	S31	supported	scripts/e345_fine_amplitude.py	results/e345_*.json	How far is the response linear along core directions?
+e346	09_quotient_program	S31	refuted (e361 re-checks)	scripts/e346_information_discarded.py	results/e346_*.json	Are the discarded (non-core) dimensions causally empty?
+e347	09_quotient_program	S31	refuted (e361 re-checks)	scripts/e347_compression_baselines.py	results/e347_*.json	Does supervision beat plain compression at matched dimension?
+e348	09_quotient_program	S31	refuted	scripts/e348_cancellation.py	results/e348_*.json	Does cancelling the core component undo the logit effect?
+e349	09_quotient_program	S31	supported (refined by e365)	scripts/e349_checkpoint_quotient.py	results/e349_*.json	When is the quotient born in Pythia training?
+e351	09_quotient_program	S31	narrowed (attention part killed)	scripts/e351_component_transport.py	results/e351_*.json	Which sublayers transport a token's own image?
+e352	09_quotient_program	S31	supported	scripts/e352_light_cone.py	results/e352_*.json	How far across tokens does a perturbation spread, and by what route?
+e353	09_quotient_program	S31	narrowed	scripts/e353_coordinate_algebra.py	results/e353_*.json	Do coordinates form an algebra beyond pairs?
+e355	09_quotient_program	S31	narrowed (tail not in coordinates)	scripts/e355_kernel_rank.py	results/e355_*.json	Is the low dimension a kernel phenomenon?
+e356	09_quotient_program	S31	refuted	scripts/e356_one_to_many.py	results/e356_*.json	Does one direction have one coordinate across contexts?
+e357	12_circuits_coselection_drift	S32	established (redundancy reading corrected, e384)	scripts/e357_induction_control.py	results/e357_*.json	Do the unit statistics detect a known circuit (induction)?
+e358	12_circuits_coselection_drift	S32	established (linear readout)	scripts/e358_ioi_control.py	results/e358_*.json	Do the same statistics detect the IOI circuit?
+e359	12_circuits_coselection_drift	S32	refuted (layer structure)	scripts/e359_coselection.py	results/e359_*.json	Are batch co-selection communities (the post's proposal) circuits?
+e360	12_circuits_coselection_drift	S32	refuted (OLMo agrees, e362d)	scripts/e360_drift.py	results/e360_*.json	Is a Pythia neuron's function more stable than its write?
+e360b	12_circuits_coselection_drift	S32	superseded by e360d (signature parts)	scripts/e360b_drift_analysis.py	results/e360b_*.json	How do writes, attribution and signatures drift against the final (Pythia)?
+e360c	12_circuits_coselection_drift	S32	refuted (speciation; late turnover holds)	scripts/e360c_turnover_speciation.py	results/e360c_*.json	Does neuron importance turn over late; do features speciate?
+e360d	12_circuits_coselection_drift	S32	refuted (Pythia; OLMo agrees, e362d)	scripts/e360d_ceiling.py	results/e360d_*.json	Are early-layer neurons' logit effects context-free?
+e360e	12_circuits_coselection_drift	S32	tool (precision control)	scripts/e360e_precision.py	results/e360e_*.json	Is the low block-2 signature agreement precision noise?
+e361	12_circuits_coselection_drift	S32	established	scripts/e361_quotient_depths.py	results/e361_*.json	Do the quotient's core results hold beyond block-2 writers?
+e362	12_circuits_coselection_drift	S32	supported (OLMo)	scripts/e362_drift_general.py	results/e362_*.json	Does per-neuron drift look the same in OLMo-1B?
+e362b	12_circuits_coselection_drift	S32	superseded by e362d (signature parts)	scripts/e362b_drift_analysis.py	results/e362b_*.json	How do OLMo's writes, attribution and signatures drift against the final?
+e362d	12_circuits_coselection_drift	S32	supported (OLMo; matches e360d)	scripts/e362d_ceiling.py	results/e362d_*.json	Do OLMo's ceiling-corrected signatures trail its writes?
+e363	12_circuits_coselection_drift	S32	narrowed (strong in 2 of 5)	scripts/e363_coselection_control.py	results/e363_*.json	Does co-selection see an attention-defined induction circuit?
+e364	12_circuits_coselection_drift	S32	tool (feeds e364b)	scripts/e364_coselection_ckpt.py	results/e364_*.json	What does co-selection look like at each Pythia checkpoint?
+e364b	12_circuits_coselection_drift	S32	refuted	scripts/e364b_persistence.py	results/e364b_*.json	Does co-selection structure persist across Pythia training?
+e365	12_circuits_coselection_drift	S32	narrowed (redundancy growth killed, e380)	scripts/e365_induction_development.py	results/e365_*.json	When does induction's unit structure appear, relative to the quotient?
+e365b	12_circuits_coselection_drift	S32	refuted	scripts/e365b_image_drift.py	results/e365b_*.json	Does the functional coordinate persist through training in function space?
+e366	12_circuits_coselection_drift	S32	narrowed	scripts/e366_conditional_natural.py	results/e366_*.json	Does scoring only where induction applies restore the natural-text circuit?
+e368	12_circuits_coselection_drift	S32	mixed (3 of 5)	scripts/e368_token_coselection.py	results/e368_*.json	Does token-level co-selection find the induction heads?
+e369	12_circuits_coselection_drift	S32	mixed (fails in final Pythia)	scripts/e369_token_ablation_coeffects.py	results/e369_*.json	Do per-token ablation co-effects find the induction heads?
+e370	12_circuits_coselection_drift	S32	refuted (saturation)	scripts/e370_saturation.py	results/e370_*.json	Does softmax saturation explain the gradient's miss in GPT-2?
+e370b	12_circuits_coselection_drift	S32	refuted (GPT-2, SmolLM2; toys agree, e379)	scripts/e370b_selection_vs_use.py	results/e370b_*.json	Does first-order selection measure a unit's use?
+e371	12_circuits_coselection_drift	S32	refuted (on the loss; see e374)	scripts/e371_scale_hessian.py	results/e371_*.json	Do gradient, curvature and co-selection reproduce ablation interactions?
+e372	12_circuits_coselection_drift	S32	established (on the loss; knee mostly readout, e374)	scripts/e372_scale_path.py	results/e372_*.json	What shape does the loss take along a head's scale?
+e373	12_circuits_coselection_drift	S32	narrowed (only just after the transition)	scripts/e373_quotient_needs_induction.py	results/e373_*.json	Does the quotient's growth at the transition need induction heads?
+e374	13_readers_readouts	S33	refuted (knee mostly readout)	scripts/e374_scale_mechanics.py	results/e374_*.json	Is the head-removal knee a degenerate direction of the loss?
+e375	13_readers_readouts	S33	supported (novelty narrowed by literature check)	scripts/e375_reader_wdd.py	results/e375_*.json	Does reader-weighted WDD recover known circuit edges without intervention?
+e376	13_readers_readouts	S33	refuted (on the loss; see e377)	scripts/e376_twins_vs_series.py	results/e376_*.json	Do near-twin writes make backups and composition make series?
+e377	13_readers_readouts	S33	established (5 models)	scripts/e377_metric_convexity.py	results/e377_*.json	Does an interaction's sign depend on the readout?
+e378	13_readers_readouts	S33	refuted	scripts/e378_stitch_time.py	results/e378_*.json	Are lower parts swappable late in Pythia training?
+e379	11_toys_synthetic	S33	supported (toys only; scope note)	scripts/e379_toy_induction.py	results/e379_*.json	Do toy induction transformers reproduce phase 2's redundancy, selection and co-selection claims?
+e380	13_readers_readouts	S33	refuted (zero-ablation; e384 narrows)	scripts/e380_redundancy_readout.py	results/e380_*.json	Is phase 2's growing induction redundancy real on the logit?
+e381	13_readers_readouts	S33	narrowed (above chance in 4 of 5)	scripts/e381_wdd_edges_all.py	results/e381_*.json	Is reader-weighted WDD a reliable general edge finder?
+e382	13_readers_readouts	S33	established (5 models)	scripts/e382_jensen_split.py	results/e382_*.json	How much of a loss interaction is readout convexity (Jensen)?
+e383	13_readers_readouts	S34	refuted (e264's additivity stands)	scripts/e383_e264_logit.py	results/e383_*.json	Does e264's KL interaction measure whether a circuit adds?
+e384	13_readers_readouts	S34	narrowed (redundant only in Pythia)	scripts/e384_logit_reread.py	results/e384_*.json	Do e357's redundancy and e366's contrast survive a linear readout?
+e385	13_readers_readouts	S34	narrowed (by e387)	scripts/e385_readers_read_prominent.py	results/e385_*.json	Do readers draw preferentially on writes WDD can identify?
+e386	11_toys_synthetic	S34	supported (toys only; contested by prior work)	scripts/e386_toy_selfrepair.py	results/e386_*.json	Does self-repair in toys require training noise?
+e387	13_readers_readouts	S35	narrowed	scripts/e387_reading_anatomy.py	results/e387_*.json	Is readers' preference for identifiable writes learned; how sparse is reading?
+e388	13_readers_readouts	S35	established (small k; PCA at equal atoms)	scripts/e388_wdd_as_sae.py	results/e388_*.json	Does WDD's k-sparse reconstruction preserve the computation (the SAE test)?
+e389	13_readers_readouts	S35	refuted (MLP rows carry it)	scripts/e389_which_atoms_matter.py	results/e389_*.json	Does WDD's small-k advantage come from the embeddings?
+e390	13_readers_readouts	S35	supported (Pythia only; see e437)	scripts/e390_provenance_or_geometry.py	results/e390_*.json	Is the advantage provenance or generic trained geometry?
+e391	14_native_vocabulary	S36	refuted	scripts/e391_sparse_true_writes.py	results/e391_*.json	Is WDD's code the few largest actual writes?
+e392	14_native_vocabulary	S36	refuted	scripts/e392_wdd_replacement_model.py	results/e392_*.json	Can own-word codes replace every block at once?
+e392b	10_sinks_huge_directions	S44	refuted	scripts/e392b_replacement_sinks_exact.py	results/e392b_*.json	Does the replacement model compound through the sink positions?
+e393	14_native_vocabulary	S36	narrowed (support matters)	scripts/e393_support_or_coefficients.py	results/e393_*.json	Is WDD's edge over the largest writes only the refit?
+e394	14_native_vocabulary	S36	refuted	scripts/e394_atom_attribution.py	results/e394_*.json	Are WDD atoms sparse causal nodes?
+e395	14_native_vocabulary	S37	established	scripts/e395_self_description.py	results/e395_*.json	Is self-description learned, and how long is it?
+e396	14_native_vocabulary	S37	supported (Pythia)	scripts/e396_mutual_intelligibility.py	results/e396_*.json	Can one stage's words describe another's states?
+e397	14_native_vocabulary	S37	superseded by e437	scripts/e397_false_friends.py	results/e397_*.json	False friends, or an impoverished geometry?
+e398	14_native_vocabulary	S37	refuted	scripts/e398_private_language_seeds.py	results/e398_*.json	Do seeds share a language up to shared tokens?
+e398b	14_native_vocabulary	S37	supported	scripts/e398b_linear_map_control.py	results/e398b_*.json	Is the linear map's gain only projection?
+e399	14_native_vocabulary	S38	established (e443 refines)	scripts/e399_what_makes_own_words.py	results/e399_*.json	Is the advantage second moment, span, or words?
+e400	14_native_vocabulary	S38	refuted (90% length)	scripts/e400_functional_pursuit.py	results/e400_*.json	Do Fisher-chosen words shorten the description?
+e401	14_native_vocabulary	S38	established	scripts/e401_replicate_emergence.py	results/e401_*.json	Is self-describability absent at initialisation everywhere?
+e402	14_native_vocabulary	S38	superseded by e437 (accretion stands)	scripts/e402_intelligibility_map.py	results/e402_*.json	Where do false friends arise; does accretion hold?
+e403	14_native_vocabulary	S38	supported (GPT-2)	scripts/e403_learned_reference.py	results/e403_*.json	Own words vs a learned SAE (GPT-2)?
+e404	14_native_vocabulary	S38	superseded by e437	scripts/e404_false_friend_mechanism.py	results/e404_*.json	Are false friends mediated by the huge directions M?
+e405	14_native_vocabulary	S38	established (sharpened by e443)	scripts/e405_accent_to_vocabulary.py	results/e405_*.json	When does the accent become words?
+e406	14_native_vocabulary	S38	narrowed (accretion)	scripts/e406_olmo_map.py	results/e406_*.json	Do false friends and accretion hold in OLMo?
+e407	14_native_vocabulary	S39	refuted	scripts/e407_read_write_alignment.py	results/e407_*.json	Are readers word-level like writers?
+e408	14_native_vocabulary	S39	narrowed (pursuit metric)	scripts/e408_weight_only_function.py	results/e408_*.json	Do the weights alone know which directions matter?
+e408b	14_native_vocabulary	S39	refuted	scripts/e408b_weight_only_vocabulary.py	results/e408b_*.json	Can weight-only word selection approach the SAE?
+e409	14_native_vocabulary	S39	supported (3 sizes)	scripts/e409_size_ladder.py	results/e409_*.json	Do false friends and the accent shift hold at 70m, 160m?
+e410	14_native_vocabulary	S39	supported	scripts/e410_map_structure.py	results/e410_*.json	How are the intelligibility maps structured?
+e411	14_native_vocabulary	S39	narrowed (sink directions)	scripts/e411_precursors.py	results/e411_*.json	Are false friends precursors of M's writers?
+e412	14_native_vocabulary	S39	supported (Pythia)	scripts/e412_errors_in_own_words.py	results/e412_*.json	Are loss gradients described in the model's own words?
+e413	14_native_vocabulary	S39	supported (Pythia)	scripts/e413_in_context.py	results/e413_*.json	Does the vocabulary cover in-context copying?
+e414	14_native_vocabulary	S39	narrowed (geometry, e435)	scripts/e414_word_frequencies.py	results/e414_*.json	How often is each native word used?
+e415	15_workspace_lenses	S40	refuted (final position; bridge word causal)	scripts/e415_twohop_workspace.py	results/e415_*.json	Does the native-word lens read a two-hop bridge at the final position?
+e416	15_workspace_lenses	S40	null (task beyond the model)	scripts/e416_arithmetic_workspace.py	results/e416_*.json	Does the native lens read a hidden arithmetic value without fabricating?
+e417	15_workspace_lenses	S40	refuted (suppression reading survives)	scripts/e417_roles_workspace.py	results/e417_*.json	Does the native lens resolve who-did-what roles earlier than lenses?
+e418	15_workspace_lenses	S40	supported (97% claim corrected by e437b)	scripts/e418_native_at_7b.py	results/e418_*.json	Does self-description hold at 7B (Qwen2.5-7B, middle depth)?
+e419	15_workspace_lenses	S40	refuted (Fisher pursuit no better)	scripts/e419_sinks_exact_7b.py	results/e419_*.json	With the huge directions M kept exact, does Fisher pursuit help?
+e420	15_workspace_lenses	S40	supported (Qwen-7B; not causal there)	scripts/e420_twohop_subject.py	results/e420_*.json	Do native words read the bridge at the subject's last token?
+e421	15_workspace_lenses	S41	supported (Qwen-7B)	scripts/e421_native_vs_subupdates.py	results/e421_*.json	Do native words beat the largest actual writes (Geva's value vectors)?
+e421b	15_workspace_lenses	S42	supported (Qwen-7B)	scripts/e421b_centred_writes.py	results/e421b_*.json	Does e421 survive centring each actual write on its mean?
+e422	15_workspace_lenses	S41	refuted (Qwen-7B)	scripts/e422_superweight_function_words.py	results/e422_*.json	Are the super weights the native language's most used words?
+e423	15_workspace_lenses	S42	refuted (all 5 models)	scripts/e423_context_readout.py	results/e423_*.json	Do native words surface context tokens (t-1, t-2, t+2) better?
+e424	15_workspace_lenses	S42	mixed	scripts/e424_recall_subject.py	results/e424_*.json	Do native words lead at reading a recalled attribute, in five models?
+e425	15_workspace_lenses	S42	null (no such word exists)	scripts/e425_prevtoken_causal.py	results/e425_*.json	Is a previous-token native word used causally for induction?
+e426	14_native_vocabulary	S42	established (word-level)	scripts/e426_five_model_battery.py	results/e426_*.json	Do the Pythia findings hold in all five models?
+e427	14_native_vocabulary	S43	supported (two inversions)	scripts/e427_capability_ladder.py	results/e427_*.json	Does self-description track capability (Pythia sizes)?
+e428	14_native_vocabulary	S43	mixed	scripts/e428_usage_importance.py	results/e428_*.json	Is usage a free neuron-importance score?
+e428b	14_native_vocabulary	S43	mixed	scripts/e428b_usage_vs_deviation.py	results/e428b_*.json	Does usage beat deviation and spread too?
+e429	14_native_vocabulary	S43	established	scripts/e429_duality_depths.py	results/e429_*.json	Does the duality hold at all depths, all readers?
+e430	14_native_vocabulary	S43	refuted	scripts/e430_selfdescription_signal.py	results/e430_*.json	Is self-description a novelty or uncertainty signal?
+e431	14_native_vocabulary	S43	null	scripts/e431_finetune_vocabulary.py	results/e431_*.json	Does instruction tuning change the vocabulary?
+e432	10_sinks_huge_directions	S44	established (corrects e400, e426)	scripts/e432_huge_direction_anatomy.py	results/e432_*.json	What are the huge directions M (top-8 PCs at middle depth)?
+e433	10_sinks_huge_directions	S44	narrowed (knee not lexical)	scripts/e433_identity_channel.py	results/e433_*.json	Is M the token-identity channel?
+e434	14_native_vocabulary	S44	refuted	scripts/e434_kept_words.py	results/e434_*.json	Does the network keep its most-used words?
+e435	14_native_vocabulary	S44	refuted	scripts/e435_state_surrogates.py	results/e435_*.json	Is the advantage just the states' covariance?
+e436	14_native_vocabulary	S44	narrowed (step 4000)	scripts/e436_increment_vocabulary.py	results/e436_*.json	Are increments word-level before states?
+e437	10_sinks_huge_directions	S44	established (corrects e404)	scripts/e437_sink_hygiene.py	results/e437_*.json	Which phase-3 results survive keeping sink positions exact?
+e437b	10_sinks_huge_directions	S44	supported (one model; corrects e418)	scripts/e437b_sink_hygiene_7b.py	results/e437b_*.json	Was Qwen2.5-7B's 97% of variance in M a sink?
+e438	10_sinks_huge_directions	S44	refuted	scripts/e438_knee_softmax.py	results/e438_*.json	Is the knee of M the attention softmax?
+e439	14_native_vocabulary	S44	refuted	scripts/e439_lexicon.py	results/e439_*.json	Is the native vocabulary the lexicon?
+e440	14_native_vocabulary	S44	established	scripts/e440_context_vocabulary.py	results/e440_*.json	Does what context adds have native words?
+e441	10_sinks_huge_directions	S44	narrowed (no single seat)	scripts/e441_knee_decomposition.py	results/e441_*.json	Is the knee MLP gating, or another single nonlinearity?
+e442	14_native_vocabulary	S44	narrowed	scripts/e442_light_cone.py	results/e442_*.json	Does the advantage live on the broadcast path?
+e443	14_native_vocabulary	S44	refuted (at end)	scripts/e443_block_accents.py	results/e443_*.json	Is the vocabulary a union of per-block accents?
+e444	16_vision_round	S45	narrowed (early signal in 2 of 4 runs)	scripts/e444_grokking_vocabulary.py	results/e444_*.json	Does the vocabulary announce grokking, and is it written or spoken?
+e444b	16_vision_round	S45	supported (written, not spoken)	scripts/e444b_grokking_families.py	results/e444b_*.json	Is each writer family, frozen or trained, a vocabulary on its own?
+e445	16_vision_round	S45	refuted (word level)	scripts/e445_translation_between_models.py	results/e445_*.json	Do two models' native words translate one to one?
+e446	16_vision_round	S45	refuted (vs rotated words, 4 of 5)	scripts/e446_word_meaning.py	results/e446_*.json	Are native words more interpretable than neurons, by judge-free proxies?
+e447	16_vision_round	S45	superseded by e447b (control overfit)	scripts/e447_train_for_self_description.py	results/e447_*.json	Can self-describability be trained into GPT-2 cheaply by a loss term?
+e447b	16_vision_round	S45	narrowed (Euclidean only)	scripts/e447b_train_sd_selfgen.py	results/e447b_*.json	Does e447 hold without overfitting (self-generated fine-tuning text)?
+e448	16_vision_round	S45	supported (2 models)	scripts/e448_interlingua.py	results/e448_*.json	Are translations described by the same native words in four languages?
+e448b	16_vision_round	S45	supported (qualitative)	scripts/e448b_rosetta_words.py	results/e448b_*.json	Which native words carry a sentence across all four languages?
+e448c	16_vision_round	S45	mixed (Qwen yes, SmolLM2 partly)	scripts/e448c_rosetta_neurons.py	results/e448c_*.json	Are the Rosetta words just multilingual neurons?
+e448d	16_vision_round	S45	supported (3 models)	scripts/e448d_concept_words.py	results/e448d_*.json	Does the vocabulary hold language-independent concept words, under controls?
+e448e	16_vision_round	S45	supported (small in Qwen)	scripts/e448e_rosetta_causal.py	results/e448e_*.json	Does removing a Rosetta word matter, in every language?
+e449	16_vision_round	S45	supported (with e449b)	scripts/e449_written_or_spoken_lm.py	results/e449_*.json	Is the vocabulary written or spoken in a small sequence model?
+e450	16_vision_round	S45	narrowed (only at 256-512 bits)	scripts/e450_native_codec.py	results/e450_*.json	Is the native vocabulary a better codec than PCA at equal bits?

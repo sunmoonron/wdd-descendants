@@ -1,0 +1,34 @@
+# 04. Attention heads under WDD
+
+**Question.** Can WDD read what attention heads write, and with which atoms?
+**Established.** Static head atoms (the SVD basis of each head's W_O) do not read attention: the dominant head's subspace is selected in 2-24% of tokens and captures 1-19% of its write (e13). OV value atoms, free from hidden states, rebuild a GPT-2 head's write exactly, recover its attention pattern from the write alone (median correlation 0.52-0.85), capture 77% of the write when the head is selected (e53), and make about half of a block's attention write attributable inside its increment (e143). Much of a GPT-2 head's write is a per-head constant that centering removes (median DC share 0.44, against 0.06-0.12 elsewhere; summed size corrected by the audit to 0.5-1.2 times a centered state, e54). Head effects on later MLP writes are tracked by OMP (e132), but patterns cannot be read hook-free (e150) and MLP writes do not sit in single head subspaces (e145); only e13, e54 and e145 cover all five models.
+**Start here:** e13, e53, e54, e143 · **Sessions:** S1, S2-3 · **Scripts:** `scripts/e13_heads.py`, `scripts/e53_ov_atoms.py`, `scripts/e54_attention_dc.py`, `scripts/e132_attn_chain.py`, `scripts/e143_increment_ov.py`, `scripts/e145_head_subspaces.py`, `scripts/e150_hookfree_attention.py`
+
+## Experiments
+
+| id | question | result | status | links |
+| --- | --- | --- | --- | --- |
+| e13 | Do static head SVD atoms read attention writes? | No: the dominant head's subspace is selected in 2-24% of tokens, capturing 1-19% of its write; head writes are dense in their W_O basis; cos(recon, true attention) 0.09-0.23 | refuted (5 models) | ← e00 · → e53 e132 e218 |
+| e53 | Do per-head OV value atoms read a head's write? | GPT-2: value atoms rebuild head writes exactly; NNLS recovers the pattern from the write alone (median corr 0.52-0.85); with them WDD selects the head 0.11 to 0.27, capturing 77% | supported (GPT-2) | ← e13 · → e54 e143 e150 |
+| e54 | How much of each head's write is a constant (DC) part? | GPT-2 median DC share 0.44 (42% of heads above 0.5), other models 0.06-0.12; aligned with the centering mean (cos 0.81-0.91, 3 models); summed DC 0.5-1.2x a centered state, not 50-100x | mixed (magnitude corrected by audit) | ← e53 · → e89 |
+| e132 | Does WDD track attention-mediated changes of downstream MLP writes? | GPT-2 (24 heads): one ablation shifts the level-6 dominant write for ~3% of tokens, visibly (state slope 1.06); OMP tracks it at slope 1.03 (corr 0.36), dual 0.61 (corr 0.49) | supported (GPT-2 pilot) | ← e13 · → none |
+| e143 | Do value atoms make attention attributable inside the block increment? | GPT-2 blocks 3-6: attention energy captured rises from 0.08-0.15 (static atoms) to 0.53-0.56 (value atoms); increment FVU16 0.56-0.59 to 0.49-0.51; MLP recall unchanged | supported (GPT-2) | ← e02 e53 · → e150 |
+| e145 | Do MLP write directions live inside single head output subspaces? | No (5 models, data-free): median energy in the best single head subspace 0.09-0.29 vs 0.08-0.15 for random subspaces of equal rank; at most 11% of atoms exceed one half | refuted | ← e41 e116 · → none |
+| e150 | Can attention patterns be read from hidden states without hooks? | No (GPT-2): joint NNLS over all heads' value atoms recovers patterns at corr 0.18-0.31 from the attention write and 0.08-0.18 from the raw increment, vs 0.52-0.85 per head (e53) | refuted | ← e53 e143 · → none |
+
+## How the results flow
+
+- `e13 → e53 → e54`: the static SVD atoms miss attention (e13). Value atoms read 77% of a head's write, and in GPT-2 blocks 3-6 the sink takes 0.29-0.56 of the attention mass, which suggested a per-head constant (e53). e54 measured that constant: large only in GPT-2, and removed by centering in every model. The audit cut its summed size from 50-100x to 0.5-1.2x a centered state (rows had been summed N-fold); the qualitative point stands.
+- `e53 → e143 → e150`: carried into the block increment, value atoms attribute 0.53-0.56 of the attention energy (e143). Read jointly over all heads, or hook-free from the raw increment, the patterns are lost (e150), so pattern recovery needs the head's own write.
+- `e13 → e132`: a head's own write is invisible to the static atoms, but its effect on a later MLP write is fully visible in the state and tracked by OMP with the right slope; the dual reading attenuates it (0.61).
+- `e41 → e116 → e145`: at the last levels, the dominant MLP writes have attention atoms as nearest partners (e41). e116's own-span test was trivially 1.0 (audit). e145 repeats it with single-head subspaces against a random control and finds no containment in five models.
+- `e13 → e218 → e375 → e381`: read right after its own block, the largest-writing head is identified by its static atoms in GPT-2 (73%) and Pythia (100%), unlike e13's mid-layer reading (e218). Weighted by a reader's key map, the static head atoms recover the induction edge (e375), but not circuit edges in general (e381).
+
+## Links to other areas
+
+- [01 Method](01_method.md): e116 finds attention atoms are the nearest partner of 6-17% of MLP atoms; its "energy in own attention span" column is trivially 1.0 (audit), which e145 replaces.
+- [02 Readability law](02_readability_law.md): e41 finds the dominant MLP writes' nearest partners at the last levels are attention atoms (GPT-2 L11 69%, Pythia L21 86%, cos 0.54-0.94); e42: dropping all attention atoms changes GPT-2 recall by under 1 point (0.635 to 0.641).
+- [03 Increments](03_increments_depth_targets.md): e11 v2 removes all attention writes: MLP recall moves about 2 points in GPT-2 and SmolLM2, none in Qwen, 0.70 to 0.63 in OLMo, and 0.47 to 0.27 in Pythia, where earlier attention builds the dominant write. e218: right after block L, its largest-writing head is identified by one of its own static atoms in 73% (GPT-2) and 100% (Pythia) of tokens under OMP (controls 0.10, 0.05; OLMo 0).
+- [05 Cancellation](05_cancellation_contraction.md): the eraser is later MLPs, not attention (e08); in GPT-2's erasure matrix it reinforces every birth block (e173), and the learned contraction is carried by the MLP, not attention (e194).
+- [10 Sinks](10_sinks_huge_directions.md): the sink that mid-block GPT-2 heads attend to is one neuron's write, removed by GPT-2's last-block attention (e55: 97% of the removal); the centering mean that absorbs e54's DC is ~16-sparse, made of a few MLP atoms (the sink neuron in SmolLM2) and attention atoms (e89).
+- [13 Readers](13_readers_readouts.md): weighted by an induction head's key map, WDD's static head atoms put a previous-token head at rank 1 in 14 of 20 readers and rank 2 in the rest (e375); as a general edge finder the reading is above chance but unreliable (e381, top-1 0.02-0.69); head write bases alone recover -0.02 to 0.21 of the loss at k=8 (e389).

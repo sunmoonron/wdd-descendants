@@ -1,10 +1,63 @@
 # What a write becomes: the descendant and quotient program on Weight-Dictionary Decomposition
 
-Ronish Bhatt ([ORCID 0009-0000-8835-5380](https://orcid.org/0009-0000-8835-5380)), September 2026. Companion to [Weight-Dictionary Decomposition](https://github.com/sunmoonron/weight-dictionary-decomposition) (WDD), which reads a transformer's residual state as a sparse combination of the model's own write vectors. This repository holds the follow-on program: 356 experiments, 1,430 recorded runs on five small models, that follow one WDD write through the network and ask what it becomes, plus the theory that the results support and the literature they sit in. No model was trained; every run is forward passes, ablations, injections and closed-form fits, one to five minutes each on one GPU. A second round (phase 2, e357 to e373, about 255 runs) tests the program's tools against known circuits, the co-selection proposal of the LessWrong post "What if not Circuits?", and per-neuron drift across Pythia and OLMo training; it is summarised below.
+Ronish Bhatt ([ORCID 0009-0000-8835-5380](https://orcid.org/0009-0000-8835-5380)), September 2026. Companion to [Weight-Dictionary Decomposition](https://github.com/sunmoonron/weight-dictionary-decomposition) (WDD), which reads a transformer's residual state as a sparse combination of the model's own write vectors. This repository holds the follow-on program: 411 experiments (e00 to e450 with variants) and about 2,000 recorded runs on five small models, run between 2026-09-19 and 2026-09-24, one to five minutes each on one GPU. Phase 1 (e00 to e356) follows one WDD write through the network and asks what it becomes, with the theory the results support and the literature they sit in; it uses forward passes, ablations, injections and closed-form fits only. Phase 2 (e357 to e373) tests the program's tools against known circuits, the co-selection proposal of the LessWrong post "What if not Circuits?", and per-neuron drift across Pythia and OLMo training. Phase 3 (e374 to e450) turns to readers and readouts and then to self-description: how well a model's own write rows describe its own states. It adds Qwen2.5-7B, and it trains toy transformers, grokking networks and a small sequence model from scratch, some with writer or reader rows frozen. **Start with [`docs/ATLAS.md`](docs/ATLAS.md)**, which organises all 411 experiments into sixteen technical areas and shows how their results connect; the table below summarises it.
 
 The short version of the result: a neuron's write is the model's own perturbation of its residual stream. Downstream computation expands that perturbation physically (hundreds of dimensions) while its causally relevant content becomes compressible (tens of dimensions), and that compressibility is a property of the residual stream's response to any perturbation, not of the write. The compressed content is not carried by a privileged subspace: any moderate-dimensional high-variance projection of the perturbation cloud carries it, there is no null space and no equivalence-class structure, and the WDD atoms are not a special basis of it. WDD remains a clean birth coordinate and instrument; it is not the functional dictionary. The negative results are part of the result.
 
+The short version of phase 3: a model's own write rows are a vocabulary in which its states can be re-described sparsely. At the middle depth 32-64 of them keep 90% of the loss, far more than a rotated copy of the dictionary, while the model's largest actual writes need a thousand or more. The vocabulary is absent at initialisation, starts as a per-block second-order accent, becomes word-level between Pythia steps 4000 and 16000, and is written by training the writer rows: writer rows frozen at random are barely used as words. It holds language-independent concept words (15 of 24 nouns in Qwen2.5-0.5B, 22 in Qwen2.5-7B), it is private across seeds and sizes, and it is not the best sparse vocabulary (a learned SAE is better at small k). Several phase-3 numbers were inflated by attention-sink tokens and were corrected in session 44; `docs/ATLAS.md` lists every correction.
+
 License: MIT for the code (`scripts/`), CC BY 4.0 for the result files and documents (`results/`, `docs/`). Cite with `CITATION.cff`.
+
+## The whole program at a glance
+
+Each area links to a page with one row per experiment (question, result, status, what it builds on and leads to), how the results flow and links to other areas. `docs/atlas/index.tsv` maps every experiment id to its area, session, status, script and result files.
+
+| # | Area | Experiments | What it established |
+| --- | --- | --- | --- |
+| 01 | [Method: solvers, the dictionary, invariance, calibration](docs/atlas/01_method.md) | 34: e00-e169, S1-S2 | Only a trained dictionary beats its rotation, by an extreme-value edge in the first ~8 atoms. OMP reconstructs best and identifies worst. Identification is limited by competition, not budget. Function follows reconstruction. |
+| 02 | [When a write is readable: the prominence law, certificates](docs/atlas/02_readability_law.md) | 33: e05-e206, S1-S3 | A write is read when its prominence beats a covariance-set competitor level (held out, zero parameters). Readability is a stable neuron trait, unrelated to importance. Two certificates. |
+| 03 | [Where provenance survives: increments, depth, targets](docs/atlas/03_increments_depth_targets.md) | 33: e02-e218, S1-S4 | Provenance is lost when writes accumulate: block increments read what states lose. An identified atom names who wrote a direction, not what caused it. |
+| 04 | [Attention heads](docs/atlas/04_attention.md) | 7: e13-e150, S1-S2 | Static head bases miss heads. OV value atoms rebuild head writes and recover attention patterns. |
+| 05 | [Cancellation, erasure, the learned contraction](docs/atlas/05_cancellation_contraction.md) | 29: e06-e220, S1-S4 | Erasure is rare, done by a crowd of later MLP writes, never attention. Every trained block contracts any direction by a gain derived from its weights, born as warmup ends. |
+| 06 | [Descendants I: fate and transport](docs/atlas/06_descendants_fate_transport.md) | 30: e221-e250, S4-S11 | A write is scattered, not damped. Its descendant still names the neuron (88-98%) and is the transported image of the write vector. A transported dictionary fails as a basis. |
+| 07 | [Descendants II: function, sufficiency, dynamics](docs/atlas/07_descendants_function.md) | 39: e251-e285b, S12-S21 | The descendant carries the write's function. Injected, it reproduces the effect, and it predicts its own future. Massive-activation neurons are the exception. |
+| 08 | [The causal coordinate: compression, kill-tree, the quotient picture](docs/atlas/08_causal_coordinate.md) | 32: e286-e316b, S22-S30 | Causal observables need 8-32 directions of a descendant, reconstruction 512-1024. The application (functional units, attribution) failed. |
+| 09 | [The quotient program](docs/atlas/09_quotient_program.md) | 38: e317-e356, S31 | Compressible, not structured. Shuffled-target fits, PCA and the discarded complement decode as well. WDD atoms are not the functional basis. |
+| 10 | [Sinks, massive activations, the huge directions M](docs/atlas/10_sinks_huge_directions.md) | 13: e20-e441, S1-S2, S44 | Sinks are one neuron's write. Phase 3's "86% / 97% of variance in 8 directions" was sink tokens; M holds 10-26% at ordinary positions. M is an early identity channel with a superquadratic knee. |
+| 11 | [Synthetic constructions and toy transformers](docs/atlas/11_toys_synthetic.md) | 16: s1-e386, S1-S3, S33-S34 | Known-truth systems reproduce misattribution, increment-versus-state reading and phase 2's selection claims. Three constructions are retracted. |
+| 12 | [Phase 2: circuits, co-selection, drift, curvature](docs/atlas/12_circuits_coselection_drift.md) | 27: e81-e373, S1-S2, S32 | Unit statistics find induction and IOI circuits in all five models, but not in natural-text averages. Co-selection peaks while a circuit forms. Interactions are large-move effects. Writes settle before function. |
+| 13 | [Readers, readouts, stitching](docs/atlas/13_readers_readouts.md) | 15: e374-e390, S33-S35 | Loss convexity biases interaction measures, so read them on logits. WDD plus a reader's metric finds induction edges. The 64-atom code keeps 84-99% of the loss, through provenance. |
+| 14 | [Self-description: the native vocabulary](docs/atlas/14_native_vocabulary.md) | 40: e391-e443, S36-S44 | 32-64 own words keep 90% of the loss. The vocabulary is learned: a per-block accent early, words from step 4000-16000. It survives covariance, lexicon and Gaussian-state controls. It is private across seeds. |
+| 15 | [A 7B workspace agenda and established lenses](docs/atlas/15_workspace_lenses.md) | 12: e415-e425, S40-S42 | At 7B, native words surface a hidden two-hop bridge that the logit lens misses. It is not a better reader in general. Most results have established names; the instrument is what is new. |
+| 16 | [The vision round: a decade of WDD, backcast](docs/atlas/16_vision_round.md) | 13: e444-e450, S45 | The vocabulary is written by training the writers. Concept words hold across languages (7 / 15 / 22 of 24 nouns). Word tables do not translate between models. A Euclidean design term and a low-rate codec fail. |
+
+How the areas feed one another (dotted lines are corrections or side branches):
+
+```mermaid
+flowchart TD
+  A01["01 Method"] --> A02["02 Readability law"]
+  A02 --> A03["03 Increments, depth, targets"]
+  A03 --> A05["05 Cancellation, contraction"]
+  A05 --> A06["06 Descendants I: fate, transport"]
+  A06 --> A07["07 Descendants II: function"]
+  A07 --> A08["08 Causal coordinate"]
+  A08 --> A09["09 Quotient program"]
+  A09 --> A12["12 Circuits, co-selection, drift"]
+  A12 --> A13["13 Readers, readouts"]
+  A13 --> A14["14 Native vocabulary"]
+  A14 --> A15["15 7B workspace, lenses"]
+  A14 --> A16["16 Vision round"]
+  A04["04 Attention"] --- A02
+  A04 --- A13
+  A10["10 Sinks, huge directions M"] -.->|sink neuron in the centring mean| A02
+  A10 -.->|corrects sink-inflated claims| A14
+  A10 -.->|corrects the 7B 97 percent| A15
+  A11["11 Toys"] -.->|known-truth mechanisms| A03
+  A11 -.->|selection under manipulation| A12
+  A12 -.->|reopens natural-text negatives| A07
+  A13 -.->|re-reads loss interactions| A12
+  A09 -.->|atoms not the functional basis| A13
+```
 
 ## What is in the repository
 
@@ -14,7 +67,7 @@ License: MIT for the code (`scripts/`), CC BY 4.0 for the result files and docum
 | `scripts/wdd_common.py`, `desc_common.py`, `func_common.py`, `quot_common.py` | Shared code: model loading, the dictionary and the cache (`wdd_common`), the runner with ablation and injection hooks (`desc_common`, `func_common`), the quotient helpers (`quot_common`). |
 | `scripts/build_cache.py` | Builds the token cache and the dictionary for one model (see below). |
 | `scripts/runjob.sh`, `wave2.sh`, `run.sh` | The launchers used on the box: resume-safe job runner with a skip guard, parallel wave runner, single launch. |
-| `results/*.json` (1,458 files) | Every recorded result, one JSON per script and model or checkpoint revision, with the numbers behind every claim in the documents. |
+| `results/*.json` (2,020 files) | Every recorded result, one JSON per script and model or checkpoint revision, with the numbers behind every claim in the documents. |
 | `results/FINDINGS.log` | One line per run in the order recorded: timestamp, experiment, and the headline numbers. |
 | `results/e349_quotient_*.pt` | The 16-dimensional quotient bases of Pythia-410m at six training checkpoints. |
 | `scripts/e357_*.py` to `scripts/e373_*.py`, `scripts/pc_common.py` | Phase 2: positive controls, co-selection, drift, curvature (see the phase-2 section). `pc_common.py` holds the ablation, induction and IOI helpers. |
@@ -22,11 +75,14 @@ License: MIT for the code (`scripts/`), CC BY 4.0 for the result files and docum
 | `results/e357_*.json` to `results/e373_*.json`, `results/FINDINGS_phase2.log`, `results/e365/*.pt` | Phase-2 results, the phase-2 findings log, and the top-16 quotient bases with their logit-image summaries at 13 Pythia checkpoints. |
 | `RUNLIST_phase2.txt` | Every phase-2 run in the order the scheduler completed it. |
 | `scripts/e374_*.py` to `scripts/e390_*.py`, `scripts/p3_common.py`, `results/e374_*.json` to `results/e390_*.json`, `RUNLIST_phase3.txt` | Phase 3: reader maps, scale mechanics, interaction readouts, stitching and toy transformers. |
+| `scripts/e391_*.py` to `scripts/e450_*.py`, `scripts/sd_common.py`, `ws_common.py`, `lr_common.py`, `ma_common.py`, `results/FINDINGS_box3.log` | Phase 3 continued: self-description and the native vocabulary (e391 to e414, e426 to e443), the Qwen2.5-7B workspace agenda and established lenses (e415 to e425), the huge directions and sinks (e432 to e443), and the vision round with models trained from scratch (e444 to e450). |
+| `docs/ATLAS.md`, `docs/atlas/` | The atlas: all 411 experiments in sixteen technical areas, one page per area, and `index.tsv` mapping every id to its area, session, status, script and results. |
+| `docs/VISION.md`, `docs/uncharted_map.md` | The backcast of a decade of WDD with its roadmap, and the survey of results never connected to WDD (session 44). |
 | `RUNLIST.txt` | Every run that produced a result, as `python <script> <model-or-revision>`, in recorded order (1,430 lines). Replaying it reproduces the repository. |
 | `waves/` | The job files that were launched in parallel, for the record of what ran together. |
 | `docs/FINDINGS.md` | The chronological narrative, session by session, with the numbers. |
 | `docs/SYNTHESIS.md` | What each round established, the closing statements, and where everything is. |
-| `docs/GRAPH.md` | The hypothesis graph, H0 to H190: each hypothesis, the experiments that tested it, and its status (survives, narrowed, killed, open). |
+| `docs/GRAPH.md` | The hypothesis graph, H0 to H262: each hypothesis, the experiments that tested it, and its status (survives, narrowed, killed, open). |
 | `docs/KILLED.md` | Every hypothesis killed, with the experiment and the number that killed it, and the artifacts retracted. |
 | `docs/THEORY.md` | The first-order transport theory, its derived predictions tagged by what they rest on, the tests of the new predictions, and the corrections the later rounds forced. |
 | `docs/RELATED_WORK.md` | The literature placement and the priority check against the closest 2025 and 2026 work. |
@@ -71,7 +127,7 @@ Reading a result: each JSON has the fields named in the script's docstring and l
 
 ## The experiment map
 
-The program ran as rounds, each answering the previous round's open questions. The rounds in brief (script ranges are approximate; the narrative in `docs/FINDINGS.md` has every one):
+This is the phase-1 map by rounds; [`docs/ATLAS.md`](docs/ATLAS.md) maps all 411 experiments by technical area. The program ran as rounds, each answering the previous round's open questions. The rounds in brief (script ranges are approximate; the narrative in `docs/FINDINGS.md` has every one):
 
 | Rounds | Scripts | Question |
 | --- | --- | --- |
@@ -309,7 +365,7 @@ Five agents read all 400+ experiments in groups of ten and listed every result n
 | e435 | Is self-description only alignment with the states' covariance? | No: Gaussian states with the same covariance keep 15-45% of the advantage. Zipf-like usage is geometry, reproduced by the Gaussian states |
 | e439 | Is the native vocabulary the lexicon (token, position and block-0 rows)? | No, in all five and at every checkpoint; descriptions almost never name the current token |
 | e440 | Is there a native vocabulary for what context adds to a token? | Yes, word-level in all five |
-| e443 | Is the late vocabulary a union of per-block accents? | No at the end (at most 0.33 of the gap), but 0.82 at step 1000: the early accent is per block, and the words appear between steps 4000 and 16000 |
+| e443 | Is the late vocabulary a union of per-block accents? | No at the end (per-block Gaussian words carry at most 0.33 of the gap, per-block word mixtures 0.12-0.52), but 0.82 at step 1000: the early accent is per block, and the words appear between steps 4000 and 16000 |
 | e436 | Do words appear in a block's increment before the state? | Yes at step 4000 in Pythia; at the end increments are less word-level than states |
 | e442 | Does the advantage live on the self path or the broadcast path? | Both |
 | e392b | Does the replacement model compound through the sinks? | No: the compounding is real |
