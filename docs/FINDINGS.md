@@ -1143,3 +1143,144 @@ SESSION 44 (a survey of all 400+ experiments for results never connected to WDD,
   - The native vocabulary came through four new deflationary controls. It is not the lexicon, not a union of per-block accents at the end of training, and not a property of the states' covariance. It also exists for what context adds to a token.
   - Two analogies lost their content. Zipf-like usage is geometry. The network does not preferentially keep its own words.
   - One new developmental fact: the early accent is a per-block accent, and the words appear between steps 4000 and 16000.
+
+SESSION 45 (a new angle, prompted by the user: "suppose WDD existed ten years ago, what would the world look like, and how do we get there?"). Each imagined capability was reduced to its load-bearing assumption, one never tested in the 400+ experiments, and given the cheapest decisive test (e444-e450 with e444b, e447b, e448b-e448e and e449b; 13 scripts, about 60 runs; the first time self-description was studied in models trained from scratch under manipulation). The backcast and the roadmap are in `VISION.md`.
+- e444 GROKKING: DOES THE NATIVE VOCABULARY ANNOUNCE GENERALISATION, AND IS IT WRITTEN OR SPOKEN? (vision: training monitored by vocabulary formation; a theory of how gradient descent writes a vocabulary). A one-layer transformer on (a + b) mod 113, trained from scratch with known Fourier ground truth (earlier toys, e153-e190 and e379-e386, never measured self-description).
+  | Run | test accuracy > 0.5 at step | own-over-rotation advantage half-way at | own-over-covA (word-level) half-way at | embedding Fourier concentration half-way at | final k4 unexplained own / rotated / covA / PCA-4 | word-level max |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | grok (weight decay 1) | 4000 | 4250 | 3250 | 4500 | 0.07 / 0.80 / 0.13 / 0.26 | 0.11 |
+  | grok, seed 1 | 2250 | 2250 | 1750 | 2500 | 0.12 / 0.80 / 0.17 / 0.34 | 0.11 |
+  | frozen MLP read rows | 8250 | 6750 | 8500 | 7750 | 0.20 / 0.78 / 0.28 / 0.58 | 0.08 |
+  | frozen MLP write rows | 13500 | 14000 | 13750 | 13250 | 0.59 / 0.73 / 0.67 / 0.61 | 0.09 |
+  | no weight decay (memorises; test 0.22) | never | 2500 | - | 500 | 0.32 / 0.72 / 0.31 / 0.29 | 0.02 |
+  | permuted labels (memorises) | never | 250 | - | 2250 | 0.60 / 0.75 / 0.63 / 0.77 | 0.04 |
+
+  - Generalising networks become sparse in their own words: 4 words leave 7-20% of the state unexplained against 78-80% for rotated words and 26-58% for the best fixed 4-dimensional subspace. Loss recovered at k 4: 1.00 against 0.43-0.60 rotated.
+  - Memorising networks get only the second-order part (covA matches own words; word-level advantage 0.02-0.04 against 0.08-0.11 in generalising runs).
+  - Timing: in both standard runs the word-level advantage (own over covA) reaches half its maximum 500-750 steps before test accuracy passes 50%, and before the embedding's Fourier concentration (a progress measure that needs the answer). The own-over-rotation advantage coincides with generalisation. In the frozen-writer run nothing leads. This is a label-free early signal in two of four generalising runs, not yet a reliable one.
+  - Written or spoken: with the MLP write rows frozen at random initialisation, the network still generalises (test 1.00, later: step 13500). Its states are then barely sparser in its own words than in rotated ones (0.59 against 0.73, against 0.07-0.20 when the writers train). Freezing the read rows instead keeps the vocabulary.
+  - e444b, family by family (k 4, own against rotated): with frozen read rows the trained MLP write rows are a strong vocabulary (0.25 against 0.89). With frozen write rows those random rows are nearly none (0.69 against 0.74), and the description moves to the attention output bases (0.61 against 0.83). In the standard run the MLP write rows alone leave 8% unexplained at k 4, against 93% for the same rows rotated.
+  - Ground truth: the MLP words the descriptions use most all have their dominant frequency among the embedding's key frequencies (100% in the four generalising runs, 10-40% in the memorising ones). Their frequency purity (0.73-0.79) is high but no higher than that of all MLP rows after the clean-up phase (0.86-0.89).
+  - Pre-registered: G1 own-over-rotation leads generalisation (one of four; the word-level part leads in two of four); G2 memorisers have a smaller advantage (confirmed: its maximum is 0.19-0.47 against 0.73-0.76, and only second-order; not yet visible at the moment of fitting); G3 used words frequency-pure (their frequencies are the key ones, but not purer than other rows at the end); G4 spoken vocabulary with frozen writers (refuted: see e444b and e449); G5 own words beat the top-k subspace after generalising (confirmed when writers train).
+- e449 / e449b WRITTEN OR SPOKEN IN A SMALL SEQUENCE MODEL (a two-block transformer trained from scratch on a topic-mixture language: each sequence draws 3 of 32 sparse topics, so prediction needs in-context inference of a few latent features). Middle state, k = 4:
+
+  | Run | loss | own / rotated / covA / PCA-4 (unexplained) | MLP rows own / rotated | head bases own / rotated | embeddings own / rotated | usage: MLP / heads / embeddings |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | trained | 4.04 | 0.42 / 0.72 / 0.68 / 0.82 | 0.68 / 0.75 | 0.69 / 0.81 | 0.52 / 0.78 | 0.50 / 0.26 / 0.22 |
+  | MLP write rows frozen | 4.09 | 0.32 / 0.72 / 0.70 / 0.85 | 0.75 / 0.74 | 0.70 / 0.82 | 0.40 / 0.78 | 0.29 / 0.48 / 0.21 |
+  | MLP read rows frozen | 4.09 | 0.35 / 0.72 / 0.68 / 0.82 | 0.70 / 0.75 | 0.67 / 0.82 | 0.44 / 0.78 | 0.40 / 0.39 / 0.19 |
+
+  - A second seed reproduces the trained and frozen-writer rows within 0.01. Own words track the latent topics better than rotated words (best |correlation| per topic 0.29-0.32 against 0.17-0.22).
+  - With the MLP writers frozen at random, their rows are no vocabulary at all (0.75 against their rotation's 0.74). The description moves to the trained writers, attention output bases and embeddings, and the whole dictionary still beats rotation.
+  - Trained MLP rows are a weak vocabulary in this model (0.68 against 0.75); embeddings are the strongest family.
+  - Pre-registered: trained states sparse in own words (confirmed); the advantage collapses with frozen writers (refuted for the whole dictionary, confirmed for the frozen rows themselves); it stays with frozen readers (confirmed); own words track topics better (confirmed).
+  - Together with e444: in both settings, rows frozen at random are barely used as words, and trained writer rows are. The vocabulary is written by training the writers, not spoken by activations organising around whatever writers exist. Where some writers are frozen, the description moves to those that train.
+- e445 TRANSLATION BETWEEN MODELS (vision: interoperable internals). Pythia 160m, 410m and 1b (same data, data order and tokenizer), middle depth, usage-matched word partners.
+  - Usage partners: the best |cos| between a word's coefficient pattern and a word of the other model.
+    - Median native-to-native 0.20 (160m->410m), 0.22 (410m->160m), 0.27 (410m->1b), against 0.15-0.17 to rotated words.
+    - Share of words with a partner above 0.5: 0.07, 0.09, 0.14 against 0.01-0.02.
+    - Partners are mutual best matches for 18-20%. The top 100 pairs are MLP rows, never the same token's embedding row.
+  - Held-out translation into the other model (loss recovered there):
+    - word-for-word (A's description, each word replaced by its partner, with a fitted scale): 0.06, 0.13, 0.08;
+    - random partners -0.03; rotated vocabularies -0.02 to -0.03;
+    - a dense ridge map of the whole state: 0.85, 0.91, 0.87;
+    - a learned linear decoder from A's word coefficients: 0.59, 0.67, 0.60. That equals B's own 16-word description (0.59, 0.67, 0.57), although only 39-46% of A's picks are among the 2000 words it decodes.
+  - Pre-registered: native partners beat rotated (confirmed, 3 of 3); word-for-word over 0.3 (refuted); the dense map wins (confirmed); word-for-word at least half of it (refuted).
+  - Reading: correspondence between models is dense and linear, not one word to one word. There are more partner words than chance, but a translation table of words carries almost no function.
+- e446 DO NATIVE WORDS MEAN SOMETHING? (vision: every model ships with its dictionary). Judge-free proxies over 200 units per type at middle depth.
+  - Medians over 200 units per type (token-explanation AUC / coherence of current tokens / coherence of next tokens / self-consistency):
+
+    | Model | native words | their neurons | rotated words | random directions | principal directions |
+    | --- | --- | --- | --- | --- | --- |
+    | GPT-2 | 0.83 / +0.25 / +0.03 / 0.68 | 0.75 / +0.20 / +0.04 / 0.63 | 0.78 / +0.17 / +0.03 / 0.64 | 0.56 / -0.02 / -0.01 / 0.58 | 0.57 / -0.01 / -0.01 / 0.61 |
+    | SmolLM2 | 0.73 / +0.31 / +0.07 / 0.59 | 0.71 / +0.42 / +0.09 / 0.64 | 0.88 / +0.43 / +0.08 / 0.57 | 0.58 / +0.08 / +0.02 / 0.51 | 0.56 / +0.07 / +0.01 / 0.54 |
+    | Pythia | 0.70 / +0.11 / +0.06 / 0.61 | 0.63 / +0.08 / +0.06 / 0.57 | 0.92 / +0.22 / +0.07 / 0.72 | 0.56 / 0.00 / +0.01 / 0.58 | 0.56 / -0.01 / -0.01 / 0.62 |
+    | Qwen-0.5B | 0.76 / +0.20 / +0.05 / 0.55 | 0.72 / +0.28 / +0.06 / 0.52 | 0.94 / +0.29 / +0.04 / 0.70 | 0.59 / -0.02 / +0.02 / 0.53 | 0.58 / -0.02 / -0.01 / 0.55 |
+    | OLMo | 0.75 / +0.17 / +0.08 / 0.70 | 0.71 / +0.21 / +0.07 / 0.64 | 0.93 / +0.15 / +0.09 / 0.78 | 0.55 / -0.01 / +0.03 / 0.56 | 0.57 / +0.01 / +0.05 / 0.63 |
+  - Native words are more token-explainable than the same neurons' activations in every model (0.70-0.83 against 0.63-0.75), and more self-consistent in four of five. Random and principal directions are near chance.
+  - Rotated words score highest in four of five models, presumably because their usage follows the state's dominant lexical direction one token type at a time (not tested). Token-level proxies seem to reward lexicality, so they cannot certify meaning; e448 tests meaning across languages instead.
+  - Pre-registered: native above rotated on all three (refuted in four of five); native above neurons on token explanation (confirmed, five of five); the most used words least explainable (refuted); self-consistency above chance and above neurons (four of five).
+- e448 / e448b IS THE VOCABULARY LANGUAGE-INDEPENDENT? (vision: words carry meaning, not surface form). 32 sentences in English, French, Spanish and German.
+  - Translation retrieval (each sentence a tf-idf bag of the native words used at its tokens; top-1 among 32 across the 12 ordered language pairs; chance 0.03):
+
+    | Model, depth | native words (similarity z-gap) | without idf | rotated words | mean-pooled state (z-gap) | whitened pooled state | bag of token ids |
+    | --- | --- | --- | --- | --- | --- | --- |
+    | SmolLM2, quarter | 0.35 (2.4) | 0.08 | 0.07 | 0.21 (0.5) | 0.21 | 0.14 |
+    | SmolLM2, middle | 0.55 (3.2) | | 0.21 | 0.55 (1.8) | 0.36 | 0.14 |
+    | SmolLM2, three quarters | 0.45 (2.5) | | 0.20 | 0.46 (1.5) | 0.33 | 0.14 |
+    | Qwen-0.5B, quarter | 1.00 (16.2) | 0.91 | 0.73 | 1.00 (4.8) | 0.98 | 0.12 |
+    | Qwen-0.5B, middle | 0.98 (9.7) | 0.67 | 0.77 | 0.99 (3.9) | 0.85 | 0.12 |
+    | Qwen-0.5B, three quarters | 0.88 (9.1) | 0.54 | 0.56 | 0.98 (3.5) | 0.80 | 0.12 |
+
+    - A sentence is described with the same native words in four languages. This holds even in SmolLM2-135M, which is trained mostly on English.
+    - The native bags match the continuous state at top-1, and separate translations from non-translations 2-4 times more sharply (z-gap).
+    - Rotated words do much worse, and so do the tokens themselves.
+    - Pre-registered: far above chance in Qwen (confirmed); above rotated (confirmed); at least the pooled state (refuted at the middle and late depths by 0.01-0.10 at top-1, though the z-gap is 2.5-3 times larger); peak at the middle depth (refuted: highest at a quarter).
+  - e448b, Rosetta words: for each sentence, the native word used in all four versions and in the fewest others. In Qwen-0.5B (middle depth), 32 of 32 sentences have one used in at most 8 other sentence versions. Most sit on the translation-equivalent token in all four languages, cognate or not:
+    - answer / réponse / respuesta / Antwort (b4#1074);
+    - very / très / muy / sehr (b0#197);
+    - phone / téléphone / teléfono / Handy (b5#3933);
+    - company / entreprise / empresa / Firma (b4#4544);
+    - tonight / soir / noche / Nacht (b4#2211);
+    - week / semaine / semana (b6#541);
+    - too / trop / demasiado / zu (b6#2822);
+    - red / rouge / rojo / rotes (b4#871);
+    - after / après / después de / nach (b0#1970);
+    - before / avant / antes de / vor (b1#2296);
+    - o'clock / heures / ocho / Uhr (b6#1695);
+    - lunch / déjeuner / almuerzo / Mittagessen (b3#358).
+    SmolLM2 has fewer (7 of 32), for example cat / chat / gato / Katze (b0#418) and brother / frère / hermano / Bruder (b0#722). Chance controls: with mismatched sentences 0 of 32 in SmolLM2, and 0 of 32 with rotated words. In Qwen-0.5B, 32 of 32 against 0 with mismatched sentences and 11 with rotated words. Qwen's states are language-independent enough that even rotated words sometimes find a shared direction.
+  - e448d, concept words under control: 24 concrete nouns, each in 5 sentence templates and 4 languages (480 sentences). A concept word is used at the noun in at least 15 of its 20 sentences, in all four languages, and in at most 10% of other nouns' sentences.
+    - Qwen-0.5B: 15 of 24 nouns have one (rotated words 0, covA words 4), most at 19-20 of 20 with 0-2% use elsewhere: book (b0#3326), tree (b6#590), city (b3#765), school (b0#1151), money (b9#2710), house (b4#3512), bread (b6#2245), doctor (b5#2638), water, key, chair, door, phone, sun, car. The car word (b6#2751) is the same one e448b found in an unrelated sentence.
+    - SmolLM2: 7 of 24 (rotated 0, covA 0): cat, house, water, phone, school, teacher, money. Its water word (b14#924) is also e448b's.
+    - Qwen2.5-7B (middle depth, block 14 of 28): 22 of 24 (rotated 0, covA 1), all MLP write rows, 16-20 of 20 sentences each and essentially never elsewhere. Twelve sit in block 7 (cat, sun, moon, phone, door, river, city, doctor, money, chair, bird, horse), six in block 0 (house, book, water, school, key, table). Noun identification across languages: own 1.00, rotated 0.88, covA 0.89, mean state 1.00.
+    - Scale: 7 of 24 (SmolLM2-135M), 15 of 24 (Qwen-0.5B), 22 of 24 (Qwen-7B).
+    - Identifying the noun from the words used, trained on three languages and tested on the fourth (chance 0.04): Qwen own 0.94, rotated 0.74, covA 0.79, mean state 0.98; SmolLM2 own 0.53, rotated 0.35, covA 0.29, mean state 0.70.
+    - Pre-registered: over 12 of 24 in Qwen (confirmed, 15); under 4 with rotated words (confirmed, 0); own words beat rotated at identification (confirmed); own words match the mean state (refuted, 0.94 against 0.98 and 0.53 against 0.70); fewer in SmolLM2 (confirmed).
+  - e448e, do they matter causally? Removing the Rosetta word's component at its token, against removing another word used there with the closest coefficient and against a random direction (change in loss over the rest of the sentence):
+    - SmolLM2: English +0.113 / +0.024 / +0.004, French +0.076 / -0.005 / +0.003, Spanish +0.055 / +0.019 / +0.002, German +0.229 / +0.052 / +0.001;
+    - Qwen-0.5B: English +0.006 / +0.018 / +0.001, French +0.033 / +0.007 / -0.000, Spanish +0.011 / +0.007 / -0.003, German +0.023 / -0.003 / +0.002.
+    - The concept word matters more than a matched other word in all four languages in SmolLM2 and in three of four in Qwen, whose effects are small (a larger, more redundant model).
+  - e448c, are they just multilingual neurons? Partly. Each Rosetta word's own neuron fires on those tokens: median 98th percentile of its activations on ordinary text in SmolLM2, 100th in Qwen-0.5B (91% of positions above the 90th). The neuron's own write supplies a median 54% of the state's component along the word in Qwen, and 10% in SmolLM2, where other components write the rest. In Qwen the method mostly rediscovers multilingual neurons, without labels or activation statistics. In SmolLM2 the word names a direction that many writers use for the concept, and its neuron is one of them. Pre-registered (activation-invisible words): refuted.
+- e447 TRAINING FOR SELF-DESCRIPTION (vision: interpretable by design with a free dictionary). GPT-2 small fine-tuned for 120 steps with an added self-description term.
+  - First design (e447): 120 steps on 64 real sequences, which overfits (the lambda = 0 control loses 0.41 nats of held-out loss). Results after fine-tuning (held-out loss / fraction unexplained at k = 16 / loss recovered at k = 16 own against rotated):
+    - lambda 0: 3.976 / 0.516 / 0.76 against 0.50;
+    - lambda 0.3: 3.928 / 0.490 / 0.78 against 0.54;
+    - lambda 1: 3.850 / 0.412 / 0.73 against 0.47;
+    - lambda 3: 3.935 / 0.242 / 0.70 against 0.35.
+    Before fine-tuning: 3.567 / 0.477 / 0.75 against 0.38.
+    - The term does what it is asked. At lambda 3 the states become twice as sparse in the model's own words (fraction unexplained 0.477 to 0.242), and held-out loss is no worse than the control's (it acts as a mild regulariser against the overfitting).
+    - Function is not better described: loss recovered by 16 own words stays at 0.70-0.78.
+    - The change is in the states: the new states in the old words match the new words, and the old states in the new words match the old words.
+    - A Euclidean self-description objective moves variance, not function. The next version should train on the functional objective directly: the loss when the state is replaced by its description.
+  - e447b, without the overfitting: the fine-tuning text is 512 sequences sampled from GPT-2 itself.
+    - lambda 0: held-out loss 3.567 -> 3.562 (no overfitting); unexplained at k 16 0.477 -> 0.479.
+    - lambda 1: 3.575 (+0.008 nats); 0.432 (-9%).
+    - lambda 3: 3.850 (+0.28); 0.281 (-41%).
+    - lambda 10: 4.473 (+0.91); 0.097 (-80%). Only here does the own-over-rotation gap grow (0.37 -> 0.47), because rotated words get worse, not because own words get better (0.72).
+    - At all lambda the own-over-rotation gap in loss recovered stays at 0.37-0.38, and loss recovered by 16 own words falls slightly (0.75 -> 0.73 -> 0.67). The write rows do not move (median cosine 1.0000); only the states change.
+    - Pre-registered: S1 (gap +0.05 for at most 0.05 nats) refuted; S2 (the change lives in the states) confirmed; S3 (cost over 0.1 nats at lambda 3) confirmed.
+    - Reading: self-describability in the Euclidean sense can be bought cheaply in small amounts and expensively in large ones, but it is not functional self-describability. A design objective has to be functional: the model must still work when its state is replaced by its description.
+- e450 A NATIVE CODEC? (vision: activations ship as native codes). Loss recovered at the middle depth when the state is sent as k word indices (17-18 bits each) plus 6-bit coefficients, against PCA coefficients at 6 bits (a codebook the receiver already holds) and against the rotated dictionary:
+
+  | Model | 64 bits native / PCA | 128 bits | 256 bits | 512 bits | rotated at 512 | sign code (D bits) |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.21 / 0.27 | 0.40 / 0.43 | 0.65 / 0.58 | 0.82 / 0.71 | 0.50 | 0.83 (768 bits) |
+  | SmolLM2 | 0.41 / 0.54 | 0.64 / 0.68 | 0.81 / 0.78 | 0.91 / 0.88 | 0.79 | 0.92 (576) |
+  | Pythia | 0.15 / 0.26 | 0.29 / 0.40 | 0.48 / 0.53 | 0.69 / 0.66 | 0.48 | 0.91 (1024) |
+  | Qwen-0.5B | 0.38 / 0.46 | 0.60 / 0.57 | 0.75 / 0.68 | 0.88 / 0.82 | 0.70 | 0.92 (896) |
+  | OLMo | 0.09 / 0.26 | 0.26 / 0.35 | 0.51 / 0.43 | 0.73 / 0.53 | 0.12 | 0.96 (2048) |
+
+  - The native code loses to PCA at 64 bits everywhere and at 128 bits in four of five models, because each word's index costs 17-18 bits. It wins at 512 bits in all five, by 0.03-0.20. At equal bits it is far better than the rotated dictionary. Only in GPT-2 and SmolLM2 does it reach a one-bit-per-dimension sign code's function at 512 bits, 1.1-1.5 times fewer bits; elsewhere the sign code keeps more.
+  - Pre-registered (native above PCA at 128 and 256 bits in three of five): refuted at 128 (one of five), confirmed at 256 (four of five).
+  - A native codec is plausible for moderate budgets, not for aggressive compression; the index cost is the obstacle.
+- Reading.
+  - The strongest new facts are causal or ground-truthed, which no earlier round could offer.
+    - The vocabulary is written: writer rows frozen at random are barely used as words, and the description moves to writers that train.
+    - Native words include language-independent concept words, found with no labels: 15 of 24 nouns in Qwen-0.5B, 7 in SmolLM2, none with rotated words. They matter causally, and in Qwen they are mostly the multilingual neurons themselves.
+    - Generalisation shows in the vocabulary: specific words beyond second order and beyond low rank, while memorisation gets only the second-order part. The word-level part sometimes shows before test accuracy does.
+  - Three capabilities of the imagined world failed their first test:
+    - word-level translation between models (correspondence is dense);
+    - a low-rate native codec (the index cost wins below about 256 bits);
+    - a Euclidean self-description objective (it moves variance, not function).
+    Each points at what would have to be built instead: dense translation, higher-rate codecs, and functional training objectives.

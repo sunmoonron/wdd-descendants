@@ -351,3 +351,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The native vocabulary is the lexicon": removing token rows, position rows and block-0 MLP rows leaves the gap, at every checkpoint (e439).
 - "Context is described only to second order": word-level in all five (e440).
 - "The late vocabulary is a union of per-block accents": 0.09 or less of the gap in three models at the end, although 0.82 at step 1000 (e443).
+
+## Session 45 kills (the vision round)
+- "Two models' native vocabularies translate word for word": 0.06-0.13 of function against 0.85-0.91 for a dense map (e445).
+- "The native vocabulary is spoken": writer rows frozen at random are barely used as words (0.69-0.75 unexplained against 0.74 for their rotation), in grokking and in a small sequence model (e444, e444b, e449b).
+- "Native words are more interpretable than neurons by token-level proxies, and more than rotated words": more token-explainable than their neurons in five of five models, but rotated words score higher in four of five; such proxies reward lexicality (e446).
+- "Self-description is a reliable early signal of generalisation": the word-level part leads in two of four generalising runs, not in the frozen variants (e444).
+- "Rosetta words are invisible to activation analysis": their neurons fire on the concept (e448c).

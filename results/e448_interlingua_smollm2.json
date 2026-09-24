@@ -1,0 +1,475 @@
+{
+ "model": "smollm2",
+ "depths": [
+  7,
+  15,
+  22
+ ],
+ "n_sentences": 32,
+ "langs": [
+  "en",
+  "fr",
+  "es",
+  "de"
+ ],
+ "retrieval": {
+  "lexical_tokens": [
+   0.14322916666666666,
+   1.3486695388952892
+  ],
+  "7": {
+   "native": [
+    0.3489583333333333,
+    2.4420305291811624
+   ],
+   "native_no_idf": [
+    0.078125,
+    0.2570461289336284
+   ],
+   "words_shared_by_all_four": {
+    "n_words": 53,
+    "mean_quadruples": 6.132075786590576
+   },
+   "rotated": [
+    0.0703125,
+    0.5667449335257212
+   ],
+   "mean_pooled_state": [
+    0.2109375,
+    0.526969434072574
+   ],
+   "whitened_pooled_state": [
+    0.20833333333333334,
+    0.8764415805538496
+   ]
+  },
+  "15": {
+   "native": [
+    0.5494791666666666,
+    3.165572226047516
+   ],
+   "native_no_idf": [
+    0.21614583333333334,
+    1.0340390056371689
+   ],
+   "words_shared_by_all_four": {
+    "n_words": 53,
+    "mean_quadruples": 4.245283126831055
+   },
+   "rotated": [
+    0.20572916666666666,
+    1.3036327262719472
+   ],
+   "mean_pooled_state": [
+    0.5494791666666666,
+    1.7740965982278187
+   ],
+   "whitened_pooled_state": [
+    0.3619791666666667,
+    1.3312023530403774
+   ]
+  },
+  "22": {
+   "native": [
+    0.4505208333333333,
+    2.4717519183953605
+   ],
+   "native_no_idf": [
+    0.265625,
+    1.1322429776191711
+   ],
+   "words_shared_by_all_four": {
+    "n_words": 52,
+    "mean_quadruples": 2.692307710647583
+   },
+   "rotated": [
+    0.19791666666666666,
+    1.3598010390996933
+   ],
+   "mean_pooled_state": [
+    0.4609375,
+    1.4758424659570057
+   ],
+   "whitened_pooled_state": [
+    0.3307291666666667,
+    1.1443160995841026
+   ]
+  }
+ },
+ "shared_words": {
+  "7": [
+   {
+    "word": 50346,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     "ortunate",
+     "remlin",
+     "ertile",
+     "olerant",
+     "ourgeois"
+    ]
+   },
+   {
+    "word": 53806,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     " strugg",
+     " noqa",
+     " comprom",
+     "<filename>",
+     " enthus"
+    ]
+   },
+   {
+    "word": 62692,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     "he",
+     "ile",
+     "ith",
+     "ha",
+     "she"
+    ]
+   },
+   {
+    "word": 51347,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     " strugg",
+     " enthus",
+     " elig",
+     " hypocr",
+     " comprom"
+    ]
+   },
+   {
+    "word": 53698,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     " ",
+     " is",
+     " new",
+     " small",
+     " ("
+    ]
+   },
+   {
+    "word": 64739,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     " setattr",
+     " cfg",
+     " traceback",
+     " Sind",
+     " filepath"
+    ]
+   },
+   {
+    "word": 57244,
+    "type": 3,
+    "n_quadruples": 18,
+    "promotes": [
+     "s",
+     "rals",
+     "ival",
+     "rils",
+     "ity"
+    ]
+   },
+   {
+    "word": 49485,
+    "type": 2,
+    "n_quadruples": 18,
+    "promotes": [
+     "ALTH",
+     "COS",
+     "naissance",
+     " autonom",
+     " appre"
+    ]
+   },
+   {
+    "word": 51847,
+    "type": 2,
+    "n_quadruples": 17,
+    "promotes": [
+     "_",
+     "sch",
+     "-",
+     "early",
+     " driver"
+    ]
+   },
+   {
+    "word": 53251,
+    "type": 3,
+    "n_quadruples": 10,
+    "promotes": [
+     " ",
+     "ism",
+     " point",
+     "ist",
+     "ly"
+    ]
+   }
+  ],
+  "15": [
+   {
+    "word": 50346,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     "ortunate",
+     "remlin",
+     "ertile",
+     "olerant",
+     "ourgeois"
+    ]
+   },
+   {
+    "word": 51821,
+    "type": 2,
+    "n_quadruples": 30,
+    "promotes": [
+     "-",
+     ".",
+     ",",
+     " (",
+     " "
+    ]
+   },
+   {
+    "word": 79807,
+    "type": 2,
+    "n_quadruples": 27,
+    "promotes": [
+     ".",
+     "]",
+     ",",
+     " \"",
+     ")"
+    ]
+   },
+   {
+    "word": 70494,
+    "type": 2,
+    "n_quadruples": 24,
+    "promotes": [
+     "ffes",
+     "phthalm",
+     "klah",
+     "]//",
+     "sers"
+    ]
+   },
+   {
+    "word": 49325,
+    "type": 2,
+    "n_quadruples": 13,
+    "promotes": [
+     " strugg",
+     " ardu",
+     " authent",
+     " enthusi",
+     " collab"
+    ]
+   },
+   {
+    "word": 75489,
+    "type": 2,
+    "n_quadruples": 8,
+    "promotes": [
+     "asgow",
+     "ducive",
+     "s",
+     "rition",
+     " term"
+    ]
+   },
+   {
+    "word": 81895,
+    "type": 2,
+    "n_quadruples": 7,
+    "promotes": [
+     " strugg",
+     " miscon",
+     "continence",
+     "__))",
+     "ChannelType"
+    ]
+   },
+   {
+    "word": 82023,
+    "type": 2,
+    "n_quadruples": 6,
+    "promotes": [
+     "<filename>",
+     "ymour",
+     "iciaries",
+     "'}),",
+     "itoring"
+    ]
+   },
+   {
+    "word": 50050,
+    "type": 2,
+    "n_quadruples": 6,
+    "promotes": [
+     "<filename>",
+     " affili",
+     " interspers",
+     " vulner",
+     " miscon"
+    ]
+   },
+   {
+    "word": 49485,
+    "type": 2,
+    "n_quadruples": 6,
+    "promotes": [
+     "ALTH",
+     "COS",
+     "naissance",
+     " autonom",
+     " appre"
+    ]
+   }
+  ],
+  "22": [
+   {
+    "word": 94005,
+    "type": 2,
+    "n_quadruples": 31,
+    "promotes": [
+     " accred",
+     " encomp",
+     " miscon",
+     " comprom",
+     " affili"
+    ]
+   },
+   {
+    "word": 50346,
+    "type": 2,
+    "n_quadruples": 30,
+    "promotes": [
+     "ortunate",
+     "remlin",
+     "ertile",
+     "olerant",
+     "ourgeois"
+    ]
+   },
+   {
+    "word": 96858,
+    "type": 2,
+    "n_quadruples": 10,
+    "promotes": [
+     " interpre",
+     " affili",
+     " dissemin",
+     " strugg",
+     " accred"
+    ]
+   },
+   {
+    "word": 68912,
+    "type": 2,
+    "n_quadruples": 5,
+    "promotes": [
+     "<filename>",
+     "peutic",
+     "Intf",
+     ":||",
+     "vantages"
+    ]
+   },
+   {
+    "word": 50676,
+    "type": 2,
+    "n_quadruples": 5,
+    "promotes": [
+     "(",
+     "/",
+     ".",
+     "ang",
+     "u"
+    ]
+   },
+   {
+    "word": 93080,
+    "type": 3,
+    "n_quadruples": 5,
+    "promotes": [
+     "Intf",
+     "rowsiness",
+     "MetaInfo",
+     ":||",
+     "aughed"
+    ]
+   },
+   {
+    "word": 50456,
+    "type": 2,
+    "n_quadruples": 3,
+    "promotes": [
+     " fact",
+     " terms",
+     " addition",
+     " case",
+     " essence"
+    ]
+   },
+   {
+    "word": 49325,
+    "type": 2,
+    "n_quadruples": 3,
+    "promotes": [
+     " strugg",
+     " ardu",
+     " authent",
+     " enthusi",
+     " collab"
+    ]
+   },
+   {
+    "word": 49865,
+    "type": 2,
+    "n_quadruples": 2,
+    "promotes": [
+     "ubile",
+     "ortune",
+     "roids",
+     "roid",
+     "ankton"
+    ]
+   },
+   {
+    "word": 92300,
+    "type": 2,
+    "n_quadruples": 2,
+    "promotes": [
+     " necessit",
+     "ecause",
+     "zees",
+     " dilig",
+     " dishwasher"
+    ]
+   }
+  ]
+ },
+ "checks": {
+  "I1": true,
+  "I2": true,
+  "I3": true,
+  "I4": true
+ },
+ "_exp": "e448_interlingua_smollm2",
+ "_time": "2026-09-24 21:12:51"
+}

@@ -1,0 +1,194 @@
+{
+ "model": "qwen7",
+ "level": 14,
+ "n_items": 480,
+ "dicts": {
+  "own": {
+   "n_concept_words": 22,
+   "words": {
+    "the cat": {
+     "word": 321103,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the dog": {
+     "word": 425289,
+     "block": 12,
+     "index": null,
+     "cover": 18,
+     "other_share": 0.0
+    },
+    "the car": {
+     "word": 434654,
+     "block": 12,
+     "index": null,
+     "cover": 19,
+     "other_share": 0.017
+    },
+    "the house": {
+     "word": 153726,
+     "block": 0,
+     "index": null,
+     "cover": 19,
+     "other_share": 0.0
+    },
+    "the book": {
+     "word": 164995,
+     "block": 0,
+     "index": null,
+     "cover": 19,
+     "other_share": 0.0
+    },
+    "the water": {
+     "word": 159458,
+     "block": 0,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the sun": {
+     "word": 324030,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the moon": {
+     "word": 321216,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the bread": {
+     "word": 334490,
+     "block": 8,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the phone": {
+     "word": 311917,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.015
+    },
+    "the door": {
+     "word": 310341,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.002
+    },
+    "the window": {
+     "word": 186218,
+     "block": 1,
+     "index": null,
+     "cover": 17,
+     "other_share": 0.0
+    },
+    "the river": {
+     "word": 324102,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the city": {
+     "word": 326011,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the school": {
+     "word": 164907,
+     "block": 0,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the doctor": {
+     "word": 322580,
+     "block": 7,
+     "index": null,
+     "cover": 19,
+     "other_share": 0.0
+    },
+    "the money": {
+     "word": 310908,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the key": {
+     "word": 153470,
+     "block": 0,
+     "index": null,
+     "cover": 19,
+     "other_share": 0.0
+    },
+    "the chair": {
+     "word": 322661,
+     "block": 7,
+     "index": null,
+     "cover": 18,
+     "other_share": 0.0
+    },
+    "the table": {
+     "word": 170952,
+     "block": 0,
+     "index": null,
+     "cover": 16,
+     "other_share": 0.0
+    },
+    "the bird": {
+     "word": 326764,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    },
+    "the horse": {
+     "word": 309784,
+     "block": 7,
+     "index": null,
+     "cover": 20,
+     "other_share": 0.0
+    }
+   },
+   "noun_id_xlang": 1.0
+  },
+  "rot": {
+   "n_concept_words": 0,
+   "words": {},
+   "noun_id_xlang": 0.8750000447034836
+  },
+  "covA": {
+   "n_concept_words": 1,
+   "words": {
+    "the horse": {
+     "word": 39923,
+     "block": -1,
+     "index": null,
+     "cover": 16,
+     "other_share": 0.052
+    }
+   },
+   "noun_id_xlang": 0.8895833790302277
+  }
+ },
+ "mean_state_noun_id_xlang": 1.0,
+ "checks": {
+  "own_over_12": true,
+  "rot_under_4": true,
+  "own_beats_rot_id": true,
+  "own_matches_mean": true
+ },
+ "_exp": "e448d_concepts_qwen7",
+ "_time": "2026-09-24 21:42:09"
+}

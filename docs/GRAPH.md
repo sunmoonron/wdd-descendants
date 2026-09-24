@@ -419,6 +419,15 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H255 The self-description advantage lives on the broadcast path. → e442 → NARROWED. Both paths: self +0.14 to +0.52, broadcast +0.17 to +0.41; larger on broadcast in three of five.
 - H256 The replacement model compounds through the sinks. → e392b → KILLED in Pythia (excess at k 128 +3.53 with every position described, +3.51 with the sinks exact; GPT-2 has none, +0.49 either way). OLMo +4.11 either way (no sinks in its two sequences). The compounding is real, not a sink effect.
 
+## The vision round: what a decade of WDD would need (session 45)
+
+- H257 Native words carry meaning, not only function. → e446, e448, e448b-e448e → SURVIVES for concrete concepts. Qwen2.5-0.5B has a language-independent concept word (one MLP write row) for 15 of 24 nouns, Qwen2.5-7B for 22 of 24 (twelve in block 7), SmolLM2 for 7 (rotated 0 in all three). Sentence bags of native words retrieve translations at 0.55-1.00 top-1, with 2-4 times the continuous state's separation. Removing a concept word costs more than a matched other word in 4 of 4 languages (SmolLM2) and 3 of 4 (Qwen). NARROWED: token-level proxies cannot show meaning (rotated words score highest on them in 4 of 5 models).
+- H258 The concept words are just multilingual neurons. → e448c → SURVIVES in Qwen-0.5B: the neuron fires (median 100th percentile) and supplies a median 54% of the component. NARROWED in SmolLM2: the neuron fires (98th) but supplies 10%, and other components write the rest. KILLED: 'invisible to activation analysis'.
+- H259 Two models' vocabularies correspond word for word. → e445 → KILLED as a basis for translation (0.06-0.13 of function against 0.85-0.91 for a dense map). Partner words above chance (7-14% against 1-2%).
+- H260 Self-description announces generalisation. → e444 → NARROWED. Generalising networks become sparse in own words; memorisers only second-order. The word-level part leads test accuracy by 500-750 steps in the two standard runs, but not in the frozen variants.
+- H261 The vocabulary is spoken (activations organise around whatever writers exist). → e444, e444b, e449, e449b → KILLED. Writer rows frozen at random are barely used as words (0.69-0.75 against 0.74 rotated); trained rows are (0.08-0.25 against 0.89-0.93 in grokking); the description moves to trained writers.
+- H262 Self-describability can be trained in cheaply. → e447, e447b → NARROWED. Euclidean self-describability can be trained in (fraction unexplained at k 16 down 9% for +0.008 nats, 41% for +0.28, 80% for +0.91). Functional self-describability does not follow (loss recovered by 16 own words 0.75 -> 0.67-0.73). The words do not move, only the states. SPAWNED: train on the functional objective.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

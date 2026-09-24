@@ -314,6 +314,19 @@ Five agents read all 400+ experiments in groups of ten and listed every result n
 | e442 | Does the advantage live on the self path or the broadcast path? | Both |
 | e392b | Does the replacement model compound through the sinks? | No: the compounding is real |
 
+## A decade of WDD, backcast (e444 to e450)
+
+The question: if this method had existed for ten years, what would the world look like, and what must be true for that world? Each imagined capability was reduced to one untested assumption and given the cheapest decisive test (`docs/VISION.md`; details in `docs/FINDINGS.md`, session 45; hypotheses H257 to H262).
+
+| Capability | Test | Answer |
+| --- | --- | --- |
+| Models ship with a readable dictionary | e448-e448e: the same content in English, French, Spanish and German | **Yes, for concrete concepts.** One MLP write row serves as a language-independent concept word for 7 of 24 nouns in SmolLM2, 15 in Qwen2.5-0.5B and 22 in Qwen2.5-7B (rotated words: 0), found without labels. Removing one hurts more than a matched other word. |
+| A theory: training writes the vocabulary | e444, e444b, e449b: models trained from scratch with frozen writer or reader rows | **Written, not spoken.** Writer rows frozen at random are barely used as words; trained ones are (in grokking, 4 trained MLP words explain 92% of the state against 7% rotated). |
+| Training monitored by vocabulary formation | e444: grokking with memorisation controls | **Partly.** Generalising networks become sparse in their own words, memorising ones only to second order; the word-level part led generalisation in two of four runs. |
+| Interoperable internals via word tables | e445: Pythia 160m, 410m, 1b | **No.** Word-for-word translation keeps 0.06-0.13 of function; dense linear maps keep 0.85-0.91. |
+| Interpretable by design | e447, e447b: GPT-2 with a self-description term | **Not with a Euclidean objective:** states get much sparser in the model's own words, but function is not better described. |
+| Activations as native codes | e450: 64-512 bits per position | **Only at moderate rates:** beats PCA at 512 bits in 5 of 5 models, loses at 128 bits and below. |
+
 ## Scope and caveats
 
 Five models under 1.1B parameters, block-2 writers for most runs, one corpus (wikitext-2, with a Pile check), tokens in typical-norm range (attention-sink positions excluded), perturbations at the natural amplitude unless a sweep says otherwise, and decoders limited to nearest-centroid, kNN, ridge and closed-form kernels so that nothing is trained. Every number is a median over held-out tokens unless the script says otherwise. Retracted artifacts and superseded designs are listed in `docs/KILLED.md`; an unsigned transport residual (e275) and a mis-designed additivity reference (e285 part 3) were corrected by e275b and e285b, and a cross-token measure in e315 was discarded for dense injection. The one large outage of the run, two hours without network mid-program, did not lose results because the launcher is resume-safe.

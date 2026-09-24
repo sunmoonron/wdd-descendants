@@ -1,0 +1,475 @@
+{
+ "model": "qwen05",
+ "depths": [
+  6,
+  12,
+  18
+ ],
+ "n_sentences": 32,
+ "langs": [
+  "en",
+  "fr",
+  "es",
+  "de"
+ ],
+ "retrieval": {
+  "lexical_tokens": [
+   0.125,
+   1.2041442543268204
+  ],
+  "6": {
+   "native": [
+    1.0,
+    16.189597129821777
+   ],
+   "native_no_idf": [
+    0.9114583333333334,
+    4.317858099937439
+   ],
+   "words_shared_by_all_four": {
+    "n_words": 282,
+    "mean_quadruples": 1.9432623386383057
+   },
+   "rotated": [
+    0.7291666666666666,
+    5.958402991294861
+   ],
+   "mean_pooled_state": [
+    1.0,
+    4.787607471148173
+   ],
+   "whitened_pooled_state": [
+    0.984375,
+    4.350502610206604
+   ]
+  },
+  "12": {
+   "native": [
+    0.984375,
+    9.652685562769571
+   ],
+   "native_no_idf": [
+    0.671875,
+    2.116781165202459
+   ],
+   "words_shared_by_all_four": {
+    "n_words": 176,
+    "mean_quadruples": 2.8125
+   },
+   "rotated": [
+    0.7682291666666666,
+    6.319322486718495
+   ],
+   "mean_pooled_state": [
+    0.9869791666666666,
+    3.8543878197669983
+   ],
+   "whitened_pooled_state": [
+    0.8541666666666666,
+    2.6582887768745422
+   ]
+  },
+  "18": {
+   "native": [
+    0.8802083333333334,
+    9.13707415262858
+   ],
+   "native_no_idf": [
+    0.5364583333333334,
+    1.6338369747002919
+   ],
+   "words_shared_by_all_four": {
+    "n_words": 143,
+    "mean_quadruples": 2.160839080810547
+   },
+   "rotated": [
+    0.5625,
+    4.292301058769226
+   ],
+   "mean_pooled_state": [
+    0.984375,
+    3.526012738545736
+   ],
+   "whitened_pooled_state": [
+    0.8046875,
+    2.770846446355184
+   ]
+  }
+ },
+ "shared_words": {
+  "6": [
+   {
+    "word": 155422,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     "aad",
+     "\".$_",
+     "\n      \n",
+     "\u0647",
+     "a"
+    ]
+   },
+   {
+    "word": 154984,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     "\u0642\u062f\u064a\u0631",
+     ")NSString",
+     "=<?=",
+     "','=',$",
+     "-{"
+    ]
+   },
+   {
+    "word": 174991,
+    "type": 2,
+    "n_quadruples": 31,
+    "promotes": [
+     "\u5bb6\u90fd\u77e5\u9053",
+     ",Th",
+     "(){}\n\n",
+     " \"${",
+     " respondsToSelector"
+    ]
+   },
+   {
+    "word": 156722,
+    "type": 2,
+    "n_quadruples": 27,
+    "promotes": [
+     "\u7684\u5e26\u9886",
+     "\tULONG",
+     "\u7684\u59bb\u5b50",
+     " ucwords",
+     "\u7684\u94b1"
+    ]
+   },
+   {
+    "word": 159315,
+    "type": 2,
+    "n_quadruples": 26,
+    "promotes": [
+     "\\n",
+     "\n",
+     "\u7684\u5e26\u9886",
+     ",",
+     "\u7684\u76ee\u6807"
+    ]
+   },
+   {
+    "word": 156404,
+    "type": 2,
+    "n_quadruples": 17,
+    "promotes": [
+     "\ubd05",
+     "\"\\\n",
+     " )\n\n\n\n\n\n\n\n",
+     "[]){\n",
+     ".TypeString"
+    ]
+   },
+   {
+    "word": 168386,
+    "type": 3,
+    "n_quadruples": 6,
+    "promotes": [
+     ".'/'.$",
+     ");$",
+     " perch\u00e8",
+     "\u52a9\u3051",
+     "\u8171"
+    ]
+   },
+   {
+    "word": 171167,
+    "type": 2,
+    "n_quadruples": 6,
+    "promotes": [
+     "\u4e0a\u4e16\u7eaa",
+     "\u591a\u5e74",
+     "\u53ca\u5176\u4ed6",
+     " hal",
+     " TextAlign"
+    ]
+   },
+   {
+    "word": 154226,
+    "type": 2,
+    "n_quadruples": 6,
+    "promotes": [
+     "tas",
+     "oretical",
+     "oret",
+     "_hpp",
+     "Whole"
+    ]
+   },
+   {
+    "word": 153311,
+    "type": 2,
+    "n_quadruples": 6,
+    "promotes": [
+     "rotch",
+     "\ud83c\udffd",
+     "gether",
+     "\u745c",
+     "\"group"
+    ]
+   }
+  ],
+  "12": [
+   {
+    "word": 155422,
+    "type": 2,
+    "n_quadruples": 32,
+    "promotes": [
+     "aad",
+     "\".$_",
+     "\n      \n",
+     "\u0647",
+     "a"
+    ]
+   },
+   {
+    "word": 218917,
+    "type": 2,
+    "n_quadruples": 31,
+    "promotes": [
+     "\u00e9paration",
+     "]={\n",
+     "},{\n",
+     "\u53cd\u4e4b",
+     "\"))))\n"
+    ]
+   },
+   {
+    "word": 212698,
+    "type": 2,
+    "n_quadruples": 31,
+    "promotes": [
+     "\u00a0",
+     "ause",
+     "\ufffd\u59cb",
+     "hari",
+     "steen"
+    ]
+   },
+   {
+    "word": 179615,
+    "type": 2,
+    "n_quadruples": 29,
+    "promotes": [
+     "(protocol",
+     "='{$",
+     " kontakt",
+     " pione",
+     "(',',$"
+    ]
+   },
+   {
+    "word": 156404,
+    "type": 2,
+    "n_quadruples": 28,
+    "promotes": [
+     "\ubd05",
+     "\"\\\n",
+     " )\n\n\n\n\n\n\n\n",
+     "[]){\n",
+     ".TypeString"
+    ]
+   },
+   {
+    "word": 222367,
+    "type": 2,
+    "n_quadruples": 27,
+    "promotes": [
+     "/car",
+     "(car",
+     " car",
+     " Car",
+     ":''"
+    ]
+   },
+   {
+    "word": 154984,
+    "type": 2,
+    "n_quadruples": 26,
+    "promotes": [
+     "\u0642\u062f\u064a\u0631",
+     ")NSString",
+     "=<?=",
+     "','=',$",
+     "-{"
+    ]
+   },
+   {
+    "word": 156722,
+    "type": 2,
+    "n_quadruples": 23,
+    "promotes": [
+     "\u7684\u5e26\u9886",
+     "\tULONG",
+     "\u7684\u59bb\u5b50",
+     " ucwords",
+     "\u7684\u94b1"
+    ]
+   },
+   {
+    "word": 168386,
+    "type": 3,
+    "n_quadruples": 12,
+    "promotes": [
+     ".'/'.$",
+     ");$",
+     " perch\u00e8",
+     "\u52a9\u3051",
+     "\u8171"
+    ]
+   },
+   {
+    "word": 165595,
+    "type": 2,
+    "n_quadruples": 9,
+    "promotes": [
+     "\u88ab\u8ba4\u4e3a\u662f",
+     "\u88ab\u89c6\u4e3a",
+     "\u89c6\u4e3a",
+     " setBackgroundImage",
+     "cstdint"
+    ]
+   }
+  ],
+  "18": [
+   {
+    "word": 241447,
+    "type": 2,
+    "n_quadruples": 26,
+    "promotes": [
+     "\u9eb9",
+     "\u0092",
+     " Vide",
+     ".Registry",
+     " \n            \n"
+    ]
+   },
+   {
+    "word": 156404,
+    "type": 2,
+    "n_quadruples": 21,
+    "promotes": [
+     "\ubd05",
+     "\"\\\n",
+     " )\n\n\n\n\n\n\n\n",
+     "[]){\n",
+     ".TypeString"
+    ]
+   },
+   {
+    "word": 166990,
+    "type": 2,
+    "n_quadruples": 19,
+    "promotes": [
+     "\\Entities",
+     "\u7684\u5e26\u9886",
+     "\u041a\u0443\u043f\u0438\u0442\u044c",
+     "-return",
+     "\u7684\u4e8b"
+    ]
+   },
+   {
+    "word": 156722,
+    "type": 2,
+    "n_quadruples": 16,
+    "promotes": [
+     "\u7684\u5e26\u9886",
+     "\tULONG",
+     "\u7684\u59bb\u5b50",
+     " ucwords",
+     "\u7684\u94b1"
+    ]
+   },
+   {
+    "word": 245973,
+    "type": 2,
+    "n_quadruples": 13,
+    "promotes": [
+     " such",
+     " all",
+     ",'#",
+     "dess",
+     "such"
+    ]
+   },
+   {
+    "word": 250635,
+    "type": 2,
+    "n_quadruples": 13,
+    "promotes": [
+     "\u705e",
+     "\u897f\u90e8",
+     " vit",
+     "\u5bcc\u6c11",
+     " Millionen"
+    ]
+   },
+   {
+    "word": 229313,
+    "type": 2,
+    "n_quadruples": 10,
+    "promotes": [
+     ",",
+     "\u6b64",
+     "\u5c06\u5176",
+     "\u5176",
+     "\u7b14\u8005"
+    ]
+   },
+   {
+    "word": 212698,
+    "type": 2,
+    "n_quadruples": 8,
+    "promotes": [
+     "\u00a0",
+     "ause",
+     "\ufffd\u59cb",
+     "hari",
+     "steen"
+    ]
+   },
+   {
+    "word": 244222,
+    "type": 2,
+    "n_quadruples": 7,
+    "promotes": [
+     "ableViewController",
+     " Associations",
+     "quisites",
+     " exactly",
+     " associations"
+    ]
+   },
+   {
+    "word": 152696,
+    "type": 2,
+    "n_quadruples": 4,
+    "promotes": [
+     "matic",
+     " limp",
+     "\u0634\u0627\u0634\u0629",
+     "\u610e",
+     "\u4e3b\u4efb"
+    ]
+   }
+  ]
+ },
+ "checks": {
+  "I1": true,
+  "I2": true,
+  "I3": false,
+  "I4": false
+ },
+ "_exp": "e448_interlingua_qwen05",
+ "_time": "2026-09-24 21:20:07"
+}
