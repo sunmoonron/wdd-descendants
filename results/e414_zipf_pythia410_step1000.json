@@ -1,0 +1,298 @@
+{
+ "model": "pythia410",
+ "rev": "step1000",
+ "level": 12,
+ "top8_var": 0.22407413153272535,
+ "vocab": {
+  "own": {
+   "16": {
+    "slope": -0.7208064198493958,
+    "top10": 0.04589652642607689,
+    "top100": 0.14703094959259033,
+    "distinct": 26074,
+    "top_words": [
+     {
+      "type": 3,
+      "block": 10,
+      "uses": 571,
+      "mshare": 0.20099231600761414
+     },
+     {
+      "type": 3,
+      "block": 7,
+      "uses": 534,
+      "mshare": 0.21694527566432953
+     },
+     {
+      "type": 3,
+      "block": 8,
+      "uses": 342,
+      "mshare": 0.08852385729551315
+     },
+     {
+      "type": 3,
+      "block": 7,
+      "uses": 271,
+      "mshare": 0.08129853755235672
+     },
+     {
+      "type": 3,
+      "block": 5,
+      "uses": 265,
+      "mshare": 0.17172403633594513
+     },
+     {
+      "type": 3,
+      "block": 7,
+      "uses": 236,
+      "mshare": 0.03540568798780441
+     },
+     {
+      "type": 3,
+      "block": 11,
+      "uses": 232,
+      "mshare": 0.1606934517621994
+     },
+     {
+      "type": 3,
+      "block": 11,
+      "uses": 184,
+      "mshare": 0.05178438872098923
+     },
+     {
+      "type": 3,
+      "block": 7,
+      "uses": 184,
+      "mshare": 0.126062273979187
+     },
+     {
+      "type": 3,
+      "block": 11,
+      "uses": 183,
+      "mshare": 0.08747520297765732
+     }
+    ],
+    "top10_mean_mshare": 0.12209051102399826,
+    "rec_full": 0.8287810683250427,
+    "rec_drop_top10": 0.8016828894615173,
+    "rec_drop_rand10": 0.828709602355957,
+    "share_of_positions_using_top10": 0.5095401406288147
+   },
+   "64": {
+    "slope": -0.595505952835083,
+    "top10": 0.012689579278230667,
+    "top100": 0.043156035244464874,
+    "distinct": 88650,
+    "top_words": [
+     {
+      "type": 3,
+      "block": 10,
+      "uses": 646,
+      "mshare": 0.20099231600761414
+     },
+     {
+      "type": 3,
+      "block": 7,
+      "uses": 575,
+      "mshare": 0.21694527566432953
+     },
+     {
+      "type": 3,
+      "block": 8,
+      "uses": 415,
+      "mshare": 0.08852385729551315
+     },
+     {
+      "type": 3,
+      "block": 7,
+      "uses": 300,
+      "mshare": 0.08129853755235672
+     },
+     {
+      "type": 3,
+      "block": 5,
+      "uses": 282,
+      "mshare": 0.17172403633594513
+     },
+     {
+      "type": 3,
+      "block": 7,
+      "uses": 258,
+      "mshare": 0.03540568798780441
+     },
+     {
+      "type": 3,
+      "block": 11,
+      "uses": 242,
+      "mshare": 0.1606934517621994
+     },
+     {
+      "type": 3,
+      "block": 11,
+      "uses": 204,
+      "mshare": 0.05178438872098923
+     },
+     {
+      "type": 3,
+      "block": 10,
+      "uses": 200,
+      "mshare": 0.0669264942407608
+     },
+     {
+      "type": 3,
+      "block": 5,
+      "uses": 198,
+      "mshare": 0.08961516618728638
+     }
+    ],
+    "top10_mean_mshare": 0.11639092117547989
+   }
+  },
+  "rot": {
+   "16": {
+    "slope": -0.3451869487762451,
+    "top10": 0.004953522700816393,
+    "top100": 0.026296477764844894,
+    "distinct": 38439,
+    "top_words": [
+     {
+      "type": 3,
+      "block": 5,
+      "uses": 41,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 41,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 40,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 35,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 10,
+      "uses": 31,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 30,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 29,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 27,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 25,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 12,
+      "uses": 25,
+      "mshare": null
+     }
+    ],
+    "top10_mean_mshare": null,
+    "rec_full": 0.6995478272438049,
+    "rec_drop_top10": 0.694894015789032,
+    "rec_drop_rand10": 0.6994680762290955,
+    "share_of_positions_using_top10": 0.05895303189754486
+   },
+   "64": {
+    "slope": -0.24748484790325165,
+    "top10": 0.0014906433643773198,
+    "top100": 0.009261099621653557,
+    "distinct": 94983,
+    "top_words": [
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 47,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 45,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 5,
+      "uses": 42,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 10,
+      "uses": 42,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 38,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 37,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 36,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 35,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 35,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 12,
+      "uses": 33,
+      "mshare": null
+     }
+    ],
+    "top10_mean_mshare": null
+   }
+  }
+ },
+ "_exp": "e414_zipf_pythia410_step1000",
+ "_time": "2026-09-24 02:21:49"
+}

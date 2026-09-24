@@ -87,3 +87,56 @@ def fmt(cell, ks):
     s = " ".join(f"{cell[str(k)]['rec']:.2f}" for k in ks) + " | fvu " + " ".join(f"{cell[str(k)]['fvu']:.2f}" for k in ks)
     if "16" in cell: s += f" | k16 CI {cell['16']['lo']:.2f}-{cell['16']['hi']:.2f}"
     return s
+
+def reader_gram(model, arch, blocks, unembed=True):
+    """Weights only: the sum over the modules that read the state downstream (each given block's attention input and
+    MLP input, and the unembedding) of W^T W for their residual-space read directions (norm gain folded in, centred when
+    the norm centres), each module normalised to unit trace (one vote per module). Returns (all readers, unembedding)."""
+    mods = []
+    def add(W, ln):
+        g = ln.weight.detach().float(); W = W.detach().float() * g[None]
+        if "rms" not in type(ln).__name__.lower(): W = W - W.mean(-1, keepdim=True)
+        Gm = (W.T @ W).double(); mods.append(Gm / Gm.trace())
+    for b in blocks:
+        l = arch.layers[b]
+        if arch.fam == "gpt2": add(l.attn.c_attn.weight.T, l.ln_1); add(arch.rdir(b), l.ln_2)
+        elif arch.fam == "neox": add(l.attention.query_key_value.weight, l.input_layernorm); add(arch.rdir(b), l.post_attention_layernorm)
+        else:
+            a = l.self_attn; add(torch.cat([a.q_proj.weight, a.k_proj.weight, a.v_proj.weight]), l.input_layernorm)
+            add(torch.cat([l.mlp.up_proj.weight, l.mlp.gate_proj.weight]), l.post_attention_layernorm)
+    Gu = None
+    if unembed:
+        fl = model.transformer.ln_f if arch.fam == "gpt2" else (model.gpt_neox.final_layer_norm if arch.fam == "neox" else model.model.norm)
+        add(model.get_output_embeddings().weight, fl); Gu = mods[-1].float()
+    return sum(mods).float(), Gu
+
+def fisher_gram(model, arch, ids, L, samples=2, seed=0):
+    """Fisher information of the model's own next-token distribution with respect to the output of block L
+    (positions 1:), E[g g^T] with g the gradient of the log-likelihood of a token sampled from the model's prediction."""
+    for p in model.parameters(): p.requires_grad_(False)
+    torch.set_grad_enabled(True); G = torch.zeros(arch.D, arch.D, device=DEV, dtype=torch.float64); n = 0; gen = torch.Generator(device=DEV).manual_seed(seed)
+    try:
+        for s0 in range(0, ids.shape[0], 2):
+            x_ids = ids[s0:s0 + 2]; leaf = {}
+            def hk(m, i, o):
+                xo = o[0] if isinstance(o, tuple) else o; y = xo.detach().requires_grad_(True); leaf["x"] = y
+                return (y,) + tuple(o[1:]) if isinstance(o, tuple) else y
+            for smp in range(samples):
+                h = arch.layers[L].register_forward_hook(hk)
+                try: lg = model(x_ids).logits.float()
+                finally: h.remove()
+                lp = torch.log_softmax(lg[:, :-1], -1)
+                with torch.no_grad(): y = torch.multinomial(lp.exp().reshape(-1, lp.shape[-1]), 1, generator=gen).view(lp.shape[0], -1)
+                (-lp.gather(2, y[..., None]).sum()).backward()
+                gx = leaf["x"].grad[:, 1:].reshape(-1, arch.D).double(); G += gx.T @ gx; n += gx.shape[0]; del lg, lp, gx, leaf["x"]
+    finally: torch.set_grad_enabled(False)
+    return (G / n).float()
+
+def metric_sqrt(G, ridge=0.01):
+    """square root of the metric G normalised to mean eigenvalue 1, plus a ridge"""
+    D = G.shape[0]; M = G / (G.trace() / D) + ridge * torch.eye(D, device=G.device)
+    ev, U = torch.linalg.eigh(M.double()); return ((U * ev.clamp_min(0).sqrt()) @ U.T).float()
+
+def share_on(G, U):
+    """share of the trace of G on the subspace spanned by the orthonormal columns of U"""
+    return ((U.T @ G @ U).trace() / G.trace()).item()

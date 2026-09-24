@@ -355,6 +355,21 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H209 Misleading words come from a band of intermediate stages. → e402, e406 → SURVIVES in Pythia only. Sources 4000 and 8000 mislead on targets from step 33000, and sources 1000 and earlier are generic, not misleading. OLMo (steps 1000-1454000) has no false-friend cell, even where its states have huge directions.
 - H210 Accretion: later vocabularies read earlier states at least as well as the earlier model's own words. → e402, e406 → SURVIVES in Pythia (step-256 states 0.97 with the final words against 0.87 with their own). NARROWED in OLMo: it holds through step 256000, but the final checkpoint's words read early states worse than their own (0.61 against 0.71).
 
+## Round 2 and fresh angles (session 39)
+
+- H211 Read alignment is word-level like write alignment. → e407 → KILLED. The readers' advantage stays second-order at every checkpoint (at the end, their second-moment and mixture controls beat the reader rows); only the writers turn from an accent into a vocabulary.
+- H212 The weights alone know which directions of the state matter. → e408, e408b → SURVIVES for the huge directions: the readers and the unembedding put 0.9-6.3% of their trace on directions holding 52-86% of the variance. NARROWED as a pursuit metric: it recovers 0.83 of the Fisher lift at k = 4 in GPT-2 and 0.74 in Pythia at step 16000, but 0.43 at Pythia's end.
+- H213 A weight-only selection of words approaches the SAE. → e408b → KILLED for the criteria tried (read strength, write norm): both pick the token embeddings and do worse than a random subset.
+- H214 False friends are a Pythia-family property. → e409 → KILLED (none at 70m or 160m); 410m-only among the models tried.
+- H215 The accent-to-vocabulary transition holds across sizes. → e409 → SURVIVES (70m, 160m, 410m).
+- H216 False friends are precursors of the huge-direction writers. → e411 → SURVIVES. Aligned MLP rows first appear at step 4000 (top-100 mean share 0.14), grow at 8000 (0.33) and are formed by 16000 (0.56); the false-friend profile follows.
+- H217 The false-friend window coincides with the cross-seed divergence phase. → literature timing → KILLED (divergence 256-2000; the window 4000-8000 is in early reconvergence).
+- H218 Errors speak the readers' language and states the writers'. → e412 → SURVIVES from step 16000; at step 1000 the errors speak the writers' language; at initialisation neither.
+- H219 The native vocabulary covers in-context computation. → e413 → SURVIVES (in-context copying on unseen sequences is kept at least as well as natural-text prediction, at steps 1000 and 143000).
+- H220 Native-word usage is Zipf-like and more concentrated than rotated-word usage. → e414 → SURVIVES (slopes -0.62 to -0.72 against -0.32 to -0.35, in Pythia and GPT-2).
+- H221 The most used native words are the writers of the huge directions, function words of the native language. → e414 → SURVIVES in part: they point into the top principal directions (29-47% of their norm) and cost 0.03 (Pythia) to 0.10 (GPT-2) when dropped.
+- H222 Accretion is directional in both families. → e410 → SURVIVES (80% of pairs in Pythia, 100% in OLMo, null-relative), distinct from the superset property, which OLMo's final vocabulary lacks.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

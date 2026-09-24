@@ -145,3 +145,23 @@ python e405_accent_to_vocabulary.py step4000 step8000 step63000
 python e406_olmo_map.py step1000-tokens2B step16000-tokens33B step256000-tokens536B
 python e406_olmo_map.py step4000-tokens8B step64000-tokens134B step1454000-tokens3048B
 python plot_e402_map.py   # local, after syncing results
+python e407_read_write_alignment.py step1000
+python e407_read_write_alignment.py step16000
+python e407_read_write_alignment.py step143000
+python e408_weight_only_function.py step16000
+python e408_weight_only_function.py step143000
+python e408b_weight_only_vocabulary.py
+python e409_size_ladder.py pythia70
+python e409_size_ladder.py pythia160
+python e410_map_structure.py   # local, from the e402 and e406 results
+python e411_precursors.py
+python e412_errors_in_own_words.py step0
+python e412_errors_in_own_words.py step1000
+python e412_errors_in_own_words.py step16000
+python e412_errors_in_own_words.py step143000
+python e413_in_context.py step1000
+python e413_in_context.py step143000
+python e414_word_frequencies.py pythia410 step1000
+python e414_word_frequencies.py pythia410 step16000
+python e414_word_frequencies.py pythia410
+python e414_word_frequencies.py gpt2

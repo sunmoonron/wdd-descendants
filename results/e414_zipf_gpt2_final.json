@@ -1,0 +1,298 @@
+{
+ "model": "gpt2",
+ "rev": null,
+ "level": 6,
+ "top8_var": 0.23447775904151352,
+ "vocab": {
+  "own": {
+   "16": {
+    "slope": -0.6499031186103821,
+    "top10": 0.039490580558776855,
+    "top100": 0.15851272642612457,
+    "distinct": 16880,
+    "top_words": [
+     {
+      "type": 3,
+      "block": 1,
+      "uses": 345,
+      "mshare": 0.817733883857727
+     },
+     {
+      "type": 3,
+      "block": 1,
+      "uses": 321,
+      "mshare": 0.8074535727500916
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 273,
+      "mshare": 0.16989509761333466
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 262,
+      "mshare": 0.7290412783622742
+     },
+     {
+      "type": 2,
+      "block": 4,
+      "uses": 261,
+      "mshare": 0.20199644565582275
+     },
+     {
+      "type": 3,
+      "block": 2,
+      "uses": 252,
+      "mshare": 0.24855244159698486
+     },
+     {
+      "type": 2,
+      "block": 6,
+      "uses": 219,
+      "mshare": 0.1384689211845398
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 218,
+      "mshare": 0.8534977436065674
+     },
+     {
+      "type": 3,
+      "block": 0,
+      "uses": 218,
+      "mshare": 0.5124925374984741
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 214,
+      "mshare": 0.2107192724943161
+     }
+    ],
+    "top10_mean_mshare": 0.4689851403236389,
+    "rec_full": 0.7530499696731567,
+    "rec_drop_top10": 0.6474238634109497,
+    "rec_drop_rand10": 0.7529463171958923,
+    "share_of_positions_using_top10": 0.45914873480796814
+   },
+   "64": {
+    "slope": -0.47889065742492676,
+    "top10": 0.011252446100115776,
+    "top100": 0.04719223827123642,
+    "distinct": 52019,
+    "top_words": [
+     {
+      "type": 3,
+      "block": 1,
+      "uses": 346,
+      "mshare": 0.817733883857727
+     },
+     {
+      "type": 3,
+      "block": 2,
+      "uses": 336,
+      "mshare": 0.24855244159698486
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 327,
+      "mshare": 0.16989509761333466
+     },
+     {
+      "type": 3,
+      "block": 1,
+      "uses": 326,
+      "mshare": 0.8074535727500916
+     },
+     {
+      "type": 2,
+      "block": 4,
+      "uses": 312,
+      "mshare": 0.20199644565582275
+     },
+     {
+      "type": 2,
+      "block": 6,
+      "uses": 288,
+      "mshare": 0.1384689211845398
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 270,
+      "mshare": 0.7290412783622742
+     },
+     {
+      "type": 3,
+      "block": 0,
+      "uses": 265,
+      "mshare": 0.5124925374984741
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 242,
+      "mshare": 0.2107192724943161
+     },
+     {
+      "type": 2,
+      "block": 1,
+      "uses": 232,
+      "mshare": 0.2161007970571518
+     }
+    ],
+    "top10_mean_mshare": 0.4052453935146332
+   }
+  },
+  "rot": {
+   "16": {
+    "slope": -0.31708598136901855,
+    "top10": 0.005075831897556782,
+    "top100": 0.029904598370194435,
+    "distinct": 30202,
+    "top_words": [
+     {
+      "type": 2,
+      "block": 2,
+      "uses": 44,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 4,
+      "uses": 40,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 3,
+      "uses": 39,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 0,
+      "uses": 37,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 0,
+      "uses": 33,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 6,
+      "uses": 30,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 6,
+      "uses": 30,
+      "mshare": null
+     },
+     {
+      "type": 0,
+      "block": -1,
+      "uses": 27,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 2,
+      "uses": 26,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 3,
+      "uses": 26,
+      "mshare": null
+     }
+    ],
+    "top10_mean_mshare": null,
+    "rec_full": 0.3787611126899719,
+    "rec_drop_top10": 0.37474656105041504,
+    "rec_drop_rand10": 0.37856796383857727,
+    "share_of_positions_using_top10": 0.07460860908031464
+   },
+   "64": {
+    "slope": -0.21217875182628632,
+    "top10": 0.002033390337601304,
+    "top100": 0.013809473253786564,
+    "distinct": 55885,
+    "top_words": [
+     {
+      "type": 3,
+      "block": 3,
+      "uses": 75,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 54,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 0,
+      "uses": 53,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 2,
+      "uses": 52,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 3,
+      "uses": 51,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 0,
+      "uses": 51,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 6,
+      "uses": 51,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 2,
+      "uses": 50,
+      "mshare": null
+     },
+     {
+      "type": 2,
+      "block": 0,
+      "uses": 48,
+      "mshare": null
+     },
+     {
+      "type": 3,
+      "block": 6,
+      "uses": 47,
+      "mshare": null
+     }
+    ],
+    "top10_mean_mshare": null
+   }
+  }
+ },
+ "_exp": "e414_zipf_gpt2_final",
+ "_time": "2026-09-24 02:20:40"
+}

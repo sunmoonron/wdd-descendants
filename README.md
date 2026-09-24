@@ -259,6 +259,21 @@ Details: `docs/FINDINGS.md` (session 38), hypotheses H202 to H210, `docs/THEORY.
 | e404 | What makes a false friend? | The target's few huge directions: with them handled exactly, the step-4000 words beat random words |
 | e403 | How do the own words compare with a learned SAE (GPT-2)? | The SAE is far better at 4-8 words. The own words reach about two thirds of its advantage at 16-32, overtake it at 64, and keep more function per unit of variance explained. Random words drawn from the states' covariance also beat the own words at 16 |
 
+## Round 2 of the review, and fresh angles (e407 to e414)
+
+Details: `docs/FINDINGS.md` (session 39), hypotheses H211 to H222, `docs/THEORY.md` section 3l (terminology: native vocabulary, native-vocabulary description length with functional distortion primary).
+
+| Experiment | Question | Answer |
+| --- | --- | --- |
+| e407 | Do the readers' directions carry word-level structure like the writers'? | No. The readers' advantage is second-order at every checkpoint, and only the writers turn from an accent into a vocabulary |
+| e408, e408b | Can the weights alone say what matters, or choose the words? | They flag the huge, function-light directions (0.9-6.3% of the readers' trace on 52-86% of the variance), and a metric built from them recovers much of the Fisher gain in GPT-2. Selecting words by weight criteria picks the embedding table and does worse than random |
+| e409 | Are false friends and the accent-to-vocabulary transition properties of the Pythia family? | The transition is, at 70m and 160m. False friends are not: they appear only in 410m |
+| e411 | What are the false friends? | Precursors: MLP rows partly aligned with directions that become huge later (from step 4000, formed by 16000) |
+| e410 | What structure do the intelligibility maps have? | Directional accretion in 80% (Pythia) and 100% (OLMo) of pairs, plus drift with training distance |
+| e412 | Do the network's errors speak its own language? | Yes, and the language changes hands. During early learning the errors are best described by the writers' words; from step 16000 by the readers', while the states stay with the writers |
+| e413 | Does the native vocabulary cover in-context computation? | Yes. In-context copying on unseen random sequences is kept at least as well as natural-text prediction |
+| e414 | What are the word frequencies of the native language? | Zipf-like (slopes about -0.65 against -0.33 for rotated words). The most used words point into the huge directions and carry little function on their own in Pythia |
+
 ## Scope and caveats
 
 Five models under 1.1B parameters, block-2 writers for most runs, one corpus (wikitext-2, with a Pile check), tokens in typical-norm range (attention-sink positions excluded), perturbations at the natural amplitude unless a sweep says otherwise, and decoders limited to nearest-centroid, kNN, ridge and closed-form kernels so that nothing is trained. Every number is a median over held-out tokens unless the script says otherwise. Retracted artifacts and superseded designs are listed in `docs/KILLED.md`; an unsigned transport residual (e275) and a mis-designed additivity reference (e285 part 3) were corrected by e275b and e285b, and a cross-token measure in e315 was discarded for dense injection. The one large outage of the run, two hours without network mid-program, did not lose results because the launcher is resume-safe.

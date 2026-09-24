@@ -131,7 +131,10 @@ Three results change the picture of section 3i.
 
 WDD was built as an identification method: which writers are in the state. Judged instead as a sparse code of the state that the rest of the network must run on, it is functionally faithful and the faithfulness is provenance. At 8 to 32 atoms, the reconstruction over the model's own MLP write rows keeps far more of the next-token loss than OMP over a rotated copy of the same dictionary (same Gram matrix), than PCA, or than embeddings or head bases alone (e388, e389); only rows that are nearly the ones that wrote the state do this (e390). At 64 to 128 atoms every overcomplete dictionary reconstructs well, which is the regime where random-baseline sanity checks of learned sparse autoencoders also find random decoders competitive (Korznikov et al. 2026). The reading side is less sparse than the writing side: a reader input draws half its content from 8 to 14 components (e387), a sparse reading at 64 atoms sees about half of what readers take in, and the apparent preference of readers for identifiable writes is mostly shared alignment with the state.
 
-## 3l. Self-description length (e391 to e398b)
+## 3l. Native-vocabulary description length (e391 to e414)
+
+Terminology (adopted in session 39). The native vocabulary (NV) of a network is a dictionary derived deterministically from its own parameters: its write directions, which WDD supplies. The native-vocabulary description length (NVDL) is what that vocabulary can say: the number of native words a k-sparse description needs to keep a given fraction of the network's function. Functional distortion (loss recovered when the description replaces the state) is primary; Euclidean reconstruction (FVU) is a secondary analysis, because the two disagree sharply (the huge directions hold most of the variance and almost none of the local sensitivity). "The network's own words" is the intuitive name for the same thing. WDD supplies the native vocabulary; NVDL measures what it can say.
+
 
 Let V_θ be network θ's unit write directions up to depth ℓ: token embeddings, MLP write rows, and orthonormal bases of the head output subspaces. A k-word description of a state x is μ + Σ_{i∈S} c_i v_i, with |S| = k and v_i ∈ V_θ; the support comes from OMP and the coefficients from least squares. Its adequacy R_θ(k; V) is the loss recovered when the description replaces the state in θ's forward pass (1 at the clean state, 0 at the mean state). Define:
 
@@ -140,7 +143,7 @@ Let V_θ be network θ's unit write directions up to depth ℓ: token embeddings
     ρ_q(θ)    = W_q / SDL_q                                      writing redundancy
     M_ij(k)   = R_θj(k; V_θi)                                    mutual intelligibility
 
-This is two-part MDL (Rissanen 1978) with a codebook the network already carries. The codebook's cost is the network's own parameters, already paid, so the description length is the data part alone. A random rotation of V_θ has the same cost and the same Gram matrix, so the difference between the two is provenance. The Kolmogorov analogue is a description length relative to a reference machine, where the machine is the network and its words are its own writers.
+The measure is MDL-inspired (Rissanen 1978): a conditional description length under a fixed, model-derived dictionary and a specified functional distortion, with a codebook whose cost is the network's own parameters, already paid. It is not an estimate of an absolute MDL quantity or of Kolmogorov complexity. A random rotation of V_θ has the same cost and the same Gram matrix, so the difference between the two is provenance.
 
 In this language:
 
@@ -160,7 +163,13 @@ What the controls change (session 38). The self-description gap Δ_θ(k) = R_θ(
 - Δ_2, the part a vocabulary with the same second moment or span also achieves (Gaussian words with covariance V_θᵀV_θ/N, or signed sums of 8 words of one family);
 - Δ_w, the part only the individual words achieve.
 
-Up to step 8000 in Pythia, Δ_2 is 41-88% of Δ at k = 16 (an accent). From step 16000 it is near zero (a vocabulary). Chosen under the Fisher metric, the gap is 0.04 / 0.09 / 0.24 at steps 1000 / 16000 / 143000: most of the early gap is a Euclidean effect, and the late gap is functional. None of this makes the own vocabulary optimal. Random words drawn from the states' own covariance (which requires activations) describe the states better at k = 16, and a learned SAE does better at small k. The own vocabulary's distinction is that it is free, that it is created by training, and that its descriptions keep more function per unit of variance explained.
+Up to step 8000 in Pythia, Δ_2 is 41-88% of Δ at k = 16 (an accent). From step 16000 it is near zero (a vocabulary), at 70m and 160m as at 410m (e409): training progressively converts a second-order geometric alignment into atom-specific structure. Chosen under the Fisher metric, the gap is 0.04 / 0.09 / 0.24 at steps 1000 / 16000 / 143000: most of the early gap is a Euclidean effect, and the late gap is functional. None of this makes the own vocabulary optimal. Random words drawn from the states' own covariance (which requires activations) describe the states better at k = 16, and a learned SAE does better at small k. The own vocabulary's distinction is that it is free, that it is created by training, and that its descriptions keep more function per unit of variance explained.
+
+Round 2 and fresh angles (session 39).
+- The review's decomposition of self-describability into write alignment, read alignment and word structure resolves as follows. The word structure belongs to the writers alone. The readers' alignment is second-order at every checkpoint: their second moment points where the states vary, but their individual rows are not a vocabulary (e407).
+- The weights already encode the split between variance and function. The downstream readers and the unembedding put 0.9-6.3% of their trace on the few directions that hold 52-86% of the variance (e408).
+- The false friends are precursors: MLP rows partly aligned with directions that become huge later (from step 4000, formed by 16000; e411). They are harmful only in the model whose huge directions are largest (Pythia-410m; e409, e406).
+- The backward pass has a language too. The error signal at the state, g = Σ_readers J_rᵀ δ_r, reaches it through the readers, and from step 16000 it is better described by the readers' words than by the writers'. The states remain better described by the writers'. During early learning the order is reversed: the writers, being built from the errors (Δw_i ∝ -Σ_t a_i(t) g_t), describe them best (e412).
 
 A shared-subspace reading of e398b. Let W_ij be the ridge map from network i's states to network j's. Its image concentrates on the directions of j's state that i's state predicts. Random words mapped through W_ij describe j's states as well as j's own words at k = 16. So j's function concentrates in the part of its state that an independently trained network also represents, which SVCCA observed in vision networks (Raghu et al. 2017).
 

@@ -303,3 +303,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The translated vocabulary equals the target's" (review's reading of e398): the fitted linear map lifts random words to the own level; the translated words add 0.07 (e398b).
 - "False friends are a general consequence of huge directions in the state": OLMo has huge directions at steps 64000 and 1454000 and no false-friend cells (e406); on the evidence so far the finding is Pythia-specific.
 - "Accretion is universal": OLMo's final vocabulary reads early states worse than their own words (e406).
+
+## Session 39 kills and narrowings (round 2 and fresh angles)
+- "Readers carry atom-specific structure like the writers": their advantage is second-order at every checkpoint (e407).
+- "A weight-only optimised vocabulary approaches the SAE": read-strength and write-norm selections collapse onto the token embeddings and do worse than a random subset (e408b).
+- "The weights alone give the functional metric": they flag the huge directions correctly, but as a pursuit metric they recover 0.15-0.83 of the Fisher lift, less at the end of Pythia's training (e408, e408b).
+- "False friends are a Pythia-family property": none at 70m or 160m (e409).
+- "False friends coincide with the cross-seed divergence phase": the divergence is at steps 256-2000, the window at 4000-8000 (literature timing).
+- "Readers describe the errors better than writers at every stage": at step 1000 the writers do (e412).

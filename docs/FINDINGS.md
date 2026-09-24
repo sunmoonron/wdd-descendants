@@ -751,3 +751,93 @@ SESSION 38 (an external review, relayed by the user, weighed item by item, and t
   - From step 16000 it is word-level: vocabularies with the same second moment or span are at the rotation level. It survives a function-aware pursuit (0.24 at the end), in two families, and is absent at initialisation in five architectures.
   - The transition coincides with the appearance of a few huge, locally insensitive directions in the state and with the window of false friends, whose harm is mediated by those directions (Pythia; OLMo shows no false friends on its checkpoint grid, e406, and its final vocabulary breaks accretion).
   - The own words are not the best sparse vocabulary. Words drawn from the states' covariance beat them at k = 16 (by 0.02-0.06 under the functional pursuit), and a learned SAE beats them at k = 4-32 in GPT-2. What sets the own words apart is that they need no activations and that their descriptions keep more function per unit of variance explained.
+
+SESSION 39 (a second round of the external review, triaged; the small experiments held back earlier; and fresh angles on WDD, approached without the self-description lens; e407-e414, 8 scripts plus a local analysis, 23 runs).
+- TRIAGE (round 2).
+  - Adopted:
+    - the terminology: native vocabulary (NV) and native-vocabulary description length (NVDL), with functional distortion primary and Euclidean reconstruction secondary; MDL-inspired, not a Kolmogorov or absolute-MDL estimate (THEORY 3l).
+    - "training progressively converts second-order geometric alignment into atom-specific structure" instead of "discretizes".
+    - the cross-seed reading: a shared functional subspace, with the individual native vocabularies as private coordinate systems.
+    - the matrix vocabulary of accretion, drift, symmetry and false friends, measured in e410.
+    - the reader/writer decomposition (e407).
+    - a weight-only optimised vocabulary (e408, e408b).
+  - Narrowed: "false friends are a historically valid vocabulary whose semantics drifted". e404 and e411 give a narrower mechanism: words halfway to becoming the writers of the huge directions, harmful only through those directions.
+  - Still deferred: the novelty matrix.
+- e407 READ AGAINST WRITE ALIGNMENT (MLP rows only, loss recovered at k = 16, steps 1000 / 16000 / 143000).
+  - Writers 0.81 / 0.62 / 0.56 against their rotation 0.66 / 0.41 / 0.29. Second-order shares (covA / mix8): 0.86 / 0.91, 0.45 / 0.38, -0.48 / -0.09.
+  - Downstream readers 0.74 / 0.57 / 0.41 against 0.65 / 0.41 / 0.21. Shares: 0.70 / 0.69, 1.17 / 0.91, 1.29 / 1.48.
+  - Writers and readers together: 0.82 / 0.71 / 0.68.
+  - Only the writers turn from an accent into a vocabulary. The readers' advantage stays second-order: at the end, Gaussian words with the readers' second moment (0.47) and mixtures of reader rows (0.51) beat the reader rows themselves (0.41).
+  - Pre-registered (readers word-level at the end): refuted.
+- e408 A FUNCTIONAL METRIC FROM THE WEIGHTS ALONE (Pythia, steps 16000 / end).
+  - The metric is the Gram matrix of the downstream readers' input directions, one vote per module, or of the unembedding alone.
+  - Share of each metric's trace on the states' top-8 principal directions, which hold 0.52 / 0.86 of the variance: Fisher 0.017 / 0.015, readers 0.013 / 0.063, unembedding 0.009 / 0.011. The weights already all but ignore the huge directions (pre-registered: confirmed).
+  - Cosine with the Fisher metric: readers 0.67 / 0.14, unembedding 0.25 / 0.21.
+  - Own words at k = 4 (Euclidean / readers / Fisher): 0.33 / 0.41 / 0.44 and 0.24 / 0.31 / 0.41. The reader metric recovers 0.74 / 0.43 of the Fisher lift at k = 4 and 0.36 / 0.15 at k = 16 (pre-registered, at least one half: confirmed at step 16000 for k = 4, refuted otherwise).
+  - Own-minus-rotation gap under the reader metric at the end: 0.16, 0.57 of its Euclidean size (confirmed, barely).
+- e408b WEIGHT-ONLY VOCABULARIES AGAINST THE SAE (GPT-2).
+  - Own words, Euclidean / reader metric (weights only) / Fisher, at k = 4 / 8 / 16: 0.35 / 0.45 / 0.47, 0.54 / 0.63 / 0.67 and 0.75 / 0.79 / 0.81. The weight-only metric recovers 0.83 of the Fisher lift at k = 4 and 0.67 at k = 16.
+  - Weight-only subsets of the SAE's size (k = 8 / 16): most seen by the readers 0.37 / 0.50; largest write norm 0.33 / 0.52; a random subset 0.46 / 0.66. Both weight-only selections collapse onto the token embeddings (100% and 96% of the chosen words) and do worse than random.
+  - Pre-registered (read-selected beats random): refuted. Weight-only selection closes -0.02 of the random-to-SAE gap at k = 8.
+  - The SAE under the reader metric: 0.78 / 0.85 / 0.89.
+  - Choosing how to describe from the weights helps; choosing which words to keep from the weights, by these criteria, hurts.
+- e409 THE PYTHIA SIZE LADDER (70m and 160m; steps 1000, 4000, 16000, 143000; 4 sequences).
+  - No false-friend cell at either size.
+  - The accent turns into a vocabulary at both sizes. covA / mix8 shares of the own advantage at k = 16, steps 1000 / 4000 / 16000 / end:
+    - 70m: 0.57 / 0.38, 0.38 / -0.19, 0.08 / 0.24, 0.00 / 0.12.
+    - 160m: 0.51 / 0.65, 0.42 / 0.53, 0.22 / 0.34, 0.04 / 0.06.
+  - Top-8 variance share at the end: 0.48 (70m) and 0.44 (160m), against 0.86 (410m).
+  - Pre-registered: the window as a family property, refuted (false friends are 410m-only among 70m, 160m, 410m and OLMo-1B); the accent-to-vocabulary fall at both sizes, confirmed.
+- e411 PRECURSORS, READ FROM THE WEIGHTS.
+  - Fraction of words with more than 0.1 of their squared norm in the final states' top-8 subspace: 0 at steps 256-2000, 0.0009 at 4000, 0.0017 at 8000, 0.0023 at 16000, then 0.0019-0.0012.
+  - Mean share of the 100 most aligned words: 0.03-0.05 up to step 2000, 0.14 at 4000, 0.33 at 8000, 0.56 at 16000, 0.65 at 33000, 0.51 at the end.
+  - They are MLP rows. Token embeddings stay at 0.03 and head directions reach 0.08.
+  - Pre-registered (more aligned words at 2000-8000 than at 256-1000): confirmed from step 4000.
+  - The false-friend profile follows the precursors:
+    - step 2000 has none, and its words are generic (at the null);
+    - step 4000 has weakly aligned precursors and is the worst false friend;
+    - step 8000 has stronger ones and is marginal;
+    - from step 16000 they are fully formed, and friends.
+- e410 THE STRUCTURE OF THE MAPS (local; each cell minus its target's rotation null, k = 16).
+  - Accretion (later words on earlier states beating earlier words on later states): 80% of pairs in Pythia (mean +0.07) and 100% in OLMo (+0.21).
+  - Symmetry correlation: 0.34 and 0.70.
+  - Drift per decade of step distance: -0.04 forward and -0.01 backward (Pythia); -0.11 and -0.08 (OLMo).
+  - OLMo accretes in this sense although its final vocabulary is below the early models' own words on their own states (e406). The two notions (directional asymmetry, and being a superset) are distinct.
+- LITERATURE TIMING. Fehlauer, Mahowald and Pimentel (2025) place Pythia's cross-seed sharp divergence between steps 256 and 2000, and the onset of reconvergence around step 2000, with induction-head formation. The precursors (from step 4000), the false-friend window (4000-8000) and the completion of the accent-to-vocabulary transition (by 16000) all fall in the early reconvergence phase, after the divergence. The earlier guess that the false friends coincide with the divergence phase is wrong.
+- e412 THE NETWORK'S ERRORS IN ITS OWN WORDS (fresh angle).
+  - Per-position gradients of the loss at the middle depth, unit directions, described with 16 words.
+  - Advantage over the same vocabulary rotated (fraction unexplained, rotation minus vocabulary), errors / states:
+
+    | Step | Writers | Readers |
+    | --- | --- | --- |
+    | 0 | 0.000 / 0.003 | 0.003 / 0.001 |
+    | 1000 | 0.059 / 0.076 | 0.020 / 0.021 |
+    | 16000 | 0.019 / 0.063 | 0.055 / 0.050 |
+    | end | 0.019 / 0.095 | 0.063 / 0.055 |
+
+  - At initialisation nothing describes either (pre-registered: confirmed).
+  - During early learning the error signal is written in the writers' words, the words that learning is building from it.
+  - From step 16000 the states speak the writers' language and the errors the readers'. This is the order the chain rule suggests, since the error reaches the state through its readers.
+  - Pre-registered (readers above writers on the errors): confirmed from step 16000, refuted at step 1000.
+  - Gaussian words with each target's own second moment describe both better than any native vocabulary.
+- e413 IN-CONTEXT COMPUTATION (fresh angle).
+  - Loss recovered on natural text and on the inducible positions of the second copy of repeated random sequences. There copying lowers the loss by 7.1 nats per token at step 1000 and 10.9 at the end.
+  - Own minus rotation at k = 4 / 16:
+    - natural text: 0.28 / 0.13 (step 1000) and 0.20 / 0.29 (end);
+    - second copy: 0.42 / 0.40 and 0.17 / 0.30.
+  - The native vocabulary keeps in-context copying on sequences never seen at least as well as it keeps natural-text prediction (pre-registered: confirmed at both checkpoints).
+  - On random tokens the mean state predicts better than the actual states (gap -0.19 to -0.51 nats per token), so there is nothing to recover.
+- e414 WORD FREQUENCIES OF THE NATIVE LANGUAGE (fresh angle; uses of each word across 16-word descriptions of 8 sequences).
+  - Zipf-like and concentrated. Rank-frequency slope -0.72 (Pythia step 1000), -0.62 (16000), -0.67 (end), -0.65 (GPT-2), against -0.32 to -0.35 for rotated words.
+  - The top 10 words take 2.4-4.6% of all uses (rotated 0.4-0.5%). Distinct words used: 16,880-31,845 (rotated 30,202-42,478).
+  - The most used words point into the states' top-8 principal directions: mean share 0.29 at the end of Pythia's training (36 times chance), 0.47 in GPT-2, 0.09-0.12 earlier.
+  - Dropping the 10 most used words from every description costs 0.03 in Pythia at every checkpoint and 0.10 in GPT-2. Dropping 10 random used words costs nothing.
+  - Pre-registered (own usage more concentrated; at the end the most used words write the huge directions): confirmed.
+  - The function-word analogy holds in part: the most used words are frequent, aimed at the huge directions, and carry little function on their own in Pythia (less so in GPT-2).
+- Reading. Four connections that the earlier lens did not show:
+  - The backward pass has a native language too, and it changes hands during training: the errors are first written in the writers' words, then in the readers'.
+  - The native vocabulary covers in-context computation as well as corpus statistics.
+  - Its usage follows a Zipf-like law whose most frequent words point into the huge directions.
+  - The weights alone know that those directions carry almost no local function.
+  - For the review's decomposition: the atom-specific structure belongs to the writers alone, and the readers contribute only an accent.
+  - False friends are the writers of the huge directions caught halfway through their formation (Pythia-410m, where those directions are largest). The accent-to-vocabulary transition holds at every size tried.

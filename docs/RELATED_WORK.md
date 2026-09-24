@@ -153,3 +153,12 @@ Sources: https://arxiv.org/abs/2602.14111 ; https://www.alignmentforum.org/posts
 - Not found in searches: a network's own weights used as the description language of its states, with the description length measured functionally across training; and mutual intelligibility of such vocabularies across checkpoints or seeds. The WDD paper itself (Zenodo record 22749478) introduces the dictionary. Sessions 36 and 37 add the functional description-length reading.
 
 Sources: https://arxiv.org/abs/2410.11179 ; https://arxiv.org/abs/2502.18147 ; https://arxiv.org/abs/2410.14670 ; https://arxiv.org/abs/2412.17626 ; https://arxiv.org/abs/2401.12181 ; https://arxiv.org/abs/2503.09543 ; https://arxiv.org/abs/2509.26643 ; https://arxiv.org/abs/2506.06609 ; https://proceedings.neurips.cc/paper_files/paper/2017/file/dc6a7e655d7e5840e66733e9ee67cc69-Paper.pdf ; https://arxiv.org/abs/2402.17762 ; https://zenodo.org/records/22749478 ; https://arxiv.org/abs/2503.13431
+
+## 16. Round 2 and fresh angles (added 2026-09-24, session 39)
+
+- Training phases across seeds: Fehlauer, Mahowald and Pimentel 2025 (arXiv 2509.26643) place Pythia's cross-seed sharp divergence between steps 256 and 2000, and the onset of reconvergence around step 2000, with induction-head formation. The precursors of the huge-direction writers, the false friends and the accent-to-vocabulary transition (steps 4000-16000) fall in their early reconvergence phase.
+- Word-frequency laws: Zipf 1949; Piantadosi 2014 (Psychonomic Bulletin and Review) reviews the evidence and its explanations. e414's rank-frequency slopes for native-word usage, -0.62 to -0.72, are shallower than natural language's (about -1). The comparison is with the rotated vocabulary (-0.32 to -0.35), not with language.
+- Heavy-tailed feature frequencies are routinely reported for learned SAE latents (density histograms in Bricken et al. 2023 and later work). e414 is the same measurement for a vocabulary that is not learned from activations.
+- Massive activations as biases and attention sinks: Sun et al. 2024 (arXiv 2402.17762). e408 shows that the readers' weights and the unembedding place almost no trace on these directions, and e414 that the most used native words point into them.
+
+Sources: https://arxiv.org/abs/2509.26643 ; https://arxiv.org/abs/2402.17762 ; https://transformer-circuits.pub/2023/monosemantic-features
