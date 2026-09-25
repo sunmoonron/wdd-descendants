@@ -231,6 +231,7 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
   - [`THEORY.md`](THEORY.md): transport theory and the self-description account.
   - [`RELATED_WORK.md`](RELATED_WORK.md).
   - [`VISION.md`](VISION.md): the backcast and a six-step roadmap.
+  - [`NEXT.md`](NEXT.md): the backlog of experiments not yet run, with designs.
 - **Sessions to experiments.**
   - Phase 1:
     - S1 e00-e126 and s1-s2;
@@ -259,3 +260,5 @@ Two standing negatives bound the claims:
 - Native words are not the best sparse vocabulary: a learned SAE wins at small k (e403).
 
 Sessions 46-47 add one direction: steering with native words. At natural size a concept word moves 35-58% of translations, about as efficiently per unit of displacement as a dense difference of means (e458); combinations of a few words, and more concepts and tasks, are the next tests. Session 52 found such combinations work as interchange coordinates across blocks (e469); the natural next step is the full causal-abstraction test on a task with a known high-level algorithm. Session 55 found that native handles for two attributes compose (e473) but that the native advantage depends on the variable (e474). Two open threads follow: which variables native words carry better than generic coordinates, and what the native-only signal in the shape of deep descriptions encodes (e475).
+
+[`NEXT.md`](NEXT.md) lists the experiments not yet run (B1-B16), with designs: the threads above, the causal-abstraction test on a known algorithm, the unrun roadmap steps, and old open items.
