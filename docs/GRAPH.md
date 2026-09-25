@@ -489,6 +489,12 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H288 The carrier words are persistent identities across blocks. → e470 → NARROWED. Consecutive-block overlap is 0.41-0.47, and a third to a half of the carriers are written by the last two blocks: partly persistent, partly re-encoded.
 - H289 Native words beat task PCA because PCA is local to a block. → e470 → NARROWED. A basis shared across blocks is as good as or better than per-block bases at 16 dimensions (Qwen 0.95 against 0.89, SmolLM2 0.50 against 0.38). Native words lead at small k in both models.
 
+## The life cycle of native words (session 54)
+
+- H290 A neuron becomes causally important before it becomes a native word (a developmental ordering). → e471 → KILLED. The lagged correlations are near zero in both directions (-0.01, +0.06), and usage and importance do not co-move (+0.04).
+- H291 When a native word falls out of use, its function dies with it. → e471 → KILLED. The importance change of dying words is about 0, like that of other neurons.
+- H292 The vocabulary in use grows over training. → e471 → KILLED after step 2000. The distinct words used fall from 14,115 to 9,435.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

@@ -399,3 +399,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 53 kills (where native words carry a variable)
 - "A native word is a causal handle at any block where the variable is present": only across the band of blocks where it is written; from Qwen's block 8 onwards four native words switch 15%, while the whole state switches 100% (e470).
 - "The carrier words are the same identities throughout": consecutive-block overlap is 0.41-0.47 (e470).
+
+## Session 54 kills (the life cycle of native words)
+- "Neurons become important before they become native words": no ordering; usage and importance evolve independently across Pythia's training (e471).
+- "When a word falls out of use its function dies": its importance does not change (e471).

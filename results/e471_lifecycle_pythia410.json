@@ -1,0 +1,122 @@
+{
+ "model": "pythia410",
+ "revisions": [
+  "step1000",
+  "step2000",
+  "step4000",
+  "step8000",
+  "step16000",
+  "step32000",
+  "step64000",
+  "main"
+ ],
+ "n_selected": 262,
+ "intervals": [
+  {
+   "interval": "step1000->step2000",
+   "births_importance_pct_before": 0.49425286054611206,
+   "births_importance_pct_after": 0.6206896305084229,
+   "births_selectivity_pct_before": 0.5977011322975159,
+   "births_selectivity_pct_after": 0.6475095748901367,
+   "deaths_importance_change": 9.059906005859375e-06,
+   "others_importance_change": -4.76837158203125e-06,
+   "lag_importance_to_usage": 0.013781560153078774,
+   "lag_usage_to_importance": 0.13810351666821802,
+   "lag_selectivity_to_usage": 0.11714943329426629,
+   "comove_usage_importance": -0.05778887179636026
+  },
+  {
+   "interval": "step2000->step4000",
+   "births_importance_pct_before": 0.4137931168079376,
+   "births_importance_pct_after": 0.6130267977714539,
+   "births_selectivity_pct_before": 0.5708812475204468,
+   "births_selectivity_pct_after": 0.6858237385749817,
+   "deaths_importance_change": 2.86102294921875e-05,
+   "others_importance_change": 2.384185791015625e-06,
+   "lag_importance_to_usage": -0.03944904452542544,
+   "lag_usage_to_importance": 0.12069649440800745,
+   "lag_selectivity_to_usage": 0.021397466013169365,
+   "comove_usage_importance": 0.04986603438767657
+  },
+  {
+   "interval": "step4000->step8000",
+   "births_importance_pct_before": 0.6091954112052917,
+   "births_importance_pct_after": 0.7969348430633545,
+   "births_selectivity_pct_before": 0.6206896305084229,
+   "births_selectivity_pct_after": 0.4712643623352051,
+   "deaths_importance_change": -1.4543533325195312e-05,
+   "others_importance_change": -1.4543533325195312e-05,
+   "lag_importance_to_usage": -0.022908103026244984,
+   "lag_usage_to_importance": 0.011506263238508166,
+   "lag_selectivity_to_usage": 0.1568703791371954,
+   "comove_usage_importance": -0.045220692123969654
+  },
+  {
+   "interval": "step8000->step16000",
+   "births_importance_pct_before": 0.7854406237602234,
+   "births_importance_pct_after": 0.8045976758003235,
+   "births_selectivity_pct_before": 0.5593869686126709,
+   "births_selectivity_pct_after": 0.6896551847457886,
+   "deaths_importance_change": -4.506111145019531e-05,
+   "others_importance_change": 2.288818359375e-05,
+   "lag_importance_to_usage": 0.07043378435589914,
+   "lag_usage_to_importance": 0.05041851117514415,
+   "lag_selectivity_to_usage": 0.026185598171221763,
+   "comove_usage_importance": 0.11749239593769423
+  },
+  {
+   "interval": "step16000->step32000",
+   "births_importance_pct_before": 0.30651339888572693,
+   "births_importance_pct_after": 0.501915693283081,
+   "births_selectivity_pct_before": 0.5862069129943848,
+   "births_selectivity_pct_after": 0.6858237385749817,
+   "deaths_importance_change": 2.8848648071289062e-05,
+   "others_importance_change": 3.266334533691406e-05,
+   "lag_importance_to_usage": -0.09139387291232333,
+   "lag_usage_to_importance": 0.05122053665646786,
+   "lag_selectivity_to_usage": 0.10556610354736137,
+   "comove_usage_importance": 0.15313248666932897
+  },
+  {
+   "interval": "step32000->step64000",
+   "births_importance_pct_before": 0.501915693283081,
+   "births_importance_pct_after": 0.5517241358757019,
+   "births_selectivity_pct_before": 0.7854406237602234,
+   "births_selectivity_pct_after": 0.8160919547080994,
+   "deaths_importance_change": -0.0001614093780517578,
+   "others_importance_change": 3.075599670410156e-05,
+   "lag_importance_to_usage": 0.004204628594477034,
+   "lag_usage_to_importance": 0.05740987805809747,
+   "lag_selectivity_to_usage": 0.10229794979734178,
+   "comove_usage_importance": 0.125459938593673
+  },
+  {
+   "interval": "step64000->main",
+   "births_importance_pct_before": 0.7318007946014404,
+   "births_importance_pct_after": 0.5287356376647949,
+   "births_selectivity_pct_before": 0.7203065156936646,
+   "births_selectivity_pct_after": 0.7049808502197266,
+   "deaths_importance_change": 9.1552734375e-05,
+   "others_importance_change": 1.3113021850585938e-05,
+   "lag_importance_to_usage": 0.020292512438234198,
+   "lag_usage_to_importance": 0.02537222956745004,
+   "lag_selectivity_to_usage": 0.10018746177951572,
+   "comove_usage_importance": -0.037214449403168266
+  }
+ ],
+ "mean": {
+  "lag_importance_to_usage": -0.006434076417472087,
+  "lag_usage_to_importance": 0.06496106139598475,
+  "lag_selectivity_to_usage": 0.0899506273914388,
+  "comove_usage_importance": 0.043675263180696366,
+  "births_importance_pct_before": 0.5489874141556876,
+  "births_importance_pct_after": 0.6310892019953046
+ },
+ "checks": {
+  "importance_leads": false,
+  "comove_over_0_3": false,
+  "deaths_keep_importance": false
+ },
+ "_exp": "e471_lifecycle_pythia410",
+ "_time": "2026-09-25 02:20:20"
+}

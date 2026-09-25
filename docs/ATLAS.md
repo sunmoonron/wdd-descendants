@@ -1,4 +1,4 @@
-# Atlas of the WDD program: 432 experiments by technical area
+# Atlas of the WDD program: 433 experiments by technical area
 
 This is the entry point to the whole program. It is small enough to paste into a new chat as context. It gives:
 
@@ -19,12 +19,12 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 - **Models.**
   - The main five: GPT-2 small, Pythia-410m, Qwen2.5-0.5B, OLMo-1B-0724 and SmolLM2-135M.
   - Also used: Pythia training checkpoints and sizes from 70m to 1b, a random-init GPT-2, Qwen2.5-7B, and toy models trained from scratch.
-- **Scale.** 432 experiment scripts (e00-e470 plus variants), 53 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
-- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 113 established, 100 supported, 52 narrowed, 26 mixed, 114 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
+- **Scale.** 433 experiment scripts (e00-e471 plus variants), 54 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
+- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 113 established, 100 supported, 52 narrowed, 26 mixed, 115 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
 - **Scope.** Negative results are kept. No claim is more general than these models.
 - **Phase 1** (sessions 1-31, e00-e356): when a write can be read back from the state; why it fades; what it becomes downstream (the descendant); and what part of that matters causally (the quotient).
 - **Phase 2** (session 32, e357-e373): the program's tools tested on known circuits, the co-selection proposal of "What if not Circuits?", and drift over training.
-- **Phase 3** (sessions 33-53, e374-e470): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), the learning signal in native coordinates (session 49), whether the native words have a grammar (session 50), whether a description is a self-sufficient state (session 51), and native words as interchange coordinates (sessions 52-53).
+- **Phase 3** (sessions 33-54, e374-e471): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), the learning signal in native coordinates (session 49), whether the native words have a grammar (session 50), whether a description is a self-sufficient state (session 51), native words as interchange coordinates (sessions 52-53), and the life cycle of native words (session 54).
 - **Terms.**
   - *Identification (recall)*: the dominant true write is in the decoder's support.
   - *Prominence*: the write's projection on the centred state, over the state's norm.
@@ -61,7 +61,7 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 | 14 | [Self-description: the native vocabulary](atlas/14_native_vocabulary.md) | 40: e391-e443, S36-S44 | 32-64 own words keep 90% of the loss. The vocabulary is learned: a per-block accent early, words from step 4000-16000. It survives covariance, lexicon and Gaussian-state controls. It is private across seeds. |
 | 15 | [A 7B workspace agenda and established lenses](atlas/15_workspace_lenses.md) | 12: e415-e425, S40-S42 | At 7B, native words surface a hidden two-hop bridge that the logit lens misses. It is not a better reader in general. Most results have established names; the instrument is what is new. |
 | 16 | [The vision round and its causal follow-ups](atlas/16_vision_round.md) | 19: e444-e455, S45-S46 | The vocabulary is written by training the writers, and the same function can be re-implemented with different words. Concept words hold across languages (7 / 15 / 22 of 24 nouns) and are causal handles: near natural size one word redirects 35-58% of translations (e455's 67-94% was a 6-8-fold injection). Word tables do not translate between models. |
-| 17 | [WDD beyond description: forensics, steering, learning, grammar, self-consistency, interchange](atlas/17_forensic_instrument.md) | 15: e456-e470, S47-S53 | Self-description survives compression that breaks the model, so it does not detect damage. WDD names what a fine-tune changed but does not compress it. A native word steers as efficiently per unit of displacement as a dense vector. Its checksum, its ledger (for a state's future) and its forgery detection add nothing over simple baselines. It is a forward coordinate, not a learning one; its words have no grammar; what a description omits persists downstream. Across the band of blocks where a noun is written, a few native words are good interchange coordinates for it. |
+| 17 | [WDD beyond description: forensics, steering, learning, grammar, self-consistency, interchange, life cycle](atlas/17_forensic_instrument.md) | 16: e456-e471, S47-S54 | Self-description survives compression that breaks the model, so it does not detect damage. WDD names what a fine-tune changed but does not compress it. A native word steers as efficiently per unit of displacement as a dense vector. Its checksum, its ledger (for a state's future) and its forgery detection add nothing over simple baselines. It is a forward coordinate, not a learning one; its words have no grammar; what a description omits persists downstream. Across the band of blocks where a noun is written, a few native words are good interchange coordinates for it. Over training, becoming a word and becoming important are separate processes. |
 
 ## How the areas connect
 
@@ -164,7 +164,8 @@ Sinks (10) are a side branch that corrected several phase-3 numbers. The toys (1
     - Per batch the gradient on a word is unrelated to it. Words form by rotation until about step 16000, then shrink in place, and the most used words get no more gradient (e462).
     - The words have no grammar: roles are carried by word choice, not inflection (e463), and a word written where it never fires is not corrected (e464).
     - A description is not a self-sufficient state: the network does not regrow what 16 words leave out, though it damps a random error of the same size (e465). Sixty-four extra dimensions still leave 7-11% of the loss missing (e466).
-    - Positive: under interchange across blocks, one to four native words carry a translated noun between contexts (67-96% in Qwen), far better than rotated words or the task's principal directions at equal size (e469). This works only across the band of blocks where the noun is written (Qwen 0-6), and the carrier words turn over as it is re-written (e470). [17]
+    - Positive: under interchange across blocks, one to four native words carry a translated noun between contexts (67-96% in Qwen), far better than rotated words or the task's principal directions at equal size (e469). This works only across the band of blocks where the noun is written (Qwen 0-6), and the carrier words turn over as it is re-written (e470).
+    - Over training, a neuron's usage as a word and its importance evolve independently: neither leads, and words that fall out of use keep their importance (e471). [17]
 
 ## Threads that cross areas
 
@@ -230,7 +231,7 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
   - Phase 2: S32 e357-e373.
   - Phase 3:
     - S33 e374-e382; S34 e383-e386; S35 e387-e390; S36 e391-e394; S37 e395-e398b; S38 e399-e406; S39 e407-e414;
-    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462; S50 e463-e464; S51 e465; S52 e466-e469; S53 e470.
+    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462; S50 e463-e464; S51 e465; S52 e466-e469; S53 e470; S54 e471.
 
 ## Open directions
 

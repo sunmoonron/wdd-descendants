@@ -1,4 +1,4 @@
-# 17. WDD beyond description: forensics, steering, learning, grammar, self-consistency, interchange (S47-S53)
+# 17. WDD beyond description: forensics, steering, learning, grammar, self-consistency, interchange, life cycle (S47-S54)
 
 **Question.** Beyond describing states, can WDD's provenance-labelled words serve as a forensic tool? The candidate uses are: telling what compression damaged, what a fine-tune changed, whether an intervention hit its target, and how content persists across generated tokens.
 
@@ -15,8 +15,9 @@
 - A description is not a self-sufficient state. After a 16-word splice the network does not regrow what the words left out, although it damps a random error of the same size (e465).
 - The Kalman gap is large: 64 extra remainder directions still miss 7-11% of the loss (e466). The remainder holds the same kinds of information as the description (e467).
 - Native words are good interchange coordinates. Across blocks, one to four native words carry a translated noun between contexts (Qwen 67-96% of answers switched), far better than rotated words or the task's principal directions at equal size. At a single block the principal directions win (e469). They work only across the band of blocks where the noun is written (Qwen 0-6, SmolLM2 about 6-12), and the carrier words turn over as it is re-written (e470).
+- Over training, becoming a word and becoming important are separate: across eight Pythia checkpoints neither leads the other, and words that fall out of use keep their importance (e471).
 
-**Start here:** e469, e458, e457, e460, e462 · **Sessions:** S47-S53 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`, `e463_native_accents.py`, `e464_illegal_words.py`, `e465_description_healing.py`, `e466_kalman_gap.py` to `e470_interchange_map.py`
+**Start here:** e469, e458, e457, e460, e462 · **Sessions:** S47-S54 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`, `e463_native_accents.py`, `e464_illegal_words.py`, `e465_description_healing.py`, `e466_kalman_gap.py` to `e471_word_lifecycle.py`
 
 ## Experiments
 
@@ -37,6 +38,7 @@
 | e468 | Does a description keep what later tokens read from a position? | Later tokens barely depend on one middle state (mean-state KL 0.02-0.15). Native is best for the position itself; for later tokens best in Qwen, tied with PCA in GPT-2 | mixed | ← e465 e460 |
 | e469 | Are native words interchange coordinates for a high-level variable? | Across blocks yes: 1-4 native words per block switch 67-96% of Qwen translations (SmolLM2 22-42%) against rotated 0-36%, PCA 8-66%. At one block PCA wins; whole-state patching there 78-99% | supported (across blocks; corrects e451's reading) | ← e455 e458 e460 |
 | e470 | Where, and through which words, do native handles carry a variable? | In a band where it is written: Qwen native-4 over blocks 0-4 switches 85%, from block 8 on 15% (whole state 100%); carriers overlap 0.41-0.47 across blocks; global PCA as good as local | supported (a writing window) | ← e469 |
+| e471 | Does a neuron become important before it becomes a native word, and does its function die with its usage? | Neither: lagged Spearman -0.01 and +0.06, co-move +0.04; dying words keep their importance; words in use fall from 14,115 to 9,435 after step 2000 (importance noisy) | refuted (independent processes) | ← e59 e462 e443 |
 
 ## How the results flow
 

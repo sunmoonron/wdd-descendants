@@ -1744,3 +1744,37 @@ SESSION 53 (a ninth relayed review, follow-ups to e469 on where and how native w
   - Native words are causal handles in a specific sense: across the band of blocks in which a variable is written, a few of them redirect it.
   - Before the band there is little to redirect. After it the variable is held in a form that only the whole state moves.
   - The carriers turn over as the variable is re-written by later blocks.
+
+SESSION 54 (a tenth relayed review, on the "life cycle" of native words; e471, 1 script, 1 run, 9 minutes of GPU time including checkpoint downloads, 2026-09-25 02:11-02:20 box time).
+
+- Weighing the review.
+  - Already answered:
+    - word fusion and splitting (descendant lineage and transition splits, e264-e267; carrier turnover across blocks, e470; compositional transport, e231 and e256);
+    - "resurrection" of a deleted word (every block writes back part of any removed direction, the generic contraction of e194 and e210; removing a concept word at every block leaves Qwen's answers mostly intact because other carriers are already present, e455);
+    - hysteresis (the same function reached from different starting points gets different words, e452 and e398);
+    - "conservation laws" (the "amount of wordhood" is not defined, and self-description does not track input difficulty, e430).
+  - Run: birth ordering together with word death (e471).
+- e471 THE LIFE CYCLE OF A NATIVE WORD (Pythia-410m at steps 1000, 2000, 4000, 8000, 16000, 32000, 64000 and final; 8 x 256 evaluation tokens).
+  - For every MLP neuron of blocks 0-12: its usage in the 16-word native descriptions of the middle-depth states, and its lexical selectivity (the share of the most common token among its top 1% activations).
+  - For 262 selected neurons (the largest usage rises and falls in each interval, plus 60 random used neurons): its importance at every checkpoint (the loss change when its activation is zeroed).
+
+  | Interval | births: importance percentile before -> after | lagged Spearman: importance -> usage change / usage -> importance change | co-movement | deaths: importance change (others) |
+  | --- | --- | --- | --- | --- |
+  | 1000 -> 2000 | 0.49 -> 0.62 | +0.01 / +0.14 | -0.06 | +0.00001 (-0.00000) |
+  | 2000 -> 4000 | 0.41 -> 0.61 | -0.04 / +0.12 | +0.05 | +0.00003 (+0.00000) |
+  | 4000 -> 8000 | 0.61 -> 0.80 | -0.02 / +0.01 | -0.05 | -0.00001 (-0.00001) |
+  | 8000 -> 16000 | 0.79 -> 0.80 | +0.07 / +0.05 | +0.12 | -0.00005 (+0.00002) |
+  | 16000 -> 32000 | 0.31 -> 0.50 | -0.09 / +0.05 | +0.15 | +0.00003 (+0.00003) |
+  | 32000 -> 64000 | 0.50 -> 0.55 | +0.00 / +0.06 | +0.13 | -0.00016 (+0.00003) |
+  | 64000 -> final | 0.73 -> 0.53 | +0.02 / +0.03 | -0.04 | +0.00009 (+0.00001) |
+
+  - Usage and importance evolve essentially independently. Neither leads (mean lagged Spearman -0.01 and +0.06), and they do not co-move (+0.04).
+  - Neurons that become heavily used words gain only a little importance (median percentile 0.55 before, 0.63 after). Words that fall out of use keep their importance, like the other neurons.
+  - Lexical selectivity weakly predicts later usage growth (+0.09).
+  - There is no "causal handle, then word, then readable" ordering at the level of single neurons. e59 (readable is not important) and e462 (used is not learned hardest) extend across development.
+  - Caveat: single-neuron ablation effects are tiny (median about 0.00001-0.00004 nats), so importance is noisy, and a small ordering effect could be hidden.
+  - The number of distinct words used in the descriptions peaks early (14,115 at step 2000) and falls steadily to 9,435 at the end: the vocabulary in use consolidates.
+  - Pre-registered: importance leading, co-movement above 0.3, and deaths keeping importance all refuted. On the last, the median change is slightly positive, not at most 0.
+- Reading.
+  - The life-cycle picture fails at the neuron level. Becoming a word and becoming important are separate processes in training, as they are separate properties at the end of it.
+  - The vocabulary in use shrinks after an early peak.
