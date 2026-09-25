@@ -1,0 +1,89 @@
+{
+ "model": "pythia410",
+ "revision": "step1000",
+ "blocks": [
+  1,
+  6,
+  12,
+  18,
+  22
+ ],
+ "by_block": {
+  "1": {
+   "m": 60548,
+   "M_all": 0.20620444416999817,
+   "M_writers": 0.1990591138601303,
+   "M_nonwriters": 0.1791246235370636,
+   "M_rotated": 0.13706646859645844,
+   "argmax_is_writer": 0.7558823823928833,
+   "factor_all": 1.504412055015564,
+   "factor_writers": 1.4522815942764282,
+   "factor_nonwriters": 1.30684494972229,
+   "top_write_correlation": 0.12734147906303406,
+   "top_write_prominence": 0.05060999467968941,
+   "top_write_is_argmax": 0.05588235706090927
+  },
+  "6": {
+   "m": 86158,
+   "M_all": 0.2310841679573059,
+   "M_writers": 0.14806368947029114,
+   "M_nonwriters": 0.23084613680839539,
+   "M_rotated": 0.1401636004447937,
+   "argmax_is_writer": 0.022549020126461983,
+   "factor_all": 1.6486746072769165,
+   "factor_writers": 1.0563633441925049,
+   "factor_nonwriters": 1.646976351737976,
+   "top_write_correlation": 0.07886397838592529,
+   "top_write_prominence": 0.023930681869387627,
+   "top_write_is_argmax": 0.004411764908581972
+  },
+  "12": {
+   "m": 116890,
+   "M_all": 0.21001192927360535,
+   "M_writers": 0.14125029742717743,
+   "M_nonwriters": 0.20973390340805054,
+   "M_rotated": 0.14232559502124786,
+   "argmax_is_writer": 0.021568628028035164,
+   "factor_all": 1.4755738973617554,
+   "factor_writers": 0.9924448132514954,
+   "factor_nonwriters": 1.4736204147338867,
+   "top_write_correlation": 0.06746076792478561,
+   "top_write_prominence": 0.020672889426350594,
+   "top_write_is_argmax": 0.0004901961074210703
+  },
+  "18": {
+   "m": 147622,
+   "M_all": 0.225460946559906,
+   "M_writers": 0.170990452170372,
+   "M_nonwriters": 0.2235327512025833,
+   "M_rotated": 0.14365950226783752,
+   "argmax_is_writer": 0.09313725680112839,
+   "factor_all": 1.5694119930267334,
+   "factor_writers": 1.1902481317520142,
+   "factor_nonwriters": 1.5559899806976318,
+   "top_write_correlation": 0.08522424846887589,
+   "top_write_prominence": 0.01668182946741581,
+   "top_write_is_argmax": 0.013725491240620613
+  },
+  "22": {
+   "m": 168110,
+   "M_all": 0.24492581188678741,
+   "M_writers": 0.1857765167951584,
+   "M_nonwriters": 0.24230052530765533,
+   "M_rotated": 0.14437709748744965,
+   "argmax_is_writer": 0.10343138128519058,
+   "factor_all": 1.6964311599731445,
+   "factor_writers": 1.2867450714111328,
+   "factor_nonwriters": 1.6782476902008057,
+   "top_write_correlation": 0.09315289556980133,
+   "top_write_prominence": 0.01462183240801096,
+   "top_write_is_argmax": 0.015196079388260841
+  }
+ },
+ "checks": {
+  "argmax_writer_over_0_6": false,
+  "nonwriters_over_1_5": false
+ },
+ "_exp": "e493_factordecomp_pythia410_step1000",
+ "_time": "2026-09-25 21:17:22"
+}

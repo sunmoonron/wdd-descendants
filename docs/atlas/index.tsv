@@ -454,3 +454,5 @@ e489	20_classical_calibration	S58	supported (partial rediscovery)	scripts/e489_i
 e490	20_classical_calibration	S58	refuted (geometry the same)	scripts/e490_support_coherence.py	results/e490_*.json	Is the correction of e484 due to more coherent native supports?
 e491	20_classical_calibration	S58	established (one mode)	scripts/e491_survival_timescales.py	results/e491_*.json	How many timescales does provenance loss have (Prony)?
 e492	20_classical_calibration	S58	established	scripts/e492_gumbel_factor.py	results/e492_*.json	How does the provenance factor vary with depth and training?
+e493	20_classical_calibration	S59	established (5 models, 5 checkpoints)	scripts/e493_factor_decomposition.py	results/e493_*.json	Where does the provenance factor come from: the largest actual writes standing out, or rows resembling what others wrote?
+e494	20_classical_calibration	S59	supported (many-to-many bridge)	scripts/e494_sae_provenance.py	results/e494_*.json	Which weight rows write a learned SAE feature (GPT-2, block 7 input)?

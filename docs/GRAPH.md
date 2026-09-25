@@ -535,6 +535,12 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H320 Provenance loss has two timescales, a fast loss of the direct trace and a slow loss of the re-written part. → e491 → KILLED. A single exponential fits at R^2 0.983-0.996 (half-life 0.9-2.6 blocks, retention 0.71-0.88 per block, the contraction's); Prony's second mode gains at most 0.01 and carries no amplitude.
 - H319 An unsupervised decomposition of the states rediscovers the rows. → e489 → SUPPORTED in part: FastICA components match native rows at median cosine 0.29-0.43 against 0.10-0.17 for rotated rows and 0.16-0.26 for principal directions; 27-31% above 0.5 in three models, 2% in two; the components are more non-Gaussian than any row, so they are built from several rows.
 
+## The provenance factor decomposed, and the SAE bridge (session 59)
+
+- H321 The provenance factor is write sparsity: the position's largest actual writes stand out above the extreme-value level. → e493 → SUPPORTED at early and middle depth in five models: the maximum is one of the 64 largest writes or the token embedding in 87-100% of positions at block 1 (0.73-0.91 at the middle in four), and the writers alone reproduce the whole factor. Across Pythia's training the writers' part rises from 1.0-1.5 (step 1000) to 1.6-2.6.
+- H322 The rest is cross-alignment, rows resembling what other rows wrote (the accent of e443). → e493 → SUPPORTED: non-writers sit 1.3-1.9 above the rotated level in the middle blocks, are the whole factor at step 1000 beyond block 1 (writers 1.0-1.3), hardly grow at the middle, and lead in Pythia's late blocks (2.5-2.9), where the huge directions live.
+- H323 A learned SAE feature is one native row. → e494 → KILLED: sixteen native words leave half of a feature unexplained (rotated 0.72). NARROWED: its top word is an MLP row for 93% of features, from every block; 23% of the most used rows are features at cosine above 0.5 (rotated 0%).
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

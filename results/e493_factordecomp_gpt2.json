@@ -1,0 +1,89 @@
+{
+ "model": "gpt2",
+ "revision": null,
+ "blocks": [
+  1,
+  3,
+  6,
+  9,
+  10
+ ],
+ "by_block": {
+  "1": {
+   "m": 58965,
+   "M_all": 0.4725440740585327,
+   "M_writers": 0.45559611916542053,
+   "M_nonwriters": 0.425134539604187,
+   "M_rotated": 0.15009312331676483,
+   "argmax_is_writer": 0.5735294222831726,
+   "factor_all": 3.14833927154541,
+   "factor_writers": 3.0354230403900146,
+   "factor_nonwriters": 2.8324718475341797,
+   "top_write_correlation": 0.3917675316333771,
+   "top_write_prominence": 0.29753121733665466,
+   "top_write_is_argmax": 0.36274510622024536
+  },
+  "3": {
+   "m": 66649,
+   "M_all": 0.4078872501850128,
+   "M_writers": 0.39561671018600464,
+   "M_nonwriters": 0.3529404103755951,
+   "M_rotated": 0.15209615230560303,
+   "argmax_is_writer": 0.688235342502594,
+   "factor_all": 2.681772232055664,
+   "factor_writers": 2.6010961532592773,
+   "factor_nonwriters": 2.3205084800720215,
+   "top_write_correlation": 0.3387467563152313,
+   "top_write_prominence": 0.2420990914106369,
+   "top_write_is_argmax": 0.40931373834609985
+  },
+  "6": {
+   "m": 78175,
+   "M_all": 0.34792661666870117,
+   "M_writers": 0.3419683277606964,
+   "M_nonwriters": 0.29051682353019714,
+   "M_rotated": 0.1551637500524521,
+   "argmax_is_writer": 0.7784314155578613,
+   "factor_all": 2.242318868637085,
+   "factor_writers": 2.203918933868408,
+   "factor_nonwriters": 1.8723241090774536,
+   "top_write_correlation": 0.28691864013671875,
+   "top_write_prominence": 0.1761126071214676,
+   "top_write_is_argmax": 0.3450980484485626
+  },
+  "9": {
+   "m": 89701,
+   "M_all": 0.3375736176967621,
+   "M_writers": 0.33077239990234375,
+   "M_nonwriters": 0.28286486864089966,
+   "M_rotated": 0.15722689032554626,
+   "argmax_is_writer": 0.763235330581665,
+   "factor_all": 2.147047519683838,
+   "factor_writers": 2.103790283203125,
+   "factor_nonwriters": 1.7990870475769043,
+   "top_write_correlation": 0.18532906472682953,
+   "top_write_prominence": 0.19056743383407593,
+   "top_write_is_argmax": 0.125490203499794
+  },
+  "10": {
+   "m": 93543,
+   "M_all": 0.34181666374206543,
+   "M_writers": 0.331571102142334,
+   "M_nonwriters": 0.2991149425506592,
+   "M_rotated": 0.15804699063301086,
+   "argmax_is_writer": 0.6970588564872742,
+   "factor_all": 2.1627533435821533,
+   "factor_writers": 2.0979273319244385,
+   "factor_nonwriters": 1.892569661140442,
+   "top_write_correlation": 0.18845266103744507,
+   "top_write_prominence": 0.17801249027252197,
+   "top_write_is_argmax": 0.10245098918676376
+  }
+ },
+ "checks": {
+  "argmax_writer_over_0_6": false,
+  "nonwriters_over_1_5": true
+ },
+ "_exp": "e493_factordecomp_gpt2",
+ "_time": "2026-09-25 21:14:06"
+}

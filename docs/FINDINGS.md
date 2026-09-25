@@ -2182,3 +2182,52 @@ SESSION 58 (the program's original mandate, re-read: toy-model and calibrate WDD
   - What its atoms are, as directions: the heavy-tailed directions of the state cloud, which a fitting-free index ranks and which an unsupervised method partly rediscovers.
   - What fades: one process, at the contraction's rate.
   - Two nulls keep it honest: the Heaps exponent and the support coherence are the same with and without provenance; provenance shows in concentration, correction and tails, not in growth or geometry.
+
+SESSION 59 (a relayed conversation with a chat model about the repository; it re-proposed experiments already in areas 12, 16 and 17, then landed on one open question, why training makes the model's own rows a coordinate system for its states, and one unrun bridge, which weight rows write a learned SAE feature; e493-e494 on the box, 2026-09-25 21:12-21:20 box time).
+
+- e493 WHERE THE PROVENANCE FACTOR COMES FROM (8 x 256 evaluation tokens, typical positions, blocks 1, NB/4, NB/2, 3NB/4, NB-2; per position the writers are the 64 MLP neurons of the blocks up to the block with the largest |activation x row norm| plus the current token's embedding (and the position embedding where one exists); the competitor maximum over all atoms, over the writers and over the non-writers, each as a ratio to the rotated dictionary's maximum, so 1 is the geometric level; the share of positions whose maximum is attained by a writer).
+
+  | Model | Factor by block, all atoms / writers only / non-writers only | Maximum attained by a writer, by block | Top single write is the maximum, by block |
+  | --- | --- | --- | --- |
+  | GPT-2 (1, 3, 6, 9, 10) | 3.2/3.0/2.8, 2.7/2.6/2.3, 2.2/2.2/1.9, 2.2/2.1/1.8, 2.2/2.1/1.9 | 0.57, 0.69, 0.78, 0.76, 0.70 | 0.36, 0.41, 0.35, 0.13, 0.10 |
+  | Pythia-410m (1, 6, 12, 18, 22) | 2.7/2.6/1.8, 1.8/1.8/1.3, 1.7/1.6/1.4, 2.7/2.3/2.5, 2.9/2.6/2.9 | 0.87, 0.86, 0.73, 0.48, 0.23 | 0.47, 0.39, 0.23, 0.18, 0.01 |
+  | Qwen-0.5B (1, 6, 12, 18, 22) | 3.3/3.3/1.5, 2.6/2.6/1.7, 2.2/2.1/1.6, 2.0/1.9/1.6, 1.8/1.7/1.7 | 0.99, 0.95, 0.79, 0.72, 0.56 | 0.67, 0.33, 0.18, 0.29, 0.18 |
+  | OLMo-1B (1, 4, 8, 12, 14) | 4.4/4.4/2.5, 2.9/2.9/1.9, 2.6/2.6/1.8, 2.6/2.6/1.9, 2.2/2.2/1.7 | 0.99, 0.96, 0.91, 0.84, 0.78 | 0.70, 0.35, 0.24, 0.33, 0.33 |
+  | SmolLM2 (1, 7, 15, 22, 28) | 3.4/3.4/1.6, 2.7/2.7/1.7, 2.2/2.2/1.6, 1.8/1.8/1.6, 1.7/1.6/1.6 | 1.00, 0.93, 0.87, 0.63, 0.49 | 0.82, 0.68, 0.36, 0.30, 0.09 |
+
+  - The factor is mostly write sparsity. At the first block the competitor maximum is one of the position's 64 largest actual writes (or its token embedding) in 87-100% of positions in four models, and the writers' maximum alone reproduces the whole factor. The largest single write is that maximum less often (0.36-0.82 at block 1, falling to 0.01-0.33), so it is the few largest writes together, not the top one, that stand out above the Gumbel level.
+  - Cross-alignment is real but second. Rows that did not write at the position still sit 1.5-1.9 times above the rotated level in the middle blocks of four models (Pythia 1.3-1.4): the vocabulary's rows resemble what other rows wrote. This part gains with depth as the writers' share falls (GPT-2 0.57 to 0.70 of positions are still writer-led, SmolLM2 1.00 to 0.49, Pythia 0.87 to 0.23), and in Pythia's late blocks the non-writers lead (2.5-2.9 against 2.3-2.6), where the huge directions live (area 10).
+  - The top write's correlation with the state exceeds its own prominence early (0.39-0.56 against 0.29-0.38 at block 1), so cross terms add to the writers as well.
+  - The mean-max factors here are below e492's slope factors by construction (the ratio of means, not of slopes) and agree with e492's mean-max ratios.
+  - Pre-registered: the maximum attained by a writer at over 0.6 of positions everywhere, held at early and middle blocks and not late; non-writers at least 1.5 times the rotated level, held in GPT-2, OLMo and SmolLM2, not in Qwen (1.5-1.7) and Pythia's middle (1.3-1.4).
+
+  Across Pythia-410m's training (the same measure at steps 1000, 4000, 16000, 64000 and the end):
+
+  | Step | Factor by block (1, 6, 12, 18, 22): writers only | non-writers only | Maximum attained by a writer |
+  | --- | --- | --- | --- |
+  | 1000 | 1.45, 1.06, 0.99, 1.19, 1.29 | 1.31, 1.65, 1.47, 1.56, 1.68 | 0.76, 0.02, 0.02, 0.09, 0.10 |
+  | 4000 | 1.84, 1.33, 1.12, 1.34, 1.38 | 1.42, 1.36, 1.33, 1.43, 1.57 | 0.87, 0.43, 0.23, 0.35, 0.31 |
+  | 16000 | 2.17, 1.54, 1.37, 1.68, 1.55 | 1.63, 1.30, 1.34, 1.48, 1.63 | 0.88, 0.74, 0.50, 0.65, 0.49 |
+  | 64000 | 2.49, 1.73, 1.55, 1.84, 1.81 | 1.76, 1.32, 1.36, 1.61, 1.91 | 0.89, 0.85, 0.67, 0.70, 0.48 |
+  | end | 2.61, 1.79, 1.58, 2.33, 2.58 | 1.81, 1.33, 1.37, 2.51, 2.86 | 0.87, 0.86, 0.73, 0.48, 0.23 |
+
+  - The two parts have different histories. At step 1000 the actual writers do not stand out at all beyond block 1 (writers' factor 1.0-1.3, the maximum a writer at 2-10% of positions), yet the factor is already 1.5-1.7: it is all cross-alignment, rows collectively resembling the state's directions, which is e443's per-block accent measured atom by atom. Through training the writers' part rises everywhere (block 1 from 1.45 to 2.61, the middle from 0.99 to 1.58) and the maximum becomes a writer (2% to 73% at the middle), while the non-writers' part hardly moves at the middle (1.3-1.5) and grows only late, with the huge directions.
+  - So the vocabulary forms as write sparsity: the largest writes at a position come to stand out above the extreme-value level. The accent precedes it and stays as a floor.
+
+- e494 WHICH WEIGHT ROWS WRITE AN SAE FEATURE? (GPT-2 small, Bloom's residual SAE at the input of block 7, 24576 features, 64% live on 8 x 256 states; each decoder row described by OMP over the native dictionary up to block 6 and over its rotation, both in TransformerLens coordinates; the reverse for the 4096 most used native MLP rows.)
+
+  | k native words | Unexplained fraction of a feature: native / rotated (median, all features) |
+  | --- | --- |
+  | 1 | 0.88 / 0.98 |
+  | 2 | 0.80 / 0.95 |
+  | 4 | 0.71 / 0.91 |
+  | 8 | 0.60 / 0.84 |
+  | 16 | 0.48 / 0.72 |
+
+  - A learned feature is written by the model's own rows, and by several of them. Its top native word is an MLP row for 93% of features (91% of the 2000 most active), a head basis for 7%, a token embedding for 1%; the top rows come from every block up to the sixth (7-18% each), not only the last. Sixteen native words leave half of a feature unexplained, sixteen rotated words 0.72: a feature is sparser in the model's own rows than in any same-Gram dictionary, but it is not one row.
+  - In the other direction, 23% of the 4096 most used native rows have a feature at cosine above 0.5 (median 0.38), against 0% of rotated rows (0.15). About a quarter of the vocabulary in use is, to the SAE, a feature; the rest are the rows features are built from.
+  - Pre-registered: native sparser than rotated by 0.2 at k = 4, confirmed (0.71 against 0.91); top words mostly MLP rows, confirmed (0.93); a quarter of used rows being features, missed by 0.02 (0.23).
+
+- Reading of session 59.
+  - The provenance factor, the one number area 20 added for how far the model's atoms belong to its states, is write sparsity on top of an accent. The writers' part is the vocabulary forming (the largest writes standing out above the Gumbel level, from step 4000 on); the non-writers' part is there from step 1000, hardly grows at the middle depth, and is what e443 called the per-block accent. This turns "why does training make the rows a coordinate system" into "why does training make the largest writes prominent", which e25 and e436 already track as write sparsity.
+  - A learned feature vocabulary sits on top of the native one: every feature has an identifiable top writer, most features need many rows, and a quarter of the most used rows are features outright. The provenance layer under an SAE is therefore a many-to-many map, not a relabelling.

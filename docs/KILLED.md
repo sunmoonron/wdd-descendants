@@ -429,3 +429,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Refitting compensates because native supports are more coherent": they are as near-orthogonal as rotated ones (e490).
 - "The Heaps exponent of the vocabulary in use marks provenance": native 0.60-0.76 against rotated 0.55-0.78, no order (e486).
 - "Provenance loss has a fast and a slow mode": one exponential fits, at the contraction's retention; Prony's second mode carries nothing (e491).
+
+## Session 59 kills (the factor decomposed, the SAE bridge)
+- "The provenance factor is a property of the dictionary's alignment as a whole": at early and middle depth it is the position's largest writes standing out; the collective alignment is a floor of 1.3-1.9 that is already there at step 1000 (e493).
+- "A learned feature is one native row": sixteen rows leave half of it unexplained; a quarter of the most used rows are features, the rest are what features are built from (e494).

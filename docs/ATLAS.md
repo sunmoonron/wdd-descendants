@@ -1,4 +1,4 @@
-# Atlas of the WDD program: 455 experiments by technical area
+# Atlas of the WDD program: 457 experiments by technical area
 
 This is the entry point to the whole program. It is small enough to paste into a new chat as context. For a shorter, theory-first version that says which routes are closed and why, read [`DIGEST.md`](DIGEST.md) first. This file gives:
 
@@ -19,12 +19,12 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 - **Models.**
   - The main five: GPT-2 small, Pythia-410m, Qwen2.5-0.5B, OLMo-1B-0724 and SmolLM2-135M.
   - Also used: Pythia training checkpoints and sizes from 70m to 1b, a random-init GPT-2, Qwen2.5-7B, and toy models trained from scratch.
-- **Scale.** 455 experiment scripts (e00-e492 plus variants), 58 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
-- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 119 established, 105 supported, 55 narrowed, 27 mixed, 120 refuted, 12 superseded, 8 null, 4 retracted, 5 tools.
+- **Scale.** 457 experiment scripts (e00-e494 plus variants), 59 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
+- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 120 established, 106 supported, 55 narrowed, 27 mixed, 120 refuted, 12 superseded, 8 null, 4 retracted, 5 tools.
 - **Scope.** Negative results are kept. No claim is more general than these models.
 - **Phase 1** (sessions 1-31, e00-e356): when a write can be read back from the state; why it fades; what it becomes downstream (the descendant); and what part of that matters causally (the quotient).
 - **Phase 2** (session 32, e357-e373): the program's tools tested on known circuits, the co-selection proposal of "What if not Circuits?", and drift over training.
-- **Phase 3** (sessions 33-58, e374-e492): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), the learning signal in native coordinates (session 49), whether the native words have a grammar (session 50), whether a description is a self-sufficient state (session 51), native words as interchange coordinates (sessions 52-53), the life cycle of native words (session 54), WDD applied to its own objects: fixed points, word algebra, role typing and induced geometry (session 55), the audits of its two open results (session 56), WDD put to WorkspaceBench's problems as a workspace reader (session 57), and the instrument calibrated against classical theory (session 58).
+- **Phase 3** (sessions 33-59, e374-e494): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), the learning signal in native coordinates (session 49), whether the native words have a grammar (session 50), whether a description is a self-sufficient state (session 51), native words as interchange coordinates (sessions 52-53), the life cycle of native words (session 54), WDD applied to its own objects: fixed points, word algebra, role typing and induced geometry (session 55), the audits of its two open results (session 56), WDD put to WorkspaceBench's problems as a workspace reader (session 57), the instrument calibrated against classical theory (session 58), and the provenance factor decomposed with a bridge to SAE features (session 59).
 - **Terms.**
   - *Identification (recall)*: the dominant true write is in the decoder's support.
   - *Prominence*: the write's projection on the centred state, over the state's norm.
@@ -64,7 +64,7 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 | 17 | [WDD beyond description: forensics, steering, learning, grammar, self-consistency, interchange, life cycle](atlas/17_forensic_instrument.md) | 16: e456-e471, S47-S54 | Self-description survives compression that breaks the model, so it does not detect damage. WDD names what a fine-tune changed but does not compress it. A native word steers as efficiently per unit of displacement as a dense vector. Its checksum, its ledger (for a state's future) and its forgery detection add nothing over simple baselines. It is a forward coordinate, not a learning one; its words have no grammar; what a description omits persists downstream. Across the band of blocks where a noun is written, a few native words are good interchange coordinates for it. Over training, becoming a word and becoming important are separate processes. |
 | 18 | [WDD applied to itself: fixed points, word algebra, role typing, induced geometry, and their audits](atlas/18_recursion_composition.md) | 6: e472-e477, S55-S56 | Applied to its own description, WDD is a projection: one application is a fixed point, for rotated words too. Native handles for two attributes of one word act independently and compose in Qwen (gender alone 92%, both from two words 74%), where rotated words fail and the task's principal directions do as well; the gender handle is one shared MLP row that works across words and languages (98%). Identity handles are not typed by grammatical role, and for an entity copied into the answer native words are no better than rotated ones. WDD's distances between states are a coarse version of activation distance; its one native-only signal, the concentration of deep descriptions, survives its audit and is half prominence. |
 | 19 | [WDD as a workspace reader: WorkspaceBench's problems](atlas/19_workspace_reader.md) | 6: e478-e482 with e478b, S57 | Against the benchmark's problems at 7B: the native reader almost never claims a wrong bridge country where the lens claims nothing, and no certificate helps where fabrication occurs (arithmetic); a concept held in mind is surfaced three times as often as by the lens, always as a computed MLP row and never as an echo; one native word carries a two-token name as a unit and disambiguates it (24 of 25) where the lens shows the second token in 4%; per-word reading loses half of a finished answer and reading the words as a whole recovers it; signs do not carry order. |
-| 20 | [Calibration against classical theory](atlas/20_classical_calibration.md) | 10: e483-e492, S58 | The detection threshold is a Gumbel law whose two parameters predict the detection curve within 0.1 (resolution 0.25-0.4 of the state's norm); its scale is the atoms' second moment for a rotated dictionary and 2.9-6.2 times that for the native one, a provenance factor that falls with depth and rises through training. The description is a non-redundant code with correction; its first word carries 0.4-1.2 bits about the next token; its word stream has sequential structure; the rows are the heavy-tailed directions of the states, which FastICA partly rediscovers; provenance loss has one timescale, the contraction's. |
+| 20 | [Calibration against classical theory, and two bridges](atlas/20_classical_calibration.md) | 12: e483-e494, S58-S59 | The detection threshold is a Gumbel law whose two parameters predict the detection curve within 0.1 (resolution 0.25-0.4 of the state's norm); its scale is the atoms' second moment for a rotated dictionary and 2.9-6.2 times that for the native one, a provenance factor that falls with depth and rises through training. The description is a non-redundant code with correction; its first word carries 0.4-1.2 bits about the next token; its word stream has sequential structure; the rows are the heavy-tailed directions of the states, which FastICA partly rediscovers; provenance loss has one timescale, the contraction's. The factor is write sparsity on an accent (e493); a learned SAE feature has an MLP row as its top native word and needs many rows (e494). |
 
 ## How the areas connect
 
@@ -194,7 +194,8 @@ Sinks (10) are a side branch that corrected several phase-3 numbers. The toys (1
     - The competitor maximum is Gumbel, grows as sqrt(2 ln m), and predicts the detection curve within 0.1; resolution 0.25-0.4 of the state's norm (e483).
     - Its scale is the atoms' second moment for a rotated dictionary and 2.9-6.2 times that for the native one; this provenance factor falls with depth and rises through training (e492).
     - The description is a non-redundant code with correction (e484, e490); its first word carries 0.4-1.2 bits about the next token (e485); its stream has half the text's sequential structure (e487); the Heaps exponent is not a provenance signature (e486).
-    - The rows are the heavy-tailed directions of the states (e488), which FastICA partly rediscovers (e489); provenance loss has one timescale, the contraction's (e491). [20]
+    - The rows are the heavy-tailed directions of the states (e488), which FastICA partly rediscovers (e489); provenance loss has one timescale, the contraction's (e491).
+    - The provenance factor is write sparsity on an accent: the largest writes standing out (rising through training) over a collective alignment present from step 1000 (e493). A learned SAE feature has an MLP row as its top native word in 93% of cases and needs many rows; a quarter of the most used rows are features (e494). [20]
 
 ## Threads that cross areas
 
@@ -246,7 +247,7 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
 - **Narrative.**
   - [`FINDINGS.md`](FINDINGS.md): chronological, by session, with every number.
   - [`SYNTHESIS.md`](SYNTHESIS.md): what each session established.
-  - [`GRAPH.md`](GRAPH.md): hypotheses H0-H320 with their tests and fates.
+  - [`GRAPH.md`](GRAPH.md): hypotheses H0-H323 with their tests and fates.
   - [`KILLED.md`](KILLED.md): every kill and retraction.
   - [`THEORY.md`](THEORY.md): transport theory and the self-description account.
   - [`RELATED_WORK.md`](RELATED_WORK.md).
@@ -262,7 +263,7 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
   - Phase 2: S32 e357-e373.
   - Phase 3:
     - S33 e374-e382; S34 e383-e386; S35 e387-e390; S36 e391-e394; S37 e395-e398b; S38 e399-e406; S39 e407-e414;
-    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462; S50 e463-e464; S51 e465; S52 e466-e469; S53 e470; S54 e471; S55 e472-e475; S56 e476-e477; S57 e478-e482 with e478b; S58 e483-e492.
+    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462; S50 e463-e464; S51 e465; S52 e466-e469; S53 e470; S54 e471; S55 e472-e475; S56 e476-e477; S57 e478-e482 with e478b; S58 e483-e492; S59 e493-e494.
 
 ## Open directions
 

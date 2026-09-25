@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e493. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e495. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -51,11 +51,14 @@ Each item gives the question, where it comes from, a design at the program's usu
 - Define the reader as the union of the whole-reconstruction lens (what is finished) and the per-word lens with provenance (what is being computed), and run it on WorkspaceBench's judged families with an LLM summariser that is told which words are computed and which copied. Needs the benchmark's repository, a judge, and a model that passes its gates (the 27B does not fit the 40 GB box in bf16; a quantised load or a smaller capable model would).
 - Cheap first step on the box: the multi-token unit words of e481 on more entities (people, works, compounds), and whether the unit word's block is the same across entities of one kind.
 
-**B18. The provenance factor as a training monitor.** (session 58, e492)
+**B18. The provenance factor as a training monitor.** (session 58, e492) — *Its decomposition into the writers' and the non-writers' part across five Pythia checkpoints is done (e493); the dense early checkpoints and the toy models remain.*
 - One number per checkpoint and block, from two dictionaries and 2,000 states, no splicing: the native over rotated slope of the competitor maximum. Run it on dense Pythia checkpoints (steps 256 to 4000) and on the toy models of the vision round (e444, e449) to see whether it rises with the induction transition and with the writer rows' training, as VISION item 3 asks.
 
 **B19. What the independent components are made of.** (session 58, e489)
 - Decompose each FastICA component over the native dictionary (OMP, k = 4): if a component is a few rows of one block, it is a co-writing group; report the blocks and the co-selection of those rows (area 12).
+
+**B20. The provenance layer under SAEs, extended.** (session 59, e494)
+- Other layers and models with public SAEs; whether a feature's activation follows its top row's activation (does the feature fire when its writer fires?); and the descendants question in reverse, which features at a later layer are the transported images of a given row's write.
 
 ## Priority 2: the causal-abstraction test on a known algorithm (deferred in session 52)
 
