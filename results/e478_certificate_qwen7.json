@@ -1,0 +1,135 @@
+{
+ "model": "qwen7",
+ "n": 133,
+ "k": 16,
+ "cells": {
+  "subject": [
+   12,
+   14,
+   16,
+   18,
+   20
+  ],
+  "final": [
+   22,
+   24,
+   26
+  ]
+ },
+ "receipt_blocks": {
+  "subject": 16,
+  "final": 24
+ },
+ "by_position": {
+  "subject": {
+   "recall_at10": {
+    "lens@12": 0.0,
+    "native@12": 0.11278195679187775,
+    "rotated@12": 0.0,
+    "lens@14": 0.0,
+    "native@14": 0.13533835113048553,
+    "rotated@14": 0.0,
+    "lens@16": 0.0,
+    "native@16": 0.10526315867900848,
+    "rotated@16": 0.0,
+    "lens@18": 0.0,
+    "native@18": 0.08270677179098129,
+    "rotated@18": 0.0,
+    "lens@20": 0.0,
+    "native@20": 0.11278195679187775,
+    "rotated@20": 0.0
+   },
+   "claims": {
+    "lens": {
+     "n": 0
+    },
+    "native": {
+     "n": 73,
+     "precision": 1.0,
+     "auc_z": null,
+     "auc_rank": null,
+     "top_half_precision_z": 1.0,
+     "n_receipt": 14,
+     "auc_receipt": null,
+     "top_half_precision_receipt": 1.0,
+     "precision_receipt_subset": 1.0,
+     "auc_coef_share": null,
+     "auc_coef_rank": null,
+     "top_half_precision_coef": 1.0,
+     "share_carried_by_mlp": 1.0,
+     "share_carried_by_token": 0.0,
+     "precision_mlp_only": 1.0,
+     "precision_token_only": null,
+     "right_claims_by_type": {
+      "mlp": 73,
+      "token": 0,
+      "head": 0
+     }
+    },
+    "rotated": {
+     "n": 0
+    }
+   }
+  },
+  "final": {
+   "recall_at10": {
+    "lens@22": 0.007518797181546688,
+    "native@22": 0.015037594363093376,
+    "rotated@22": 0.0,
+    "lens@24": 0.4436090290546417,
+    "native@24": 0.4135338366031647,
+    "rotated@24": 0.0,
+    "lens@26": 0.37593984603881836,
+    "native@26": 0.39849624037742615,
+    "rotated@26": 0.0
+   },
+   "claims": {
+    "lens": {
+     "n": 111,
+     "precision": 0.990990990990991,
+     "auc_z": 0.5090909004211426,
+     "auc_rank": 0.5863636136054993,
+     "top_half_precision_z": 1.0,
+     "n_receipt": 59,
+     "auc_receipt": null,
+     "top_half_precision_receipt": 1.0,
+     "precision_receipt_subset": 1.0
+    },
+    "native": {
+     "n": 111,
+     "precision": 0.990990990990991,
+     "auc_z": 0.5636363625526428,
+     "auc_rank": 0.9909090995788574,
+     "top_half_precision_z": 1.0,
+     "n_receipt": 56,
+     "auc_receipt": 0.37272727489471436,
+     "top_half_precision_receipt": 0.9655172228813171,
+     "precision_receipt_subset": 0.9821428571428571,
+     "auc_coef_share": 0.15909090638160706,
+     "auc_coef_rank": 0.2454545497894287,
+     "top_half_precision_coef": 0.9821428656578064,
+     "share_carried_by_mlp": 1.0,
+     "share_carried_by_token": 0.0,
+     "precision_mlp_only": 0.990990990990991,
+     "precision_token_only": null,
+     "right_claims_by_type": {
+      "mlp": 110,
+      "token": 0,
+      "head": 0
+     }
+    },
+    "rotated": {
+     "n": 0
+    }
+   }
+  }
+ },
+ "checks": {
+  "coef_auc_over_0_65": false,
+  "receipt_auc_at_least_coef": true,
+  "subject_native_coef_beats_lens_z": false,
+  "mlp_only_raises_precision": false
+ },
+ "_exp": "e478_certificate_qwen7",
+ "_time": "2026-09-25 19:13:22"
+}

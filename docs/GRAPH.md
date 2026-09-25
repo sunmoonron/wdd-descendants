@@ -512,6 +512,15 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H302 The attribute handles of e473 are item-specific (the vocabulary has no shared gender word). → e477 → KILLED for gender. Four native words from the other kinship words, in the other languages, flip only gender in 98% of items (own words 92%; at sixteen words 98% against 73% with leakage); one MLP row sits in 91% of items' own gender supports at block 4; rotated words fitted to the same shared direction give 7% at four words (81% at sixteen).
 - H303 The generation handle is shared to the same degree. → e477 → NARROWED. 48% at four words against the own words' 75%; 69% at sixteen (own 70%). Generation is carried by more, and more word-specific, words.
 
+## WDD as a workspace reader (session 57)
+
+- H304 A native readout's own numbers (coefficient, provenance, a causal receipt) separate right claims from wrong ones better than the lens's confidence. → e478, e478b → NOT TESTABLE on two-hop bridges (73 of 73 native claims right at the subject token, 110 of 111 at the end); KILLED on chained arithmetic (every certificate at AUC 0.43-0.59; precision lens 0.63, native 0.48 against chance 0.50).
+- H305 What the native reader surfaces at a writing position is an echo of the prompt token. → e479 → KILLED. Every surfaced concept rides on an MLP row (12 of 12), none on the concept's token embedding; native 0.30 against lens 0.10 under "think", 0.00 for all under "do not think".
+- H306 The native reader loses nothing the lens captures (the benchmark's first desideratum). → e480 → KILLED for per-word pooling (0.40-0.50 against 1.00 on basic, multilingual and poetry); SUPPORTED for the reconstruction read as a whole (0.85-1.00) and the union (0.80-0.90).
+- H307 A single native word can carry a multi-token concept as a unit. → e481 → SUPPORTED at the final position: both tokens of a two-token country in one word's top 10 in 0.31 of items (all MLP rows), the second token in 0.42 against the lens's 0.04, disambiguation 24 of 25. Not at the subject token (second token 0.08).
+- H308 The signs of native words carry the direction of a described action without a question. → e482 → KILLED. At the period, mid blocks, every fixed rule is at 0.50-0.56; at the object token every reader reads the order from the current token; the lens reads it late by recency (0.88 at block 26).
+- H309 The planned rhyme of a couplet is readable at the end of the first line. → e480 → KILLED at 7B for every reader (0.00).
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

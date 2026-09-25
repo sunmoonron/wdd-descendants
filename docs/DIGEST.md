@@ -1,6 +1,6 @@
 # WDD in brief: the theory, what it forced, and the routes it closes
 
-A ten-minute read of the whole program (439 experiments, five small models, one GPU, September 2026). It is organised around the mathematics, so that a reader can see which results follow from the setup, which were discoveries, and which routes are closed for reasons that no further experiment will reopen. The details, every number and every correction are in [`ATLAS.md`](ATLAS.md) and its area pages; experiment ids are given in parentheses.
+A ten-minute read of the whole program (445 experiments, five small models, one GPU, September 2026). It is organised around the mathematics, so that a reader can see which results follow from the setup, which were discoveries, and which routes are closed for reasons that no further experiment will reopen. The details, every number and every correction are in [`ATLAS.md`](ATLAS.md) and its area pages; experiment ids are given in parentheses.
 
 ## 1. The object, and two facts it carries with it
 
@@ -50,6 +50,8 @@ What self-description measures is that a state is made of the model's own rows, 
 
 The positive results of the last sessions are of one kind. A concept word injected at natural size across depth moves 35-58% of translations, about as efficiently per unit of displacement as a dense steering vector (e458). Under interchange, setting one to four native words per block to another context's values carries a translated noun between contexts in 67-96% of Qwen's answers, against 0-36% for rotated words and 8-66% for the task's own principal directions at equal size (e469). This works only across the band of blocks in which the noun is being written (Qwen blocks 0-6); from block 8 on, four native words switch 15% while the whole state still switches 100%, and the carrier words turn over as the variable is re-written (e470). For a word with two attributes, the native words for gender and for generation act independently and combine: gender from one source word and generation from another give the doubly changed word in 74% of items, with additive effects, where rotated words fail (e473). The gender words are the vocabulary's, not the item's: four native words found on other kinship words, in other languages, flip only gender in 98% of items, better than the item's own, and one MLP row of block 4 sits in 91% of the items' own gender supports; the generation handle is only half shared (e477). The limits are as informative. The task's own principal directions do as well as native words on those attributes (e473); identity handles are not typed by grammatical role; and for an entity copied into the answer, native words are no better than rotated ones (e474).
 
+Put to WorkspaceBench's own problems (session 57, Qwen2.5-7B): the native reader almost never claims a wrong bridge country (73 of 73 at the subject token, where the lens claims nothing), surfaces a concept held in mind while copying a sentence three times as often as the lens and always as a computed MLP row rather than an echo of the prompt token, and can carry a two-token name in one word that names the right second token in 24 of 25 cases, where the lens shows the second token in 4% of items (e478, e479, e481). It loses half of a finished answer when its words are read one by one and recovers it when they are read as a whole (e480); on chained arithmetic no reader is reliable and no certificate rescues it (e478b); and its signs do not carry the direction of an action (e482).
+
 The reading, a hypothesis and not a theorem: while MLP writers are building a semantic variable, their rows are its coordinates; once it is built, the variable is a distributed direction that any good basis finds and a few rows cannot move. Native words are a temporary vocabulary for the construction of variables, not a coordinate system for the finished state.
 
 ## 6. Open
@@ -74,6 +76,8 @@ The reading, a hypothesis and not a theorem: while MLP writers are building a se
 | Word-for-word translation between models or seeds | Private languages; no row correspondence | e398, e445, e453 |
 | Native words as a learning coordinate, or a life cycle of words | Gradients are noise relative to words; usage and importance are independent | e462, e471 |
 | WDD as a geometry of states | Activation distance predicts behaviour better; the small surplus is shared with rotated words | e475 |
+| Per-claim certificates (coefficients, causal receipts) against fabrication | Fabricated and right claims are carried alike where fabrication occurs | e478b |
+| Order of an action from the signs of native words | Signs follow the position and recency, not the role | e482, e417 |
 | Interpolation, closure and permutation tests | Coefficients map linearly to states; sparse combinations are recovered by construction; a permutation of coefficients is a random vector, already the rotated control | e271, e63, e388 |
 
 ## 8. Reading any number here

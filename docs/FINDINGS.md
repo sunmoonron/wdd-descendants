@@ -1925,3 +1925,102 @@ SESSION 56 (a new box; the digest written, and two audits that arose from writin
 - Reading of session 56.
   - The digest's two open questions each moved. The profile signal is real and half of it is prominence, so WDD's one surplus over activation geometry is a WDD quantity by construction; what the other half is remains open.
   - Qwen's vocabulary has a gender word: a shared, cross-lingual handle that is one MLP row in most items and that beats item-specific handles. Together with e448d (concept words shared across languages) and e473 (handles compose), this is the strongest form so far of the reading that native words are a vocabulary for the construction of variables: at least one attribute is a single shared word during its writing window. Generation is not one word.
+
+SESSION 57 (WorkspaceBench, the full release of 2026-09-23, read as a specification for a workspace reader; the user asked for experiments that flesh out WDD under the assumption that it already answers the benchmark's underlying problems, and, where it does not, for mechanisms that bridge the gap. Qwen2.5-7B and Qwen2.5-7B-Instruct on the new box; e478-e482, 6 scripts, 9 runs, about 15 minutes of GPU time, 2026-09-25 19:12-19:35 box time).
+
+- What the benchmark asks, and what the program already had.
+  - WorkspaceBench scores activation-to-text readers on intermediates a model computes but never writes (two-hop bridges, arithmetic chains, planned rhymes, corrections of typos, concepts held in mind while copying a sentence, the direction of a described action), and on how often a reader states things the context contradicts. Its diagnosis: single-token readers (logit lens, J-lens) are a bag of words, with no order and no multi-token concepts; the expressive readers (natural-language autoencoders) confabulate; and any reader can cheat by inverting the prompt.
+  - Sessions 40-42 (e415-e425) had run the benchmark's first families on Qwen2.5-7B: the native-word reader surfaces the two-hop bridge at the subject token where the lenses see nothing (e420), is no better in general (e423-e425), fabricates more digits than the lens in arithmetic (e416), and shows the resolution of a role as suppression of the other name (e417).
+  - The assumption to test is therefore not "the native reader scores higher" (it does not), but whether its three properties that no text generator has, provenance, a fidelity number per claim, and a decomposition into separately readable parts, answer the benchmark's underlying problems: trust, prompt echo, multi-token concepts and order.
+
+- e478 A CERTIFICATE FOR EVERY CLAIM (e420's two-hop items, 133 of 167 pass the gate; read at the subject's last token, blocks 12-20, and at the final position, blocks 22-26; a claim is a country token in a reader's top 10, right if it is the bridge; certificates per claim: for the lens its logit z-score and rank, for native words the carrying word's coefficient share, rank, type and block; receipts at one block per position: remove the carrying word, or the token's unembedding direction, and measure the drop of the answer's log-probability).
+
+  | Position | Reader | Country claims | Precision | Carried by | True bridge in the top 10 (best cell) |
+  | --- | --- | --- | --- | --- | --- |
+  | subject token | lens | 0 | - | - | 0.00 |
+  | subject token | native 16 | 73 | 1.00 | MLP rows 73, token embeddings 0 | 0.14 |
+  | subject token | rotated 16 | 0 | - | - | 0.00 |
+  | final position | lens | 111 | 0.99 | - | 0.44 |
+  | final position | native 16 | 111 | 0.99 | MLP rows 110 | 0.41 |
+  | final position | rotated 16 | 0 | - | - | 0.00 |
+
+  - There is nothing for a certificate to filter in this family. At the subject token the native reader names a country in 73 cells, always the right one, where the lens and the rotated words name none; at the final position both readers claim 111 times at 0.99 precision. The AUCs are undefined or rest on one wrong claim.
+  - Every native claim is carried by an MLP row, none by a token embedding: the bridge is a computed representation, which is the benchmark's condition for a workspace variable.
+  - Pre-registered: the coefficient's AUC, the receipt's AUC and the token-only precision gain could not be evaluated (no wrong claims); the guess that the native reader would need filtering was wrong for this family.
+
+- e479 DIRECTED MODULATION, AND ECHO AGAINST COMPUTED CONTENT (Qwen2.5-7B-Instruct with its chat template; 40 concepts of four kinds; "think about the {kind} {concept} while you write. Now write exactly this sentence: ..." against "do not think about ..." and a neutral instruction; the assistant turn teacher-forced to the sentence, all 85 prompts pass the copying gate; states at every token of the copied sentence after blocks 8, 12, 16, 20 and 24; a cell passes if the concept's token is in the top 10, an item if any cell passes).
+
+  | Reader | Pass, think | Pass, don't think | Neutral floor | Contrast | Precision of concept claims under think (claims) |
+  | --- | --- | --- | --- | --- | --- |
+  | plain lens | 0.10 | 0.00 | 0.000 | +0.10 | 1.00 (8) |
+  | native 16, pooled | 0.30 | 0.00 | 0.000 | +0.30 | 0.91 (32) |
+  | native, MLP-row words only ("computed") | 0.30 | 0.00 | 0.000 | +0.30 | 0.91 (32) |
+  | native, token-embedding words only ("echo") | 0.00 | 0.00 | 0.000 | 0.00 | - (0) |
+  | rotated 16 | 0.00 | 0.00 | 0.000 | 0.00 | - (0) |
+
+  - The native reader surfaces the held concept at the writing positions three times as often as the lens (0.30 against 0.10), at 0.91 precision, and only at block 24 (mean block of the carrying word 23.7). Under "do not think" no reader surfaces it, so the contrast is the whole effect; the neutral floor is zero.
+  - Every native pass rides on an MLP row; no token-embedding word carries the concept at any writing position, although the concept's token is in the prompt. The readout's provenance separates a computed representation from an echo of the prompt, which is the benchmark's text-inversion concern, and here there is no echo to remove.
+  - Pre-registered: the lens passing half with a contrast of 0.2, refuted (0.10); native contrast at least the lens's, confirmed; echo flat and computed contrast, confirmed (the echo part is empty); native precision at least the lens's, refuted by 0.09 on 32 against 8 claims.
+
+- e480 THE SINGLE-TOKEN FAMILIES, REGEX-SCORED (the benchmark's baseline families adapted: 24 basic completions, 24 arithmetic sentences in German, French and Spanish with the answer accepted in four languages or as a digit, 20 typos read at the misspelled word, 16 couplets read at the final token and at the end of the first line; gated on the model's own top-1; readers at blocks 4-26 at the read position; a reader passes an item if a target token is in its top 10 at any block).
+
+  | Family (gated items, 7B) | plain lens | centred lens | native 16, per word (pooled) | native 16, sum (the reconstruction read as a whole) | union (top 5 of each) | rotated |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | basic (20) | 1.00 | 0.95 | 0.50 | 0.95 | 0.90 | 0.00 |
+  | multilingual (20) | 1.00 | 0.95 | 0.40 | 0.85 | 0.80 | 0.00 |
+  | typo (12) | 0.25 | 0.17 | 0.33 | 0.25 | 0.33 | 0.00 |
+  | poetry, final token (15) | 1.00 | 1.00 | 0.40 | 1.00 | 0.80 | 0.00 |
+  | poetry, end of first line (15) | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+  | multilingual number-claim precision | 0.51 | 0.63 | 0.33 | 0.49 | 0.54 | 0.00 |
+
+  - The per-word reader loses half of what the lens sees at the final position (0.40-0.50 against 1.00): the finished answer is spread over many words, and no single word promotes it into the top 10. Read as a whole, the same 16 words recover it (0.85-1.00), so the loss is in the pooling, not in the description. The union of the two readings keeps 0.80-0.90 within the benchmark's ten-token budget.
+  - The correction of a typo is weakly represented at the misspelled token for every reader (0.17-0.33 of gated items); the planned rhyme is invisible at the end of the first line for every reader, so a plan the benchmark reads in a 27B model is not readable here.
+  - Qwen2.5-0.5B (47 gated items): lens 1.00 / 0.62 / 0.00 / 1.00 on basic / multilingual / typo / poetry, per-word native 0.67 / 0.88 / 0.08 / 0.67, sum 0.87 / 0.62 / 0.00 / 1.00. The benchmark's own warning holds: the small model passes few gates (8 of 24 multilingual items), and its per-word reader even leads the lens on multilingual, at low precision (0.27 against 0.15).
+  - Pre-registered: the lens at 0.8 and native at 0.7 in every family, refuted (typo fails for both; per-word native fails everywhere); native earlier than the lens in at most one family, confirmed at 7B; native precision at least the lens's, refuted at 7B (0.33 against 0.51), confirmed at 0.5B.
+
+- e482 ORDER WITHOUT A QUESTION (Qwen2.5-7B, 240 stories "The {A} chased/followed/bit the {B}." in both orders of 40 animal pairs; read at the object token and at the final period, blocks 8-26; a fixed rule decodes the agent from each reader, reported for its better direction, so 0.5 means no order information; lens-magnitude: the agent is the name with the larger (or smaller) logit; native-sign: the agent is the name on a promoting (or suppressing) word).
+
+  | Position | Best block: lens-magnitude | native-magnitude | native-sign | Mid blocks 14-22: native-sign / lens-magnitude | Opposite signs on the two names (best) |
+  | --- | --- | --- | --- | --- | --- |
+  | object token | 0.94 (block 8; the agent is the smaller) | 0.99 | 0.99 | 0.82-0.93 / 0.71-0.83 | 0.62 |
+  | final period | 0.88 (block 26) | 0.77 | 0.74 (block 8) | 0.50-0.56 / 0.50-0.56 | 0.61 |
+
+  - At the object token every reader decodes the order, because the current token is the recipient: its own name is promoted (recipient on a promoting word 0.93-1.00 through block 20) and the other name is the agent. That is position information, not order in the readout, and a judge who does not know which token was read cannot use it.
+  - At the period, in the middle blocks, no reader carries the order (0.50-0.56 for every rule); the lens recovers it only at the last block (0.88 at block 26), a recency effect, and native signs only at block 8 (0.74), where the just-copied recipient is promoted.
+  - The two names sit on words of opposite sign in at most 0.62 of items, and the sign is not a role: the agent is promoted in 0.29-0.48 of items at the object token, the recipient in 0.60-1.00, which follows the position, not the role.
+  - Pre-registered: the lens reading order late at the period by recency, confirmed (0.88); native signs beating the lens by 0.1 at the object token, confirmed but trivially (both read the current token); opposite signs in half the items, confirmed (0.62) without carrying the role.
+
+- e478b CERTIFICATES WHERE FABRICATIONS OCCUR (e416's chained arithmetic, 52 of 109 chains answered; blocks 12-26 at the final position; a claim is a digit in a reader's top 3 among the ten digits, right if it is a quantity of the chain (five of the ten digits, so a random claim is right half the time); certificates as e478; receipts at block 20).
+
+  | Reader | Claims | Precision | AUC right against fabricated: confidence (z) / rank / coefficient share / coefficient rank / receipt | Precision keeping the top half by the best certificate |
+  | --- | --- | --- | --- | --- |
+  | plain lens | 1248 | 0.63 | 0.53 / 0.55 / - / - / 0.43 | 0.63 (z) |
+  | native 16 | 1248 | 0.48 | 0.59 / 0.52 / 0.54 / 0.52 / 0.51 | 0.57 (z) |
+  | rotated 16 | 1248 | 0.55 | - / - / 0.51 / - / - | - |
+
+  - Nothing here is reliable. The plain lens's digit claims are right 0.63 of the time against a chance rate of 0.50, the native reader's 0.48, the rotated words' 0.55; every certificate is at chance (0.43-0.59), and keeping the better half of claims by any of them leaves precision where it was. Over the whole vocabulary (any digit in the top 10) the native reader is at 0.60 and the lens at 0.54, with the same flat certificates.
+  - The receipts are as uninformative as the coefficients: removing the word that carries a digit changes the answer's log-probability without regard to whether the digit was in the chain.
+  - Pre-registered: all four guesses refuted. A certificate can only rank claims that differ in how they are carried; fabricated and right digits are carried alike here, which says the digits the readers show at the final position are not the chain's intermediate at all (e416's conclusion).
+
+- e481 MULTI-TOKEN CONCEPTS THROUGH SINGLE NATIVE WORDS (e420's two-hop items restricted to two-token country names, with extra landmarks; 26 of 45 pass the gate over eight countries: Costa Rica, Czech Republic, New Zealand, Saudi Arabia, South Africa, South Korea, Sri Lanka, United Arab Emirates; subject token blocks 12-20, final position 22-26; each native word read separately).
+
+  | Position (any cell) | Reader | First token in the top 10 | Second token | Both tokens in the pooled top 10 | Both in one word's top 10 | Second token ranked right by the carrying word |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | subject token | lens | 0.00 | 0.00 | 0.00 | - | - |
+  | subject token | native 16 | 0.19 | 0.08 | 0.00 | 0.00 | 10 of 10 |
+  | final position | lens | 0.85 | 0.04 | 0.04 | - | - |
+  | final position | native 16 | 0.77 | 0.42 | 0.23 | 0.31 (13 words, all MLP rows) | 14 of 15 |
+  | either | rotated 16 | 0.00 | 0.00 | 0.00 | 0.00 | - |
+
+  - At the final position the plain lens shows the first token of the name and almost never the second (0.04), which is the benchmark's multi-token complaint: " South" does not say Korea or Africa. The native reader shows the second token in 0.42 of items, and in 0.31 a single word carries both tokens in its own top 10, so the concept is read as a unit. When a word carries the first token, it ranks the right second token above the alternatives in 24 of 25 cases (Korea against Africa, Arab against Kingdom and States, and so on).
+  - The unit words are MLP rows, one neuron writing the two-token name; no token embedding does this.
+  - At the subject token the native reader surfaces the first token in 0.19 of items and the second rarely (0.08); the unit reading is late.
+  - Pre-registered: second-token recall at half the first's at the subject token, refuted (0.02 per cell); disambiguation above chance, confirmed (24 of 25); the lens blind at the subject token, confirmed.
+
+- Reading of session 57: WDD against WorkspaceBench's underlying problems.
+  - Trust. On the two-hop family the native reader does not need a certificate: 73 country claims at the subject token, all right, where the lens claims nothing; 0.99 at the final position for both. On chained arithmetic no reader is reliable and no certificate, including a causal receipt, separates fabricated digits from right ones. The trust mechanism WDD offers is therefore provenance and precision, not a per-claim score.
+  - Prompt echo. The provenance of a surfaced concept says whether it is a copy of a prompt token or a computed representation. For a concept held in mind while copying a sentence, everything the native reader surfaces is computed (MLP rows), nothing is an echo, and it surfaces it three times as often as the lens with the same think/don't-think contrast.
+  - Multi-token concepts. A native word is one neuron's write, and one neuron can write a two-token name. The word then carries the concept as a unit and disambiguates its second token, which a whole-state lens cannot.
+  - Order. Signs do not carry roles. Without a question, order is readable only from position and recency, by any reader; the bag-of-words limitation stands for native words too.
+  - Losing nothing the lens has. Per-word pooling loses half of the finished answer; reading the 16 words as a whole recovers it, and the union of the two readings within ten tokens keeps 0.80-0.90 of the lens's passes plus the hidden parts. That union is the candidate "native workspace reader": a whole-state reading for what is finished, per-word readings with provenance for what is being computed.
+  - The gap the program cannot close at this scale: the benchmark's judged, multi-token, compositional families (conjunctive association, role-bound scenes, buggy code) need a text-producing reader and a capable model; a native readout is a list of words with numbers attached, which a summariser could turn into text, and its provenance would let the summariser say which words are computed and which copied. That is a design, not a result.

@@ -416,3 +416,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The native-only profile signal is an artefact of the normalisation or of k": it is the same under L1, at k = 8 and at k = 32 (e476).
 - "It is a proxy for norm, position, confidence, token frequency, copying or token identity": none of their gaps removes more than 0.03 of it (e476).
 - "The attribute handles of e473 are item-specific": four native words found on other kinship words, in other languages, flip only gender in 98% of items, better than the item's own (e477).
+
+## Session 57 kills (WDD as a workspace reader)
+- "The native reader's coefficients or causal receipts certify its claims": on chained arithmetic every certificate is at chance and no reader beats the 0.5 base rate by much (e478b).
+- "The per-word native reader keeps everything the lens captures": it loses half of the finished answer; only the reconstruction read as a whole keeps it (e480).
+- "Signs of native words carry who did what to whom": without a question, order is position and recency, for every reader (e482).
+- "The planned rhyme is readable at the end of the first line": not at 7B, for any reader (e480).

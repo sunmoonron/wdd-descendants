@@ -47,6 +47,10 @@ Each item gives the question, where it comes from, a design at the program's usu
 - Design: put a context noun before the subject ("Near the {Y}, the {e} chased the {X}.") so that subject items get a real other-context control.
 - Also report the transfer when the interchange starts at later blocks, where the carrier words of the two roles have diverged. e470 suggests that late windows barely work even within a role, so keep this part small.
 
+**B17. The native workspace reader, judged.** (session 57, e478-e482)
+- Define the reader as the union of the whole-reconstruction lens (what is finished) and the per-word lens with provenance (what is being computed), and run it on WorkspaceBench's judged families with an LLM summariser that is told which words are computed and which copied. Needs the benchmark's repository, a judge, and a model that passes its gates (the 27B does not fit the 40 GB box in bf16; a quantised load or a smaller capable model would).
+- Cheap first step on the box: the multi-token unit words of e481 on more entities (people, works, compounds), and whether the unit word's block is the same across entities of one kind.
+
 ## Priority 2: the causal-abstraction test on a known algorithm (deferred in session 52)
 
 **B6. Native words as coordinates for the variables of a known algorithm.**
