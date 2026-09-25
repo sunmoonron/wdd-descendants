@@ -1546,3 +1546,37 @@ SESSION 49 (a fourth relayed review, on the learning signal in native coordinate
   - Per batch, the learning signal on a word is unrelated to the word.
   - Over training, words form by rotation until about step 16000, then shrink in place.
   - The words used most are not the words learning pushes hardest.
+
+SESSION 50 (a sixth relayed review, on whether the native vocabulary has a grammar; e463-e464, 2 scripts, 4 runs, about 2 minutes of GPU time, 2026-09-25 01:05-01:08 box time. The fifth review, on the same day, was triaged without experiments: most of its proposals repeated its own earlier lists or atlas results.)
+
+- Weighing the review.
+  - Run:
+    - "accents", whether a word's grammatical role is carried by coefficients (inflection) or by which words are used (e463);
+    - the "illegal word", whether a native word written where it never occurs is corrected (e464).
+  - Skipped:
+    - "homophones" (usage-equivalent writers that substitute for each other): the quotient program found no equivalence-class structure among perturbations (e336, e338), and similar descendants are not interchangeable token by token (e262, e264);
+    - the sign "switch" (effects are linear to 3-10 times natural amplitude, e345, e271, so flipping a write's sign reverses its effect);
+    - "phase locking" (a write's downstream trace is its descendant, predictable and context-general, e231, e242).
+- e463 DO NATIVE WORDS HAVE ACCENTS? (twelve English words used as nouns and as verbs, 5 templates each; 16 native words at the middle depth at the word's token; role decoded leaving one word out).
+
+  | Model | overlap of supports, same token: within role / across roles (different tokens, same role) | role decoded from: native supports / native coefficients / rotated coefficients / raw state | shared-word coefficients ("accent") against role-specific words | shared words' energy, sign flips |
+  | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.26 / 0.15 (0.04) | 0.91 / 0.81 / 0.89 / 0.99 | 0.61 against 0.97 | 0.50, 0.00 |
+  | Qwen-0.5B | 0.19 / 0.13 (0.04) | 0.78 / 0.73 / 0.88 / 0.99 | 0.61 against 0.94 | 0.50, 0.00 |
+
+  - A word's role is carried by which native words describe it, not by inflecting shared words.
+  - The words used in both roles carry half of the description, and their coefficients never change sign between roles. From their coefficients the role is decoded at 0.61 (chance 0.5), against 0.94-0.97 from the role-specific words.
+  - Role information is not special to the native vocabulary: rotated words decode it as well or better (0.88-0.89), and the raw state best (0.99).
+  - Pre-registered: within-role overlap above across-role held; support decoding at least 0.8 held in GPT-2 only; the accent channel carrying role was refuted; rare sign flips held.
+- e464 THE ILLEGAL WORD (40 MLP neurons of a middle block; the same extra write, the neuron's median natural write size along its row, is added in 20 contexts where it fires most and in 20 norm-matched contexts where it writes almost nothing; the difference is followed through the next blocks).
+
+  | Model | survival along the word after 1 / 2 / 4 blocks: fires / never fires | energy after 2 blocks | 8 native words explain the difference at +2 (the word itself among them) | KL at the position |
+  | --- | --- | --- | --- | --- |
+  | GPT-2, block 4 | 0.79/0.64/0.49 / 0.76/0.60/0.47 | 0.96 / 0.92 | 0.57 / 0.56 (always) | 0.0003 / 0.0002 |
+  | Qwen-0.5B, block 10 | 0.69/0.47/0.24 / 0.68/0.48/0.25 | 0.86 / 0.82 | 0.46 / 0.46 (always) | 0.0000 / 0.0000 |
+
+  - A native word written where it never occurs is damped, scattered and re-described exactly like the same word written where it does.
+  - The network enforces no contextual legality on its own writes. The response is the generic, direction-independent contraction (e214, e216) in both cases.
+  - A single natural-size write barely moves the next-token prediction in either case.
+  - Pre-registered: survival within 20% held; a larger effect in illegal contexts was refuted.
+- Reading. Both of the review's grammar proposals give nulls. The native vocabulary behaves like fixed labels with context-dependent amounts, not like an internal language with inflection or syntax. Roles are expressed by word choice, and the network does not police where a word appears.

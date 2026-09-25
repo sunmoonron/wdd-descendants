@@ -467,6 +467,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H278 One batch's gradient predicts how a word changes between checkpoints. → e462 → KILLED (cosine 0.000-0.001 at every stage).
 - H279 The most used native words receive the most learning pressure. → e462 → KILLED (Spearman of usage with gradient norm -0.63 to -0.04). Forward use and backward pressure are different writer properties.
 
+## A grammar over native words? (session 50)
+
+- H280 Native words carry grammatical role by inflection (coefficient modulation of shared words). → e463 → KILLED. Role is carried by which words are used (0.94-0.97 decoding), not by shared words' coefficients (0.61, no sign flips). Rotated words decode role as well (0.88-0.89).
+- H281 The network corrects native words written in contexts where they never occur. → e464 → KILLED. Survival, energy and re-description are the same in legal and illegal contexts: generic contraction, no contextual syntax.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

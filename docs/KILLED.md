@@ -383,3 +383,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "A gradient update reinforces or shrinks a word along its own direction": per batch, the along-row share is 0.5-0.8 times chance and the sign is a coin flip (e462).
 - "One batch's gradient predicts how a word will change": cosine with the net change between checkpoints is 0.000-0.001 (e462).
 - "The most used native words receive the most learning pressure": Spearman -0.63 to -0.04 (e462).
+
+## Session 50 kills (a grammar over native words)
+- "Native words have accents (role carried by inflecting shared words)": role is carried by word choice; shared words' coefficients decode it at 0.61 and never flip sign (e463).
+- "The network corrects a native word written where it never occurs": it is damped exactly as where it fires (e464).

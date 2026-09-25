@@ -1,0 +1,30 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "n": 120,
+ "jaccard": {
+  "same_token_within_role": 0.1885317884429398,
+  "same_token_across_roles": 0.13495250318832075,
+  "different_token_same_role": 0.04331031446478239
+ },
+ "decode": {
+  "native_support": 0.7833333333333333,
+  "native_coefficients": 0.7333333333333333,
+  "rotated_coefficients": 0.875,
+  "raw_state": 0.9916666666666667
+ },
+ "accent_channel": {
+  "decode_from_shared_word_coefficients": 0.6083333333333333,
+  "decode_from_role_specific_word_presence": 0.9416666666666667,
+  "sign_flip_share": 0.0,
+  "shared_words_energy_share": 0.49609926094611484
+ },
+ "checks": {
+  "within_over_across": true,
+  "support_decodes_0_8": false,
+  "accent_carries_role": false,
+  "sign_flips_rare": true
+ },
+ "_exp": "e463_accents_qwen05",
+ "_time": "2026-09-25 01:07:01"
+}

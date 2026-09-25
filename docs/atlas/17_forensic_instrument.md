@@ -1,4 +1,4 @@
-# 17. WDD as an instrument: forensics, steering and the learning signal (S47-S49)
+# 17. WDD beyond description: forensics, steering, learning, grammar (S47-S50)
 
 **Question.** Beyond describing states, can WDD's provenance-labelled words serve as a forensic tool? The candidate uses are: telling what compression damaged, what a fine-tune changed, whether an intervention hit its target, and how content persists across generated tokens.
 
@@ -11,8 +11,9 @@
 - Near-identical states differ in their futures mainly through context, and the WDD ledger adds nothing to the cosine in predicting the vector's effect. The write history is not an input (e460).
 - A forged write-sized vector is barely detectable at its block, no better than a covariance detector, and invisible a few blocks later (e461).
 - WDD is a forward coordinate, not a learning one. One batch's gradient on a word is unrelated to the word and does not predict its change between checkpoints; words form by rotation until about step 16000, then shrink in place; the most used words get no more gradient than others (e462).
+- The native words have no grammar. A word's noun or verb role is carried by which words describe it, not by inflecting shared words (e463). A word written where it never fires is damped exactly as where it fires (e464).
 
-**Start here:** e458, e457, e460, e462, e456 · **Sessions:** S47, S48, S49 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`
+**Start here:** e458, e457, e460, e462, e463 · **Sessions:** S47-S50 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`, `e463_native_accents.py`, `e464_illegal_words.py`
 
 ## Experiments
 
@@ -25,6 +26,8 @@
 | e460 | Do near-identical states with different ledgers have different futures? | Different futures come from context: pairs (cos 0.95-0.998, always the same token) differ by KL 0.26-0.40, vector part 15-24%; ledger distance adds nothing (partial rho -0.07, -0.10) | refuted (history is not an input) | ← e131 e445 |
 | e461 | Can WDD detect and locate a forged write-sized vector? | Weakly: AUC 0.60-0.64 at the forged block (Mahalanobis 0.62-0.75), correct block 0.14-0.35 (chance 0.06-0.14), chance a few blocks later | refuted (not an authenticity checker) | ← e131 e189 e195 |
 | e462 | How does a gradient update reshape a native word, over training? | Per batch: along-row share 0.5-0.8x chance, sign a coin flip, no prediction of the net change (cos 0.000). Net: rows rotate and grow to step 16000, then shrink in place; usage vs gradient rho -0.63 to -0.04 | refuted (not a learning coordinate) | ← e443 e412 e429 e81 |
+| e463 | Is a word's grammatical role carried by inflecting shared native words? | No: role decoded from role-specific words at 0.94-0.97, from shared words' coefficients 0.61 (no sign flips); rotated words decode it as well (0.88-0.89) | refuted (word choice, not inflection) | ← e146 e162 e440 |
+| e464 | Is a native word written where it never fires corrected? | No: survival after 2 blocks 0.60 vs 0.64 (GPT-2), 0.48 vs 0.47 (Qwen); energy and re-description the same; generic contraction | refuted (no contextual syntax) | ← e214 e216 e246 |
 
 ## How the results flow
 
@@ -34,6 +37,7 @@
 - `e440 → e459`. Native words carry context (e440) and persist a little longer than random directions across positions, with no special regeneration.
 - `e131 → e460, e461`. Provenance is lost when writes accumulate (e131). A state's future depends on its vector and its context, not on its history (e460). A single forged write is lost in its block's other writes (e461).
 - `e81, e443 → e462`. Rows keep rotating until late (e81), and words appear between steps 4000 and 16000 (e443). The rotation is accumulated drift: per batch the gradient on a word is noise relative to it, and after step 16000 the words mostly shrink in place.
+- `e146, e440 → e463` and `e214 → e464`. A token's description mixes words for the token and words for its context (e146, e440). Roles are a matter of which context words appear, not an inflection of shared words. The contraction is direction-independent (e214), and it is also indifferent to whether a word belongs in its context.
 
 ## Links to other areas
 

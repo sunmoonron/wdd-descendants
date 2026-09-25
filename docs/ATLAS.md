@@ -1,4 +1,4 @@
-# Atlas of the WDD program: 424 experiments by technical area
+# Atlas of the WDD program: 426 experiments by technical area
 
 This is the entry point to the whole program. It is small enough to paste into a new chat as context. It gives:
 
@@ -19,12 +19,12 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 - **Models.**
   - The main five: GPT-2 small, Pythia-410m, Qwen2.5-0.5B, OLMo-1B-0724 and SmolLM2-135M.
   - Also used: Pythia training checkpoints and sizes from 70m to 1b, a random-init GPT-2, Qwen2.5-7B, and toy models trained from scratch.
-- **Scale.** 424 experiment scripts (e00-e462 plus variants), 49 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
-- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 113 established, 98 supported, 52 narrowed, 25 mixed, 109 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
+- **Scale.** 426 experiment scripts (e00-e464 plus variants), 50 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
+- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 113 established, 98 supported, 52 narrowed, 25 mixed, 111 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
 - **Scope.** Negative results are kept. No claim is more general than these models.
 - **Phase 1** (sessions 1-31, e00-e356): when a write can be read back from the state; why it fades; what it becomes downstream (the descendant); and what part of that matters causally (the quotient).
 - **Phase 2** (session 32, e357-e373): the program's tools tested on known circuits, the co-selection proposal of "What if not Circuits?", and drift over training.
-- **Phase 3** (sessions 33-49, e374-e462): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), and the learning signal in native coordinates (session 49).
+- **Phase 3** (sessions 33-50, e374-e464): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), the learning signal in native coordinates (session 49), and whether the native words have a grammar (session 50).
 - **Terms.**
   - *Identification (recall)*: the dominant true write is in the decoder's support.
   - *Prominence*: the write's projection on the centred state, over the state's norm.
@@ -61,7 +61,7 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 | 14 | [Self-description: the native vocabulary](atlas/14_native_vocabulary.md) | 40: e391-e443, S36-S44 | 32-64 own words keep 90% of the loss. The vocabulary is learned: a per-block accent early, words from step 4000-16000. It survives covariance, lexicon and Gaussian-state controls. It is private across seeds. |
 | 15 | [A 7B workspace agenda and established lenses](atlas/15_workspace_lenses.md) | 12: e415-e425, S40-S42 | At 7B, native words surface a hidden two-hop bridge that the logit lens misses. It is not a better reader in general. Most results have established names; the instrument is what is new. |
 | 16 | [The vision round and its causal follow-ups](atlas/16_vision_round.md) | 19: e444-e455, S45-S46 | The vocabulary is written by training the writers, and the same function can be re-implemented with different words. Concept words hold across languages (7 / 15 / 22 of 24 nouns) and are causal handles: near natural size one word redirects 35-58% of translations (e455's 67-94% was a 6-8-fold injection). Word tables do not translate between models. |
-| 17 | [WDD as an instrument: forensics, steering, the learning signal](atlas/17_forensic_instrument.md) | 7: e456-e462, S47-S49 | Self-description survives compression that breaks the model, so it does not detect damage. WDD names what a fine-tune changed but does not compress it. A native word steers as efficiently per unit of displacement as a dense vector. Its checksum, its ledger (for a state's future) and its forgery detection add nothing over simple baselines. It is a forward coordinate, not a learning one. |
+| 17 | [WDD beyond description: forensics, steering, learning, grammar](atlas/17_forensic_instrument.md) | 9: e456-e464, S47-S50 | Self-description survives compression that breaks the model, so it does not detect damage. WDD names what a fine-tune changed but does not compress it. A native word steers as efficiently per unit of displacement as a dense vector. Its checksum, its ledger (for a state's future) and its forgery detection add nothing over simple baselines. It is a forward coordinate, not a learning one, and its words have no grammar. |
 
 ## How the areas connect
 
@@ -161,7 +161,8 @@ Sinks (10) are a side branch that corrected several phase-3 numbers. The toys (1
     - Its checksum confirms an intervention reached the intended word but predicts success no better than the intervention's size (e458).
     - Near-identical states have different futures through context, not history; the ledger adds nothing to the cosine (e460).
     - A forged write is barely detectable where it enters, and not at all a few blocks later (e461).
-    - Per batch the gradient on a word is unrelated to it. Words form by rotation until about step 16000, then shrink in place, and the most used words get no more gradient (e462). [17]
+    - Per batch the gradient on a word is unrelated to it. Words form by rotation until about step 16000, then shrink in place, and the most used words get no more gradient (e462).
+    - The words have no grammar: roles are carried by word choice, not inflection (e463), and a word written where it never fires is not corrected (e464). [17]
 
 ## Threads that cross areas
 
@@ -226,7 +227,7 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
   - Phase 2: S32 e357-e373.
   - Phase 3:
     - S33 e374-e382; S34 e383-e386; S35 e387-e390; S36 e391-e394; S37 e395-e398b; S38 e399-e406; S39 e407-e414;
-    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462.
+    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462; S50 e463-e464.
 
 ## Open directions
 

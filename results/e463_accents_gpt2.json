@@ -1,0 +1,30 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "n": 120,
+ "jaccard": {
+  "same_token_within_role": 0.26070096173819524,
+  "same_token_across_roles": 0.14880380995914197,
+  "different_token_same_role": 0.038392023884052065
+ },
+ "decode": {
+  "native_support": 0.9083333333333333,
+  "native_coefficients": 0.8083333333333333,
+  "rotated_coefficients": 0.8916666666666667,
+  "raw_state": 0.9916666666666667
+ },
+ "accent_channel": {
+  "decode_from_shared_word_coefficients": 0.6083333333333333,
+  "decode_from_role_specific_word_presence": 0.975,
+  "sign_flip_share": 0.0,
+  "shared_words_energy_share": 0.5037578443686167
+ },
+ "checks": {
+  "within_over_across": true,
+  "support_decodes_0_8": true,
+  "accent_carries_role": false,
+  "sign_flips_rare": true
+ },
+ "_exp": "e463_accents_gpt2",
+ "_time": "2026-09-25 01:07:03"
+}
