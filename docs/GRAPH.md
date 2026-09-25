@@ -521,6 +521,20 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H308 The signs of native words carry the direction of a described action without a question. → e482 → KILLED. At the period, mid blocks, every fixed rule is at 0.50-0.56; at the object token every reader reads the order from the current token; the lens reads it late by recency (0.88 at block 26).
 - H309 The planned rhyme of a couplet is readable at the end of the first line. → e480 → KILLED at 7B for every reader (0.00).
 
+## Calibration against classical theory (session 58)
+
+- H310 WDD's detection threshold is an extreme-value statistic: the competitor maximum is Gumbel, scales as sqrt(2 ln m), and predicts the detection curve. → e483 → SUPPORTED in five: KS 0.02-0.07 (normal 0.06-0.11), scaling R^2 0.97-0.997, the fitted Gumbel's CDF within 0.1 of the measured detection at every injected size (within 0.11 in two), resolution 0.25-0.4 of the state's norm.
+- H311 The scale of that law is set by the atoms' second moment. → e483 → KILLED for the native dictionary (slope 2.9-6.2 times the prediction), SUPPORTED for the rotated one (0.96-1.02): the excess is provenance.
+- H312 The provenance factor is above 2 at every depth and falls with depth. → e492 → SUPPORTED: 6.2-13.7 at block 1 falling to 3.5-5.1 at the last blocks in GPT-2, Qwen, OLMo and SmolLM2; Pythia dips to 2.9 at the middle and rises again late. At step 1000 of Pythia it is already 2.2-3.0 (the accent of e443).
+- H313 A native description is a redundant code. → e484 → KILLED: one or two erased words already cost a tenth of the intact value, and a random half refitted reaches only 0.59-0.80 of the chosen 8. NARROWED to correction: refitting native words recovers 0.02-0.09, refitting rotated words costs.
+- H314 The correction comes from more coherent supports. → e490 → KILLED: native and rotated supports are equally near-orthogonal (mean |cos| 0.03-0.05). Within native supports the gain does follow coherence (Spearman +0.46 to +0.67).
+- H315 The first native word carries more bits about the next token than the first rotated word. → e485 → SUPPORTED in five: 0.4-1.2 against 0.2-0.3 bits; below the current token's 0.9-1.4; and 1.6-4.4 bits about the current token (lexical).
+- H316 The Heaps exponent of the vocabulary in use is a provenance signature. → e486 → KILLED: native 0.60-0.76, rotated 0.55-0.78, no consistent order. NARROWED: provenance concentrates usage (half of selections on 2-5% of the words used; rotated 16-23%).
+- H317 The native word stream has sequential structure of its own. → e487 → SUPPORTED: the previous word predicts 0.2-0.9 bits of the next (shuffled about 0), about half of the text's own; the rotated stream has almost no entropy (1.0-3.5 bits). Most of the structure is lexical (the current token fixes 1.5-4.3 bits).
+- H318 Native rows are the non-Gaussian directions of the state cloud (projection pursuit). → e488 → SUPPORTED in five: kurtosis 1.3-4.5 times rotated at the median, 2-10 times at the 90th percentile; usage follows it (+0.25 to +0.46).
+- H320 Provenance loss has two timescales, a fast loss of the direct trace and a slow loss of the re-written part. → e491 → KILLED. A single exponential fits at R^2 0.983-0.996 (half-life 0.9-2.6 blocks, retention 0.71-0.88 per block, the contraction's); Prony's second mode gains at most 0.01 and carries no amplitude.
+- H319 An unsupervised decomposition of the states rediscovers the rows. → e489 → SUPPORTED in part: FastICA components match native rows at median cosine 0.29-0.43 against 0.10-0.17 for rotated rows and 0.16-0.26 for principal directions; 27-31% above 0.5 in three models, 2% in two; the components are more non-Gaussian than any row, so they are built from several rows.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

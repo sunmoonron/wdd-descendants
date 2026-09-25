@@ -1,0 +1,41 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "k": 16,
+ "n": 2040,
+ "kinds": {
+  "native": {
+   "coherence_median": 0.04511567950248718,
+   "coherence_p90": 0.060127388685941696,
+   "log10_condition_median": 0.4488494396209717,
+   "refit_gain_fvu_mean": 0.013955807313323021,
+   "refit_gain_loss_mean": 0.1566387414932251,
+   "spearman_coherence_fvu_gain": 0.5181729638620381,
+   "spearman_coherence_loss_gain": null,
+   "fvu_gain_top_quartile": 0.022358346730470657,
+   "fvu_gain_bottom_quartile": 0.006828587036579847,
+   "loss_gain_top_quartile": null,
+   "loss_gain_bottom_quartile": null
+  },
+  "rotated": {
+   "coherence_median": 0.04391343146562576,
+   "coherence_p90": 0.06206423416733742,
+   "log10_condition_median": 0.4676333963871002,
+   "refit_gain_fvu_mean": 0.006621830631047487,
+   "refit_gain_loss_mean": -0.05587336793541908,
+   "spearman_coherence_fvu_gain": 0.30743455467336417,
+   "spearman_coherence_loss_gain": null,
+   "fvu_gain_top_quartile": 0.009952778927981853,
+   "fvu_gain_bottom_quartile": 0.0036873293574899435,
+   "loss_gain_top_quartile": null,
+   "loss_gain_bottom_quartile": null
+  }
+ },
+ "checks": {
+  "native_coherence_1_5x": false,
+  "fvu_gain_tracks_coherence": true,
+  "loss_gain_tracks_coherence": false
+ },
+ "_exp": "e490_coherence_gpt2",
+ "_time": "2026-09-25 19:50:28"
+}

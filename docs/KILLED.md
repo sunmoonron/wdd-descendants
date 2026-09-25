@@ -422,3 +422,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The per-word native reader keeps everything the lens captures": it loses half of the finished answer; only the reconstruction read as a whole keeps it (e480).
 - "Signs of native words carry who did what to whom": without a question, order is position and recency, for every reader (e482).
 - "The planned rhyme is readable at the end of the first line": not at 7B, for any reader (e480).
+
+## Session 58 kills (calibration against classical theory)
+- "The competitor level is set by the atoms' second moment": true for the rotated dictionary (ratio 0.96-1.02) and false for the native one (2.9-6.2 times), so the excess is provenance (e483).
+- "A native description is a redundant code": every word matters; a random half refitted reaches 0.59-0.80 of OMP's own 8 (e484).
+- "Refitting compensates because native supports are more coherent": they are as near-orthogonal as rotated ones (e490).
+- "The Heaps exponent of the vocabulary in use marks provenance": native 0.60-0.76 against rotated 0.55-0.78, no order (e486).
+- "Provenance loss has a fast and a slow mode": one exponential fits, at the contraction's retention; Prony's second mode carries nothing (e491).

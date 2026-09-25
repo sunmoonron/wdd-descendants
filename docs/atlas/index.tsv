@@ -444,3 +444,13 @@ e479	19_workspace_reader	S57	supported (computed, not echo)	scripts/e479_directe
 e480	19_workspace_reader	S57	mixed (whole reading keeps it, per-word loses half)	scripts/e480_single_token_battery.py	results/e480_*.json	Does the native reader keep what the lens captures on the benchmark's single-token families (basic, multilingual, typo, poetry), regex-scored?
 e481	19_workspace_reader	S57	supported (final position)	scripts/e481_multitoken_concepts.py	results/e481_*.json	Can a single native word carry a multi-token concept and disambiguate it?
 e482	19_workspace_reader	S57	refuted (position and recency only)	scripts/e482_order_from_signs.py	results/e482_*.json	Do the signs of native words carry the direction of a described action without a question?
+e483	20_classical_calibration	S58	established (5 models)	scripts/e483_gumbel_calibration.py	results/e483_*.json	Is the detection threshold an extreme-value law that predicts the detection curve?
+e484	20_classical_calibration	S58	narrowed (non-redundant, with correction)	scripts/e484_erasure_channel.py	results/e484_*.json	How does a description degrade over an erasure channel, and does refitting correct?
+e485	20_classical_calibration	S58	established (5 models)	scripts/e485_bits_per_word.py	results/e485_*.json	How many bits does the first native word carry about the next and the current token?
+e486	20_classical_calibration	S58	null (exponent); established (concentration)	scripts/e486_heaps_law.py	results/e486_*.json	Does the vocabulary in use grow by Heaps' law, and does provenance change the exponent?
+e487	20_classical_calibration	S58	established (5 models)	scripts/e487_word_stream_entropy.py	results/e487_*.json	Does the native word stream have sequential structure of its own?
+e488	20_classical_calibration	S58	established (5 models)	scripts/e488_projection_pursuit.py	results/e488_*.json	Are native rows the non-Gaussian directions of the state cloud (projection pursuit)?
+e489	20_classical_calibration	S58	supported (partial rediscovery)	scripts/e489_ica_rediscovery.py	results/e489_*.json	Does FastICA on the states alone rediscover the rows?
+e490	20_classical_calibration	S58	refuted (geometry the same)	scripts/e490_support_coherence.py	results/e490_*.json	Is the correction of e484 due to more coherent native supports?
+e491	20_classical_calibration	S58	established (one mode)	scripts/e491_survival_timescales.py	results/e491_*.json	How many timescales does provenance loss have (Prony)?
+e492	20_classical_calibration	S58	established	scripts/e492_gumbel_factor.py	results/e492_*.json	How does the provenance factor vary with depth and training?

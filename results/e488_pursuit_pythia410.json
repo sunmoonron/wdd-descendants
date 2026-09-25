@@ -1,0 +1,45 @@
+{
+ "model": "pythia410",
+ "level": 12,
+ "n": 8160,
+ "kurtosis": {
+  "native_mlp": {
+   "median": 0.2681441307067871,
+   "p90": 0.7788584232330322,
+   "mean": 0.3944198787212372
+  },
+  "rotated_mlp": {
+   "median": 0.21423697471618652,
+   "p90": 0.48977673053741455,
+   "mean": 0.24111473560333252
+  },
+  "random": {
+   "median": 0.21632814407348633,
+   "p90": 0.48306405544281006,
+   "mean": 0.2420026659965515
+  },
+  "pca16": {
+   "median": 0.7939980030059814,
+   "p90": 3.513475179672241,
+   "mean": 1.3548634052276611
+  },
+  "token_embeddings": {
+   "median": 0.21724224090576172,
+   "p90": 0.4912128448486328,
+   "mean": 0.24152739346027374
+  }
+ },
+ "native_above_random_99": 0.072509765625,
+ "rotated_above_random_99": 0.01123046875,
+ "usage_vs_kurtosis_spearman": 0.24868923807853016,
+ "used_share": 0.419921875,
+ "kurtosis_used": 0.3350820541381836,
+ "kurtosis_unused": 0.23358988761901855,
+ "checks": {
+  "native_over_rotated_and_random": true,
+  "usage_tracks_kurtosis": false,
+  "pca_less_kurtotic_than_native": false
+ },
+ "_exp": "e488_pursuit_pythia410",
+ "_time": "2026-09-25 19:45:31"
+}

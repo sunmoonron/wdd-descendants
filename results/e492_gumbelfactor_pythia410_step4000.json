@@ -1,0 +1,64 @@
+{
+ "model": "pythia410",
+ "revision": "step4000",
+ "blocks": [
+  1,
+  6,
+  12,
+  18,
+  22
+ ],
+ "by_block": {
+  "1": {
+   "m": 60548,
+   "native_slope": 0.11909057199954987,
+   "rotated_slope": 0.03086705505847931,
+   "factor": 3.8581773277018594,
+   "native_mean_max": 0.25885477662086487,
+   "rotated_mean_max": 0.13743902742862701,
+   "mean_max_ratio": 1.8834153694465703
+  },
+  "6": {
+   "m": 86158,
+   "native_slope": 0.07799920439720154,
+   "rotated_slope": 0.03075275756418705,
+   "factor": 2.5363320422372486,
+   "native_mean_max": 0.2065799981355667,
+   "rotated_mean_max": 0.13979914784431458,
+   "mean_max_ratio": 1.4776913974155388
+  },
+  "12": {
+   "m": 116890,
+   "native_slope": 0.06503121554851532,
+   "rotated_slope": 0.0312945693731308,
+   "factor": 2.078035162367515,
+   "native_mean_max": 0.1946638524532318,
+   "rotated_mean_max": 0.14161251485347748,
+   "mean_max_ratio": 1.3746232291308793
+  },
+  "18": {
+   "m": 147622,
+   "native_slope": 0.08042678982019424,
+   "rotated_slope": 0.031405992805957794,
+   "factor": 2.5608739808708445,
+   "native_mean_max": 0.22107063233852386,
+   "rotated_mean_max": 0.14328007400035858,
+   "mean_max_ratio": 1.542926564498917
+  },
+  "22": {
+   "m": 168110,
+   "native_slope": 0.09637894481420517,
+   "rotated_slope": 0.031504880636930466,
+   "factor": 3.059175050523074,
+   "native_mean_max": 0.24123811721801758,
+   "rotated_mean_max": 0.14451363682746887,
+   "mean_max_ratio": 1.6693104022150214
+  }
+ },
+ "checks": {
+  "factor_over_2_everywhere": true,
+  "falls_with_depth": true
+ },
+ "_exp": "e492_gumbelfactor_pythia410_step4000",
+ "_time": "2026-09-25 19:53:40"
+}

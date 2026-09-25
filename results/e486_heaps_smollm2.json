@@ -1,0 +1,125 @@
+{
+ "model": "smollm2",
+ "blocks": [
+  7,
+  15
+ ],
+ "T": [
+  256,
+  512,
+  1024,
+  2048,
+  4096,
+  8192,
+  16384
+ ],
+ "by_block": {
+  "7": {
+   "native": {
+    "V": [
+     2044,
+     3218,
+     4883,
+     8164,
+     12330,
+     17609,
+     23161
+    ],
+    "beta": 0.5600681304931641,
+    "distinct": 23161,
+    "cover_half": 740,
+    "cover_0_9": 8382,
+    "share_of_dictionary_used": 0.3506692102713178
+   },
+   "rotated": {
+    "V": [
+     2997,
+     4954,
+     7829,
+     12853,
+     18675,
+     24796,
+     29865
+    ],
+    "beta": 0.4811112880706787,
+    "distinct": 29865,
+    "cover_half": 3395,
+    "cover_0_9": 15547,
+    "share_of_dictionary_used": 0.45217114825581395
+   },
+   "lexicon": {
+    "V": [
+     125,
+     192,
+     295,
+     599,
+     1140,
+     2115,
+     3090
+    ],
+    "beta": 0.8597670793533325,
+    "distinct": 3090,
+    "cover_half": 43,
+    "cover_0_9": 1455,
+    "share_of_dictionary_used": null
+   }
+  },
+  "15": {
+   "native": {
+    "V": [
+     2236,
+     3679,
+     5947,
+     10553,
+     17101,
+     24965,
+     33726
+    ],
+    "beta": 0.6249507069587708,
+    "distinct": 33726,
+    "cover_half": 1215,
+    "cover_0_9": 14550,
+    "share_of_dictionary_used": 0.4066116898148148
+   },
+   "rotated": {
+    "V": [
+     3211,
+     5617,
+     9451,
+     16546,
+     25846,
+     35264,
+     43046
+    ],
+    "beta": 0.5466393828392029,
+    "distinct": 43046,
+    "cover_half": 6172,
+    "cover_0_9": 25276,
+    "share_of_dictionary_used": 0.5189766589506173
+   },
+   "lexicon": {
+    "V": [
+     125,
+     192,
+     295,
+     599,
+     1140,
+     2115,
+     3090
+    ],
+    "beta": 0.8597670793533325,
+    "distinct": 3090,
+    "cover_half": 43,
+    "cover_0_9": 1455,
+    "share_of_dictionary_used": null
+   }
+  }
+ },
+ "checks": {
+  "native_beta_under_0_8_rotated_higher": false,
+  "native_over_lexicon": false,
+  "half_under_5pct": true
+ },
+ "_exp": "e486_heaps_smollm2",
+ "_time": "2026-09-25 19:42:43"
+}

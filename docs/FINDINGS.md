@@ -2024,3 +2024,161 @@ SESSION 57 (WorkspaceBench, the full release of 2026-09-23, read as a specificat
   - Order. Signs do not carry roles. Without a question, order is readable only from position and recency, by any reader; the bag-of-words limitation stands for native words too.
   - Losing nothing the lens has. Per-word pooling loses half of the finished answer; reading the 16 words as a whole recovers it, and the union of the two readings within ten tokens keeps 0.80-0.90 of the lens's passes plus the hidden parts. That union is the candidate "native workspace reader": a whole-state reading for what is finished, per-word readings with provenance for what is being computed.
   - The gap the program cannot close at this scale: the benchmark's judged, multi-token, compositional families (conjunctive association, role-bound scenes, buggy code) need a text-producing reader and a capable model; a native readout is a list of words with numbers attached, which a summariser could turn into text, and its provenance would let the summariser say which words are computed and which copied. That is a design, not a result.
+
+SESSION 58 (the program's original mandate, re-read: toy-model and calibrate WDD against theory older than OMP, many short runs, terminate failures and follow the leads; the OG five models on the new box; e483-e491, 9 scripts, 45 runs plus reruns, about 25 minutes of GPU time, 2026-09-25 19:39-20:05 box time).
+
+- The turn. The review-driven and benchmark-driven avenues are worked through; what was undone is the calibration of WDD as an instrument against classical theory: extreme-value statistics for its detection threshold (Fisher and Tippett 1928, Gumbel 1935), the erasure channel for its redundancy (Shannon 1948), bits per word (Fano 1961), Heaps' law for its vocabulary (Herdan 1960), the sequential entropy of its word stream (Shannon 1951), projection pursuit for what its atoms are as directions (Friedman and Tukey 1974), independent components for whether those atoms can be rediscovered from activations alone (Comon 1994), mutual coherence for its supports (Tropp 2004), and Prony's method (1795) for the timescales of provenance loss.
+
+- e483 THE DETECTION THRESHOLD AS AN EXTREME-VALUE LAW (middle depth, 8 x 256 evaluation tokens, typical positions, the dictionary up to the middle block, m = 78,000-227,000 atoms; the competitor maximum M(x) = max_j |<u, a_j>| over the unit state; Gumbel fit by moments; sub-dictionaries of m' = 2^10, 2^12, 2^14 and all; an MLP row injected at a relative size s, detected if OMP picks it first; the prediction is the fitted Gumbel's CDF at the realised prominence).
+
+  | Model | M(x): Gumbel location, scale | KS Gumbel / normal | Mean maximum against sqrt(2 ln m'): R^2, slope over the second-moment prediction | Rotated dictionary: slope over prediction | Detection measured / predicted at s = 0.2, 0.3, 0.4 | Half detection at s |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.318, 0.052 | 0.029 / 0.056 | 0.997, 3.85 | 0.98 | 0.01/0.01, 0.23/0.21, 0.71/0.67 | 0.4 |
+  | Pythia-410m | 0.214, 0.038 | 0.022 / 0.089 | 0.984, 2.91 | 1.01 | 0.31/0.26, 0.89/0.84, 0.97/0.98 | 0.25 |
+  | Qwen-0.5B | 0.289, 0.076 | 0.070 / 0.095 | 0.971, 4.96 | 0.96 | 0.06/0.05, 0.46/0.36, 0.76/0.70 | 0.4 |
+  | OLMo-1B | 0.233, 0.049 | 0.041 / 0.107 | 0.995, 6.21 | 1.01 | 0.16/0.14, 0.80/0.70, 0.96/0.94 | 0.25 |
+  | SmolLM2 | 0.358, 0.071 | 0.059 / 0.069 | 0.982, 4.38 | 1.02 | 0.01/0.00, 0.19/0.10, 0.53/0.42 | 0.4 |
+
+  - The competitor maximum is a Gumbel variable in all five models (closer than a normal), and its mean grows linearly in sqrt(2 ln m') (R^2 0.97-0.997). The instrument's detection curve follows from the two fitted Gumbel parameters: the predicted rate is within 0.1 of the measured one at every size in GPT-2, Pythia and OLMo, and within 0.11 in Qwen and SmolLM2. The resolution is a write of 0.25 (Pythia, OLMo) to 0.4 (GPT-2, Qwen, SmolLM2) of the state's norm.
+  - The scale of the law is provenance. For the rotated dictionary (same Gram matrix, no alignment with the states) the slope equals the second-moment prediction sigma = sqrt(u^T C_A u) exactly (ratios 0.96-1.02). For the native dictionary it is 2.9-6.2 times that: the own atoms' correlations with the states have a far heavier tail than any same-Gram dictionary's, which is the same fact as the own-word advantage (e00, e03) stated as an extreme-value statistic, and it gives the excess a number per model.
+  - Pre-registered: Gumbel closer than normal, confirmed in five; scaling R^2 above 0.95, confirmed; prediction within 0.1 everywhere, confirmed in three, off by 0.01 in two.
+
+- e486 HEAPS' LAW FOR THE VOCABULARY IN USE (32 x 512 evaluation tokens in order, sinks excluded; distinct words V(T) used in the 16-word descriptions of the first T states, T = 256 to 16,384; exponent fitted on T >= 1024; the quarter and middle blocks).
+
+  | Model (middle block) | native: exponent, distinct words, words covering half of all selections, share of the dictionary used | rotated: exponent, distinct, half | the text's lexicon: exponent, distinct, half |
+  | --- | --- | --- | --- |
+  | GPT-2 | 0.60, 33,751, 1,569, 0.43 | 0.57, 53,771, 8,648 | 0.91, 3,510, 83 |
+  | Pythia-410m | 0.74, 64,493, 3,408, 0.55 | 0.72, 86,716, 17,534 | 0.89, 3,506, 91 |
+  | Qwen-0.5B | 0.76, 55,621, 1,745, 0.25 | 0.78, 104,603, 19,517 | 0.88, 3,130, 44 |
+  | OLMo-1B | 0.69, 35,701, 1,815, 0.25 | 0.78, 103,311, 23,791 | 0.89, 3,504, 90 |
+  | SmolLM2 | 0.63, 33,726, 1,215, 0.41 | 0.55, 43,046, 6,172 | 0.86, 3,090, 43 |
+
+  - The growth exponent is not a signature of provenance: native 0.60-0.76 against rotated 0.55-0.78, with no consistent order. What provenance changes is concentration: the native description of 16,000 states uses 33,000-64,000 distinct words with half of all selections falling on 1,200-3,400 of them (2-5%), while the rotated dictionary spreads the same states over 43,000-105,000 words with half on 6,000-24,000.
+  - Pre-registered: native below 0.8 and rotated higher, held in two of five; native above the lexicon, refuted (the text's lexicon is far from saturated at 16,000 tokens); half of the selections by under 5% of the words used, confirmed in three.
+
+- e488 NATIVE ATOMS AS PROJECTION-PURSUIT DIRECTIONS (middle depth, 16 x 512 evaluation tokens, typical positions; excess kurtosis of the states' projections on 4096 MLP rows of the blocks up to the middle, the same rows rotated, 4096 random directions, the top 16 principal directions and 4096 token embeddings; usage of the rows in 16-word descriptions of the same states).
+
+  | Model | Median (90th percentile) kurtosis: native rows / rotated / random / PCs / token embeddings | Native rows above the random 99th percentile (rotated) | Spearman of usage with kurtosis | Median kurtosis, used against unused rows |
+  | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.81 (2.73) / 0.18 (0.43) / 0.17 (0.43) / 0.42 / 0.19 | 0.54 (0.01) | +0.42 | 1.05 / 0.60 |
+  | Pythia-410m | 0.27 (0.78) / 0.21 (0.49) / 0.22 (0.48) / 0.79 / 0.22 | 0.07 (0.01) | +0.25 | 0.34 / 0.23 |
+  | Qwen-0.5B | 0.21 (0.85) / 0.04 (0.25) / 0.03 (0.24) / -0.03 / 0.05 | 0.24 (0.02) | +0.25 | 0.44 / 0.18 |
+  | OLMo-1B | 0.29 (2.24) / 0.06 (0.21) / 0.07 (0.22) / 1.07 / 0.13 | 0.41 (0.01) | +0.46 | 1.41 / 0.20 |
+  | SmolLM2 | 0.30 (1.05) / 0.12 (0.42) / 0.13 (0.42) / 0.16 / -0.08 | 0.16 (0.01) | +0.27 | 0.35 / 0.25 |
+
+  - The rows are the heavy-tailed directions of the state cloud in all five models: at the 90th percentile 2-10 times the kurtosis of rotated or random directions, and 7-54% of the rows lie above the random 99th percentile (rotated 1-2%). Projection pursuit's index, computed with no fitting, would rank them; OMP's usage does (Spearman +0.25 to +0.46), and the rows it uses are more kurtotic than the ones it never uses in all five. Pythia's and OLMo's top principal directions are more kurtotic still, which is their huge directions (area 10).
+  - Pre-registered: native over rotated and random, confirmed in five; usage tracking kurtosis above 0.3, confirmed in two; PCs less kurtotic than the median native row, confirmed in three.
+
+- e484 THE DESCRIPTION OVER AN ERASURE CHANNEL (middle depth, 8 x 256 evaluation tokens; 16 native words, 16 rotated words, 16 principal components fitted on other sequences; 0, 1, 2, 4, 8 or 12 of the 16 parts erased at random, largest first or smallest first; loss recovered after splicing, with and without refitting the remaining words; v2 adds the intact 8-word OMP description as the reference for a random half kept).
+
+  | Model | Intact 16 words: native / rotated / PCA | Random half kept, refitted: native / rotated / PCA | Share of the intact value kept: native / rotated / PCA | Random half over the chosen 8 (interchangeability): native / rotated / PCA | Refit gain at half erased: native / rotated | Erase the 4 largest / the 4 smallest (native) |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.77 / 0.39 / 0.47 | 0.42 / 0.16 / 0.24 | 0.54 / 0.41 / 0.51 | 0.70 / 0.81 / 0.85 | +0.04 / -0.01 | 0.42 / 0.69 |
+  | Pythia-410m | 0.60 / 0.36 / 0.38 | 0.29 / 0.14 / 0.23 | 0.48 / 0.40 / 0.62 | 0.70 / 0.84 / 0.89 | +0.02 / -0.01 | 0.32 / 0.52 |
+  | Qwen-0.5B | 0.85 / 0.56 / 0.56 | 0.55 / 0.18 / 0.36 | 0.65 / 0.32 / 0.64 | 0.76 / 0.75 / 0.82 | +0.06 / -0.02 | 0.45 / 0.80 |
+  | OLMo-1B | 0.69 / 0.08 / 0.36 | 0.28 / 0.00 / 0.21 | 0.41 / 0.04 / 0.57 | 0.59 / 0.19 / 0.75 | +0.09 / -0.00 | 0.24 / 0.59 |
+  | SmolLM2 | 0.89 / 0.70 / 0.71 | 0.63 / 0.30 / 0.50 | 0.71 / 0.43 / 0.70 | 0.80 / 0.82 / 0.88 | +0.08 / -0.03 | 0.53 / 0.85 |
+
+  - The code has no redundancy: erasing one or two words already costs more than a tenth of the intact value for every dictionary, and half the words keep 0.41-0.71 of it (native). A random half of the native words, refitted, reaches 0.59-0.80 of what OMP's own 8-word choice reaches, against 0.75-0.89 for the principal components: native words are less interchangeable than a generic basis, each carrying its own content.
+  - The code has correction: refitting the remaining native words recovers 0.02-0.09 of loss recovered in all five, while refitting rotated words costs 0.00-0.03. A word that stays can stand in for one that goes only if the two overlap (e490).
+  - The largest coefficients carry most: erasing the four largest costs 2-3 times what erasing the four smallest costs, for every dictionary.
+  - Pre-registered: native more graceful than rotated after losing half, confirmed in five; refit gain at least 0.05, confirmed in three; largest first costs more, confirmed in five.
+
+- e485 BITS PER WORD (middle depth, 32 x 512 evaluation tokens, typical positions; held-out predictive information in bits, v2: symbols and targets restricted to their 1000 most frequent values, smoothing tuned on a validation split, fitted on 20 sequences and scored on 8; the random-label control is at +0.00 to +0.04).
+
+  | Model | Marginal next-token cross-entropy | Bits about the next token: native word 1 / word 2 / rotated word 1 / current token / previous token / PCA component | Bits about the current token: native word 1 / rotated word 1 / PCA / previous token |
+  | --- | --- | --- | --- |
+  | GPT-2 | 5.84 | 0.40 / 0.19 / 0.19 / 1.00 / 0.47 / 0.40 | 2.11 / 0.54 / 0.90 / 1.00 |
+  | Pythia-410m | 5.86 | 0.48 / 0.28 / 0.23 / 0.91 / 0.36 / 0.55 | 1.60 / 0.48 / 1.05 / 0.90 |
+  | Qwen-0.5B | 6.17 | 1.21 / 0.59 / 0.26 / 1.39 / 0.45 / 0.66 | 4.39 / 0.56 / 1.33 / 1.40 |
+  | OLMo-1B | 5.86 | 0.50 / 0.25 / 0.17 / 0.92 / 0.36 / 0.52 | 1.73 / 0.27 / 1.11 / 0.91 |
+  | SmolLM2 | 6.11 | 1.05 / 0.48 / 0.21 / 1.37 / 0.57 / 0.84 | 4.26 / 1.08 / 2.12 / 1.37 |
+
+  - The first native word carries 0.4-1.2 bits about the next token, two to five times the first rotated word's 0.2-0.3, and about as much as the sign and index of the largest principal component (0.4-0.8, from 32 symbols against thousands). It carries less than the current token does (0.9-1.4).
+  - It says more about the current token than about the next one: 1.6-4.4 bits, against the rotated word's 0.3-1.1. The first native word is largely lexical, most so in Qwen and SmolLM2 (4.3-4.4 bits, close to naming the token).
+  - The second word carries about half of the first's.
+  - Pre-registered: native over rotated, confirmed in five; native under the current token, confirmed in five; more about the current than the next token, confirmed in five.
+
+- e487 THE SEQUENTIAL ENTROPY OF THE WORD STREAM (middle depth, 32 x 512 evaluation tokens in order; the first native and first rotated word per position; held-out cross-entropies in bits as e485, v2 estimator; a shuffled-position control).
+
+  | Model | Native stream: H, bits from the previous word (shuffled control), bits from the current token, from the previous token | Rotated stream: H, bits from the previous word (shuffled) | Text tokens: H, bits from the previous token |
+  | --- | --- | --- | --- |
+  | GPT-2 | 7.76, +0.56 (-0.08), +2.19, +0.42 | 2.20, +0.10 (+0.06) | 5.84, +1.00 |
+  | Pythia-410m | 8.13, +0.23 (-0.10), +1.49, +0.31 | 1.54, +0.19 (+0.11) | 5.85, +0.90 |
+  | Qwen-0.5B | 7.22, +0.92 (-0.08), +4.33, +0.96 | 1.62, +0.14 (+0.10) | 6.17, +1.39 |
+  | OLMo-1B | 5.74, +0.60 (-0.07), +1.64, +0.57 | 1.02, +0.15 (+0.12) | 5.86, +0.92 |
+  | SmolLM2 | 7.92, +0.84 (-0.11), +3.55, +0.79 | 3.49, +0.11 (+0.02) | 6.11, +1.37 |
+
+  - The native word stream is as rich as the text (5.7-8.1 bits per position against the tokens' 5.8-6.2) and has sequential structure of its own: the previous word predicts 0.2-0.9 bits of the next, about half of what the previous token predicts of the next token, and nothing once positions are shuffled.
+  - The rotated stream has almost no entropy (1.0-3.5 bits): OMP over a dictionary with no provenance picks the same few atoms, aligned with the mean directions, almost everywhere. That is the rotated description's failure seen from the vocabulary side.
+  - Most of the native word's predictability is lexical: the current token fixes 1.5-4.3 bits of it, the previous word or token 0.2-1.0.
+  - Pre-registered: all three confirmed in five.
+
+- e489 REDISCOVERING THE ROWS FROM ACTIVATIONS ALONE (FastICA, 64 components, tanh contrast, on the centred middle-depth states whitened to 256 principal dimensions, 16 x 512 evaluation tokens; the largest |cosine| of each component with any native MLP row of the blocks up to the middle, with the same rows rotated, with random directions and with token embeddings; the same for the top 64 principal directions and for random directions inside the whitened subspace).
+
+  | Model | Components' largest |cos| with a native row: median (share above 0.5) | with a rotated row / a random direction / a token embedding | Top-64 principal directions with a native row / a rotated row | Random directions in the subspace: native / rotated | Excess kurtosis: components / used native rows / PCs |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.43 (0.30) | 0.15 / 0.14 / 0.23 | 0.22 / 0.15 | 0.17 / 0.15 | 13.2 / 2.7 / 0.6 |
+  | Pythia-410m | 0.29 (0.02) | 0.14 / 0.12 / 0.14 | 0.17 / 0.14 | 0.14 / 0.13 | 8.9 / 2.9 / 0.5 |
+  | Qwen-0.5B | 0.36 (0.27) | 0.15 / 0.12 / 0.16 | 0.25 / 0.15 | 0.17 / 0.15 | 6.9 / 1.9 / 0.2 |
+  | OLMo-1B | 0.33 (0.02) | 0.10 / 0.08 / 0.11 | 0.16 / 0.10 | 0.12 / 0.10 | 17.7 / 9.4 / 0.4 |
+  | SmolLM2 | 0.43 (0.31) | 0.17 / 0.16 / 0.17 | 0.26 / 0.17 | 0.19 / 0.17 | 3.8 / 1.6 / 0.4 |
+
+  - An unsupervised method that has never seen the weights lands on the model's own rows: the independent components' best match among native rows is at median cosine 0.29-0.43, two to three times their best match among the same rows rotated (0.10-0.17) or among random directions, and 1.7-2.1 times the principal directions' best match (0.16-0.26). In GPT-2, Qwen and SmolLM2, 27-31% of the components have a native row at cosine above 0.5; in Pythia and OLMo, 2%.
+  - The converse does not hold: 64 components cannot cover thousands of used rows (the most used rows' best component is at 0.18-0.25), and the components are more non-Gaussian than any single row (kurtosis 3.8-17.7 against 1.6-9.4), so what ICA finds are directions built from several rows, not the rows themselves.
+  - Pre-registered: native at least twice rotated, confirmed in five; components better than the principal directions, confirmed in five; a quarter above 0.5, confirmed in three.
+
+- e490 WHY REFITTING COMPENSATES (middle depth, 8 x 256 evaluation tokens; per position the within-support coherence, the mean |cosine| between the 16 chosen words, and the log condition number of their Gram matrix; the refit gain after erasing a random half, in reconstruction (FVU) and in the spliced per-position loss).
+
+  | Model | Coherence, median (90th pct): native / rotated | log10 condition: native / rotated | Refit gain, FVU: native / rotated | Refit gain, loss (nats per position): native / rotated | Spearman, native coherence with the FVU gain | FVU gain, top / bottom coherence quartile |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.045 (0.060) / 0.044 (0.062) | 0.45 / 0.47 | 0.014 / 0.007 | +0.16 / -0.06 | +0.52 | 0.022 / 0.007 |
+  | Pythia-410m | 0.029 (0.034) / 0.026 (0.028) | 0.24 / 0.19 | 0.003 / 0.001 | +0.08 / -0.04 | +0.52 | 0.005 / 0.002 |
+  | Qwen-0.5B | 0.035 (0.043) / 0.042 (0.055) | 0.33 / 0.38 | 0.007 / 0.004 | +0.32 / -0.09 | +0.52 | 0.013 / 0.004 |
+  | OLMo-1B | 0.029 (0.037) / 0.020 (0.023) | 0.30 / 0.16 | 0.005 / 0.001 | +0.50 / -0.02 | +0.67 | 0.009 / 0.002 |
+  | SmolLM2 | 0.043 (0.052) / 0.036 (0.043) | 0.40 / 0.32 | 0.013 / 0.007 | +0.55 / -0.23 | +0.46 | 0.019 / 0.008 |
+
+  - Native supports are not more coherent than rotated ones: the 16 chosen words are nearly orthogonal in both (mean |cosine| 0.03-0.05; condition numbers of 1.5-3). The pre-registered 1.5-fold difference is refuted in all five.
+  - Within native supports, the compensation follows the overlap: the FVU gain from refitting rises with coherence (Spearman +0.46 to +0.67), three times larger in the most coherent quartile than in the least. In loss, refitting native words recovers 0.08-0.55 nats per position after erasing half, while refitting rotated words costs 0.02-0.23.
+  - So the correction capacity of e484 is not a property of the supports' geometry, which is the same for both dictionaries, but of what the words fit: refitting rotated words to the state moves them onto directions that hurt, refitting native words finds more of what the erased word carried.
+  - Pre-registered: coherence 1.5 times, refuted in five; the FVU gain tracking coherence, confirmed in five; the loss gain tracking coherence, not evaluated (a bookkeeping mismatch between the loss and state masks left the per-position correlation uncomputed).
+
+- e491 HOW MANY TIMESCALES DOES PROVENANCE LOSS HAVE? (Prony's method; the birth block at a quarter depth, the top MLP write of each typical position by activation times row norm; recall of that write in the 16-word description at the next eight blocks; a single exponential plus floor by grid search; Prony's two-mode linear prediction.)
+
+  | Model (birth block) | Recall over blocks +0..+8 | One exponential plus floor: half-life, floor, R^2 | Prony's two retention factors per block (amplitudes), R^2 |
+  | --- | --- | --- | --- |
+  | GPT-2 (3) | 0.27/0.23/0.17/0.14/0.10/0.07/0.04/0.03 | 2.56, 0.00, 0.983 | -0.24 and 0.76 (0.30, -0.03), 0.993 |
+  | Pythia-410m (6) | 0.63/0.45/0.29/0.22/0.19/0.15/0.11/0.08/0.05 | 1.80, 0.04, 0.992 | 0.27 and 0.71 (0.63, -0.00), 0.985 |
+  | Qwen-0.5B (6) | 0.82/0.40/0.22/0.15/0.11/0.10/0.08/0.08/0.06 | 0.90, 0.06, 0.996 | 0.39 and 0.88 (0.17, 0.65), 0.999 |
+  | OLMo-1B (4) | 0.84/0.66/0.51/0.38/0.26/0.19/0.14/0.08/0.05 | 2.36, 0.00, 0.994 | 0.44 and 0.72 (1.04, -0.20), 0.998 |
+  | SmolLM2 (7) | 0.49/0.36/0.28/0.21/0.15/0.10/0.09/0.09/0.07 | 2.08, 0.03, 0.995 | 0.07 and 0.77 (0.47, 0.02), 0.992 |
+
+  - One timescale. A single exponential fits the fading at R^2 0.983-0.996 with a half-life of 0.9-2.6 blocks; the two-mode fit gains at most 0.01, and its second root either carries no amplitude or is unphysical. Qwen is the one case with two real amplitudes (a fast loss of 0.39 per block on 0.17 of the trace, a slow 0.88 on 0.65), and even there the gain is 0.003.
+  - The retention per block, 0.71-0.88, is the contraction's: e194 measured a gain of -0.16 to -0.42 per block along any direction (retention 0.58-0.84). Provenance fades at the rate the residual stream contracts everything, with no second, slower channel for what is re-written.
+  - Recall at birth is 0.27-0.84: the block's largest write is not always its most prominent one among 80,000-140,000 atoms (GPT-2's block 3 has many comparable writes, e25).
+  - Pre-registered: a second mode, refuted in five; fast under 0.5 and slow over 0.8, held in Qwen only; recall at birth at least 0.8, held in two.
+
+- e492 THE PROVENANCE FACTOR ACROSS DEPTH AND TRAINING (the native slope of the competitor maximum against sqrt(2 ln m'), over the rotated dictionary's, at blocks 1, NB/4, NB/2, 3NB/4 and NB-2; Pythia-410m at steps 1000, 4000, 16000, 64000 and the end).
+
+  | Model | Factor at blocks 1 / quarter / middle / three-quarter / last-but-one |
+  | --- | --- |
+  | GPT-2 | 6.2 / 5.2 / 4.7 / 3.9 / 3.8 |
+  | Pythia-410m, final | 5.9 / 3.8 / 2.9 / 6.3 / 5.4 |
+  | Qwen-0.5B | 10.3 / 7.0 / 5.1 / 3.9 / 3.5 |
+  | OLMo-1B | 13.7 / 7.6 / 6.4 / 6.0 / 5.1 |
+  | SmolLM2 | 10.8 / 7.7 / 5.0 / 3.5 / 3.5 |
+  | Pythia step 1000 | 2.4 / 3.0 / 2.3 / 2.2 / 2.6 |
+  | Pythia step 4000 | 3.9 / 2.5 / 2.1 / 2.6 / 3.1 |
+  | Pythia step 16000 | 5.0 / 3.0 / 2.4 / 3.6 / 3.5 |
+  | Pythia step 64000 | 5.5 / 3.7 / 2.7 / 4.0 / 3.8 |
+
+  - The factor is above 2 at every depth of every final model. It is largest at the first block (6-14) and falls with depth in four models; Pythia dips to 2.9 at the middle and rises to 5-6 late, where its huge directions live (area 10).
+  - Over training it rises everywhere: at block 1 from 2.4 at step 1000 to 5.9 at the end, at the late blocks from 2.2-2.6 to 5.4-6.3, at the middle only from 2.3 to 2.9. At step 1000 it is already 2.2-3.0, which is the per-block accent of e443 (0.82 of the self-description gap at that step) measured as an extreme-value excess.
+  - Pre-registered: above 2 everywhere, confirmed; falling with depth, confirmed in four; Pythia within 0.2 of 1 at step 1000, refuted (2.2-3.0).
+
+- Reading of session 58.
+  - What WDD is, as an instrument: a detector whose threshold is an extreme-value statistic with a known distribution and growth, calibrated by two numbers per model, with a resolution of a quarter to two fifths of the state's norm; its scale beyond the geometric part is a single provenance factor that measures how far the model's atoms are aligned with its states, falls with depth and rises with training.
+  - What its description is: a non-redundant code in which every word carries its own content, with a correction property that a rotated dictionary lacks and that does not come from the supports' geometry; whose first word is lexical first (1.6-4.4 bits about the current token) and predictive second (0.4-1.2 bits about the next); whose stream has half the sequential structure of the text.
+  - What its atoms are, as directions: the heavy-tailed directions of the state cloud, which a fitting-free index ranks and which an unsupervised method partly rediscovers.
+  - What fades: one process, at the contraction's rate.
+  - Two nulls keep it honest: the Heaps exponent and the support coherence are the same with and without provenance; provenance shows in concentration, correction and tails, not in growth or geometry.

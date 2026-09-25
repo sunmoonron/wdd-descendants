@@ -1,0 +1,98 @@
+{
+ "model": "pythia410",
+ "level": 12,
+ "n": 16289,
+ "n_train": 10180,
+ "n_test": 4073,
+ "about_next": {
+  "native_word_1": {
+   "bits": 0.4746828079223633,
+   "ce_marginal": 5.856564044952393,
+   "ce_conditional": 5.381881237030029,
+   "alpha": 32,
+   "coverage": 0.7900810241699219
+  },
+  "native_word_2": {
+   "bits": 0.2782750129699707,
+   "ce_marginal": 5.856564044952393,
+   "ce_conditional": 5.578289031982422,
+   "alpha": 64,
+   "coverage": 0.6297569274902344
+  },
+  "rotated_word_1": {
+   "bits": 0.2285475730895996,
+   "ce_marginal": 5.856564044952393,
+   "ce_conditional": 5.628016471862793,
+   "alpha": 4,
+   "coverage": 0.08863245695829391
+  },
+  "current_token": {
+   "bits": 0.9092974662780762,
+   "ce_marginal": 5.856564044952393,
+   "ce_conditional": 4.947266578674316,
+   "alpha": 16,
+   "coverage": 0.601276695728302
+  },
+  "previous_token": {
+   "bits": 0.35506391525268555,
+   "ce_marginal": 5.856564044952393,
+   "ce_conditional": 5.501500129699707,
+   "alpha": 64,
+   "coverage": 0.6017677187919617
+  },
+  "pca_component": {
+   "bits": 0.5520100593566895,
+   "ce_marginal": 5.856564044952393,
+   "ce_conditional": 5.304553985595703,
+   "alpha": 128,
+   "coverage": 1.0
+  },
+  "random_label": {
+   "bits": 0.018184185028076172,
+   "ce_marginal": 5.856564044952393,
+   "ce_conditional": 5.838379859924316,
+   "alpha": 256,
+   "coverage": 0.24551928043365479
+  }
+ },
+ "about_current": {
+  "native_word_1": {
+   "bits": 1.6015548706054688,
+   "alpha": 16,
+   "coverage": 0.7900810241699219
+  },
+  "native_word_2": {
+   "bits": 0.9292802810668945,
+   "alpha": 16,
+   "coverage": 0.6297569274902344
+  },
+  "rotated_word_1": {
+   "bits": 0.4816317558288574,
+   "alpha": 2,
+   "coverage": 0.08863245695829391
+  },
+  "previous_token": {
+   "bits": 0.9043550491333008,
+   "alpha": 16,
+   "coverage": 0.6017677187919617
+  },
+  "pca_component": {
+   "bits": 1.0531516075134277,
+   "alpha": 64,
+   "coverage": 1.0
+  },
+  "random_label": {
+   "bits": 0.0054912567138671875,
+   "alpha": 256,
+   "coverage": 0.24551928043365479
+  }
+ },
+ "estimator": "v2: top-1000 symbols and targets, smoothing tuned on sequences 20-23, tested on 24-31",
+ "checks": {
+  "native_over_rotated": true,
+  "native_under_current_token": true,
+  "more_about_current_than_next": true
+ },
+ "_exp": "e485_bits_pythia410",
+ "_time": "2026-09-25 19:48:15"
+}

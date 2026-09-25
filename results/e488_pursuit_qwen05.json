@@ -1,0 +1,45 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "n": 8176,
+ "kurtosis": {
+  "native_mlp": {
+   "median": 0.20985102653503418,
+   "p90": 0.854936957359314,
+   "mean": 0.3859098255634308
+  },
+  "rotated_mlp": {
+   "median": 0.036013126373291016,
+   "p90": 0.24528861045837402,
+   "mean": 0.04477044939994812
+  },
+  "random": {
+   "median": 0.031235456466674805,
+   "p90": 0.2376617193222046,
+   "mean": 0.041960522532463074
+  },
+  "pca16": {
+   "median": -0.026940584182739258,
+   "p90": 0.5971927642822266,
+   "mean": -0.01572764664888382
+  },
+  "token_embeddings": {
+   "median": 0.04915332794189453,
+   "p90": 0.2694694995880127,
+   "mean": 0.06097706779837608
+  }
+ },
+ "native_above_random_99": 0.2392578125,
+ "rotated_above_random_99": 0.015625,
+ "usage_vs_kurtosis_spearman": 0.25456763738051874,
+ "used_share": 0.276123046875,
+ "kurtosis_used": 0.4381554126739502,
+ "kurtosis_unused": 0.17777466773986816,
+ "checks": {
+  "native_over_rotated_and_random": true,
+  "usage_tracks_kurtosis": false,
+  "pca_less_kurtotic_than_native": true
+ },
+ "_exp": "e488_pursuit_qwen05",
+ "_time": "2026-09-25 19:46:32"
+}

@@ -1,0 +1,41 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "n_pairs": 16320,
+ "streams": {
+  "native": {
+   "H": 7.21844482421875,
+   "H_given_prev_word": 6.298135280609131,
+   "sequential_bits": 0.9203095436096191,
+   "H_given_current_token": 2.8904194831848145,
+   "H_given_previous_token": 6.257039546966553,
+   "H_given_shuffled_prev": 7.295538902282715,
+   "shuffled_bits": -0.07709407806396484
+  },
+  "rotated": {
+   "H": 1.622471809387207,
+   "H_given_prev_word": 1.4817715883255005,
+   "sequential_bits": 0.14070022106170654,
+   "H_given_current_token": 1.038374423980713,
+   "H_given_previous_token": 1.3892478942871094,
+   "H_given_shuffled_prev": 1.5215163230895996,
+   "shuffled_bits": 0.10095548629760742
+  },
+  "token": {
+   "H": 6.172420978546143,
+   "H_given_prev_word": 4.778181076049805,
+   "sequential_bits": 1.394239902496338,
+   "H_given_current_token": null,
+   "H_given_previous_token": 4.778181076049805,
+   "H_given_shuffled_prev": 6.224912166595459,
+   "shuffled_bits": -0.052491188049316406
+  }
+ },
+ "checks": {
+  "native_sequential_over_rotated": true,
+  "current_token_fixes_word_more_than_prev_word": true,
+  "native_sequential_below_text": true
+ },
+ "_exp": "e487_stream_qwen05",
+ "_time": "2026-09-25 19:50:03"
+}

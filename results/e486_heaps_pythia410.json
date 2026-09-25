@@ -1,0 +1,125 @@
+{
+ "model": "pythia410",
+ "blocks": [
+  6,
+  12
+ ],
+ "T": [
+  256,
+  512,
+  1024,
+  2048,
+  4096,
+  8192,
+  16384
+ ],
+ "by_block": {
+  "6": {
+   "native": {
+    "V": [
+     2574,
+     4416,
+     7282,
+     13936,
+     23910,
+     37905,
+     54023
+    ],
+    "beta": 0.7225906252861023,
+    "distinct": 54023,
+    "cover_half": 2155,
+    "cover_0_9": 29300,
+    "share_of_dictionary_used": 0.6270224471320133
+   },
+   "rotated": {
+    "V": [
+     3575,
+     6475,
+     11243,
+     21545,
+     36888,
+     55533,
+     71732
+    ],
+    "beta": 0.6713173389434814,
+    "distinct": 71732,
+    "cover_half": 14494,
+    "cover_0_9": 49150,
+    "share_of_dictionary_used": 0.8325634299774832
+   },
+   "lexicon": {
+    "V": [
+     132,
+     207,
+     299,
+     662,
+     1247,
+     2275,
+     3506
+    ],
+    "beta": 0.8884181380271912,
+    "distinct": 3506,
+    "cover_half": 91,
+    "cover_0_9": 1874,
+    "share_of_dictionary_used": null
+   }
+  },
+  "12": {
+   "native": {
+    "V": [
+     2757,
+     4938,
+     8394,
+     15918,
+     27472,
+     43891,
+     64493
+    ],
+    "beta": 0.7346690893173218,
+    "distinct": 64493,
+    "cover_half": 3408,
+    "cover_0_9": 38380,
+    "share_of_dictionary_used": 0.5517409530327658
+   },
+   "rotated": {
+    "V": [
+     3590,
+     6771,
+     11981,
+     23094,
+     40447,
+     63245,
+     86716
+    ],
+    "beta": 0.7164534330368042,
+    "distinct": 86716,
+    "cover_half": 17534,
+    "cover_0_9": 60603,
+    "share_of_dictionary_used": 0.741859868252203
+   },
+   "lexicon": {
+    "V": [
+     132,
+     207,
+     299,
+     662,
+     1247,
+     2275,
+     3506
+    ],
+    "beta": 0.8884181380271912,
+    "distinct": 3506,
+    "cover_half": 91,
+    "cover_0_9": 1874,
+    "share_of_dictionary_used": null
+   }
+  }
+ },
+ "checks": {
+  "native_beta_under_0_8_rotated_higher": false,
+  "native_over_lexicon": false,
+  "half_under_5pct": false
+ },
+ "_exp": "e486_heaps_pythia410",
+ "_time": "2026-09-25 19:43:47"
+}

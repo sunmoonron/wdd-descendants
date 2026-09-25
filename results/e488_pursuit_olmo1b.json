@@ -1,0 +1,45 @@
+{
+ "model": "olmo1b",
+ "level": 8,
+ "n": 8173,
+ "kurtosis": {
+  "native_mlp": {
+   "median": 0.29285168647766113,
+   "p90": 2.238003730773926,
+   "mean": 1.008455753326416
+  },
+  "rotated_mlp": {
+   "median": 0.06395196914672852,
+   "p90": 0.20928561687469482,
+   "mean": 0.0718434527516365
+  },
+  "random": {
+   "median": 0.06862235069274902,
+   "p90": 0.2170267105102539,
+   "mean": 0.07686362415552139
+  },
+  "pca16": {
+   "median": 1.074841022491455,
+   "p90": 2.480071783065796,
+   "mean": 1.2199575901031494
+  },
+  "token_embeddings": {
+   "median": 0.12959647178649902,
+   "p90": 0.41707515716552734,
+   "mean": 0.20408260822296143
+  }
+ },
+ "native_above_random_99": 0.412841796875,
+ "rotated_above_random_99": 0.0078125,
+ "usage_vs_kurtosis_spearman": 0.4590204985601007,
+ "used_share": 0.273193359375,
+ "kurtosis_used": 1.414067268371582,
+ "kurtosis_unused": 0.19820070266723633,
+ "checks": {
+  "native_over_rotated_and_random": true,
+  "usage_tracks_kurtosis": true,
+  "pca_less_kurtotic_than_native": false
+ },
+ "_exp": "e488_pursuit_olmo1b",
+ "_time": "2026-09-25 19:46:36"
+}

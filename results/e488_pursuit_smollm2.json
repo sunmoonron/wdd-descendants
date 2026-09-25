@@ -1,0 +1,45 @@
+{
+ "model": "smollm2",
+ "level": 15,
+ "n": 8176,
+ "kurtosis": {
+  "native_mlp": {
+   "median": 0.2986452579498291,
+   "p90": 1.0543882846832275,
+   "mean": 0.5068536400794983
+  },
+  "rotated_mlp": {
+   "median": 0.12396430969238281,
+   "p90": 0.4243561029434204,
+   "mean": 0.14011412858963013
+  },
+  "random": {
+   "median": 0.12822747230529785,
+   "p90": 0.41648948192596436,
+   "mean": 0.14054374396800995
+  },
+  "pca16": {
+   "median": 0.16112709045410156,
+   "p90": 1.184664249420166,
+   "mean": 0.33820343017578125
+  },
+  "token_embeddings": {
+   "median": -0.0791623592376709,
+   "p90": 0.16560649871826172,
+   "mean": -0.06103869527578354
+  }
+ },
+ "native_above_random_99": 0.16162109375,
+ "rotated_above_random_99": 0.01220703125,
+ "usage_vs_kurtosis_spearman": 0.26684783121176175,
+ "used_share": 0.638671875,
+ "kurtosis_used": 0.3531355857849121,
+ "kurtosis_unused": 0.248427152633667,
+ "checks": {
+  "native_over_rotated_and_random": true,
+  "usage_tracks_kurtosis": false,
+  "pca_less_kurtotic_than_native": true
+ },
+ "_exp": "e488_pursuit_smollm2",
+ "_time": "2026-09-25 19:45:25"
+}

@@ -1,0 +1,94 @@
+{
+ "model": "pythia410",
+ "level": 12,
+ "n": 8160,
+ "components": 64,
+ "whitened_dims": 256,
+ "iterations": 91,
+ "converged": true,
+ "alignment": {
+  "ica": {
+   "native_mlp": {
+    "median": 0.2922931909561157,
+    "mean": 0.3042573928833008,
+    "share_over_0_5": 0.015625
+   },
+   "rotated_mlp": {
+    "median": 0.13521620631217957,
+    "mean": 0.13702654838562012,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.11932794749736786,
+    "mean": 0.12063866853713989,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.13552388548851013,
+    "mean": 0.13625600934028625,
+    "share_over_0_5": 0.0
+   }
+  },
+  "pca64": {
+   "native_mlp": {
+    "median": 0.16568328440189362,
+    "mean": 0.18815508484840393,
+    "share_over_0_5": 0.0
+   },
+   "rotated_mlp": {
+    "median": 0.13556984066963196,
+    "mean": 0.13701499998569489,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.11674904823303223,
+    "mean": 0.11827025562524796,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.13559028506278992,
+    "mean": 0.136834979057312,
+    "share_over_0_5": 0.0
+   }
+  },
+  "random_in_subspace": {
+   "native_mlp": {
+    "median": 0.1394086629152298,
+    "mean": 0.14079339802265167,
+    "share_over_0_5": 0.0
+   },
+   "rotated_mlp": {
+    "median": 0.13357500731945038,
+    "mean": 0.13540109992027283,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.1192626804113388,
+    "mean": 0.11937405914068222,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.13388390839099884,
+    "mean": 0.1367364525794983,
+    "share_over_0_5": 0.0
+   }
+  }
+ },
+ "reverse": {
+  "most_used_native_rows_max_cos_with_ica": 0.18957722187042236,
+  "share_over_0_5": 0.0078125,
+  "rotated_rows_max_cos_with_ica": 0.07760143280029297
+ },
+ "kurtosis": {
+  "ica_median": 8.92717170715332,
+  "native_used_median": 2.8595829010009766,
+  "pca64_median": 0.5239424705505371
+ },
+ "checks": {
+  "native_twice_rotated": true,
+  "ica_better_than_pca": true,
+  "quarter_over_0_5": false
+ },
+ "_exp": "e489_ica_pythia410",
+ "_time": "2026-09-25 19:50:49"
+}

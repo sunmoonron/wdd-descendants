@@ -1,0 +1,41 @@
+{
+ "model": "smollm2",
+ "level": 15,
+ "n_pairs": 16320,
+ "streams": {
+  "native": {
+   "H": 7.919602870941162,
+   "H_given_prev_word": 7.083708763122559,
+   "sequential_bits": 0.8358941078186035,
+   "H_given_current_token": 4.374214172363281,
+   "H_given_previous_token": 7.130899429321289,
+   "H_given_shuffled_prev": 8.025814056396484,
+   "shuffled_bits": -0.10621118545532227
+  },
+  "rotated": {
+   "H": 3.4917335510253906,
+   "H_given_prev_word": 3.379364013671875,
+   "sequential_bits": 0.11236953735351562,
+   "H_given_current_token": 2.4607455730438232,
+   "H_given_previous_token": 3.1571357250213623,
+   "H_given_shuffled_prev": 3.4700369834899902,
+   "shuffled_bits": 0.02169656753540039
+  },
+  "token": {
+   "H": 6.107676029205322,
+   "H_given_prev_word": 4.741582870483398,
+   "sequential_bits": 1.3660931587219238,
+   "H_given_current_token": null,
+   "H_given_previous_token": 4.741582870483398,
+   "H_given_shuffled_prev": 6.117960453033447,
+   "shuffled_bits": -0.010284423828125
+  }
+ },
+ "checks": {
+  "native_sequential_over_rotated": true,
+  "current_token_fixes_word_more_than_prev_word": true,
+  "native_sequential_below_text": true
+ },
+ "_exp": "e487_stream_smollm2",
+ "_time": "2026-09-25 19:49:19"
+}

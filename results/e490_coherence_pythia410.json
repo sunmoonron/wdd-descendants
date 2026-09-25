@@ -1,0 +1,41 @@
+{
+ "model": "pythia410",
+ "level": 12,
+ "k": 16,
+ "n": 2032,
+ "kinds": {
+  "native": {
+   "coherence_median": 0.02888326346874237,
+   "coherence_p90": 0.03360277786850929,
+   "log10_condition_median": 0.24339106678962708,
+   "refit_gain_fvu_mean": 0.0028798640705645084,
+   "refit_gain_loss_mean": 0.07901055365800858,
+   "spearman_coherence_fvu_gain": 0.5175192861442214,
+   "spearman_coherence_loss_gain": null,
+   "fvu_gain_top_quartile": 0.004915899597108364,
+   "fvu_gain_bottom_quartile": 0.0016579097136855125,
+   "loss_gain_top_quartile": null,
+   "loss_gain_bottom_quartile": null
+  },
+  "rotated": {
+   "coherence_median": 0.025858871638774872,
+   "coherence_p90": 0.02833891101181507,
+   "log10_condition_median": 0.1924228072166443,
+   "refit_gain_fvu_mean": 0.001388217555359006,
+   "refit_gain_loss_mean": -0.036760322749614716,
+   "spearman_coherence_fvu_gain": 0.2698683881141043,
+   "spearman_coherence_loss_gain": null,
+   "fvu_gain_top_quartile": 0.0016540768556296825,
+   "fvu_gain_bottom_quartile": 0.0011154456296935678,
+   "loss_gain_top_quartile": null,
+   "loss_gain_bottom_quartile": null
+  }
+ },
+ "checks": {
+  "native_coherence_1_5x": false,
+  "fvu_gain_tracks_coherence": true,
+  "loss_gain_tracks_coherence": false
+ },
+ "_exp": "e490_coherence_pythia410",
+ "_time": "2026-09-25 19:51:30"
+}

@@ -1,0 +1,41 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "k": 16,
+ "n": 2040,
+ "kinds": {
+  "native": {
+   "coherence_median": 0.03465558961033821,
+   "coherence_p90": 0.04302508383989334,
+   "log10_condition_median": 0.3250318765640259,
+   "refit_gain_fvu_mean": 0.007188667543232441,
+   "refit_gain_loss_mean": 0.32062605023384094,
+   "spearman_coherence_fvu_gain": 0.5238165963441965,
+   "spearman_coherence_loss_gain": null,
+   "fvu_gain_top_quartile": 0.012550326995551586,
+   "fvu_gain_bottom_quartile": 0.0036452370695769787,
+   "loss_gain_top_quartile": null,
+   "loss_gain_bottom_quartile": null
+  },
+  "rotated": {
+   "coherence_median": 0.04173178970813751,
+   "coherence_p90": 0.05541417375206947,
+   "log10_condition_median": 0.37645772099494934,
+   "refit_gain_fvu_mean": 0.003999186679720879,
+   "refit_gain_loss_mean": -0.09106342494487762,
+   "spearman_coherence_fvu_gain": 0.28050993210570657,
+   "spearman_coherence_loss_gain": null,
+   "fvu_gain_top_quartile": 0.005453046411275864,
+   "fvu_gain_bottom_quartile": 0.002559131011366844,
+   "loss_gain_top_quartile": null,
+   "loss_gain_bottom_quartile": null
+  }
+ },
+ "checks": {
+  "native_coherence_1_5x": false,
+  "fvu_gain_tracks_coherence": true,
+  "loss_gain_tracks_coherence": false
+ },
+ "_exp": "e490_coherence_qwen05",
+ "_time": "2026-09-25 19:51:34"
+}

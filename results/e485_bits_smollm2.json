@@ -1,0 +1,98 @@
+{
+ "model": "smollm2",
+ "level": 15,
+ "n": 16320,
+ "n_train": 10200,
+ "n_test": 4080,
+ "about_next": {
+  "native_word_1": {
+   "bits": 1.0507659912109375,
+   "ce_marginal": 6.107676029205322,
+   "ce_conditional": 5.056910037994385,
+   "alpha": 32,
+   "coverage": 0.91642165184021
+  },
+  "native_word_2": {
+   "bits": 0.4791531562805176,
+   "ce_marginal": 6.107676029205322,
+   "ce_conditional": 5.628522872924805,
+   "alpha": 32,
+   "coverage": 0.7762255072593689
+  },
+  "rotated_word_1": {
+   "bits": 0.20757150650024414,
+   "ce_marginal": 6.107676029205322,
+   "ce_conditional": 5.900104522705078,
+   "alpha": 16,
+   "coverage": 0.25269609689712524
+  },
+  "current_token": {
+   "bits": 1.3660931587219238,
+   "ce_marginal": 6.107676029205322,
+   "ce_conditional": 4.741582870483398,
+   "alpha": 16,
+   "coverage": 0.7095588445663452
+  },
+  "previous_token": {
+   "bits": 0.5735511779785156,
+   "ce_marginal": 6.107676029205322,
+   "ce_conditional": 5.534124851226807,
+   "alpha": 128,
+   "coverage": 0.7090686559677124
+  },
+  "pca_component": {
+   "bits": 0.8427200317382812,
+   "ce_marginal": 6.107676029205322,
+   "ce_conditional": 5.264955997467041,
+   "alpha": 128,
+   "coverage": 1.0
+  },
+  "random_label": {
+   "bits": 0.02942800521850586,
+   "ce_marginal": 6.107676029205322,
+   "ce_conditional": 6.078248023986816,
+   "alpha": 256,
+   "coverage": 0.24632354080677032
+  }
+ },
+ "about_current": {
+  "native_word_1": {
+   "bits": 4.255429029464722,
+   "alpha": 2,
+   "coverage": 0.91642165184021
+  },
+  "native_word_2": {
+   "bits": 1.933882236480713,
+   "alpha": 8,
+   "coverage": 0.7762255072593689
+  },
+  "rotated_word_1": {
+   "bits": 1.077178955078125,
+   "alpha": 2,
+   "coverage": 0.25269609689712524
+  },
+  "previous_token": {
+   "bits": 1.3655133247375488,
+   "alpha": 16,
+   "coverage": 0.7090686559677124
+  },
+  "pca_component": {
+   "bits": 2.1178855895996094,
+   "alpha": 32,
+   "coverage": 1.0
+  },
+  "random_label": {
+   "bits": 0.02743053436279297,
+   "alpha": 256,
+   "coverage": 0.24632354080677032
+  }
+ },
+ "estimator": "v2: top-1000 symbols and targets, smoothing tuned on sequences 20-23, tested on 24-31",
+ "checks": {
+  "native_over_rotated": true,
+  "native_under_current_token": true,
+  "more_about_current_than_next": true
+ },
+ "_exp": "e485_bits_smollm2",
+ "_time": "2026-09-25 19:47:34"
+}

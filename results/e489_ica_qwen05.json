@@ -1,0 +1,94 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "n": 8176,
+ "components": 64,
+ "whitened_dims": 256,
+ "iterations": 131,
+ "converged": true,
+ "alignment": {
+  "ica": {
+   "native_mlp": {
+    "median": 0.36237892508506775,
+    "mean": 0.41033607721328735,
+    "share_over_0_5": 0.265625
+   },
+   "rotated_mlp": {
+    "median": 0.1469239741563797,
+    "mean": 0.14834505319595337,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.12285839021205902,
+    "mean": 0.12419779598712921,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.15633966028690338,
+    "mean": 0.161932110786438,
+    "share_over_0_5": 0.0
+   }
+  },
+  "pca64": {
+   "native_mlp": {
+    "median": 0.24508002400398254,
+    "mean": 0.2626456618309021,
+    "share_over_0_5": 0.0
+   },
+   "rotated_mlp": {
+    "median": 0.14602792263031006,
+    "mean": 0.14780086278915405,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.12806209921836853,
+    "mean": 0.1290072500705719,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.15673710405826569,
+    "mean": 0.15846018493175507,
+    "share_over_0_5": 0.0
+   }
+  },
+  "random_in_subspace": {
+   "native_mlp": {
+    "median": 0.1690674126148224,
+    "mean": 0.17072966694831848,
+    "share_over_0_5": 0.0
+   },
+   "rotated_mlp": {
+    "median": 0.145616814494133,
+    "mean": 0.14571088552474976,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.12492869794368744,
+    "mean": 0.12566332519054413,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.1509486883878708,
+    "mean": 0.15088093280792236,
+    "share_over_0_5": 0.0
+   }
+  }
+ },
+ "reverse": {
+  "most_used_native_rows_max_cos_with_ica": 0.198513925075531,
+  "share_over_0_5": 0.0390625,
+  "rotated_rows_max_cos_with_ica": 0.08365434408187866
+ },
+ "kurtosis": {
+  "ica_median": 6.907848358154297,
+  "native_used_median": 1.9335980415344238,
+  "pca64_median": 0.23151659965515137
+ },
+ "checks": {
+  "native_twice_rotated": true,
+  "ica_better_than_pca": true,
+  "quarter_over_0_5": true
+ },
+ "_exp": "e489_ica_qwen05",
+ "_time": "2026-09-25 19:50:52"
+}

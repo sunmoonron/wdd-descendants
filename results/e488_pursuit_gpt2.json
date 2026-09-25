@@ -1,0 +1,45 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "n": 8176,
+ "kurtosis": {
+  "native_mlp": {
+   "median": 0.8123486042022705,
+   "p90": 2.732684850692749,
+   "mean": 1.3447736501693726
+  },
+  "rotated_mlp": {
+   "median": 0.17998147010803223,
+   "p90": 0.43132495880126953,
+   "mean": 0.19827494025230408
+  },
+  "random": {
+   "median": 0.1716327667236328,
+   "p90": 0.4263418912887573,
+   "mean": 0.19007664918899536
+  },
+  "pca16": {
+   "median": 0.42253589630126953,
+   "p90": 1.7654540538787842,
+   "mean": 0.5697182416915894
+  },
+  "token_embeddings": {
+   "median": 0.188995361328125,
+   "p90": 0.5500810146331787,
+   "mean": 0.24453097581863403
+  }
+ },
+ "native_above_random_99": 0.5390625,
+ "rotated_above_random_99": 0.01171875,
+ "usage_vs_kurtosis_spearman": 0.42162849467408253,
+ "used_share": 0.613525390625,
+ "kurtosis_used": 1.0522422790527344,
+ "kurtosis_unused": 0.5965735912322998,
+ "checks": {
+  "native_over_rotated_and_random": true,
+  "usage_tracks_kurtosis": true,
+  "pca_less_kurtotic_than_native": true
+ },
+ "_exp": "e488_pursuit_gpt2",
+ "_time": "2026-09-25 19:45:14"
+}

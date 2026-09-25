@@ -1,0 +1,41 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "n_pairs": 16320,
+ "streams": {
+  "native": {
+   "H": 7.760811805725098,
+   "H_given_prev_word": 7.20025110244751,
+   "sequential_bits": 0.5605607032775879,
+   "H_given_current_token": 5.568794250488281,
+   "H_given_previous_token": 7.340118885040283,
+   "H_given_shuffled_prev": 7.840962886810303,
+   "shuffled_bits": -0.08015108108520508
+  },
+  "rotated": {
+   "H": 2.2039546966552734,
+   "H_given_prev_word": 2.105302572250366,
+   "sequential_bits": 0.09865212440490723,
+   "H_given_current_token": 1.7198606729507446,
+   "H_given_previous_token": 2.0507616996765137,
+   "H_given_shuffled_prev": 2.1479814052581787,
+   "shuffled_bits": 0.05597329139709473
+  },
+  "token": {
+   "H": 5.8402099609375,
+   "H_given_prev_word": 4.838990211486816,
+   "sequential_bits": 1.0012197494506836,
+   "H_given_current_token": null,
+   "H_given_previous_token": 4.838990211486816,
+   "H_given_shuffled_prev": 5.919913291931152,
+   "shuffled_bits": -0.07970333099365234
+  }
+ },
+ "checks": {
+  "native_sequential_over_rotated": true,
+  "current_token_fixes_word_more_than_prev_word": true,
+  "native_sequential_below_text": true
+ },
+ "_exp": "e487_stream_gpt2",
+ "_time": "2026-09-25 19:48:47"
+}

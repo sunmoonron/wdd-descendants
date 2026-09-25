@@ -1,0 +1,125 @@
+{
+ "model": "qwen05",
+ "blocks": [
+  6,
+  12
+ ],
+ "T": [
+  256,
+  512,
+  1024,
+  2048,
+  4096,
+  8192,
+  16384
+ ],
+ "by_block": {
+  "6": {
+   "native": {
+    "V": [
+     2051,
+     3245,
+     5246,
+     10086,
+     17136,
+     27500,
+     41738
+    ],
+    "beta": 0.7431221008300781,
+    "distinct": 41738,
+    "cover_half": 1062,
+    "cover_0_9": 16870,
+    "share_of_dictionary_used": 0.2170959553928096
+   },
+   "rotated": {
+    "V": [
+     3364,
+     6079,
+     10787,
+     21143,
+     37984,
+     62402,
+     90297
+    ],
+    "beta": 0.7692180275917053,
+    "distinct": 90297,
+    "cover_half": 14076,
+    "cover_0_9": 64134,
+    "share_of_dictionary_used": 0.46967064747003995
+   },
+   "lexicon": {
+    "V": [
+     117,
+     180,
+     278,
+     614,
+     1155,
+     2173,
+     3130
+    ],
+    "beta": 0.8809389472007751,
+    "distinct": 3130,
+    "cover_half": 44,
+    "cover_0_9": 1495,
+    "share_of_dictionary_used": null
+   }
+  },
+  "12": {
+   "native": {
+    "V": [
+     2346,
+     3961,
+     6730,
+     12743,
+     22456,
+     36498,
+     55621
+    ],
+    "beta": 0.7612015604972839,
+    "distinct": 55621,
+    "cover_half": 1745,
+    "cover_0_9": 29458,
+    "share_of_dictionary_used": 0.24522520457110608
+   },
+   "rotated": {
+    "V": [
+     3577,
+     6643,
+     12026,
+     23537,
+     42836,
+     71029,
+     104603
+    ],
+    "beta": 0.7834867238998413,
+    "distinct": 104603,
+    "cover_half": 19517,
+    "cover_0_9": 78440,
+    "share_of_dictionary_used": 0.46117998730248305
+   },
+   "lexicon": {
+    "V": [
+     117,
+     180,
+     278,
+     614,
+     1155,
+     2173,
+     3130
+    ],
+    "beta": 0.8809389472007751,
+    "distinct": 3130,
+    "cover_half": 44,
+    "cover_0_9": 1495,
+    "share_of_dictionary_used": null
+   }
+  }
+ },
+ "checks": {
+  "native_beta_under_0_8_rotated_higher": true,
+  "native_over_lexicon": false,
+  "half_under_5pct": true
+ },
+ "_exp": "e486_heaps_qwen05",
+ "_time": "2026-09-25 19:44:54"
+}

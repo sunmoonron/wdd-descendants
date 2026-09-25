@@ -1,0 +1,41 @@
+{
+ "model": "pythia410",
+ "level": 12,
+ "n_pairs": 16258,
+ "streams": {
+  "native": {
+   "H": 8.12683391571045,
+   "H_given_prev_word": 7.9001665115356445,
+   "sequential_bits": 0.2266674041748047,
+   "H_given_current_token": 6.63928747177124,
+   "H_given_previous_token": 7.820138454437256,
+   "H_given_shuffled_prev": 8.223223686218262,
+   "shuffled_bits": -0.0963897705078125
+  },
+  "rotated": {
+   "H": 1.5403391122817993,
+   "H_given_prev_word": 1.346922755241394,
+   "sequential_bits": 0.19341635704040527,
+   "H_given_current_token": 1.0635454654693604,
+   "H_given_previous_token": 1.2565975189208984,
+   "H_given_shuffled_prev": 1.432900309562683,
+   "shuffled_bits": 0.10743880271911621
+  },
+  "token": {
+   "H": 5.854051113128662,
+   "H_given_prev_word": 4.9549241065979,
+   "sequential_bits": 0.8991270065307617,
+   "H_given_current_token": null,
+   "H_given_previous_token": 4.9549241065979,
+   "H_given_shuffled_prev": 5.910017490386963,
+   "shuffled_bits": -0.05596637725830078
+  }
+ },
+ "checks": {
+  "native_sequential_over_rotated": true,
+  "current_token_fixes_word_more_than_prev_word": true,
+  "native_sequential_below_text": true
+ },
+ "_exp": "e487_stream_pythia410",
+ "_time": "2026-09-25 19:49:35"
+}

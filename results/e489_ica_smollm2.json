@@ -1,0 +1,94 @@
+{
+ "model": "smollm2",
+ "level": 15,
+ "n": 8176,
+ "components": 64,
+ "whitened_dims": 256,
+ "iterations": 133,
+ "converged": true,
+ "alignment": {
+  "ica": {
+   "native_mlp": {
+    "median": 0.42948034405708313,
+    "mean": 0.44796666502952576,
+    "share_over_0_5": 0.3125
+   },
+   "rotated_mlp": {
+    "median": 0.17267222702503204,
+    "mean": 0.17513447999954224,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.15727630257606506,
+    "mean": 0.1568688452243805,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.1711486130952835,
+    "mean": 0.17939108610153198,
+    "share_over_0_5": 0.0
+   }
+  },
+  "pca64": {
+   "native_mlp": {
+    "median": 0.26262691617012024,
+    "mean": 0.2832329571247101,
+    "share_over_0_5": 0.03125
+   },
+   "rotated_mlp": {
+    "median": 0.17151547968387604,
+    "mean": 0.17344653606414795,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.15707558393478394,
+    "mean": 0.1583949774503708,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.16497215628623962,
+    "mean": 0.1700332760810852,
+    "share_over_0_5": 0.0
+   }
+  },
+  "random_in_subspace": {
+   "native_mlp": {
+    "median": 0.19023215770721436,
+    "mean": 0.19053998589515686,
+    "share_over_0_5": 0.0
+   },
+   "rotated_mlp": {
+    "median": 0.17308270931243896,
+    "mean": 0.17554575204849243,
+    "share_over_0_5": 0.0
+   },
+   "random": {
+    "median": 0.15806680917739868,
+    "mean": 0.15789397060871124,
+    "share_over_0_5": 0.0
+   },
+   "token_embeddings": {
+    "median": 0.16431781649589539,
+    "mean": 0.16399605572223663,
+    "share_over_0_5": 0.0
+   }
+  }
+ },
+ "reverse": {
+  "most_used_native_rows_max_cos_with_ica": 0.24908243119716644,
+  "share_over_0_5": 0.0625,
+  "rotated_rows_max_cos_with_ica": 0.10328088700771332
+ },
+ "kurtosis": {
+  "ica_median": 3.8256497383117676,
+  "native_used_median": 1.5816574096679688,
+  "pca64_median": 0.41884446144104004
+ },
+ "checks": {
+  "native_twice_rotated": true,
+  "ica_better_than_pca": true,
+  "quarter_over_0_5": true
+ },
+ "_exp": "e489_ica_smollm2",
+ "_time": "2026-09-25 19:50:37"
+}
