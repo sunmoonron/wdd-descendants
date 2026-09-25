@@ -420,3 +420,5 @@ e456	17_forensic_instrument	S47	refuted (not a damage detector)	scripts/e456_com
 e457	17_forensic_instrument	S47	narrowed (names, does not compress)	scripts/e457_model_diff.py	results/e457_*.json	Can WDD describe what a fine-tune changed, write by write?
 e458	17_forensic_instrument	S47	mixed (corrects e455's size)	scripts/e458_steering_checksum.py	results/e458_*.json	Native word against dense steering at natural size; does a WDD checksum predict success?
 e459	17_forensic_instrument	S47	narrowed (modest persistence)	scripts/e459_generation_lineage.py	results/e459_*.json	Do native words persist across generated tokens?
+e460	17_forensic_instrument	S48	refuted (history is not an input)	scripts/e460_markov_pairs.py	results/e460_*.json	Do near-identical states with different ledgers have different futures?
+e461	17_forensic_instrument	S48	refuted (not an authenticity checker)	scripts/e461_forgery_forensics.py	results/e461_*.json	Can WDD detect and locate a forged write-sized vector?

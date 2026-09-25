@@ -456,6 +456,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H273 WDD can certify an intervention before its effect is observed. → e458 → NARROWED. The checksum (the target word's component two blocks later) predicts success at AUC 0.70-0.92, but the displacement size alone predicts as well (0.83-0.94).
 - H274 Native words are persistent objects across autoregressive positions. → e459 → NARROWED. They persist 1.3-1.8 times as much as rotated words at lags of 4-32 in Qwen and in GPT-2's natural text. They are not regenerated beyond their usage rate.
 
+## Authorship labels as forensics (session 48)
+
+- H275 Provenance predicts a state's future beyond its vector (the residual stream is not "Markov"). → e460 → KILLED. Near-identical states differ in their futures mainly through context (76-85%), and the ledger distance adds nothing to the cosine (partial Spearman -0.07 and -0.10).
+- H276 WDD detects and locates forged write-sized contributions. → e461 → KILLED at the scale of one write. At the forged block the AUC is 0.60-0.64 (Mahalanobis 0.62-0.75). The correct block is found in 0.14-0.35 of cases, and detection is at chance a few blocks later.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

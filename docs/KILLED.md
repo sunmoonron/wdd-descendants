@@ -374,3 +374,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "A fine-tune's state change is sparse in native words": on chat it is low-rank and dense (its own principal directions 0.27-0.32 unexplained against native 0.57-0.65), although usage changes concentrate in a few words (e457).
 - "A WDD checksum predicts an intervention's success beyond its size": AUC 0.70-0.92, against 0.83-0.94 for the displacement alone (e458).
 - "Native words regenerate across generated tokens": no more than their usage rate predicts (e459).
+
+## Session 48 kills (authorship labels as forensics)
+- "Near-identical states with different write histories have different futures because of their histories": the difference is context (76-85%), and the ledger distance does not predict the vector's effect (e460).
+- "WDD is an activation authenticity checker": a forged write-sized vector is detected at AUC 0.60-0.64, no better than a covariance detector, and not at all a few blocks later (e461).

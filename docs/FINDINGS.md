@@ -1465,3 +1465,39 @@ SESSION 47 (the user relayed a second external review, twelve proposals for usin
     - its self-description does not detect compression damage;
     - its checksum confirms an intervention reached the intended word but predicts success no better than the intervention's size.
   - The most important result is a correction: e455's causal-handle numbers came from 6-8-fold injections. Near natural size (0.7 times) a single concept word still moves 35-58% of translations. That is about as efficient per unit of displacement as the dense steer in Qwen-0.5B, and more efficient in Qwen-7B.
+
+SESSION 48 (a third relayed review, fifteen "weird" uses of WDD's authorship labels; the user asked whether it was overclaiming; e460-e461, 2 scripts, 4 runs, about 1 minute of GPU time, 2026-09-25 00:25-00:27 box time).
+
+- Weighing the review. Its reading of the atlas is fair, but several proposals rest on a misconception. The forward pass from block L is a deterministic function of block L's outputs at every position, so a state's write history is not an input.
+  - Ill-posed:
+    - "the same residual with different histories has different futures": the only coherent form is tested in e460;
+    - "write order" (the same final vector has the same future, and different intermediate orders give different vectors);
+    - "batch contamination" (items in a batch do not interact, beyond floating point);
+    - "foreign-write authorship" (there is no row correspondence between two models, e445 and e453; e461 covers detection).
+  - Already answered:
+    - ghost writes, or the causal afterlife: a write's own causal half-life is 1.5-2 blocks (e208), and later its effect is carried by the descendant, not by re-injecting the write (e268, e269);
+    - residual receipts (e131, e02, e44, e08, e173);
+    - the mirror model (e07: WDD is exactly invariant under the neuron gauge);
+    - write-ancestry ambiguity (the identifiability limit, e61 and e63);
+    - organ transplant (e247, e236, e242);
+    - amnesia and KV-cache forensics: cross-token effects travel only through attention (e341, e351, e352), and persistence across positions is e459;
+    - same answer by different routes (the circuits of e357-e366).
+  - Run: the testable core of the "Markov" proposal (e460), and forgery detection with crash localisation (e461).
+- e460 NEAR-IDENTICAL STATES, DIFFERENT FUTURES? (the most similar pairs of middle-depth states from different sequences, centred cosine 0.95-0.998; the next-token KL between the pair; and the KL when j's state is transplanted into i's context at block L. The transplant splits the divergence into the vector's part and the context's part. The ledger distance is 1 - Jaccard overlap of their 16-word native supports.)
+  - Near-identical states come from the same token: 62 of 62 pairs in GPT-2 and 92 of 92 in Qwen-0.5B.
+  - Their predictions differ (KL 0.26 and 0.40). Mostly this is context: the vector accounts for 0.064 (24%) in GPT-2 and 0.061 (15%) in Qwen, and the rest comes from the other positions read through attention.
+  - The ledger distance does not predict the vector's effect beyond the cosine (partial Spearman -0.07 and -0.10), nor the total (+0.01 and -0.08).
+  - The provenance is a description of the vector and adds nothing to it. The residual stream plus the context is the state, as the architecture implies.
+  - Pre-registered: both held. The KL parts are not strictly additive, but they sum to within 5% of the total.
+- e461 FORGED WRITES (at a random block, the token's largest MLP neuron write is replaced by a random vector of the same norm; each block's increment is scored by its unexplained variance with 8 of its own atoms (WDD), its norm, and its Mahalanobis distance; statistics fitted on 8 clean sequences, tested on 8 others, 160 forgeries per model).
+
+  | Model | detection AUC at the forged block: WDD / norm / Mahalanobis | correct block found: WDD / norm / Mahalanobis (chance) | detection at the middle depth: WDD / Mahalanobis |
+  | --- | --- | --- | --- |
+  | GPT-2 | 0.60 / 0.56 / 0.75 | 0.35 / 0.20 / 0.53 (0.14) | 0.54 / 0.49 |
+  | SmolLM2 | 0.64 / 0.48 / 0.62 | 0.14 / 0.09 / 0.15 (0.06) | 0.53 / 0.49 |
+
+  - A write-sized forgery is barely visible at its own block. WDD does no better than a covariance detector (worse in GPT-2) and cannot locate it in SmolLM2.
+  - A few blocks later it is invisible to every detector, as phase 1's loss of provenance at accumulation predicts (e131).
+  - WDD is not an authenticity checker at the scale of one write.
+  - Pre-registered: WDD beating the norm held; AUC at least 0.8, beating Mahalanobis in both models, and locating half the forgeries were refuted; the downstream fall to near chance held.
+- Reading. Both of the review's headline proposals give clean nulls, and the reasons are structural rather than surprising. A transformer's future depends on the current states of all positions, not on how they were written, and a single write is too small to stand out in the block that wrote it.

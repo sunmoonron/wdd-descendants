@@ -1,4 +1,4 @@
-# 17. WDD as a forensic instrument: compression, model diffs, steering, generation (S47)
+# 17. WDD as a forensic instrument: compression, model diffs, steering, generation, forgery (S47-S48)
 
 **Question.** Beyond describing states, can WDD's provenance-labelled words serve as a forensic tool? The candidate uses are: telling what compression damaged, what a fine-tune changed, whether an intervention hit its target, and how content persists across generated tokens.
 
@@ -8,8 +8,10 @@
 - One concept word, injected at natural size across depth, moves 35-58% of translations. That is about as efficient per unit of displacement as a dense steering vector, and more efficient at 7B. This also corrected e455, whose swaps were 6-8 times natural size (e458).
 - A downstream WDD checksum confirms that an intervention reached the intended word, but it predicts success no better than the intervention's size (e458).
 - Native words persist across generated tokens only modestly more than rotated words (e459).
+- Near-identical states differ in their futures mainly through context, and the WDD ledger adds nothing to the cosine in predicting the vector's effect. The write history is not an input (e460).
+- A forged write-sized vector is barely detectable at its block, no better than a covariance detector, and invisible a few blocks later (e461).
 
-**Start here:** e458, e457, e456 · **Sessions:** S47 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`
+**Start here:** e458, e457, e460, e456 · **Sessions:** S47, S48 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`
 
 ## Experiments
 
@@ -19,6 +21,8 @@
 | e457 | Can WDD describe what a fine-tune changed, write by write? | Names it: top 1% of words carry 38-59% of the chat usage change. Does not compress it: the chat change's own PCA leaves 0.27-0.32, native words 0.57-0.65 | narrowed (names, does not compress) | ← e431 |
 | e458 | Native word against dense steering at natural size; does a WDD checksum predict success? | Native, 0.7x natural: 35-58% moved; dense: 82-100% with 4-6x the displacement; per displacement native equal or better. Checksum AUC 0.70-0.92, displacement 0.83-0.94 | mixed (corrects e455's size) | ← e455 · → VISION item 7 |
 | e459 | Do native words persist across generated tokens? | Modestly: 1.3-1.8x rotated words' reuse at lags 4-32 in Qwen and GPT-2's natural text; no regeneration beyond usage rate; sampled text more self-similar | narrowed (modest persistence) | ← e440 e413 |
+| e460 | Do near-identical states with different ledgers have different futures? | Different futures come from context: pairs (cos 0.95-0.998, always the same token) differ by KL 0.26-0.40, vector part 15-24%; ledger distance adds nothing (partial rho -0.07, -0.10) | refuted (history is not an input) | ← e131 e445 |
+| e461 | Can WDD detect and locate a forged write-sized vector? | Weakly: AUC 0.60-0.64 at the forged block (Mahalanobis 0.62-0.75), correct block 0.14-0.35 (chance 0.06-0.14), chance a few blocks later | refuted (not an authenticity checker) | ← e131 e189 e195 |
 
 ## How the results flow
 
@@ -26,9 +30,11 @@
 - `e431 → e457`. Instruct tuning barely moves the rows (e431). It moves the states, above all on chat, where a few words carry much of the usage change. The change itself is dense and low-rank, so WDD is a naming tool for a model diff, not a compressor of it.
 - `e455 → e458`. Adding the target word at every block accumulates. Measured at the middle block, e455 injected 6-8 times natural. At natural scale the native handle is weaker but about as efficient per unit of displacement as a dense steering vector. The WDD checksum sees the intended change but adds nothing over its size.
 - `e440 → e459`. Native words carry context (e440) and persist a little longer than random directions across positions, with no special regeneration.
+- `e131 → e460, e461`. Provenance is lost when writes accumulate (e131). A state's future depends on its vector and its context, not on its history (e460). A single forged write is lost in its block's other writes (e461).
 
 ## Links to other areas
 
 - [16 Vision round](16_vision_round.md): e458 corrects the size of e455's concept-word swaps; e457 extends e431's instruct comparison from rows to states.
 - [14 Native vocabulary](14_native_vocabulary.md): e456 shows the self-description advantage (e395, e401) is robust to compression, and e459 tests its words over time rather than depth.
 - [05 Cancellation](05_cancellation_contraction.md): e458's absorbed increments (at s = 1 only 0.29-0.36 of the target's typical coefficient is present at the middle block) look like the per-block contraction of e194 and e210 acting on an injected direction.
+- [03 Increments](03_increments_depth_targets.md): e461 reads each block's increment, as the increment pipeline does (e02, e44), to look for a forged write.
