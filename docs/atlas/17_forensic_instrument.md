@@ -1,4 +1,4 @@
-# 17. WDD as a forensic instrument: compression, model diffs, steering, generation, forgery (S47-S48)
+# 17. WDD as an instrument: forensics, steering and the learning signal (S47-S49)
 
 **Question.** Beyond describing states, can WDD's provenance-labelled words serve as a forensic tool? The candidate uses are: telling what compression damaged, what a fine-tune changed, whether an intervention hit its target, and how content persists across generated tokens.
 
@@ -10,8 +10,9 @@
 - Native words persist across generated tokens only modestly more than rotated words (e459).
 - Near-identical states differ in their futures mainly through context, and the WDD ledger adds nothing to the cosine in predicting the vector's effect. The write history is not an input (e460).
 - A forged write-sized vector is barely detectable at its block, no better than a covariance detector, and invisible a few blocks later (e461).
+- WDD is a forward coordinate, not a learning one. One batch's gradient on a word is unrelated to the word and does not predict its change between checkpoints; words form by rotation until about step 16000, then shrink in place; the most used words get no more gradient than others (e462).
 
-**Start here:** e458, e457, e460, e456 · **Sessions:** S47, S48 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`
+**Start here:** e458, e457, e460, e462, e456 · **Sessions:** S47, S48, S49 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`
 
 ## Experiments
 
@@ -23,6 +24,7 @@
 | e459 | Do native words persist across generated tokens? | Modestly: 1.3-1.8x rotated words' reuse at lags 4-32 in Qwen and GPT-2's natural text; no regeneration beyond usage rate; sampled text more self-similar | narrowed (modest persistence) | ← e440 e413 |
 | e460 | Do near-identical states with different ledgers have different futures? | Different futures come from context: pairs (cos 0.95-0.998, always the same token) differ by KL 0.26-0.40, vector part 15-24%; ledger distance adds nothing (partial rho -0.07, -0.10) | refuted (history is not an input) | ← e131 e445 |
 | e461 | Can WDD detect and locate a forged write-sized vector? | Weakly: AUC 0.60-0.64 at the forged block (Mahalanobis 0.62-0.75), correct block 0.14-0.35 (chance 0.06-0.14), chance a few blocks later | refuted (not an authenticity checker) | ← e131 e189 e195 |
+| e462 | How does a gradient update reshape a native word, over training? | Per batch: along-row share 0.5-0.8x chance, sign a coin flip, no prediction of the net change (cos 0.000). Net: rows rotate and grow to step 16000, then shrink in place; usage vs gradient rho -0.63 to -0.04 | refuted (not a learning coordinate) | ← e443 e412 e429 e81 |
 
 ## How the results flow
 
@@ -31,6 +33,7 @@
 - `e455 → e458`. Adding the target word at every block accumulates. Measured at the middle block, e455 injected 6-8 times natural. At natural scale the native handle is weaker but about as efficient per unit of displacement as a dense steering vector. The WDD checksum sees the intended change but adds nothing over its size.
 - `e440 → e459`. Native words carry context (e440) and persist a little longer than random directions across positions, with no special regeneration.
 - `e131 → e460, e461`. Provenance is lost when writes accumulate (e131). A state's future depends on its vector and its context, not on its history (e460). A single forged write is lost in its block's other writes (e461).
+- `e81, e443 → e462`. Rows keep rotating until late (e81), and words appear between steps 4000 and 16000 (e443). The rotation is accumulated drift: per batch the gradient on a word is noise relative to it, and after step 16000 the words mostly shrink in place.
 
 ## Links to other areas
 
@@ -38,3 +41,4 @@
 - [14 Native vocabulary](14_native_vocabulary.md): e456 shows the self-description advantage (e395, e401) is robust to compression, and e459 tests its words over time rather than depth.
 - [05 Cancellation](05_cancellation_contraction.md): e458's absorbed increments (at s = 1 only 0.29-0.36 of the target's typical coefficient is present at the middle block) look like the per-block contraction of e194 and e210 acting on an injected direction.
 - [03 Increments](03_increments_depth_targets.md): e461 reads each block's increment, as the increment pipeline does (e02, e44), to look for a forged write.
+- [12 Circuits, co-selection, drift](12_circuits_coselection_drift.md): e462 splits e81's atom drift into early rotation and late shrinkage, and finds single-batch gradients unrelated to it.

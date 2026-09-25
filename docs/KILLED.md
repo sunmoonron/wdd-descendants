@@ -378,3 +378,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 48 kills (authorship labels as forensics)
 - "Near-identical states with different write histories have different futures because of their histories": the difference is context (76-85%), and the ledger distance does not predict the vector's effect (e460).
 - "WDD is an activation authenticity checker": a forged write-sized vector is detected at AUC 0.60-0.64, no better than a covariance detector, and not at all a few blocks later (e461).
+
+## Session 49 kills (the learning signal in native coordinates)
+- "A gradient update reinforces or shrinks a word along its own direction": per batch, the along-row share is 0.5-0.8 times chance and the sign is a coin flip (e462).
+- "One batch's gradient predicts how a word will change": cosine with the net change between checkpoints is 0.000-0.001 (e462).
+- "The most used native words receive the most learning pressure": Spearman -0.63 to -0.04 (e462).

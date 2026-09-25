@@ -1,0 +1,33 @@
+{
+ "model": "pythia410",
+ "revision": "step64000",
+ "next_revision": "main",
+ "loss": 3.2033634185791016,
+ "chance": 0.0009765625,
+ "blocks": {},
+ "along_share_over_chance": {
+  "active_median": 0.46048399806022644,
+  "others_median": 0.46965351700782776,
+  "active_mean": 1.2764005661010742
+ },
+ "grow_share_active": 0.49323567748069763,
+ "spearman_activity_gradnorm": 0.4778186889841219,
+ "spearman_usage_gradnorm": -0.2836717591480043,
+ "spearman_usage_along": 0.022530908460977536,
+ "spearman_usage_activity": 0.28408107936885807,
+ "gradnorm_used_over_unused": 1.0218822956085205,
+ "net": {
+  "along_share_over_chance_active": 508.7367858886719,
+  "along_share_over_chance_all": 520.660888671875,
+  "cos_grad_net_active": 0.0010625580325722694,
+  "cos_grad_net_all": 0.0002997319388668984,
+  "rel_change_active": 0.3805060386657715,
+  "grow_share_active": 0.00010171905159950256
+ },
+ "checks": {
+  "orthogonal_under_10x": true,
+  "usage_gradnorm_over_0_3": false
+ },
+ "_exp": "e462_gradwriters_pythia410_step64000",
+ "_time": "2026-09-25 00:46:56"
+}

@@ -1501,3 +1501,48 @@ SESSION 48 (a third relayed review, fifteen "weird" uses of WDD's authorship lab
   - WDD is not an authenticity checker at the scale of one write.
   - Pre-registered: WDD beating the norm held; AUC at least 0.8, beating Mahalanobis in both models, and locating half the forgeries were refuted; the downstream fall to near chance held.
 - Reading. Both of the review's headline proposals give clean nulls, and the reasons are structural rather than surprising. A transformer's future depends on the current states of all positions, not on how they were written, and a single write is too small to stand out in the block that wrote it.
+
+SESSION 49 (a fourth relayed review, on the learning signal in native coordinates; e462, 1 script, 5 runs, under 1 minute of GPU time, 2026-09-25 00:44-00:47 box time; the first run was void, see below).
+
+- Weighing the review.
+  - Already answered:
+    - the "backward ledger", the loss gradient in native coordinates (e412, e429: states speak the writers' words and errors the readers' words, at every depth of all five models; per-write first-order attribution, e156);
+    - where a cancelled write goes (diffuse over thousands of later writers, e221-e225; cancellers are a crowd, e173, e185, e186);
+    - write-level error correction (the learned contraction restores part of any removed direction, e194 and e210; later blocks take over, e186);
+    - the native write transition graph (co-selection across blocks, session 32; increments over earlier atoms, e104).
+  - Settled by the chain rule, or ill-posed:
+    - a one-example "training scar": a writer row's gradient is the sum over tokens of its activation times the residual gradient, so the scar lands on the example's most active writers by construction;
+    - reconstructing the example from its gradient: the target's unembedding dominates the gradient, and native coordinates add nothing;
+    - "two concept writers for one concept": e448d finds one per noun;
+    - the claim that inactive writers get rotating updates: their rows get almost no gradient.
+  - Run: how gradient updates reshape the words, with the forward-usage against backward-pressure comparison as a side measure (e462).
+- e462 HOW DOES A GRADIENT UPDATE RESHAPE A NATIVE WORD? (Pythia-410m at steps 1000, 4000, 16000 and 64000, each against the next checkpoint, and GPT-2; one batch of 4 x 512 evaluation tokens; for every MLP writer, the gradient on its row, the share of that gradient along the row, and the row's net change to the next checkpoint.)
+
+  | Checkpoint (loss) | gradient's along-row share, times chance | descent lengthens (active rows) | net change to the next checkpoint: size relative to the row, share lengthened, along-row share | cos(-gradient, net change) | Spearman usage with gradient norm |
+  | --- | --- | --- | --- | --- | --- |
+  | step 1000 (5.16) | 0.8 | 0.51 | 3.09, 0.99, 1.0% | 0.000 | -0.63 |
+  | step 4000 (3.77) | 0.6 | 0.48 | 1.65, 1.00, 6.5% | 0.000 | -0.33 |
+  | step 16000 (3.33) | 0.5 | 0.49 | 0.80, 0.07, 3.6% | 0.001 | -0.18 |
+  | step 64000 (3.20) | 0.5 | 0.49 | 0.38, 0.00, 49.7% | 0.001 | -0.28 |
+  | GPT-2 final (3.61) | 0.5 | 0.50 | - | - | -0.04 |
+
+  - One batch's gradient is noise relative to the word.
+    - Its share along the word's own row is 0.5-0.8 times chance, so it is no more aligned with the word than a random direction.
+    - Its sign along the row is a coin flip.
+    - Its direction does not predict the row's net change between checkpoints (cosine 0.000-0.001).
+  - The vocabulary is written by accumulated drift in two regimes.
+    - Between steps 1000 and 16000, rows rotate while growing: the net change is 1.7-3.1 times the row's norm and almost all orthogonal to it, and 99-100% of rows lengthen. This is when the words appear (e443).
+    - From step 16000 the rows mostly shrink in place, as weight decay would do. Late, half of the change is along the row, and no row lengthens.
+  - Forward use and backward pressure are unrelated or anti-related. The words the model uses most to describe its states receive no more gradient than rarely used ones, and early in training less (Spearman -0.63 to -0.04).
+  - Gradient norm tracks the writer's activation in Pythia (+0.45 to +0.63), as the chain rule requires, but only weakly in GPT-2 (+0.09).
+  - Pre-registered:
+    - the gradient being near-orthogonal to the row held;
+    - the net change being more along the row late than early held;
+    - one batch predicting the net change early was refuted (it never does);
+    - usage correlating with gradient norm was refuted.
+  - The first run (log lines at 00:44-00:45) is void. Its activation-recording pre-hook returned a tensor, which PyTorch uses as the layer's new input, and that corrupted the forward pass (GPT-2 loss 8.2 instead of 3.6). The weight-only net-change figures were not affected and agree with the rerun.
+- Reading.
+  - WDD provenance is a coordinate system for the forward computation, not for learning.
+  - Per batch, the learning signal on a word is unrelated to the word.
+  - Over training, words form by rotation until about step 16000, then shrink in place.
+  - The words used most are not the words learning pushes hardest.

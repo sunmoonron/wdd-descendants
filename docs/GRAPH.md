@@ -461,6 +461,12 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H275 Provenance predicts a state's future beyond its vector (the residual stream is not "Markov"). → e460 → KILLED. Near-identical states differ in their futures mainly through context (76-85%), and the ledger distance adds nothing to the cosine (partial Spearman -0.07 and -0.10).
 - H276 WDD detects and locates forged write-sized contributions. → e461 → KILLED at the scale of one write. At the forged block the AUC is 0.60-0.64 (Mahalanobis 0.62-0.75). The correct block is found in 0.14-0.35 of cases, and detection is at chance a few blocks later.
 
+## The learning signal in native coordinates (session 49)
+
+- H277 A gradient update reinforces or shrinks a word along its own direction. → e462 → KILLED per batch. The along-row share is 0.5-0.8 times chance and the sign is a coin flip. SURVIVES for accumulated drift late in training, where half of the change is along the row (shrinkage).
+- H278 One batch's gradient predicts how a word changes between checkpoints. → e462 → KILLED (cosine 0.000-0.001 at every stage).
+- H279 The most used native words receive the most learning pressure. → e462 → KILLED (Spearman of usage with gradient norm -0.63 to -0.04). Forward use and backward pressure are different writer properties.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
