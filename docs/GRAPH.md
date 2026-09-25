@@ -495,6 +495,16 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H291 When a native word falls out of use, its function dies with it. → e471 → KILLED. The importance change of dying words is about 0, like that of other neurons.
 - H292 The vocabulary in use grows over training. → e471 → KILLED after step 2000. The distinct words used fall from 14,115 to 9,435.
 
+## WDD applied to itself, word algebra, roles and induced geometry (session 55)
+
+- H293 Repeatedly applying WDD's description reveals a native attractor, drift or collapse (the recursive fixed point). → e472 → KILLED. One application is already a fixed point for 96-100% of states, for native and rotated words alike; loss and energy do not change after the first step. The operator is a projection.
+- H294 Perturbed descriptions flow back to a common native description. → e472 → KILLED. Each noisy trajectory freezes at its first description; two noise seeds share Jaccard 0.62-0.65 of their final words. NARROWED to stability: 5% noise keeps more native words than rotated ones (0.67-0.71 against 0.46-0.48).
+- H295 Native handles for two attributes of one word act independently and compose (word algebra). → e473 → SUPPORTED in Qwen. With four words per block the gender handle alone changes only gender in 92%, the generation handle only generation in 75%; gender and generation taken from different words give the doubly changed word in 74% (83% with sixteen); behaviour is additive within 24%. Rotated words fail at four (6%, 25%, 16%). The task's principal directions do as well (91%, 80%, 91%). SmolLM2 underpowered (20 items).
+- H296 Identity handles are typed by grammatical role. → e474 → KILLED. A handle found in the other role switches as many answers as the item's own (Qwen 0.18 against 0.17 for subjects, 0.32 against 0.31 for objects at four words; alike at sixteen and in SmolLM2), although the carrier words shared between roles fall to 0.61-0.66 at the middle block.
+- H297 Native words are the better interchange coordinates for any variable. → e474 → KILLED for an entity copied into the answer: rotated words do as well or better (0.84-0.97 against 0.72-0.96 at sixteen words). NARROWS H286 to some variables (a translated concept, gender and generation).
+- H298 WDD induces a geometry of states that predicts behaviour beyond activation distance. → e475 → NARROWED. Activation distance predicts next-token similarity best (Spearman +0.13 to +0.37, and the closest nearest neighbours); native coefficients or word sets add +0.04 to +0.09 beyond it, rotated words +0.03 to +0.07.
+- H299 The identity-free part of a description (its coefficient profile) carries behavioural information. → e475 → SUPPORTED at the deepest depth only, and only for native words: +0.13 to +0.14 beyond activation distance and the entropy gap in all three models (rotated -0.02 to +0.04). It is not prediction confidence. OPEN: what it encodes.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

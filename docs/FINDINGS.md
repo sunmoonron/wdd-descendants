@@ -1778,3 +1778,104 @@ SESSION 54 (a tenth relayed review, on the "life cycle" of native words; e471, 1
 - Reading.
   - The life-cycle picture fails at the neuron level. Becoming a word and becoming important are separate processes in training, as they are separate properties at the end of it.
   - The vocabulary in use shrinks after an early peak.
+
+SESSION 55 (an eleventh and a twelfth relayed review, on applying WDD to its own objects ("recursive WDD") and on WDD as a measurement language, plus the two experiments deferred in sessions 53-54; e472-e475, 4 scripts, 9 runs and two reruns of e475, about 7 minutes of wall-clock GPU time with the runs in parallel, 2026-09-25 02:43-02:50 box time).
+
+- Weighing the eleventh review (recursive WDD).
+  - Run: the recursive fixed point, with the self-consistency triangle and the attractor test folded in as perturbed versions (e472).
+  - Already answered or determined by OMP:
+    - dictionary to dictionary (an atom described over a dictionary that contains it returns itself; atoms over the other atoms is e16; a block's writes over earlier atoms is e104);
+    - bootstrapping from 1 to 16 words (a one-word description decomposes to itself, so the expansion is undefined; description length is e395 and e09);
+    - predicting later vocabulary from earlier vocabulary (e459: native words recur 1.3-1.8 times as often as rotated words across generated tokens; e440);
+    - a coefficient-space behavioural metric (e151, e169, e460; re-run with controls as e475, below);
+    - WDD observing its own intervention (e458's checksum: AUC 0.70-0.92, no better than the intervention's size);
+    - dictionary closure (reading back a combination of atoms is sparse recovery, e63 and the S1 constructions; injected combinations read downstream are e246 and e247);
+    - the word-permutation paradox (moving the coefficients to other words builds a different vector of the same norm, a random perturbation; the provenance controls that matter are e390's rows from other checkpoints and the rotated controls of e388 and e395);
+    - the "Gödel" blind-spot test (e09 is literally "residual of the residual": weight atoms fit their own residual no better than rotated ones; e122: a second pass finds reconstruction only; e466-e467: what a description leaves out).
+- Weighing the twelfth review (WDD as a measurement language).
+  - Run: WDD's induced geometry and the activation, WDD and behaviour triangle, with the split of word identities from coefficients and the "self-distance" quadrants folded in (e475). e151 and e169 had compared support overlap with state cosine without a rotated control.
+  - Already answered:
+    - conservation and exchange rates of "wordhood" (a zeroed write's footprint grows while it decorrelates, e222; descendants keep their identity, e247; stable lineages, e267; carrier turnover, e470);
+    - the entropy of a description (a restatement of how fast the residual falls with k, e01, e09, e395);
+    - reversibility, predicting the next block's description (one linear operator transports and composes descendants, e248; a transported dictionary fails, e236; own-word codes cannot replace blocks, e392);
+    - coordinate-frame drift (e81, e360-e362, e431, e443);
+    - description equivalence classes (the quotient program, whose fibres have no structure, e338; e460);
+    - a phase transition in k (e09's gap peaks near k = 8; e169; e395);
+    - WDD interpolation (the map from coefficients to states is linear, so interpolating coefficients interpolates the two reconstructions; interpolants' effects follow linear interpolation, e271).
+- Also run: word algebra (e473) and typed handles (e474), deferred in sessions 53-54 for want of a two-attribute task and a relational readout.
+
+- e472 IS THE DESCRIPTION A FIXED POINT OF WDD? (middle depth, 8 x 256 evaluation tokens, typical positions; the 16-word OMP description, refitted, applied five times; native and rotated words; the attractor test adds Gaussian noise of 5% of the state's norm before each step, with two seeds; a word-sized nudge adds a random dictionary atom of 5% of the norm.)
+
+  | Model | Words | Loss recovered, step 1 -> 5 | Energy kept | Same words as the previous step, steps 2 / 3-5 | Overlap (Jaccard) of the noisy run's words with the clean run's | Overlap of two noisy seeds' final words |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 (block 6) | native | 0.767 -> 0.767 | 0.51 | 0.96 / 0.99-1.00 | 0.71 | 0.65 |
+  | GPT-2 | rotated | 0.386 -> 0.386 | 0.28 | 1.00 / 1.00 | 0.48 | 0.43 |
+  | Qwen (block 12) | native | 0.852 -> 0.852 | 0.43 | 1.00 / 1.00 | 0.67 | 0.62 |
+  | Qwen | rotated | 0.561 -> 0.560 | 0.28 | 1.00 / 1.00 | 0.46 | 0.39 |
+
+  - The operator is a projection in practice. After one application 96-100% of descriptions choose exactly the same words again, and loss and energy do not change, for native and rotated words alike. Repeated application neither drifts nor collapses; the first description is the whole story.
+  - Noise at each step does not move a trajectory either (the same words 0.96-1.00 of the time); the word-sized nudge behaves the same.
+  - The one difference between vocabularies is stability to a small perturbation of the original state: 5% noise leaves about 13 of 16 native words in place (Jaccard 0.67-0.71) but about 10 of 16 rotated words (0.46-0.48). Two noisy runs do not converge to a common description; each freezes at its own first one.
+  - Pre-registered: fixed-point shares within 0.1 for native and rotated, confirmed; loss stable after step 1, confirmed; noisy seeds sharing at least half their final words, confirmed for native (0.62-0.65), though by freezing, not by convergence.
+
+- e473 WORD ALGEBRA (few-shot word translation into English of kinship words carrying two attributes in one word, gender and generation: king / queen / prince / princess, father / mother / son / daughter, man / woman / boy / girl, uncle / aunt / nephew / niece, and grandparents where the answer tokens differ; French, Spanish and German, bare words so no article marks gender; a four-way forced choice among the quadruple's English words. At the word's last token, blocks 0 to the middle, e469's interchange recomputed at each block. For a base word w: G, native words for the difference to its gender-flipped partner; A, for the generation-flipped partner; B, for the doubly flipped word, e469's direct basis. "G toward w^ga" sets the G subspace to the doubly flipped word's value; "compose" sets G to the gender partner's value and then A to the generation partner's, so no source has both changes.)
+
+  Qwen, 128 items (32 quadruple-contexts fully correct). Share of answers that become the expected word (whole-state interchange: 0.97 doubly flipped).
+
+  | Basis, words per block | G toward w^ga: gender only | A toward w^ga: generation only | G and A together: both | compose: both | direct B: both |
+  | --- | --- | --- | --- | --- | --- |
+  | native, 4 | 0.92 | 0.75 | 0.73 | 0.74 | 0.86 |
+  | rotated, 4 | 0.06 (0.92 unchanged) | 0.25 (0.75 unchanged) | 0.04 | 0.16 | 0.31 |
+  | task PCA, 4 | 0.91 | 0.80 | 0.83 | 0.91 | 0.85 |
+  | native, 16 | 0.73 (0.27 both) | 0.70 (0.20 both) | 0.93 | 0.83 | 0.90 |
+  | rotated, 16 | 0.80 | 0.66 | 0.55 | 0.54 | 0.73 |
+  | task PCA, 16 | 0.76 | 0.74 | 0.91 | 0.91 | 0.88 |
+
+  - Native handles for the two attributes act independently and compose. With four words per block, the gender handle alone changes only the gender in 92% of items, and the generation handle only the generation in 75%. Taking gender from one word and generation from another produces the doubly changed word in 74% (83% with 16 words), although no source had both changes.
+  - In behaviour space (four-way log-probabilities), with four native words the gender intervention moves the gender score by 5.4 nats and the generation score by 0.22 of that; the generation intervention the reverse (4.8 nats, cross-talk 0.22). The effect of both together is the sum of the two effects within 24% (rotated 29%, task PCA 31%).
+  - Rotated words fail at four per block (the answer mostly stays unchanged) and partly catch up at sixteen (compose 0.54).
+  - The task's principal directions, fitted on all items' gender (or generation) differences at each block, do as well as native words or better. Gender and generation are shared low-dimensional directions at the word's position. Native words find them item by item, without seeing the other items; they are not the only coordinates that do.
+  - With sixteen words, each native handle leaks into the other attribute (0.20-0.27 of answers change both).
+  - SmolLM2 translates few of these words correctly (20 items from 5 quadruple-contexts; whole-state interchange 0.80). Its numbers are underpowered: native four words give gender-only 0.30, generation-only 0.35 and compose 0.25; rotated 0.10, 0.40 and 0.25.
+  - Pre-registered: whole-state interchange at least 0.9, confirmed in Qwen (0.97), not SmolLM2 (0.80); the gender handle alone giving the gender-flipped word in half the items, confirmed in Qwen; compose reaching half of the direct basis, confirmed (0.74 against 0.86); native factorising better than rotated at both sizes, refuted (true at four words, 0.92 against 0.06; at sixteen rotated is cleaner, 0.80 against 0.73); behavioural additivity within 25%, confirmed in Qwen (0.24).
+
+- e474 TYPED HANDLES (few-shot relational questions: "The {A} chased the {B}. Who chased? The" -> A, or "Who was chased? The" -> B, with three verbs (chased, bit, followed); people in the few-shot lines, sixteen single-token animals in the test line; a forced choice among the animals. An entity e is swapped for e' at its own token, blocks 0 to the middle, as in e469. Bases from native words for a difference e' - e taken: in the item's own story; in the same role with another co-entity; and in the other role with the same co-entity (for a subject item, the stories "X ... e" and "X ... e'" at the object token, with the same few-shot prefix). 160 items per role and model.)
+
+  | Model, role | Whole state | Native 4: own / same role, other co-entity / other role | Rotated 4 | Native 16: own / same role / other role | Rotated 16 | Top-4 word overlap between roles, block 0 -> middle |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | Qwen, subject | 0.99 | 0.17 / (0.17) / 0.18 | 0.15 | 0.72 / (0.72) / 0.75 | 0.88 | 0.99 -> 0.66 |
+  | Qwen, object | 1.00 | 0.31 / 0.33 / 0.32 | 0.31 | 0.96 / 0.96 / 0.94 | 0.97 | 0.99 -> 0.65 |
+  | SmolLM2, subject | 0.99 | 0.20 / (0.20) / 0.21 | 0.30 | 0.77 / (0.77) / 0.80 | 0.84 | 0.95 -> 0.61 |
+  | SmolLM2, object | 1.00 | 0.34 / 0.36 / 0.32 | 0.53 | 0.88 / 0.86 / 0.86 | 0.91 | 0.94 -> 0.64 |
+
+  - Identity handles are not typed by role. A basis found with the entity in the other role switches as many answers as the item's own basis, in both models and both roles, although the carrier words shared between roles fall from 0.94-0.99 at block 0 to 0.61-0.66 at the middle block. The interchange works through the early blocks, where the words still agree (the writing window of e470).
+  - A design flaw for subject items: the subject comes before the co-entity, so its state cannot see it, and the "other co-entity" basis is the item's own (in parentheses). For object items, where it differs, other-context and other-role bases do equally well (top-4 overlap with the own basis 0.70-0.75 and 0.64-0.65 at the middle block).
+  - On this task native words have no edge over rotated words: about equal or worse at four words per block (SmolLM2 object 0.34 against 0.53) and at sixteen (0.72-0.96 against 0.84-0.97). e469's native advantage, on a translated noun, does not carry over to an entity copied into the answer. Four words per block are also far from enough here (0.17-0.36, where the whole state gives 0.99-1.00).
+  - Pre-registered: whole state at least 0.9, confirmed; native four at least half the whole state, refuted (0.17-0.36); untyped handles, confirmed; the overlap between roles falling with depth, confirmed.
+
+- e475 THREE GEOMETRIES (8 x 256 evaluation tokens, about 2040 typical positions, all pairs; depths a quarter, half and three quarters of the way; behaviour d_B: one minus the Bhattacharyya coefficient of two next-token distributions; activation d_X: one minus the cosine of the centred states; native and rotated 16-word descriptions: d_C, one minus the cosine of the sparse coefficient vectors; d_S, one minus the Jaccard overlap of the word sets (identities only); d_M, the distance between the sorted normalised coefficient magnitudes (coefficients only); d_R, one minus the cosine of the reconstructions; d_Z, the top 16 principal components fitted on other sequences. Partial correlations are rank correlations with d_B after regressing out d_X. v3 adds the gap between the two next-token entropies.)
+
+  | Model, depth | Spearman with behaviour: activation / native coefficients / native word sets / rotated coefficients / PCA 16 | Beyond activation (partial): native coefficients / native word sets / rotated coefficients / rotated word sets | Behaviour distance to the 10 nearest: activation / native coefficients / rotated coefficients (random pairs) |
+  | --- | --- | --- | --- |
+  | GPT-2, 3 | +0.13 / +0.09 / +0.10 / +0.07 / +0.12 | +0.046 / +0.074 / +0.045 / +0.041 | 0.517 / 0.572 / 0.627 (0.827) |
+  | GPT-2, 6 | +0.20 / +0.10 / +0.11 / +0.05 / +0.19 | +0.038 / +0.065 / +0.033 / +0.034 | 0.473 / 0.547 / 0.638 |
+  | GPT-2, 9 | +0.32 / +0.17 / +0.16 / +0.07 / +0.31 | +0.075 / +0.091 / +0.032 / +0.035 | 0.391 / 0.461 / 0.597 |
+  | Qwen, 6 | +0.20 / +0.14 / +0.13 / +0.08 / +0.19 | +0.068 / +0.068 / +0.058 / +0.059 | 0.545 / 0.580 / 0.666 (0.882) |
+  | Qwen, 12 | +0.25 / +0.13 / +0.12 / +0.06 / +0.23 | +0.051 / +0.059 / +0.039 / +0.040 | 0.515 / 0.576 / 0.692 |
+  | Qwen, 18 | +0.33 / +0.16 / +0.15 / +0.08 / +0.33 | +0.058 / +0.064 / +0.043 / +0.043 | 0.442 / 0.513 / 0.650 |
+  | SmolLM2, 7 | +0.17 / +0.14 / +0.11 / +0.10 / +0.14 | +0.068 / +0.072 / +0.063 / +0.069 | 0.524 / 0.564 / 0.601 (0.859) |
+  | SmolLM2, 15 | +0.23 / +0.13 / +0.11 / +0.08 / +0.19 | +0.045 / +0.062 / +0.047 / +0.049 | 0.477 / 0.541 / 0.599 |
+  | SmolLM2, 22 | +0.37 / +0.17 / +0.15 / +0.09 / +0.31 | +0.041 / +0.056 / +0.044 / +0.043 | 0.403 / 0.477 / 0.567 |
+
+  - Activation distance is the better geometry of behaviour at every depth in all three models, by rank correlation and by nearest neighbours. The distance between the native reconstructions tracks it closely; the coefficient and word-set distances are coarser.
+  - WDD adds a little beyond activation distance (partial +0.04 to +0.09), and rotated words add nearly as much (+0.03 to +0.07). The native margin is clearest for word sets in GPT-2's deepest depth (+0.091 against +0.035) and absent in SmolLM2.
+  - Quadrants. Among the 5% of pairs closest in activation, those whose native descriptions are farther apart behave more differently (d_B 0.62-0.78 against 0.53-0.69). Nearby states share at least one native word in 50-80% of pairs, but a rotated word in only 6-28%. Among pairs close in native coefficients, those farther apart in activation behave much more differently (0.77-0.83 against 0.54-0.68): activation distance carries what WDD-nearness misses.
+  - One native-only signal. The shape of the coefficient profile alone, with no word identities, adds -0.01 to +0.03 at the first two depths but +0.14 to +0.15 at the deepest depth in all three models. It survives controlling for the entropy gap (+0.130 to +0.138), which I had guessed it was (the top word's share correlates with entropy at only -0.10 to +0.04 there). Rotated words' profiles add nothing (-0.02 to +0.04). What it encodes is open; on its own it is a poor nearest-neighbour geometry (0.79-0.86, near the random 0.83-0.88).
+  - The entropy gap itself predicts behaviour distance (+0.23 to +0.30) almost independently of activation distance.
+  - Pre-registered: activation at least as good as native coefficients at every depth, confirmed; native coefficients adding under 0.05 beyond activation, refuted in 5 of 9 cases (+0.038 to +0.075); native adding more than rotated at every depth, confirmed in GPT-2 and Qwen, not SmolLM2.
+
+- Reading.
+  - WDD applied to itself is a projection. One application reaches a fixed point for native and rotated words alike, so the recursion adds nothing; native descriptions differ only in being more stable to small noise.
+  - Word algebra holds in Qwen. Native handles for gender and generation act independently and can be combined from different source words, far better than rotated words at four words per block. The same structure is found by the task's principal directions, so it belongs to the representation, which native words read without supervision.
+  - Identity handles are untyped by role, and on a copy-style relational task native words are no better than rotated ones. Native words are good interchange coordinates for some variables (a translated concept, gender and generation), not all.
+  - WDD does not induce a better geometry than activation distance. Its extra information is small and mostly shared with rotated words, apart from one unexplained native signal in the concentration of deep descriptions.

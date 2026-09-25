@@ -432,3 +432,7 @@ e468	17_forensic_instrument	S52	mixed	scripts/e468_future_tokens.py	results/e468
 e469	17_forensic_instrument	S52	supported (across blocks; corrects e451's reading)	scripts/e469_interchange.py	results/e469_*.json	Are native words interchange coordinates for a high-level variable?
 e470	17_forensic_instrument	S53	supported (a writing window)	scripts/e470_interchange_map.py	results/e470_*.json	Where, and through which words, do native handles carry a variable?
 e471	17_forensic_instrument	S54	refuted (independent processes)	scripts/e471_word_lifecycle.py	results/e471_*.json	Does a neuron become important before it becomes a native word, and does its function die with its usage?
+e472	18_recursion_composition	S55	refuted (a projection, not a native attractor)	scripts/e472_wdd_fixed_point.py	results/e472_*.json	Is the 16-word description a fixed point when WDD is applied again, and do perturbed descriptions converge (the recursive fixed point and attractor)?
+e473	18_recursion_composition	S55	supported (Qwen; task PCA equal)	scripts/e473_word_algebra.py	results/e473_*.json	Do native handles for two attributes of one word act independently and compose (word algebra)?
+e474	18_recursion_composition	S55	refuted (untyped; no native edge here)	scripts/e474_typed_handles.py	results/e474_*.json	Are native identity handles typed by grammatical role?
+e475	18_recursion_composition	S55	narrowed (a coarse activation geometry)	scripts/e475_three_geometries.py	results/e475_*.json	Does WDD induce a geometry of states that predicts behaviour beyond activation distance?

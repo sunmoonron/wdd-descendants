@@ -403,3 +403,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 54 kills (the life cycle of native words)
 - "Neurons become important before they become native words": no ordering; usage and importance evolve independently across Pythia's training (e471).
 - "When a word falls out of use its function dies": its importance does not change (e471).
+
+## Session 55 kills (WDD applied to itself, roles, induced geometry)
+- "Iterating WDD's description reveals a native attractor or drift": one application is already a fixed point, for rotated words too (e472).
+- "Perturbed states flow back to a common native description": each noisy trajectory freezes at its first description (e472).
+- "Native identity handles are typed by grammatical role": handles found in one role work as well in the other (e474).
+- "Native words are the better interchange coordinates for every variable": for an entity copied into the answer, rotated words do as well or better (e474).
+- "WDD defines a geometry of states that predicts behaviour better than activation distance": activation distance is better, and WDD's extra information is mostly shared with rotated words (e475).
+- "The identity-free signal in deep descriptions is prediction confidence" (a guess made during the session): it survives controlling for the entropy gap (e475).
