@@ -387,3 +387,6 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 50 kills (a grammar over native words)
 - "Native words have accents (role carried by inflecting shared words)": role is carried by word choice; shared words' coefficients decode it at 0.61 and never flip sign (e463).
 - "The network corrects a native word written where it never occurs": it is damped exactly as where it fires (e464).
+
+## Session 51 kills (self-consistency of native descriptions)
+- "The network regrows what a 16-word native description leaves out": the omission persists at a constant share of the state four blocks later, while a random error of the same size is damped (e465).

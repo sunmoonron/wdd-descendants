@@ -1580,3 +1580,34 @@ SESSION 50 (a sixth relayed review, on whether the native vocabulary has a gramm
   - A single natural-size write barely moves the next-token prediction in either case.
   - Pre-registered: survival within 20% held; a larger effect in illegal contexts was refuted.
 - Reading. Both of the review's grammar proposals give nulls. The native vocabulary behaves like fixed labels with context-dependent amounts, not like an internal language with inflection or syntax. Roles are expressed by word choice, and the network does not police where a word appears.
+
+SESSION 51 (a seventh relayed review, on whether WDD can judge its own reliability; e465, 1 script, 2 runs, under a minute of GPU time, 2026-09-25 01:20-01:21 box time).
+
+- Weighing the review. Six of its seven proposals were already answered or ill-posed:
+  - the "self-audit": WDD already reports its own reliability without the ledger (e180), with stability selection (e195) and a per-atom null z-score (e200);
+  - the "counterfactual dictionary": WDD reads directions, and a coefficient only changes prominence (e56, e60, e247);
+  - "dictionary collisions": aliasing (e41, e181), near-twin atoms (S1f), and the identifiability limit;
+  - the "provenance-scrambled forgery": this is the rotated-dictionary control (same Gram matrix, same number of words, ownership scrambled), which keeps far less function (e388, e395). Provenance labels are not an input (e460);
+  - the "blindfold", the model run on only the k-word code against rotated words and PCA: e388, with chained replacement in e392;
+  - the "disagreement detector": the output difference of two reconstructions is the model's sensitivity to their difference, which is not specific to WDD.
+  - Run: "description under amnesia", whether the network regrows what a description leaves out (e465).
+- e465 DOES THE NETWORK REGROW WHAT A DESCRIPTION LEAVES OUT? (the middle-depth state replaced at typical positions by 16 native words, 16 rotated words, the top 16 principal components, or by itself plus a random vector of the same norm as the native omission; the divergence from the natural run followed downstream).
+
+  | Model, replacement | omission (relative to the state) | loss recovered | divergence over omission at +1 / +2 / +4 | divergence relative to the state at +4 | native-word overlap with the natural run at +2 |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2, native | 0.70 | 0.77 | 1.17 / 1.33 / 2.00 | 0.69 | 0.19 |
+  | GPT-2, rotated | 0.85 | 0.39 | 1.23 / 1.46 / 2.35 | 0.97 | 0.03 |
+  | GPT-2, PCA | 0.84 | 0.54 | 1.19 / 1.40 / 2.19 | 0.90 | 0.06 |
+  | GPT-2, random (same size) | 0.70 | 0.92 | 1.02 / 1.08 / 1.41 | 0.49 | 0.20 |
+  | Qwen-0.5B, native | 0.76 | 0.85 | 1.02 / 1.07 / 1.30 | 0.67 | 0.18 |
+  | Qwen-0.5B, rotated | 0.85 | 0.56 | 1.06 / 1.15 / 1.52 | 0.88 | 0.03 |
+  | Qwen-0.5B, PCA | 0.80 | 0.65 | 1.03 / 1.11 / 1.47 | 0.81 | 0.07 |
+  | Qwen-0.5B, random (same size) | 0.76 | 0.96 | 0.97 / 0.89 / 0.94 | 0.49 | 0.17 |
+
+  - The network does not regrow what a description leaves out. The divergence from the natural run grows 1.3-2 times in absolute size by four blocks later, and stays at a constant share of the growing state (0.67-0.69).
+  - A random error of the same size behaves differently: it is damped (its share of the state halves to 0.49) and costs little loss (0.92-0.96 recovered).
+  - So what a 16-word description omits is functional content that later blocks cannot re-derive from the words, not noise.
+  - Native descriptions omit less and keep more than rotated or PCA descriptions, but per unit of omission they persist about as much (1.30-2.00 against 1.47-2.35).
+  - Word overlap is a poor trajectory measure. Even the harmless random perturbation changes about 80% of the downstream 16-word descriptions, since OMP's supports are unstable under perturbation (e189).
+  - Pre-registered: native omissions healing most was refuted (random ones heal); downstream descriptions sharing most words was refuted.
+- Reading. A native description is a good static summary (e388) but not a dynamically self-sufficient state. What it leaves out persists as a structured, functional deficit that the network carries forward, where a random error of the same size would fade.

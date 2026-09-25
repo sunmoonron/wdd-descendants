@@ -472,6 +472,10 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H280 Native words carry grammatical role by inflection (coefficient modulation of shared words). → e463 → KILLED. Role is carried by which words are used (0.94-0.97 decoding), not by shared words' coefficients (0.61, no sign flips). Rotated words decode role as well (0.88-0.89).
 - H281 The network corrects native words written in contexts where they never occur. → e464 → KILLED. Survival, energy and re-description are the same in legal and illegal contexts: generic contraction, no contextual syntax.
 
+## Self-consistency of native descriptions (session 51)
+
+- H282 The network regrows what a native description leaves out (descriptions are dynamically self-sufficient). → e465 → KILLED. The omission persists at a constant share of the state (0.67-0.69 at +4) and grows 1.3-2 times in size. A random error of the same size is damped (0.49) and nearly harmless (0.92-0.96 of the loss kept). The omitted part is functional content.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

@@ -1,4 +1,4 @@
-# 17. WDD beyond description: forensics, steering, learning, grammar (S47-S50)
+# 17. WDD beyond description: forensics, steering, learning, grammar, self-consistency (S47-S51)
 
 **Question.** Beyond describing states, can WDD's provenance-labelled words serve as a forensic tool? The candidate uses are: telling what compression damaged, what a fine-tune changed, whether an intervention hit its target, and how content persists across generated tokens.
 
@@ -12,8 +12,9 @@
 - A forged write-sized vector is barely detectable at its block, no better than a covariance detector, and invisible a few blocks later (e461).
 - WDD is a forward coordinate, not a learning one. One batch's gradient on a word is unrelated to the word and does not predict its change between checkpoints; words form by rotation until about step 16000, then shrink in place; the most used words get no more gradient than others (e462).
 - The native words have no grammar. A word's noun or verb role is carried by which words describe it, not by inflecting shared words (e463). A word written where it never fires is damped exactly as where it fires (e464).
+- A description is not a self-sufficient state. After a 16-word splice the network does not regrow what the words left out, although it damps a random error of the same size (e465).
 
-**Start here:** e458, e457, e460, e462, e463 · **Sessions:** S47-S50 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`, `e463_native_accents.py`, `e464_illegal_words.py`
+**Start here:** e458, e457, e460, e462, e463 · **Sessions:** S47-S51 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`, `e463_native_accents.py`, `e464_illegal_words.py`, `e465_description_healing.py`
 
 ## Experiments
 
@@ -28,6 +29,7 @@
 | e462 | How does a gradient update reshape a native word, over training? | Per batch: along-row share 0.5-0.8x chance, sign a coin flip, no prediction of the net change (cos 0.000). Net: rows rotate and grow to step 16000, then shrink in place; usage vs gradient rho -0.63 to -0.04 | refuted (not a learning coordinate) | ← e443 e412 e429 e81 |
 | e463 | Is a word's grammatical role carried by inflecting shared native words? | No: role decoded from role-specific words at 0.94-0.97, from shared words' coefficients 0.61 (no sign flips); rotated words decode it as well (0.88-0.89) | refuted (word choice, not inflection) | ← e146 e162 e440 |
 | e464 | Is a native word written where it never fires corrected? | No: survival after 2 blocks 0.60 vs 0.64 (GPT-2), 0.48 vs 0.47 (Qwen); energy and re-description the same; generic contraction | refuted (no contextual syntax) | ← e214 e216 e246 |
+| e465 | Does the network regrow what a 16-word description leaves out? | No: divergence stays 0.67-0.69 of the state at +4 (1.3-2x the omission); a same-size random error is damped to 0.49 and keeps 0.92-0.96 of the loss | refuted (omission is functional) | ← e388 e392 e221 |
 
 ## How the results flow
 
@@ -38,6 +40,7 @@
 - `e131 → e460, e461`. Provenance is lost when writes accumulate (e131). A state's future depends on its vector and its context, not on its history (e460). A single forged write is lost in its block's other writes (e461).
 - `e81, e443 → e462`. Rows keep rotating until late (e81), and words appear between steps 4000 and 16000 (e443). The rotation is accumulated drift: per batch the gradient on a word is noise relative to it, and after step 16000 the words mostly shrink in place.
 - `e146, e440 → e463` and `e214 → e464`. A token's description mixes words for the token and words for its context (e146, e440). Roles are a matter of which context words appear, not an inflection of shared words. The contraction is direction-independent (e214), and it is also indifferent to whether a word belongs in its context.
+- `e388, e221 → e465`. A 16-word description keeps much of the loss (e388), and random perturbations keep their energy while scattering (e221). What the description omits is not like a random perturbation: it persists as a functional deficit that later blocks do not re-derive.
 
 ## Links to other areas
 
