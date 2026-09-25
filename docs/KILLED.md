@@ -411,3 +411,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Native words are the better interchange coordinates for every variable": for an entity copied into the answer, rotated words do as well or better (e474).
 - "WDD defines a geometry of states that predicts behaviour better than activation distance": activation distance is better, and WDD's extra information is mostly shared with rotated words (e475).
 - "The identity-free signal in deep descriptions is prediction confidence" (a guess made during the session): it survives controlling for the entropy gap (e475).
+
+## Session 56 kills (audits from the digest)
+- "The native-only profile signal is an artefact of the normalisation or of k": it is the same under L1, at k = 8 and at k = 32 (e476).
+- "It is a proxy for norm, position, confidence, token frequency, copying or token identity": none of their gaps removes more than 0.03 of it (e476).
+- "The attribute handles of e473 are item-specific": four native words found on other kinship words, in other languages, flip only gender in 98% of items, better than the item's own (e477).

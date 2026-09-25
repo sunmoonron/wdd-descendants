@@ -1,6 +1,6 @@
-# Atlas of the WDD program: 437 experiments by technical area
+# Atlas of the WDD program: 439 experiments by technical area
 
-This is the entry point to the whole program. It is small enough to paste into a new chat as context. It gives:
+This is the entry point to the whole program. It is small enough to paste into a new chat as context. For a shorter, theory-first version that says which routes are closed and why, read [`DIGEST.md`](DIGEST.md) first. This file gives:
 
 - what was asked;
 - the eighteen technical areas;
@@ -19,12 +19,12 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 - **Models.**
   - The main five: GPT-2 small, Pythia-410m, Qwen2.5-0.5B, OLMo-1B-0724 and SmolLM2-135M.
   - Also used: Pythia training checkpoints and sizes from 70m to 1b, a random-init GPT-2, Qwen2.5-7B, and toy models trained from scratch.
-- **Scale.** 437 experiment scripts (e00-e475 plus variants), 55 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
-- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 113 established, 101 supported, 53 narrowed, 26 mixed, 117 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
+- **Scale.** 439 experiment scripts (e00-e477 plus variants), 56 sessions, 2026-09-19 to 2026-09-25, one GPU. Most runs take 1-5 minutes.
+- **Status counts** (from [`atlas/index.tsv`](atlas/index.tsv)): 113 established, 102 supported, 54 narrowed, 26 mixed, 117 refuted, 12 superseded, 6 null, 4 retracted, 5 tools.
 - **Scope.** Negative results are kept. No claim is more general than these models.
 - **Phase 1** (sessions 1-31, e00-e356): when a write can be read back from the state; why it fades; what it becomes downstream (the descendant); and what part of that matters causally (the quotient).
 - **Phase 2** (session 32, e357-e373): the program's tools tested on known circuits, the co-selection proposal of "What if not Circuits?", and drift over training.
-- **Phase 3** (sessions 33-55, e374-e475): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), the learning signal in native coordinates (session 49), whether the native words have a grammar (session 50), whether a description is a self-sufficient state (session 51), native words as interchange coordinates (sessions 52-53), the life cycle of native words (session 54), and WDD applied to its own objects: fixed points, word algebra, role typing and induced geometry (session 55).
+- **Phase 3** (sessions 33-56, e374-e477): readers and readouts; then self-description, meaning how well a model's own write rows describe its own states compared with controls (its "native vocabulary"). Also a 7B workspace agenda, the huge directions and sinks, a backcast "vision" round that trained models from scratch, causal tests of concept words and of a re-implemented block (session 46), WDD as a forensic instrument (sessions 47-48), the learning signal in native coordinates (session 49), whether the native words have a grammar (session 50), whether a description is a self-sufficient state (session 51), native words as interchange coordinates (sessions 52-53), the life cycle of native words (session 54), WDD applied to its own objects: fixed points, word algebra, role typing and induced geometry (session 55), and the audits of its two open results (session 56).
 - **Terms.**
   - *Identification (recall)*: the dominant true write is in the decoder's support.
   - *Prominence*: the write's projection on the centred state, over the state's norm.
@@ -62,7 +62,7 @@ Each area has its own page in [`atlas/`](atlas/). A page gives the area's questi
 | 15 | [A 7B workspace agenda and established lenses](atlas/15_workspace_lenses.md) | 12: e415-e425, S40-S42 | At 7B, native words surface a hidden two-hop bridge that the logit lens misses. It is not a better reader in general. Most results have established names; the instrument is what is new. |
 | 16 | [The vision round and its causal follow-ups](atlas/16_vision_round.md) | 19: e444-e455, S45-S46 | The vocabulary is written by training the writers, and the same function can be re-implemented with different words. Concept words hold across languages (7 / 15 / 22 of 24 nouns) and are causal handles: near natural size one word redirects 35-58% of translations (e455's 67-94% was a 6-8-fold injection). Word tables do not translate between models. |
 | 17 | [WDD beyond description: forensics, steering, learning, grammar, self-consistency, interchange, life cycle](atlas/17_forensic_instrument.md) | 16: e456-e471, S47-S54 | Self-description survives compression that breaks the model, so it does not detect damage. WDD names what a fine-tune changed but does not compress it. A native word steers as efficiently per unit of displacement as a dense vector. Its checksum, its ledger (for a state's future) and its forgery detection add nothing over simple baselines. It is a forward coordinate, not a learning one; its words have no grammar; what a description omits persists downstream. Across the band of blocks where a noun is written, a few native words are good interchange coordinates for it. Over training, becoming a word and becoming important are separate processes. |
-| 18 | [WDD applied to itself: fixed points, word algebra, role typing, induced geometry](atlas/18_recursion_composition.md) | 4: e472-e475, S55 | Applied to its own description, WDD is a projection: one application is a fixed point, for rotated words too. Native handles for two attributes of one word act independently and compose in Qwen (gender alone 92%, both from two words 74%), where rotated words fail and the task's principal directions do as well. Identity handles are not typed by grammatical role, and for an entity copied into the answer native words are no better than rotated ones. WDD's distances between states are a coarse version of activation distance; one native-only signal remains in the shape of deep descriptions. |
+| 18 | [WDD applied to itself: fixed points, word algebra, role typing, induced geometry, and their audits](atlas/18_recursion_composition.md) | 6: e472-e477, S55-S56 | Applied to its own description, WDD is a projection: one application is a fixed point, for rotated words too. Native handles for two attributes of one word act independently and compose in Qwen (gender alone 92%, both from two words 74%), where rotated words fail and the task's principal directions do as well; the gender handle is one shared MLP row that works across words and languages (98%). Identity handles are not typed by grammatical role, and for an entity copied into the answer native words are no better than rotated ones. WDD's distances between states are a coarse version of activation distance; its one native-only signal, the concentration of deep descriptions, survives its audit and is half prominence. |
 
 ## How the areas connect
 
@@ -174,7 +174,9 @@ Sinks (10) are a side branch that corrected several phase-3 numbers. The toys (1
     - Re-describing a description reproduces it: one application is a fixed point for 96-100% of states, for rotated words too (e472).
     - Native handles for gender and generation act independently and combine from different source words in Qwen (92% gender only, 74% both from two words), where rotated words fail; the task's principal directions do as well (e473).
     - Identity handles are not typed by grammatical role, and for an entity copied into the answer native words are no better than rotated ones (e474).
-    - WDD's distances between states predict behaviour worse than activation distance and add little beyond it, mostly as rotated words do; one native-only signal sits in the shape of deep descriptions (e475). [18]
+    - WDD's distances between states predict behaviour worse than activation distance and add little beyond it, mostly as rotated words do; one native-only signal sits in the shape of deep descriptions (e475).
+    - That signal is not an artefact and not a proxy for norm, position, confidence or token identity; half of it is prominence, the rest is open (e476).
+    - The gender handle is a shared word: found on other kinship words in other languages it flips only gender in 98% of items, and one MLP row recurs in 91% of items; generation is only half shared (e477). [18]
 
 ## Threads that cross areas
 
@@ -226,10 +228,11 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
 - **Narrative.**
   - [`FINDINGS.md`](FINDINGS.md): chronological, by session, with every number.
   - [`SYNTHESIS.md`](SYNTHESIS.md): what each session established.
-  - [`GRAPH.md`](GRAPH.md): hypotheses H0-H299 with their tests and fates.
+  - [`GRAPH.md`](GRAPH.md): hypotheses H0-H303 with their tests and fates.
   - [`KILLED.md`](KILLED.md): every kill and retraction.
   - [`THEORY.md`](THEORY.md): transport theory and the self-description account.
   - [`RELATED_WORK.md`](RELATED_WORK.md).
+  - [`DIGEST.md`](DIGEST.md): the ten-minute, theory-first summary, with the list of routes the mathematics closes.
   - [`VISION.md`](VISION.md): the backcast and a six-step roadmap.
   - [`NEXT.md`](NEXT.md): the backlog of experiments not yet run, with designs.
 - **Sessions to experiments.**
@@ -241,7 +244,7 @@ Area pages give the corrected version. Where the narrative in [`FINDINGS.md`](FI
   - Phase 2: S32 e357-e373.
   - Phase 3:
     - S33 e374-e382; S34 e383-e386; S35 e387-e390; S36 e391-e394; S37 e395-e398b; S38 e399-e406; S39 e407-e414;
-    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462; S50 e463-e464; S51 e465; S52 e466-e469; S53 e470; S54 e471; S55 e472-e475.
+    - S40 e415-e420; S41 e421-e422; S42 e421b, e423-e426; S43 e427-e431; S44 e432-e443 with e392b and e437b; S45 e444-e450; S46 e451-e455 with e452b; S47 e456-e459; S48 e460-e461; S49 e462; S50 e463-e464; S51 e465; S52 e466-e469; S53 e470; S54 e471; S55 e472-e475; S56 e476-e477.
 
 ## Open directions
 
@@ -259,6 +262,6 @@ Two standing negatives bound the claims:
 - WDD atoms are a birth and provenance coordinate, not the functional basis (area 09).
 - Native words are not the best sparse vocabulary: a learned SAE wins at small k (e403).
 
-Sessions 46-47 add one direction: steering with native words. At natural size a concept word moves 35-58% of translations, about as efficiently per unit of displacement as a dense difference of means (e458); combinations of a few words, and more concepts and tasks, are the next tests. Session 52 found such combinations work as interchange coordinates across blocks (e469); the natural next step is the full causal-abstraction test on a task with a known high-level algorithm. Session 55 found that native handles for two attributes compose (e473) but that the native advantage depends on the variable (e474). Two open threads follow: which variables native words carry better than generic coordinates, and what the native-only signal in the shape of deep descriptions encodes (e475).
+Sessions 46-47 add one direction: steering with native words. At natural size a concept word moves 35-58% of translations, about as efficiently per unit of displacement as a dense difference of means (e458); combinations of a few words, and more concepts and tasks, are the next tests. Session 52 found such combinations work as interchange coordinates across blocks (e469); the natural next step is the full causal-abstraction test on a task with a known high-level algorithm. Session 55 found that native handles for two attributes compose (e473) but that the native advantage depends on the variable (e474). Two open threads follow: which variables native words carry better than generic coordinates (e477 adds that the gender handle is one shared, cross-lingual word), and what the unexplained half of the native-only signal in the shape of deep descriptions encodes (e475, e476).
 
 [`NEXT.md`](NEXT.md) lists the experiments not yet run (B1-B16), with designs: the threads above, the causal-abstraction test on a known algorithm, the unrun roadmap steps, and old open items.

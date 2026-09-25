@@ -1879,3 +1879,49 @@ SESSION 55 (an eleventh and a twelfth relayed review, on applying WDD to its own
   - Word algebra holds in Qwen. Native handles for gender and generation act independently and can be combined from different source words, far better than rotated words at four words per block. The same structure is found by the task's principal directions, so it belongs to the representation, which native words read without supervision.
   - Identity handles are untyped by role, and on a copy-style relational task native words are no better than rotated ones. Native words are good interchange coordinates for some variables (a translated concept, gender and generation), not all.
   - WDD does not induce a better geometry than activation distance. Its extra information is small and mostly shared with rotated words, apart from one unexplained native signal in the concentration of deep descriptions.
+
+SESSION 56 (a new box; the digest written, and two audits that arose from writing it: e476-e477, 2 scripts, 5 runs plus reruns, about 8 minutes of GPU time, 2026-09-25 18:44-18:53 box time).
+
+- The two relayed reviews of the day were weighed as follows. The thirteenth review said to stop running and synthesise; the user asked for a short, theory-first digest and for any quick experiments that arose from writing it. Writing the digest raised exactly the review's first question, whether e475's native-only profile signal is an artefact of the coefficient normalisation, the choice of k, or a proxy for a plainer variable. That is e476. The digest's second open thread, whether the attribute handles of e473 belong to the vocabulary or to the item, is e477 (NEXT B3).
+- The old box was retired after every script and result on it had been verified against the local copies; the new box reproduces e472's GPT-2 numbers exactly.
+
+- e476 AUDIT OF THE NATIVE-ONLY PROFILE SIGNAL (e475's setup: 8 x 256 evaluation tokens, 2040 typical positions, all pairs, at the middle and the three-quarter depth; behaviour distance d_B, activation distance d_X; the profile of a description is its sorted, normalised coefficient magnitudes, with no word identities; partial rank correlations of a profile distance with d_B given d_X, then given d_X and the gap of each candidate, then given d_X and all gaps at once).
+
+  | Model, depth | profile partial given d_X: L2 / L1 / top share only / effective number / k = 8 / k = 32 | rotated profile / PCA-16 profile | given d_X and all candidates | candidates that remove most (partial left) | native top share against prominence / FVU / norm / position / entropy | top word an MLP row |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2, 9 | +0.146 / +0.150 / +0.107 / +0.135 / +0.138 / +0.129 | +0.035 / +0.071 | +0.094 | top probability +0.120, prominence +0.127, FVU +0.136 | +0.56 / -0.39 / +0.05 / +0.04 / -0.10 | 0.86 |
+  | Qwen-0.5B, 18 | +0.145 / +0.152 / +0.058 / +0.133 / +0.102 / +0.157 | -0.011 / +0.140 | +0.067 | FVU +0.072, prominence +0.106, norm +0.124 | +0.76 / -0.64 / +0.20 / -0.05 / -0.01 | 0.98 |
+  | SmolLM2, 22 | +0.143 / +0.148 / +0.078 / +0.136 / +0.109 / +0.146 | -0.014 / +0.052 | +0.110 | FVU +0.113, top probability +0.130, entropy +0.130 | +0.71 / -0.59 / +0.22 / -0.02 / +0.04 | 0.97 |
+
+  - At the middle depth the signal is absent, as in e475 (partial -0.01, +0.00, +0.03).
+  - It is not an artefact of the metric. L1 normalisation gives the same number, and k = 8 and k = 32 give +0.10 to +0.16. It is the shape of the whole profile: the top word's share alone carries +0.06 to +0.11, the effective number of words +0.13 to +0.14.
+  - It is not a proxy for the state's norm, the position, the next-token entropy or top probability, the token's frequency, copying, or the identity of the current token or of the top word: none of their gaps lowers the partial by more than 0.03, except the top probability in GPT-2 (0.146 to 0.120).
+  - It is partly the description's fit. A concentrated native description is one in which a single own write dominates the state: per position, the native top share correlates with the top word's prominence at +0.56 to +0.86 and with the unexplained fraction at -0.39 to -0.71 (rotated top shares correlate with nothing, |r| at most 0.05). The FVU gap and the prominence gap are themselves behaviour predictors at this depth (partials +0.07 to +0.18 and +0.06 to +0.10), and controlling for them removes about half of the signal in Qwen (0.145 to 0.072) and a third or less in the others. With every candidate controlled, +0.07 to +0.11 remains.
+  - The dominating word is an MLP row in 86-98% of positions and the current token's own embedding in at most 1%. So the signal is not lexical.
+  - In Qwen the top-16 principal components' profile carries as much (+0.140); in GPT-2 and SmolLM2 it carries less (+0.07, +0.05). Rotated profiles carry none anywhere.
+  - Pre-registered: a proxy (partial under 0.05 given all candidates), refuted; the top share tracking the current token's embedding, refuted; robustness to L1 and to the top share alone, half confirmed (L1 yes, the top share alone only in GPT-2); robustness to k, confirmed.
+- Reading of e476. The signal survives its audit. What can be said about it: it is the concentration of the description as a whole, at the deepest depth only; a third to a half of it is how well sixteen own words fit and how much one own write dominates, which is prominence, a quantity a rotated dictionary cannot compute; the rest is not norm, position, confidence, frequency or identity, and is open. The dominating writes are MLP rows, so the natural next question is whether positions whose deep state is dominated by one strong MLP write share a regime of behaviour beyond their entropy.
+
+- e477 ARE ATTRIBUTE HANDLES SHARED ACROSS WORDS? (e473's Qwen items, 128 from 32 quadruple-contexts; the interchange over blocks 0-12; bases from the item's own difference (e473), from the sign-aligned mean difference of the other quadruples' items in any language ("shared"), from the words most often chosen by those items' own descriptions ("vote"), from the other quadruples in the other two languages only ("cross-lingual"), and from rotated words fitted to the shared mean. v1 let the group means cancel, because half the items have the female or younger word as base; v2 aligns the signs.)
+
+  | Basis, words per block | gender handle toward the doubly flipped word: only gender changes | generation handle: only generation changes | compose (gender from one partner, generation from the other): both change |
+  | --- | --- | --- | --- |
+  | own, 4 | 0.92 | 0.75 | 0.74 |
+  | shared mean, 4 | 0.98 | 0.48 | 0.45 |
+  | shared vote, 4 | 0.96 | 0.42 | 0.43 |
+  | cross-lingual mean, 4 | 0.98 | 0.44 | - |
+  | rotated shared mean, 4 | 0.07 | 0.05 | - |
+  | own, 16 | 0.73 (0.27 both) | 0.70 | 0.83 |
+  | shared mean, 16 | 0.98 (0.02 both) | 0.69 | 0.66 |
+  | shared vote, 16 | 0.78 | 0.57 | 0.56 |
+  | cross-lingual mean, 16 | 0.95 | 0.65 | - |
+  | rotated shared mean, 16 | 0.81 | 0.20 | - |
+
+  - The gender handle belongs to the vocabulary. Four native words found on the other kinship words, in the other two languages, change only the gender in 98% of items, better than the item's own four words (92%), and at sixteen words they do it cleanly (98% gender only, against the own words' 73% with 27% leaking into both attributes). The words that vote highest across items do nearly as well (96%).
+  - One word carries it. The most common word in the items' own gender supports, an MLP row, appears in 91% of them at block 4 (69-75% at blocks 5 and 7, 22-25% at blocks 0-2), and every block's most common gender word is an MLP row.
+  - Rotated words fitted to the same shared direction fail at four words (7%) and reach 81% at sixteen: the shared gender direction is real enough that sixteen generic atoms span it, but at four words only the own rows are it.
+  - The generation handle is less shared: 48% at four words (own 75%), 69% at sixteen (own 70%). Generation is carried by more, and more word-specific, words than gender; composing with shared handles is therefore limited by its generation half (45% at four words, 66% at sixteen).
+  - Pre-registered: shared mean at four words at least 0.5, confirmed (0.98); vote worse than mean, confirmed by a hair (0.96 against 0.98); cross-lingual at least 80% of shared, confirmed (equal); one gender word in at least half the items' supports, confirmed (0.91 at block 4).
+- Reading of session 56.
+  - The digest's two open questions each moved. The profile signal is real and half of it is prominence, so WDD's one surplus over activation geometry is a WDD quantity by construction; what the other half is remains open.
+  - Qwen's vocabulary has a gender word: a shared, cross-lingual handle that is one MLP row in most items and that beats item-specific handles. Together with e448d (concept words shared across languages) and e473 (handles compose), this is the strongest form so far of the reading that native words are a vocabulary for the construction of variables: at least one attribute is a single shared word during its writing window. Generation is not one word.

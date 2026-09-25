@@ -2,11 +2,11 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e476.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e478. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
-**B1. What does the native-only profile signal encode?** (H299, e475)
+**B1. What does the native-only profile signal encode?** (H299, e475) — *Audited in session 56 (e476): not an artefact, not a proxy for norm, position, confidence, frequency or identity; a third to a half is fit and prominence; +0.07 to +0.11 remains open. Next: do positions dominated by one strong MLP write share a behavioural regime?*
 - At the deepest depth, how concentrated a native description is predicts next-token similarity beyond activation distance and the entropy gap: partial +0.13-0.14 in GPT-2, Qwen and SmolLM2. Rotated words' profiles give nothing, and so do shallower depths.
 - Design: at 3/4 depth, compute per position the native profile's top-word share, Gini and effective number of words. Correlate them with candidate causes:
   - the state's norm, and its share in the huge directions M (area 10);
@@ -30,7 +30,7 @@ Each item gives the question, where it comes from, a design at the program's usu
 - Models: Qwen, SmolLM2, and GPT-2 where it answers.
 - Hypothesis to test: native words win for semantic features written by MLPs, and not for lexical or positional ones. As a covariate, record the share of each variable's top carriers that are token embeddings against MLP rows.
 
-**B3. Are attribute handles shared across words?** (e473)
+**B3. Are attribute handles shared across words?** (e473) — *Done in session 56 (e477): the gender handle is shared across words and languages (98% at k = 4); the generation handle transfers only about half (48%).*
 - Does the gender handle found on king/queen move father/mother?
 - Design: e473's items. For each item, take a native basis from the other quadruples' gender differences (OMP on their mean at each block) and apply it with the item's own source.
 - Compare with the task-PCA gender direction and with the item's own basis.

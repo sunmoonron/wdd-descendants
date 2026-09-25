@@ -505,6 +505,13 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H298 WDD induces a geometry of states that predicts behaviour beyond activation distance. → e475 → NARROWED. Activation distance predicts next-token similarity best (Spearman +0.13 to +0.37, and the closest nearest neighbours); native coefficients or word sets add +0.04 to +0.09 beyond it, rotated words +0.03 to +0.07.
 - H299 The identity-free part of a description (its coefficient profile) carries behavioural information. → e475 → SUPPORTED at the deepest depth only, and only for native words: +0.13 to +0.14 beyond activation distance and the entropy gap in all three models (rotated -0.02 to +0.04). It is not prediction confidence. OPEN: what it encodes.
 
+## Audits that arose from the digest (session 56)
+
+- H300 The native-only profile signal of e475 is an artefact of the coefficient normalisation or of k. → e476 → KILLED. L1 normalisation gives the same partial (+0.15), k = 8 and 32 give +0.10 to +0.16, the effective number of words +0.13; rotated profiles carry none (-0.01 to +0.04).
+- H301 The profile signal is a proxy for a plain variable: norm, position, entropy, top probability, token frequency, copying, or the identity of the current token or top word. → e476 → KILLED for all of these (each removes at most 0.03). NARROWED: a third to a half of it is the description's fit and the top write's prominence (given all candidates +0.07 to +0.11 remains; per position the native top share tracks prominence at +0.56 to +0.86); the top word is an MLP row in 86-98% of positions. In Qwen the PCA-16 profile carries as much. OPEN: the remainder.
+- H302 The attribute handles of e473 are item-specific (the vocabulary has no shared gender word). → e477 → KILLED for gender. Four native words from the other kinship words, in the other languages, flip only gender in 98% of items (own words 92%; at sixteen words 98% against 73% with leakage); one MLP row sits in 91% of items' own gender supports at block 4; rotated words fitted to the same shared direction give 7% at four words (81% at sixteen).
+- H303 The generation handle is shared to the same degree. → e477 → NARROWED. 48% at four words against the own words' 75%; 69% at sixteen (own 70%). Generation is carried by more, and more word-specific, words.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
