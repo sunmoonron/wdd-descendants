@@ -541,6 +541,13 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H322 The rest is cross-alignment, rows resembling what other rows wrote (the accent of e443). → e493 → SUPPORTED: non-writers sit 1.3-1.9 above the rotated level in the middle blocks, are the whole factor at step 1000 beyond block 1 (writers 1.0-1.3), hardly grow at the middle, and lead in Pythia's late blocks (2.5-2.9), where the huge directions live.
 - H323 A learned SAE feature is one native row. → e494 → KILLED: sixteen native words leave half of a feature unexplained (rotated 0.72). NARROWED: its top word is an MLP row for 93% of features, from every block; 23% of the most used rows are features at cosine above 0.5 (rotated 0%).
 
+## The SAE bridge across depth and in activation; the accent's clock (session 60)
+
+- H324 The provenance layer under SAEs depends on depth. → e495 → KILLED: at five depths of GPT-2 the numbers are the same (unexplained by 16 native words 0.47-0.49 against rotated 0.71-0.73; top word an MLP row 0.76-0.93; used rows that are features 0.19-0.23), and the top row comes from any block (the block just before the SAE holds 0.12-0.30).
+- H325 Frequent features are the single-row ones. → e495 → SUPPORTED: Spearman of frequency with the single-word unexplained fraction -0.25 to -0.38 at every depth.
+- H326 A feature fires when its top row fires. → e496 → NARROWED: AUC 0.62 for the top row's write size (random row 0.51), 0.70 for the eight-word ledger; a quarter of features follow their top row above 0.8, a third the ledger. The composition predicts better than any one row.
+- H327 The accent and the words form together. → e492, e493 on Pythia steps 256-3000 → KILLED: the non-writers' part forms between steps 256 and 512 and then plateaus (block 12: 1.15, 1.72, 1.47, 1.36, 1.34); the writers' part is below the rotated level at step 256 (0.82-0.90), crosses 1 near step 1000 and grows to the end (block 12: 0.82 to 1.58).
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

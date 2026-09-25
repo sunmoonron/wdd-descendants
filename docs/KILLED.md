@@ -433,3 +433,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 59 kills (the factor decomposed, the SAE bridge)
 - "The provenance factor is a property of the dictionary's alignment as a whole": at early and middle depth it is the position's largest writes standing out; the collective alignment is a floor of 1.3-1.9 that is already there at step 1000 (e493).
 - "A learned feature is one native row": sixteen rows leave half of it unexplained; a quarter of the most used rows are features, the rest are what features are built from (e494).
+
+## Session 60 kills (the SAE bridge, the accent's clock)
+- "The provenance layer under SAEs changes with depth": the same numbers at five depths of GPT-2 (e495).
+- "A feature is its top row's activity": AUC 0.62 for the row, 0.70 for the eight-word composition; a Spearman over all positions is uninformative for a feature that is zero at 98% of them (e496).
+- "The accent and the words form together": the accent by step 512, the words from about step 1000 (e492, e493).

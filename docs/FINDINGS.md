@@ -2231,3 +2231,56 @@ SESSION 59 (a relayed conversation with a chat model about the repository; it re
 - Reading of session 59.
   - The provenance factor, the one number area 20 added for how far the model's atoms belong to its states, is write sparsity on top of an accent. The writers' part is the vocabulary forming (the largest writes standing out above the Gumbel level, from step 4000 on); the non-writers' part is there from step 1000, hardly grows at the middle depth, and is what e443 called the per-block accent. This turns "why does training make the rows a coordinate system" into "why does training make the largest writes prominent", which e25 and e436 already track as write sparsity.
   - A learned feature vocabulary sits on top of the native one: every feature has an identifiable top writer, most features need many rows, and a quarter of the most used rows are features outright. The provenance layer under an SAE is therefore a many-to-many map, not a relabelling.
+
+SESSION 60 (the follow-ups of NEXT B18 and B20: the SAE bridge across depth and in activation, and the provenance factor on Pythia's dense early checkpoints; e495-e496 and e492/e493 at steps 256, 512, 2000, 3000; 2026-09-25 21:25-21:30 box time).
+
+- e495 THE PROVENANCE LAYER UNDER SAEs, ACROSS DEPTH (GPT-2 small, Bloom's residual SAEs at the inputs of blocks 3, 5, 7, 9 and 11, 24576 features each; each decoder row described by OMP over the native dictionary up to the block and over its rotation, TransformerLens coordinates; feature frequencies on 8 x 256 states; the reverse for the 4096 most used native MLP rows).
+
+  | SAE at the input of block | Unexplained by 1 / 4 / 16 native words (rotated) | Top word an MLP row; share of those in the block just before | Frequency against single-word unexplained (Spearman); top word a token embedding, frequent / rare features | Used rows that are features (cos above 0.5) |
+  | --- | --- | --- | --- | --- |
+  | 3 | 0.90 / 0.74 / 0.49 (0.98 / 0.92 / 0.73) | 0.76; 0.30 | -0.34; 0.00 / 0.04 | 0.19 |
+  | 5 | 0.89 / 0.72 / 0.48 (0.98 / 0.91 / 0.72) | 0.91; 0.12 | -0.38; 0.00 / 0.01 | 0.20 |
+  | 7 | 0.88 / 0.71 / 0.48 (0.98 / 0.91 / 0.72) | 0.93; 0.19 | -0.32; 0.00 / 0.01 | 0.23 |
+  | 9 | 0.87 / 0.71 / 0.48 (0.98 / 0.91 / 0.71) | 0.91; 0.19 | -0.28; 0.02 / 0.03 | 0.23 |
+  | 11 | 0.87 / 0.71 / 0.47 (0.98 / 0.91 / 0.71) | 0.81; 0.21 | -0.25; 0.12 / 0.18 | 0.23 |
+
+  - The bridge is the same at every depth: sixteen native words leave 0.47-0.49 of a feature unexplained where sixteen rotated words leave 0.71-0.73, the top word is an MLP row for 0.76-0.93 of features, and that row comes from any block up to the SAE's (the block just before holds 0.12-0.30 of them). Features are compositions of rows written throughout the network, not the last block's writes re-labelled.
+  - Frequent features are the single-row ones: the more often a feature fires, the less of it one native word leaves unexplained (Spearman -0.25 to -0.38). Token-embedding top words appear only in the last block's rare features (0.18).
+  - A fifth to a quarter of the most used rows are features at every depth (0.19-0.23; rotated rows 0.00).
+  - Pre-registered: top word an MLP row for over 0.8, held at four depths (0.76 at the first); the block just before under 0.4, confirmed; frequent features more single-row, confirmed.
+
+- e492 AND e493 ON PYTHIA'S DENSE EARLY CHECKPOINTS (steps 256, 512, 2000, 3000, added to 1000, 4000, 16000, 64000 and the end; the factor as the ratio of mean competitor maxima, and its split into writers and non-writers).
+
+  | Step | Writers' part, blocks 1 / 6 / 12 / 18 / 22 | Non-writers' part | Maximum attained by a writer |
+  | --- | --- | --- | --- |
+  | 256 | 1.55 / 0.85 / 0.82 / 0.88 / 0.90 | 1.02 / 1.09 / 1.15 / 1.49 / 1.70 | 0.96 / 0.09 / 0.04 / 0.04 / 0.02 |
+  | 512 | 1.49 / 0.95 / 0.97 / 1.06 / 1.09 | 1.16 / 1.48 / 1.72 / 1.69 / 1.91 | 0.87 / 0.05 / 0.02 / 0.03 / 0.03 |
+  | 1000 | 1.45 / 1.06 / 0.99 / 1.19 / 1.29 | 1.31 / 1.65 / 1.47 / 1.56 / 1.68 | 0.76 / 0.02 / 0.02 / 0.09 / 0.10 |
+  | 2000 | 1.72 / 1.20 / 1.02 / 1.20 / 1.30 | 1.44 / 1.42 / 1.36 / 1.44 / 1.61 | 0.80 / 0.24 / 0.09 / 0.20 / 0.16 |
+  | 3000 | 1.79 / 1.28 / 1.08 / 1.26 / 1.31 | 1.44 / 1.38 / 1.34 / 1.44 / 1.56 | 0.82 / 0.36 / 0.16 / 0.27 / 0.24 |
+  | 4000 | 1.84 / 1.33 / 1.12 / 1.34 / 1.38 | 1.42 / 1.36 / 1.33 / 1.43 / 1.57 | 0.87 / 0.43 / 0.23 / 0.35 / 0.31 |
+  | 16000 | 2.17 / 1.54 / 1.37 / 1.68 / 1.55 | 1.63 / 1.30 / 1.34 / 1.48 / 1.63 | 0.88 / 0.74 / 0.50 / 0.65 / 0.49 |
+  | end | 2.61 / 1.79 / 1.58 / 2.33 / 2.58 | 1.81 / 1.33 / 1.37 / 2.51 / 2.86 | 0.87 / 0.86 / 0.73 / 0.48 / 0.23 |
+
+  - Two processes with different clocks. The non-writers' part, rows collectively aligned with the states' directions, appears between steps 256 and 512 (block 12: 1.15 to 1.72) and then stays at 1.3-1.7 through the middle of training: this is the accent, and it is formed by step 512. The writers' part, the largest actual writes standing out, is below the rotated level at step 256 beyond block 1 (0.82-0.90: the writes are dense and small), crosses 1 around step 1000, and grows steadily to the end (block 12: 0.82, 0.97, 0.99, 1.02, 1.08, 1.12, 1.37, 1.58); the maximum becomes a writer at the middle at 4% of positions at step 256 and 73% at the end.
+  - At block 1 the writer is the token embedding from the start (0.96 of positions at step 256, with the top MLP write never the maximum), so block 1's factor is the embedding standing out.
+  - This dates the vocabulary's two components more finely than e443 could: the accent by step 512, before the induction transition; the words from about step 1000, with the transition, growing through 16000 and beyond.
+
+- e496 DOES A FEATURE FIRE WHEN ITS WRITER FIRES? (GPT-2 small, the SAE at the input of block 7; the 1197 features live on at least 1% of 2040 typical positions, each described by 8 native words; the MLP activations of blocks 0-6 at every position, a row's write size being its activation times its row norm. v2 uses the statistic a sparse feature needs: the AUC of a score for the positions where the feature fires against the rest, chance 0.5; v1's Spearman over all positions is dominated by the zeros.)
+
+  | Score for the positions where the feature fires | Median AUC | Share of features above 0.8 |
+  | --- | --- | --- |
+  | write size of the feature's top native MLP row | 0.62 | 0.24 |
+  | write size of a random MLP row of the same block | 0.51 | - |
+  | ledger prediction from the top 1 word (coefficient times write size) | 0.56 | 0.24 |
+  | ledger prediction from the top 4 words | 0.66 | 0.35 |
+  | ledger prediction from the top 8 words | 0.70 | 0.38 |
+
+  - Partly, and better through the composition than through any one row. The top row's activity separates the positions where the feature fires from the rest at AUC 0.62 (a random row 0.51); a quarter of features follow their top row at above 0.8. Summing the eight words' coefficients times their rows' write sizes, with no fitting, raises the median to 0.70 and the share above 0.8 to 0.38.
+  - MLP rows are 0.58 of the eight words; the rest are token embeddings and head bases, whose "activity" the ledger cannot include, which bounds the prediction.
+  - The Spearman over all positions is +0.01 for every score because the features are zero at 98% of positions; v1 reported that and nothing else.
+  - Pre-registered (for the Spearman form): all three refuted; in the AUC form the composition beats the top row by 0.08 and a quarter of features follow their top row strongly.
+
+- Reading of session 60.
+  - The SAE bridge is a fixed property of the pair (GPT-2, its SAEs): at every depth a feature is a composition of the model's own rows, written throughout the network, sparser in them than in any same-Gram dictionary and never a single row for most features; the frequent features are the nearest to single rows. In activation the composition predicts a feature's firing partly (AUC 0.70 from eight words), strongly for a third of features.
+  - The vocabulary's two components have different clocks: the accent, rows collectively aligned with the states, forms by step 512; the words, the largest writes standing out, begin near step 1000 and grow to the end. That is the finer version of e443's step 4000-16000 window, and it puts the accent before the induction transition (e365, e373) and the words with it.
