@@ -1695,3 +1695,52 @@ SESSION 52 (an eighth relayed review, framing WDD against systems theory, predic
   - What it omits is the same kind of information it keeps, spread over many dimensions (e467).
   - In causal-abstraction terms, the model's own words are good interchange coordinates: across blocks a handful carries a noun as a portable variable, far better than rotated words or the task's principal directions of the same size (e469).
   - This is the first test in which native words beat a task-fitted dense subspace at equal dimension. The caveat is that they need several blocks to do it.
+
+SESSION 53 (a ninth relayed review, follow-ups to e469 on where and how native words carry a variable; e470, 1 script, 2 runs, about 5 minutes of GPU time, 2026-09-25 01:54-01:59 box time).
+
+- Weighing the review.
+  - Folded into e470:
+    - the "handoff point";
+    - the "causal handle lifetime";
+    - "local against global PCA";
+    - "the same word at different layers" and "causal conservation", reformulated. Native words are block-specific rows, so there is no same word at another layer, but the carrier words chosen at each block can be compared across blocks.
+  - Skipped:
+    - "word algebra" (it needs a two-attribute task; additivity of descendants is e256, e285b and e271);
+    - "typed handles" and transfer into incongruent contexts (the translation readout only names the noun, so a relational readout is needed; left for a later session).
+- e470 WHERE AND HOW NATIVE WORDS CARRY A VARIABLE UNDER INTERCHANGE (e469's pairs, up to 150; the idempotent interchange at the last noun token; interchange accuracy).
+
+  | Qwen-0.5B (L = 12) | block 0 | 2 | 4 | 6 | 8 | 10 | 12 |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | single block: whole state | 0.64 | 0.95 | 0.99 | 1.00 | 1.00 | 1.00 | 0.99 |
+  | single block: native 4 | 0.01 | 0.01 | 0.35 | 0.02 | 0.01 | 0.01 | 0.00 |
+  | single block: local PCA 4 | 0.19 | 0.29 | 0.53 | 0.56 | 0.51 | 0.53 | 0.47 |
+  | blocks [b, L]: native 1 / native 4 | 0.67 / 0.96 | 0.65 / 0.97 | 0.23 / 0.94 | 0.02 / 0.54 | 0.01 / 0.15 | 0.00 / 0.03 | 0.00 / 0.00 |
+  | blocks [0, b]: native 4 | - | 0.07 | 0.85 | 0.94 | 0.94 | 0.95 | 0.96 |
+
+  | SmolLM2 (L = 15) | block 0 | 2 | 4 | 6 | 8 | 10 | 12 | 14 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | single block: whole state | 0.12 | 0.25 | 0.65 | 0.75 | 0.77 | 0.77 | 0.78 | 0.78 |
+  | single block: native 4 | 0.00 | 0.00 | 0.02 | 0.05 | 0.10 | 0.02 | 0.01 | 0.03 |
+  | blocks [b, L]: native 4 | 0.42 | 0.47 | 0.49 | 0.46 | 0.44 | 0.35 | 0.17 | 0.06 |
+  | blocks [0, b]: native 4 | - | 0.00 | 0.04 | 0.10 | 0.31 | 0.39 | 0.42 | 0.42 |
+
+  - The handoff. Patching the whole state at the last noun token works at a single block from early on: Qwen from block 2 (0.95-1.00), SmolLM2 from blocks 4-6 (0.65-0.78). Native words at a single block almost never do (at most 0.35).
+  - The window. Native words act as handles in a band of blocks where the noun is being written: in Qwen blocks 0-6 (native 4 over [0, 4] already 0.85, over [0, 6] 0.94), in SmolLM2 blocks about 6-12. Starting after the band fails: Qwen from block 8 gives 0.15, although whole-state patching there still works (1.00). A few native words can redirect the noun while it is being written, but not once it is built.
+  - The carrier words are partly persistent and partly re-encoded.
+    - The top 4 at a block share 0.41 (Qwen) and 0.47 (SmolLM2) with the previous block's.
+    - 0.53 and 0.32 of them were written by the last two blocks, and 0.27 and 0.49 by blocks at least 4 below.
+    - The noun token's own embedding is never among them.
+  - Local against global PCA, all blocks.
+    - k = 1 / 4 / 16: native 0.67 / 0.96 / 0.97, local 0.07 / 0.60 / 0.89, global 0.06 / 0.51 / 0.95 in Qwen; native 0.22 / 0.42 / 0.65, local 0.04 / 0.19 / 0.38, global 0.12 / 0.27 / 0.50 in SmolLM2.
+    - One basis shared across blocks is as good as, or better than, per-block bases at 16 dimensions, so the variable's difference direction is largely shared across depth.
+    - Native words lead at small k in both models; in SmolLM2 the order native > global > local holds at every k.
+  - Pre-registered: all five refuted.
+    - Whole-state patching is not effective at every block (the earliest blocks fail).
+    - Native words do not work at block 0.
+    - Later starts are not strictly monotone (SmolLM2 peaks at b0 = 4).
+    - Local PCA is not above global.
+    - Consecutive-block overlap is below 0.5.
+- Reading.
+  - Native words are causal handles in a specific sense: across the band of blocks in which a variable is written, a few of them redirect it.
+  - Before the band there is little to redirect. After it the variable is held in a form that only the whole state moves.
+  - The carriers turn over as the variable is re-written by later blocks.

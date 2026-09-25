@@ -483,6 +483,12 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H285 A native description keeps what later tokens read from a position better than generic codes. → e468 → MIXED. It does in Qwen (0.28 of the mean-state damage against 0.54-0.66); in GPT-2 it ties the principal components (0.10 against 0.09). Later tokens depend little on one middle-depth state in any case.
 - H286 Native words are interchange coordinates for a high-level variable. → e469 → SUPPORTED across blocks. One to four native words per block carry the translated noun (Qwen 0.67-0.96, SmolLM2 0.22-0.42) far better than rotated words (0.00-0.36) or the task's principal directions (0.04-0.66) at equal k. NARROWED at a single block, where the principal directions win. REVISES H264's explanation.
 
+## Where native words carry a variable (session 53)
+
+- H287 Native words are causal handles only during the band of blocks in which a variable is written. → e470 → SUPPORTED. In Qwen, native 4 over blocks 0-4 switches 85% of answers, from block 8 onwards only 15%. SmolLM2's band is about blocks 6-12. Whole-state patching works at single blocks from early on.
+- H288 The carrier words are persistent identities across blocks. → e470 → NARROWED. Consecutive-block overlap is 0.41-0.47, and a third to a half of the carriers are written by the last two blocks: partly persistent, partly re-encoded.
+- H289 Native words beat task PCA because PCA is local to a block. → e470 → NARROWED. A basis shared across blocks is as good as or better than per-block bases at 16 dimensions (Qwen 0.95 against 0.89, SmolLM2 0.50 against 0.38). Native words lead at small k in both models.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.

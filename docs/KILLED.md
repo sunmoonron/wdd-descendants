@@ -395,3 +395,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "A few extra directions make a native description dynamically sufficient": 64 extra remainder directions still leave 7-11% of the loss unrecovered (e466).
 - "What a description leaves out is a different kind of information": token identity, neighbouring tokens and position are in both halves (e467).
 - "e451's single-depth weakness is because the concept has moved elsewhere by the middle layer" (session 46's explanation): whole-state patching at that position and layer switches 78-99% of answers; one word is outvoted by the other directions carrying the noun there (e469).
+
+## Session 53 kills (where native words carry a variable)
+- "A native word is a causal handle at any block where the variable is present": only across the band of blocks where it is written; from Qwen's block 8 onwards four native words switch 15%, while the whole state switches 100% (e470).
+- "The carrier words are the same identities throughout": consecutive-block overlap is 0.41-0.47 (e470).
