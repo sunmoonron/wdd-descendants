@@ -438,3 +438,6 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The provenance layer under SAEs changes with depth": the same numbers at five depths of GPT-2 (e495).
 - "A feature is its top row's activity": AUC 0.62 for the row, 0.70 for the eight-word composition; a Spearman over all positions is uninformative for a feature that is zero at 98% of them (e496).
 - "The accent and the words form together": the accent by step 512, the words from about step 1000 (e492, e493).
+
+## Session 61 kills (the bridge's control)
+- "An SAE feature is a sparse composition of native writes": it needs as many native words as a whole state, half unexplained by sixteen; the rotated dictionary's numbers on features are the native dictionary's numbers on random directions (e497).

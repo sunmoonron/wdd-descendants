@@ -2284,3 +2284,21 @@ SESSION 60 (the follow-ups of NEXT B18 and B20: the SAE bridge across depth and 
 - Reading of session 60.
   - The SAE bridge is a fixed property of the pair (GPT-2, its SAEs): at every depth a feature is a composition of the model's own rows, written throughout the network, sparser in them than in any same-Gram dictionary and never a single row for most features; the frequent features are the nearest to single rows. In activation the composition predicts a feature's firing partly (AUC 0.70 from eight words), strongly for a third of features.
   - The vocabulary's two components have different clocks: the accent, rows collectively aligned with the states, forms by step 512; the words, the largest writes standing out, begin near step 1000 and grow to the end. That is the finer version of e443's step 4000-16000 window, and it puts the accent before the induction transition (e365, e373) and the words with it.
+
+SESSION 61 (a control the SAE bridge lacked, prompted by a relayed conversation's reading of e494-e496 as "features are sparse compositions of native writes"; e497, 2026-09-25 21:39 box time).
+
+- e497 ARE SAE FEATURES SPECIAL TO THE NATIVE DICTIONARY, OR IS ANY DIRECTION? (GPT-2 small, the SAEs at the inputs of blocks 7 and 3; the native dictionary up to the block and its rotation, TransformerLens coordinates; targets: the decoder rows, 4096 random unit directions, 4096 directions drawn from the states' covariance, 4096 centred typical states, and the decoder rows rotated by a random orthogonal matrix; the unexplained fraction at k = 1, 4, 16 and the share of top words that are MLP rows.)
+
+  | Target (block 7 input; block 3 input) | Unexplained by 1 / 4 / 16 native words | Same, rotated dictionary | Top native word an MLP row |
+  | --- | --- | --- | --- |
+  | SAE features | 0.88 / 0.71 / 0.48; 0.90 / 0.74 / 0.49 | 0.98 / 0.91 / 0.72 | 0.93; 0.76 |
+  | the states themselves | 0.88 / 0.70 / 0.47; 0.78 / 0.52 / 0.30 | 0.98 / 0.91 / 0.72 | 0.85; 0.88 |
+  | covariance-matched random directions | 0.92 / 0.83 / 0.63; 0.83 / 0.72 / 0.54 | 0.98 / 0.91 / 0.72 | 0.62; 0.73 |
+  | random directions | 0.98 / 0.91 / 0.72; 0.98 / 0.92 / 0.73 | 0.98 / 0.91 / 0.72 | 0.54; 0.40 |
+  | features rotated | 0.98 / 0.91 / 0.72; 0.98 / 0.92 / 0.73 | 0.98 / 0.91 / 0.72 | 0.54; 0.40 |
+
+  - The rotated dictionary's numbers on features are the generic floor: they equal the native dictionary's numbers on random directions exactly. Against that floor a feature is far sparser (0.48 against 0.72 at sixteen words at block 7), sparser than a direction drawn from the states' covariance (0.63; at block 3, 0.54 against 0.49), and exactly as sparse as a whole state (0.47).
+  - So a feature is not a sparse composition of native writes: a single write would be fully explained by one word, and a feature needs as many native words as a state does. It is a state-like direction in the native subspace, aligned with the rows beyond what the states' covariance alone gives, and its top word is an MLP row at the states' rate (0.93 against 0.54 for random directions, whose top words follow the atom counts).
+  - At the input of block 3 the states are sparser than the features (0.30 against 0.49) and the covariance-matched directions are nearly as sparse as the features: early, a feature's alignment with the rows is mostly second-order.
+  - Pre-registered: features sparser than random by 0.15, confirmed; features within 0.05 of covariance-matched directions, refuted at block 7 (0.15 apart); states sparser than features, confirmed (equal at block 7, sparser at block 3); features' top word an MLP row far more often than random directions', confirmed.
+- Reading. The bridge of sessions 59-60 stands, reworded: a learned feature has the provenance profile of a state, not of a write. What it is made of is the same many-row mixture a state is made of, and the frequent features (e495) and the rows that are features (e494) are the exceptions that come close to single writes.

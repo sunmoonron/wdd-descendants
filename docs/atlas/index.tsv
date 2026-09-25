@@ -458,3 +458,4 @@ e493	20_classical_calibration	S59	established (5 models, 9 checkpoints)	scripts/
 e494	20_classical_calibration	S59	supported (many-to-many bridge)	scripts/e494_sae_provenance.py	results/e494_*.json	Which weight rows write a learned SAE feature (GPT-2, block 7 input)?
 e495	20_classical_calibration	S60	established (5 depths)	scripts/e495_sae_depth.py	results/e495_*.json	Is the provenance layer under SAEs the same at every depth, and are frequent features single rows?
 e496	20_classical_calibration	S60	narrowed (composition beats any row)	scripts/e496_feature_from_ledger.py	results/e496_*.json	Does a feature fire when its writer fires?
+e497	20_classical_calibration	S61	narrowed (the bridge reworded)	scripts/e497_feature_specificity.py	results/e497_*.json	Are SAE features special to the native dictionary, or is any direction?

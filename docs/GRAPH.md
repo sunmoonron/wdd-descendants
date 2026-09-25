@@ -548,6 +548,10 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H326 A feature fires when its top row fires. → e496 → NARROWED: AUC 0.62 for the top row's write size (random row 0.51), 0.70 for the eight-word ledger; a quarter of features follow their top row above 0.8, a third the ledger. The composition predicts better than any one row.
 - H327 The accent and the words form together. → e492, e493 on Pythia steps 256-3000 → KILLED: the non-writers' part forms between steps 256 and 512 and then plateaus (block 12: 1.15, 1.72, 1.47, 1.36, 1.34); the writers' part is below the rotated level at step 256 (0.82-0.90), crosses 1 near step 1000 and grows to the end (block 12: 0.82 to 1.58).
 
+## The bridge's missing control (session 61)
+
+- H328 SAE features are sparse compositions of native writes. → e497 → NARROWED. A feature needs as many native words as a whole state (0.48 unexplained at sixteen; states 0.47); it is far sparser than a random direction (0.72, which is also the rotated dictionary's floor on anything) and sparser than a covariance-matched direction (0.63 at block 7; 0.54 against 0.49 at block 3); its top word is an MLP row at the states' rate (0.93; random directions 0.54). Features are state-like directions in the native subspace, not write-like ones.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
