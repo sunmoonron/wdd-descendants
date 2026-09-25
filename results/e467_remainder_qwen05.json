@@ -1,0 +1,62 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "k": 16,
+ "probes": {
+  "native_desc": {
+   "current": 0.8945385813713074,
+   "previous": 0.4557438790798187,
+   "next": 0.3333333432674408,
+   "position_r2": 0.6346288919448853,
+   "energy_share": 0.4261515736579895
+  },
+  "native_rem": {
+   "current": 0.81732577085495,
+   "previous": 0.5009416341781616,
+   "next": 0.30492424964904785,
+   "position_r2": 0.770447850227356,
+   "energy_share": 0.5738409161567688
+  },
+  "rotated_desc": {
+   "current": 0.7156308889389038,
+   "previous": 0.3653483986854553,
+   "next": 0.280303031206131,
+   "position_r2": 0.6267907619476318,
+   "energy_share": 0.28064173460006714
+  },
+  "rotated_rem": {
+   "current": 0.8286252021789551,
+   "previous": 0.46704331040382385,
+   "next": 0.31060606241226196,
+   "position_r2": 0.8014644384384155,
+   "energy_share": 0.7193517088890076
+  },
+  "pca_desc": {
+   "current": 0.44256120920181274,
+   "previous": 0.2711864411830902,
+   "next": 0.25757575035095215,
+   "position_r2": 0.5433536767959595,
+   "energy_share": 0.33697575330734253
+  },
+  "pca_rem": {
+   "current": 0.8323916792869568,
+   "previous": 0.48775893449783325,
+   "next": 0.23674243688583374,
+   "position_r2": -0.10515499114990234,
+   "energy_share": 0.6630242466926575
+  },
+  "whole": {
+   "current": 0.8531073331832886,
+   "previous": 0.534839928150177,
+   "next": 0.3219697177410126,
+   "position_r2": 0.8673380017280579,
+   "energy_share": 1.0
+  }
+ },
+ "checks": {
+  "remainder_carries_current_more": false,
+  "desc_carries_next_as_well": true
+ },
+ "_exp": "e467_remainder_qwen05",
+ "_time": "2026-09-25 01:37:10"
+}

@@ -467,7 +467,7 @@ What stays unique after the mapping:
 - Concept words are causal handles, not correlated provenance.
   - Swapped at every block up to the middle at the noun, one MLP write row redirects 67-94% of a model's translations of the noun to the swapped-in noun, English copies included. In the Qwen models it moves 39-78% of category answers to the target's category. An equal-size random direction moves 0-3% of translations.
   - Corrected in session 47 (e458): those swaps accumulated across blocks to 6-8 times the target word's natural size. Near natural size (0.7 times) a concept word moves 35-58% of translations; the contrast with random stands.
-  - At a single depth the effects are specific (3-13 times the controls) but change answers only in SmolLM2, because the concept is re-written or read before the middle layer.
+  - At a single depth the effects are specific (3-13 times the controls) but change answers only in SmolLM2, because one word is outvoted by the other directions that carry the noun at the same position (corrected in session 52: whole-state patching there at one layer switches 78-99%).
   - Removing the word alone rarely breaks the Qwen models: it is the handle, not the only carrier.
 - The function does not determine the vocabulary.
   - A middle MLP block retrained from scratch to reproduce its own input-output map keeps the model's loss within 0.02 nats, with different rows (median best |cos| 0.26-0.28 with the originals; two seeds 0.22-0.25 with each other).
@@ -516,6 +516,18 @@ What stays unique after the mapping:
 - A seventh relayed review asked whether WDD can judge its own reliability. Most of its proposals repeat phase 1's certificates (e180, e195, e200), the prominence law, aliasing, the rotated-dictionary control (e388, e395) or e388's splice.
 - The new test: after a state is replaced by its 16-word native description, the network does not regrow what the description left out. The divergence from the natural run stays at 0.67-0.69 of the growing state four blocks later, while a random error of the same size is damped to 0.49 and costs almost no loss.
 - What the description omits is functional content that later blocks cannot re-derive from the words.
+
+## Session 52: native words as interchange coordinates, and a large Kalman gap (e466-e469)
+
+- An eighth relayed review framed WDD in systems-theory and causal-abstraction terms.
+- Interchange interventions (e469) give the strongest positive result for native words since the concept words. Setting a few native words of the base state to the source's values at the last noun token, at every block up to the middle, carries the noun across contexts:
+  - one word per block switches 67% of Qwen's answers, and four switch 96%;
+  - against 0-36% for rotated words and 8-66% for the task's own principal directions of the difference;
+  - SmolLM2 shows the same order at lower levels.
+  At a single block the principal directions win. Patching the whole state at that one position and block switches 78-99%, which corrects session 46's explanation of weak single-depth effects: the noun had not left the position.
+- The Kalman gap is large (e466). Sixty-four extra directions of what a 16-word description omits still leave 7-11% of the loss unrecovered.
+- What it omits is the same kind of information it keeps (e467): token identity, the neighbouring tokens and position sit in both halves.
+- Later tokens depend very little on one position's middle-depth state (e468).
 
 ## What the whole program established (ten rounds, e01 to e247)
 

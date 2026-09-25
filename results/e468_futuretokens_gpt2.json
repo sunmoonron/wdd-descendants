@@ -1,0 +1,39 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "k": 16,
+ "n": 96,
+ "horizon": 8,
+ "kl": {
+  "native": {
+   "own": 0.4357326239114627,
+   "future": 0.015221920961190941,
+   "own_rel_mean": 0.12228518603372576,
+   "future_rel_mean": 0.1009552086484005
+  },
+  "rotated": {
+   "own": 1.4815750165532033,
+   "future": 0.07323484322245122,
+   "own_rel_mean": 0.41579323323502626,
+   "future_rel_mean": 0.48570997686201434
+  },
+  "pca": {
+   "own": 1.8212665317890544,
+   "future": 0.013143564879480133,
+   "own_rel_mean": 0.5111251819007169,
+   "future_rel_mean": 0.08717108295166777
+  },
+  "mean": {
+   "own": 3.5632494666303196,
+   "future": 0.15077895598437863,
+   "own_rel_mean": 1.0,
+   "future_rel_mean": 1.0
+  }
+ },
+ "checks": {
+  "native_least_future_damage": false,
+  "future_smaller_share_than_own": true
+ },
+ "_exp": "e468_futuretokens_gpt2",
+ "_time": "2026-09-25 01:36:26"
+}

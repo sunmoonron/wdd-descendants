@@ -1,0 +1,39 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "k": 16,
+ "n": 96,
+ "horizon": 8,
+ "kl": {
+  "native": {
+   "own": 0.32088684703436837,
+   "future": 0.006393767948490374,
+   "own_rel_mean": 0.07974346202402442,
+   "future_rel_mean": 0.2772690341408746
+  },
+  "rotated": {
+   "own": 1.347527932957746,
+   "future": 0.012494745815123073,
+   "own_rel_mean": 0.3348736277016025,
+   "future_rel_mean": 0.5418410758577634
+  },
+  "pca": {
+   "own": 1.4611154397328694,
+   "future": 0.015170298055636522,
+   "own_rel_mean": 0.36310121358316255,
+   "future_rel_mean": 0.6578677742767722
+  },
+  "mean": {
+   "own": 4.023989414175351,
+   "future": 0.023059798106563296,
+   "own_rel_mean": 1.0,
+   "future_rel_mean": 1.0
+  }
+ },
+ "checks": {
+  "native_least_future_damage": true,
+  "future_smaller_share_than_own": false
+ },
+ "_exp": "e468_futuretokens_qwen05",
+ "_time": "2026-09-25 01:37:20"
+}

@@ -435,7 +435,7 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
   - Swapped at every block up to the middle, one MLP row redirects 67-94% of translations (random 0-3%) and 39-78% of category answers in the Qwen models.
   - REVISES H257: native words carry meaning causally.
   - NARROWED by e458 (session 47). e455's swaps were 6-8 times the natural size. Near natural size (0.7 times) one word moves 35-58% of translations, still far above random.
-- H264 One depth suffices to intervene on a concept. → e451, e454 against e455 → KILLED. The concept is re-written or read before the middle layer. This is e208's re-writing, now for a semantic direction.
+- H264 One depth suffices to intervene on a concept. → e451, e454 against e455 → KILLED. The concept is re-written or read before the middle layer. This is e208's re-writing, now for a semantic direction. CORRECTED by e469: the explanation is not propagation. Whole-state patching at the last noun token at that one layer switches 78-99%; a single word is outvoted by the other directions carrying the noun there.
 - H265 The concept word is the noun's only carrier. → e455 → KILLED in the Qwen models, where removal at every depth leaves accuracy at 0.88-0.90. SURVIVES in SmolLM2, where accuracy falls to 0.13.
 - H266 A block's function determines its vocabulary. → e452 → KILLED. Re-implementations match the function within 0.02 nats with new rows: median best |cos| 0.26-0.28 with the originals, and 0.22-0.25 between two seeds.
 - H267 Words are written by training the writers even when the function is held fixed. → e452 → SURVIVES.
@@ -475,6 +475,13 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 ## Self-consistency of native descriptions (session 51)
 
 - H282 The network regrows what a native description leaves out (descriptions are dynamically self-sufficient). → e465 → KILLED. The omission persists at a constant share of the state (0.67-0.69 at +4) and grows 1.3-2 times in size. A random error of the same size is damped (0.49) and nearly harmless (0.92-0.96 of the loss kept). The omitted part is functional content.
+
+## Systems-theory and causal-abstraction readings (session 52)
+
+- H283 A few extra directions make a native description dynamically sufficient (a small Kalman gap). → e466 → KILLED. With 64 extra remainder directions 7-11% of the loss is still missing; the omitted content is spread out.
+- H284 A description's remainder holds a different kind of information (unverbalised computation). → e467 → KILLED. Token identity, the neighbouring tokens and position are readable from both halves.
+- H285 A native description keeps what later tokens read from a position better than generic codes. → e468 → MIXED. It does in Qwen (0.28 of the mean-state damage against 0.54-0.66); in GPT-2 it ties the principal components (0.10 against 0.09). Later tokens depend little on one middle-depth state in any case.
+- H286 Native words are interchange coordinates for a high-level variable. → e469 → SUPPORTED across blocks. One to four native words per block carry the translated noun (Qwen 0.67-0.96, SmolLM2 0.22-0.42) far better than rotated words (0.00-0.36) or the task's principal directions (0.04-0.66) at equal k. NARROWED at a single block, where the principal directions win. REVISES H264's explanation.
 
 ## Attention, sinks, embeddings
 

@@ -1327,7 +1327,7 @@ SESSION 46 (the user asked for thirty more minutes of experiments, relaying an e
     - Swapped at every depth, it redirects 67-94% of translations to the swapped-in noun, English copies included (57-87%).
     - In the Qwen models it moves 39-78% of category answers to the target's category.
   - Removing it alone rarely breaks the Qwen models (accuracy 0.88-0.90), so other carriers exist. In SmolLM2, removal breaks most translations (0.13).
-  - The weak single-depth effects of e451 and e454 are explained by propagation: the concept is re-written or read before the middle layer. This is phase 1's finding that a direction's later presence is mostly re-writing (e208), now for a semantic direction.
+  - The weak single-depth effects of e451 and e454 are explained by propagation: the concept is re-written or read before the middle layer. This is phase 1's finding that a direction's later presence is mostly re-writing (e208), now for a semantic direction. (Corrected in session 52, e469: patching the whole state at the last noun token at that single layer switches 78-99% of answers, so the noun has not left the position; one word is outvoted by the other directions that carry it there.)
   - Pre-registered: all held, including that category answers move less than translations.
   - CORRECTION (session 47, e458). The swap added the target's full typical coefficient at every block, and what is added at a block persists into the next, so the additions accumulated.
     - At the middle block the injected component was 6.3 (Qwen-0.5B) and 8.0 (Qwen-7B) times the target word's typical coefficient, not 1.
@@ -1611,3 +1611,87 @@ SESSION 51 (a seventh relayed review, on whether WDD can judge its own reliabili
   - Word overlap is a poor trajectory measure. Even the harmless random perturbation changes about 80% of the downstream 16-word descriptions, since OMP's supports are unstable under perturbation (e189).
   - Pre-registered: native omissions healing most was refuted (random ones heal); downstream descriptions sharing most words was refuted.
 - Reading. A native description is a good static summary (e388) but not a dynamically self-sufficient state. What it leaves out persists as a structured, functional deficit that the network carries forward, where a random error of the same size would fade.
+
+SESSION 52 (an eighth relayed review, framing WDD against systems theory, predictive information and causal abstraction; e466-e469, 4 scripts, 8 runs, about 4 minutes of GPU time, 2026-09-25 01:36-01:40 box time).
+
+- Weighing the review.
+  - Run:
+    - the "Kalman gap", how many extra dimensions make a 16-word description dynamically sufficient (e466);
+    - what the description leaves out (e467);
+    - the predictive content across positions (e468);
+    - interchange interventions with native words (e469). RELATED_WORK noted interchange was untested, although e455, e458 and e460 have since done related swaps.
+  - Skipped:
+    - the observability-controllability map (effects are linear to 3-10 times natural amplitude, e345 and e271, so a write's controllability equals its ablation importance, already set against readability in e59, e59b and e428);
+    - dynamical modes (e220, e282, e285, e305, e308);
+    - the full causal-abstraction square (it would follow a signal from e469, which is now there).
+  - The review's note that GitHub shows 411 experiments was a cached copy.
+- e466 THE KALMAN GAP (16 native words plus the projection of their remainder on its top r principal directions, fitted on other sequences; against 16 rotated words plus remainder, and the top 16 + r principal components; loss recovered by splicing at the middle depth).
+
+  | Model | r = 0 / 4 / 8 / 16 / 32 / 64: native + remainder | rotated + remainder | PCA (16 + r) |
+  | --- | --- | --- | --- |
+  | GPT-2 | 0.77 / 0.81 / 0.82 / 0.84 / 0.86 / 0.89 | 0.40 / 0.50 / 0.57 / 0.67 / 0.74 / 0.81 | 0.40 / 0.46 / 0.49 / 0.54 / 0.60 / 0.70 |
+  | Qwen-0.5B | 0.82 / 0.87 / 0.87 / 0.89 / 0.91 / 0.93 | 0.52 / 0.70 / 0.73 / 0.77 / 0.83 / 0.89 | 0.47 / 0.50 / 0.53 / 0.58 / 0.67 / 0.79 |
+
+  - The gap is large and spread out. Even 64 extra directions of the remainder leave 7-11% of the loss unrecovered, and the divergence four blocks later falls only from 0.73 to 0.54-0.57 of the state.
+  - What a description omits is not concentrated in a few high-variance directions.
+  - Native plus remainder stays best at every size, but its lead over rotated words shrinks from 0.30-0.37 to 0.04-0.08.
+  - Pre-registered: 95% by r = 16 refuted (never reached); native beating PCA up to 32 held.
+- e467 WHAT DOES THE DESCRIPTION LEAVE OUT? (ridge probes, trained on 12 sequences and tested on 4, from the 16-word description, its remainder, and the whole state; accuracy among the 200 most frequent tokens, and R^2 for log position).
+
+  | Model, part (energy share) | current / previous / next token | position |
+  | --- | --- | --- |
+  | GPT-2, whole state | 0.91 / 0.69 / 0.38 | 0.93 |
+  | GPT-2, native description (0.51) | 0.89 / 0.54 / 0.35 | 0.88 |
+  | GPT-2, native remainder (0.49) | 0.83 / 0.60 / 0.37 | 0.70 |
+  | GPT-2, rotated description (0.28) | 0.77 / 0.46 / 0.30 | 0.75 |
+  | GPT-2, PCA description (0.31) | 0.40 / 0.29 / 0.27 | 0.79 |
+  | Qwen-0.5B, whole state | 0.85 / 0.53 / 0.32 | 0.87 |
+  | Qwen-0.5B, native description (0.43) | 0.89 / 0.46 / 0.33 | 0.63 |
+  | Qwen-0.5B, native remainder (0.57) | 0.82 / 0.50 / 0.30 | 0.77 |
+  | Qwen-0.5B, rotated description (0.28) | 0.72 / 0.37 / 0.28 | 0.63 |
+  | Qwen-0.5B, PCA description (0.34) | 0.44 / 0.27 / 0.26 | 0.54 |
+
+  - The split is not by kind of information. The current, previous and next token and the position are all readable from both the description and what it leaves out.
+  - In Qwen the 16-word description gives the current token better than the whole state (0.89 against 0.85).
+  - Same-size rotated and PCA descriptions carry far less token information. The PCA remainder loses position entirely, since position lives in the top components.
+  - Pre-registered: the remainder carrying the current token better was refuted; the description carrying the next token as well held in Qwen only.
+- e468 ONE POSITION REPLACED: WHAT DO LATER TOKENS LOSE? (the middle-depth state at one position replaced; KL at that position and averaged over the next 8, which read it only through attention above the splice; in brackets, relative to replacing it with the mean state).
+
+  | Model | native: own / later | rotated | PCA | mean state |
+  | --- | --- | --- | --- | --- |
+  | GPT-2 | 0.44 (0.12) / 0.015 (0.10) | 1.48 (0.42) / 0.073 (0.49) | 1.82 (0.51) / 0.013 (0.09) | 3.56 / 0.151 |
+  | Qwen-0.5B | 0.32 (0.08) / 0.006 (0.28) | 1.35 (0.33) / 0.013 (0.54) | 1.46 (0.36) / 0.015 (0.66) | 4.02 / 0.023 |
+
+  - Later tokens depend very little on one position's middle-depth state; removing it entirely costs them 0.02-0.15 nats against 3.6-4.0 at the position itself.
+  - For the position's own prediction the native description is by far the best 16-dimensional code.
+  - For what later tokens read, it is best in Qwen and ties the principal components in GPT-2. There PCA, poor for the position itself, keeps what attention reads.
+  - Pre-registered: native least damaging to later tokens held in Qwen only; later damage a smaller share than own damage held in GPT-2 only.
+- e469 INTERCHANGE INTERVENTIONS WITH NATIVE WORDS (the base prompt translates noun c, the source prompt noun c', same template and language, both answered correctly; at the last noun token a subspace of the base state is set to the source state's value, x <- x + P (x_source - x), recomputed at each intervened block so nothing accumulates; P is the whole space, the span of k native words chosen by OMP on the clean source-minus-base difference at that block, the same with rotated words, or the top k principal directions of the differences across pairs).
+
+  | Model, blocks | whole state | native k = 1 / 4 / 16 | rotated k = 1 / 4 / 16 | PCA k = 1 / 4 / 16 |
+  | --- | --- | --- | --- | --- |
+  | Qwen-0.5B, block L only | 0.99 | 0.00 / 0.00 / 0.21 | 0.00 / 0.00 / 0.01 | 0.04 / 0.39 / 0.98 |
+  | Qwen-0.5B, blocks 0..L | 1.00 | 0.67 / 0.96 / 0.98 | 0.00 / 0.36 / 0.91 | 0.08 / 0.66 / 0.92 |
+  | SmolLM2, block L only | 0.78 | 0.00 / 0.02 / 0.29 | 0.00 / 0.00 / 0.06 | 0.15 / 0.56 / 0.78 |
+  | SmolLM2, blocks 0..L | 0.79 | 0.22 / 0.42 / 0.65 | 0.01 / 0.17 / 0.28 | 0.04 / 0.19 / 0.38 |
+
+  (Interchange accuracy: the share of answers that become the source's noun. 352 pairs in Qwen, 120 in SmolLM2.)
+  - Across blocks, the noun is a portable causal variable carried by a few native words.
+    - One native word per block switches 67% of Qwen's answers, and four switch 96%.
+    - Rotated words with the same per-pair choice switch 0-36%.
+    - The task's own principal directions of the difference switch 8-66% at the same k.
+    - In SmolLM2 the order is the same (native 0.22-0.65, rotated 0.01-0.28, PCA 0.04-0.38).
+  - At a single block the task-fitted principal directions win (0.98 and 0.78 at k = 16, against 0.21-0.29 for native words). The native words need several blocks.
+  - Patching the whole state at the last noun token at one block switches 78-99% of answers, so the noun has not left that position by the middle depth.
+  - This corrects session 46's explanation of e451's weak single-depth effects. They are not because the concept is read or re-written elsewhere; one word is outvoted by the other directions that carry the noun at the same position.
+  - Pre-registered:
+    - the whole state at all blocks switching at least 90% held in Qwen (1.00), not in SmolLM2 (0.79);
+    - native k = 16 reaching half of full held;
+    - native beating rotated held;
+    - single-block full interchange switching under 30% was refuted (0.78-0.99).
+- Reading.
+  - Two of the review's systems-theory questions return nulls, and one a strong positive.
+  - A native description is not made dynamically sufficient by a few extra directions (e466).
+  - What it omits is the same kind of information it keeps, spread over many dimensions (e467).
+  - In causal-abstraction terms, the model's own words are good interchange coordinates: across blocks a handful carries a noun as a portable variable, far better than rotated words or the task's principal directions of the same size (e469).
+  - This is the first test in which native words beat a task-fitted dense subspace at equal dimension. The caveat is that they need several blocks to do it.

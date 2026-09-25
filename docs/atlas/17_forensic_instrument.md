@@ -1,4 +1,4 @@
-# 17. WDD beyond description: forensics, steering, learning, grammar, self-consistency (S47-S51)
+# 17. WDD beyond description: forensics, steering, learning, grammar, self-consistency, interchange (S47-S52)
 
 **Question.** Beyond describing states, can WDD's provenance-labelled words serve as a forensic tool? The candidate uses are: telling what compression damaged, what a fine-tune changed, whether an intervention hit its target, and how content persists across generated tokens.
 
@@ -13,8 +13,10 @@
 - WDD is a forward coordinate, not a learning one. One batch's gradient on a word is unrelated to the word and does not predict its change between checkpoints; words form by rotation until about step 16000, then shrink in place; the most used words get no more gradient than others (e462).
 - The native words have no grammar. A word's noun or verb role is carried by which words describe it, not by inflecting shared words (e463). A word written where it never fires is damped exactly as where it fires (e464).
 - A description is not a self-sufficient state. After a 16-word splice the network does not regrow what the words left out, although it damps a random error of the same size (e465).
+- The Kalman gap is large: 64 extra remainder directions still miss 7-11% of the loss (e466). The remainder holds the same kinds of information as the description (e467).
+- Native words are good interchange coordinates. Across blocks, one to four native words carry a translated noun between contexts (Qwen 67-96% of answers switched), far better than rotated words or the task's principal directions at equal size. At a single block the principal directions win (e469).
 
-**Start here:** e458, e457, e460, e462, e463 · **Sessions:** S47-S51 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`, `e463_native_accents.py`, `e464_illegal_words.py`, `e465_description_healing.py`
+**Start here:** e469, e458, e457, e460, e462 · **Sessions:** S47-S52 · **Scripts:** `scripts/e456_compression_autopsy.py`, `e457_model_diff.py`, `e458_steering_checksum.py`, `e459_generation_lineage.py`, `e460_markov_pairs.py`, `e461_forgery_forensics.py`, `e462_gradient_writers.py`, `e463_native_accents.py`, `e464_illegal_words.py`, `e465_description_healing.py`, `e466_kalman_gap.py` to `e469_interchange.py`
 
 ## Experiments
 
@@ -30,6 +32,10 @@
 | e463 | Is a word's grammatical role carried by inflecting shared native words? | No: role decoded from role-specific words at 0.94-0.97, from shared words' coefficients 0.61 (no sign flips); rotated words decode it as well (0.88-0.89) | refuted (word choice, not inflection) | ← e146 e162 e440 |
 | e464 | Is a native word written where it never fires corrected? | No: survival after 2 blocks 0.60 vs 0.64 (GPT-2), 0.48 vs 0.47 (Qwen); energy and re-description the same; generic contraction | refuted (no contextual syntax) | ← e214 e216 e246 |
 | e465 | Does the network regrow what a 16-word description leaves out? | No: divergence stays 0.67-0.69 of the state at +4 (1.3-2x the omission); a same-size random error is damped to 0.49 and keeps 0.92-0.96 of the loss | refuted (omission is functional) | ← e388 e392 e221 |
+| e466 | How many extra dimensions make a 16-word description dynamically sufficient? | Many: with 64 remainder directions loss recovered is 0.89 (GPT-2) and 0.93 (Qwen), never 95%; native plus remainder stays above rotated and PCA at every size | refuted (the gap is large) | ← e465 e388 e450 |
+| e467 | What does a 16-word description leave out? | The same kinds of information it keeps: current, previous and next token and position are readable from both halves; the Qwen description gives the current token better than the whole state | refuted (no special remainder) | ← e465 e439 |
+| e468 | Does a description keep what later tokens read from a position? | Later tokens barely depend on one middle state (mean-state KL 0.02-0.15). Native is best for the position itself; for later tokens best in Qwen, tied with PCA in GPT-2 | mixed | ← e465 e460 |
+| e469 | Are native words interchange coordinates for a high-level variable? | Across blocks yes: 1-4 native words per block switch 67-96% of Qwen translations (SmolLM2 22-42%) against rotated 0-36%, PCA 8-66%. At one block PCA wins; whole-state patching there 78-99% | supported (across blocks; corrects e451's reading) | ← e455 e458 e460 |
 
 ## How the results flow
 
@@ -41,6 +47,7 @@
 - `e81, e443 → e462`. Rows keep rotating until late (e81), and words appear between steps 4000 and 16000 (e443). The rotation is accumulated drift: per batch the gradient on a word is noise relative to it, and after step 16000 the words mostly shrink in place.
 - `e146, e440 → e463` and `e214 → e464`. A token's description mixes words for the token and words for its context (e146, e440). Roles are a matter of which context words appear, not an inflection of shared words. The contraction is direction-independent (e214), and it is also indifferent to whether a word belongs in its context.
 - `e388, e221 → e465`. A 16-word description keeps much of the loss (e388), and random perturbations keep their energy while scattering (e221). What the description omits is not like a random perturbation: it persists as a functional deficit that later blocks do not re-derive.
+- `e455, e458 → e469`. A concept word injected at every block accumulates (e458). An idempotent interchange that sets a few native words to the source's values at each block carries the noun almost as well as patching the whole state. It does so far better than rotated words or the task's principal directions at equal size, so the native words are the model's own interchange coordinates.
 
 ## Links to other areas
 

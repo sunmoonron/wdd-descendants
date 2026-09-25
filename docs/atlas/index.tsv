@@ -426,3 +426,7 @@ e462	17_forensic_instrument	S49	refuted (not a learning coordinate)	scripts/e462
 e463	17_forensic_instrument	S50	refuted (word choice, not inflection)	scripts/e463_native_accents.py	results/e463_*.json	Is a word's grammatical role carried by inflecting shared native words?
 e464	17_forensic_instrument	S50	refuted (no contextual syntax)	scripts/e464_illegal_words.py	results/e464_*.json	Is a native word written where it never fires corrected?
 e465	17_forensic_instrument	S51	refuted (omission is functional)	scripts/e465_description_healing.py	results/e465_*.json	Does the network regrow what a 16-word description leaves out?
+e466	17_forensic_instrument	S52	refuted (the gap is large)	scripts/e466_kalman_gap.py	results/e466_*.json	How many extra dimensions make a 16-word description dynamically sufficient?
+e467	17_forensic_instrument	S52	refuted (no special remainder)	scripts/e467_remainder_content.py	results/e467_*.json	What does a 16-word description leave out?
+e468	17_forensic_instrument	S52	mixed	scripts/e468_future_tokens.py	results/e468_*.json	Does a description keep what later tokens read from a position?
+e469	17_forensic_instrument	S52	supported (across blocks; corrects e451's reading)	scripts/e469_interchange.py	results/e469_*.json	Are native words interchange coordinates for a high-level variable?

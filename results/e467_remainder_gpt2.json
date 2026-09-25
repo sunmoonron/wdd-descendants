@@ -1,0 +1,62 @@
+{
+ "model": "gpt2",
+ "level": 6,
+ "k": 16,
+ "probes": {
+  "native_desc": {
+   "current": 0.8913480639457703,
+   "previous": 0.5432595610618591,
+   "next": 0.3454545736312866,
+   "position_r2": 0.8838292956352234,
+   "energy_share": 0.5119151473045349
+  },
+  "native_rem": {
+   "current": 0.8309859037399292,
+   "previous": 0.6036217212677002,
+   "next": 0.3676767945289612,
+   "position_r2": 0.6963832974433899,
+   "energy_share": 0.4880760908126831
+  },
+  "rotated_desc": {
+   "current": 0.7706237435340881,
+   "previous": 0.46277663111686707,
+   "next": 0.2969697117805481,
+   "position_r2": 0.7548041343688965,
+   "energy_share": 0.28211304545402527
+  },
+  "rotated_rem": {
+   "current": 0.8792756199836731,
+   "previous": 0.6358148455619812,
+   "next": 0.35757577419281006,
+   "position_r2": 0.8830105662345886,
+   "energy_share": 0.7178799510002136
+  },
+  "pca_desc": {
+   "current": 0.402414470911026,
+   "previous": 0.2917504906654358,
+   "next": 0.2686868906021118,
+   "position_r2": 0.7883075475692749,
+   "energy_share": 0.30517539381980896
+  },
+  "pca_rem": {
+   "current": 0.9235411882400513,
+   "previous": 0.6841046214103699,
+   "next": 0.3010101020336151,
+   "position_r2": -0.49948954582214355,
+   "energy_share": 0.6948245167732239
+  },
+  "whole": {
+   "current": 0.909456729888916,
+   "previous": 0.6901408433914185,
+   "next": 0.383838415145874,
+   "position_r2": 0.928469717502594,
+   "energy_share": 1.0
+  }
+ },
+ "checks": {
+  "remainder_carries_current_more": false,
+  "desc_carries_next_as_well": false
+ },
+ "_exp": "e467_remainder_gpt2",
+ "_time": "2026-09-25 01:36:26"
+}

@@ -1,0 +1,95 @@
+{
+ "model": "qwen05",
+ "level": 12,
+ "n_pairs": 352,
+ "results": {
+  "full_single": {
+   "iia": 0.9886363636363636,
+   "d_target": 9.364153557880359
+  },
+  "native1_single": {
+   "iia": 0.0,
+   "d_target": 0.8200659040700305
+  },
+  "native4_single": {
+   "iia": 0.002840909090909091,
+   "d_target": 2.6053372499617664
+  },
+  "native16_single": {
+   "iia": 0.20738636363636365,
+   "d_target": 6.704020368104631
+  },
+  "rotated1_single": {
+   "iia": 0.0,
+   "d_target": 0.2034927545623346
+  },
+  "rotated4_single": {
+   "iia": 0.002840909090909091,
+   "d_target": 0.8071197792887688
+  },
+  "rotated16_single": {
+   "iia": 0.005681818181818182,
+   "d_target": 3.492398381571878
+  },
+  "pca1_single": {
+   "iia": 0.04261363636363636,
+   "d_target": 2.406426740640944
+  },
+  "pca4_single": {
+   "iia": 0.39204545454545453,
+   "d_target": 7.462433713742278
+  },
+  "pca16_single": {
+   "iia": 0.9772727272727273,
+   "d_target": 9.356303578750653
+  },
+  "full_all": {
+   "iia": 0.9971590909090909,
+   "d_target": 9.397189550101757
+  },
+  "native1_all": {
+   "iia": 0.6676136363636364,
+   "d_target": 8.06973462280902
+  },
+  "native4_all": {
+   "iia": 0.9602272727272727,
+   "d_target": 9.296015956862407
+  },
+  "native16_all": {
+   "iia": 0.9772727272727273,
+   "d_target": 9.357805593447251
+  },
+  "rotated1_all": {
+   "iia": 0.002840909090909091,
+   "d_target": 1.406329377808354
+  },
+  "rotated4_all": {
+   "iia": 0.35511363636363635,
+   "d_target": 7.125358456915075
+  },
+  "rotated16_all": {
+   "iia": 0.9119318181818182,
+   "d_target": 9.112876640124755
+  },
+  "pca1_all": {
+   "iia": 0.07954545454545454,
+   "d_target": 3.2719208899546754
+  },
+  "pca4_all": {
+   "iia": 0.6590909090909091,
+   "d_target": 8.481416171924634
+  },
+  "pca16_all": {
+   "iia": 0.9176136363636364,
+   "d_target": 9.174281337721782
+  }
+ },
+ "checks": {
+  "full_all_over_0_9": true,
+  "native16_half_of_full": true,
+  "native_beats_rotated": true,
+  "single_full_under_0_3": false
+ },
+ "_exp": "e469_interchange_qwen05",
+ "_time": "2026-09-25 01:40:17"
+}

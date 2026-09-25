@@ -390,3 +390,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 
 ## Session 51 kills (self-consistency of native descriptions)
 - "The network regrows what a 16-word native description leaves out": the omission persists at a constant share of the state four blocks later, while a random error of the same size is damped (e465).
+
+## Session 52 kills and corrections (systems-theory and causal-abstraction readings)
+- "A few extra directions make a native description dynamically sufficient": 64 extra remainder directions still leave 7-11% of the loss unrecovered (e466).
+- "What a description leaves out is a different kind of information": token identity, neighbouring tokens and position are in both halves (e467).
+- "e451's single-depth weakness is because the concept has moved elsewhere by the middle layer" (session 46's explanation): whole-state patching at that position and layer switches 78-99% of answers; one word is outvoted by the other directions carrying the noun there (e469).
