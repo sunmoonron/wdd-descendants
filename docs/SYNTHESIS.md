@@ -466,6 +466,7 @@ What stays unique after the mapping:
 - An external review, relayed by the user, listed what it thought was still open. It had read the README as pushed before this session, so two of its items were already done: writer and reader freezing (session 45) and a public SAE at matched sparsity (e403). Its other two, and one question from the program, were tested in about 30 minutes of GPU time.
 - Concept words are causal handles, not correlated provenance.
   - Swapped at every block up to the middle at the noun, one MLP write row redirects 67-94% of a model's translations of the noun to the swapped-in noun, English copies included. In the Qwen models it moves 39-78% of category answers to the target's category. An equal-size random direction moves 0-3% of translations.
+  - Corrected in session 47 (e458): those swaps accumulated across blocks to 6-8 times the target word's natural size. Near natural size (0.7 times) a concept word moves 35-58% of translations; the contrast with random stands.
   - At a single depth the effects are specific (3-13 times the controls) but change answers only in SmolLM2, because the concept is re-written or read before the middle layer.
   - Removing the word alone rarely breaks the Qwen models: it is the handle, not the only carrier.
 - The function does not determine the vocabulary.
@@ -474,6 +475,21 @@ What stays unique after the mapping:
   - With the writer rows frozen at random the block still reproduces the function (+0.03 to +0.05 nats), but its rows are not words at all.
   - Most of the remaining gap is the quality of the fit, not the end-to-end objective. More distillation raises the rows to 0.71-0.77 of the original's advantage. Training the block on the model's own next-token loss adapts it to the text but makes its rows no more word-like (0.52-0.70). Only an exact fit would pin the rows (MLP identifiability up to permutation and scale); these fits keep the loss within 0.02 nats.
 - Concept words correspond across sizes only at the concept level. Mapped through a dense map from Qwen2.5-0.5B to 7B, a concept word is most aligned with the same noun's 7B concept word in 11 of 14 cases (chance 1 in 14), but at |cos| 0.08, and it is the nearest 7B atom for only 1 of 14.
+
+## Session 47: WDD as a forensic instrument, four quick tests (e456-e459)
+
+- A second relayed review proposed twelve forensic uses of WDD. Eight were already answered by the atlas or were not quick (the list is in FINDINGS); four were run in about 10 minutes of GPU time.
+- Self-description does not detect compression damage. Quantised to 4 bits, GPT-2 loses 3.9 nats and keeps 96% of its words' advantage over rotation; own words stay far below rotation in unexplained variance at every level of quantisation and pruning. The measure says the states are built from the model's own rows, which stays true when the function is broken.
+- WDD can name what a fine-tune changed, but it does not compress the change.
+  - Instruct tuning moves chat states 2-3 times as much as natural text.
+  - A few words carry much of the usage change. Qwen's block-10 rows 3276 and 1521 go from under 1% to 12-13% of chat tokens.
+  - The chat change itself is low-rank: its own principal directions describe it far better than native words (0.27-0.32 against 0.57-0.65 unexplained).
+- The e455 correction.
+  - Adding the target concept word at every block accumulates; e455 injected 6-8 times its natural size.
+  - Near natural size one word moves 35-58% of translations. The dense difference of mean states moves 82-100% with 4-6 times the displacement.
+  - Per unit of displacement the native word is about as efficient (Qwen-0.5B) or more efficient (Qwen-7B).
+  - A WDD checksum downstream confirms the intended word was moved and predicts success (AUC 0.70 and 0.92), but no better than the intervention's size.
+- Native words persist across generated and natural text modestly more than rotated words (1.3-1.8 times at lags of 4-32 in Qwen), with no regeneration beyond their usage rate.
 
 ## What the whole program established (ten rounds, e01 to e247)
 

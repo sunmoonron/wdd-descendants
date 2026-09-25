@@ -1,6 +1,6 @@
 # What a write becomes: the descendant and quotient program on Weight-Dictionary Decomposition
 
-Ronish Bhatt ([ORCID 0009-0000-8835-5380](https://orcid.org/0009-0000-8835-5380)), September 2026. Companion to [Weight-Dictionary Decomposition](https://github.com/sunmoonron/weight-dictionary-decomposition) (WDD), which reads a transformer's residual state as a sparse combination of the model's own write vectors. This repository holds the follow-on program: 417 experiments (e00 to e455 with variants) and about 2,000 recorded runs on five small models, run between 2026-09-19 and 2026-09-24, one to five minutes each on one GPU. Phase 1 (e00 to e356) follows one WDD write through the network and asks what it becomes, with the theory the results support and the literature they sit in; it uses forward passes, ablations, injections and closed-form fits only. Phase 2 (e357 to e373) tests the program's tools against known circuits, the co-selection proposal of the LessWrong post "What if not Circuits?", and per-neuron drift across Pythia and OLMo training. Phase 3 (e374 to e455) turns to readers and readouts and then to self-description: how well a model's own write rows describe its own states. It adds Qwen2.5-7B, and it trains toy transformers, grokking networks and a small sequence model from scratch, some with writer or reader rows frozen. **Start with [`docs/ATLAS.md`](docs/ATLAS.md)**, which organises all 417 experiments into sixteen technical areas and shows how their results connect; the table below summarises it.
+Ronish Bhatt ([ORCID 0009-0000-8835-5380](https://orcid.org/0009-0000-8835-5380)), September 2026. Companion to [Weight-Dictionary Decomposition](https://github.com/sunmoonron/weight-dictionary-decomposition) (WDD), which reads a transformer's residual state as a sparse combination of the model's own write vectors. This repository holds the follow-on program: 421 experiments (e00 to e459 with variants) and about 2,000 recorded runs on five small models, run between 2026-09-19 and 2026-09-24, one to five minutes each on one GPU. Phase 1 (e00 to e356) follows one WDD write through the network and asks what it becomes, with the theory the results support and the literature they sit in; it uses forward passes, ablations, injections and closed-form fits only. Phase 2 (e357 to e373) tests the program's tools against known circuits, the co-selection proposal of the LessWrong post "What if not Circuits?", and per-neuron drift across Pythia and OLMo training. Phase 3 (e374 to e459) turns to readers and readouts and then to self-description: how well a model's own write rows describe its own states. It adds Qwen2.5-7B, and it trains toy transformers, grokking networks and a small sequence model from scratch, some with writer or reader rows frozen. **Start with [`docs/ATLAS.md`](docs/ATLAS.md)**, which organises all 421 experiments into seventeen technical areas and shows how their results connect; the table below summarises it.
 
 The short version of the result: a neuron's write is the model's own perturbation of its residual stream. Downstream computation expands that perturbation physically (hundreds of dimensions) while its causally relevant content becomes compressible (tens of dimensions), and that compressibility is a property of the residual stream's response to any perturbation, not of the write. The compressed content is not carried by a privileged subspace: any moderate-dimensional high-variance projection of the perturbation cloud carries it, there is no null space and no equivalence-class structure, and the WDD atoms are not a special basis of it. WDD remains a clean birth coordinate and instrument; it is not the functional dictionary. The negative results are part of the result.
 
@@ -29,7 +29,8 @@ Each area links to a page with one row per experiment (question, result, status,
 | 13 | [Readers, readouts, stitching](docs/atlas/13_readers_readouts.md) | 15: e374-e390, S33-S35 | Loss convexity biases interaction measures, so read them on logits. WDD plus a reader's metric finds induction edges. The 64-atom code keeps 84-99% of the loss, through provenance. |
 | 14 | [Self-description: the native vocabulary](docs/atlas/14_native_vocabulary.md) | 40: e391-e443, S36-S44 | 32-64 own words keep 90% of the loss. The vocabulary is learned: a per-block accent early, words from step 4000-16000. It survives covariance, lexicon and Gaussian-state controls. It is private across seeds. |
 | 15 | [A 7B workspace agenda and established lenses](docs/atlas/15_workspace_lenses.md) | 12: e415-e425, S40-S42 | At 7B, native words surface a hidden two-hop bridge that the logit lens misses. It is not a better reader in general. Most results have established names; the instrument is what is new. |
-| 16 | [The vision round and its causal follow-ups](docs/atlas/16_vision_round.md) | 19: e444-e455, S45-S46 | The vocabulary is written by training the writers, and the same function can be re-implemented with different words. Concept words hold across languages (7 / 15 / 22 of 24 nouns) and are causal handles: swapped at every depth they redirect 67-94% of translations. Word tables do not translate between models. |
+| 16 | [The vision round and its causal follow-ups](docs/atlas/16_vision_round.md) | 19: e444-e455, S45-S46 | The vocabulary is written by training the writers, and the same function can be re-implemented with different words. Concept words hold across languages (7 / 15 / 22 of 24 nouns) and are causal handles: near natural size one word redirects 35-58% of translations (e455's 67-94% was a 6-8-fold injection). Word tables do not translate between models. |
+| 17 | [WDD as a forensic instrument](docs/atlas/17_forensic_instrument.md) | 4: e456-e459, S47 | Self-description survives compression that breaks the model, so it does not detect damage. WDD names what a fine-tune changed but does not compress it. A native word steers as efficiently per unit of displacement as a dense vector. The checksum adds nothing over the intervention's size. |
 
 How the areas feed one another (dotted lines are corrections or side branches):
 
@@ -47,6 +48,7 @@ flowchart TD
   A13 --> A14["14 Native vocabulary"]
   A14 --> A15["15 7B workspace, lenses"]
   A14 --> A16["16 Vision round"]
+  A16 --> A17["17 Forensic uses"]
   A04["04 Attention"] --- A02
   A04 --- A13
   A10["10 Sinks, huge directions M"] -.->|sink neuron in the centring mean| A02
@@ -75,8 +77,8 @@ flowchart TD
 | `results/e357_*.json` to `results/e373_*.json`, `results/FINDINGS_phase2.log`, `results/e365/*.pt` | Phase-2 results, the phase-2 findings log, and the top-16 quotient bases with their logit-image summaries at 13 Pythia checkpoints. |
 | `RUNLIST_phase2.txt` | Every phase-2 run in the order the scheduler completed it. |
 | `scripts/e374_*.py` to `scripts/e390_*.py`, `scripts/p3_common.py`, `results/e374_*.json` to `results/e390_*.json`, `RUNLIST_phase3.txt` | Phase 3: reader maps, scale mechanics, interaction readouts, stitching and toy transformers. |
-| `scripts/e391_*.py` to `scripts/e455_*.py`, `scripts/sd_common.py`, `ws_common.py`, `lr_common.py`, `ma_common.py`, `results/FINDINGS_box3.log` | Phase 3 continued: self-description and the native vocabulary (e391 to e414, e426 to e443), the Qwen2.5-7B workspace agenda and established lenses (e415 to e425), the huge directions and sinks (e432 to e443), the vision round with models trained from scratch (e444 to e450), and causal tests of concept words and a re-implemented block (e451 to e455). |
-| `docs/ATLAS.md`, `docs/atlas/` | The atlas: all 417 experiments in sixteen technical areas, one page per area, and `index.tsv` mapping every id to its area, session, status, script and results. |
+| `scripts/e391_*.py` to `scripts/e459_*.py`, `scripts/sd_common.py`, `ws_common.py`, `lr_common.py`, `ma_common.py`, `results/FINDINGS_box3.log` | Phase 3 continued: self-description and the native vocabulary (e391 to e414, e426 to e443), the Qwen2.5-7B workspace agenda and established lenses (e415 to e425), the huge directions and sinks (e432 to e443), the vision round with models trained from scratch (e444 to e450), causal tests of concept words and a re-implemented block (e451 to e455), and WDD as a forensic instrument (e456 to e459). |
+| `docs/ATLAS.md`, `docs/atlas/` | The atlas: all 421 experiments in seventeen technical areas, one page per area, and `index.tsv` mapping every id to its area, session, status, script and results. |
 | `docs/VISION.md`, `docs/uncharted_map.md` | The backcast of a decade of WDD with its roadmap, and the survey of results never connected to WDD (session 44). |
 | `RUNLIST.txt` | Every run that produced a result, as `python <script> <model-or-revision>`, in recorded order (1,430 lines). Replaying it reproduces the repository. |
 | `waves/` | The job files that were launched in parallel, for the record of what ran together. |
@@ -127,7 +129,7 @@ Reading a result: each JSON has the fields named in the script's docstring and l
 
 ## The experiment map
 
-This is the phase-1 map by rounds; [`docs/ATLAS.md`](docs/ATLAS.md) maps all 417 experiments by technical area. The program ran as rounds, each answering the previous round's open questions. The rounds in brief (script ranges are approximate; the narrative in `docs/FINDINGS.md` has every one):
+This is the phase-1 map by rounds; [`docs/ATLAS.md`](docs/ATLAS.md) maps all 421 experiments by technical area. The program ran as rounds, each answering the previous round's open questions. The rounds in brief (script ranges are approximate; the narrative in `docs/FINDINGS.md` has every one):
 
 | Rounds | Scripts | Question |
 | --- | --- | --- |
@@ -390,10 +392,21 @@ An external review, relayed by the user, listed what it considered still open. T
 | Experiment | Question | Result |
 | --- | --- | --- |
 | e451, e454 | Is a concept word (one MLP write row, used on a noun across languages) a causal handle, tested at one depth? | Its effects are specific: removal is 3-6 times as specific as removing a matched other word, and a swap raises the swapped-in noun 3-13 times as much as random. But answers change only in SmolLM2 (French and Spanish 29-37%), and the noun's category barely moves. |
-| e455 | And when swapped at every block up to the middle, at the noun? | Yes. 67-94% of translations move to the swapped-in noun (random 0-3%), English copies included, and 39-78% of the Qwen models' category answers move (random 11-13%). Removal alone rarely breaks the Qwen models (accuracy 0.88-0.90): the word is a handle, not the only carrier. |
+| e455 | And when swapped at every block up to the middle, at the noun? | Yes. 67-94% of translations move to the swapped-in noun (random 0-3%), English copies included, and 39-78% of the Qwen models' category answers move (random 11-13%). Removal alone rarely breaks the Qwen models (accuracy 0.88-0.90): the word is a handle, not the only carrier. Corrected in e458: these swaps were 6-8 times the word's natural size, and near natural size one word moves 35-58% of translations. |
 | e452 | Does a block's function determine its vocabulary? | No. A middle MLP retrained from scratch to its own input-output map keeps the loss within 0.02 nats with different rows (median best abs cosine 0.26-0.28; two seeds 0.22-0.25 with each other). Its rows are words about half as good as the original's. Frozen random writer rows reproduce the function but are not words at all. |
 | e452b | Why only half? | Mostly the quality of the fit. More distillation reaches 71-77% of the original's advantage, and the rows drift slightly toward the originals. Training the block on the model's own next-token loss adapts it to the text (loss down 0.16-0.29 nats) but makes its rows no more word-like. |
 | e453 | Do concept words correspond across Qwen2.5-0.5B and 7B? | Only at the concept level. Through a dense map, a concept word is most aligned with the same noun's 7B concept word in 11 of 14 cases, but at abs cosine 0.08, and it is the nearest 7B atom for only 1 of 14. |
+
+## WDD as a forensic instrument (e456 to e459)
+
+A second relayed review proposed twelve forensic uses of WDD. Eight were already answered by the atlas, or could not be done properly quickly; the list is in `docs/FINDINGS.md`, session 47. Four were run in about 10 minutes of GPU time. Details: `docs/atlas/17_forensic_instrument.md`.
+
+| Experiment | Question | Result |
+| --- | --- | --- |
+| e456 | Does self-description detect compression damage? | No. At 4 bits GPT-2 loses 3.9 nats and keeps 96% of its words' advantage over rotation. Own words stay far below rotation in unexplained variance at every level of quantisation and pruning: the states are still built from the model's rows. |
+| e457 | Can WDD describe what a fine-tune changed? | It names it: on chat, a few words carry much of the usage change (Qwen's block-10 rows 3276 and 1521 go from under 1% to 12-13% of tokens). It does not compress it: the chat change is low-rank and dense. |
+| e458 | Native word or dense steering vector; can a WDD checksum certify an intervention? | Corrects e455, whose swaps were 6-8 times natural size. Near natural size one concept word moves 35-58% of translations; the dense difference of means moves 82-100% with 4-6 times the displacement. The checksum predicts success (AUC 0.70-0.92) no better than the displacement's size. |
+| e459 | Do native words persist across generated tokens? | Modestly: 1.3-1.8 times rotated words' reuse at lags of 4-32 in Qwen, and no regeneration beyond their usage rate. |
 
 ## Scope and caveats
 

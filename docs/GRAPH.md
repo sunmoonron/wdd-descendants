@@ -434,6 +434,7 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
   - At one depth, removal is 3-6 times as specific as removing a matched other word, and a swap raises the target 3-13 times as much as random, but answers change only in SmolLM2.
   - Swapped at every block up to the middle, one MLP row redirects 67-94% of translations (random 0-3%) and 39-78% of category answers in the Qwen models.
   - REVISES H257: native words carry meaning causally.
+  - NARROWED by e458 (session 47). e455's swaps were 6-8 times the natural size. Near natural size (0.7 times) one word moves 35-58% of translations, still far above random.
 - H264 One depth suffices to intervene on a concept. → e451, e454 against e455 → KILLED. The concept is re-written or read before the middle layer. This is e208's re-writing, now for a semantic direction.
 - H265 The concept word is the noun's only carrier. → e455 → KILLED in the Qwen models, where removal at every depth leaves accuracy at 0.88-0.90. SURVIVES in SmolLM2, where accuracy falls to 0.13.
 - H266 A block's function determines its vocabulary. → e452 → KILLED. Re-implementations match the function within 0.02 nats with new rows: median best |cos| 0.26-0.28 with the originals, and 0.22-0.25 between two seeds.
@@ -443,6 +444,17 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
   - Frozen random readers leave weak words (10-18%).
 - H268 The re-implementation's half-sized advantage is the missing end-to-end objective. → e452b → KILLED. Next-token training of the block leaves 0.52-0.70 of the original's advantage, while more distillation gives 0.71-0.77. The gap is fit quality, and the rows drift toward the originals (median best |cos| 0.26-0.28 to 0.32) as the fit improves.
 - H269 Concept words are the words two model sizes share. → e453 → NARROWED to the concept level. Identification among 14 shared nouns is 0.79 (reverse 0.86, chance 0.07), but the mapped words are nearly orthogonal (|cos| 0.08) and are the nearest atom for only 1 of 14.
+
+## WDD as a forensic instrument (session 47)
+
+- H270 Self-description detects compression damage. → e456 → KILLED. At 4 bits GPT-2 loses 3.9 nats and keeps 96% of the advantage over rotation. Own words stay at 0.42-0.56 unexplained against 0.64-0.72 for rotation at every level. The measure tracks that states are built from the model's rows, not whether the function survives.
+- H271 A fine-tune's change is sparse in the model's own words. → e457 → NARROWED.
+  - Usage changes are concentrated in a few named words (top 1% of words: 38-59% of the change on chat).
+  - The change itself is low-rank and dense on chat: its own principal directions give 0.27-0.32 unexplained against native 0.57-0.65.
+  - Native words do beat those directions on natural text (0.58-0.66 against 0.70-0.77).
+- H272 A single concept word is a weaker steering handle than the dense difference of means. → e458 → MIXED. At natural size the dense steer moves more answers (82-100% against 35-58% at 0.7 times natural), but with 4-6 times the displacement. Per unit of displacement native is equal (Qwen-0.5B) or better (Qwen-7B).
+- H273 WDD can certify an intervention before its effect is observed. → e458 → NARROWED. The checksum (the target word's component two blocks later) predicts success at AUC 0.70-0.92, but the displacement size alone predicts as well (0.83-0.94).
+- H274 Native words are persistent objects across autoregressive positions. → e459 → NARROWED. They persist 1.3-1.8 times as much as rotated words at lags of 4-32 in Qwen and in GPT-2's natural text. They are not regenerated beyond their usage rate.
 
 ## Attention, sinks, embeddings
 

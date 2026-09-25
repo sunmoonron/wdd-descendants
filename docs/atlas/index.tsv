@@ -415,4 +415,8 @@ e452	16_vision_round	S46	supported (function does not fix words)	scripts/e452_re
 e452b	16_vision_round	S46	refuted (fit quality, not objective)	scripts/e452b_endtoend_block.py	results/e452b_*.json	Is the half-sized advantage the missing end-to-end training?
 e453	16_vision_round	S46	narrowed (concept level)	scripts/e453_concept_correspondence.py	results/e453_*.json	Do concept words correspond across Qwen sizes under a dense map?
 e454	16_vision_round	S46	refuted (at one depth; see e455)	scripts/e454_concept_properties.py	results/e454_*.json	Does a concept word carry its category at one depth?
-e455	16_vision_round	S46	established (3 models)	scripts/e455_concept_persistent.py	results/e455_*.json	Does swapping the concept word at every depth redirect the model?
+e455	16_vision_round	S46	supported (size corrected by e458)	scripts/e455_concept_persistent.py	results/e455_*.json	Does swapping the concept word at every depth redirect the model?
+e456	17_forensic_instrument	S47	refuted (not a damage detector)	scripts/e456_compression_autopsy.py	results/e456_*.json	Does self-description detect compression damage?
+e457	17_forensic_instrument	S47	narrowed (names, does not compress)	scripts/e457_model_diff.py	results/e457_*.json	Can WDD describe what a fine-tune changed, write by write?
+e458	17_forensic_instrument	S47	mixed (corrects e455's size)	scripts/e458_steering_checksum.py	results/e458_*.json	Native word against dense steering at natural size; does a WDD checksum predict success?
+e459	17_forensic_instrument	S47	narrowed (modest persistence)	scripts/e459_generation_lineage.py	results/e459_*.json	Do native words persist across generated tokens?

@@ -367,3 +367,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Frozen readers keep the vocabulary when the function is fixed": trained writers behind frozen random readers keep 10-18% of the advantage (e452; the pre-registered guess was at least half).
 - "The re-implemented rows lack the original's word advantage because they lack end-to-end training": next-token training of the block adds nothing beyond more distillation (0.52-0.70 against 0.71-0.77 of the original's advantage) (e452b).
 - "Concept words are shared words between model sizes": a mapped concept word is the other model's nearest atom for 1 of 14 nouns, at |cos| 0.08, although it identifies the right concept in 11 of 14 (e453).
+
+## Session 47 kills and corrections (WDD as a forensic instrument)
+- "e455's swaps were at the target's typical coefficient": the per-block additions accumulated to 6-8 times natural size. Near natural size, 35-58% of translations move, not 67-94% (e458).
+- "Self-description detects compression damage": at 4 bits GPT-2 loses 3.9 nats and keeps 96% of the advantage (e456).
+- "A fine-tune's state change is sparse in native words": on chat it is low-rank and dense (its own principal directions 0.27-0.32 unexplained against native 0.57-0.65), although usage changes concentrate in a few words (e457).
+- "A WDD checksum predicts an intervention's success beyond its size": AUC 0.70-0.92, against 0.83-0.94 for the displacement alone (e458).
+- "Native words regenerate across generated tokens": no more than their usage rate predicts (e459).

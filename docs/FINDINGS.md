@@ -1329,6 +1329,10 @@ SESSION 46 (the user asked for thirty more minutes of experiments, relaying an e
   - Removing it alone rarely breaks the Qwen models (accuracy 0.88-0.90), so other carriers exist. In SmolLM2, removal breaks most translations (0.13).
   - The weak single-depth effects of e451 and e454 are explained by propagation: the concept is re-written or read before the middle layer. This is phase 1's finding that a direction's later presence is mostly re-writing (e208), now for a semantic direction.
   - Pre-registered: all held, including that category answers move less than translations.
+  - CORRECTION (session 47, e458). The swap added the target's full typical coefficient at every block, and what is added at a block persists into the next, so the additions accumulated.
+    - At the middle block the injected component was 6.3 (Qwen-0.5B) and 8.0 (Qwen-7B) times the target word's typical coefficient, not 1.
+    - Adding only each block's increment (natural size would be 1): at 0.3 times natural, 13% and 29% of translations move; at 0.7 times, 35% and 58%.
+    - The random control accumulated in the same way, so the contrast with random stands. "At the target's typical coefficient" and the 67-94% figure describe a 6-8-fold injection.
 - e452 A FUNCTION-PRESERVING RE-IMPLEMENTATION (the middle block's MLP retrained from scratch to reproduce its own input-output map on 410k tokens of WikiText-2 train, then swapped in; the family test is the block's rows alone against their rotation at k = 4).
 
   | Model | variant | block error (relative) | loss change | advantage over rotation (share of the original's) | share of the 16 words | best abs cosine with original rows (median) |
@@ -1375,3 +1379,89 @@ SESSION 46 (the user asked for thirty more minutes of experiments, relaying an e
   - A single-depth test understates this, because the concept is carried forward by re-writing and early reads.
   - The vocabulary is not a function of the computation: the same function is implemented with different words, and a block whose writers are frozen at random implements it with no words at all.
   - Trained writers become words, even under a local objective, but only half as good as the original's.
+
+SESSION 47 (the user relayed a second external review, twelve proposals for using WDD as a forensic instrument, and asked for the quick ones; e456-e459, 4 scripts, 12 runs, about 10 minutes of GPU time, 2026-09-25 00:02-00:11 box time; e458 was rerun after three bugs, and e459 after adding a usage-normalised regeneration).
+
+- Triage (against the atlas).
+  - Run: compression autopsy (e456), model diff (e457), intervention checksum paired with dense steering (e458; also VISION's roadmap item 7), and word lineage across generated tokens (e459).
+  - Skipped as already answered:
+    - checkpoint dating (e396, e402, e410: from step 33000 the vocabularies are interchangeable, and later words read earlier states better);
+    - context transplantation (e146, e162, e440);
+    - output-token blame (e394, e160, e156);
+    - paraphrase invariance (e448: translations, the paraphrases with no shared tokens, are already described by the same words);
+    - write budget against surprisal (e430, e155, e161);
+    - state transplantation between models (e445, e453).
+  - Skipped as not quick:
+    - memorisation fingerprints (this needs Pythia's memorised-sequence lists and loss-matched controls, since memorised text is mostly boilerplate);
+    - adversarial prompts (the five base models have no refusal behaviour to attack, and "the same answer by different routes" was not specified tightly enough for a five-minute test).
+- e456 COMPRESSION AUTOPSY (every linear matrix in the blocks quantised per row to 8, 6, 4 or 3 bits, or magnitude-pruned by 30, 50 or 70%; self-description at the middle depth with the compressed model's own words).
+
+  | Variant | GPT-2: loss change | GPT-2: advantage (share of original) | SmolLM2: loss change | SmolLM2: advantage (share) | row cosine with original |
+  | --- | --- | --- | --- | --- | --- |
+  | int8 | +0.004 | 1.02 | +0.007 | 1.01 | 1.000 |
+  | int6 | +0.091 | 0.98 | +0.061 | 1.08 | 0.999 |
+  | int4 | +3.882 | 0.96 | +0.846 | 1.47 | 0.986-0.988 |
+  | int3 | +4.747 | 0.89 | +7.046 | 1.45 | 0.931-0.938 |
+  | prune 30% | +0.321 | 1.01 | +0.637 | 1.26 | 0.993 |
+  | prune 50% | +2.768 | 1.07 | +3.825 | 1.16 | 0.966-0.967 |
+  | prune 70% | +4.668 | 1.25 | +9.962 | undefined (model destroyed) | 0.889-0.892 |
+
+  - Self-description survives compression that breaks the model. At 4 bits GPT-2 loses 3.9 nats and keeps 96% of its own-over-rotation advantage. In unexplained variance, own words stay at 0.42-0.54 against 0.72 for rotation at every level (SmolLM2 0.42-0.56 against 0.64).
+  - The measure says the states are built from the model's own rows, which stays true when the function is broken. It is not a compression-damage detector; the loss is.
+  - The advantage shares above 1 come from the loss-recovered normalisation, which shifts when the model breaks.
+  - Word usage changes with severity: 1.3-8.4 of the 16 words per token. The absolute change is larger for the most used words (Spearman +0.18 to +0.48), as expected of absolute changes.
+  - Pre-registered: advantage kept at 4 bits held; faster collapse at the extremes refuted; rare words changing more refuted.
+- e457 WDD AS A MODEL DIFF (base against instruct on the same inputs, Qwen2.5-0.5B and SmolLM2-135M; d = x_instruct - x_base per token at the middle depth).
+
+  | Model, text | size of d (relative to the state) | d unexplained at k 16: own / rotated / PCA of the d's | usage change (of 16 words) | share carried by the top 1% of words |
+  | --- | --- | --- | --- | --- |
+  | Qwen-0.5B, chat | 0.56 | 0.65 / 0.72 / 0.32 | 5.4 | 0.59 |
+  | Qwen-0.5B, natural | 0.24 | 0.66 / 0.72 / 0.70 | 2.8 | 0.27 |
+  | SmolLM2, chat | 0.64 | 0.57 / 0.65 / 0.27 | 6.5 | 0.38 |
+  | SmolLM2, natural | 0.27 | 0.58 / 0.64 / 0.77 | 3.3 | 0.14 |
+
+  - Fine-tuning changes chat states two to three times as much as natural-text states.
+  - On chat the change is low-rank: its own principal directions describe it far better than native words (0.27-0.32 against 0.57-0.65), so the change is a few dense directions.
+  - On natural text native words describe it better than those principal directions (0.58-0.66 against 0.70-0.77), and than rotated words everywhere, by 0.06-0.08.
+  - Usage changes are concentrated in a few named words. On chat: Qwen block-10 rows 3276 and 1521 rise from 0.4-0.5% to 12-13% of tokens, and block-4 row 3914 falls from 14% to 4%. SmolLM2 block-0 row 611 falls from 13% to 0.2%, and block-2 row 1374 rises from 0.5% to 11%.
+  - The top-1% shares count every MLP word, most of which are never used, so they partly reflect how sparse usage is.
+  - WDD gives a readable, named list of what a fine-tune changed, but it does not compress the chat change better than a dense basis.
+  - Pre-registered: all three held.
+- e458 NATIVE AGAINST DENSE STEERING, AND A WDD CHECKSUM (e455's setup, non-English translation; each block adds only the increment of the target's typical value, so s = 1 would be natural size if additions persisted; the injected size at the middle block and the checksum two blocks later are in units of the target word's typical coefficient; version 2 after fixing three bugs).
+
+  | Intervention | Qwen-0.5B: moved (injected size, displacement) | Qwen-7B: moved (injected, displacement) |
+  | --- | --- | --- |
+  | native s = 0.5 / 1 / 2 | 0.06 / 0.13 / 0.35 (0.12 / 0.29 / 0.67; 0.05-0.09) | 0.13 / 0.29 / 0.58 (0.14 / 0.36 / 0.76; 0.05-0.09) |
+  | dense s = 0.5 / 1 / 2 | 0.88 / 0.82 / 0.71 (0.87 / 1.16 / 1.86; 0.23-0.57) | 1.00 / 0.98 / 0.96 (0.92 / 1.10 / 1.65; 0.22-0.51) |
+  | e455's accumulating swap | 0.67 (6.29; 0.16) | 0.94 (7.99; 0.16) |
+
+  - The blocks absorb part of each added native increment: at s = 1 only 0.29-0.36 of the typical coefficient is present at the middle block.
+  - e455 injected 6-8 times the natural size, which corrects its headline (see the correction under session 46).
+  - At 0.7 times natural size one concept word moves 35-58% of translations.
+  - The dense difference of the two nouns' mean states moves 82-100% at natural size, with 4-6 times the displacement.
+  - Per unit of displacement the native word is about as efficient as the dense steer in Qwen-0.5B (3.8 against 3.9 moved per unit), and more efficient in Qwen-7B (6.4 against 4.6).
+  - The dense steer carries the concept word too (0.87-1.86 of its typical coefficient).
+  - The WDD checksum predicts a moved answer at AUC 0.70 (Qwen-0.5B) and 0.92 (Qwen-7B); within native interventions 0.82 and 0.92, within dense 0.45 and 0.71. The displacement size alone does as well or better (0.83, 0.94).
+  - The checksum confirms that an intervention reached the intended word, but it adds no predictive power over the intervention's size.
+  - Pre-registered: native more efficient per displacement held in 7B only; checksum AUC at least 0.75 held in 7B only; dense steering raising the target word held; natural-size native swaps moving fewer answers than e455's held.
+  - The first run (log lines at 00:05 and 00:06) had three bugs: a zero displacement for fp32 models, a sign-uncorrected checksum, and dense additions that accumulated. It is superseded.
+- e459 NATIVE WORDS ACROSS GENERATED TOKENS (16 prompts of 64 tokens, 96 sampled tokens at temperature 0.8, and the same prompts' natural continuations; 16 words per position at the middle depth, MLP-row words only; lift = the chance that a word used at t is used at t + lag, over its usage rate).
+
+  | Model, text | lift own / rotated at lag 4, 8, 16, 32 | regeneration over the usage rate, own / rotated |
+  | --- | --- | --- |
+  | GPT-2, generated | 3.5/3.1, 3.2/3.5, 2.4/2.1, 1.9/1.3 | 1.4 / 1.9 |
+  | GPT-2, natural | 2.4/1.8, 1.8/1.1, 1.6/1.1, 1.1/0.8 | 1.2 / 1.2 |
+  | Qwen-0.5B, generated | 3.4/2.0, 3.0/2.3, 2.3/1.6, 1.8/1.0 | 1.6 / 2.0 |
+  | Qwen-0.5B, natural | 2.1/1.2, 1.4/0.8, 1.2/0.7, 1.7/1.2 | 1.2 / 0.9 |
+
+  - Native words persist across positions modestly more than rotated words at lags of 4 or more: 1.3-1.8 times in Qwen and in GPT-2's natural text, but not in GPT-2's generated text at lag 8.
+  - They track slower-changing content somewhat better than random directions.
+  - They are not regenerated more than their usage predicts; the raw regeneration gap (0.12-0.16 against 0.02-0.05) was usage concentration.
+  - Sampled text is more self-similar than natural text (higher lifts and state cosines), so "generated" differs from "natural" by the text as much as by generation.
+  - Pre-registered: persistence above 1.2 times rotated held in Qwen, not GPT-2; generated close to natural refuted.
+- Reading.
+  - As forensic instruments:
+    - WDD names what a fine-tune changed (a short list of words whose usage moves) but does not compress the change better than a dense basis;
+    - its self-description does not detect compression damage;
+    - its checksum confirms an intervention reached the intended word but predicts success no better than the intervention's size.
+  - The most important result is a correction: e455's causal-handle numbers came from 6-8-fold injections. Near natural size (0.7 times) a single concept word still moves 35-58% of translations. That is about as efficient per unit of displacement as the dense steer in Qwen-0.5B, and more efficient in Qwen-7B.

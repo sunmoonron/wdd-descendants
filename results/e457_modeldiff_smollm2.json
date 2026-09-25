@@ -1,0 +1,118 @@
+{
+ "base": "smollm2",
+ "instruct": "HuggingFaceTB/SmolLM2-135M-Instruct",
+ "level": 15,
+ "texts": {
+  "chat": {
+   "n_tokens": 2040,
+   "rel_change_norm": 0.6407598853111267,
+   "mean_shift_rel": 0.22999036312103271,
+   "fvu_own": {
+    "4": 0.8177110552787781,
+    "16": 0.5706596374511719
+   },
+   "fvu_rot": {
+    "4": 0.8887724280357361,
+    "16": 0.6460438966751099
+   },
+   "fvu_pca_of_diffs": {
+    "4": 0.5098555088043213,
+    "16": 0.27305662631988525
+   },
+   "usage_change_total": 6.5362749099731445,
+   "top1pct_share": 0.38364335894584656,
+   "top10pct_share": 0.8638443350791931,
+   "most_changed": [
+    {
+     "block": 0,
+     "index": 611,
+     "base_use": 0.1308823674917221,
+     "instruct_use": 0.0024509804788976908
+    },
+    {
+     "block": 2,
+     "index": 1374,
+     "base_use": 0.005392157007008791,
+     "instruct_use": 0.11176471412181854
+    },
+    {
+     "block": 2,
+     "index": 706,
+     "base_use": 0.15000000596046448,
+     "instruct_use": 0.05931372940540314
+    },
+    {
+     "block": 0,
+     "index": 333,
+     "base_use": 0.19607844948768616,
+     "instruct_use": 0.11176471412181854
+    },
+    {
+     "block": 0,
+     "index": 189,
+     "base_use": 0.001470588380470872,
+     "instruct_use": 0.08137255162000656
+    }
+   ]
+  },
+  "natural": {
+   "n_tokens": 2039,
+   "rel_change_norm": 0.27261483669281006,
+   "mean_shift_rel": 0.08642592281103134,
+   "fvu_own": {
+    "4": 0.8293991684913635,
+    "16": 0.5829670429229736
+   },
+   "fvu_rot": {
+    "4": 0.8866804838180542,
+    "16": 0.6425880193710327
+   },
+   "fvu_pca_of_diffs": {
+    "4": 0.9045934081077576,
+    "16": 0.7688007950782776
+   },
+   "usage_change_total": 3.253065347671509,
+   "top1pct_share": 0.14314790070056915,
+   "top10pct_share": 0.5390471816062927,
+   "most_changed": [
+    {
+     "block": 0,
+     "index": 816,
+     "base_use": 0.04217753931879997,
+     "instruct_use": 0.021579205989837646
+    },
+    {
+     "block": 2,
+     "index": 1180,
+     "base_use": 0.06571849435567856,
+     "instruct_use": 0.07994115352630615
+    },
+    {
+     "block": 10,
+     "index": 222,
+     "base_use": 0.04021579399704933,
+     "instruct_use": 0.026483571156859398
+    },
+    {
+     "block": 1,
+     "index": 1431,
+     "base_use": 0.04462972283363342,
+     "instruct_use": 0.03187837451696396
+    },
+    {
+     "block": 14,
+     "index": 1357,
+     "base_use": 0.047572340816259384,
+     "instruct_use": 0.05934281647205353
+    }
+   ]
+  }
+ },
+ "checks": {
+  "own_beats_rot_k16": true,
+  "top1pct_over_0_3": true,
+  "chat_changes_more": true
+ },
+ "_exp": "e457_modeldiff_smollm2",
+ "_time": "2026-09-25 00:03:05"
+}
