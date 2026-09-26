@@ -3011,3 +3011,92 @@ SESSION 71 (the relayed take's two experiments on the turnover: word-set identit
   - Neither account alone. Replacement is right about identity (a new vocabulary of new rows) and wrong about mechanism (no event; generic churn). Threshold crossing is right about the rate (the churn of the large-row population) and wrong about the boundary (it drifts toward larger, sparser rows during the transition, and it is not a magnitude boundary). What the data show is a continuously churning population under a wordhood boundary that moves during steps 256-16000 and then holds.
   - The distinct rows used as words shrink with training (block 12: 12309 at step 1000, 9435 at the end, of 53248) while the MLP share of the words rises (0.63 to 0.67): the vocabulary concentrates.
   - Pre-registered: retention below 0.5 for the pairs from steps 512-3000 and above 0.8 after 16000, met early and refuted late (0.56-0.72; the set keeps turning over); the word set overlapping the largest rows by under 0.5, confirmed (at most 0.27); entrants more selective than leavers at the pairs from 1000-4000, met for 1000-2000 and 2000-3000 (0.76, 0.61) and not after, the selectivity hysteresis lying in 256-3000, earlier than guessed.
+
+SESSION 72 (the relayed take's brake: not another "which rows" study but a prospective test of what the moving boundary is; e516 at thirteen Pythia checkpoints and e516b; 2026-09-26 02:48-02:56 box time).
+
+- e516, e516b WHAT GOVERNS ENTRY INTO THE VOCABULARY (e516 records, per checkpoint and per MLP row of blocks up to 6 and 12: usage as a native word, mean absolute write, activity, write kurtosis, prominence when active, the share of positions at which the row's own write clears the position's calibrated Gumbel floor, the share at which the row's atom projection clears it, and the row's largest projection over the floor. e516b: at an origin checkpoint, every row that is not a word (not among the 256 most used) is ranked by each quantity computed there, and the ranking is scored by the AUC with which it picks the rows that are words at a later checkpoint; the same for the words at the origin, stayers against leavers; nothing fitted, nothing from the later checkpoint used).
+
+  The floor and the rows at the end: block 6: floor 0.143 of the state norm, rows whose own write ever clears it 0.00, whose projection ever clears it 0.13, median largest projection over the floor 0.80; block 12: floor 0.146 of the state norm, rows whose own write ever clears it 0.01, whose projection ever clears it 0.09, median largest projection over the floor 0.79 (at step 1000: block 6: floor 0.152, own write 0.00, projection 0.10; block 12: floor 0.158, own write 0.00, projection 0.07).
+
+  Block 6, entry at the next checkpoint (AUC of entrants over non-entrants):
+
+  | origin | n | usage | magnitude | selectivity | kurtosis | prominence when active | own write over the floor | projection over the floor (share) | largest projection over the floor | magnitude x selectivity |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 223 | 0.76 | 0.52 | 0.54 | 0.56 | 0.55 | 0.67 | 0.70 | 0.75 | 0.63 |
+  | 1000 | 204 | 0.75 | 0.63 | 0.52 | 0.56 | 0.70 | 0.67 | 0.74 | 0.75 | 0.70 |
+  | 2000 | 134 | 0.87 | 0.60 | 0.55 | 0.56 | 0.76 | 0.67 | 0.87 | 0.87 | 0.68 |
+  | 3000 | 111 | 0.94 | 0.70 | 0.42 | 0.47 | 0.78 | 0.67 | 0.90 | 0.93 | 0.71 |
+  | 4000 | 114 | 0.91 | 0.66 | 0.44 | 0.49 | 0.82 | 0.67 | 0.90 | 0.89 | 0.69 |
+  | 8000 | 98 | 0.93 | 0.78 | 0.35 | 0.40 | 0.87 | 0.67 | 0.93 | 0.93 | 0.78 |
+  | 16000 | 77 | 0.94 | 0.79 | 0.38 | 0.43 | 0.82 | 0.67 | 0.93 | 0.94 | 0.80 |
+  | 32000 | 83 | 0.98 | 0.75 | 0.41 | 0.49 | 0.84 | 0.66 | 0.98 | 0.97 | 0.75 |
+
+  Block 6, entry by the end:
+
+  | origin | n | usage | magnitude | selectivity | kurtosis | prominence when active | own write over the floor | projection over the floor (share) | largest projection over the floor | magnitude x selectivity |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 252 | 0.64 | 0.56 | 0.46 | 0.48 | 0.56 | 0.67 | 0.67 | 0.54 | 0.55 |
+  | 1000 | 246 | 0.65 | 0.67 | 0.43 | 0.45 | 0.71 | 0.67 | 0.69 | 0.61 | 0.66 |
+  | 2000 | 229 | 0.70 | 0.69 | 0.43 | 0.47 | 0.78 | 0.67 | 0.74 | 0.70 | 0.72 |
+  | 3000 | 211 | 0.75 | 0.72 | 0.40 | 0.44 | 0.79 | 0.67 | 0.83 | 0.76 | 0.74 |
+  | 4000 | 193 | 0.76 | 0.71 | 0.39 | 0.43 | 0.80 | 0.67 | 0.79 | 0.78 | 0.73 |
+  | 8000 | 169 | 0.86 | 0.72 | 0.39 | 0.45 | 0.82 | 0.67 | 0.88 | 0.89 | 0.75 |
+  | 16000 | 127 | 0.89 | 0.76 | 0.39 | 0.46 | 0.84 | 0.67 | 0.91 | 0.93 | 0.76 |
+  | 32000 | 96 | 0.96 | 0.77 | 0.43 | 0.53 | 0.88 | 0.66 | 0.97 | 0.96 | 0.80 |
+
+  Block 6, staying at the next checkpoint (AUC of stayers over leavers):
+
+  | origin | n | usage | magnitude | selectivity | kurtosis | prominence when active | own write over the floor | projection over the floor (share) | largest projection over the floor | magnitude x selectivity |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 223 | 0.69 | 0.61 | 0.44 | 0.52 | 0.60 | 0.72 | 0.70 | 0.68 | 0.60 |
+  | 1000 | 204 | 0.66 | 0.60 | 0.48 | 0.53 | 0.66 | 0.67 | 0.71 | 0.70 | 0.63 |
+  | 2000 | 134 | 0.70 | 0.55 | 0.53 | 0.55 | 0.66 | 0.97 | 0.74 | 0.69 | 0.56 |
+  | 3000 | 111 | 0.73 | 0.57 | 0.52 | 0.53 | 0.69 | 0.92 | 0.77 | 0.74 | 0.62 |
+  | 4000 | 114 | 0.77 | 0.63 | 0.50 | 0.51 | 0.72 | 0.93 | 0.77 | 0.76 | 0.69 |
+  | 8000 | 98 | 0.80 | 0.67 | 0.44 | 0.41 | 0.64 | 0.88 | 0.67 | 0.62 | 0.70 |
+  | 16000 | 77 | 0.76 | 0.57 | 0.53 | 0.52 | 0.67 | 0.76 | 0.70 | 0.71 | 0.59 |
+  | 32000 | 83 | 0.80 | 0.63 | 0.50 | 0.52 | 0.67 | 0.78 | 0.70 | 0.74 | 0.66 |
+
+  Block 12, entry at the next checkpoint (AUC of entrants over non-entrants):
+
+  | origin | n | usage | magnitude | selectivity | kurtosis | prominence when active | own write over the floor | projection over the floor (share) | largest projection over the floor | magnitude x selectivity |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 234 | 0.73 | 0.47 | 0.57 | 0.57 | 0.49 | 0.67 | 0.71 | 0.76 | 0.59 |
+  | 1000 | 231 | 0.74 | 0.58 | 0.57 | 0.59 | 0.66 | 0.67 | 0.73 | 0.76 | 0.71 |
+  | 2000 | 177 | 0.82 | 0.55 | 0.58 | 0.60 | 0.73 | 0.67 | 0.80 | 0.86 | 0.64 |
+  | 3000 | 131 | 0.89 | 0.63 | 0.48 | 0.51 | 0.77 | 0.67 | 0.84 | 0.88 | 0.67 |
+  | 4000 | 149 | 0.86 | 0.58 | 0.51 | 0.56 | 0.75 | 0.67 | 0.86 | 0.91 | 0.63 |
+  | 8000 | 128 | 0.91 | 0.65 | 0.47 | 0.51 | 0.81 | 0.67 | 0.91 | 0.95 | 0.69 |
+  | 16000 | 112 | 0.92 | 0.66 | 0.53 | 0.55 | 0.81 | 0.66 | 0.94 | 0.97 | 0.70 |
+  | 32000 | 84 | 0.98 | 0.65 | 0.54 | 0.57 | 0.79 | 0.67 | 0.98 | 0.97 | 0.69 |
+
+  Block 12, entry by the end:
+
+  | origin | n | usage | magnitude | selectivity | kurtosis | prominence when active | own write over the floor | projection over the floor (share) | largest projection over the floor | magnitude x selectivity |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 252 | 0.68 | 0.52 | 0.52 | 0.50 | 0.54 | 0.67 | 0.68 | 0.61 | 0.59 |
+  | 1000 | 243 | 0.68 | 0.62 | 0.50 | 0.50 | 0.66 | 0.67 | 0.69 | 0.67 | 0.69 |
+  | 2000 | 232 | 0.70 | 0.62 | 0.49 | 0.51 | 0.71 | 0.67 | 0.72 | 0.70 | 0.67 |
+  | 3000 | 226 | 0.72 | 0.62 | 0.47 | 0.50 | 0.72 | 0.67 | 0.76 | 0.77 | 0.65 |
+  | 4000 | 219 | 0.74 | 0.63 | 0.46 | 0.49 | 0.75 | 0.67 | 0.76 | 0.80 | 0.66 |
+  | 8000 | 191 | 0.80 | 0.66 | 0.45 | 0.49 | 0.78 | 0.67 | 0.89 | 0.84 | 0.70 |
+  | 16000 | 156 | 0.89 | 0.69 | 0.46 | 0.50 | 0.78 | 0.66 | 0.90 | 0.92 | 0.73 |
+  | 32000 | 115 | 0.95 | 0.72 | 0.48 | 0.53 | 0.81 | 0.67 | 0.95 | 0.96 | 0.76 |
+
+  Block 12, staying at the next checkpoint (AUC of stayers over leavers):
+
+  | origin | n | usage | magnitude | selectivity | kurtosis | prominence when active | own write over the floor | projection over the floor (share) | largest projection over the floor | magnitude x selectivity |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 234 | 0.65 | 0.57 | 0.52 | 0.54 | 0.59 | 0.70 | 0.69 | 0.64 | 0.62 |
+  | 1000 | 231 | 0.71 | 0.60 | 0.49 | 0.54 | 0.69 | 0.70 | 0.75 | 0.72 | 0.61 |
+  | 2000 | 177 | 0.76 | 0.49 | 0.59 | 0.58 | 0.66 | 0.76 | 0.81 | 0.77 | 0.54 |
+  | 3000 | 131 | 0.75 | 0.62 | 0.48 | 0.48 | 0.70 | 0.98 | 0.79 | 0.76 | 0.65 |
+  | 4000 | 149 | 0.77 | 0.67 | 0.46 | 0.48 | 0.73 | 0.90 | 0.82 | 0.76 | 0.71 |
+  | 8000 | 128 | 0.76 | 0.67 | 0.44 | 0.44 | 0.64 | 0.99 | 0.71 | 0.69 | 0.67 |
+  | 16000 | 112 | 0.78 | 0.55 | 0.50 | 0.52 | 0.55 | 0.92 | 0.67 | 0.65 | 0.55 |
+  | 32000 | 84 | 0.80 | 0.70 | 0.40 | 0.39 | 0.60 | 0.74 | 0.65 | 0.56 | 0.67 |
+
+  - The boundary is the extreme-value floor, and it predicts out of sample. A row's largest projection over the calibrated Gumbel floor, computed at the origin, picks the rows that will be words at the next checkpoint at AUC 0.76 from step 1000, 0.86 from 2000, 0.88-0.91 from 3000-4000, 0.95 from 8000 and 0.97 from 16000 and 32000 (block 12), matching or beating the strongest baseline, the row's own current usage (0.74, 0.82, 0.89, 0.86, 0.91, 0.92, 0.98), and far ahead of magnitude (0.55-0.66), selectivity (0.47-0.58), kurtosis (0.51-0.60) and their product (0.63-0.71); the share of positions at which the projection clears the floor does nearly as well (0.73-0.98). Block 6 is the same (0.75-0.97, equal to usage). A row enters the vocabulary when its projection approaches the floor, and nothing about its size or its selectivity alone says so.
+  - It is the projection that crosses, not the row's own write. The own write clears the floor at some position for only 0-1% of rows at any checkpoint (the floor is 0.14-0.16 of the state norm and a single write is 0.3-0.7 of a winning projection, e505), so as a predictor of entry that criterion is degenerate (a flat 0.67); the projection that enters carries the position's chord with it. For staying, the own write is what counts: among the words at the origin, the share of positions at which the row's own write clears the floor separates the rows still words at the next checkpoint from those that leave at 0.90-0.99 from steps 3000-16000 (0.76-0.98 at block 6), ahead of usage (0.65-0.80) and of the projection criterion (0.65-0.82). A row becomes a word on the strength of its chord and keeps its place on the strength of its own write.
+  - At long horizons the same holds with less to hold on to: from step 1000 nothing predicts the end's vocabulary above 0.69 (the turnover of e515b), and from 8000 the floor criteria reach 0.84-0.89 by the end against usage 0.80 and magnitude 0.66.
+  - Pre-registered: the own-write criterion beating magnitude at the next checkpoint, met numerically (0.67 against 0.55-0.66) but on a degenerate quantity; usage the best single predictor everywhere, refuted (the projection over the floor matches or beats it at most origins and horizons); the product of magnitude and selectivity beating either alone at the next checkpoint, confirmed (0.63-0.71 against 0.55-0.66 and 0.47-0.58).

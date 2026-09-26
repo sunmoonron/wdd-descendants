@@ -487,3 +487,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Wordhood is a fixed threshold rows cross": entrants are more selective and larger than leavers through the transition, and the words are never the largest rows (e515b).
 - "The vocabulary is abandoned in an event": its retention tracks the churn of the largest rows at every pair (e515b).
 - "The early words become the words": 0.04-0.05 of the step-1000 words survive to the end (e515b).
+
+## Session 72 kills (the boundary)
+- "Magnitude, selectivity or kurtosis govern entry into the vocabulary": prospectively they predict the next checkpoint's entrants at 0.5-0.7; the projection over the extreme-value floor does at 0.76-0.97 (e516b).
+- "A row enters the vocabulary on its own write": its own write almost never clears the floor; the projection that crosses carries the position's chord, and the own write governs staying instead (e516b).

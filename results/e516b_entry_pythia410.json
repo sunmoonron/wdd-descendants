@@ -1,0 +1,2676 @@
+{
+ "model": "pythia410",
+ "steps": [
+  0,
+  64,
+  256,
+  512,
+  1000,
+  2000,
+  3000,
+  4000,
+  8000,
+  16000,
+  32000,
+  64000,
+  143000
+ ],
+ "origins": [
+  512,
+  1000,
+  2000,
+  3000,
+  4000,
+  8000,
+  16000,
+  32000
+ ],
+ "quantities": [
+  "usage",
+  "magnitude",
+  "selectivity",
+  "kurtosis",
+  "prominence_active",
+  "write_over_floor_rate",
+  "projection_over_floor_rate",
+  "max_projection_over_floor",
+  "magnitude_x_selectivity"
+ ],
+ "by_block": {
+  "6": {
+   "entry": {
+    "512": {
+     "1000": {
+      "n_entrants": 223,
+      "auc": {
+       "usage": 0.7646101765871024,
+       "magnitude": 0.5184197203166705,
+       "selectivity": 0.5416699339705067,
+       "kurtosis": 0.5625032706175356,
+       "prominence_active": 0.5481847655152131,
+       "write_over_floor_rate": 0.6707607508081308,
+       "projection_over_floor_rate": 0.7046065723466961,
+       "max_projection_over_floor": 0.7466475076741214,
+       "magnitude_x_selectivity": 0.6349372097103263
+      }
+     },
+     "2000": {
+      "n_entrants": 248,
+      "auc": {
+       "usage": 0.7073278932396405,
+       "magnitude": 0.5256897554763584,
+       "selectivity": 0.5450409581680424,
+       "kurtosis": 0.5666849994503028,
+       "prominence_active": 0.5641406457567957,
+       "write_over_floor_rate": 0.6698268052972488,
+       "projection_over_floor_rate": 0.6890122399245082,
+       "max_projection_over_floor": 0.6291724022226091,
+       "magnitude_x_selectivity": 0.6346176970435452
+      }
+     },
+     "3000": {
+      "n_entrants": 246,
+      "auc": {
+       "usage": 0.760041530660248,
+       "magnitude": 0.513801657185901,
+       "selectivity": 0.5655823672187733,
+       "kurtosis": 0.5876524931383499,
+       "prominence_active": 0.5612093820618718,
+       "write_over_floor_rate": 0.6698966206914465,
+       "projection_over_floor_rate": 0.6856068411589334,
+       "max_projection_over_floor": 0.5920520302114629,
+       "magnitude_x_selectivity": 0.659785535555036
+      }
+     },
+     "4000": {
+      "n_entrants": 253,
+      "auc": {
+       "usage": 0.7561847399083736,
+       "magnitude": 0.55441284144995,
+       "selectivity": 0.5158927300543884,
+       "kurtosis": 0.548223294685273,
+       "prominence_active": 0.5898519333877783,
+       "write_over_floor_rate": 0.6696728348340315,
+       "projection_over_floor_rate": 0.6803057413232033,
+       "max_projection_over_floor": 0.5732822435850924,
+       "magnitude_x_selectivity": 0.6481883625236992
+      }
+     },
+     "8000": {
+      "n_entrants": 250,
+      "auc": {
+       "usage": 0.6768360434566498,
+       "magnitude": 0.5584094298089896,
+       "selectivity": 0.4949895618831215,
+       "kurtosis": 0.5251345593978556,
+       "prominence_active": 0.5777506213164809,
+       "write_over_floor_rate": 0.6697577220762622,
+       "projection_over_floor_rate": 0.68084967691543,
+       "max_projection_over_floor": 0.5819784136902648,
+       "magnitude_x_selectivity": 0.6081025349712419
+      }
+     },
+     "16000": {
+      "n_entrants": 251,
+      "auc": {
+       "usage": 0.6678563926435214,
+       "magnitude": 0.576447697581766,
+       "selectivity": 0.47387061022729604,
+       "kurtosis": 0.5034188826090985,
+       "prominence_active": 0.5927640405889313,
+       "write_over_floor_rate": 0.6697254298976648,
+       "projection_over_floor_rate": 0.6735792141216776,
+       "max_projection_over_floor": 0.5555841607827522,
+       "magnitude_x_selectivity": 0.6099135501310928
+      }
+     },
+     "32000": {
+      "n_entrants": 252,
+      "auc": {
+       "usage": 0.7161404968179574,
+       "magnitude": 0.5693063643106251,
+       "selectivity": 0.4750365207864143,
+       "kurtosis": 0.48820837926611255,
+       "prominence_active": 0.5821750100883036,
+       "write_over_floor_rate": 0.6696990754830551,
+       "projection_over_floor_rate": 0.6697596616642206,
+       "max_projection_over_floor": 0.5499163910699915,
+       "magnitude_x_selectivity": 0.6020640443840274
+      }
+     },
+     "64000": {
+      "n_entrants": 251,
+      "auc": {
+       "usage": 0.6635325553811737,
+       "magnitude": 0.5490588683787838,
+       "selectivity": 0.4768171058001263,
+       "kurtosis": 0.5129510716233239,
+       "prominence_active": 0.5554107376635832,
+       "write_over_floor_rate": 0.6697254298976648,
+       "projection_over_floor_rate": 0.663015256566491,
+       "max_projection_over_floor": 0.5546782866757716,
+       "magnitude_x_selectivity": 0.5639824511646296
+      }
+     },
+     "143000": {
+      "n_entrants": 252,
+      "auc": {
+       "usage": 0.643044114630182,
+       "magnitude": 0.5562269349817284,
+       "selectivity": 0.464232877499814,
+       "kurtosis": 0.4846959306375582,
+       "prominence_active": 0.5591846678073776,
+       "write_over_floor_rate": 0.6696990754830551,
+       "projection_over_floor_rate": 0.6683272916229882,
+       "max_projection_over_floor": 0.5391705160026421,
+       "magnitude_x_selectivity": 0.5517627197164905
+      }
+     }
+    },
+    "1000": {
+     "2000": {
+      "n_entrants": 204,
+      "auc": {
+       "usage": 0.7533134975243465,
+       "magnitude": 0.6312980778586779,
+       "selectivity": 0.5199426679788604,
+       "kurtosis": 0.5628992877457235,
+       "prominence_active": 0.703797125684245,
+       "write_over_floor_rate": 0.6706869973283515,
+       "projection_over_floor_rate": 0.7377718562258307,
+       "max_projection_over_floor": 0.7468619944787783,
+       "magnitude_x_selectivity": 0.6999171886250601
+      }
+     },
+     "3000": {
+      "n_entrants": 219,
+      "auc": {
+       "usage": 0.7756474627389196,
+       "magnitude": 0.62329795439555,
+       "selectivity": 0.5304758124629665,
+       "kurtosis": 0.5757991353398617,
+       "prominence_active": 0.7017967033314046,
+       "write_over_floor_rate": 0.6707684340265481,
+       "projection_over_floor_rate": 0.7233006587863633,
+       "max_projection_over_floor": 0.6930448412287781,
+       "magnitude_x_selectivity": 0.6923410518590419
+      }
+     },
+     "4000": {
+      "n_entrants": 227,
+      "auc": {
+       "usage": 0.7647870267763084,
+       "magnitude": 0.6645442195326292,
+       "selectivity": 0.47914822275005575,
+       "kurtosis": 0.5187992379318768,
+       "prominence_active": 0.7277072335680038,
+       "write_over_floor_rate": 0.6706022891736286,
+       "projection_over_floor_rate": 0.7159242763955009,
+       "max_projection_over_floor": 0.6506005795055809,
+       "magnitude_x_selectivity": 0.7025394821581137
+      }
+     },
+     "8000": {
+      "n_entrants": 228,
+      "auc": {
+       "usage": 0.750336244862191,
+       "magnitude": 0.6628856624319419,
+       "selectivity": 0.4583057926852039,
+       "kurtosis": 0.4798424239255724,
+       "prominence_active": 0.7205129904724917,
+       "write_over_floor_rate": 0.6705632793847823,
+       "projection_over_floor_rate": 0.7007420726500514,
+       "max_projection_over_floor": 0.6238781464801496,
+       "magnitude_x_selectivity": 0.6860005128473233
+      }
+     },
+     "16000": {
+      "n_entrants": 237,
+      "auc": {
+       "usage": 0.6730126258848833,
+       "magnitude": 0.7156716488308692,
+       "selectivity": 0.3925244028418086,
+       "kurtosis": 0.419351245046922,
+       "prominence_active": 0.7455963780670976,
+       "write_over_floor_rate": 0.6702203499239267,
+       "projection_over_floor_rate": 0.6943514958546352,
+       "max_projection_over_floor": 0.6086318581497459,
+       "magnitude_x_selectivity": 0.6786244297493585
+      }
+     },
+     "32000": {
+      "n_entrants": 243,
+      "auc": {
+       "usage": 0.6807941059056193,
+       "magnitude": 0.682713171806354,
+       "selectivity": 0.4169457696633046,
+       "kurtosis": 0.44171994930207087,
+       "prominence_active": 0.7208222155906503,
+       "write_over_floor_rate": 0.6700027563383731,
+       "projection_over_floor_rate": 0.6934346999776075,
+       "max_projection_over_floor": 0.6171250266029744,
+       "magnitude_x_selectivity": 0.6631682933737304
+      }
+     },
+     "64000": {
+      "n_entrants": 242,
+      "auc": {
+       "usage": 0.6606331257879752,
+       "magnitude": 0.6703496043183828,
+       "selectivity": 0.4191098175622915,
+       "kurtosis": 0.4474027105466795,
+       "prominence_active": 0.7017561176795674,
+       "write_over_floor_rate": 0.6700385209503869,
+       "projection_over_floor_rate": 0.6866516341483591,
+       "max_projection_over_floor": 0.6171354281862358,
+       "magnitude_x_selectivity": 0.6434260061588933
+      }
+     },
+     "143000": {
+      "n_entrants": 246,
+      "auc": {
+       "usage": 0.6476156667849958,
+       "magnitude": 0.6679933966538814,
+       "selectivity": 0.4253253331255357,
+       "kurtosis": 0.4533768553872972,
+       "prominence_active": 0.7051216337509488,
+       "write_over_floor_rate": 0.6698966206914465,
+       "projection_over_floor_rate": 0.6895353703270792,
+       "max_projection_over_floor": 0.605307352860536,
+       "magnitude_x_selectivity": 0.6557542620154636
+      }
+     }
+    },
+    "2000": {
+     "3000": {
+      "n_entrants": 134,
+      "auc": {
+       "usage": 0.872973369486631,
+       "magnitude": 0.5950879046532418,
+       "selectivity": 0.5516173991790569,
+       "kurtosis": 0.5585019531435531,
+       "prominence_active": 0.7636672552659938,
+       "write_over_floor_rate": 0.670045395679125,
+       "projection_over_floor_rate": 0.8660357782546148,
+       "max_projection_over_floor": 0.8724936592759278,
+       "magnitude_x_selectivity": 0.6788883705368216
+      }
+     },
+     "4000": {
+      "n_entrants": 163,
+      "auc": {
+       "usage": 0.8252186260039924,
+       "magnitude": 0.6755419208427619,
+       "selectivity": 0.46676187707087513,
+       "kurtosis": 0.506054951762547,
+       "prominence_active": 0.7876705204659302,
+       "write_over_floor_rate": 0.6705656318814289,
+       "projection_over_floor_rate": 0.8285374548421917,
+       "max_projection_over_floor": 0.8354330795860975,
+       "magnitude_x_selectivity": 0.7103162289731325
+      }
+     },
+     "8000": {
+      "n_entrants": 194,
+      "auc": {
+       "usage": 0.8023350577563603,
+       "magnitude": 0.6729313681583499,
+       "selectivity": 0.46536627490288707,
+       "kurtosis": 0.4906908918756808,
+       "prominence_active": 0.7975771259827276,
+       "write_over_floor_rate": 0.6706166937104708,
+       "projection_over_floor_rate": 0.8038897416433914,
+       "max_projection_over_floor": 0.8138196639749498,
+       "magnitude_x_selectivity": 0.7248399471933499
+      }
+     },
+     "16000": {
+      "n_entrants": 207,
+      "auc": {
+       "usage": 0.7568593844805415,
+       "magnitude": 0.7221401056948454,
+       "selectivity": 0.40825100701920775,
+       "kurtosis": 0.4370486480913773,
+       "prominence_active": 0.8006690227859234,
+       "write_over_floor_rate": 0.6707067313118111,
+       "projection_over_floor_rate": 0.7760032387648921,
+       "max_projection_over_floor": 0.7648807734811739,
+       "magnitude_x_selectivity": 0.7560704150506665
+      }
+     },
+     "32000": {
+      "n_entrants": 216,
+      "auc": {
+       "usage": 0.7302109600735487,
+       "magnitude": 0.707856744155503,
+       "selectivity": 0.4200934134489099,
+       "kurtosis": 0.4430109009718939,
+       "prominence_active": 0.7843446283162595,
+       "write_over_floor_rate": 0.6707545311268716,
+       "projection_over_floor_rate": 0.8469198187549252,
+       "max_projection_over_floor": 0.7392817507223536,
+       "magnitude_x_selectivity": 0.7401617086945101
+      }
+     },
+     "64000": {
+      "n_entrants": 225,
+      "auc": {
+       "usage": 0.7069915930616154,
+       "magnitude": 0.6868513591808261,
+       "selectivity": 0.42573902624557086,
+       "kurtosis": 0.45542099724498364,
+       "prominence_active": 0.7734900421332261,
+       "write_over_floor_rate": 0.6706810290124113,
+       "projection_over_floor_rate": 0.7445897232765382,
+       "max_projection_over_floor": 0.7154251750952826,
+       "magnitude_x_selectivity": 0.707012403485746
+      }
+     },
+     "143000": {
+      "n_entrants": 229,
+      "auc": {
+       "usage": 0.7020350519293868,
+       "magnitude": 0.6941592356599089,
+       "selectivity": 0.4329336373747196,
+       "kurtosis": 0.46928924309775805,
+       "prominence_active": 0.7796054206288848,
+       "write_over_floor_rate": 0.6705245054744337,
+       "projection_over_floor_rate": 0.7408260458884774,
+       "max_projection_over_floor": 0.7000244623284015,
+       "magnitude_x_selectivity": 0.7239276739269226
+      }
+     }
+    },
+    "3000": {
+     "4000": {
+      "n_entrants": 111,
+      "auc": {
+       "usage": 0.9363945821815456,
+       "magnitude": 0.6969443211096629,
+       "selectivity": 0.4242866077524265,
+       "kurtosis": 0.4689178844981707,
+       "prominence_active": 0.7793691943135505,
+       "write_over_floor_rate": 0.6696696696696697,
+       "projection_over_floor_rate": 0.9047642236831426,
+       "max_projection_over_floor": 0.9308497686876065,
+       "magnitude_x_selectivity": 0.7055666159004792
+      }
+     },
+     "8000": {
+      "n_entrants": 155,
+      "auc": {
+       "usage": 0.86898484289874,
+       "magnitude": 0.690942379273386,
+       "selectivity": 0.4353355986992219,
+       "kurtosis": 0.47882902575189107,
+       "prominence_active": 0.7986079071694607,
+       "write_over_floor_rate": 0.6704333225658066,
+       "projection_over_floor_rate": 0.9036556704725879,
+       "max_projection_over_floor": 0.8822323251808317,
+       "magnitude_x_selectivity": 0.7204589477577101
+      }
+     },
+     "16000": {
+      "n_entrants": 178,
+      "auc": {
+       "usage": 0.831884041824269,
+       "magnitude": 0.7473064027993197,
+       "selectivity": 0.3749609061341359,
+       "kurtosis": 0.412259239482059,
+       "prominence_active": 0.8062026546426005,
+       "write_over_floor_rate": 0.6706283110415402,
+       "projection_over_floor_rate": 0.8306091640000605,
+       "max_projection_over_floor": 0.8342800083718569,
+       "magnitude_x_selectivity": 0.7635075772466936
+      }
+     },
+     "32000": {
+      "n_entrants": 193,
+      "auc": {
+       "usage": 0.7898561034719964,
+       "magnitude": 0.7184887055150514,
+       "selectivity": 0.40114050955023456,
+       "kurtosis": 0.42819245465288575,
+       "prominence_active": 0.7854739060983408,
+       "write_over_floor_rate": 0.670618110132863,
+       "projection_over_floor_rate": 0.8000460433641103,
+       "max_projection_over_floor": 0.7975610235212195,
+       "magnitude_x_selectivity": 0.7387202478263879
+      }
+     },
+     "64000": {
+      "n_entrants": 207,
+      "auc": {
+       "usage": 0.766959631720647,
+       "magnitude": 0.7081962227082425,
+       "selectivity": 0.39489230062081465,
+       "kurtosis": 0.43086755982732755,
+       "prominence_active": 0.7832704229968748,
+       "write_over_floor_rate": 0.6707067313118111,
+       "projection_over_floor_rate": 0.7784646795323313,
+       "max_projection_over_floor": 0.7759431284393253,
+       "magnitude_x_selectivity": 0.7184168618539702
+      }
+     },
+     "143000": {
+      "n_entrants": 211,
+      "auc": {
+       "usage": 0.7466483960105894,
+       "magnitude": 0.7184711460019777,
+       "selectivity": 0.3972234427864375,
+       "kurtosis": 0.4397721152933289,
+       "prominence_active": 0.7917531680292644,
+       "write_over_floor_rate": 0.6707282749604915,
+       "projection_over_floor_rate": 0.8344508847293554,
+       "max_projection_over_floor": 0.755237340695366,
+       "magnitude_x_selectivity": 0.7360840696626174
+      }
+     }
+    },
+    "4000": {
+     "8000": {
+      "n_entrants": 114,
+      "auc": {
+       "usage": 0.9050603329750424,
+       "magnitude": 0.6618216801986593,
+       "selectivity": 0.4428175679110149,
+       "kurtosis": 0.4859600152242666,
+       "prominence_active": 0.8171770763209345,
+       "write_over_floor_rate": 0.6697078007009609,
+       "projection_over_floor_rate": 0.900589444425848,
+       "max_projection_over_floor": 0.8902551056462441,
+       "magnitude_x_selectivity": 0.6856052575789697
+      }
+     },
+     "16000": {
+      "n_entrants": 140,
+      "auc": {
+       "usage": 0.8271780207343936,
+       "magnitude": 0.7302237637168321,
+       "selectivity": 0.37996180506436555,
+       "kurtosis": 0.4152610492492371,
+       "prominence_active": 0.830589293292646,
+       "write_over_floor_rate": 0.6701195360022634,
+       "projection_over_floor_rate": 0.8495647495099327,
+       "max_projection_over_floor": 0.8321618030434694,
+       "magnitude_x_selectivity": 0.7444723440373462
+      }
+     },
+     "32000": {
+      "n_entrants": 166,
+      "auc": {
+       "usage": 0.8218752532252905,
+       "magnitude": 0.7196438852756157,
+       "selectivity": 0.3869393325514447,
+       "kurtosis": 0.41355922806269324,
+       "prominence_active": 0.8002183601663291,
+       "write_over_floor_rate": 0.6706096598784519,
+       "projection_over_floor_rate": 0.8122253971638768,
+       "max_projection_over_floor": 0.7945699968013648,
+       "magnitude_x_selectivity": 0.7365557095639194
+      }
+     },
+     "64000": {
+      "n_entrants": 183,
+      "auc": {
+       "usage": 0.7879083481543805,
+       "magnitude": 0.7000678777828294,
+       "selectivity": 0.3854652899109073,
+       "kurtosis": 0.4267458980586799,
+       "prominence_active": 0.7958092291720014,
+       "write_over_floor_rate": 0.6706261072236709,
+       "projection_over_floor_rate": 0.7872419574891917,
+       "max_projection_over_floor": 0.7800167575090886,
+       "magnitude_x_selectivity": 0.707799790153715
+      }
+     },
+     "143000": {
+      "n_entrants": 193,
+      "auc": {
+       "usage": 0.7616114002488324,
+       "magnitude": 0.714644598652589,
+       "selectivity": 0.3872997788339683,
+       "kurtosis": 0.4338195485657437,
+       "prominence_active": 0.7992107271491906,
+       "write_over_floor_rate": 0.670618110132863,
+       "projection_over_floor_rate": 0.7887376976739106,
+       "max_projection_over_floor": 0.7804820196807843,
+       "magnitude_x_selectivity": 0.7301776249444882
+      }
+     }
+    },
+    "8000": {
+     "16000": {
+      "n_entrants": 98,
+      "auc": {
+       "usage": 0.9292784138162645,
+       "magnitude": 0.775486421703366,
+       "selectivity": 0.349843108371253,
+       "kurtosis": 0.403183379432711,
+       "prominence_active": 0.8730093068373617,
+       "write_over_floor_rate": 0.6700836419036857,
+       "projection_over_floor_rate": 0.9303738445727893,
+       "max_projection_over_floor": 0.927291504213805,
+       "magnitude_x_selectivity": 0.7830549834171963
+      }
+     },
+     "32000": {
+      "n_entrants": 130,
+      "auc": {
+       "usage": 0.8967219445335828,
+       "magnitude": 0.7374183477556171,
+       "selectivity": 0.3873857140526164,
+       "kurtosis": 0.4363708058892956,
+       "prominence_active": 0.8183322546081508,
+       "write_over_floor_rate": 0.6699911345106848,
+       "projection_over_floor_rate": 0.8879347761056027,
+       "max_projection_over_floor": 0.9081649524907673,
+       "magnitude_x_selectivity": 0.758051822320365
+      }
+     },
+     "64000": {
+      "n_entrants": 160,
+      "auc": {
+       "usage": 0.8526901366081541,
+       "magnitude": 0.7262077080973952,
+       "selectivity": 0.3729351730605889,
+       "kurtosis": 0.43454907807191395,
+       "prominence_active": 0.8181344227774632,
+       "write_over_floor_rate": 0.6705186509060023,
+       "projection_over_floor_rate": 0.8812393827859569,
+       "max_projection_over_floor": 0.8876908886608154,
+       "magnitude_x_selectivity": 0.7333325222961495
+      }
+     },
+     "143000": {
+      "n_entrants": 169,
+      "auc": {
+       "usage": 0.8612950047792686,
+       "magnitude": 0.7241942014892716,
+       "selectivity": 0.39038548996039374,
+       "kurtosis": 0.4465018330479877,
+       "prominence_active": 0.8220362931142292,
+       "write_over_floor_rate": 0.6706186319623826,
+       "projection_over_floor_rate": 0.882491998417175,
+       "max_projection_over_floor": 0.8896702231351793,
+       "magnitude_x_selectivity": 0.7454802237992284
+      }
+     }
+    },
+    "16000": {
+     "32000": {
+      "n_entrants": 77,
+      "auc": {
+       "usage": 0.9409555827566343,
+       "magnitude": 0.7878793989101339,
+       "selectivity": 0.3760381613516869,
+       "kurtosis": 0.4264317495553601,
+       "prominence_active": 0.818772074462113,
+       "write_over_floor_rate": 0.6711181827805562,
+       "projection_over_floor_rate": 0.932898676185313,
+       "max_projection_over_floor": 0.9368063744012084,
+       "magnitude_x_selectivity": 0.7970430360070079
+      }
+     },
+     "64000": {
+      "n_entrants": 116,
+      "auc": {
+       "usage": 0.9125258925307664,
+       "magnitude": 0.73255574509565,
+       "selectivity": 0.3815550749360302,
+       "kurtosis": 0.4451900816376264,
+       "prominence_active": 0.8124814183014499,
+       "write_over_floor_rate": 0.6697508224686244,
+       "projection_over_floor_rate": 0.9230184598513465,
+       "max_projection_over_floor": 0.9407524064822712,
+       "magnitude_x_selectivity": 0.722847264530279
+      }
+     },
+     "143000": {
+      "n_entrants": 127,
+      "auc": {
+       "usage": 0.8933463189136425,
+       "magnitude": 0.7598120412402584,
+       "selectivity": 0.3904789791975568,
+       "kurtosis": 0.4559859248036924,
+       "prominence_active": 0.8387890677297846,
+       "write_over_floor_rate": 0.6699462772180166,
+       "projection_over_floor_rate": 0.9094041450128219,
+       "max_projection_over_floor": 0.927530608569648,
+       "magnitude_x_selectivity": 0.7648789783068626
+      }
+     }
+    },
+    "32000": {
+     "64000": {
+      "n_entrants": 83,
+      "auc": {
+       "usage": 0.9808792931227965,
+       "magnitude": 0.7487565055690946,
+       "selectivity": 0.411569122641698,
+       "kurtosis": 0.49220522367591285,
+       "prominence_active": 0.8427211829706855,
+       "write_over_floor_rate": 0.664578194187118,
+       "projection_over_floor_rate": 0.9755115474781632,
+       "max_projection_over_floor": 0.9709934220345895,
+       "magnitude_x_selectivity": 0.7491039228384969
+      }
+     },
+     "143000": {
+      "n_entrants": 96,
+      "auc": {
+       "usage": 0.961976591925612,
+       "magnitude": 0.7670764183145009,
+       "selectivity": 0.42700940148305083,
+       "kurtosis": 0.5331144803436911,
+       "prominence_active": 0.878382841925612,
+       "write_over_floor_rate": 0.6648455891007533,
+       "projection_over_floor_rate": 0.9711158192090396,
+       "max_projection_over_floor": 0.9647470133003766,
+       "magnitude_x_selectivity": 0.8022378177966102
+      }
+     }
+    }
+   },
+   "exit": {
+    "512": {
+     "1000": {
+      "n_leavers": 223,
+      "n_stayers": 33,
+      "auc": {
+       "usage": 0.6947954885174616,
+       "magnitude": 0.610273134936812,
+       "selectivity": 0.43946188340807174,
+       "kurtosis": 0.5180051637450741,
+       "prominence_active": 0.6022557412691942,
+       "write_over_floor_rate": 0.7196629976899035,
+       "projection_over_floor_rate": 0.6988721293654029,
+       "max_projection_over_floor": 0.6828373420301671,
+       "magnitude_x_selectivity": 0.5960048919690175
+      }
+     },
+     "2000": {
+      "n_leavers": 248,
+      "n_stayers": 8,
+      "auc": {
+       "usage": 0.7172379032258065,
+       "magnitude": 0.5589717741935484,
+       "selectivity": 0.4873991935483871,
+       "kurtosis": 0.5362903225806451,
+       "prominence_active": 0.5665322580645161,
+       "write_over_floor_rate": 0.6854838709677419,
+       "projection_over_floor_rate": 0.6799395161290323,
+       "max_projection_over_floor": 0.6134072580645161,
+       "magnitude_x_selectivity": 0.5877016129032258
+      }
+     },
+     "3000": {
+      "n_leavers": 246,
+      "n_stayers": 10,
+      "auc": {
+       "usage": 0.6365853658536585,
+       "magnitude": 0.634959349593496,
+       "selectivity": 0.432520325203252,
+       "kurtosis": 0.516260162601626,
+       "prominence_active": 0.608130081300813,
+       "write_over_floor_rate": 0.6829268292682927,
+       "projection_over_floor_rate": 0.6922764227642276,
+       "max_projection_over_floor": 0.6386178861788618,
+       "magnitude_x_selectivity": 0.6032520325203252
+      }
+     },
+     "4000": {
+      "n_leavers": 253,
+      "n_stayers": 3,
+      "auc": {
+       "usage": null,
+       "magnitude": null,
+       "selectivity": null,
+       "kurtosis": null,
+       "prominence_active": null,
+       "write_over_floor_rate": null,
+       "projection_over_floor_rate": null,
+       "max_projection_over_floor": null,
+       "magnitude_x_selectivity": null
+      }
+     },
+     "8000": {
+      "n_leavers": 250,
+      "n_stayers": 6,
+      "auc": {
+       "usage": 0.5566666666666666,
+       "magnitude": 0.4613333333333333,
+       "selectivity": 0.5106666666666667,
+       "kurtosis": 0.5326666666666666,
+       "prominence_active": 0.382,
+       "write_over_floor_rate": 0.6933333333333334,
+       "projection_over_floor_rate": 0.5113333333333333,
+       "max_projection_over_floor": 0.5366666666666666,
+       "magnitude_x_selectivity": 0.412
+      }
+     },
+     "16000": {
+      "n_leavers": 251,
+      "n_stayers": 5,
+      "auc": {
+       "usage": 0.6924302788844622,
+       "magnitude": 0.3896414342629482,
+       "selectivity": 0.6047808764940239,
+       "kurtosis": 0.5936254980079682,
+       "prominence_active": 0.4,
+       "write_over_floor_rate": 0.701195219123506,
+       "projection_over_floor_rate": 0.6772908366533864,
+       "max_projection_over_floor": 0.6430278884462152,
+       "magnitude_x_selectivity": 0.5187250996015936
+      }
+     },
+     "32000": {
+      "n_leavers": 252,
+      "n_stayers": 4,
+      "auc": {
+       "usage": null,
+       "magnitude": null,
+       "selectivity": null,
+       "kurtosis": null,
+       "prominence_active": null,
+       "write_over_floor_rate": null,
+       "projection_over_floor_rate": null,
+       "max_projection_over_floor": null,
+       "magnitude_x_selectivity": null
+      }
+     },
+     "64000": {
+      "n_leavers": 251,
+      "n_stayers": 5,
+      "auc": {
+       "usage": 0.6653386454183267,
+       "magnitude": 0.447808764940239,
+       "selectivity": 0.5808764940239044,
+       "kurtosis": 0.5681274900398406,
+       "prominence_active": 0.46613545816733065,
+       "write_over_floor_rate": 0.701195219123506,
+       "projection_over_floor_rate": 0.750597609561753,
+       "max_projection_over_floor": 0.6342629482071713,
+       "magnitude_x_selectivity": 0.5856573705179283
+      }
+     },
+     "143000": {
+      "n_leavers": 252,
+      "n_stayers": 4,
+      "auc": {
+       "usage": null,
+       "magnitude": null,
+       "selectivity": null,
+       "kurtosis": null,
+       "prominence_active": null,
+       "write_over_floor_rate": null,
+       "projection_over_floor_rate": null,
+       "max_projection_over_floor": null,
+       "magnitude_x_selectivity": null
+      }
+     }
+    },
+    "1000": {
+     "2000": {
+      "n_leavers": 204,
+      "n_stayers": 52,
+      "auc": {
+       "usage": 0.655448717948718,
+       "magnitude": 0.6000188536953243,
+       "selectivity": 0.4757730015082956,
+       "kurtosis": 0.52526395173454,
+       "prominence_active": 0.6583710407239819,
+       "write_over_floor_rate": 0.669683257918552,
+       "projection_over_floor_rate": 0.705316742081448,
+       "max_projection_over_floor": 0.7014517345399698,
+       "magnitude_x_selectivity": 0.6257541478129713
+      }
+     },
+     "3000": {
+      "n_leavers": 219,
+      "n_stayers": 37,
+      "auc": {
+       "usage": 0.6380352955695422,
+       "magnitude": 0.593607305936073,
+       "selectivity": 0.5135135135135135,
+       "kurtosis": 0.5696655559669258,
+       "prominence_active": 0.674564975934839,
+       "write_over_floor_rate": 0.70097494755029,
+       "projection_over_floor_rate": 0.686782673084043,
+       "max_projection_over_floor": 0.7368875725040108,
+       "magnitude_x_selectivity": 0.6818462297914353
+      }
+     },
+     "4000": {
+      "n_leavers": 227,
+      "n_stayers": 29,
+      "auc": {
+       "usage": 0.5972960656235758,
+       "magnitude": 0.5834725808901716,
+       "selectivity": 0.5047850524077169,
+       "kurtosis": 0.5263557648488532,
+       "prominence_active": 0.6483366246392223,
+       "write_over_floor_rate": 0.714567826219049,
+       "projection_over_floor_rate": 0.7166945161780344,
+       "max_projection_over_floor": 0.7642412274039192,
+       "magnitude_x_selectivity": 0.646209934680237
+      }
+     },
+     "8000": {
+      "n_leavers": 228,
+      "n_stayers": 28,
+      "auc": {
+       "usage": 0.5842731829573935,
+       "magnitude": 0.6032268170426065,
+       "selectivity": 0.512687969924812,
+       "kurtosis": 0.5604636591478697,
+       "prominence_active": 0.6489661654135338,
+       "write_over_floor_rate": 0.7117794486215538,
+       "projection_over_floor_rate": 0.6577380952380952,
+       "max_projection_over_floor": 0.7080200501253133,
+       "magnitude_x_selectivity": 0.6701127819548872
+      }
+     },
+     "16000": {
+      "n_leavers": 237,
+      "n_stayers": 19,
+      "auc": {
+       "usage": 0.6764379302687098,
+       "magnitude": 0.6144792360648457,
+       "selectivity": 0.5634021763268932,
+       "kurtosis": 0.6473462136353542,
+       "prominence_active": 0.6902065289806796,
+       "write_over_floor_rate": 0.6893182322895848,
+       "projection_over_floor_rate": 0.7272929158338886,
+       "max_projection_over_floor": 0.7546080390850544,
+       "magnitude_x_selectivity": 0.7310681767710415
+      }
+     },
+     "32000": {
+      "n_leavers": 243,
+      "n_stayers": 13,
+      "auc": {
+       "usage": 0.6745805634694524,
+       "magnitude": 0.6755302310857867,
+       "selectivity": 0.5333966445077556,
+       "kurtosis": 0.5549224438113327,
+       "prominence_active": 0.7334599556821779,
+       "write_over_floor_rate": 0.6837606837606838,
+       "projection_over_floor_rate": 0.8122823678379234,
+       "max_projection_over_floor": 0.7955049066160177,
+       "magnitude_x_selectivity": 0.8027856916745806
+      }
+     },
+     "64000": {
+      "n_leavers": 242,
+      "n_stayers": 14,
+      "auc": {
+       "usage": 0.6520070838252656,
+       "magnitude": 0.6033057851239669,
+       "selectivity": 0.5605076741440378,
+       "kurtosis": 0.5929752066115702,
+       "prominence_active": 0.6782762691853601,
+       "write_over_floor_rate": 0.6847697756788665,
+       "projection_over_floor_rate": 0.7792207792207793,
+       "max_projection_over_floor": 0.7136953955135773,
+       "magnitude_x_selectivity": 0.7378984651711924
+      }
+     },
+     "143000": {
+      "n_leavers": 246,
+      "n_stayers": 10,
+      "auc": {
+       "usage": 0.6780487804878049,
+       "magnitude": 0.6378048780487805,
+       "selectivity": 0.5247967479674797,
+       "kurtosis": 0.5646341463414634,
+       "prominence_active": 0.6959349593495935,
+       "write_over_floor_rate": 0.6829268292682927,
+       "projection_over_floor_rate": 0.758130081300813,
+       "max_projection_over_floor": 0.782520325203252,
+       "magnitude_x_selectivity": 0.7378048780487805
+      }
+     }
+    },
+    "2000": {
+     "3000": {
+      "n_leavers": 134,
+      "n_stayers": 122,
+      "auc": {
+       "usage": 0.7040004893564962,
+       "magnitude": 0.5508319060435527,
+       "selectivity": 0.5349889894788353,
+       "kurtosis": 0.5516271103498899,
+       "prominence_active": 0.6618546611206264,
+       "write_over_floor_rate": 0.9669684365059946,
+       "projection_over_floor_rate": 0.7378884267188647,
+       "max_projection_over_floor": 0.6868730119892341,
+       "magnitude_x_selectivity": 0.5635551749449474
+      }
+     },
+     "4000": {
+      "n_leavers": 163,
+      "n_stayers": 93,
+      "auc": {
+       "usage": 0.7342172966554522,
+       "magnitude": 0.5605910680124019,
+       "selectivity": 0.5464080744112408,
+       "kurtosis": 0.5739164852562834,
+       "prominence_active": 0.6751764628273633,
+       "write_over_floor_rate": 0.8464938320469688,
+       "projection_over_floor_rate": 0.8225476614552412,
+       "max_projection_over_floor": 0.7691800250676166,
+       "magnitude_x_selectivity": 0.5901444686324956
+      }
+     },
+     "8000": {
+      "n_leavers": 194,
+      "n_stayers": 62,
+      "auc": {
+       "usage": 0.7337046890588627,
+       "magnitude": 0.6511473229132025,
+       "selectivity": 0.5231127369471233,
+       "kurtosis": 0.5534585966079149,
+       "prominence_active": 0.7697040239441304,
+       "write_over_floor_rate": 0.6704356501496508,
+       "projection_over_floor_rate": 0.8053708014632525,
+       "max_projection_over_floor": 0.7994679082141669,
+       "magnitude_x_selectivity": 0.6993681410043232
+      }
+     },
+     "16000": {
+      "n_leavers": 207,
+      "n_stayers": 49,
+      "auc": {
+       "usage": 0.725426402445036,
+       "magnitude": 0.6497091590259292,
+       "selectivity": 0.5068520161687864,
+       "kurtosis": 0.546583850931677,
+       "prominence_active": 0.7038351572513063,
+       "write_over_floor_rate": 0.6719905353445726,
+       "projection_over_floor_rate": 0.7872424332051661,
+       "max_projection_over_floor": 0.7969042689539584,
+       "magnitude_x_selectivity": 0.6762299122547569
+      }
+     },
+     "32000": {
+      "n_leavers": 216,
+      "n_stayers": 40,
+      "auc": {
+       "usage": 0.6788194444444444,
+       "magnitude": 0.6446759259259259,
+       "selectivity": 0.508449074074074,
+       "kurtosis": 0.5717592592592593,
+       "prominence_active": 0.7128472222222222,
+       "write_over_floor_rate": 0.6907407407407408,
+       "projection_over_floor_rate": 0.7075231481481481,
+       "max_projection_over_floor": 0.7574074074074074,
+       "magnitude_x_selectivity": 0.6612268518518518
+      }
+     },
+     "64000": {
+      "n_leavers": 225,
+      "n_stayers": 31,
+      "auc": {
+       "usage": 0.7103942652329749,
+       "magnitude": 0.6369892473118279,
+       "selectivity": 0.5413620071684588,
+       "kurtosis": 0.6084587813620072,
+       "prominence_active": 0.7288888888888889,
+       "write_over_floor_rate": 0.7202867383512545,
+       "projection_over_floor_rate": 0.7574193548387097,
+       "max_projection_over_floor": 0.7893906810035842,
+       "magnitude_x_selectivity": 0.6699641577060932
+      }
+     },
+     "143000": {
+      "n_leavers": 229,
+      "n_stayers": 27,
+      "auc": {
+       "usage": 0.6760472262655669,
+       "magnitude": 0.6424065987384765,
+       "selectivity": 0.5102700954229339,
+       "kurtosis": 0.5739932071809801,
+       "prominence_active": 0.7444606178230633,
+       "write_over_floor_rate": 0.7090409186479055,
+       "projection_over_floor_rate": 0.7142163998059194,
+       "max_projection_over_floor": 0.7548115801390911,
+       "magnitude_x_selectivity": 0.6804140384926411
+      }
+     }
+    },
+    "3000": {
+     "4000": {
+      "n_leavers": 111,
+      "n_stayers": 145,
+      "auc": {
+       "usage": 0.7341410375893135,
+       "magnitude": 0.5722273998136067,
+       "selectivity": 0.5220876048462255,
+       "kurtosis": 0.5343895619757689,
+       "prominence_active": 0.6856787822305064,
+       "write_over_floor_rate": 0.9205343274308792,
+       "projection_over_floor_rate": 0.7710469089779435,
+       "max_projection_over_floor": 0.744641192917055,
+       "magnitude_x_selectivity": 0.6151599875737807
+      }
+     },
+     "8000": {
+      "n_leavers": 155,
+      "n_stayers": 101,
+      "auc": {
+       "usage": 0.7167039284573619,
+       "magnitude": 0.6634302139891408,
+       "selectivity": 0.49421909932928776,
+       "kurtosis": 0.5080804854679016,
+       "prominence_active": 0.756244011497924,
+       "write_over_floor_rate": 0.8820185244330885,
+       "projection_over_floor_rate": 0.7709358032577451,
+       "max_projection_over_floor": 0.7566911529862663,
+       "magnitude_x_selectivity": 0.7133823059725327
+      }
+     },
+     "16000": {
+      "n_leavers": 178,
+      "n_stayers": 78,
+      "auc": {
+       "usage": 0.7012388360702967,
+       "magnitude": 0.6779026217228464,
+       "selectivity": 0.46737251512532413,
+       "kurtosis": 0.48170556035724577,
+       "prominence_active": 0.739628349178911,
+       "write_over_floor_rate": 0.752520887352348,
+       "projection_over_floor_rate": 0.7593632958801498,
+       "max_projection_over_floor": 0.7528810141169692,
+       "magnitude_x_selectivity": 0.7120426390089312
+      }
+     },
+     "32000": {
+      "n_leavers": 193,
+      "n_stayers": 63,
+      "auc": {
+       "usage": 0.689119170984456,
+       "magnitude": 0.6803191051895715,
+       "selectivity": 0.4511061764947775,
+       "kurtosis": 0.48087836170737724,
+       "prominence_active": 0.723003536475039,
+       "write_over_floor_rate": 0.6711078213668887,
+       "projection_over_floor_rate": 0.718562381774817,
+       "max_projection_over_floor": 0.7004687885516901,
+       "magnitude_x_selectivity": 0.7045809688296735
+      }
+     },
+     "64000": {
+      "n_leavers": 207,
+      "n_stayers": 49,
+      "auc": {
+       "usage": 0.6990042393769101,
+       "magnitude": 0.6614413881494627,
+       "selectivity": 0.4857537217785665,
+       "kurtosis": 0.5251897860593513,
+       "prominence_active": 0.7701863354037267,
+       "write_over_floor_rate": 0.6719905353445726,
+       "projection_over_floor_rate": 0.7412008281573499,
+       "max_projection_over_floor": 0.7392290249433107,
+       "magnitude_x_selectivity": 0.6975253869663808
+      }
+     },
+     "143000": {
+      "n_leavers": 211,
+      "n_stayers": 45,
+      "auc": {
+       "usage": 0.6486571879936809,
+       "magnitude": 0.6463401790416008,
+       "selectivity": 0.4764612954186414,
+       "kurtosis": 0.5096366508688783,
+       "prominence_active": 0.7492364402317009,
+       "write_over_floor_rate": 0.6790942601369142,
+       "projection_over_floor_rate": 0.6667719852553976,
+       "max_projection_over_floor": 0.6659294365455503,
+       "magnitude_x_selectivity": 0.6821484992101106
+      }
+     }
+    },
+    "4000": {
+     "8000": {
+      "n_leavers": 114,
+      "n_stayers": 142,
+      "auc": {
+       "usage": 0.7746478873239436,
+       "magnitude": 0.6327526562886089,
+       "selectivity": 0.5040153199901162,
+       "kurtosis": 0.5140227328885594,
+       "prominence_active": 0.7247961452928094,
+       "write_over_floor_rate": 0.9340252038547072,
+       "projection_over_floor_rate": 0.7664319248826291,
+       "max_projection_over_floor": 0.7648875710402767,
+       "magnitude_x_selectivity": 0.6946503582900915
+      }
+     },
+     "16000": {
+      "n_leavers": 140,
+      "n_stayers": 116,
+      "auc": {
+       "usage": 0.7056650246305419,
+       "magnitude": 0.674076354679803,
+       "selectivity": 0.4294334975369458,
+       "kurtosis": 0.44532019704433495,
+       "prominence_active": 0.6474753694581281,
+       "write_over_floor_rate": 0.9379310344827586,
+       "projection_over_floor_rate": 0.7027709359605911,
+       "max_projection_over_floor": 0.6975985221674876,
+       "magnitude_x_selectivity": 0.7112068965517241
+      }
+     },
+     "32000": {
+      "n_leavers": 166,
+      "n_stayers": 90,
+      "auc": {
+       "usage": 0.6603748326639893,
+       "magnitude": 0.6514056224899598,
+       "selectivity": 0.45227576974564926,
+       "kurtosis": 0.47764390896921016,
+       "prominence_active": 0.6731593038821955,
+       "write_over_floor_rate": 0.8267737617135208,
+       "projection_over_floor_rate": 0.694912985274431,
+       "max_projection_over_floor": 0.7095716198125837,
+       "magnitude_x_selectivity": 0.6874832663989291
+      }
+     },
+     "64000": {
+      "n_leavers": 183,
+      "n_stayers": 73,
+      "auc": {
+       "usage": 0.6729545624672505,
+       "magnitude": 0.6497492327270005,
+       "selectivity": 0.471367617336627,
+       "kurtosis": 0.5141851935025077,
+       "prominence_active": 0.6983307133767498,
+       "write_over_floor_rate": 0.7222097462384909,
+       "projection_over_floor_rate": 0.6868777603114006,
+       "max_projection_over_floor": 0.7227337375552062,
+       "magnitude_x_selectivity": 0.6935399356239239
+      }
+     },
+     "143000": {
+      "n_leavers": 193,
+      "n_stayers": 63,
+      "auc": {
+       "usage": 0.6613208323052883,
+       "magnitude": 0.6292458261370178,
+       "selectivity": 0.4755325273459988,
+       "kurtosis": 0.5057981741919566,
+       "prominence_active": 0.6791676947117362,
+       "write_over_floor_rate": 0.6711078213668887,
+       "projection_over_floor_rate": 0.6313841598815693,
+       "max_projection_over_floor": 0.6671601283000247,
+       "magnitude_x_selectivity": 0.6820462209063245
+      }
+     }
+    },
+    "8000": {
+     "16000": {
+      "n_leavers": 98,
+      "n_stayers": 158,
+      "auc": {
+       "usage": 0.7982433479721003,
+       "magnitude": 0.6695944200464996,
+       "selectivity": 0.4369026091449238,
+       "kurtosis": 0.412748643761302,
+       "prominence_active": 0.6394988375096874,
+       "write_over_floor_rate": 0.8762593645052957,
+       "projection_over_floor_rate": 0.6678506845776285,
+       "max_projection_over_floor": 0.6225781451821235,
+       "magnitude_x_selectivity": 0.6959442004649962
+      }
+     },
+     "32000": {
+      "n_leavers": 130,
+      "n_stayers": 126,
+      "auc": {
+       "usage": 0.7185592185592186,
+       "magnitude": 0.675946275946276,
+       "selectivity": 0.4360805860805861,
+       "kurtosis": 0.42264957264957265,
+       "prominence_active": 0.6373626373626373,
+       "write_over_floor_rate": 0.9885225885225886,
+       "projection_over_floor_rate": 0.6461538461538462,
+       "max_projection_over_floor": 0.6183760683760684,
+       "magnitude_x_selectivity": 0.697985347985348
+      }
+     },
+     "64000": {
+      "n_leavers": 160,
+      "n_stayers": 96,
+      "auc": {
+       "usage": 0.7513020833333334,
+       "magnitude": 0.6743489583333333,
+       "selectivity": 0.4608072916666667,
+       "kurtosis": 0.45546875,
+       "prominence_active": 0.6845703125,
+       "write_over_floor_rate": 0.8666666666666667,
+       "projection_over_floor_rate": 0.6874348958333333,
+       "max_projection_over_floor": 0.6464192708333333,
+       "magnitude_x_selectivity": 0.7111328125
+      }
+     },
+     "143000": {
+      "n_leavers": 169,
+      "n_stayers": 87,
+      "auc": {
+       "usage": 0.7036659185200299,
+       "magnitude": 0.6631299734748011,
+       "selectivity": 0.4307284227708631,
+       "kurtosis": 0.4399102224035911,
+       "prominence_active": 0.6463986941440523,
+       "write_over_floor_rate": 0.8101067809290621,
+       "projection_over_floor_rate": 0.640685574372577,
+       "max_projection_over_floor": 0.6153846153846154,
+       "magnitude_x_selectivity": 0.6922396789770795
+      }
+     }
+    },
+    "16000": {
+     "32000": {
+      "n_leavers": 77,
+      "n_stayers": 179,
+      "auc": {
+       "usage": 0.7587607922803453,
+       "magnitude": 0.5728070811869694,
+       "selectivity": 0.5251396648044693,
+       "kurtosis": 0.5218022201262424,
+       "prominence_active": 0.6711165929043024,
+       "write_over_floor_rate": 0.7623158963941087,
+       "projection_over_floor_rate": 0.7002104041210186,
+       "max_projection_over_floor": 0.7115286947689182,
+       "magnitude_x_selectivity": 0.5940651527243705
+      }
+     },
+     "64000": {
+      "n_leavers": 116,
+      "n_stayers": 140,
+      "auc": {
+       "usage": 0.7286330049261084,
+       "magnitude": 0.6109605911330049,
+       "selectivity": 0.520320197044335,
+       "kurtosis": 0.537807881773399,
+       "prominence_active": 0.6886699507389162,
+       "write_over_floor_rate": 0.9350369458128078,
+       "projection_over_floor_rate": 0.6947660098522167,
+       "max_projection_over_floor": 0.7366995073891626,
+       "magnitude_x_selectivity": 0.654987684729064
+      }
+     },
+     "143000": {
+      "n_leavers": 127,
+      "n_stayers": 129,
+      "auc": {
+       "usage": 0.6793017151925776,
+       "magnitude": 0.5840200207532198,
+       "selectivity": 0.4966733809436611,
+       "kurtosis": 0.5295122993346761,
+       "prominence_active": 0.6250991881828725,
+       "write_over_floor_rate": 0.985594823902826,
+       "projection_over_floor_rate": 0.6313251541231765,
+       "max_projection_over_floor": 0.6925471525361655,
+       "magnitude_x_selectivity": 0.6338887871574193
+      }
+     }
+    },
+    "32000": {
+     "64000": {
+      "n_leavers": 83,
+      "n_stayers": 173,
+      "auc": {
+       "usage": 0.7972700048749913,
+       "magnitude": 0.6285953060798106,
+       "selectivity": 0.5001044640991712,
+       "kurtosis": 0.5181419318894074,
+       "prominence_active": 0.6707291594122153,
+       "write_over_floor_rate": 0.7839682429138519,
+       "projection_over_floor_rate": 0.7004666063096316,
+       "max_projection_over_floor": 0.7382826102096246,
+       "magnitude_x_selectivity": 0.659098823037816
+      }
+     },
+     "143000": {
+      "n_leavers": 96,
+      "n_stayers": 160,
+      "auc": {
+       "usage": 0.778515625,
+       "magnitude": 0.6453776041666667,
+       "selectivity": 0.471875,
+       "kurtosis": 0.48736979166666666,
+       "prominence_active": 0.6399088541666667,
+       "write_over_floor_rate": 0.8577473958333334,
+       "projection_over_floor_rate": 0.6559244791666666,
+       "max_projection_over_floor": 0.6805338541666667,
+       "magnitude_x_selectivity": 0.6697265625
+      }
+     }
+    }
+   }
+  },
+  "12": {
+   "entry": {
+    "512": {
+     "1000": {
+      "n_entrants": 234,
+      "auc": {
+       "usage": 0.7318184498612111,
+       "magnitude": 0.4656298732836888,
+       "selectivity": 0.574739100611954,
+       "kurtosis": 0.5683756633659965,
+       "prominence_active": 0.48681651715314855,
+       "write_over_floor_rate": 0.6687016802733851,
+       "projection_over_floor_rate": 0.7138441028751503,
+       "max_projection_over_floor": 0.7632786602137221,
+       "magnitude_x_selectivity": 0.5911214340078209
+      }
+     },
+     "2000": {
+      "n_entrants": 243,
+      "auc": {
+       "usage": 0.6792422566160247,
+       "magnitude": 0.5256344453548824,
+       "selectivity": 0.5283177018080892,
+       "kurtosis": 0.520925522977168,
+       "prominence_active": 0.5601308378127738,
+       "write_over_floor_rate": 0.668807795158795,
+       "projection_over_floor_rate": 0.693284143158917,
+       "max_projection_over_floor": 0.6678251931052932,
+       "magnitude_x_selectivity": 0.613411039641342
+      }
+     },
+     "3000": {
+      "n_entrants": 249,
+      "auc": {
+       "usage": 0.6769096369171204,
+       "magnitude": 0.49692084988609236,
+       "selectivity": 0.5713903144953779,
+       "kurtosis": 0.5823711964822679,
+       "prominence_active": 0.5414945716544581,
+       "write_over_floor_rate": 0.668877889123184,
+       "projection_over_floor_rate": 0.6899926269741575,
+       "max_projection_over_floor": 0.602958789255195,
+       "magnitude_x_selectivity": 0.6452014378732913
+      }
+     },
+     "4000": {
+      "n_entrants": 251,
+      "auc": {
+       "usage": 0.8007379669619054,
+       "magnitude": 0.5063676958233315,
+       "selectivity": 0.557908295903812,
+       "kurtosis": 0.5699526461379223,
+       "prominence_active": 0.5510435080368312,
+       "write_over_floor_rate": 0.6689016482939141,
+       "projection_over_floor_rate": 0.6912499789431795,
+       "max_projection_over_floor": 0.6141396379556384,
+       "magnitude_x_selectivity": 0.6307235742946192
+      }
+     },
+     "8000": {
+      "n_entrants": 253,
+      "auc": {
+       "usage": 0.685426487227316,
+       "magnitude": 0.5029764369498928,
+       "selectivity": 0.5610891490625736,
+       "kurtosis": 0.5754617395066629,
+       "prominence_active": 0.5355361367527927,
+       "write_over_floor_rate": 0.6689254346503293,
+       "projection_over_floor_rate": 0.6882069033071879,
+       "max_projection_over_floor": 0.6291205696604061,
+       "magnitude_x_selectivity": 0.6425894630482111
+      }
+     },
+     "16000": {
+      "n_entrants": 250,
+      "auc": {
+       "usage": 0.6752655568617042,
+       "magnitude": 0.5203277843085207,
+       "selectivity": 0.524973645292177,
+       "kurtosis": 0.5325961093625573,
+       "prominence_active": 0.5415793106063479,
+       "write_over_floor_rate": 0.6688897652724584,
+       "projection_over_floor_rate": 0.6741660156990633,
+       "max_projection_over_floor": 0.6127805543968754,
+       "magnitude_x_selectivity": 0.5978354252777672
+      }
+     },
+     "32000": {
+      "n_entrants": 251,
+      "auc": {
+       "usage": 0.6704987939635251,
+       "magnitude": 0.538268835505327,
+       "selectivity": 0.5003991919921988,
+       "kurtosis": 0.4900749668133178,
+       "prominence_active": 0.5517590244622466,
+       "write_over_floor_rate": 0.6689016482939141,
+       "projection_over_floor_rate": 0.6701595430907907,
+       "max_projection_over_floor": 0.6139993598726574,
+       "magnitude_x_selectivity": 0.6084099165802425
+      }
+     },
+     "64000": {
+      "n_entrants": 253,
+      "auc": {
+       "usage": 0.68363325788035,
+       "magnitude": 0.5341673257529603,
+       "selectivity": 0.504402806362333,
+       "kurtosis": 0.5034849445404459,
+       "prominence_active": 0.5524331282540083,
+       "write_over_floor_rate": 0.6689254346503293,
+       "projection_over_floor_rate": 0.6805521590512815,
+       "max_projection_over_floor": 0.6205423426438812,
+       "magnitude_x_selectivity": 0.6020716381896171
+      }
+     },
+     "143000": {
+      "n_entrants": 252,
+      "auc": {
+       "usage": 0.6762275704113019,
+       "magnitude": 0.5178824993529203,
+       "selectivity": 0.5156410453196574,
+       "kurtosis": 0.5043732807242477,
+       "prominence_active": 0.5367818167590637,
+       "write_over_floor_rate": 0.6689135381114903,
+       "projection_over_floor_rate": 0.6753256466282632,
+       "max_projection_over_floor": 0.6071086973532935,
+       "magnitude_x_selectivity": 0.5917082753971263
+      }
+     }
+    },
+    "1000": {
+     "2000": {
+      "n_entrants": 231,
+      "auc": {
+       "usage": 0.7444111898538464,
+       "magnitude": 0.5827492447154697,
+       "selectivity": 0.5671660270511695,
+       "kurtosis": 0.5885855771566808,
+       "prominence_active": 0.6597304630510976,
+       "write_over_floor_rate": 0.6686568550445278,
+       "projection_over_floor_rate": 0.7349854456808457,
+       "max_projection_over_floor": 0.7593215210205032,
+       "magnitude_x_selectivity": 0.7097698015989936
+      }
+     },
+     "3000": {
+      "n_entrants": 239,
+      "auc": {
+       "usage": 0.7039123754051704,
+       "magnitude": 0.599262196672945,
+       "selectivity": 0.5488382861408188,
+       "kurtosis": 0.570238246975107,
+       "prominence_active": 0.6645498834189525,
+       "write_over_floor_rate": 0.6687605543383799,
+       "projection_over_floor_rate": 0.7178807653922318,
+       "max_projection_over_floor": 0.6967311224720052,
+       "magnitude_x_selectivity": 0.7127410787163386
+      }
+     },
+     "4000": {
+      "n_entrants": 239,
+      "auc": {
+       "usage": 0.7846909021890682,
+       "magnitude": 0.621665649981476,
+       "selectivity": 0.5411100774613385,
+       "kurtosis": 0.5562404311496056,
+       "prominence_active": 0.686064216380008,
+       "write_over_floor_rate": 0.6687605543383799,
+       "projection_over_floor_rate": 0.7089374520095111,
+       "max_projection_over_floor": 0.6780604676392316,
+       "magnitude_x_selectivity": 0.7237461043481475
+      }
+     },
+     "8000": {
+      "n_entrants": 239,
+      "auc": {
+       "usage": 0.6948013109488628,
+       "magnitude": 0.6053706358844372,
+       "selectivity": 0.5477715796686333,
+       "kurtosis": 0.5647583785712638,
+       "prominence_active": 0.6661239674881764,
+       "write_over_floor_rate": 0.6687605543383799,
+       "projection_over_floor_rate": 0.7075729179811464,
+       "max_projection_over_floor": 0.7083898617437688,
+       "magnitude_x_selectivity": 0.7205440813733094
+      }
+     },
+     "16000": {
+      "n_entrants": 243,
+      "auc": {
+       "usage": 0.6899348705301847,
+       "magnitude": 0.6015336861650957,
+       "selectivity": 0.5189058642267865,
+       "kurtosis": 0.5347024697365199,
+       "prominence_active": 0.6528020307681217,
+       "write_over_floor_rate": 0.668807795158795,
+       "projection_over_floor_rate": 0.6976752314146809,
+       "max_projection_over_floor": 0.6797839164856128,
+       "magnitude_x_selectivity": 0.6829626477813595
+      }
+     },
+     "32000": {
+      "n_entrants": 249,
+      "auc": {
+       "usage": 0.6898132316536495,
+       "magnitude": 0.625574325818908,
+       "selectivity": 0.4981699925995623,
+       "kurtosis": 0.508258162049255,
+       "prominence_active": 0.6584556758402702,
+       "write_over_floor_rate": 0.668877889123184,
+       "projection_over_floor_rate": 0.6962882148772174,
+       "max_projection_over_floor": 0.6806655170441925,
+       "magnitude_x_selectivity": 0.6903597173137881
+      }
+     },
+     "64000": {
+      "n_entrants": 249,
+      "auc": {
+       "usage": 0.743995034800484,
+       "magnitude": 0.6045339045353436,
+       "selectivity": 0.514193360286795,
+       "kurtosis": 0.5268089783246137,
+       "prominence_active": 0.6383948474252698,
+       "write_over_floor_rate": 0.668877889123184,
+       "projection_over_floor_rate": 0.6919495283905659,
+       "max_projection_over_floor": 0.6733489900675451,
+       "magnitude_x_selectivity": 0.6754318336996241
+      }
+     },
+     "143000": {
+      "n_entrants": 243,
+      "auc": {
+       "usage": 0.6845052432878216,
+       "magnitude": 0.6224191483122142,
+       "selectivity": 0.4950263328768661,
+       "kurtosis": 0.5026225995975817,
+       "prominence_active": 0.6614238859442033,
+       "write_over_floor_rate": 0.668807795158795,
+       "projection_over_floor_rate": 0.6917231360538343,
+       "max_projection_over_floor": 0.6694358179083535,
+       "magnitude_x_selectivity": 0.6858334528917015
+      }
+     }
+    },
+    "2000": {
+     "3000": {
+      "n_entrants": 177,
+      "auc": {
+       "usage": 0.8228440495044262,
+       "magnitude": 0.5479560623881141,
+       "selectivity": 0.5765635404682479,
+       "kurtosis": 0.5958249962158713,
+       "prominence_active": 0.7255370119877987,
+       "write_over_floor_rate": 0.6685618866836645,
+       "projection_over_floor_rate": 0.8024238748301153,
+       "max_projection_over_floor": 0.8613406459280368,
+       "magnitude_x_selectivity": 0.6399001738827192
+      }
+     },
+     "4000": {
+      "n_entrants": 186,
+      "auc": {
+       "usage": 0.827344583276827,
+       "magnitude": 0.60539277672503,
+       "selectivity": 0.5160620392192318,
+       "kurtosis": 0.5321336488725825,
+       "prominence_active": 0.7337200806848684,
+       "write_over_floor_rate": 0.6684700826193178,
+       "projection_over_floor_rate": 0.7798168911238907,
+       "max_projection_over_floor": 0.8288820633367258,
+       "magnitude_x_selectivity": 0.6669338243169662
+      }
+     },
+     "8000": {
+      "n_entrants": 218,
+      "auc": {
+       "usage": 0.7561782403970818,
+       "magnitude": 0.5845576411514845,
+       "selectivity": 0.5448240776056322,
+       "kurtosis": 0.5533371833433408,
+       "prominence_active": 0.7177116337868626,
+       "write_over_floor_rate": 0.6684469486121015,
+       "projection_over_floor_rate": 0.7801396851313007,
+       "max_projection_over_floor": 0.8055321062672298,
+       "magnitude_x_selectivity": 0.6641886138677546
+      }
+     },
+     "16000": {
+      "n_entrants": 223,
+      "auc": {
+       "usage": 0.7445094266940766,
+       "magnitude": 0.5995771229660164,
+       "selectivity": 0.5150528740758329,
+       "kurtosis": 0.5289996921177819,
+       "prominence_active": 0.7061673405715256,
+       "write_over_floor_rate": 0.6685276134148268,
+       "projection_over_floor_rate": 0.7584444325283725,
+       "max_projection_over_floor": 0.7775195332699326,
+       "magnitude_x_selectivity": 0.6577931209951623
+      }
+     },
+     "32000": {
+      "n_entrants": 234,
+      "auc": {
+       "usage": 0.6976239355120283,
+       "magnitude": 0.6065430835134008,
+       "selectivity": 0.5068884923030266,
+       "kurtosis": 0.5189189114754905,
+       "prominence_active": 0.7044306157805532,
+       "write_over_floor_rate": 0.6687016802733851,
+       "projection_over_floor_rate": 0.740757994169799,
+       "max_projection_over_floor": 0.7398506906069741,
+       "magnitude_x_selectivity": 0.6626198060293363
+      }
+     },
+     "64000": {
+      "n_entrants": 237,
+      "auc": {
+       "usage": 0.7460249933315658,
+       "magnitude": 0.6080590677308968,
+       "selectivity": 0.505431404706175,
+       "kurtosis": 0.5175333631663286,
+       "prominence_active": 0.691760774570131,
+       "write_over_floor_rate": 0.6687369805569652,
+       "projection_over_floor_rate": 0.7349699090653514,
+       "max_projection_over_floor": 0.7331720112117674,
+       "magnitude_x_selectivity": 0.6635434799908981
+      }
+     },
+     "143000": {
+      "n_entrants": 232,
+      "auc": {
+       "usage": 0.704453396643225,
+       "magnitude": 0.6186671590285221,
+       "selectivity": 0.4941924720922329,
+       "kurtosis": 0.5081409636349377,
+       "prominence_active": 0.7063781829233222,
+       "write_over_floor_rate": 0.6686728778332592,
+       "projection_over_floor_rate": 0.7244099010483386,
+       "max_projection_over_floor": 0.7042556076965308,
+       "magnitude_x_selectivity": 0.6724437759797129
+      }
+     }
+    },
+    "3000": {
+     "4000": {
+      "n_entrants": 131,
+      "auc": {
+       "usage": 0.8926267955235039,
+       "magnitude": 0.6322023292832953,
+       "selectivity": 0.47578273481466804,
+       "kurtosis": 0.5091291563889798,
+       "prominence_active": 0.7654576145330596,
+       "write_over_floor_rate": 0.6694789777770911,
+       "projection_over_floor_rate": 0.8430693431758446,
+       "max_projection_over_floor": 0.8810537386615711,
+       "magnitude_x_selectivity": 0.6693854009456748
+      }
+     },
+     "8000": {
+      "n_entrants": 178,
+      "auc": {
+       "usage": 0.8289820795728746,
+       "magnitude": 0.6011483803877334,
+       "selectivity": 0.49691901576999287,
+       "kurtosis": 0.5298628045083381,
+       "prominence_active": 0.7390141275955515,
+       "write_over_floor_rate": 0.6685535798092351,
+       "projection_over_floor_rate": 0.8346133537115414,
+       "max_projection_over_floor": 0.8572474824729398,
+       "magnitude_x_selectivity": 0.6427502836964832
+      }
+     },
+     "16000": {
+      "n_entrants": 203,
+      "auc": {
+       "usage": 0.7903138314287189,
+       "magnitude": 0.6134127062409535,
+       "selectivity": 0.4896159233054132,
+       "kurtosis": 0.5155665267254607,
+       "prominence_active": 0.7330590312748952,
+       "write_over_floor_rate": 0.6683062143395115,
+       "projection_over_floor_rate": 0.807634576803441,
+       "max_projection_over_floor": 0.8428217850654997,
+       "magnitude_x_selectivity": 0.6540922701185975
+      }
+     },
+     "32000": {
+      "n_entrants": 220,
+      "auc": {
+       "usage": 0.7789201229302041,
+       "magnitude": 0.6141409356201292,
+       "selectivity": 0.48507472971203736,
+       "kurtosis": 0.5134501422930893,
+       "prominence_active": 0.7320173232361514,
+       "write_over_floor_rate": 0.6684797551042908,
+       "projection_over_floor_rate": 0.7763242215224327,
+       "max_projection_over_floor": 0.7956627309248018,
+       "magnitude_x_selectivity": 0.6463728182300531
+      }
+     },
+     "64000": {
+      "n_entrants": 225,
+      "auc": {
+       "usage": 0.7647092564165735,
+       "magnitude": 0.5997381359982986,
+       "selectivity": 0.49417291531112667,
+       "kurtosis": 0.5164695948435786,
+       "prominence_active": 0.7150093387491762,
+       "write_over_floor_rate": 0.6685601059584799,
+       "projection_over_floor_rate": 0.7645701964401151,
+       "max_projection_over_floor": 0.7781962211230504,
+       "magnitude_x_selectivity": 0.6335994508352232
+      }
+     },
+     "143000": {
+      "n_entrants": 226,
+      "auc": {
+       "usage": 0.7216253493886349,
+       "magnitude": 0.6167740422818528,
+       "selectivity": 0.474898776665988,
+       "kurtosis": 0.49914139199987656,
+       "prominence_active": 0.7219902934277537,
+       "write_over_floor_rate": 0.6685763056728337,
+       "projection_over_floor_rate": 0.756790458055083,
+       "max_projection_over_floor": 0.7710243657168618,
+       "magnitude_x_selectivity": 0.6468710241476896
+      }
+     }
+    },
+    "4000": {
+     "8000": {
+      "n_entrants": 149,
+      "auc": {
+       "usage": 0.8588989773048109,
+       "magnitude": 0.5843061509166002,
+       "selectivity": 0.5066931839498721,
+       "kurtosis": 0.556154631543078,
+       "prominence_active": 0.7477735426723736,
+       "write_over_floor_rate": 0.6689547751113308,
+       "projection_over_floor_rate": 0.856721830286932,
+       "max_projection_over_floor": 0.9054468936536965,
+       "magnitude_x_selectivity": 0.6252208168378228
+      }
+     },
+     "16000": {
+      "n_entrants": 189,
+      "auc": {
+       "usage": 0.8020699280854954,
+       "magnitude": 0.6196182736530823,
+       "selectivity": 0.47601321754305487,
+       "kurtosis": 0.5058503870881955,
+       "prominence_active": 0.762156972201856,
+       "write_over_floor_rate": 0.6684364474641542,
+       "projection_over_floor_rate": 0.827189151810859,
+       "max_projection_over_floor": 0.8797143259957872,
+       "magnitude_x_selectivity": 0.6574596380857389
+      }
+     },
+     "32000": {
+      "n_entrants": 210,
+      "auc": {
+       "usage": 0.7388769800671585,
+       "magnitude": 0.612414585780506,
+       "selectivity": 0.4839175873448921,
+       "kurtosis": 0.5209071996044827,
+       "prominence_active": 0.7505772169805363,
+       "write_over_floor_rate": 0.668314324327738,
+       "projection_over_floor_rate": 0.7863926374611836,
+       "max_projection_over_floor": 0.8301268830824361,
+       "magnitude_x_selectivity": 0.6441281389218186
+      }
+     },
+     "64000": {
+      "n_entrants": 215,
+      "auc": {
+       "usage": 0.7902511268342315,
+       "magnitude": 0.6059827858417889,
+       "selectivity": 0.4842309304044089,
+       "kurtosis": 0.5223741314376286,
+       "prominence_active": 0.7536717676965521,
+       "write_over_floor_rate": 0.6683974828711062,
+       "projection_over_floor_rate": 0.7686788334065535,
+       "max_projection_over_floor": 0.8059104322663457,
+       "magnitude_x_selectivity": 0.6383772705781368
+      }
+     },
+     "143000": {
+      "n_entrants": 219,
+      "auc": {
+       "usage": 0.7443156858525708,
+       "magnitude": 0.627316601205802,
+       "selectivity": 0.4635390641419565,
+       "kurtosis": 0.49300116887293705,
+       "prominence_active": 0.7518583729901317,
+       "write_over_floor_rate": 0.6684633686089132,
+       "projection_over_floor_rate": 0.7649686297484868,
+       "max_projection_over_floor": 0.7963218357387855,
+       "magnitude_x_selectivity": 0.6587988167119152
+      }
+     }
+    },
+    "8000": {
+     "16000": {
+      "n_entrants": 128,
+      "auc": {
+       "usage": 0.9136838751324152,
+       "magnitude": 0.6476223185911016,
+       "selectivity": 0.4711107157044492,
+       "kurtosis": 0.5067354437802664,
+       "prominence_active": 0.807636103964891,
+       "write_over_floor_rate": 0.6695769450855025,
+       "projection_over_floor_rate": 0.9122305586032082,
+       "max_projection_over_floor": 0.9463152204241071,
+       "magnitude_x_selectivity": 0.6881574949398457
+      }
+     },
+     "32000": {
+      "n_entrants": 166,
+      "auc": {
+       "usage": 0.8303857538205676,
+       "magnitude": 0.6197013473193878,
+       "selectivity": 0.503999490940706,
+       "kurtosis": 0.5443568085996353,
+       "prominence_active": 0.7892323467952757,
+       "write_over_floor_rate": 0.668671391734355,
+       "projection_over_floor_rate": 0.8615927762844054,
+       "max_projection_over_floor": 0.8918205666340826,
+       "magnitude_x_selectivity": 0.6685703553242995
+      }
+     },
+     "64000": {
+      "n_entrants": 183,
+      "auc": {
+       "usage": 0.8149200847222701,
+       "magnitude": 0.6294366118045577,
+       "selectivity": 0.4868525577328008,
+       "kurtosis": 0.5337910711733914,
+       "prominence_active": 0.7851788179424211,
+       "write_over_floor_rate": 0.6685060616944434,
+       "projection_over_floor_rate": 0.8456026755664579,
+       "max_projection_over_floor": 0.8774349917793239,
+       "magnitude_x_selectivity": 0.6674499823935045
+      }
+     },
+     "143000": {
+      "n_entrants": 191,
+      "auc": {
+       "usage": 0.8040089475538451,
+       "magnitude": 0.6619897826383782,
+       "selectivity": 0.4538540490517047,
+       "kurtosis": 0.4910992979567359,
+       "prominence_active": 0.7803214697960563,
+       "write_over_floor_rate": 0.6684152717637527,
+       "projection_over_floor_rate": 0.8865683667937829,
+       "max_projection_over_floor": 0.8376048129343894,
+       "magnitude_x_selectivity": 0.7017976515794611
+      }
+     }
+    },
+    "16000": {
+     "32000": {
+      "n_entrants": 112,
+      "auc": {
+       "usage": 0.9206194618543333,
+       "magnitude": 0.6596777407067215,
+       "selectivity": 0.5254866138966933,
+       "kurtosis": 0.5547322441646856,
+       "prominence_active": 0.8085498500648368,
+       "write_over_floor_rate": 0.6626870812621569,
+       "projection_over_floor_rate": 0.9441938958828615,
+       "max_projection_over_floor": 0.9665602374648801,
+       "magnitude_x_selectivity": 0.7024075737518911
+      }
+     },
+     "64000": {
+      "n_entrants": 138,
+      "auc": {
+       "usage": 0.9231609031825707,
+       "magnitude": 0.655930364367141,
+       "selectivity": 0.5153821327879974,
+       "kurtosis": 0.5446167539456518,
+       "prominence_active": 0.7934127262247712,
+       "write_over_floor_rate": 0.6631988145632788,
+       "projection_over_floor_rate": 0.9326639750847701,
+       "max_projection_over_floor": 0.9526161210838937,
+       "magnitude_x_selectivity": 0.69959892248979
+      }
+     },
+     "143000": {
+      "n_entrants": 156,
+      "auc": {
+       "usage": 0.8917676564735388,
+       "magnitude": 0.6903927198044845,
+       "selectivity": 0.45866127116127114,
+       "kurtosis": 0.5006976109917286,
+       "prominence_active": 0.782136572577749,
+       "write_over_floor_rate": 0.6634428546193252,
+       "projection_over_floor_rate": 0.8953723034605388,
+       "max_projection_over_floor": 0.9202099238863944,
+       "magnitude_x_selectivity": 0.7332455678043913
+      }
+     }
+    },
+    "32000": {
+     "64000": {
+      "n_entrants": 84,
+      "auc": {
+       "usage": 0.978654096778955,
+       "magnitude": 0.6542317841932267,
+       "selectivity": 0.5400988058336663,
+       "kurtosis": 0.570800572062196,
+       "prominence_active": 0.7925412756014933,
+       "write_over_floor_rate": 0.6690063074447289,
+       "projection_over_floor_rate": 0.9816514380757974,
+       "max_projection_over_floor": 0.9736341520050978,
+       "magnitude_x_selectivity": 0.6902590570514135
+      }
+     },
+     "143000": {
+      "n_entrants": 115,
+      "auc": {
+       "usage": 0.9547599802988231,
+       "magnitude": 0.7162321745872907,
+       "selectivity": 0.4788129300896009,
+       "kurtosis": 0.5317444668554011,
+       "prominence_active": 0.8108767599293192,
+       "write_over_floor_rate": 0.668454353869645,
+       "projection_over_floor_rate": 0.9457951225608898,
+       "max_projection_over_floor": 0.9560185204218815,
+       "magnitude_x_selectivity": 0.7624626800014143
+      }
+     }
+    }
+   },
+   "exit": {
+    "512": {
+     "1000": {
+      "n_leavers": 234,
+      "n_stayers": 22,
+      "auc": {
+       "usage": 0.6542346542346542,
+       "magnitude": 0.5666278166278166,
+       "selectivity": 0.5172882672882673,
+       "kurtosis": 0.5398212898212899,
+       "prominence_active": 0.5893550893550894,
+       "write_over_floor_rate": 0.6961926961926962,
+       "projection_over_floor_rate": 0.6899766899766899,
+       "max_projection_over_floor": 0.6410256410256411,
+       "magnitude_x_selectivity": 0.6249028749028749
+      }
+     },
+     "2000": {
+      "n_leavers": 243,
+      "n_stayers": 13,
+      "auc": {
+       "usage": 0.5501741057296613,
+       "magnitude": 0.4593225704336815,
+       "selectivity": 0.6043051598607154,
+       "kurtosis": 0.5891104779993669,
+       "prominence_active": 0.4906616017727129,
+       "write_over_floor_rate": 0.6837606837606838,
+       "projection_over_floor_rate": 0.7192149414371637,
+       "max_projection_over_floor": 0.6862931307375751,
+       "magnitude_x_selectivity": 0.6479898702120924
+      }
+     },
+     "3000": {
+      "n_leavers": 249,
+      "n_stayers": 7,
+      "auc": {
+       "usage": 0.3838209982788296,
+       "magnitude": 0.5335628227194492,
+       "selectivity": 0.4985656913367757,
+       "kurtosis": 0.5438898450946644,
+       "prominence_active": 0.5370051635111877,
+       "write_over_floor_rate": 0.6884681583476764,
+       "projection_over_floor_rate": 0.4916810097532989,
+       "max_projection_over_floor": 0.5341365461847389,
+       "magnitude_x_selectivity": 0.6288009179575444
+      }
+     },
+     "4000": {
+      "n_leavers": 251,
+      "n_stayers": 5,
+      "auc": {
+       "usage": 0.5745019920318725,
+       "magnitude": 0.450199203187251,
+       "selectivity": 0.7115537848605578,
+       "kurtosis": 0.6565737051792828,
+       "prominence_active": 0.48047808764940236,
+       "write_over_floor_rate": 0.701195219123506,
+       "projection_over_floor_rate": 0.8820717131474104,
+       "max_projection_over_floor": 0.8924302788844621,
+       "magnitude_x_selectivity": 0.7633466135458168
+      }
+     },
+     "8000": {
+      "n_leavers": 253,
+      "n_stayers": 3,
+      "auc": {
+       "usage": null,
+       "magnitude": null,
+       "selectivity": null,
+       "kurtosis": null,
+       "prominence_active": null,
+       "write_over_floor_rate": null,
+       "projection_over_floor_rate": null,
+       "max_projection_over_floor": null,
+       "magnitude_x_selectivity": null
+      }
+     },
+     "16000": {
+      "n_leavers": 250,
+      "n_stayers": 6,
+      "auc": {
+       "usage": 0.546,
+       "magnitude": 0.5533333333333333,
+       "selectivity": 0.462,
+       "kurtosis": 0.43666666666666665,
+       "prominence_active": 0.536,
+       "write_over_floor_rate": 0.6933333333333334,
+       "projection_over_floor_rate": 0.6273333333333333,
+       "max_projection_over_floor": 0.722,
+       "magnitude_x_selectivity": 0.4886666666666667
+      }
+     },
+     "32000": {
+      "n_leavers": 251,
+      "n_stayers": 5,
+      "auc": {
+       "usage": 0.551394422310757,
+       "magnitude": 0.5641434262948207,
+       "selectivity": 0.5171314741035856,
+       "kurtosis": 0.5593625498007968,
+       "prominence_active": 0.5713147410358566,
+       "write_over_floor_rate": 0.701195219123506,
+       "projection_over_floor_rate": 0.7768924302788844,
+       "max_projection_over_floor": 0.851792828685259,
+       "magnitude_x_selectivity": 0.6677290836653387
+      }
+     },
+     "64000": {
+      "n_leavers": 253,
+      "n_stayers": 3,
+      "auc": {
+       "usage": null,
+       "magnitude": null,
+       "selectivity": null,
+       "kurtosis": null,
+       "prominence_active": null,
+       "write_over_floor_rate": null,
+       "projection_over_floor_rate": null,
+       "max_projection_over_floor": null,
+       "magnitude_x_selectivity": null
+      }
+     },
+     "143000": {
+      "n_leavers": 252,
+      "n_stayers": 4,
+      "auc": {
+       "usage": null,
+       "magnitude": null,
+       "selectivity": null,
+       "kurtosis": null,
+       "prominence_active": null,
+       "write_over_floor_rate": null,
+       "projection_over_floor_rate": null,
+       "max_projection_over_floor": null,
+       "magnitude_x_selectivity": null
+      }
+     }
+    },
+    "1000": {
+     "2000": {
+      "n_leavers": 231,
+      "n_stayers": 25,
+      "auc": {
+       "usage": 0.7090909090909091,
+       "magnitude": 0.6038095238095238,
+       "selectivity": 0.48744588744588746,
+       "kurtosis": 0.5397402597402597,
+       "prominence_active": 0.6914285714285714,
+       "write_over_floor_rate": 0.7037229437229438,
+       "projection_over_floor_rate": 0.7485714285714286,
+       "max_projection_over_floor": 0.7243290043290044,
+       "magnitude_x_selectivity": 0.6055411255411255
+      }
+     },
+     "3000": {
+      "n_leavers": 239,
+      "n_stayers": 17,
+      "auc": {
+       "usage": 0.6470588235294118,
+       "magnitude": 0.3937976864385922,
+       "selectivity": 0.6896381983755845,
+       "kurtosis": 0.7245877430470096,
+       "prominence_active": 0.5729756337681516,
+       "write_over_floor_rate": 0.6852079744031504,
+       "projection_over_floor_rate": 0.7543686930839282,
+       "max_projection_over_floor": 0.6682254491754861,
+       "magnitude_x_selectivity": 0.5842973172532612
+      }
+     },
+     "4000": {
+      "n_leavers": 239,
+      "n_stayers": 17,
+      "auc": {
+       "usage": 0.6620723603248831,
+       "magnitude": 0.47674132414472065,
+       "selectivity": 0.6719173024858479,
+       "kurtosis": 0.6529657888259907,
+       "prominence_active": 0.6256460743293133,
+       "write_over_floor_rate": 0.6852079744031504,
+       "projection_over_floor_rate": 0.7843957666748708,
+       "max_projection_over_floor": 0.7907949790794979,
+       "magnitude_x_selectivity": 0.6783165148904751
+      }
+     },
+     "8000": {
+      "n_leavers": 239,
+      "n_stayers": 17,
+      "auc": {
+       "usage": 0.5874969234555747,
+       "magnitude": 0.3925670686684716,
+       "selectivity": 0.7184346541964066,
+       "kurtosis": 0.6652719665271967,
+       "prominence_active": 0.5372877184346542,
+       "write_over_floor_rate": 0.6852079744031504,
+       "projection_over_floor_rate": 0.6849618508491263,
+       "max_projection_over_floor": 0.7135121831159242,
+       "magnitude_x_selectivity": 0.5958651242923948
+      }
+     },
+     "16000": {
+      "n_leavers": 243,
+      "n_stayers": 13,
+      "auc": {
+       "usage": 0.6375435264324153,
+       "magnitude": 0.49446027223805,
+       "selectivity": 0.6071541627097182,
+       "kurtosis": 0.584045584045584,
+       "prominence_active": 0.5527065527065527,
+       "write_over_floor_rate": 0.6837606837606838,
+       "projection_over_floor_rate": 0.7841088952200064,
+       "max_projection_over_floor": 0.7432731877176322,
+       "magnitude_x_selectivity": 0.5986071541627097
+      }
+     },
+     "32000": {
+      "n_leavers": 249,
+      "n_stayers": 7,
+      "auc": {
+       "usage": 0.5152036718301779,
+       "magnitude": 0.37005163511187605,
+       "selectivity": 0.6156052782558806,
+       "kurtosis": 0.525530694205393,
+       "prominence_active": 0.3476764199655766,
+       "write_over_floor_rate": 0.6884681583476764,
+       "projection_over_floor_rate": 0.6368330464716007,
+       "max_projection_over_floor": 0.5611015490533563,
+       "magnitude_x_selectivity": 0.3884107860011474
+      }
+     },
+     "64000": {
+      "n_leavers": 249,
+      "n_stayers": 7,
+      "auc": {
+       "usage": 0.5312679288582903,
+       "magnitude": 0.4503729202524383,
+       "selectivity": 0.5823293172690763,
+       "kurtosis": 0.5243832472748136,
+       "prominence_active": 0.42168674698795183,
+       "write_over_floor_rate": 0.6884681583476764,
+       "projection_over_floor_rate": 0.6494549627079748,
+       "max_projection_over_floor": 0.5238095238095238,
+       "magnitude_x_selectivity": 0.5398737808376363
+      }
+     },
+     "143000": {
+      "n_leavers": 243,
+      "n_stayers": 13,
+      "auc": {
+       "usage": 0.6337448559670782,
+       "magnitude": 0.5799303577081355,
+       "selectivity": 0.51661918328585,
+       "kurtosis": 0.5384615384615384,
+       "prominence_active": 0.581829692940804,
+       "write_over_floor_rate": 0.6837606837606838,
+       "projection_over_floor_rate": 0.7530864197530864,
+       "max_projection_over_floor": 0.630579297245964,
+       "magnitude_x_selectivity": 0.6574865463754352
+      }
+     }
+    },
+    "2000": {
+     "3000": {
+      "n_leavers": 177,
+      "n_stayers": 79,
+      "auc": {
+       "usage": 0.7568476006579418,
+       "magnitude": 0.4879496531502539,
+       "selectivity": 0.5890724451119216,
+       "kurtosis": 0.5754130015018236,
+       "prominence_active": 0.6560108703425588,
+       "write_over_floor_rate": 0.7586354859472216,
+       "projection_over_floor_rate": 0.8109132518057641,
+       "max_projection_over_floor": 0.7737967532003147,
+       "magnitude_x_selectivity": 0.5351498247872416
+      }
+     },
+     "4000": {
+      "n_leavers": 186,
+      "n_stayers": 70,
+      "auc": {
+       "usage": 0.721889400921659,
+       "magnitude": 0.5455453149001536,
+       "selectivity": 0.565284178187404,
+       "kurtosis": 0.5750384024577573,
+       "prominence_active": 0.6831029185867895,
+       "write_over_floor_rate": 0.7041474654377881,
+       "projection_over_floor_rate": 0.7897849462365591,
+       "max_projection_over_floor": 0.7466973886328725,
+       "magnitude_x_selectivity": 0.6096774193548387
+      }
+     },
+     "8000": {
+      "n_leavers": 218,
+      "n_stayers": 38,
+      "auc": {
+       "usage": 0.7158377595364558,
+       "magnitude": 0.6172139063254466,
+       "selectivity": 0.5155721873491067,
+       "kurtosis": 0.5758087880251086,
+       "prominence_active": 0.748913568324481,
+       "write_over_floor_rate": 0.6972477064220184,
+       "projection_over_floor_rate": 0.7811443746982134,
+       "max_projection_over_floor": 0.760985031385804,
+       "magnitude_x_selectivity": 0.6778126508932882
+      }
+     },
+     "16000": {
+      "n_leavers": 223,
+      "n_stayers": 33,
+      "auc": {
+       "usage": 0.6930289441500204,
+       "magnitude": 0.6272591384699008,
+       "selectivity": 0.4737056665307786,
+       "kurtosis": 0.4963989672509852,
+       "prominence_active": 0.6867780948498438,
+       "write_over_floor_rate": 0.7196629976899035,
+       "projection_over_floor_rate": 0.7469764913711102,
+       "max_projection_over_floor": 0.7472482674276396,
+       "magnitude_x_selectivity": 0.6619105856774018
+      }
+     },
+     "32000": {
+      "n_leavers": 234,
+      "n_stayers": 22,
+      "auc": {
+       "usage": 0.5965423465423465,
+       "magnitude": 0.5957653457653458,
+       "selectivity": 0.4823232323232323,
+       "kurtosis": 0.5233100233100233,
+       "prominence_active": 0.6911421911421911,
+       "write_over_floor_rate": 0.6961926961926962,
+       "projection_over_floor_rate": 0.7624320124320124,
+       "max_projection_over_floor": 0.7606837606837606,
+       "magnitude_x_selectivity": 0.6451048951048951
+      }
+     },
+     "64000": {
+      "n_leavers": 237,
+      "n_stayers": 19,
+      "auc": {
+       "usage": 0.6868754163890739,
+       "magnitude": 0.6819897845880524,
+       "selectivity": 0.44437041972018654,
+       "kurtosis": 0.4297135243171219,
+       "prominence_active": 0.7648234510326449,
+       "write_over_floor_rate": 0.6893182322895848,
+       "projection_over_floor_rate": 0.6602265156562291,
+       "max_projection_over_floor": 0.6442371752165224,
+       "magnitude_x_selectivity": 0.735287586053742
+      }
+     },
+     "143000": {
+      "n_leavers": 232,
+      "n_stayers": 24,
+      "auc": {
+       "usage": 0.6698994252873564,
+       "magnitude": 0.7013290229885057,
+       "selectivity": 0.38146551724137934,
+       "kurtosis": 0.41217672413793105,
+       "prominence_active": 0.7097701149425287,
+       "write_over_floor_rate": 0.7011494252873564,
+       "projection_over_floor_rate": 0.6639727011494253,
+       "max_projection_over_floor": 0.6314655172413793,
+       "magnitude_x_selectivity": 0.7210847701149425
+      }
+     }
+    },
+    "3000": {
+     "4000": {
+      "n_leavers": 131,
+      "n_stayers": 125,
+      "auc": {
+       "usage": 0.7454045801526717,
+       "magnitude": 0.6217404580152672,
+       "selectivity": 0.47700763358778625,
+       "kurtosis": 0.4787175572519084,
+       "prominence_active": 0.695267175572519,
+       "write_over_floor_rate": 0.9829618320610687,
+       "projection_over_floor_rate": 0.7854045801526718,
+       "max_projection_over_floor": 0.7611603053435114,
+       "magnitude_x_selectivity": 0.6450076335877862
+      }
+     },
+     "8000": {
+      "n_leavers": 178,
+      "n_stayers": 78,
+      "auc": {
+       "usage": 0.7409968308844713,
+       "magnitude": 0.6300057620282339,
+       "selectivity": 0.48566695476807836,
+       "kurtosis": 0.48458657447421494,
+       "prominence_active": 0.699438202247191,
+       "write_over_floor_rate": 0.752520887352348,
+       "projection_over_floor_rate": 0.7815471045808124,
+       "max_projection_over_floor": 0.7444540478248344,
+       "magnitude_x_selectivity": 0.6652981849611063
+      }
+     },
+     "16000": {
+      "n_leavers": 203,
+      "n_stayers": 53,
+      "auc": {
+       "usage": 0.7321312389627289,
+       "magnitude": 0.6212473278185705,
+       "selectivity": 0.4861046565665954,
+       "kurtosis": 0.4871270564178827,
+       "prominence_active": 0.6917929175573938,
+       "write_over_floor_rate": 0.6692071753880472,
+       "projection_over_floor_rate": 0.7232084766242216,
+       "max_projection_over_floor": 0.6988567710753788,
+       "magnitude_x_selectivity": 0.6471791058648573
+      }
+     },
+     "32000": {
+      "n_leavers": 220,
+      "n_stayers": 36,
+      "auc": {
+       "usage": 0.6622474747474747,
+       "magnitude": 0.6029040404040404,
+       "selectivity": 0.43674242424242427,
+       "kurtosis": 0.4667929292929293,
+       "prominence_active": 0.6401515151515151,
+       "write_over_floor_rate": 0.705050505050505,
+       "projection_over_floor_rate": 0.6757575757575758,
+       "max_projection_over_floor": 0.6592171717171718,
+       "magnitude_x_selectivity": 0.6228535353535354
+      }
+     },
+     "64000": {
+      "n_leavers": 225,
+      "n_stayers": 31,
+      "auc": {
+       "usage": 0.6289605734767025,
+       "magnitude": 0.6445878136200717,
+       "selectivity": 0.4235125448028674,
+       "kurtosis": 0.4213620071684588,
+       "prominence_active": 0.662078853046595,
+       "write_over_floor_rate": 0.7202867383512545,
+       "projection_over_floor_rate": 0.6024372759856631,
+       "max_projection_over_floor": 0.5780645161290323,
+       "magnitude_x_selectivity": 0.6732616487455197
+      }
+     },
+     "143000": {
+      "n_leavers": 226,
+      "n_stayers": 30,
+      "auc": {
+       "usage": 0.6292035398230088,
+       "magnitude": 0.7020648967551623,
+       "selectivity": 0.38023598820058996,
+       "kurtosis": 0.38569321533923306,
+       "prominence_active": 0.7110619469026549,
+       "write_over_floor_rate": 0.7174041297935103,
+       "projection_over_floor_rate": 0.6109144542772862,
+       "max_projection_over_floor": 0.5473451327433628,
+       "magnitude_x_selectivity": 0.7339233038348083
+      }
+     }
+    },
+    "4000": {
+     "8000": {
+      "n_leavers": 149,
+      "n_stayers": 107,
+      "auc": {
+       "usage": 0.7749482531518535,
+       "magnitude": 0.6700119174559368,
+       "selectivity": 0.4645298877250204,
+       "kurtosis": 0.47745091889857616,
+       "prominence_active": 0.7253340023834912,
+       "write_over_floor_rate": 0.9022141378661481,
+       "projection_over_floor_rate": 0.823119864517343,
+       "max_projection_over_floor": 0.760898199836919,
+       "magnitude_x_selectivity": 0.7117230132346485
+      }
+     },
+     "16000": {
+      "n_leavers": 189,
+      "n_stayers": 67,
+      "auc": {
+       "usage": 0.7360025270473032,
+       "magnitude": 0.6432914791123746,
+       "selectivity": 0.49364289662797123,
+       "kurtosis": 0.5070678354260444,
+       "prominence_active": 0.706941483060886,
+       "write_over_floor_rate": 0.6860933428097608,
+       "projection_over_floor_rate": 0.7765932243544184,
+       "max_projection_over_floor": 0.7720919213456527,
+       "magnitude_x_selectivity": 0.6807233672905315
+      }
+     },
+     "32000": {
+      "n_leavers": 210,
+      "n_stayers": 46,
+      "auc": {
+       "usage": 0.7215320910973085,
+       "magnitude": 0.6402691511387164,
+       "selectivity": 0.4644927536231884,
+       "kurtosis": 0.48757763975155277,
+       "prominence_active": 0.6498964803312629,
+       "write_over_floor_rate": 0.6774327122153209,
+       "projection_over_floor_rate": 0.7425465838509316,
+       "max_projection_over_floor": 0.7338509316770186,
+       "magnitude_x_selectivity": 0.6760869565217391
+      }
+     },
+     "64000": {
+      "n_leavers": 215,
+      "n_stayers": 41,
+      "auc": {
+       "usage": 0.6738513896766875,
+       "magnitude": 0.6593306863301192,
+       "selectivity": 0.44265456608054454,
+       "kurtosis": 0.45070901871809416,
+       "prominence_active": 0.6351673284174703,
+       "write_over_floor_rate": 0.6879183210436756,
+       "projection_over_floor_rate": 0.6832671582529779,
+       "max_projection_over_floor": 0.6736245036868973,
+       "magnitude_x_selectivity": 0.6861032331253545
+      }
+     },
+     "143000": {
+      "n_leavers": 219,
+      "n_stayers": 37,
+      "auc": {
+       "usage": 0.705417746513637,
+       "magnitude": 0.6665432555843515,
+       "selectivity": 0.42330001234110826,
+       "kurtosis": 0.4481056398864618,
+       "prominence_active": 0.6218684437862521,
+       "write_over_floor_rate": 0.70097494755029,
+       "projection_over_floor_rate": 0.6918425274589658,
+       "max_projection_over_floor": 0.6565469579168209,
+       "magnitude_x_selectivity": 0.686782673084043
+      }
+     }
+    },
+    "8000": {
+     "16000": {
+      "n_leavers": 128,
+      "n_stayers": 128,
+      "auc": {
+       "usage": 0.76025390625,
+       "magnitude": 0.668701171875,
+       "selectivity": 0.44207763671875,
+       "kurtosis": 0.4432373046875,
+       "prominence_active": 0.64031982421875,
+       "write_over_floor_rate": 0.9864501953125,
+       "projection_over_floor_rate": 0.707275390625,
+       "max_projection_over_floor": 0.689697265625,
+       "magnitude_x_selectivity": 0.66839599609375
+      }
+     },
+     "32000": {
+      "n_leavers": 166,
+      "n_stayers": 90,
+      "auc": {
+       "usage": 0.7024096385542169,
+       "magnitude": 0.6045515394912985,
+       "selectivity": 0.43942436412315933,
+       "kurtosis": 0.46311914323962516,
+       "prominence_active": 0.5551539491298527,
+       "write_over_floor_rate": 0.8152610441767069,
+       "projection_over_floor_rate": 0.6519410977242303,
+       "max_projection_over_floor": 0.6287817938420348,
+       "magnitude_x_selectivity": 0.5757028112449799
+      }
+     },
+     "64000": {
+      "n_leavers": 183,
+      "n_stayers": 73,
+      "auc": {
+       "usage": 0.7171195448761135,
+       "magnitude": 0.6446590313646231,
+       "selectivity": 0.40601841455198745,
+       "kurtosis": 0.4209147391271802,
+       "prominence_active": 0.5779624223370012,
+       "write_over_floor_rate": 0.7092596751253837,
+       "projection_over_floor_rate": 0.6555131372108691,
+       "max_projection_over_floor": 0.5915113406692117,
+       "magnitude_x_selectivity": 0.62227711655064
+      }
+     },
+     "143000": {
+      "n_leavers": 191,
+      "n_stayers": 65,
+      "auc": {
+       "usage": 0.7314538864277084,
+       "magnitude": 0.635118807893677,
+       "selectivity": 0.4266612968183649,
+       "kurtosis": 0.4382601691502215,
+       "prominence_active": 0.5805074506645187,
+       "write_over_floor_rate": 0.6600886024969794,
+       "projection_over_floor_rate": 0.6489730165122836,
+       "max_projection_over_floor": 0.5983890455094644,
+       "magnitude_x_selectivity": 0.6228755537656061
+      }
+     }
+    },
+    "16000": {
+     "32000": {
+      "n_leavers": 112,
+      "n_stayers": 144,
+      "auc": {
+       "usage": 0.7775917658730159,
+       "magnitude": 0.5528273809523809,
+       "selectivity": 0.5037822420634921,
+       "kurtosis": 0.5153769841269841,
+       "prominence_active": 0.5505332341269841,
+       "write_over_floor_rate": 0.917906746031746,
+       "projection_over_floor_rate": 0.6677207341269841,
+       "max_projection_over_floor": 0.6539558531746031,
+       "magnitude_x_selectivity": 0.5541914682539683
+      }
+     },
+     "64000": {
+      "n_leavers": 138,
+      "n_stayers": 118,
+      "auc": {
+       "usage": 0.7217514124293786,
+       "magnitude": 0.6150208793908131,
+       "selectivity": 0.43674772783099974,
+       "kurtosis": 0.44509948415622697,
+       "prominence_active": 0.5533038565463031,
+       "write_over_floor_rate": 0.93828297715549,
+       "projection_over_floor_rate": 0.625951854581184,
+       "max_projection_over_floor": 0.6029845246868092,
+       "magnitude_x_selectivity": 0.596045197740113
+      }
+     },
+     "143000": {
+      "n_leavers": 156,
+      "n_stayers": 100,
+      "auc": {
+       "usage": 0.6983333333333334,
+       "magnitude": 0.6115384615384616,
+       "selectivity": 0.4684615384615385,
+       "kurtosis": 0.48012820512820514,
+       "prominence_active": 0.5829487179487179,
+       "write_over_floor_rate": 0.8605128205128205,
+       "projection_over_floor_rate": 0.6163461538461539,
+       "max_projection_over_floor": 0.6001282051282051,
+       "magnitude_x_selectivity": 0.6253846153846154
+      }
+     }
+    },
+    "32000": {
+     "64000": {
+      "n_leavers": 84,
+      "n_stayers": 172,
+      "auc": {
+       "usage": 0.7993493909191584,
+       "magnitude": 0.7008582502768549,
+       "selectivity": 0.39887873754152825,
+       "kurtosis": 0.392234219269103,
+       "prominence_active": 0.5973145071982281,
+       "write_over_floor_rate": 0.7402408637873754,
+       "projection_over_floor_rate": 0.647217607973422,
+       "max_projection_over_floor": 0.5584163898117387,
+       "magnitude_x_selectivity": 0.6745570321151716
+      }
+     },
+     "143000": {
+      "n_leavers": 115,
+      "n_stayers": 141,
+      "auc": {
+       "usage": 0.7512796793092815,
+       "magnitude": 0.6685784767190872,
+       "selectivity": 0.4246068455134135,
+       "kurtosis": 0.4333641689793401,
+       "prominence_active": 0.5878507554733272,
+       "write_over_floor_rate": 0.8586493987049029,
+       "projection_over_floor_rate": 0.5673758865248227,
+       "max_projection_over_floor": 0.533395004625347,
+       "magnitude_x_selectivity": 0.6669750231267345
+      }
+     }
+    }
+   }
+  }
+ },
+ "checks": {
+  "write_over_floor_beats_magnitude_next": true,
+  "usage_best_everywhere": false,
+  "product_beats_both_next": true
+ },
+ "_exp": "e516b_entry_pythia410",
+ "_time": "2026-09-26 02:56:02"
+}

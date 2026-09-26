@@ -1,0 +1,28 @@
+{
+ "model": "pythia410",
+ "revision": "step64000",
+ "blocks": [
+  6,
+  12
+ ],
+ "by_block": {
+  "6": {
+   "n_rows": 28672,
+   "rotated_calibration": 0.9942505955696106,
+   "median_floor": 0.1431053876876831,
+   "rows_with_a_write_over_floor": 0.0025460380129516125,
+   "rows_with_a_projection_over_floor": 0.1439732164144516,
+   "median_max_projection_over_floor": 0.8180124759674072
+  },
+  "12": {
+   "n_rows": 53248,
+   "rotated_calibration": 0.9934732913970947,
+   "median_floor": 0.14564429223537445,
+   "rows_with_a_write_over_floor": 0.0025728666223585606,
+   "rows_with_a_projection_over_floor": 0.09915865957736969,
+   "median_max_projection_over_floor": 0.79360032081604
+  }
+ },
+ "_exp": "e516_rows_pythia410_step64000",
+ "_time": "2026-09-26 02:54:32"
+}
