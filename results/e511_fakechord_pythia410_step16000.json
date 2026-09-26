@@ -1,0 +1,120 @@
+{
+ "model": "pythia410",
+ "revision": "step16000",
+ "blocks": [
+  6,
+  12,
+  18
+ ],
+ "by_block": {
+  "6": {
+   "n_positions": 2032,
+   "gains": {
+    "real": 0.3065722584724426,
+    "fake_random": -0.3355158865451813,
+    "fake_used": -0.31588566303253174,
+    "random": -0.3114919364452362
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 0.7885048985481262,
+    "fake_random": 0.8745572566986084,
+    "fake_used": 0.8843404650688171,
+    "random": 0.43997079133987427
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 1.0388696680660248,
+    "fake_used": 1.0071088515132005
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "12": {
+   "n_positions": 2032,
+   "gains": {
+    "real": -0.3521123230457306,
+    "fake_random": -0.7792246341705322,
+    "fake_used": -0.7972948551177979,
+    "random": -0.8144837617874146
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 0.6937686204910278,
+    "fake_random": 0.7306838035583496,
+    "fake_used": 0.7368796467781067,
+    "random": 0.45195233821868896
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.9237428511742898,
+    "fake_used": 0.9628244626951975
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "18": {
+   "n_positions": 2032,
+   "gains": {
+    "real": -0.26173514127731323,
+    "fake_random": -0.5464501976966858,
+    "fake_used": -0.5687093138694763,
+    "random": -0.7000337243080139
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 0.5772854685783386,
+    "fake_random": 0.5759403109550476,
+    "fake_used": 0.5798200964927673,
+    "random": 0.3549872636795044
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.6495915511536793,
+    "fake_used": 0.7003768309482785
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  }
+ },
+ "checks": {
+  "fake_random_like_random": true,
+  "fake_used_between": true,
+  "real_least_contracted": true
+ },
+ "_exp": "e511_fakechord_pythia410_step16000",
+ "_time": "2026-09-26 02:01:48"
+}

@@ -1,0 +1,120 @@
+{
+ "model": "pythia410",
+ "revision": null,
+ "blocks": [
+  6,
+  12,
+  18
+ ],
+ "by_block": {
+  "6": {
+   "n_positions": 2032,
+   "gains": {
+    "real": 0.07598372548818588,
+    "fake_random": -0.47493788599967957,
+    "fake_used": -0.37842366099357605,
+    "random": -0.5647342801094055
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 1.2841895818710327,
+    "fake_random": 1.3499010801315308,
+    "fake_used": 1.3440896272659302,
+    "random": 0.6109446883201599
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.8598503658002029,
+    "fake_used": 0.7092158836053634
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "12": {
+   "n_positions": 2032,
+   "gains": {
+    "real": -0.8534095883369446,
+    "fake_random": -1.3698667287826538,
+    "fake_used": -1.3319250345230103,
+    "random": -1.5410076379776
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 1.054714322090149,
+    "fake_random": 1.1253468990325928,
+    "fake_used": 1.1162285804748535,
+    "random": 0.7646136283874512
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.7511032655133534,
+    "fake_used": 0.6959232162396939
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "18": {
+   "n_positions": 2032,
+   "gains": {
+    "real": -0.6549716591835022,
+    "fake_random": -1.1636996269226074,
+    "fake_used": -1.16943359375,
+    "random": -1.5382392406463623
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 0.836474597454071,
+    "fake_random": 0.9000648856163025,
+    "fake_used": 0.908360481262207,
+    "random": 0.6844812631607056
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.5759613263475089,
+    "fake_used": 0.5824530927699739
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  }
+ },
+ "checks": {
+  "fake_random_like_random": true,
+  "fake_used_between": true,
+  "real_least_contracted": true
+ },
+ "_exp": "e511_fakechord_pythia410",
+ "_time": "2026-09-26 02:01:38"
+}

@@ -1,0 +1,73 @@
+{
+ "model": "pythia410",
+ "revision": "step16000",
+ "blocks": [
+  6,
+  12,
+  18
+ ],
+ "by_block": {
+  "6": {
+   "n_states": 2032,
+   "n_atoms": 86158,
+   "writer_win_rate": 0.7381889820098877,
+   "tail_factor": 1.2615642547607422,
+   "provenance_factor": 1.5856434106826782,
+   "writer_max_over_prominence": 2.9916059970855713,
+   "chord_amplitude": 0.35436388850212097,
+   "effective_writes": 997.2139282226562,
+   "top64_energy_share": 0.18048301339149475,
+   "top_write_prominence": 0.07174476236104965,
+   "energy_shares": {
+    "mlp": 0.5595740079879761,
+    "attention": 0.43819379806518555,
+    "embedding": 0.0020289926324039698
+   },
+   "crowd_gain_along_chord": 0.4442419409751892,
+   "linear_contraction_random": -0.07959893345832825,
+   "rotated_calibration": 0.993133544921875
+  },
+  "12": {
+   "n_states": 2032,
+   "n_atoms": 116890,
+   "writer_win_rate": 0.5039370059967041,
+   "tail_factor": 1.2889529466629028,
+   "provenance_factor": 1.5020052194595337,
+   "writer_max_over_prominence": 2.5952341556549072,
+   "chord_amplitude": 0.35257747769355774,
+   "effective_writes": 2011.0321044921875,
+   "top64_energy_share": 0.11396847665309906,
+   "top_write_prominence": 0.07503949850797653,
+   "energy_shares": {
+    "mlp": 0.46527421474456787,
+    "attention": 0.5333872437477112,
+    "embedding": 0.0010981373488903046
+   },
+   "crowd_gain_along_chord": 0.08151013404130936,
+   "linear_contraction_random": -0.12074064463376999,
+   "rotated_calibration": 0.9955012202262878
+  },
+  "18": {
+   "n_states": 2032,
+   "n_atoms": 147622,
+   "writer_win_rate": 0.6535432934761047,
+   "tail_factor": 1.409839153289795,
+   "provenance_factor": 1.7737414836883545,
+   "writer_max_over_prominence": 3.3467330932617188,
+   "chord_amplitude": 0.31463298201560974,
+   "effective_writes": 2331.652587890625,
+   "top64_energy_share": 0.10338480770587921,
+   "top_write_prominence": 0.0718536451458931,
+   "energy_shares": {
+    "mlp": 0.5317440032958984,
+    "attention": 0.4678018093109131,
+    "embedding": 0.0004411694535519928
+   },
+   "crowd_gain_along_chord": 0.11345737427473068,
+   "linear_contraction_random": -0.046640921384096146,
+   "rotated_calibration": 0.9928085207939148
+  }
+ },
+ "_exp": "e512_sweep_pythia410_step16000",
+ "_time": "2026-09-26 02:03:40"
+}

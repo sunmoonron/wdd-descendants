@@ -469,3 +469,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 
 ## Session 67 kills (the contraction's anisotropy)
 - "The network learns to preserve its vocabulary": as a linear response the contraction is isotropic within 25% and native rows are contracted slightly more than random directions, not less; the rows used as words are contracted like the rows never used (e510). The chord's relative sparing (e509) is a nonlinear, pattern-level effect at chord amplitude, present in GPT-2 and late Pythia and reversed in OLMo.
+
+## Session 68 kills (the fake chord, the sweep)
+- "The nonlinear response spares native-row chords in general": a fake chord of the block's most-used rows with the position's coefficients is contracted like a random direction (e511). Only the position's own writes are spared.
+- "Wordhood turns on in a phase transition": a fast crossover over two doublings of steps followed by a slow creep; sparsification leads it and the contraction and the chord follow (e512).

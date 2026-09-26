@@ -2687,3 +2687,104 @@ SESSION 67 (the experiment the relayed take and NEXT.md both named: does the lea
   - The sparing e509 found is a large-amplitude, pattern-level effect. At a chord-size perturbation the rows most used as words are contracted less than random directions in GPT-2 (0.63 at the middle block, 0.72-0.80 at the others) and at Pythia's block 18 (0.66), not at Pythia's blocks 6 and 12 (0.96-0.99), and more in OLMo (1.02-1.19). This matches the residual's structure of e508 model by model: exchangeable or slightly kind to the chord's top in GPT-2, reinforcing at Pythia's block 18, contracting the chord's extremes in OLMo. What the chord gets that a random direction does not is the MLP's nonlinear response to its own large write patterns, which e509 measured on the position's actual chord (a third to a half of the random direction's contraction) and this run sees at a fifth to a third on single used rows.
   - Over Pythia's training the contraction is born between steps 512 and 4000 for every set alike (random -0.00, -0.05, -0.08, -0.13, -0.16 at block 6; -0.00, -0.06, -0.12, -0.18, -0.22 at block 12) and no sparing of native atoms emerges with it. At step 512 the MLP amplifies the cloud's own directions and nothing else: the gain is +0.03 to +0.07 along covariance-matched and principal directions and 0.00 along random directions and native rows, the early anisotropy of e509 as a response property; at step 4000 the same on-manifold directions are contracted more than random ones (1.2-1.6 times at blocks 6 and 12), and by step 16000 the difference is gone.
   - Pre-registered: native rows contracted less than random (ratio below 0.7), refuted (1.01-1.17); less than covariance-matched (below 0.85), refuted at the end (0.93-1.73; met only at Pythia step 4000, 0.75, where the manifold is contracted more); used rows less than unused (below 0.85), refuted (0.86-1.19); the sparing emerging with the contraction, refuted, the contraction is born isotropic.
+
+SESSION 68 (the two sharp items in a relayed list: the fake chord that separates write history from the vocabulary's manifold, and a dense checkpoint sweep to see whether the onset of wordhood is a transition; e511, e512; 2026-09-26 01:55-02:06 box time).
+
+- e511 THE FAKE CHORD (e509's ablation with four perturbations of identical norm at every block: the position's real chord so far; a fake chord with the position's own coefficients on random rows of the same blocks; a fake chord on rows drawn from each block's 256 most-used rows as native words; a random direction; the small writes' response along the perturbation's direction over the real centred chord's norm; GPT-2, Pythia at the end and at step 16000, OLMo).
+
+  | Model, block | Real chord | Fake chord, random rows | Fake chord, used rows | Random direction | Fakes' place between real (0) and random (1): random rows / used rows |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2 3 | -0.28 | -0.78 | -0.94 | -0.80 | 0.96 / 1.26 |
+  | GPT-2 6 | -0.35 | -1.15 | -1.22 | -1.11 | 1.05 / 1.16 |
+  | GPT-2 9 | -0.23 | -0.74 | -1.02 | -0.95 | 0.71 / 1.10 |
+  | Pythia end 6 | +0.08 | -0.47 | -0.38 | -0.56 | 0.86 / 0.71 |
+  | Pythia end 12 | -0.85 | -1.37 | -1.33 | -1.54 | 0.75 / 0.70 |
+  | Pythia end 18 | -0.65 | -1.16 | -1.17 | -1.54 | 0.58 / 0.58 |
+  | Pythia step 16000 6 | +0.31 | -0.34 | -0.32 | -0.31 | 1.04 / 1.01 |
+  | Pythia step 16000 12 | -0.35 | -0.78 | -0.80 | -0.81 | 0.92 / 0.96 |
+  | Pythia step 16000 18 | -0.26 | -0.55 | -0.57 | -0.70 | 0.65 / 0.70 |
+  | OLMo 4 | -0.38 | -0.63 | -0.62 | -0.80 | 0.60 / 0.58 |
+  | OLMo 8 | -0.46 | -1.04 | -1.00 | -1.32 | 0.68 / 0.63 |
+  | OLMo 12 | -0.56 | -1.19 | -1.14 | -1.65 | 0.57 / 0.53 |
+
+  - The sparing is the write history, not the vocabulary. A chord of native rows with the position's own coefficients and the real chord's norm is contracted like a random direction, whether its rows are random or the block's most-used (GPT-2: -0.78 to -1.22 against -0.80 to -1.11 for the random direction, the real chord -0.23 to -0.35; Pythia step 16000: -0.32 to -0.80 against -0.31 to -0.81, the real chord +0.31 to -0.35), or most of the way to it (OLMo and Pythia's end: the fakes sit 0.6-0.85 of the way from the real chord to the random direction). Only the rows that wrote at that position are spared, and the most-used rows, assembled into a chord the position did not write, are contracted as much as anything (GPT-2 -1.22 at the middle block). The downstream MLPs' small response to removing the real chord is a response to removing what they were trained to find there.
+  - A caveat the design leaves: removing a present component and adding an absent one are different displacements of the same norm; a control that adds a copy of the real chord (doubling it) would separate "expected component" from "removal". Recorded in NEXT.
+  - Pre-registered: the fake chord of random rows within 25% of the random direction, confirmed in all four runs; the fake of used rows between the real chord and the random direction, confirmed in OLMo and Pythia and refuted in GPT-2 (beyond the random direction); the real chord least contracted at every block, confirmed everywhere.
+
+- e512 IS THE ONSET OF WORDHOOD A TRANSITION (Pythia-410m at 18 checkpoints from step 512 to the end, blocks 6, 12 and 18; the observables of sessions 58-67 without ablation: the writer-win rate, the non-writer tail factor, the provenance factor, the chord's centred amplitude, the effective number of writes, the top-64 energy share, the attention share of the state's energy, the crowd's gain along the chord, and the linear contraction gain along random directions).
+
+  Block 6:
+
+  | step | writer wins | tail factor | provenance factor | chord amplitude | effective writes | top-64 energy share | attention share | crowd gain along the chord | linear contraction |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.05 | 1.40 | 1.49 | 0.22 | 3140 | 0.07 | 0.21 | +0.467 | +0.002 |
+  | 1000 | 0.02 | 1.52 | 1.65 | 0.18 | 2657 | 0.09 | 0.37 | +1.022 | -0.008 |
+  | 2000 | 0.24 | 1.32 | 1.47 | 0.19 | 1854 | 0.12 | 0.45 | +1.189 | -0.029 |
+  | 3000 | 0.36 | 1.29 | 1.47 | 0.23 | 1497 | 0.14 | 0.45 | +0.952 | -0.041 |
+  | 4000 | 0.43 | 1.28 | 1.48 | 0.25 | 1332 | 0.15 | 0.46 | +0.828 | -0.046 |
+  | 5000 | 0.50 | 1.29 | 1.51 | 0.27 | 1236 | 0.16 | 0.44 | +0.752 | -0.051 |
+  | 6000 | 0.53 | 1.29 | 1.52 | 0.28 | 1186 | 0.16 | 0.43 | +0.681 | -0.055 |
+  | 8000 | 0.62 | 1.29 | 1.55 | 0.30 | 1116 | 0.17 | 0.43 | +0.602 | -0.061 |
+  | 10000 | 0.66 | 1.27 | 1.54 | 0.32 | 1079 | 0.17 | 0.43 | +0.558 | -0.066 |
+  | 13000 | 0.70 | 1.28 | 1.58 | 0.34 | 1032 | 0.18 | 0.43 | +0.489 | -0.074 |
+  | 16000 | 0.74 | 1.26 | 1.59 | 0.35 | 997 | 0.18 | 0.44 | +0.444 | -0.080 |
+  | 20000 | 0.77 | 1.27 | 1.62 | 0.37 | 956 | 0.18 | 0.46 | +0.385 | -0.087 |
+  | 25000 | 0.79 | 1.27 | 1.64 | 0.39 | 925 | 0.19 | 0.47 | +0.347 | -0.090 |
+  | 32000 | 0.82 | 1.27 | 1.68 | 0.41 | 889 | 0.19 | 0.49 | +0.305 | -0.101 |
+  | 40000 | 0.84 | 1.27 | 1.71 | 0.42 | 854 | 0.19 | 0.50 | +0.264 | -0.110 |
+  | 64000 | 0.85 | 1.29 | 1.77 | 0.45 | 794 | 0.20 | 0.51 | +0.168 | -0.127 |
+  | 100000 | 0.87 | 1.29 | 1.80 | 0.48 | 868 | 0.19 | 0.52 | +0.082 | -0.148 |
+  | 143000 | 0.86 | 1.30 | 1.82 | 0.49 | 1008 | 0.17 | 0.52 | +0.042 | -0.159 |
+
+  Block 12:
+
+  | step | writer wins | tail factor | provenance factor | chord amplitude | effective writes | top-64 energy share | attention share | crowd gain along the chord | linear contraction |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.02 | 1.58 | 1.72 | 0.13 | 5903 | 0.04 | 0.14 | +1.245 | -0.000 |
+  | 1000 | 0.02 | 1.33 | 1.48 | 0.15 | 4797 | 0.06 | 0.33 | +1.053 | -0.004 |
+  | 2000 | 0.09 | 1.24 | 1.37 | 0.18 | 3431 | 0.08 | 0.49 | +0.957 | -0.030 |
+  | 3000 | 0.16 | 1.24 | 1.36 | 0.22 | 2856 | 0.09 | 0.54 | +0.729 | -0.047 |
+  | 4000 | 0.23 | 1.25 | 1.37 | 0.24 | 2571 | 0.10 | 0.56 | +0.612 | -0.059 |
+  | 5000 | 0.31 | 1.25 | 1.40 | 0.25 | 2429 | 0.10 | 0.55 | +0.529 | -0.068 |
+  | 6000 | 0.35 | 1.24 | 1.39 | 0.27 | 2348 | 0.10 | 0.56 | +0.464 | -0.074 |
+  | 8000 | 0.43 | 1.25 | 1.42 | 0.29 | 2240 | 0.11 | 0.55 | +0.333 | -0.089 |
+  | 10000 | 0.46 | 1.26 | 1.46 | 0.31 | 2159 | 0.11 | 0.55 | +0.258 | -0.097 |
+  | 13000 | 0.51 | 1.28 | 1.48 | 0.33 | 2077 | 0.11 | 0.53 | +0.152 | -0.110 |
+  | 16000 | 0.50 | 1.29 | 1.50 | 0.35 | 2011 | 0.11 | 0.53 | +0.082 | -0.121 |
+  | 20000 | 0.55 | 1.30 | 1.53 | 0.37 | 1955 | 0.12 | 0.53 | +0.007 | -0.129 |
+  | 25000 | 0.59 | 1.31 | 1.56 | 0.40 | 1881 | 0.12 | 0.53 | -0.064 | -0.138 |
+  | 32000 | 0.61 | 1.31 | 1.58 | 0.43 | 1799 | 0.12 | 0.53 | -0.139 | -0.149 |
+  | 40000 | 0.65 | 1.31 | 1.59 | 0.45 | 1745 | 0.12 | 0.55 | -0.187 | -0.159 |
+  | 64000 | 0.67 | 1.33 | 1.62 | 0.51 | 1675 | 0.13 | 0.60 | -0.306 | -0.184 |
+  | 100000 | 0.72 | 1.32 | 1.64 | 0.57 | 1881 | 0.12 | 0.68 | -0.412 | -0.208 |
+  | 143000 | 0.73 | 1.33 | 1.66 | 0.60 | 2181 | 0.11 | 0.75 | -0.455 | -0.223 |
+
+  Block 18:
+
+  | step | writer wins | tail factor | provenance factor | chord amplitude | effective writes | top-64 energy share | attention share | crowd gain along the chord | linear contraction |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.03 | 1.52 | 1.70 | 0.10 | 8757 | 0.03 | 0.09 | +2.272 | +0.000 |
+  | 1000 | 0.09 | 1.33 | 1.57 | 0.12 | 6755 | 0.04 | 0.21 | +1.879 | -0.005 |
+  | 2000 | 0.20 | 1.29 | 1.49 | 0.16 | 4482 | 0.06 | 0.40 | +1.158 | -0.013 |
+  | 3000 | 0.27 | 1.32 | 1.51 | 0.20 | 3601 | 0.08 | 0.47 | +0.750 | -0.021 |
+  | 4000 | 0.35 | 1.33 | 1.54 | 0.22 | 3197 | 0.08 | 0.49 | +0.616 | -0.029 |
+  | 5000 | 0.42 | 1.36 | 1.59 | 0.24 | 2966 | 0.09 | 0.49 | +0.530 | -0.034 |
+  | 6000 | 0.47 | 1.37 | 1.62 | 0.25 | 2825 | 0.09 | 0.50 | +0.473 | -0.034 |
+  | 8000 | 0.56 | 1.38 | 1.67 | 0.27 | 2691 | 0.09 | 0.49 | +0.358 | -0.039 |
+  | 10000 | 0.60 | 1.39 | 1.71 | 0.28 | 2511 | 0.10 | 0.48 | +0.276 | -0.043 |
+  | 13000 | 0.63 | 1.41 | 1.76 | 0.30 | 2441 | 0.10 | 0.47 | +0.199 | -0.044 |
+  | 16000 | 0.65 | 1.41 | 1.77 | 0.31 | 2332 | 0.10 | 0.47 | +0.113 | -0.047 |
+  | 20000 | 0.66 | 1.42 | 1.80 | 0.33 | 2239 | 0.11 | 0.46 | +0.054 | -0.048 |
+  | 25000 | 0.66 | 1.45 | 1.83 | 0.35 | 2141 | 0.11 | 0.45 | -0.014 | -0.050 |
+  | 32000 | 0.66 | 1.47 | 1.87 | 0.37 | 2008 | 0.11 | 0.45 | -0.089 | -0.055 |
+  | 40000 | 0.68 | 1.49 | 1.88 | 0.39 | 2010 | 0.11 | 0.44 | -0.134 | -0.056 |
+  | 64000 | 0.70 | 1.54 | 1.95 | 0.43 | 1917 | 0.12 | 0.46 | -0.278 | -0.062 |
+  | 100000 | 0.59 | 1.84 | 2.23 | 0.47 | 1953 | 0.11 | 0.50 | -0.341 | -0.069 |
+  | 143000 | 0.48 | 2.29 | 2.68 | 0.51 | 1587 | 0.12 | 0.53 | -0.340 | -0.072 |
+
+  The step at which each observable crosses the midpoint of its total change (interpolated in log-step): block 6: writer wins 4257, tail factor 1769, provenance factor 27281, chord amplitude 16420, effective writes 1655, top-64 energy share 2116, attention share 975, crowd gain along the chord 42065, linear contraction 15405; block 12: writer wins 6557, tail factor 711, provenance factor 559, chord amplitude 19000, effective writes 1467, top-64 energy share 2039, attention share 1634, crowd gain along the chord 6978, linear contraction 13372; block 18: writer wins 2816, tail factor 105408, provenance factor 94082, chord amplitude 14097, effective writes 1620, top-64 energy share 3108, attention share 1413, crowd gain along the chord 2420, linear contraction 6727. The share of each observable's total change that falls between steps 2000 and 8000 (two doublings of the eight): block 6: writer wins +0.47, tail factor +0.27, provenance factor +0.25, chord amplitude +0.41, effective writes +0.35, top-64 energy share +0.48, attention share -0.06, crowd gain along the chord +1.38, linear contraction +0.20; block 12: writer wins +0.48, tail factor -0.05, provenance factor -0.83, chord amplitude +0.23, effective writes +0.32, top-64 energy share +0.42, attention share +0.10, crowd gain along the chord +0.37, linear contraction +0.26; block 18: writer wins +0.81, tail factor +0.11, provenance factor +0.18, chord amplitude +0.26, effective writes +0.25, top-64 energy share +0.33, attention share +0.20, crowd gain along the chord +0.31, linear contraction +0.37. The midpoints of series that fall and then rise (the tail and provenance factors at block 12 and 18) or whose net change is small (block 6's crowd gain) are not meaningful and are not used below.
+
+  - Wordhood turns on in a fast phase and then creeps. At block 12 the writer-win rate is 0.02 at steps 512-1000, 0.09 at 2000, 0.23 at 4000, 0.43 at 8000, 0.50 at 16000, 0.61 at 32000 and 0.73 at the end: half of its total rise falls in the two doublings from 2000 to 8000, and the remaining four doublings add the rest slowly. Block 6 is the same a doubling earlier (0.02, 0.24, 0.43, 0.62, 0.74, 0.82, 0.86). Its change is the most concentrated of the nine observables, and the attention share's the least; so wordhood does change faster than energy, as the relayed hypothesis said, but over two decades of steps as a sigmoid in log-time, a crossover, not a discontinuity.
+  - The developmental order is the same at every block. The effective number of writes falls first (its midpoint near step 1500-1700 at all three blocks; at block 12 from 5900 at step 512 to 3400 at 2000 and 2600 at 4000, then flat near 2000); the writer-win rate rises next (midpoint 2800-6600); the crowd's gain along the chord decays through zero (block 12: +1.24, +0.96, +0.61, +0.33, +0.26, +0.08, +0.01 at steps 512, 2000, 4000, 8000, 10000, 16000, 20000, then -0.45) and the linear contraction grows (block 12: 0, -0.03, -0.06, -0.09, -0.12, -0.15, -0.22 at 512, 2000, 4000, 8000, 16000, 32000 and the end) with midpoints at 2400-15400 (the crowd's gain first, the contraction after); and the chord's amplitude grows last (midpoints 14000-19000; block 12 from 0.13 to 0.35 by step 16000 and 0.60 at the end). Sparsification precedes wordhood; the contraction and the chord's growth follow it.
+  - The state's energy moves in two separate phases, and the late one erodes the words at the last block. The attention share at block 12 rises from 0.14 at step 512 to 0.49 at 2000, holds at 0.53-0.56 from 3000 to 40000, and rises again to 0.60, 0.68 and 0.75 at 64000, 100000 and the end; at block 18 the late phase brings the non-writer tail from 1.47 at step 32000 to 1.84 and 2.29 and takes the writer-win rate from 0.70 at 64000 down to 0.59 and 0.48. The last block's words lose ground late to attention-carried maxima.
+  - The non-writer tail factor is flat from step 2000 on (1.24-1.33 at block 12; 1.26-1.30 at block 6) after an early drop from 1.4-1.6 at step 512: the accent arrives before step 512 and does not change through the wordhood phase, as e493 and e503 found at coarser resolution.

@@ -1,0 +1,108 @@
+{
+ "model": "olmo1b",
+ "revision": null,
+ "blocks": [
+  4,
+  8,
+  12
+ ],
+ "by_block": {
+  "4": {
+   "n_positions": 2039,
+   "gains": {
+    "real": -0.380185604095459,
+    "fake_random": -0.6306999921798706,
+    "fake_used": -0.623487651348114,
+    "random": -0.7999686002731323
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 1.0883800983428955,
+    "fake_random": 1.0158002376556396,
+    "fake_used": 1.0257948637008667,
+    "random": 0.8802337050437927
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.5967711659725762,
+    "fake_used": 0.5795900488300801
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "8": {
+   "n_positions": 2039,
+   "gains": {
+    "real": -0.4638180136680603,
+    "fake_random": -1.0449656248092651,
+    "fake_used": -1.0045050382614136,
+    "random": -1.3173531293869019
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 1.1591436862945557,
+    "fake_random": 0.957582414150238,
+    "fake_used": 0.9575966596603394,
+    "random": 0.9229151010513306
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.6808713554236913,
+    "fake_used": 0.6334678147811064
+   },
+   "n_used_rows_per_block": [
+    256,
+    164,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "12": {
+   "n_positions": 2040,
+   "gains": {
+    "real": -0.561834990978241,
+    "fake_random": -1.1854712963104248,
+    "fake_used": -1.1379148960113525,
+    "random": -1.6488741636276245
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 2.615161418914795,
+    "fake_random": 0.9202702641487122,
+    "fake_used": 0.9207294583320618,
+    "random": 0.9203515648841858
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.5737017772894308,
+    "fake_used": 0.5299532156040543
+   },
+   "n_used_rows_per_block": [
+    256,
+    87,
+    137,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  }
+ },
+ "checks": {
+  "fake_random_like_random": true,
+  "fake_used_between": true,
+  "real_least_contracted": true
+ },
+ "_exp": "e511_fakechord_olmo1b",
+ "_time": "2026-09-26 02:01:54"
+}

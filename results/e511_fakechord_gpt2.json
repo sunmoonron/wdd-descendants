@@ -1,0 +1,102 @@
+{
+ "model": "gpt2",
+ "revision": null,
+ "blocks": [
+  3,
+  6,
+  9
+ ],
+ "by_block": {
+  "3": {
+   "n_positions": 2040,
+   "gains": {
+    "real": -0.27651000022888184,
+    "fake_random": -0.7814648151397705,
+    "fake_used": -0.9382140040397644,
+    "random": -0.8007314801216125
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 0.8475639820098877,
+    "fake_random": 1.3439449071884155,
+    "fake_used": 1.5387364625930786,
+    "random": 1.267854928970337
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.9632470897877277,
+    "fake_used": 1.262260378850337
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "6": {
+   "n_positions": 2040,
+   "gains": {
+    "real": -0.3499513864517212,
+    "fake_random": -1.1460506916046143,
+    "fake_used": -1.2235320806503296,
+    "random": -1.1053247451782227
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 2.0740036964416504,
+    "fake_random": 1.7421432733535767,
+    "fake_used": 1.8726140260696411,
+    "random": 1.5087709426879883
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 1.053914989132066,
+    "fake_used": 1.1564886212976786
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  },
+  "9": {
+   "n_positions": 2040,
+   "gains": {
+    "real": -0.23458454012870789,
+    "fake_random": -0.742007851600647,
+    "fake_used": -1.0174552202224731,
+    "random": -0.9466450810432434
+   },
+   "response_norm_over_crowd_norm": {
+    "real": 1.3218556642532349,
+    "fake_random": 1.196656346321106,
+    "fake_used": 1.445298433303833,
+    "random": 1.0599987506866455
+   },
+   "fake_place_between_real_and_random": {
+    "fake_random": 0.7126125972662796,
+    "fake_used": 1.0994439870074597
+   },
+   "n_used_rows_per_block": [
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256,
+    256
+   ]
+  }
+ },
+ "checks": {
+  "fake_random_like_random": true,
+  "fake_used_between": false,
+  "real_least_contracted": true
+ },
+ "_exp": "e511_fakechord_gpt2",
+ "_time": "2026-09-26 02:01:20"
+}

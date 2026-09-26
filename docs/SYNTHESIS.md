@@ -597,6 +597,11 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 68: the sparing is write history; wordhood is a fast crossover (e511, e512)
+
+- Only the position's own writes are spared: a chord of native rows with the same coefficients and norm, random or the block's most-used, is contracted like a random direction (GPT-2, Pythia step 16000) or most of the way to it (OLMo, Pythia's end). The downstream MLPs respond little to removing what they were trained to find there and fully to any other displacement of the same size (e511).
+- Across 18 Pythia checkpoints wordhood turns on in a fast phase (half its rise between steps 2000 and 8000) and then creeps; sparsification precedes it (midpoint near step 1500-1700), the contraction and the chord's growth follow (2400-19000); the accent is in place before step 512 and flat after; the attention share moves early and again late, and the late phase erodes the last block's words (e512). A crossover with an order, not a discontinuity.
+
 ## Session 67: the contraction does not know the atoms (e510)
 
 - As a linear response the learned contraction is isotropic: at the end of training a block contracts native rows, embeddings, head bases, random, covariance-matched and principal directions alike within 25% (GPT-2, Pythia, OLMo), native rows slightly more than random (1.01-1.17), used rows like unused (0.86-1.19), and it is born isotropic between Pythia steps 512 and 4000. The sentence "the network learns to preserve its vocabulary" stays unwritten.
