@@ -1,0 +1,81 @@
+{
+ "model": "gpt2",
+ "revision": null,
+ "blocks": [
+  3,
+  6,
+  9
+ ],
+ "by_block": {
+  "3": {
+   "n_positions": 2040,
+   "gain_actual_centred": -0.22913694381713867,
+   "gain_actual_raw": -0.22385190427303314,
+   "gain_response": -0.27651000022888184,
+   "response_share": 1.2067456245422363,
+   "spearman_response_actual": 0.34722093740467375,
+   "gain_chord_rows_response": 0.3765351176261902,
+   "gain_random_response": -0.8092169761657715,
+   "response_norm_over_crowd_norm": 0.7330748438835144,
+   "chord_norm_over_state_norm": 0.720501184463501,
+   "gain_response_by_block": [
+    0.03821077197790146,
+    -0.13735677301883698,
+    -0.08152561634778976,
+    -0.07408219575881958
+   ]
+  },
+  "6": {
+   "n_positions": 2040,
+   "gain_actual_centred": -0.25227129459381104,
+   "gain_actual_raw": -0.21342997252941132,
+   "gain_response": -0.3499513864517212,
+   "response_share": 1.3872026205062866,
+   "spearman_response_actual": 0.05943788037468573,
+   "gain_chord_rows_response": 0.2781066298484802,
+   "gain_random_response": -1.1119357347488403,
+   "response_norm_over_crowd_norm": 1.6536463499069214,
+   "chord_norm_over_state_norm": 0.6789776086807251,
+   "gain_response_by_block": [
+    0.028290575370192528,
+    -0.07145901024341583,
+    -0.034639764577150345,
+    -0.024562286213040352,
+    -0.036692507565021515,
+    -0.07918376475572586,
+    -0.11724243313074112
+   ]
+  },
+  "9": {
+   "n_positions": 2040,
+   "gain_actual_centred": -0.1369042694568634,
+   "gain_actual_raw": -0.09069137275218964,
+   "gain_response": -0.23458454012870789,
+   "response_share": 1.7134932279586792,
+   "spearman_response_actual": 0.1790807048812106,
+   "gain_chord_rows_response": 0.25828009843826294,
+   "gain_random_response": -0.9336686730384827,
+   "response_norm_over_crowd_norm": 1.3324029445648193,
+   "chord_norm_over_state_norm": 0.5777860283851624,
+   "gain_response_by_block": [
+    0.01650063507258892,
+    -0.02582147903740406,
+    -0.007631334941834211,
+    0.0009438229026272893,
+    -0.005639897659420967,
+    -0.016114598140120506,
+    -0.03854990378022194,
+    -0.04288643226027489,
+    -0.06568416208028793,
+    -0.09272638708353043
+   ]
+  }
+ },
+ "checks": {
+  "response_over_half_of_actual": true,
+  "response_negative_at_mid": true,
+  "random_negative_and_smaller": false
+ },
+ "_exp": "e509_crowdresponse_gpt2",
+ "_time": "2026-09-26 01:29:10"
+}

@@ -2554,3 +2554,79 @@ SESSION 65 (the one experiment the relayed take asked for, taken as the out-of-s
   - The crowd's role differs by model. In OLMo it removes 0.42-0.46 of the chord and adds variance beyond it: the chord alone is calibrated at 0.58-0.63 with R^2 0.33-0.48, while the sum of all writes has R^2 at or below zero. In Pythia at the end the crowd is neutral at block 6 (+0.01), takes 0.64 at block 12 and 0.18 at block 18, and attention gives back 0.03, 0.30 and 0.50; the chord recovers the top atom in 23-47% of states and orders the true top hundred at 0.29-0.54.
   - Over Pythia's training the crowd flips from amplifier to contractor. Its gain along the chord at block 12 is +1.37 at step 512, +0.63 at 4000, -0.08 at 16000, -0.50 at 64000 and -0.64 at the end (block 18: +2.79, +0.69, +0.01, -0.43, -0.18); attention's gain rises from 0.08 to 0.30-0.50 at blocks 12 and 18 over the same steps. At step 512 the state is its MLP write-sum: the centred sum of all writes predicts the whole profile at Spearman 0.79-0.91 over all atoms with R^2 0.98-0.99 and gain 1.02-1.04, and the chord's recall of the top atom is 0.00; by step 16000 the write-sum's R^2 is negative at blocks 12 and 18 and the chord's recall has risen to 0.22-0.35. The dense small writes reinforce the large writes' directions early and cancel them late; the timing of the flip (between steps 4000 and 16000 at block 12, between 16000 and 64000 at block 18) is the window in which area 05's learned contraction matures, which is a hypothesis to test, not a result.
   - Pre-registered: the observed top ten recalled at over 0.5 with the true top hundred ordered above 0.6 in GPT-2, refuted (0.39 and 0.39); the crowd's gain negative and the rest's positive at every block of every model, met in GPT-2 and OLMo and refuted in Pythia (the crowd positive early, and neutral at block 6 at the end), with the two summing to -0.15 at GPT-2's middle block, at the edge of the 0.15 asked; the chord's ordering of the true top hundred rising through Pythia's training, confirmed at every block (0.10 to 0.29 at block 12, 0.06 to 0.36 at block 6, 0.16 to 0.54 at block 18).
+
+SESSION 66 (the two follow-ups the relayed take pointed to, run as asked: is the chord's clean maximum a selection effect, and is the crowd's contraction the network's response to the chord; e508, e509; 2026-09-26 01:20-01:30 box time).
+
+- e508 IS THE CHORD'S MAXIMUM A SELECTION EFFECT (the same states and chord as e506-e507; the residual r = (o - p) sign(p) along the chord's sign; the winner's chord rank; a null that keeps the chord and permutes the residual across atoms, within the chord's top 200 and over all atoms, four permutations; the winner's standardised residual among the chord's top 200; the maximum's level; the observed over predicted projection at the chord's top atom and at the winner).
+
+  | Model, block | Winner at chord rank 1: observed / null within the top 200 / null over all atoms | Within 10: observed / null (top 200) | Within 100: observed / null (top 200) | Winner's standardised residual: observed / null | Observed max over null max (top 200) | Observed over predicted at the chord's top atom / at the winner |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 3 | 0.46 / 0.34 / 0.54 | 0.63 / 0.63 | 0.81 / 0.82 | +1.88 / +2.18 | 0.98 | 0.96 / 1.18 |
+  | GPT-2 6 | 0.43 / 0.30 / 0.46 | 0.69 / 0.62 | 0.83 / 0.83 | +1.93 / +2.12 | 1.00 | 0.94 / 1.17 |
+  | GPT-2 9 | 0.32 / 0.22 / 0.31 | 0.61 / 0.55 | 0.76 / 0.76 | +2.50 / +2.39 | 1.02 | 1.01 / 1.47 |
+  | Pythia-410m end 6 | 0.47 / 0.36 / 0.45 | 0.84 / 0.65 | 0.91 / 0.79 | +2.28 / +1.93 | 1.13 | 1.21 / 1.50 |
+  | Pythia-410m end 12 | 0.23 / 0.38 / 0.49 | 0.60 / 0.67 | 0.77 / 0.77 | +2.41 / +1.72 | 0.95 | 0.72 / 1.48 |
+  | Pythia-410m end 18 | 0.25 / 0.18 / 0.27 | 0.66 / 0.57 | 0.91 / 0.85 | +2.59 / +2.33 | 1.07 | 1.27 / 2.00 |
+  | OLMo-1B 4 | 0.19 / 0.79 / 0.91 | 0.84 / 0.99 | 0.97 / 1.00 | +0.47 / +0.38 | 0.63 | 0.39 / 0.92 |
+  | OLMo-1B 8 | 0.13 / 0.71 / 0.85 | 0.72 / 0.97 | 0.93 / 1.00 | +0.92 / +0.52 | 0.68 | 0.38 / 1.00 |
+  | OLMo-1B 12 | 0.19 / 0.60 / 0.78 | 0.70 / 0.94 | 0.89 / 0.98 | +1.28 / +0.75 | 0.82 | 0.44 / 1.12 |
+
+  | Pythia block, step | Winner at chord rank 1: observed / null (top 200) | Within 10: observed / null | Observed max over null max | Observed over predicted at the chord's top atom / at the winner |
+  | --- | --- | --- | --- | --- |
+  | 6, 512 | 0.00 / 0.20 | 0.04 / 0.21 | 1.00 | 0.57 / 25.83 |
+  | 6, 4000 | 0.19 / 0.03 | 0.40 / 0.11 | 1.09 | 1.87 / 6.15 |
+  | 6, 16000 | 0.39 / 0.17 | 0.70 / 0.37 | 1.13 | 1.54 / 2.27 |
+  | 6, 64000 | 0.47 / 0.34 | 0.83 / 0.63 | 1.13 | 1.26 / 1.60 |
+  | 6, end | 0.47 / 0.36 | 0.84 / 0.65 | 1.13 | 1.21 / 1.50 |
+  | 12, 512 | 0.00 / 0.01 | 0.03 / 0.02 | 1.01 | 0.50 / 33.59 |
+  | 12, 4000 | 0.08 / 0.02 | 0.20 / 0.06 | 1.05 | 1.52 / 13.01 |
+  | 12, 16000 | 0.22 / 0.14 | 0.45 / 0.30 | 1.07 | 1.21 / 3.34 |
+  | 12, 64000 | 0.24 / 0.31 | 0.58 / 0.61 | 0.99 | 0.86 / 1.70 |
+  | 12, end | 0.23 / 0.38 | 0.60 / 0.67 | 0.95 | 0.72 / 1.48 |
+  | 18, 512 | 0.00 / 0.01 | 0.06 / 0.03 | 1.01 | 0.50 / 30.55 |
+  | 18, 4000 | 0.17 / 0.01 | 0.34 / 0.06 | 1.06 | 2.17 / 9.15 |
+  | 18, 16000 | 0.35 / 0.09 | 0.63 / 0.25 | 1.14 | 1.69 / 2.84 |
+  | 18, 64000 | 0.31 / 0.22 | 0.62 / 0.46 | 1.11 | 1.15 / 2.12 |
+  | 18, end | 0.25 / 0.18 | 0.66 / 0.57 | 1.07 | 1.27 / 2.00 |
+
+  - In GPT-2 the discrepancy between the maximum (predicted within 1-13%, e506) and the profile (a partial predictor, e507) is extreme-value selection over a nearly exchangeable residual. Keeping the chord and permuting the residual within its top 200 reproduces the level of the maximum within 2% (0.98-1.02), the winner's chord rank within 100 exactly (0.81-0.83 both), and the winner's residual excess (+1.9 to +2.5 observed against +2.1 to +2.4 null): the winner is where the residual happened to help, as it would be under any residual. The chord's own top atom is calibrated (observed over predicted 0.94-1.01); the winner's 1.17-1.47 is the selection. The one gap is at rank 1, where the chord's top atom wins in 0.32-0.46 of states against 0.22-0.34 under the null: the residual disrupts the chord's top a little less than exchangeability implies.
+  - Elsewhere the residual is structured against or for the chord's extremes. In OLMo the null says the chord's top atom should win in 0.60-0.79 of states and it wins in 0.13-0.19, because the chord's largest projections are specifically contracted (observed over predicted 0.38-0.44 at the chord's top atom, 0.92-1.12 at the winner; the observed maximum 0.63-0.82 of the null's): a targeted contraction of the extremes. In Pythia mid-training the residual reinforces the chord's extremes: at steps 4000 and 16000 the chord's top atom wins two to six times more often than the null (0.19 against 0.03, 0.39 against 0.17 at block 6) and its projection exceeds the chord's by 1.2-2.2; by the end blocks 6 and 18 are near the exchangeable picture (0.47 against 0.36; 0.25 against 0.18) and block 12 is contracted like OLMo (0.23 against 0.38). At step 512 the chord's atoms never win.
+  - Pre-registered: the null reproducing the rank-1 share within 0.1 in GPT-2, refuted by a little (0.13 at the middle block); the null maximum within 10%, confirmed (1.00); the winner's residual above the null's, refuted in GPT-2 (equal or below) and met in OLMo and Pythia's end.
+
+- e509 IS THE CROWD'S CONTRACTION THE NETWORK'S RESPONSE TO THE CHORD (per position and block b' up to the state's block, the chord written so far is subtracted from the input of block b''s second layer norm, so its MLP sees the state without the chord while attention is untouched; the small writes' response is the change of the non-chord rows' writes summed over blocks, the chord's own rows' response likewise, and the same for a random direction of the chord's size at every block; gains are projections on the centred chord's direction over its norm, medians over typical positions; GPT-2, Pythia at four checkpoints and the end, OLMo).
+
+  | Model, block | Crowd's gain along the chord: actual | Response (the part that vanishes when the chord is removed) | Response over actual | Spearman across positions | The chord's own rows' response | Response to a random direction of the same size | Response norm over crowd norm |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 3 | -0.23 | -0.28 | 1.21 | 0.35 | +0.38 | -0.81 | 0.73 |
+  | GPT-2 6 | -0.25 | -0.35 | 1.39 | 0.06 | +0.28 | -1.11 | 1.65 |
+  | GPT-2 9 | -0.14 | -0.23 | 1.71 | 0.18 | +0.26 | -0.93 | 1.33 |
+  | Pythia-410m end 6 | +0.04 | +0.08 | 1.83 | 0.64 | +0.32 | -0.56 | 1.40 |
+  | Pythia-410m end 12 | -0.45 | -0.85 | 1.88 | 0.61 | +0.32 | -1.54 | 1.02 |
+  | Pythia-410m end 18 | -0.34 | -0.65 | 1.93 | 0.73 | +0.33 | -1.54 | 0.82 |
+  | OLMo-1B 4 | -0.25 | -0.38 | 1.53 | 0.61 | +0.45 | -0.81 | 1.26 |
+  | OLMo-1B 8 | -0.36 | -0.46 | 1.28 | 0.43 | +0.39 | -1.33 | 1.31 |
+  | OLMo-1B 12 | -0.35 | -0.56 | 1.59 | 0.19 | +0.40 | -1.66 | 2.92 |
+
+  | Pythia block, step | Actual | Response | Non-response part (actual less response) | Random-direction response | The chord's own rows' response |
+  | --- | --- | --- | --- | --- | --- |
+  | 6, 512 | +0.47 | +0.10 | +0.37 | -0.02 | +0.19 |
+  | 6, 4000 | +0.83 | +0.66 | +0.17 | -0.12 | +0.15 |
+  | 6, 16000 | +0.44 | +0.31 | +0.14 | -0.31 | +0.26 |
+  | 6, 64000 | +0.17 | -0.03 | +0.20 | -0.49 | +0.31 |
+  | 6, end | +0.04 | +0.08 | -0.03 | -0.56 | +0.32 |
+  | 12, 512 | +1.24 | +0.08 | +1.17 | -0.02 | +0.08 |
+  | 12, 4000 | +0.61 | +0.06 | +0.55 | -0.34 | +0.08 |
+  | 12, 16000 | +0.08 | -0.35 | +0.43 | -0.81 | +0.18 |
+  | 12, 64000 | -0.31 | -0.74 | +0.43 | -1.31 | +0.30 |
+  | 12, end | -0.45 | -0.85 | +0.40 | -1.54 | +0.32 |
+  | 18, 512 | +2.27 | +0.06 | +2.21 | -0.02 | +0.04 |
+  | 18, 4000 | +0.62 | -0.01 | +0.63 | -0.28 | +0.04 |
+  | 18, 16000 | +0.11 | -0.26 | +0.38 | -0.70 | +0.15 |
+  | 18, 64000 | -0.28 | -0.62 | +0.35 | -1.33 | +0.30 |
+  | 18, end | -0.34 | -0.65 | +0.32 | -1.54 | +0.33 |
+
+  - Where the crowd contracts the chord, the contraction is a response to the chord, and more than the whole of it: removing the chord from what the MLPs see removes a gain of -0.23 to -0.35 in GPT-2, -0.38 to -0.56 in OLMo and -0.65 to -0.85 at Pythia's blocks 12 and 18, against actual gains of -0.14 to -0.45 (response over actual 1.2-1.9). What is left when the response is taken out is a small positive alignment of the crowd with the chord (+0.10 in GPT-2 and OLMo, +0.40 at Pythia's block 12) that does not depend on the chord being there.
+  - The early amplification is not a response. At Pythia step 512 the crowd runs along the chord at +0.47 to +2.27 and the response is +0.06 to +0.10 (share 0.03-0.21): the dense small writes point where the large ones point whether or not the large ones are present, the anisotropy of an early state. The response turns negative between steps 4000 and 16000 at blocks 12 and 18 (+0.06 to -0.35, -0.01 to -0.26) and grows to -0.74 and -0.62 by step 64000, while at block 6 the response is positive through step 16000 (+0.66 at step 4000: at that block the chord elicits aligned small writes, a positive feedback) and near zero at the end.
+  - The response is the learned contraction of area 05, and the chord gets less of it than any direction. A random direction of the chord's size, subtracted the same way, elicits -0.81 to -1.11 in GPT-2, -0.81 to -1.66 in OLMo and -0.56 to -1.54 in Pythia at the end, against the chord's -0.23 to -0.85: the chord is contracted a third to a half as much as a random direction. Over Pythia's training the random-direction response is -0.02 at step 512, -0.12 to -0.34 at 4000, -0.31 to -0.81 at 16000 and -0.49 to -1.54 by 64000, the birth and growth e217 placed at the end of warmup, and the chord's response follows it at 0.1-0.6 of its size. The vocabulary is what the contraction spares.
+  - The chord's own rows are excited by the chord: their response is +0.26 to +0.45 at the end of training in all three models, and it grows through Pythia's training from +0.04 to +0.19 at step 512 to +0.30 to +0.33 at the end. The rows that write a word read it.
+  - Pre-registered: the response over half of the actual gain in all three models at the end, met in GPT-2 and OLMo and at Pythia's blocks 12 and 18, not at Pythia's block 6 where the crowd does not contract; the response within 0.2 of zero at step 512 with the actual gain positive, confirmed; the random-direction response negative and smaller than the chord's, refuted, the reverse holds.

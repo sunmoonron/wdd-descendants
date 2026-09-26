@@ -1,0 +1,87 @@
+{
+ "model": "olmo1b",
+ "revision": null,
+ "blocks": [
+  4,
+  8,
+  12
+ ],
+ "by_block": {
+  "4": {
+   "n_positions": 2039,
+   "gain_actual_centred": -0.24799785017967224,
+   "gain_actual_raw": -0.2362043261528015,
+   "gain_response": -0.380185604095459,
+   "response_share": 1.533019781112671,
+   "spearman_response_actual": 0.6127959106718759,
+   "gain_chord_rows_response": 0.4498555362224579,
+   "gain_random_response": -0.8088037967681885,
+   "response_norm_over_crowd_norm": 1.2646156549453735,
+   "chord_norm_over_state_norm": 0.8653870820999146,
+   "gain_response_by_block": [
+    0.014944740571081638,
+    -0.03765176236629486,
+    -0.10411354154348373,
+    -0.16134542226791382,
+    -0.10081616789102554
+   ]
+  },
+  "8": {
+   "n_positions": 2039,
+   "gain_actual_centred": -0.361728310585022,
+   "gain_actual_raw": -0.3604709208011627,
+   "gain_response": -0.4638180136680603,
+   "response_share": 1.2822275161743164,
+   "spearman_response_actual": 0.4280286137685111,
+   "gain_chord_rows_response": 0.392728328704834,
+   "gain_random_response": -1.3304412364959717,
+   "response_norm_over_crowd_norm": 1.310741901397705,
+   "chord_norm_over_state_norm": 0.8221385478973389,
+   "gain_response_by_block": [
+    0.01200217567384243,
+    -0.019060168415308,
+    -0.06500470638275146,
+    -0.12207968533039093,
+    -0.10402237623929977,
+    -0.09952811151742935,
+    -0.05328010767698288,
+    -0.017473986372351646,
+    -0.004090100061148405
+   ]
+  },
+  "12": {
+   "n_positions": 2040,
+   "gain_actual_centred": -0.35407036542892456,
+   "gain_actual_raw": -0.3368188142776489,
+   "gain_response": -0.561834990978241,
+   "response_share": 1.5867891311645508,
+   "spearman_response_actual": 0.18607659049831002,
+   "gain_chord_rows_response": 0.3952789008617401,
+   "gain_random_response": -1.664622187614441,
+   "response_norm_over_crowd_norm": 2.919901132583618,
+   "chord_norm_over_state_norm": 0.7282895445823669,
+   "gain_response_by_block": [
+    0.009978908114135265,
+    -0.00846010260283947,
+    -0.0363629125058651,
+    -0.07585039734840393,
+    -0.06988510489463806,
+    -0.07109572738409042,
+    -0.06570516526699066,
+    -0.05293085426092148,
+    -0.05931723862886429,
+    -0.04623190686106682,
+    -0.04104055091738701,
+    -0.02779627963900566,
+    -0.018390456214547157
+   ]
+  }
+ },
+ "checks": {
+  "response_over_half_of_actual": true,
+  "response_negative_at_mid": true,
+  "random_negative_and_smaller": false
+ },
+ "_exp": "e509_crowdresponse_olmo1b",
+ "_time": "2026-09-26 01:29:29"
+}

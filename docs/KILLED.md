@@ -461,3 +461,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 65 kills (the profile)
 - "The centred chord predicts the whole projection profile": it predicts a third to a half of the top atoms and orders the true top hundred at 0.3-0.4 in GPT-2, calibrated within 13-25%; the sum of all writes does better there and worse in OLMo (e507).
 - "The crowd of small writes contracts the chord throughout training": it amplifies it early (+1.4 at Pythia step 512) and contracts it late (-0.64 at the end) (e507).
+
+## Session 66 kills (selection and response)
+- "The chord's clean maximum in GPT-2 shows the residual reinforces the winner": it is extreme-value selection over a nearly exchangeable residual; the null reproduces the level, the rank and the winner's residual excess (e508).
+- "The early amplification of the chord by the small writes is feedback": at Pythia step 512 it is not a response to the chord (share 0.03-0.21); it is the anisotropy of the early state (e509).
+- "The chord is contracted like any direction": a random direction of its size is contracted two to three times more; the learned contraction spares the vocabulary (e509).
