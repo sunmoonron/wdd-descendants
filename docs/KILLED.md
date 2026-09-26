@@ -477,3 +477,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 69 kills (the origin of sparsification)
 - "Sparsification begins with the gradient concentrating on a few rows": the gradient is most concentrated in the first 32 steps and spread by the time the writes sparsify; the rows turn selective together, none die (e513).
 - "The accent arrives by step 512": it is born at step 64 with the state cloud's collapse to 9-16 dimensions, and peaks in the collapsed phase (e513).
+
+## Session 70 kills (the lineage)
+- "A future word is ordinary at step 256, selective at 1000, aligned at 2000 and a word later": nothing tells the future words from magnitude-matched non-words through step 1000, and against the population they are simply the larger rows from step 1000; among rows of one size selectivity and kurtosis lead usage by one doubling from step 2000 and the three grow together; direction never leads (e514).
+- "The early writer wins are MLP rows": the token embedding through step 16, head atoms at steps 512-2000, MLP writers only from step 2000 (e514).
+- "The early words are the later words": before step 2000 the future words are used less than their controls; the vocabulary turns over between steps 1000 and 8000 (e514).

@@ -1,0 +1,149 @@
+{
+ "model": "pythia410",
+ "revision": "step64",
+ "blocks": [
+  6,
+  12
+ ],
+ "lm_loss": 9.495534896850586,
+ "by_block": {
+  "6": {
+   "n_states": 2040,
+   "winner_split": {
+    "mlp_writer": 0.012745099142193794,
+    "embedding": 0.1558823585510254,
+    "mlp_nonwriter": 0.45196080207824707,
+    "other": 0.37941174022853374
+   },
+   "sets": {
+    "words": {
+     "activity": 0.5044118165969849,
+     "kurtosis": 2.6003408432006836,
+     "gradient_share": 0.0001552078319946304,
+     "cosine_with_end": 0.06514369696378708,
+     "magnitude": 0.020452575758099556,
+     "usage": 0.0,
+     "share_used": 0.21484375
+    },
+    "matched": {
+     "activity": 0.5107843279838562,
+     "kurtosis": 2.6398816108703613,
+     "gradient_share": 0.00018363309209235013,
+     "cosine_with_end": 0.070578932762146,
+     "magnitude": 0.020004326477646828,
+     "usage": 0.0,
+     "share_used": 0.1953125
+    },
+    "random": {
+     "activity": 0.49215689301490784,
+     "kurtosis": 2.6921706199645996,
+     "gradient_share": 0.0001399964385200292,
+     "cosine_with_end": 0.08332284539937973,
+     "magnitude": 0.019670182839035988,
+     "usage": 0.0,
+     "share_used": 0.234375
+    }
+   },
+   "auc": {
+    "activity": {
+     "words_vs_matched": 0.4869842529296875,
+     "words_vs_random": 0.505279541015625
+    },
+    "kurtosis": {
+     "words_vs_matched": 0.5083465576171875,
+     "words_vs_random": 0.4896240234375
+    },
+    "gradient_share": {
+     "words_vs_matched": 0.4787139892578125,
+     "words_vs_random": 0.512939453125
+    },
+    "cosine_with_end": {
+     "words_vs_matched": 0.4546661376953125,
+     "words_vs_random": 0.4153900146484375
+    },
+    "magnitude": {
+     "words_vs_matched": 0.4961395263671875,
+     "words_vs_random": 0.5102691650390625
+    },
+    "usage": {
+     "words_vs_matched": 0.1845855712890625,
+     "words_vs_random": 0.1797027587890625
+    },
+    "selectivity": {
+     "words_vs_matched": 0.5130157470703125,
+     "words_vs_random": 0.494720458984375
+    }
+   }
+  },
+  "12": {
+   "n_states": 2040,
+   "winner_split": {
+    "mlp_writer": 0.0049019609577953815,
+    "embedding": 0.008333333767950535,
+    "mlp_nonwriter": 0.3901961147785187,
+    "other": 0.5965685904957354
+   },
+   "sets": {
+    "words": {
+     "activity": 0.479411780834198,
+     "kurtosis": 2.621173858642578,
+     "gradient_share": 0.00011083011486334726,
+     "cosine_with_end": 0.04607032239437103,
+     "magnitude": 0.018299078568816185,
+     "usage": 0.0,
+     "share_used": 0.13671875
+    },
+    "matched": {
+     "activity": 0.5014706254005432,
+     "kurtosis": 2.163626194000244,
+     "gradient_share": 0.00013345142360776663,
+     "cosine_with_end": 0.047853950411081314,
+     "magnitude": 0.019358033314347267,
+     "usage": 0.0,
+     "share_used": 0.12109375
+    },
+    "random": {
+     "activity": 0.470098078250885,
+     "kurtosis": 2.7750816345214844,
+     "gradient_share": 0.00010697115067159757,
+     "cosine_with_end": 0.06726241856813431,
+     "magnitude": 0.01832207478582859,
+     "usage": 0.0,
+     "share_used": 0.1171875
+    }
+   },
+   "auc": {
+    "activity": {
+     "words_vs_matched": 0.4444427490234375,
+     "words_vs_random": 0.4824371337890625
+    },
+    "kurtosis": {
+     "words_vs_matched": 0.55181884765625,
+     "words_vs_random": 0.4839935302734375
+    },
+    "gradient_share": {
+     "words_vs_matched": 0.4714508056640625,
+     "words_vs_random": 0.4996185302734375
+    },
+    "cosine_with_end": {
+     "words_vs_matched": 0.4740447998046875,
+     "words_vs_random": 0.35589599609375
+    },
+    "magnitude": {
+     "words_vs_matched": 0.4612274169921875,
+     "words_vs_random": 0.4806976318359375
+    },
+    "usage": {
+     "words_vs_matched": 0.1251678466796875,
+     "words_vs_random": 0.125640869140625
+    },
+    "selectivity": {
+     "words_vs_matched": 0.5555572509765625,
+     "words_vs_random": 0.5175628662109375
+    }
+   }
+  }
+ },
+ "_exp": "e514_lineage_pythia410_step64",
+ "_time": "2026-09-26 02:30:06"
+}

@@ -2851,3 +2851,110 @@ SESSION 69 (the relayed list's item B, the one real gap: what precedes sparsific
   - What precedes sparsification is the re-expansion of a collapsed state cloud and attention's return, both starting between steps 256 and 512; the gradient's concentration does not. The gradient is most concentrated in the first 32 steps, before the collapse, and by the time the writes sparsify it is spread over two to three times more rows than at initialisation (participation ratio 2383-2902 against 855). Sparsification is not a few rows being reinforced; it is every row becoming selective (active at a fifth of positions instead of half) while the gradient spreads.
   - The accent's birth is the cloud's collapse: the non-writer tail factor is 1.00 at every block through step 32, 1.14-1.48 at step 64, and peaks in the collapsed phase (1.86 at block 18 at step 128; 1.58 at block 12 at step 512), then settles to 1.24-1.33 as the cloud re-expands. e493 placed the accent "by step 512"; it is in place by step 64.
   - A caveat on the writer-win statistic, here and in e512: the position's writers include the token embedding, and at initialisation and through step 32 the wins at block 6 (0.39-0.55) are that atom, the state being little more than the embedding; those wins collapse to 0.02-0.09 by step 64 as the embedding's share of the state goes to zero, and the rise from step 2000 is MLP rows (e500: the MLP-only dictionary recovers the loss at every checkpoint from step 256). A split of the wins by winner type is a cheap follow-up.
+
+SESSION 70 (the relayed list's combined item, run as asked: follow the rows that end as native words back through training against non-word rows matched on their eventual magnitude, and split the winner statistic by type; e514 at fourteen Pythia checkpoints; 2026-09-26 02:25-02:31 box time).
+
+- e514 THE LINEAGE OF THE FUTURE WORDS, AND THE WINNER SPLIT (reference at the end of training: at blocks 6 and 12 the 256 MLP rows of blocks up to the block most used as native words, each paired with a non-word row of the same block with the closest mean absolute write at the end, taken without replacement, and 256 random non-word rows; at each checkpoint, per row: activity, the excess kurtosis of the write coefficient across positions, the row's share of the block's loss gradient, the cosine of its write direction with its direction at the end, its mean absolute write, and its usage as a native word at that checkpoint; AUCs of words against matched and against random non-words; and the share of states whose largest projection is an MLP row among the position's writers, the token embedding, an MLP row that is not a writer, or another atom).
+
+  Winner split by type:
+
+  | step | block 6: MLP writer / embedding / MLP non-writer / other | block 12: the same |
+  | --- | --- | --- |
+  | 0 | 0.01 / 0.37 / 0.27 / 0.34 | 0.00 / 0.06 / 0.48 / 0.46 |
+  | 16 | 0.01 / 0.55 / 0.19 / 0.26 | 0.00 / 0.22 / 0.41 / 0.37 |
+  | 64 | 0.01 / 0.16 / 0.45 / 0.38 | 0.00 / 0.01 / 0.39 / 0.60 |
+  | 128 | 0.04 / 0.07 / 0.47 / 0.41 | 0.02 / 0.00 / 0.41 / 0.57 |
+  | 256 | 0.06 / 0.03 / 0.47 / 0.44 | 0.04 / 0.00 / 0.57 / 0.39 |
+  | 512 | 0.05 / 0.00 / 0.14 / 0.81 | 0.02 / 0.00 / 0.08 / 0.90 |
+  | 1000 | 0.02 / 0.00 / 0.06 / 0.92 | 0.02 / 0.00 / 0.24 / 0.74 |
+  | 2000 | 0.24 / 0.00 / 0.21 / 0.55 | 0.09 / 0.00 / 0.35 / 0.56 |
+  | 3000 | 0.36 / 0.00 / 0.23 / 0.41 | 0.16 / 0.00 / 0.33 / 0.51 |
+  | 4000 | 0.43 / 0.00 / 0.23 / 0.34 | 0.23 / 0.00 / 0.32 / 0.46 |
+  | 8000 | 0.62 / 0.00 / 0.18 / 0.21 | 0.43 / 0.00 / 0.29 / 0.28 |
+  | 16000 | 0.73 / 0.01 / 0.15 / 0.12 | 0.50 / 0.00 / 0.29 / 0.20 |
+  | 64000 | 0.85 / 0.00 / 0.08 / 0.07 | 0.67 / 0.00 / 0.26 / 0.07 |
+  | 143000 | 0.85 / 0.00 / 0.06 / 0.08 | 0.73 / 0.00 / 0.20 / 0.07 |
+
+  Block 6, AUC of the future words against matched non-words (against random non-words in brackets):
+
+  | step | loss | selectivity | write kurtosis | gradient share | cosine with the end direction | magnitude | usage as a word |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 0 | 11.07 | 0.50 (0.50) | 0.49 (0.50) | 0.51 (0.52) | 0.45 (0.41) | 0.51 (0.50) | 0.16 (0.16) |
+  | 16 | 10.29 | 0.51 (0.51) | 0.51 (0.51) | 0.48 (0.50) | 0.45 (0.41) | 0.49 (0.48) | 0.17 (0.17) |
+  | 64 | 9.50 | 0.51 (0.49) | 0.51 (0.49) | 0.48 (0.51) | 0.45 (0.42) | 0.50 (0.51) | 0.18 (0.18) |
+  | 128 | 8.52 | 0.52 (0.49) | 0.49 (0.47) | 0.49 (0.51) | 0.46 (0.42) | 0.51 (0.53) | 0.22 (0.22) |
+  | 256 | 7.54 | 0.51 (0.48) | 0.50 (0.48) | 0.50 (0.50) | 0.46 (0.42) | 0.52 (0.53) | 0.21 (0.20) |
+  | 512 | 6.69 | 0.60 (0.45) | 0.58 (0.46) | 0.43 (0.50) | 0.47 (0.44) | 0.44 (0.57) | 0.23 (0.23) |
+  | 1000 | 5.41 | 0.57 (0.43) | 0.58 (0.47) | 0.50 (0.56) | 0.47 (0.47) | 0.53 (0.65) | 0.29 (0.29) |
+  | 2000 | 4.50 | 0.61 (0.47) | 0.64 (0.50) | 0.53 (0.64) | 0.43 (0.46) | 0.49 (0.67) | 0.50 (0.50) |
+  | 3000 | 4.28 | 0.61 (0.43) | 0.63 (0.46) | 0.55 (0.67) | 0.42 (0.47) | 0.50 (0.70) | 0.63 (0.62) |
+  | 4000 | 4.12 | 0.63 (0.43) | 0.66 (0.47) | 0.54 (0.67) | 0.43 (0.48) | 0.48 (0.71) | 0.67 (0.67) |
+  | 8000 | 3.91 | 0.66 (0.41) | 0.69 (0.47) | 0.56 (0.63) | 0.48 (0.54) | 0.50 (0.76) | 0.82 (0.84) |
+  | 16000 | 3.73 | 0.68 (0.42) | 0.72 (0.47) | 0.57 (0.65) | 0.54 (0.62) | 0.51 (0.80) | 0.89 (0.91) |
+  | 64000 | 3.59 | 0.72 (0.45) | 0.76 (0.53) | 0.56 (0.69) | 0.68 (0.82) | 0.56 (0.86) | 1.00 (1.00) |
+  | 143000 | 3.50 | 0.75 (0.46) | 0.79 (0.56) | 0.50 (0.64) | 0.35 (0.36) | 0.58 (0.88) | 1.00 (1.00) |
+
+  Block 12, AUC of the future words against matched non-words (against random non-words in brackets):
+
+  | step | loss | selectivity | write kurtosis | gradient share | cosine with the end direction | magnitude | usage as a word |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 0 | 11.07 | 0.50 (0.51) | 0.48 (0.49) | 0.50 (0.49) | 0.47 (0.35) | 0.50 (0.48) | 0.15 (0.16) |
+  | 16 | 10.29 | 0.58 (0.55) | 0.56 (0.51) | 0.44 (0.45) | 0.47 (0.35) | 0.42 (0.42) | 0.17 (0.17) |
+  | 64 | 9.50 | 0.56 (0.52) | 0.55 (0.48) | 0.47 (0.50) | 0.47 (0.36) | 0.46 (0.48) | 0.13 (0.13) |
+  | 128 | 8.52 | 0.53 (0.50) | 0.55 (0.47) | 0.51 (0.52) | 0.48 (0.36) | 0.49 (0.53) | 0.15 (0.15) |
+  | 256 | 7.54 | 0.52 (0.49) | 0.52 (0.46) | 0.51 (0.53) | 0.48 (0.36) | 0.50 (0.53) | 0.19 (0.20) |
+  | 512 | 6.69 | 0.57 (0.51) | 0.56 (0.49) | 0.50 (0.51) | 0.52 (0.40) | 0.47 (0.53) | 0.23 (0.22) |
+  | 1000 | 5.41 | 0.55 (0.50) | 0.57 (0.52) | 0.52 (0.59) | 0.51 (0.43) | 0.53 (0.64) | 0.36 (0.40) |
+  | 2000 | 4.50 | 0.58 (0.47) | 0.61 (0.48) | 0.55 (0.68) | 0.45 (0.37) | 0.47 (0.65) | 0.46 (0.49) |
+  | 3000 | 4.28 | 0.61 (0.47) | 0.63 (0.49) | 0.57 (0.69) | 0.45 (0.36) | 0.45 (0.63) | 0.51 (0.52) |
+  | 4000 | 4.12 | 0.65 (0.44) | 0.67 (0.49) | 0.55 (0.71) | 0.46 (0.38) | 0.43 (0.66) | 0.53 (0.57) |
+  | 8000 | 3.91 | 0.67 (0.44) | 0.69 (0.49) | 0.59 (0.77) | 0.51 (0.45) | 0.47 (0.71) | 0.66 (0.68) |
+  | 16000 | 3.73 | 0.69 (0.44) | 0.71 (0.49) | 0.61 (0.81) | 0.55 (0.53) | 0.49 (0.76) | 0.84 (0.86) |
+  | 64000 | 3.59 | 0.74 (0.50) | 0.75 (0.54) | 0.60 (0.83) | 0.69 (0.78) | 0.50 (0.82) | 1.00 (1.00) |
+  | 143000 | 3.50 | 0.76 (0.53) | 0.78 (0.59) | 0.58 (0.79) | 0.28 (0.29) | 0.51 (0.84) | 1.00 (1.00) |
+
+  Block 6, medians for words / matched / random:
+
+  | step | activity | write kurtosis | cosine with the end | magnitude (x100) | share used as words |
+  | --- | --- | --- | --- | --- | --- |
+  | 0 | 0.51 / 0.51 / 0.50 | 2.5 / 2.6 / 2.7 | 0.06 / 0.07 / 0.08 | 1.98 / 1.95 / 1.95 | 0.19 / 0.21 / 0.20 |
+  | 16 | 0.50 / 0.51 / 0.50 | 2.6 / 2.5 / 2.5 | 0.06 / 0.07 / 0.08 | 1.83 / 1.92 / 1.82 | 0.20 / 0.24 / 0.24 |
+  | 64 | 0.50 / 0.51 / 0.49 | 2.6 / 2.6 / 2.7 | 0.07 / 0.07 / 0.08 | 2.05 / 2.00 / 1.97 | 0.21 / 0.20 / 0.23 |
+  | 128 | 0.51 / 0.51 / 0.49 | 2.6 / 2.7 / 2.9 | 0.07 / 0.07 / 0.08 | 2.08 / 2.06 / 2.02 | 0.26 / 0.23 / 0.23 |
+  | 256 | 0.50 / 0.50 / 0.48 | 2.9 / 2.7 / 3.1 | 0.07 / 0.07 / 0.09 | 2.04 / 2.01 / 1.95 | 0.25 / 0.20 / 0.28 |
+  | 512 | 0.44 / 0.49 / 0.39 | 4.0 / 3.3 / 4.5 | 0.08 / 0.08 / 0.09 | 1.78 / 1.89 / 1.68 | 0.28 / 0.26 / 0.25 |
+  | 1000 | 0.34 / 0.37 / 0.30 | 6.3 / 5.4 / 6.8 | 0.13 / 0.13 / 0.14 | 1.92 / 1.84 / 1.72 | 0.36 / 0.29 / 0.30 |
+  | 2000 | 0.24 / 0.28 / 0.23 | 12.0 / 8.8 / 11.8 | 0.26 / 0.28 / 0.27 | 3.18 / 3.17 / 2.78 | 0.59 / 0.34 / 0.33 |
+  | 3000 | 0.21 / 0.24 / 0.18 | 14.7 / 10.6 / 16.3 | 0.33 / 0.36 / 0.35 | 4.37 / 4.36 / 3.72 | 0.71 / 0.32 / 0.36 |
+  | 4000 | 0.19 / 0.24 / 0.17 | 17.4 / 10.8 / 18.6 | 0.39 / 0.41 / 0.40 | 5.30 / 5.45 / 4.57 | 0.75 / 0.32 / 0.33 |
+  | 8000 | 0.18 / 0.23 / 0.14 | 20.2 / 11.4 / 20.4 | 0.54 / 0.54 / 0.53 | 8.45 / 8.34 / 6.78 | 0.88 / 0.32 / 0.24 |
+  | 16000 | 0.15 / 0.22 / 0.13 | 23.9 / 11.3 / 25.1 | 0.70 / 0.67 / 0.67 | 11.43 / 11.29 / 8.98 | 0.93 / 0.31 / 0.25 |
+  | 64000 | 0.13 / 0.23 / 0.12 | 30.0 / 10.0 / 26.1 | 0.96 / 0.94 / 0.94 | 13.85 / 13.34 / 10.17 | 1.00 / 0.25 / 0.14 |
+  | 143000 | 0.12 / 0.23 / 0.11 | 33.1 / 8.8 / 22.6 | 1.00 / 1.00 / 1.00 | 10.27 / 9.51 / 7.59 | 1.00 / 0.00 / 0.00 |
+
+  Block 12, medians for words / matched / random:
+
+  | step | activity | write kurtosis | cosine with the end | magnitude (x100) | share used as words |
+  | --- | --- | --- | --- | --- | --- |
+  | 0 | 0.49 / 0.49 / 0.50 | 2.6 / 2.6 / 2.9 | 0.05 / 0.05 / 0.07 | 1.78 / 1.81 / 1.79 | 0.18 / 0.17 / 0.12 |
+  | 16 | 0.42 / 0.53 / 0.50 | 2.2 / 1.7 / 2.2 | 0.05 / 0.05 / 0.07 | 1.23 / 1.34 / 1.47 | 0.19 / 0.16 / 0.14 |
+  | 64 | 0.48 / 0.50 / 0.47 | 2.6 / 2.2 / 2.8 | 0.05 / 0.05 / 0.07 | 1.83 / 1.94 / 1.83 | 0.14 / 0.12 / 0.12 |
+  | 128 | 0.50 / 0.50 / 0.48 | 2.6 / 2.3 / 2.9 | 0.05 / 0.05 / 0.07 | 2.02 / 2.07 / 1.93 | 0.17 / 0.12 / 0.14 |
+  | 256 | 0.48 / 0.50 / 0.48 | 2.5 / 2.2 / 2.9 | 0.05 / 0.05 / 0.07 | 2.01 / 2.01 / 1.91 | 0.22 / 0.16 / 0.13 |
+  | 512 | 0.42 / 0.45 / 0.40 | 4.0 / 3.4 / 4.0 | 0.06 / 0.06 / 0.07 | 1.69 / 1.80 / 1.62 | 0.26 / 0.17 / 0.19 |
+  | 1000 | 0.28 / 0.31 / 0.29 | 7.8 / 6.3 / 7.2 | 0.11 / 0.11 / 0.12 | 1.81 / 1.81 / 1.68 | 0.45 / 0.30 / 0.18 |
+  | 2000 | 0.21 / 0.24 / 0.20 | 12.5 / 10.4 / 12.9 | 0.20 / 0.21 / 0.23 | 3.12 / 3.16 / 2.80 | 0.56 / 0.34 / 0.24 |
+  | 3000 | 0.18 / 0.22 / 0.18 | 15.7 / 11.8 / 15.9 | 0.27 / 0.28 / 0.30 | 4.07 / 4.32 / 3.81 | 0.58 / 0.29 / 0.21 |
+  | 4000 | 0.17 / 0.22 / 0.16 | 17.4 / 11.8 / 18.1 | 0.32 / 0.33 / 0.35 | 5.07 / 5.35 / 4.62 | 0.62 / 0.31 / 0.19 |
+  | 8000 | 0.16 / 0.24 / 0.15 | 20.0 / 10.6 / 20.1 | 0.46 / 0.45 / 0.48 | 8.36 / 8.56 / 6.99 | 0.71 / 0.25 / 0.17 |
+  | 16000 | 0.16 / 0.25 / 0.15 | 21.9 / 9.6 / 20.8 | 0.63 / 0.60 / 0.61 | 11.79 / 11.80 / 9.29 | 0.88 / 0.22 / 0.19 |
+  | 64000 | 0.13 / 0.29 / 0.14 | 25.6 / 6.9 / 19.7 | 0.95 / 0.93 / 0.93 | 14.26 / 14.22 / 10.52 | 1.00 / 0.19 / 0.12 |
+  | 143000 | 0.11 / 0.31 / 0.13 | 27.7 / 5.3 / 17.5 | 1.00 / 1.00 / 1.00 | 10.44 / 10.44 / 8.07 | 1.00 / 0.00 / 0.00 |
+
+  First checkpoint at which the AUC against matched non-words exceeds 0.6: block 6: selectivity 512, kurtosis 2000, gradient share never, cosine with end 64000, usage 3000; block 12: selectivity 3000, kurtosis 2000, gradient share 16000, cosine with end 64000, usage 8000.
+
+  - The measurement trap is confirmed and closed. The early writer wins of e512 and e513 were the token embedding: at block 6 it is the winner in 0.37 of states at initialisation and 0.55 at step 16, and never after step 64; the maxima of steps 512-2000 are on atoms that are neither writers nor MLP rows, head atoms mostly (0.81-0.90 at step 512, as e505 found), and the rise from step 2000 is MLP writers, 0.09 to 0.73 at block 12 and 0.24 to 0.85 at block 6. MLP rows that are not among the position's 64 largest writes take a fifth of the maxima at the end (0.20 at block 12), the chord's shadow of e505.
+  - The future words have no lineage before sparsification among rows of their size, and a size lineage from step 1000. Against non-word rows of the same block and the same eventual magnitude, nothing measured tells the future words apart through step 1000: selectivity, kurtosis, gradient share, direction and magnitude all sit at AUC 0.42-0.58, and their directions drift identically (cosine with the end 0.05-0.13 for both). Against random non-word rows the future words are already larger and more reinforced by step 1000 (magnitude AUC 0.64 and gradient share 0.59, rising to 0.82 and 0.83 by step 64000), two doublings before they are words, while their selectivity against random rows never rises above 0.55: among all rows the words are the large ones, among rows of one size the selective ones. The picture "ordinary at 256, selective at 1000, aligned at 2000, a word later" is not what happens; what happens is ordinary through step 512, growing at 1000, selective for its size at 2000-3000, a word at 3000-8000.
+  - Among rows of the same size the precursor is selectivity, one doubling ahead of wordhood. Selectivity and write kurtosis are above AUC 0.6 from step 2000 at block 6 (selectivity touches 0.60 at step 512 there and dips to 0.57 at 1000) and from 2000-3000 at block 12, usage crosses at 3000 and between 4000 and 8000, and the three then grow together to the end (selectivity 0.75-0.76, kurtosis 0.78-0.79, usage 1.00). Gradient share never separates (at most 0.61) and direction only at step 64000 (0.68-0.69, the words' directions 0.95-0.96 of their final ones against 0.93-0.94), so the words are not settled earlier, and among rows of their size they are not reinforced more (gradient share 0.50-0.61 against matched rows, 0.59-0.83 against random ones); they become the rows that fire rarely and write heavily when they do. At the end a word is active at 0.11-0.12 of positions against 0.23-0.31 for a non-word of the same magnitude: selectivity marks a word after magnitude is controlled, and magnitude does not (AUC 0.51-0.58).
+  - The early vocabulary is other rows. Before step 2000 the future words are used as words less than their matched and their random controls (usage AUC 0.13-0.23 through step 512, 0.36 at step 1000, 0.46-0.50 at 2000, then rising): the rows that serve as words in the collapsed and accent phases are not the rows that serve at the end, and turn over between steps 1000 and 8000. Which rows the early words are, and what becomes of them, is the next question.
+  - Pre-registered: selectivity separates before usage at block 12, confirmed by one checkpoint (3000 against 4000-8000); direction settled by step 4000, refuted (never before 64000); gradient share not separating before wordhood, confirmed against matched rows (0.50-0.57 through step 4000) and refuted against random ones (0.59 at step 1000, 0.68 at 2000); the selectivity separation present at the end after magnitude matching, confirmed (0.76).

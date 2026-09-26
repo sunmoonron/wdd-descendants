@@ -1,0 +1,149 @@
+{
+ "model": "pythia410",
+ "revision": "step64000",
+ "blocks": [
+  6,
+  12
+ ],
+ "lm_loss": 3.5933330059051514,
+ "by_block": {
+  "6": {
+   "n_states": 2031,
+   "winner_split": {
+    "mlp_writer": 0.847858190536499,
+    "embedding": 0.004923683125525713,
+    "mlp_nonwriter": 0.07779419422149658,
+    "other": 0.06942393211647868
+   },
+   "sets": {
+    "words": {
+     "activity": 0.1290004998445511,
+     "kurtosis": 30.01007080078125,
+     "gradient_share": 0.0002222105540568009,
+     "cosine_with_end": 0.9624457359313965,
+     "magnitude": 0.13854803144931793,
+     "usage": 17.0,
+     "share_used": 1.0
+    },
+    "matched": {
+     "activity": 0.22895126044750214,
+     "kurtosis": 10.020610809326172,
+     "gradient_share": 0.00018049949721898884,
+     "cosine_with_end": 0.9442335367202759,
+     "magnitude": 0.1334153711795807,
+     "usage": 0.0,
+     "share_used": 0.25390625
+    },
+    "random": {
+     "activity": 0.1176760271191597,
+     "kurtosis": 26.136228561401367,
+     "gradient_share": 0.00012960801541339606,
+     "cosine_with_end": 0.9407409429550171,
+     "magnitude": 0.10166691243648529,
+     "usage": 0.0,
+     "share_used": 0.140625
+    }
+   },
+   "auc": {
+    "activity": {
+     "words_vs_matched": 0.2817840576171875,
+     "words_vs_random": 0.5523834228515625
+    },
+    "kurtosis": {
+     "words_vs_matched": 0.7585601806640625,
+     "words_vs_random": 0.5298309326171875
+    },
+    "gradient_share": {
+     "words_vs_matched": 0.5565643310546875,
+     "words_vs_random": 0.688568115234375
+    },
+    "cosine_with_end": {
+     "words_vs_matched": 0.680633544921875,
+     "words_vs_random": 0.8242034912109375
+    },
+    "magnitude": {
+     "words_vs_matched": 0.5552520751953125,
+     "words_vs_random": 0.8633270263671875
+    },
+    "usage": {
+     "words_vs_matched": 0.9974365234375,
+     "words_vs_random": 0.9987945556640625
+    },
+    "selectivity": {
+     "words_vs_matched": 0.7182159423828125,
+     "words_vs_random": 0.4476165771484375
+    }
+   }
+  },
+  "12": {
+   "n_states": 2031,
+   "winner_split": {
+    "mlp_writer": 0.6720827221870422,
+    "embedding": 0.0004923683009110391,
+    "mlp_nonwriter": 0.2550467848777771,
+    "other": 0.07237812463426962
+   },
+   "sets": {
+    "words": {
+     "activity": 0.12653864920139313,
+     "kurtosis": 25.5640811920166,
+     "gradient_share": 0.00034697496448643506,
+     "cosine_with_end": 0.9529638886451721,
+     "magnitude": 0.14260144531726837,
+     "usage": 15.0,
+     "share_used": 0.99609375
+    },
+    "matched": {
+     "activity": 0.2890201807022095,
+     "kurtosis": 6.91741943359375,
+     "gradient_share": 0.00026624122983776033,
+     "cosine_with_end": 0.9345978498458862,
+     "magnitude": 0.14221200346946716,
+     "usage": 0.0,
+     "share_used": 0.1875
+    },
+    "random": {
+     "activity": 0.1368783861398697,
+     "kurtosis": 19.68087387084961,
+     "gradient_share": 0.00014965087757445872,
+     "cosine_with_end": 0.9314466118812561,
+     "magnitude": 0.10516536980867386,
+     "usage": 0.0,
+     "share_used": 0.12109375
+    }
+   },
+   "auc": {
+    "activity": {
+     "words_vs_matched": 0.263885498046875,
+     "words_vs_random": 0.5008697509765625
+    },
+    "kurtosis": {
+     "words_vs_matched": 0.7498016357421875,
+     "words_vs_random": 0.5430450439453125
+    },
+    "gradient_share": {
+     "words_vs_matched": 0.6003570556640625,
+     "words_vs_random": 0.8315277099609375
+    },
+    "cosine_with_end": {
+     "words_vs_matched": 0.6916961669921875,
+     "words_vs_random": 0.78125
+    },
+    "magnitude": {
+     "words_vs_matched": 0.4998016357421875,
+     "words_vs_random": 0.8242950439453125
+    },
+    "usage": {
+     "words_vs_matched": 0.995086669921875,
+     "words_vs_random": 0.9954376220703125
+    },
+    "selectivity": {
+     "words_vs_matched": 0.736114501953125,
+     "words_vs_random": 0.4991302490234375
+    }
+   }
+  }
+ },
+ "_exp": "e514_lineage_pythia410_step64000",
+ "_time": "2026-09-26 02:31:01"
+}

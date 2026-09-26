@@ -1,0 +1,149 @@
+{
+ "model": "pythia410",
+ "revision": "step16000",
+ "blocks": [
+  6,
+  12
+ ],
+ "lm_loss": 3.7262675762176514,
+ "by_block": {
+  "6": {
+   "n_states": 2032,
+   "winner_split": {
+    "mlp_writer": 0.7303149700164795,
+    "embedding": 0.007874015718698502,
+    "mlp_nonwriter": 0.14616142213344574,
+    "other": 0.11564959213137627
+   },
+   "sets": {
+    "words": {
+     "activity": 0.1525590568780899,
+     "kurtosis": 23.913000106811523,
+     "gradient_share": 0.00026159913977608085,
+     "cosine_with_end": 0.7023508548736572,
+     "magnitude": 0.11425933986902237,
+     "usage": 10.0,
+     "share_used": 0.9296875
+    },
+    "matched": {
+     "activity": 0.2224409431219101,
+     "kurtosis": 11.293118476867676,
+     "gradient_share": 0.00017971974739339203,
+     "cosine_with_end": 0.6712924242019653,
+     "magnitude": 0.11293208599090576,
+     "usage": 0.0,
+     "share_used": 0.3125
+    },
+    "random": {
+     "activity": 0.12647637724876404,
+     "kurtosis": 25.144302368164062,
+     "gradient_share": 0.00014840697986073792,
+     "cosine_with_end": 0.6667749881744385,
+     "magnitude": 0.08978700637817383,
+     "usage": 0.0,
+     "share_used": 0.25390625
+    }
+   },
+   "auc": {
+    "activity": {
+     "words_vs_matched": 0.3219146728515625,
+     "words_vs_random": 0.58428955078125
+    },
+    "kurtosis": {
+     "words_vs_matched": 0.721221923828125,
+     "words_vs_random": 0.4745941162109375
+    },
+    "gradient_share": {
+     "words_vs_matched": 0.5693206787109375,
+     "words_vs_random": 0.6519775390625
+    },
+    "cosine_with_end": {
+     "words_vs_matched": 0.53582763671875,
+     "words_vs_random": 0.62261962890625
+    },
+    "magnitude": {
+     "words_vs_matched": 0.5147857666015625,
+     "words_vs_random": 0.8038177490234375
+    },
+    "usage": {
+     "words_vs_matched": 0.8915252685546875,
+     "words_vs_random": 0.91021728515625
+    },
+    "selectivity": {
+     "words_vs_matched": 0.6780853271484375,
+     "words_vs_random": 0.41571044921875
+    }
+   }
+  },
+  "12": {
+   "n_states": 2032,
+   "winner_split": {
+    "mlp_writer": 0.5014763474464417,
+    "embedding": 0.0024606299120932817,
+    "mlp_nonwriter": 0.29133859276771545,
+    "other": 0.2047244298737496
+   },
+   "sets": {
+    "words": {
+     "activity": 0.1599409431219101,
+     "kurtosis": 21.853450775146484,
+     "gradient_share": 0.00030162595794536173,
+     "cosine_with_end": 0.626313328742981,
+     "magnitude": 0.11789356172084808,
+     "usage": 6.0,
+     "share_used": 0.87890625
+    },
+    "matched": {
+     "activity": 0.2539370059967041,
+     "kurtosis": 9.643087387084961,
+     "gradient_share": 0.0002152283996110782,
+     "cosine_with_end": 0.5976184606552124,
+     "magnitude": 0.11801747232675552,
+     "usage": 0.0,
+     "share_used": 0.22265625
+    },
+    "random": {
+     "activity": 0.14566929638385773,
+     "kurtosis": 20.818063735961914,
+     "gradient_share": 0.00014764514344278723,
+     "cosine_with_end": 0.6094241142272949,
+     "magnitude": 0.09286252409219742,
+     "usage": 0.0,
+     "share_used": 0.1875
+    }
+   },
+   "auc": {
+    "activity": {
+     "words_vs_matched": 0.3097686767578125,
+     "words_vs_random": 0.5569000244140625
+    },
+    "kurtosis": {
+     "words_vs_matched": 0.7115325927734375,
+     "words_vs_random": 0.4927520751953125
+    },
+    "gradient_share": {
+     "words_vs_matched": 0.6115570068359375,
+     "words_vs_random": 0.8072662353515625
+    },
+    "cosine_with_end": {
+     "words_vs_matched": 0.54986572265625,
+     "words_vs_random": 0.5345916748046875
+    },
+    "magnitude": {
+     "words_vs_matched": 0.48736572265625,
+     "words_vs_random": 0.763275146484375
+    },
+    "usage": {
+     "words_vs_matched": 0.8424835205078125,
+     "words_vs_random": 0.8564910888671875
+    },
+    "selectivity": {
+     "words_vs_matched": 0.6902313232421875,
+     "words_vs_random": 0.4430999755859375
+    }
+   }
+  }
+ },
+ "_exp": "e514_lineage_pythia410_step16000",
+ "_time": "2026-09-26 02:31:01"
+}
