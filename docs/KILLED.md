@@ -473,3 +473,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 68 kills (the fake chord, the sweep)
 - "The nonlinear response spares native-row chords in general": a fake chord of the block's most-used rows with the position's coefficients is contracted like a random direction (e511). Only the position's own writes are spared.
 - "Wordhood turns on in a phase transition": a fast crossover over two doublings of steps followed by a slow creep; sparsification leads it and the contraction and the chord follow (e512).
+
+## Session 69 kills (the origin of sparsification)
+- "Sparsification begins with the gradient concentrating on a few rows": the gradient is most concentrated in the first 32 steps and spread by the time the writes sparsify; the rows turn selective together, none die (e513).
+- "The accent arrives by step 512": it is born at step 64 with the state cloud's collapse to 9-16 dimensions, and peaks in the collapsed phase (e513).

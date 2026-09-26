@@ -597,6 +597,10 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 69: what precedes sparsification (e513)
+
+- Pythia's first 2000 steps at fine resolution: the gradient concentrates transiently on a few rows (steps 0-16), the state cloud collapses to 9-16 effective dimensions and attention's share of the state collapses with it while the accent is born (16-64), a collapsed plateau (64-256), then sparsification (256-2000) as every row turns selective, the cloud re-expands, attention takes the state back, the ledger's tails heavy, and the contraction is born at warmup's end. The gradient's concentration does not initiate sparsification; it precedes the collapse and is gone by the time the writes sparsify. What precedes sparsification is the cloud's re-expansion and attention's return.
+
 ## Session 68: the sparing is write history; wordhood is a fast crossover (e511, e512)
 
 - Only the position's own writes are spared: a chord of native rows with the same coefficients and norm, random or the block's most-used, is contracted like a random direction (GPT-2, Pythia step 16000) or most of the way to it (OLMo, Pythia's end). The downstream MLPs respond little to removing what they were trained to find there and fully to any other displacement of the same size (e511).

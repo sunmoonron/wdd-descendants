@@ -2788,3 +2788,66 @@ SESSION 68 (the two sharp items in a relayed list: the fake chord that separates
   - The developmental order is the same at every block. The effective number of writes falls first (its midpoint near step 1500-1700 at all three blocks; at block 12 from 5900 at step 512 to 3400 at 2000 and 2600 at 4000, then flat near 2000); the writer-win rate rises next (midpoint 2800-6600); the crowd's gain along the chord decays through zero (block 12: +1.24, +0.96, +0.61, +0.33, +0.26, +0.08, +0.01 at steps 512, 2000, 4000, 8000, 10000, 16000, 20000, then -0.45) and the linear contraction grows (block 12: 0, -0.03, -0.06, -0.09, -0.12, -0.15, -0.22 at 512, 2000, 4000, 8000, 16000, 32000 and the end) with midpoints at 2400-15400 (the crowd's gain first, the contraction after); and the chord's amplitude grows last (midpoints 14000-19000; block 12 from 0.13 to 0.35 by step 16000 and 0.60 at the end). Sparsification precedes wordhood; the contraction and the chord's growth follow it.
   - The state's energy moves in two separate phases, and the late one erodes the words at the last block. The attention share at block 12 rises from 0.14 at step 512 to 0.49 at 2000, holds at 0.53-0.56 from 3000 to 40000, and rises again to 0.60, 0.68 and 0.75 at 64000, 100000 and the end; at block 18 the late phase brings the non-writer tail from 1.47 at step 32000 to 1.84 and 2.29 and takes the writer-win rate from 0.70 at 64000 down to 0.59 and 0.48. The last block's words lose ground late to attention-carried maxima.
   - The non-writer tail factor is flat from step 2000 on (1.24-1.33 at block 12; 1.26-1.30 at block 6) after an early drop from 1.4-1.6 at step 512: the accent arrives before step 512 and does not change through the wordhood phase, as e493 and e503 found at coarser resolution.
+
+SESSION 69 (the relayed list's item B, the one real gap: what precedes sparsification; e513 at thirteen Pythia checkpoints from initialisation to step 2000; 2026-09-26 02:10-02:18 box time).
+
+- e513 WHAT PRECEDES SPARSIFICATION (e512's observables below step 512, from initialisation, plus the candidates for the first arrow: the concentration of the language-model loss's gradient across a block's MLP rows from one backward pass (the participation ratio of the per-row gradient norms of the down- and up-projections, and the share of the gradient's energy in its 64 largest rows), the rows' liveness (median share of positions at which a row is active, and the share of rows active at under 1%), the write ledger's excess kurtosis, and the state cloud's effective dimension and top-8 variance share; Pythia-410m, blocks 6, 12, 18).
+
+  Block 6:
+
+  | step | loss | writer wins | tail factor | chord amplitude | effective writes | ledger kurtosis | MLP / attention share | crowd gain along the chord | linear contraction | gradient rows, PR down / up (top-64 share) | rows' median activity (share under 1%) | cloud effective dimension (top-8 share) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 0 | 11.07 | 0.39 | 1.00 | 0.35 | 3822 | 3.3 | 0.85 / 0.14 | -0.117 | +0.001 | 934 / 1134 (0.17) | 0.48 (0.00) | 90 (0.23) |
+  | 1 | 11.07 | 0.39 | 1.00 | 0.35 | 3822 | 3.3 | 0.85 / 0.14 | -0.117 | +0.001 | 934 / 1134 (0.17) | 0.48 (0.00) | 90 (0.23) |
+  | 2 | 11.07 | 0.39 | 1.00 | 0.35 | 3822 | 3.3 | 0.85 / 0.14 | -0.116 | +0.001 | 933 / 1134 (0.17) | 0.48 (0.00) | 90 (0.23) |
+  | 4 | 10.98 | 0.39 | 1.00 | 0.35 | 3820 | 3.3 | 0.85 / 0.14 | -0.116 | +0.000 | 922 / 1125 (0.17) | 0.49 (0.00) | 90 (0.23) |
+  | 8 | 10.70 | 0.41 | 1.00 | 0.35 | 3810 | 3.3 | 0.83 / 0.16 | -0.125 | +0.001 | 818 / 1058 (0.19) | 0.48 (0.00) | 90 (0.23) |
+  | 16 | 10.29 | 0.55 | 1.00 | 0.37 | 3794 | 3.4 | 0.73 / 0.26 | -0.176 | +0.001 | 595 / 789 (0.23) | 0.47 (0.04) | 89 (0.23) |
+  | 32 | 9.95 | 0.49 | 1.00 | 0.36 | 3801 | 3.3 | 0.77 / 0.22 | -0.133 | +0.000 | 666 / 843 (0.22) | 0.48 (0.02) | 39 (0.33) |
+  | 64 | 9.50 | 0.17 | 1.00 | 0.30 | 3789 | 3.4 | 0.92 / 0.07 | +0.036 | +0.002 | 1422 / 1756 (0.12) | 0.49 (0.00) | 28 (0.43) |
+  | 128 | 8.52 | 0.11 | 1.00 | 0.29 | 3743 | 3.4 | 0.93 / 0.06 | +0.053 | -0.002 | 2063 / 2391 (0.09) | 0.50 (0.00) | 31 (0.40) |
+  | 256 | 7.54 | 0.09 | 1.07 | 0.27 | 3644 | 3.6 | 0.91 / 0.08 | +0.113 | -0.003 | 1610 / 1863 (0.11) | 0.48 (0.00) | 25 (0.43) |
+  | 512 | 6.69 | 0.05 | 1.40 | 0.22 | 3140 | 5.0 | 0.79 / 0.21 | +0.467 | +0.002 | 1552 / 1918 (0.12) | 0.39 (0.00) | 35 (0.38) |
+  | 1000 | 5.41 | 0.02 | 1.52 | 0.18 | 2657 | 7.9 | 0.63 / 0.37 | +1.022 | -0.008 | 2135 / 1891 (0.10) | 0.28 (0.00) | 73 (0.25) |
+  | 2000 | 4.50 | 0.24 | 1.32 | 0.19 | 1854 | 14.6 | 0.55 / 0.45 | +1.189 | -0.029 | 2170 / 2199 (0.09) | 0.19 (0.00) | 108 (0.20) |
+
+  Block 12:
+
+  | step | loss | writer wins | tail factor | chord amplitude | effective writes | ledger kurtosis | MLP / attention share | crowd gain along the chord | linear contraction | gradient rows, PR down / up (top-64 share) | rows' median activity (share under 1%) | cloud effective dimension (top-8 share) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 0 | 11.07 | 0.06 | 0.99 | 0.27 | 7126 | 3.3 | 0.80 / 0.19 | -0.172 | +0.003 | 855 / 1051 (0.18) | 0.49 (0.00) | 86 (0.23) |
+  | 1 | 11.07 | 0.06 | 0.99 | 0.27 | 7126 | 3.3 | 0.80 / 0.19 | -0.172 | +0.003 | 855 / 1051 (0.18) | 0.49 (0.00) | 86 (0.23) |
+  | 2 | 11.07 | 0.06 | 0.99 | 0.27 | 7125 | 3.3 | 0.80 / 0.19 | -0.172 | +0.002 | 856 / 1050 (0.18) | 0.49 (0.00) | 86 (0.23) |
+  | 4 | 10.98 | 0.06 | 0.99 | 0.28 | 7121 | 3.3 | 0.80 / 0.19 | -0.169 | +0.002 | 860 / 1019 (0.18) | 0.50 (0.00) | 86 (0.23) |
+  | 8 | 10.70 | 0.08 | 0.99 | 0.28 | 7098 | 3.3 | 0.77 / 0.23 | -0.195 | +0.000 | 796 / 891 (0.19) | 0.50 (0.01) | 86 (0.23) |
+  | 16 | 10.29 | 0.22 | 0.99 | 0.32 | 6990 | 3.4 | 0.68 / 0.32 | -0.265 | -0.001 | 575 / 747 (0.23) | 0.49 (0.12) | 85 (0.23) |
+  | 32 | 9.95 | 0.13 | 0.99 | 0.29 | 7080 | 3.3 | 0.72 / 0.27 | -0.213 | -0.000 | 644 / 785 (0.22) | 0.51 (0.08) | 16 (0.45) |
+  | 64 | 9.50 | 0.01 | 1.14 | 0.20 | 7045 | 3.4 | 0.91 / 0.09 | +0.178 | -0.002 | 1252 / 1668 (0.14) | 0.50 (0.00) | 13 (0.58) |
+  | 128 | 8.52 | 0.03 | 1.14 | 0.18 | 6971 | 3.4 | 0.94 / 0.06 | +0.340 | -0.001 | 1928 / 2247 (0.09) | 0.50 (0.00) | 14 (0.54) |
+  | 256 | 7.54 | 0.04 | 1.11 | 0.17 | 6799 | 3.6 | 0.94 / 0.06 | +0.557 | -0.002 | 1695 / 2096 (0.11) | 0.50 (0.00) | 16 (0.56) |
+  | 512 | 6.69 | 0.02 | 1.58 | 0.13 | 5903 | 4.8 | 0.86 / 0.14 | +1.245 | -0.000 | 1376 / 1860 (0.13) | 0.43 (0.00) | 28 (0.45) |
+  | 1000 | 5.41 | 0.02 | 1.33 | 0.15 | 4797 | 8.3 | 0.67 / 0.33 | +1.053 | -0.004 | 2383 / 2362 (0.09) | 0.28 (0.00) | 88 (0.23) |
+  | 2000 | 4.50 | 0.09 | 1.24 | 0.18 | 3431 | 14.5 | 0.51 / 0.49 | +0.957 | -0.030 | 2902 / 2879 (0.06) | 0.19 (0.00) | 133 (0.17) |
+
+  Block 18:
+
+  | step | loss | writer wins | tail factor | chord amplitude | effective writes | ledger kurtosis | MLP / attention share | crowd gain along the chord | linear contraction | gradient rows, PR down / up (top-64 share) | rows' median activity (share under 1%) | cloud effective dimension (top-8 share) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 0 | 11.07 | 0.03 | 1.00 | 0.24 | 10430 | 3.3 | 0.79 / 0.21 | -0.191 | +0.001 | 873 / 1061 (0.18) | 0.50 (0.01) | 83 (0.23) |
+  | 1 | 11.07 | 0.03 | 1.00 | 0.24 | 10430 | 3.3 | 0.79 / 0.21 | -0.191 | +0.001 | 873 / 1061 (0.18) | 0.50 (0.01) | 83 (0.23) |
+  | 2 | 11.07 | 0.03 | 1.00 | 0.24 | 10430 | 3.3 | 0.79 / 0.21 | -0.191 | +0.001 | 873 / 1062 (0.18) | 0.50 (0.01) | 83 (0.23) |
+  | 4 | 10.98 | 0.03 | 1.00 | 0.24 | 10427 | 3.3 | 0.78 / 0.21 | -0.197 | +0.001 | 855 / 1066 (0.18) | 0.50 (0.00) | 83 (0.23) |
+  | 8 | 10.70 | 0.03 | 1.00 | 0.25 | 10389 | 3.3 | 0.75 / 0.25 | -0.245 | +0.001 | 677 / 930 (0.21) | 0.50 (0.03) | 83 (0.23) |
+  | 16 | 10.29 | 0.11 | 1.00 | 0.29 | 10210 | 3.4 | 0.68 / 0.32 | -0.319 | +0.001 | 536 / 718 (0.25) | 0.52 (0.18) | 82 (0.23) |
+  | 32 | 9.95 | 0.05 | 1.02 | 0.26 | 10403 | 3.3 | 0.72 / 0.28 | -0.264 | +0.001 | 625 / 719 (0.22) | 0.51 (0.15) | 9 (0.53) |
+  | 64 | 9.50 | 0.00 | 1.48 | 0.15 | 10378 | 3.3 | 0.87 / 0.13 | +0.323 | +0.001 | 1064 / 1238 (0.16) | 0.50 (0.00) | 9 (0.68) |
+  | 128 | 8.52 | 0.00 | 1.86 | 0.13 | 10273 | 3.4 | 0.93 / 0.07 | +0.754 | +0.000 | 1675 / 1900 (0.11) | 0.50 (0.00) | 10 (0.63) |
+  | 256 | 7.54 | 0.04 | 1.42 | 0.12 | 9989 | 3.6 | 0.96 / 0.04 | +1.282 | +0.000 | 1801 / 2217 (0.10) | 0.49 (0.00) | 14 (0.63) |
+  | 512 | 6.69 | 0.03 | 1.52 | 0.10 | 8757 | 4.7 | 0.91 / 0.09 | +2.272 | +0.000 | 1554 / 2028 (0.12) | 0.45 (0.00) | 22 (0.51) |
+  | 1000 | 5.41 | 0.09 | 1.33 | 0.12 | 6755 | 8.7 | 0.79 / 0.21 | +1.879 | -0.005 | 2059 / 1972 (0.10) | 0.27 (0.00) | 61 (0.30) |
+  | 2000 | 4.50 | 0.20 | 1.29 | 0.16 | 4482 | 16.3 | 0.59 / 0.40 | +1.158 | -0.013 | 2297 / 2429 (0.09) | 0.19 (0.00) | 88 (0.24) |
+
+  - The first 2000 steps have four phases, the same at every block, read at block 12. Steps 0-16: the gradient concentrates on a few rows (participation ratio 855 to 575 of 4096, the top 64 rows' share 0.18 to 0.23), a transient share of rows goes near-dead (0.12 under 1% activity at step 16, 0.00 again by step 64), and attention's share of the state rises (0.19 to 0.32). Steps 16-64: the state cloud collapses from 85 to 13 effective dimensions (top-8 share 0.23 to 0.58), attention's share collapses with it (0.32 to 0.09) and the MLP writes carry 0.91 of the state, the crowd's gain along the chord turns positive (-0.27 to +0.18), and the accent is born (tail factor 0.99 to 1.14). Steps 64-256: a collapsed plateau, the gradient spreading back over the rows (participation ratio to 1900), the crowd's alignment rising (+0.56), the effective number of writes barely moving (7045 to 6799). Steps 256-2000: sparsification (6799 to 3431), with the rows turning selective (median activity 0.50 to 0.19, no row dying), the ledger's tails heavying (excess kurtosis 3.6 to 14.5), the cloud re-expanding (16 to 133 dimensions), attention taking the state back (0.06 to 0.49), the crowd's alignment peaking at step 512 (+1.24) and starting down, the linear contraction born between steps 1000 and 2000 (-0.004 to -0.030; Pythia's warmup ends near step 1430), and the writer-win rate beginning to rise at step 2000 (0.09).
+  - What precedes sparsification is the re-expansion of a collapsed state cloud and attention's return, both starting between steps 256 and 512; the gradient's concentration does not. The gradient is most concentrated in the first 32 steps, before the collapse, and by the time the writes sparsify it is spread over two to three times more rows than at initialisation (participation ratio 2383-2902 against 855). Sparsification is not a few rows being reinforced; it is every row becoming selective (active at a fifth of positions instead of half) while the gradient spreads.
+  - The accent's birth is the cloud's collapse: the non-writer tail factor is 1.00 at every block through step 32, 1.14-1.48 at step 64, and peaks in the collapsed phase (1.86 at block 18 at step 128; 1.58 at block 12 at step 512), then settles to 1.24-1.33 as the cloud re-expands. e493 placed the accent "by step 512"; it is in place by step 64.
+  - A caveat on the writer-win statistic, here and in e512: the position's writers include the token embedding, and at initialisation and through step 32 the wins at block 6 (0.39-0.55) are that atom, the state being little more than the embedding; those wins collapse to 0.02-0.09 by step 64 as the embedding's share of the state goes to zero, and the rise from step 2000 is MLP rows (e500: the MLP-only dictionary recovers the loss at every checkpoint from step 256). A split of the wins by winner type is a cheap follow-up.

@@ -1,0 +1,128 @@
+{
+ "model": "pythia410",
+ "revision": "step1000",
+ "blocks": [
+  6,
+  12,
+  18
+ ],
+ "lm_loss": 5.407383441925049,
+ "by_block": {
+  "6": {
+   "n_states": 2040,
+   "n_atoms": 86158,
+   "writer_win_rate": 0.022549020126461983,
+   "tail_factor": 1.521216869354248,
+   "provenance_factor": 1.6486746072769165,
+   "chord_amplitude": 0.1780020147562027,
+   "effective_writes": 2657.332763671875,
+   "top64_energy_share": 0.08906439691781998,
+   "top_write_prominence": 0.023627281188964844,
+   "ledger_excess_kurtosis": 7.8786516189575195,
+   "energy_shares": {
+    "mlp": 0.625925600528717,
+    "attention": 0.37059298157691956,
+    "embedding": 0.003387454664334655
+   },
+   "crowd_gain_along_chord": 1.0221891403198242,
+   "linear_contraction_random": -0.007544711697846651,
+   "rotated_calibration": 0.9955134987831116,
+   "gradient": {
+    "down": {
+     "participation_ratio": 2134.562744140625,
+     "top64_share": 0.09707317501306534
+    },
+    "up": {
+     "participation_ratio": 1891.391357421875,
+     "top64_share": 0.0997578427195549
+    }
+   },
+   "liveness": {
+    "median_activity": 0.28382354974746704,
+    "share_under_1pct": 0.0
+   },
+   "cloud": {
+    "effective_dimension": 73.46299943835074,
+    "top8_variance_share": 0.24872895969985107
+   }
+  },
+  "12": {
+   "n_states": 2040,
+   "n_atoms": 116890,
+   "writer_win_rate": 0.021568628028035164,
+   "tail_factor": 1.326391577720642,
+   "provenance_factor": 1.4755738973617554,
+   "chord_amplitude": 0.15097589790821075,
+   "effective_writes": 4797.23583984375,
+   "top64_energy_share": 0.057565838098526,
+   "top_write_prominence": 0.02048334851861,
+   "ledger_excess_kurtosis": 8.264404296875,
+   "energy_shares": {
+    "mlp": 0.6722800731658936,
+    "attention": 0.32509082555770874,
+    "embedding": 0.0017949908506125212
+   },
+   "crowd_gain_along_chord": 1.0532958507537842,
+   "linear_contraction_random": -0.00415994506329298,
+   "rotated_calibration": 0.9966490864753723,
+   "gradient": {
+    "down": {
+     "participation_ratio": 2382.64208984375,
+     "top64_share": 0.08538678288459778
+    },
+    "up": {
+     "participation_ratio": 2362.329345703125,
+     "top64_share": 0.07889556139707565
+    }
+   },
+   "liveness": {
+    "median_activity": 0.2754902243614197,
+    "share_under_1pct": 0.0
+   },
+   "cloud": {
+    "effective_dimension": 87.99888041655913,
+    "top8_variance_share": 0.22581963938027796
+   }
+  },
+  "18": {
+   "n_states": 2040,
+   "n_atoms": 147622,
+   "writer_win_rate": 0.09313725680112839,
+   "tail_factor": 1.3344579935073853,
+   "provenance_factor": 1.5694119930267334,
+   "chord_amplitude": 0.12184195220470428,
+   "effective_writes": 6755.48095703125,
+   "top64_energy_share": 0.04449211061000824,
+   "top_write_prominence": 0.016604356467723846,
+   "ledger_excess_kurtosis": 8.66292667388916,
+   "energy_shares": {
+    "mlp": 0.787737250328064,
+    "attention": 0.21170945465564728,
+    "embedding": 0.0007819635211490095
+   },
+   "crowd_gain_along_chord": 1.8785526752471924,
+   "linear_contraction_random": -0.004604983609169722,
+   "rotated_calibration": 0.9951438307762146,
+   "gradient": {
+    "down": {
+     "participation_ratio": 2058.52099609375,
+     "top64_share": 0.0985201746225357
+    },
+    "up": {
+     "participation_ratio": 1972.2103271484375,
+     "top64_share": 0.09864400327205658
+    }
+   },
+   "liveness": {
+    "median_activity": 0.2710784375667572,
+    "share_under_1pct": 0.0
+   },
+   "cloud": {
+    "effective_dimension": 60.77233989235599,
+    "top8_variance_share": 0.2954066387535878
+   }
+  }
+ },
+ "_exp": "e513_early_pythia410_step1000",
+ "_time": "2026-09-26 02:17:53"
+}
