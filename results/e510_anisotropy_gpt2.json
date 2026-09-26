@@ -1,0 +1,210 @@
+{
+ "model": "gpt2",
+ "revision": null,
+ "blocks": [
+  3,
+  6,
+  9
+ ],
+ "by_block": {
+  "3": {
+   "n_positions": 2040,
+   "n_atoms": 62807,
+   "n_unused_rows": 4799,
+   "share_rows_used": 0.4792751669883728,
+   "gain": {
+    "0.1": {
+     "mlp_rows_random": -0.22302988171577454,
+     "mlp_rows_used": -0.24750880897045135,
+     "mlp_rows_unused": -0.23655088245868683,
+     "token_embeddings": -0.24927860498428345,
+     "head_bases": -0.22806082665920258,
+     "random": -0.22183117270469666,
+     "covariance_matched": -0.20426814258098602,
+     "pca_top64": -0.22296400368213654
+    },
+    "1.0": {
+     "mlp_rows_random": -0.16316232085227966,
+     "mlp_rows_used": -0.14297719299793243,
+     "mlp_rows_unused": -0.17675934731960297,
+     "token_embeddings": -0.2311328798532486,
+     "head_bases": -0.177467942237854,
+     "random": -0.17937448620796204,
+     "covariance_matched": -0.18468719720840454,
+     "pca_top64": -0.18321946263313293
+    }
+   },
+   "response_norm": {
+    "0.1": {
+     "mlp_rows_random": 0.5869001746177673,
+     "mlp_rows_used": 0.6654151678085327,
+     "mlp_rows_unused": 0.6047202348709106,
+     "token_embeddings": 0.781431257724762,
+     "head_bases": 0.6328904628753662,
+     "random": 0.612554132938385,
+     "covariance_matched": 0.6505182981491089,
+     "pca_top64": 0.6700871586799622
+    },
+    "1.0": {
+     "mlp_rows_random": 0.5340417623519897,
+     "mlp_rows_used": 0.564629316329956,
+     "mlp_rows_unused": 0.5449417233467102,
+     "token_embeddings": 1.1776965856552124,
+     "head_bases": 0.6379097700119019,
+     "random": 0.605876088142395,
+     "covariance_matched": 0.6543115377426147,
+     "pca_top64": 0.6889124512672424
+    }
+   },
+   "ratios": {
+    "0.1": {
+     "native_over_random": 1.0054036995633324,
+     "native_over_covariance": 1.0918485814661485,
+     "used_over_unused": 1.0463237608664526,
+     "covariance_over_random": 0.9208270419816484
+    },
+    "1.0": {
+     "native_over_random": 0.9096183314672388,
+     "native_over_covariance": 0.8834522550481082,
+     "used_over_unused": 0.8088805212626851,
+     "covariance_over_random": 1.0296179858839183
+    }
+   }
+  },
+  "6": {
+   "n_positions": 2040,
+   "n_atoms": 74333,
+   "n_unused_rows": 11763,
+   "share_rows_used": 0.36181640625,
+   "gain": {
+    "0.1": {
+     "mlp_rows_random": -0.21870921552181244,
+     "mlp_rows_used": -0.19152867794036865,
+     "mlp_rows_unused": -0.21267513930797577,
+     "token_embeddings": -0.28068986535072327,
+     "head_bases": -0.21240733563899994,
+     "random": -0.19310899078845978,
+     "covariance_matched": -0.17475824058055878,
+     "pca_top64": -0.18904072046279907
+    },
+    "1.0": {
+     "mlp_rows_random": -0.15132726728916168,
+     "mlp_rows_used": -0.09839745610952377,
+     "mlp_rows_unused": -0.15568874776363373,
+     "token_embeddings": -0.25894126296043396,
+     "head_bases": -0.16464731097221375,
+     "random": -0.15595193207263947,
+     "covariance_matched": -0.14067941904067993,
+     "pca_top64": -0.1568138301372528
+    }
+   },
+   "response_norm": {
+    "0.1": {
+     "mlp_rows_random": 0.5622004866600037,
+     "mlp_rows_used": 0.5496691465377808,
+     "mlp_rows_unused": 0.5536049008369446,
+     "token_embeddings": 0.8761427998542786,
+     "head_bases": 0.5601901412010193,
+     "random": 0.5385838747024536,
+     "covariance_matched": 0.568053662776947,
+     "pca_top64": 0.5859177708625793
+    },
+    "1.0": {
+     "mlp_rows_random": 0.4686184227466583,
+     "mlp_rows_used": 0.4526843726634979,
+     "mlp_rows_unused": 0.4761121869087219,
+     "token_embeddings": 1.3731229305267334,
+     "head_bases": 0.504848301410675,
+     "random": 0.46457719802856445,
+     "covariance_matched": 0.5089082717895508,
+     "pca_top64": 0.536926805973053
+    }
+   },
+   "ratios": {
+    "0.1": {
+     "native_over_random": 1.13256878734039,
+     "native_over_covariance": 1.2514958653465813,
+     "used_over_unused": 0.9005691900030457,
+     "covariance_over_random": 0.9049720568007978
+    },
+    "1.0": {
+     "native_over_random": 0.9703455755756607,
+     "native_over_covariance": 1.0756887419715797,
+     "used_over_unused": 0.6320139221551871,
+     "covariance_over_random": 0.902069100209378
+    }
+   }
+  },
+  "9": {
+   "n_positions": 2040,
+   "n_atoms": 85859,
+   "n_unused_rows": 19931,
+   "share_rows_used": 0.27911603450775146,
+   "gain": {
+    "0.1": {
+     "mlp_rows_random": -0.09631453454494476,
+     "mlp_rows_used": -0.09463115781545639,
+     "mlp_rows_unused": -0.09106863290071487,
+     "token_embeddings": -0.19182352721691132,
+     "head_bases": -0.09900666028261185,
+     "random": -0.09044197201728821,
+     "covariance_matched": -0.10387766361236572,
+     "pca_top64": -0.10244480520486832
+    },
+    "1.0": {
+     "mlp_rows_random": -0.07306501269340515,
+     "mlp_rows_used": -0.057498350739479065,
+     "mlp_rows_unused": -0.07794857770204544,
+     "token_embeddings": -0.29849931597709656,
+     "head_bases": -0.08602549135684967,
+     "random": -0.07886247336864471,
+     "covariance_matched": -0.08282189071178436,
+     "pca_top64": -0.08832622319459915
+    }
+   },
+   "response_norm": {
+    "0.1": {
+     "mlp_rows_random": 0.4870680570602417,
+     "mlp_rows_used": 0.5316898226737976,
+     "mlp_rows_unused": 0.49222150444984436,
+     "token_embeddings": 0.8723829388618469,
+     "head_bases": 0.4879414141178131,
+     "random": 0.48085543513298035,
+     "covariance_matched": 0.5612871050834656,
+     "pca_top64": 0.5676363706588745
+    },
+    "1.0": {
+     "mlp_rows_random": 0.43685996532440186,
+     "mlp_rows_used": 0.4572369456291199,
+     "mlp_rows_unused": 0.436090350151062,
+     "token_embeddings": 1.3691202402114868,
+     "head_bases": 0.4384324550628662,
+     "random": 0.4309270679950714,
+     "covariance_matched": 0.5132560729980469,
+     "pca_top64": 0.5215839147567749
+    }
+   },
+   "ratios": {
+    "0.1": {
+     "native_over_random": 1.064931827520678,
+     "native_over_covariance": 0.9271919601922907,
+     "used_over_unused": 1.0391191214940656,
+     "covariance_over_random": 1.1485559336599742
+    },
+    "1.0": {
+     "native_over_random": 0.9264864462449817,
+     "native_over_covariance": 0.8821944544548903,
+     "used_over_unused": 0.7376446425907045,
+     "covariance_over_random": 1.0502066087203636
+    }
+   }
+  }
+ },
+ "checks": {
+  "native_spared_vs_random": false,
+  "native_spared_vs_covariance": false,
+  "used_spared_vs_unused": false
+ },
+ "_exp": "e510_anisotropy_gpt2",
+ "_time": "2026-09-26 01:45:56"
+}

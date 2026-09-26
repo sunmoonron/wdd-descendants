@@ -2630,3 +2630,60 @@ SESSION 66 (the two follow-ups the relayed take pointed to, run as asked: is the
   - The response is the learned contraction of area 05, and the chord gets less of it than any direction. A random direction of the chord's size, subtracted the same way, elicits -0.81 to -1.11 in GPT-2, -0.81 to -1.66 in OLMo and -0.56 to -1.54 in Pythia at the end, against the chord's -0.23 to -0.85: the chord is contracted a third to a half as much as a random direction. Over Pythia's training the random-direction response is -0.02 at step 512, -0.12 to -0.34 at 4000, -0.31 to -0.81 at 16000 and -0.49 to -1.54 by 64000, the birth and growth e217 placed at the end of warmup, and the chord's response follows it at 0.1-0.6 of its size. The vocabulary is what the contraction spares.
   - The chord's own rows are excited by the chord: their response is +0.26 to +0.45 at the end of training in all three models, and it grows through Pythia's training from +0.04 to +0.19 at step 512 to +0.30 to +0.33 at the end. The rows that write a word read it.
   - Pre-registered: the response over half of the actual gain in all three models at the end, met in GPT-2 and OLMo and at Pythia's blocks 12 and 18, not at Pythia's block 6 where the crowd does not contract; the response within 0.2 of zero at step 512 with the actual gain positive, confirmed; the random-direction response negative and smaller than the chord's, refuted, the reverse holds.
+
+SESSION 67 (the experiment the relayed take and NEXT.md both named: does the learned contraction spare native atoms, or any direction on the state cloud's manifold; e510; 2026-09-26 01:40-01:49 box time).
+
+- e510 WHICH DIRECTIONS THE CONTRACTION SPARES (per block NB/4, NB/2, 3NB/4 and typical position, the MLP's directional gain along a unit direction, the change of its output projected on the direction over the perturbation's size, the perturbation added to the residual entering the block's second layer norm at 0.1 and at 1.0 of the centred state norm; medians over positions then over 128 directions per set; the sets: MLP rows of earlier blocks at random, the 128 rows most used as native words at that block (16-word OMP over the centred states), 128 rows never used, token embeddings, head-basis atoms, random directions, covariance-matched random directions (the state cloud's covariance, no provenance) and the cloud's top 64 principal directions; GPT-2, Pythia at four checkpoints and the end, OLMo).
+
+  Directional gain at size 0.1 of the state norm (the linear regime):
+
+  | Model, block | random | covariance-matched | PCA top 64 | MLP rows | rows used as words | rows never used | token embeddings | head bases | native / random | native / covariance-matched | used / unused |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 3 | -0.222 | -0.204 | -0.223 | -0.223 | -0.248 | -0.237 | -0.249 | -0.228 | 1.01 | 1.09 | 1.05 |
+  | GPT-2 6 | -0.193 | -0.175 | -0.189 | -0.219 | -0.192 | -0.213 | -0.281 | -0.212 | 1.13 | 1.25 | 0.90 |
+  | GPT-2 9 | -0.090 | -0.104 | -0.102 | -0.096 | -0.095 | -0.091 | -0.192 | -0.099 | 1.06 | 0.93 | 1.04 |
+  | Pythia-410m end 6 | -0.161 | -0.172 | -0.171 | -0.177 | -0.165 | -0.177 | -0.161 | -0.203 | 1.10 | 1.03 | 0.93 |
+  | Pythia-410m end 12 | -0.222 | -0.224 | -0.233 | -0.240 | -0.231 | -0.236 | -0.220 | -0.250 | 1.08 | 1.07 | 0.98 |
+  | Pythia-410m end 18 | -0.069 | -0.042 | -0.058 | -0.072 | -0.065 | -0.074 | -0.070 | -0.075 | 1.05 | 1.73 | 0.89 |
+  | OLMo-1B 4 | -0.360 | -0.343 | -0.342 | -0.375 | -0.388 | -0.374 | -0.356 | -0.385 | 1.04 | 1.09 | 1.04 |
+  | OLMo-1B 8 | -0.276 | -0.269 | -0.289 | -0.299 | -0.300 | -0.302 | -0.268 | -0.302 | 1.08 | 1.11 | 1.00 |
+  | OLMo-1B 12 | -0.232 | -0.197 | -0.185 | -0.248 | -0.238 | -0.247 | -0.232 | -0.243 | 1.07 | 1.26 | 0.96 |
+
+  At size 1.0 (a chord-size perturbation):
+
+  | Model, block | random | covariance-matched | MLP rows | rows used as words | used / random |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2 3 | -0.179 | -0.185 | -0.163 | -0.143 | 0.80 |
+  | GPT-2 6 | -0.156 | -0.141 | -0.151 | -0.098 | 0.63 |
+  | GPT-2 9 | -0.079 | -0.083 | -0.073 | -0.057 | 0.73 |
+  | Pythia-410m end 6 | -0.138 | -0.150 | -0.149 | -0.133 | 0.97 |
+  | Pythia-410m end 12 | -0.201 | -0.210 | -0.218 | -0.198 | 0.99 |
+  | Pythia-410m end 18 | -0.070 | -0.051 | -0.074 | -0.046 | 0.66 |
+  | OLMo-1B 4 | -0.197 | -0.193 | -0.200 | -0.235 | 1.19 |
+  | OLMo-1B 8 | -0.152 | -0.152 | -0.163 | -0.160 | 1.05 |
+  | OLMo-1B 12 | -0.129 | -0.117 | -0.132 | -0.132 | 1.03 |
+
+  Pythia through training, size 0.1, and the used rows' sparing at size 1.0:
+
+  | Pythia block, step | random | covariance-matched | PCA top 64 | MLP rows | rows used as words | used at size 1.0 / random at size 1.0 |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 6, 512 | +0.000 | +0.070 | +0.067 | +0.005 | +0.009 | 5.31 |
+  | 6, 4000 | -0.048 | -0.058 | -0.052 | -0.052 | -0.056 | 1.08 |
+  | 6, 16000 | -0.081 | -0.078 | -0.100 | -0.092 | -0.085 | 0.96 |
+  | 6, 64000 | -0.128 | -0.142 | -0.143 | -0.144 | -0.130 | 0.90 |
+  | 6, end | -0.161 | -0.172 | -0.171 | -0.177 | -0.165 | 0.97 |
+  | 12, 512 | -0.000 | +0.049 | +0.042 | +0.002 | +0.004 | n/a |
+  | 12, 4000 | -0.057 | -0.089 | -0.093 | -0.067 | -0.077 | 1.30 |
+  | 12, 16000 | -0.118 | -0.136 | -0.147 | -0.130 | -0.140 | 1.18 |
+  | 12, 64000 | -0.183 | -0.185 | -0.199 | -0.199 | -0.193 | 1.02 |
+  | 12, end | -0.222 | -0.224 | -0.233 | -0.240 | -0.231 | 0.99 |
+  | 18, 512 | -0.001 | +0.028 | +0.024 | +0.000 | +0.003 | n/a |
+  | 18, 4000 | -0.027 | -0.030 | -0.029 | -0.032 | -0.034 | 1.05 |
+  | 18, 16000 | -0.044 | -0.041 | -0.045 | -0.047 | -0.048 | 0.78 |
+  | 18, 64000 | -0.057 | -0.048 | -0.050 | -0.062 | -0.053 | 0.76 |
+  | 18, end | -0.069 | -0.042 | -0.058 | -0.072 | -0.065 | 0.66 |
+
+  - As a linear response the learned contraction is isotropic. At the end of training a block contracts native MLP rows, token embeddings, head bases, random directions, covariance-matched directions and the cloud's principal directions all alike, within about 25% (GPT-2 -0.09 to -0.28, OLMo -0.19 to -0.39, Pythia -0.04 to -0.25 per block, the numbers of e194 and e210), and native rows are contracted slightly more than random directions, not less (native over random 1.01-1.17); the rows used as words are contracted like the rows never used (0.86-1.19). The linear gain does not know the atoms. The sentence "the network learns to preserve its vocabulary" is not supported.
+  - The sparing e509 found is a large-amplitude, pattern-level effect. At a chord-size perturbation the rows most used as words are contracted less than random directions in GPT-2 (0.63 at the middle block, 0.72-0.80 at the others) and at Pythia's block 18 (0.66), not at Pythia's blocks 6 and 12 (0.96-0.99), and more in OLMo (1.02-1.19). This matches the residual's structure of e508 model by model: exchangeable or slightly kind to the chord's top in GPT-2, reinforcing at Pythia's block 18, contracting the chord's extremes in OLMo. What the chord gets that a random direction does not is the MLP's nonlinear response to its own large write patterns, which e509 measured on the position's actual chord (a third to a half of the random direction's contraction) and this run sees at a fifth to a third on single used rows.
+  - Over Pythia's training the contraction is born between steps 512 and 4000 for every set alike (random -0.00, -0.05, -0.08, -0.13, -0.16 at block 6; -0.00, -0.06, -0.12, -0.18, -0.22 at block 12) and no sparing of native atoms emerges with it. At step 512 the MLP amplifies the cloud's own directions and nothing else: the gain is +0.03 to +0.07 along covariance-matched and principal directions and 0.00 along random directions and native rows, the early anisotropy of e509 as a response property; at step 4000 the same on-manifold directions are contracted more than random ones (1.2-1.6 times at blocks 6 and 12), and by step 16000 the difference is gone.
+  - Pre-registered: native rows contracted less than random (ratio below 0.7), refuted (1.01-1.17); less than covariance-matched (below 0.85), refuted at the end (0.93-1.73; met only at Pythia step 4000, 0.75, where the manifold is contracted more); used rows less than unused (below 0.85), refuted (0.86-1.19); the sparing emerging with the contraction, refuted, the contraction is born isotropic.

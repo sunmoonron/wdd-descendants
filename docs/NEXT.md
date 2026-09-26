@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e510. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e511. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -121,3 +121,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 65 leaves (e507):** is the crowd's flip from amplifying the chord (+1.4 at Pythia step 512) to contracting it (-0.64 at the end) area 05's learned contraction (e194, e210, e217: a linear gain of -0.16 to -0.42 per block, born as the warmup ends)? The test is to measure the crowd's gain along the chord and the block's linear response gain at the same checkpoints and blocks and ask whether they move together and match in size.
 
 **Session 66 leaves (e508, e509):** the learned contraction is anisotropic: it removes two to three times more of a random direction than of the chord. Which directions does it spare, and are they the vocabulary? The test is the MLP's directional gain (area 05's measure) along the native atoms against random directions, by atom type and by usage as a word, at the end of training and across Pythia's checkpoints; a second question is what makes OLMo's contraction target the chord's extremes (a saturation of the largest projections) where GPT-2's is exchangeable.
+
+**Session 67 leaves (e510):** the chord's sparing is a pattern-level effect, so the test that discriminates "the model's own writes at that position" from "any combination of native rows" is to perturb along a fake chord, a random combination of 64 native rows of earlier blocks with the position's own coefficients but rows the position did not write, and along the real chord, at the same norm, and compare the small writes' response (e509's measure); a second item is OLMo's reversed sign at chord amplitude (the most-used rows contracted more), which e508's targeted contraction of the chord's extremes suggests is a saturation of the largest projections.

@@ -466,3 +466,6 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The chord's clean maximum in GPT-2 shows the residual reinforces the winner": it is extreme-value selection over a nearly exchangeable residual; the null reproduces the level, the rank and the winner's residual excess (e508).
 - "The early amplification of the chord by the small writes is feedback": at Pythia step 512 it is not a response to the chord (share 0.03-0.21); it is the anisotropy of the early state (e509).
 - "The chord is contracted like any direction": a random direction of its size is contracted two to three times more; the learned contraction spares the vocabulary (e509).
+
+## Session 67 kills (the contraction's anisotropy)
+- "The network learns to preserve its vocabulary": as a linear response the contraction is isotropic within 25% and native rows are contracted slightly more than random directions, not less; the rows used as words are contracted like the rows never used (e510). The chord's relative sparing (e509) is a nonlinear, pattern-level effect at chord amplitude, present in GPT-2 and late Pythia and reversed in OLMo.

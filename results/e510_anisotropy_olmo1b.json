@@ -1,0 +1,210 @@
+{
+ "model": "olmo1b",
+ "revision": null,
+ "blocks": [
+  4,
+  8,
+  12
+ ],
+ "by_block": {
+  "4": {
+   "n_positions": 2039,
+   "n_atoms": 91264,
+   "n_unused_rows": 25145,
+   "share_rows_used": 0.232635498046875,
+   "gain": {
+    "0.1": {
+     "mlp_rows_random": -0.37472182512283325,
+     "mlp_rows_used": -0.38803717494010925,
+     "mlp_rows_unused": -0.374465674161911,
+     "token_embeddings": -0.35642701387405396,
+     "head_bases": -0.38483819365501404,
+     "random": -0.36032310128211975,
+     "covariance_matched": -0.3428139090538025,
+     "pca_top64": -0.3417782485485077
+    },
+    "1.0": {
+     "mlp_rows_random": -0.200126513838768,
+     "mlp_rows_used": -0.23537340760231018,
+     "mlp_rows_unused": -0.20055538415908813,
+     "token_embeddings": -0.20765183866024017,
+     "head_bases": -0.2115020602941513,
+     "random": -0.19704288244247437,
+     "covariance_matched": -0.1925601214170456,
+     "pca_top64": -0.1933162808418274
+    }
+   },
+   "response_norm": {
+    "0.1": {
+     "mlp_rows_random": 0.7630081176757812,
+     "mlp_rows_used": 0.8109893798828125,
+     "mlp_rows_unused": 0.7565358877182007,
+     "token_embeddings": 0.7408864498138428,
+     "head_bases": 0.7778858542442322,
+     "random": 0.7485889792442322,
+     "covariance_matched": 0.8265071511268616,
+     "pca_top64": 0.8623290657997131
+    },
+    "1.0": {
+     "mlp_rows_random": 0.5594291090965271,
+     "mlp_rows_used": 0.6550992131233215,
+     "mlp_rows_unused": 0.5537791848182678,
+     "token_embeddings": 0.5431634783744812,
+     "head_bases": 0.5621762275695801,
+     "random": 0.5452669262886047,
+     "covariance_matched": 0.6090713739395142,
+     "pca_top64": 0.6452614665031433
+    }
+   },
+   "ratios": {
+    "0.1": {
+     "native_over_random": 1.0399605903409446,
+     "native_over_covariance": 1.0930764920160314,
+     "used_over_unused": 1.036242309281278,
+     "covariance_over_random": 0.9514069673412135
+    },
+    "1.0": {
+     "native_over_random": 1.0156495446984435,
+     "native_over_covariance": 1.0392936624989717,
+     "used_over_unused": 1.1736080214909765,
+     "covariance_over_random": 0.9772498200906217
+    }
+   }
+  },
+  "8": {
+   "n_positions": 2039,
+   "n_atoms": 132224,
+   "n_unused_rows": 55934,
+   "share_rows_used": 0.146514892578125,
+   "gain": {
+    "0.1": {
+     "mlp_rows_random": -0.29861539602279663,
+     "mlp_rows_used": -0.3002285957336426,
+     "mlp_rows_unused": -0.30165812373161316,
+     "token_embeddings": -0.26754698157310486,
+     "head_bases": -0.301637202501297,
+     "random": -0.27619245648384094,
+     "covariance_matched": -0.26944103837013245,
+     "pca_top64": -0.28911757469177246
+    },
+    "1.0": {
+     "mlp_rows_random": -0.16333088278770447,
+     "mlp_rows_used": -0.15963776409626007,
+     "mlp_rows_unused": -0.16583557426929474,
+     "token_embeddings": -0.16164998710155487,
+     "head_bases": -0.16382819414138794,
+     "random": -0.15248574316501617,
+     "covariance_matched": -0.15230493247509003,
+     "pca_top64": -0.16739241778850555
+    }
+   },
+   "response_norm": {
+    "0.1": {
+     "mlp_rows_random": 0.6398729681968689,
+     "mlp_rows_used": 0.6619221568107605,
+     "mlp_rows_unused": 0.6359807848930359,
+     "token_embeddings": 0.6157913208007812,
+     "head_bases": 0.6454542875289917,
+     "random": 0.6225175857543945,
+     "covariance_matched": 0.6922997236251831,
+     "pca_top64": 0.7319744229316711
+    },
+    "1.0": {
+     "mlp_rows_random": 0.46998149156570435,
+     "mlp_rows_used": 0.5316300988197327,
+     "mlp_rows_unused": 0.46650373935699463,
+     "token_embeddings": 0.4511256814002991,
+     "head_bases": 0.4725361168384552,
+     "random": 0.45256033539772034,
+     "covariance_matched": 0.5063216686248779,
+     "pca_top64": 0.5534142255783081
+    }
+   },
+   "ratios": {
+    "0.1": {
+     "native_over_random": 1.0811859231219356,
+     "native_over_covariance": 1.1082773352906516,
+     "used_over_unused": 0.9952610989543831,
+     "covariance_over_random": 0.9755553855465148
+    },
+    "1.0": {
+     "native_over_random": 1.0711223187006536,
+     "native_over_covariance": 1.0723939148485409,
+     "used_over_unused": 0.9626267753445334,
+     "covariance_over_random": 0.9988142452784554
+    }
+   }
+  },
+  "12": {
+   "n_positions": 2039,
+   "n_atoms": 173184,
+   "n_unused_rows": 89859,
+   "share_rows_used": 0.085906982421875,
+   "gain": {
+    "0.1": {
+     "mlp_rows_random": -0.2481846958398819,
+     "mlp_rows_used": -0.23796367645263672,
+     "mlp_rows_unused": -0.24743209779262543,
+     "token_embeddings": -0.2320699840784073,
+     "head_bases": -0.24306026101112366,
+     "random": -0.23209521174430847,
+     "covariance_matched": -0.19719408452510834,
+     "pca_top64": -0.18496787548065186
+    },
+    "1.0": {
+     "mlp_rows_random": -0.1315850019454956,
+     "mlp_rows_used": -0.13213808834552765,
+     "mlp_rows_unused": -0.13410072028636932,
+     "token_embeddings": -0.14436712861061096,
+     "head_bases": -0.1302337348461151,
+     "random": -0.12859521806240082,
+     "covariance_matched": -0.11725383251905441,
+     "pca_top64": -0.11231239140033722
+    }
+   },
+   "response_norm": {
+    "0.1": {
+     "mlp_rows_random": 0.6361081600189209,
+     "mlp_rows_used": 0.6730977892875671,
+     "mlp_rows_unused": 0.6367906332015991,
+     "token_embeddings": 0.6355053782463074,
+     "head_bases": 0.6345643401145935,
+     "random": 0.6305471062660217,
+     "covariance_matched": 0.7096146941184998,
+     "pca_top64": 0.714248538017273
+    },
+    "1.0": {
+     "mlp_rows_random": 0.470920205116272,
+     "mlp_rows_used": 0.5667388439178467,
+     "mlp_rows_unused": 0.47000882029533386,
+     "token_embeddings": 0.4705180525779724,
+     "head_bases": 0.46865734457969666,
+     "random": 0.4645764231681824,
+     "covariance_matched": 0.5314421653747559,
+     "pca_top64": 0.5305444002151489
+    }
+   },
+   "ratios": {
+    "0.1": {
+     "native_over_random": 1.069322774798554,
+     "native_over_covariance": 1.2585808364260593,
+     "used_over_unused": 0.9617332535897414,
+     "covariance_over_random": 0.8496258196931287
+    },
+    "1.0": {
+     "native_over_random": 1.023249572792388,
+     "native_over_covariance": 1.122223462709522,
+     "used_over_unused": 0.9853644936682628,
+     "covariance_over_random": 0.9118055421171026
+    }
+   }
+  }
+ },
+ "checks": {
+  "native_spared_vs_random": false,
+  "native_spared_vs_covariance": false,
+  "used_spared_vs_unused": false
+ },
+ "_exp": "e510_anisotropy_olmo1b",
+ "_time": "2026-09-26 01:48:27"
+}
