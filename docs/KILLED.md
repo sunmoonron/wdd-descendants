@@ -447,3 +447,6 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The accent is a prerequisite for the words": neither part predicts the other at the next checkpoint (e498).
 - "SAE features are state-like in every family": on OpenAI's TopK family they sit between covariance-matched directions and states (e499).
 - "The two clocks are a Pythia peculiarity": OLMo shows the same order and the same decay of the accent (e498).
+
+## Session 63 kills (row-following)
+- "TopK SAEs preserve the model's native write structure better than ReLU SAEs": the difference in row-following is the features' own sparsity; at matched frequency the families are alike, and the family label carries nothing (e501).

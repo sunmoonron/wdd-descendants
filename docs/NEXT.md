@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e501. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e502. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -57,7 +57,7 @@ Each item gives the question, where it comes from, a design at the program's usu
 **B19. What the independent components are made of.** (session 58, e489)
 - Decompose each FastICA component over the native dictionary (OMP, k = 4): if a component is a few rows of one block, it is a co-writing group; report the blocks and the co-selection of those rows (area 12).
 
-**B20. The provenance layer under SAEs, extended.** (session 59, e494) — *Other layers, the activation question and a second family are done (sessions 60-62, e495-e496, e499); other models need public SAEs, and the descendants question in reverse remains. New: why TopK features follow their rows' activity far better than ReLU features (e499 against e496).*
+**B20. The provenance layer under SAEs, extended.** (session 59, e494) — *Other layers, the activation question and a second family are done (sessions 60-62, e495-e496, e499); other models need public SAEs, and the descendants question in reverse remains. The TopK-against-ReLU question is answered: the features' sparsity (session 63, e501).*
 - Other layers and models with public SAEs; whether a feature's activation follows its top row's activation (does the feature fire when its writer fires?); and the descendants question in reverse, which features at a later layer are the transported images of a given row's write.
 
 ## Priority 2: the causal-abstraction test on a known algorithm (deferred in session 52)

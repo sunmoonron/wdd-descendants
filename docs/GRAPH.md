@@ -564,6 +564,10 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H333 The words are MLP rows at every checkpoint, whichever component carries the state. → e500 → SUPPORTED: MLP rows alone recover within 0.04 of the full dictionary from step 256 to the end at three blocks; the head bases' share of the words peaks at steps 512-1000 (0.31-0.37) and falls to 0.14-0.19 while attention's share of the state's energy rises to 0.75; the provenance advantage over rotation grows from 0.05-0.08 to 0.24-0.25.
 - H334 The two clocks are Pythia-specific. → e498 on OLMo → KILLED: the writers' part rises with write sparsity through 256,000 steps (block 8: 1.27 to 2.70; effective writes 1,964 to 297) and the second-order alignment is largest at the first checkpoint and decays (1.28-1.65 to 1.01-1.07).
 
+## What predicts row-following (session 63)
+
+- H335 The TopK family's stronger row-following is a property of its parameterisation. → e501 → KILLED: it is its features' sparsity. Within both families the AUC falls with frequency (-0.40, -0.20) and rises with activation strength and the top-row cosine; at matched frequency the families are alike at both ends (0.79/0.77, 0.53/0.51), and the family effect is -0.09 given frequency, -0.19 given all controls (raw +0.18). Whether a feature follows its writers is a property of the feature.
+
 ## Attention, sinks, embeddings
 
 - H9 Attention writes are unreadable by static atoms; per-head OV value atoms recover about half of a block's attention write inside its increment. → e11 v2, e132, e143, e145, e150 (hook-free joint recovery fails), e170 → SURVIVES as stated.
