@@ -1,0 +1,1109 @@
+{
+ "model": "pythia410",
+ "steps": [
+  0,
+  64,
+  256,
+  512,
+  1000,
+  2000,
+  3000,
+  4000,
+  8000,
+  16000,
+  32000,
+  64000,
+  143000
+ ],
+ "by_block": {
+  "6": {
+   "per_step": [
+    {
+     "step": 0,
+     "n_words": 256,
+     "overlap_with_end": 0.00390625,
+     "overlap_with_magnitude_top": 0.00390625,
+     "median_usage": 9.0,
+     "retention": 0.09375,
+     "retention_magnitude_null": 0.0859375,
+     "jaccard": 0.04918032786885246,
+     "spearman_usage": -0.6608454639081367,
+     "hysteresis": {
+      "n_entrants": 232,
+      "n_leavers": 232,
+      "entrants_at_entry": {
+       "magnitude": 0.020889220759272575,
+       "selectivity": 0.4892156720161438,
+       "cos_end": 0.07868589460849762
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.019587375223636627,
+       "selectivity": 0.4931372404098511,
+       "cos_end": 0.08261916786432266
+      },
+      "entrants_before": {
+       "magnitude": 0.01919146254658699,
+       "selectivity": 0.5049019455909729
+      },
+      "leavers_after": {
+       "magnitude": 0.019677286967635155,
+       "selectivity": 0.5039215087890625
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.5534148335315101,
+       "selectivity": 0.4949464922711058,
+       "cos_end": 0.4802318668252081
+      }
+     }
+    },
+    {
+     "step": 64,
+     "n_words": 256,
+     "overlap_with_end": 0.0078125,
+     "overlap_with_magnitude_top": 0.00390625,
+     "median_usage": 12.0,
+     "retention": 0.1953125,
+     "retention_magnitude_null": 0.29296875,
+     "jaccard": 0.10822510822510822,
+     "spearman_usage": -0.5217093453156476,
+     "hysteresis": {
+      "n_entrants": 206,
+      "n_leavers": 206,
+      "entrants_at_entry": {
+       "magnitude": 0.01960172690451145,
+       "selectivity": 0.5176470279693604,
+       "cos_end": 0.07673348486423492
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.020678745582699776,
+       "selectivity": 0.4848039150238037,
+       "cos_end": 0.08043022453784943
+      },
+      "entrants_before": {
+       "magnitude": 0.01955253630876541,
+       "selectivity": 0.5122548341751099
+      },
+      "leavers_after": {
+       "magnitude": 0.019818156957626343,
+       "selectivity": 0.5014705657958984
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.4707323970213969,
+       "selectivity": 0.5712366858327835,
+       "cos_end": 0.4673861815439721
+      }
+     }
+    },
+    {
+     "step": 256,
+     "n_words": 256,
+     "overlap_with_end": 0.0234375,
+     "overlap_with_magnitude_top": 0.015625,
+     "median_usage": 13.0,
+     "retention": 0.1484375,
+     "retention_magnitude_null": 0.22265625,
+     "jaccard": 0.08016877637130802,
+     "spearman_usage": -0.5350321209398105,
+     "hysteresis": {
+      "n_entrants": 218,
+      "n_leavers": 218,
+      "entrants_at_entry": {
+       "magnitude": 0.016949422657489777,
+       "selectivity": 0.6308823227882385,
+       "cos_end": 0.09103228151798248
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.01928188093006611,
+       "selectivity": 0.522549033164978,
+       "cos_end": 0.07866350561380386
+      },
+      "entrants_before": {
+       "magnitude": 0.019587798044085503,
+       "selectivity": 0.5421568155288696
+      },
+      "leavers_after": {
+       "magnitude": 0.01633276231586933,
+       "selectivity": 0.604901909828186
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.35613584715091323,
+       "selectivity": 0.7061063883511489,
+       "cos_end": 0.5664927194680582
+      }
+     }
+    },
+    {
+     "step": 512,
+     "n_words": 256,
+     "overlap_with_end": 0.015625,
+     "overlap_with_magnitude_top": 0.01953125,
+     "median_usage": 14.0,
+     "retention": 0.12890625,
+     "retention_magnitude_null": 0.16796875,
+     "jaccard": 0.06889352818371608,
+     "spearman_usage": -0.5426669054253545,
+     "hysteresis": {
+      "n_entrants": 223,
+      "n_leavers": 223,
+      "entrants_at_entry": {
+       "magnitude": 0.01847580075263977,
+       "selectivity": 0.698039174079895,
+       "cos_end": 0.14364725351333618
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.016622914001345634,
+       "selectivity": 0.6328431367874146,
+       "cos_end": 0.09103228151798248
+      },
+      "entrants_before": {
+       "magnitude": 0.01689048483967781,
+       "selectivity": 0.625
+      },
+      "leavers_after": {
+       "magnitude": 0.017448706552386284,
+       "selectivity": 0.7117646932601929
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.6244243801403607,
+       "selectivity": 0.6392849242896499,
+       "cos_end": 0.8111564680568683
+      }
+     }
+    },
+    {
+     "step": 1000,
+     "n_words": 256,
+     "overlap_with_end": 0.0390625,
+     "overlap_with_magnitude_top": 0.05078125,
+     "median_usage": 10.0,
+     "retention": 0.203125,
+     "retention_magnitude_null": 0.296875,
+     "jaccard": 0.11304347826086956,
+     "spearman_usage": -0.46105843764774923,
+     "hysteresis": {
+      "n_entrants": 204,
+      "n_leavers": 204,
+      "entrants_at_entry": {
+       "magnitude": 0.029609479010105133,
+       "selectivity": 0.7936274409294128,
+       "cos_end": 0.2822089195251465
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.01833002083003521,
+       "selectivity": 0.7029411792755127,
+       "cos_end": 0.1402651071548462
+      },
+      "entrants_before": {
+       "magnitude": 0.018361153081059456,
+       "selectivity": 0.7093137502670288
+      },
+      "leavers_after": {
+       "magnitude": 0.028575193136930466,
+       "selectivity": 0.7970588207244873
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.9416330257593233,
+       "selectivity": 0.7441128412149174,
+       "cos_end": 0.9782295271049596
+      }
+     }
+    },
+    {
+     "step": 2000,
+     "n_words": 256,
+     "overlap_with_end": 0.10546875,
+     "overlap_with_magnitude_top": 0.04296875,
+     "median_usage": 11.0,
+     "retention": 0.4765625,
+     "retention_magnitude_null": 0.5546875,
+     "jaccard": 0.3128205128205128,
+     "spearman_usage": 0.0086810867618105,
+     "hysteresis": {
+      "n_entrants": 134,
+      "n_leavers": 134,
+      "entrants_at_entry": {
+       "magnitude": 0.03960935398936272,
+       "selectivity": 0.8156862854957581,
+       "cos_end": 0.3778648376464844
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.02886616252362728,
+       "selectivity": 0.7848039269447327,
+       "cos_end": 0.2721092700958252
+      },
+      "entrants_before": {
+       "magnitude": 0.02926008030772209,
+       "selectivity": 0.7980391979217529
+      },
+      "leavers_after": {
+       "magnitude": 0.03865717723965645,
+       "selectivity": 0.8308823108673096
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.8371018044107819,
+       "selectivity": 0.6105480062374694,
+       "cos_end": 0.8774225885497884
+      }
+     }
+    },
+    {
+     "step": 3000,
+     "n_words": 256,
+     "overlap_with_end": 0.17578125,
+     "overlap_with_magnitude_top": 0.0625,
+     "median_usage": 12.0,
+     "retention": 0.56640625,
+     "retention_magnitude_null": 0.60546875,
+     "jaccard": 0.39509536784741145,
+     "spearman_usage": 0.2445135084220073,
+     "hysteresis": {
+      "n_entrants": 111,
+      "n_leavers": 111,
+      "entrants_at_entry": {
+       "magnitude": 0.052407048642635345,
+       "selectivity": 0.8147058486938477,
+       "cos_end": 0.44318628311157227
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.03841312229633331,
+       "selectivity": 0.8284313678741455,
+       "cos_end": 0.36008089780807495
+      },
+      "entrants_before": {
+       "magnitude": 0.043315786868333817,
+       "selectivity": 0.7950980067253113
+      },
+      "leavers_after": {
+       "magnitude": 0.046536922454833984,
+       "selectivity": 0.8421568870544434
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.7921434948461975,
+       "selectivity": 0.4717149582014447,
+       "cos_end": 0.8029380732083434
+      }
+     }
+    },
+    {
+     "step": 4000,
+     "n_words": 256,
+     "overlap_with_end": 0.24609375,
+     "overlap_with_magnitude_top": 0.09765625,
+     "median_usage": 12.0,
+     "retention": 0.5546875,
+     "retention_magnitude_null": 0.51953125,
+     "jaccard": 0.3837837837837838,
+     "spearman_usage": 0.2087468705968476,
+     "hysteresis": {
+      "n_entrants": 114,
+      "n_leavers": 114,
+      "entrants_at_entry": {
+       "magnitude": 0.07960367947816849,
+       "selectivity": 0.8362745046615601,
+       "cos_end": 0.5702172517776489
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.046804144978523254,
+       "selectivity": 0.8357843160629272,
+       "cos_end": 0.4325631558895111
+      },
+      "entrants_before": {
+       "magnitude": 0.0517885722219944,
+       "selectivity": 0.8220587968826294
+      },
+      "leavers_after": {
+       "magnitude": 0.07241474092006683,
+       "selectivity": 0.8480392098426819
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.8728070175438597,
+       "selectivity": 0.5243921206525085,
+       "cos_end": 0.8568790397045245
+      }
+     }
+    },
+    {
+     "step": 8000,
+     "n_words": 256,
+     "overlap_with_end": 0.33984375,
+     "overlap_with_magnitude_top": 0.12890625,
+     "median_usage": 15.0,
+     "retention": 0.6171875,
+     "retention_magnitude_null": 0.59765625,
+     "jaccard": 0.4463276836158192,
+     "spearman_usage": 0.33021423301416025,
+     "hysteresis": {
+      "n_entrants": 98,
+      "n_leavers": 98,
+      "entrants_at_entry": {
+       "magnitude": 0.11458175629377365,
+       "selectivity": 0.8243110179901123,
+       "cos_end": 0.7197905778884888
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.07435723394155502,
+       "selectivity": 0.8828431367874146,
+       "cos_end": 0.5659305453300476
+      },
+      "entrants_before": {
+       "magnitude": 0.08574288338422775,
+       "selectivity": 0.7990195751190186
+      },
+      "leavers_after": {
+       "magnitude": 0.09509305655956268,
+       "selectivity": 0.8937007784843445
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.8744273219491878,
+       "selectivity": 0.4086838817159517,
+       "cos_end": 0.8504789670970428
+      }
+     }
+    },
+    {
+     "step": 16000,
+     "n_words": 256,
+     "overlap_with_end": 0.50390625,
+     "overlap_with_magnitude_top": 0.21484375,
+     "median_usage": 15.0,
+     "retention": 0.69921875,
+     "retention_magnitude_null": 0.66015625,
+     "jaccard": 0.5375375375375375,
+     "spearman_usage": 0.4057671046705027,
+     "hysteresis": {
+      "n_entrants": 77,
+      "n_leavers": 77,
+      "entrants_at_entry": {
+       "magnitude": 0.13433554768562317,
+       "selectivity": 0.8503937125205994,
+       "cos_end": 0.840298056602478
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.11661269515752792,
+       "selectivity": 0.8361220359802246,
+       "cos_end": 0.7631196975708008
+      },
+      "entrants_before": {
+       "magnitude": 0.11124995350837708,
+       "selectivity": 0.8439960479736328
+      },
+      "leavers_after": {
+       "magnitude": 0.13460774719715118,
+       "selectivity": 0.8361220359802246
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.7082138640580199,
+       "selectivity": 0.5112160566706021,
+       "cos_end": 0.8959352335975712
+      }
+     }
+    },
+    {
+     "step": 32000,
+     "n_words": 256,
+     "overlap_with_end": 0.625,
+     "overlap_with_magnitude_top": 0.25,
+     "median_usage": 17.0,
+     "retention": 0.67578125,
+     "retention_magnitude_null": 0.6796875,
+     "jaccard": 0.5103244837758112,
+     "spearman_usage": 0.4709674140379302,
+     "hysteresis": {
+      "n_entrants": 83,
+      "n_leavers": 83,
+      "entrants_at_entry": {
+       "magnitude": 0.12507598102092743,
+       "selectivity": 0.8709995150566101,
+       "cos_end": 0.9553194046020508
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.13347211480140686,
+       "selectivity": 0.850885808467865,
+       "cos_end": 0.8621686697006226
+      },
+      "entrants_before": {
+       "magnitude": 0.12597714364528656,
+       "selectivity": 0.8562992215156555
+      },
+      "leavers_after": {
+       "magnitude": 0.12824662029743195,
+       "selectivity": 0.8567208051681519
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.4587022789955001,
+       "selectivity": 0.5080563216722311,
+       "cos_end": 0.9995645231528524
+      }
+     }
+    },
+    {
+     "step": 64000,
+     "n_words": 256,
+     "overlap_with_end": 0.78125,
+     "overlap_with_magnitude_top": 0.2734375,
+     "median_usage": 17.0,
+     "retention": 0.78125,
+     "retention_magnitude_null": 0.734375,
+     "jaccard": 0.6410256410256411,
+     "spearman_usage": 0.6868120579173249,
+     "hysteresis": {
+      "n_entrants": 56,
+      "n_leavers": 56,
+      "entrants_at_entry": {
+       "magnitude": 0.09508293867111206,
+       "selectivity": 0.8789370059967041,
+       "cos_end": 1.0
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.12160439044237137,
+       "selectivity": 0.8793697357177734,
+       "cos_end": 0.9586609601974487
+      },
+      "entrants_before": {
+       "magnitude": 0.12577220797538757,
+       "selectivity": 0.8685376644134521
+      },
+      "leavers_after": {
+       "magnitude": 0.08922956883907318,
+       "selectivity": 0.876968502998352
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.22417091836734693,
+       "selectivity": 0.5567602040816326,
+       "cos_end": 1.0
+      }
+     }
+    },
+    {
+     "step": 143000,
+     "n_words": 256,
+     "overlap_with_end": 1.0,
+     "overlap_with_magnitude_top": 0.26953125,
+     "median_usage": 18.0
+    }
+   ],
+   "transition": {
+    "512": {
+     "512": 1.0,
+     "1000": 0.12890625,
+     "2000": 0.03125,
+     "3000": 0.0390625,
+     "4000": 0.01171875,
+     "8000": 0.0234375,
+     "16000": 0.01953125,
+     "32000": 0.015625,
+     "64000": 0.01953125,
+     "143000": 0.015625,
+     "at_end": {
+      "share_words": 0.015625,
+      "median_usage": 0.0,
+      "median_magnitude": 0.0746510699391365,
+      "median_selectivity": 0.9148622155189514,
+      "median_cos_end": 1.0
+     }
+    },
+    "1000": {
+     "1000": 1.0,
+     "2000": 0.203125,
+     "3000": 0.14453125,
+     "4000": 0.11328125,
+     "8000": 0.109375,
+     "16000": 0.07421875,
+     "32000": 0.05078125,
+     "64000": 0.0546875,
+     "143000": 0.0390625,
+     "at_end": {
+      "share_words": 0.0390625,
+      "median_usage": 0.0,
+      "median_magnitude": 0.07745816558599472,
+      "median_selectivity": 0.913385808467865,
+      "median_cos_end": 1.0
+     }
+    },
+    "2000": {
+     "2000": 1.0,
+     "3000": 0.4765625,
+     "4000": 0.36328125,
+     "8000": 0.2421875,
+     "16000": 0.19140625,
+     "32000": 0.15625,
+     "64000": 0.12109375,
+     "143000": 0.10546875,
+     "at_end": {
+      "share_words": 0.10546875,
+      "median_usage": 0.0,
+      "median_magnitude": 0.07925505191087723,
+      "median_selectivity": 0.912401556968689,
+      "median_cos_end": 1.0
+     }
+    },
+    "4000": {
+     "4000": 1.0,
+     "8000": 0.5546875,
+     "16000": 0.453125,
+     "32000": 0.3515625,
+     "64000": 0.28515625,
+     "143000": 0.24609375,
+     "at_end": {
+      "share_words": 0.24609375,
+      "median_usage": 4.0,
+      "median_magnitude": 0.08693302422761917,
+      "median_selectivity": 0.9025590419769287,
+      "median_cos_end": 1.0
+     }
+    }
+   },
+   "rows_ever_words_before_end": 1821,
+   "share_of_end_words_never_words_before_step4000": 0.6953125,
+   "share_of_early_words_lost": 0.8780889621087314
+  },
+  "12": {
+   "per_step": [
+    {
+     "step": 0,
+     "n_words": 256,
+     "overlap_with_end": 0.01171875,
+     "overlap_with_magnitude_top": 0.0,
+     "median_usage": 9.0,
+     "retention": 0.01953125,
+     "retention_magnitude_null": 0.0390625,
+     "jaccard": 0.009861932938856016,
+     "spearman_usage": -0.7325383383371954,
+     "hysteresis": {
+      "n_entrants": 251,
+      "n_leavers": 251,
+      "entrants_at_entry": {
+       "magnitude": 0.020256757736206055,
+       "selectivity": 0.49166661500930786,
+       "cos_end": 0.060492150485515594
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.01773771084845066,
+       "selectivity": 0.49705880880355835,
+       "cos_end": 0.0636233240365982
+      },
+      "entrants_before": {
+       "magnitude": 0.018173694610595703,
+       "selectivity": 0.5112744569778442
+      },
+      "leavers_after": {
+       "magnitude": 0.01880240999162197,
+       "selectivity": 0.5102940797805786
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.6007047507182426,
+       "selectivity": 0.4702465040237457,
+       "cos_end": 0.4779289217631466
+      }
+     }
+    },
+    {
+     "step": 64,
+     "n_words": 256,
+     "overlap_with_end": 0.015625,
+     "overlap_with_magnitude_top": 0.015625,
+     "median_usage": 15.0,
+     "retention": 0.19140625,
+     "retention_magnitude_null": 0.2265625,
+     "jaccard": 0.10583153347732181,
+     "spearman_usage": -0.47570194384449244,
+     "hysteresis": {
+      "n_entrants": 207,
+      "n_leavers": 207,
+      "entrants_at_entry": {
+       "magnitude": 0.020766405388712883,
+       "selectivity": 0.5034313201904297,
+       "cos_end": 0.06029918044805527
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.020070476457476616,
+       "selectivity": 0.49166661500930786,
+       "cos_end": 0.06027018278837204
+      },
+      "entrants_before": {
+       "magnitude": 0.019127415493130684,
+       "selectivity": 0.5063725113868713
+      },
+      "leavers_after": {
+       "magnitude": 0.01990327797830105,
+       "selectivity": 0.4897058606147766
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.5159980396275292,
+       "selectivity": 0.5412495040724404,
+       "cos_end": 0.49651100375738055
+      }
+     }
+    },
+    {
+     "step": 256,
+     "n_words": 256,
+     "overlap_with_end": 0.0,
+     "overlap_with_magnitude_top": 0.01953125,
+     "median_usage": 18.0,
+     "retention": 0.140625,
+     "retention_magnitude_null": 0.1171875,
+     "jaccard": 0.07563025210084033,
+     "spearman_usage": -0.5378848898049786,
+     "hysteresis": {
+      "n_entrants": 220,
+      "n_leavers": 220,
+      "entrants_at_entry": {
+       "magnitude": 0.01697172224521637,
+       "selectivity": 0.6323529481887817,
+       "cos_end": 0.07273399829864502
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.020617598667740822,
+       "selectivity": 0.5053921341896057,
+       "cos_end": 0.06079996004700661
+      },
+      "entrants_before": {
+       "magnitude": 0.018977884203195572,
+       "selectivity": 0.529901921749115
+      },
+      "leavers_after": {
+       "magnitude": 0.01730824075639248,
+       "selectivity": 0.5666666030883789
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.36927685950413225,
+       "selectivity": 0.6611363636363636,
+       "cos_end": 0.574297520661157
+      }
+     }
+    },
+    {
+     "step": 512,
+     "n_words": 256,
+     "overlap_with_end": 0.015625,
+     "overlap_with_magnitude_top": 0.0078125,
+     "median_usage": 13.0,
+     "retention": 0.0859375,
+     "retention_magnitude_null": 0.08203125,
+     "jaccard": 0.044897959183673466,
+     "spearman_usage": -0.5856395971355695,
+     "hysteresis": {
+      "n_entrants": 234,
+      "n_leavers": 234,
+      "entrants_at_entry": {
+       "magnitude": 0.018679527565836906,
+       "selectivity": 0.7147058248519897,
+       "cos_end": 0.11879277229309082
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.016821470111608505,
+       "selectivity": 0.6318627595901489,
+       "cos_end": 0.07330559939146042
+      },
+      "entrants_before": {
+       "magnitude": 0.01593569666147232,
+       "selectivity": 0.643627405166626
+      },
+      "leavers_after": {
+       "magnitude": 0.017648519948124886,
+       "selectivity": 0.7269607782363892
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.5869493754109139,
+       "selectivity": 0.6860435386076412,
+       "cos_end": 0.7962232449411937
+      }
+     }
+    },
+    {
+     "step": 1000,
+     "n_words": 256,
+     "overlap_with_end": 0.05078125,
+     "overlap_with_magnitude_top": 0.02734375,
+     "median_usage": 7.0,
+     "retention": 0.09765625,
+     "retention_magnitude_null": 0.21875,
+     "jaccard": 0.0513347022587269,
+     "spearman_usage": -0.6197526085010516,
+     "hysteresis": {
+      "n_entrants": 231,
+      "n_leavers": 231,
+      "entrants_at_entry": {
+       "magnitude": 0.03009548783302307,
+       "selectivity": 0.8181372284889221,
+       "cos_end": 0.23737989366054535
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.018653085455298424,
+       "selectivity": 0.7147058248519897,
+       "cos_end": 0.11844237148761749
+      },
+      "entrants_before": {
+       "magnitude": 0.017827464267611504,
+       "selectivity": 0.7397058606147766
+      },
+      "leavers_after": {
+       "magnitude": 0.030588850378990173,
+       "selectivity": 0.7936274409294128
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.9502633009126515,
+       "selectivity": 0.7587563951200315,
+       "cos_end": 0.9514439384569254
+      }
+     }
+    },
+    {
+     "step": 2000,
+     "n_words": 256,
+     "overlap_with_end": 0.09375,
+     "overlap_with_magnitude_top": 0.03515625,
+     "median_usage": 7.0,
+     "retention": 0.30859375,
+     "retention_magnitude_null": 0.4453125,
+     "jaccard": 0.18244803695150116,
+     "spearman_usage": -0.2315922445364448,
+     "hysteresis": {
+      "n_entrants": 177,
+      "n_leavers": 177,
+      "entrants_at_entry": {
+       "magnitude": 0.03983154147863388,
+       "selectivity": 0.8397058844566345,
+       "cos_end": 0.32035374641418457
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.03056526929140091,
+       "selectivity": 0.8019607663154602,
+       "cos_end": 0.22533942759037018
+      },
+      "entrants_before": {
+       "magnitude": 0.02899911254644394,
+       "selectivity": 0.811274528503418
+      },
+      "leavers_after": {
+       "magnitude": 0.0403277762234211,
+       "selectivity": 0.8382352590560913
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.8443933735516614,
+       "selectivity": 0.6109355549171694,
+       "cos_end": 0.8428931660761595
+      }
+     }
+    },
+    {
+     "step": 3000,
+     "n_words": 256,
+     "overlap_with_end": 0.1171875,
+     "overlap_with_magnitude_top": 0.0703125,
+     "median_usage": 7.0,
+     "retention": 0.48828125,
+     "retention_magnitude_null": 0.56640625,
+     "jaccard": 0.32299741602067183,
+     "spearman_usage": 0.11181304086237358,
+     "hysteresis": {
+      "n_entrants": 131,
+      "n_leavers": 131,
+      "entrants_at_entry": {
+       "magnitude": 0.05196307227015495,
+       "selectivity": 0.820588231086731,
+       "cos_end": 0.3700708746910095
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.03838640823960304,
+       "selectivity": 0.8450980186462402,
+       "cos_end": 0.3070381283760071
+      },
+      "entrants_before": {
+       "magnitude": 0.04184304177761078,
+       "selectivity": 0.8122549057006836
+      },
+      "leavers_after": {
+       "magnitude": 0.046537891030311584,
+       "selectivity": 0.8553921580314636
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.794067944758464,
+       "selectivity": 0.4580152671755725,
+       "cos_end": 0.7706427364372705
+      }
+     }
+    },
+    {
+     "step": 4000,
+     "n_words": 256,
+     "overlap_with_end": 0.14453125,
+     "overlap_with_magnitude_top": 0.1015625,
+     "median_usage": 7.0,
+     "retention": 0.41796875,
+     "retention_magnitude_null": 0.49609375,
+     "jaccard": 0.2641975308641975,
+     "spearman_usage": -0.024019610499637807,
+     "hysteresis": {
+      "n_entrants": 149,
+      "n_leavers": 149,
+      "entrants_at_entry": {
+       "magnitude": 0.07927187532186508,
+       "selectivity": 0.8494094610214233,
+       "cos_end": 0.5029493570327759
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.04863480105996132,
+       "selectivity": 0.8490195870399475,
+       "cos_end": 0.3704718351364136
+      },
+      "entrants_before": {
+       "magnitude": 0.04842207208275795,
+       "selectivity": 0.8446078300476074
+      },
+      "leavers_after": {
+       "magnitude": 0.07462949305772781,
+       "selectivity": 0.8420275449752808
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.8640601774694834,
+       "selectivity": 0.5245259222557542,
+       "cos_end": 0.8455474978604567
+      }
+     }
+    },
+    {
+     "step": 8000,
+     "n_words": 256,
+     "overlap_with_end": 0.25390625,
+     "overlap_with_magnitude_top": 0.140625,
+     "median_usage": 10.0,
+     "retention": 0.5,
+     "retention_magnitude_null": 0.5859375,
+     "jaccard": 0.3333333333333333,
+     "spearman_usage": 0.09895307042826625,
+     "hysteresis": {
+      "n_entrants": 128,
+      "n_leavers": 128,
+      "entrants_at_entry": {
+       "magnitude": 0.11269189417362213,
+       "selectivity": 0.8415354490280151,
+       "cos_end": 0.6443681716918945
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.07802599668502808,
+       "selectivity": 0.8543307185173035,
+       "cos_end": 0.5130070447921753
+      },
+      "entrants_before": {
+       "magnitude": 0.07915564626455307,
+       "selectivity": 0.8351377844810486
+      },
+      "leavers_after": {
+       "magnitude": 0.10813100636005402,
+       "selectivity": 0.8597440719604492
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.762939453125,
+       "selectivity": 0.48406982421875,
+       "cos_end": 0.81915283203125
+      }
+     }
+    },
+    {
+     "step": 16000,
+     "n_words": 256,
+     "overlap_with_end": 0.390625,
+     "overlap_with_magnitude_top": 0.140625,
+     "median_usage": 12.0,
+     "retention": 0.5625,
+     "retention_magnitude_null": 0.6328125,
+     "jaccard": 0.391304347826087,
+     "spearman_usage": 0.22901719539645343,
+     "hysteresis": {
+      "n_entrants": 112,
+      "n_leavers": 112,
+      "entrants_at_entry": {
+       "magnitude": 0.13444572687149048,
+       "selectivity": 0.8882874250411987,
+       "cos_end": 0.8096852898597717
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.12061569094657898,
+       "selectivity": 0.837598443031311,
+       "cos_end": 0.6964974403381348
+      },
+      "entrants_before": {
+       "magnitude": 0.10919787734746933,
+       "selectivity": 0.8700787425041199
+      },
+      "leavers_after": {
+       "magnitude": 0.13594548404216766,
+       "selectivity": 0.852854311466217
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.6095344387755102,
+       "selectivity": 0.5747767857142857,
+       "cos_end": 0.8550701530612245
+      }
+     }
+    },
+    {
+     "step": 32000,
+     "n_words": 256,
+     "overlap_with_end": 0.55078125,
+     "overlap_with_magnitude_top": 0.1328125,
+     "median_usage": 15.0,
+     "retention": 0.671875,
+     "retention_magnitude_null": 0.71484375,
+     "jaccard": 0.5058823529411764,
+     "spearman_usage": 0.40604157475410685,
+     "hysteresis": {
+      "n_entrants": 84,
+      "n_leavers": 84,
+      "entrants_at_entry": {
+       "magnitude": 0.13600069284439087,
+       "selectivity": 0.8749384880065918,
+       "cos_end": 0.9492477178573608
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.12377457320690155,
+       "selectivity": 0.9094488024711609,
+       "cos_end": 0.8140742778778076
+      },
+      "entrants_before": {
+       "magnitude": 0.1307351142168045,
+       "selectivity": 0.8818897604942322
+      },
+      "leavers_after": {
+       "magnitude": 0.12149883806705475,
+       "selectivity": 0.9222058057785034
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.5547052154195011,
+       "selectivity": 0.46201814058956914,
+       "cos_end": 0.9785997732426304
+      }
+     }
+    },
+    {
+     "step": 64000,
+     "n_words": 256,
+     "overlap_with_end": 0.71875,
+     "overlap_with_magnitude_top": 0.1484375,
+     "median_usage": 16.0,
+     "retention": 0.71875,
+     "retention_magnitude_null": 0.7421875,
+     "jaccard": 0.5609756097560976,
+     "spearman_usage": 0.4853740832659435,
+     "hysteresis": {
+      "n_entrants": 72,
+      "n_leavers": 72,
+      "entrants_at_entry": {
+       "magnitude": 0.09481582045555115,
+       "selectivity": 0.8656495809555054,
+       "cos_end": 1.0
+      },
+      "leavers_at_exit": {
+       "magnitude": 0.13056860864162445,
+       "selectivity": 0.9079271554946899,
+       "cos_end": 0.9595934152603149
+      },
+      "entrants_before": {
+       "magnitude": 0.12188485264778137,
+       "selectivity": 0.8572131991386414
+      },
+      "leavers_after": {
+       "magnitude": 0.09472192078828812,
+       "selectivity": 0.9005905389785767
+      },
+      "auc_entrants_over_leavers": {
+       "magnitude": 0.27295524691358025,
+       "selectivity": 0.4660493827160494,
+       "cos_end": 1.0
+      }
+     }
+    },
+    {
+     "step": 143000,
+     "n_words": 256,
+     "overlap_with_end": 1.0,
+     "overlap_with_magnitude_top": 0.1171875,
+     "median_usage": 16.0
+    }
+   ],
+   "transition": {
+    "512": {
+     "512": 1.0,
+     "1000": 0.0859375,
+     "2000": 0.05078125,
+     "3000": 0.02734375,
+     "4000": 0.01953125,
+     "8000": 0.01171875,
+     "16000": 0.0234375,
+     "32000": 0.01953125,
+     "64000": 0.01171875,
+     "143000": 0.015625,
+     "at_end": {
+      "share_words": 0.015625,
+      "median_usage": 0.0,
+      "median_magnitude": 0.08430293202400208,
+      "median_selectivity": 0.8479330539703369,
+      "median_cos_end": 1.0
+     }
+    },
+    "1000": {
+     "1000": 1.0,
+     "2000": 0.09765625,
+     "3000": 0.06640625,
+     "4000": 0.06640625,
+     "8000": 0.06640625,
+     "16000": 0.05078125,
+     "32000": 0.02734375,
+     "64000": 0.02734375,
+     "143000": 0.05078125,
+     "at_end": {
+      "share_words": 0.05078125,
+      "median_usage": 0.0,
+      "median_magnitude": 0.0857238620519638,
+      "median_selectivity": 0.8430117964744568,
+      "median_cos_end": 1.0
+     }
+    },
+    "2000": {
+     "2000": 1.0,
+     "3000": 0.30859375,
+     "4000": 0.2734375,
+     "8000": 0.1484375,
+     "16000": 0.12890625,
+     "32000": 0.0859375,
+     "64000": 0.07421875,
+     "143000": 0.09375,
+     "at_end": {
+      "share_words": 0.09375,
+      "median_usage": 0.0,
+      "median_magnitude": 0.08546529710292816,
+      "median_selectivity": 0.8833661675453186,
+      "median_cos_end": 1.0
+     }
+    },
+    "4000": {
+     "4000": 1.0,
+     "8000": 0.41796875,
+     "16000": 0.26171875,
+     "32000": 0.1796875,
+     "64000": 0.16015625,
+     "143000": 0.14453125,
+     "at_end": {
+      "share_words": 0.14453125,
+      "median_usage": 1.0,
+      "median_magnitude": 0.09043962508440018,
+      "median_selectivity": 0.8892716765403748,
+      "median_cos_end": 1.0
+     }
+    }
+   },
+   "rows_ever_words_before_end": 2047,
+   "share_of_end_words_never_words_before_step4000": 0.73046875,
+   "share_of_early_words_lost": 0.8959452857840743
+  }
+ },
+ "checks": {
+  "retention_low_early_high_late": false,
+  "words_not_the_largest": true,
+  "entrants_more_selective": false
+ },
+ "_exp": "e515b_turnover_pythia410",
+ "_time": "2026-09-26 02:43:52"
+}

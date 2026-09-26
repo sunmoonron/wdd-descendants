@@ -482,3 +482,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "A future word is ordinary at step 256, selective at 1000, aligned at 2000 and a word later": nothing tells the future words from magnitude-matched non-words through step 1000, and against the population they are simply the larger rows from step 1000; among rows of one size selectivity and kurtosis lead usage by one doubling from step 2000 and the three grow together; direction never leads (e514).
 - "The early writer wins are MLP rows": the token embedding through step 16, head atoms at steps 512-2000, MLP writers only from step 2000 (e514).
 - "The early words are the later words": before step 2000 the future words are used less than their controls; the vocabulary turns over between steps 1000 and 8000 (e514).
+
+## Session 71 kills (the turnover)
+- "Wordhood is a fixed threshold rows cross": entrants are more selective and larger than leavers through the transition, and the words are never the largest rows (e515b).
+- "The vocabulary is abandoned in an event": its retention tracks the churn of the largest rows at every pair (e515b).
+- "The early words become the words": 0.04-0.05 of the step-1000 words survive to the end (e515b).

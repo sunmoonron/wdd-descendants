@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e515. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e516. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -129,3 +129,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 69 leaves (e513):** (a) split the writer-win statistic of e512-e513 by the winner's type (MLP row against embedding), since at initialisation the embedding atom wins; (b) why the cloud collapses at steps 16-64 and re-expands from 256 (the attention share follows the same course), and whether the re-expansion is driven by attention's return; (c) the rows' selectivity (activity 0.50 to 0.19) as the mechanism of sparsification: which rows become selective first, and whether they are the future words.
 
 **Session 70 leaves (e514):** (a) the vocabulary's turnover: which rows are the words of the collapsed and accent phases (steps 64-1000), what becomes of them, and whether the turnover between steps 1000 and 8000 is a hand-over (early words losing selectivity as late words gain it) or a replacement by rows that were never words; (b) the synthetic-task test, now with a prediction to transplant: no lineage before sparsification, selectivity one doubling ahead of wordhood, and a vocabulary that turns over.
+
+**Session 71 leaves (e515, e515b):** the synthetic-task test now has three predictions to transplant: no lineage of the eventual words before sparsification, a vocabulary replaced at the churn rate of the large rows, and a boundary that drifts toward larger, sparser rows before it holds; a tiny transformer on modular addition or induction, trained for two minutes with checkpoints, would show whether a model whose algorithm is known does the same. A second item: what the drifting boundary is a threshold on, if not magnitude (the candidates being the write's prominence against the position's floor, which is the extreme-value model's own quantity).

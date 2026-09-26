@@ -1,0 +1,26 @@
+{
+ "model": "pythia410",
+ "revision": "step64",
+ "blocks": [
+  6,
+  12
+ ],
+ "by_block": {
+  "6": {
+   "n_rows": 28672,
+   "n_used": 6250,
+   "share_of_words_that_are_mlp_rows": 0.43226104974746704,
+   "usage_threshold_top256": 7.0,
+   "overlap_top256_usage_with_top256_magnitude": 0.00390625
+  },
+  "12": {
+   "n_rows": 53248,
+   "n_used": 7215,
+   "share_of_words_that_are_mlp_rows": 0.5390625596046448,
+   "usage_threshold_top256": 10.0,
+   "overlap_top256_usage_with_top256_magnitude": 0.015625
+  }
+ },
+ "_exp": "e515_tracks_pythia410_step64",
+ "_time": "2026-09-26 02:42:29"
+}
