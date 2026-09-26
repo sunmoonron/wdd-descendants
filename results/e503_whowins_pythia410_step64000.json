@@ -1,0 +1,130 @@
+{
+ "model": "pythia410",
+ "revision": "step64000",
+ "blocks": [
+  6,
+  12,
+  18
+ ],
+ "n_writers_mlp": 64,
+ "by_block": {
+  "6": {
+   "n_states": 2031,
+   "n_atoms": 86158,
+   "n_writers": 65,
+   "calibration_rotated": 0.9942505955696106,
+   "gumbel_mean": 4.501528096306387,
+   "win_rate_observed": 0.8527818918228149,
+   "win_rate_predicted": 0.15214180946350098,
+   "win_rate_predicted_calibrated": 0.16001969575881958,
+   "accuracy_calibrated": 0.30034467577934265,
+   "accuracy_hybrid": 0.8690300583839417,
+   "win_rate_hybrid": 0.9837518930435181,
+   "auc_prominence_minus_level": 0.7689951879629559,
+   "writer_wins_below_level": 0.8163972496986389,
+   "nonwriter_wins_above_level": 0.023411370813846588,
+   "nonwriters": {
+    "ratio_to_level": 1.2830891609191895,
+    "ratio_to_calibrated_level": 1.290508508682251,
+    "spearman_with_level": 0.2858040515907854,
+    "factor_observed": 1.3218674659729004,
+    "factor_second_order": 1.0242993831634521,
+    "median_sigma_ratio": 1.0192574262619019
+   },
+   "writers": {
+    "ratio_to_prominence": 2.1369645595550537,
+    "spearman_with_prominence": 0.5869150844314888,
+    "median_prominence": 0.10652338713407516,
+    "median_level": 0.1427205353975296,
+    "median_max": 0.23528502881526947
+   },
+   "all": {
+    "ratio_to_predicted": 1.65982186794281,
+    "spearman_with_predicted": 0.3174458212014997,
+    "factor_observed": 1.765175223350525,
+    "factor_predicted": 1.0634726285934448
+   }
+  },
+  "12": {
+   "n_states": 2031,
+   "n_atoms": 116890,
+   "n_writers": 65,
+   "calibration_rotated": 0.9934732913970947,
+   "gumbel_mean": 4.566141195541049,
+   "win_rate_observed": 0.6725751161575317,
+   "win_rate_predicted": 0.21664205193519592,
+   "win_rate_predicted_calibrated": 0.22156573832035065,
+   "accuracy_calibrated": 0.451501727104187,
+   "accuracy_hybrid": 0.6996553540229797,
+   "win_rate_hybrid": 0.972919762134552,
+   "auc_prominence_minus_level": 0.634686643402063,
+   "writer_wins_below_level": 0.7430453896522522,
+   "nonwriter_wins_above_level": 0.14887218177318573,
+   "nonwriters": {
+    "ratio_to_level": 1.3168421983718872,
+    "ratio_to_calibrated_level": 1.325493335723877,
+    "spearman_with_level": 0.4394212024622578,
+    "factor_observed": 1.3605334758758545,
+    "factor_second_order": 1.0264356136322021,
+    "median_sigma_ratio": 1.0253254175186157
+   },
+   "writers": {
+    "ratio_to_prominence": 1.7739722728729248,
+    "spearman_with_prominence": 0.3757527642934003,
+    "median_prominence": 0.11483018100261688,
+    "median_level": 0.14541053771972656,
+    "median_max": 0.20998908579349518
+   },
+   "all": {
+    "ratio_to_predicted": 1.4924468994140625,
+    "spearman_with_predicted": 0.3240098882548763,
+    "factor_observed": 1.622665524482727,
+    "factor_predicted": 1.0872517824172974
+   }
+  },
+  "18": {
+   "n_states": 2031,
+   "n_atoms": 147622,
+   "n_writers": 65,
+   "calibration_rotated": 0.9948704242706299,
+   "gumbel_mean": 4.6150063915281585,
+   "win_rate_observed": 0.7021172046661377,
+   "win_rate_predicted": 0.2117183655500412,
+   "win_rate_predicted_calibrated": 0.2161496877670288,
+   "accuracy_calibrated": 0.47661250829696655,
+   "accuracy_hybrid": 0.7208272218704224,
+   "win_rate_hybrid": 0.9812900424003601,
+   "auc_prominence_minus_level": 0.6795915292153977,
+   "writer_wins_below_level": 0.7187938094139099,
+   "nonwriter_wins_above_level": 0.06280991435050964,
+   "nonwriters": {
+    "ratio_to_level": 1.5335321426391602,
+    "ratio_to_calibrated_level": 1.5414390563964844,
+    "spearman_with_level": 0.378674491027337,
+    "factor_observed": 1.6064013242721558,
+    "factor_second_order": 1.0421439409255981,
+    "median_sigma_ratio": 1.0395253896713257
+   },
+   "writers": {
+    "ratio_to_prominence": 2.276862382888794,
+    "spearman_with_prominence": 0.5044067382245991,
+    "median_prominence": 0.10585127025842667,
+    "median_level": 0.14913706481456757,
+    "median_max": 0.2570902705192566
+   },
+   "all": {
+    "ratio_to_predicted": 1.7941707372665405,
+    "spearman_with_predicted": 0.44923789959708915,
+    "factor_observed": 1.9517194032669067,
+    "factor_predicted": 1.0878113508224487
+   }
+  }
+ },
+ "checks": {
+  "nonwriter_level_second_order": false,
+  "writer_level_is_prominence": false,
+  "win_rate_predicted": false
+ },
+ "_exp": "e503_whowins_pythia410_step64000",
+ "_time": "2026-09-26 00:30:16"
+}

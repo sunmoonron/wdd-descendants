@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e502. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e507. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -115,3 +115,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 - Needs EleutherAI's memorisation lists and loss-matched non-memorised controls, since memorised text is mostly boilerplate.
 
 **B16. A write-up item, not an experiment:** the 20-30-paper novelty matrix deferred since session 31.
+
+**Session 64 leaves (e502-e506):** (a) the count of words: the centred chord puts 19-21 atoms above the floor in GPT-2 where the state has 40-107, so attention's writes, in the head bases, add words; the full ledger through the Gram (MLP rows, head-basis coefficients from the attention outputs, embeddings, biases) would be the exact test; (b) the contraction's size: why the crowd removes about half of the chord in GPT-2 and OLMo and less in Pythia, and whether area 05's linear gain predicts it; (c) why Pythia-160m's features are not state-like (e504): coordinates, the massive dimensions, or the SAE's training data; (d) the chord at matched amplitude across models.

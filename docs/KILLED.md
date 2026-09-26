@@ -450,3 +450,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 
 ## Session 63 kills (row-following)
 - "TopK SAEs preserve the model's native write structure better than ReLU SAEs": the difference in row-following is the features' own sparsity; at matched frequency the families are alike, and the family label carries nothing (e501).
+
+## Session 64 kills (the model tested)
+- "The accent is the second-order alignment of the state cloud with the atoms": a factor 1.02-1.24 of a 1.3-2.3 excess; the rest is a tail of atoms aligned with the position's large writes or with attention (e503, e505).
+- "A word is a write whose own coefficient clears the floor": the own coefficient is 0.3-0.7 of a winning projection; the other large writes and the crowd of small ones decide the rest (e503, e505).
+- "The largest writes, summed as written, predict the maximum": twice the level where they are as large as the state and the wrong atom in 84-98% of states; the overshoot is the common direction they share, and the centred chord does predict GPT-2's level within 13% (e506).
+- "The ledger is redundant with the top row" (e496): it adds where features are sparse, +0.10 in the sparsest ReLU decile (e502).
+- "SAE features are state-like in every model": on Pythia-160m they sit between random and covariance-matched directions (e504).

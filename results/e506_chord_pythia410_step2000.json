@@ -1,0 +1,83 @@
+{
+ "model": "pythia410",
+ "revision": "step2000",
+ "blocks": [
+  6,
+  12,
+  18
+ ],
+ "by_block": {
+  "6": {
+   "n_states": 2040,
+   "n_atoms": 86158,
+   "calibration_rotated": 0.9979562163352966,
+   "ratio_observed_over_chord": 2.8528215885162354,
+   "ratio_observed_over_combined": 1.35393226146698,
+   "median_ratio_observed_over_combined": 1.3148329257965088,
+   "spearman_observed_chord": 0.047933196152841875,
+   "spearman_observed_combined": 0.13466966592860666,
+   "chord_argmax_is_observed_argmax": 0.04264706000685692,
+   "chord_argmax_in_observed_top4": 0.06372549384832382,
+   "factor_observed": 1.4673928022384644,
+   "factor_predicted": 1.0838007926940918,
+   "factor_chord_alone": 0.5143654346466064,
+   "chord_amplitude": 0.1977323740720749,
+   "median_observed_max": 0.20009905099868774,
+   "median_chord_max": 0.07097703218460083,
+   "median_floor": 0.15212853252887726,
+   "atoms_above_floor_observed": 8.0,
+   "atoms_above_floor_chord": 0.0,
+   "share_chord_above_floor": 0.001470588380470872
+  },
+  "12": {
+   "n_states": 2040,
+   "n_atoms": 116890,
+   "calibration_rotated": 0.9928146600723267,
+   "ratio_observed_over_chord": 3.1561756134033203,
+   "ratio_observed_over_combined": 1.25161874294281,
+   "median_ratio_observed_over_combined": 1.186318039894104,
+   "spearman_observed_chord": -0.10456847871949898,
+   "spearman_observed_combined": 0.33782909207847894,
+   "chord_argmax_is_observed_argmax": 0.014215687289834023,
+   "chord_argmax_in_observed_top4": 0.0313725508749485,
+   "factor_observed": 1.368263840675354,
+   "factor_predicted": 1.0931953191757202,
+   "factor_chord_alone": 0.43351954221725464,
+   "chord_amplitude": 0.1846785545349121,
+   "median_observed_max": 0.1837415099143982,
+   "median_chord_max": 0.060228534042835236,
+   "median_floor": 0.15437942743301392,
+   "atoms_above_floor_observed": 4.0,
+   "atoms_above_floor_chord": 0.0,
+   "share_chord_above_floor": 0.001470588380470872
+  },
+  "18": {
+   "n_states": 2040,
+   "n_atoms": 147622,
+   "calibration_rotated": 0.9946965575218201,
+   "ratio_observed_over_chord": 4.339747905731201,
+   "ratio_observed_over_combined": 1.3253400325775146,
+   "median_ratio_observed_over_combined": 1.2742727994918823,
+   "spearman_observed_chord": 0.01623170918338897,
+   "spearman_observed_combined": 0.491168769221525,
+   "chord_argmax_is_observed_argmax": 0.05637255311012268,
+   "chord_argmax_in_observed_top4": 0.10784314572811127,
+   "factor_observed": 1.4852206707000732,
+   "factor_predicted": 1.120633602142334,
+   "factor_chord_alone": 0.34223660826683044,
+   "chord_amplitude": 0.1656520515680313,
+   "median_observed_max": 0.2047569900751114,
+   "median_chord_max": 0.04733450338244438,
+   "median_floor": 0.16021479666233063,
+   "atoms_above_floor_observed": 7.0,
+   "atoms_above_floor_chord": 0.0,
+   "share_chord_above_floor": 0.0019607844296842813
+  }
+ },
+ "checks": {
+  "level_within_20pct_and_spearman_over_0_7": false,
+  "chord_argmax_over_half": false
+ },
+ "_exp": "e506_chord_pythia410_step2000",
+ "_time": "2026-09-26 00:39:11"
+}
