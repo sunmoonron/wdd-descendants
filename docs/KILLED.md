@@ -457,3 +457,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The largest writes, summed as written, predict the maximum": twice the level where they are as large as the state and the wrong atom in 84-98% of states; the overshoot is the common direction they share, and the centred chord does predict GPT-2's level within 13% (e506).
 - "The ledger is redundant with the top row" (e496): it adds where features are sparse, +0.10 in the sparsest ReLU decile (e502).
 - "SAE features are state-like in every model": on Pythia-160m they sit between random and covariance-matched directions (e504).
+
+## Session 65 kills (the profile)
+- "The centred chord predicts the whole projection profile": it predicts a third to a half of the top atoms and orders the true top hundred at 0.3-0.4 in GPT-2, calibrated within 13-25%; the sum of all writes does better there and worse in OLMo (e507).
+- "The crowd of small writes contracts the chord throughout training": it amplifies it early (+1.4 at Pythia step 512) and contracts it late (-0.64 at the end) (e507).

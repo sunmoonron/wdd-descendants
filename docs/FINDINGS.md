@@ -2515,3 +2515,42 @@ SESSION 64 (the relayed queue taken as a researcher would: the ledger under the 
   - Pre-registered: the raw chord refuted at every block of every model; the addendum (the centred chord brings the level within 20%) met for GPT-2 at every block and not for OLMo or Pythia; the atom named in over half of states, refuted everywhere (the best is 0.52, all writes in GPT-2).
 
 - What session 64 leaves of THEORY 3m and what it replaces, written into 3n: the Gumbel floor and its calibration stand; the two clocks stand with a corrected mechanism (the accent is the dense sum of small writes aligned with the head bases, the words the sparse chord of large writes); energy as a sum and wordhood as a maximum stands; the two-term numerator (own coefficient, second-order alignment) is replaced by the centred chord of the position's largest writes, which predicts GPT-2's maximum within 13% and names the atom in a third to a half of states, with the crowd's contraction (OLMo) and the small writes (Pythia) as the corrections that matter.
+
+SESSION 65 (the one experiment the relayed take asked for, taken as the out-of-sample test of the chord: the whole projection profile, not only the maximum; e507 in two versions; 2026-09-26 01:05-01:14 box time).
+
+- e507 DOES THE CENTRED CHORD PREDICT THE WHOLE PROJECTION PROFILE (the same states, dictionaries and writers as e506; per state the observed profile o over every atom, the centred chord's prediction p, and the exact remainder o = p + crowd + rest, with the crowd the centred sum of the remaining MLP writes and the rest the centred non-MLP part; Spearman over all atoms, among the state's 100 largest observed projections and among its 100 largest predicted; the recall of the observed top 1, 5, 10 and 50 atoms by the predicted top k, as means over states; on the 200 largest predicted, a set chosen by the predictor so that the regression is unbiased, the gain of o on p through the origin, the gains of the crowd and of the rest on p, the R^2, and the variance shares of crowd and rest in the residual with their cross term; the same for the centred sum of all writes. v1 reported medians of 0/1 recalls and a tail chosen as the union of two top sets, which forces a negative correlation; v2 corrected both and is what is recorded).
+
+  | Model, block | Chord: Spearman all atoms / among the observed top 100 / among the predicted top 100 | Chord: recall of the observed top 1 / 10 / 50 | Chord on its top 200: gain (crowd, rest) | Chord R^2 | Residual variance shares crowd / rest / cross | All writes: gain, R^2, recall top 1 / 10 |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 3 | 0.33 / 0.30 / 0.39 | 0.46 / 0.30 / 0.26 | 0.87 (-0.27, +0.16) | 0.66 | 0.52 / 0.98 / -0.50 | 1.09, 0.73, 0.52 / 0.30 |
+  | GPT-2 6 | 0.22 / 0.39 / 0.40 | 0.43 / 0.39 / 0.29 | 0.75 (-0.31, +0.16) | 0.54 | 0.84 / 0.83 / -0.67 | 0.93, 0.77, 0.51 / 0.44 |
+  | GPT-2 9 | 0.22 / 0.41 / 0.38 | 0.32 / 0.36 / 0.30 | 0.84 (-0.16, +0.13) | 0.55 | 0.92 / 0.74 / -0.65 | 0.85, 0.73, 0.39 / 0.42 |
+  | Pythia-410m end 6 | 0.15 / 0.36 / 0.43 | 0.47 / 0.46 / 0.29 | 1.02 (+0.01, +0.03) | 0.73 | 0.94 / 1.09 / -1.04 | 0.63, 0.42, 0.41 / 0.41 |
+  | Pythia-410m end 12 | 0.10 / 0.29 / 0.38 | 0.23 / 0.29 / 0.19 | 0.65 (-0.64, +0.30) | 0.39 | 2.83 / 2.59 / -4.40 | -0.06, -14.14, 0.06 / 0.08 |
+  | Pythia-410m end 18 | 0.20 / 0.54 / 0.46 | 0.25 / 0.44 / 0.46 | 1.29 (-0.18, +0.50) | 0.72 | 1.13 / 1.13 / -1.29 | 0.41, -0.42, 0.27 / 0.43 |
+  | OLMo-1B 4 | 0.19 / 0.52 / 0.52 | 0.19 / 0.50 / 0.42 | 0.59 (-0.43, +0.02) | 0.35 | 1.20 / 0.39 / -0.62 | 0.51, 0.01, 0.45 / 0.42 |
+  | OLMo-1B 8 | 0.14 / 0.47 / 0.43 | 0.13 / 0.39 / 0.36 | 0.58 (-0.46, +0.05) | 0.33 | 1.43 / 0.69 / -1.16 | 0.29, -1.80, 0.28 / 0.27 |
+  | OLMo-1B 12 | 0.13 / 0.41 / 0.39 | 0.19 / 0.33 / 0.31 | 0.63 (-0.42, +0.07) | 0.48 | 1.57 / 0.89 / -1.47 | 0.20, -3.12, 0.28 / 0.24 |
+
+  | Pythia block, step | Chord gain (crowd, rest) | Chord R^2 | Chord recall top 1 / 10 | Chord Spearman among the observed top 100 | All writes: Spearman all atoms, R^2, recall top 1 |
+  | --- | --- | --- | --- | --- | --- |
+  | 6, 512 | 1.40 (+0.37, +0.02) | 0.48 | 0.00 / 0.03 | 0.06 | 0.79, 0.98, 0.22 |
+  | 6, 4000 | 1.72 (+0.92, -0.18) | 0.52 | 0.19 / 0.19 | 0.18 | 0.34, 0.77, 0.32 |
+  | 6, 16000 | 1.41 (+0.45, -0.03) | 0.65 | 0.39 / 0.36 | 0.31 | 0.32, 0.73, 0.38 |
+  | 6, 64000 | 1.14 (+0.14, +0.02) | 0.74 | 0.47 / 0.47 | 0.38 | 0.27, 0.57, 0.42 |
+  | 6, end | 1.02 (+0.01, +0.03) | 0.73 | 0.47 / 0.46 | 0.36 | 0.25, 0.42, 0.41 |
+  | 12, 512 | 2.46 (+1.37, +0.08) | 0.32 | 0.00 / 0.02 | 0.10 | 0.87, 0.99, 0.47 |
+  | 12, 4000 | 1.30 (+0.63, -0.32) | 0.47 | 0.08 / 0.09 | 0.10 | 0.16, -1.46, 0.08 |
+  | 12, 16000 | 1.05 (-0.08, +0.18) | 0.59 | 0.22 / 0.21 | 0.22 | 0.10, -4.05, 0.09 |
+  | 12, 64000 | 0.80 (-0.50, +0.30) | 0.58 | 0.24 / 0.28 | 0.28 | 0.06, -8.61, 0.10 |
+  | 12, end | 0.65 (-0.64, +0.30) | 0.39 | 0.23 / 0.29 | 0.29 | 0.04, -14.14, 0.06 |
+  | 18, 512 | 3.85 (+2.79, +0.08) | 0.23 | 0.00 / 0.03 | 0.16 | 0.91, 0.99, 0.53 |
+  | 18, 4000 | 1.74 (+0.69, +0.04) | 0.46 | 0.17 / 0.16 | 0.16 | 0.23, -0.08, 0.21 |
+  | 18, 16000 | 1.52 (+0.01, +0.50) | 0.59 | 0.35 / 0.31 | 0.31 | 0.17, -1.09, 0.24 |
+  | 18, 64000 | 1.12 (-0.43, +0.52) | 0.67 | 0.31 / 0.30 | 0.30 | 0.12, -2.35, 0.22 |
+  | 18, end | 1.29 (-0.18, +0.50) | 0.72 | 0.25 / 0.44 | 0.54 | 0.11, -0.42, 0.27 |
+
+  - In GPT-2 the centred chord is a partial predictor of the whole profile, not a full one: on its own 200 largest predictions it is calibrated to within 13-25% (gain 0.75-0.87) and explains 54-66% of the variance; it recovers the state's largest atom in 32-46% of states, a third of its top ten (0.30-0.39) and a quarter of its top fifty (0.26-0.30), and orders the true top hundred at Spearman 0.30-0.41. The crowd takes 0.16-0.31 of the chord and attention gives back 0.13-0.16; each correction is as large as the residual and the two are anti-correlated (cross term -0.50 to -0.67), so the chord's error is the net of two large opposing terms. The centred sum of all writes does better in GPT-2 on every count (gain 0.85-1.09, R^2 0.73-0.77, top atom 0.39-0.52).
+  - The crowd's role differs by model. In OLMo it removes 0.42-0.46 of the chord and adds variance beyond it: the chord alone is calibrated at 0.58-0.63 with R^2 0.33-0.48, while the sum of all writes has R^2 at or below zero. In Pythia at the end the crowd is neutral at block 6 (+0.01), takes 0.64 at block 12 and 0.18 at block 18, and attention gives back 0.03, 0.30 and 0.50; the chord recovers the top atom in 23-47% of states and orders the true top hundred at 0.29-0.54.
+  - Over Pythia's training the crowd flips from amplifier to contractor. Its gain along the chord at block 12 is +1.37 at step 512, +0.63 at 4000, -0.08 at 16000, -0.50 at 64000 and -0.64 at the end (block 18: +2.79, +0.69, +0.01, -0.43, -0.18); attention's gain rises from 0.08 to 0.30-0.50 at blocks 12 and 18 over the same steps. At step 512 the state is its MLP write-sum: the centred sum of all writes predicts the whole profile at Spearman 0.79-0.91 over all atoms with R^2 0.98-0.99 and gain 1.02-1.04, and the chord's recall of the top atom is 0.00; by step 16000 the write-sum's R^2 is negative at blocks 12 and 18 and the chord's recall has risen to 0.22-0.35. The dense small writes reinforce the large writes' directions early and cancel them late; the timing of the flip (between steps 4000 and 16000 at block 12, between 16000 and 64000 at block 18) is the window in which area 05's learned contraction matures, which is a hypothesis to test, not a result.
+  - Pre-registered: the observed top ten recalled at over 0.5 with the true top hundred ordered above 0.6 in GPT-2, refuted (0.39 and 0.39); the crowd's gain negative and the rest's positive at every block of every model, met in GPT-2 and OLMo and refuted in Pythia (the crowd positive early, and neutral at block 6 at the end), with the two summing to -0.15 at GPT-2's middle block, at the edge of the 0.15 asked; the chord's ordering of the true top hundred rising through Pythia's training, confirmed at every block (0.10 to 0.29 at block 12, 0.06 to 0.36 at block 6, 0.16 to 0.54 at block 18).
