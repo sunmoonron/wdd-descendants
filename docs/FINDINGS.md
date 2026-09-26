@@ -2302,3 +2302,99 @@ SESSION 61 (a control the SAE bridge lacked, prompted by a relayed conversation'
   - At the input of block 3 the states are sparser than the features (0.30 against 0.49) and the covariance-matched directions are nearly as sparse as the features: early, a feature's alignment with the rows is mostly second-order.
   - Pre-registered: features sparser than random by 0.15, confirmed; features within 0.05 of covariance-matched directions, refuted at block 7 (0.15 apart); states sparser than features, confirmed (equal at block 7, sparser at block 3); features' top word an MLP row far more often than random directions', confirmed.
 - Reading. The bridge of sessions 59-60 stands, reworded: a learned feature has the provenance profile of a state, not of a write. What it is made of is the same many-row mixture a state is made of, and the frequent features (e495) and the rows that are features (e494) are the exceptions that come close to single writes.
+
+SESSION 62 (the follow-ups a relayed conversation proposed after e497: the anatomy of the two clocks on Pythia's checkpoints, the SAE bridge on an independently trained SAE family, and e496 with its missing baselines on a larger sample; e496 v3, e498, e499; 2026-09-25 21:46-21:58 box time).
+
+- e496 v3 DOES A FEATURE FIRE WHEN ITS WRITER FIRES, ON A LARGER SAMPLE (2000 most active features, 8176 positions from 16 x 512 tokens, 16 native words per feature; the baselines the earlier version lacked: the feature's own coefficients applied to 8 random rows of the same blocks, and the ledger from 16 words).
+
+  | Score for the positions where the feature fires | Median AUC | Share of features above 0.8 |
+  | --- | --- | --- |
+  | write size of the feature's top native MLP row | 0.62 | 0.15 |
+  | a random MLP row of the same block | 0.50 | - |
+  | ledger from the top 1 / 4 / 8 / 16 words | 0.52 / 0.59 / 0.61 / 0.63 | 0.10 / 0.17 / 0.20 / 0.22 |
+  | the same coefficients on 8 random rows of the same blocks | 0.50 | 0.00 |
+
+  - Correction to session 60. On four times the positions and all 2000 features, the ledger no longer beats the top row: 0.61-0.63 against 0.62, with a fifth of features above 0.8 (v2's 0.70 and 0.38 came from 1197 features on 2040 positions). The composition adds nothing over the single most important row; the random-row ledger is at chance. What stands: a feature's top native row separates the positions where the feature fires at 0.62 against 0.50 for a random row, strongly for about a sixth of features.
+
+- e498 THE ANATOMY OF THE TWO CLOCKS (Pythia-410m at steps 256, 512, 1000, 2000, 3000, 4000, 16000, 64000 and the end; blocks 1, 6, 12, 18, 22; per cell the writers' and non-writers' factor parts (as e493) and: the effective number of active MLP writes per position (participation ratio of the ledger), the energy share of the 64 largest writes, the largest write's prominence, the state's projection shares on the summed MLP writes, the attention increments and the embedding, the effective dimension of the state cloud and its top-8 share, and the alignment of the states' covariance with the native atoms' covariance over the rotated atoms' (the accent as a second-order quantity). 45 cells.)
+
+  | Block 12, step | writers' part | non-writers' part | effective writes | top-64 energy share | top write prominence | state shares MLP / attention | effective dimension | covariance-alignment ratio |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 256 | 0.82 | 1.15 | 6,800 | 0.04 | 0.022 | 0.94 / 0.06 | 16 | 1.08 |
+  | 512 | 0.97 | 1.72 | 5,900 | 0.04 | 0.017 | 0.86 / 0.14 | 28 | 1.19 |
+  | 1000 | 0.99 | 1.47 | 4,800 | 0.06 | 0.021 | 0.67 / 0.33 | 88 | 1.24 |
+  | 2000 | 1.02 | 1.36 | 3,430 | 0.08 | 0.030 | 0.51 / 0.49 | 133 | 1.21 |
+  | 4000 | 1.12 | 1.33 | 2,570 | 0.10 | 0.044 | 0.44 / 0.56 | 112 | 1.22 |
+  | 16000 | 1.37 | 1.34 | 2,010 | 0.11 | 0.075 | 0.47 / 0.53 | 157 | 1.08 |
+  | 64000 | 1.55 | 1.36 | 1,670 | 0.13 | 0.115 | 0.40 / 0.60 | 123 | 1.06 |
+  | end | 1.58 | 1.37 | 2,180 | 0.11 | 0.139 | 0.25 / 0.75 | 108 | 1.07 |
+
+  Across the 45 cells, Spearman of each factor part with the measures:
+
+  | | maximum attained by a writer | effective writes | top-64 energy share | top write prominence | effective dimension | top-8 variance share | covariance-alignment ratio | state norm |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | writers' part | +0.85 | -0.81 | +0.82 | +0.86 | +0.24 | -0.27 | -0.14 | +0.37 |
+  | non-writers' part | -0.27 | +0.18 | -0.19 | -0.12 | -0.56 | +0.54 | +0.61 | +0.36 |
+
+  - The two parts are two different quantities. The writers' part is write sparsity: it tracks the largest write's prominence (+0.86), the energy share of the 64 largest writes (+0.82) and, inversely, the effective number of writes (-0.81), which falls from 6,800 to 1,700-2,200 at block 12 over training while the top-64 share triples. The non-writers' part is second-order alignment: it tracks the alignment of the states' covariance with the atoms' covariance (+0.61) and the concentration of the state cloud (top-8 share +0.54, effective dimension -0.56), and it is unrelated to any sparsity measure (|rho| at most 0.27).
+  - The accent's rise (steps 256-512 at depth: covariance alignment 1.08 to 1.19 at block 12, 1.11 to 1.25 at block 18) coincides with the state cloud gaining dimensions (16 to 28 to 88 by step 1000) and with attention beginning to carry the state (its share rising from 0.06 to 0.33 at block 12 by step 1000, 0.75 at the end, while the MLP share falls from 0.94 to 0.25).
+  - No prerequisite relation is visible at this resolution: the non-writers' part at one checkpoint does not predict the writers' part at the next (Spearman +0.04 over blocks 6-22), nor the reverse (-0.03); the change of the writers' part between checkpoints follows the change of the top-64 energy share weakly (+0.22) and not that of the effective number of writes (+0.05).
+  - Late in training the non-writers' part rises again at blocks 18-22 (2.5-2.9 at the end) together with the top-8 share (0.38-0.56) and a collapse of the effective dimension (12-31): the huge directions of area 10, which are non-writing rows' alignment by construction.
+
+- e499 THE SAE BRIDGE ON A SECOND FAMILY (OpenAI's GPT-2 small autoencoders, v5, TopK with k = 32, 32768 latents, for the residual after blocks 2 and 6; their inputs are layer-normalised per position, which the sae_lens copy of the same weights states and which the reconstruction of our states confirms: unexplained 0.31 at block 6 under layer-norm against 6.2 raw; the targets of e497 and the activation test of e496 v3, 470 live features).
+
+  | Target (block 6; block 2) | Unexplained by 1 / 4 / 16 native words | Top native word an MLP row |
+  | --- | --- | --- |
+  | TopK features | 0.92 / 0.79 / 0.56; 0.94 / 0.82 / 0.59 | 0.89; 0.86 |
+  | the states | 0.88 / 0.70 / 0.47; 0.78 / 0.52 / 0.30 | 0.85; 0.88 |
+  | covariance-matched directions | 0.92 / 0.83 / 0.63; 0.83 / 0.72 / 0.54 | 0.61; 0.73 |
+  | random directions (and any target under the rotated dictionary) | 0.98 / 0.91 / 0.72; 0.98 / 0.92 / 0.73 | 0.54; 0.40 |
+
+  | Score for the positions where a TopK feature fires (block 6) | Median AUC | Share above 0.8 |
+  | --- | --- | --- |
+  | its top native MLP row's write size | 0.73 | - |
+  | a random row of the same block | 0.50 | - |
+  | ledger from the top 1 / 4 / 8 / 16 words | 0.66 / 0.80 / 0.83 / 0.85 | 0.38 / 0.49 / 0.53 / 0.55 |
+  | the same coefficients on 8 random rows | 0.49 | 0.00 |
+
+  - The provenance part of the bridge holds on the second family: the top native word is an MLP row for 0.86-0.89 of features (random directions 0.40-0.54), and features are far sparser in native words than random directions (0.56 against 0.72) and sparser than covariance-matched ones at block 6 (0.63). The state-likeness is weaker than for the ReLU family: TopK features sit between covariance-matched directions and the states (0.56 against 0.47), and at block 2 below the covariance-matched level (0.59 against 0.54).
+  - The activation part is stronger on the second family. A TopK feature's top row separates the positions where it fires at AUC 0.73 (the ReLU family's 0.62), and its ledger from eight words reaches 0.83 with half of the features above 0.8 (the ReLU family's 0.61 and 0.20); the same coefficients on random rows are at chance. A TopK feature, active at 32 positions' worth of latents, is closer to a reading of its rows' activity than a ReLU feature.
+  - Pre-registered: the ordering random > covariance > features about equal to states, refuted in the last term (features 0.09 above states); top word an MLP row over 0.8, confirmed; ledger at 0.65 and random under 0.55, confirmed.
+
+- e500 WHICH KIND OF ATOM BECOMES A WORD, AND WHEN (Pythia-410m at nine checkpoints, blocks 6, 12 and 18; 16-word descriptions over the full dictionary, over the MLP rows only, the head bases only, the token embeddings only, and the rotated dictionary; loss recovered by splicing; the type mix of the full description's words).
+
+  | Block 12, step | Loss recovered: full / MLP rows only / head bases only / token embeddings only / rotated | Word types: token / MLP / head | MLP words from the last two blocks |
+  | --- | --- | --- | --- |
+  | 256 | 0.80 / 0.76 / 0.69 / 0.67 / 0.72 | 0.22 / 0.64 / 0.14 | 0.18 |
+  | 512 | 0.80 / 0.81 / 0.75 / 0.70 / 0.75 | 0.07 / 0.58 / 0.35 | 0.23 |
+  | 1000 | 0.83 / 0.81 / 0.76 / 0.65 / 0.70 | 0.06 / 0.63 / 0.31 | 0.26 |
+  | 2000 | 0.80 / 0.79 / 0.71 / 0.64 / 0.67 | 0.11 / 0.66 / 0.23 | 0.22 |
+  | 4000 | 0.74 / 0.72 / 0.61 / 0.57 / 0.61 | 0.14 / 0.63 / 0.23 | 0.20 |
+  | 16000 | 0.67 / 0.63 / 0.46 / 0.41 / 0.46 | 0.18 / 0.64 / 0.18 | 0.21 |
+  | 64000 | 0.66 / 0.63 / 0.38 / 0.37 / 0.41 | 0.18 / 0.67 / 0.14 | 0.26 |
+  | end | 0.60 / 0.57 / 0.32 / 0.32 / 0.36 | 0.18 / 0.67 / 0.14 | 0.31 |
+
+  - MLP rows are the words at every checkpoint: the MLP-only dictionary recovers within 0.04 of the full one from step 256 to the end, at all three blocks. The provenance advantage (full minus rotated) grows from 0.05-0.08 at steps 256-512 to 0.24-0.25 at the end at block 12, and it is the MLP rows' advantage throughout.
+  - Early in training every dictionary describes the states about equally well (step 512, block 12: full 0.80, heads only 0.75, tokens only 0.70, rotated 0.75): a young model's states are easy for any dictionary, and the words only separate from the rotated control from step 1000 on, as e493 found.
+  - The head bases' share of the words peaks at step 512-1000 (0.31-0.37 at blocks 12-18) as attention begins to carry the state (e498) and then falls to 0.14-0.19 at the end, while attention's share of the state's energy keeps rising to 0.75. The words form in the component whose writes are sparse, not in the one that carries the energy.
+  - The words come from ever more recent blocks: the share of MLP words written by the last two blocks before the reading rises from 0.18 to 0.31 at block 12 (0.33 to 0.42 at block 6).
+
+- e498 ON OLMo-1B's CHECKPOINTS (steps 1000, 4000, 16000, 64000, 256000, 1000000 and the end, 2 to 3000 billion tokens; blocks 1, 4, 8, 12, 14).
+
+  | Step | Writers' part, blocks 1 / 4 / 8 / 12 / 14 | Non-writers' part | Effective writes | Covariance-alignment ratio | Attention's share of the state |
+  | --- | --- | --- | --- | --- | --- |
+  | 1000 | 1.90 / 1.46 / 1.27 / 1.50 / 1.66 | 1.71 / 1.48 / 1.45 / 1.69 / 1.93 | 428 / 1,115 / 1,964 / 2,750 / 3,122 | 1.12 / 1.21 / 1.28 / 1.47 / 1.65 | 0.32 / 0.29 / 0.20 / 0.15 / 0.13 |
+  | 4000 | 2.92 / 1.97 / 1.69 / 2.12 / 2.12 | 2.22 / 1.76 / 1.61 / 1.91 / 1.92 | 231 / 1,032 / 1,991 / 2,186 / 2,008 | 1.37 / 1.33 / 1.32 / 1.34 / 1.35 | 0.45 / 0.43 / 0.27 / 0.21 / 0.24 |
+  | 16000 | 3.69 / 2.42 / 2.07 / 2.28 / 2.19 | 1.94 / 1.67 / 1.51 / 1.69 / 1.70 | 46 / 398 / 1,144 / 1,233 / 811 | 1.80 / 1.37 / 1.17 / 1.15 / 1.14 | 0.51 / 0.44 / 0.30 / 0.30 / 0.35 |
+  | 64000 | 4.29 / 2.85 / 2.45 / 2.46 / 2.21 | 2.06 / 1.76 / 1.82 / 1.75 / 1.69 | 18 / 168 / 536 / 662 / 570 | 1.23 / 1.16 / 1.18 / 1.11 / 1.07 | 0.46 / 0.45 / 0.40 / 0.37 / 0.37 |
+  | 256000 | 4.79 / 3.22 / 2.70 / 2.73 / 2.31 | 2.36 / 1.95 / 1.94 / 1.93 / 1.82 | 14 / 103 / 297 / 426 / 426 | 1.16 / 1.13 / 1.12 / 1.07 / 1.04 | 0.47 / 0.46 / 0.46 / 0.42 / 0.37 |
+  | 1000000 | 4.63 / 3.08 / 2.67 / 2.68 / 2.27 | 2.54 / 1.99 / 1.93 / 1.93 / 1.81 | 20 / 135 / 363 / 497 / 503 | 1.14 / 1.07 / 1.07 / 1.04 / 1.01 | 0.43 / 0.41 / 0.44 / 0.43 / 0.34 |
+  | end | 4.36 / 2.90 / 2.55 / 2.56 / 2.19 | 2.49 / 1.88 / 1.83 / 1.86 / 1.74 | 30 / 218 / 541 / 759 / 726 | 1.11 / 1.06 / 1.07 / 1.04 / 1.01 | 0.35 / 0.37 / 0.44 / 0.48 / 0.30 |
+
+  - The same two clocks in a second model. The writers' part rises with write sparsity through 256,000 steps (block 8: 1.27 to 2.70 as the effective number of writes falls from 1,964 to 297) and then holds; the second-order alignment is largest at the earliest checkpoint (1.28-1.65 at blocks 8-14 at step 1000, 2 billion tokens in) and decays to 1.01-1.07, as Pythia's did after its peak at steps 1000-3000. OLMo's first checkpoint is already past the accent's formation.
+  - The non-writers' part nevertheless stays at 1.7-2.5 to the end, above Pythia's 1.3-1.4 at the middle: OLMo's late states concentrate more (top-8 shares 0.2-0.3, effective dimension falling from 200 to 118-146 at the last blocks).
+  - Attention's share of the state rises from 0.13-0.32 to 0.35-0.48, less than Pythia's 0.75.
+
+- Reading of session 62.
+  - The two clocks generalise (Pythia, OLMo) and are two quantities: the words are write sparsity, the accent is the second-order alignment of the state cloud with the atoms; the accent forms first and then decays while the words keep forming; neither predicts the other. The words form in the MLP rows at every checkpoint, even as attention comes to carry most of the state's energy.
+  - The SAE bridge has a provenance part that holds across two families (the top word is an MLP row, features far sparser in native words than random or covariance-matched directions) and a state-likeness that is exact for the ReLU family and partial for the TopK family. In activation the TopK family's features follow their rows much better (top row 0.73, eight-word ledger 0.83, half above 0.8) than the ReLU family's (0.62, 0.61, a fifth), which makes the activation claim family-dependent and worth understanding: a feature that is active at few positions and reads a few rows is closer to a WDD word than one that is dense.

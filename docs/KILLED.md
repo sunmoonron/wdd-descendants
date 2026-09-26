@@ -441,3 +441,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 
 ## Session 61 kills (the bridge's control)
 - "An SAE feature is a sparse composition of native writes": it needs as many native words as a whole state, half unexplained by sixteen; the rotated dictionary's numbers on features are the native dictionary's numbers on random directions (e497).
+
+## Session 62 kills (the two clocks; the ledger)
+- "The composition of a feature's rows predicts its firing better than its top row": on the full sample the 4-16-word ledger is 0.59-0.63 against the top row's 0.62 (e496 v3; v2's 0.70 was a small sample).
+- "The accent is a prerequisite for the words": neither part predicts the other at the next checkpoint (e498).
+- "SAE features are state-like in every family": on OpenAI's TopK family they sit between covariance-matched directions and states (e499).
+- "The two clocks are a Pythia peculiarity": OLMo shows the same order and the same decay of the accent (e498).

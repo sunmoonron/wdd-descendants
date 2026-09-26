@@ -545,12 +545,24 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 
 - H324 The provenance layer under SAEs depends on depth. → e495 → KILLED: at five depths of GPT-2 the numbers are the same (unexplained by 16 native words 0.47-0.49 against rotated 0.71-0.73; top word an MLP row 0.76-0.93; used rows that are features 0.19-0.23), and the top row comes from any block (the block just before the SAE holds 0.12-0.30).
 - H325 Frequent features are the single-row ones. → e495 → SUPPORTED: Spearman of frequency with the single-word unexplained fraction -0.25 to -0.38 at every depth.
-- H326 A feature fires when its top row fires. → e496 → NARROWED: AUC 0.62 for the top row's write size (random row 0.51), 0.70 for the eight-word ledger; a quarter of features follow their top row above 0.8, a third the ledger. The composition predicts better than any one row.
+- H326 A feature fires when its top row fires. → e496 → NARROWED: AUC 0.62 for the top row's write size (random row 0.50), strongly (above 0.8) for a sixth of features; on the full sample (v3: 2000 features, 8176 positions) the 4-16-word ledger is 0.59-0.63, no better than the top row, and the same coefficients on random rows are at chance. v2's 0.70 for the ledger was a smaller sample.
 - H327 The accent and the words form together. → e492, e493 on Pythia steps 256-3000 → KILLED: the non-writers' part forms between steps 256 and 512 and then plateaus (block 12: 1.15, 1.72, 1.47, 1.36, 1.34); the writers' part is below the rotated level at step 256 (0.82-0.90), crosses 1 near step 1000 and grows to the end (block 12: 0.82 to 1.58).
 
 ## The bridge's missing control (session 61)
 
 - H328 SAE features are sparse compositions of native writes. → e497 → NARROWED. A feature needs as many native words as a whole state (0.48 unexplained at sixteen; states 0.47); it is far sparser than a random direction (0.72, which is also the rotated dictionary's floor on anything) and sparser than a covariance-matched direction (0.63 at block 7; 0.54 against 0.49 at block 3); its top word is an MLP row at the states' rate (0.93; random directions 0.54). Features are state-like directions in the native subspace, not write-like ones.
+
+## The anatomy of the two clocks (session 62)
+
+- H329 The writers' part of the provenance factor is write sparsity. → e498 → SUPPORTED across 45 checkpoint-block cells of Pythia: Spearman +0.86 with the top write's prominence, +0.82 with the top-64 energy share, -0.81 with the effective number of writes; at most 0.27 with any second-order quantity.
+- H330 The non-writers' part is second-order alignment of the state cloud with the atoms. → e498 → SUPPORTED: +0.61 with the covariance-alignment ratio, +0.54 with the top-8 variance share, -0.56 with the effective dimension; at most 0.27 with any sparsity measure.
+- H331 The accent is a prerequisite for the words (the former predicts the latter across checkpoints). → e498 → KILLED at this resolution: the non-writers' part at one checkpoint does not predict the writers' part at the next (+0.04), nor the reverse (-0.03).
+
+## The two clocks in OLMo, the type of a word, a second SAE family (session 62, continued)
+
+- H332 The SAE bridge holds on an independently trained SAE family. → e499 (OpenAI TopK, 32k latents) → SUPPORTED for provenance (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72 and covariance-matched 0.63) and NARROWED for state-likeness (features between covariance-matched directions and states, 0.56 against 0.47; below the covariance level at block 2). In activation stronger than the ReLU family: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8.
+- H333 The words are MLP rows at every checkpoint, whichever component carries the state. → e500 → SUPPORTED: MLP rows alone recover within 0.04 of the full dictionary from step 256 to the end at three blocks; the head bases' share of the words peaks at steps 512-1000 (0.31-0.37) and falls to 0.14-0.19 while attention's share of the state's energy rises to 0.75; the provenance advantage over rotation grows from 0.05-0.08 to 0.24-0.25.
+- H334 The two clocks are Pythia-specific. → e498 on OLMo → KILLED: the writers' part rises with write sparsity through 256,000 steps (block 8: 1.27 to 2.70; effective writes 1,964 to 297) and the second-order alignment is largest at the first checkpoint and decays (1.28-1.65 to 1.01-1.07).
 
 ## Attention, sinks, embeddings
 

@@ -455,7 +455,10 @@ e490	20_classical_calibration	S58	refuted (geometry the same)	scripts/e490_suppo
 e491	20_classical_calibration	S58	established (one mode)	scripts/e491_survival_timescales.py	results/e491_*.json	How many timescales does provenance loss have (Prony)?
 e492	20_classical_calibration	S58	established	scripts/e492_gumbel_factor.py	results/e492_*.json	How does the provenance factor vary with depth and training?
 e493	20_classical_calibration	S59	established (5 models, 9 checkpoints)	scripts/e493_factor_decomposition.py	results/e493_*.json	Where does the provenance factor come from: the largest actual writes standing out, or rows resembling what others wrote?
-e494	20_classical_calibration	S59	supported (many-to-many bridge)	scripts/e494_sae_provenance.py	results/e494_*.json	Which weight rows write a learned SAE feature (GPT-2, block 7 input)?
-e495	20_classical_calibration	S60	established (5 depths)	scripts/e495_sae_depth.py	results/e495_*.json	Is the provenance layer under SAEs the same at every depth, and are frequent features single rows?
-e496	20_classical_calibration	S60	narrowed (composition beats any row)	scripts/e496_feature_from_ledger.py	results/e496_*.json	Does a feature fire when its writer fires?
-e497	20_classical_calibration	S61	narrowed (the bridge reworded)	scripts/e497_feature_specificity.py	results/e497_*.json	Are SAE features special to the native dictionary, or is any direction?
+e494	21_sae_bridge	S59	supported (many-to-many bridge)	scripts/e494_sae_provenance.py	results/e494_*.json	Which weight rows write a learned SAE feature (GPT-2, block 7 input)?
+e495	21_sae_bridge	S60	established (5 depths)	scripts/e495_sae_depth.py	results/e495_*.json	Is the provenance layer under SAEs the same at every depth, and are frequent features single rows?
+e496	21_sae_bridge	S60	narrowed (the top row, partly)	scripts/e496_feature_from_ledger.py	results/e496_*.json	Does a feature fire when its writer fires?
+e497	21_sae_bridge	S61	narrowed (the bridge reworded)	scripts/e497_feature_specificity.py	results/e497_*.json	Are SAE features special to the native dictionary, or is any direction?
+e498	20_classical_calibration	S62	established (Pythia 9, OLMo 7 checkpoints)	scripts/e498_two_clocks_anatomy.py	results/e498_*.json	What carries each clock: which network quantities move with the writers' and the non-writers' part across Pythia's training?
+e499	21_sae_bridge	S62	supported (provenance; activation family-dependent)	scripts/e499_sae_second_family.py	results/e499_*.json	Does the bridge hold on an independently trained SAE family (OpenAI TopK, 32k latents)?
+e500	20_classical_calibration	S62	established (9 checkpoints)	scripts/e500_type_mix_training.py	results/e500_*.json	Which kind of atom becomes a word, and when (Pythia, nine checkpoints)?
