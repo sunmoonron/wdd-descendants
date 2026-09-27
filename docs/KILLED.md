@@ -491,3 +491,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 72 kills (the boundary)
 - "Magnitude, selectivity or kurtosis govern entry into the vocabulary": prospectively they predict the next checkpoint's entrants at 0.5-0.7; the projection over the extreme-value floor does at 0.76-0.97 (e516b).
 - "A row enters the vocabulary on its own write": its own write almost never clears the floor; the projection that crosses carries the position's chord, and the own write governs staying instead (e516b).
+
+## Session 73 kills (the counterfactual chord)
+- "The chord makes the maximum and the maximum makes the word": destroying, permuting or removing the position's largest writes leaves the prospective prediction of entry within 0.04 of the real state's (e517b). The projection that predicts wordhood is carried by the embeddings, attention and the crowd.
+- "The floor's drift is what raises the entrants": the floor moves by a tenth over training; the entrants' projections rise by three fifths (e517b).

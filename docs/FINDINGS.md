@@ -3100,3 +3100,109 @@ SESSION 72 (the relayed take's brake: not another "which rows" study but a prosp
   - It is the projection that crosses, not the row's own write. The own write clears the floor at some position for only 0-1% of rows at any checkpoint (the floor is 0.14-0.16 of the state norm and a single write is 0.3-0.7 of a winning projection, e505), so as a predictor of entry that criterion is degenerate (a flat 0.67); the projection that enters carries the position's chord with it. For staying, the own write is what counts: among the words at the origin, the share of positions at which the row's own write clears the floor separates the rows still words at the next checkpoint from those that leave at 0.90-0.99 from steps 3000-16000 (0.76-0.98 at block 6), ahead of usage (0.65-0.80) and of the projection criterion (0.65-0.82). A row becomes a word on the strength of its chord and keeps its place on the strength of its own write.
   - At long horizons the same holds with less to hold on to: from step 1000 nothing predicts the end's vocabulary above 0.69 (the turnover of e515b), and from 8000 the floor criteria reach 0.84-0.89 by the end against usage 0.80 and magnitude 0.66.
   - Pre-registered: the own-write criterion beating magnitude at the next checkpoint, met numerically (0.67 against 0.55-0.66) but on a degenerate quantity; usage the best single predictor everywhere, refuted (the projection over the floor matches or beats it at most origins and horizons); the product of magnitude and selectivity beating either alone at the next checkpoint, confirmed (0.63-0.71 against 0.55-0.66 and 0.47-0.58).
+
+SESSION 73 (a new box; the relayed take's counterfactual chord swap, the floor decomposition, and the selection criterion across texts in three models; e517, e517b, e518; 2026-09-27 19:00-19:08 box time).
+
+- e517, e517b THE COUNTERFACTUAL CHORD (e517 rebuilds every position's state four ways, leaving the embeddings and everything outside the 64 largest MLP writes as they are: real; fake chord, the same 64 coefficients on random rows of the same blocks rescaled to the chord's norm with the candidate's own write kept where it is a writer; permuted chord, the same rows with their coefficients permuted among them and the candidate's own coefficient restored; no chord, the 64 writes removed and the candidate's own kept; and, on the real state, the candidate's own write subtracted where it is a writer. The floor is recomputed from each counterfactual state. Per row, the largest projection over the floor under each; thirteen Pythia checkpoints, blocks 6 and 12. e517b repeats e516b's prospective test under each state: at an origin, the non-word rows ranked by the quantity, scored by which are words at a later checkpoint; and the entrants' rise split into their projection and the floor at the position of their maximum).
+
+  Rows whose largest projection clears the floor at the end of training, by state: block 6: real 0.130, fake chord 0.165, permuted 0.127, no chord 0.099, own write removed 0.096 (chord 0.50 of the state, floor 0.143); block 12: real 0.095, fake chord 0.106, permuted 0.089, no chord 0.060, own write removed 0.079 (chord 0.62 of the state, floor 0.146).
+
+  Block 6, entry at the next checkpoint (AUC of entrants over non-entrants, ranked by the largest projection over the floor under each state):
+
+  | origin | real | own write removed | permuted chord | fake chord | no chord | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.75 | 0.74 | 0.75 | 0.75 | 0.75 | 0.52 | 0.76 |
+  | 1000 | 0.75 | 0.73 | 0.75 | 0.73 | 0.74 | 0.63 | 0.75 |
+  | 2000 | 0.87 | 0.87 | 0.87 | 0.86 | 0.85 | 0.60 | 0.87 |
+  | 3000 | 0.93 | 0.90 | 0.93 | 0.93 | 0.93 | 0.70 | 0.94 |
+  | 4000 | 0.89 | 0.86 | 0.89 | 0.87 | 0.88 | 0.66 | 0.91 |
+  | 8000 | 0.93 | 0.88 | 0.93 | 0.90 | 0.93 | 0.78 | 0.93 |
+  | 16000 | 0.94 | 0.89 | 0.94 | 0.92 | 0.94 | 0.79 | 0.94 |
+  | 32000 | 0.97 | 0.93 | 0.97 | 0.95 | 0.97 | 0.75 | 0.98 |
+
+  Block 6, entry by the end (AUC of entrants over non-entrants, ranked by the largest projection over the floor under each state):
+
+  | origin | real | own write removed | permuted chord | fake chord | no chord | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.54 | 0.54 | 0.54 | 0.54 | 0.54 | 0.56 | 0.64 |
+  | 1000 | 0.61 | 0.60 | 0.61 | 0.61 | 0.61 | 0.67 | 0.65 |
+  | 2000 | 0.70 | 0.69 | 0.70 | 0.68 | 0.70 | 0.69 | 0.70 |
+  | 3000 | 0.76 | 0.73 | 0.75 | 0.74 | 0.75 | 0.72 | 0.75 |
+  | 4000 | 0.78 | 0.74 | 0.78 | 0.77 | 0.77 | 0.71 | 0.76 |
+  | 8000 | 0.89 | 0.84 | 0.89 | 0.85 | 0.88 | 0.72 | 0.86 |
+  | 16000 | 0.93 | 0.88 | 0.92 | 0.89 | 0.91 | 0.76 | 0.89 |
+  | 32000 | 0.96 | 0.91 | 0.96 | 0.94 | 0.95 | 0.77 | 0.96 |
+
+  Block 6, the entrants' rise to the next checkpoint (medians; projection and floor in units of the state norm):
+
+  | origin | entrants' ratio, origin to horizon | non-entrants' ratio | entrants' projection | floor at the maximum | the projection's share of the rise (log) |
+  | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.87 to 1.14 | 0.78 to 0.83 | 0.130 to 0.174 | 0.148 to 0.152 | 1.12 |
+  | 1000 | 0.95 to 1.19 | 0.83 to 0.85 | 0.144 to 0.183 | 0.152 to 0.153 | 0.97 |
+  | 2000 | 1.07 to 1.24 | 0.85 to 0.85 | 0.163 to 0.187 | 0.153 to 0.151 | 0.94 |
+  | 3000 | 1.12 to 1.23 | 0.85 to 0.85 | 0.170 to 0.184 | 0.151 to 0.149 | 0.80 |
+  | 4000 | 1.14 to 1.32 | 0.85 to 0.84 | 0.169 to 0.192 | 0.149 to 0.146 | 0.87 |
+  | 8000 | 1.19 to 1.39 | 0.84 to 0.83 | 0.172 to 0.200 | 0.146 to 0.144 | 0.98 |
+  | 16000 | 1.25 to 1.47 | 0.83 to 0.82 | 0.182 to 0.210 | 0.144 to 0.143 | 1.00 |
+  | 32000 | 1.43 to 1.56 | 0.82 to 0.82 | 0.206 to 0.226 | 0.144 to 0.143 | 1.14 |
+
+  Block 12, entry at the next checkpoint (AUC of entrants over non-entrants, ranked by the largest projection over the floor under each state):
+
+  | origin | real | own write removed | permuted chord | fake chord | no chord | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.76 | 0.76 | 0.76 | 0.76 | 0.76 | 0.47 | 0.73 |
+  | 1000 | 0.76 | 0.75 | 0.76 | 0.76 | 0.76 | 0.58 | 0.74 |
+  | 2000 | 0.86 | 0.85 | 0.86 | 0.85 | 0.86 | 0.55 | 0.82 |
+  | 3000 | 0.88 | 0.86 | 0.88 | 0.89 | 0.88 | 0.63 | 0.89 |
+  | 4000 | 0.91 | 0.89 | 0.90 | 0.89 | 0.90 | 0.58 | 0.86 |
+  | 8000 | 0.95 | 0.93 | 0.95 | 0.94 | 0.93 | 0.65 | 0.91 |
+  | 16000 | 0.97 | 0.92 | 0.97 | 0.95 | 0.96 | 0.66 | 0.92 |
+  | 32000 | 0.97 | 0.95 | 0.97 | 0.93 | 0.96 | 0.65 | 0.98 |
+
+  Block 12, entry by the end (AUC of entrants over non-entrants, ranked by the largest projection over the floor under each state):
+
+  | origin | real | own write removed | permuted chord | fake chord | no chord | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.61 | 0.61 | 0.61 | 0.60 | 0.60 | 0.52 | 0.68 |
+  | 1000 | 0.67 | 0.66 | 0.67 | 0.67 | 0.66 | 0.62 | 0.68 |
+  | 2000 | 0.70 | 0.70 | 0.71 | 0.70 | 0.71 | 0.62 | 0.70 |
+  | 3000 | 0.77 | 0.76 | 0.77 | 0.76 | 0.76 | 0.62 | 0.72 |
+  | 4000 | 0.80 | 0.78 | 0.80 | 0.77 | 0.79 | 0.63 | 0.74 |
+  | 8000 | 0.84 | 0.80 | 0.83 | 0.81 | 0.82 | 0.66 | 0.80 |
+  | 16000 | 0.92 | 0.88 | 0.92 | 0.88 | 0.91 | 0.69 | 0.89 |
+  | 32000 | 0.96 | 0.92 | 0.95 | 0.89 | 0.93 | 0.72 | 0.95 |
+
+  Block 12, the entrants' rise to the next checkpoint (medians; projection and floor in units of the state norm):
+
+  | origin | entrants' ratio, origin to horizon | non-entrants' ratio | entrants' projection | floor at the maximum | the projection's share of the rise (log) |
+  | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.88 to 1.12 | 0.75 to 0.81 | 0.135 to 0.177 | 0.154 to 0.158 | 1.13 |
+  | 1000 | 0.93 to 1.11 | 0.81 to 0.82 | 0.147 to 0.173 | 0.159 to 0.155 | 0.82 |
+  | 2000 | 1.00 to 1.14 | 0.82 to 0.81 | 0.156 to 0.174 | 0.155 to 0.153 | 0.93 |
+  | 3000 | 1.04 to 1.13 | 0.81 to 0.81 | 0.159 to 0.171 | 0.153 to 0.151 | 0.84 |
+  | 4000 | 1.09 to 1.30 | 0.81 to 0.81 | 0.167 to 0.193 | 0.152 to 0.148 | 0.84 |
+  | 8000 | 1.16 to 1.39 | 0.81 to 0.80 | 0.172 to 0.206 | 0.148 to 0.148 | 1.01 |
+  | 16000 | 1.26 to 1.50 | 0.80 to 0.79 | 0.182 to 0.220 | 0.147 to 0.147 | 0.94 |
+  | 32000 | 1.30 to 1.48 | 0.79 to 0.79 | 0.191 to 0.215 | 0.147 to 0.145 | 0.80 |
+
+  - The chord does not carry rows across the floor. Destroying the position's co-writing leaves the prospective prediction of entry where it was: at block 12 from origins 2000 to 32000 the real state's AUC at the next checkpoint is 0.86, 0.88, 0.91, 0.95, 0.97, 0.97, the fake chord's 0.85, 0.89, 0.89, 0.94, 0.95, 0.93, the permuted chord's 0.86, 0.88, 0.90, 0.95, 0.97, 0.97, and with no chord at all 0.86, 0.88, 0.90, 0.93, 0.96, 0.96; removing the candidate's own write costs 0.01-0.05. Block 6 the same. Nothing at the position's largest writes, neither which rows they are, nor how their coefficients are paired, nor whether they are there, decides which non-word rows will be words next; magnitude stays at 0.55-0.66 throughout. The relayed chain "chord makes the maximum, the maximum makes the word" is refuted at its first link: the projection that predicts wordhood is carried by what the state holds outside its largest writes, the embeddings, attention's output and the crowd of small writes, with which the future word's direction is already aligned.
+  - Removing the chord does lower the population's level, not its order: at the end 9.5% of rows have a projection over the floor somewhere under the real state and 6.0% with no chord (block 12; 13.0% and 9.9% at block 6); the fake chord, adding random rows' content, raises it (10.6%). The ranking of the rows that is what the selection reads survives all four.
+  - The entrants' rise is the projection, not the floor. For the rows entering at the next checkpoint the ratio goes from 0.9-1.4 to 1.1-1.6 while the non-entrants stay at 0.8; the entrants' largest projection rises from 0.135 to 0.215 of the state norm over training and the floor at those positions moves from 0.159 to 0.145, so the projection's share of the rise is 0.80-1.14 in log terms at every origin. The floor drifts by a tenth over the whole of training; the entrants' projections rise by three fifths. What moves is the numerator.
+  - Pre-registered: the fake chord 0.15 below the real, refuted (at most 0.04); the own write removed keeping 0.8 of the excess, confirmed (and so does every counterfactual); the permuted chord falling less than the fake, refuted (neither falls); the projection carrying two thirds of the rise, confirmed (0.80-1.14).
+
+- e518 THE SELECTION CRITERION ACROSS TEXTS (GPT-2, Pythia-410m and OLMo-1B at the end of training, blocks NB/4, NB/2, 3NB/4; every row's quantities on one set of eight sequences, the word set on a disjoint eight; the AUC with which each quantity on the first set picks the rows that are words on the second and not the first, against the rows that are words on neither).
+
+  | Model, block | overlap of the two word sets | new words on B | usage | magnitude | selectivity | kurtosis | largest projection over the floor | the same, own write removed | magnitude x selectivity |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 3 | 0.74 | 67 | 0.95 | 0.67 | 0.60 | 0.59 | 0.86 | 0.77 | 0.73 |
+  | GPT-2 6 | 0.64 | 93 | 0.93 | 0.72 | 0.59 | 0.59 | 0.89 | 0.82 | 0.75 |
+  | GPT-2 9 | 0.58 | 107 | 0.94 | 0.77 | 0.55 | 0.58 | 0.91 | 0.85 | 0.79 |
+  | Pythia-410m 6 | 0.58 | 108 | 0.96 | 0.73 | 0.59 | 0.69 | 0.97 | 0.94 | 0.82 |
+  | Pythia-410m 12 | 0.62 | 97 | 0.93 | 0.76 | 0.56 | 0.63 | 0.97 | 0.94 | 0.81 |
+  | Pythia-410m 18 | 0.59 | 106 | 0.92 | 0.89 | 0.58 | 0.64 | 0.95 | 0.89 | 0.85 |
+  | OLMo-1B 4 | 0.59 | 105 | 0.88 | 0.85 | 0.55 | 0.61 | 0.90 | 0.86 | 0.81 |
+  | OLMo-1B 8 | 0.50 | 128 | 0.85 | 0.89 | 0.55 | 0.65 | 0.92 | 0.90 | 0.85 |
+  | OLMo-1B 12 | 0.61 | 100 | 0.89 | 0.93 | 0.47 | 0.60 | 0.93 | 0.88 | 0.88 |
+
+  - The criterion holds across texts and across models. The largest projection over the floor on one text set picks the other set's new words at 0.86-0.91 in GPT-2, 0.95-0.97 in Pythia and 0.90-0.93 in OLMo, level with or ahead of usage (0.85-0.96) and ahead of magnitude in GPT-2 and Pythia (0.67-0.89); with the own write removed 0.77-0.94; selectivity and kurtosis 0.47-0.69. In OLMo magnitude is nearly as good (0.85-0.93): there the words are the large rows more than elsewhere, as e509 and e511 found the crowd's contraction strongest. The word sets of the two text sets overlap by 0.50-0.74, so the vocabulary is partly text-specific and the criterion predicts the part that changes.
+  - Pre-registered: above 0.8 and ahead of magnitude at the middle block of all three, confirmed (0.89, 0.97, 0.92 against 0.72, 0.76, 0.89); the own write removed keeping 0.8 of the excess, confirmed.

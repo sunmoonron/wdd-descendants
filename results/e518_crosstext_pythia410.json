@@ -1,0 +1,85 @@
+{
+ "model": "pythia410",
+ "blocks": [
+  6,
+  12,
+  18
+ ],
+ "by_block": {
+  "6": {
+   "n_rows": 28672,
+   "overlap_of_word_sets": 0.578125,
+   "n_cross_text_entrants": 108,
+   "auc_entrants": {
+    "usage": 0.9645274336792635,
+    "magnitude": 0.7269100738438028,
+    "selectivity": 0.5912636265628353,
+    "kurtosis": 0.6946184562406126,
+    "max_over_floor": 0.9657173865259919,
+    "max_over_floor_own_removed": 0.9373776683989344,
+    "magnitude_x_selectivity": 0.8184419140774235
+   },
+   "auc_all_B_words": {
+    "usage": 0.9828399108336853,
+    "magnitude": 0.8269271163253097,
+    "selectivity": 0.48136063309403154,
+    "kurtosis": 0.5813047391874296,
+    "max_over_floor": 0.9771020562799128,
+    "max_over_floor_own_removed": 0.9461707037848395,
+    "magnitude_x_selectivity": 0.8527423755542652
+   }
+  },
+  "12": {
+   "n_rows": 53248,
+   "overlap_of_word_sets": 0.62109375,
+   "n_cross_text_entrants": 97,
+   "auc_entrants": {
+    "usage": 0.9344326388692634,
+    "magnitude": 0.7648843312417227,
+    "selectivity": 0.5577881876466019,
+    "kurtosis": 0.6280538277057348,
+    "max_over_floor": 0.9727386389881529,
+    "max_over_floor_own_removed": 0.9433933985146609,
+    "magnitude_x_selectivity": 0.8130100188761434
+   },
+   "auc_all_B_words": {
+    "usage": 0.9742214921591938,
+    "magnitude": 0.8106232426592693,
+    "selectivity": 0.5140040300894474,
+    "kurtosis": 0.5689067748433726,
+    "max_over_floor": 0.9834669177658891,
+    "max_over_floor_own_removed": 0.9526100342976298,
+    "magnitude_x_selectivity": 0.7642724963201992
+   }
+  },
+  "18": {
+   "n_rows": 77824,
+   "overlap_of_word_sets": 0.5859375,
+   "n_cross_text_entrants": 106,
+   "auc_entrants": {
+    "usage": 0.9236668935176007,
+    "magnitude": 0.8862698594027602,
+    "selectivity": 0.5777787331390243,
+    "kurtosis": 0.6425878690123411,
+    "max_over_floor": 0.948032096565425,
+    "max_over_floor_own_removed": 0.8946132077907464,
+    "magnitude_x_selectivity": 0.8486067179379007
+   },
+   "auc_all_B_words": {
+    "usage": 0.967639683890264,
+    "magnitude": 0.9232484420927445,
+    "selectivity": 0.5069586121209777,
+    "kurtosis": 0.5709291968015161,
+    "max_over_floor": 0.974392025384179,
+    "max_over_floor_own_removed": 0.9412076843060283,
+    "magnitude_x_selectivity": 0.8825445395491698
+   }
+  }
+ },
+ "checks": {
+  "floor_over_0_8_and_ahead_of_magnitude": true,
+  "own_removed_keeps_0_8": true
+ },
+ "_exp": "e518_crosstext_pythia410",
+ "_time": "2026-09-27 19:04:19"
+}

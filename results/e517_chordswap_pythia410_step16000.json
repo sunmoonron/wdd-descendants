@@ -1,0 +1,52 @@
+{
+ "model": "pythia410",
+ "revision": "step16000",
+ "blocks": [
+  6,
+  12
+ ],
+ "by_block": {
+  "6": {
+   "n_rows": 28672,
+   "rotated_calibration": 0.9931334257125854,
+   "median_floor": 0.14448168873786926,
+   "chord_norm_over_state": 0.36823371052742004,
+   "median_max_over_floor": {
+    "real": 0.8311097025871277,
+    "fake": 0.8352672457695007,
+    "permuted": 0.829887866973877,
+    "nochord": 0.8222379684448242,
+    "cross": 0.8221253752708435
+   },
+   "share_rows_over_floor": {
+    "real": 0.140869140625,
+    "fake": 0.1211286261677742,
+    "permuted": 0.1373465359210968,
+    "nochord": 0.1110142320394516,
+    "cross": 0.101806640625
+   }
+  },
+  "12": {
+   "n_rows": 53248,
+   "rotated_calibration": 0.9955012202262878,
+   "median_floor": 0.14723838865756989,
+   "chord_norm_over_state": 0.36494049429893494,
+   "median_max_over_floor": {
+    "real": 0.7976065278053284,
+    "fake": 0.8014113903045654,
+    "permuted": 0.7974861264228821,
+    "nochord": 0.792431116104126,
+    "cross": 0.7944629192352295
+   },
+   "share_rows_over_floor": {
+    "real": 0.07677283883094788,
+    "fake": 0.060715895146131516,
+    "permuted": 0.0732421875,
+    "nochord": 0.05643404275178909,
+    "cross": 0.06266902387142181
+   }
+  }
+ },
+ "_exp": "e517_chordswap_pythia410_step16000",
+ "_time": "2026-09-27 19:06:50"
+}

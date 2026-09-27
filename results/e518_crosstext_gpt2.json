@@ -1,0 +1,85 @@
+{
+ "model": "gpt2",
+ "blocks": [
+  3,
+  6,
+  9
+ ],
+ "by_block": {
+  "3": {
+   "n_rows": 12288,
+   "overlap_of_word_sets": 0.73828125,
+   "n_cross_text_entrants": 67,
+   "auc_entrants": {
+    "usage": 0.9492063294060412,
+    "magnitude": 0.6664225882705154,
+    "selectivity": 0.5952909917607948,
+    "kurtosis": 0.5876393211543619,
+    "max_over_floor": 0.857069437600963,
+    "max_over_floor_own_removed": 0.7748582619705484,
+    "magnitude_x_selectivity": 0.7337794936724651
+   },
+   "auc_all_B_words": {
+    "usage": 0.98440779016373,
+    "magnitude": 0.7933989179895279,
+    "selectivity": 0.5184033982297207,
+    "kurtosis": 0.4330538485912566,
+    "max_over_floor": 0.8882913792386968,
+    "max_over_floor_own_removed": 0.8265322421459441,
+    "magnitude_x_selectivity": 0.795681892557347
+   }
+  },
+  "6": {
+   "n_rows": 21504,
+   "overlap_of_word_sets": 0.63671875,
+   "n_cross_text_entrants": 93,
+   "auc_entrants": {
+    "usage": 0.9323701405143298,
+    "magnitude": 0.7190892617978414,
+    "selectivity": 0.589992452024611,
+    "kurtosis": 0.5918278553330132,
+    "max_over_floor": 0.8901817867608004,
+    "max_over_floor_own_removed": 0.8234810652556782,
+    "magnitude_x_selectivity": 0.7459122757527009
+   },
+   "auc_all_B_words": {
+    "usage": 0.9732893978256778,
+    "magnitude": 0.7708383583160768,
+    "selectivity": 0.5386571309652674,
+    "kurtosis": 0.48530964679028615,
+    "max_over_floor": 0.9250258480209903,
+    "max_over_floor_own_removed": 0.8803157576595445,
+    "magnitude_x_selectivity": 0.7754474318171123
+   }
+  },
+  "9": {
+   "n_rows": 30720,
+   "overlap_of_word_sets": 0.58203125,
+   "n_cross_text_entrants": 107,
+   "auc_entrants": {
+    "usage": 0.943574269926196,
+    "magnitude": 0.7664062454301599,
+    "selectivity": 0.5525366518492247,
+    "kurtosis": 0.5822623552313143,
+    "max_over_floor": 0.9119293491562556,
+    "max_over_floor_own_removed": 0.8533913716493355,
+    "magnitude_x_selectivity": 0.7910983902156241
+   },
+   "auc_all_B_words": {
+    "usage": 0.9744439645975578,
+    "magnitude": 0.8004706887637867,
+    "selectivity": 0.5166197704667804,
+    "kurtosis": 0.5123138427734375,
+    "max_over_floor": 0.9423186999409138,
+    "max_over_floor_own_removed": 0.8831511425370929,
+    "magnitude_x_selectivity": 0.811756422539719
+   }
+  }
+ },
+ "checks": {
+  "floor_over_0_8_and_ahead_of_magnitude": true,
+  "own_removed_keeps_0_8": true
+ },
+ "_exp": "e518_crosstext_gpt2",
+ "_time": "2026-09-27 19:03:55"
+}
