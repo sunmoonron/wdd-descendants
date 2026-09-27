@@ -524,3 +524,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The drift is the integrated instantaneous gradient": at training-batch scale a row's gradient agrees with itself at cosine 0.08-0.18 and the thousand-step update follows it at 0.01; the whitened (Adam-like) direction is no better, the gradient noise being isotropic across a row's coordinates (e525, e525b).
 - "The entrants' rows drift because their gradient is more consistent or better aimed": no difference from matched rows in consistency (AUC 0.47-0.59), in the pull toward the best state (cosine 0.00) or in following (e525).
 - "The descendant of the row's own write is the object to follow" (the relayed framing): the entrant's own write is absent at its best position (e519) and the response part of the alignment is small (e521); the row's downstream image has nowhere to act. The testable core, the adjoint transport of the loss to the row, is what e525 estimated, and it does not steer the row.
+
+## Session 80 kills (the input side and the curvature)
+- "The drift runs in flat directions of the loss": the curvature along the thousand-step update is 1.13-1.15 times a random direction's, the entrants' no flatter than matched rows' (e527).
+- "The row rotates toward the writes it co-occurs with": the co-active writes are not a target for any group (cosine 0.00-0.02) (e526).
+- "The row's motion is the origin's geometry": the five input-side targets together explain 2-4% of an entrant's thousand-step increment (0.4% for random directions); most of the motion is growth along the row and unexplained (e526).

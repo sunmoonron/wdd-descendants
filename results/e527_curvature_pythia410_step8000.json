@@ -1,0 +1,103 @@
+{
+ "model": "pythia410",
+ "origin": 8000,
+ "n_entrants": 60,
+ "n_matched": 60,
+ "eps_rel": 0.05,
+ "groups": {
+  "entrants": {
+   "median_curvature": {
+    "update_1000": 8.881722897058353e-05,
+    "negative_gradient": 0.0003179746854584664,
+    "own_direction": 0.00010122546518687159,
+    "random_1": 7.856034062569961e-05,
+    "random_2": 7.176581857493147e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.1362673044204712,
+    "negative_gradient": 5.059085369110107,
+    "own_direction": 1.4778127670288086
+   },
+   "fraction_flatter_than_random": {
+    "update_1000": 0.15000000596046448,
+    "negative_gradient": 0.06666667014360428,
+    "own_direction": 0.1666666716337204
+   },
+   "random_agreement": 0.15692400932312012,
+   "fraction_negative_curvature": {
+    "update_1000": 0.01666666753590107,
+    "negative_gradient": 0.06666667014360428,
+    "own_direction": 0.05000000074505806,
+    "random_1": 0.03333333507180214,
+    "random_2": 0.03333333507180214
+   }
+  },
+  "matched": {
+   "median_curvature": {
+    "update_1000": 5.2957220759708434e-05,
+    "negative_gradient": 0.00018667288532014936,
+    "own_direction": 5.0118349463446066e-05,
+    "random_1": 4.503531090449542e-05,
+    "random_2": 4.4907272240379825e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.1185996532440186,
+    "negative_gradient": 4.179551601409912,
+    "own_direction": 1.0858861207962036
+   },
+   "fraction_flatter_than_random": {
+    "update_1000": 0.25,
+    "negative_gradient": 0.05000000074505806,
+    "own_direction": 0.3333333432674408
+   },
+   "random_agreement": 0.1367298811674118,
+   "fraction_negative_curvature": {
+    "update_1000": 0.0,
+    "negative_gradient": 0.03333333507180214,
+    "own_direction": 0.0,
+    "random_1": 0.01666666753590107,
+    "random_2": 0.01666666753590107
+   }
+  },
+  "all": {
+   "median_curvature": {
+    "update_1000": 7.195751823019236e-05,
+    "negative_gradient": 0.0002490199694875628,
+    "own_direction": 7.676467794226483e-05,
+    "random_1": 5.1929240726167336e-05,
+    "random_2": 5.865861749043688e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.126360297203064,
+    "negative_gradient": 4.681457042694092,
+    "own_direction": 1.2303210496902466
+   },
+   "fraction_flatter_than_random": {
+    "update_1000": 0.20000000298023224,
+    "negative_gradient": 0.05833333358168602,
+    "own_direction": 0.25
+   },
+   "random_agreement": 0.15588349103927612,
+   "fraction_negative_curvature": {
+    "update_1000": 0.008333333767950535,
+    "negative_gradient": 0.05000000074505806,
+    "own_direction": 0.02500000037252903,
+    "random_1": 0.02500000037252903,
+    "random_2": 0.02500000037252903
+   }
+  }
+ },
+ "auc_matched_over_entrants": {
+  "update_1000": 0.445,
+  "negative_gradient": 0.4425,
+  "own_direction": 0.3536111111111111
+ },
+ "checks": {
+  "update_flatter_than_random": false,
+  "gradient_steeper_than_random": true,
+  "entrants_flatter_than_matched": false,
+  "own_direction_steeper": false
+ },
+ "_exp": "e527_curvature_pythia410_step8000",
+ "_time": "2026-09-27 23:06:13"
+}

@@ -1,0 +1,103 @@
+{
+ "model": "pythia410",
+ "origin": 12000,
+ "n_entrants": 44,
+ "n_matched": 44,
+ "eps_rel": 0.05,
+ "groups": {
+  "entrants": {
+   "median_curvature": {
+    "update_1000": 6.0413491155486554e-05,
+    "negative_gradient": 0.0002459961106069386,
+    "own_direction": 9.495405538473278e-05,
+    "random_1": 5.330489875632338e-05,
+    "random_2": 4.5396973291644827e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.1499534845352173,
+    "negative_gradient": 4.067803859710693,
+    "own_direction": 1.537916898727417
+   },
+   "fraction_flatter_than_random": {
+    "update_1000": 0.1818181872367859,
+    "negative_gradient": 0.11363636702299118,
+    "own_direction": 0.13636364042758942
+   },
+   "random_agreement": 0.12734894454479218,
+   "fraction_negative_curvature": {
+    "update_1000": 0.04545454680919647,
+    "negative_gradient": 0.09090909361839294,
+    "own_direction": 0.022727273404598236,
+    "random_1": 0.022727273404598236,
+    "random_2": 0.04545454680919647
+   }
+  },
+  "matched": {
+   "median_curvature": {
+    "update_1000": 3.816006574197672e-05,
+    "negative_gradient": 0.00011647704377537593,
+    "own_direction": 4.1238294215872884e-05,
+    "random_1": 3.506402936181985e-05,
+    "random_2": 3.4578482882352546e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.0984572172164917,
+    "negative_gradient": 3.8206562995910645,
+    "own_direction": 1.3411293029785156
+   },
+   "fraction_flatter_than_random": {
+    "update_1000": 0.27272728085517883,
+    "negative_gradient": 0.06818182021379471,
+    "own_direction": 0.15909090638160706
+   },
+   "random_agreement": 0.1448744535446167,
+   "fraction_negative_curvature": {
+    "update_1000": 0.0,
+    "negative_gradient": 0.06818182021379471,
+    "own_direction": 0.0,
+    "random_1": 0.0,
+    "random_2": 0.0
+   }
+  },
+  "all": {
+   "median_curvature": {
+    "update_1000": 4.54442051704973e-05,
+    "negative_gradient": 0.0001492640731157735,
+    "own_direction": 5.22881600772962e-05,
+    "random_1": 4.1220631828764454e-05,
+    "random_2": 4.023896326543763e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.128557801246643,
+    "negative_gradient": 3.8439877033233643,
+    "own_direction": 1.451336145401001
+   },
+   "fraction_flatter_than_random": {
+    "update_1000": 0.22727273404598236,
+    "negative_gradient": 0.09090909361839294,
+    "own_direction": 0.14772726595401764
+   },
+   "random_agreement": 0.14165787398815155,
+   "fraction_negative_curvature": {
+    "update_1000": 0.022727273404598236,
+    "negative_gradient": 0.07954545319080353,
+    "own_direction": 0.011363636702299118,
+    "random_1": 0.011363636702299118,
+    "random_2": 0.022727273404598236
+   }
+  }
+ },
+ "auc_matched_over_entrants": {
+  "update_1000": 0.40392561983471076,
+  "negative_gradient": 0.46797520661157027,
+  "own_direction": 0.38016528925619836
+ },
+ "checks": {
+  "update_flatter_than_random": false,
+  "gradient_steeper_than_random": true,
+  "entrants_flatter_than_matched": false,
+  "own_direction_steeper": false
+ },
+ "_exp": "e527_curvature_pythia410_step12000",
+ "_time": "2026-09-27 23:00:58"
+}
