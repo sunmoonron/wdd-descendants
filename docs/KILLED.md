@@ -502,3 +502,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 
 ## Session 75 kills (agreement beyond size)
 - "Consensus among the state's parts is a mechanistic variable of wordhood": given the size of a row's projection over the floor, the agreement of the parts that make it adds nothing (within-size AUC 0.43-0.57; equal entry rates near the floor). The criterion is on the resultant alone (e520).
+
+## Session 76 kills (the sources)
+- "Writes elsewhere, transported by attention, construct a native direction here": other positions' writes supply 0.00-0.06 of a future word's projection; it is made by the writes at the same position (e521).
+- "The vocabulary builds the vocabulary": current words supply 0.02-0.09; the largest sources are non-words from blocks below (e521).
+- "A few descendants carry a row to wordhood": the sources are tens of thousands of small writes; the participation ratio is 30,000-120,000 (e521).

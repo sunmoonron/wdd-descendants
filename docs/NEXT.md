@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e521. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e522. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -139,3 +139,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 74 leaves (e519, e519b):** the agreement itself as the predictor: rank rows by the product, or the sign agreement, of attention's and the MLP writes' projections along the atom at the row's best position, against the whole state's projection; and why the parts of the computation come to agree on some directions and cancel on the rest (the collapse-and-re-expansion of e513 is where it starts). The descendants link (whether the attention part's alignment is the transported image of earlier writes), the review's cross-layer causal state, and the synthetic task remain.
 
 **Session 75 leaves (e520):** the composition question is closed; what remains is where the resultant's alignment comes from over depth and training: the descendants link (is the projection a future word's atom receives the transported image of writes made at other positions and blocks, areas 06-07 applied to the entrants), the review's cross-layer causal state (whether the 8-32 causal directions of e272 and e286 are one subspace across layers and models), and the synthetic task with the developmental predictions of sessions 68-73.
+
+**Session 76 leaves (e521):** the sources are the same position's mass of small writes, so the question moves to training: what makes that mass come to point along particular native rows, the loss's pull through the unembedding being the candidate that e521 could only test conditionally on the size (the unconditional test is the entrants against random non-words, and the gradient of the loss with respect to the residual projected on the future words' directions across checkpoints); the cross-layer causal state and the synthetic task remain.

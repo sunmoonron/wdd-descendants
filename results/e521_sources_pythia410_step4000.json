@@ -1,0 +1,117 @@
+{
+ "model": "pythia410",
+ "origin": "step4000",
+ "horizon": "step8000",
+ "by_block": {
+  "12": {
+   "n_entrants": 149,
+   "n_matched": 149,
+   "linearity": {
+    "median_total_over_projection": 0.9346708655357361
+   },
+   "groups": {
+    "entrants": {
+     "same_position_mlp": 0.726155161857605,
+     "other_positions_mlp": 1.6370010769151122e-07,
+     "attention_outputs": 0.17937536537647247,
+     "embedding": 0.012019422836601734,
+     "direct_mlp": 0.5544150471687317,
+     "transported_mlp": 0.15474309027194977,
+     "word_share": 0.019025668501853943,
+     "participation_ratio": 119850.046875,
+     "top5_same_position": 0.9758388996124268,
+     "top5_words": 0.08590605109930038,
+     "top5_block_gap": 6.852348804473877,
+     "ablation_spearman": 1.0,
+     "ablation_over_attribution": 1.0324641466140747,
+     "unembedding_cos": 0.28252434730529785,
+     "S": 1.0935462713241577
+    },
+    "matched": {
+     "same_position_mlp": 0.6003288626670837,
+     "other_positions_mlp": 0.0034669337328523397,
+     "attention_outputs": 0.2301831692457199,
+     "embedding": 0.008199736475944519,
+     "direct_mlp": 0.5709802508354187,
+     "transported_mlp": 0.05721155181527138,
+     "word_share": 0.013634832575917244,
+     "participation_ratio": 101365.78125,
+     "top5_same_position": 0.9570469260215759,
+     "top5_words": 0.06845638155937195,
+     "top5_block_gap": 7.103355884552002,
+     "ablation_spearman": 1.0,
+     "ablation_over_attribution": 1.0289690494537354,
+     "unembedding_cos": 0.27218368649482727,
+     "S": 1.0934687852859497
+    }
+   },
+   "auc_entrants_vs_matched": {
+    "other_pos_mlp_share": 0.47993333633620106,
+    "attention_share": 0.4273230935543444,
+    "transported_mlp_share": 0.5758299175712805,
+    "word_share": 0.5466870861672898,
+    "participation": 0.5774514661501734,
+    "unemb_cos": 0.6073600288275303
+   }
+  },
+  "6": {
+   "n_entrants": 114,
+   "n_matched": 114,
+   "linearity": {
+    "median_total_over_projection": 0.9554949402809143
+   },
+   "groups": {
+    "entrants": {
+     "same_position_mlp": 0.7428379654884338,
+     "other_positions_mlp": 9.097102626753895e-09,
+     "attention_outputs": 0.23827016353607178,
+     "embedding": 0.014476466923952103,
+     "direct_mlp": 0.7322463393211365,
+     "transported_mlp": 0.0026237990241497755,
+     "word_share": 0.04463627189397812,
+     "participation_ratio": 36659.7109375,
+     "top5_same_position": 0.9385964870452881,
+     "top5_words": 0.13333332538604736,
+     "top5_block_gap": 3.9526314735412598,
+     "ablation_spearman": 1.0,
+     "ablation_over_attribution": 1.0349005460739136,
+     "unembedding_cos": 0.2623416781425476,
+     "S": 1.1363966464996338
+    },
+    "matched": {
+     "same_position_mlp": 0.6878432035446167,
+     "other_positions_mlp": 8.250984784297088e-09,
+     "attention_outputs": 0.21737992763519287,
+     "embedding": 0.012560260482132435,
+     "direct_mlp": 0.6970229148864746,
+     "transported_mlp": -0.007889429107308388,
+     "word_share": 0.04287697374820709,
+     "participation_ratio": 31837.208984375,
+     "top5_same_position": 0.9280701279640198,
+     "top5_words": 0.13333334028720856,
+     "top5_block_gap": 4.0596489906311035,
+     "ablation_spearman": 1.0,
+     "ablation_over_attribution": 1.02944815158844,
+     "unembedding_cos": 0.2594251334667206,
+     "S": 1.1362838745117188
+    }
+   },
+   "auc_entrants_vs_matched": {
+    "other_pos_mlp_share": 0.5207756232686981,
+    "attention_share": 0.494921514312096,
+    "transported_mlp_share": 0.5104647583871961,
+    "word_share": 0.4927670052323792,
+    "participation": 0.5120036934441367,
+    "unemb_cos": 0.5115420129270545
+   }
+  }
+ },
+ "checks": {
+  "other_positions_over_half": false,
+  "words_push_words": false,
+  "direct_under_third": false,
+  "unembedding_not_separating": false
+ },
+ "_exp": "e521_sources_pythia410_step4000",
+ "_time": "2026-09-27 20:00:07"
+}
