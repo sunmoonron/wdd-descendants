@@ -507,3 +507,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Writes elsewhere, transported by attention, construct a native direction here": other positions' writes supply 0.00-0.06 of a future word's projection; it is made by the writes at the same position (e521).
 - "The vocabulary builds the vocabulary": current words supply 0.02-0.09; the largest sources are non-words from blocks below (e521).
 - "A few descendants carry a row to wordhood": the sources are tens of thousands of small writes; the participation ratio is 30,000-120,000 (e521).
+
+## Session 77 kills (the sources counted, the gradient, who moves)
+- "Tens of thousands of writes carry a future word's projection" (session 76's own reading of the participation ratio): the ratio measured a cancelling mass sixty times the projection; causally the top thousand writes carry half and the top ten thousand nine tenths (e521b).
+- "The loss gradient at the origin selects the entrants": the one-step flow reads entry at chance in every form, with 12k and 65k tokens, for its reliable part (e522, e522b). The row's own gradient direction is unmeasurable at this token count; that half is open.
+- "The state moves onto the row": the rise of an entrant's alignment is the row moving toward the states, 0.64-0.78 of the rise at block 12 (e522).
+- "A future word defends its maximum at one position": the best position persists for 38-60% of entrants and the rise at the old position is a fraction of the rise of the maximum (e523).
+- "Given its size, nothing else about a row's projections predicts entry" (the over-reading of e520): composition at one position adds nothing, but breadth across positions does, the count over the floor at 0.71-0.85 within deciles of S (e523).

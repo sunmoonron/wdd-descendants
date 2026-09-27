@@ -1,0 +1,200 @@
+{
+ "model": "pythia410",
+ "origin": "step8000",
+ "horizon": "step16000",
+ "gradient_text": "pile-10k",
+ "n_gradient_tokens": 65536,
+ "by_block": {
+  "12": {
+   "n_candidates": 52992,
+   "n_entrants": 128,
+   "reliability": {
+    "flow_dS": {
+     "split_half_spearman_all": 0.19414490392882883,
+     "split_half_spearman_entrants": 0.11365249038637612,
+     "split_half_spearman_top_decile_S": 0.24166674885196346
+    },
+    "row_pull": {
+     "split_half_spearman_all": 0.016534696733804446,
+     "split_half_spearman_entrants": 0.1462014740889947,
+     "split_half_spearman_top_decile_S": 0.04308395400461425
+    }
+   },
+   "predictors": {
+    "flow_dS": {
+     "auc_all": 0.5428846604021641,
+     "auc_within_S": 0.5477791593051439,
+     "auc_matched": 0.6417236328125,
+     "spearman_dS": 0.016724662673263495,
+     "spearman_dS_within_S": 0.01227527853105943,
+     "spearman_dS_row": 0.009582463902200999,
+     "positive_fraction_entrants": 0.5078125,
+     "positive_fraction_all": 0.48924365639686584
+    },
+    "row_pull": {
+     "auc_all": 0.5618203373278602,
+     "auc_within_S": 0.5718458302385172,
+     "auc_matched": 0.591552734375,
+     "spearman_dS": -0.00406924145289674,
+     "spearman_dS_within_S": -0.0014065845180576157,
+     "spearman_dS_row": -0.005134287024767168,
+     "positive_fraction_entrants": 0.578125,
+     "positive_fraction_all": 0.49950936436653137
+    }
+   },
+   "row_change": {
+    "cos_with_negative_gradient": {
+     "1": {
+      "median_all": 0.0015926470514386892,
+      "positive_fraction_all": 0.5200973749160767,
+      "median_entrants": 0.0018244268139824271,
+      "positive_fraction_entrants": 0.53125,
+      "median_matched": 0.0017885267734527588
+     },
+     "2": {
+      "median_all": 0.001739033148624003,
+      "positive_fraction_all": 0.5217957496643066,
+      "median_entrants": 0.0017932358896359801,
+      "positive_fraction_entrants": 0.5390625,
+      "median_matched": 0.0038069237489253283
+     },
+     "all": {
+      "median_all": 0.002289610216394067,
+      "positive_fraction_all": 0.5286647081375122,
+      "median_entrants": 0.00483267055824399,
+      "positive_fraction_entrants": 0.5625,
+      "median_matched": 0.005056056659668684
+     }
+    },
+    "halves_gradient_cos": {
+     "median_all": 0.01593608222901821,
+     "median_entrants": 0.01979852095246315,
+     "positive_fraction_all": 0.652702271938324
+    },
+    "cos_gradient_halves_agreement": 0.00995279118877794,
+    "median_relative_row_change": 0.7422897815704346
+   },
+   "state_change": {
+    "entrants_best_positions": {
+     "1": {
+      "median": 0.06642496585845947,
+      "positive_fraction": 0.8203125
+     },
+     "2": {
+      "median": 0.08009977638721466,
+      "positive_fraction": 0.953125
+     },
+     "all": {
+      "median": 0.08996523171663284,
+      "positive_fraction": 0.96875
+     },
+     "halves": {
+      "median": 0.2368192821741104,
+      "positive_fraction": 1.0
+     },
+     "n": 128
+    },
+    "random_positions": {
+     "1": {
+      "median": 0.048066146671772,
+      "positive_fraction": 0.8385000228881836
+     },
+     "2": {
+      "median": 0.07494643330574036,
+      "positive_fraction": 0.921500027179718
+     },
+     "all": {
+      "median": 0.07856463640928268,
+      "positive_fraction": 0.9340000152587891
+     },
+     "halves": {
+      "median": 0.21331466734409332,
+      "positive_fraction": 0.999000072479248
+     },
+     "n": 2000
+    },
+    "median_relative_actual_change": 0.7150290608406067
+   }
+  },
+  "6": {
+   "n_candidates": 28416,
+   "n_entrants": 98,
+   "reliability": {
+    "flow_dS": {
+     "split_half_spearman_all": 0.31820004737924845,
+     "split_half_spearman_entrants": 0.4717722140402554,
+     "split_half_spearman_top_decile_S": 0.3391548201780053
+    },
+    "row_pull": {
+     "split_half_spearman_all": 0.009550374484901585,
+     "split_half_spearman_entrants": 0.07866801828510225,
+     "split_half_spearman_top_decile_S": 0.027068642900056502
+    }
+   },
+   "predictors": {
+    "flow_dS": {
+     "auc_all": 0.5255195728973134,
+     "auc_within_S": 0.5096342362986112,
+     "auc_matched": 0.5235318617242816,
+     "spearman_dS": 0.012061102444654356,
+     "spearman_dS_within_S": 0.0077348084896339715,
+     "spearman_dS_row": 0.02207467645847816,
+     "positive_fraction_entrants": 0.5714285969734192,
+     "positive_fraction_all": 0.5180884003639221
+    },
+    "row_pull": {
+     "auc_all": 0.4662715428709799,
+     "auc_within_S": 0.4726337960361248,
+     "auc_matched": 0.4828196584756351,
+     "spearman_dS": -0.0012795147592123263,
+     "spearman_dS_within_S": -0.0007954912465903585,
+     "spearman_dS_row": 0.004423089712213617,
+     "positive_fraction_entrants": 0.44897958636283875,
+     "positive_fraction_all": 0.49732545018196106
+    }
+   },
+   "row_change": {
+    "cos_with_negative_gradient": {
+     "1": {
+      "median_all": 0.0015620767371729016,
+      "positive_fraction_all": 0.5192849040031433,
+      "median_entrants": 0.007152874022722244,
+      "positive_fraction_entrants": 0.5714285969734192,
+      "median_matched": -0.0007766304770484567
+     },
+     "2": {
+      "median_all": 0.0015299336519092321,
+      "positive_fraction_all": 0.5191441178321838,
+      "median_entrants": 0.0069854166358709335,
+      "positive_fraction_entrants": 0.5714285969734192,
+      "median_matched": -0.0006901553715579212
+     },
+     "all": {
+      "median_all": 0.0022166769485920668,
+      "positive_fraction_all": 0.5272733569145203,
+      "median_entrants": 0.006875589489936829,
+      "positive_fraction_entrants": 0.5714285969734192,
+      "median_matched": 0.0005617604474537075
+     }
+    },
+    "halves_gradient_cos": {
+     "median_all": 0.017428457736968994,
+     "median_entrants": 0.0173121839761734,
+     "positive_fraction_all": 0.6628307700157166
+    },
+    "cos_gradient_halves_agreement": 0.014130961542553175,
+    "median_relative_row_change": 0.7344003915786743
+   },
+   "state_change": null
+  }
+ },
+ "checks": {
+  "flow_dS_split_half_over_0_5": false,
+  "row_pull_split_half_over_0_5": false,
+  "row_change_follows_gradient_70": false,
+  "state_change_follows_flow_60": true,
+  "flow_within_S_over_0_55": false
+ },
+ "_exp": "e522b_reliability_pythia410_step8000",
+ "_time": "2026-09-27 20:51:39"
+}

@@ -541,3 +541,7 @@ python e519_carrier_components.py pythia410 main | step0 step64 step256 step512 
 python e519b_carrier_prediction.py pythia410 (v2 recorded)
 python e520_agreement.py pythia410
 python e521_descendant_sources.py pythia410 step4000 | step8000 | step16000
+python e521b_retention.py pythia410 step4000 | step8000 | step16000
+python e522_gradient_pull.py pythia410 step2000 | step4000 | step8000 | step16000
+python e522b_gradient_reliability.py pythia410 step4000 | step8000 | step16000
+python e523_row_motion.py pythia410 step2000 | step4000 | step8000 | step16000
