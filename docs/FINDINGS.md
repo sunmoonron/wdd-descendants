@@ -3443,3 +3443,74 @@ SESSION 77 (the relayed take's caution on the participation ratio and its gradie
   - The maximum is not defended at one position: the best position persists for only 38-60% of entrants (49-79% of matched rows, 24-31% of non-words), and the rise at the old best position (0.01-0.08) is a fraction of the rise of the maximum (0.09-0.15); a future word's projection rises at several positions, and its new maximum is often elsewhere.
   - Wordhood has a breadth criterion beyond the maximum: within deciles of S the count of positions over the floor reads the entrants at 0.71-0.85, the mean squared projection over positions at 0.68-0.77 and the row's fraction in the top-32 components at 0.64-0.71 (e516b had the rate of positions over the floor just below the maximum unconditionally). Given how far a row's largest projection clears the floor, the number of positions at which it clears it says whether it enters; the maximum of 2,000 positions is one reading of the row's upper tail and the count a second.
   - Pre-registered: the change more in the subspace for entrants at AUC 0.6, confirmed (0.66-0.78); the change toward the best state above 0.1 and 0.05 above matched, confirmed at 4000 only (0.121 against 0.055), the others 0.085-0.121 against 0.022-0.073; the specificity surviving the residual, confirmed at three origins; the best position persisting for 60%, refuted (38-60%); the mean squared projection within deciles at 0.6, confirmed (0.68-0.77).
+
+SESSION 78 (the relayed take's trajectory experiment, the row's increments against the cloud it faces at the time, aligned at entry; e524 (sixteen Pythia checkpoints a thousand steps apart, cached) and e524b (the analysis); 2026-09-27 21:22-21:29 box time).
+
+- e524 THE ROW SPACE AGAINST THE CLOUD AT EVERY THOUSAND STEPS (a tool: at each checkpoint from step 1000 to 16000 the unit rows of blocks 0-12 and their norms, and per block the centred unit states at every measurement position with the sink mask, the extreme-value floor at every position, the top-32 principal directions of the kept states, OMP usage, and per row the largest projection over the floor with its position, the counts of positions over the floor and over three quarters of it, and the mean squared projection; Pythia-410m, 8 x 256 measurement tokens, blocks 12 and 6; 1.9 GB).
+
+- e524b THE TRAJECTORIES (per row and interval of a thousand steps: the increment's fraction in the current top-32 subspace, its cosine with the state at the row's current best position, its cosine with the row (growth against rotation), its cosine with the next increment (a steady drift gives a positive value, a random walk zero), the rank of the old best position under the new row with the old states and with both moved, the profile's stability across positions under the row's motion alone and the states' alone, the relative size of the increment; per row and checkpoint the levels; entry events dated at a thousand steps, a clean entry being a non-word at the two checkpoints before and a word at the checkpoint and the next; aligned medians from five thousand steps before to three after, against S-matched non-entrants and all non-words).
+
+  Block 12 (321 clean entries, 1467 entries of any kind over 16 checkpoints); k = thousand steps from entry; entrants / matched:
+
+  | k | n | S | positions over the floor | over 3/4 of the floor | row in the top 32 | mean squared projection | increment in the top 32 | toward the best state | growth (radial) | consecutive cosine | rank of the old best position, both moved | profile stability under the row's motion / the states' | relative size of the increment |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | -5 | 173 | 1.02 / 1.03 | 1 / 1 | 13 / 10 | 0.065 / 0.062 | 1.64 / 1.59 | 0.050 / 0.047 | 0.068 / 0.056 | 0.25 / 0.23 | 0.28 / 0.24 | 4 / 3 | 0.957 / 0.919 (0.960 / 0.914) | 0.38 / 0.38 |
+  | -4 | 215 | 1.02 / 1.02 | 1 / 1 | 15 / 9 | 0.065 / 0.064 | 1.63 / 1.57 | 0.051 / 0.049 | 0.065 / 0.055 | 0.25 / 0.21 | 0.29 / 0.25 | 3 / 2 | 0.959 / 0.917 (0.952 / 0.911) | 0.39 / 0.39 |
+  | -3 | 258 | 1.05 / 1.06 | 1 / 1 | 16 / 9 | 0.067 / 0.064 | 1.67 / 1.55 | 0.051 / 0.046 | 0.060 / 0.054 | 0.26 / 0.23 | 0.29 / 0.24 | 3 / 2 | 0.963 / 0.917 (0.955 / 0.910) | 0.36 / 0.40 |
+  | -2 | 321 | 1.07 / 1.04 | 1 / 1 | 18 / 9 | 0.068 / 0.065 | 1.70 / 1.59 | 0.054 / 0.045 | 0.069 / 0.054 | 0.25 / 0.21 | 0.31 / 0.24 | 3 / 2 | 0.958 / 0.916 (0.950 / 0.910) | 0.38 / 0.40 |
+  | -1 | 321 | 1.14 / 1.14 | 3 / 1 | 24 / 10 | 0.074 / 0.066 | 1.74 / 1.56 | 0.052 / 0.042 | 0.090 / 0.043 | 0.28 / 0.23 | 0.25 / 0.17 | 2 / 1 | 0.970 / 0.926 (0.962 / 0.919) | 0.33 / 0.34 |
+  | +0 | 321 | 1.25 / 1.08 | 7 / 1 | 33 / 10 | 0.078 / 0.062 | 1.83 / 1.51 | 0.048 / 0.039 | 0.088 / 0.036 | 0.27 / 0.22 | 0.20 / 0.12 | 2 / 2 | 0.978 / 0.932 (0.969 / 0.925) | 0.28 / 0.29 |
+  | +1 | 321 | 1.29 / 1.06 | 8 / 1 | 35 / 9 | 0.078 / 0.059 | 1.83 / 1.46 | 0.046 / 0.038 | 0.075 / 0.034 | 0.26 / 0.19 | 0.15 / 0.07 | 2 / 1 | 0.981 / 0.936 (0.973 / 0.929) | 0.24 / 0.27 |
+  | +2 | 309 | 1.29 / 1.02 | 9 / 1 | 35 / 7 | 0.079 / 0.056 | 1.79 / 1.40 | 0.047 / 0.039 | 0.072 / 0.031 | 0.25 / 0.17 | 0.12 / 0.03 | 2 / 2 | 0.984 / 0.938 (0.976 / 0.932) | 0.21 / 0.25 |
+  | +3 | 299 | 1.30 / 1.00 | 9 / 1 | 35 / 7 | 0.076 / 0.055 | 1.78 / 1.38 | 0.043 / 0.038 | 0.064 / 0.025 | 0.23 / 0.15 | 0.08 / -0.01 | 2 / 2 | 0.986 / 0.939 (0.978 / 0.933) | 0.20 / 0.23 |
+
+  Block 6 (316 clean entries, 1177 entries of any kind over 16 checkpoints); k = thousand steps from entry; entrants / matched:
+
+  | k | n | S | positions over the floor | over 3/4 of the floor | row in the top 32 | mean squared projection | increment in the top 32 | toward the best state | growth (radial) | consecutive cosine | rank of the old best position, both moved | profile stability under the row's motion / the states' | relative size of the increment |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | -5 | 172 | 1.08 / 1.02 | 2 / 1 | 17 / 10 | 0.061 / 0.058 | 1.63 / 1.50 | 0.048 / 0.044 | 0.071 / 0.064 | 0.27 / 0.26 | 0.22 / 0.18 | 2 / 2 | 0.965 / 0.934 (0.957 / 0.930) | 0.33 / 0.36 |
+  | -4 | 199 | 1.12 / 1.09 | 3 / 1 | 20 / 12 | 0.061 / 0.061 | 1.62 / 1.61 | 0.047 / 0.045 | 0.070 / 0.060 | 0.26 / 0.26 | 0.21 / 0.16 | 2 / 2 | 0.968 / 0.935 (0.961 / 0.933) | 0.32 / 0.33 |
+  | -3 | 256 | 1.09 / 1.08 | 2 / 1 | 20 / 12 | 0.061 / 0.060 | 1.64 / 1.55 | 0.047 / 0.045 | 0.066 / 0.058 | 0.25 / 0.23 | 0.26 / 0.23 | 3 / 2 | 0.966 / 0.933 (0.958 / 0.928) | 0.34 / 0.36 |
+  | -2 | 316 | 1.10 / 1.10 | 3 / 1 | 24 / 13 | 0.063 / 0.060 | 1.70 / 1.57 | 0.050 / 0.047 | 0.079 / 0.069 | 0.26 / 0.24 | 0.27 / 0.22 | 2 / 2 | 0.962 / 0.933 (0.960 / 0.927) | 0.36 / 0.37 |
+  | -1 | 316 | 1.19 / 1.19 | 6 / 3 | 32 / 15 | 0.070 / 0.061 | 1.78 / 1.59 | 0.050 / 0.042 | 0.096 / 0.056 | 0.30 / 0.25 | 0.20 / 0.15 | 2 / 1 | 0.972 / 0.939 (0.968 / 0.935) | 0.30 / 0.31 |
+  | +0 | 316 | 1.31 / 1.14 | 12 / 2 | 41 / 14 | 0.076 / 0.058 | 1.87 / 1.53 | 0.046 / 0.041 | 0.084 / 0.046 | 0.28 / 0.23 | 0.16 / 0.09 | 2 / 1 | 0.979 / 0.944 (0.973 / 0.939) | 0.26 / 0.27 |
+  | +1 | 316 | 1.35 / 1.15 | 13 / 2 | 44 / 13 | 0.077 / 0.056 | 1.83 / 1.49 | 0.044 / 0.041 | 0.076 / 0.047 | 0.26 / 0.21 | 0.10 / 0.05 | 1 / 2 | 0.983 / 0.946 (0.976 / 0.940) | 0.23 / 0.25 |
+  | +2 | 301 | 1.39 / 1.12 | 13 / 2 | 42 / 13 | 0.076 / 0.056 | 1.83 / 1.46 | 0.045 / 0.040 | 0.073 / 0.035 | 0.24 / 0.19 | 0.05 / -0.00 | 1 / 1 | 0.984 / 0.948 (0.977 / 0.941) | 0.21 / 0.24 |
+  | +3 | 287 | 1.39 / 1.09 | 14 / 2 | 42 / 11 | 0.073 / 0.055 | 1.82 / 1.41 | 0.044 / 0.041 | 0.071 / 0.037 | 0.22 / 0.16 | 0.00 / -0.04 | 1 / 2 | 0.985 / 0.949 (0.979 / 0.942) | 0.20 / 0.22 |
+
+  AUC of the entrants against the matched rows at each aligned interval, block 12 / block 6:
+
+  | k | increment in the top 32 | toward the best state | consecutive cosine | profile stability (row) | over 3/4 of the floor | row in the top 32 |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | -5 | 0.53 / 0.53 | 0.55 / 0.54 | 0.56 / 0.53 | 0.52 / 0.56 | 0.59 / 0.63 | 0.52 / 0.54 |
+  | -4 | 0.54 / 0.53 | 0.51 / 0.54 | 0.56 / 0.53 | 0.52 / 0.55 | 0.61 / 0.65 | 0.52 / 0.53 |
+  | -3 | 0.56 / 0.54 | 0.53 / 0.53 | 0.57 / 0.54 | 0.53 / 0.54 | 0.61 / 0.64 | 0.52 / 0.53 |
+  | -2 | 0.62 / 0.57 | 0.57 / 0.54 | 0.60 / 0.57 | 0.53 / 0.54 | 0.64 / 0.68 | 0.53 / 0.55 |
+  | -1 | 0.67 / 0.64 | 0.70 / 0.67 | 0.62 / 0.57 | 0.56 / 0.57 | 0.75 / 0.80 | 0.56 / 0.60 |
+  | +0 | 0.65 / 0.61 | 0.73 / 0.68 | 0.64 / 0.58 | 0.60 / 0.61 | 0.86 / 0.86 | 0.64 / 0.66 |
+
+  All non-words at each absolute interval, block 12 (medians over about 52,900 rows):
+
+  | interval from step | S | over 3/4 of the floor | row in the top 32 | increment in the top 32 | toward the best state | growth | consecutive cosine | profile stability row / states | relative size | Spearman of the increment's subspace fraction with the change of breadth |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 1000 | 0.81 | 2 | 0.046 | 0.050 | 0.004 | 0.12 | 0.31 | 0.67 / 0.66 | 1.36 | 0.09 |
+  | 2000 | 0.82 | 2 | 0.049 | 0.040 | 0.009 | 0.25 | 0.32 | 0.86 / 0.84 | 0.78 | 0.10 |
+  | 3000 | 0.81 | 2 | 0.046 | 0.037 | 0.012 | 0.27 | 0.24 | 0.92 / 0.89 | 0.51 | 0.09 |
+  | 4000 | 0.81 | 2 | 0.044 | 0.036 | 0.011 | 0.24 | 0.15 | 0.94 / 0.91 | 0.40 | 0.10 |
+  | 5000 | 0.81 | 2 | 0.043 | 0.036 | 0.010 | 0.21 | 0.09 | 0.96 / 0.92 | 0.34 | 0.05 |
+  | 6000 | 0.81 | 2 | 0.041 | 0.035 | 0.009 | 0.18 | 0.03 | 0.96 / 0.92 | 0.30 | 0.06 |
+  | 7000 | 0.80 | 2 | 0.040 | 0.036 | 0.008 | 0.15 | -0.03 | 0.97 / 0.92 | 0.28 | 0.07 |
+  | 8000 | 0.81 | 2 | 0.040 | 0.036 | 0.008 | 0.13 | -0.04 | 0.97 / 0.93 | 0.25 | 0.05 |
+  | 9000 | 0.80 | 1 | 0.039 | 0.036 | 0.006 | 0.11 | -0.07 | 0.97 / 0.93 | 0.24 | 0.03 |
+  | 10000 | 0.80 | 1 | 0.038 | 0.036 | 0.006 | 0.09 | -0.09 | 0.98 / 0.93 | 0.22 | 0.03 |
+  | 11000 | 0.80 | 1 | 0.038 | 0.036 | 0.006 | 0.08 | -0.10 | 0.98 / 0.93 | 0.21 | 0.03 |
+  | 12000 | 0.80 | 1 | 0.038 | 0.036 | 0.005 | 0.07 | -0.12 | 0.98 / 0.93 | 0.20 | 0.02 |
+  | 13000 | 0.80 | 1 | 0.038 | 0.036 | 0.005 | 0.06 | -0.13 | 0.98 / 0.93 | 0.20 | 0.02 |
+  | 14000 | 0.80 | 1 | 0.037 | 0.035 | 0.004 | 0.05 | -0.14 | 0.98 / 0.94 | 0.19 | -0.00 |
+  | 15000 | 0.80 | 1 | 0.037 | 0.036 | 0.004 | 0.04 | n/a | 0.98 / 0.93 | 0.18 | 0.01 |
+
+  - Entry is a slow, directed approach and a fast crossing. For five thousand steps before entry the entrants' rows drift with consecutive increments at cosine 0.28-0.31 (matched rows 0.24-0.25, and the typical non-word at the same absolute times far less: 0.15 at step 4000, 0.03 at 6000, negative from 7000 on), their breadth rising steadily (positions over three quarters of the floor 13, 15, 16, 18 against 9-10 for matched rows; +2 to +5 per thousand steps) while the maximum barely moves (1.02 to 1.07) and no second position clears the floor. Then, in the two thousand steps around entry, the maximum crosses (1.07 to 1.14 to 1.25), the positions over the floor go from 1 to 3 to 7, the breadth jumps (+8, to 33), and the increment's pull toward the state at the best position doubles relative to the matched rows (0.090 against 0.043, AUC 0.70-0.73 against 0.51-0.57 before). After entry the levels plateau (S 1.29-1.30, 8-9 positions over the floor, 35 over three quarters) and the increments decorrelate and shrink (consecutive cosine 0.20, 0.15, 0.12, 0.08; matched 0.12, 0.07, 0.03, -0.01).
+  - The row's motion preserves its profile; the states' motion moves the maximum. Under the row's motion alone the profile over positions keeps its ranking (Spearman 0.96-0.99, the same for matched rows) and the old best position stays first (median rank 1); with the states also moved it sits at rank 2-4 and persists as the maximum for under half of the rows. A row does not lock onto an occurrence; it lifts its whole profile, and the states decide where the maximum sits.
+  - The cloud's principal subspace is tracked continuously and weakly. The entrants' fraction in the top-32 components rises at every checkpoint from four thousand steps before entry to one after (0.065 to 0.078, matched rows 0.065 to 0.059); their increments lie in the subspace at 0.048-0.054 against 0.039-0.049 for matched rows and 0.031 isotropic, and the typical row's increments at 0.035-0.040 after step 3000. Rows whose increment points into the subspace gain breadth (Spearman 0.05-0.10 across all non-words per interval).
+  - The typical row's motion is not a drift after the early phase: its consecutive increments' cosine falls from 0.31 at step 1000 to 0.03 at 6000 and to -0.14 by 14000, the rows jittering about a slowly moving position, while their radial component (growth) falls from 0.27 to 0.04; the rows near the floor, entrants and matched alike, keep a directed motion. Block 6 the same throughout (breadth 17-24 against 10-13 before entry, 32 and 41 at the crossing; the pull 0.096 against 0.056; consecutive cosine 0.21-0.27 against 0.16-0.23).
+  - Pre-registered: a steady drift above 0.2 at every aligned interval from four thousand steps before entry to two after, refuted after entry (0.15, 0.12) and confirmed before (0.25-0.31); the pull toward the best state 1.5 times its value four intervals earlier, refuted (1.3 times; twice the matched rows'); continuous tracking of the subspace, confirmed; the profile better preserved for entrants at every interval, refuted (equal, 0.96-0.98); breadth first, confirmed (18 against 9 two thousand steps before entry).

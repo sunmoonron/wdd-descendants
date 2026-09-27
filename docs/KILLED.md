@@ -514,3 +514,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The state moves onto the row": the rise of an entrant's alignment is the row moving toward the states, 0.64-0.78 of the rise at block 12 (e522).
 - "A future word defends its maximum at one position": the best position persists for 38-60% of entrants and the rise at the old position is a fraction of the rise of the maximum (e523).
 - "Given its size, nothing else about a row's projections predicts entry" (the over-reading of e520): composition at one position adds nothing, but breadth across positions does, the count over the floor at 0.71-0.85 within deciles of S (e523).
+
+## Session 78 kills (the time course)
+- "A row locks onto one occurrence": the row's own motion keeps its whole profile (Spearman 0.96-0.99) and its old best position first; the maximum moves because the states move (e524b).
+- "Entry is an episode of accelerated rotation": the increments' size falls with training for entrants and matched rows alike; what changes at entry is the direction (the pull toward the best state doubles relative to matched rows) after a steady, directed drift of five thousand steps in which breadth rises first (e524b).
+- "The typical row drifts": after step 6000 the typical non-word's consecutive increments are uncorrelated and then anti-correlated (-0.14 by 14000); only the rows near the floor keep a directed motion (e524b).
