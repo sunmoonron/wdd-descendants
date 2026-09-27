@@ -1,0 +1,74 @@
+{
+ "model": "pythia410",
+ "revision": "step4000",
+ "blocks": [
+  6,
+  12
+ ],
+ "by_block": {
+  "6": {
+   "n_rows": 28672,
+   "median_floor": 0.1481703519821167,
+   "share_of_state_energy": {
+    "embedding": 0.002515440573915839,
+    "attention": 0.4587869942188263,
+    "mlp": 0.5388638973236084
+   },
+   "rows_over_floor": {
+    "embedding": 0.0,
+    "attention": 0.0142647884786129,
+    "own": 0.0,
+    "chord_others": 0.0019880023319274187,
+    "crowd": 0.0149972103536129,
+    "attention_embedding": 0.0142647884786129,
+    "mlp_all": 0.079345703125,
+    "chord": 0.0023018973879516125,
+    "real": 0.1348353922367096
+   },
+   "median_max_over_floor": {
+    "embedding": 0.02439064346253872,
+    "attention": 0.6585635542869568,
+    "own": 0.1768970936536789,
+    "chord_others": 0.23039264976978302,
+    "crowd": 0.6854550838470459,
+    "attention_embedding": 0.6586742997169495,
+    "mlp_all": 0.7793294787406921,
+    "chord": 0.2601620554924011,
+    "real": 0.849682092666626
+   }
+  },
+  "12": {
+   "n_rows": 53248,
+   "median_floor": 0.15092742443084717,
+   "share_of_state_energy": {
+    "embedding": 0.0013749133795499802,
+    "attention": 0.5609157085418701,
+    "mlp": 0.4378367066383362
+   },
+   "rows_over_floor": {
+    "embedding": 0.0,
+    "attention": 0.22937951982021332,
+    "own": 0.0,
+    "chord_others": 0.0031738283578306437,
+    "crowd": 0.046311601996421814,
+    "attention_embedding": 0.22911658883094788,
+    "mlp_all": 0.10685847699642181,
+    "chord": 0.003248948371037841,
+    "real": 0.06847205758094788
+   },
+   "median_max_over_floor": {
+    "embedding": 0.021583059802651405,
+    "attention": 0.8660827875137329,
+    "own": 0.15663796663284302,
+    "chord_others": 0.2147746980190277,
+    "crowd": 0.7871257066726685,
+    "attention_embedding": 0.866371750831604,
+    "mlp_all": 0.8404897451400757,
+    "chord": 0.23044611513614655,
+    "real": 0.813052773475647
+   }
+  }
+ },
+ "_exp": "e519_carrier_pythia410_step4000",
+ "_time": "2026-09-27 19:26:35"
+}

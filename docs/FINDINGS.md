@@ -3206,3 +3206,92 @@ SESSION 73 (a new box; the relayed take's counterfactual chord swap, the floor d
 
   - The criterion holds across texts and across models. The largest projection over the floor on one text set picks the other set's new words at 0.86-0.91 in GPT-2, 0.95-0.97 in Pythia and 0.90-0.93 in OLMo, level with or ahead of usage (0.85-0.96) and ahead of magnitude in GPT-2 and Pythia (0.67-0.89); with the own write removed 0.77-0.94; selectivity and kurtosis 0.47-0.69. In OLMo magnitude is nearly as good (0.85-0.93): there the words are the large rows more than elsewhere, as e509 and e511 found the crowd's contraction strongest. The word sets of the two text sets overlap by 0.50-0.74, so the vocabulary is partly text-specific and the criterion predicts the part that changes.
   - Pre-registered: above 0.8 and ahead of magnitude at the middle block of all three, confirmed (0.89, 0.97, 0.92 against 0.72, 0.76, 0.89); the own write removed keeping 0.8 of the excess, confirmed.
+
+SESSION 74 (the question e517b left and the relayed take put first: which part of the state supplies the projection that predicts wordhood; e519 at thirteen Pythia checkpoints and e519b; 2026-09-27 19:15-19:28 box time).
+
+- e519, e519b WHO SUPPLIES THE PROJECTION (every position's centred state split exactly into five parts, each centred over positions, in the real state's units: the token embedding; attention's output with the biases; the row's own write where it is among the 64 largest; the other largest writes; the crowd of the remaining MLP writes. Per row, the largest projection over the real floor that each part supplies alone, and that three combinations supply (attention with the embedding; all the MLP writes; the chord), plus the parts' shares of the real projection at the position of the row's real maximum. e519b repeats the prospective entry test of e516b on each part's projection. v1 left the parts uncentred with the centring as a sixth part, so that a part carried the common direction; v2, centred, is what is recorded, and the ranking it gives is close to v1's).
+
+  Rows whose part-only projection clears the floor somewhere, at the end of training: block 6: the whole state 0.130, attention 0.070, crowd 0.037, all MLP writes 0.119, chord 0.051, own write 0.004, embedding 0.000 (energy shares attention/MLP 0.52/0.48); block 12: the whole state 0.095, attention 0.965, crowd 0.927, all MLP writes 0.875, chord 0.081, own write 0.006, embedding 0.000 (energy shares attention/MLP 0.75/0.25).
+
+  Block 6, entry at the next checkpoint (AUC of entrants over non-entrants, ranked by the largest projection over the real floor that each part supplies alone):
+
+  | origin | the whole state | attention | embedding | attention + embedding | crowd | chord (own + other largest) | all MLP writes | own write | other largest writes | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.75 | 0.54 | 0.50 | 0.54 | 0.75 | 0.58 | 0.76 | 0.60 | 0.56 | 0.52 | 0.76 |
+  | 1000 | 0.75 | 0.52 | 0.49 | 0.52 | 0.70 | 0.71 | 0.73 | 0.68 | 0.61 | 0.63 | 0.75 |
+  | 2000 | 0.87 | 0.51 | 0.54 | 0.50 | 0.76 | 0.76 | 0.80 | 0.69 | 0.71 | 0.60 | 0.87 |
+  | 3000 | 0.93 | 0.53 | 0.52 | 0.53 | 0.81 | 0.79 | 0.83 | 0.73 | 0.68 | 0.70 | 0.94 |
+  | 4000 | 0.89 | 0.60 | 0.48 | 0.60 | 0.79 | 0.83 | 0.83 | 0.78 | 0.72 | 0.66 | 0.91 |
+  | 8000 | 0.93 | 0.58 | 0.51 | 0.58 | 0.77 | 0.87 | 0.83 | 0.81 | 0.71 | 0.78 | 0.93 |
+  | 16000 | 0.94 | 0.57 | 0.52 | 0.57 | 0.80 | 0.87 | 0.88 | 0.79 | 0.76 | 0.79 | 0.94 |
+  | 32000 | 0.97 | 0.66 | 0.51 | 0.66 | 0.77 | 0.93 | 0.93 | 0.85 | 0.84 | 0.75 | 0.98 |
+
+  Block 6, entry by the end (AUC of entrants over non-entrants, ranked by the largest projection over the real floor that each part supplies alone):
+
+  | origin | the whole state | attention | embedding | attention + embedding | crowd | chord (own + other largest) | all MLP writes | own write | other largest writes | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.54 | 0.55 | 0.49 | 0.54 | 0.54 | 0.52 | 0.54 | 0.60 | 0.51 | 0.56 | 0.64 |
+  | 1000 | 0.61 | 0.59 | 0.49 | 0.60 | 0.53 | 0.64 | 0.54 | 0.68 | 0.52 | 0.67 | 0.65 |
+  | 2000 | 0.70 | 0.59 | 0.54 | 0.59 | 0.55 | 0.74 | 0.59 | 0.74 | 0.64 | 0.69 | 0.70 |
+  | 3000 | 0.76 | 0.56 | 0.49 | 0.56 | 0.60 | 0.75 | 0.66 | 0.74 | 0.63 | 0.72 | 0.75 |
+  | 4000 | 0.78 | 0.59 | 0.47 | 0.58 | 0.61 | 0.78 | 0.68 | 0.77 | 0.66 | 0.71 | 0.76 |
+  | 8000 | 0.89 | 0.60 | 0.49 | 0.60 | 0.67 | 0.84 | 0.76 | 0.81 | 0.71 | 0.72 | 0.86 |
+  | 16000 | 0.93 | 0.60 | 0.50 | 0.60 | 0.73 | 0.90 | 0.84 | 0.84 | 0.77 | 0.76 | 0.89 |
+  | 32000 | 0.96 | 0.66 | 0.48 | 0.66 | 0.71 | 0.93 | 0.89 | 0.90 | 0.81 | 0.77 | 0.96 |
+
+  Block 6, the parts' shares of the real projection at the row's maximum (medians), entrants / non-entrants / rows already words:
+
+  | origin | embedding | attention | own | chord others | crowd | entrants that are writers at their maximum |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.00 / 0.01 / 0.00 | 0.12 / 0.15 / 0.12 | 0.00 / 0.00 / 0.00 | 0.04 / 0.05 / 0.05 | 0.81 / 0.78 / 0.81 | 0.11 |
+  | 1000 | 0.00 / 0.00 / 0.00 | 0.24 / 0.30 / 0.19 | 0.00 / 0.00 / -0.00 | 0.06 / 0.06 / 0.06 | 0.65 / 0.64 / 0.71 | 0.30 |
+  | 2000 | 0.00 / 0.00 / 0.00 | 0.21 / 0.33 / 0.17 | 0.00 / 0.00 / 0.00 | 0.10 / 0.08 / 0.09 | 0.64 / 0.58 / 0.68 | 0.31 |
+  | 3000 | 0.00 / 0.00 / 0.00 | 0.22 / 0.33 / 0.17 | -0.00 / -0.00 / 0.08 | 0.10 / 0.10 / 0.11 | 0.59 / 0.55 / 0.62 | 0.43 |
+  | 4000 | 0.00 / 0.00 / 0.00 | 0.19 / 0.32 / 0.17 | 0.00 / -0.00 / 0.12 | 0.13 / 0.11 / 0.13 | 0.50 / 0.54 / 0.58 | 0.48 |
+  | 8000 | 0.00 / 0.00 / 0.00 | 0.23 / 0.31 / 0.17 | 0.16 / 0.00 / 0.17 | 0.16 / 0.14 / 0.17 | 0.48 / 0.51 / 0.48 | 0.61 |
+  | 16000 | 0.00 / 0.00 / 0.00 | 0.19 / 0.32 / 0.15 | 0.19 / 0.00 / 0.24 | 0.18 / 0.18 / 0.21 | 0.40 / 0.46 / 0.39 | 0.60 |
+  | 32000 | 0.00 / 0.00 / 0.00 | 0.24 / 0.33 / 0.17 | 0.25 / 0.00 / 0.28 | 0.24 / 0.21 / 0.24 | 0.20 / 0.40 / 0.29 | 0.71 |
+
+  Block 12, entry at the next checkpoint (AUC of entrants over non-entrants, ranked by the largest projection over the real floor that each part supplies alone):
+
+  | origin | the whole state | attention | embedding | attention + embedding | crowd | chord (own + other largest) | all MLP writes | own write | other largest writes | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.76 | 0.61 | 0.51 | 0.61 | 0.75 | 0.55 | 0.75 | 0.66 | 0.60 | 0.47 | 0.73 |
+  | 1000 | 0.76 | 0.63 | 0.53 | 0.63 | 0.72 | 0.68 | 0.73 | 0.64 | 0.64 | 0.58 | 0.74 |
+  | 2000 | 0.86 | 0.62 | 0.51 | 0.61 | 0.76 | 0.69 | 0.78 | 0.69 | 0.63 | 0.55 | 0.82 |
+  | 3000 | 0.88 | 0.62 | 0.51 | 0.62 | 0.72 | 0.77 | 0.76 | 0.74 | 0.66 | 0.63 | 0.89 |
+  | 4000 | 0.91 | 0.63 | 0.50 | 0.63 | 0.78 | 0.79 | 0.82 | 0.76 | 0.74 | 0.58 | 0.86 |
+  | 8000 | 0.95 | 0.68 | 0.47 | 0.68 | 0.79 | 0.83 | 0.82 | 0.74 | 0.76 | 0.65 | 0.91 |
+  | 16000 | 0.97 | 0.64 | 0.51 | 0.64 | 0.74 | 0.89 | 0.86 | 0.80 | 0.77 | 0.66 | 0.92 |
+  | 32000 | 0.97 | 0.56 | 0.55 | 0.56 | 0.69 | 0.88 | 0.84 | 0.81 | 0.78 | 0.65 | 0.98 |
+
+  Block 12, entry by the end (AUC of entrants over non-entrants, ranked by the largest projection over the real floor that each part supplies alone):
+
+  | origin | the whole state | attention | embedding | attention + embedding | crowd | chord (own + other largest) | all MLP writes | own write | other largest writes | magnitude | usage |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.61 | 0.52 | 0.50 | 0.52 | 0.60 | 0.53 | 0.60 | 0.65 | 0.54 | 0.52 | 0.68 |
+  | 1000 | 0.67 | 0.57 | 0.49 | 0.57 | 0.61 | 0.63 | 0.62 | 0.64 | 0.58 | 0.62 | 0.68 |
+  | 2000 | 0.70 | 0.62 | 0.50 | 0.62 | 0.63 | 0.71 | 0.65 | 0.69 | 0.64 | 0.62 | 0.70 |
+  | 3000 | 0.77 | 0.62 | 0.52 | 0.62 | 0.69 | 0.71 | 0.71 | 0.68 | 0.63 | 0.62 | 0.72 |
+  | 4000 | 0.80 | 0.63 | 0.48 | 0.63 | 0.69 | 0.74 | 0.72 | 0.71 | 0.65 | 0.63 | 0.74 |
+  | 8000 | 0.84 | 0.60 | 0.50 | 0.60 | 0.68 | 0.77 | 0.74 | 0.75 | 0.67 | 0.66 | 0.80 |
+  | 16000 | 0.92 | 0.59 | 0.51 | 0.59 | 0.70 | 0.81 | 0.80 | 0.78 | 0.68 | 0.69 | 0.89 |
+  | 32000 | 0.96 | 0.56 | 0.48 | 0.55 | 0.67 | 0.87 | 0.83 | 0.81 | 0.76 | 0.72 | 0.95 |
+
+  Block 12, the parts' shares of the real projection at the row's maximum (medians), entrants / non-entrants / rows already words:
+
+  | origin | embedding | attention | own | chord others | crowd | entrants that are writers at their maximum |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.00 / 0.00 / 0.00 | 0.10 / 0.11 / 0.08 | 0.00 / 0.00 / 0.00 | 0.03 / 0.04 / 0.04 | 0.85 / 0.85 / 0.88 | 0.06 |
+  | 1000 | 0.00 / 0.00 / 0.00 | 0.27 / 0.28 / 0.24 | 0.00 / -0.00 / 0.00 | 0.04 / 0.04 / 0.05 | 0.67 / 0.67 / 0.70 | 0.10 |
+  | 2000 | 0.00 / 0.00 / 0.00 | 0.34 / 0.41 / 0.33 | 0.00 / 0.00 / 0.00 | 0.06 / 0.06 / 0.06 | 0.55 / 0.52 / 0.56 | 0.17 |
+  | 3000 | 0.00 / 0.00 / 0.00 | 0.38 / 0.47 / 0.36 | 0.00 / -0.00 / 0.00 | 0.08 / 0.07 / 0.08 | 0.50 / 0.46 / 0.50 | 0.23 |
+  | 4000 | 0.00 / 0.00 / 0.00 | 0.40 / 0.49 / 0.42 | -0.00 / 0.00 / 0.00 | 0.09 / 0.07 / 0.09 | 0.41 / 0.42 / 0.44 | 0.23 |
+  | 8000 | 0.00 / 0.00 / 0.00 | 0.39 / 0.51 / 0.37 | 0.00 / 0.00 / 0.00 | 0.15 / 0.11 / 0.15 | 0.27 / 0.36 / 0.30 | 0.47 |
+  | 16000 | 0.00 / 0.00 / 0.00 | 0.43 / 0.55 / 0.44 | 0.17 / 0.00 / 0.19 | 0.16 / 0.15 / 0.16 | 0.19 / 0.28 / 0.16 | 0.53 |
+  | 32000 | 0.00 / 0.00 / 0.00 | 0.32 / 0.58 / 0.36 | 0.00 / 0.00 / 0.25 | 0.25 / 0.19 / 0.21 | 0.26 / 0.20 / 0.22 | 0.46 |
+
+  - No single part supplies the prediction; the whole state does. At block 12, entry at the next checkpoint from origins 2000-32000 is read from the whole state at 0.86, 0.91, 0.95, 0.97, 0.97 and from attention's part alone at 0.62, 0.63, 0.68, 0.64, 0.56, from the crowd at 0.76, 0.78, 0.79, 0.74, 0.69, from the chord at 0.69, 0.79, 0.83, 0.89, 0.88, from all the MLP writes together at 0.78, 0.82, 0.82, 0.86, 0.84, from the own write at 0.69-0.81 and from the embedding at 0.5; block 6 the same, the chord and the MLP writes reaching 0.93 at the last origin. The relayed bet on attention is refuted: attention's centred part is the weakest carrier of the ranking, even at block 12 where it holds three quarters of the state's energy. The MLP writes together are the strongest single part, and the chord's rank rises through training as the words come to rest on their own and their neighbours' writes; but every part falls short of their sum by 0.1-0.3.
+  - The parts are redundant, and the word is where they agree. Each part alone clears the floor for far more rows than the whole state does (at block 12 at the end: attention 0.965, the crowd 0.927, all MLP writes 0.875, against 0.095 for the whole), so the parts are large along many atoms and cancel along most of them; the whole state's few maxima are the atoms along which attention, the chord and the crowd add rather than cancel. That is why e517b could remove or replace the chord and lose nothing: the remaining parts carry the same ranking. A row becomes a word when its direction is one on which the components of the computation at some position agree.
+  - Over training the carrier at the entrants' maxima moves from the crowd to attention and the chord. At block 12 the crowd supplies 0.85 of the entrants' maximum at step 512 and 0.55 at 2000, attention 0.10 rising to 0.34, 0.40 and 0.43 by steps 2000-16000, the other largest writes 0.03 rising to 0.25 by step 32000, and the entrants' own write is 0.00 until step 16000 (they are the writers at their own maximum in 0.06-0.23 of cases through step 4000, 0.47-0.53 from 8000): a row is not, at the moment it becomes a word, writing at the position where its projection is largest.
+  - Pre-registered: attention alone at 0.8, refuted (0.56-0.68); attention with the embedding within 0.05 of the whole, refuted (0.3 short); the crowd alone under 0.7, refuted (0.69-0.79); attention's share at the entrants' maxima above the MLP writes' share, refuted (0.32-0.43 against 0.45-0.61).

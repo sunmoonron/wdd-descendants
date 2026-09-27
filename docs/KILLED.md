@@ -495,3 +495,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 73 kills (the counterfactual chord)
 - "The chord makes the maximum and the maximum makes the word": destroying, permuting or removing the position's largest writes leaves the prospective prediction of entry within 0.04 of the real state's (e517b). The projection that predicts wordhood is carried by the embeddings, attention and the crowd.
 - "The floor's drift is what raises the entrants": the floor moves by a tenth over training; the entrants' projections rise by three fifths (e517b).
+
+## Session 74 kills (the carrier)
+- "Attention transports the projection that makes a row a word": attention's part alone ranks the entrants at 0.56-0.68, the weakest of the parts; the MLP writes together are the strongest part, and only the whole state reaches 0.86-0.97 (e519b).
+- "One part of the state carries the vocabulary's selection": none does; the parts cancel along most atoms and the words are the atoms along which they agree (e519b).

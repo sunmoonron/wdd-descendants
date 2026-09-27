@@ -1,0 +1,74 @@
+{
+ "model": "pythia410",
+ "revision": "step3000",
+ "blocks": [
+  6,
+  12
+ ],
+ "by_block": {
+  "6": {
+   "n_rows": 28672,
+   "median_floor": 0.15038679540157318,
+   "share_of_state_energy": {
+    "embedding": 0.0024903356097638607,
+    "attention": 0.45374640822410583,
+    "mlp": 0.5433923006057739
+   },
+   "rows_over_floor": {
+    "embedding": 0.0,
+    "attention": 0.01025390625,
+    "own": 0.0,
+    "chord_others": 0.0008021763642318547,
+    "crowd": 0.01604352705180645,
+    "attention_embedding": 0.01025390625,
+    "mlp_all": 0.0709751695394516,
+    "chord": 0.0011509486939758062,
+    "real": 0.13232421875
+   },
+   "median_max_over_floor": {
+    "embedding": 0.02637007273733616,
+    "attention": 0.646241307258606,
+    "own": 0.1570071280002594,
+    "chord_others": 0.2044997364282608,
+    "crowd": 0.6847748756408691,
+    "attention_embedding": 0.6474444270133972,
+    "mlp_all": 0.7725152373313904,
+    "chord": 0.23177053034305573,
+    "real": 0.8510493040084839
+   }
+  },
+  "12": {
+   "n_rows": 53248,
+   "median_floor": 0.15250316262245178,
+   "share_of_state_energy": {
+    "embedding": 0.0014016511850059032,
+    "attention": 0.5386202931404114,
+    "mlp": 0.45948463678359985
+   },
+   "rows_over_floor": {
+    "embedding": 0.0,
+    "attention": 0.15754583477973938,
+    "own": 0.0,
+    "chord_others": 0.0026667669881135225,
+    "crowd": 0.04169170930981636,
+    "attention_embedding": 0.1581655740737915,
+    "mlp_all": 0.09559044986963272,
+    "chord": 0.0027231071144342422,
+    "real": 0.06773963570594788
+   },
+   "median_max_over_floor": {
+    "embedding": 0.02366425096988678,
+    "attention": 0.8255253434181213,
+    "own": 0.14187081158161163,
+    "chord_others": 0.19294755160808563,
+    "crowd": 0.7780873775482178,
+    "attention_embedding": 0.8257095813751221,
+    "mlp_all": 0.8303864002227783,
+    "chord": 0.20812338590621948,
+    "real": 0.81513512134552
+   }
+  }
+ },
+ "_exp": "e519_carrier_pythia410_step3000",
+ "_time": "2026-09-27 19:26:49"
+}
