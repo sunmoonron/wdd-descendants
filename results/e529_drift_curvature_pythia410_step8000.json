@@ -1,0 +1,113 @@
+{
+ "model": "pythia410",
+ "origin": 8000,
+ "n_entrants": 60,
+ "n_matched": 60,
+ "eps_rel": 0.05,
+ "groups": {
+  "entrants": {
+   "median_curvature": {
+    "update_1000": 8.88189097167924e-05,
+    "sum_2000": 9.712563041830435e-05,
+    "difference": 9.099746239371598e-05,
+    "update_8000": 9.945828060153872e-05,
+    "random_1": 8.115772652672604e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.153123140335083,
+    "sum_2000": 1.1513564586639404,
+    "difference": 1.173104166984558,
+    "update_8000": 1.2448049783706665
+   },
+   "ratio_8000_over_1000": 1.021050214767456,
+   "ratio_difference_over_sum": 0.8999098539352417,
+   "fraction_flatter_than_random": {
+    "update_1000": 0.25,
+    "sum_2000": 0.21666666865348816,
+    "difference": 0.1666666716337204,
+    "update_8000": 0.25
+   },
+   "fraction_negative": {
+    "update_1000": 0.01666666753590107,
+    "sum_2000": 0.03333333507180214,
+    "difference": 0.01666666753590107,
+    "update_8000": 0.0,
+    "random_1": 0.03333333507180214
+   }
+  },
+  "matched": {
+   "median_curvature": {
+    "update_1000": 5.295201117405668e-05,
+    "sum_2000": 4.8273032007273287e-05,
+    "difference": 5.256390795693733e-05,
+    "update_8000": 4.5410397433442995e-05,
+    "random_1": 4.548111610347405e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.1035418510437012,
+    "sum_2000": 1.0806554555892944,
+    "difference": 1.1691017150878906,
+    "update_8000": 0.9312340021133423
+   },
+   "ratio_8000_over_1000": 0.8865799307823181,
+   "ratio_difference_over_sum": 1.1033998727798462,
+   "fraction_flatter_than_random": {
+    "update_1000": 0.30000001192092896,
+    "sum_2000": 0.3499999940395355,
+    "difference": 0.23333333432674408,
+    "update_8000": 0.5666666626930237
+   },
+   "fraction_negative": {
+    "update_1000": 0.0,
+    "sum_2000": 0.0,
+    "difference": 0.0,
+    "update_8000": 0.0,
+    "random_1": 0.0
+   }
+  },
+  "all": {
+   "median_curvature": {
+    "update_1000": 7.196026854217052e-05,
+    "sum_2000": 6.861585279693827e-05,
+    "difference": 6.339915853459388e-05,
+    "update_8000": 7.108494901331142e-05,
+    "random_1": 5.5742613767506555e-05
+   },
+   "median_ratio_to_random": {
+    "update_1000": 1.1482796669006348,
+    "sum_2000": 1.1021572351455688,
+    "difference": 1.1712990999221802,
+    "update_8000": 1.092523455619812
+   },
+   "ratio_8000_over_1000": 0.941689670085907,
+   "ratio_difference_over_sum": 1.0067874193191528,
+   "fraction_flatter_than_random": {
+    "update_1000": 0.2750000059604645,
+    "sum_2000": 0.28333333134651184,
+    "difference": 0.20000000298023224,
+    "update_8000": 0.40833333134651184
+   },
+   "fraction_negative": {
+    "update_1000": 0.008333333767950535,
+    "sum_2000": 0.01666666753590107,
+    "difference": 0.008333333767950535,
+    "update_8000": 0.0,
+    "random_1": 0.01666666753590107
+   }
+  }
+ },
+ "auc_matched_over_entrants": {
+  "update_1000": 0.45,
+  "sum_2000": 0.40555555555555556,
+  "difference": 0.5091666666666667,
+  "update_8000": 0.2872222222222222
+ },
+ "checks": {
+  "oscillation_steeper_than_random": false,
+  "drift_flatter_than_update": false,
+  "drift_flatter_than_random": false,
+  "no_group_difference": false
+ },
+ "_exp": "e529_drift_curvature_pythia410_step8000",
+ "_time": "2026-09-27 23:41:43"
+}

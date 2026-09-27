@@ -529,3 +529,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The drift runs in flat directions of the loss": the curvature along the thousand-step update is 1.13-1.15 times a random direction's, the entrants' no flatter than matched rows' (e527).
 - "The row rotates toward the writes it co-occurs with": the co-active writes are not a target for any group (cosine 0.00-0.02) (e526).
 - "The row's motion is the origin's geometry": the five input-side targets together explain 2-4% of an entrant's thousand-step increment (0.4% for random directions); most of the motion is growth along the row and unexplained (e526).
+
+## Session 81 kills (the common flow, the geometry of drift and oscillation)
+- "Vocabulary entry is which rows are positioned to gain from a common anisotropic flow on the row set" (this program's own idea, not the relayed one): the common flow carries a tenth of the motion early and a fortieth late, amplifies the cloud's principal subspace only in the first interval, and reproduces 0.11-0.26 of the entrants' rise before step 5000 and none after (e528).
+- "The drift runs in flat directions, the oscillation in steep ones": killed: the eight-thousand-step displacement is 1.09-1.18 times as curved as random, the oscillation axis 1.15-1.17 (e529).
