@@ -1,0 +1,290 @@
+{
+ "model": "pythia410",
+ "origin": 8000,
+ "gradient_tokens": 2999808,
+ "loss_halves": {
+  "1": 2.754644014925711,
+  "2": 2.7043193140127553
+ },
+ "by_block": {
+  "12": {
+   "n_entrants": 67,
+   "n_non_words": 52992,
+   "n_words": 256,
+   "medians": {
+    "entrants": {
+     "consistency": 0.13804855942726135,
+     "gradient_size": 0.0008857776992954314,
+     "toward_best_state": -0.008400670252740383,
+     "in_top_32": 0.05324946716427803,
+     "radial": 0.004795284941792488,
+     "act_rate": 0.13317185640335083,
+     "act_mean": -0.021741943433880806,
+     "S": 1.2347663640975952,
+     "follow_1": 0.019188715144991875,
+     "follow_sign_1": 0.013767185620963573,
+     "step_rel_1": 0.22213029861450195,
+     "follow_2": 0.016930682584643364,
+     "follow_3": 0.01940847933292389,
+     "follow_4": 0.02354981191456318,
+     "increment_autocorrelation": 0.08892827481031418
+    },
+    "matched": {
+     "consistency": 0.15209968388080597,
+     "gradient_size": 0.0010146887507289648,
+     "toward_best_state": -0.0043923333287239075,
+     "in_top_32": 0.0525892898440361,
+     "radial": -0.004929610528051853,
+     "act_rate": 0.13630372285842896,
+     "act_mean": -0.026751521974802017,
+     "S": 1.234260082244873,
+     "follow_1": 0.007436584215611219,
+     "follow_sign_1": 0.004793899599462748,
+     "step_rel_1": 0.23752443492412567,
+     "follow_2": 0.008575104176998138,
+     "follow_3": 0.00703691178932786,
+     "follow_4": 0.006694276351481676,
+     "increment_autocorrelation": 0.022332828491926193
+    },
+    "non_words": {
+     "consistency": 0.10685386508703232,
+     "gradient_size": 0.0009232566226273775,
+     "toward_best_state": -0.0007011727429926395,
+     "in_top_32": 0.050232116132974625,
+     "radial": -0.002657901495695114,
+     "act_rate": 0.15739206969738007,
+     "act_mean": -0.03828337788581848,
+     "S": 0.8062008023262024,
+     "follow_1": 0.011792288161814213,
+     "follow_sign_1": 0.009587002918124199,
+     "step_rel_1": 0.2533497214317322,
+     "follow_2": 0.009942756034433842,
+     "follow_3": 0.008301516994833946,
+     "follow_4": 0.007634751498699188,
+     "increment_autocorrelation": -0.04257449507713318
+    },
+    "words": {
+     "consistency": 0.14423972368240356,
+     "gradient_size": 0.0009442032314836979,
+     "toward_best_state": -0.014242532663047314,
+     "in_top_32": 0.0529860183596611,
+     "radial": -0.013198153115808964,
+     "act_rate": 0.12145577371120453,
+     "act_mean": -0.0163987148553133,
+     "S": 1.3545751571655273,
+     "follow_1": 0.011500001884996891,
+     "follow_sign_1": 0.005907249636948109,
+     "step_rel_1": 0.20967242121696472,
+     "follow_2": 0.003969874698668718,
+     "follow_3": 0.0010586914140731096,
+     "follow_4": -0.0008384689572267234,
+     "increment_autocorrelation": 0.11669797450304031
+    }
+   },
+   "positive_fraction": {
+    "entrants": {
+     "follow_1": 0.746268630027771,
+     "follow_2": 0.7164179086685181,
+     "follow_4": 0.7313432693481445,
+     "follow_sign_1": 0.7014925479888916,
+     "toward_best_state": 0.3283582031726837
+    },
+    "matched": {
+     "follow_1": 0.5671641826629639,
+     "follow_2": 0.6716417670249939,
+     "follow_4": 0.5820895433425903,
+     "follow_sign_1": 0.5522388219833374,
+     "toward_best_state": 0.4029850661754608
+    },
+    "non_words": {
+     "follow_1": 0.6329634785652161,
+     "follow_2": 0.6154325008392334,
+     "follow_4": 0.5915610194206238,
+     "follow_sign_1": 0.6128849387168884,
+     "toward_best_state": 0.4919233024120331
+    },
+    "words": {
+     "follow_1": 0.609375,
+     "follow_2": 0.55078125,
+     "follow_4": 0.4921875,
+     "follow_sign_1": 0.5625,
+     "toward_best_state": 0.34765625
+    }
+   },
+   "auc_entrants_vs_matched": {
+    "consistency": 0.4655825350857652,
+    "gradient_size": 0.44575629316106036,
+    "toward_best_state": 0.4780574738249053,
+    "in_top_32": 0.5673869458676766,
+    "act_rate": 0.5090220539095567,
+    "act_mean": 0.5662731120516818,
+    "follow_1": 0.5713967476052573,
+    "increment_autocorrelation": 0.6199599019826242
+   },
+   "within_S_deciles": {
+    "consistency": 0.562999536266674,
+    "gradient_size": 0.5169050498437552,
+    "toward_best_state": 0.44502032243105377,
+    "in_top_32": 0.5585440592123808,
+    "act_rate": 0.4410376715131345,
+    "act_mean": 0.6295285984039087,
+    "increment_autocorrelation": 0.7674513761968411
+   },
+   "spearman_non_words": {
+    "consistency_vs_increment_autocorrelation": 0.1552720224910485,
+    "consistency_vs_act_rate": -0.21562465075061515,
+    "consistency_vs_S": 0.09104569352698634,
+    "follow_1_vs_consistency": 0.002883924249364801,
+    "follow_1_vs_act_rate": 0.036670564418017304,
+    "follow_1_vs_increment_autocorrelation": 0.009077650745045537,
+    "gradient_size_vs_step_rel_1": 0.022028115920762766,
+    "toward_best_state_vs_S": -0.03116599147497365,
+    "act_rate_vs_S": 0.035165564559287474
+   }
+  },
+  "6": {
+   "n_entrants": 61,
+   "n_non_words": 28416,
+   "n_words": 256,
+   "medians": {
+    "entrants": {
+     "consistency": 0.13625773787498474,
+     "gradient_size": 0.0015263897366821766,
+     "toward_best_state": -0.006690125446766615,
+     "in_top_32": 0.05478224158287048,
+     "radial": -0.00307345949113369,
+     "act_rate": 0.14210176467895508,
+     "act_mean": -0.03530348464846611,
+     "S": 1.2054191827774048,
+     "follow_1": 0.015817545354366302,
+     "follow_sign_1": 0.010333389975130558,
+     "step_rel_1": 0.20075766742229462,
+     "follow_2": 0.002915135584771633,
+     "follow_3": 0.009202267974615097,
+     "follow_4": 0.0064308219589293,
+     "increment_autocorrelation": 0.009446326643228531
+    },
+    "matched": {
+     "consistency": 0.124564990401268,
+     "gradient_size": 0.001111175981350243,
+     "toward_best_state": -0.0018441788852214813,
+     "in_top_32": 0.05259374901652336,
+     "radial": -0.00469319149851799,
+     "act_rate": 0.11867225915193558,
+     "act_mean": -0.03544153645634651,
+     "S": 1.2054212093353271,
+     "follow_1": 0.014534256421029568,
+     "follow_sign_1": 0.007900845259428024,
+     "step_rel_1": 0.233395054936409,
+     "follow_2": 0.01768714375793934,
+     "follow_3": 0.0187686700373888,
+     "follow_4": 0.013772268779575825,
+     "increment_autocorrelation": -0.009483827278017998
+    },
+    "non_words": {
+     "consistency": 0.10237297415733337,
+     "gradient_size": 0.0010675174416974187,
+     "toward_best_state": -0.0010932562872767448,
+     "in_top_32": 0.04946476221084595,
+     "radial": -0.003520950209349394,
+     "act_rate": 0.13804984092712402,
+     "act_mean": -0.043492041528224945,
+     "S": 0.839867889881134,
+     "follow_1": 0.012212034314870834,
+     "follow_sign_1": 0.00986482109874487,
+     "step_rel_1": 0.25440549850463867,
+     "follow_2": 0.00985773466527462,
+     "follow_3": 0.008301516994833946,
+     "follow_4": 0.007343563251197338,
+     "increment_autocorrelation": -0.05512659624218941
+    },
+    "words": {
+     "consistency": 0.13491064310073853,
+     "gradient_size": 0.0011572835501283407,
+     "toward_best_state": -0.018826566636562347,
+     "in_top_32": 0.05525334179401398,
+     "radial": -0.007594473659992218,
+     "act_rate": 0.10676649957895279,
+     "act_mean": -0.026801111176609993,
+     "S": 1.4571274518966675,
+     "follow_1": 0.00913267396390438,
+     "follow_sign_1": 0.0063139391131699085,
+     "step_rel_1": 0.2013484388589859,
+     "follow_2": 0.006578236818313599,
+     "follow_3": 0.0038138681557029486,
+     "follow_4": 0.005902484524995089,
+     "increment_autocorrelation": 0.041845619678497314
+    }
+   },
+   "positive_fraction": {
+    "entrants": {
+     "follow_1": 0.688524603843689,
+     "follow_2": 0.5245901346206665,
+     "follow_4": 0.5901639461517334,
+     "follow_sign_1": 0.7049180269241333,
+     "toward_best_state": 0.4590163826942444
+    },
+    "matched": {
+     "follow_1": 0.6065573692321777,
+     "follow_2": 0.6393442749977112,
+     "follow_4": 0.6721311211585999,
+     "follow_sign_1": 0.5737704634666443,
+     "toward_best_state": 0.4754098355770111
+    },
+    "non_words": {
+     "follow_1": 0.6346072554588318,
+     "follow_2": 0.6121551394462585,
+     "follow_4": 0.5873099565505981,
+     "follow_sign_1": 0.6165188550949097,
+     "toward_best_state": 0.48821085691452026
+    },
+    "words": {
+     "follow_1": 0.59375,
+     "follow_2": 0.578125,
+     "follow_4": 0.53515625,
+     "follow_sign_1": 0.55078125,
+     "toward_best_state": 0.32421875
+    }
+   },
+   "auc_entrants_vs_matched": {
+    "consistency": 0.5463585057780167,
+    "gradient_size": 0.597420048374093,
+    "toward_best_state": 0.44369793066380003,
+    "in_top_32": 0.4764848159097017,
+    "act_rate": 0.5640956732061274,
+    "act_mean": 0.5044342918570277,
+    "follow_1": 0.4969094329481322,
+    "increment_autocorrelation": 0.5726955119591508
+   },
+   "within_S_deciles": {
+    "consistency": 0.5945675348081034,
+    "gradient_size": 0.5924477577111075,
+    "toward_best_state": 0.46060896221275294,
+    "in_top_32": 0.5179116005797252,
+    "act_rate": 0.5301934442448385,
+    "act_mean": 0.5827093958495453,
+    "increment_autocorrelation": 0.6752291852893275
+   },
+   "spearman_non_words": {
+    "consistency_vs_increment_autocorrelation": 0.1466938608189307,
+    "consistency_vs_act_rate": -0.1385610972595548,
+    "consistency_vs_S": 0.06934843332244862,
+    "follow_1_vs_consistency": 0.005320764282637498,
+    "follow_1_vs_act_rate": 0.047293038315784956,
+    "follow_1_vs_increment_autocorrelation": 0.005160478883740443,
+    "gradient_size_vs_step_rel_1": -0.06069819021651698,
+    "toward_best_state_vs_S": -0.03664913932089122,
+    "act_rate_vs_S": 0.03896691824244985
+   }
+  }
+ },
+ "checks": {
+  "update_follows_gradient_70": false,
+  "entrants_more_consistent": false,
+  "consistency_explains_drift": false,
+  "gradient_toward_best_state": false,
+  "consistency_within_S": false
+ },
+ "_exp": "e525_gradient_scale_pythia410_step8000",
+ "_time": "2026-09-27 22:08:13"
+}
