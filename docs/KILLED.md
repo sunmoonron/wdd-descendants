@@ -499,3 +499,6 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 74 kills (the carrier)
 - "Attention transports the projection that makes a row a word": attention's part alone ranks the entrants at 0.56-0.68, the weakest of the parts; the MLP writes together are the strongest part, and only the whole state reaches 0.86-0.97 (e519b).
 - "One part of the state carries the vocabulary's selection": none does; the parts cancel along most atoms and the words are the atoms along which they agree (e519b).
+
+## Session 75 kills (agreement beyond size)
+- "Consensus among the state's parts is a mechanistic variable of wordhood": given the size of a row's projection over the floor, the agreement of the parts that make it adds nothing (within-size AUC 0.43-0.57; equal entry rates near the floor). The criterion is on the resultant alone (e520).

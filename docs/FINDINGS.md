@@ -3295,3 +3295,63 @@ SESSION 74 (the question e517b left and the relayed take put first: which part o
   - The parts are redundant, and the word is where they agree. Each part alone clears the floor for far more rows than the whole state does (at block 12 at the end: attention 0.965, the crowd 0.927, all MLP writes 0.875, against 0.095 for the whole), so the parts are large along many atoms and cancel along most of them; the whole state's few maxima are the atoms along which attention, the chord and the crowd add rather than cancel. That is why e517b could remove or replace the chord and lose nothing: the remaining parts carry the same ranking. A row becomes a word when its direction is one on which the components of the computation at some position agree.
   - Over training the carrier at the entrants' maxima moves from the crowd to attention and the chord. At block 12 the crowd supplies 0.85 of the entrants' maximum at step 512 and 0.55 at 2000, attention 0.10 rising to 0.34, 0.40 and 0.43 by steps 2000-16000, the other largest writes 0.03 rising to 0.25 by step 32000, and the entrants' own write is 0.00 until step 16000 (they are the writers at their own maximum in 0.06-0.23 of cases through step 4000, 0.47-0.53 from 8000): a row is not, at the moment it becomes a word, writing at the position where its projection is largest.
   - Pre-registered: attention alone at 0.8, refuted (0.56-0.68); attention with the embedding within 0.05 of the whole, refuted (0.3 short); the crowd alone under 0.7, refuted (0.69-0.79); attention's share at the entrants' maxima above the MLP writes' share, refuted (0.32-0.43 against 0.45-0.61).
+
+SESSION 75 (the relayed take's direct test of the consensus reading: does how the projection is assembled predict wordhood beyond how large it is; e520, an analysis over e519's thirteen records; 2026-09-27 19:38-19:40 box time).
+
+- e520 AGREEMENT BEYOND SIZE (at each row's best position the real projection P splits into the parts' projections recorded by e519 as shares s_k = p_k / P; from the shares: the agreement index a = (1 - sum s_k^2) / 2, the pairwise cross term over P^2, a third for three equal positive parts and large and negative when large parts cancel; the constructive fraction, the share of the pairwise products that are positive; the sign consensus; the largest single share. The size predictor S is the row's largest projection over the floor. Per origin, among the rows that are not words: the AUC of each for entry at the next checkpoint; the AUC of the agreement quantities within deciles of S and of S within deciles of a; and, among rows with S within 0.9-1.1 of the floor, the entry rate in the top and bottom quartiles of a).
+
+  Block 6, entry at the next checkpoint (AUC of entrants over non-entrants):
+
+  | origin | S, the largest projection over the floor | agreement index a | constructive fraction | sign consensus | largest single share | S x (1 + a) | within deciles of S: a / constructive / consensus / largest share | S within deciles of a |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.75 | 0.44 | 0.51 | 0.59 | 0.56 | 0.71 | 0.43 / 0.44 / 0.52 / 0.57 | 0.75 |
+  | 1000 | 0.75 | 0.53 | 0.53 | 0.59 | 0.52 | 0.74 | 0.52 / 0.49 / 0.54 / 0.53 | 0.75 |
+  | 2000 | 0.87 | 0.51 | 0.55 | 0.60 | 0.52 | 0.85 | 0.51 / 0.43 / 0.50 / 0.51 | 0.87 |
+  | 3000 | 0.93 | 0.54 | 0.55 | 0.61 | 0.49 | 0.91 | 0.50 / 0.52 / 0.56 / 0.51 | 0.93 |
+  | 4000 | 0.89 | 0.61 | 0.54 | 0.58 | 0.42 | 0.88 | 0.57 / 0.51 / 0.53 / 0.44 | 0.88 |
+  | 8000 | 0.93 | 0.63 | 0.42 | 0.49 | 0.40 | 0.91 | 0.56 / 0.47 / 0.53 / 0.45 | 0.92 |
+  | 16000 | 0.94 | 0.63 | 0.39 | 0.50 | 0.38 | 0.92 | 0.57 / 0.46 / 0.44 / 0.44 | 0.92 |
+  | 32000 | 0.97 | 0.53 | 0.35 | 0.44 | 0.46 | 0.93 | 0.43 / 0.34 / 0.45 / 0.57 | 0.97 |
+
+  Block 6, rows near the floor at the origin (S within 0.9-1.1), entry at the next checkpoint:
+
+  | origin | rows | entry rate, all | top agreement quartile | bottom agreement quartile | median a, entrants / non-entrants |
+  | --- | --- | --- | --- | --- | --- |
+  | 512 | 3959 | 0.023 | 0.010 | 0.028 | 0.16 / 0.18 |
+  | 1000 | 7179 | 0.015 | 0.018 | 0.017 | 0.24 / 0.24 |
+  | 2000 | 8465 | 0.006 | 0.008 | 0.008 | 0.26 / 0.25 |
+  | 3000 | 8136 | 0.006 | 0.005 | 0.005 | 0.26 / 0.26 |
+  | 4000 | 8035 | 0.005 | 0.007 | 0.005 | 0.26 / 0.26 |
+  | 8000 | 7164 | 0.004 | 0.005 | 0.003 | 0.29 / 0.28 |
+  | 16000 | 6414 | 0.003 | 0.001 | 0.003 | 0.28 / 0.29 |
+  | 32000 | 5864 | 0.002 | 0.000 | 0.003 | 0.26 / 0.29 |
+
+  Block 12, entry at the next checkpoint (AUC of entrants over non-entrants):
+
+  | origin | S, the largest projection over the floor | agreement index a | constructive fraction | sign consensus | largest single share | S x (1 + a) | within deciles of S: a / constructive / consensus / largest share | S within deciles of a |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 512 | 0.76 | 0.49 | 0.53 | 0.60 | 0.51 | 0.75 | 0.51 / 0.48 / 0.54 / 0.50 | 0.76 |
+  | 1000 | 0.76 | 0.51 | 0.54 | 0.60 | 0.50 | 0.74 | 0.49 / 0.48 / 0.54 / 0.52 | 0.76 |
+  | 2000 | 0.86 | 0.51 | 0.50 | 0.57 | 0.51 | 0.81 | 0.47 / 0.41 / 0.51 / 0.55 | 0.86 |
+  | 3000 | 0.88 | 0.53 | 0.45 | 0.55 | 0.49 | 0.84 | 0.50 / 0.43 / 0.52 / 0.52 | 0.88 |
+  | 4000 | 0.91 | 0.52 | 0.40 | 0.51 | 0.50 | 0.80 | 0.49 / 0.43 / 0.50 / 0.52 | 0.90 |
+  | 8000 | 0.95 | 0.56 | 0.43 | 0.51 | 0.45 | 0.86 | 0.52 / 0.46 / 0.53 / 0.48 | 0.94 |
+  | 16000 | 0.97 | 0.55 | 0.46 | 0.54 | 0.44 | 0.87 | 0.53 / 0.48 / 0.52 / 0.47 | 0.96 |
+  | 32000 | 0.97 | 0.58 | 0.48 | 0.55 | 0.40 | 0.89 | 0.57 / 0.52 / 0.52 / 0.43 | 0.97 |
+
+  Block 12, rows near the floor at the origin (S within 0.9-1.1), entry at the next checkpoint:
+
+  | origin | rows | entry rate, all | top agreement quartile | bottom agreement quartile | median a, entrants / non-entrants |
+  | --- | --- | --- | --- | --- | --- |
+  | 512 | 5703 | 0.016 | 0.018 | 0.013 | 0.14 / 0.13 |
+  | 1000 | 10566 | 0.010 | 0.011 | 0.012 | 0.23 / 0.24 |
+  | 2000 | 11250 | 0.009 | 0.009 | 0.010 | 0.24 / 0.25 |
+  | 3000 | 10087 | 0.006 | 0.006 | 0.006 | 0.24 / 0.24 |
+  | 4000 | 9634 | 0.005 | 0.005 | 0.007 | 0.22 / 0.24 |
+  | 8000 | 8882 | 0.005 | 0.006 | 0.006 | 0.25 / 0.24 |
+  | 16000 | 8159 | 0.003 | 0.003 | 0.002 | 0.27 / 0.24 |
+  | 32000 | 8030 | 0.001 | 0.001 | 0.001 | 0.13 / 0.22 |
+
+  - How the projection is assembled adds nothing to how large it is. The agreement index alone reads the next checkpoint's entrants at 0.44-0.63, the constructive fraction at 0.35-0.55 and the sign consensus at 0.44-0.61, against S at 0.75-0.97; within deciles of S, where rows of the same size are compared, agreement sits at 0.43-0.57, the constructive fraction at 0.34-0.55, the consensus at 0.44-0.61 and the largest share at 0.40-0.57, none away from chance in either direction; S within deciles of a is 0.75-0.97. The rows nearest the floor at the origin, thousands at every checkpoint, enter at the same rate whether the parts agree or cancel at their best position (top and bottom quartiles of a within a few thousandths of each other, entrants' and non-entrants' median a equal), and multiplying S by the agreement lowers the AUC (0.74-0.89 against 0.76-0.97). The relayed take's own criterion decides it: the agreement is a function of the size, and "consensus" describes what a large resultant is made of at the atoms where the state is largest, not a variable that selects among resultants of one size.
+  - So e519b's descriptive finding stands and its stronger reading falls. That no part supplies the projection alone, that the parts clear the floor for most rows each while the whole does for a tenth, and that the words are the atoms along which the parts add, all remain true; but nothing in the composition of a row's projection, given its size, says whether the row will be a word. The extreme-value criterion is a criterion on the resultant alone.
+  - Pre-registered: the agreement index alone at 0.7, refuted (at most 0.63); agreement within deciles of S at 0.6, refuted (at most 0.57); the graded index adding more than the sign consensus, refuted (neither adds); the top agreement quartile near the floor entering at twice the bottom's rate, refuted (equal rates).

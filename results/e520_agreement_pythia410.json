@@ -1,0 +1,2362 @@
+{
+ "model": "pythia410",
+ "steps": [
+  0,
+  64,
+  256,
+  512,
+  1000,
+  2000,
+  3000,
+  4000,
+  8000,
+  16000,
+  32000,
+  64000,
+  143000
+ ],
+ "origins": [
+  512,
+  1000,
+  2000,
+  3000,
+  4000,
+  8000,
+  16000,
+  32000
+ ],
+ "by_block": {
+  "6": {
+   "512": {
+    "1000": {
+     "n_entrants": 223,
+     "auc": {
+      "S": 0.7466476667315091,
+      "agreement": 0.4411296001185932,
+      "constructive": 0.5097864034245692,
+      "consensus": 0.5888021372223077,
+      "largest_share": 0.5630720598361169,
+      "S_times_agreement": 0.7077675198133812
+     },
+     "within_S_deciles": {
+      "agreement": 0.4349160092286521,
+      "constructive": 0.4414205402520288,
+      "consensus": 0.516889065512077,
+      "largest_share": 0.5673420542590158
+     },
+     "S_within_agreement_deciles": 0.7457903244211364,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.010101010091602802,
+      "entry_rate_bottom_agreement_quartile": 0.028282828629016876,
+      "entry_rate_all": 0.02349078096449375,
+      "median_agreement_entrants": 0.15977725386619568,
+      "median_agreement_non_entrants": 0.178429514169693
+     }
+    },
+    "2000": {
+     "n_entrants": 248,
+     "auc": {
+      "S": 0.6291722590722943,
+      "agreement": 0.500759985020751,
+      "constructive": 0.4392355544154428,
+      "consensus": 0.5258861577081291,
+      "largest_share": 0.502495968887138,
+      "S_times_agreement": 0.6198199627122061
+     },
+     "within_S_deciles": {
+      "agreement": 0.49928778660195366,
+      "constructive": 0.4356892159206411,
+      "consensus": 0.49770078503824505,
+      "largest_share": 0.5032899991174288
+     },
+     "S_within_agreement_deciles": 0.6299137453360923,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.011111111380159855,
+      "entry_rate_bottom_agreement_quartile": 0.017171716317534447,
+      "entry_rate_all": 0.01641828753054142,
+      "median_agreement_entrants": 0.1803472638130188,
+      "median_agreement_non_entrants": 0.17772018909454346
+     }
+    },
+    "3000": {
+     "n_entrants": 246,
+     "auc": {
+      "S": 0.5920518859075705,
+      "agreement": 0.49056396847248557,
+      "constructive": 0.4243768236404409,
+      "consensus": 0.5211041556634949,
+      "largest_share": 0.5124680006118485,
+      "S_times_agreement": 0.5803771237925371
+     },
+     "within_S_deciles": {
+      "agreement": 0.4898644056270508,
+      "constructive": 0.43666018260174,
+      "consensus": 0.504046284852728,
+      "largest_share": 0.5128006817017412
+     },
+     "S_within_agreement_deciles": 0.5928616446795708,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.005050505045801401,
+      "entry_rate_bottom_agreement_quartile": 0.017171716317534447,
+      "entry_rate_all": 0.012882040813565254,
+      "median_agreement_entrants": 0.17664173245429993,
+      "median_agreement_non_entrants": 0.17794272303581238
+     }
+    },
+    "4000": {
+     "n_entrants": 253,
+     "auc": {
+      "S": 0.5732823839312619,
+      "agreement": 0.4868389677876068,
+      "constructive": 0.38519171076226355,
+      "consensus": 0.5064795721238263,
+      "largest_share": 0.5133666393506239,
+      "S_times_agreement": 0.5593286063807824
+     },
+     "within_S_deciles": {
+      "agreement": 0.4854871300670362,
+      "constructive": 0.42277812956795335,
+      "consensus": 0.4967291513134512,
+      "largest_share": 0.5142993797397342
+     },
+     "S_within_agreement_deciles": 0.574408133501084,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.008080808445811272,
+      "entry_rate_bottom_agreement_quartile": 0.014141414314508438,
+      "entry_rate_all": 0.012629452161490917,
+      "median_agreement_entrants": 0.1702161729335785,
+      "median_agreement_non_entrants": 0.17802757024765015
+     }
+    },
+    "8000": {
+     "n_entrants": 250,
+     "auc": {
+      "S": 0.5819781296598736,
+      "agreement": 0.5027565149470994,
+      "constructive": 0.45329219626500034,
+      "consensus": 0.5001435773627778,
+      "largest_share": 0.5012449052048569,
+      "S_times_agreement": 0.5725547113541148
+     },
+     "within_S_deciles": {
+      "agreement": 0.5031320405385107,
+      "constructive": 0.4572313472962497,
+      "consensus": 0.5255387953983531,
+      "largest_share": 0.5001379528888478
+     },
+     "S_within_agreement_deciles": 0.5839506985896254,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.011111111380159855,
+      "entry_rate_bottom_agreement_quartile": 0.011111111380159855,
+      "entry_rate_all": 0.013134630396962166,
+      "median_agreement_entrants": 0.18163618445396423,
+      "median_agreement_non_entrants": 0.17767420411109924
+     }
+    },
+    "16000": {
+     "n_entrants": 251,
+     "auc": {
+      "S": 0.5555843022371724,
+      "agreement": 0.5344590747607829,
+      "constructive": 0.4135173843946069,
+      "consensus": 0.5174870905159762,
+      "largest_share": 0.4668922393154172,
+      "S_times_agreement": 0.5651157839792967
+     },
+     "within_S_deciles": {
+      "agreement": 0.5347415206355879,
+      "constructive": 0.43954603944128345,
+      "consensus": 0.49538690210194186,
+      "largest_share": 0.46637504786750505
+     },
+     "S_within_agreement_deciles": 0.5550448801496368,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.008080808445811272,
+      "entry_rate_bottom_agreement_quartile": 0.010101010091602802,
+      "entry_rate_all": 0.010608739219605923,
+      "median_agreement_entrants": 0.18391752243041992,
+      "median_agreement_non_entrants": 0.17772018909454346
+     }
+    },
+    "32000": {
+     "n_entrants": 252,
+     "auc": {
+      "S": 0.5499165319680871,
+      "agreement": 0.5173947153069437,
+      "constructive": 0.42464178068140573,
+      "consensus": 0.5043858759240097,
+      "largest_share": 0.4808964725879937,
+      "S_times_agreement": 0.5504973139187029
+     },
+     "within_S_deciles": {
+      "agreement": 0.5189300281602698,
+      "constructive": 0.4594671297203956,
+      "consensus": 0.5229819556408476,
+      "largest_share": 0.4791869311734517
+     },
+     "S_within_agreement_deciles": 0.5502138784654544,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.0060606058686971664,
+      "entry_rate_bottom_agreement_quartile": 0.0060606058686971664,
+      "entry_rate_all": 0.010103561915457249,
+      "median_agreement_entrants": 0.1868094503879547,
+      "median_agreement_non_entrants": 0.17767420411109924
+     }
+    },
+    "64000": {
+     "n_entrants": 251,
+     "auc": {
+      "S": 0.554678569584612,
+      "agreement": 0.48954291125927674,
+      "constructive": 0.4017384748242959,
+      "consensus": 0.4950995237936944,
+      "largest_share": 0.5118777154828228,
+      "S_times_agreement": 0.54153377613282
+     },
+     "within_S_deciles": {
+      "agreement": 0.4905656664672017,
+      "constructive": 0.4643827339809084,
+      "consensus": 0.5172041825778504,
+      "largest_share": 0.5103901643167894
+     },
+     "S_within_agreement_deciles": 0.5560900496021035,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.007070707157254219,
+      "entry_rate_bottom_agreement_quartile": 0.010101010091602802,
+      "entry_rate_all": 0.009345794096589088,
+      "median_agreement_entrants": 0.17721518874168396,
+      "median_agreement_non_entrants": 0.17794272303581238
+     }
+    },
+    "143000": {
+     "n_entrants": 252,
+     "auc": {
+      "S": 0.5391702342064506,
+      "agreement": 0.5034049433815092,
+      "constructive": 0.439764373296542,
+      "consensus": 0.5188222948129212,
+      "largest_share": 0.496962096157878,
+      "S_times_agreement": 0.5343649046514407
+     },
+     "within_S_deciles": {
+      "agreement": 0.5033485333788752,
+      "constructive": 0.46115764493186134,
+      "consensus": 0.5185115471186056,
+      "largest_share": 0.4968022926670806
+     },
+     "S_within_agreement_deciles": 0.5380838398630481,
+     "near_floor": {
+      "n": 3959,
+      "entry_rate_top_agreement_quartile": 0.00909090880304575,
+      "entry_rate_bottom_agreement_quartile": 0.00909090880304575,
+      "entry_rate_all": 0.009598383679986,
+      "median_agreement_entrants": 0.18139588832855225,
+      "median_agreement_non_entrants": 0.17777815461158752
+     }
+    }
+   },
+   "1000": {
+    "2000": {
+     "n_entrants": 204,
+     "auc": {
+      "S": 0.7468619944787783,
+      "agreement": 0.5261519573092246,
+      "constructive": 0.5318604862900782,
+      "consensus": 0.5941457257793235,
+      "largest_share": 0.5176562330589403,
+      "S_times_agreement": 0.7360094647528655
+     },
+     "within_S_deciles": {
+      "agreement": 0.5172527914096189,
+      "constructive": 0.49401359824937974,
+      "consensus": 0.5427547924453465,
+      "largest_share": 0.5263396144217424
+     },
+     "S_within_agreement_deciles": 0.7461305704396454,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.017827298492193222,
+      "entry_rate_bottom_agreement_quartile": 0.016713092103600502,
+      "entry_rate_all": 0.015043877996504307,
+      "median_agreement_entrants": 0.24421918392181396,
+      "median_agreement_non_entrants": 0.24467220902442932
+     }
+    },
+    "3000": {
+     "n_entrants": 219,
+     "auc": {
+      "S": 0.693045327047487,
+      "agreement": 0.5327406992842109,
+      "constructive": 0.5522097221068403,
+      "consensus": 0.5873781384495873,
+      "largest_share": 0.4995832485174837,
+      "S_times_agreement": 0.6890104407298746
+     },
+     "within_S_deciles": {
+      "agreement": 0.5274528559648851,
+      "constructive": 0.520606406542377,
+      "consensus": 0.5677214829686834,
+      "largest_share": 0.5030137047422387
+     },
+     "S_within_agreement_deciles": 0.6925343615871897,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.018384400755167007,
+      "entry_rate_bottom_agreement_quartile": 0.013927577063441277,
+      "entry_rate_all": 0.013511630706489086,
+      "median_agreement_entrants": 0.25499415397644043,
+      "median_agreement_non_entrants": 0.24457040429115295
+     }
+    },
+    "4000": {
+     "n_entrants": 227,
+     "auc": {
+      "S": 0.6506005795055809,
+      "agreement": 0.5321810629103144,
+      "constructive": 0.5355314809429054,
+      "consensus": 0.5941116782048423,
+      "largest_share": 0.4972421054046295,
+      "S_times_agreement": 0.6505561968981246
+     },
+     "within_S_deciles": {
+      "agreement": 0.5273802403090398,
+      "constructive": 0.4789528755499921,
+      "consensus": 0.529292642613599,
+      "largest_share": 0.5001864894133649
+     },
+     "S_within_agreement_deciles": 0.6504761914199436,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.019498607143759727,
+      "entry_rate_bottom_agreement_quartile": 0.011142061091959476,
+      "entry_rate_all": 0.013511630706489086,
+      "median_agreement_entrants": 0.24851611256599426,
+      "median_agreement_non_entrants": 0.24457040429115295
+     }
+    },
+    "8000": {
+     "n_entrants": 228,
+     "auc": {
+      "S": 0.6238775240926212,
+      "agreement": 0.5318553496697612,
+      "constructive": 0.493570581235265,
+      "consensus": 0.5453963239303026,
+      "largest_share": 0.4869250384013105,
+      "S_times_agreement": 0.6233531625999865
+     },
+     "within_S_deciles": {
+      "agreement": 0.528069956047983,
+      "constructive": 0.44921227436533523,
+      "consensus": 0.5141756878502158,
+      "largest_share": 0.4890405554415748
+     },
+     "S_within_agreement_deciles": 0.6239054115203603,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.017270194366574287,
+      "entry_rate_bottom_agreement_quartile": 0.008913649246096611,
+      "entry_rate_all": 0.01281515508890152,
+      "median_agreement_entrants": 0.24826011061668396,
+      "median_agreement_non_entrants": 0.24461451172828674
+     }
+    },
+    "16000": {
+     "n_entrants": 237,
+     "auc": {
+      "S": 0.6086315586778496,
+      "agreement": 0.5415812984592321,
+      "constructive": 0.5473729351974261,
+      "consensus": 0.5701766719478536,
+      "largest_share": 0.47702863385562727,
+      "S_times_agreement": 0.6174757124548714
+     },
+     "within_S_deciles": {
+      "agreement": 0.5384169649952343,
+      "constructive": 0.5204368923506416,
+      "consensus": 0.560130256431552,
+      "largest_share": 0.47894226794265055
+     },
+     "S_within_agreement_deciles": 0.606628048195135,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.017827298492193222,
+      "entry_rate_bottom_agreement_quartile": 0.009470752440392971,
+      "entry_rate_all": 0.013511630706489086,
+      "median_agreement_entrants": 0.24851611256599426,
+      "median_agreement_non_entrants": 0.24463123083114624
+     }
+    },
+    "32000": {
+     "n_entrants": 243,
+     "auc": {
+      "S": 0.6171248805331083,
+      "agreement": 0.5425696523201227,
+      "constructive": 0.5356316258204197,
+      "consensus": 0.583835850190161,
+      "largest_share": 0.4696857555149773,
+      "S_times_agreement": 0.6202249213012079
+     },
+     "within_S_deciles": {
+      "agreement": 0.5395145124295726,
+      "constructive": 0.5003635028483445,
+      "consensus": 0.5448586247720189,
+      "largest_share": 0.47141226854657275
+     },
+     "S_within_agreement_deciles": 0.6156812049351055,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.017827298492193222,
+      "entry_rate_bottom_agreement_quartile": 0.009470752440392971,
+      "entry_rate_all": 0.013372335582971573,
+      "median_agreement_entrants": 0.24967727065086365,
+      "median_agreement_non_entrants": 0.24463123083114624
+     }
+    },
+    "64000": {
+     "n_entrants": 242,
+     "auc": {
+      "S": 0.6171351348497266,
+      "agreement": 0.5536780878214308,
+      "constructive": 0.46306805348345903,
+      "consensus": 0.5029502319411778,
+      "largest_share": 0.4577659960798509,
+      "S_times_agreement": 0.6243308260884104
+     },
+     "within_S_deciles": {
+      "agreement": 0.5514007428531632,
+      "constructive": 0.5162837275456263,
+      "consensus": 0.5540521057728414,
+      "largest_share": 0.458182162782074
+     },
+     "S_within_agreement_deciles": 0.6160076094629429,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.017270194366574287,
+      "entry_rate_bottom_agreement_quartile": 0.005571030545979738,
+      "entry_rate_all": 0.01323304045945406,
+      "median_agreement_entrants": 0.2522085905075073,
+      "median_agreement_non_entrants": 0.24454420804977417
+     }
+    },
+    "143000": {
+     "n_entrants": 246,
+     "auc": {
+      "S": 0.6053066313410738,
+      "agreement": 0.576513098464318,
+      "constructive": 0.46562291661255273,
+      "consensus": 0.5052897477856567,
+      "largest_share": 0.4276287118568736,
+      "S_times_agreement": 0.6202656057444493
+     },
+     "within_S_deciles": {
+      "agreement": 0.5751458909945447,
+      "constructive": 0.5094767864403862,
+      "consensus": 0.5460604941001062,
+      "largest_share": 0.4277277817057915
+     },
+     "S_within_agreement_deciles": 0.6033240937149054,
+     "near_floor": {
+      "n": 7179,
+      "entry_rate_top_agreement_quartile": 0.018941504880785942,
+      "entry_rate_bottom_agreement_quartile": 0.0044568246230483055,
+      "entry_rate_all": 0.013093745335936546,
+      "median_agreement_entrants": 0.2536422610282898,
+      "median_agreement_non_entrants": 0.24454420804977417
+     }
+    }
+   },
+   "2000": {
+    "3000": {
+     "n_entrants": 134,
+     "auc": {
+      "S": 0.8724931315419227,
+      "agreement": 0.5104636459875855,
+      "constructive": 0.5492987998273254,
+      "consensus": 0.6018170409532143,
+      "largest_share": 0.5221732719613867,
+      "S_times_agreement": 0.853597615486671
+     },
+     "within_S_deciles": {
+      "agreement": 0.506291762359622,
+      "constructive": 0.4286889731172033,
+      "consensus": 0.4974697153119987,
+      "largest_share": 0.5135988245508434
+     },
+     "S_within_agreement_deciles": 0.8704308770108767,
+     "near_floor": {
+      "n": 8465,
+      "entry_rate_top_agreement_quartile": 0.008030231110751629,
+      "entry_rate_bottom_agreement_quartile": 0.008030231110751629,
+      "entry_rate_all": 0.006497342139482498,
+      "median_agreement_entrants": 0.25511932373046875,
+      "median_agreement_non_entrants": 0.25225526094436646
+     }
+    },
+    "4000": {
+     "n_entrants": 163,
+     "auc": {
+      "S": 0.8354330795860975,
+      "agreement": 0.5189569965858449,
+      "constructive": 0.5417631962206522,
+      "consensus": 0.5960839383146022,
+      "largest_share": 0.5122759101102028,
+      "S_times_agreement": 0.819087565270771
+     },
+     "within_S_deciles": {
+      "agreement": 0.5158829299374955,
+      "constructive": 0.4469308884811094,
+      "consensus": 0.49463819644288454,
+      "largest_share": 0.5094978569193063
+     },
+     "S_within_agreement_deciles": 0.8342115040583287,
+     "near_floor": {
+      "n": 8465,
+      "entry_rate_top_agreement_quartile": 0.011809163726866245,
+      "entry_rate_bottom_agreement_quartile": 0.009447331540286541,
+      "entry_rate_all": 0.009450679644942284,
+      "median_agreement_entrants": 0.2513122856616974,
+      "median_agreement_non_entrants": 0.2522982358932495
+     }
+    },
+    "8000": {
+     "n_entrants": 194,
+     "auc": {
+      "S": 0.8138198466210831,
+      "agreement": 0.5400700046099884,
+      "constructive": 0.5397591408910355,
+      "consensus": 0.592261137213273,
+      "largest_share": 0.4966051563195197,
+      "S_times_agreement": 0.79920505096923
+     },
+     "within_S_deciles": {
+      "agreement": 0.5203123016548256,
+      "constructive": 0.5030406849481275,
+      "consensus": 0.5486952160685423,
+      "largest_share": 0.5080831188737238
+     },
+     "S_within_agreement_deciles": 0.8116653189573557,
+     "near_floor": {
+      "n": 8465,
+      "entry_rate_top_agreement_quartile": 0.013698630034923553,
+      "entry_rate_bottom_agreement_quartile": 0.012281530536711216,
+      "entry_rate_all": 0.010632013902068138,
+      "median_agreement_entrants": 0.24978047609329224,
+      "median_agreement_non_entrants": 0.25226402282714844
+     }
+    },
+    "16000": {
+     "n_entrants": 207,
+     "auc": {
+      "S": 0.764881458499129,
+      "agreement": 0.525810877160354,
+      "constructive": 0.5482726159106038,
+      "consensus": 0.6050337174400262,
+      "largest_share": 0.5058352398239299,
+      "S_times_agreement": 0.7570987982558758
+     },
+     "within_S_deciles": {
+      "agreement": 0.5059160457035489,
+      "constructive": 0.4579844560886488,
+      "consensus": 0.503568649778476,
+      "largest_share": 0.5177558024416083
+     },
+     "S_within_agreement_deciles": 0.7625564761937003,
+     "near_floor": {
+      "n": 8465,
+      "entry_rate_top_agreement_quartile": 0.013698630034923553,
+      "entry_rate_bottom_agreement_quartile": 0.014643363654613495,
+      "entry_rate_all": 0.011458948254585266,
+      "median_agreement_entrants": 0.2488650679588318,
+      "median_agreement_non_entrants": 0.25239109992980957
+     }
+    },
+    "32000": {
+     "n_entrants": 216,
+     "auc": {
+      "S": 0.7392815865510901,
+      "agreement": 0.5737381796690307,
+      "constructive": 0.5667490806409247,
+      "consensus": 0.6194245797215655,
+      "largest_share": 0.4515584778040452,
+      "S_times_agreement": 0.7457972156553717
+     },
+     "within_S_deciles": {
+      "agreement": 0.5564544644537913,
+      "constructive": 0.48067563225365145,
+      "consensus": 0.5233894218496543,
+      "largest_share": 0.4594613036095118
+     },
+     "S_within_agreement_deciles": 0.7358788918832487,
+     "near_floor": {
+      "n": 8465,
+      "entry_rate_top_agreement_quartile": 0.015588096342980862,
+      "entry_rate_bottom_agreement_quartile": 0.012281530536711216,
+      "entry_rate_all": 0.012167749926447868,
+      "median_agreement_entrants": 0.26209771633148193,
+      "median_agreement_non_entrants": 0.2521957755088806
+     }
+    },
+    "64000": {
+     "n_entrants": 225,
+     "auc": {
+      "S": 0.7154247021310978,
+      "agreement": 0.5630276014015505,
+      "constructive": 0.5809660293474277,
+      "consensus": 0.6286051892053808,
+      "largest_share": 0.46768606213961117,
+      "S_times_agreement": 0.7126564427575388
+     },
+     "within_S_deciles": {
+      "agreement": 0.5544568716010492,
+      "constructive": 0.5411017659320622,
+      "consensus": 0.5752449490700956,
+      "largest_share": 0.4688089889529815
+     },
+     "S_within_agreement_deciles": 0.712584608623473,
+     "near_floor": {
+      "n": 8465,
+      "entry_rate_top_agreement_quartile": 0.0170051958411932,
+      "entry_rate_bottom_agreement_quartile": 0.013226263225078583,
+      "entry_rate_all": 0.012994684278964996,
+      "median_agreement_entrants": 0.25202372670173645,
+      "median_agreement_non_entrants": 0.25226402282714844
+     }
+    },
+    "143000": {
+     "n_entrants": 229,
+     "auc": {
+      "S": 0.7000243074054858,
+      "agreement": 0.5698300325198693,
+      "constructive": 0.5569951337162925,
+      "consensus": 0.585373138814186,
+      "largest_share": 0.4584012605767811,
+      "S_times_agreement": 0.7015709028737116
+     },
+     "within_S_deciles": {
+      "agreement": 0.5611650884384811,
+      "constructive": 0.4826624706870679,
+      "consensus": 0.5268319365681838,
+      "largest_share": 0.4595268067181983
+     },
+     "S_within_agreement_deciles": 0.6968981730371072,
+     "near_floor": {
+      "n": 8465,
+      "entry_rate_top_agreement_quartile": 0.015588096342980862,
+      "entry_rate_bottom_agreement_quartile": 0.011336796917021275,
+      "entry_rate_all": 0.012640283443033695,
+      "median_agreement_entrants": 0.25595223903656006,
+      "median_agreement_non_entrants": 0.25225526094436646
+     }
+    }
+   },
+   "3000": {
+    "4000": {
+     "n_entrants": 111,
+     "auc": {
+      "S": 0.9308500869709136,
+      "agreement": 0.5402849590448955,
+      "constructive": 0.553620393048056,
+      "consensus": 0.6099196175507782,
+      "largest_share": 0.4928900283431285,
+      "S_times_agreement": 0.9079394179553162
+     },
+     "within_S_deciles": {
+      "agreement": 0.49824435542771933,
+      "constructive": 0.5184083936628517,
+      "consensus": 0.5632356188180304,
+      "largest_share": 0.5134415293772738
+     },
+     "S_within_agreement_deciles": 0.9276814069152982,
+     "near_floor": {
+      "n": 8136,
+      "entry_rate_top_agreement_quartile": 0.005408063065260649,
+      "entry_rate_bottom_agreement_quartile": 0.005408063065260649,
+      "entry_rate_all": 0.005899704992771149,
+      "median_agreement_entrants": 0.26018744707107544,
+      "median_agreement_non_entrants": 0.25923240184783936
+     }
+    },
+    "8000": {
+     "n_entrants": 155,
+     "auc": {
+      "S": 0.8822339231883446,
+      "agreement": 0.5675147901302491,
+      "constructive": 0.4151408928981122,
+      "consensus": 0.4913101492881447,
+      "largest_share": 0.46781076395032023,
+      "S_times_agreement": 0.8463408481539019
+     },
+     "within_S_deciles": {
+      "agreement": 0.5381579891045831,
+      "constructive": 0.4619210791043373,
+      "consensus": 0.5231344527503964,
+      "largest_share": 0.48283481017603663
+     },
+     "S_within_agreement_deciles": 0.8770501277321068,
+     "near_floor": {
+      "n": 8136,
+      "entry_rate_top_agreement_quartile": 0.007866273634135723,
+      "entry_rate_bottom_agreement_quartile": 0.012782693840563297,
+      "entry_rate_all": 0.0076204524375498295,
+      "median_agreement_entrants": 0.23393455147743225,
+      "median_agreement_non_entrants": 0.2593614459037781
+     }
+    },
+    "16000": {
+     "n_entrants": 178,
+     "auc": {
+      "S": 0.8342814010286561,
+      "agreement": 0.5593683624982194,
+      "constructive": 0.42197501016639466,
+      "consensus": 0.5038192617963999,
+      "largest_share": 0.47409121185811454,
+      "S_times_agreement": 0.8105954920893115
+     },
+     "within_S_deciles": {
+      "agreement": 0.5312065699793534,
+      "constructive": 0.4647735404986352,
+      "consensus": 0.5217157072894835,
+      "largest_share": 0.4888914668386142
+     },
+     "S_within_agreement_deciles": 0.8242955623214171,
+     "near_floor": {
+      "n": 8136,
+      "entry_rate_top_agreement_quartile": 0.014257620088756084,
+      "entry_rate_bottom_agreement_quartile": 0.014257620088756084,
+      "entry_rate_all": 0.010201573371887207,
+      "median_agreement_entrants": 0.24730604887008667,
+      "median_agreement_non_entrants": 0.2593187689781189
+     }
+    },
+    "32000": {
+     "n_entrants": 193,
+     "auc": {
+      "S": 0.7975615742791634,
+      "agreement": 0.5576145131327314,
+      "constructive": 0.39474639340750084,
+      "consensus": 0.5015748923405909,
+      "largest_share": 0.47107153078948033,
+      "S_times_agreement": 0.775370618789401
+     },
+     "within_S_deciles": {
+      "agreement": 0.5332572380687665,
+      "constructive": 0.428492444651231,
+      "consensus": 0.5052765766250374,
+      "largest_share": 0.4850220826835679
+     },
+     "S_within_agreement_deciles": 0.7881739809453033,
+     "near_floor": {
+      "n": 8136,
+      "entry_rate_top_agreement_quartile": 0.01622418873012066,
+      "entry_rate_bottom_agreement_quartile": 0.012782693840563297,
+      "entry_rate_all": 0.01130776759237051,
+      "median_agreement_entrants": 0.2600410580635071,
+      "median_agreement_non_entrants": 0.25923240184783936
+     }
+    },
+    "64000": {
+     "n_entrants": 207,
+     "auc": {
+      "S": 0.7759434709483028,
+      "agreement": 0.5587794213071068,
+      "constructive": 0.44263154442606883,
+      "consensus": 0.5091945678761173,
+      "largest_share": 0.47241475508124914,
+      "S_times_agreement": 0.7613726252782244
+     },
+     "within_S_deciles": {
+      "agreement": 0.5356854289129668,
+      "constructive": 0.42310866904683037,
+      "consensus": 0.4977056064542379,
+      "largest_share": 0.48464129315488996
+     },
+     "S_within_agreement_deciles": 0.7670441678940797,
+     "near_floor": {
+      "n": 8136,
+      "entry_rate_top_agreement_quartile": 0.01671583019196987,
+      "entry_rate_bottom_agreement_quartile": 0.01622418873012066,
+      "entry_rate_all": 0.012536873109638691,
+      "median_agreement_entrants": 0.2580150067806244,
+      "median_agreement_non_entrants": 0.2592681646347046
+     }
+    },
+    "143000": {
+     "n_entrants": 211,
+     "auc": {
+      "S": 0.7552375087271508,
+      "agreement": 0.594804625242911,
+      "constructive": 0.5519455980293232,
+      "consensus": 0.6075836105157651,
+      "largest_share": 0.4340892803282669,
+      "S_times_agreement": 0.7521954612934583
+     },
+     "within_S_deciles": {
+      "agreement": 0.5796085380191873,
+      "constructive": 0.5188393479131228,
+      "consensus": 0.5623329023858828,
+      "largest_share": 0.4398546862199893
+     },
+     "S_within_agreement_deciles": 0.7435301225091444,
+     "near_floor": {
+      "n": 8136,
+      "entry_rate_top_agreement_quartile": 0.01868239976465702,
+      "entry_rate_bottom_agreement_quartile": 0.01130776759237051,
+      "entry_rate_all": 0.012659783475100994,
+      "median_agreement_entrants": 0.26594147086143494,
+      "median_agreement_non_entrants": 0.25916585326194763
+     }
+    }
+   },
+   "4000": {
+    "8000": {
+     "n_entrants": 114,
+     "auc": {
+      "S": 0.8902551056462441,
+      "agreement": 0.6062636451208581,
+      "constructive": 0.5417660025266332,
+      "consensus": 0.5844122354504734,
+      "largest_share": 0.42143850722842724,
+      "S_times_agreement": 0.8779889090969952
+     },
+     "within_S_deciles": {
+      "agreement": 0.5706195604298274,
+      "constructive": 0.5058939616193475,
+      "consensus": 0.5263018984913534,
+      "largest_share": 0.4395258344174243
+     },
+     "S_within_agreement_deciles": 0.8843007682703317,
+     "near_floor": {
+      "n": 8035,
+      "entry_rate_top_agreement_quartile": 0.006968641187995672,
+      "entry_rate_bottom_agreement_quartile": 0.0054753609001636505,
+      "entry_rate_all": 0.004604853689670563,
+      "median_agreement_entrants": 0.264955073595047,
+      "median_agreement_non_entrants": 0.2638093829154968
+     }
+    },
+    "16000": {
+     "n_entrants": 140,
+     "auc": {
+      "S": 0.8321618030434694,
+      "agreement": 0.5644547117191763,
+      "constructive": 0.5173908210900713,
+      "consensus": 0.560470515126407,
+      "largest_share": 0.4443056201119576,
+      "S_times_agreement": 0.8175714386759089
+     },
+     "within_S_deciles": {
+      "agreement": 0.5326576976816266,
+      "constructive": 0.5194909634465376,
+      "consensus": 0.5579202192278484,
+      "largest_share": 0.47410305349391313
+     },
+     "S_within_agreement_deciles": 0.8242857713303035,
+     "near_floor": {
+      "n": 8035,
+      "entry_rate_top_agreement_quartile": 0.006470880936831236,
+      "entry_rate_bottom_agreement_quartile": 0.009955201297998428,
+      "entry_rate_all": 0.006471686530858278,
+      "median_agreement_entrants": 0.24824336171150208,
+      "median_agreement_non_entrants": 0.2638838291168213
+     }
+    },
+    "32000": {
+     "n_entrants": 166,
+     "auc": {
+      "S": 0.7945695703166649,
+      "agreement": 0.5403893805309734,
+      "constructive": 0.5004348011515087,
+      "consensus": 0.5663411877598891,
+      "largest_share": 0.46990809254717986,
+      "S_times_agreement": 0.7718741870135409
+     },
+     "within_S_deciles": {
+      "agreement": 0.5096409426165125,
+      "constructive": 0.4724232794065575,
+      "consensus": 0.5210492598569844,
+      "largest_share": 0.4890523839505811
+     },
+     "S_within_agreement_deciles": 0.7882258796722696,
+     "near_floor": {
+      "n": 8035,
+      "entry_rate_top_agreement_quartile": 0.009955201297998428,
+      "entry_rate_bottom_agreement_quartile": 0.009955201297998428,
+      "entry_rate_all": 0.008462974801659584,
+      "median_agreement_entrants": 0.25074756145477295,
+      "median_agreement_non_entrants": 0.2638906240463257
+     }
+    },
+    "64000": {
+     "n_entrants": 183,
+     "auc": {
+      "S": 0.7800159833113945,
+      "agreement": 0.5613730705783779,
+      "constructive": 0.5021246887967207,
+      "consensus": 0.5678339438849899,
+      "largest_share": 0.4565242510653444,
+      "S_times_agreement": 0.7590017417512622
+     },
+     "within_S_deciles": {
+      "agreement": 0.5332304512182813,
+      "constructive": 0.44768003957515207,
+      "consensus": 0.5077347671356139,
+      "largest_share": 0.4708903109185716
+     },
+     "S_within_agreement_deciles": 0.7708316066607588,
+     "near_floor": {
+      "n": 8035,
+      "entry_rate_top_agreement_quartile": 0.01642608270049095,
+      "entry_rate_bottom_agreement_quartile": 0.009457441978156567,
+      "entry_rate_all": 0.010578718036413193,
+      "median_agreement_entrants": 0.2691437602043152,
+      "median_agreement_non_entrants": 0.2637993097305298
+     }
+    },
+    "143000": {
+     "n_entrants": 193,
+     "auc": {
+      "S": 0.7804814689228404,
+      "agreement": 0.5973774008227222,
+      "constructive": 0.4331993951209088,
+      "consensus": 0.48073843422086754,
+      "largest_share": 0.41644350260756346,
+      "S_times_agreement": 0.7651797609673806
+     },
+     "within_S_deciles": {
+      "agreement": 0.5671863573294116,
+      "constructive": 0.4628665201165762,
+      "consensus": 0.5184568951865878,
+      "largest_share": 0.43377760688998435
+     },
+     "S_within_agreement_deciles": 0.7688362985405388,
+     "near_floor": {
+      "n": 8035,
+      "entry_rate_top_agreement_quartile": 0.01941264234483242,
+      "entry_rate_bottom_agreement_quartile": 0.007964161224663258,
+      "entry_rate_all": 0.010952084325253963,
+      "median_agreement_entrants": 0.2838488221168518,
+      "median_agreement_non_entrants": 0.2637138366699219
+     }
+    }
+   },
+   "8000": {
+    "16000": {
+     "n_entrants": 98,
+     "auc": {
+      "S": 0.9272918645528697,
+      "agreement": 0.6290810200766513,
+      "constructive": 0.42253250618702176,
+      "consensus": 0.48894948190449283,
+      "largest_share": 0.40223532735362666,
+      "S_times_agreement": 0.9060588851685882
+     },
+     "within_S_deciles": {
+      "agreement": 0.5565460931168795,
+      "constructive": 0.4735864068324372,
+      "consensus": 0.5300862879724336,
+      "largest_share": 0.44655250929001883
+     },
+     "S_within_agreement_deciles": 0.9197521792464273,
+     "near_floor": {
+      "n": 7164,
+      "entry_rate_top_agreement_quartile": 0.005025125574320555,
+      "entry_rate_bottom_agreement_quartile": 0.0027917365077883005,
+      "entry_rate_all": 0.004048017784953117,
+      "median_agreement_entrants": 0.28593918681144714,
+      "median_agreement_non_entrants": 0.27556777000427246
+     }
+    },
+    "32000": {
+     "n_entrants": 130,
+     "auc": {
+      "S": 0.9081652244382924,
+      "agreement": 0.6283317651026058,
+      "constructive": 0.5089990155499595,
+      "consensus": 0.5596769807297983,
+      "largest_share": 0.4004484414687342,
+      "S_times_agreement": 0.8954911100354076
+     },
+     "within_S_deciles": {
+      "agreement": 0.5684771505115953,
+      "constructive": 0.494536407757914,
+      "consensus": 0.5436815162233819,
+      "largest_share": 0.4335778468133228
+     },
+     "S_within_agreement_deciles": 0.8964147618660567,
+     "near_floor": {
+      "n": 7164,
+      "entry_rate_top_agreement_quartile": 0.00614181999117136,
+      "entry_rate_bottom_agreement_quartile": 0.0039084311574697495,
+      "entry_rate_all": 0.006281407084316015,
+      "median_agreement_entrants": 0.27934420108795166,
+      "median_agreement_non_entrants": 0.2756090462207794
+     }
+    },
+    "64000": {
+     "n_entrants": 160,
+     "auc": {
+      "S": 0.8876908886608154,
+      "agreement": 0.6303738586494904,
+      "constructive": 0.5015660390713477,
+      "consensus": 0.5531829522933183,
+      "largest_share": 0.3963423697621744,
+      "S_times_agreement": 0.8674927449037373
+     },
+     "within_S_deciles": {
+      "agreement": 0.5823506431214766,
+      "constructive": 0.4617671661380367,
+      "consensus": 0.5083399834538574,
+      "largest_share": 0.42503605211495304
+     },
+     "S_within_agreement_deciles": 0.8741917742680835,
+     "near_floor": {
+      "n": 7164,
+      "entry_rate_top_agreement_quartile": 0.011725293472409248,
+      "entry_rate_bottom_agreement_quartile": 0.007258514873683453,
+      "entry_rate_all": 0.007677275221794844,
+      "median_agreement_entrants": 0.28811198472976685,
+      "median_agreement_non_entrants": 0.2755737602710724
+     }
+    },
+    "143000": {
+     "n_entrants": 169,
+     "auc": {
+      "S": 0.8896704326144076,
+      "agreement": 0.6526388203135359,
+      "constructive": 0.5159984523674609,
+      "consensus": 0.562697866223632,
+      "largest_share": 0.3723790744495462,
+      "S_times_agreement": 0.8729296906012746
+     },
+     "within_S_deciles": {
+      "agreement": 0.6101309475016873,
+      "constructive": 0.4748951395894482,
+      "consensus": 0.522560708816183,
+      "largest_share": 0.3945524297692215
+     },
+     "S_within_agreement_deciles": 0.8732331983475182,
+     "near_floor": {
+      "n": 7164,
+      "entry_rate_top_agreement_quartile": 0.014517029747366905,
+      "entry_rate_bottom_agreement_quartile": 0.007816862314939499,
+      "entry_rate_all": 0.008654383011162281,
+      "median_agreement_entrants": 0.2909550964832306,
+      "median_agreement_non_entrants": 0.2755235731601715
+     }
+    }
+   },
+   "16000": {
+    "32000": {
+     "n_entrants": 77,
+     "auc": {
+      "S": 0.9368059161276988,
+      "agreement": 0.6334091470475959,
+      "constructive": 0.39280593079245113,
+      "consensus": 0.5018182001491222,
+      "largest_share": 0.383469982855988,
+      "S_times_agreement": 0.9166716694858126
+     },
+     "within_S_deciles": {
+      "agreement": 0.5666514180181157,
+      "constructive": 0.46106722313031745,
+      "consensus": 0.44459216076571245,
+      "largest_share": 0.4396680669921302
+     },
+     "S_within_agreement_deciles": 0.9225666824292871,
+     "near_floor": {
+      "n": 6414,
+      "entry_rate_top_agreement_quartile": 0.0012468828354030848,
+      "entry_rate_bottom_agreement_quartile": 0.00311720697209239,
+      "entry_rate_all": 0.0026504520792514086,
+      "median_agreement_entrants": 0.2762266993522644,
+      "median_agreement_non_entrants": 0.2884877324104309
+     }
+    },
+    "64000": {
+     "n_entrants": 116,
+     "auc": {
+      "S": 0.9407521018642622,
+      "agreement": 0.6234504081881321,
+      "constructive": 0.35350249786767396,
+      "consensus": 0.48599701474351165,
+      "largest_share": 0.3802171926404289,
+      "S_times_agreement": 0.9075322895089558
+     },
+     "within_S_deciles": {
+      "agreement": 0.5380678431798726,
+      "constructive": 0.433565702553332,
+      "consensus": 0.44684053287484193,
+      "largest_share": 0.4532451716150795
+     },
+     "S_within_agreement_deciles": 0.9318600823359887,
+     "near_floor": {
+      "n": 6414,
+      "entry_rate_top_agreement_quartile": 0.00561097264289856,
+      "entry_rate_bottom_agreement_quartile": 0.004987531341612339,
+      "entry_rate_all": 0.004209541715681553,
+      "median_agreement_entrants": 0.2932901382446289,
+      "median_agreement_non_entrants": 0.28847354650497437
+     }
+    },
+    "143000": {
+     "n_entrants": 127,
+     "auc": {
+      "S": 0.927530608569648,
+      "agreement": 0.6475887375048814,
+      "constructive": 0.47895720854186946,
+      "consensus": 0.5492474607558709,
+      "largest_share": 0.35154756738867643,
+      "S_times_agreement": 0.9039500342778125
+     },
+     "within_S_deciles": {
+      "agreement": 0.5710521116427335,
+      "constructive": 0.47714833736612555,
+      "consensus": 0.506488117174508,
+      "largest_share": 0.41896033086561413
+     },
+     "S_within_agreement_deciles": 0.9077943304798413,
+     "near_floor": {
+      "n": 6414,
+      "entry_rate_top_agreement_quartile": 0.00623441394418478,
+      "entry_rate_bottom_agreement_quartile": 0.00311720697209239,
+      "entry_rate_all": 0.004209541715681553,
+      "median_agreement_entrants": 0.30789878964424133,
+      "median_agreement_non_entrants": 0.28840896487236023
+     }
+    }
+   },
+   "32000": {
+    "64000": {
+     "n_entrants": 83,
+     "auc": {
+      "S": 0.9709934220345895,
+      "agreement": 0.5328568713140069,
+      "constructive": 0.3455347525704413,
+      "consensus": 0.43881224966927324,
+      "largest_share": 0.456893256150285,
+      "S_times_agreement": 0.9275390482978042
+     },
+     "within_S_deciles": {
+      "agreement": 0.43114024839996884,
+      "constructive": 0.3422531920449704,
+      "consensus": 0.4486684350618709,
+      "largest_share": 0.5697072985243521
+     },
+     "S_within_agreement_deciles": 0.9674624390342607,
+     "near_floor": {
+      "n": 5864,
+      "entry_rate_top_agreement_quartile": 0.0,
+      "entry_rate_bottom_agreement_quartile": 0.002728512976318598,
+      "entry_rate_all": 0.0015347885200753808,
+      "median_agreement_entrants": 0.26158541440963745,
+      "median_agreement_non_entrants": 0.2920190095901489
+     }
+    },
+    "143000": {
+     "n_entrants": 96,
+     "auc": {
+      "S": 0.9647470133003766,
+      "agreement": 0.6066387858992467,
+      "constructive": 0.39867584745762713,
+      "consensus": 0.507827580626177,
+      "largest_share": 0.3600760652071563,
+      "S_times_agreement": 0.9502291519538606
+     },
+     "within_S_deciles": {
+      "agreement": 0.5049903100775194,
+      "constructive": 0.4003391472868217,
+      "consensus": 0.4393976098191215,
+      "largest_share": 0.4767805232558139
+     },
+     "S_within_agreement_deciles": 0.9515610863455259,
+     "near_floor": {
+      "n": 5864,
+      "entry_rate_top_agreement_quartile": 0.002728512976318598,
+      "entry_rate_bottom_agreement_quartile": 0.001364256488159299,
+      "entry_rate_all": 0.0020463846158236265,
+      "median_agreement_entrants": 0.3023865222930908,
+      "median_agreement_non_entrants": 0.291900098323822
+     }
+    }
+   }
+  },
+  "12": {
+   "512": {
+    "1000": {
+     "n_entrants": 234,
+     "auc": {
+      "S": 0.7632787412157366,
+      "agreement": 0.4902701190373202,
+      "constructive": 0.52774027384513,
+      "consensus": 0.5988344458149986,
+      "largest_share": 0.5121113401848078,
+      "S_times_agreement": 0.7491103548763051
+     },
+     "within_S_deciles": {
+      "agreement": 0.5058221914367752,
+      "constructive": 0.4841410532096514,
+      "consensus": 0.538986850475566,
+      "largest_share": 0.49521795253727036
+     },
+     "S_within_agreement_deciles": 0.7610112070317365,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.017531557008624077,
+      "entry_rate_bottom_agreement_quartile": 0.013323983177542686,
+      "entry_rate_all": 0.015956513583660126,
+      "median_agreement_entrants": 0.13557279109954834,
+      "median_agreement_non_entrants": 0.12953788042068481
+     }
+    },
+    "2000": {
+     "n_entrants": 243,
+     "auc": {
+      "S": 0.6678251931052932,
+      "agreement": 0.4792758343789327,
+      "constructive": 0.5274400302636751,
+      "consensus": 0.5966127183422508,
+      "largest_share": 0.5236417018651963,
+      "S_times_agreement": 0.6538671729544226
+     },
+     "within_S_deciles": {
+      "agreement": 0.48141787779123135,
+      "constructive": 0.47708466589228016,
+      "consensus": 0.5425000193615848,
+      "largest_share": 0.5206164066267436
+     },
+     "S_within_agreement_deciles": 0.6642786970084764,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.00841514766216278,
+      "entry_rate_bottom_agreement_quartile": 0.010518933646380901,
+      "entry_rate_all": 0.009994739666581154,
+      "median_agreement_entrants": 0.11511775851249695,
+      "median_agreement_non_entrants": 0.12984001636505127
+     }
+    },
+    "3000": {
+     "n_entrants": 249,
+     "auc": {
+      "S": 0.6029590938312909,
+      "agreement": 0.48161620564125185,
+      "constructive": 0.46541275733729526,
+      "consensus": 0.5349890546772723,
+      "largest_share": 0.5194651917873797,
+      "S_times_agreement": 0.5944548723685291
+     },
+     "within_S_deciles": {
+      "agreement": 0.48306728106882,
+      "constructive": 0.47495404503073335,
+      "consensus": 0.5480597989289272,
+      "largest_share": 0.5176079866715223
+     },
+     "S_within_agreement_deciles": 0.6022845273025406,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.009116409346461296,
+      "entry_rate_bottom_agreement_quartile": 0.011220196262001991,
+      "entry_rate_all": 0.009994739666581154,
+      "median_agreement_entrants": 0.11856693029403687,
+      "median_agreement_non_entrants": 0.1298520863056183
+     }
+    },
+    "4000": {
+     "n_entrants": 251,
+     "auc": {
+      "S": 0.6141397134958015,
+      "agreement": 0.5023378547394389,
+      "constructive": 0.486703760411984,
+      "consensus": 0.5266006752837346,
+      "largest_share": 0.5000279120902862,
+      "S_times_agreement": 0.6105618292080724
+     },
+     "within_S_deciles": {
+      "agreement": 0.5044967373361244,
+      "constructive": 0.4913284362582693,
+      "consensus": 0.5520505187319534,
+      "largest_share": 0.4974132162617003
+     },
+     "S_within_agreement_deciles": 0.6135673786280715,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.011921458877623081,
+      "entry_rate_bottom_agreement_quartile": 0.00841514766216278,
+      "entry_rate_all": 0.010170086286962032,
+      "median_agreement_entrants": 0.12459367513656616,
+      "median_agreement_non_entrants": 0.1298135221004486
+     }
+    },
+    "8000": {
+     "n_entrants": 253,
+     "auc": {
+      "S": 0.6291204197687066,
+      "agreement": 0.4871349078507052,
+      "constructive": 0.5122754182034626,
+      "consensus": 0.5657584253936925,
+      "largest_share": 0.5129641705626642,
+      "S_times_agreement": 0.619153146372917
+     },
+     "within_S_deciles": {
+      "agreement": 0.48872366382464666,
+      "constructive": 0.4877203996625564,
+      "consensus": 0.5632856161691178,
+      "largest_share": 0.5106299917967699
+     },
+     "S_within_agreement_deciles": 0.6276759973065276,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.014025245793163776,
+      "entry_rate_bottom_agreement_quartile": 0.014025245793163776,
+      "entry_rate_all": 0.010696125216782093,
+      "median_agreement_entrants": 0.12749063968658447,
+      "median_agreement_non_entrants": 0.1298135221004486
+     }
+    },
+    "16000": {
+     "n_entrants": 250,
+     "auc": {
+      "S": 0.6127808577604187,
+      "agreement": 0.5158578741799704,
+      "constructive": 0.536099882446627,
+      "consensus": 0.5828981836107846,
+      "largest_share": 0.48681870236244357,
+      "S_times_agreement": 0.6099849076637215
+     },
+     "within_S_deciles": {
+      "agreement": 0.5197774248614105,
+      "constructive": 0.5056742044660619,
+      "consensus": 0.5633754557403114,
+      "largest_share": 0.4821233442160537
+     },
+     "S_within_agreement_deciles": 0.6110434364551198,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.014726507477462292,
+      "entry_rate_bottom_agreement_quartile": 0.007012622896581888,
+      "entry_rate_all": 0.009819393046200275,
+      "median_agreement_entrants": 0.14169040322303772,
+      "median_agreement_non_entrants": 0.12962889671325684
+     }
+    },
+    "32000": {
+     "n_entrants": 251,
+     "auc": {
+      "S": 0.6139994354128205,
+      "agreement": 0.5157633813166967,
+      "constructive": 0.47943649455570714,
+      "consensus": 0.5573316978384409,
+      "largest_share": 0.48735982672899536,
+      "S_times_agreement": 0.6081563282525272
+     },
+     "within_S_deciles": {
+      "agreement": 0.5188179629428519,
+      "constructive": 0.49788662927965865,
+      "consensus": 0.5701181064914,
+      "largest_share": 0.483921955179076
+     },
+     "S_within_agreement_deciles": 0.6134174910320511,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.011921458877623081,
+      "entry_rate_bottom_agreement_quartile": 0.007012622896581888,
+      "entry_rate_all": 0.008416622877120972,
+      "median_agreement_entrants": 0.14219072461128235,
+      "median_agreement_non_entrants": 0.12962889671325684
+     }
+    },
+    "64000": {
+     "n_entrants": 253,
+     "auc": {
+      "S": 0.6205420428604822,
+      "agreement": 0.49643703682996443,
+      "constructive": 0.5239267248431327,
+      "consensus": 0.6115226845723294,
+      "largest_share": 0.5062825981657603,
+      "S_times_agreement": 0.6116858416872349
+     },
+     "within_S_deciles": {
+      "agreement": 0.4987822201472878,
+      "constructive": 0.4887011344779372,
+      "consensus": 0.571982362219202,
+      "largest_share": 0.5033765812145258
+     },
+     "S_within_agreement_deciles": 0.6211251944213194,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.011921458877623081,
+      "entry_rate_bottom_agreement_quartile": 0.009817671962082386,
+      "entry_rate_all": 0.009644047357141972,
+      "median_agreement_entrants": 0.14169040322303772,
+      "median_agreement_non_entrants": 0.12966492772102356
+     }
+    },
+    "143000": {
+     "n_entrants": 252,
+     "auc": {
+      "S": 0.6071086973532935,
+      "agreement": 0.5217439099265038,
+      "constructive": 0.4843150134532387,
+      "consensus": 0.5647668857708675,
+      "largest_share": 0.4810276227796137,
+      "S_times_agreement": 0.6089873352956402
+     },
+     "within_S_deciles": {
+      "agreement": 0.5228924029157906,
+      "constructive": 0.4765612867035959,
+      "consensus": 0.5594915596233316,
+      "largest_share": 0.4793773422280795
+     },
+     "S_within_agreement_deciles": 0.6069290544512904,
+     "near_floor": {
+      "n": 5703,
+      "entry_rate_top_agreement_quartile": 0.011921458877623081,
+      "entry_rate_bottom_agreement_quartile": 0.010518933646380901,
+      "entry_rate_all": 0.00911800842732191,
+      "median_agreement_entrants": 0.12451490759849548,
+      "median_agreement_non_entrants": 0.1298021376132965
+     }
+    }
+   },
+   "1000": {
+    "2000": {
+     "n_entrants": 231,
+     "auc": {
+      "S": 0.7593210287245654,
+      "agreement": 0.5132852212513326,
+      "constructive": 0.5391111481974051,
+      "consensus": 0.5969482903013351,
+      "largest_share": 0.5010945789930267,
+      "S_times_agreement": 0.7363638743066729
+     },
+     "within_S_deciles": {
+      "agreement": 0.4878002220114789,
+      "constructive": 0.4824403771495462,
+      "consensus": 0.5399404988845627,
+      "largest_share": 0.5245490522904447
+     },
+     "S_within_agreement_deciles": 0.7600151357970857,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.010598031803965569,
+      "entry_rate_bottom_agreement_quartile": 0.01173353474587202,
+      "entry_rate_all": 0.00965360552072525,
+      "median_agreement_entrants": 0.22738352417945862,
+      "median_agreement_non_entrants": 0.23511984944343567
+     }
+    },
+    "3000": {
+     "n_entrants": 239,
+     "auc": {
+      "S": 0.6967313604167904,
+      "agreement": 0.5163347905336364,
+      "constructive": 0.5367913002944884,
+      "consensus": 0.6119997776009407,
+      "largest_share": 0.49755158781744907,
+      "S_times_agreement": 0.68247061560361
+     },
+     "within_S_deciles": {
+      "agreement": 0.4986797947842222,
+      "constructive": 0.48758280416565297,
+      "consensus": 0.5609196829473,
+      "largest_share": 0.5143638980452163
+     },
+     "S_within_agreement_deciles": 0.6955475256280166,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.009462527930736542,
+      "entry_rate_bottom_agreement_quartile": 0.011355034075677395,
+      "entry_rate_all": 0.008707174099981785,
+      "median_agreement_entrants": 0.22776034474372864,
+      "median_agreement_non_entrants": 0.23493707180023193
+     }
+    },
+    "4000": {
+     "n_entrants": 239,
+     "auc": {
+      "S": 0.6780605469541601,
+      "agreement": 0.5031294894728071,
+      "constructive": 0.5444049782173447,
+      "consensus": 0.6291354506241966,
+      "largest_share": 0.5104984808415187,
+      "S_times_agreement": 0.6618765737568951
+     },
+     "within_S_deciles": {
+      "agreement": 0.4863815729347213,
+      "constructive": 0.49551096036596465,
+      "consensus": 0.5811765825868637,
+      "largest_share": 0.5264141624058596
+     },
+     "S_within_agreement_deciles": 0.6785553081233564,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.009084027260541916,
+      "entry_rate_bottom_agreement_quartile": 0.011355034075677395,
+      "entry_rate_all": 0.008801816962659359,
+      "median_agreement_entrants": 0.22387582063674927,
+      "median_agreement_non_entrants": 0.2350134253501892
+     }
+    },
+    "8000": {
+     "n_entrants": 239,
+     "auc": {
+      "S": 0.708389703113912,
+      "agreement": 0.5393729218993039,
+      "constructive": 0.4615974962497919,
+      "consensus": 0.5688561843475637,
+      "largest_share": 0.4762700441712768,
+      "S_times_agreement": 0.6995295910910935
+     },
+     "within_S_deciles": {
+      "agreement": 0.5201605633060309,
+      "constructive": 0.5218230529904825,
+      "consensus": 0.5863150911612366,
+      "largest_share": 0.49454507493971106
+     },
+     "S_within_agreement_deciles": 0.7056525273732461,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.008705525659024715,
+      "entry_rate_bottom_agreement_quartile": 0.009841029532253742,
+      "entry_rate_all": 0.009275033138692379,
+      "median_agreement_entrants": 0.22387582063674927,
+      "median_agreement_non_entrants": 0.2350134253501892
+     }
+    },
+    "16000": {
+     "n_entrants": 243,
+     "auc": {
+      "S": 0.6797832923636257,
+      "agreement": 0.5434617097650204,
+      "constructive": 0.5754311883274834,
+      "consensus": 0.6318291135275554,
+      "largest_share": 0.47508969218069547,
+      "S_times_agreement": 0.6659717848492359
+     },
+     "within_S_deciles": {
+      "agreement": 0.5246951359055849,
+      "constructive": 0.529734647724519,
+      "consensus": 0.5765395723530841,
+      "largest_share": 0.49358777246462265
+     },
+     "S_within_agreement_deciles": 0.6798450557198656,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.009841029532253742,
+      "entry_rate_bottom_agreement_quartile": 0.009084027260541916,
+      "entry_rate_all": 0.009085746482014656,
+      "median_agreement_entrants": 0.2353636920452118,
+      "median_agreement_non_entrants": 0.23490279912948608
+     }
+    },
+    "32000": {
+     "n_entrants": 249,
+     "auc": {
+      "S": 0.6806652886121206,
+      "agreement": 0.524034594666705,
+      "constructive": 0.553939855510623,
+      "consensus": 0.6232419582202309,
+      "largest_share": 0.487620314220498,
+      "S_times_agreement": 0.665965380205767
+     },
+     "within_S_deciles": {
+      "agreement": 0.5062946509013349,
+      "constructive": 0.5086689910011076,
+      "consensus": 0.5612834108731264,
+      "largest_share": 0.5045532884614015
+     },
+     "S_within_agreement_deciles": 0.6805570882724185,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.010598031803965569,
+      "entry_rate_bottom_agreement_quartile": 0.00832702498883009,
+      "entry_rate_all": 0.009180390276014805,
+      "median_agreement_entrants": 0.23717555403709412,
+      "median_agreement_non_entrants": 0.23489922285079956
+     }
+    },
+    "64000": {
+     "n_entrants": 249,
+     "auc": {
+      "S": 0.6733489900675451,
+      "agreement": 0.5223698578703263,
+      "constructive": 0.5360784472284222,
+      "consensus": 0.587631377947183,
+      "largest_share": 0.4870420003583338,
+      "S_times_agreement": 0.660235618544938
+     },
+     "within_S_deciles": {
+      "agreement": 0.5061090505732272,
+      "constructive": 0.4907524269668742,
+      "consensus": 0.5697399920328935,
+      "largest_share": 0.5019580873925551
+     },
+     "S_within_agreement_deciles": 0.6730575677546179,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.009462527930736542,
+      "entry_rate_bottom_agreement_quartile": 0.00719152158126235,
+      "entry_rate_all": 0.009085746482014656,
+      "median_agreement_entrants": 0.23776021599769592,
+      "median_agreement_non_entrants": 0.23486793041229248
+     }
+    },
+    "143000": {
+     "n_entrants": 243,
+     "auc": {
+      "S": 0.6694352718016147,
+      "agreement": 0.5338281528477867,
+      "constructive": 0.5483351663015943,
+      "consensus": 0.5989876585338111,
+      "largest_share": 0.4743339584695187,
+      "S_times_agreement": 0.6608366651695541
+     },
+     "within_S_deciles": {
+      "agreement": 0.5187424348723054,
+      "constructive": 0.4901738822721066,
+      "consensus": 0.5722657308910758,
+      "largest_share": 0.48825508287497804
+     },
+     "S_within_agreement_deciles": 0.6687512175885496,
+     "near_floor": {
+      "n": 10566,
+      "entry_rate_top_agreement_quartile": 0.010976532474160194,
+      "entry_rate_bottom_agreement_quartile": 0.00719152158126235,
+      "entry_rate_all": 0.008707174099981785,
+      "median_agreement_entrants": 0.23985284566879272,
+      "median_agreement_non_entrants": 0.23486045002937317
+     }
+    }
+   },
+   "2000": {
+    "3000": {
+     "n_entrants": 177,
+     "auc": {
+      "S": 0.861340431984365,
+      "agreement": 0.5112510302724947,
+      "constructive": 0.5039736293030089,
+      "consensus": 0.5670537442549438,
+      "largest_share": 0.5093320625079226,
+      "S_times_agreement": 0.8128592983396367
+     },
+     "within_S_deciles": {
+      "agreement": 0.469044097864456,
+      "constructive": 0.41299250284405314,
+      "consensus": 0.5068559134113996,
+      "largest_share": 0.5464807406855442
+     },
+     "S_within_agreement_deciles": 0.8609663918266519,
+     "near_floor": {
+      "n": 11250,
+      "entry_rate_top_agreement_quartile": 0.008531816303730011,
+      "entry_rate_bottom_agreement_quartile": 0.009598293341696262,
+      "entry_rate_all": 0.009066666476428509,
+      "median_agreement_entrants": 0.24406269192695618,
+      "median_agreement_non_entrants": 0.246089905500412
+     }
+    },
+    "4000": {
+     "n_entrants": 186,
+     "auc": {
+      "S": 0.8288822669629836,
+      "agreement": 0.48063514287843634,
+      "constructive": 0.502925803885922,
+      "consensus": 0.5637474399088732,
+      "largest_share": 0.5314920225340962,
+      "S_times_agreement": 0.7813293251540738
+     },
+     "within_S_deciles": {
+      "agreement": 0.4447348610706546,
+      "constructive": 0.46225797465891666,
+      "consensus": 0.5330674929557943,
+      "largest_share": 0.5646847364339355
+     },
+     "S_within_agreement_deciles": 0.8287280186029754,
+     "near_floor": {
+      "n": 11250,
+      "entry_rate_top_agreement_quartile": 0.00817632395774126,
+      "entry_rate_bottom_agreement_quartile": 0.013508709147572517,
+      "entry_rate_all": 0.009511111304163933,
+      "median_agreement_entrants": 0.22739678621292114,
+      "median_agreement_non_entrants": 0.24621382355690002
+     }
+    },
+    "8000": {
+     "n_entrants": 218,
+     "auc": {
+      "S": 0.8055320193464741,
+      "agreement": 0.5174738533674665,
+      "constructive": 0.5105022872327665,
+      "consensus": 0.5621747642622184,
+      "largest_share": 0.5008336569682805,
+      "S_times_agreement": 0.7571182883703853
+     },
+     "within_S_deciles": {
+      "agreement": 0.48933208836199843,
+      "constructive": 0.43801343734261383,
+      "consensus": 0.5176305107766758,
+      "largest_share": 0.5247957234469961
+     },
+     "S_within_agreement_deciles": 0.8014827286742057,
+     "near_floor": {
+      "n": 11250,
+      "entry_rate_top_agreement_quartile": 0.011020262725651264,
+      "entry_rate_bottom_agreement_quartile": 0.012086739763617516,
+      "entry_rate_all": 0.009600000455975533,
+      "median_agreement_entrants": 0.23873889446258545,
+      "median_agreement_non_entrants": 0.24611929059028625
+     }
+    },
+    "16000": {
+     "n_entrants": 223,
+     "auc": {
+      "S": 0.7775199581694885,
+      "agreement": 0.5338735449633384,
+      "constructive": 0.5376243033028207,
+      "consensus": 0.5682433301179768,
+      "largest_share": 0.47626455843970766,
+      "S_times_agreement": 0.7340237554543294
+     },
+     "within_S_deciles": {
+      "agreement": 0.5042081677997968,
+      "constructive": 0.46650231522207297,
+      "consensus": 0.5365405241746608,
+      "largest_share": 0.5031434537829619
+     },
+     "S_within_agreement_deciles": 0.7745404381712878,
+     "near_floor": {
+      "n": 11250,
+      "entry_rate_top_agreement_quartile": 0.007109846919775009,
+      "entry_rate_bottom_agreement_quartile": 0.011731247417628765,
+      "entry_rate_all": 0.00862222258001566,
+      "median_agreement_entrants": 0.2270030975341797,
+      "median_agreement_non_entrants": 0.24613824486732483
+     }
+    },
+    "32000": {
+     "n_entrants": 234,
+     "auc": {
+      "S": 0.7398508526110027,
+      "agreement": 0.5386517311912513,
+      "constructive": 0.5261837391372248,
+      "consensus": 0.510825433206873,
+      "largest_share": 0.4703322022212048,
+      "S_times_agreement": 0.6993972316103557
+     },
+     "within_S_deciles": {
+      "agreement": 0.5149268758457035,
+      "constructive": 0.4661266941949072,
+      "consensus": 0.5274978854149094,
+      "largest_share": 0.4909552128824192
+     },
+     "S_within_agreement_deciles": 0.7369058734807519,
+     "near_floor": {
+      "n": 11250,
+      "entry_rate_top_agreement_quartile": 0.00817632395774126,
+      "entry_rate_bottom_agreement_quartile": 0.009242800995707512,
+      "entry_rate_all": 0.0077333333902060986,
+      "median_agreement_entrants": 0.2506673336029053,
+      "median_agreement_non_entrants": 0.2460872232913971
+     }
+    },
+    "64000": {
+     "n_entrants": 237,
+     "auc": {
+      "S": 0.7331725710803103,
+      "agreement": 0.544497112078084,
+      "constructive": 0.5282835590203421,
+      "consensus": 0.5030715587979943,
+      "largest_share": 0.4687630544348187,
+      "S_times_agreement": 0.7021025863127338
+     },
+     "within_S_deciles": {
+      "agreement": 0.5231002525403529,
+      "constructive": 0.49277437330371576,
+      "consensus": 0.5676590054930728,
+      "largest_share": 0.4876969785315093
+     },
+     "S_within_agreement_deciles": 0.7283987930876167,
+     "near_floor": {
+      "n": 11250,
+      "entry_rate_top_agreement_quartile": 0.010309278033673763,
+      "entry_rate_bottom_agreement_quartile": 0.006754354573786259,
+      "entry_rate_all": 0.00791111122816801,
+      "median_agreement_entrants": 0.2600747346878052,
+      "median_agreement_non_entrants": 0.24602007865905762
+     }
+    },
+    "143000": {
+     "n_entrants": 232,
+     "auc": {
+      "S": 0.7042560161825835,
+      "agreement": 0.5140222641238138,
+      "constructive": 0.5265599265378683,
+      "consensus": 0.5799867160335678,
+      "largest_share": 0.49463706831193954,
+      "S_times_agreement": 0.6697738294423675
+     },
+     "within_S_deciles": {
+      "agreement": 0.4944193014588274,
+      "constructive": 0.4813008302553785,
+      "consensus": 0.5523086633412144,
+      "largest_share": 0.5123131210932974
+     },
+     "S_within_agreement_deciles": 0.7017454970313344,
+     "near_floor": {
+      "n": 11250,
+      "entry_rate_top_agreement_quartile": 0.00817632395774126,
+      "entry_rate_bottom_agreement_quartile": 0.008887308649718761,
+      "entry_rate_all": 0.007644444238394499,
+      "median_agreement_entrants": 0.2471821904182434,
+      "median_agreement_non_entrants": 0.2460893988609314
+     }
+    }
+   },
+   "3000": {
+    "4000": {
+     "n_entrants": 131,
+     "auc": {
+      "S": 0.8810535942528807,
+      "agreement": 0.5343263067434093,
+      "constructive": 0.44771315119835386,
+      "consensus": 0.5488788037068556,
+      "largest_share": 0.4900829497958855,
+      "S_times_agreement": 0.8360711536275969
+     },
+     "within_S_deciles": {
+      "agreement": 0.5010353961361929,
+      "constructive": 0.42664140435631237,
+      "consensus": 0.5213167373012357,
+      "largest_share": 0.5219957352423337
+     },
+     "S_within_agreement_deciles": 0.8825075156621005,
+     "near_floor": {
+      "n": 10087,
+      "entry_rate_top_agreement_quartile": 0.005947660654783249,
+      "entry_rate_bottom_agreement_quartile": 0.005551150068640709,
+      "entry_rate_all": 0.005849112756550312,
+      "median_agreement_entrants": 0.23545539379119873,
+      "median_agreement_non_entrants": 0.24321386218070984
+     }
+    },
+    "8000": {
+     "n_entrants": 178,
+     "auc": {
+      "S": 0.8572475888458244,
+      "agreement": 0.5522648276355052,
+      "constructive": 0.45784219199624887,
+      "consensus": 0.5265892853571768,
+      "largest_share": 0.46547040429780495,
+      "S_times_agreement": 0.8136538532726469
+     },
+     "within_S_deciles": {
+      "agreement": 0.5138111611830101,
+      "constructive": 0.42968085550206914,
+      "consensus": 0.5129156143313065,
+      "largest_share": 0.5015414082691874
+     },
+     "S_within_agreement_deciles": 0.8574140185196417,
+     "near_floor": {
+      "n": 10087,
+      "entry_rate_top_agreement_quartile": 0.005947660654783249,
+      "entry_rate_bottom_agreement_quartile": 0.007533703465014696,
+      "entry_rate_all": 0.007237037643790245,
+      "median_agreement_entrants": 0.24044150114059448,
+      "median_agreement_non_entrants": 0.2431807816028595
+     }
+    },
+    "16000": {
+     "n_entrants": 203,
+     "auc": {
+      "S": 0.842822065016344,
+      "agreement": 0.5894891335680006,
+      "constructive": 0.49191655934439993,
+      "consensus": 0.5437340608820299,
+      "largest_share": 0.4216756793730445,
+      "S_times_agreement": 0.8123335517260976
+     },
+     "within_S_deciles": {
+      "agreement": 0.5581403765529447,
+      "constructive": 0.4381725270981205,
+      "consensus": 0.5173479893736017,
+      "largest_share": 0.4513365419078148
+     },
+     "S_within_agreement_deciles": 0.8415359240657709,
+     "near_floor": {
+      "n": 10087,
+      "entry_rate_top_agreement_quartile": 0.010309278033673763,
+      "entry_rate_bottom_agreement_quartile": 0.007930214516818523,
+      "entry_rate_all": 0.009219788014888763,
+      "median_agreement_entrants": 0.2502882182598114,
+      "median_agreement_non_entrants": 0.24309390783309937
+     }
+    },
+    "32000": {
+     "n_entrants": 220,
+     "auc": {
+      "S": 0.7956629893262956,
+      "agreement": 0.5670972209780669,
+      "constructive": 0.5288500099915244,
+      "consensus": 0.5639117334950352,
+      "largest_share": 0.44629839859980847,
+      "S_times_agreement": 0.7641175072180151
+     },
+     "within_S_deciles": {
+      "agreement": 0.5425505942841002,
+      "constructive": 0.4755633797010131,
+      "consensus": 0.5357997284256877,
+      "largest_share": 0.46907116246815367
+     },
+     "S_within_agreement_deciles": 0.7962598647248399,
+     "near_floor": {
+      "n": 10087,
+      "entry_rate_top_agreement_quartile": 0.010705788619816303,
+      "entry_rate_bottom_agreement_quartile": 0.005154639016836882,
+      "entry_rate_all": 0.008228412829339504,
+      "median_agreement_entrants": 0.2598481774330139,
+      "median_agreement_non_entrants": 0.24298450350761414
+     }
+    },
+    "64000": {
+     "n_entrants": 225,
+     "auc": {
+      "S": 0.778196642261683,
+      "agreement": 0.5511669540937834,
+      "constructive": 0.46414076137653376,
+      "consensus": 0.547232255850142,
+      "largest_share": 0.46175568484511575,
+      "S_times_agreement": 0.7362289983428195
+     },
+     "within_S_deciles": {
+      "agreement": 0.5320792934517745,
+      "constructive": 0.4761732903762904,
+      "consensus": 0.5344826329119199,
+      "largest_share": 0.482022787527297
+     },
+     "S_within_agreement_deciles": 0.7784483215127372,
+     "near_floor": {
+      "n": 10087,
+      "entry_rate_top_agreement_quartile": 0.012291831895709038,
+      "entry_rate_bottom_agreement_quartile": 0.006344171240925789,
+      "entry_rate_all": 0.008624962531030178,
+      "median_agreement_entrants": 0.2607712149620056,
+      "median_agreement_non_entrants": 0.24298450350761414
+     }
+    },
+    "143000": {
+     "n_entrants": 226,
+     "auc": {
+      "S": 0.771024533430115,
+      "agreement": 0.5480893435334298,
+      "constructive": 0.4664877893011691,
+      "consensus": 0.5337160661581825,
+      "largest_share": 0.46477484998888063,
+      "S_times_agreement": 0.730646812995362
+     },
+     "within_S_deciles": {
+      "agreement": 0.5242800006024624,
+      "constructive": 0.46334958318848035,
+      "consensus": 0.510006016552689,
+      "largest_share": 0.48734247602900405
+     },
+     "S_within_agreement_deciles": 0.769963833974203,
+     "near_floor": {
+      "n": 10087,
+      "entry_rate_top_agreement_quartile": 0.011895321309566498,
+      "entry_rate_bottom_agreement_quartile": 0.007137192878872156,
+      "entry_rate_all": 0.008823237381875515,
+      "median_agreement_entrants": 0.2607712149620056,
+      "median_agreement_non_entrants": 0.24298450350761414
+     }
+    }
+   },
+   "4000": {
+    "8000": {
+     "n_entrants": 149,
+     "auc": {
+      "S": 0.9054470206602895,
+      "agreement": 0.521975379263913,
+      "constructive": 0.40415771323105154,
+      "consensus": 0.5100249479050707,
+      "largest_share": 0.5007623570747181,
+      "S_times_agreement": 0.800251650863448
+     },
+     "within_S_deciles": {
+      "agreement": 0.49316918360350953,
+      "constructive": 0.4261715662756012,
+      "consensus": 0.49879307951903556,
+      "largest_share": 0.5243834675781778
+     },
+     "S_within_agreement_deciles": 0.9023031044227675,
+     "near_floor": {
+      "n": 9634,
+      "entry_rate_top_agreement_quartile": 0.004981319885700941,
+      "entry_rate_bottom_agreement_quartile": 0.007471980061382055,
+      "entry_rate_all": 0.005189952440559864,
+      "median_agreement_entrants": 0.21972835063934326,
+      "median_agreement_non_entrants": 0.24104851484298706
+     }
+    },
+    "16000": {
+     "n_entrants": 189,
+     "auc": {
+      "S": 0.8797146266040079,
+      "agreement": 0.5517578717018142,
+      "constructive": 0.441194168160439,
+      "consensus": 0.5212189823670232,
+      "largest_share": 0.4743681891571216,
+      "S_times_agreement": 0.7953294901574356
+     },
+     "within_S_deciles": {
+      "agreement": 0.5126387572333148,
+      "constructive": 0.4084550050732675,
+      "consensus": 0.49297564183214554,
+      "largest_share": 0.5086436636766207
+     },
+     "S_within_agreement_deciles": 0.8762989287267293,
+     "near_floor": {
+      "n": 9634,
+      "entry_rate_top_agreement_quartile": 0.009962639771401882,
+      "entry_rate_bottom_agreement_quartile": 0.010377749800682068,
+      "entry_rate_all": 0.008615320548415184,
+      "median_agreement_entrants": 0.2404886782169342,
+      "median_agreement_non_entrants": 0.24100413918495178
+     }
+    },
+    "32000": {
+     "n_entrants": 210,
+     "auc": {
+      "S": 0.8301268830824361,
+      "agreement": 0.5714385856650265,
+      "constructive": 0.455252782784896,
+      "consensus": 0.46826046397491206,
+      "largest_share": 0.4564001797149461,
+      "S_times_agreement": 0.7804855010095433
+     },
+     "within_S_deciles": {
+      "agreement": 0.5398276620358732,
+      "constructive": 0.4671451998004223,
+      "consensus": 0.5330758443192938,
+      "largest_share": 0.4844702967592983
+     },
+     "S_within_agreement_deciles": 0.8268788848233435,
+     "near_floor": {
+      "n": 9634,
+      "entry_rate_top_agreement_quartile": 0.010377749800682068,
+      "entry_rate_bottom_agreement_quartile": 0.009547529742121696,
+      "entry_rate_all": 0.008511521853506565,
+      "median_agreement_entrants": 0.22658035159111023,
+      "median_agreement_non_entrants": 0.24100413918495178
+     }
+    },
+    "64000": {
+     "n_entrants": 215,
+     "auc": {
+      "S": 0.8059103441377521,
+      "agreement": 0.5778914440795431,
+      "constructive": 0.4355363572310172,
+      "consensus": 0.5376723740212769,
+      "largest_share": 0.44778799432980626,
+      "S_times_agreement": 0.7575074766095696
+     },
+     "within_S_deciles": {
+      "agreement": 0.5506287510830195,
+      "constructive": 0.46439521573289605,
+      "consensus": 0.5300776526704065,
+      "largest_share": 0.47104015271995847
+     },
+     "S_within_agreement_deciles": 0.8015942808816435,
+     "near_floor": {
+      "n": 9634,
+      "entry_rate_top_agreement_quartile": 0.011623079888522625,
+      "entry_rate_bottom_agreement_quartile": 0.00913241971284151,
+      "entry_rate_all": 0.009134315885603428,
+      "median_agreement_entrants": 0.24374184012413025,
+      "median_agreement_non_entrants": 0.2408902645111084
+     }
+    },
+    "143000": {
+     "n_entrants": 219,
+     "auc": {
+      "S": 0.7963218357387855,
+      "agreement": 0.5529271705375146,
+      "constructive": 0.4783509313215117,
+      "consensus": 0.5354562883140308,
+      "largest_share": 0.46180890030679345,
+      "S_times_agreement": 0.7520332410192807
+     },
+     "within_S_deciles": {
+      "agreement": 0.5231885934767798,
+      "constructive": 0.4486668216419946,
+      "consensus": 0.5105891984035257,
+      "largest_share": 0.4874472844230899
+     },
+     "S_within_agreement_deciles": 0.7942953717991843,
+     "near_floor": {
+      "n": 9634,
+      "entry_rate_top_agreement_quartile": 0.010792859829962254,
+      "entry_rate_bottom_agreement_quartile": 0.010377749800682068,
+      "entry_rate_all": 0.00944571290165186,
+      "median_agreement_entrants": 0.23727163672447205,
+      "median_agreement_non_entrants": 0.24100413918495178
+     }
+    }
+   },
+   "8000": {
+    "16000": {
+     "n_entrants": 128,
+     "auc": {
+      "S": 0.9463152204241071,
+      "agreement": 0.5558974148286169,
+      "constructive": 0.4263683993360321,
+      "consensus": 0.511966880816813,
+      "largest_share": 0.4465394100900424,
+      "S_times_agreement": 0.8560133372900273
+     },
+     "within_S_deciles": {
+      "agreement": 0.524952685927021,
+      "constructive": 0.45656398687188854,
+      "consensus": 0.5292596691637307,
+      "largest_share": 0.47561451976793645
+     },
+     "S_within_agreement_deciles": 0.9424060004833318,
+     "near_floor": {
+      "n": 8882,
+      "entry_rate_top_agreement_quartile": 0.006303466856479645,
+      "entry_rate_bottom_agreement_quartile": 0.006303466856479645,
+      "entry_rate_all": 0.004616077523678541,
+      "median_agreement_entrants": 0.24774169921875,
+      "median_agreement_non_entrants": 0.23964357376098633
+     }
+    },
+    "32000": {
+     "n_entrants": 166,
+     "auc": {
+      "S": 0.8918205666340826,
+      "agreement": 0.5565344328892445,
+      "constructive": 0.4342229022857036,
+      "consensus": 0.5383987393940278,
+      "largest_share": 0.4479413888469488,
+      "S_times_agreement": 0.8343269720687924
+     },
+     "within_S_deciles": {
+      "agreement": 0.5322945201709126,
+      "constructive": 0.46445898342367664,
+      "consensus": 0.5152382632699825,
+      "largest_share": 0.46781112199648833
+     },
+     "S_within_agreement_deciles": 0.8905371160880112,
+     "near_floor": {
+      "n": 8882,
+      "entry_rate_top_agreement_quartile": 0.007203962188214064,
+      "entry_rate_bottom_agreement_quartile": 0.008104457519948483,
+      "entry_rate_all": 0.006755235139280558,
+      "median_agreement_entrants": 0.23435240983963013,
+      "median_agreement_non_entrants": 0.23975220322608948
+     }
+    },
+    "64000": {
+     "n_entrants": 183,
+     "auc": {
+      "S": 0.8774351987319599,
+      "agreement": 0.5723112687676292,
+      "constructive": 0.5073619778546193,
+      "consensus": 0.5781810663793336,
+      "largest_share": 0.4385909960909751,
+      "S_times_agreement": 0.8243974806827823
+     },
+     "within_S_deciles": {
+      "agreement": 0.5481644176988891,
+      "constructive": 0.4835045682288698,
+      "consensus": 0.5425130544944269,
+      "largest_share": 0.4560998778730573
+     },
+     "S_within_agreement_deciles": 0.8751079863137504,
+     "near_floor": {
+      "n": 8882,
+      "entry_rate_top_agreement_quartile": 0.010355696082115173,
+      "entry_rate_bottom_agreement_quartile": 0.008104457519948483,
+      "entry_rate_all": 0.00821886956691742,
+      "median_agreement_entrants": 0.2515304684638977,
+      "median_agreement_non_entrants": 0.23963236808776855
+     }
+    },
+    "143000": {
+     "n_entrants": 191,
+     "auc": {
+      "S": 0.8376049120916419,
+      "agreement": 0.5603668858008897,
+      "constructive": 0.4202909055645166,
+      "consensus": 0.5117964904480331,
+      "largest_share": 0.44446663363408057,
+      "S_times_agreement": 0.7891515222968468
+     },
+     "within_S_deciles": {
+      "agreement": 0.5443690490376739,
+      "constructive": 0.4820529898863149,
+      "consensus": 0.5318166850566524,
+      "largest_share": 0.4543963419672356
+     },
+     "S_within_agreement_deciles": 0.8356090171859227,
+     "near_floor": {
+      "n": 8882,
+      "entry_rate_top_agreement_quartile": 0.011256190948188305,
+      "entry_rate_bottom_agreement_quartile": 0.008554705418646336,
+      "entry_rate_all": 0.008444043807685375,
+      "median_agreement_entrants": 0.2521350383758545,
+      "median_agreement_non_entrants": 0.23964357376098633
+     }
+    }
+   },
+   "16000": {
+    "32000": {
+     "n_entrants": 112,
+     "auc": {
+      "S": 0.9665604063107845,
+      "agreement": 0.551783856980765,
+      "constructive": 0.46248294656364813,
+      "consensus": 0.5350177963583316,
+      "largest_share": 0.43651968067862545,
+      "S_times_agreement": 0.8719293683812406
+     },
+     "within_S_deciles": {
+      "agreement": 0.5278588960383801,
+      "constructive": 0.4775359697460101,
+      "consensus": 0.523271419066482,
+      "largest_share": 0.4672005822368189
+     },
+     "S_within_agreement_deciles": 0.9645925719295515,
+     "near_floor": {
+      "n": 8159,
+      "entry_rate_top_agreement_quartile": 0.0029411765281111,
+      "entry_rate_bottom_agreement_quartile": 0.0019607844296842813,
+      "entry_rate_all": 0.0025738447438925505,
+      "median_agreement_entrants": 0.2666114270687103,
+      "median_agreement_non_entrants": 0.23773694038391113
+     }
+    },
+    "64000": {
+     "n_entrants": 138,
+     "auc": {
+      "S": 0.952616258185661,
+      "agreement": 0.5959568414604519,
+      "constructive": 0.49411559214527523,
+      "consensus": 0.5504893710483844,
+      "largest_share": 0.40199568074592135,
+      "S_times_agreement": 0.8804615174533292
+     },
+     "within_S_deciles": {
+      "agreement": 0.5791131173349117,
+      "constructive": 0.5014800006316004,
+      "consensus": 0.5337444101432374,
+      "largest_share": 0.4229101421560879
+     },
+     "S_within_agreement_deciles": 0.9495925839851463,
+     "near_floor": {
+      "n": 8159,
+      "entry_rate_top_agreement_quartile": 0.007352941203862429,
+      "entry_rate_bottom_agreement_quartile": 0.0019607844296842813,
+      "entry_rate_all": 0.004167177248746157,
+      "median_agreement_entrants": 0.28299352526664734,
+      "median_agreement_non_entrants": 0.23758143186569214
+     }
+    },
+    "143000": {
+     "n_entrants": 156,
+     "auc": {
+      "S": 0.9202100452100452,
+      "agreement": 0.5932033762916116,
+      "constructive": 0.4799388917035976,
+      "consensus": 0.5422260900202077,
+      "largest_share": 0.39726640829582005,
+      "S_times_agreement": 0.8422202907497025
+     },
+     "within_S_deciles": {
+      "agreement": 0.5774715068873654,
+      "constructive": 0.49045122570489014,
+      "consensus": 0.5272792562386682,
+      "largest_share": 0.4157139565527814
+     },
+     "S_within_agreement_deciles": 0.9167470039311252,
+     "near_floor": {
+      "n": 8159,
+      "entry_rate_top_agreement_quartile": 0.009313725866377354,
+      "entry_rate_bottom_agreement_quartile": 0.0049019609577953815,
+      "entry_rate_all": 0.006250766105949879,
+      "median_agreement_entrants": 0.26886874437332153,
+      "median_agreement_non_entrants": 0.23767441511154175
+     }
+    }
+   },
+   "32000": {
+    "64000": {
+     "n_entrants": 84,
+     "auc": {
+      "S": 0.9736341520050978,
+      "agreement": 0.5784924955088258,
+      "constructive": 0.48121874628735595,
+      "consensus": 0.551976791699518,
+      "largest_share": 0.3987075948546804,
+      "S_times_agreement": 0.8888355618197986
+     },
+     "within_S_deciles": {
+      "agreement": 0.571194046444733,
+      "constructive": 0.5246523268494272,
+      "consensus": 0.5246097473855026,
+      "largest_share": 0.42802533004998355
+     },
+     "S_within_agreement_deciles": 0.9736012215622465,
+     "near_floor": {
+      "n": 8030,
+      "entry_rate_top_agreement_quartile": 0.0014940239489078522,
+      "entry_rate_bottom_agreement_quartile": 0.0009960159659385681,
+      "entry_rate_all": 0.0009962640469893813,
+      "median_agreement_entrants": 0.12652334570884705,
+      "median_agreement_non_entrants": 0.21859610080718994
+     }
+    },
+    "143000": {
+     "n_entrants": 115,
+     "auc": {
+      "S": 0.9560183559713231,
+      "agreement": 0.6153698780845785,
+      "constructive": 0.4776107965080568,
+      "consensus": 0.547334379787053,
+      "largest_share": 0.35593119717539723,
+      "S_times_agreement": 0.8689503367536309
+     },
+     "within_S_deciles": {
+      "agreement": 0.5976767578484343,
+      "constructive": 0.5557944398086003,
+      "consensus": 0.5876933711915445,
+      "largest_share": 0.3898561815573652
+     },
+     "S_within_agreement_deciles": 0.9518229579500704,
+     "near_floor": {
+      "n": 8030,
+      "entry_rate_top_agreement_quartile": 0.0039840638637542725,
+      "entry_rate_bottom_agreement_quartile": 0.0024900399148464203,
+      "entry_rate_all": 0.002615193137899041,
+      "median_agreement_entrants": 0.27501755952835083,
+      "median_agreement_non_entrants": 0.2185419201850891
+     }
+    }
+   }
+  }
+ },
+ "checks": {
+  "agreement_alone_over_0_7": false,
+  "agreement_within_S_over_0_6": false,
+  "graded_beats_sign": false,
+  "near_floor_top_twice_bottom": false
+ },
+ "_exp": "e520_agreement_pythia410",
+ "_time": "2026-09-27 19:40:13"
+}

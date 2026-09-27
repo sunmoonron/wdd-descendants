@@ -1,4 +1,4 @@
-# 24. The boundary's carrier: the counterfactual chord, the criterion across texts, the consensus of parts (S73-S74)
+# 24. The boundary's carrier: the counterfactual chord, the criterion across texts, the consensus of parts (S73-S75)
 
 **Question.** e516b found that a row's largest projection over the extreme-value floor predicts its entry into the vocabulary at the next checkpoint. What carries that projection, the position's co-written chord or the rest of the state, and does the criterion hold across texts and models?
 
@@ -9,7 +9,9 @@
 
 - No part of the state supplies the prediction alone: split exactly into centred parts, attention's ranks the next checkpoint's entrants at 0.56-0.68 (Pythia block 12), the crowd's at 0.69-0.79, the chord's at 0.69-0.89, all the MLP writes' at 0.78-0.86, the whole state's at 0.86-0.97; each part alone clears the floor for most rows (attention 0.965, the crowd 0.927) while the whole does for 0.095, so the parts cancel along most atoms and the words are the atoms along which they add; the carrier at the entrants' maxima moves from the crowd (0.85 at step 512) to attention (0.4) and the chord (0.25), the entrants not writing at their own maximum until late (e519, e519b).
 
-**Start here:** e517b, e518, e519b · **Sessions:** S73-S74 · **Scripts:** `scripts/e517_chord_swap.py`, `e517b_chord_swap_prediction.py`, `e518_cross_text_selection.py`, `e519_carrier_components.py`, `e519b_carrier_prediction.py`
+- Given its size, the composition of a row's projection adds nothing: the agreement index, the constructive fraction and the sign consensus of the parts at the row's best position read the next checkpoint's entrants at 0.35-0.63 against 0.75-0.97 for the size, are at chance within deciles of the size (0.34-0.61), and rows near the floor enter at the same rate whether their parts agree or cancel; the criterion is on the resultant alone (e520).
+
+**Start here:** e517b, e518, e519b, e520 · **Sessions:** S73-S75 · **Scripts:** `scripts/e517_chord_swap.py`, `e517b_chord_swap_prediction.py`, `e518_cross_text_selection.py`, `e519_carrier_components.py`, `e519b_carrier_prediction.py`, `e520_agreement.py`
 
 ## Experiments
 
@@ -20,10 +22,12 @@
 | e518 | Does the selection criterion hold across texts, at the end of training, in GPT-2, Pythia and OLMo? | Yes: quantities on one set of eight sequences, the word set on a disjoint eight; the largest projection over the floor picks the new words at 0.86/0.89/0.91 (GPT-2, blocks 3/6/9), 0.97/0.97/0.95 (Pythia 6/12/18), 0.90/0.92/0.93 (OLMo 4/8/12); usage 0.85-0.96, magnitude 0.67-0.93 (0.85-0.93 in OLMo), selectivity 0.47-0.60, kurtosis 0.58-0.69; the two word sets overlap by 0.50-0.74 | established (three models) | ← e516b · → 23 |
 | e519 | Every row's largest projection over the real floor supplied by each centred part of the state alone and by three combinations, and the parts' shares at the row's real maximum, at thirteen Pythia checkpoints (the records e519b reads) | At the end, at block 12, a part alone clears the floor somewhere for most rows (attention 0.965, the crowd 0.927, all MLP writes 0.875) against 0.095 for the whole state: the parts cancel along most atoms | tool | → e519b |
 | e519b | Which part of the state supplies the projection that predicts entry (attention, the relayed bet; the embedding; the crowd; the chord; the own write)? | None alone. Entry at the next checkpoint at block 12 from origins 2000-32000: the whole state 0.86-0.97; attention 0.56-0.68; embedding 0.5; the crowd 0.69-0.79; the chord 0.69-0.89; all MLP writes 0.78-0.86; own write 0.69-0.81; block 6 the same with the chord and the MLP writes at 0.93 late. At the entrants' maxima the crowd's share falls from 0.85 (step 512) to 0.2-0.3 while attention's rises to 0.3-0.4 and the other largest writes' to 0.25; the entrants' own write is 0.00 until step 16000 | refuted (attention); the projection is a consensus of the parts | ← e517b e505 · → 22 |
+| e520 | Does the agreement of the parts predict entry beyond the size of their sum (the relayed take's consensus as a mechanistic variable; an analysis over e519's records)? | No. At block 12 the agreement index reads the next checkpoint's entrants at 0.49-0.58, the constructive fraction at 0.40-0.54, the sign consensus at 0.51-0.60, the size S at 0.76-0.97; within deciles of S agreement is at 0.47-0.57, the others 0.40-0.55; S within deciles of agreement 0.76-0.97; among 5700-11250 rows with S within 0.9-1.1 of the floor the top and bottom agreement quartiles enter at the same rate (within a few thousandths) and entrants' and non-entrants' median agreement are equal; block 6 the same | refuted (the criterion is on the resultant alone) | ← e519b · → 23 |
 
 ## How the results flow
 
 - `e516b → e517, e517b`. The criterion's carrier: not the chord of e505-e511, which the counterfactual removes without loss, but the state's other content.
+- `e519b → e520`. The consensus reading tested directly: the agreement of the parts is a function of the size and selects nothing among resultants of one size.
 - `e517b → e519, e519b`. What e517b left: which part carries the projection. None; the parts are redundant for the ranking and cancel along most atoms, the words being the atoms along which they agree.
 - `e516b → e518`. The criterion across texts and models, the substitute for checkpoints where there are none.
 
