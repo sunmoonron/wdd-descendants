@@ -613,3 +613,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 97 kills (the necessity test)
 - "WDD measures something simpler, the selectivity of a neuron": six ordinary neuron statistics predict entry at 0.74 out of sample, S and breadth at 0.88, and the activation side adds +0.001 to WDD (e548).
 - "A word's extreme contexts are where its neuron fires most": the row's alignment at the neuron's peak contexts predicts entry at 0.64; the extremes are the coalition's contexts, where the neuron fires moderately (e548).
+
+## Session 98 kills (the feature-side test)
+- "A feature reader recovers WDD's row-context associations": no feature matches a word's context set as a set (Jaccard 0.19, 0.28 of words at 0.25 against 0.17 of random rows); the feature nearest to the row covers half of the contexts (e549).
+- "The feature finds the class but not the direction" (the relayed take's cleanest case): the nearest feature is at cosine 0.48 with the row and at half of its contexts; both are seen in part, neither in full (e549).
