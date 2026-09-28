@@ -599,3 +599,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "An extreme is a few large writes": 9232 effective writers, the top ten 0.01 of the absolute contribution, a cancelling mass with more than half of the projection transported by attention (e545).
 - "The writers behind a row's extremes are the big writers of any direction": random directions' ensembles cohere at 0.083 against the native rows' 0.489 (e545).
 - "A few shared write programs make many words": the words-by-writers matrix has effective rank 63.6 of 247, each word its own ensemble (e545).
+
+## Session 95 kills (the coalition before the word)
+- "Entry is the ensemble forming": it is in place four intervals before (0.42 against a near miss's 0.20); what rises is coherence and alignment (e546).
+- "The rise is the row's rotation alone": a quarter is the row, a quarter the arrival of transported writes, an eighth the local writers' motion (e546b).
+- "The ensembles' persistence is a selection artefact of stable contexts": the selection-matched null gives 0.599 against the real 0.873 (e546).

@@ -1,0 +1,257 @@
+{
+ "model": "pythia410",
+ "block": 12,
+ "entrants": {
+  "by_k": {
+   "-4": {
+    "S": 1.0441675186157227,
+    "mlp_projection": 0.8527690172195435,
+    "coherence": 2.453444719314575,
+    "within_now": 0.4197109639644623,
+    "within_fixed": 0.4309232234954834,
+    "within_act": 0.25017184019088745,
+    "persist_act": 0.7199159264564514,
+    "persist_fixed": 0.7492759227752686,
+    "persist_now": 0.6114660501480103,
+    "attention_share": 0.3118302524089813,
+    "own_share": 0.055128660053014755,
+    "n": 251
+   },
+   "-3": {
+    "S": 1.0491390228271484,
+    "mlp_projection": 0.8560879230499268,
+    "coherence": 2.753012180328369,
+    "within_now": 0.43448829650878906,
+    "within_fixed": 0.4441160559654236,
+    "within_act": 0.25655388832092285,
+    "persist_act": 0.7668018937110901,
+    "persist_fixed": 0.7987578511238098,
+    "persist_now": 0.6943321824073792,
+    "attention_share": 0.3060448467731476,
+    "own_share": 0.06570818275213242,
+    "n": 293
+   },
+   "-2": {
+    "S": 1.0558336973190308,
+    "mlp_projection": 0.987524151802063,
+    "coherence": 3.0661630630493164,
+    "within_now": 0.4278939366340637,
+    "within_fixed": 0.43008971214294434,
+    "within_act": 0.2607891261577606,
+    "persist_act": 0.7948130965232849,
+    "persist_fixed": 0.8291624188423157,
+    "persist_now": 0.7453190088272095,
+    "attention_share": 0.30293381214141846,
+    "own_share": 0.05276777222752571,
+    "n": 372
+   },
+   "-1": {
+    "S": 1.1156951189041138,
+    "mlp_projection": 1.3118489980697632,
+    "coherence": 3.4048972129821777,
+    "within_now": 0.44923028349876404,
+    "within_fixed": 0.4572875499725342,
+    "within_act": 0.25339561700820923,
+    "persist_act": 0.8691059350967407,
+    "persist_fixed": 0.8896793127059937,
+    "persist_now": 0.8539732694625854,
+    "attention_share": 0.38393330574035645,
+    "own_share": 0.07156588137149811,
+    "n": 372
+   },
+   "0": {
+    "S": 1.209539771080017,
+    "mlp_projection": 1.7779475450515747,
+    "coherence": 3.720080852508545,
+    "within_now": 0.50083988904953,
+    "within_fixed": 0.50083988904953,
+    "within_act": 0.2576519250869751,
+    "persist_act": 1.0,
+    "persist_fixed": 1.0,
+    "persist_now": 1.0,
+    "attention_share": 0.38486340641975403,
+    "own_share": 0.09930860996246338,
+    "n": 372
+   },
+   "1": {
+    "S": 1.2478976249694824,
+    "mlp_projection": 1.95797860622406,
+    "coherence": 3.1716761589050293,
+    "within_now": 0.5068483352661133,
+    "within_fixed": 0.5041448473930359,
+    "within_act": 0.26018601655960083,
+    "persist_act": 0.8778124451637268,
+    "persist_fixed": 0.8997750878334045,
+    "persist_now": 0.8709694147109985,
+    "attention_share": 0.40760329365730286,
+    "own_share": 0.12237949669361115,
+    "n": 372
+   },
+   "2": {
+    "S": 1.2682212591171265,
+    "mlp_projection": 1.8955073356628418,
+    "coherence": 2.720876932144165,
+    "within_now": 0.5063406229019165,
+    "within_fixed": 0.4961796700954437,
+    "within_act": 0.2563604712486267,
+    "persist_act": 0.8398303985595703,
+    "persist_fixed": 0.8692307472229004,
+    "persist_now": 0.817005455493927,
+    "attention_share": 0.3998405635356903,
+    "own_share": 0.12332476675510406,
+    "n": 360
+   }
+  },
+  "decomposition": {
+   "total": 0.834648609161377,
+   "activations": -0.1747242510318756,
+   "row_rotation": 0.2557802200317383,
+   "writers_motion": 0.14671343564987183,
+   "remainder": 0.0452117919921875,
+   "n": 251
+  },
+  "n_events": 372
+ },
+ "near_misses": {
+  "by_k": {
+   "-4": {
+    "S": 1.028146743774414,
+    "mlp_projection": 0.3394879102706909,
+    "coherence": 1.7916061878204346,
+    "within_now": 0.19665944576263428,
+    "within_fixed": 0.20216646790504456,
+    "within_act": 0.15532758831977844,
+    "persist_act": 0.6878724694252014,
+    "persist_fixed": 0.7071672677993774,
+    "persist_now": 0.5228843092918396,
+    "attention_share": 0.358802855014801,
+    "own_share": -0.008761200122535229,
+    "n": 251
+   },
+   "-3": {
+    "S": 1.0255918502807617,
+    "mlp_projection": 0.5578354597091675,
+    "coherence": 1.9007110595703125,
+    "within_now": 0.1854359358549118,
+    "within_fixed": 0.191642627120018,
+    "within_act": 0.14842718839645386,
+    "persist_act": 0.7524273991584778,
+    "persist_fixed": 0.752373218536377,
+    "persist_now": 0.5968337655067444,
+    "attention_share": 0.2861957848072052,
+    "own_share": -0.009788306429982185,
+    "n": 293
+   },
+   "-2": {
+    "S": 1.0250309705734253,
+    "mlp_projection": 0.41270390152931213,
+    "coherence": 2.25504994392395,
+    "within_now": 0.17632202804088593,
+    "within_fixed": 0.17691540718078613,
+    "within_act": 0.14574944972991943,
+    "persist_act": 0.7837721705436707,
+    "persist_fixed": 0.7815654277801514,
+    "persist_now": 0.6574426889419556,
+    "attention_share": 0.21981428563594818,
+    "own_share": -0.011400623247027397,
+    "n": 372
+   },
+   "-1": {
+    "S": 1.1157864332199097,
+    "mlp_projection": 0.562446653842926,
+    "coherence": 2.474470376968384,
+    "within_now": 0.16875503957271576,
+    "within_fixed": 0.16915711760520935,
+    "within_act": 0.13997092843055725,
+    "persist_act": 0.8631333112716675,
+    "persist_fixed": 0.8681071400642395,
+    "persist_now": 0.8109540939331055,
+    "attention_share": 0.28740131855010986,
+    "own_share": -0.00864118617027998,
+    "n": 372
+   },
+   "0": {
+    "S": 1.0758568048477173,
+    "mlp_projection": 0.863554835319519,
+    "coherence": 2.235546112060547,
+    "within_now": 0.17562389373779297,
+    "within_fixed": 0.17562389373779297,
+    "within_act": 0.15524296462535858,
+    "persist_act": 1.0,
+    "persist_fixed": 1.0,
+    "persist_now": 1.0,
+    "attention_share": 0.30100083351135254,
+    "own_share": -0.006136632990092039,
+    "n": 372
+   },
+   "1": {
+    "S": 1.0320614576339722,
+    "mlp_projection": 0.6711260676383972,
+    "coherence": 1.0345726013183594,
+    "within_now": 0.17589136958122253,
+    "within_fixed": 0.17489370703697205,
+    "within_act": 0.1500776708126068,
+    "persist_act": 0.8756452798843384,
+    "persist_fixed": 0.8776942491531372,
+    "persist_now": 0.8328838348388672,
+    "attention_share": 0.3361489474773407,
+    "own_share": -0.009155829437077045,
+    "n": 372
+   },
+   "2": {
+    "S": 1.0197863578796387,
+    "mlp_projection": 0.3899337947368622,
+    "coherence": 0.6385576725006104,
+    "within_now": 0.17112049460411072,
+    "within_fixed": 0.17050759494304657,
+    "within_act": 0.14275723695755005,
+    "persist_act": 0.8312456011772156,
+    "persist_fixed": 0.8329084515571594,
+    "persist_now": 0.7437965869903564,
+    "attention_share": 0.3595009744167328,
+    "own_share": -0.01508203987032175,
+    "n": 360
+   }
+  },
+  "decomposition": {
+   "total": 0.2071990966796875,
+   "activations": -0.20945893228054047,
+   "row_rotation": 0.03697315603494644,
+   "writers_motion": 0.2337503433227539,
+   "remainder": -0.03431713581085205,
+   "n": 251
+  },
+  "n_events": 372
+ },
+ "coherence_groups_step8000": {
+  "persistent_words_at_their_top_positions": 2.1897778511047363,
+  "persistent_words_at_random_positions": -0.4950218200683594,
+  "random_rows_at_their_top_positions": 1.3389298915863037,
+  "entrants_at_k0": 3.720080852508545,
+  "near_misses_at_k0": 2.235546112060547
+ },
+ "specificity": {
+  "n_words": 256,
+  "diagonal_median": 0.5751852989196777,
+  "off_diagonal_median": 0.012918432243168354,
+  "ratio_median": 43.43246078491211,
+  "share_diagonal_is_largest": 0.9453125,
+  "off_diagonal_max_median": 0.2642897367477417
+ },
+ "persistence_null_8000_16000": {
+  "n": 139,
+  "real_each_checkpoints_positions": 0.8108557462692261,
+  "real_fixed_positions": 0.8733749389648438,
+  "null_random_row_alignment_fixed_positions": 0.5988227128982544,
+  "activations_alone_fixed_positions": 0.7866978645324707
+ },
+ "checks": {
+  "context_first": true,
+  "rise_is_alignment": false,
+  "coherence_rises": false,
+  "persistence_mostly_context": false,
+  "ensembles_private": true
+ },
+ "_exp": "e546_ensemble_precedence_pythia410",
+ "_time": "2026-09-28 16:06:14"
+}

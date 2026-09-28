@@ -665,6 +665,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H429 The ensembles are big writers, the same for any direction. → e545 → KILLED: random directions' writer vectors at their largest projections cohere at 0.083 against the native rows' 0.489.
 - H430 A few shared write programs make the extremes of many words. → e545 → KILLED: the words-by-writers matrix has effective rank 63.6 for 247 words, and the words' activation means at their extremes are no lower in rank (24.8) than random position sets (14.3).
 - H431 A word's writer ensemble persists through training. → e545 → ESTABLISHED: cosine 0.778 from step 4000 to 8000, 0.882 from 8000 to 16000, 0.710 from 4000 to 16000, against 0.002 for different words.
+- H432 The ensemble exists before entry. → e546 → ESTABLISHED: four intervals before entry a future entrant's writer vectors cohere across its future extreme positions at 0.42 against 0.20 for a near miss matched on S; the contexts alone 0.25 against 0.16; the contexts' stability generic (0.72 against 0.69).
+- H433 Entry is the ensemble forming. → e546 → KILLED: the ensemble is in place at k=-4; what rises is its coherence (2.45 to 3.72), the own neuron's contribution (0.06 to 0.12) and the alignment; the near miss's coherence rises to 2.47 and collapses to 0.64.
+- H434 The rise of an entrant's projection is the row's rotation (e522's reading). → e546b → NARROWED: a quarter of the rise from k=-4 to entry is the row's rotation (0.25), a quarter the attention outputs' own motion (0.25, transported writes), 0.13 the local writers' motion, the activations' change -0.06.
+- H435 The ensembles are private to their rows. → e546 → ESTABLISHED: a word's ensemble aggregate write has cosine 0.575 with its own row against 0.013 with other words (0.264 with the most similar), the own row the largest for 0.95.
+- H436 The ensembles' persistence is their contexts' stability, a selection artefact. → e546 → KILLED: the selection-matched null persists at 0.599 and the activations alone at 0.787 against the real 0.873.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
