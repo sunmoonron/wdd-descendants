@@ -539,3 +539,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The rows move toward where the states end up": the destination's geometry predicts the displacement no better than the origin's (0.035-0.066; 0.001-0.002 without the row) (e530).
 - "The entrants' motion is the predictable part": entrants and matched rows are equally unpredictable, and rows of like alignment share no displacement (e530).
 - The search for the drift's cause in local quantities, as a line of work: closed by the bound. What is identifiable is the criterion, the time course and the anatomy; the size of the motion but not its direction.
+
+## Session 83 kills (the criterion's specificity)
+- "S foretells entry because the native rows are moving into the cloud": the native dictionary frozen at step 4000 foretells entry as well as the moving rows (0.91 against 0.91), with the same turnover (e531).
+- "The prospective criterion is a property of the native vocabulary": a fixed random dictionary shows it at 0.81 (four thousand steps) and 0.86 (one thousand); the native excess is 0.10 (e531). This program's own reading of sessions 72-82, corrected by its own control.
