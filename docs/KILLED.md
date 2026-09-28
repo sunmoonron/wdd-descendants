@@ -533,3 +533,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 81 kills (the common flow, the geometry of drift and oscillation)
 - "Vocabulary entry is which rows are positioned to gain from a common anisotropic flow on the row set" (this program's own idea, not the relayed one): the common flow carries a tenth of the motion early and a fortieth late, amplifies the cloud's principal subspace only in the first interval, and reproduces 0.11-0.26 of the entrants' rise before step 5000 and none after (e528).
 - "The drift runs in flat directions, the oscillation in steep ones": killed: the eight-thousand-step displacement is 1.09-1.18 times as curved as random, the oscillation axis 1.15-1.17 (e529).
+
+## Session 82 kills (the bound)
+- "The direction of the row-specific drift is in the network's geometry at the origin": everything in hand predicts 0.049-0.072 of the eight-thousand-step displacement's energy on held-out rows, all of it growth and read repulsion; the non-radial part at 0.015 or less (e530).
+- "The rows move toward where the states end up": the destination's geometry predicts the displacement no better than the origin's (0.035-0.066; 0.001-0.002 without the row) (e530).
+- "The entrants' motion is the predictable part": entrants and matched rows are equally unpredictable, and rows of like alignment share no displacement (e530).
+- The search for the drift's cause in local quantities, as a line of work: closed by the bound. What is identifiable is the criterion, the time course and the anatomy; the size of the motion but not its direction.
