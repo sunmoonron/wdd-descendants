@@ -1,0 +1,289 @@
+{
+ "model": "pythia410",
+ "steps": [
+  1000,
+  2000,
+  3000,
+  4000,
+  5000,
+  6000,
+  7000,
+  8000,
+  9000,
+  10000,
+  11000,
+  12000,
+  13000,
+  14000,
+  15000,
+  16000
+ ],
+ "definitions": [
+  "omp",
+  "nearest_neighbour",
+  "top16_correlation",
+  "count_over_floor"
+ ],
+ "by_block": {
+  "12": {
+   "native": {
+    "omp": {
+     "overlap_with_omp_words": 1.0,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.936306511437653,
+       "entries_mean": 97.8,
+       "retention_mean": 0.61796875
+      },
+      "4000": {
+       "prospective_auc_mean": 0.9079134731455875,
+       "entries_mean": 126.83333333333333,
+       "retention_mean": 0.5045572916666666
+      }
+     }
+    },
+    "nearest_neighbour": {
+     "overlap_with_omp_words": 0.51171875,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9491116436416431,
+       "entries_mean": 112.93333333333334,
+       "retention_mean": 0.5588541666666667
+      },
+      "4000": {
+       "prospective_auc_mean": 0.9245718115311486,
+       "entries_mean": 144.16666666666666,
+       "retention_mean": 0.4368489583333333
+      }
+     }
+    },
+    "top16_correlation": {
+     "overlap_with_omp_words": 0.579345703125,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9620306260067444,
+       "entries_mean": 62.6,
+       "retention_mean": 0.75546875
+      },
+      "4000": {
+       "prospective_auc_mean": 0.9426059654448782,
+       "entries_mean": 100.5,
+       "retention_mean": 0.607421875
+      }
+     }
+    },
+    "count_over_floor": {
+     "overlap_with_omp_words": 0.4072265625,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9729979536870036,
+       "entries_mean": 50.4,
+       "retention_mean": 0.803125
+      },
+      "4000": {
+       "prospective_auc_mean": 0.9556233540588835,
+       "entries_mean": 84.16666666666667,
+       "retention_mean": 0.6712239583333334
+      }
+     }
+    }
+   },
+   "random": {
+    "omp": {
+     "overlap_with_omp_words": 1.0,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.8625550903618727,
+       "entries_mean": 190.13333333333333,
+       "retention_mean": 0.25729166666666664
+      },
+      "4000": {
+       "prospective_auc_mean": 0.809453129251835,
+       "entries_mean": 210.5,
+       "retention_mean": 0.177734375
+      }
+     }
+    },
+    "nearest_neighbour": {
+     "overlap_with_omp_words": 0.2060546875,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.8853528888085485,
+       "entries_mean": 183.8,
+       "retention_mean": 0.28203125
+      },
+      "4000": {
+       "prospective_auc_mean": 0.8001076903527227,
+       "entries_mean": 208.58333333333334,
+       "retention_mean": 0.18522135416666666
+      }
+     }
+    },
+    "top16_correlation": {
+     "overlap_with_omp_words": 0.465576171875,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.88666286506062,
+       "entries_mean": 163.53333333333333,
+       "retention_mean": 0.3611979166666667
+      },
+      "4000": {
+       "prospective_auc_mean": 0.8294958130934161,
+       "entries_mean": 191.0,
+       "retention_mean": 0.25390625
+      }
+     }
+    },
+    "count_over_floor": {
+     "overlap_with_omp_words": 0.17578125,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9340843726871203,
+       "entries_mean": 166.33333333333334,
+       "retention_mean": 0.3502604166666667
+      },
+      "4000": {
+       "prospective_auc_mean": 0.8534024922390299,
+       "entries_mean": 202.41666666666666,
+       "retention_mean": 0.20930989583333334
+      }
+     }
+    }
+   }
+  },
+  "6": {
+   "native": {
+    "omp": {
+     "overlap_with_omp_words": 1.0,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9278411613437905,
+       "entries_mean": 78.46666666666667,
+       "retention_mean": 0.6934895833333333
+      },
+      "4000": {
+       "prospective_auc_mean": 0.8951525533460717,
+       "entries_mean": 109.25,
+       "retention_mean": 0.5732421875
+      }
+     }
+    },
+    "nearest_neighbour": {
+     "overlap_with_omp_words": 0.507080078125,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9459518016857242,
+       "entries_mean": 98.93333333333334,
+       "retention_mean": 0.6135416666666667
+      },
+      "4000": {
+       "prospective_auc_mean": 0.9117993975605779,
+       "entries_mean": 126.16666666666667,
+       "retention_mean": 0.5071614583333334
+      }
+     }
+    },
+    "top16_correlation": {
+     "overlap_with_omp_words": 0.6513671875,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9556631566627111,
+       "entries_mean": 55.666666666666664,
+       "retention_mean": 0.7825520833333334
+      },
+      "4000": {
+       "prospective_auc_mean": 0.9232255768371442,
+       "entries_mean": 83.83333333333333,
+       "retention_mean": 0.6725260416666666
+      }
+     }
+    },
+    "count_over_floor": {
+     "overlap_with_omp_words": 0.600341796875,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9633718939495676,
+       "entries_mean": 54.266666666666666,
+       "retention_mean": 0.7880208333333333
+      },
+      "4000": {
+       "prospective_auc_mean": 0.9323459037062748,
+       "entries_mean": 82.58333333333333,
+       "retention_mean": 0.6774088541666666
+      }
+     }
+    }
+   },
+   "random": {
+    "omp": {
+     "overlap_with_omp_words": 1.0,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.8575114176066428,
+       "entries_mean": 167.6,
+       "retention_mean": 0.3453125
+      },
+      "4000": {
+       "prospective_auc_mean": 0.816347620268716,
+       "entries_mean": 188.41666666666666,
+       "retention_mean": 0.2639973958333333
+      }
+     }
+    },
+    "nearest_neighbour": {
+     "overlap_with_omp_words": 0.2470703125,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.88923699526949,
+       "entries_mean": 170.6,
+       "retention_mean": 0.33359375
+      },
+      "4000": {
+       "prospective_auc_mean": 0.8222562077088594,
+       "entries_mean": 199.16666666666666,
+       "retention_mean": 0.22200520833333334
+      }
+     }
+    },
+    "top16_correlation": {
+     "overlap_with_omp_words": 0.53125,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.873877484999301,
+       "entries_mean": 145.86666666666667,
+       "retention_mean": 0.43020833333333336
+      },
+      "4000": {
+       "prospective_auc_mean": 0.8243565404350335,
+       "entries_mean": 176.33333333333334,
+       "retention_mean": 0.3111979166666667
+      }
+     }
+    },
+    "count_over_floor": {
+     "overlap_with_omp_words": 0.215576171875,
+     "horizons": {
+      "1000": {
+       "prospective_auc_mean": 0.9322725919248016,
+       "entries_mean": 155.0,
+       "retention_mean": 0.39453125
+      },
+      "4000": {
+       "prospective_auc_mean": 0.8676061045626192,
+       "entries_mean": 191.91666666666666,
+       "retention_mean": 0.2503255208333333
+      }
+     }
+    }
+   }
+  }
+ },
+ "checks": {
+  "nn_overlap_over_0_6": false,
+  "nn_auc_within_0_05": true,
+  "retention_gap_every_definition": true,
+  "count_over_floor_highest_auc": true
+ },
+ "_exp": "e535_wordhood_without_omp_pythia410",
+ "_time": "2026-09-28 01:59:26"
+}

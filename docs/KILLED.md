@@ -555,3 +555,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 
 ## Session 86 (no kills; the record answering the relayed proposals)
 - The margin's restoring tendency, the drift along the gradient of the row's own margin, and the shuffled-states control are e524b with e522 and e516b, e523 with e526 and e528, and e532's kernel respectively; the elasticity of retention with respect to margin is e534's records read again (e534b): at equal margin native words are, if anything, slightly less robust than random ones (-0.14--0.05 at 20 degrees).
+
+## Session 87 kills (breaking the criterion)
+- "The vocabulary is what OMP makes": under three other definitions of wordhood, one with no reconstruction at all, the prospective criterion, the generic level, the native retention advantage and the entry statistics are the same (e535).
+- "The prospective criterion, breadth-first entry, turnover and retention need training": rows diffusing against a fixed Gaussian cloud show all four, at the generic levels of e531 (e536). What needs more than diffusion is the native excess, which a weak persistent pull into the cloud supplies.
+- Of the relayed five, the floor under an injected projection is e483 and the state-row transplant is e532; the cross-layer causal state stays open.

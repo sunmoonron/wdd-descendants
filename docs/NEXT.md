@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e535. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e537. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -161,3 +161,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 85 leaves (e534):** the basin is the margin and is structured along the drift; nothing in it asks for another basin experiment. What remains is the same as before session 85: the half-life to the end of training and on OLMo; the cross-layer causal state; the synthetic task; and the write-up of the boundary. The one new question e534 opens is why the row's drift runs along the safer directions when the origin's gradient does not point along them (sessions 79-82): a slow variable that keeps a word a word without being aimed by anything at a single time.
 
 **Session 86 (e534b, an analysis):** the basin is the margin's function and nothing else; the relayed proposals of this round were already in the record. The queue stands: the half-life to the end of training and on OLMo; the cross-layer causal state; the synthetic task; the write-up of the boundary.
+
+**Session 87 (e535, e536):** the criterion survives without OMP, and its generic four fifths appear with no training; the native fifth is a persistent pull of the rows into the cloud. The synthetic null is now a tool: the pull's strength and form (along the covariance, along particular directions, with or without memory in the increments) can be varied to find what reproduces Pythia's plateau at S 1.3 and the increments' lag correlation of 0.1-0.3, which would say what kind of process the boundary of session 82 hides, without claiming its cause. The cross-layer causal state and the half-life to the end of training remain.
