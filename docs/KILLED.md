@@ -604,3 +604,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Entry is the ensemble forming": it is in place four intervals before (0.42 against a near miss's 0.20); what rises is coherence and alignment (e546).
 - "The rise is the row's rotation alone": a quarter is the row, a quarter the arrival of transported writes, an eighth the local writers' motion (e546b).
 - "The ensembles' persistence is a selection artefact of stable contexts": the selection-matched null gives 0.599 against the real 0.873 (e546).
+
+## Session 96 kills (the channel and the neuron)
+- "A coalition selected by its alignment with the row can tell which came first": random non-words give the same stable channel, the same approach and the same displacement cosine as entrants; my own construction, retired (e547).
+- "The words' coalitions are drawn from a shared population of programs": 176 of 256 words are alone at cosine 0.3, and the families are near-duplicate rows at the same contexts (e547).
+- "What separates a word from a near miss is the row's approach": both approach alike (0.174 and 0.140); the near miss's neuron loses its selectivity for its contexts (e547b).
