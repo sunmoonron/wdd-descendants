@@ -622,3 +622,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The word's own neuron is selective for its contexts before entry, in general": on OLMo-1B the entrant's neuron is not (z 0.06 at k=-8, 0.68 at entry) and its own write is 0.03 of the extreme; the coalition alone makes the word (e552).
 - "Attention supplies more than half of an extreme, in general": 0.14 on OLMo-1B against 0.54-0.57 on Pythia (e552).
 - "The coherence of the contributions separates entrants from near misses, in general": 6.56 against 8.55 on OLMo-1B (e552).
+
+## Session 100 kills (the anticipated critique of session 99, run)
+- Session 99's own clause, "the word's neuron's part in the coalition is architectural": by absolute activation the OLMo entrant's neuron is selective eight intervals before entry (z 2.63) and is the top contributor to its extreme; the signed statistic misled (e554).
+- "Attention's half of an extreme is about extremes": 0.27 at OLMo's extremes and 0.27 everywhere (e554).
+- "A row above the floor is a word": 3312 non-words over the floor on Pythia at step 8000, 4252 on OLMo; words live at 1.1-1.3 times the floor (e554).
+- "The native fifth's retention lives in the tails, in general": on OLMo the covariance keeps 0.58 of 0.64 (e555).

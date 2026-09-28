@@ -1,0 +1,122 @@
+{
+ "model": "olmo1b",
+ "block": 8,
+ "rho_position": 0.8985375761985779,
+ "clouds": {
+  "real": {
+   "residual_at_pairs": null,
+   "top32_overlap_with_real": null,
+   "realised_position_persistence": 0.8985375761985779,
+   "prospective_auc_1": 0.9797806570795908,
+   "prospective_auc_4": 0.9427208347191417,
+   "entries_per_interval": 62.46666666666667,
+   "retention_4": 0.6380208333333334,
+   "words_median_S": 1.7014158964157104,
+   "gate": 0.9471153846153846,
+   "entrants_under_floor_km2": 0.2788104089219331,
+   "delta_S_exit": -0.04741239547729492,
+   "delta_S_entry": 0.20377123355865479,
+   "leavers_S": [
+    1.4092177152633667,
+    1.3640127182006836,
+    1.3708945512771606
+   ],
+   "entrants_S": [
+    1.1462336778640747,
+    1.2556556463241577,
+    1.4046894311904907,
+    1.5061707496643066
+   ],
+   "same_peak": 0.4700520833333333,
+   "persistence_1_1_1_2": 1.1016138792037964
+  },
+  "gaussian_coupled": {
+   "residual_at_pairs": null,
+   "top32_overlap_with_real": 0.874827615916729,
+   "realised_position_persistence": 0.8240334391593933,
+   "prospective_auc_1": 0.9626380866449872,
+   "prospective_auc_4": 0.921859259964123,
+   "entries_per_interval": 78.33333333333333,
+   "retention_4": 0.5810546875,
+   "words_median_S": 1.1598464250564575,
+   "gate": 0.7053140096618358,
+   "entrants_under_floor_km2": 0.5540540540540541,
+   "delta_S_exit": -0.08660316467285156,
+   "delta_S_entry": 0.11728024482727051,
+   "leavers_S": [
+    1.1028268337249756,
+    1.043339729309082,
+    1.005526065826416
+   ],
+   "entrants_S": [
+    0.9851946234703064,
+    1.0176984071731567,
+    1.1013399362564087,
+    1.113063097000122
+   ],
+   "same_peak": 0.22578125,
+   "persistence_1_1_1_2": 0.9805036783218384
+  },
+  "graft_top4": {
+   "residual_at_pairs": 0.0001029600953188492,
+   "top32_overlap_with_real": 0.8552505411207676,
+   "realised_position_persistence": 0.8181772232055664,
+   "prospective_auc_1": 0.9839423707280696,
+   "prospective_auc_4": 0.9492615157883817,
+   "entries_per_interval": 53.8,
+   "retention_4": 0.6875,
+   "words_median_S": 1.8214638233184814,
+   "gate": 0.9265536723163842,
+   "entrants_under_floor_km2": 0.23684210526315788,
+   "delta_S_exit": -0.0785512924194336,
+   "delta_S_entry": 0.28067636489868164,
+   "leavers_S": [
+    1.416846752166748,
+    1.3623781204223633,
+    1.319004774093628
+   ],
+   "entrants_S": [
+    1.1849554777145386,
+    1.3040813207626343,
+    1.511488437652588,
+    1.6778968572616577
+   ],
+   "same_peak": 0.46484375,
+   "persistence_1_1_1_2": 0.9234402179718018
+  },
+  "surgery_top16": {
+   "residual_at_pairs": 1.24591002759189e-06,
+   "top32_overlap_with_real": 0.791297934949398,
+   "realised_position_persistence": 0.8364055156707764,
+   "prospective_auc_1": 0.8833583004442555,
+   "prospective_auc_4": 0.8221554142258919,
+   "entries_per_interval": 147.26666666666668,
+   "retention_4": 0.3284505208333333,
+   "words_median_S": 1.028083324432373,
+   "gate": 0.3472803347280335,
+   "entrants_under_floor_km2": 0.7529411764705882,
+   "delta_S_exit": -0.05981898307800293,
+   "delta_S_entry": 0.08778196573257446,
+   "leavers_S": [
+    1.0229319334030151,
+    0.9622729420661926,
+    0.9675540924072266
+   ],
+   "entrants_S": [
+    0.9292135834693909,
+    0.9600095152854919,
+    1.0317811965942383,
+    1.023856520652771
+   ],
+   "same_peak": 0.17734375,
+   "persistence_1_1_1_2": 0.8426706194877625
+  }
+ },
+ "checks": {
+  "gaussian_loses": false,
+  "graft_restores": true,
+  "surgery_collapses": false
+ },
+ "_exp": "e555_olmo_tails_olmo1b",
+ "_time": "2026-09-28 18:25:34"
+}
