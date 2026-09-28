@@ -609,3 +609,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "A coalition selected by its alignment with the row can tell which came first": random non-words give the same stable channel, the same approach and the same displacement cosine as entrants; my own construction, retired (e547).
 - "The words' coalitions are drawn from a shared population of programs": 176 of 256 words are alone at cosine 0.3, and the families are near-duplicate rows at the same contexts (e547).
 - "What separates a word from a near miss is the row's approach": both approach alike (0.174 and 0.140); the near miss's neuron loses its selectivity for its contexts (e547b).
+
+## Session 97 kills (the necessity test)
+- "WDD measures something simpler, the selectivity of a neuron": six ordinary neuron statistics predict entry at 0.74 out of sample, S and breadth at 0.88, and the activation side adds +0.001 to WDD (e548).
+- "A word's extreme contexts are where its neuron fires most": the row's alignment at the neuron's peak contexts predicts entry at 0.64; the extremes are the coalition's contexts, where the neuron fires moderately (e548).
