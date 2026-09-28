@@ -617,3 +617,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 98 kills (the feature-side test)
 - "A feature reader recovers WDD's row-context associations": no feature matches a word's context set as a set (Jaccard 0.19, 0.28 of words at 0.25 against 0.17 of random rows); the feature nearest to the row covers half of the contexts (e549).
 - "The feature finds the class but not the direction" (the relayed take's cleanest case): the nearest feature is at cosine 0.48 with the row and at half of its contexts; both are seen in part, neither in full (e549).
+
+## Session 99 kills (the second model)
+- "The word's own neuron is selective for its contexts before entry, in general": on OLMo-1B the entrant's neuron is not (z 0.06 at k=-8, 0.68 at entry) and its own write is 0.03 of the extreme; the coalition alone makes the word (e552).
+- "Attention supplies more than half of an extreme, in general": 0.14 on OLMo-1B against 0.54-0.57 on Pythia (e552).
+- "The coherence of the contributions separates entrants from near misses, in general": 6.56 against 8.55 on OLMo-1B (e552).
