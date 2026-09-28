@@ -1,0 +1,131 @@
+{
+ "pythia410": {
+  "words": {
+   "usage": 19.0,
+   "S": 1.609086036682129,
+   "share_over_floor": 1.0,
+   "cnt": 25.0,
+   "breadth": 2.248704671859741,
+   "norm": 0.7049591541290283,
+   "norm_rank": 0.04910982400178909
+  },
+  "norm_matched": {
+   "usage": 0.0,
+   "S": 0.9177815914154053,
+   "share_over_floor": 0.390625,
+   "cnt": 0.0,
+   "breadth": 3.0,
+   "norm": 0.7047201991081238,
+   "norm_rank": 0.04888446629047394
+  },
+  "random": {
+   "usage": 0.0,
+   "S": 0.7944493889808655,
+   "share_over_floor": 0.078125,
+   "cnt": 0.0,
+   "breadth": 1.0,
+   "norm": 0.5958144664764404,
+   "norm_rank": 0.5269117951393127
+  },
+  "usage_norm_corr": 0.18299099802970886,
+  "usage_norm_spearman": 0.051484741270542145
+ },
+ "pythia160": {
+  "words": {
+   "usage": 26.0,
+   "S": 1.5773868560791016,
+   "share_over_floor": 0.9765625,
+   "cnt": 21.0,
+   "breadth": 2.6822431087493896,
+   "norm": 0.6575769186019897,
+   "norm_rank": 0.064918152987957
+  },
+  "norm_matched": {
+   "usage": 1.0,
+   "S": 0.9263927340507507,
+   "share_over_floor": 0.41015625,
+   "cnt": 0.0,
+   "breadth": 2.25,
+   "norm": 0.657467782497406,
+   "norm_rank": 0.064964659512043
+  },
+  "random": {
+   "usage": 0.0,
+   "S": 0.7783982753753662,
+   "share_over_floor": 0.1171875,
+   "cnt": 0.0,
+   "breadth": 1.0,
+   "norm": 0.5273916125297546,
+   "norm_rank": 0.5119977593421936
+  },
+  "usage_norm_corr": 0.2680028975009918,
+  "usage_norm_spearman": 0.10435076057910919
+ },
+ "mamba130": {
+  "words": {
+   "usage": 24.0,
+   "S": 1.784778118133545,
+   "share_over_floor": 0.98828125,
+   "cnt": 29.0,
+   "breadth": 2.055555582046509,
+   "norm": 3.3450143337249756,
+   "norm_rank": 0.545973539352417
+  },
+  "norm_matched": {
+   "usage": 1.0,
+   "S": 0.9256672859191895,
+   "share_over_floor": 0.3984375,
+   "cnt": 0.0,
+   "breadth": 2.4000000953674316,
+   "norm": 3.3450117111206055,
+   "norm_rank": 0.5463742017745972
+  },
+  "random": {
+   "usage": 0.0,
+   "S": 0.917046844959259,
+   "share_over_floor": 0.3984375,
+   "cnt": 0.0,
+   "breadth": 2.0,
+   "norm": 3.348748207092285,
+   "norm_rank": 0.5456730723381042
+  },
+  "usage_norm_corr": -0.01637234538793564,
+  "usage_norm_spearman": 0.048108309507369995
+ },
+ "twins": {
+  "410m words -> 160m words": {
+   "share": 0.3984375,
+   "median": 0.20000000298023224
+  },
+  "410m norm-matched -> 160m words": {
+   "share": 0.0234375,
+   "median": 0.0
+  },
+  "410m norm-matched -> 160m norm-matched": {
+   "share": 0.01953125,
+   "median": 0.0
+  },
+  "410m random -> 160m words": {
+   "share": 0.0,
+   "median": 0.0
+  },
+  "410m words -> 160m norm-matched": {
+   "share": 0.01953125,
+   "median": 0.06666667014360428
+  },
+  "mamba words -> 410m words": {
+   "share": 0.53125,
+   "median": 0.25
+  },
+  "mamba norm-matched -> 410m words": {
+   "share": 0.0546875,
+   "median": 0.0
+  },
+  "mamba random -> 410m words": {
+   "share": 0.046875,
+   "median": 0.0
+  }
+ },
+ "_exp": "e572_norm_matched_words",
+ "_time": "2026-09-28 23:31:48"
+}

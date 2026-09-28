@@ -1,0 +1,160 @@
+{
+ "pythia160": {
+  "noise_0.005": {
+   "row_identity": 0.9999902844429016,
+   "membership": 0.8618181943893433,
+   "usage": 0.9901541471481323,
+   "fvu": {
+    "ref_words_old_vectors": 0.7018635272979736,
+    "ref_words_new_vectors": 0.7018647193908691,
+    "new_words": 0.7021059989929199
+   },
+   "function_describe": 1.0003454684358364,
+   "function_matter": 0.9927529411764706,
+   "ablation_cost": {
+    "ref_words": 0.47781944274902344,
+    "new_words": 0.4813075065612793
+   },
+   "share_ref_words_over_floor": 0.9765625,
+   "n_positions": 2038,
+   "delta_loss": 0.025690793991088867
+  },
+  "noise_0.02": {
+   "row_identity": 0.9998434782028198,
+   "membership": 0.7777777910232544,
+   "usage": 0.9771486520767212,
+   "fvu": {
+    "ref_words_old_vectors": 0.7039960622787476,
+    "ref_words_new_vectors": 0.704041600227356,
+    "new_words": 0.7045412063598633
+   },
+   "function_describe": 1.0007743567191998,
+   "function_matter": 0.8446752573384398,
+   "ablation_cost": {
+    "ref_words": 0.5064816474914551,
+    "new_words": 0.5996170043945312
+   },
+   "share_ref_words_over_floor": 0.9765625,
+   "n_positions": 2038,
+   "delta_loss": 0.4436023235321045
+  },
+  "noise_0.04": {
+   "row_identity": 0.9993605017662048,
+   "membership": 0.7716262936592102,
+   "usage": 0.9683674573898315,
+   "fvu": {
+    "ref_words_old_vectors": 0.7072473168373108,
+    "ref_words_new_vectors": 0.7073506712913513,
+    "new_words": 0.7070783376693726
+   },
+   "function_describe": 0.9997610748547002,
+   "function_matter": 0.9443832102563414,
+   "ablation_cost": {
+    "ref_words": 0.6042547225952148,
+    "new_words": 0.6398406028747559
+   },
+   "share_ref_words_over_floor": 0.96875,
+   "n_positions": 2038,
+   "delta_loss": 1.460191011428833
+  },
+  "finetune_2e-06": {
+   "row_identity": 0.9999966025352478,
+   "membership": 0.7594501972198486,
+   "usage": 0.9645195603370667,
+   "fvu": {
+    "ref_words_old_vectors": 0.7075155973434448,
+    "ref_words_new_vectors": 0.7075027227401733,
+    "new_words": 0.7064778208732605
+   },
+   "function_describe": 0.9985332104704392,
+   "function_matter": 0.9864434910751558,
+   "ablation_cost": {
+    "ref_words": 0.46761417388916016,
+    "new_words": 0.47404050827026367
+   },
+   "share_ref_words_over_floor": 0.9765625,
+   "n_positions": 2038,
+   "delta_loss": 0.567467451095581
+  },
+  "finetune_2e-05": {
+   "row_identity": 0.9999229311943054,
+   "membership": 0.6569579243659973,
+   "usage": 0.9212074279785156,
+   "fvu": {
+    "ref_words_old_vectors": 0.7497501373291016,
+    "ref_words_new_vectors": 0.7495866417884827,
+    "new_words": 0.7480933666229248
+   },
+   "function_describe": 0.9977902362084536,
+   "function_matter": 0.9529278034272546,
+   "ablation_cost": {
+    "ref_words": 0.3501749038696289,
+    "new_words": 0.36747264862060547
+   },
+   "share_ref_words_over_floor": 0.984375,
+   "n_positions": 2038,
+   "delta_loss": 2.0146186351776123
+  }
+ },
+ "pythia410": {
+  "step1000->step2000": {
+   "row_identity": 0.6623322367668152,
+   "membership": 0.06666667014360428,
+   "usage": 0.21427030861377716,
+   "fvu": {
+    "ref_words_old_vectors": 0.9156484603881836,
+    "ref_words_new_vectors": 0.9126289486885071,
+    "new_words": 0.8965365290641785
+   },
+   "function_describe": 0.9791274357454796,
+   "function_matter": 0.6295226055023779,
+   "ablation_cost": {
+    "ref_words": 0.004986286163330078,
+    "new_words": 0.00792074203491211
+   },
+   "share_ref_words_over_floor": 0.3125,
+   "n_positions": 2040,
+   "delta_loss": -0.9109072685241699
+  },
+  "step8000->step16000": {
+   "row_identity": 0.8696366548538208,
+   "membership": 0.36533331871032715,
+   "usage": 0.7244192361831665,
+   "fvu": {
+    "ref_words_old_vectors": 0.8880445957183838,
+    "ref_words_new_vectors": 0.8772097229957581,
+    "new_words": 0.8719987273216248
+   },
+   "function_describe": 0.9819312358026584,
+   "function_matter": 1.7234589688642379,
+   "ablation_cost": {
+    "ref_words": 0.03259706497192383,
+    "new_words": 0.018913745880126953
+   },
+   "share_ref_words_over_floor": 0.9140625,
+   "n_positions": 2032,
+   "delta_loss": -0.1834087371826172
+  },
+  "step16000->final": {
+   "row_identity": 0.6857403516769409,
+   "membership": 0.21615201234817505,
+   "usage": 0.6144925355911255,
+   "fvu": {
+    "ref_words_old_vectors": 0.8772292733192444,
+    "ref_words_new_vectors": 0.8678429126739502,
+    "new_words": 0.8433228731155396
+   },
+   "function_describe": 0.9613483028497095,
+   "function_matter": 0.543805108196834,
+   "ablation_cost": {
+    "ref_words": 0.06034684181213379,
+    "new_words": 0.11097145080566406
+   },
+   "share_ref_words_over_floor": 0.91015625,
+   "n_positions": 2032,
+   "delta_loss": -0.22550249099731445
+  }
+ },
+ "_exp": "e569_stability_hierarchy",
+ "_time": "2026-09-28 22:59:17"
+}

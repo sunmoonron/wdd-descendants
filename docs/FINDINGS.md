@@ -4521,3 +4521,168 @@ SESSION 101 (the user relayed GPT's map of twenty-one research directions and as
   - Pre-registered: C1 (retention >= 0.8) refuted at every rate (0.77-0.69); C2 (words rotate less) null, nothing rotates; C3 (new words were TinyStories words) refuted; C4 (Pile loss up under 0.1) refuted, +0.58 at the gentlest rate; N1 (fine-tuning keeps more than noise at matched damage) refuted; N2 (noise rotates rows more) confirmed at 6 times, both tiny.
 
   Overview after the session, and the critique I would expect: (i) the vocabulary is now seen in a state-space model, two vision transformers, three optimizers and across scale, so it is a property of writing through rows to a residual stream, not of attention, the MLP, the tokenizer or Adam; the critic will ask for the coalition and the gate on Mamba, which the cache recipe of e550 can give. (ii) The two nulls are clean: the ledger is not a detector of upstream corruption (no single state is) nor of factual error (the confidence is); the lead is novelty, invented names driving one row to an extreme, and the critic will ask which row. (iii) Entry is the row turning into a direction the cloud already speaks, exit the cloud's erosion, and the neuron carries the word when transplanted; the critic will ask whether the 16000 direction's S of 1.29 in the 8000 cloud is the coalition of session 95 measured another way, which it is. (iv) The word set is fragile at its edge (0.86 under noise costing 0.03 nats) while the usage is robust; every Jaccard of word sets in the record should be read with that, and the usage correlation reported beside it from now on.
+
+SESSION 102 (the user asked for everything that furthers the exploration and relayed GPT's reading of session 101: switch from exploration to theory extraction, put one question above the project, "why does a trained network organise computation into persistent associations between native write directions and classes of its state distribution", and make the next artifact a mechanism map with every arrow annotated. Done in that order but with the arrows tested first: the factorial transplant (e565), the partition's convergence across seeds, data orders, corpora, scales, architectures and families (e566, with three follow-ups on what the seed variants share), the learning-dynamics sweep on the toy (e567), the invented-name study (e568), the stability hierarchy with its baseline (e569, e569b), the Mamba coalition (e570), the cross-lagged row-and-cloud test (e571), and what a word is beyond a large row (e572); then MECHANISM_MAP.md.)
+
+- e565 THE FACTORIAL TRANSPLANT (the step-16000 neuron into the step-8000 model: W the write column, Wd its direction at the old norm, Wn its norm at the old direction, R the read row, b the bias, and the combinations; all rows of a group at once; twenty entrants one at a time):
+
+  | rows | none | W | Wd | Wn | R | b | WR | Wb | Rb | WRb | at 16000 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | entrants: word share | 0.00 | 0.59 | 0.54 | 0.18 | 0.18 | 0.03 | 0.67 | 0.61 | 0.18 | 0.68 | 1.00 |
+  | stayers: word share | 1.00 | 0.96 | 0.93 | 0.97 | 0.92 | 0.99 | 0.95 | 0.95 | 0.91 | 0.95 | 1.00 |
+  | entrants: median S | 1.13 | 1.34 | 1.29 | 1.15 | 1.16 | 1.13 | 1.38 | 1.34 | 1.16 | 1.38 | 1.35 |
+
+  - The write direction is what carries the word. Alone it makes 0.54 of the entrants words (the whole column 0.59); the norm alone 0.18, the read row alone 0.18, the bias 0.03; read and write together 0.67, sub-additive (-0.10); the bias adds +0.01. One at a time: W 0.60, R 0.15, WR 0.60. The input selectivity is not what a later checkpoint brings; the direction is, into a cloud that already speaks it (e558b).
+  - Pre-registered: F1 (Rb below W) confirmed (0.18 against 0.59); F2 (bias adds little) confirmed; F3 (read and write additive within 0.1) confirmed at the edge (-0.10).
+
+- e566 / e566b / e566c / e566d THE PARTITION ACROSS SEEDS, DATA ORDERS, CORPORA, SCALES, ARCHITECTURES AND FAMILIES (Pythia-160m against seven variants on the same 2038 positions; Pythia-410m, Mamba-130m, GPT-2 and OLMo-1B on eight Pile documents by character spans, 8126 characters; twins at Jaccard 0.25 against the rotated-dictionary null):
+
+  | words of | twins among main | twins among deduped | twins among weight-seed1 | twins among weight-seed2 | twins among data-seed1 | twins among data-seed2 | twins among seed1 | twins among seed2 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | main | - | 0.39 | 0.36 | 0.42 | 0.41 | 0.42 | 0.34 | 0.38 |
+  | deduped | 0.42 | - | 0.39 | 0.38 | 0.40 | 0.41 | 0.31 | 0.35 |
+  | weight-seed1 | 0.34 | 0.35 | - | 0.33 | 0.32 | 0.34 | 0.28 | 0.30 |
+  | weight-seed2 | 0.44 | 0.46 | 0.38 | - | 0.43 | 0.51 | 0.34 | 0.49 |
+  | data-seed1 | 0.41 | 0.36 | 0.33 | 0.42 | - | 0.41 | 0.34 | 0.34 |
+  | data-seed2 | 0.43 | 0.45 | 0.38 | 0.49 | 0.44 | - | 0.32 | 0.45 |
+  | seed1 | 0.36 | 0.32 | 0.30 | 0.28 | 0.32 | 0.30 | - | 0.27 |
+  | seed2 | 0.41 | 0.41 | 0.32 | 0.48 | 0.43 | 0.44 | 0.34 | - |
+
+  | words of | twins among pythia410 (null) | twins among mamba130 (null) | twins among gpt2 (null) | twins among olmo1b (null) |
+  | --- | --- | --- | --- | --- |
+  | pythia410 | - | 0.46 (0.00) | 0.29 (0.00) | 0.41 (0.00) |
+  | mamba130 | 0.45 (0.05) | - | 0.34 (0.05) | 0.42 (0.06) |
+  | gpt2 | 0.33 (0.01) | 0.37 (0.01) | - | 0.33 (0.00) |
+  | olmo1b | 0.45 (0.02) | 0.51 (0.01) | 0.38 (0.01) | - |
+
+  - The partition is the data's. Models that share nothing but the corpus and the architecture (seed1, seed2: independent initialisation and data order) twin with main at 0.34 / 0.38 and with each other at 0.27 (null 0.03); the deduped data twin at 0.39. Across families by characters, Pythia-410m twins with Mamba-130m at 0.46 / 0.45 (same corpus and tokenizer, no attention), with OLMo-1B at 0.41 / 0.45 (a different corpus, tokenizer and family), with GPT-2 at 0.29 / 0.33; every null is under 0.06.
+  - What the seed variants share, settled in three steps. e566: rows by index between main and the "weight-seed" variants sit at 0.111, above the deduped twin's 0.073, and at -0.000 for seed1. e566b: the shuffled-index cosine is 0.000 and the mean row removed changes nothing, so the by-index correlation is real; the uploaded step-0 rows of weight-seed1 differ from main's (0.001) while data-seed1's are main's (1.000). e566c: every step-0 tensor of weight-seed1 differs from main's (embedding -0.000, block-3 read rows -0.001). e566d: at step 512 weight-seed1's rows match main's step 0 at 0.978 and main's own step 512 at 0.997, and its own uploaded step 0 at 0.000: the run started from main's initialisation, whatever the uploaded step 0 says (data-seed1 at 512 likewise 0.996). The independent-initialisation test is therefore seed1 and seed2 only; the by-index cosine of 0.10-0.11 for the "weight-seed" and "data-seed" variants is the shared initialisation and early trajectory, main's own retention of its step 0 being 0.071.
+  - Pre-registered: P1 (seed variants twin at the deduped rate) confirmed for the shared-initialisation variants (0.36-0.42) and nearly for the independent ones (0.34-0.38); P2 (weight-seed rows at noise, data-seed above) refuted as posed, the variants are not what their names say; P3 (Pythia-Mamba at the seed rate, OLMo and GPT-2 lower but above the null) confirmed, OLMo at the Mamba rate; I5, I6 confirmed; I7 (shared reads) refuted, nothing is shared at the uploaded step 0; I8 (the early rows follow main's step 0) confirmed.
+
+- e567 THE LEARNING-DYNAMICS SWEEP (e444's toy, 10000 full-batch steps, one knob at a time from the AdamW base; measured every 250 steps on the training inputs; the words are the 32 most used MLP rows, their S over the floor calibrated on the rotated rows, rotated words for comparison; association persistence as the correlation of each word's projection profile over the training inputs with 250 steps earlier, the Jaccard of its over-the-floor set and of its top-16 set):
+
+  | run | train / test acc | test > 0.5 from step | own-over-rotation advantage | words' S / rotated words' S | rows over the floor / rotated | top-32 usage share | row persistence (cosine per 250 steps) | association persistence: profile correlation / over-the-floor Jaccard / top-16 Jaccard | membership retention / usage correlation | at the midpoint: final words' row cosine with the end / profile correlation with the end |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | base | 1.00 / 1.00 | 4000 | 0.73 | 0.97 / 0.43 | 22 / 0 | 0.28 | 0.991 | 0.916 / 0.00 / 0.39 | 0.72 / 0.92 | 0.46 / n/a |
+  | seed1 | 1.00 / 1.00 | 2250 | 0.72 | 0.89 / 0.44 | 146 / 0 | 0.22 | 0.993 | 0.939 / 0.00 / 0.45 | 0.78 / 0.95 | 0.62 / 0.42 |
+  | dm2048 | 1.00 / 1.00 | 3000 | 0.71 | 1.01 / 0.49 | 174 / 0 | 0.18 | 0.988 | 0.946 / 0.00 / 0.60 | 0.72 / 0.90 | 0.50 / 0.34 |
+  | wd3 | 1.00 / 1.00 | 1000 | 0.74 | 0.94 / 0.39 | 71 / 0 | 0.26 | 1.000 | 1.000 / 0.00 / 1.00 | 0.94 / 0.99 | 0.96 / 0.95 |
+  | lr3e-3 | 1.00 / 1.00 | 1000 | 0.65 | 0.91 / 0.36 | 7 / 0 | 0.29 | 0.986 | 0.961 / 0.00 / 0.39 | 0.72 / 0.90 | 0.01 / -0.02 |
+  | frac0.5 | 1.00 / 1.00 | 250 | 0.73 | 0.87 / 0.41 | 5 / 0 | 0.27 | 0.989 | 0.930 / 0.00 / 0.45 | 0.81 / 0.95 | 0.77 / 0.55 |
+  | init0.3 | 0.96 / 0.94 | 1250 | 0.77 | 0.77 / 0.39 | 11 / 0 | 0.40 | 0.997 | 0.991 / 0.00 / 0.68 | 0.84 / 0.97 | 0.68 / 0.45 |
+  | init3 | 1.00 / 1.00 | 5500 | 0.70 | 0.98 / 0.53 | 137 / 0 | 0.24 | 0.994 | 0.915 / 0.00 / 0.33 | 0.75 / 0.93 | 0.30 / 0.21 |
+  | dm128 | 1.00 / 0.20 | never | 0.36 | 1.13 / 0.87 | 71 / 2 | 0.59 | 0.999 | 0.981 / 0.73 / 0.78 | 0.91 / 0.99 | 0.84 / 0.26 |
+  | wd0.3 | 1.00 / 0.34 | never | 0.27 | 1.31 / 0.90 | 203 / 3 | 0.20 | 0.999 | 0.955 / 0.50 / 0.60 | 0.84 / 0.96 | 0.89 / 0.43 |
+  | nowd | 1.00 / 0.20 | never | 0.35 | 0.98 / 1.04 | 214 / 27 | 0.25 | 1.000 | 0.966 / 0.00 / 0.78 | 0.88 / 0.99 | 1.00 / 0.22 |
+  | lr3e-4 | 1.00 / 0.18 | never | 0.61 | 0.99 / 1.04 | 178 / 34 | 0.20 | 1.000 | 0.914 / 0.00 / 0.60 | 0.91 / 1.00 | 0.93 / 0.21 |
+  | frac0.2 | 1.00 / 0.03 | never | 0.25 | 1.26 / 0.93 | 415 / 4 | 0.12 | 0.994 | 0.943 / 0.61 / 0.60 | 0.62 / 0.86 | 0.73 / 0.36 |
+  | randlab | 1.00 / 0.01 | never | 0.17 | 1.20 / 1.15 | 447 / 109 | 0.13 | 1.000 | 0.995 / 0.88 / 0.88 | 0.84 / 0.96 | 0.90 / 0.65 |
+
+  - The association appears in every run that generalises and in no run that memorises, whatever the knob. Generalising (base, seed1, dm2048, wd3, lr3e-3, frac0.5, init0.3, init3): words at 1.8-2.5 times the rotated words' S, no rotated row over the floor, advantage 0.65-0.77. Memorising (dm128, wd0.3, nowd, lr3e-4, frac0.2, randlab): words at 0.9-1.5 times the rotated words', rotated rows over the floor too (2-109), advantage 0.17-0.61. Width, decay, learning rate, data fraction and initialisation scale matter only through whether the run generalises; the toy's cloud after grokking is low-rank, so a few rotated atoms win everywhere and the rest sit far under the floor, which is why the native words' S reads near 1 there and the ratio to the rotated words is the statistic.
+  - Row identity and computational identity in the toy: the rows persist at cosine 0.991 per 250 steps in the base run while the words' projection profiles correlate at 0.916 and their over-the-floor sets keep Jaccard 0.00 (top-16 sets 0.39, unstable through ties); at the midpoint the final words' rows have cosine 0.46 with the end and their profiles correlate n/a with the end.
+  - Pre-registered: L1 (association tracks generalisation) confirmed; L2 (width raises S, decay raises the top-32 share) refuted (width 2048: S 1.01 against 0.97; decay 3: share 0.26 against 0.28); L3 (association persistence exceeds the rows' cosine deficit) not decidable as posed, the rows barely move and the profiles are the persistent object.
+
+- e568 THE INVENTED-NAME STUDY (real countries, sixty invented names, real and invented people, three frames, blocks 12, 18, 22; the top row of every prompt's last position; matched token counts; the dominant row's Pile context; its write column zeroed):
+
+  | block | S real / invented countries (capital frame) | distinct top rows real / invented | modal share real / invented | S real / invented people (birthplace) | modal row real people / invented people |
+  | --- | --- | --- | --- | --- | --- |
+  | 12 | 1.41 / 1.52 | 3 / 4 | 0.38 / 0.93 | 1.54 / 1.51 | 38763 / 48625 |
+  | 18 | 2.43 / 2.95 | 7 / 2 | 0.91 / 0.90 | 2.53 / 2.59 | 72634 / 72634 |
+  | 22 | 2.08 / 2.14 | 17 / 4 | 0.51 / 0.78 | 2.15 / 2.13 | 72634 / 72634 |
+
+  - One row, and it is not novelty. At block 18 the invented countries are topped by row 72634 (block 17, neuron 3002) in 0.90 of the capital prompts, 0.98 of the language prompts, and so are invented people (1.00) and real people (1.00); real countries never (0.01), they drive their own row (70851) at 0.91. Matched on token count the split stays: two-token real countries are topped by the invented row 0.02 of the time, three-token 0.00, four-token 0.00. On the Pile the row is a word (S 3.78, 1377 positions over the floor) whose contexts are function words (' ,', ' the', ' .', ' in', ' =', ' "'): a generic construction row. The split the ledger sees is known entity against name-like string, not right against wrong.
+  - No causal role for the row's own write: zeroing its column changes the invented prompts' S by -0.001, the confidence by -0.000, no top-1 answer (0.00); the real prompts likewise (+0.000); a random word's column -0.001. The extreme along the row is built by the coalition, as everywhere.
+  - Pre-registered: N1 (one row for invented names) confirmed; N2 (a rarity row) refuted; N3 (the same row for invented people) confirmed, and for real people; N4 (zeroing it lowers the confidence) refuted.
+
+- e569 / e569b THE STABILITY HIERARCHY AND ITS BASELINE (Pythia-160m block 6 under weight noise and fine-tuning; Pythia-410m block 12 between checkpoints; then the description level against random and norm-matched dictionaries):
+
+  | level | noise 0.5% (+0.03 nats) | noise 2% (+0.44) | noise 4% (+1.46) | fine-tune 2e-6 (+0.57) | fine-tune 2e-5 (+2.01) | training 1000 to 2000 (-0.91) | training 8000 to 16000 (-0.18) | training 16000 to the end (-0.23) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | row identity (cosine) | 1.000 | 1.000 | 0.999 | 1.000 | 1.000 | 0.662 | 0.870 | 0.686 |
+  | membership (Jaccard) | 0.86 | 0.78 | 0.77 | 0.76 | 0.66 | 0.07 | 0.37 | 0.22 |
+  | usage (correlation) | 0.99 | 0.98 | 0.97 | 0.96 | 0.92 | 0.21 | 0.72 | 0.61 |
+  | describe (new words' FVU over the old words') | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.98 | 0.98 | 0.96 |
+  | matter (old words' ablation cost over the new words') | 0.99 | 0.84 | 0.94 | 0.99 | 0.95 | 0.63 | 1.72 | 0.54 |
+  | old words still over the floor | 0.98 | 0.98 | 0.97 | 0.98 | 0.98 | 0.31 | 0.91 | 0.91 |
+
+  | dictionary (256 atoms, K=8) | Pythia-160m, noise-2% states | Pythia-410m, step-16000 states |
+  | --- | --- | --- |
+  | the model's own words | 0.706 | 0.872 |
+  | the other checkpoint's or the unperturbed model's words, old vectors | 0.705 | 0.888 |
+  | the deduped twin's words / the step-1000 words | 0.849 | 0.933 |
+  | random rows | 0.856 | 0.944 |
+  | random rows matched to the words' norms | 0.706 | 0.872 |
+  | the rotated dictionary's most used atoms | 0.905 | 0.936 |
+  | Gaussian atoms with the rows' covariance | 0.895 | 0.945 |
+
+  - Membership is the fragile level, function the stable one. Under noise costing +0.03 nats the word set keeps 0.86 while the rows keep 1.000, the usage 0.99, and the old words still cost the model 0.99 of what its own words cost when zeroed; under training from 8000 to 16000 the set keeps 0.37, the usage 0.72, and the old words cost 1.72 times the new words' own; from 1000 to 2000, where the set keeps 0.07, the old words still describe the new states at 0.98 of the new words' FVU.
+  - The description level is not the words'. Random rows matched to the words' norms describe the states at K=8 exactly as well as the words (0.706 against 0.706 on Pythia-160m, 0.872 against 0.872 on Pythia-410m), unmatched random rows worse (0.856 / 0.944), rotated and Gaussian atoms worse still (0.905, 0.895). At K=8 within 256 atoms the states are spanned by the large rows; the words are among them. What is the words' is the usage, the extremes and the twins (e572).
+  - Pre-registered: S1 (row identity > usage > function > membership) confirmed; S2 (old words describe within 10% from 8000 to 16000) confirmed, and trivially so; S3 (old words' ablation cost at least half the new words') confirmed; D4 (random rows within 15% of the words) refuted for unmatched rows and exceeded by norm-matched rows.
+
+- e570 THE MAMBA COALITION (Mamba-130m block 12, 19,968 writers with their activations, the 256 words' eight extremes each; within-row coherence of the writer-contribution vectors; near misses matched on S; random rows; random directions with their own extremes):
+
+  | rows | within-row coherence | across rows | effective writers | own row's rank (top-10 share) | selectivity z | S |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | words | 0.857 | 0.000 | 202 | 0 (0.80) | 6.35 | 1.78 |
+  | S-matched near misses | 0.400 | 0.000 | 577 | 24 (0.42) | 7.54 | 1.78 |
+  | random non-words | 0.168 | -0.001 | 1278 | 444 (0.14) | 1.03 | 0.87 |
+  | random directions with their own extremes | 0.096 | -0.001 | 1754 | n/a | n/a | n/a |
+
+  - The coalition is there, and stronger: within-row coherence 0.857 against 0.000 across rows (Pythia 0.49, OLMo 0.73), 0.096 for random directions; 202 effective writers against 1754 for random directions; the own row ranks 0 among contributors (top-10 in 0.80), as on OLMo; the near misses are as selective as the words (z 7.54 against 6.35) and half as coherent (0.400), so the coalition's coherence, not the neuron's selectivity, is what separates a word from a near miss, as on OLMo. The extreme is built from every block (block shares 0.11, 0.04, 0.04, 0.04, 0.05, 0.06, 0.08, 0.09, 0.09, 0.09, 0.10, 0.12, 0.12).
+  - Pre-registered: C1, C2, C3 confirmed.
+
+- e571 THE ROW AND THE CLOUD AT ONE-CHECKPOINT RESOLUTION (the session-88 cache; per interval the four S matrices; aligned on 344 clean entries and 245 exits):
+
+  | rows | quantity | k = -4 | k = -3 | k = -2 | k = -1 | k = 0 | k = 1 | k = 2 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | entrants | rise | +0.057 | +0.045 | +0.063 | +0.068 | +0.079 | +0.041 | +0.023 |
+  | entrants | row part (row first) | +0.043 | +0.041 | +0.042 | +0.057 | +0.045 | +0.032 | +0.019 |
+  | entrants | cloud part (after the row) | +0.021 | -0.004 | +0.019 | +0.002 | +0.032 | +0.005 | +0.004 |
+  | entrants | cloud part (cloud first) | +0.001 | -0.012 | +0.010 | -0.009 | +0.017 | +0.009 | -0.008 |
+  | entrants | row part (after the cloud) | +0.054 | +0.044 | +0.048 | +0.065 | +0.055 | +0.033 | +0.026 |
+  | near_misses | rise | +0.047 | +0.034 | +0.046 | +0.100 | -0.051 | -0.015 | +0.000 |
+  | near_misses | row part (row first) | +0.026 | +0.027 | +0.027 | +0.024 | -0.020 | -0.004 | -0.005 |
+  | near_misses | cloud part (after the row) | +0.012 | +0.008 | +0.015 | +0.050 | -0.030 | -0.008 | -0.003 |
+  | near_misses | cloud part (cloud first) | -0.003 | -0.002 | -0.010 | +0.018 | -0.042 | -0.018 | -0.006 |
+  | near_misses | row part (after the cloud) | +0.046 | +0.034 | +0.047 | +0.047 | +0.007 | +0.007 | +0.003 |
+  | leavers | rise | +0.063 | +0.041 | +0.061 | -0.003 | -0.046 | -0.007 | -0.007 |
+  | leavers | row part (row first) | +0.040 | +0.026 | +0.027 | +0.009 | -0.022 | -0.012 | -0.010 |
+  | leavers | cloud part (after the row) | +0.005 | +0.005 | +0.025 | +0.001 | -0.023 | +0.003 | +0.000 |
+  | leavers | cloud part (cloud first) | +0.005 | -0.011 | +0.014 | -0.012 | -0.025 | -0.006 | -0.001 |
+  | leavers | row part (after the cloud) | +0.042 | +0.034 | +0.036 | +0.009 | -0.015 | -0.004 | -0.005 |
+  | random | rise | +0.005 | +0.002 | -0.003 | +0.006 | -0.008 | +0.005 | +0.004 |
+  | random | row part (row first) | -0.009 | -0.002 | +0.002 | -0.001 | -0.002 | -0.004 | +0.000 |
+  | random | cloud part (after the row) | +0.007 | +0.000 | +0.001 | +0.006 | -0.003 | +0.008 | +0.008 |
+  | random | cloud part (cloud first) | +0.002 | -0.001 | -0.001 | +0.006 | -0.007 | +0.005 | +0.002 |
+  | random | row part (after the cloud) | +0.003 | +0.001 | +0.002 | -0.001 | -0.003 | +0.000 | +0.005 |
+
+  | k | -4 | -3 | -2 | -1 | 0 | 1 | 2 |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | the cloud's variance along the old row, new over old | 0.977 | 0.972 | 0.974 | 0.973 | 0.997 | 0.989 | 0.979 |
+  | the same for random directions | 0.990 | 0.991 | 0.991 | 0.990 | 0.997 | 1.003 | 0.997 |
+  | the old cloud's variance along the new row over along the old row | 1.027 | 1.032 | 1.035 | 1.037 | 1.035 | 1.014 | 1.008 |
+  | the same for a random turn of the same size | 0.965 | 0.975 | 0.968 | 0.965 | 0.970 | 0.979 | 0.982 |
+
+  - Entry is the row's turn; the cloud does not come to the row. At k = -2 / -1 / 0 the entrants' rise is +0.063 / +0.068 / +0.079, of which the row's part is +0.042 / +0.057 / +0.045 in the row-first order and +0.048 / +0.065 / +0.055 in the cloud-first order, the cloud's +0.019 / +0.002 / +0.032 and +0.010 / -0.009 / +0.017. The row's turn moves it to 1.037 / 1.035 times the old cloud's variance along it (a random turn of the same size 0.965 / 0.970), while the cloud's variance along the old row goes to 0.973 / 0.997 of itself (random directions 0.990 / 0.997). The leavers' fall at k = 0 (-0.046) splits evenly (-0.022 row, -0.023 cloud), where over eight thousand steps the cloud's part dominated (e558b).
+  - Pre-registered: X1 (the row part exceeds the cloud part at entry, peaking at k = -1 or 0) confirmed; X2 (the cloud leads before entry) refuted; X3 (the leavers' fall is the cloud's at every k) refuted at k = 0.
+
+- e572 WHAT A WORD IS BEYOND A LARGE ROW (words against non-word rows matched on norm within the block, and random rows; Pythia-410m, Pythia-160m, Mamba-130m; the twins by context sets):
+
+  | model | rows | usage | S (over the floor) | count | breadth | norm rank |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-410m | words | 19 | 1.61 (1.00) | 25 | 2.25 | 0.05 |
+  | Pythia-410m | norm_matched | 0 | 0.92 (0.39) | 0 | 3.00 | 0.05 |
+  | Pythia-410m | random | 0 | 0.79 (0.08) | 0 | 1.00 | 0.53 |
+  | Pythia-160m | words | 26 | 1.58 (0.98) | 21 | 2.68 | 0.06 |
+  | Pythia-160m | norm_matched | 1 | 0.93 (0.41) | 0 | 2.25 | 0.06 |
+  | Pythia-160m | random | 0 | 0.78 (0.12) | 0 | 1.00 | 0.51 |
+  | Mamba-130m | words | 24 | 1.78 (0.99) | 29 | 2.06 | 0.55 |
+  | Mamba-130m | norm_matched | 1 | 0.93 (0.40) | 0 | 2.40 | 0.55 |
+  | Mamba-130m | random | 0 | 0.92 (0.40) | 0 | 2.00 | 0.55 |
+
+  Twins: 410m words -> 160m words 0.40; 410m norm-matched -> 160m words 0.02; 410m norm-matched -> 160m norm-matched 0.02; 410m random -> 160m words 0.00; 410m words -> 160m norm-matched 0.02; mamba words -> 410m words 0.53; mamba norm-matched -> 410m words 0.05; mamba random -> 410m words 0.05.
+
+  - Usage is not norm, and the twins are the words'. On Pythia-410m the words sit at norm rank 0.05 and their norm-matched neighbours are used 0 times against the words' 19 (usage-norm rank correlation 0.05); the neighbours' S is 0.92 against the words' 1.61 (0.39 over the floor against 1.00); their context sets twin with 160m's words at 0.02 against the words' 0.40 (random rows 0.00); Mamba's norm-matched rows twin with Pythia-410m's words at 0.05 against its words' 0.53. A word is a large row that the cloud makes extreme at a class of contexts the data fixes; the norm gets it into the span, the association is the rest.
+  - Pre-registered: W1 (usage three times the norm-matched rows') confirmed; W2 (S higher by 0.2 and the norm-matched twin rate under half the words') confirmed; W3 (words in the top quarter by norm) confirmed.
+
+  The mechanism map (MECHANISM_MAP.md) annotates every arrow from the data to behaviour with these and the earlier results, per model, and lists the arrows still open: the reverse direction of the loop (a row shaping the cloud), the developmental parts on Mamba (checkpoints), what the transplant carries beyond the extreme, and whether a context class keeps its role when it changes rows.

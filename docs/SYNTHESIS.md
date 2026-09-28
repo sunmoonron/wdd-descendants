@@ -597,6 +597,16 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 102: theory extraction, the arrows tested and the mechanism map (e565-e572, MECHANISM_MAP.md)
+
+- The question above the program, in GPT's words after session 101: why does a trained network organise its computation into persistent associations between native write directions and classes of its state distribution. The map (MECHANISM_MAP.md) has eight arrows and five cross-cutting claims, each annotated per model; these eight experiments tested the arrows that were open.
+- The partition is the data's: independently seeded Pythia-160m runs twin by context sets at 0.34-0.38 (null 0.03), Pythia-410m twins with Mamba-130m at 0.46 and with OLMo-1B at 0.41 by character spans (e566); the "weight-seed" variants turned out to start from main's initialisation (e566d).
+- The loop runs from the data to the neuron: the row turns toward directions where the cloud already has variance (1.035 against a random turn's 0.970) and the cloud does not grow along the row (e571); what a later neuron carries into an earlier model is its write direction (0.54 of entrants become words), not its norm (0.18) or its input weights (0.18) (e565).
+- The coalition is in Mamba too, stronger (within-row 0.857 against 0.000), with the own row first and the near misses as selective as the words (e570).
+- In the toy the association tracks generalisation and nothing else: every knob that keeps the run generalising keeps the words at 1.8-2.5 times the rotated words' S; every knob that makes it memorise removes it (e567).
+- The invented-name lead closes: a generic construction row that real people's names drive too, no causal role for its own write; the ledger separates known entity from name-like string, not right from wrong (e568).
+- Stability has levels: row identity > usage > function > membership (e569); but the description level is not the words' (norm-matched random rows describe equally, e569b), and what is the words' is the usage (19 against 0), the extremes (S 1.61 against 0.92) and the twins (0.40 against 0.02) (e572).
+
 ## Session 101: the map, nine uncovered directions run in one session (e556-e564)
 
 - GPT's map of twenty-one directions, triaged against the record: eight were covered (compression, model diffing, steering, forged writes, gradient reshaping, grokking, interchange, light cones), four are analytic, nine were not covered and were run here with the follow-ups a critic would demand.

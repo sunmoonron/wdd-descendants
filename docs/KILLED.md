@@ -640,3 +640,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The advantage is smaller in a state-space model": Mamba's 0.258 against Pythia-160m's 0.188 (e563).
 - "Fine-tuning protects the vocabulary (or targets it)": at matched loss damage noise and fine-tuning move the word set alike; the rows rotate by 1e-4 (e564, e564b).
 - "A word set's Jaccard is a stable statistic": 0.86 under noise costing +0.03 nats; the usage correlation (0.99) is the stable one (e564b).
+
+## Session 102 kills (theory extraction: the arrows tested before the map)
+- "The neuron's input selectivity is what a transplant brings": the read row alone makes 0.18 of entrants words, the write direction alone 0.54 (e565).
+- "The Pythia weight-seed variants are independently initialised": their step-512 rows match main's at 0.997 (e566d).
+- "The invented-name row is a novelty detector": a generic function-word row that real people's names drive too; zeroing it changes nothing (e568).
+- "The cloud comes to the row": the row turns toward the cloud's variance, the cloud does not grow along the row (e571).
+- "The words span the states better than other rows": norm-matched random rows describe them equally at K=8 (e569b); what is the words' is the usage, the extremes and the twins (e572).
+- "Width, decay, learning rate or initialisation scale set the association": only whether the run generalises does (e567).
