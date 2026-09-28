@@ -565,3 +565,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Trajectory memory makes the directed drift and the retention": memory with no relation to the cloud gives retention 0.24 against 0.31 for plain diffusion; only a motion directed into the cloud gives 0.52 (e537).
 - "Covariance-shaped noise is a form of co-adaptation": it lowers retention (0.18); the geometry that matters is a drift, not a noise shape (e537).
 - "The replay with a fixed permutation tests row-specific coupling": it cannot, the increments being larger than the rows; it tests whether the phenomenology rides on the sequences, and it does (e537).
+
+## Session 89 kills (the coupling tests and the exits)
+- "The rows' motion is intrinsically anisotropic, and would show the native excess against any cloud of the same shape": against the cloud turned by a fixed rotation the excess vanishes and the words sit at the floor (0.72, 0.13) (e538).
+- "A pull that fades toward a target margin makes Pythia's plateau": it makes a slow approach from below, not a jump of 0.11 in one interval followed by a stop (e538).
+- "Reversing time tests the direction of the drift": the alignment is with covariance directions that are stable through training, and the reversal pairs late rows with early states; it keeps most of the excess (0.86, 0.45) and says nothing about causes (e538).
+- "Words leave as they enter, by the projection crossing the floor": they leave above it, 0.82 of them at the first checkpoint out, by losing usage and breadth with the projection kept (e538b).
