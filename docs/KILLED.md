@@ -560,3 +560,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The vocabulary is what OMP makes": under three other definitions of wordhood, one with no reconstruction at all, the prospective criterion, the generic level, the native retention advantage and the entry statistics are the same (e535).
 - "The prospective criterion, breadth-first entry, turnover and retention need training": rows diffusing against a fixed Gaussian cloud show all four, at the generic levels of e531 (e536). What needs more than diffusion is the native excess, which a weak persistent pull into the cloud supplies.
 - Of the relayed five, the floor under an injected projection is e483 and the state-row transplant is e532; the cross-layer causal state stays open.
+
+## Session 88 kills (the factorial and the replay)
+- "Trajectory memory makes the directed drift and the retention": memory with no relation to the cloud gives retention 0.24 against 0.31 for plain diffusion; only a motion directed into the cloud gives 0.52 (e537).
+- "Covariance-shaped noise is a form of co-adaptation": it lowers retention (0.18); the geometry that matters is a drift, not a noise shape (e537).
+- "The replay with a fixed permutation tests row-specific coupling": it cannot, the increments being larger than the rows; it tests whether the phenomenology rides on the sequences, and it does (e537).
