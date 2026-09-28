@@ -1,0 +1,148 @@
+{
+ "model": "pythia410",
+ "block": 12,
+ "steps": [
+  4000,
+  8000,
+  16000
+ ],
+ "by_step": {
+  "4000": {
+   "linearity_state": 1.0,
+   "linearity_mlp": 0.9992840886116028,
+   "linearity_projection_relative_error": 0.012313464067606673,
+   "concentration": {
+    "eff": 12728.5009765625,
+    "top10": 0.008728321641683578,
+    "top100": 0.04513441398739815,
+    "top1000_signed": 7.399092674255371,
+    "share_mlp": 0.45822367661238816,
+    "share_attn": 0.5418276573600598,
+    "share_emb": 0.00151878099269937,
+    "n_pos_over_0": 26543.0
+   },
+   "similarity": {
+    "n_rows_with_extremes": 4041,
+    "n_rows_multi": 1171,
+    "n_words_multi": 222,
+    "within_row": 0.4022601246833801,
+    "extreme_vs_typical": 0.034534890204668045,
+    "cross_row": 6.612416473217309e-05,
+    "activation_within": 0.2390916794538498,
+    "activation_typical": 0.04779703915119171,
+    "activation_cross": 0.041911181062459946
+   },
+   "random_directions": {
+    "within_direction": 0.07541636377573013,
+    "extreme_vs_typical": 0.04508047550916672,
+    "cross_direction": -4.381942198961042e-05
+   },
+   "rank": {
+    "n_words": 244,
+    "words_by_writers": 69.28336334228516,
+    "activation_means": 24.837234497070312,
+    "random_position_sets": 23.293893814086914
+   }
+  },
+  "8000": {
+   "linearity_state": 1.0,
+   "linearity_mlp": 0.9991089105606079,
+   "linearity_projection_relative_error": 0.013613750741316393,
+   "concentration": {
+    "eff": 9232.1923828125,
+    "top10": 0.013491468504071236,
+    "top100": 0.05270194262266159,
+    "top1000_signed": 8.41866683959961,
+    "share_mlp": 0.42709206749251855,
+    "share_attn": 0.5711960156817004,
+    "share_emb": 0.0016062185534095642,
+    "n_pos_over_0": 26498.0
+   },
+   "similarity": {
+    "n_rows_with_extremes": 3129,
+    "n_rows_multi": 1136,
+    "n_words_multi": 241,
+    "within_row": 0.4889072775840759,
+    "extreme_vs_typical": 0.02429991029202938,
+    "cross_row": 0.0005384027026593685,
+    "activation_within": 0.21280881762504578,
+    "activation_typical": 0.04339328035712242,
+    "activation_cross": 0.03734147176146507
+   },
+   "random_directions": {
+    "within_direction": 0.08308353275060654,
+    "extreme_vs_typical": 0.04185200110077858,
+    "cross_direction": 0.00037562305806204677
+   },
+   "rank": {
+    "n_words": 247,
+    "words_by_writers": 63.649566650390625,
+    "activation_means": 24.839458465576172,
+    "random_position_sets": 14.306249618530273
+   }
+  },
+  "16000": {
+   "linearity_state": 1.0,
+   "linearity_mlp": 0.9988206624984741,
+   "linearity_projection_relative_error": 0.020342961439033063,
+   "concentration": {
+    "eff": 7548.46484375,
+    "top10": 0.017076492309570312,
+    "top100": 0.05711965635418892,
+    "top1000_signed": 8.11337661743164,
+    "share_mlp": 0.42942498650963895,
+    "share_attn": 0.5698946760342116,
+    "share_emb": 0.0010147616924004615,
+    "n_pos_over_0": 26464.0
+   },
+   "similarity": {
+    "n_rows_with_extremes": 2544,
+    "n_rows_multi": 1095,
+    "n_words_multi": 236,
+    "within_row": 0.5970202684402466,
+    "extreme_vs_typical": 0.026751399040222168,
+    "cross_row": 0.0007243916625156999,
+    "activation_within": 0.24020934104919434,
+    "activation_typical": 0.056550782173871994,
+    "activation_cross": 0.05027889087796211
+   },
+   "random_directions": {
+    "within_direction": 0.09943016618490219,
+    "extreme_vs_typical": 0.05609475076198578,
+    "cross_direction": -4.206136509310454e-05
+   },
+   "rank": {
+    "n_words": 252,
+    "words_by_writers": 70.78143310546875,
+    "activation_means": 20.4265079498291,
+    "random_position_sets": 13.685704231262207
+   }
+  }
+ },
+ "persistence": {
+  "4000-8000": {
+   "n_common": 107,
+   "same_word": 0.7784589529037476,
+   "different_words": 0.0015962106408551335
+  },
+  "8000-16000": {
+   "n_common": 133,
+   "same_word": 0.8822392821311951,
+   "different_words": 0.0018379130633547902
+  },
+  "4000-16000": {
+   "n_common": 71,
+   "same_word": 0.7096042037010193,
+   "different_words": 0.0015844042645767331
+  }
+ },
+ "checks": {
+  "many_writers": true,
+  "same_population": true,
+  "direction_selective": true,
+  "ensembles_persist": true,
+  "ensembles_shared": false
+ },
+ "_exp": "e545_writer_ensembles_pythia410",
+ "_time": "2026-09-28 15:21:01"
+}

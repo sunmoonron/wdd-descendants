@@ -594,3 +594,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The bulk of the real cloud carries part of the native fifth": with the top 16 projections per position Gaussianised the real states fall below a Gaussian cloud (retention 0.16 against 0.35) (e544).
 - "The vocabulary needs the extremes to persist at their positions": moved to random positions at every checkpoint the grafted extremes give the same vocabulary (retention 0.51, gate 0.89) (e544b).
 - "The shape of the tail predicts entry": kurtosis 0.58 within the band against breadth 0.86 (e544).
+
+## Session 94 kills (the writers of the extremes)
+- "An extreme is a few large writes": 9232 effective writers, the top ten 0.01 of the absolute contribution, a cancelling mass with more than half of the projection transported by attention (e545).
+- "The writers behind a row's extremes are the big writers of any direction": random directions' ensembles cohere at 0.083 against the native rows' 0.489 (e545).
+- "A few shared write programs make many words": the words-by-writers matrix has effective rank 63.6 of 247, each word its own ensemble (e545).
