@@ -547,3 +547,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 84 kills (what makes the native axes persistent)
 - "The native rows' stability is their covariance": atoms with the dictionary's or the cloud's covariance keep 0.19-0.20 of their words over four thousand steps, isotropic atoms 0.18, the native rows 0.50 (e532).
 - "A native word is a fine-tuned orientation that the row's drift would destroy": half the words survive a 26-29 degree rotation statically and 32-33 degrees prospectively, the rows' own four-thousand-step rotation being about 32 degrees; the basin is twice a random dictionary's (e533).
+
+## Session 85 kills (the basin's anatomy)
+- "The native basin is a local packing phenomenon": the nearest-neighbour cosine reads survival at 0.54-0.56, and the words survive their competitors' random motion (0.79-0.89 kept); only neighbours approaching the word matter (e534).
+- "Native words have a wider basin than random words at the same margin": within quartiles of S the two survive alike; the width is the margin (e534).
+- "A word's basin is isotropic": rotation toward the row's own future direction or its nearest atom is safer, away from the nearest atom worse, and into the cloud's principal subspace not a loss at all (e534).
