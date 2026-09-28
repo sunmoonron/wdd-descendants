@@ -22,10 +22,11 @@
 
 - `e531 → e536`. The generic four fifths of the criterion reproduced with no training at all.
 - `e536 → e537`. The null as a tool: the factorial names the ingredient (a coherent motion directed into the cloud), and the replay finds it in Pythia's own increment sequences.
-- `e537 → e538`. The coupling: the sequences' motion is aimed at the cloud they face (a turned cloud loses the fifth, a Gaussian cloud with the same covariance keeps most of it); the sign is necessary; a fading pull is not the plateau; and the reversed-time replay points at the exits, read in area 27 (e538b).
+- `e537 → e538`. The coupling: the sequences' motion is aimed at the cloud they face (a turned cloud loses the fifth, a Gaussian cloud with the same covariance keeps most of it); the sign is necessary; a fading pull is not the plateau; and the reversed-time replay points at the exits, read in area 29 (e538b, e540).
 
 ## Links to other areas
 
-- [27 The native axes](27_native_axes.md): the generic and the native parts of the criterion that this area takes apart in a system without training, and the exits (e538b).
+- [27 The native axes](27_native_axes.md): the generic and the native parts of the criterion that this area takes apart in a system without training.
+- [29 How a word leaves](29_exits.md): the exits, in Pythia and in these worlds (e540).
 - [26 The drift's cause](26_drift_cause.md): the boundary the pull's origin sits behind.
 - [11 Toys, synthetic](11_toys_synthetic.md): the program's earlier synthetic systems.

@@ -571,3 +571,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "A pull that fades toward a target margin makes Pythia's plateau": it makes a slow approach from below, not a jump of 0.11 in one interval followed by a stop (e538).
 - "Reversing time tests the direction of the drift": the alignment is with covariance directions that are stable through training, and the reversal pairs late rows with early states; it keeps most of the excess (0.86, 0.45) and says nothing about causes (e538).
 - "Words leave as they enter, by the projection crossing the floor": they leave above it, 0.82 of them at the first checkpoint out, by losing usage and breadth with the projection kept (e538b).
+
+## Session 90 kills (the takeover audit)
+- "An exit is a competitive displacement": at the positions a leaver loses the field does not move (0.88 to 0.88) and its own projection falls (0.92 to 0.79), in Pythia, for a random dictionary and in the synthetic worlds (e539, e540).
+- "The takeover is local, by a few competitors, the leaver's neighbours or an entrant taking its seat": the takers are at the null in every respect and entrants never displace a leaver (e539).
+- "The one-way gate is generic": a random dictionary leaves through the floor (0.24 over it at exit), isotropic diffusion likewise (0.37); the gate is the persistence of the native maximum (e539, e540).
+- "The erosion of a leaver's marginal positions is its own motion, as the rise of an entrant's maximum was": it is mostly the states' drift (-0.015 of -0.020), the row's part small and in the right direction (e539b).
