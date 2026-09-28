@@ -543,3 +543,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 83 kills (the criterion's specificity)
 - "S foretells entry because the native rows are moving into the cloud": the native dictionary frozen at step 4000 foretells entry as well as the moving rows (0.91 against 0.91), with the same turnover (e531).
 - "The prospective criterion is a property of the native vocabulary": a fixed random dictionary shows it at 0.81 (four thousand steps) and 0.86 (one thousand); the native excess is 0.10 (e531). This program's own reading of sessions 72-82, corrected by its own control.
+
+## Session 84 kills (what makes the native axes persistent)
+- "The native rows' stability is their covariance": atoms with the dictionary's or the cloud's covariance keep 0.19-0.20 of their words over four thousand steps, isotropic atoms 0.18, the native rows 0.50 (e532).
+- "A native word is a fine-tuned orientation that the row's drift would destroy": half the words survive a 26-29 degree rotation statically and 32-33 degrees prospectively, the rows' own four-thousand-step rotation being about 32 degrees; the basin is twice a random dictionary's (e533).

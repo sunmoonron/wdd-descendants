@@ -1,0 +1,666 @@
+{
+ "model": "pythia410",
+ "steps": [
+  1000,
+  2000,
+  3000,
+  4000,
+  5000,
+  6000,
+  7000,
+  8000,
+  9000,
+  10000,
+  11000,
+  12000,
+  13000,
+  14000,
+  15000,
+  16000
+ ],
+ "dictionaries": [
+  "frozen_1000",
+  "frozen_4000",
+  "frozen_8000",
+  "frozen_16000",
+  "rotated",
+  "random_isotropic",
+  "random_dictionary_covariance",
+  "random_state_covariance",
+  "native"
+ ],
+ "by_block": {
+  "12": {
+   "per_dictionary": {
+    "frozen_1000": {
+     "1000": {
+      "prospective_auc_mean": 0.904857873256993,
+      "entries_mean": 164.0,
+      "persistence_of_S_mean": 0.6733734168440897,
+      "retention_mean": 0.359375
+     },
+     "2000": {
+      "prospective_auc_mean": 0.8882846038288598,
+      "entries_mean": 172.14285714285714,
+      "persistence_of_S_mean": 0.6200421149004375,
+      "retention_mean": 0.3275669642857143
+     },
+     "4000": {
+      "prospective_auc_mean": 0.8662083651578855,
+      "entries_mean": 182.75,
+      "persistence_of_S_mean": 0.5381592432914596,
+      "retention_mean": 0.2861328125
+     },
+     "8000": {
+      "prospective_auc_mean": 0.8151891726237701,
+      "entries_mean": 198.875,
+      "persistence_of_S_mean": 0.4129420280978851,
+      "retention_mean": 0.22314453125
+     }
+    },
+    "frozen_4000": {
+     "1000": {
+      "prospective_auc_mean": 0.93299073467238,
+      "entries_mean": 109.86666666666666,
+      "persistence_of_S_mean": 0.7222198790885653,
+      "retention_mean": 0.5708333333333333
+     },
+     "2000": {
+      "prospective_auc_mean": 0.9259059446387875,
+      "entries_mean": 115.85714285714286,
+      "persistence_of_S_mean": 0.6776322145387547,
+      "retention_mean": 0.5474330357142857
+     },
+     "4000": {
+      "prospective_auc_mean": 0.9088424175982254,
+      "entries_mean": 127.33333333333333,
+      "persistence_of_S_mean": 0.6065320785184884,
+      "retention_mean": 0.5026041666666666
+     },
+     "8000": {
+      "prospective_auc_mean": 0.8776006318660685,
+      "entries_mean": 144.0,
+      "persistence_of_S_mean": 0.494480525584702,
+      "retention_mean": 0.4375
+     }
+    },
+    "frozen_8000": {
+     "1000": {
+      "prospective_auc_mean": 0.9617351991663731,
+      "entries_mean": 73.93333333333334,
+      "persistence_of_S_mean": 0.7323639442195348,
+      "retention_mean": 0.7111979166666667
+     },
+     "2000": {
+      "prospective_auc_mean": 0.956219892443123,
+      "entries_mean": 82.42857142857143,
+      "persistence_of_S_mean": 0.689110973528659,
+      "retention_mean": 0.6780133928571429
+     },
+     "4000": {
+      "prospective_auc_mean": 0.9446775074422846,
+      "entries_mean": 91.25,
+      "persistence_of_S_mean": 0.6210078722264631,
+      "retention_mean": 0.6435546875
+     },
+     "8000": {
+      "prospective_auc_mean": 0.9283052408672999,
+      "entries_mean": 109.0,
+      "persistence_of_S_mean": 0.5143575538473326,
+      "retention_mean": 0.57421875
+     }
+    },
+    "frozen_16000": {
+     "1000": {
+      "prospective_auc_mean": 0.9711113916368707,
+      "entries_mean": 63.0,
+      "persistence_of_S_mean": 0.740679686182181,
+      "retention_mean": 0.75390625
+     },
+     "2000": {
+      "prospective_auc_mean": 0.9687696702455104,
+      "entries_mean": 70.35714285714286,
+      "persistence_of_S_mean": 0.6979469144467245,
+      "retention_mean": 0.7251674107142857
+     },
+     "4000": {
+      "prospective_auc_mean": 0.9664022565112416,
+      "entries_mean": 81.16666666666667,
+      "persistence_of_S_mean": 0.6301892810963184,
+      "retention_mean": 0.6829427083333334
+     },
+     "8000": {
+      "prospective_auc_mean": 0.9540606272161736,
+      "entries_mean": 102.5,
+      "persistence_of_S_mean": 0.5248640189981748,
+      "retention_mean": 0.599609375
+     }
+    },
+    "rotated": {
+     "1000": {
+      "prospective_auc_mean": 0.8648839316671989,
+      "entries_mean": 189.06666666666666,
+      "persistence_of_S_mean": 0.5812476579172479,
+      "retention_mean": 0.26145833333333335
+     },
+     "2000": {
+      "prospective_auc_mean": 0.8443024890315506,
+      "entries_mean": 198.28571428571428,
+      "persistence_of_S_mean": 0.5215728413394803,
+      "retention_mean": 0.22544642857142858
+     },
+     "4000": {
+      "prospective_auc_mean": 0.8090364582574368,
+      "entries_mean": 211.58333333333334,
+      "persistence_of_S_mean": 0.42980994280232854,
+      "retention_mean": 0.17350260416666666
+     },
+     "8000": {
+      "prospective_auc_mean": 0.7527924617727623,
+      "entries_mean": 228.0,
+      "persistence_of_S_mean": 0.29227461779247876,
+      "retention_mean": 0.109375
+     }
+    },
+    "random_isotropic": {
+     "1000": {
+      "prospective_auc_mean": 0.8625550903618727,
+      "entries_mean": 190.13333333333333,
+      "persistence_of_S_mean": 0.5829185164802738,
+      "retention_mean": 0.25729166666666664
+     },
+     "2000": {
+      "prospective_auc_mean": 0.8416834900263461,
+      "entries_mean": 197.14285714285714,
+      "persistence_of_S_mean": 0.5227688572577476,
+      "retention_mean": 0.22991071428571427
+     },
+     "4000": {
+      "prospective_auc_mean": 0.809453129251835,
+      "entries_mean": 210.5,
+      "persistence_of_S_mean": 0.42930477825463315,
+      "retention_mean": 0.177734375
+     },
+     "8000": {
+      "prospective_auc_mean": 0.7394447865060862,
+      "entries_mean": 228.625,
+      "persistence_of_S_mean": 0.2919574460505396,
+      "retention_mean": 0.10693359375
+     }
+    },
+    "random_dictionary_covariance": {
+     "1000": {
+      "prospective_auc_mean": 0.8717679469096781,
+      "entries_mean": 186.8,
+      "persistence_of_S_mean": 0.6060247183089551,
+      "retention_mean": 0.2703125
+     },
+     "2000": {
+      "prospective_auc_mean": 0.854501635628614,
+      "entries_mean": 194.21428571428572,
+      "persistence_of_S_mean": 0.5489277566623578,
+      "retention_mean": 0.24135044642857142
+     },
+     "4000": {
+      "prospective_auc_mean": 0.8224340493816823,
+      "entries_mean": 208.0,
+      "persistence_of_S_mean": 0.45988241551970205,
+      "retention_mean": 0.1875
+     },
+     "8000": {
+      "prospective_auc_mean": 0.7532058279528617,
+      "entries_mean": 224.875,
+      "persistence_of_S_mean": 0.32219524439920744,
+      "retention_mean": 0.12158203125
+     }
+    },
+    "random_state_covariance": {
+     "1000": {
+      "prospective_auc_mean": 0.739516778596884,
+      "entries_mean": 195.66666666666666,
+      "persistence_of_S_mean": 0.8227814195189739,
+      "retention_mean": 0.23567708333333334
+     },
+     "2000": {
+      "prospective_auc_mean": 0.7358231262211568,
+      "entries_mean": 199.07142857142858,
+      "persistence_of_S_mean": 0.785925239241742,
+      "retention_mean": 0.22237723214285715
+     },
+     "4000": {
+      "prospective_auc_mean": 0.7254497904775565,
+      "entries_mean": 205.75,
+      "persistence_of_S_mean": 0.7238246037664903,
+      "retention_mean": 0.1962890625
+     },
+     "8000": {
+      "prospective_auc_mean": 0.7168842233403843,
+      "entries_mean": 219.0,
+      "persistence_of_S_mean": 0.6110917762275627,
+      "retention_mean": 0.14453125
+     }
+    },
+    "native": {
+     "1000": {
+      "prospective_auc_mean": 0.9363065043061972,
+      "entries_mean": 97.8,
+      "persistence_of_S_mean": 0.6673834884759998,
+      "retention_mean": 0.61796875
+     },
+     "2000": {
+      "prospective_auc_mean": 0.9257244653207343,
+      "entries_mean": 108.21428571428571,
+      "persistence_of_S_mean": 0.5951919509772053,
+      "retention_mean": 0.5772879464285714
+     },
+     "4000": {
+      "prospective_auc_mean": 0.9079134655915628,
+      "entries_mean": 126.83333333333333,
+      "persistence_of_S_mean": 0.4941086303177331,
+      "retention_mean": 0.5045572916666666
+     },
+     "8000": {
+      "prospective_auc_mean": 0.874161806105454,
+      "entries_mean": 167.875,
+      "persistence_of_S_mean": 0.35476949492436066,
+      "retention_mean": 0.34423828125
+     }
+    }
+   },
+   "kernel_overlap_with_contemporaneous_native_words": {
+    "frozen_1000": {
+     "1000": 1.0,
+     "2000": 0.1328125,
+     "3000": 0.06640625,
+     "4000": 0.06640625,
+     "5000": 0.04296875,
+     "6000": 0.03515625,
+     "7000": 0.046875,
+     "8000": 0.046875,
+     "9000": 0.0390625,
+     "10000": 0.0390625,
+     "11000": 0.03125,
+     "12000": 0.0234375,
+     "13000": 0.03125,
+     "14000": 0.0234375,
+     "15000": 0.03515625,
+     "16000": 0.01953125
+    },
+    "frozen_4000": {
+     "1000": 0.078125,
+     "2000": 0.28125,
+     "3000": 0.546875,
+     "4000": 1.0,
+     "5000": 0.5859375,
+     "6000": 0.54296875,
+     "7000": 0.4765625,
+     "8000": 0.453125,
+     "9000": 0.4140625,
+     "10000": 0.37890625,
+     "11000": 0.3359375,
+     "12000": 0.3671875,
+     "13000": 0.39453125,
+     "14000": 0.33984375,
+     "15000": 0.3125,
+     "16000": 0.28125
+    },
+    "frozen_8000": {
+     "1000": 0.07421875,
+     "2000": 0.18359375,
+     "3000": 0.359375,
+     "4000": 0.5078125,
+     "5000": 0.58203125,
+     "6000": 0.71484375,
+     "7000": 0.76953125,
+     "8000": 1.0,
+     "9000": 0.78125,
+     "10000": 0.7265625,
+     "11000": 0.6875,
+     "12000": 0.6796875,
+     "13000": 0.671875,
+     "14000": 0.62890625,
+     "15000": 0.59765625,
+     "16000": 0.59375
+    },
+    "frozen_16000": {
+     "1000": 0.06640625,
+     "2000": 0.13671875,
+     "3000": 0.27734375,
+     "4000": 0.359375,
+     "5000": 0.4453125,
+     "6000": 0.51953125,
+     "7000": 0.5625,
+     "8000": 0.58984375,
+     "9000": 0.64453125,
+     "10000": 0.6875,
+     "11000": 0.71875,
+     "12000": 0.75390625,
+     "13000": 0.78125,
+     "14000": 0.8125,
+     "15000": 0.84375,
+     "16000": 1.0
+    }
+   }
+  },
+  "6": {
+   "per_dictionary": {
+    "frozen_1000": {
+     "1000": {
+      "prospective_auc_mean": 0.8831674879295688,
+      "entries_mean": 137.8,
+      "persistence_of_S_mean": 0.7247427541678004,
+      "retention_mean": 0.46171875
+     },
+     "2000": {
+      "prospective_auc_mean": 0.8722216289192216,
+      "entries_mean": 149.14285714285714,
+      "persistence_of_S_mean": 0.6751747876401489,
+      "retention_mean": 0.4174107142857143
+     },
+     "4000": {
+      "prospective_auc_mean": 0.8504976460370403,
+      "entries_mean": 158.5,
+      "persistence_of_S_mean": 0.5992481678846492,
+      "retention_mean": 0.380859375
+     },
+     "8000": {
+      "prospective_auc_mean": 0.8050443622904535,
+      "entries_mean": 182.0,
+      "persistence_of_S_mean": 0.4754156488804355,
+      "retention_mean": 0.2890625
+     }
+    },
+    "frozen_4000": {
+     "1000": {
+      "prospective_auc_mean": 0.9211846229027898,
+      "entries_mean": 73.8,
+      "persistence_of_S_mean": 0.7938919986050765,
+      "retention_mean": 0.71171875
+     },
+     "2000": {
+      "prospective_auc_mean": 0.9162061970685625,
+      "entries_mean": 80.5,
+      "persistence_of_S_mean": 0.7566706927990781,
+      "retention_mean": 0.685546875
+     },
+     "4000": {
+      "prospective_auc_mean": 0.89777912690783,
+      "entries_mean": 89.83333333333333,
+      "persistence_of_S_mean": 0.6968246152713392,
+      "retention_mean": 0.6490885416666666
+     },
+     "8000": {
+      "prospective_auc_mean": 0.8726113092848585,
+      "entries_mean": 108.5,
+      "persistence_of_S_mean": 0.596620943087146,
+      "retention_mean": 0.576171875
+     }
+    },
+    "frozen_8000": {
+     "1000": {
+      "prospective_auc_mean": 0.9405188078148347,
+      "entries_mean": 63.06666666666667,
+      "persistence_of_S_mean": 0.803372177387462,
+      "retention_mean": 0.7536458333333333
+     },
+     "2000": {
+      "prospective_auc_mean": 0.9394057874998902,
+      "entries_mean": 69.14285714285714,
+      "persistence_of_S_mean": 0.7674168661929219,
+      "retention_mean": 0.7299107142857143
+     },
+     "4000": {
+      "prospective_auc_mean": 0.9355567972353852,
+      "entries_mean": 78.25,
+      "persistence_of_S_mean": 0.7084771433980098,
+      "retention_mean": 0.6943359375
+     },
+     "8000": {
+      "prospective_auc_mean": 0.9144416606699909,
+      "entries_mean": 92.5,
+      "persistence_of_S_mean": 0.6070079936633636,
+      "retention_mean": 0.638671875
+     }
+    },
+    "frozen_16000": {
+     "1000": {
+      "prospective_auc_mean": 0.9538774768850868,
+      "entries_mean": 54.266666666666666,
+      "persistence_of_S_mean": 0.807208942546713,
+      "retention_mean": 0.7880208333333333
+     },
+     "2000": {
+      "prospective_auc_mean": 0.9520753783486257,
+      "entries_mean": 59.07142857142857,
+      "persistence_of_S_mean": 0.7699114198067891,
+      "retention_mean": 0.7692522321428571
+     },
+     "4000": {
+      "prospective_auc_mean": 0.9500633694555788,
+      "entries_mean": 69.08333333333333,
+      "persistence_of_S_mean": 0.7101964901171031,
+      "retention_mean": 0.7301432291666666
+     },
+     "8000": {
+      "prospective_auc_mean": 0.9277650359488621,
+      "entries_mean": 89.875,
+      "persistence_of_S_mean": 0.6064251402335505,
+      "retention_mean": 0.64892578125
+     }
+    },
+    "rotated": {
+     "1000": {
+      "prospective_auc_mean": 0.8497541775378756,
+      "entries_mean": 173.86666666666667,
+      "persistence_of_S_mean": 0.6429045282515632,
+      "retention_mean": 0.32083333333333336
+     },
+     "2000": {
+      "prospective_auc_mean": 0.832650455316015,
+      "entries_mean": 182.42857142857142,
+      "persistence_of_S_mean": 0.5845165213860407,
+      "retention_mean": 0.28738839285714285
+     },
+     "4000": {
+      "prospective_auc_mean": 0.803897820854433,
+      "entries_mean": 195.91666666666666,
+      "persistence_of_S_mean": 0.4949170630408355,
+      "retention_mean": 0.23470052083333334
+     },
+     "8000": {
+      "prospective_auc_mean": 0.7530386493088944,
+      "entries_mean": 215.375,
+      "persistence_of_S_mean": 0.35463033570825025,
+      "retention_mean": 0.15869140625
+     }
+    },
+    "random_isotropic": {
+     "1000": {
+      "prospective_auc_mean": 0.8575114176066428,
+      "entries_mean": 167.6,
+      "persistence_of_S_mean": 0.6432637925252157,
+      "retention_mean": 0.3453125
+     },
+     "2000": {
+      "prospective_auc_mean": 0.8424917481674109,
+      "entries_mean": 175.28571428571428,
+      "persistence_of_S_mean": 0.5828384298693087,
+      "retention_mean": 0.31529017857142855
+     },
+     "4000": {
+      "prospective_auc_mean": 0.816347620268716,
+      "entries_mean": 188.41666666666666,
+      "persistence_of_S_mean": 0.4929966979461458,
+      "retention_mean": 0.2639973958333333
+     },
+     "8000": {
+      "prospective_auc_mean": 0.7582585845780653,
+      "entries_mean": 212.25,
+      "persistence_of_S_mean": 0.35444444565823563,
+      "retention_mean": 0.1708984375
+     }
+    },
+    "random_dictionary_covariance": {
+     "1000": {
+      "prospective_auc_mean": 0.8572685632892943,
+      "entries_mean": 171.4,
+      "persistence_of_S_mean": 0.6608028975022885,
+      "retention_mean": 0.33046875
+     },
+     "2000": {
+      "prospective_auc_mean": 0.8428165485834657,
+      "entries_mean": 179.42857142857142,
+      "persistence_of_S_mean": 0.602965051924567,
+      "retention_mean": 0.29910714285714285
+     },
+     "4000": {
+      "prospective_auc_mean": 0.8075000355891744,
+      "entries_mean": 191.0,
+      "persistence_of_S_mean": 0.5169613627065294,
+      "retention_mean": 0.25390625
+     },
+     "8000": {
+      "prospective_auc_mean": 0.7521025633315739,
+      "entries_mean": 214.25,
+      "persistence_of_S_mean": 0.3785931945197805,
+      "retention_mean": 0.1630859375
+     }
+    },
+    "random_state_covariance": {
+     "1000": {
+      "prospective_auc_mean": 0.7149158511127759,
+      "entries_mean": 190.93333333333334,
+      "persistence_of_S_mean": 0.8011184740335093,
+      "retention_mean": 0.25416666666666665
+     },
+     "2000": {
+      "prospective_auc_mean": 0.713311736313141,
+      "entries_mean": 196.07142857142858,
+      "persistence_of_S_mean": 0.7574342404394406,
+      "retention_mean": 0.23409598214285715
+     },
+     "4000": {
+      "prospective_auc_mean": 0.6987804043688643,
+      "entries_mean": 202.0,
+      "persistence_of_S_mean": 0.6957084438735707,
+      "retention_mean": 0.2109375
+     },
+     "8000": {
+      "prospective_auc_mean": 0.6823227280941582,
+      "entries_mean": 213.75,
+      "persistence_of_S_mean": 0.5876417698037307,
+      "retention_mean": 0.1650390625
+     }
+    },
+    "native": {
+     "1000": {
+      "prospective_auc_mean": 0.9278411845110516,
+      "entries_mean": 78.46666666666667,
+      "persistence_of_S_mean": 0.727431049562232,
+      "retention_mean": 0.6934895833333333
+     },
+     "2000": {
+      "prospective_auc_mean": 0.9160110744693633,
+      "entries_mean": 91.07142857142857,
+      "persistence_of_S_mean": 0.6623906666442043,
+      "retention_mean": 0.6442522321428571
+     },
+     "4000": {
+      "prospective_auc_mean": 0.8951525600516074,
+      "entries_mean": 109.25,
+      "persistence_of_S_mean": 0.5663922064467067,
+      "retention_mean": 0.5732421875
+     },
+     "8000": {
+      "prospective_auc_mean": 0.849124402071134,
+      "entries_mean": 144.25,
+      "persistence_of_S_mean": 0.4123867920087104,
+      "retention_mean": 0.4365234375
+     }
+    }
+   },
+   "kernel_overlap_with_contemporaneous_native_words": {
+    "frozen_1000": {
+     "1000": 1.0,
+     "2000": 0.203125,
+     "3000": 0.140625,
+     "4000": 0.11328125,
+     "5000": 0.109375,
+     "6000": 0.09375,
+     "7000": 0.06640625,
+     "8000": 0.0625,
+     "9000": 0.046875,
+     "10000": 0.046875,
+     "11000": 0.0546875,
+     "12000": 0.046875,
+     "13000": 0.05859375,
+     "14000": 0.05859375,
+     "15000": 0.05859375,
+     "16000": 0.05859375
+    },
+    "frozen_4000": {
+     "1000": 0.14453125,
+     "2000": 0.39453125,
+     "3000": 0.65234375,
+     "4000": 1.0,
+     "5000": 0.7109375,
+     "6000": 0.671875,
+     "7000": 0.63671875,
+     "8000": 0.6015625,
+     "9000": 0.52734375,
+     "10000": 0.4921875,
+     "11000": 0.51953125,
+     "12000": 0.51171875,
+     "13000": 0.48828125,
+     "14000": 0.4765625,
+     "15000": 0.47265625,
+     "16000": 0.4375
+    },
+    "frozen_8000": {
+     "1000": 0.09765625,
+     "2000": 0.25,
+     "3000": 0.45703125,
+     "4000": 0.62109375,
+     "5000": 0.6796875,
+     "6000": 0.77734375,
+     "7000": 0.80078125,
+     "8000": 1.0,
+     "9000": 0.80078125,
+     "10000": 0.76953125,
+     "11000": 0.76171875,
+     "12000": 0.75,
+     "13000": 0.7265625,
+     "14000": 0.75,
+     "15000": 0.7109375,
+     "16000": 0.6875
+    },
+    "frozen_16000": {
+     "1000": 0.0703125,
+     "2000": 0.203125,
+     "3000": 0.32421875,
+     "4000": 0.50390625,
+     "5000": 0.5390625,
+     "6000": 0.6015625,
+     "7000": 0.65234375,
+     "8000": 0.67578125,
+     "9000": 0.73828125,
+     "10000": 0.80859375,
+     "11000": 0.7890625,
+     "12000": 0.828125,
+     "13000": 0.828125,
+     "14000": 0.859375,
+     "15000": 0.87109375,
+     "16000": 1.0
+    }
+   }
+  }
+ },
+ "checks": {
+  "dict_cov_between": false,
+  "state_cov_no_more": true,
+  "neither_within_0_10": true,
+  "kernel_half_within_4000": false
+ },
+ "_exp": "e532_covariance_matched_pythia410",
+ "_time": "2026-09-28 01:11:56"
+}

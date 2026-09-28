@@ -1,0 +1,31 @@
+# 27. The native axes: the criterion's generic part, and what the rows' stability consists of (S83-S84)
+
+**Question.** The prospective criterion, a row's largest projection over the floor foretelling its entry, was read in sessions 72-82 as a property of the native vocabulary's formation. Is it, or would any fixed dictionary followed through training show it; and if what distinguishes the native rows is stability, is that stability their second-order geometry or their individual orientations, and how precisely oriented must a word be?
+
+**Established.**
+- The criterion is largely generic: fixed dictionaries followed through training against the moving states foretell their own entries at 0.81 (random atoms) and 0.81 (the rotated native dictionary) over four thousand steps against 0.91 for the native rows, and the native rows frozen at step 4000 do as well as the moving ones (0.91) with the same entries per interval; the native directions' distinction is stability, half the word set surviving four thousand steps against a sixth for random directions (e531).
+- The stability is not second-order geometry: random atoms drawn with the native dictionary's covariance keep 0.19 of their words over four thousand steps and atoms drawn with the state cloud's covariance 0.20, against 0.18 for isotropic atoms and 0.50 for the native rows; the cloud-covariance atoms have the most persistent projections (S at 0.72) and the most churning, least predictable words (prospective AUC 0.73). The advantage is in the individual orientations, e488's non-Gaussian directions (e532).
+- The half-life and the kernel: the native vocabulary keeps 0.62/0.58/0.50/0.34 of its words over one to eight thousand steps, random directions 0.26/0.23/0.18/0.11; a native dictionary frozen later keeps more (0.29, 0.50, 0.64, 0.68 at four thousand steps for dictionaries from 1000, 4000, 8000, 16000) and its words overlap the contemporaneous native words over a widening stretch; the step-1000 vocabulary is unrelated to any later one (e532).
+- A native word's angular basin is wide: half the words survive a rotation of 26-29 degrees statically and 32-33 prospectively, a random dictionary's words 13-16, with the rotated atom's projection falling alike for both; the difference is the margin above the competitors, and the rows' own drift over four thousand steps (about 32 degrees) stays inside the basin (e533).
+
+**Start here:** e531, e532, e533 · **Sessions:** S83-S84 · **Scripts:** `scripts/e531_temporal_null.py`, `e532_covariance_matched.py`, `e533_angular_basin.py`
+
+## Experiments
+
+| id | question | result | status | links |
+| --- | --- | --- | --- | --- |
+| e531 | Is the prospective criterion specific to the native rows: three fixed dictionaries (the native rotated, random atoms, the native frozen at 4000) followed across sixteen checkpoints against the moving states, with OMP usage defining each dictionary's words and the same S? | Largely generic. Block 12, prospective AUC at 1000/4000 steps: native moving 0.94/0.91, native frozen 0.93/0.91, rotated 0.86/0.81, random 0.86/0.81; entries per 4000 steps 127/127/212/210; word overlap 0.50/0.50/0.17/0.18; persistence of S 0.49/0.61/0.43/0.43; static AUC 0.96-0.98 for all. Block 6 the same | narrowed (four fifths generic; the native excess a tenth, carried by the frozen directions; the motion adds nothing) | ← e516b e518 e522 · → 23 26 |
+| e532 | Is the native rows' stability their second-order geometry (random atoms with the dictionary's covariance; with the state cloud's), what is the half-life of each dictionary's words, and how does a native dictionary frozen at one age describe the states of other ages? | Block 12, retention at 1000/2000/4000/8000 steps: native 0.62/0.58/0.50/0.34; frozen at 1000/4000/8000/16000 (at 4000 steps) 0.29/0.50/0.64/0.68; rotated 0.17; isotropic 0.18; dictionary-covariance 0.19; state-covariance 0.20 (its S persistence 0.72 against native 0.49; prospective AUC 0.73 against 0.91); kernel: the step-1000 dictionary's words overlap later native words at 0.02-0.13, the step-4000 dictionary's at 0.45 (8000) and 0.28 (16000), the step-16000 dictionary's at 0.75 (12000) and 0.59 (8000). Block 6 the same | refuted (covariance); established (orientations; the kernel widens) | ← e531 e488 · → e533 |
+| e533 | How precisely oriented must a word be: each word atom rotated by theta toward a random orthogonal direction, OMP rerun on the same states (static) and on the states four thousand steps later with the atoms frozen (prospective); native against a random dictionary; checkpoints 4000, 8000, 12000, block 12? | Native static retention at 5/10/20/30/45 degrees 0.85-0.92/0.73-0.86/0.61-0.73/0.43-0.48/0.13-0.19, half-loss 26-29 degrees; random 0.71-0.77/0.57-0.62/0.38-0.42/0.22-0.26/0.08-0.09, half-loss 13-16; prospective native at 0/10/20/30 degrees 0.50/0.48, 0.65/0.62, 0.79/0.73 at 0/10 (4000, 8000, 12000), half-loss 32-33 degrees; the rotated atom's S ratio 0.99/0.95-0.97/0.89-0.93/0.77-0.87 at 10/20/30/45 for both | established (a wide basin, twice a random dictionary's, by the margin) | ← e532 e523 |
+
+## How the results flow
+
+- `e516b, e522 → e531`. The control the criterion needed: fixed dictionaries through training. The prediction is mostly the extreme-value statistic of any dictionary against a slow cloud; the native directions add stability, their motion nothing.
+- `e531 → e532, e533`. What the stability consists of: not covariance (matched atoms churn like isotropic ones), the individual orientations; and how much orientation matters, a basin of 26-29 degrees that the drift stays inside.
+
+## Links to other areas
+
+- [24 The boundary's carrier](24_selection_counterfactual.md): the prospective criterion whose generic part this area measures.
+- [23 The onset of wordhood in training](23_training_sweep.md): the turnover (e515b) and the replacement of the early vocabulary (e514) seen here from the dictionary's side.
+- [20 Classical calibration](20_classical_calibration.md): the non-Gaussian directions (e488) that the covariance-matched controls point back to.
+- [26 The drift's cause](26_drift_cause.md): the rows' drift, which decides which rows enter and stays inside the basin.
