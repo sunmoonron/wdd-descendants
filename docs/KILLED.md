@@ -583,3 +583,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Peak memory": the states at native peaks persist as everywhere else (0.926 against 0.925), and the maximum relocates at the random rate (e541).
 - "Usage erodes in chunks": the lost positions are the least coherent of a word's positions, not a chunk (e541).
 - "A persistent maximum is a stable word": covariance-matched atoms have the most persistent maxima and churn as words below the floor (e541b).
+
+## Session 92 kills (the cloud's persistence)
+- "The persistent subspace is small and the native rows sit in it": 277 directions persist above 0.9, and a native row's whole profile persists like an isotropic atom's (0.905 against 0.899) (e542).
+- "Slow dynamic modes behind the variance modes": the two top-32 subspaces overlap at 0.95 (e542).
+- "The rows lead the cloud": their weight in the final subspace is below their contemporaneous weight early, and entrants enter the contemporaneous subspace (e542).
+- "A Gaussian cloud with the real covariance and the real dynamics makes the native vocabulary": at any coupling it makes words at S 1.08 with retention 0.37-0.42 (e543).
