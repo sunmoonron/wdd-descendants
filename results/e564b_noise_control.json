@@ -1,0 +1,67 @@
+{
+ "loss_start": 4.059037804603577,
+ "rows": {
+  "0.005": {
+   "loss": 4.091572284698486,
+   "delta_loss": 0.03253448009490967,
+   "pile_words_jaccard": 0.8618181943893433,
+   "usage_corr": 0.9901541471481323,
+   "rot_words_median": 9.775161743164062e-06,
+   "rot_all_median": 1.3053417205810547e-05,
+   "share_start_words_over_floor": 0.9765625,
+   "median_S_start_words": 1.5717169046401978
+  },
+  "0.01": {
+   "loss": 4.161447048187256,
+   "delta_loss": 0.1024092435836792,
+   "pile_words_jaccard": 0.8351254463195801,
+   "usage_corr": 0.9854333400726318,
+   "rot_words_median": 3.886222839355469e-05,
+   "rot_all_median": 5.233287811279297e-05,
+   "share_start_words_over_floor": 0.9765625,
+   "median_S_start_words": 1.5556186437606812
+  },
+  "0.02": {
+   "loss": 4.4070963859558105,
+   "delta_loss": 0.3480585813522339,
+   "pile_words_jaccard": 0.7964912056922913,
+   "usage_corr": 0.9783720970153809,
+   "rot_words_median": 0.00015974044799804688,
+   "rot_all_median": 0.00020933151245117188,
+   "share_start_words_over_floor": 0.96875,
+   "median_S_start_words": 1.5457135438919067
+  },
+  "0.04": {
+   "loss": 5.375082015991211,
+   "delta_loss": 1.3160442113876343,
+   "pile_words_jaccard": 0.7066666483879089,
+   "usage_corr": 0.9701093435287476,
+   "rot_words_median": 0.0006371736526489258,
+   "rot_all_median": 0.0008367300033569336,
+   "share_start_words_over_floor": 0.97265625,
+   "median_S_start_words": 1.568625807762146
+  }
+ },
+ "finetune_reference": {
+  "2e-5": {
+   "delta_loss": 2.0808650255203247,
+   "jaccard": 0.6897689700126648,
+   "rot": 7.56382942199707e-05,
+   "usage_corr": 0.9201455116271973
+  },
+  "5e-6": {
+   "delta_loss": 1.065282940864563,
+   "jaccard": 0.7777777910232544,
+   "rot": 1.1146068572998047e-05,
+   "usage_corr": 0.9537020921707153
+  },
+  "2e-6": {
+   "delta_loss": 0.5754467248916626,
+   "jaccard": 0.7655172348022461,
+   "rot": 3.4570693969726562e-06,
+   "usage_corr": 0.9631869792938232
+  }
+ },
+ "_exp": "e564b_noise_control",
+ "_time": "2026-09-28 19:53:49"
+}

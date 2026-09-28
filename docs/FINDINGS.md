@@ -4356,3 +4356,168 @@ SESSION 100 (the user's standing instruction, given mid-turn: after results, tak
   - The floor is not the birth threshold on either model. At step 8000, 4252 non-words sit over the floor on OLMo and 3312 on Pythia (of 73728 and 53248 rows); the words' tenth-percentile S is 1.29 and 1.09, rising through training (1.05 to 1.40 on OLMo, 0.98 to 1.13 on Pythia), and the entrants enter at 1.17 and 1.15 times it. The floor is the extreme-value scale the criterion is calibrated to and the level below which nothing enters; wordhood is the usage competition among the thousands of rows above it, won at 1.1-1.3 times the floor. "Birth is the crossing of the floor" (sessions 89-95) becomes "birth is the rise of the maximum from the floor to the words' level while the usage crosses". My pre-registered guess that Pythia had under a thousand non-words over the floor was wrong by a factor of three.
   - The tails on OLMo carry the plateau, the gate and the low turnover, and less of the retention than on Pythia. The coupled Gaussian cloud with the real covariance gives words at S 1.16 against 1.70, the gate at 0.71 against 0.95, 78 entries per interval against 62, and retention 0.58 against 0.64 (Pythia: 0.35 against 0.50). The top-4 graft restores all of it and overshoots (S 1.82, gate 0.93, 54 entries, retention 0.69); the surgery collapses it below the Gaussian cloud (S 1.03, gate 0.35, 147 entries, retention 0.33). On OLMo the covariance carries 0.91 of the retention and the tails the rest; on Pythia the tails carried most of it. The composition of the native fifth differs between the models; what the tails carry on both is the plateau, the gate and the low turnover.
   - Pre-registered. e554: the neuron not selective by absolute activation, refuted (the anticipated critique was right); attention low everywhere, confirmed; the floor not the birth threshold with Pythia under a thousand, half (right about both models' thousands, wrong about Pythia's count). e555: the Gaussian cloud losing most of the retention, refuted (0.58 of 0.64); the graft restoring, confirmed; the surgery below 0.3, refuted by a hair (0.33).
+
+SESSION 101 (the user relayed GPT's map of twenty-one research directions and asked for every one the 533 experiments had not covered, plus my own. Covered already: compression and pruning (e456), model diffing (e457), steering (e458), forged writes (e461), gradient reshaping (e462), grokking (e444), word-for-word translation between models (e445, no) and concept-level correspondence (e453), interchange (S52-53), light cones (areas 06-07). Not covered, and run here in one session with the follow-ups I anticipated a critic would demand: the optimizer's geometry (e556), cross-model conservation with a data twin and the end of training (e557, e557b), merging and transplanting (e558) with the rise decomposed (e558b), corruption detection and document identity (e559), factual errors at four depths (e560), screening the instrument (e561, e561b), a vision transformer and a state-space model with a second model each (e562, e563), continued training with a noise control (e564, e564b). Analytic directions left as such: reparameterization invariance (WDD is invariant to orthogonal changes of the residual basis and to per-neuron rescaling, the only symmetries the model has), identifiability, the hypothesis pipeline, the ontology.)
+
+- e556 THE OPTIMIZER'S GEOMETRY (e444's (a+b) mod 113 trainer, 25000 full-batch steps, the same decay per step for all: AdamW; sign momentum; SGD with momentum 0.9 and the gradient norm clipped at 1; and three plain SGD settings):
+
+  | optimizer | test acc > 0.5 from step | final k=4 FVU own / rotated / covA / PCA | own-over-rotation advantage, max | at train fit: own / rotated FVU | top-20 MLP words' frequency purity vs all MLP rows |
+  | --- | --- | --- | --- | --- | --- |
+  | AdamW (e444's recipe) | 4000 | 0.07 / 0.80 / 0.13 / 0.26 | 0.76 (half at step 4250) | step 250, test acc 0.18: 0.65 / 0.73 | 0.73 vs 0.86 |
+  | sign momentum (Lion-like) | 4250 | 0.09 / 0.79 / 0.16 / 0.44 | 0.73 (half at step 4000) | step 750, test acc 0.09: 0.63 / 0.73 | 0.80 vs 0.93 |
+  | SGD, lr 1, momentum 0.9, clipped at norm 1 | 1750 | 0.11 / 0.81 / 0.17 / 0.36 | 0.72 (half at step 1500) | step 250, test acc 0.29: 0.59 / 0.73 | 0.94 vs 0.94 |
+  | SGD, lr 0.1, momentum 0.9, no decay | never (test acc 0.26) | 0.65 / 0.73 / 0.67 / 0.83 | 0.12 (half at step 250) | step 500, test acc 0.24: 0.66 / 0.73 | 0.20 vs 0.13 |
+  | SGD, lr 0.3, momentum 0.9 | diverged at step 163 | | | | |
+  | SGD, lr 1, no momentum | diverged at step 463 | | | | |
+
+  - The vocabulary does not depend on the optimizer's geometry. The three runs that grok reach the same picture: own k=4 FVU 0.07 / 0.09 / 0.11 against rotated 0.80 / 0.79 / 0.81 for AdamW, sign momentum and clipped SGD, the own-over-rotation advantage 0.76 / 0.73 / 0.72, its half-way step before or with grokking every time. The run that memorises (SGD without decay, test accuracy 0.26) has an advantage of 0.12, e444's memorising picture. Plain SGD is fragile on this task: lr 0.1-0.3 with decay 0.01 decayed to zero without learning, lr 0.3 with momentum and lr 1 without diverged at steps 163 and 463; the clipped run groks fastest of all (test accuracy over 0.5 from step 1750 against 4000 for AdamW).
+  - Caveat: clipping the whole gradient at norm 1 every step makes the update normalised gradient descent; its direction is the Euclidean gradient's (what distinguishes it from Adam's per-coordinate normalisation), its size is not free.
+  - Pre-registered: G1 (SGD fits within 25000 steps) confirmed only with clipping; G2 (SGD's advantage smaller) refuted; G3 (sign at least AdamW's) confirmed (0.73 against 0.76); G4 (SGD's top words as frequency-pure) confirmed (0.94 against 0.73).
+
+- e557 CONSERVATION ACROSS SCALE, ACROSS A DATA TWIN AND TO THE END OF TRAINING (Pythia-410m block 12 against Pythia-160m block 6 and pythia-160m-deduped block 6 on the same 2030 Pile positions; a word's context set is its over-the-floor positions or its top-8; twins by best Jaccard against two nulls):
+
+  | pair (words of the first, twins among the second) | context sets | best Jaccard, median | share with a twin (Jaccard >= 0.25) | >= 0.5 | rotated-dictionary null | size-matched null | modal-token purity, twinned / untwinned | twin rate, pure / impure words |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 410m->160m | over the floor | 0.20 | 0.40 | 0.11 | 0.03 | 0.00 | 0.30 / 0.23 | 0.61 / 0.33 |
+  | 410m->160m | top 8 | 0.14 | 0.21 | 0.05 | 0.09 | 0.00 | 0.29 / 0.23 | 0.16 / 0.23 |
+  | 160m->410m | over the floor | 0.16 | 0.35 | 0.11 | 0.03 | 0.00 | 0.29 / 0.20 | 0.56 / 0.29 |
+  | 160m->410m | top 8 | 0.14 | 0.17 | 0.05 | 0.09 | 0.00 | 0.30 / 0.20 | 0.23 / 0.15 |
+  | 160m->160m-deduped | over the floor | 0.20 | 0.39 | 0.11 | 0.03 | 0.03 | 0.24 / 0.22 | 0.54 / 0.35 |
+  | 160m->160m-deduped | top 8 | 0.14 | 0.18 | 0.05 | 0.03 | 0.00 | 0.29 / 0.21 | 0.19 / 0.18 |
+  | 160m-deduped->160m | over the floor | 0.21 | 0.43 | 0.09 | 0.02 | 0.06 | 0.17 / 0.20 | 0.50 / 0.41 |
+  | 160m-deduped->160m | top 8 | 0.14 | 0.18 | 0.05 | 0.05 | 0.00 | 0.38 / 0.17 | 0.22 / 0.17 |
+  | 410m->160m-deduped | over the floor | 0.21 | 0.44 | 0.11 | 0.02 | 0.00 | 0.35 / 0.21 | 0.66 / 0.37 |
+  | 410m->160m-deduped | top 8 | 0.14 | 0.17 | 0.02 | 0.07 | 0.00 | 0.27 / 0.24 | 0.18 / 0.17 |
+
+  - The vocabulary is conserved across scale, at the same rate as across a data twin. 0.40 of 410m's words have a 160m word whose over-the-floor set matches at Jaccard 0.25 or more, against 0.03 for the 256 most used atoms of 160m's rotated dictionary and 0.00 for random sets of the same sizes; the reverse direction 0.35; 160m against its deduped twin 0.39 and 0.43; 410m against the deduped model 0.44. On top-8 sets the twins fall to 0.21 (rotated 0.09): the sets match as sets, not at their peaks.
+  - Twins are not token identities. The twinned words' modal-token purity is 0.30 at the median (untwinned 0.23); 0.36 of twins are pure (purity over 0.5); pure words twin at 0.61 and impure ones at 0.33. Token identity helps, and most of the conserved vocabulary is not it.
+  - Rows by index between 160m and its deduped twin: median cosine 0.073 (block 0 0.19, later blocks 0.07); e557b settles what that is.
+  - The cache's word sets (session 88's usage) gave a final-versus-16000 Jaccard of 0.22; e557b recomputes them rows-only.
+
+- e557b THE INITIALIZATION AND THE END OF TRAINING (rows at step 0 of both 160m models; the step-16000 words recomputed rows-only from the session-88 cache on the positions the final model keeps; ages over checkpoints 1000-16000 recomputed rows-only):
+  - The two 160m models share their initialization exactly (cosine by index at step 0 1.000), and the final rows keep 0.071 / 0.072 cosine with their own step-0 rows (block 0 0.22, block 6 0.05); the two final models' 0.073 by index is that remnant. A merge by index between them would not be in one basin; the trajectory merge of e558 is the one that is.
+  - The words outlive their rows. From step 16000 to the end (step 143000) the word set by row index keeps Jaccard 0.21 (0.35 of the final words were words at 16000), while context-set twins between the two checkpoints are 0.55 (final to 16000) and 0.52 (back); the rows themselves rotate to cosine 0.61 by index. Among final words that were not words at 16000, 0.40 have a 16000 twin: the same context sets, spoken by other rows.
+  - The 160m twin rate of the final words is 0.40, of the step-16000 words 0.36; twinned final words were words at 4.8 of the 16 checkpoints against 3.0 for the untwinned, and 0.48 of the final words were never words in 1000-16000 (twin rate 0.31, against 0.51 for words present at eight checkpoints or more).
+  - Pre-registered (e557, e557b): H1 (over a third with a twin, rotated under a tenth) confirmed; H2 (twins mostly token-pure) refuted; H3 (no shared initialization) refuted, the initialization is shared and forgotten; H4 (final vs 16000 word set >= 0.5 by index) refuted, but the context sets exceed it; H5 (twinned words older) confirmed; I1-I4 confirmed.
+
+- e558 MERGING ALONG THE TRAJECTORY AND TRANSPLANTING A WORD (Pythia-410m steps 8000 and 16000 averaged; the 16000 neuron of each entrant, stayer and never-word copied into the 8000 model at three depths):
+
+  | alpha (weight of step 16000) | loss (parents 8000 / 16000: 3.910 / 3.726) | words' Jaccard with 8000 / 16000 (parents' 0.37) | merged words in both parents / one / neither | usage correlation with the interpolated parents' |
+  | --- | --- | --- | --- | --- |
+  | 0.25 | 3.836 | 0.62 / 0.49 | 0.52 / 0.39 / 0.10 | 0.91 |
+  | 0.5 | 3.784 | 0.47 / 0.60 | 0.51 / 0.37 / 0.12 | 0.91 |
+  | 0.75 | 3.741 | 0.39 / 0.69 | 0.49 / 0.40 / 0.11 | 0.93 |
+
+  | rows transplanted into the step-8000 model | n | word at 8000 / 16000 | median S at 8000 / 16000 | dictionary only: S, word | write column only: S, word, count | whole neuron: S, word, count |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | entrants | 119 | 0.00 / 1.00 | 1.13 / 1.35 | 1.26, 0.48 | 1.34, 0.59, 10 | 1.38, 0.68, 11 |
+  | stayers | 137 | 1.00 / 1.00 | 1.39 / 1.48 | 1.45, 0.92 | 1.55, 0.96, 21 | 1.58, 0.95, 22 |
+  | never | 64 | 0.00 / 0.00 | 0.82 / 0.82 | 0.80, 0.00 | 0.80, 0.00, 0 | 0.80, 0.00, 0 |
+
+  - No barrier along the trajectory, and the merge is not the intersection: the merged words are words of both parents for 0.51 (the parents share Jaccard 0.37), of one parent for 0.37, of neither for 0.12; the usage follows the interpolated parents' usage at 0.91.
+  - The neuron carries the word. Transplanting the whole 16000 neuron (read row, bias, write column) into the 8000 model makes 0.68 of the entrants words at once and 0.80 one at a time (S 1.38 against 1.13 before and 1.35 at 16000); the write column alone 0.59; the direction alone in the 8000 dictionary 0.48, at S 1.26. Stayers stay (0.92 / 0.96 / 0.95), never-words never do (0.00); the loss after transplanting all entrants or all stayers is 3.915 / 3.913 against 3.910.
+  - Pre-registered: M1 (merged words mostly in both parents, >= 0.7) refuted; M2 (no barrier) confirmed; T1 (entrants' 16000 directions not over the floor at 8000) refuted (S 1.26); T2 (whole neuron makes fewer than half words) refuted; T3 (stayers remain) confirmed.
+
+- e558b THE RISE DECOMPOSED (the 16000 direction in the 8000 cloud and the 8000 direction in the 16000 cloud, dictionary swaps with each cloud's floor):
+
+  | rows | n | S: 8000 row in 8000 cloud / 16000 row in 8000 cloud / 8000 row in 16000 cloud / 16000 row in 16000 cloud | rise | row part then cloud part | cloud part then row part | cloud part larger | row cosine 8000-16000 |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | entrants | 119 | 1.13 / 1.29 / 1.11 / 1.35 | +0.16 | +0.15 + +0.03 | -0.00 + +0.18 | 0.36 | 0.85 |
+  | leavers | 119 | 1.28 / 1.27 / 1.20 / 1.20 | -0.08 | -0.01 + -0.07 | -0.08 + +0.02 | 0.57 | 0.86 |
+  | stayers | 137 | 1.39 / 1.49 / 1.35 / 1.48 | +0.08 | +0.07 + -0.02 | -0.05 + +0.11 | 0.48 | 0.88 |
+  | never | 52873 | 0.80 / 0.80 / 0.80 / 0.80 | +0.00 | +0.00 + -0.00 | -0.00 + +0.01 | 0.49 | 0.85 |
+
+  - Entry is the row's motion into a cloud that already speaks the direction; exit is the cloud's erosion. For the entrants the 16000 direction already sits at 1.29 in the 8000 cloud (0.93 over the floor) while the 8000 direction gains nothing from the 16000 cloud (-0.00); in either order the row part is +0.15 to +0.18 and the cloud part -0.00 to +0.03. For the leavers the fall is the cloud's (-0.07 against -0.01 for the row; cloud part larger in 0.57). This joins session 95 (the coalition precedes the word) and session 90 (exit is erosion): the direction is spoken first, the row turns into it, and it leaves when the cloud stops.
+  - Pre-registered: R1 (entrants: cloud part larger) refuted; R2 (leavers: cloud part larger) confirmed.
+
+- e559 CORRUPTION DETECTION FROM ONE STATE, AND DOCUMENT IDENTITY (32 Pile sequences, one random token replaced in each between positions 40 and 200; Pythia-410m block 12; a detector sees one state; L2 logistic regression trained on sixteen sequences, AUC on the other sixteen; 4438 test states):
+
+  | features | AUC, all distances | 1-2 tokens after | 3-8 | 9-32 | 33 and more |
+  | --- | --- | --- | --- | --- | --- |
+  | raw state (1024) | 0.551 | 0.718 | 0.658 | 0.592 | 0.532 |
+  | top-256 principal components | 0.525 | 0.805 | 0.595 | 0.541 | 0.512 |
+  | native codes (256 words) | 0.504 | 0.522 | 0.538 | 0.507 | 0.501 |
+  | rotated-dictionary codes (256) | 0.499 | 0.494 | 0.492 | 0.500 | 0.499 |
+  | ledger scalars (3) | 0.500 | 0.538 | 0.492 | 0.491 | 0.501 |
+  | native codes + scalars | 0.504 | 0.520 | 0.537 | 0.507 | 0.501 |
+
+  Document identity from half a sequence (32 sequences, chance 0.03): ledger histogram 0.34, ledger weighted by coefficient 0.38, rotated-atom histogram 0.22, mean unit state 0.50, token histogram 0.22.
+
+  - Null. No single state announces an upstream corruption beyond a few tokens: the raw state reaches 0.718 one or two tokens after it (its top-256 components 0.805), 0.658 at three to eight, chance beyond; the native codes are at chance everywhere (0.504), as are the rotated codes and the ledger scalars. The instrument is not at fault: the state itself carries no such signal, and the light-cone results (areas 06-07) already measured the corruption's spread when both runs are in hand.
+  - The ledger identifies a document above a generic code and below the state's mean: half a sequence retrieves its other half at 0.34 by the word-usage histogram (0.38 weighted), 0.22 by the rotated-atom histogram, 0.22 by the token histogram, 0.50 by the mean unit state.
+  - Pre-registered: D1 (order raw >= PCA >= native >= rotated up to 8 tokens) refuted (PCA-256 beats the raw state at 1-2 tokens, 0.805 against 0.718); D2 (native codes keep 80% of the raw gain) refuted; D3 (ledger between rotated and tokens) refuted, the ledger beats the token histogram and the rotated atoms alike.
+
+- e560 FACTUAL ERRORS AT FOUR DEPTHS (160 country-capital prompts, accuracy 0.59; 30 invented countries; the last prompt position; the floor calibrated on the Pile states at each block):
+
+  | block | S right / wrong / invented (AUC right vs wrong) | words among the 16 atoms, right / wrong / invented | five-fold AUC right vs wrong: raw / native codes / rotated codes / ledger scalars / confidence / codes + confidence | real vs invented: by S / by confidence |
+  | --- | --- | --- | --- | --- |
+  | 6 | 1.54 / 1.54 / 1.57 (0.49) | 8 / 8 / 8 | 0.73 / 0.58 / 0.45 / 0.44 / 0.85 / 0.79 | 0.31 / 0.78 |
+  | 12 | 1.41 / 1.42 / 1.52 (0.43) | 3 / 3 / 2 | 0.74 / 0.57 / 0.42 / 0.48 / 0.85 / 0.82 | 0.09 / 0.78 |
+  | 18 | 2.39 / 2.47 / 2.94 (0.34) | 3 / 3 / 4 | 0.64 / 0.57 / 0.43 / 0.62 / 0.85 / 0.81 | 0.01 / 0.78 |
+  | 22 | 2.13 / 2.02 / 2.11 (0.62) | 3 / 2 / 3 | 0.62 / 0.43 / 0.43 / 0.54 / 0.85 / 0.73 | 0.42 / 0.78 |
+
+  - Null for errors, a lead for novelty. Right and wrong answers sit at the same S (1.41 against 1.42 at block 12; 2.39 against 2.47 at 18) with the same number of words among the 16 atoms; the model's own confidence separates them at AUC 0.86, the raw state probe at 0.74 (block 12) falling to 0.62 at block 22, the native codes at 0.57 and the rotated codes at 0.42; nothing in the ledger adds to the confidence. Invented countries are more spoken, not less: S 2.94 against 2.39 at block 18 (AUC real against invented 0.99 by S, 0.78 by confidence), 0.91 at block 12. A name the model has never seen drives one row to an extreme; which row, and whether it is the same one, is the follow-up.
+  - Pre-registered: F1 (wrong answers at lower S) refuted; F2 (raw > native > rotated) confirmed at blocks 6-18, not at 22; F3 (native codes beat confidence) refuted; F4 (invented less spoken) refuted in direction, the separation is real the other way.
+
+- e561 / e561b SCREENING THE INSTRUMENT (Pythia-410m block 12, 2032 positions, 53,248 rows; per position the M rows with the largest projection, OMP inside them; e561 timed while six jobs shared the GPU, e561b alone and at four times the positions and rows):
+
+  | candidates M | per-position Jaccard with full OMP, median (mean) | identical sets | word set Jaccard | FVU ratio | coverage of full OMP's first / last eight picks |
+  | --- | --- | --- | --- | --- | --- |
+  | 64 | 0.45 (0.48) | 0.00 | 0.68 | 1.023 | 0.91 / 0.42 |
+  | 256 | 0.78 (0.73) | 0.16 | 0.84 | 1.003 | 0.99 / 0.79 |
+  | 1024 | 1.00 (0.93) | 0.72 | 0.95 | 1.001 | 1.00 / 0.96 |
+  | 4096 | 1.00 (0.99) | 0.96 | 0.99 | 1.000 | 1.00 / 1.00 |
+  | rows of blocks 9-12 only (16384) | 0.23 (0.24) | 0.00 | 0.41 | 1.048 | full OMP takes 0.48 of its atoms there |
+
+  | size (alone on the GPU) | positions | rows | full OMP | screen M=256 (speed-up, Jaccard) | screen M=1024 (speed-up, Jaccard) |
+  | --- | --- | --- | --- | --- | --- |
+  | N x1, m x1 | 2032 | 53248 | 0.28s | 0.08s (x3.6, 0.78) | 0.15s (x1.9, 1.00) |
+  | N x4, m x1 | 8128 | 53248 | 0.93s | 0.27s (x3.4, 0.78) | 0.60s (x1.6, 1.00) |
+  | N x1, m x4 | 2032 | 212992 | 0.88s | 0.11s (x8.0, 0.60) | 0.19s (x4.6, 0.88) |
+  | N x4, m x4 | 8128 | 212992 | 3.52s | 0.44s (x8.0, 0.68) | 0.77s (x4.6, 1.00) |
+
+  - The screen is exact at M=1024 and cheap: median per-position Jaccard 1.00 with full OMP (0.72 identical sets), word set 0.95, FVU ratio 1.001; alone on the GPU it is 1.9 times faster at the present size and 4.6 times at four times the rows. What M=256 loses is OMP's later picks (coverage 0.79 of the last eight against 0.99 of the first eight): the residual-driven selections are not the largest projections. The rows of blocks 9-12 alone are not a dictionary for block 12's states (Jaccard 0.23, word set 0.41): full OMP takes 0.48 of its atoms from them and the rest from blocks 0-8.
+  - Pre-registered: S1 (M=1024 Jaccard >= 0.8) confirmed; S2 (word set >= 0.9 from 1024) confirmed; S3 (the misses are the later picks) confirmed; S4 (no speed-up at the present size) refuted once alone; S5 (faster at four times the rows) confirmed.
+
+- e562 / e563 A VISION TRANSFORMER AND A STATE-SPACE MODEL (google/vit-base-patch16-224 and facebook/deit-base-patch16-224 on 40 food101 images, the MLP write rows of blocks 0..B; state-spaces/mamba-130m-hf and mamba-370m-hf on the Pile sequences, the mixer output-projection rows of blocks 0..B; Pythia-160m block 6 by the same code):
+
+  | model, block | FVU at K=16: native / rotated / Gaussian with the rows' covariance | advantage (rotated minus native) | top-256 usage share, native / rotated | words' median S (tenth percentile) / rotated words' | words over the floor | words' count | breadth | rows over the floor anywhere, native / rotated |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | ViT-base, block 3 of 12 (ethz/food101, 40 images) | 0.596 / 0.773 / 0.670 | 0.176 | 0.23 / 0.10 | 1.41 (1.15) / 1.09 | 1.00 | 70 | 5.21 | 5349 / 2919 |
+  | ViT-base, block 6 of 12 (ethz/food101, 40 images) | 0.644 / 0.749 / 0.722 | 0.105 | 0.22 / 0.08 | 1.67 (1.31) / 1.06 | 1.00 | 75 | 3.05 | 7686 / 2976 |
+  | ViT-base, block 9 of 12 (ethz/food101, 40 images) | 0.608 / 0.735 / 0.719 | 0.127 | 0.33 / 0.09 | 1.87 (1.40) / 1.07 | 1.00 | 95 | 2.60 | 6217 / 2646 |
+  | DeiT-base, block 3 of 12 (ethz/food101, 40 images) | 0.539 / 0.780 / 0.639 | 0.241 | 0.37 / 0.13 | 1.33 (1.14) / 1.09 | 0.98 | 61 | 7.68 | 3988 / 2402 |
+  | DeiT-base, block 6 of 12 (ethz/food101, 40 images) | 0.596 / 0.757 / 0.684 | 0.161 | 0.26 / 0.08 | 1.49 (1.19) / 1.06 | 0.99 | 71 | 4.48 | 7584 / 3153 |
+  | DeiT-base, block 9 of 12 (ethz/food101, 40 images) | 0.505 / 0.740 / 0.647 | 0.235 | 0.31 / 0.17 | 1.71 (1.23) / 1.07 | 0.98 | 55 | 2.90 | 4832 / 2614 |
+  | Mamba-130m, block 6 of 24 | 0.482 / 0.767 / 0.734 | 0.285 | 0.35 / 0.15 | 1.71 (1.13) / 1.01 | 0.97 | 31 | 2.31 | 3899 / 771 |
+  | Mamba-130m, block 12 of 24 | 0.489 / 0.748 / 0.717 | 0.258 | 0.26 / 0.09 | 1.78 (1.27) / 0.99 | 0.98 | 29 | 2.04 | 7524 / 896 |
+  | Mamba-130m, block 18 of 24 | 0.486 / 0.737 / 0.684 | 0.251 | 0.27 / 0.11 | 1.71 (1.23) / 1.00 | 0.98 | 26 | 2.25 | 8737 / 987 |
+  | Mamba-370m, block 12 of 48 | 0.496 / 0.799 / 0.784 | 0.303 | 0.32 / 0.10 | 2.02 (1.36) / 0.98 | 1.00 | 38 | 2.04 | 7660 / 874 |
+  | Mamba-370m, block 24 of 48 | 0.516 / 0.783 / 0.762 | 0.266 | 0.22 / 0.06 | 1.93 (1.37) / 0.97 | 1.00 | 38 | 1.89 | 15254 / 937 |
+  | Mamba-370m, block 36 of 48 | 0.489 / 0.773 / 0.734 | 0.283 | 0.29 / 0.10 | 1.86 (1.35) / 0.99 | 1.00 | 38 | 1.94 | 16546 / 1023 |
+  | Pythia-160m, block 6 of 12 (same code) | 0.558 / 0.746 / 0.674 | 0.188 | 0.28 / 0.11 | 1.57 (1.16) / 1.02 | 0.97 | 20 | 2.68 | 2782 / 945 |
+
+  - Both have a native vocabulary. Mamba's is the stronger: at the middle block the native rows' FVU is 0.489 against 0.748 rotated (advantage 0.258; Pythia-160m 0.188), the words sit at S 1.78 against 0.99 for the rotated dictionary's most used atoms, and 7524 rows are over the floor somewhere against 896 rotated (Mamba-370m: advantage 0.266, S 1.93, 15254 against 937). No attention and no MLP: the vocabulary is a property of writing to a residual stream through rows.
+  - The vision transformers' is weaker and broader: advantage 0.105 (DeiT 0.161) at the middle block, words at S 1.67 / 1.49 with breadth 3.05 / 4.48 (Pythia 2.68), no token identity to narrow them. The rotated dictionary puts 2976 / 3153 rows over the floor (Pythia 945, Mamba 896): the Gumbel floor is looser on image states, so the native excess (7686 / 7584 native) is the number to read, about 2.5 times the null against Pythia's 3 and Mamba's 8-16.
+  - Pre-registered: V1 (native beats rotated) confirmed; V2 (words at S >= 1.2) confirmed; V3 (smaller than Pythia's advantage) confirmed; V4 (broader) confirmed; M1 (native beats rotated) confirmed; M2 (words at S >= 1.2) confirmed; M3 (advantage smaller than Pythia's) refuted, it is larger.
+
+- e564 / e564b CONTINUED TRAINING ON A NEW DOMAIN, AND A NOISE CONTROL (Pythia-160m, 300 steps of AdamW on TinyStories at three learning rates; then Gaussian noise on every weight matrix at four relative scales; block 6, rows 0-6, the Pile words):
+
+  | learning rate | Pile loss, start -> 300 steps | TinyStories loss | Pile word set Jaccard with the start at 100 / 200 / 300 | usage correlation | start words still over the floor | rows' rotation (1 - cosine), words / norm-matched non-words (share of words rotating less) | new Pile words (share that were TinyStories words before) | TinyStories word set Jaccard |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 2e-6 | 4.059 -> 4.634 (+0.58) | 2.532 -> 1.955 | 0.80 / 0.77 / 0.77 | 0.96 | 0.98 | 0.0000 / 0.0000 (0.50) | 34 (0.15) | 0.71 |
+  | 5e-6 | 4.059 -> 5.124 (+1.07) | 2.532 -> 1.919 | 0.79 / 0.78 / 0.78 | 0.95 | 0.97 | 0.0000 / 0.0000 (0.46) | 32 (0.22) | 0.68 |
+  | 2e-5 | 4.059 -> 6.140 (+2.08) | 2.532 -> 1.912 | 0.70 / 0.70 / 0.69 | 0.92 | 0.99 | 0.0001 / 0.0001 (0.53) | 47 (0.23) | 0.62 |
+
+  | relative noise on every weight matrix | Pile loss change | Pile word set Jaccard | usage correlation | rows' rotation (words) | start words still over the floor |
+  | --- | --- | --- | --- | --- | --- |
+  | 0.005 | +0.03 | 0.86 | 0.99 | 0.0000 | 0.98 |
+  | 0.01 | +0.10 | 0.84 | 0.99 | 0.0000 | 0.98 |
+  | 0.02 | +0.35 | 0.80 | 0.98 | 0.0002 | 0.97 |
+  | 0.04 | +1.32 | 0.71 | 0.97 | 0.0006 | 0.97 |
+
+  - The rows do not move, the states do. Three hundred steps at lr 2e-5 cost 2.08 nats of Pile loss and rotate the write rows by 0.0001 (1 minus cosine; words and norm-matched non-words alike); the Pile word set keeps Jaccard 0.69 with the start, the usage correlates 0.92, and 0.99 of the start words are still over the floor. At lr 2e-6 (+0.58 nats) the set keeps 0.77 and the usage 0.96. The new Pile words were mostly not TinyStories words before (0.23), and the words lost were marginal (usage 18 at the start against the threshold 16).
+  - The word set is a marginal statistic; the usage is the robust one. Noise costing +0.03 nats already moves the set to Jaccard 0.86 (usage 0.99); at matched damage fine-tuning and noise agree (0.77 at +0.58 nats against 0.80 at +0.35 and 0.71 at +1.32), the usage correlation a little lower under fine-tuning (0.96 against 0.98-0.97). Fine-tuning neither protects nor targets the vocabulary: it moves the states, and the set's edge follows.
+  - Pre-registered: C1 (retention >= 0.8) refuted at every rate (0.77-0.69); C2 (words rotate less) null, nothing rotates; C3 (new words were TinyStories words) refuted; C4 (Pile loss up under 0.1) refuted, +0.58 at the gentlest rate; N1 (fine-tuning keeps more than noise at matched damage) refuted; N2 (noise rotates rows more) confirmed at 6 times, both tiny.
+
+  Overview after the session, and the critique I would expect: (i) the vocabulary is now seen in a state-space model, two vision transformers, three optimizers and across scale, so it is a property of writing through rows to a residual stream, not of attention, the MLP, the tokenizer or Adam; the critic will ask for the coalition and the gate on Mamba, which the cache recipe of e550 can give. (ii) The two nulls are clean: the ledger is not a detector of upstream corruption (no single state is) nor of factual error (the confidence is); the lead is novelty, invented names driving one row to an extreme, and the critic will ask which row. (iii) Entry is the row turning into a direction the cloud already speaks, exit the cloud's erosion, and the neuron carries the word when transplanted; the critic will ask whether the 16000 direction's S of 1.29 in the 8000 cloud is the coalition of session 95 measured another way, which it is. (iv) The word set is fragile at its edge (0.86 under noise costing 0.03 nats) while the usage is robust; every Jaccard of word sets in the record should be read with that, and the usage correlation reported beside it from now on.

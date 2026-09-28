@@ -1,0 +1,235 @@
+{
+ "n": 160,
+ "accuracy": 0.5874999761581421,
+ "scalars": {
+  "S": {
+   "right": 2.388705253601074,
+   "wrong": 2.4744820594787598,
+   "fake": 2.9445297718048096,
+   "auc_right_vs_wrong": 0.3359123146357189
+  },
+  "cut": {
+   "right": 1.6935697793960571,
+   "wrong": 1.7345138788223267,
+   "fake": 1.7921849489212036,
+   "auc_right_vs_wrong": 0.4197292069632495
+  },
+  "nwords": {
+   "right": 3.0,
+   "wrong": 3.0,
+   "fake": 4.0,
+   "auc_right_vs_wrong": 0.5518214055448099
+  },
+  "fvu": {
+   "right": 0.5766783952713013,
+   "wrong": 0.5645712614059448,
+   "fake": 0.5156959295272827,
+   "auc_right_vs_wrong": 0.5889748549323017
+  },
+  "confidence": {
+   "right": 0.24779367446899414,
+   "wrong": 0.12013303488492966,
+   "fake": 0.10020028799772263,
+   "auc_right_vs_wrong": 0.8623468729851709
+  },
+  "entropy": {
+   "right": 4.205039978027344,
+   "wrong": 4.884710311889648,
+   "auc_right_vs_wrong": 0.8235009671179884
+  }
+ },
+ "auc": {
+  "raw": 0.6449065119277885,
+  "native_codes": 0.5739845261121856,
+  "rotated_codes": 0.434638942617666,
+  "ledger_scalars": 0.619277885235332,
+  "confidence": 0.8504190844616376,
+  "native_codes_plus_confidence": 0.8101225016118633,
+  "ledger_scalars_plus_confidence": 0.841231463571889
+ },
+ "fake": {
+  "S_real": 2.4294135570526123,
+  "S_fake": 2.9445297718048096,
+  "nwords_real": 3.0,
+  "nwords_fake": 4.0,
+  "auc_real_vs_fake_S": 0.007083333333333333,
+  "auc_real_vs_fake_conf": 0.7829166666666667,
+  "fake_top_answers": [
+   " Z",
+   " located",
+   " the",
+   " located",
+   " Tol",
+   " located",
+   " Vel",
+   " the",
+   " Or",
+   " located"
+  ]
+ },
+ "wrong_examples": [
+  [
+   "Germany",
+   " Frankfurt"
+  ],
+  [
+   "Italy",
+   " P"
+  ],
+  [
+   "Portugal",
+   " Port"
+  ],
+  [
+   "Russia",
+   " Nov"
+  ],
+  [
+   "Greece",
+   " the"
+  ],
+  [
+   "Turkey",
+   " in"
+  ],
+  [
+   "Iran",
+   " in"
+  ],
+  [
+   "Iraq",
+   " Mos"
+  ],
+  [
+   "India",
+   " Delhi"
+  ],
+  [
+   "Pakistan",
+   " Kar"
+  ],
+  [
+   "Mexico",
+   " the"
+  ],
+  [
+   "Brazil",
+   " the"
+  ],
+  [
+   "Argentina",
+   " in"
+  ],
+  [
+   "Sweden",
+   " located"
+  ],
+  [
+   "Ukraine",
+   " K"
+  ],
+  [
+   "Georgia",
+   " located"
+  ],
+  [
+   "Uzbekistan",
+   " U"
+  ],
+  [
+   "Myanmar",
+   " Yang"
+  ],
+  [
+   "Laos",
+   " in"
+  ],
+  [
+   "Syria",
+   " Ale"
+  ],
+  [
+   "Jordan",
+   " in"
+  ],
+  [
+   "Libya",
+   " Beng"
+  ],
+  [
+   "Tanzania",
+   " Dar"
+  ],
+  [
+   "Mali",
+   " O"
+  ],
+  [
+   "Niger",
+   " the"
+  ],
+  [
+   "Chad",
+   " the"
+  ],
+  [
+   "Cameroon",
+   " the"
+  ],
+  [
+   "Zambia",
+   " Z"
+  ],
+  [
+   "Mozambique",
+   " the"
+  ],
+  [
+   "South Africa",
+   " Cape"
+  ],
+  [
+   "Namibia",
+   " the"
+  ],
+  [
+   "Eritrea",
+   " located"
+  ],
+  [
+   "Liberia",
+   " in"
+  ],
+  [
+   "Sierra Leone",
+   " the"
+  ],
+  [
+   "Ivory Coast",
+   " O"
+  ],
+  [
+   "Guinea",
+   " the"
+  ],
+  [
+   "Togo",
+   " O"
+  ],
+  [
+   "Benin",
+   " Ben"
+  ],
+  [
+   "Gabon",
+   " G"
+  ],
+  [
+   "Congo",
+   " the"
+  ]
+ ],
+ "block": 18,
+ "_exp": "e560_facts_b18",
+ "_time": "2026-09-28 19:54:29"
+}

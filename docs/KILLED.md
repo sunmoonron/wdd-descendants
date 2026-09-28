@@ -628,3 +628,15 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Attention's half of an extreme is about extremes": 0.27 at OLMo's extremes and 0.27 everywhere (e554).
 - "A row above the floor is a word": 3312 non-words over the floor on Pythia at step 8000, 4252 on OLMo; words live at 1.1-1.3 times the floor (e554).
 - "The native fifth's retention lives in the tails, in general": on OLMo the covariance keeps 0.58 of 0.64 (e555).
+
+## Session 101 kills (GPT's map, the nine uncovered directions run)
+- "The native vocabulary depends on the optimizer's geometry": AdamW, sign momentum and clipped SGD grok to the same advantage (0.76 / 0.73 / 0.72) (e556).
+- "Cross-model twins are token identities": twinned words' purity 0.30, most twins impure (e557).
+- "The final vocabulary is the step-16000 vocabulary, row for row": Jaccard 0.21 by index, 0.55 by context sets (e557b).
+- "Entry is the cloud lifting the row": the 16000 direction already at 1.29 in the 8000 cloud; the row turns, the cloud was there (e558b).
+- "The coalition precedes the word, so a transplanted neuron cannot bring it": the whole neuron makes 0.68-0.80 of entrants words (e558).
+- "The ledger detects corruption": AUC 0.504 for the codes; no single state does beyond two tokens (e559).
+- "The ledger sees factual errors": S right / wrong 1.41 / 1.42; the confidence does (0.85) (e560).
+- "The advantage is smaller in a state-space model": Mamba's 0.258 against Pythia-160m's 0.188 (e563).
+- "Fine-tuning protects the vocabulary (or targets it)": at matched loss damage noise and fine-tuning move the word set alike; the rows rotate by 1e-4 (e564, e564b).
+- "A word set's Jaccard is a stable statistic": 0.86 under noise costing +0.03 nats; the usage correlation (0.99) is the stable one (e564b).
