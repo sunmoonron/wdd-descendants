@@ -577,3 +577,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The takeover is local, by a few competitors, the leaver's neighbours or an entrant taking its seat": the takers are at the null in every respect and entrants never displace a leaver (e539).
 - "The one-way gate is generic": a random dictionary leaves through the floor (0.24 over it at exit), isotropic diffusion likewise (0.37); the gate is the persistence of the native maximum (e539, e540).
 - "The erosion of a leaver's marginal positions is its own motion, as the rise of an entrant's maximum was": it is mostly the states' drift (-0.015 of -0.020), the row's part small and in the right direction (e539b).
+
+## Session 91 kills (what holds the maximum)
+- "Breadth alone holds the native maximum": independent churn from the isotropic kernel reproduces random words' maxima and under-predicts the native (1.19 against 1.28) (e541).
+- "Peak memory": the states at native peaks persist as everywhere else (0.926 against 0.925), and the maximum relocates at the random rate (e541).
+- "Usage erodes in chunks": the lost positions are the least coherent of a word's positions, not a chunk (e541).
+- "A persistent maximum is a stable word": covariance-matched atoms have the most persistent maxima and churn as words below the floor (e541b).

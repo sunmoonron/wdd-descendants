@@ -3917,3 +3917,61 @@ SESSION 90 (the relayed take on e538b, five proposals, all new, and my own split
   - The one-way gate is native. Under rows-only OMP Pythia's leavers are above the floor at the first checkpoint out in 0.77 of cases (e538b's 0.82 with the full dictionary) and its entrants under it two intervals before entry in 0.44; the random dictionary's leavers are under the floor at exit (0.24 over it) and its entrants under it before entry (0.76 at one interval): for random directions the floor is a gate both ways. Isotropic diffusion 0.37, the pull worlds 0.52-0.56. What the native rows have is the persistence of their maximum: words sit at S 1.25-1.44 (the words' median rises from 1.10 at step 1000 to 1.44 at 16000), so the erosion of a word's breadth reaches the usage threshold long before its maximum reaches the floor.
   - The erosion is mostly the states' drift. At the lost positions the cosine between state and row falls -0.020, of which -0.006 is the row's motion and -0.015 the state's; at the gained positions it rises 0.022 (0.008 row, 0.011 state); a leaver's kept positions fall too (-0.006), and the cosine at its old peak falls as much as at the lost positions (0.179 to 0.164) while its S holds, the maximum relocating to another position above the floor (e523's moving maximum). The floor at those positions changes by less than one percent. The pre-registered analogy with e522, where the rise of an entrant's maximum was the row's motion, does not hold at the marginal positions: there the states' churn dominates, with the row's own motion a smaller part that goes the right way (-0.006 for leavers, 0.008 for entrants).
   - Pre-registered. e539: takers mostly established words, refuted (0.05); the takeover diffuse, confirmed; the takers not neighbours, confirmed; exit a displacement with the cutoff moving more, refuted (0.00, the cutoff still); entry the row's own rise, confirmed; hysteresis over 0.3, confirmed but generic; the random dictionary showing less of the gate, confirmed (0.24). e540: isotropic diffusion without the gate, confirmed (0.37); the pull world with the gate at 0.7 or more, refuted (0.56); the pull world's exits displacements, refuted; the takers at chance cosine everywhere, confirmed. e539b: the row's motion dominating the fall, refuted; the peak moving by less than a third, refuted (the maximum relocates); the floor's change under two percent, confirmed.
+
+SESSION 91 (the relayed review's question, what holds the native maximum, with its five mechanisms; e541, e541b; 2026-09-28 14:04-14:09 box time).
+
+- e541 WHAT HOLDS THE NATIVE MAXIMUM (from the e524 cache, block 12, OMP over the rows alone, Pythia's rows and a fixed random dictionary: the provenance of every word's maximum at t+1, the same position, its top five or twenty at t, or beyond, for stayers and leavers; an order-statistics null, a kernel of per-position changes of the projection over the floor conditional on the level, estimated from the random atoms and from the native non-words, applied independently to every position of a word's profile and the maximum taken; the level-matched persistence of a position's projection; the states' own persistence at the peaks; and usage clusters, the pairwise cosine and token sharing among a leaver's lost positions against its kept and random positions.) e541b IS IT THE COVARIANCE (the same for a third dictionary of random atoms drawn with the state cloud's covariance at step 8000; the persistence of S across one and four thousand steps; retention and entries per dictionary; the null for the native words with the covariance atoms' kernel.)
+
+  | words | word-checkpoints | maximum at t+1 at the same position | among the top five at t | among the top twenty | beyond | the old peak's value at t+1 | the new maximum | S at t → t+1 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia's rows, all | 3840 | 0.44 | 0.35 | 0.12 | 0.09 | 1.22 | 1.28 | 1.27 → 1.28 |
+  | Pythia's rows, stayer | 2398 | 0.49 | 0.37 | 0.11 | 0.03 | 1.35 | 1.40 | 1.38 → 1.40 |
+  | Pythia's rows, leaver | 1442 | 0.34 | 0.33 | 0.15 | 0.18 | 0.98 | 1.08 | 1.14 → 1.08 |
+  | random atoms, all | 3840 | 0.40 | 0.38 | 0.16 | 0.06 | 0.91 | 0.95 | 0.98 → 0.95 |
+  | random atoms, stayer | 1230 | 0.43 | 0.41 | 0.14 | 0.01 | 0.98 | 1.02 | 1.02 → 1.02 |
+  | random atoms, leaver | 2610 | 0.39 | 0.37 | 0.17 | 0.08 | 0.87 | 0.92 | 0.97 → 0.92 |
+  | covariance-matched atoms, all | 3840 | 0.56 | 0.34 | 0.08 | 0.02 | 0.87 | 0.89 | n/a → n/a |
+
+  | words and kernel | kernel populated up to level | word-checkpoints | median S at t | S at t+1, actual / null | over the floor at t+1, actual / null | S at t 1.0-1.1: actual / null (over the floor actual / null) | 1.1-1.2 | 1.2-1.3 | 1.3-1.5 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | native words, isotropic random-atom kernel | 1.25 | 3840 | 1.27 | 1.28 / 1.19 | 0.86 / 0.90 | 1.03 / 1.03 (0.60 / 0.72) | 1.13 / 1.10 (0.84 / 0.96) | 1.25 / 1.17 (0.96 / 0.99) | 1.39 / 1.30 (0.99 / 1.00) |
+  | native words, native non-word kernel | 2.00 | 3840 | 1.27 | 1.28 / 1.31 | 0.86 / 0.96 | 1.03 / 1.10 (0.60 / 0.91) | 1.13 / 1.19 (0.84 / 0.99) | 1.25 / 1.28 (0.96 / 1.00) | 1.39 / 1.43 (0.99 / 1.00) |
+  | native words, covariance-atom kernel | 1.15 | 3840 | 1.27 | 1.28 / 1.25 | 0.86 / 0.92 | 1.03 / 1.04 (0.60 / 0.84) | 1.13 / 1.13 (0.84 / 0.99) | 1.25 / 1.22 (0.96 / 1.00) | 1.39 / 1.36 (0.99 / 1.00) |
+  | random words, random-atom kernel (calibration) | 1.25 | 3840 | 0.98 | 0.95 / 0.96 | 0.32 / 0.35 | 0.99 / 1.00 (0.46 / 0.54) | 1.06 / 1.07 (0.77 / 0.85) | 1.14 / 1.14 (0.88 / 0.96) | n/a |
+  | covariance words, covariance-atom kernel (calibration) | 1.15 | 3840 | 0.91 | 0.89 / 0.91 | 0.16 / 0.17 | 1.02 / 1.02 (0.70 / 0.71) | 1.10 / 1.10 (0.95 / 0.97) | n/a | n/a |
+
+  | positions of | level at t 0.9-1.0: pairs: mean at t+1 (share over the floor) | 1.0-1.1 | 1.1-1.2 | 1.2-1.4 | 1.4 and above |
+  | --- | --- | --- | --- | --- | --- |
+  | native words | 39543: 0.90 (0.25) | 25354: 1.01 (0.57) | 14885: 1.12 (0.84) | 14787: 1.26 (0.96) | 8469: 1.59 (0.99) |
+  | native non-words | 19221: 0.86 (0.15) | 6333: 0.98 (0.47) | 2443: 1.09 (0.79) | 1682: 1.24 (0.93) | 791: 1.47 (0.88) |
+  | covariance-matched words | 6769: 0.91 (0.05) | 1188: 1.00 (0.60) | 136: 1.09 (0.93) | n/a | n/a |
+  | covariance-matched non-words | 3533: 0.89 (0.03) | 281: 0.98 (0.42) | 20: 1.07 (0.85) | n/a | n/a |
+  | random words | 9479: 0.85 (0.08) | 2563: 0.93 (0.31) | 430: 1.03 (0.64) | 47: 1.10 (0.83) | n/a |
+  | random non-words | 7397: 0.84 (0.06) | 1016: 0.93 (0.29) | 120: 1.00 (0.57) | n/a | n/a |
+
+  | kernel | median change over a thousand steps from level 0.80 | 0.90 | 1.00 | 1.10 | 1.20 | 1.30 | 1.40 |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | isotropic random atoms | -0.069 | -0.077 | -0.085 | -0.091 | -0.122 | n/a | n/a |
+  | native non-words | -0.076 | -0.064 | -0.048 | -0.034 | -0.027 | -0.018 | -0.019 |
+  | covariance-matched atoms | -0.021 | -0.024 | -0.029 | -0.031 | n/a | n/a | n/a |
+
+  | dictionary | persistence of S across 1000 / 4000 steps, all atoms | words | retention at 4 | entries per interval | words' median S | words' median positions over three quarters of the floor | maximum at the same position at t+1 |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia's rows | 0.80 / 0.68 | 0.89 / 0.83 | 0.50 | 96 | 1.28 | 38 | 0.44 |
+  | random atoms | 0.62 / 0.46 | 0.56 / 0.39 | 0.24 | 174 | 0.98 | 12 | 0.40 |
+  | covariance-matched atoms | 0.84 / 0.75 | 0.91 / 0.85 | 0.29 | 167 | 0.90 | 9 | 0.56 |
+
+  | dictionary, event | events | pairwise cosine among the states of the lost or gained positions (share of pairs sharing a token) | among the kept positions | among random positions |
+  | --- | --- | --- | --- | --- |
+  | Pythia's rows, exits | 242 | 0.185 (0.167) | 0.275 (0.167) | -0.004 (0.000) |
+  | Pythia's rows, entries | 343 | 0.200 (0.133) | 0.268 (0.100) | -0.002 (0.000) |
+  | random atoms, exits | 298 | 0.359 (0.400) | 0.556 (0.500) | -0.004 (0.000) |
+  | random atoms, entries | 349 | 0.332 (0.400) | 0.511 (0.500) | -0.004 (0.000) |
+
+  - The maximum relocates, and generically. A native word's position of largest projection is the same one interval later in 0.44 of cases, among its top five at t in another 0.35, beyond its top twenty in 0.09; random words 0.40, 0.38, 0.06; covariance-matched atoms 0.56, 0.34, 0.02. Leavers' maxima wander (0.34 the same, 0.18 beyond twenty), the old peak falling to 0.98 while the new maximum is 1.08. The states at native peaks are no more persistent than elsewhere (0.926 against 0.925 across a thousand steps): no peak memory.
+  - Breadth alone does not hold it. Independent churn drawn from the isotropic atoms' kernel, which regresses a position's projection by -0.085 to -0.122 per thousand steps at levels 1.0-1.25, reproduces the random words' maximum exactly (0.95 actual against 0.96) but under-predicts the native words' (1.28 against 1.19; within the kernel's populated range, 1.13 against 1.10 at 1.1-1.2, and beyond it 1.25 against 1.17, 1.39 against 1.30).
+  - What holds it is the persistence of the native row's alignments. At equal level a native word's projection at a position does not regress over a thousand steps (1.01, 1.12, 1.26 at t+1 from 1.0-1.1, 1.1-1.2, 1.2-1.4) while a random atom's does (0.93, 1.03, 1.10); native non-words nearly as much (0.98, 1.09, 1.24). The native non-words' kernel regresses by -0.027 to -0.019 at 1.2-1.45 where the isotropic atoms' regresses by -0.122 at 1.2. A native row's high projection is not an extreme-value fluke that decays with the state's motion; it is kept as the state moves.
+  - It is the cloud's covariance (e541b). Atoms drawn with the state cloud's covariance persist like the native rows at equal level (1.00, 1.09), their S is even more persistent (correlation across four thousand steps 0.75 over all atoms and 0.85 over words, against 0.68 and 0.83 for the rows and 0.46 and 0.39 for random atoms), and independent churn from their kernel reproduces the native words' maximum (1.03 against 1.04 at 1.0-1.1, 1.13 against 1.13 at 1.1-1.2, 1.25 against 1.22, 1.39 against 1.36 beyond its range). Any direction in the cloud's persistent subspace keeps its alignments as the states move; an isotropic direction's alignments are flukes that regress.
+  - Persistence is not stability. The covariance-matched words churn (retention 0.29, 167 entries per interval against 96) and sit under the floor (median S 0.90, 9 positions over three quarters of it), their maxima staying put (0.56 the same position) at a level where any of many similar atoms can take the word. The native words have both: the persistent alignments of the cloud's subspace and the individual orientation (e488, e532) that sets them at S 1.28 with 38 positions over three quarters of the floor. The gate is one-way because the maximum is held by the first and sits high by the second, while the breadth erodes by the states' drift (e539b).
+  - Not usage clusters. A word's positions share contexts (pairwise state cosine 0.275 among the kept positions, 0.167 of pairs sharing a token, against -0.004 and 0.000 for random positions), but the lost positions are less coherent than the kept (0.185 against 0.275): the periphery goes, not a chunk. A random word's positions are near-duplicates (0.556, 0.500 sharing a token).
+  - Pre-registered. e541: the maximum relocates, confirmed; breadth alone holds it, refuted; native positions persist more at equal level, confirmed; lost positions not clustered, refuted as stated and in the direction opposite to chunks; the states at peaks no more persistent, confirmed. e541b: covariance-matched atoms persist like the rows, confirmed; their kernel predicts the native maximum, confirmed; their retention under 0.3, confirmed; their maximum relocating at the native rate, refuted (0.56 the same position against 0.44).
