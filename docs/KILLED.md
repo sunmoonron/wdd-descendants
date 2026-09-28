@@ -552,3 +552,6 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The native basin is a local packing phenomenon": the nearest-neighbour cosine reads survival at 0.54-0.56, and the words survive their competitors' random motion (0.79-0.89 kept); only neighbours approaching the word matter (e534).
 - "Native words have a wider basin than random words at the same margin": within quartiles of S the two survive alike; the width is the margin (e534).
 - "A word's basin is isotropic": rotation toward the row's own future direction or its nearest atom is safer, away from the nearest atom worse, and into the cloud's principal subspace not a loss at all (e534).
+
+## Session 86 (no kills; the record answering the relayed proposals)
+- The margin's restoring tendency, the drift along the gradient of the row's own margin, and the shuffled-states control are e524b with e522 and e516b, e523 with e526 and e528, and e532's kernel respectively; the elasticity of retention with respect to margin is e534's records read again (e534b): at equal margin native words are, if anything, slightly less robust than random ones (-0.14--0.05 at 20 degrees).

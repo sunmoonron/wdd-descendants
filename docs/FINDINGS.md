@@ -3736,3 +3736,37 @@ SESSION 85 (the relayed list's three new items, which fit in one run: is a nativ
   - The basin is mostly the row's own, with a local relational part. Every non-word atom rotated by 20 degrees in a random direction leaves 0.79-0.89 of the native words (a random dictionary's words 0.44-0.55); the five nearest atoms rotated toward the word remove 0.30-0.39 of native words (0.17-0.21 of a random dictionary's). A native word's wordhood survives its competitors' random motion and is vulnerable to neighbours approaching; a random dictionary's word, sitting near the floor, is vulnerable to any competitor's motion and, having no near neighbours of its own kind, little to approaching ones.
   - The margin accounts for the native width. Within pooled quartiles of S the native and the random dictionary's words survive a random 20-degree rotation alike: in the cells with at least a hundred words on one side, native 0.35 against random 0.41, 0.53 against 0.65, 0.00 against 0.22, 0.41 against 0.53, 0.57 against 0.61, 0.44 against 0.48; the native words are wider (e533) because they sit higher above the floor (median S 1.20-1.41 against 0.90-0.93, breadth 5-12 against 0). Among native words, usage reads survival at 0.71-0.78, breadth at 0.65-0.68, S at 0.62-0.67, the competitor margin at 0.62-0.65 and the nearest-neighbour cosine at 0.54-0.56: the basin is the margin, not the packing.
   - Pre-registered: the future direction safer by 0.15 at 20 degrees, refuted narrowly (0.11-0.15; 0.17-0.25 at 30); into the subspace safer by 0.10 and out of it worse than random, half confirmed (into 0.19-0.27 safer; out equal to random, as a random direction already is); margin-matched alike within 0.10, confirmed in the populated cells (0.04-0.06 apart) and not in cells of 16-23 words (0.12-0.15); the nearest-neighbour cosine at AUC 0.6 or below, confirmed (0.54-0.56); competitors rotated leaving 0.9, refuted (0.79-0.89).
+
+SESSION 86 (the relayed take's four proposals mapped to the record, and the one that was a free analysis of data in hand; e534b, no run; 2026-09-28 01:35-01:45).
+
+- The mapping. A restoring tendency of a word's margin once native (proposal 1) is the post-entry plateau of e524b (S 1.29-1.30 with the increments decorrelating) against the fall of matched non-entrants (e522, -0.04 to -0.13), with e516b's mechanism, the own write governing staying. The accumulated update against the gradient of the row's own WDD margin (proposal 3): that gradient is the state at the row's best position, orthogonalised to the row, and the alignment was measured in e523 and e526 (cosine 0.05-0.12 for entrants, about 0.01 for typical rows) and e528 (the common part of it at 0.10-0.15): a small persistent alignment, already the program's finding. Shuffling the states' times against fixed rows (proposal 4) is e532's kernel read along a permutation: within eight thousand steps a native dictionary keeps its advantage at every gap, across the whole run it does not (the step-1000 vocabulary is unrelated to any later one). Proposal 2, the elasticity of retention with respect to margin, is e534's per-word records read again.
+
+- e534b RETENTION AS A FUNCTION OF THE MARGIN (an analysis over e534's per-word records at checkpoints 4000, 8000, 12000, block 12: the survival of a word under a random rotation of 20 and 30 degrees against its margin over the floor S, in pooled quintiles of S for the native and the random dictionary's words apart; within the range of S both dictionaries populate, 0.9-1.25, the survival of each and the least-squares slope of survival on S; and the mean difference of native and random survival in the populated pooled bins).
+
+  | checkpoint | pooled quintile of S | native words: n, survival at 20 / 30 degrees | random-dictionary words: n, survival at 20 / 30 degrees |
+  | --- | --- | --- | --- |
+  | 4000 | 0.72-0.88 | 0, n/a / n/a | 103, 0.28 / 0.17 |
+  | 4000 | 0.88-0.94 | 6, 0.17 / 0.17 | 97, 0.38 / 0.25 |
+  | 4000 | 0.94-1.08 | 52, 0.44 / 0.21 | 51, 0.53 / 0.37 |
+  | 4000 | 1.08-1.25 | 96, 0.54 / 0.40 | 7, 0.57 / 0.57 |
+  | 4000 | 1.25-2.17 | 104, 0.77 / 0.59 | 0, n/a / n/a |
+  | 8000 | 0.74-0.91 | 0, n/a / n/a | 103, 0.19 / 0.12 |
+  | 8000 | 0.91-0.99 | 9, 0.33 / 0.33 | 94, 0.43 / 0.33 |
+  | 8000 | 0.99-1.17 | 42, 0.50 / 0.26 | 61, 0.64 / 0.43 |
+  | 8000 | 1.17-1.42 | 103, 0.62 / 0.37 | 0, n/a / n/a |
+  | 8000 | 1.42-3.80 | 104, 0.81 / 0.62 | 0, n/a / n/a |
+  | 12000 | 0.74-0.92 | 0, n/a / n/a | 103, 0.31 / 0.18 |
+  | 12000 | 0.92-0.99 | 2, 0.50 / 0.00 | 101, 0.45 / 0.28 |
+  | 12000 | 0.99-1.21 | 50, 0.48 / 0.32 | 53, 0.53 / 0.32 |
+  | 12000 | 1.21-1.50 | 102, 0.74 / 0.42 | 1, 1.00 / 1.00 |
+  | 12000 | 1.50-3.92 | 104, 0.79 / 0.56 | 0, n/a / n/a |
+
+  | checkpoint | words with S in 0.9-1.25: native n / random n | survival in that range at 20 degrees, native / random | at 30 degrees | slope of survival on S in that range at 20 degrees, native / random | at 30 degrees | native minus random in the populated pooled bins, 20 / 30 degrees |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 4000 | 153 / 127 | 0.50 / 0.46 | 0.33 / 0.31 | 0.63 / 1.98 | 0.56 / 2.20 | -0.09 / -0.16 |
+  | 8000 | 84 / 162 | 0.52 / 0.51 | 0.30 / 0.36 | 0.97 / 1.69 | 0.19 / 0.91 | -0.14 / -0.16 |
+  | 12000 | 67 / 171 | 0.54 / 0.48 | 0.31 / 0.29 | 0.90 / 0.32 | 0.03 / 0.10 | -0.05 / -0.00 |
+
+  - Survival rises steeply with the margin for both dictionaries: from the lowest populated quintile to the highest, native words go from 0.44-0.50 to 0.77-0.81 at 20 degrees and random-dictionary words from 0.19-0.31 to 0.53-0.64; the two dictionaries occupy different ranges (the random dictionary's words sit at S 0.72-1.25, the native at 0.88-3.9), which is e533's whole difference.
+  - At equal margin the native words are no more robust: within S 0.9-1.25 they survive a 20-degree rotation at 0.50-0.54 against 0.46-0.51 for random words, and in the populated pooled bins native minus random is -0.14--0.05 at 20 degrees and -0.16--0.00 at 30, native slightly below. The slopes within the narrow common range are poorly determined (native 0.63-0.97 against random 0.32-1.98 at 20 degrees) and are not the evidence; the bins are. The angular basin of a native word is its margin over the floor and nothing else; e533's twofold width is the native words' higher S.
+  - Pre-registered: the slopes within a factor of 1.5, refuted (the common range is too narrow to fix them); native within 0.10 of random in the common bins, refuted narrowly (-0.14--0.05), in the direction of native below random.
