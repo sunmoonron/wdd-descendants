@@ -589,3 +589,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Slow dynamic modes behind the variance modes": the two top-32 subspaces overlap at 0.95 (e542).
 - "The rows lead the cloud": their weight in the final subspace is below their contemporaneous weight early, and entrants enter the contemporaneous subspace (e542).
 - "A Gaussian cloud with the real covariance and the real dynamics makes the native vocabulary": at any coupling it makes words at S 1.08 with retention 0.37-0.42 (e543).
+
+## Session 93 kills (the tails)
+- "The bulk of the real cloud carries part of the native fifth": with the top 16 projections per position Gaussianised the real states fall below a Gaussian cloud (retention 0.16 against 0.35) (e544).
+- "The vocabulary needs the extremes to persist at their positions": moved to random positions at every checkpoint the grafted extremes give the same vocabulary (retention 0.51, gate 0.89) (e544b).
+- "The shape of the tail predicts entry": kurtosis 0.58 within the band against breadth 0.86 (e544).
