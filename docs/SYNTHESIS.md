@@ -597,6 +597,13 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 108: the forecast, with no future in the class (e588)
+
+- GPT's centrepiece run as a real forecast: classes at t from the states alone (spherical k-means, no rows), the row that would own each class by its pull, the target the words at t + k. On Pythia-410m and OLMo-1B: AUC 0.927 / 0.932 two checkpoints ahead, 0.869 / 0.848 eight ahead; the top hundred candidates per checkpoint recruited at 0.05 / 0.10; the norm at 0.423 / 0.475.
+- The oracle's price: the row's own S forecasts at 0.926 / 0.965, and the class side adds +0.006 / +0.003: the maximum already measures the pull; the class side is the same signal seen from the other end.
+- The clock: arrival extrapolated from the pull's slope correlates with the actual recruitment checkpoint at 0.04 / 0.04.
+- Read as the stopping signal GPT proposed: the forecast is real but modest without the future in the class; the descriptive program can stop here either way.
+
 ## Session 107: the relay, the geometry of recruitment, and the blocked recruit (e585-e587)
 
 - Three experiments outside GPT's control loop, each ending a thread. The relay (e585): a class has one speaker over sixteen checkpoints at the median, after a gap of 8 checkpoints when no row speaks it; its own direction is already at cosine 0.85 with its 16000 direction at step 4000 and 0.86 at the final model, while the row is the speaker for 0.06 and 0.38: the latent object is the class with its direction, and it outlives its row.

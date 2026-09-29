@@ -676,3 +676,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Recruitment is a lottery among rows": the recruit is the first of 53,248 rows by its ratio over the class two checkpoints ahead for 0.52 of words, top ten for 0.84 (e587).
 - "The class needs its row": with the eventual words frozen the toy still generalises (1.00) with a vocabulary on other neurons; a third of the classes re-appear on substitutes (e586).
 - "One more autoencoder control is what the developmental claim needs": the three facts above need none.
+
+## Session 108 kills (the forecast)
+- "The forecast needs the future in the class": row-free clusters at t forecast recruitment at AUC 0.927 / 0.932 two checkpoints ahead (e588).
+- "The class side adds to the row's own maximum": the combination adds +0.006 / +0.003 over S alone; the maximum already measures the pull (e588).

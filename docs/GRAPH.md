@@ -737,6 +737,9 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H501 The class's direction is the invariant, the row its implementation. → e585 → ESTABLISHED: the class's own direction at cosine 0.85 with its 16000 direction at step 4000 and 0.86 at the final model, while the eventual row is the speaker for 0.06 at 4000 and 0.38 at the final model.
 - H502 The row that will be recruited is the nearest available row, well ahead. → e587 → ESTABLISHED: two checkpoints before recruitment the eventual row is the first of 53,248 by its ratio over the class for 0.52 of words and in the top ten for 0.84; five before, top ten for 0.72; eight before, 0.62.
 - H503 Blocking the row that would carry a class leaves the class unimplemented. → e586 → SUPPORTED: with the 32 eventual words frozen the toy reaches test accuracy 1.00 and each base class's best substitute has profile correlation 0.38 (over 0.5 for 0.34; random pairs 0.01); 0.03 of the frozen neurons are words at the end.
+- H504 Recruitment is forecastable from row-free classes at time t. → e588 → SUPPORTED: AUC 0.927 / 0.932 two checkpoints ahead on Pythia-410m / OLMo-1B (norm 0.423 / 0.475), 0.869 / 0.848 eight ahead; precision at 100 per checkpoint 0.05 / 0.10.
+- H505 The class a row would own carries information beyond the row's own maximum. → e588 → REFUTED: combined AUC 0.932 / 0.967 against S alone 0.926 / 0.965.
+- H506 The arrival of a recruit is forecastable from its pull's slope. → e588 → NARROWED: Spearman 0.04 / 0.04, within two checkpoints for 0.48 / 0.40.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

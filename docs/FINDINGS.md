@@ -4935,3 +4935,28 @@ SESSION 107 (the user: instead of one more control, out-of-the-box experiments t
   - Pre-registered: S1 (still groks with the eventual words frozen) confirmed; S2 (most base classes re-appear on substitutes) refuted (0.34); S3 (frozen rows are not words) confirmed.
 
   What ends the loop: the latent object is the class with its direction, present and pointing the right way before any row speaks it (e585); the row that will speak it is the nearest available row, predictable thousands of steps ahead (e587); and if that row is blocked, another is recruited to the class (e586). No autoencoder control is needed for any of the three, and none of the three is a statistic about WDD; they are facts about how a network assigns parameters to the structure its data gives it, read in parameter coordinates.
+
+SESSION 108 (the user: GPT's take, keep the out-of-the-box energy. GPT made the forecasting experiment the centrepiece and offered either outcome as a stopping signal; its sketch defined the class by the future word's positions, which puts the future into the forecast. Run as a real forecast: the classes at t from the states alone, no rows, and the target the words at t + k.)
+
+- e588 FORECASTING RECRUITMENT FROM ROW-FREE CLASSES (at every checkpoint the unit states clustered by spherical k-means, K = 512 on Pythia-410m's 12219 positions and K = 128 on OLMo-1B's 2040 positions; a row's class-side score = its largest mean projection ratio over the clusters in which it is the best row; the target: among the rows that are not words at t, which are words at t + k; pooled over t; the row-side S of e548, the norm and the usage at t as baselines, S with the class side and with the usage combined; the clock: an entrant's arrival extrapolated from its pull's slope two to four checkpoints before):
+
+  | model, horizon | candidates (non-words at t) | base rate | AUC class-side (the row's largest pull toward any row-free class) | the owned-class variant (degenerate) | row-side S | S and class-side combined | usage at t / S and usage / all three | norm | precision at 100 per checkpoint: class-side / S / usage / norm |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-410m, 2 checkpoints ahead | 688896 | 0.001 | 0.927 | 0.582 | 0.926 | 0.932 | 0.964 / 0.954 / 0.956 | 0.423 | 0.05 / 0.04 / 0.23 / 0.01 |
+  | Pythia-410m, 4 checkpoints ahead | 582912 | 0.002 | 0.907 | 0.571 | 0.916 | 0.918 | 0.942 / 0.932 / 0.936 | 0.432 | 0.08 / 0.07 / 0.23 / 0.01 |
+  | Pythia-410m, 8 checkpoints ahead | 370944 | 0.003 | 0.869 | 0.550 | 0.897 | 0.896 | 0.903 / 0.910 / 0.913 | 0.467 | 0.09 / 0.10 / 0.21 / 0.01 |
+  | OLMo-1B, 2 checkpoints ahead | 955136 | 0.001 | 0.932 | 0.521 | 0.965 | 0.967 | 0.968 / 0.959 / 0.970 | 0.475 | 0.10 / 0.07 / 0.22 / 0.01 |
+  | OLMo-1B, 4 checkpoints ahead | 808192 | 0.001 | 0.901 | 0.514 | 0.940 | 0.939 | 0.936 / 0.921 / 0.934 | 0.464 | 0.10 / 0.07 / 0.22 / 0.01 |
+  | OLMo-1B, 8 checkpoints ahead | 514304 | 0.002 | 0.848 | 0.509 | 0.909 | 0.903 | 0.877 / 0.887 / 0.894 | 0.449 | 0.10 / 0.08 / 0.21 / 0.01 |
+
+  | model | entrant forecasts | Spearman of the forecast checkpoint with the actual (inflated by the origin) | Spearman of the leads, origin removed | median absolute error (checkpoints) | within 1 | within 2 | forecast lead / actual lead, median |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-410m | 938 | 0.51 | 0.04 | 2.2 | 0.22 | 0.48 | 2.4 / 3.0 |
+  | OLMo-1B | 790 | 0.47 | 0.04 | 2.8 | 0.17 | 0.40 | 3.8 / 3.0 |
+
+  - The forecast is real but not at the level pre-registered. From the states alone, with no row in the class definition, the row that will be recruited two checkpoints later is picked at AUC 0.927 on Pythia-410m and 0.932 on OLMo-1B (base rates 0.001 / 0.001); the top hundred candidates per checkpoint are recruited at 0.05 / 0.10; eight checkpoints ahead 0.869 / 0.848. The norm forecasts at 0.423 / 0.475.
+  - The class side adds little to the row's own S. The row-side S at t, e548's signal, forecasts at 0.926 / 0.965; combined with the class-side score 0.932 / 0.967 (+0.006 / +0.003). The row's own maximum already carries the class's pull: the class side is what the maximum measures, seen from the other end.
+  - The clock: an entrant's arrival, extrapolated from its pull two to four checkpoints before, correlates with the actual recruitment checkpoint at 0.04 on Pythia (within two checkpoints for 0.48 of 938 forecasts) and 0.04 on OLMo (within two for 0.40 of 790).
+  - Pre-registered: F1 (AUC 0.8 at two ahead on both) refuted (0.927 / 0.932); F2 (the class adds 0.03 to S) refuted (+0.006 / +0.003); F3 (the clock at 0.4) refuted or partial.
+
+  The stopping signal, read: the forecast is weaker than the post-hoc rank of e587 suggested, which is itself the answer: seen from the class side without the future, recruitment is only partly predictable. What WDD adds to the forecast is the parameter: the class side is computable by any method, the row it names is what the native dictionary supplies.
