@@ -1,0 +1,376 @@
+{
+ "n_words": 256,
+ "domain_words": {
+  "pubmed": 5,
+  "github": 10,
+  "wikipedia": 9,
+  "stackexchange": 13,
+  "freelaw": 13,
+  "uspto": 9
+ },
+ "loss0": {
+  "pubmed": 2.228000521659851,
+  "github": 0.9112561047077179,
+  "wikipedia": 2.4740272760391235,
+  "stackexchange": 2.4284404516220093,
+  "freelaw": 1.5825920104980469,
+  "uspto": 2.3368468284606934
+ },
+ "conditions": {
+  "int8_per_channel": {
+   "losses": {
+    "pubmed": 2.2302991151809692,
+    "github": 0.9131264686584473,
+    "wikipedia": 2.4756486415863037,
+    "stackexchange": 2.431471347808838,
+    "freelaw": 1.585481345653534,
+    "uspto": 2.339677095413208
+   },
+   "damage": {
+    "pubmed": 0.002298593521118164,
+    "github": 0.0018703639507293701,
+    "wikipedia": 0.0016213655471801758,
+    "stackexchange": 0.0030308961868286133,
+    "freelaw": 0.0028893351554870605,
+    "uspto": 0.0028302669525146484
+   },
+   "per_domain": {
+    "pubmed": {
+     "n": 5,
+     "act_ratio": 0.996948295313004,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "github": {
+     "n": 10,
+     "act_ratio": 0.9980394032099345,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "wikipedia": {
+     "n": 9,
+     "act_ratio": 1.0046706371873202,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "stackexchange": {
+     "n": 13,
+     "act_ratio": 0.9984170938708273,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "freelaw": {
+     "n": 13,
+     "act_ratio": 1.000317451735188,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "uspto": {
+     "n": 9,
+     "act_ratio": 1.0063087005870868,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    }
+   },
+   "random_rows_act_ratio": 1.0006033570269022
+  },
+  "int4_g64": {
+   "losses": {
+    "pubmed": 2.6066585779190063,
+    "github": 1.256469190120697,
+    "wikipedia": 2.8373115062713623,
+    "stackexchange": 2.728675961494446,
+    "freelaw": 2.016902267932892,
+    "uspto": 2.6428873538970947
+   },
+   "damage": {
+    "pubmed": 0.3786580562591553,
+    "github": 0.3452130854129791,
+    "wikipedia": 0.36328423023223877,
+    "stackexchange": 0.3002355098724365,
+    "freelaw": 0.43431025743484497,
+    "uspto": 0.30604052543640137
+   },
+   "per_domain": {
+    "pubmed": {
+     "n": 5,
+     "act_ratio": 0.9089337766161586,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "github": {
+     "n": 10,
+     "act_ratio": 0.9932243636172667,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "wikipedia": {
+     "n": 9,
+     "act_ratio": 0.9375949823824624,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "stackexchange": {
+     "n": 13,
+     "act_ratio": 0.916824976631297,
+     "share_silenced": 0.15384615384615385,
+     "still_writing": 0.9230769230769231
+    },
+    "freelaw": {
+     "n": 13,
+     "act_ratio": 0.9005366375495599,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "uspto": {
+     "n": 9,
+     "act_ratio": 0.9827162509115621,
+     "share_silenced": 0.1111111111111111,
+     "still_writing": 0.8888888888888888
+    }
+   },
+   "random_rows_act_ratio": 0.9789992629617664
+  },
+  "int4_g32": {
+   "losses": {
+    "pubmed": 2.5282514095306396,
+    "github": 1.2222499251365662,
+    "wikipedia": 2.7666525840759277,
+    "stackexchange": 2.6872905492782593,
+    "freelaw": 1.929521381855011,
+    "uspto": 2.56423282623291
+   },
+   "damage": {
+    "pubmed": 0.3002508878707886,
+    "github": 0.31099382042884827,
+    "wikipedia": 0.2926253080368042,
+    "stackexchange": 0.25885009765625,
+    "freelaw": 0.3469293713569641,
+    "uspto": 0.2273859977722168
+   },
+   "per_domain": {
+    "pubmed": {
+     "n": 5,
+     "act_ratio": 1.002533143187722,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "github": {
+     "n": 10,
+     "act_ratio": 1.0170776882279633,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "wikipedia": {
+     "n": 9,
+     "act_ratio": 0.9570023621823844,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "stackexchange": {
+     "n": 13,
+     "act_ratio": 0.9249399248145463,
+     "share_silenced": 0.07692307692307693,
+     "still_writing": 1.0
+    },
+    "freelaw": {
+     "n": 13,
+     "act_ratio": 0.9480975538421755,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    },
+    "uspto": {
+     "n": 9,
+     "act_ratio": 0.9871009913948526,
+     "share_silenced": 0.0,
+     "still_writing": 1.0
+    }
+   },
+   "random_rows_act_ratio": 1.0003006805438301
+  },
+  "int3_g64": {
+   "losses": {
+    "pubmed": 4.423322916030884,
+    "github": 3.7068467140197754,
+    "wikipedia": 4.44739031791687,
+    "stackexchange": 4.379486560821533,
+    "freelaw": 4.482847452163696,
+    "uspto": 4.110312819480896
+   },
+   "damage": {
+    "pubmed": 2.1953223943710327,
+    "github": 2.7955906093120575,
+    "wikipedia": 1.9733630418777466,
+    "stackexchange": 1.951046109199524,
+    "freelaw": 2.9002554416656494,
+    "uspto": 1.7734659910202026
+   },
+   "per_domain": {
+    "pubmed": {
+     "n": 5,
+     "act_ratio": 0.4330616764590034,
+     "share_silenced": 1.0,
+     "still_writing": 0.0
+    },
+    "github": {
+     "n": 10,
+     "act_ratio": 0.5859118156430108,
+     "share_silenced": 0.7,
+     "still_writing": 0.4
+    },
+    "wikipedia": {
+     "n": 9,
+     "act_ratio": 0.527533160059235,
+     "share_silenced": 0.7777777777777778,
+     "still_writing": 0.2222222222222222
+    },
+    "stackexchange": {
+     "n": 13,
+     "act_ratio": 0.6281629225331823,
+     "share_silenced": 0.6923076923076923,
+     "still_writing": 0.0
+    },
+    "freelaw": {
+     "n": 13,
+     "act_ratio": 0.5890070736987181,
+     "share_silenced": 0.8461538461538461,
+     "still_writing": 0.3076923076923077
+    },
+    "uspto": {
+     "n": 9,
+     "act_ratio": 0.5925289796726264,
+     "share_silenced": 0.6666666666666666,
+     "still_writing": 0.0
+    }
+   },
+   "random_rows_act_ratio": 1.0237802454187848
+  },
+  "prune30": {
+   "losses": {
+    "pubmed": 3.0935217142105103,
+    "github": 1.9687302112579346,
+    "wikipedia": 3.307409405708313,
+    "stackexchange": 3.2523021697998047,
+    "freelaw": 2.998210310935974,
+    "uspto": 3.0447052717208862
+   },
+   "damage": {
+    "pubmed": 0.8655211925506592,
+    "github": 1.0574741065502167,
+    "wikipedia": 0.8333821296691895,
+    "stackexchange": 0.8238617181777954,
+    "freelaw": 1.4156183004379272,
+    "uspto": 0.7078584432601929
+   },
+   "per_domain": {
+    "pubmed": {
+     "n": 5,
+     "act_ratio": 0.6097535768102126,
+     "share_silenced": 1.0,
+     "still_writing": 0.2
+    },
+    "github": {
+     "n": 10,
+     "act_ratio": 0.8342087034806596,
+     "share_silenced": 0.1,
+     "still_writing": 0.8
+    },
+    "wikipedia": {
+     "n": 9,
+     "act_ratio": 0.8094842570945399,
+     "share_silenced": 0.4444444444444444,
+     "still_writing": 0.8888888888888888
+    },
+    "stackexchange": {
+     "n": 13,
+     "act_ratio": 0.7468075871589566,
+     "share_silenced": 0.6153846153846154,
+     "still_writing": 0.3076923076923077
+    },
+    "freelaw": {
+     "n": 13,
+     "act_ratio": 0.7716152635539515,
+     "share_silenced": 0.5384615384615384,
+     "still_writing": 0.6153846153846154
+    },
+    "uspto": {
+     "n": 9,
+     "act_ratio": 0.7314417116100246,
+     "share_silenced": 0.6666666666666666,
+     "still_writing": 0.0
+    }
+   },
+   "random_rows_act_ratio": 1.0927817118144205
+  },
+  "prune50": {
+   "losses": {
+    "pubmed": 6.387983560562134,
+    "github": 5.445679426193237,
+    "wikipedia": 6.24550199508667,
+    "stackexchange": 6.051490306854248,
+    "freelaw": 6.339466571807861,
+    "uspto": 6.036374092102051
+   },
+   "damage": {
+    "pubmed": 4.159983038902283,
+    "github": 4.534423321485519,
+    "wikipedia": 3.7714747190475464,
+    "stackexchange": 3.6230498552322388,
+    "freelaw": 4.7568745613098145,
+    "uspto": 3.6995272636413574
+   },
+   "per_domain": {
+    "pubmed": {
+     "n": 5,
+     "act_ratio": -0.023689782118795945,
+     "share_silenced": 1.0,
+     "still_writing": 0.0
+    },
+    "github": {
+     "n": 10,
+     "act_ratio": 0.10687756283815829,
+     "share_silenced": 0.8,
+     "still_writing": 0.0
+    },
+    "wikipedia": {
+     "n": 9,
+     "act_ratio": 0.08038466797962976,
+     "share_silenced": 0.8888888888888888,
+     "still_writing": 0.1111111111111111
+    },
+    "stackexchange": {
+     "n": 13,
+     "act_ratio": 0.13533368190449357,
+     "share_silenced": 0.7692307692307693,
+     "still_writing": 0.0
+    },
+    "freelaw": {
+     "n": 13,
+     "act_ratio": 0.13034409117980153,
+     "share_silenced": 1.0,
+     "still_writing": 0.07692307692307693
+    },
+    "uspto": {
+     "n": 9,
+     "act_ratio": 0.29468981880118994,
+     "share_silenced": 0.6666666666666666,
+     "still_writing": 0.0
+    }
+   },
+   "random_rows_act_ratio": 1.3014126817707745
+  }
+ },
+ "spearman_damage_vs_activation": -0.9374517374517376,
+ "spearman_damage_vs_silenced": 0.822908622908623,
+ "spearman_damage_vs_writing": -0.830888030888031,
+ "spearman_within_compression": {
+  "int8_per_channel": 0.028571428571428574,
+  "int4_g64": -0.6,
+  "int4_g32": 0.19999999999999998,
+  "int3_g64": -0.4285714285714286,
+  "prune30": 0.4285714285714286,
+  "prune50": -0.4285714285714286
+ },
+ "_exp": "e606_compression_audit",
+ "_time": "2026-09-29 22:37:18"
+}

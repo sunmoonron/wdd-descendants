@@ -1,0 +1,311 @@
+{
+ "n_runs": 6,
+ "conditions": {
+  "inputs_zero_alone": {
+   "n": 6,
+   "steps_back": 5.0,
+   "steps_back_per_run": {
+    "github_s0": 5,
+    "github_s1": 5,
+    "github_s2": 5,
+    "pubmed_s0": 5,
+    "pubmed_s1": 5,
+    "pubmed_s2": 5
+   },
+   "recovery": 0.44623350538841977,
+   "rise_forget": 0.08088767528533936,
+   "rise_retain": 0.01597273349761963,
+   "act_ratio": 0.0,
+   "still_writing": 0.25,
+   "probe": 0.9814860820770264
+  },
+  "ga_alone": {
+   "n": 6,
+   "steps_back": 55.0,
+   "steps_back_per_run": {
+    "github_s0": 40,
+    "github_s1": 55,
+    "github_s2": 35,
+    "pubmed_s0": 60,
+    "pubmed_s1": 65,
+    "pubmed_s2": 65
+   },
+   "recovery": 0.679947943241307,
+   "rise_forget": 2.088637351989746,
+   "rise_retain": 0.14332234859466553,
+   "act_ratio": 0.7190451841017287,
+   "still_writing": 0.4666666666666667,
+   "probe": 0.02641323208808899
+  },
+  "ga_rows_zero": {
+   "n": 6,
+   "steps_back": 100.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 95,
+    "pubmed_s1": 100,
+    "pubmed_s2": 100
+   },
+   "recovery": 0.660957782267227,
+   "rise_forget": 2.2351948022842407,
+   "rise_retain": 0.1703965663909912,
+   "act_ratio": 0.7067941914496997,
+   "still_writing": 0.0,
+   "probe": 0.016292273998260498
+  },
+  "ga_inputs_zero": {
+   "n": 6,
+   "steps_back": 100.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 90,
+    "pubmed_s1": 100,
+    "pubmed_s2": 100
+   },
+   "recovery": 0.6604806631641639,
+   "rise_forget": 2.2351948022842407,
+   "rise_retain": 0.1703965663909912,
+   "act_ratio": 0.0,
+   "still_writing": 0.15,
+   "probe": 0.016292273998260498
+  },
+  "ga_random_rows_zero": {
+   "n": 6,
+   "steps_back": 60.0,
+   "steps_back_per_run": {
+    "github_s0": 55,
+    "github_s1": 65,
+    "github_s2": 35,
+    "pubmed_s0": 60,
+    "pubmed_s1": 65,
+    "pubmed_s2": 65
+   },
+   "recovery": 0.6774914671855693,
+   "rise_forget": 2.068207859992981,
+   "rise_retain": 0.14703822135925293,
+   "act_ratio": 0.721293995680771,
+   "still_writing": 0.4666666666666667,
+   "probe": 0.024438410997390747
+  },
+  "ga_diffselected_inputs_zero": {
+   "n": 6,
+   "steps_back": 65.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 65,
+    "pubmed_s1": 65,
+    "pubmed_s2": 65
+   },
+   "recovery": 0.6601807758049191,
+   "rise_forget": 1.9415676593780518,
+   "rise_retain": 0.15807104110717773,
+   "act_ratio": 0.7021174176396082,
+   "still_writing": 0.43333333333333335,
+   "probe": 0.01950135827064514
+  },
+  "rmu_alone": {
+   "n": 6,
+   "steps_back": 50.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 50,
+    "pubmed_s1": 30,
+    "pubmed_s2": 45
+   },
+   "recovery": 0.8664150956908252,
+   "rise_forget": 2.2684162855148315,
+   "rise_retain": 0.05923950672149658,
+   "act_ratio": 1.0,
+   "still_writing": 0.2,
+   "probe": 0.7271161675453186
+  },
+  "rmu_rows_zero": {
+   "n": 6,
+   "steps_back": 100.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 100,
+    "pubmed_s1": 100,
+    "pubmed_s2": 100
+   },
+   "recovery": 0.8495366253861056,
+   "rise_forget": 2.439360499382019,
+   "rise_retain": 0.08310282230377197,
+   "act_ratio": 0.9650340689982816,
+   "still_writing": 0.0,
+   "probe": 0.7170275449752808
+  },
+  "rmu_inputs_zero": {
+   "n": 6,
+   "steps_back": 100.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 100,
+    "pubmed_s1": 100,
+    "pubmed_s2": 100
+   },
+   "recovery": 0.8495556587217516,
+   "rise_forget": 2.439360499382019,
+   "rise_retain": 0.08310282230377197,
+   "act_ratio": 0.0,
+   "still_writing": 0.06666666666666667,
+   "probe": 0.7170275449752808
+  },
+  "rmu_random_rows_zero": {
+   "n": 6,
+   "steps_back": 50.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 50,
+    "pubmed_s1": 35,
+    "pubmed_s2": 50
+   },
+   "recovery": 0.8652415865113288,
+   "rise_forget": 2.2255882024765015,
+   "rise_retain": 0.059310078620910645,
+   "act_ratio": 0.9946143061945475,
+   "still_writing": 0.23333333333333334,
+   "probe": 0.7463090419769287
+  },
+  "rmu_diffselected_inputs_zero": {
+   "n": 6,
+   "steps_back": 100.0,
+   "steps_back_per_run": {
+    "github_s0": 100,
+    "github_s1": 100,
+    "github_s2": 100,
+    "pubmed_s0": 100,
+    "pubmed_s1": 55,
+    "pubmed_s2": 100
+   },
+   "recovery": 0.7945001610432715,
+   "rise_forget": 2.260869860649109,
+   "rise_retain": 0.07029354572296143,
+   "act_ratio": 0.9443170523668694,
+   "still_writing": 0.18333333333333332,
+   "probe": 0.7778326869010925
+  }
+ },
+ "added": {
+  "ga_rows_zero": {
+   "n": 6,
+   "median_added_steps": 35.0,
+   "share_slower": 1.0,
+   "per_run": [
+    60,
+    45,
+    65,
+    35,
+    35,
+    35
+   ]
+  },
+  "ga_inputs_zero": {
+   "n": 6,
+   "median_added_steps": 35.0,
+   "share_slower": 1.0,
+   "per_run": [
+    60,
+    45,
+    65,
+    30,
+    35,
+    35
+   ]
+  },
+  "ga_random_rows_zero": {
+   "n": 6,
+   "median_added_steps": 0.0,
+   "share_slower": 0.3333333333333333,
+   "per_run": [
+    15,
+    10,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  "ga_diffselected_inputs_zero": {
+   "n": 6,
+   "median_added_steps": 5.0,
+   "share_slower": 0.6666666666666666,
+   "per_run": [
+    60,
+    45,
+    65,
+    5,
+    0,
+    0
+   ]
+  },
+  "rmu_rows_zero": {
+   "n": 6,
+   "median_added_steps": 0.0,
+   "share_slower": 0.5,
+   "per_run": [
+    0,
+    0,
+    0,
+    50,
+    70,
+    55
+   ]
+  },
+  "rmu_inputs_zero": {
+   "n": 6,
+   "median_added_steps": 0.0,
+   "share_slower": 0.5,
+   "per_run": [
+    0,
+    0,
+    0,
+    50,
+    70,
+    55
+   ]
+  },
+  "rmu_random_rows_zero": {
+   "n": 6,
+   "median_added_steps": 0.0,
+   "share_slower": 0.3333333333333333,
+   "per_run": [
+    0,
+    0,
+    0,
+    0,
+    5,
+    5
+   ]
+  },
+  "rmu_diffselected_inputs_zero": {
+   "n": 6,
+   "median_added_steps": 0.0,
+   "share_slower": 0.5,
+   "per_run": [
+    0,
+    0,
+    0,
+    50,
+    25,
+    55
+   ]
+  }
+ },
+ "_exp": "e603b_separable_summary",
+ "_time": "2026-09-29 23:04:35"
+}

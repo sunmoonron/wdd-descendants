@@ -1,0 +1,54 @@
+{
+ "n_prompts": 200,
+ "n_words": 256,
+ "n_harmful_words": 53,
+ "n_harmless_words": 32,
+ "refusal0": {
+  "harmful": 0.925,
+  "harmless": 0.06
+ },
+ "probe0": 0.9787499904632568,
+ "partA": {
+  "harmful_words_row_cos_base": 0.9973161816596985,
+  "harmless_words_row_cos_base": 0.9976951479911804,
+  "all_rows_cos_base": 0.9972338676452637,
+  "share_rows_below_0_99": 0.0,
+  "harmful_words_activation_base_over_instruct": 0.49254459142684937,
+  "harmful_words_are_words_in_base": 0.33962264150943394,
+  "harmful_words_still_writing_in_base": 0.3584905660377358,
+  "harmless_words_still_writing_in_base": 0.40625,
+  "refusal_base": 0.035
+ },
+ "partB": {
+  "persona": {
+   "refusal_harmful": 0.96,
+   "refusal_harmless": 0.08,
+   "harmful_words_activation_ratio": 0.9695486426353455,
+   "share_harmful_words_halved": 0.09433962264150944,
+   "harmful_words_still_writing": 0.7547169811320755,
+   "harmless_words_still_writing": 0.75,
+   "probe_harmful": 0.9856249690055847
+  },
+  "direct": {
+   "refusal_harmful": 0.925,
+   "refusal_harmless": 0.05,
+   "harmful_words_activation_ratio": 0.9812559485435486,
+   "share_harmful_words_halved": 0.1320754716981132,
+   "harmful_words_still_writing": 0.7169811320754716,
+   "harmless_words_still_writing": 0.6875,
+   "probe_harmful": 0.9749999642372131
+  }
+ },
+ "partC": {
+  "refusal_harmful": 0.37,
+  "refusal_harmless": 0.015,
+  "harmful_words_activation_ratio": 0.956106424331665,
+  "share_harmful_words_halved": 0.24528301886792453,
+  "harmful_words_still_writing": 0.7924528301886793,
+  "harmless_words_still_writing": 0.71875,
+  "probe_harmful": 0.7224999666213989,
+  "harmful_words_row_cos_after": 0.9999939203262329
+ },
+ "_exp": "e604_refusal_audit",
+ "_time": "2026-09-29 22:38:05"
+}

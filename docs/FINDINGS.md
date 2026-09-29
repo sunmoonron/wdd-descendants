@@ -5234,3 +5234,105 @@ SESSION 111 (a fresh box; the user: think it through, run the experiments, step 
   - Pre-registered: G1 (zeroing the writers costs under 0.3 nats) confirmed; G2 (the wider net under 1 nat) confirmed; G3 (the hybrid relearns like ascent alone, within 20 steps) refuted, the hybrid relearns slower.
 
   What the session settled: the audit's right number is on the parameter side. Whether the named writers still fire at the forgotten contexts, and whether their rows moved, separates the methods by depth: RMU overrides and is the shallowest, ascent and difference and NPO silence and relearn in tens of steps, dampening reaches the rows and relearns slowest at a retain cost. The state-side share of session 110 and the reviewer's probe read the state's shift, which every method produces, and rank RMU as the deepest when it is the shallowest. Fine-tuning recruits existing rows by feeding them differently. Removing the rows the audit names does not unlearn on its own, because the coalition carries the classes, but removing them after a silencing method slows the relearning: the audit cannot be the first step of an unlearning and can direct the second.
+
+SESSION 112 (the user: run them all with robust controls and out-of-the-box thinking, and check the scripts often. Every script smoke-tested at toy size on the box before its full run; the baseline that could sink the audit, the causal test it pointed at, and three new audits: refusal, merging, compression.)
+
+- e602 / e602b THE NAIVE-SELECTION BASELINE, WITH SEEDS (the five methods of e597 rerun on Pythia-160m PubMed with two seeds, Pythia-160m Github and Pythia-410m PubMed with one; the audit tracking six neuron sets of the forget words' size side by side: the WDD forget words at their classes and at all forget positions, the WDD retain words, and the neurons of blocks 0-B chosen by activation difference (forget minus retain), by activation ratio, by magnitude, or at random, plus all neurons; the same attacks):
+
+  | Spearman with the outcome over 54 training-method conditions | WDD writers at their classes | WDD writers at all forget positions | WDD retain words | difference-selected | ratio-selected | magnitude-selected | random set | all neurons | still-writing share | probe |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 20-step recovery, all | 0.89 | 0.31 | -0.68 | 0.83 | 0.87 | 0.56 | -0.01 | -0.30 | 0.36 | 0.73 |
+  | 20-step recovery, without dampening | 0.83 | 0.72 | -0.58 | 0.85 | 0.79 | 0.29 | 0.70 | 0.19 | 0.04 | 0.82 |
+  | 20-step recovery, Pythia-160m | 0.90 | 0.28 | -0.69 | 0.83 | 0.93 | 0.68 | -0.07 | -0.34 | 0.43 | 0.70 |
+  | 20-step recovery, Pythia-410m | 0.78 | 0.13 | -0.38 | 0.72 | 0.78 | 0.77 | -0.50 | -0.03 | -0.73 | -0.15 |
+  | 20-step recovery, PubMed | 0.94 | 0.12 | -0.77 | 0.91 | 0.92 | 0.67 | 0.05 | -0.21 | 0.18 | 0.75 |
+  | 20-step recovery, Github | 0.38 | 0.29 | -0.26 | 0.85 | 0.64 | 0.40 | -0.14 | -0.28 | 0.48 | 0.69 |
+  | steps back within 0.1 nats, all | -0.61 | -0.57 | 0.33 | -0.62 | -0.57 | -0.22 | -0.43 | -0.21 | -0.13 | -0.66 |
+  | benign recovery, all | -0.39 | -0.22 | 0.65 | -0.51 | -0.46 | -0.16 | -0.14 | 0.31 | 0.13 | -0.56 |
+
+  | method | conditions | WDD writers at their classes | difference-selected | ratio-selected | magnitude-selected | random | all neurons | still writing | probe | recovery | steps back |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | ga | 12 | 0.76 | -0.14 | 0.50 | 0.95 | 0.99 | 1.00 | 0.57 | 0.06 | 0.75 | 35 |
+  | gd | 9 | 0.75 | -0.27 | 0.39 | 0.94 | 0.99 | 1.00 | 0.53 | 0.02 | 0.76 | 60 |
+  | npo | 12 | 0.82 | -0.05 | 0.46 | 0.96 | 1.00 | 1.00 | 0.67 | 0.29 | 0.83 | 35 |
+  | rmu | 12 | 1.00 | 1.02 | 1.23 | 1.00 | 1.00 | 1.00 | 0.18 | 0.87 | 0.92 | 30 |
+  | ssd | 9 | 0.11 | -0.28 | -0.59 | 0.66 | 1.12 | 1.16 | 0.07 | 0.05 | 0.42 | n/a |
+  | drift | 3 | 1.00 | 1.01 | 1.00 | 1.00 | 0.98 | 0.98 | 0.95 | 0.97 | 0.52 | 25 |
+
+  - The dictionary picks different neurons from the activation statistics: the difference-selected set overlaps the WDD forget words by Jaccard 0.06 (magnitude-selected 0.00, ratio-selected 0.00); 0.18 of the difference-selected neurons are words at all. The naive sets respond to the methods differently: under capped ascent the difference-selected neurons collapse (-0.14 of their activation) where the WDD writers fall to 0.76, and under RMU neither moves (1.02 / 1.00); the random set stays at 0.99 / 1.00 / 1.12 under ascent, RMU and dampening.
+  - Over the 54 training-method conditions the strongest single correlate of the 20-step recovery is the WDD writers at their classes (0.89); a rank correlation only means something for a set whose ratio moves, and the interquartile ranges across conditions are 0.39 for the WDD writers, 1.28 difference-selected, 0.79 ratio-selected, 0.09 magnitude-selected and 0.01 for the random set, whose ratio never leaves 1; the WDD writers at their classes are at 0.89, the difference-selected set at 0.83, the magnitude-selected at 0.56, the random set at -0.01, all neurons at -0.30, the still-writing share at 0.36 and the probe at 0.73. By model: WDD 0.90 / 0.78, difference-selected 0.83 / 0.72, ratio-selected 0.93 / 0.78; by domain (Pythia-160m) WDD 0.94 / 0.38 on PubMed / Github against difference-selected 0.91 / 0.85; without dampening WDD 0.83, difference-selected 0.85, ratio-selected 0.79. A naive selection predicts relearnability about as well: the audit's substance is that domain-selective neurons still fire, and the dictionary is one way to find them. Seeds: over the 16 Pythia-160m PubMed conditions run twice, the writers' activation ratio agrees between seeds at Spearman 0.98 (median absolute difference 0.02) and the recovery at 0.98.
+  - Pre-registered: N1 (difference-selected overlaps the WDD words by 0.3 or less) confirmed; N2 (WDD correlates with the recovery at least 0.1 higher than difference-selected) refuted (+0.06); N3 (the random set within 0.9-1.1 under every method) refuted.
+
+- e603 / e603b SEPARABLE INTERVENTIONS (Pythia-160m, both domains, three seeds: capped ascent to +2 and RMU to +2, each alone and followed by the forget words' write columns zeroed, their inputs zeroed so the neurons never fire, as many random rows zeroed, or the difference-selected neurons' inputs zeroed; the input silencing alone):
+
+  | condition | runs | steps back within 0.1 nats, median (per run) | 20-step recovery | forget rise | retain change | writers' activation at their classes | still writing | probe |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | inputs_zero_alone | 6 | 5 (5, 5, 5, 5, 5, 5) | 0.45 | +0.08 | +0.016 | 0.00 | 0.25 | 0.98 |
+  | ga_alone | 6 | 55 (40, 55, 35, 60, 65, 65) | 0.68 | +2.09 | +0.143 | 0.72 | 0.47 | 0.03 |
+  | ga_rows_zero | 6 | 100 (100, 100, 100, 95, 100, 100) | 0.66 | +2.24 | +0.170 | 0.71 | 0.00 | 0.02 |
+  | ga_inputs_zero | 6 | 100 (100, 100, 100, 90, 100, 100) | 0.66 | +2.24 | +0.170 | 0.00 | 0.15 | 0.02 |
+  | ga_random_rows_zero | 6 | 60 (55, 65, 35, 60, 65, 65) | 0.68 | +2.07 | +0.147 | 0.72 | 0.47 | 0.02 |
+  | ga_diffselected_inputs_zero | 6 | 65 (100, 100, 100, 65, 65, 65) | 0.66 | +1.94 | +0.158 | 0.70 | 0.43 | 0.02 |
+  | rmu_alone | 6 | 50 (100, 100, 100, 50, 30, 45) | 0.87 | +2.27 | +0.059 | 1.00 | 0.20 | 0.73 |
+  | rmu_rows_zero | 6 | 100 (100, 100, 100, 100, 100, 100) | 0.85 | +2.44 | +0.083 | 0.97 | 0.00 | 0.72 |
+  | rmu_inputs_zero | 6 | 100 (100, 100, 100, 100, 100, 100) | 0.85 | +2.44 | +0.083 | 0.00 | 0.07 | 0.72 |
+  | rmu_random_rows_zero | 6 | 50 (100, 100, 100, 50, 35, 50) | 0.87 | +2.23 | +0.059 | 0.99 | 0.23 | 0.75 |
+  | rmu_diffselected_inputs_zero | 6 | 100 (100, 100, 100, 100, 55, 100) | 0.79 | +2.26 | +0.070 | 0.94 | 0.18 | 0.78 |
+
+  | variant | added relearning steps over the method alone, median over uncensored runs | slower in (share of uncensored runs) | uncensored runs | per run (a run is censored when the method alone is not back within 100 steps) |
+  | --- | --- | --- | --- | --- |
+  | ga_rows_zero | 40 | 1.00 | 6 of 6 | github_s0 +60, github_s1 +45, github_s2 +65, pubmed_s0 +35, pubmed_s1 +35, pubmed_s2 +35 |
+  | ga_inputs_zero | 40 | 1.00 | 6 of 6 | github_s0 +60, github_s1 +45, github_s2 +65, pubmed_s0 +30, pubmed_s1 +35, pubmed_s2 +35 |
+  | ga_random_rows_zero | 0 | 0.33 | 6 of 6 | github_s0 +15, github_s1 +10, github_s2 +0, pubmed_s0 +0, pubmed_s1 +0, pubmed_s2 +0 |
+  | ga_diffselected_inputs_zero | 25 | 0.67 | 6 of 6 | github_s0 +60, github_s1 +45, github_s2 +65, pubmed_s0 +5, pubmed_s1 +0, pubmed_s2 +0 |
+  | rmu_rows_zero | 55 | 1.00 | 3 of 6 | github_s0 +0 (censored), github_s1 +0 (censored), github_s2 +0 (censored), pubmed_s0 +50, pubmed_s1 +70, pubmed_s2 +55 |
+  | rmu_inputs_zero | 55 | 1.00 | 3 of 6 | github_s0 +0 (censored), github_s1 +0 (censored), github_s2 +0 (censored), pubmed_s0 +50, pubmed_s1 +70, pubmed_s2 +55 |
+  | rmu_random_rows_zero | 5 | 0.67 | 3 of 6 | github_s0 +0 (censored), github_s1 +0 (censored), github_s2 +0 (censored), pubmed_s0 +0, pubmed_s1 +5, pubmed_s2 +5 |
+  | rmu_diffselected_inputs_zero | 50 | 1.00 | 3 of 6 | github_s0 +0 (censored), github_s1 +0 (censored), github_s2 +0 (censored), pubmed_s0 +50, pubmed_s1 +25, pubmed_s2 +55 |
+
+  - Silencing the named writers after an unlearning slows the relearning, robustly. After capped ascent, zeroing the writers' inputs adds 40 relearning steps at the median (slower in 1.00 of 6 runs; PubMed +30, +35, +35, Github +60, +45, +65) and zeroing their write columns 40; after RMU the three Github runs are censored, RMU alone not being back within 100 steps there, and on the three PubMed runs silencing adds +50, +70, +55 steps (rows zeroed +50, +70, +55). As many random rows zeroed add 0 after ascent and 5 after RMU (per run +0, +0, +0, +15, +10, +0; +0, +5, +5). The difference-selected neurons silenced instead of the writers add 25 after ascent (Github +60, +45, +65, PubMed +5, +0, +0) and after RMU on PubMed +50, +25, +55: the selection matters on one domain and not the other. Silencing the writers alone, with no unlearning, raises the forget loss by +0.08 nats and is back within 0.1 after 5 steps: the writers are not where the knowledge is, and removing them after the unlearning removes the fastest route back.
+  - Pre-registered: S1 (input silencing adds 30 after RMU and 20 after ascent) confirmed; S2 (the difference-selected set adds less than the WDD writers after RMU) confirmed; S3 (random rows add fewer than 10) confirmed.
+
+- e604 THE REFUSAL AUDIT (Qwen2.5-0.5B base and instruct, block 12 of 24; 200 harmful requests from AdvBench and 200 Alpaca instructions in the chat template; words on the last eight positions of each prompt: 53 harmful-class and 32 harmless-class words of 256; refusal by phrase on greedy 32-token completions; two prefix jailbreaks; one epoch of benign Alpaca fine-tuning):
+
+  | condition | refusal on harmful | on harmless | harmful-class writers' activation ratio | halved for | still writing | harmless-class still writing | probe reads harmful |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | the instruct model as is | 0.93 | 0.06 | 1.00 | | 1.00 | 1.00 | 0.98 |
+  | jailbreak: persona | 0.96 | 0.08 | 0.97 | 0.09 | 0.75 | 0.75 | 0.99 |
+  | jailbreak: direct | 0.93 | 0.05 | 0.98 | 0.13 | 0.72 | 0.69 | 0.97 |
+  | benign fine-tuning (one epoch of Alpaca) | 0.37 | 0.01 | 0.96 | 0.25 | 0.79 | 0.72 | 0.72 |
+
+  - Where safety training put refusal: not in the rows. The harmful-class words' rows are at cosine 0.9973 with the base model's (all rows 0.9972, harmless-class words 0.9977); their neurons fire at the harmful prompts at 0.49 of the instruct model's level in the base model, and 0.34 of them are words on the base model's states (0.36 still write at their classes there; harmless-class words 0.41). Safety training recruited existing writers by feeding them more, as the learning audit found for domains; the base model refuses 0.04 of the harmful prompts, the instruct model 0.93.
+  - Jailbreaks and benign fine-tuning: neither prefix jailbreak moves this model's refusal rate (0.96 / 0.93 from 0.93), and the writers fire as before under them (0.97 / 0.98); one epoch of benign Alpaca fine-tuning takes the refusal rate from 0.93 to 0.37 (harmless prompts 0.01), the known erosion, with the harmful-class writers at 0.96 of their activation (halved for 0.25), their rows at cosine 1.0000, and 0.79 still writing at their classes; the probe's reading of the prompts as harmful falls from 0.98 to 0.72. Where the refusal falls, the writers that fire on harmful requests keep firing: benign fine-tuning changes what is downstream of them, the override pattern the unlearning audit saw under RMU.
+  - Pre-registered: R1 (rows at cosine 0.99 with the base, half of the words are words in the base) refuted; R2 (a jailbreak that halves refusal leaves the writers at 0.8) untestable, neither prefix moved the refusal rate on this model; R3 (benign fine-tuning that lowers refusal leaves the writers at 0.8) confirmed.
+
+- e605 THE MERGING AUDIT (Pythia-160m fine-tuned on Github and on PubMed for one epoch each; the two merged by averaging, or added in full; each alone; one at half strength; sequential Github-then-PubMed; the entrants of each fine-tune (22 Github, 31 PubMed; Jaccard between them 0.02, between the fine-tuned word sets 0.17, original 0.18) followed into each model):
+
+  | model | Github loss | PubMed loss | control loss | Github entrants still writing (words) | PubMed entrants still writing (words) | original Github words writing | original PubMed words writing |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | the original | 1.228 | 2.739 | 3.050 | | | 1.00 | 1.00 |
+  | github_ft | 1.000 | 2.982 | 3.282 | 1.00 (1.00) | 0.83 (0.32) | 0.99 | 1.00 |
+  | pubmed_ft | 1.392 | 2.575 | 3.324 | 0.88 (0.45) | 1.00 (1.00) | 0.99 | 0.99 |
+  | merged | 1.102 | 2.652 | 3.196 | 1.00 (0.50) | 0.90 (0.55) | 0.99 | 1.00 |
+  | merged_full | 1.186 | 2.837 | 3.643 | 0.94 (0.59) | 1.00 (0.71) | 0.96 | 0.98 |
+  | github_half | 1.055 | 2.785 | 3.097 | 0.94 (0.41) | 0.80 (0.26) | 1.00 | 1.00 |
+  | sequential_github_then_pubmed | 1.138 | 2.582 | 3.403 | 1.00 (0.50) | 1.00 (0.65) | 0.96 | 0.99 |
+
+  - The two fine-tunes recruit different rows (Jaccard 0.02 between their entrants; the fine-tuned word sets overlap by 0.17, the original's by 0.18), and the averaged model keeps about half of each fine-tune's gain (1.102 on Github against 1.000 fine-tuned and 1.228 original; 2.652 on PubMed against 2.575 and 2.739) at a control cost of +0.146. The still-writing share is lenient for entrants, since their rows already wrote at those positions before being promoted into the 256 (the Github entrants still write at 0.88 in the PubMed fine-tune, which never saw Github); the stricter count, the share of entrants that remain words, is 0.50 / 0.55 in the averaged model, 0.50 / 0.65 after sequential fine-tuning, 0.45 for the Github entrants in the PubMed fine-tune alone, and 0.41 at half strength. Sequential fine-tuning keeps more of the first domain's gain than expected (1.138 on Github), so at one epoch each there is little for merging to rescue.
+  - Pre-registered: M1 (entrants overlap by 0.2 or less) confirmed; M2 (merging keeps 0.6 of each fine-tune's entrants where sequence keeps 0.3 or less of Github's) refuted, sequence keeps them too (1.00); M3 (the merged losses within 0.1 of the fine-tunes') refuted.
+
+- e606 THE COMPRESSION AUDIT (Pythia-410m block 12, six Pile domains with 256 words and domain words pubmed 5, github 10, wikipedia 9, stackexchange 13, freelaw 13, uspto 9; 8-bit per channel, 4-bit in groups of 64 and 32, 3-bit in groups of 64, magnitude pruning of 30% and 50%; per-domain loss damage against the domain's writers' activation ratio and silenced share):
+
+  | compression | pubmed: damage / writers' activation / silenced share | github: damage / writers' activation / silenced share | wikipedia: damage / writers' activation / silenced share | stackexchange: damage / writers' activation / silenced share | freelaw: damage / writers' activation / silenced share | uspto: damage / writers' activation / silenced share | random rows' activation | Spearman damage vs activation within |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | int8_per_channel | +0.002 / 1.00 / 0.00 | +0.002 / 1.00 / 0.00 | +0.002 / 1.00 / 0.00 | +0.003 / 1.00 / 0.00 | +0.003 / 1.00 / 0.00 | +0.003 / 1.01 / 0.00 | 1.00 | 0.03 |
+  | int4_g64 | +0.379 / 0.91 / 0.00 | +0.345 / 0.99 / 0.00 | +0.363 / 0.94 / 0.00 | +0.300 / 0.92 / 0.15 | +0.434 / 0.90 / 0.00 | +0.306 / 0.98 / 0.11 | 0.98 | -0.60 |
+  | int4_g32 | +0.300 / 1.00 / 0.00 | +0.311 / 1.02 / 0.00 | +0.293 / 0.96 / 0.00 | +0.259 / 0.92 / 0.08 | +0.347 / 0.95 / 0.00 | +0.227 / 0.99 / 0.00 | 1.00 | 0.20 |
+  | int3_g64 | +2.195 / 0.43 / 1.00 | +2.796 / 0.59 / 0.70 | +1.973 / 0.53 / 0.78 | +1.951 / 0.63 / 0.69 | +2.900 / 0.59 / 0.85 | +1.773 / 0.59 / 0.67 | 1.02 | -0.43 |
+  | prune30 | +0.866 / 0.61 / 1.00 | +1.057 / 0.83 / 0.10 | +0.833 / 0.81 / 0.44 | +0.824 / 0.75 / 0.62 | +1.416 / 0.77 / 0.54 | +0.708 / 0.73 / 0.67 | 1.09 | 0.43 |
+  | prune50 | +4.160 / -0.02 / 1.00 | +4.534 / 0.11 / 0.80 | +3.771 / 0.08 / 0.89 | +3.623 / 0.14 / 0.77 | +4.757 / 0.13 / 1.00 | +3.700 / 0.29 / 0.67 | 1.30 | -0.43 |
+
+  - Across compressions the damage and the silencing rise together (Spearman -0.94 between a domain's damage and its writers' activation ratio over 36 compression-by-domain pairs; with the share silenced 0.82), but most of that is severity: a harsher compression both damages every domain more and silences every domain's writers more, and the random rows' activation ratio (1.00, 0.98, 1.00, 1.02, 1.09, 1.30 across the six compressions) shows that only 3-bit and pruning touch neurons at all. The question the audit would have to answer is which domain a given compression hurts, and within single compressions the six-domain correlation is int8_per_channel 0.03, int4_g64 -0.60, int4_g32 0.20, int3_g64 -0.43, prune30 0.43, prune50 -0.43: inconsistent at this size, with five to thirteen domain words per domain. Pruning half the weights silences 0.85 of the writers at the median domain and costs +4.091 nats; 3-bit quantisation 0.78 and +2.265; 4-bit in groups of 64 0.04 and +0.355, in groups of 32 0.01 and +0.290; 8-bit nothing.
+  - Pre-registered: C1 (damage correlates with the writers' activation at -0.5 or beyond) confirmed across compressions, where severity carries it; not within; C2 (4-bit in groups of 64 silences fewer than a fifth of any domain's writers) confirmed; C3 (pruning at 50% silences more and damages more than 3-bit) confirmed.
+
+  What the session settled: the audit's substance is that domain-selective neurons still fire, and the dictionary is one of several ways to find them; silencing the named writers after an override method buys relearning resistance; safety training, like domain fine-tuning, recruits existing writers by feeding them more and leaves their rows alone, and benign fine-tuning erodes refusal with those writers still firing, an override downstream of them (the two prefix jailbreaks did not move this model); merged fine-tunes keep both sets of recruits because they recruit different rows; and compression damage tracks the silencing of writers across compressions through their severity, not within one compression across domains.

@@ -699,3 +699,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "4-bit quantisation undoes shallow unlearning" at 160m with round-to-nearest weights: no recovery, the quantisation itself costs more (e597).
 - "Fine-tuning recruits new writers by rewriting rows": entrants arrive with their rows unchanged (e600).
 - "WDD can unlearn by removing the writers it names": +0.08 nats for the writers, the coalition carries the classes (e601); what survives is the hybrid, removal after silencing, which slows the relearning.
+
+## Session 112 kills (the audit's baselines, causal test and three new audits)
+- "The dictionary is what makes the audit work": a naive difference selection predicts relearnability at 0.83 against the writers' 0.89 (e602).
+- "Safety training rewrites the writers of harmful requests": rows at cosine 0.9973 with the base (e604).
+- "Jailbreaks silence the harmful-request writers": activation 0.97 / 0.98 under the two prefixes (e604).
+- "Merged fine-tunes collide on the same rows": entrants' Jaccard 0.02 (e605).

@@ -1,0 +1,96 @@
+{
+ "n_entrants": {
+  "github": 22,
+  "pubmed": 31
+ },
+ "entrant_jaccard": 0.019230769230769232,
+ "wordset_jaccard_ft": 0.1662870159453303,
+ "wordset_jaccard_orig": 0.18244803695150116,
+ "loss0": {
+  "github": 1.2277076244354248,
+  "pubmed": 2.738595962524414,
+  "control": 3.0497100353240967
+ },
+ "conditions": {
+  "github_ft": {
+   "losses": {
+    "github": 1.000266969203949,
+    "pubmed": 2.9816973209381104,
+    "control": 3.281890630722046
+   },
+   "github_entrants_still_writing": 1.0,
+   "github_entrants_now_words": 1.0,
+   "github_original_words_still_writing": 0.9909502262443439,
+   "pubmed_entrants_still_writing": 0.8333333333333334,
+   "pubmed_entrants_now_words": 0.3225806451612903,
+   "pubmed_original_words_still_writing": 1.0
+  },
+  "pubmed_ft": {
+   "losses": {
+    "github": 1.3920068740844727,
+    "pubmed": 2.574858784675598,
+    "control": 3.3244853019714355
+   },
+   "github_entrants_still_writing": 0.8823529411764706,
+   "github_entrants_now_words": 0.45454545454545453,
+   "github_original_words_still_writing": 0.9909502262443439,
+   "pubmed_entrants_still_writing": 1.0,
+   "pubmed_entrants_now_words": 1.0,
+   "pubmed_original_words_still_writing": 0.991701244813278
+  },
+  "merged": {
+   "losses": {
+    "github": 1.102031171321869,
+    "pubmed": 2.6515508890151978,
+    "control": 3.1961177587509155
+   },
+   "github_entrants_still_writing": 1.0,
+   "github_entrants_now_words": 0.5,
+   "github_original_words_still_writing": 0.9909502262443439,
+   "pubmed_entrants_still_writing": 0.9,
+   "pubmed_entrants_now_words": 0.5483870967741935,
+   "pubmed_original_words_still_writing": 1.0
+  },
+  "merged_full": {
+   "losses": {
+    "github": 1.1860328912734985,
+    "pubmed": 2.8365215063095093,
+    "control": 3.6432456970214844
+   },
+   "github_entrants_still_writing": 0.9411764705882353,
+   "github_entrants_now_words": 0.5909090909090909,
+   "github_original_words_still_writing": 0.9592760180995475,
+   "pubmed_entrants_still_writing": 1.0,
+   "pubmed_entrants_now_words": 0.7096774193548387,
+   "pubmed_original_words_still_writing": 0.983402489626556
+  },
+  "github_half": {
+   "losses": {
+    "github": 1.055029958486557,
+    "pubmed": 2.7846274375915527,
+    "control": 3.097104787826538
+   },
+   "github_entrants_still_writing": 0.9411764705882353,
+   "github_entrants_now_words": 0.4090909090909091,
+   "github_original_words_still_writing": 1.0,
+   "pubmed_entrants_still_writing": 0.8,
+   "pubmed_entrants_now_words": 0.25806451612903225,
+   "pubmed_original_words_still_writing": 1.0
+  },
+  "sequential_github_then_pubmed": {
+   "losses": {
+    "github": 1.1375434398651123,
+    "pubmed": 2.5820764303207397,
+    "control": 3.403058886528015
+   },
+   "github_entrants_still_writing": 1.0,
+   "github_entrants_now_words": 0.5,
+   "github_original_words_still_writing": 0.9638009049773756,
+   "pubmed_entrants_still_writing": 1.0,
+   "pubmed_entrants_now_words": 0.6451612903225806,
+   "pubmed_original_words_still_writing": 0.991701244813278
+  }
+ },
+ "_exp": "e605_merging_audit",
+ "_time": "2026-09-29 22:35:22"
+}
