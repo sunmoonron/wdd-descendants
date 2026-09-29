@@ -4753,3 +4753,52 @@ SESSION 103 (the user: "another day of gpt gassing up nothing burgers, pls gener
   - Pre-registered: T4 (KL under 0.01) confirmed; T5 (the whole neuron moves toward 16000 by under a tenth) refuted in sign, it moves away.
 
   The generalisation, against GPT's: the record now separates three objects. The partition of contexts into classes is the corpus's surface structure and is shared by every language model trained to predict it (0.3-0.5 twins across seeds, scales, architectures and families), not by two vision models with different objectives. The direction a class is spoken along is the model's own, carries the class's downstream effect, and is not preserved when the class changes rows. The row is the direction's implementation: it can be recruited to a spoken direction, transplanted as a label, and frozen to attract usage, but it brings no computation by itself and is not what later blocks read. WDD reads the second object through the third.
+
+SESSION 104 (the user: "what even is WDD, 500+ experiments and still going in circles". Answered directly: WDD is the instrument that decomposes a state into the model's own write vectors with exact provenance; the circles are the repeated finding, in areas 06-07, 24, 31 and 36, that a row alone is not the computation; what is not circular is the object pinned as class, direction, row and coalition, and the doors closed. GPT's one sharp proposal, the coalition transplant factorial, run as e578; and one test of whether the instrument is useful rather than descriptive, run as e579. GPT's conceptual correction adopted in THEORY and the map: the downstream effect is a function of the direction, the coalition that produces it and the readout that consumes it, not of the direction alone.)
+
+- e578 THE COALITION TRANSPLANT (30 entrants from step 16000 into step 8000; the coalition of an entrant's class = the k MLP neurons of blocks 0-12 contributing most to its direction at its class's positions at 16000, the entrant's own neuron excluded; whole-neuron transplants; the readout = blocks 13-23, the final norm and the unembedding):
+
+  | transplanted into the step-8000 model | entrants that become words | median S | KL of the change at the class / elsewhere | closure of the gap to 16000 at the class / elsewhere | closure larger at the class than elsewhere |
+  | --- | --- | --- | --- | --- | --- |
+  | the direction alone (at the old norm) | 0.60 | 1.38 | 0.0000 / 0.0000 | +0.000 / -0.000 | 0.50 |
+  | the coalition alone, k = 128 | 0.47 | 1.31 | 0.0214 / 0.0038 | -0.020 / -0.008 | 0.43 |
+  | the coalition and the direction, k = 128 | 0.93 | 1.62 | 0.0217 / 0.0038 | -0.022 / -0.008 | 0.43 |
+  | the coalition and the direction, k = 512 | 0.83 | 1.83 | 0.0447 / 0.0116 | -0.066 / -0.021 | 0.47 |
+  | 128 random neurons with the coalition's block histogram | 0.13 | 1.19 | 0.0012 / 0.0011 | -0.005 / -0.001 | 0.33 |
+  | the readout alone (blocks 13-23, the final norm, the unembedding), all forty classes | - | - | - | -0.873 / -0.994 | - |
+  | the readout with every entrant's coalition and direction | - | - | - | -0.776 / -0.972 | - |
+  | every entrant's coalition and direction, no readout | - | - | - | -0.096 / -0.167 | - |
+
+  | the step-8000 versions placed into the 16000 model | KL of the change at the class / elsewhere | change larger at the class | moved toward 8000 at the class / elsewhere |
+  | --- | --- | --- | --- |
+  | the direction alone (at the old norm) | 0.0001 / 0.0000 | 0.87 | +0.000 / +0.000 |
+  | the coalition alone, k = 128 | 0.0105 / 0.0015 | 1.00 | -0.006 / -0.000 |
+  | the coalition and the direction, k = 128 | 0.0118 / 0.0015 | 1.00 | -0.005 / -0.000 |
+  | the coalition and the direction, k = 512 | 0.0282 / 0.0050 | 1.00 | -0.046 / -0.007 |
+  | 128 random neurons with the coalition's block histogram | 0.0005 / 0.0005 | 0.47 | -0.006 / -0.000 |
+
+  - Nothing moves the recipient's predictions at the class toward the donor, and the coalition is what the class's computation needs. The direction alone makes 0.60 of the entrants words and closes +0.000 of the gap at the class; the coalition alone (128 neurons) makes 0.47 words and closes -0.020 at the class against -0.008 elsewhere (larger at the class for 0.43 of entrants; random neurons of the same blocks -0.005 / -0.001, 0.33); the coalition with the direction 0.93 words and -0.022; four times the coalition 0.83 words and -0.066. The readout alone closes -0.873 of the gap at the classes and -0.994 elsewhere; with every coalition and direction -0.776 / -0.972; every coalition and direction without the readout -0.096 / -0.167. Every closure is negative: the transplants move the recipient away from the donor at the class, the coalition ones more at the class than elsewhere. The readout from 16000 on 8000's states is a mixed model and moves everything away (-0.873 at the classes, -0.994 elsewhere), which is why the necessity direction was added. In that direction the coalition is what the class's computation needs: the 8000 versions of the 128 producers change the 16000 model's predictions at the class by 0.0105 nats against 0.0015 elsewhere (larger at the class for 1.00 of entrants; 512 producers 0.0282 against 0.0050; random neurons 0.0005 against 0.0005, specific for 0.47; the direction alone 0.0001), without moving them toward the 8000 model (-0.006): a disruption specific to the class, not a reversion.
+  - Reading: the association (a row that becomes a word) travels with the direction and is completed by the coalition (0.93 against 0.60); the computation at the class needs the coalition specifically (necessity) and cannot be moved between checkpoints by any part short of the whole model (sufficiency). e573b's "the direction carries the function" is therefore to be read as GPT corrected it: changing the direction changes the effect, and direction similarity tracks effect similarity within a model, but the effect is a function of the direction, its producers and its readers together.
+  - Pre-registered: K1 (coalition alone under half words, specific closure) partly: word share 0.47, but no closure, a class-specific disruption instead (necessity 0.0105 against 0.0015); K2 (coalition and direction at least 0.7 words) confirmed; K3 (nothing short of the readout closes a tenth) confirmed, nothing closes anything; K4 (the readout closes half, unspecifically) refuted, the mixed model moves away everywhere (-0.873 / -0.994).
+
+- e579 IS THE INSTRUMENT USEFUL BEFORE THE LABELS ARE (the fourteen sweep runs of e567, measured every 250 steps on the training inputs only: the native excess = the words' S over the rotated words' S, and the own-over-rotation advantage, against test accuracy):
+
+  | run | train fit (acc 0.99) at step | test acc > 0.5 at step | native excess >= 1.5 at step (lead) | advantage >= 0.3 at step (lead) | maximum native excess | final test acc |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | base | 250 | 4000 | 4000 (0) | 3500 (500) | 2.46 | 1.00 |
+  | seed1 | 250 | 2250 | 2250 (0) | 2000 (250) | 2.17 | 1.00 |
+  | dm2048 | 250 | 3000 | 2500 (500) | 1750 (1250) | 2.26 | 1.00 |
+  | wd3 | 250 | 1000 | 750 (250) | 1000 (0) | 2.79 | 1.00 |
+  | lr3e-3 | 250 | 1000 | 1000 (0) | 1000 (0) | 2.69 | 1.00 |
+  | frac0.5 | 250 | 250 | 500 (-250) | 750 (-500) | 2.48 | 1.00 |
+  | init0.3 | 1250 | 1250 | 250 (1000) | 250 (1000) | 3.48 | 0.94 |
+  | init3 | 750 | 5500 | 5500 (0) | 4750 (750) | 2.17 | 1.00 |
+  | dm128 | 250 | never | never (-) | 9500 (-) | 1.31 | 0.20 |
+  | wd0.3 | 250 | never | never (-) | never (-) | 1.45 | 0.34 |
+  | nowd | 250 | never | never (-) | 6250 (-) | 1.13 | 0.20 |
+  | lr3e-4 | 500 | never | never (-) | 3750 (-) | 1.14 | 0.18 |
+  | frac0.2 | 250 | never | never (-) | 4750 (-) | 1.37 | 0.03 |
+  | randlab | 250 | never | never (-) | never (-) | 1.18 | 0.01 |
+
+  - A detector of generalisation, not a predictor. The native excess crosses 1.5 in every generalising run and in no memorising run (the memorising runs' maximum is 1.45, the generalising runs' minimum 2.17); it does so at the step test accuracy crosses one half, leading in 0.38 of the runs by 0.0 steps at the median. The advantage crossing 0.3 leads in 0.62 by 250.0 steps but fires in 4 of 6 memorising runs. From the weights and the training inputs alone, without labels or a test set, the instrument says whether a run has generalised, at the moment it does.
+  - Pre-registered: U1 (the excess leads by 250-1000 steps in most runs) refuted, it is coincident; U2 (no false alarms) confirmed.

@@ -597,6 +597,12 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 104: what has to travel, and what the instrument is for (e578, e579)
+
+- What WDD is, said plainly: the decomposition of a state into the model's own write vectors with exact provenance, reporting which directions the state is built along and how strongly. The circles are the repeated finding that a row alone is not the computation (areas 06-07, 24, 31, 36); what is not circular is the object pinned (class, direction, row, coalition) and the doors closed.
+- The coalition transplant, GPT's one sharp proposal: the direction alone makes 0.60 of entrants words; the coalition of 128 producers alone 0.47; both 0.93; but nothing short of the readout moves the recipient's predictions at the class toward the donor (closure -0.066 for 512 producers with the direction, -0.873 for the readout alone). The association travels with the direction; the computation is the whole model's. e573b's sentence is corrected: changing the direction changes the effect, but the effect is a function of the direction, its producers and its readers together.
+- The instrument's use: from the weights and the training inputs alone, the native excess separates every generalising toy run from every memorising one (2.17 against 1.45) at the step test accuracy crosses one half, not before: a label-free detector of generalisation, not a predictor.
+
 ## Session 103: the object, class or direction or row (e573-e577)
 
 - GPT's one live question after session 102, whether a context class or its row is the object, generalised into five hypotheses and run. The answer has three parts, and the record now separates them.

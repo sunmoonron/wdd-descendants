@@ -1,4 +1,4 @@
-# 36. The object: class, direction or row (S103)
+# 36. The object: class, direction or row, and what has to travel (S103-S104)
 
 **Question.** Session 102 left one question above the rest: when a context class changes which row speaks it, does the computation stay? Generalised into five hypotheses the record did not contain: that the function follows the class rather than the direction; that the partition is the corpus's surface structure, or an output partition, and that the words are what later blocks read; that two vision models share a partition; that trained rows can attract a fresh network's cloud (the loop's reverse direction); and that a transplanted direction carries computation.
 
@@ -7,8 +7,9 @@
 - The direction carries the function: when a class changes its row the new direction is not the old one (cosine 0.133) and the downstream effect changes with it (0.156 against 0.449 for kept rows); within one model two words sharing a class have effects as alike as their directions (correlation 0.86; 0.185 when they differ, 0.917 when they agree) (e573, e573b). The words are read by the other blocks no more than any other row (e574).
 - The row is the implementation: frozen trained rows draw a fresh network's usage (advantage 0.55 against 0.05 for random frozen rows) without bringing their classes (profile correlation -0.01, random pairs 0.00) (e576); a transplanted direction becomes a word without carrying computation (KL 0.0021 at the class positions, moving away from the later model) (e577).
 - The generalisation: the data fixes the classes, training fixes the directions, the rows are where the directions live; WDD reads the direction through the row.
+- What has to travel (S104): the direction alone makes 0.60 of entrants words, the coalition of 128 producers alone 0.47, both 0.93; nothing short of the readout moves the recipient's predictions at the class toward the donor (closure -0.066 for 512 producers with the direction, -0.873 for the readout alone): the effect is the direction's, its producers' and its readers' together (e578). The instrument's use: the native excess separates every generalising toy run from every memorising one from the weights and training inputs alone, at the step test accuracy crosses one half, not before (e579).
 
-**Start here:** e573b, e574, e577, e576 · **Sessions:** S103 · **Scripts:** `scripts/e573_class_or_row.py`, `e573b_synonyms.py`, `e574_what_partition.py`, `e575_vision_twins.py`, `e575b_image_level.py`, `e576_frozen_rows.py`, `e577_functional_transplant.py`
+**Start here:** e573b, e578, e574, e579 · **Sessions:** S103-S104 · **Scripts:** `scripts/e573_class_or_row.py`, `e573b_synonyms.py`, `e574_what_partition.py`, `e575_vision_twins.py`, `e575b_image_level.py`, `e576_frozen_rows.py`, `e577_functional_transplant.py`, `e578_coalition_transplant.py`, `e579_lead_time.py`
 
 ## Experiments
 
@@ -21,6 +22,8 @@
 | e575b | The same at the image level and at the spatial level (a word's set of patch indices over images) | Images 0.98 / 0.98 but the null 0.99 / 0.79 (uninformative at 40 images); spatial 0.88 / 0.80 (null 0.20 / 0.05) | narrowed (the shared part is the spatial layout) | ← e575 · → 34 |
 | e576 | The loop's reverse direction in the toy: a fresh network trained with the grokked run's write rows frozen (as trained, permuted among the neurons, or random): does it re-use the rows for the same classes? | Trained rows frozen: test acc 0.08, advantage 0.55, words' S 1.18 vs 0.80, base words re-used 0.31, profile correlation -0.01 (random pairs 0.00); permuted: 0.34 / 0.59 / re-used 0.47 / correlation -0.00; random rows: advantage 0.05, S 1.33 vs 1.33 | narrowed (frozen trained rows draw usage, not their classes) | ← e444 e449 e571 · → 23 25 |
 | e577 | What the transplanted direction carries: the step-8000 model's next-token distribution at the entrants' classes with the 16000 direction, the whole neuron, a random word's direction, or the direction in random neurons | Gap to 16000 at the class positions 0.2864 nats; the direction changes them by KL 0.0021 (elsewhere 0.0017) and moves -0.005 of the gap; whole neuron 0.0109, -0.020; random word's direction 0.0065, -0.023 | refuted (the label travels, the computation does not) | ← e565 · → 29 35 |
+| e578 | The coalition transplant factorial: the direction alone, the producer coalition (k = 128, 512) with and without the direction, block-matched random neurons, and the readout (blocks 13-23) alone or with every coalition: what makes the entrant a word, and what moves the recipient's predictions at the class toward the donor? | Words: direction 0.60, coalition 0.47, both 0.93, k = 512 0.83, random 0.13; closure at the class (elsewhere): +0.000 (-0.000) / -0.020 (-0.008) / -0.022 / -0.066 / random -0.005; readout alone -0.873 (-0.994), with all coalitions -0.776 | refuted (no transplant short of the readout carries the computation; the effect is the direction's, its producers' and its readers' together) | ← e577 e545 · → 31 35 |
+| e579 | Does the vocabulary statistic anticipate generalisation in the fourteen toy runs (the native excess and the advantage against test accuracy, every 250 steps, training inputs only)? | The native excess crosses 1.5 in all 8 generalising runs and no memorising run (maxima 1.45 against 2.17), at the step test accuracy crosses 0.5 (lead 0.0 steps; leads in 0.38); the advantage at 0.3 leads by 250.0 steps in 0.62 with 4 false alarms | narrowed (a label-free detector of generalisation, not a predictor) | ← e567 e444 · → 23 |
 
 ## How the results flow
 
@@ -28,6 +31,7 @@
 - `e557, e566 → e574`: the conserved partition, then what it is: surface structure, shared by every model trained to predict the corpus, not an output partition, not the interface.
 - `e562 → e575 → e575b`: the vision vocabulary, then the two models' partitions: shared only in the spatial layout.
 - `e571 → e576`, `e565 → e577`: the loop's forward direction and the transplant's label, then the reverse direction and the transplant's computation: the row draws usage, not classes, and carries a label, not a function.
+- `e577 → e578`: the label without the computation, then the factorial: producers and direction together do not carry it either; the readout does, unspecifically. `e567 → e579`: the sweep re-read as an instrument: a detector, not a predictor.
 
 ## Links to other areas
 

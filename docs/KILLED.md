@@ -656,3 +656,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Two vision models share a partition of patches": 0.02 at the patch level; the spatial layout is what they share (e575, e575b).
 - "The row can bring its class to a fresh network": frozen trained rows draw usage but not the base classes (profile correlation -0.01) (e576).
 - "The transplanted direction carries computation": KL 0.0021, away from the later model (e577).
+
+## Session 104 kills (what has to travel, and what the instrument is for)
+- "The direction carries the function" without qualification: the coalition and the direction together close -0.022 of the gap at the class, the readout -0.873; the effect is the direction's, its producers' and its readers' together (e578).
+- "The producer coalition is the transplantable computation": 128 neurons close -0.020 of the gap, 512 with the direction -0.066 (e578).
+- "The vocabulary statistic predicts grokking": it fires at the step test accuracy crosses one half, not before (lead 0.0 steps), though it never fires in a memorising run (e579).
