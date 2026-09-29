@@ -680,3 +680,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 108 kills (the forecast)
 - "The forecast needs the future in the class": row-free clusters at t forecast recruitment at AUC 0.927 / 0.932 two checkpoints ahead (e588).
 - "The class side adds to the row's own maximum": the combination adds +0.006 / +0.003 over S alone; the maximum already measures the pull (e588).
+
+## Session 109 kills (the last mechanistic hole, the scale test, the paper)
+- "One gradient step shows the turn": the step points at the class at mean cosine +0.020, consistent in sign and driven by the class's positions (0.215 of the gradient at 0.006 of positions), but a drift, not a jump (e589).
+- "A removed speaker is replaced within a few million tokens": 0.17 of the classes have a substitute after 2.5M tokens against 0.30 unfrozen; the proxy cannot reach a real interval (e590).
+- "WDD needs to be the hero of its own record": the paper is written with the network as the subject and WDD as the instrument (PAPER.md).

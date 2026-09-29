@@ -597,6 +597,12 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 109: the mechanism of the turn, the removed speaker at scale, and the paper (e589, e590, PAPER.md)
+
+- The last mechanistic hole: two checkpoints before recruitment the eventual row's gradient step points toward its class at mean cosine +0.020, 3.8 standard errors above zero and above every control, and the class's positions supply 0.215 of the row's gradient at 0.006 of positions (matched non-recruits 0.086): the turn is a small drift the class's own loss drives, accumulated over a real interval's two billion tokens (e589).
+- The removed speaker at scale: thirty words' write columns zeroed and frozen at step 8000, 2.5M tokens of continued training: 0.17 of their classes have a substitute speaker (removal alone 0.23, unfrozen 0.30), the loss at the classes 3.583 -> 3.588 -> 3.636 (e590).
+- The paper (PAPER.md): the falsifiable sequence, structure then alignment then recruitment then distributed implementation then replacement; the five distinctions; what WDD is not; the sentence: the data gives the class and its direction, training recruits the nearest row to it by a small drift the class's own positions drive, thousands of writers implement it, the row is replaceable, and WDD is the instrument that follows the row.
+
 ## Session 108: the forecast, with no future in the class (e588)
 
 - GPT's centrepiece run as a real forecast: classes at t from the states alone (spherical k-means, no rows), the row that would own each class by its pull, the target the words at t + k. On Pythia-410m and OLMo-1B: AUC 0.927 / 0.932 two checkpoints ahead, 0.869 / 0.848 eight ahead; the top hundred candidates per checkpoint recruited at 0.05 / 0.10; the norm at 0.423 / 0.475.

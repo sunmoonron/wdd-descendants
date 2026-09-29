@@ -740,6 +740,9 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H504 Recruitment is forecastable from row-free classes at time t. → e588 → SUPPORTED: AUC 0.927 / 0.932 two checkpoints ahead on Pythia-410m / OLMo-1B (norm 0.423 / 0.475), 0.869 / 0.848 eight ahead; precision at 100 per checkpoint 0.05 / 0.10.
 - H505 The class a row would own carries information beyond the row's own maximum. → e588 → REFUTED: combined AUC 0.932 / 0.967 against S alone 0.926 / 0.965.
 - H506 The arrival of a recruit is forecastable from its pull's slope. → e588 → NARROWED: Spearman 0.04 / 0.04, within two checkpoints for 0.48 / 0.40.
+- H507 The eventual row's gradient step points toward its class before recruitment. → e589 → NARROWED: mean cosine +0.020 (3.8 standard errors; matched non-recruits +0.008, random +0.002, shuffled -0.002): a consistent drift, far smaller than one step's noise on twelve thousand tokens.
+- H508 The class's own positions drive the recruit's gradient. → e589 → ESTABLISHED: 0.215 of the gradient's size at 0.006 of positions (matched non-recruits 0.086, random 0.039), that part pointing at the class (+0.018).
+- H509 A class whose speaker is removed recruits a substitute under continued training. → e590 → NARROWED: 0.17 of classes with a substitute after 600 proxy steps (removal alone 0.23, unfrozen 0.30, random rows removed 0.30); loss at the classes 3.583 -> 3.588 -> 3.636; the proxy raises the loss everywhere by about 0.1 nats and is not a faithful continuation.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
