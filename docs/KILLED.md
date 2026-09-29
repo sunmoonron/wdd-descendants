@@ -648,3 +648,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The cloud comes to the row": the row turns toward the cloud's variance, the cloud does not grow along the row (e571).
 - "The words span the states better than other rows": norm-matched random rows describe them equally at K=8 (e569b); what is the words' is the usage, the extremes and the twins (e572).
 - "Width, decay, learning rate or initialisation scale set the association": only whether the run generalises does (e567).
+
+## Session 103 kills (the object: class, direction or row)
+- "The class is the object and the row its label": the direction carries the downstream effect (effect cosine tracks direction cosine at 0.86); a class that changes rows changes its effect (0.156 against 0.449) (e573, e573b).
+- "The partition is an output partition": predicted-token purity 0.22 against input purity 0.24 (e574).
+- "The vocabulary is the interface later blocks read": words are read no more than norm-matched or random rows (e574).
+- "Two vision models share a partition of patches": 0.02 at the patch level; the spatial layout is what they share (e575, e575b).
+- "The row can bring its class to a fresh network": frozen trained rows draw usage but not the base classes (profile correlation -0.01) (e576).
+- "The transplanted direction carries computation": KL 0.0021, away from the later model (e577).

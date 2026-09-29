@@ -1,0 +1,37 @@
+# 36. The object: class, direction or row (S103)
+
+**Question.** Session 102 left one question above the rest: when a context class changes which row speaks it, does the computation stay? Generalised into five hypotheses the record did not contain: that the function follows the class rather than the direction; that the partition is the corpus's surface structure, or an output partition, and that the words are what later blocks read; that two vision models share a partition; that trained rows can attract a fresh network's cloud (the loop's reverse direction); and that a transplanted direction carries computation.
+
+**Established.**
+- The class is the partition, and the partition is the corpus's surface structure: the token, the previous token, the position and four flags predict a word's context set at AUC 0.853 (0.61 of words at 0.8 or more); it is not an output partition beyond that (predicted-token purity 0.22 against input purity 0.24); two vision models with different objectives share only its spatial layout (0.88 against 0.02 at the patch level) (e574, e575, e575b).
+- The direction carries the function: when a class changes its row the new direction is not the old one (cosine 0.133) and the downstream effect changes with it (0.156 against 0.449 for kept rows); within one model two words sharing a class have effects as alike as their directions (correlation 0.86; 0.185 when they differ, 0.917 when they agree) (e573, e573b). The words are read by the other blocks no more than any other row (e574).
+- The row is the implementation: frozen trained rows draw a fresh network's usage (advantage 0.55 against 0.05 for random frozen rows) without bringing their classes (profile correlation -0.01, random pairs 0.00) (e576); a transplanted direction becomes a word without carrying computation (KL 0.0021 at the class positions, moving away from the later model) (e577).
+- The generalisation: the data fixes the classes, training fixes the directions, the rows are where the directions live; WDD reads the direction through the row.
+
+**Start here:** e573b, e574, e577, e576 · **Sessions:** S103 · **Scripts:** `scripts/e573_class_or_row.py`, `e573b_synonyms.py`, `e574_what_partition.py`, `e575_vision_twins.py`, `e575b_image_level.py`, `e576_frozen_rows.py`, `e577_functional_transplant.py`
+
+## Experiments
+
+| id | question | result | status | links |
+| --- | --- | --- | --- | --- |
+| e573 | When a context class changes its row between step 16000 and the end: does the new row's direction match the old, and does the direction's downstream effect (the logit change through blocks 13-23 when it is removed at the class's positions) match? | Changed-row twins (60): direction cosine 0.133 (0.23 at 0.5 or more; random 0.007), effect cosine 0.156; kept-row twins 0.449; random pairs 0.014 | refuted (neither the direction nor its effect follows the class across a row change) | ← e557b · → 35 |
+| e573b | Within one model, do two words sharing a context class share their downstream effect, and does the effect track the direction? | 150 class-sharing pairs: direction cosine 0.163, effect cosine 0.314 (disjoint pairs 0.068); effect tracks direction at 0.86: 0.185 when the directions differ (n 106), 0.917 when they agree (n 36) | established (the direction carries the function) | ← e547 · → 31 |
+| e574 | What the partition is: surface predictability of the context sets, their homogeneity in the predicted next token against the input token, and the read energy of the words' directions by the other blocks | Surface AUC 0.853 median (0.61 of words >= 0.8); predicted-token purity 0.22 vs input 0.24 (random 0.11 / 0.08), JS 2.928 vs 4.315; read energy words 479 vs norm-matched 526, random rows 435, random directions 473 | mixed (the partition is the corpus's surface structure; not an output partition; the words are not the interface) | ← e557 e572 · → 14 |
+| e575 | Do ViT-base and DeiT-base share a partition of patches on the same 40 images (blocks 3, 6, 9)? | Patch-level twins block 3/6/9 ViT->DeiT 0.09/0.02/0.04, DeiT->ViT 0.03/0.01/0.12 (nulls 0.00) | refuted (no shared patch partition) | ← e562 · → 34 |
+| e575b | The same at the image level and at the spatial level (a word's set of patch indices over images) | Images 0.98 / 0.98 but the null 0.99 / 0.79 (uninformative at 40 images); spatial 0.88 / 0.80 (null 0.20 / 0.05) | narrowed (the shared part is the spatial layout) | ← e575 · → 34 |
+| e576 | The loop's reverse direction in the toy: a fresh network trained with the grokked run's write rows frozen (as trained, permuted among the neurons, or random): does it re-use the rows for the same classes? | Trained rows frozen: test acc 0.08, advantage 0.55, words' S 1.18 vs 0.80, base words re-used 0.31, profile correlation -0.01 (random pairs 0.00); permuted: 0.34 / 0.59 / re-used 0.47 / correlation -0.00; random rows: advantage 0.05, S 1.33 vs 1.33 | narrowed (frozen trained rows draw usage, not their classes) | ← e444 e449 e571 · → 23 25 |
+| e577 | What the transplanted direction carries: the step-8000 model's next-token distribution at the entrants' classes with the 16000 direction, the whole neuron, a random word's direction, or the direction in random neurons | Gap to 16000 at the class positions 0.2864 nats; the direction changes them by KL 0.0021 (elsewhere 0.0017) and moves -0.005 of the gap; whole neuron 0.0109, -0.020; random word's direction 0.0065, -0.023 | refuted (the label travels, the computation does not) | ← e565 · → 29 35 |
+
+## How the results flow
+
+- `e557b → e573 → e573b`: the words outlive their rows (e557b) but not their directions or their effects; the within-model version settles that the effect is the direction's.
+- `e557, e566 → e574`: the conserved partition, then what it is: surface structure, shared by every model trained to predict the corpus, not an output partition, not the interface.
+- `e562 → e575 → e575b`: the vision vocabulary, then the two models' partitions: shared only in the spatial layout.
+- `e571 → e576`, `e565 → e577`: the loop's forward direction and the transplant's label, then the reverse direction and the transplant's computation: the row draws usage, not classes, and carries a label, not a function.
+
+## Links to other areas
+
+- [35 Theory extraction: the mechanism map](35_mechanism_map.md): the question this area answers, and [`MECHANISM_MAP.md`](../MECHANISM_MAP.md) updated with it.
+- [31 The coalitions](31_coalitions.md), [29 How a word leaves](29_exits.md): the coalition that computes what the transplanted row does not.
+- [23 The onset of wordhood in training](23_training_sweep.md), [25 Training's hand](25_training_motion.md): the toy's rows and their motion.
+- [14 Self-description: the native vocabulary](14_native_vocabulary.md), [34 The map: nine directions run](34_map.md): the criterion and the vision models.

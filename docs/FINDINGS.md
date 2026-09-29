@@ -4686,3 +4686,70 @@ SESSION 102 (the user asked for everything that furthers the exploration and rel
   - Pre-registered: W1 (usage three times the norm-matched rows') confirmed; W2 (S higher by 0.2 and the norm-matched twin rate under half the words') confirmed; W3 (words in the top quarter by norm) confirmed.
 
   The mechanism map (MECHANISM_MAP.md) annotates every arrow from the data to behaviour with these and the earlier results, per model, and lists the arrows still open: the reverse direction of the loop (a row shaping the cloud), the developmental parts on Mamba (checkpoints), what the transplant carries beyond the extreme, and whether a context class keeps its role when it changes rows.
+
+SESSION 103 (the user: "another day of gpt gassing up nothing burgers, pls generalize its insights and think outside the box". GPT's reading of session 102 restated the record; the one question in it worth keeping was whether a context class or its row is the object. Generalised into five hypotheses the record did not contain, and run: that the function follows the class rather than the direction (e573, e573b), that the partition is the corpus's surface structure or an output partition and that the words are the directions later blocks read (e574), that two vision models share a partition (e575, e575b), that trained rows can attract a fresh network's cloud, the loop's reverse direction (e576), and that a transplanted direction carries computation (e577).)
+
+- e573 / e573b CLASS OR ROW (Pythia-410m; twin pairs between step 16000 and the end, and class-sharing pairs within the final model; the effect of a direction = the logit change through blocks 13-23 when its component is removed at the class's positions):
+
+  | pairs | n | direction cosine | effect-vector cosine | KL of removing the direction |
+  | --- | --- | --- | --- | --- |
+  | changed-row twins, step 16000 to the end | 60 | 0.133 (share >= 0.5 0.23) | 0.156 | 0.0213 / 0.0281 |
+  | kept-row twins | 52 | 0.695 | 0.449 | 0.0154 / 0.0288 |
+  | random pairs across the checkpoints | 60 | 0.007 (share >= 0.5 0.00) | 0.014 | 0.0051 / 0.0116 |
+  | class-sharing pairs within the final model (Jaccard >= 0.25) | 150 | 0.163 | 0.314 (correlation with the direction cosine 0.86; 0.185 when the directions differ, n 106; 0.917 when they agree, n 36) | |
+  | disjoint pairs within the final model | 120 | 0.001 | 0.068 | |
+
+  - The class is the partition; the direction carries the function. When a class changes its row between 16000 and the end, the new row's direction is not the old one (cosine 0.133, 0.23 of pairs at 0.5 or more; random pairs 0.007) and the direction's downstream effect changes with it (effect cosine 0.156 against 0.449 for classes that kept their row and 0.014 for random pairs). Within one model, two words sharing a class have effects as alike as their directions: the effect cosine tracks the direction cosine at 0.86, 0.185 when the directions differ and 0.917 when they agree (disjoint pairs 0.068). GPT's deepest question resolves the second way: the native write direction has functional content beyond labelling its class; the class is the deeper object only as a partition.
+  - Pre-registered: Q1 (the direction persists across a row change) refuted; Q2 (the effect follows the class) refuted; Q3 (the effect tracks the direction) confirmed.
+
+- e574 WHAT THE PARTITION IS (Pythia-410m block 12; the 256 words' over-the-floor sets):
+
+  | reading | statistic | words' context sets | control |
+  | --- | --- | --- | --- |
+  | surface | five-fold AUC from the token, the previous token, the position bucket and four flags | median 0.853, share >= 0.8 0.61, >= 0.9 0.36, tenth percentile 0.599 | chance 0.5 |
+  | output | modal predicted next token's share within the set | 0.22 | random sets of the same sizes 0.11 |
+  | input | modal input token's share within the set | 0.24 | 0.08 |
+  | output | mean pairwise Jensen-Shannon divergence of the predictions within the set | 2.928 | 4.315 |
+  | interface | read energy of the direction by the other blocks' MLP inputs and attention (all / blocks after 12) | words 479 / 412 | norm-matched rows 526 / 462, random rows 435, rotated words 449, random directions 473 |
+
+  - The partition is largely the corpus's surface structure: the token, the previous token, the position and four flags predict a word's context set at AUC 0.853 at the median (0.61 of words at 0.8 or more). It is not an output partition beyond that: within a set the predicted next token is as pure as the input token (0.22 against 0.24; random sets 0.11 / 0.08), and the predictions within a set are more alike than random (JS 2.928 against 4.315) by no more than the inputs are. And the words are not the interface: the other blocks read a word's direction with 479 units of energy against 526 for norm-matched rows, 435 for random rows and 473 for random directions; the vocabulary is written, not especially read.
+  - Pre-registered: R1 (surface AUC 0.8 or more for most words) confirmed; R2 (an output partition) refuted; R3 (words read more) refuted.
+
+- e575 / e575b TWO VISION MODELS (ViT-base and DeiT-base on the same 40 images; twins at three levels):
+
+  | level (ViT-base against DeiT-base, 40 images) | ViT -> DeiT twins (null) | DeiT -> ViT (null) | median best Jaccard (null) |
+  | --- | --- | --- | --- |
+  | patch positions, block 3 | 0.09 (0.00) | 0.03 (0.00) | 0.08 |
+  | patch positions, block 6 | 0.02 (0.00) | 0.01 (0.00) | 0.07 |
+  | patch positions, block 9 | 0.04 (0.00) | 0.12 (0.00) | 0.09 |
+  | images (a word's set of images), block 6 | 0.98 (0.99) | 0.98 (0.79) | 0.55 (0.45) |
+  | spatial (a word's set of patch indices over images), block 6 | 0.88 (0.20) | 0.80 (0.05) | 0.40 (0.18) |
+
+  - The two vision models do not share a partition of patches, and do share the spatial layout. At the patch level (image and position) twins are 0.02 / 0.01 at block 6 (null 0.00); a word's set of patch indices over images twins at 0.88 / 0.80 (null 0.20 / 0.05); the image level is uninformative with 40 images (null 0.99). "The partition is the data's" holds for the two language-model families with the same objective; for two vision models with different objectives the shared part is the spatial one.
+  - Pre-registered: V5 (patch-level twins at the language models' level) refuted.
+
+- e576 THE LOOP'S REVERSE DIRECTION (the grokked toy's MLP write rows saved; a fresh network trained 10000 steps with the write rows frozen at the trained rows, at the trained rows permuted among the neurons, or at random rows):
+
+  | run | train / test acc | own-over-rotation advantage | words' S / rotated | top-32 usage share | base words re-used as words | base words' profile correlation (share > 0.5) | random pairs | usage correlation with the base |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | base (the grokked run whose rows are saved) | 1.00 / 1.00 | 0.73 | 0.97 / 0.43 | 0.28 | - | - | - | - |
+  | fresh network, the trained rows frozen | 1.00 / 0.08 | 0.55 | 1.18 / 0.80 | 0.34 | 0.31 | -0.01 (0.00) | 0.00 | 0.57 |
+  | fresh network, the trained rows frozen but permuted among the neurons | 1.00 / 0.34 | 0.59 | 1.16 / 0.63 | 0.35 | 0.47 | -0.00 (0.00) | -0.00 | 0.62 |
+  | fresh network, random rows frozen | 1.00 / 0.05 | 0.05 | 1.33 / 1.33 | 0.17 | 0.09 | 0.00 (0.00) | -0.01 | 0.06 |
+
+  - Frozen trained rows attract usage without attracting the classes. A fresh network with the trained rows frozen fits the training set without grokking by 10000 steps (test 0.08; permuted 0.34) yet describes its states by the frozen rows (advantage 0.55 / 0.59 against 0.05 for random frozen rows; words at 1.18 against 0.80 rotated); the base words are re-used as words for 0.31 / 0.47 of them, and their input classes correlate with the base run's at -0.01 / -0.00 (random pairs 0.00). A row can draw the cloud onto itself (the advantage) but not its class; the class is the data's.
+  - Pre-registered: Z1 (the same rows for the same classes, correlation over 0.5 for most) refuted (0.00); Z2 (the classes follow the directions under permutation) refuted; Z3 (random frozen rows: no vocabulary) confirmed.
+
+- e577 WHAT THE TRANSPLANT CARRIES (119 entrants' neurons from step 16000 into step 8000; 1151 class positions; the gap between the models there 0.2864 nats):
+
+  | transplant into the step-8000 model | KL of the change at the class positions | elsewhere | KL to the 16000 model at the class positions, before -> after | moved toward 16000, share of the gap |
+  | --- | --- | --- | --- | --- |
+  | the entrants' write directions at the old norm | 0.0021 | 0.0017 | 0.2864 -> 0.2877 | -0.005 |
+  | the whole neurons | 0.0109 | 0.0088 | 0.2864 -> 0.2922 | -0.020 |
+  | random words' directions into the same neurons | 0.0065 | 0.0057 | 0.2864 -> 0.2930 | -0.023 |
+  | the entrants' directions into random other neurons | 0.0017 | 0.0017 | 0.2864 -> 0.2875 | -0.004 |
+
+  - The label travels, the computation does not. The direction alone changes the 8000 model's predictions at the class positions by 0.0021 nats (elsewhere 0.0017) and moves them away from the 16000 model (-0.005 of the gap); the whole neuron by 0.0109, also away (-0.020); a random word's direction 0.0065. The transplanted row becomes a word (e565) because the cloud already speaks the direction; what the later model computes there is the coalition's, and it does not come with one neuron.
+  - Pre-registered: T4 (KL under 0.01) confirmed; T5 (the whole neuron moves toward 16000 by under a tenth) refuted in sign, it moves away.
+
+  The generalisation, against GPT's: the record now separates three objects. The partition of contexts into classes is the corpus's surface structure and is shared by every language model trained to predict it (0.3-0.5 twins across seeds, scales, architectures and families), not by two vision models with different objectives. The direction a class is spoken along is the model's own, carries the class's downstream effect, and is not preserved when the class changes rows. The row is the direction's implementation: it can be recruited to a spoken direction, transplanted as a label, and frozen to attract usage, but it brings no computation by itself and is not what later blocks read. WDD reads the second object through the third.

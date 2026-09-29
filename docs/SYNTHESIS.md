@@ -597,6 +597,14 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 103: the object, class or direction or row (e573-e577)
+
+- GPT's one live question after session 102, whether a context class or its row is the object, generalised into five hypotheses and run. The answer has three parts, and the record now separates them.
+- The class is the partition, and the partition is the corpus's surface structure: the token, the previous token, the position and four flags predict a word's context set at AUC 0.853; it is not an output partition beyond that (0.22 against 0.24 purity), and two vision models with different objectives share only the spatial layout of it (0.88 against 0.02 at the patch level) (e574, e575, e575b).
+- The direction carries the function: when a class changes its row the new direction is not the old one (0.133) and the downstream effect changes with it (0.156 against 0.449 for kept rows); within one model the effects of two words sharing a class are as alike as their directions (0.86) (e573, e573b). The words are not the directions later blocks read (e574).
+- The row is the implementation: frozen trained rows draw a fresh network's usage (advantage 0.55) without its classes (profile correlation -0.01) (e576); a transplanted direction becomes a word without carrying computation (KL 0.0021, away from the later model) (e577).
+- The generalisation: the partition is the data's and shared by every model trained to predict the corpus; the direction is the model's and carries the class's effect; the row is recruited, transplantable as a label, and computes nothing alone. WDD reads the direction through the row.
+
 ## Session 102: theory extraction, the arrows tested and the mechanism map (e565-e572, MECHANISM_MAP.md)
 
 - The question above the program, in GPT's words after session 101: why does a trained network organise its computation into persistent associations between native write directions and classes of its state distribution. The map (MECHANISM_MAP.md) has eight arrows and five cross-cutting claims, each annotated per model; these eight experiments tested the arrows that were open.

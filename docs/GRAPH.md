@@ -717,6 +717,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H481 Mamba's vocabulary is built by a private coalition with the own row first. → e570 → ESTABLISHED: within-row coherence 0.857 against 0.000, near misses 0.400, random directions 0.096; own rank 0; the near misses as selective as the words (7.54 against 6.35).
 - H482 The cloud rises along the row before the row turns. → e571 → REFUTED: at k = -2..0 the row's part of the rise is +0.042 to +0.045 and the cloud's +0.002 to +0.032; the row turns toward the cloud's variance (1.035 against a random turn's 0.970) and the cloud does not grow along the row (0.997 against 0.997).
 - H483 A word is a large row. → e572 → REFUTED: norm-matched non-word rows are used 0 times against the words' 19, sit at S 0.92 against 1.61, and twin across models at 0.02 against 0.40.
+- H484 When a class changes its row, the new row is recruited to the old direction. → e573 → REFUTED: direction cosine 0.133 for changed-row twins (0.23 at 0.5 or more; random pairs 0.007).
+- H485 The computation follows the class, not the direction. → e573, e573b → REFUTED: effect cosine 0.156 for changed-row twins against 0.449 for kept rows; within a model the effect cosine of class-sharing pairs tracks their direction cosine at 0.86 (0.185 when the directions differ, 0.917 when they agree).
+- H486 The partition is the corpus's surface structure. → e574 → SUPPORTED: the token, the previous token, the position and four flags predict a word's context set at AUC 0.853 (0.61 of words at 0.8 or more).
+- H487 The partition is an output partition (classes of next-token prediction). → e574 → REFUTED as a distinction: predicted-token purity 0.22 against input purity 0.24 (random 0.11 / 0.08).
+- H488 The words are the directions later blocks read. → e574 → NULL: read energy 479 for words against 526 norm-matched, 435 random rows, 473 random directions.
+- H489 Two vision models share a partition. → e575, e575b → NARROWED: patch-level twins 0.02 (null 0.00); the spatial layout shared at 0.88 (null 0.20); the image level uninformative at 40 images.
+- H490 Trained rows attract a fresh network's cloud (the loop's reverse direction). → e576 → NARROWED: frozen trained rows draw usage (advantage 0.55 / 0.59 permuted, against 0.05 for random frozen rows) without grokking (test 0.08 / 0.34) and without the base classes (profile correlation -0.01 / -0.00, random pairs 0.00).
+- H491 A transplanted direction carries computation. → e577 → REFUTED: KL 0.0021 at the class positions (elsewhere 0.0017), moving away from the later model (-0.005 of the gap); the whole neuron 0.0109, -0.020.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
