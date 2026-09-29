@@ -670,3 +670,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 106 kills (the developmental comparison)
 - "Only the native dictionary sees the class early": where the per-checkpoint autoencoder has a feature for a class (0.31 of classes) it has it before the row is recruited (0.61); and the class is present in the cloud from the first checkpoint for either dictionary (e584).
 - "The learned dictionary can date when a parameter becomes responsible": its decoder points at the row 7.0 checkpoints after recruitment, for 33 of 241 words (e584).
+
+## Session 107 kills (responsibility migration, read directly)
+- "Responsibility relays between rows": one speaker at the median, a gap before it, handoffs rare and passed through overlaps (e585).
+- "Recruitment is a lottery among rows": the recruit is the first of 53,248 rows by its ratio over the class two checkpoints ahead for 0.52 of words, top ten for 0.84 (e587).
+- "The class needs its row": with the eventual words frozen the toy still generalises (1.00) with a vocabulary on other neurons; a third of the classes re-appear on substitutes (e586).
+- "One more autoencoder control is what the developmental claim needs": the three facts above need none.

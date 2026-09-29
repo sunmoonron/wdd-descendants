@@ -4880,3 +4880,58 @@ SESSION 106 (the user: "gpt glazing again, do your magic". GPT's one claim left 
   - Limits: the row-free presence measure saturates and needs a sharper form (the class's coherence relative to surface-matched sets, not random ones); the autoencoder is small (4096 latents on 12k states) and a longitudinally matched, larger one is the stronger control still to be built.
 
   The placement, sharpened: at a fixed checkpoint a learned dictionary sees what WDD sees (session 105); across checkpoints the class exists before either dictionary is needed, the learned one sees a minority of the classes and sees those before the row, and it cannot date the parameter, which WDD has for free because its dictionary is the model's parameterisation. The honest claim, in GPT's words: a native, parameter-indexed coordinate system for how representations form and how responsibility for them migrates through training. A longitudinally trained or matched autoencoder could be built to do the same; until it is, the developmental question is the instrument's.
+
+SESSION 107 (the user: instead of one more control, out-of-the-box experiments that end the loop. Three, none in GPT's framing: the relay, a map of how responsibility for a class migrates between rows with the class's own direction as the invariant (e585); recruitment as geometry, whether the row that will be recruited is already the nearest available row thousands of steps ahead (e587); and the causal version in the toy, the rows about to be recruited frozen and the classes watched for substitutes (e586).)
+
+- e585 THE RELAY (253 classes of the step-16000 words, 12219 positions, sixteen checkpoints and the final model; the speaker of a class at a checkpoint is the row over the floor at the most of its positions; the class's own direction is the unit mean of its unit states):
+
+  | step | the class's own direction, cosine with 16000 | the 16000 row's direction, cosine with itself at 16000 | the speaker is the 16000 word |
+  | --- | --- | --- | --- |
+  | 1000 | 0.61 | 0.20 | 0.00 |
+  | 2000 | 0.75 | 0.39 | 0.01 |
+  | 3000 | 0.81 | 0.53 | 0.03 |
+  | 4000 | 0.85 | 0.64 | 0.06 |
+  | 5000 | 0.87 | 0.71 | 0.10 |
+  | 6000 | 0.89 | 0.78 | 0.21 |
+  | 7000 | 0.91 | 0.82 | 0.28 |
+  | 8000 | 0.93 | 0.86 | 0.35 |
+  | 9000 | 0.94 | 0.90 | 0.43 |
+  | 10000 | 0.95 | 0.93 | 0.53 |
+  | 11000 | 0.96 | 0.95 | 0.63 |
+  | 12000 | 0.96 | 0.96 | 0.72 |
+  | 13000 | 0.97 | 0.98 | 0.77 |
+  | 14000 | 0.97 | 0.98 | 0.83 |
+  | 15000 | 0.97 | 0.99 | 0.89 |
+  | 16000 | 1.00 | 1.00 | 1.00 |
+  | final | 0.86 | 0.69 | 0.38 |
+
+  - Tenure after a gap, not a relay; and the class's direction is the invariant. A class has 1 speaker over the sixteen checkpoints at the median (0.31 of classes have more than one), 0 handoffs, and 8 checkpoints of gap (every class has one: the checkpoints before its row is recruited, when no row is over the floor at half of it); the 187 handoffs that do happen pass through an overlap 183 times (responsibility is passed, not dropped). Meanwhile the class's own direction is already at cosine 0.85 with its 16000 direction at step 4000 and 0.93 at 8000, when the eventual row is the speaker for 0.06 and 0.35 of classes; at the final model the class's direction is still at 0.86 while the 16000 word is still the speaker for 0.38 (its own direction there at cosine 0.69). The latent object, the class with its direction, is not the parameter: it exists and points the same way before any row speaks it, and outlives the row that does.
+  - Pre-registered: Y1 (most classes have more than one speaker) refuted (0.31); Y2 (the class's direction more persistent than the speaker's identity) confirmed; Y3 (handoffs through overlaps) confirmed (183 of 187).
+
+- e587 RECRUITMENT AS GEOMETRY (189 tracked words recruited from step 3000 on; the eventual row's rank among 53,248 rows at earlier checkpoints, by cosine with the class's own direction, by its mean projection ratio over the class's positions, and by the count of class positions it is over the floor at):
+
+  | checkpoints before recruitment | n | rank of the eventual row by cosine with the class's direction, median (top 10, top 100) | by its mean projection ratio over the class (top 10, top 100, first of all) | by the count of class positions over the floor | its cosine / ratio |
+  | --- | --- | --- | --- | --- | --- |
+  | 0 | 189 | 1 (0.88, 0.90) | 1 (0.96, 1.00, 0.71) | 1 | 0.30 / 1.02 |
+  | 1 | 189 | 1 (0.85, 0.92) | 1 (0.92, 1.00, 0.59) | 2 | 0.26 / 0.95 |
+  | 2 | 189 | 2 (0.78, 0.89) | 1 (0.84, 0.95, 0.52) | 3 | 0.24 / 0.90 |
+  | 3 | 189 | 2 (0.71, 0.81) | 2 (0.74, 0.86, 0.43) | 5 | 0.23 / 0.85 |
+  | 5 | 157 | 3 (0.69, 0.82) | 2 (0.72, 0.87, 0.40) | 7 | 0.21 / 0.79 |
+  | 8 | 117 | 5 (0.56, 0.72) | 4 (0.62, 0.76, 0.31) | 16 | 0.18 / 0.69 |
+
+  - The recruit is the nearest available row, thousands of steps ahead. Two checkpoints before recruitment the eventual row is the first of all rows by its ratio over the class for 0.52 of words and in the top ten for 0.84 (by cosine with the class's direction, rank 2 at the median, top ten for 0.78); five checkpoints before, top ten for 0.72; eight before, 0.62. Which row will be recruited for a class is predictable from the class alone, and the states pick it more sharply than the direction (ratio above cosine at every lead). Recruitment is the geometry's, not a lottery; the row that is already nearest to the class turns into it (e571) and is recruited when it crosses the floor.
+  - Pre-registered: G1 (top 10 by cosine two before, for most) confirmed; G2 (top 100 five before, for most) confirmed (0.82); G3 (ratio ranks better than cosine) confirmed.
+
+- e586 BLOCK THE RECRUIT (the toy; the base run's state at step 1500 and its 32 eventual words; training resumed to 10000 with those neurons frozen, with 32 random non-words frozen, and unfrozen):
+
+  | run from step 1500 | train / test acc | advantage | words' S / rotated | frozen neurons that are words at the end | base words still words | each base class's best substitute among the other final words: profile correlation (share over 0.5) | random pairs | the same row's correlation with its base profile |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | the base run (uninterrupted) | 1.00 / 1.00 | 0.73 | 0.97 / 0.43 | - | - | - | - | - |
+  | resumed, nothing frozen | 1.00 / 1.00 | 0.73 | 0.97 / 0.43 | - | 1.00 | 0.52 (0.59) | -0.02 | 1.00 |
+  | resumed with the 32 eventual words frozen | 1.00 / 1.00 | 0.72 | 0.97 / 0.40 | 0.03 | 0.03 | 0.38 (0.34) | 0.01 | 0.01 |
+  | resumed with 32 random non-words frozen | 1.00 / 1.00 | 0.73 | 0.83 / 0.41 | 0.12 | 0.12 | 0.51 (0.53) | -0.04 | 0.11 |
+
+  - The blocked classes are only partly re-implemented. With its eventual words frozen the network reaches test accuracy 1.00 (unfrozen 1.00, random neurons frozen 1.00); 0.03 of the frozen neurons are words at the end (they cannot move, so they cannot be recruited) and 0.03 of the base words are words; each base class's best substitute among the other final words has profile correlation 0.38 with the base class (over 0.5 for 0.34; random pairs 0.01), against 0.52 in the unfrozen run (where the base row itself carries the class at 1.00) and 0.51 with random neurons frozen. The class is the data's and the task's; block the row that would have carried it and another row is recruited to it.
+  - Pre-registered: S1 (still groks with the eventual words frozen) confirmed; S2 (most base classes re-appear on substitutes) refuted (0.34); S3 (frozen rows are not words) confirmed.
+
+  What ends the loop: the latent object is the class with its direction, present and pointing the right way before any row speaks it (e585); the row that will speak it is the nearest available row, predictable thousands of steps ahead (e587); and if that row is blocked, another is recruited to the class (e586). No autoencoder control is needed for any of the three, and none of the three is a statistic about WDD; they are facts about how a network assigns parameters to the structure its data gives it, read in parameter coordinates.
