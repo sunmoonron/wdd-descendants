@@ -1,0 +1,113 @@
+{
+ "model": "pythia160",
+ "domain": "pubmed",
+ "method": "drift",
+ "n_words": 256,
+ "n_forget_words": 60,
+ "n_retain_words": 27,
+ "loss0": {
+  "forget": 2.92544162273407,
+  "retain": 3.0934720039367676,
+  "forget_q4": 4.99478554725647,
+  "forget_q8": 2.935857057571411
+ },
+ "base_audit": {
+  "forget": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998211860657,
+   "share_still_writing": 1.0,
+   "S": 1.6208884716033936,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  },
+  "retain": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.5657267570495605,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  }
+ },
+ "probe0": {
+  "forget_acc": 0.9775364398956299,
+  "retain_acc": 0.8938423991203308,
+  "forget_logit": 4.539224624633789
+ },
+ "conditions": {
+  "drift": {
+   "method": "drift",
+   "target": 0.0,
+   "steps": 200,
+   "loss_forget": 3.1902809143066406,
+   "loss_retain": 3.425924301147461,
+   "rise_forget": 0.2648392915725708,
+   "rise_retain": 0.33245229721069336,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999934434890747,
+     "row_cos_min": 0.9999876022338867,
+     "share_still_writing": 0.95,
+     "S": 1.5362762212753296,
+     "still_word": 0.9,
+     "act_ratio": 1.0001238340968044,
+     "share_act_halved": 0.016666666666666666
+    },
+    "retain": {
+     "row_cos": 0.9999939799308777,
+     "row_cos_min": 0.9999895095825195,
+     "share_still_writing": 0.9259259259259259,
+     "S": 1.5585390329360962,
+     "still_word": 0.8518518518518519,
+     "act_ratio": 0.9668709411342095,
+     "share_act_halved": 0.0
+    }
+   },
+   "where": {
+    "total": 0.3548370599746704,
+    "early_blocks_only": 0.05685912072658539,
+    "late_blocks_only": 0.20603492856025696
+   },
+   "early_share": 0.21628150534722335,
+   "param_change": {
+    "total": 0.0007674796351590544,
+    "groups": {
+     "embeddings": 0.0009147972532683249,
+     "layernorm 0-6": 9.851604359577691e-05,
+     "attention 0-6": 0.0006293700896617447,
+     "mlp 0-6": 0.003525669299371548,
+     "layernorm 7-11": 4.990454681081976e-05,
+     "attention 7-11": 0.00018117914428118862,
+     "mlp 7-11": 0.003509825342734745,
+     "other": 0.0015726527797358942
+    },
+    "row_rel_change": {
+     "forget_words": 0.003627929836511612,
+     "retain_words": 0.0034671409521251917,
+     "all_rows": 0.0045126318000257015,
+     "forget_over_norm_matched": 0.9578061103820801,
+     "retain_over_norm_matched": 0.9322424530982971
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9637126922607422,
+    "retain_acc": 0.9214092493057251,
+    "forget_logit": 4.024324893951416
+   },
+   "loss_after_relearn20": 3.0513163805007935,
+   "recovery": 0.5247126775664568,
+   "steps_to_relearn": null,
+   "benign_forget": 3.3547275066375732,
+   "benign_retain": 3.6473721265792847,
+   "recovery_benign": -0.6209297395204338,
+   "forget_q4": 5.230449438095093,
+   "recovery_q4": 0.11016265962920069,
+   "forget_q8": 3.1985199451446533,
+   "recovery_q8": 0.008217828957348017
+  }
+ },
+ "_exp": "e597_audit_pythia160_pubmed_drift",
+ "_time": "2026-09-29 19:30:55"
+}

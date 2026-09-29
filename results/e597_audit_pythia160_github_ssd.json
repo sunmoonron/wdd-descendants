@@ -1,0 +1,256 @@
+{
+ "model": "pythia160",
+ "domain": "github",
+ "method": "ssd",
+ "n_words": 256,
+ "n_forget_words": 54,
+ "n_retain_words": 53,
+ "loss0": {
+  "forget": 1.703926920890808,
+  "retain": 2.8542587757110596,
+  "forget_q4": 3.398533821105957,
+  "forget_q8": 1.7114777565002441
+ },
+ "base_audit": {
+  "forget": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.4856224060058594,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  },
+  "retain": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.5440081357955933,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  }
+ },
+ "probe0": {
+  "forget_acc": 0.9854822754859924,
+  "retain_acc": 0.7742730379104614,
+  "forget_logit": 3.7409160137176514
+ },
+ "conditions": {
+  "ssd_1": {
+   "method": "ssd",
+   "target": 1.0,
+   "steps": 5,
+   "loss_forget": 3.774923086166382,
+   "loss_retain": 3.9006437063217163,
+   "rise_forget": 2.0709961652755737,
+   "rise_retain": 1.0463849306106567,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9005930423736572,
+     "row_cos_min": 0.6054323315620422,
+     "share_still_writing": 0.05555555555555555,
+     "S": 1.093092679977417,
+     "still_word": 0.3148148148148148,
+     "act_ratio": 0.3105358899343457,
+     "share_act_halved": 0.5925925925925926
+    },
+    "retain": {
+     "row_cos": 0.9999999403953552,
+     "row_cos_min": 0.6166915893554688,
+     "share_still_writing": 0.660377358490566,
+     "S": 1.5898405313491821,
+     "still_word": 0.6981132075471698,
+     "act_ratio": 0.9441261368364311,
+     "share_act_halved": 0.11320754716981132
+    }
+   },
+   "where": {
+    "total": 2.0181422233581543,
+    "early_blocks_only": 1.4706491231918335,
+    "late_blocks_only": 0.508533775806427
+   },
+   "early_share": 0.7430587258692386,
+   "param_change": {
+    "total": 0.022085229346746015,
+    "groups": {
+     "embeddings": 0.0,
+     "layernorm 0-6": 0.0,
+     "attention 0-6": 0.040943167543533304,
+     "mlp 0-6": 0.1727538253686353,
+     "layernorm 7-11": 0.0,
+     "attention 7-11": 0.004913775023361358,
+     "mlp 7-11": 0.17218486736781424,
+     "other": 0.0
+    },
+    "row_rel_change": {
+     "forget_words": 0.4590458869934082,
+     "retain_words": 0.0,
+     "all_rows": 0.04496510326862335,
+     "forget_over_norm_matched": 12.675898551940918,
+     "retain_over_norm_matched": 0.0
+    }
+   },
+   "probe": {
+    "forget_acc": 0.5831490755081177,
+    "retain_acc": 0.9693251848220825,
+    "forget_logit": 0.2809636890888214
+   },
+   "loss_after_relearn20": 2.9890007972717285,
+   "recovery": 0.37948997785327904,
+   "steps_to_relearn": null,
+   "benign_forget": 3.1803113222122192,
+   "benign_retain": 3.591078758239746,
+   "recovery_benign": 0.28711388940454247,
+   "forget_q4": 6.466183423995972,
+   "recovery_q4": -0.48124349736872785,
+   "forget_q8": 3.7813721895217896,
+   "recovery_q8": 0.0005319817933520099,
+   "dampened_share": 0.03900665707058377
+  },
+  "ssd_2": {
+   "method": "ssd",
+   "target": 2.0,
+   "steps": 5,
+   "loss_forget": 3.774923086166382,
+   "loss_retain": 3.9006437063217163,
+   "rise_forget": 2.0709961652755737,
+   "rise_retain": 1.0463849306106567,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9005930423736572,
+     "row_cos_min": 0.6054323315620422,
+     "share_still_writing": 0.05555555555555555,
+     "S": 1.093092679977417,
+     "still_word": 0.3148148148148148,
+     "act_ratio": 0.3105358899343457,
+     "share_act_halved": 0.5925925925925926
+    },
+    "retain": {
+     "row_cos": 0.9999999403953552,
+     "row_cos_min": 0.6166915893554688,
+     "share_still_writing": 0.660377358490566,
+     "S": 1.5898405313491821,
+     "still_word": 0.6981132075471698,
+     "act_ratio": 0.9441261368364311,
+     "share_act_halved": 0.11320754716981132
+    }
+   },
+   "where": {
+    "total": 2.0181422233581543,
+    "early_blocks_only": 1.4706491231918335,
+    "late_blocks_only": 0.508533775806427
+   },
+   "early_share": 0.7430587258692386,
+   "param_change": {
+    "total": 0.022085229346746015,
+    "groups": {
+     "embeddings": 0.0,
+     "layernorm 0-6": 0.0,
+     "attention 0-6": 0.040943167543533304,
+     "mlp 0-6": 0.1727538253686353,
+     "layernorm 7-11": 0.0,
+     "attention 7-11": 0.004913775023361358,
+     "mlp 7-11": 0.17218486736781424,
+     "other": 0.0
+    },
+    "row_rel_change": {
+     "forget_words": 0.4590458869934082,
+     "retain_words": 0.0,
+     "all_rows": 0.04496510326862335,
+     "forget_over_norm_matched": 12.675898551940918,
+     "retain_over_norm_matched": 0.0
+    }
+   },
+   "probe": {
+    "forget_acc": 0.5831490755081177,
+    "retain_acc": 0.9693251848220825,
+    "forget_logit": 0.2809636890888214
+   },
+   "loss_after_relearn20": 2.985040307044983,
+   "recovery": 0.3814023378533366,
+   "steps_to_relearn": null,
+   "benign_forget": 3.1725032329559326,
+   "benign_retain": 3.587059736251831,
+   "recovery_benign": 0.290884098827044,
+   "forget_q4": 6.466183423995972,
+   "recovery_q4": -0.48124349736872785,
+   "forget_q8": 3.7813721895217896,
+   "recovery_q8": 0.0005319817933520099,
+   "dampened_share": 0.03900665707058377
+  },
+  "ssd_4": {
+   "method": "ssd",
+   "target": 4.0,
+   "steps": 3,
+   "loss_forget": 6.5605292320251465,
+   "loss_retain": 5.354850769042969,
+   "rise_forget": 4.856602311134338,
+   "rise_retain": 2.500591993331909,
+   "audit": {
+    "forget": {
+     "row_cos": 0.8584545254707336,
+     "row_cos_min": 0.6874055862426758,
+     "share_still_writing": 0.037037037037037035,
+     "S": 0.9277087450027466,
+     "still_word": 0.14814814814814814,
+     "act_ratio": 0.004915165642365942,
+     "share_act_halved": 0.7592592592592593
+    },
+    "retain": {
+     "row_cos": 0.9968677163124084,
+     "row_cos_min": 0.752379298210144,
+     "share_still_writing": 0.37735849056603776,
+     "S": 1.547269344329834,
+     "still_word": 0.6037735849056604,
+     "act_ratio": 0.8018889768055354,
+     "share_act_halved": 0.3018867924528302
+    }
+   },
+   "where": {
+    "total": 4.792913436889648,
+    "early_blocks_only": 3.772984504699707,
+    "late_blocks_only": 1.0355651378631592
+   },
+   "early_share": 0.7846408553845724,
+   "param_change": {
+    "total": 0.033821579768125984,
+    "groups": {
+     "embeddings": 0.0,
+     "layernorm 0-6": 0.0,
+     "attention 0-6": 0.06327371633660629,
+     "mlp 0-6": 0.26821520352159045,
+     "layernorm 7-11": 0.0,
+     "attention 7-11": 0.007513696207095548,
+     "mlp 7-11": 0.2573677418562373,
+     "other": 0.0
+    },
+    "row_rel_change": {
+     "forget_words": 0.6179786920547485,
+     "retain_words": 0.0791432186961174,
+     "all_rows": 0.14752326905727386,
+     "forget_over_norm_matched": 4.803651332855225,
+     "retain_over_norm_matched": 0.624771773815155
+    }
+   },
+   "probe": {
+    "forget_acc": 0.03237674757838249,
+    "retain_acc": 0.9970588684082031,
+    "forget_logit": -2.046175718307495
+   },
+   "loss_after_relearn20": 4.7278358936309814,
+   "recovery": 0.3773612128364922,
+   "steps_to_relearn": null,
+   "benign_forget": 4.643202781677246,
+   "benign_retain": 4.420271396636963,
+   "recovery_benign": 0.3947876164272709,
+   "forget_q4": 9.389986038208008,
+   "recovery_q4": -0.23367157392441507,
+   "forget_q8": 6.570437431335449,
+   "recovery_q8": -0.00048539360438515367,
+   "dampened_share": 0.11597006997944397
+  }
+ },
+ "_exp": "e597_audit_pythia160_github_ssd",
+ "_time": "2026-09-29 19:39:32"
+}

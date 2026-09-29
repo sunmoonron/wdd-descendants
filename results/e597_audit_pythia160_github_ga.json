@@ -1,0 +1,253 @@
+{
+ "model": "pythia160",
+ "domain": "github",
+ "method": "ga",
+ "n_words": 256,
+ "n_forget_words": 54,
+ "n_retain_words": 53,
+ "loss0": {
+  "forget": 1.703926920890808,
+  "retain": 2.8542587757110596,
+  "forget_q4": 3.398533821105957,
+  "forget_q8": 1.7114777565002441
+ },
+ "base_audit": {
+  "forget": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.4856224060058594,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  },
+  "retain": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.5440081357955933,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  }
+ },
+ "probe0": {
+  "forget_acc": 0.9854822754859924,
+  "retain_acc": 0.7742730379104614,
+  "forget_logit": 3.7409160137176514
+ },
+ "conditions": {
+  "ga_1": {
+   "method": "ga",
+   "target": 1.0,
+   "steps": 340,
+   "loss_forget": 2.779621124267578,
+   "loss_retain": 3.157570958137512,
+   "rise_forget": 1.07569420337677,
+   "rise_retain": 0.30331218242645264,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999973773956299,
+     "row_cos_min": 0.9999920129776001,
+     "share_still_writing": 0.9444444444444444,
+     "S": 1.5122278928756714,
+     "still_word": 0.9444444444444444,
+     "act_ratio": 0.9806981532500041,
+     "share_act_halved": 0.018518518518518517
+    },
+    "retain": {
+     "row_cos": 0.999998152256012,
+     "row_cos_min": 0.9999947547912598,
+     "share_still_writing": 0.9811320754716981,
+     "S": 1.5489180088043213,
+     "still_word": 0.8867924528301887,
+     "act_ratio": 0.9998248315176528,
+     "share_act_halved": 0.018867924528301886
+    }
+   },
+   "where": {
+    "total": 1.0703680515289307,
+    "early_blocks_only": 0.40946847200393677,
+    "late_blocks_only": 0.053923942148685455
+   },
+   "early_share": 0.8836322293982889,
+   "param_change": {
+    "total": 0.00026017879362687945,
+    "groups": {
+     "embeddings": 0.000536677285794016,
+     "layernorm 0-6": 4.877528797729389e-05,
+     "attention 0-6": 0.00036748743312716196,
+     "mlp 0-6": 0.0019162583553290226,
+     "layernorm 7-11": 1.986870142117661e-05,
+     "attention 7-11": 9.083697883545584e-05,
+     "mlp 7-11": 0.001790995553476101,
+     "other": 0.00024750031992562505
+    },
+    "row_rel_change": {
+     "forget_words": 0.002236453117802739,
+     "retain_words": 0.001949045341461897,
+     "all_rows": 0.0023316117003560066,
+     "forget_over_norm_matched": 1.0859626531600952,
+     "retain_over_norm_matched": 0.9128351211547852
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9872047305107117,
+    "retain_acc": 0.7772302031517029,
+    "forget_logit": 3.846184015274048
+   },
+   "loss_after_relearn20": 1.8673356175422668,
+   "recovery": 0.8480900090950628,
+   "steps_to_relearn": 35,
+   "benign_forget": 2.9494963884353638,
+   "benign_retain": 3.215019941329956,
+   "recovery_benign": -0.15792152047907387,
+   "forget_q4": 4.253844738006592,
+   "recovery_q4": 0.20487540583961328,
+   "forget_q8": 2.78485369682312,
+   "recovery_q8": 0.0021551320501836946
+  },
+  "ga_2": {
+   "method": "ga",
+   "target": 2.0,
+   "steps": 600,
+   "loss_forget": 3.6372913122177124,
+   "loss_retain": 3.4553157091140747,
+   "rise_forget": 1.9333643913269043,
+   "rise_retain": 0.6010569334030151,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999969005584717,
+     "row_cos_min": 0.9999901056289673,
+     "share_still_writing": 0.9074074074074074,
+     "S": 1.5183676481246948,
+     "still_word": 0.8888888888888888,
+     "act_ratio": 0.9922159609341822,
+     "share_act_halved": 0.018518518518518517
+    },
+    "retain": {
+     "row_cos": 0.9999977946281433,
+     "row_cos_min": 0.999994158744812,
+     "share_still_writing": 1.0,
+     "S": 1.569399356842041,
+     "still_word": 0.8301886792452831,
+     "act_ratio": 1.0003388543201734,
+     "share_act_halved": 0.018867924528301886
+    }
+   },
+   "where": {
+    "total": 1.908752679824829,
+    "early_blocks_only": 0.5888994336128235,
+    "late_blocks_only": 0.05200907588005066
+   },
+   "early_share": 0.9188510136630836,
+   "param_change": {
+    "total": 0.00028321682178226976,
+    "groups": {
+     "embeddings": 0.0006168190634376283,
+     "layernorm 0-6": 5.2469818640871524e-05,
+     "attention 0-6": 0.0004037541176992297,
+     "mlp 0-6": 0.0020850238377282154,
+     "layernorm 7-11": 2.117739812503577e-05,
+     "attention 7-11": 0.00010087679104674182,
+     "mlp 7-11": 0.0019441106130680859,
+     "other": 0.00026022615085786663
+    },
+    "row_rel_change": {
+     "forget_words": 0.002414349000900984,
+     "retain_words": 0.002116156043484807,
+     "all_rows": 0.002496355213224888,
+     "forget_over_norm_matched": 1.0948114395141602,
+     "retain_over_norm_matched": 0.9136507511138916
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9906495809555054,
+    "retain_acc": 0.771562397480011,
+    "forget_logit": 4.236365795135498
+   },
+   "loss_after_relearn20": 1.8319291472434998,
+   "recovery": 0.9337930154672802,
+   "steps_to_relearn": 30,
+   "benign_forget": 3.8937395811080933,
+   "benign_retain": 3.5305161476135254,
+   "recovery_benign": -0.13264352547342387,
+   "forget_q4": 4.687145471572876,
+   "recovery_q4": 0.33348743969442796,
+   "forget_q8": 3.6345126628875732,
+   "recovery_q8": 0.005342751209194363
+  },
+  "ga_4": {
+   "method": "ga",
+   "target": 4.0,
+   "steps": 600,
+   "loss_forget": 5.166094779968262,
+   "loss_retain": 3.804370403289795,
+   "rise_forget": 3.4621678590774536,
+   "rise_retain": 0.9501116275787354,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999963641166687,
+     "row_cos_min": 0.9999876022338867,
+     "share_still_writing": 0.8148148148148148,
+     "S": 1.5277866125106812,
+     "still_word": 0.8703703703703703,
+     "act_ratio": 0.9700626093975626,
+     "share_act_halved": 0.07407407407407407
+    },
+    "retain": {
+     "row_cos": 0.9999973773956299,
+     "row_cos_min": 0.9999926090240479,
+     "share_still_writing": 0.9245283018867925,
+     "S": 1.5256818532943726,
+     "still_word": 0.7924528301886793,
+     "act_ratio": 1.0001695372623831,
+     "share_act_halved": 0.018867924528301886
+    }
+   },
+   "where": {
+    "total": 3.547062397003174,
+    "early_blocks_only": 1.3739988803863525,
+    "late_blocks_only": 0.03595501184463501
+   },
+   "early_share": 0.9744991577080986,
+   "param_change": {
+    "total": 0.00030208626568195644,
+    "groups": {
+     "embeddings": 0.0007013696771438178,
+     "layernorm 0-6": 6.035616273313547e-05,
+     "attention 0-6": 0.00043991764626929563,
+     "mlp 0-6": 0.0022520979149067643,
+     "layernorm 7-11": 2.4602365237654102e-05,
+     "attention 7-11": 0.00010611615924489288,
+     "mlp 7-11": 0.0020637375182645983,
+     "other": 0.0002597619271152484
+    },
+    "row_rel_change": {
+     "forget_words": 0.0026256621349602938,
+     "retain_words": 0.0022933506406843662,
+     "all_rows": 0.002715042093768716,
+     "forget_over_norm_matched": 1.0927180051803589,
+     "retain_over_norm_matched": 0.94922935962677
+    }
+   },
+   "probe": {
+    "forget_acc": 0.993848443031311,
+    "retain_acc": 0.7686052322387695,
+    "forget_logit": 4.597275257110596
+   },
+   "loss_after_relearn20": 1.8246917724609375,
+   "recovery": 0.9651187185354124,
+   "steps_to_relearn": 25,
+   "benign_forget": 5.701837539672852,
+   "benign_retain": 3.8829973936080933,
+   "recovery_benign": -0.1547419944702931,
+   "forget_q4": 5.2549660205841064,
+   "recovery_q4": 0.4637948606071274,
+   "forget_q8": 5.162473917007446,
+   "recovery_q8": 0.003226792872263684
+  }
+ },
+ "_exp": "e597_audit_pythia160_github_ga",
+ "_time": "2026-09-29 20:10:58"
+}

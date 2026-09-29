@@ -1,0 +1,465 @@
+{
+ "model": "pythia160",
+ "domain": "github",
+ "method": "guided",
+ "n_words": 256,
+ "n_forget_words": 54,
+ "n_retain_words": 53,
+ "loss0": {
+  "forget": 1.703926920890808,
+  "retain": 2.8542587757110596,
+  "forget_q4": 3.398533821105957,
+  "forget_q8": 1.7114777565002441
+ },
+ "base_audit": {
+  "forget": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.4856224060058594,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  },
+  "retain": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.5440081357955933,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  }
+ },
+ "probe0": {
+  "forget_acc": 0.9854822754859924,
+  "retain_acc": 0.7742730379104614,
+  "forget_logit": 3.7409160137176514
+ },
+ "conditions": {
+  "forget_rows_zero": {
+   "method": "forget_rows_zero",
+   "loss_forget": 1.8143218755722046,
+   "loss_retain": 2.875272512435913,
+   "rise_forget": 0.11039495468139648,
+   "rise_retain": 0.021013736724853516,
+   "audit": {
+    "forget": {
+     "row_cos": 0.0,
+     "row_cos_min": 0.0,
+     "share_still_writing": 0.0,
+     "S": 0.0,
+     "still_word": 0.0,
+     "act_ratio": 0.9656351832203849,
+     "share_act_halved": 0.018518518518518517
+    },
+    "retain": {
+     "row_cos": 1.0,
+     "row_cos_min": 0.9999998807907104,
+     "share_still_writing": 1.0,
+     "S": 1.545439600944519,
+     "still_word": 0.9811320754716981,
+     "act_ratio": 1.0,
+     "share_act_halved": 0.05660377358490566
+    }
+   },
+   "where": {
+    "total": 0.10696835815906525,
+    "early_blocks_only": 0.10696835815906525,
+    "late_blocks_only": 0.0
+   },
+   "early_share": 1.0,
+   "param_change": {
+    "total": 0.002623387434303166,
+    "groups": {
+     "embeddings": 0.0,
+     "layernorm 0-6": 0.0,
+     "attention 0-6": 0.0,
+     "mlp 0-6": 0.03453110821681734,
+     "layernorm 7-11": 0.0,
+     "attention 7-11": 0.0,
+     "mlp 7-11": 0.0,
+     "other": 0.0
+    },
+    "row_rel_change": {
+     "forget_words": 1.0,
+     "retain_words": 0.0,
+     "all_rows": 0.0,
+     "forget_over_norm_matched": 999999995904.0,
+     "retain_over_norm_matched": 0.0
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9889271855354309,
+    "retain_acc": 0.7723016738891602,
+    "forget_logit": 3.741164207458496
+   },
+   "loss_after_relearn20": 1.7659662365913391,
+   "recovery": 0.43802399412565063,
+   "steps_to_relearn": 5,
+   "benign_forget": 1.81023508310318,
+   "benign_retain": 2.8855329751968384,
+   "recovery_benign": 0.03701973954171436,
+   "forget_q4": 3.6291539669036865,
+   "recovery_q4": -1.0890460661296246,
+   "forget_q8": 1.8201590180397034,
+   "recovery_q8": 0.015523292227285435,
+   "n_rows": 54
+  },
+  "random_rows_zero": {
+   "method": "random_rows_zero",
+   "loss_forget": 1.7100536823272705,
+   "loss_retain": 2.856805920600891,
+   "rise_forget": 0.006126761436462402,
+   "rise_retain": 0.002547144889831543,
+   "audit": {
+    "forget": {
+     "row_cos": 1.0,
+     "row_cos_min": 0.9999998807907104,
+     "share_still_writing": 1.0,
+     "S": 1.4843549728393555,
+     "still_word": 1.0,
+     "act_ratio": 1.0,
+     "share_act_halved": 0.0
+    },
+    "retain": {
+     "row_cos": 1.0,
+     "row_cos_min": 0.9999998807907104,
+     "share_still_writing": 1.0,
+     "S": 1.542394995689392,
+     "still_word": 0.9056603773584906,
+     "act_ratio": 1.0,
+     "share_act_halved": 0.018867924528301886
+    }
+   },
+   "where": {
+    "total": 0.004292923957109451,
+    "early_blocks_only": 0.004292923957109451,
+    "late_blocks_only": 0.0
+   },
+   "early_share": 1.0,
+   "param_change": {
+    "total": 0.002336205041275083,
+    "groups": {
+     "embeddings": 0.0,
+     "layernorm 0-6": 0.0,
+     "attention 0-6": 0.0,
+     "mlp 0-6": 0.030750985554816625,
+     "layernorm 7-11": 0.0,
+     "attention 7-11": 0.0,
+     "mlp 7-11": 0.0,
+     "other": 0.0
+    },
+    "row_rel_change": {
+     "forget_words": 0.0,
+     "retain_words": 0.0,
+     "all_rows": 0.0,
+     "forget_over_norm_matched": 0.0,
+     "retain_over_norm_matched": 0.0
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9864665269851685,
+    "retain_acc": 0.7764909267425537,
+    "forget_logit": 3.71665620803833
+   },
+   "loss_after_relearn20": 1.7086908221244812,
+   "recovery": null,
+   "steps_to_relearn": 5,
+   "benign_forget": 1.7245430946350098,
+   "benign_retain": 2.87531840801239,
+   "recovery_benign": null,
+   "forget_q4": 3.406846284866333,
+   "recovery_q4": null,
+   "forget_q8": 1.7176733613014221,
+   "recovery_q8": null,
+   "n_rows": 54
+  },
+  "retain_rows_zero": {
+   "method": "retain_rows_zero",
+   "loss_forget": 1.83556067943573,
+   "loss_retain": 2.99942409992218,
+   "rise_forget": 0.13163375854492188,
+   "rise_retain": 0.1451653242111206,
+   "audit": {
+    "forget": {
+     "row_cos": 1.0,
+     "row_cos_min": 0.9999998807907104,
+     "share_still_writing": 0.9629629629629629,
+     "S": 1.448310136795044,
+     "still_word": 0.9444444444444444,
+     "act_ratio": 1.0,
+     "share_act_halved": 0.018518518518518517
+    },
+    "retain": {
+     "row_cos": 0.0,
+     "row_cos_min": 0.0,
+     "share_still_writing": 0.0,
+     "S": 0.0,
+     "still_word": 0.0,
+     "act_ratio": 1.0,
+     "share_act_halved": 0.018867924528301886
+    }
+   },
+   "where": {
+    "total": 0.13806775212287903,
+    "early_blocks_only": 0.13806775212287903,
+    "late_blocks_only": 0.0
+   },
+   "early_share": 1.0,
+   "param_change": {
+    "total": 0.0025227084959780254,
+    "groups": {
+     "embeddings": 0.0,
+     "layernorm 0-6": 0.0,
+     "attention 0-6": 0.0,
+     "mlp 0-6": 0.03320589209776432,
+     "layernorm 7-11": 0.0,
+     "attention 7-11": 0.0,
+     "mlp 7-11": 0.0,
+     "other": 0.0
+    },
+    "row_rel_change": {
+     "forget_words": 0.0,
+     "retain_words": 1.0,
+     "all_rows": 0.0,
+     "forget_over_norm_matched": 0.0,
+     "retain_over_norm_matched": 999999995904.0
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9874446392059326,
+    "retain_acc": 0.7742730379104614,
+    "forget_logit": 3.6200766563415527
+   },
+   "loss_after_relearn20": 1.7995179295539856,
+   "recovery": 0.2738108391051091,
+   "steps_to_relearn": 15,
+   "benign_forget": 1.8280923962593079,
+   "benign_retain": 2.9468640089035034,
+   "recovery_benign": 0.056735318196308,
+   "forget_q4": 3.706210494041443,
+   "recovery_q4": -1.3373690483090388,
+   "forget_q8": 1.8444417119026184,
+   "recovery_q8": -0.010105286608514286,
+   "n_rows": 53
+  },
+  "wide_net_zero": {
+   "method": "wide_net_zero",
+   "loss_forget": 2.2364107966423035,
+   "loss_retain": 3.056518793106079,
+   "rise_forget": 0.5324838757514954,
+   "rise_retain": 0.20226001739501953,
+   "audit": {
+    "forget": {
+     "row_cos": 0.0,
+     "row_cos_min": 0.0,
+     "share_still_writing": 0.0,
+     "S": 0.0,
+     "still_word": 0.0,
+     "act_ratio": 0.9041425554838156,
+     "share_act_halved": 0.07407407407407407
+    },
+    "retain": {
+     "row_cos": 1.0,
+     "row_cos_min": 0.9999998807907104,
+     "share_still_writing": 0.9811320754716981,
+     "S": 1.6479662656784058,
+     "still_word": 0.9433962264150944,
+     "act_ratio": 1.0,
+     "share_act_halved": 0.07547169811320754
+    }
+   },
+   "where": {
+    "total": 0.5379235744476318,
+    "early_blocks_only": 0.5379235744476318,
+    "late_blocks_only": 0.0
+   },
+   "early_share": 1.0,
+   "param_change": {
+    "total": 0.004702843866651155,
+    "groups": {
+     "embeddings": 0.0,
+     "layernorm 0-6": 0.0,
+     "attention 0-6": 0.0,
+     "mlp 0-6": 0.06190256473850289,
+     "layernorm 7-11": 0.0,
+     "attention 7-11": 0.0,
+     "mlp 7-11": 0.0,
+     "other": 0.0
+    },
+    "row_rel_change": {
+     "forget_words": 1.0,
+     "retain_words": 0.0,
+     "all_rows": 0.0,
+     "forget_over_norm_matched": 999999995904.0,
+     "retain_over_norm_matched": 0.0
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9916028380393982,
+    "retain_acc": 0.7701035737991333,
+    "forget_logit": 3.849594831466675
+   },
+   "loss_after_relearn20": 1.9425809979438782,
+   "recovery": 0.5518097581522874,
+   "steps_to_relearn": null,
+   "benign_forget": 2.0539989471435547,
+   "benign_retain": 2.9766037464141846,
+   "recovery_benign": 0.3425678368970528,
+   "forget_q4": 4.434327721595764,
+   "recovery_q4": -0.9452117663243595,
+   "forget_q8": 2.2442031502723694,
+   "recovery_q8": -0.00045356870250579107,
+   "n_rows": 147
+  },
+  "forget_rows_zero_repaired": {
+   "method": "forget_rows_zero_repaired",
+   "loss_forget": 1.8059832453727722,
+   "loss_retain": 2.8853734731674194,
+   "rise_forget": 0.10205632448196411,
+   "rise_retain": 0.031114697456359863,
+   "audit": {
+    "forget": {
+     "row_cos": 0.05506041273474693,
+     "row_cos_min": -0.07340552657842636,
+     "share_still_writing": 0.0,
+     "S": 0.8422010540962219,
+     "still_word": 0.0,
+     "act_ratio": 0.9862671563307636,
+     "share_act_halved": 0.037037037037037035
+    },
+    "retain": {
+     "row_cos": 0.9999992847442627,
+     "row_cos_min": 0.9999982118606567,
+     "share_still_writing": 0.9811320754716981,
+     "S": 1.5531952381134033,
+     "still_word": 0.9622641509433962,
+     "act_ratio": 0.999882610997454,
+     "share_act_halved": 0.03773584905660377
+    }
+   },
+   "where": {
+    "total": 0.12875227630138397,
+    "early_blocks_only": 0.1020834818482399,
+    "late_blocks_only": 0.025136075913906097
+   },
+   "early_share": 0.8024197194514592,
+   "param_change": {
+    "total": 0.002637154605001055,
+    "groups": {
+     "embeddings": 0.00026870039397931735,
+     "layernorm 0-6": 3.2375393325394926e-05,
+     "attention 0-6": 0.0002041795335350334,
+     "mlp 0-6": 0.03454598956307456,
+     "layernorm 7-11": 1.5908438999939578e-05,
+     "attention 7-11": 5.837933097497177e-05,
+     "mlp 7-11": 0.0010898290668084065,
+     "other": 0.0005847626698769801
+    },
+    "row_rel_change": {
+     "forget_words": 0.9999337792396545,
+     "retain_words": 0.001247959560714662,
+     "all_rows": 0.00145985116250813,
+     "forget_over_norm_matched": 790.3915405273438,
+     "retain_over_norm_matched": 0.994041919708252
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9854822754859924,
+    "retain_acc": 0.7787087559700012,
+    "forget_logit": 3.641122341156006
+   },
+   "loss_after_relearn20": 1.776075839996338,
+   "recovery": 0.2930480352711478,
+   "steps_to_relearn": 5,
+   "benign_forget": 1.8681848645210266,
+   "benign_retain": 2.9476243257522583,
+   "recovery_benign": -0.6094832384370943,
+   "forget_q4": 3.552052855491638,
+   "recovery_q4": -0.5042579199764516,
+   "forget_q8": 1.8127548694610596,
+   "recovery_q8": 0.007635112523441734,
+   "n_rows": 54
+  },
+  "ga_2_then_forget_rows_zero": {
+   "method": "ga_2_then_forget_rows_zero",
+   "loss_forget": 4.206965684890747,
+   "loss_retain": 3.5340312719345093,
+   "rise_forget": 2.503038763999939,
+   "rise_retain": 0.6797724962234497,
+   "audit": {
+    "forget": {
+     "row_cos": 0.0,
+     "row_cos_min": 0.0,
+     "share_still_writing": 0.0,
+     "S": 0.0,
+     "still_word": 0.0,
+     "act_ratio": 0.9581732189662108,
+     "share_act_halved": 0.037037037037037035
+    },
+    "retain": {
+     "row_cos": 0.999997615814209,
+     "row_cos_min": 0.9999936819076538,
+     "share_still_writing": 1.0,
+     "S": 1.513408899307251,
+     "still_word": 0.9245283018867925,
+     "act_ratio": 1.000091866039528,
+     "share_act_halved": 0.018867924528301886
+    }
+   },
+   "where": {
+    "total": 2.446619749069214,
+    "early_blocks_only": 1.0146708488464355,
+    "late_blocks_only": 0.058458924293518066
+   },
+   "early_share": 0.945524832357909,
+   "param_change": {
+    "total": 0.0026385826075652663,
+    "groups": {
+     "embeddings": 0.0005883762537753012,
+     "layernorm 0-6": 5.333750010758261e-05,
+     "attention 0-6": 0.0004056413901936816,
+     "mlp 0-6": 0.0345953686635565,
+     "layernorm 7-11": 2.0995331603429565e-05,
+     "attention 7-11": 9.884609145362299e-05,
+     "mlp 7-11": 0.001949689960405848,
+     "other": 0.000254735633851696
+    },
+    "row_rel_change": {
+     "forget_words": 1.0,
+     "retain_words": 0.00214499537833035,
+     "all_rows": 0.0025401536840945482,
+     "forget_over_norm_matched": 429.5003356933594,
+     "retain_over_norm_matched": 0.9505405426025391
+    }
+   },
+   "probe": {
+    "forget_acc": 0.9943405389785767,
+    "retain_acc": 0.7690981030464172,
+    "forget_logit": 4.393758773803711
+   },
+   "loss_after_relearn20": 1.9837545156478882,
+   "recovery": 0.8882048497283732,
+   "steps_to_relearn": null,
+   "benign_forget": 4.4059202671051025,
+   "benign_retain": 3.588888645172119,
+   "recovery_benign": -0.07948521815795591,
+   "forget_q4": 5.486387729644775,
+   "recovery_q4": 0.1658723234464181,
+   "forget_q8": 4.212411046028137,
+   "recovery_q8": 0.0008411673451997892,
+   "n_rows": 54,
+   "ga_steps": 420
+  }
+ },
+ "ga_2_alone": {
+  "steps": 420,
+  "loss_forget": 3.893145799636841,
+  "loss_after_relearn20": 1.8431615829467773,
+  "steps_to_relearn": 35,
+  "recovery": 0.936399844068711
+ },
+ "_exp": "e601_guided_unlearning_pythia160_github",
+ "_time": "2026-09-29 20:49:49"
+}

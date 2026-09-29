@@ -5120,3 +5120,117 @@ SESSION 110 (a new box, an 80 GB A100; the user: run the six directions named af
   - Pre-registered: B1 (truncation halves the bias) refuted; B2 (the oracle support still biased upward) refuted at GPT-2; B3 (the sign constraint changes nothing) confirmed.
 
   What the six answered: recruitment is a symptom of the class's geometry and not a performance event (the class learns at its tokens' pace, and the direction's effect is what it will be before the row arrives); unlearning leaves the writers untouched and silences half of them at the forgotten classes, and the share still writing tracks how fast the forgetting is undone; pruning helps grokking regardless of what is pruned, and S cannot guide it before generalisation; twins do not anchor a stitch; polysemanticity rises through training at any grain; and the instrument's bias is the support's, not the refit's. Four of the six were nulls, and each closes a door the paper's next reader would have opened.
+
+SESSION 111 (a fresh box; the user: think it through, run the experiments, step into the shoes of the people who would use the unlearning audit, and look for what else is uncharted. The audit of session 110 tested as an unlearning researcher, a reviewer, a safety team and a continual-learning person would test it: five methods, two domains, two model sizes, a probe baseline, three recovery attacks; then the mirror question, where fine-tuning lives; then whether WDD can do the unlearning itself. Some thirty jobs.)
+
+- e597 / e597b THE UNLEARNING AUDIT ACROSS THE METHODS PEOPLE USE (Pythia-160m block 6 and Pythia-410m block 12; forget domain PubMed Abstracts or Github, retain the rest; every training method stopped at a target rise of the held-out forget loss of 1, 2 or 4 nats, 600 steps at most; capped gradient ascent and gradient difference at lr 2e-6, NPO at 1e-5, RMU on the write rows of blocks B-2..B at 5e-5, selective dampening one shot with alpha lowered to the target; a drift control of 200 steps of retain fine-tuning; the audit, a logistic probe of forget-against-retain trained on the original's states as the baseline, and three attacks: relearning on the forget windows, benign relearning on the retain windows, and 4-bit and 8-bit quantisation):
+
+  | method | conditions | forget words: still writing | neurons' activation ratio | rows' cosine | rows' change / same-norm rows | retain words still writing | probe: forget positions still classified forget | KL split in blocks 0-B | retain loss change | relearn 20 steps: recovery | steps back within 0.1 | benign recovery | 4-bit recovery | 8-bit recovery |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | capped gradient ascent | 9 | 0.91 | 0.96 | 1.0000 | 0.95 | 0.96 | 0.95 | 0.82 | +0.303 | 0.86 | 35 | 0.36 | 0.20 | -0.00 |
+  | gradient difference | 6 | 0.67 | 0.82 | 1.0000 | 0.88 | 0.85 | 0.08 | 0.74 | +0.468 | 0.77 | 60 | -0.21 | 0.02 | -0.01 |
+  | negative preference optimisation | 9 | 0.88 | 0.93 | 1.0000 | 0.88 | 0.97 | 0.70 | 0.56 | +0.373 | 0.86 | 45 | 0.69 | -0.09 | -0.00 |
+  | representation misdirection (RMU) | 9 | 0.22 | 1.00 | 0.9996 | 1.21 | 0.48 | 0.86 | 1.00 | +0.079 | 0.92 | 30 | 0.26 | -0.12 | 0.00 |
+  | selective dampening | 6 | 0.06 | 0.11 | 0.9006 | 4.80 | 0.41 | 0.05 | 0.68 | +1.046 | 0.38 | n/a | 0.32 | -0.40 | 0.00 |
+  | drift control (retain fine-tuning) | 3 | 0.98 | 1.00 | 1.0000 | 0.96 | 0.93 | 0.97 | 0.40 | +0.332 | 0.61 | 25 | -0.62 | 0.11 | 0.01 |
+
+  | model | forget domain | method | target | steps (alpha for ssd) | forget rise | retain change | still writing | activation ratio | rows' cosine | rows' change / same norm | retain words writing | probe | KL early | recovery (20) | steps back | benign recovery | 4-bit recovery |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-160m | github | ga | 1 | 340 | +1.08 | +0.303 | 0.94 | 0.98 | 1.0000 | 1.09 | 0.98 | 0.99 | 0.88 | 0.85 | 35 | -0.16 | 0.20 |
+  | Pythia-160m | github | ga | 2 | 600 | +1.93 | +0.601 | 0.91 | 0.99 | 1.0000 | 1.09 | 1.00 | 0.99 | 0.92 | 0.93 | 30 | -0.13 | 0.33 |
+  | Pythia-160m | github | ga | 4 | 600 | +3.46 | +0.950 | 0.81 | 0.97 | 1.0000 | 1.09 | 0.92 | 0.99 | 0.97 | 0.97 | 25 | -0.15 | 0.46 |
+  | Pythia-160m | github | gd | 1 | 170 | +1.00 | +0.353 | 0.91 | 0.99 | 1.0000 | 0.88 | 0.96 | 0.96 | 0.70 | 0.78 | 65 | -0.21 | 0.02 |
+  | Pythia-160m | github | gd | 2 | 245 | +2.02 | +0.693 | 0.78 | 0.99 | 1.0000 | 0.83 | 0.87 | 0.95 | 0.74 | 0.80 | over 100 | -0.22 | 0.09 |
+  | Pythia-160m | github | gd | 4 | 250 | +4.06 | +1.049 | 0.72 | 0.97 | 1.0000 | 0.82 | 0.85 | 0.97 | 0.87 | 0.82 | over 100 | -0.21 | 0.25 |
+  | Pythia-160m | github | npo | 1 | 505 | +1.03 | +0.242 | 0.91 | 0.98 | 1.0000 | 1.07 | 1.00 | 0.98 | 0.83 | 0.87 | 30 | -0.01 | -0.22 |
+  | Pythia-160m | github | npo | 2 | 55 | +2.09 | +0.765 | 0.91 | 0.95 | 1.0000 | 0.88 | 0.98 | 0.85 | 0.53 | 0.80 | 45 | 0.74 | -0.34 |
+  | Pythia-160m | github | npo | 4 | 600 | +3.78 | +0.669 | 0.83 | 0.98 | 1.0000 | 1.14 | 1.00 | 0.99 | 0.93 | 0.95 | 60 | -0.03 | -0.12 |
+  | Pythia-160m | github | rmu | 1 | 40 | +1.09 | +0.235 | 0.54 | 1.00 | 0.9996 | 1.17 | 0.74 | 0.88 | 1.00 | 0.83 | over 100 | 0.25 | -0.64 |
+  | Pythia-160m | github | rmu | 2 | 50 | +2.13 | +0.545 | 0.44 | 1.00 | 0.9993 | 1.29 | 0.49 | 0.73 | 1.00 | 0.86 | over 100 | 0.36 | -0.31 |
+  | Pythia-160m | github | rmu | 4 | 80 | +4.03 | +0.907 | 0.17 | 1.00 | 0.9991 | 1.21 | 0.38 | 0.25 | 1.00 | 0.87 | over 100 | 0.26 | -0.12 |
+  | Pythia-160m | github | ssd | 1 | 5 | +2.07 | +1.046 | 0.06 | 0.31 | 0.9006 | 12.68 | 0.66 | 0.58 | 0.74 | 0.38 | over 100 | 0.29 | -0.48 |
+  | Pythia-160m | github | ssd | 2 | 5 | +2.07 | +1.046 | 0.06 | 0.31 | 0.9006 | 12.68 | 0.66 | 0.58 | 0.74 | 0.38 | over 100 | 0.29 | -0.48 |
+  | Pythia-160m | github | ssd | 4 | 3 | +4.86 | +2.501 | 0.04 | 0.00 | 0.8585 | 4.80 | 0.38 | 0.03 | 0.78 | 0.38 | over 100 | 0.39 | -0.23 |
+  | Pythia-160m | github | drift | 0 | 200 | +0.26 | +0.271 | 0.98 | 1.01 | 1.0000 | 0.96 | 0.94 | 0.98 | 0.42 | 0.61 | 25 | -0.71 | 0.18 |
+  | Pythia-160m | pubmed | ga | 1 | 65 | +1.01 | +0.068 | 0.60 | 0.78 | 1.0000 | 0.89 | 0.96 | 0.10 | 0.79 | 0.76 | 35 | 0.38 | -0.24 |
+  | Pythia-160m | pubmed | ga | 2 | 85 | +2.09 | +0.143 | 0.45 | 0.72 | 1.0000 | 0.86 | 0.96 | 0.00 | 0.82 | 0.63 | 60 | 0.36 | -0.08 |
+  | Pythia-160m | pubmed | ga | 4 | 105 | +4.42 | +0.340 | 0.27 | 0.57 | 1.0000 | 0.83 | 0.93 | 0.00 | 0.87 | 0.63 | over 100 | 0.40 | 0.03 |
+  | Pythia-160m | pubmed | gd | 1 | 65 | +1.03 | +0.223 | 0.67 | 0.82 | 1.0000 | 0.94 | 0.96 | 0.08 | 0.71 | 0.77 | 35 | 0.55 | -0.10 |
+  | Pythia-160m | pubmed | gd | 2 | 80 | +2.29 | +0.468 | 0.42 | 0.70 | 1.0000 | 0.92 | 0.81 | 0.00 | 0.77 | 0.69 | 60 | 0.57 | 0.01 |
+  | Pythia-160m | pubmed | gd | 4 | 95 | +4.44 | +1.066 | 0.32 | 0.60 | 1.0000 | 0.89 | 0.81 | 0.00 | 0.76 | 0.56 | 95 | 0.59 | 0.09 |
+  | Pythia-160m | pubmed | npo | 1 | 40 | +1.14 | +0.329 | 0.67 | 0.81 | 1.0000 | 0.85 | 0.93 | 0.30 | 0.56 | 0.83 | 30 | 0.72 | -0.27 |
+  | Pythia-160m | pubmed | npo | 2 | 50 | +2.26 | +0.614 | 0.52 | 0.72 | 1.0000 | 0.84 | 0.85 | 0.02 | 0.62 | 0.76 | 45 | 0.69 | -0.09 |
+  | Pythia-160m | pubmed | npo | 4 | 115 | +4.07 | +0.251 | 0.22 | 0.53 | 1.0000 | 0.81 | 0.81 | 0.00 | 0.86 | 0.72 | 75 | 0.31 | -0.09 |
+  | Pythia-160m | pubmed | rmu | 1 | 35 | +1.61 | +0.039 | 0.22 | 1.00 | 0.9997 | 1.20 | 0.48 | 0.97 | 1.00 | 0.92 | 30 | 0.28 | -0.16 |
+  | Pythia-160m | pubmed | rmu | 2 | 40 | +2.69 | +0.050 | 0.17 | 1.00 | 0.9996 | 1.22 | 0.26 | 0.87 | 1.00 | 0.93 | 50 | 0.26 | -0.03 |
+  | Pythia-160m | pubmed | rmu | 4 | 60 | +4.11 | +0.086 | 0.03 | 1.00 | 0.9994 | 1.21 | 0.22 | 0.43 | 1.00 | 0.92 | over 100 | 0.26 | 0.05 |
+  | Pythia-160m | pubmed | ssd | 1 | 3 | +1.50 | +0.684 | 0.12 | 0.25 | 0.9405 | 4.83 | 0.52 | 0.64 | 0.65 | 0.42 | over 100 | 0.32 | -0.40 |
+  | Pythia-160m | pubmed | ssd | 2 | 2 | +2.57 | +1.309 | 0.08 | 0.11 | 0.9123 | 3.04 | 0.41 | 0.05 | 0.65 | 0.45 | over 100 | 0.39 | -0.22 |
+  | Pythia-160m | pubmed | ssd | 4 | 1.1 | +4.23 | +2.646 | 0.07 | -0.02 | 0.9261 | 2.27 | 0.22 | 0.00 | 0.68 | 0.49 | over 100 | 0.49 | -0.09 |
+  | Pythia-160m | pubmed | drift | 0 | 200 | +0.26 | +0.332 | 0.95 | 1.00 | 1.0000 | 0.96 | 0.93 | 0.96 | 0.22 | 0.52 | over 100 | -0.62 | 0.11 |
+  | Pythia-410m | pubmed | ga | 1 | 50 | +1.09 | +0.073 | 0.94 | 0.96 | 1.0000 | 0.95 | 1.00 | 0.95 | 0.48 | 0.86 | 30 | 0.35 | 0.20 |
+  | Pythia-410m | pubmed | ga | 2 | 55 | +2.53 | +0.122 | 0.98 | 0.96 | 1.0000 | 0.95 | 0.97 | 0.94 | 0.32 | 0.87 | 50 | 0.48 | 0.29 |
+  | Pythia-410m | pubmed | ga | 4 | 60 | +6.99 | +0.370 | 0.97 | 0.99 | 1.0000 | 0.97 | 0.95 | 0.97 | 0.23 | 0.93 | 80 | 0.68 | 0.26 |
+  | Pythia-410m | pubmed | npo | 1 | 35 | +1.22 | +0.373 | 0.97 | 0.93 | 1.0000 | 0.90 | 1.00 | 0.85 | 0.38 | 0.87 | 30 | 0.72 | 0.11 |
+  | Pythia-410m | pubmed | npo | 2 | 35 | +2.23 | +0.606 | 0.88 | 0.90 | 1.0000 | 0.88 | 0.97 | 0.38 | 0.46 | 0.90 | 30 | 0.82 | 0.11 |
+  | Pythia-410m | pubmed | npo | 4 | 70 | +4.08 | +0.215 | 0.92 | 0.94 | 1.0000 | 0.92 | 0.97 | 0.70 | 0.31 | 0.86 | 60 | 0.55 | 0.25 |
+  | Pythia-410m | pubmed | rmu | 1 | 30 | +1.50 | +0.028 | 0.38 | 1.00 | 0.9999 | n/a | 0.73 | 0.98 | 1.00 | 0.94 | 20 | 0.16 | -0.17 |
+  | Pythia-410m | pubmed | rmu | 2 | 35 | +2.74 | +0.043 | 0.25 | 1.00 | 0.9999 | n/a | 0.59 | 0.86 | 1.00 | 0.95 | 30 | 0.22 | -0.10 |
+  | Pythia-410m | pubmed | rmu | 4 | 40 | +4.26 | +0.079 | 0.17 | 1.00 | 0.9999 | n/a | 0.30 | 0.62 | 1.00 | 0.96 | 45 | 0.38 | -0.04 |
+  | Pythia-410m | pubmed | drift | 0 | 200 | +0.44 | +0.618 | 1.00 | 1.00 | 1.0000 | 0.97 | 0.86 | 0.97 | 0.40 | 0.76 | 25 | -0.42 | -0.42 |
+
+  | Spearman over the 39 training-method conditions (without ssd: 33) | still-writing share | activation ratio | rows' cosine | rows' change / same norm | probe accuracy | forget rise | retain change | parameter change | KL split early |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | relearn recovery (20 steps) | 0.39 | 0.82 | 0.20 | -0.02 | 0.67 | 0.03 | -0.50 | -0.18 | 0.39 |
+  | steps back within 0.1 | -0.06 | -0.37 | 0.03 | -0.27 | -0.44 | 0.44 | 0.21 | 0.16 | -0.32 |
+  | benign recovery | 0.04 | -0.49 | 0.46 | -0.20 | -0.63 | 0.20 | 0.10 | -0.15 | -0.62 |
+  | 4-bit recovery | 0.55 | 0.16 | 0.48 | -0.39 | 0.26 | 0.28 | -0.09 | -0.33 | -0.19 |
+  | relearn recovery (20 steps), without ssd | 0.05 | 0.70 | -0.34 | 0.68 | 0.66 | 0.14 | -0.22 | 0.35 | 0.39 |
+  | steps back within 0.1, without ssd | -0.06 | -0.37 | 0.03 | -0.27 | -0.44 | 0.44 | 0.21 | 0.16 | -0.32 |
+  | relearn recovery (20 steps), Pythia-160m only | 0.53 | 0.85 | 0.21 | -0.13 | 0.70 | -0.16 | -0.44 | -0.42 | 0.65 |
+  | relearn recovery (20 steps), Pythia-410m only | -0.68 | 0.72 | -0.78 | 0.03 | -0.03 | 0.52 | -0.33 | 0.78 | 0.57 |
+
+  - What the methods do to the writers, read on three levels. The rows: every training method leaves them untouched (cosine 0.9991 to 1.0000 across ascent, difference, NPO and RMU; change 0.81 to 1.29 times rows of the same norm), and only selective dampening reaches them (cosine 0.8585 to 0.9405, 2.27 to 12.68 times rows of the same norm), at a retain cost of +0.684 to +2.646. The writers' activation at the forgotten contexts: RMU never touches it (1.00 of the original in all 9 conditions), because it pushes the block-B state away from the writers downstream of them; ascent, difference and NPO silence the writers on Pythia-160m's PubMed (0.53 to 0.82 at +1 to +4 nats) but not on Github (0.95 to 0.99) nor on Pythia-410m (0.90 to 0.99), where they raise the loss through the readers instead; dampening silences them (-0.02 to 0.31). The state's projection on the writers falls under every method (still writing 0.03 to 0.54 for RMU, which also damages the retain words' writing, 0.22 to 0.74 from 1.00, with the retain loss almost unchanged, +0.028 to +0.907).
+  - Depth is read on the parameter side, not the state side. Twenty relearning steps recover 0.83 to 0.96 of RMU's rise, 0.78 to 0.97 of ascent's, difference's and NPO's where they leave the writers firing, 0.56 to 0.83 where they silence them, and 0.38 to 0.49 of dampening's. Across the 39 training-method conditions the writers' activation ratio has the largest rank correlation with the recovery, 0.82 (Pythia-160m alone 0.85, Pythia-410m alone 0.72, without dampening 0.70); the state-side still-writing share of session 110 correlates at 0.39 overall and -0.68 on Pythia-410m, the probe at 0.67 and -0.03, because RMU drives both to their "forgotten" reading while being the shallowest. Session 110's number was right within one method on one model and wrong across methods and at the larger scale; the number that survives is whether the named writers still fire, with the rows' own change as the sign of a method that reaches them.
+  - The attacks. Benign relearning on the retain set alone recovers 0.36 / -0.21 / 0.26 of the rise for ascent, difference and RMU on PubMed (on Github the ascent conditions' forget loss moves the other way, -0.13, the retain windows there being 34 documents whose style the fine-tuning drifts toward). Quantisation to 4 bits in groups of 64 recovers nothing at this scale (0.20 / -0.12 / -0.40); the quantisation itself costs the original 2.069 nats on PubMed, more than the unlearning, so the known quantisation attack is not reproducible on a 160m model with round-to-nearest weights. 8-bit changes nothing (-0.00).
+  - The probe a reviewer would propose does not grade depth: after one nat of gradient ascent on Pythia-160m's PubMed it classifies 0.10 of the forget positions as forget (from 0.98), after RMU at +2 still 0.87, and on Pythia-410m after ascent to +7 nats still 0.97; it reads the direction of the state's shift, not whether the writers are gone.
+  - Scale: on Pythia-410m no training method silences the writers (ascent 0.96 to 0.99, NPO 0.90 to 0.94, RMU 1.00) and all relearn fast (recovery 0.76 to 0.96 excluding the drift control); the state-side readings invert there (still-writing against recovery -0.68) while the activation ratio holds (0.72).
+  - Pre-registered: A1 (ascent, difference and NPO: rows at cosine 0.99, still writing under 0.6, activation halved at +2) refuted in its activation half on Pythia-160m PubMed (0.72 / 0.70 / 0.72) and in both halves on Github and Pythia-410m; A2 (dampening changes the rows by 1.5 times or more) confirmed; A3 (still-writing predicts recovery better than the probe) refuted (0.39 against 0.67; the activation ratio 0.82); A4 (4-bit quantisation recovers half for the training methods) refuted; A5 (benign relearning recovers a quarter for ascent, difference and NPO) confirmed.
+
+- e600 THE LEARNING AUDIT (Pythia-160m fine-tuned for one epoch, 80 steps of 8, at lr 1e-5 on 640 windows from 640 Github or PubMed documents, all parameters, attention only, or MLP only; the 256 words on the domain's held-out states before and after, the entrants, whether their rows moved, and the collateral on a control domain's words):
+
+  | learned domain | trained | domain loss (from) | control loss change | entrants among the 256 domain words | entrant rows unchanged (cosine 0.99) | entrants write at domain positions (before) | old domain words still writing | control words still writing |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | github | all | 0.994 (1.228) | +0.264 | 25 | 1.00 | 0.72 (0.77) | 0.99 | 1.00 |
+  | github | attention | 1.097 (1.228) | +0.001 | 20 | 1.00 | 0.67 (0.71) | 0.99 | 1.00 |
+  | github | mlp | 1.029 (1.228) | -0.004 | 19 | 1.00 | 0.69 (0.71) | 1.00 | 1.00 |
+  | pubmed | all | 2.561 (2.739) | +0.265 | 29 | 1.00 | 0.21 (0.16) | 1.00 | 1.00 |
+  | pubmed | attention | 2.632 (2.739) | +0.007 | 24 | 1.00 | 0.18 (0.14) | 1.00 | 1.00 |
+  | pubmed | mlp | 2.575 (2.739) | +0.010 | 21 | 1.00 | 0.10 (0.08) | 1.00 | 1.00 |
+
+  - Fine-tuning lives in the readers, not in new writers. The domain loss falls by 0.233 on Github and 0.178 on PubMed with all parameters; 25 / 29 rows enter the domain's 256 words, every one with its row at cosine 0.99 or more with the original (1.00 / 1.00): the entrants are recruited as they stand, by being fed differently, not rewritten. Attention-only fine-tuning, which cannot touch a row, gains 0.130 / 0.106 with 20 / 24 entrants; MLP-only 0.199 / 0.163. The control domain's words keep writing for 1.00 / 1.00 under full fine-tuning. Two earlier runs of this experiment, 300 steps at 2e-5 on windows cut from 29 Github documents and 200 steps at 1e-5 on one window from each of 96 documents, memorised their training windows (batch loss 1.30 to 0.07) and raised the held-out domain loss by two nats: a learning audit needs one pass over many documents, which is what this run does.
+  - Pre-registered: L1 (twenty or more entrants, most rows unchanged) confirmed; L2 (attention-only reaches half the gain with fewer entrants) confirmed; L3 (control words keep writing at 0.9 under all three) confirmed.
+
+- e601 WDD-GUIDED UNLEARNING (the rows the audit names zeroed, one shot, against random rows, the retain words' rows, a wider net, a repaired version, and a hybrid after capped ascent; Pythia-160m, both domains):
+
+  | forget domain | condition | rows | forget rise | retain change | forget words still writing | activation ratio | retain words writing | probe | recovery (20) | steps back | benign recovery | 4-bit recovery |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | pubmed | the forget words' rows zeroed | 60 | +0.08 | +0.016 | 0.00 | 0.97 | 1.00 | 0.98 | 0.45 | 5 | -0.13 | -0.72 |
+  | pubmed | as many random rows zeroed | 60 | +0.00 | +0.003 | 1.00 | 1.00 | 1.00 | 0.98 | n/a | 5 | n/a | n/a |
+  | pubmed | the retain words' rows zeroed | 27 | +0.03 | +0.118 | 1.00 | 0.98 | 0.00 | 0.97 | n/a | 5 | n/a | n/a |
+  | pubmed | every row whose class is half forget zeroed | 156 | +0.16 | +0.061 | 0.00 | 0.95 | 1.00 | 0.98 | 0.46 | 15 | 0.21 | -0.70 |
+  | pubmed | forget rows zeroed, then 50 steps of retain fine-tuning | 60 | +0.09 | +0.037 | 0.00 | 0.98 | 1.00 | 0.98 | 0.33 | 5 | -0.65 | -0.27 |
+  | pubmed | capped ascent to +2, then the forget rows zeroed | 60 | +2.27 | +0.188 | 0.00 | 0.68 | 1.00 | 0.00 | 0.60 | 95 | 0.36 | -0.05 |
+  | github | the forget words' rows zeroed | 54 | +0.11 | +0.021 | 0.00 | 0.97 | 1.00 | 0.99 | 0.44 | 5 | 0.04 | -1.09 |
+  | github | as many random rows zeroed | 54 | +0.01 | +0.003 | 1.00 | 1.00 | 1.00 | 0.99 | n/a | 5 | n/a | n/a |
+  | github | the retain words' rows zeroed | 53 | +0.13 | +0.145 | 0.96 | 1.00 | 0.00 | 0.99 | 0.27 | 15 | 0.06 | -1.34 |
+  | github | every row whose class is half forget zeroed | 147 | +0.53 | +0.202 | 0.00 | 0.90 | 0.98 | 0.99 | 0.55 | over 100 | 0.34 | -0.95 |
+  | github | forget rows zeroed, then 50 steps of retain fine-tuning | 54 | +0.10 | +0.031 | 0.00 | 0.99 | 0.98 | 0.99 | 0.29 | 5 | -0.61 | -0.50 |
+  | github | capped ascent to +2, then the forget rows zeroed | 54 | +2.50 | +0.680 | 0.00 | 0.96 | 1.00 | 0.99 | 0.89 | over 100 | -0.08 | 0.17 |
+  | pubmed | capped ascent to +2 alone | | +2.15 | | | | | | 0.63 | 60 | | |
+  | github | capped ascent to +2 alone | | +2.19 | | | | | | 0.94 | 35 | | |
+
+  - The audit can name the writers; removing them does not unlearn. Zeroing the 60 PubMed writers raises the forget loss by +0.08 nats (retain +0.016; Github +0.11), as many random rows +0.00; the wider net of 156 rows +0.16. The coalition carries the classes, as e590 and e591b said. But the writers matter for the way back: zeroing them after capped ascent to +2 slows the relearning (back within 0.1 nats after 95 steps against 60 for ascent alone on PubMed, over 100 against 35 on Github; twenty-step recovery 0.60 against 0.63 and 0.89 against 0.94; the hybrid's retain cost +0.188 / +0.680). Removal alone does not unlearn, because the class is carried by the coalition; removal after silencing takes away the fastest route back, because the relearning would otherwise reopen the silenced writers first. The audit can direct the second step of an unlearning even though it cannot be the first.
+  - Pre-registered: G1 (zeroing the writers costs under 0.3 nats) confirmed; G2 (the wider net under 1 nat) confirmed; G3 (the hybrid relearns like ascent alone, within 20 steps) refuted, the hybrid relearns slower.
+
+  What the session settled: the audit's right number is on the parameter side. Whether the named writers still fire at the forgotten contexts, and whether their rows moved, separates the methods by depth: RMU overrides and is the shallowest, ascent and difference and NPO silence and relearn in tens of steps, dampening reaches the rows and relearns slowest at a retain cost. The state-side share of session 110 and the reviewer's probe read the state's shift, which every method produces, and rank RMU as the deepest when it is the shallowest. Fine-tuning recruits existing rows by feeding them differently. Removing the rows the audit names does not unlearn on its own, because the coalition carries the classes, but removing them after a silencing method slows the relearning: the audit cannot be the first step of an unlearning and can direct the second.

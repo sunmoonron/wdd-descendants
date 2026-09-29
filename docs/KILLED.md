@@ -692,3 +692,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "S knows the recruits before recruitment": the eventual words sit among the lowest-S half for 0.62 at 1500 and 0.69 at 3500; pruning helps grokking whatever is pruned (e593, e593c).
 - "Twins anchor a stitch": no better than random positions (e594).
 - "A better refit fixes the magnitude bias": the bias is the support's (e596).
+
+## Session 111 kills (the audit tested as its users would)
+- "The still-writing share grades unlearning depth": Spearman 0.39 with relearning across five methods; RMU is lowest on it and shallowest (e597).
+- "A linear probe would do the same job": it saturates after one nat of ascent and stays high under RMU (e597).
+- "4-bit quantisation undoes shallow unlearning" at 160m with round-to-nearest weights: no recovery, the quantisation itself costs more (e597).
+- "Fine-tuning recruits new writers by rewriting rows": entrants arrive with their rows unchanged (e600).
+- "WDD can unlearn by removing the writers it names": +0.08 nats for the writers, the coalition carries the classes (e601); what survives is the hybrid, removal after silencing, which slows the relearning.

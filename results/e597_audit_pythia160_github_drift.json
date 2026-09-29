@@ -1,0 +1,113 @@
+{
+ "model": "pythia160",
+ "domain": "github",
+ "method": "drift",
+ "n_words": 256,
+ "n_forget_words": 54,
+ "n_retain_words": 53,
+ "loss0": {
+  "forget": 1.703926920890808,
+  "retain": 2.8542587757110596,
+  "forget_q4": 3.398533821105957,
+  "forget_q8": 1.7114777565002441
+ },
+ "base_audit": {
+  "forget": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.4856224060058594,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  },
+  "retain": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.5440081357955933,
+   "still_word": 1.0,
+   "act_ratio": 1.0,
+   "share_act_halved": 0.0
+  }
+ },
+ "probe0": {
+  "forget_acc": 0.9854822754859924,
+  "retain_acc": 0.7742730379104614,
+  "forget_logit": 3.7409160137176514
+ },
+ "conditions": {
+  "drift": {
+   "method": "drift",
+   "target": 0.0,
+   "steps": 200,
+   "loss_forget": 1.9637678265571594,
+   "loss_retain": 3.1252251863479614,
+   "rise_forget": 0.2598409056663513,
+   "rise_retain": 0.27096641063690186,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999932646751404,
+     "row_cos_min": 0.9999867677688599,
+     "share_still_writing": 0.9814814814814815,
+     "S": 1.5042091608047485,
+     "still_word": 0.9259259259259259,
+     "act_ratio": 1.0095219685167913,
+     "share_act_halved": 0.037037037037037035
+    },
+    "retain": {
+     "row_cos": 0.9999932050704956,
+     "row_cos_min": 0.9999856948852539,
+     "share_still_writing": 0.9433962264150944,
+     "S": 1.5794438123703003,
+     "still_word": 0.8301886792452831,
+     "act_ratio": 0.9990964276033153,
+     "share_act_halved": 0.018867924528301886
+    }
+   },
+   "where": {
+    "total": 0.3421780467033386,
+    "early_blocks_only": 0.0951661542057991,
+    "late_blocks_only": 0.1338890790939331
+   },
+   "early_share": 0.4154725165404477,
+   "param_change": {
+    "total": 0.0007474107377791629,
+    "groups": {
+     "embeddings": 0.000905065119817431,
+     "layernorm 0-6": 9.626955642478955e-05,
+     "attention 0-6": 0.0006097772035980803,
+     "mlp 0-6": 0.0034167166167312353,
+     "layernorm 7-11": 4.743494817324001e-05,
+     "attention 7-11": 0.00017483280393531893,
+     "mlp 7-11": 0.0033923549424318272,
+     "other": 0.0015358769431547275
+    },
+    "row_rel_change": {
+     "forget_words": 0.0036332837771624327,
+     "retain_words": 0.003707176772877574,
+     "all_rows": 0.004379017278552055,
+     "forget_over_norm_matched": 0.9556315541267395,
+     "retain_over_norm_matched": 0.9866325855255127
+    }
+   },
+   "probe": {
+    "forget_acc": 0.976870059967041,
+    "retain_acc": 0.7843765616416931,
+    "forget_logit": 3.3580029010772705
+   },
+   "loss_after_relearn20": 1.8065511584281921,
+   "recovery": 0.6050497235059723,
+   "steps_to_relearn": 25,
+   "benign_forget": 2.1485477685928345,
+   "benign_retain": 3.3160072565078735,
+   "recovery_benign": -0.7111272244137792,
+   "forget_q4": 3.611963987350464,
+   "recovery_q4": 0.17861213692596267,
+   "forget_q8": 1.9679588675498962,
+   "recovery_q8": 0.012930198992661124
+  }
+ },
+ "_exp": "e597_audit_pythia160_github_drift",
+ "_time": "2026-09-29 19:39:45"
+}
