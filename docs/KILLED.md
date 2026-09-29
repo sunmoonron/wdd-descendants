@@ -661,3 +661,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The direction carries the function" without qualification: the coalition and the direction together close -0.022 of the gap at the class, the readout -0.873; the effect is the direction's, its producers' and its readers' together (e578).
 - "The producer coalition is the transplantable computation": 128 neurons close -0.020 of the gap, 512 with the direction -0.066 (e578).
 - "The vocabulary statistic predicts grokking": it fires at the step test accuracy crosses one half, not before (lead 0.0 steps), though it never fires in a memorising run (e579).
+
+## Session 105 kills (the strongest existing method invited)
+- "The coalition is what native rows have that a learned dictionary does not": autoencoder features have coalitions as coherent (0.692 against 0.672) and as necessary (0.92 against 0.77) (e581).
+- "WDD is a better feature-discovery method": the descriptive decomposition is recoverable by attribution from an autoencoder's directions; what the autoencoder lacks is the parameter, which carries the association and not the computation (e581 with e577, e578).
+- "The native excess is an early predictor of generalisation": at delta 1000 the best WDD statistic reaches AUC 0.824 against 0.961 for the best classic baseline (e580b).

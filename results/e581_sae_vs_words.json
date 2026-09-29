@@ -1,0 +1,51 @@
+{
+ "coord": "raw",
+ "n_positions": 2038,
+ "class_size_words": 20.0,
+ "class_size_features": 33.0,
+ "groups": {
+  "words": {
+   "n": 256,
+   "within": 0.6721891760826111,
+   "across": 0.0010833069682121277,
+   "effective": 1837.343505859375,
+   "own_rank": 0.25
+  },
+  "features": {
+   "n": 256,
+   "within": 0.6921764612197876,
+   "across": 0.003110482357442379,
+   "effective": 3298.09912109375,
+   "own_rank": null
+  },
+  "random_directions": {
+   "n": 256,
+   "within": 0.15392480790615082,
+   "across": 0.0004465149831958115,
+   "effective": 6144.58984375,
+   "own_rank": null
+  }
+ },
+ "feature_word_overlap": {
+  "median_nearest_cos": 0.25372961163520813,
+  "producer_jaccard": 0.06666666666666667,
+  "producer_jaccard_cos_ge_03": 0.13274336283185842,
+  "n_cos_ge_03": 106
+ },
+ "necessity": {
+  "words": {
+   "n": 64,
+   "drop_top": 0.7654352598283879,
+   "drop_random": 0.005231864726965935,
+   "share_drop_over_03": 0.96875
+  },
+  "features": {
+   "n": 64,
+   "drop_top": 0.9221143504492013,
+   "drop_random": 0.002843714983041653,
+   "share_drop_over_03": 0.984375
+  }
+ },
+ "_exp": "e581_sae_vs_words",
+ "_time": "2026-09-29 00:33:18"
+}

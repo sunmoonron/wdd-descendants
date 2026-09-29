@@ -4802,3 +4802,38 @@ SESSION 104 (the user: "what even is WDD, 500+ experiments and still going in ci
 
   - A detector of generalisation, not a predictor. The native excess crosses 1.5 in every generalising run and in no memorising run (the memorising runs' maximum is 1.45, the generalising runs' minimum 2.17); it does so at the step test accuracy crosses one half, leading in 0.38 of the runs by 0.0 steps at the median. The advantage crossing 0.3 leads in 0.62 by 250.0 steps but fires in 4 of 6 memorising runs. From the weights and the training inputs alone, without labels or a test set, the instrument says whether a run has generalised, at the moment it does.
   - Pre-registered: U1 (the excess leads by 250-1000 steps in most runs) refuted, it is coincident; U2 (no false alarms) confirmed.
+
+SESSION 105 (the user: "ready to test it out?", with GPT's proposal: stop pitching WDD as better feature discovery; its niche, if any, is parameter provenance; invite the strongest existing method to recover the same decomposition, and test the generalisation detector brutally simply against standard baselines. Both run.)
+
+- e581 THE STRONGEST EXISTING METHOD ON THE SAME DECOMPOSITION (EleutherAI's TopK autoencoder for Pythia-160m at block 6, 32,768 latents, 32 active, on the same 2038 states as the words; a unit's direction is its row or its decoder row, its class its eight largest projections or activations; the producer coalition by attribution, the same computation for both):
+
+  | units | within-unit coherence of the producer contributions | across units | effective producers | necessity: relative drop of the class signal with the top-128 producers zeroed (random neurons) |
+  | --- | --- | --- | --- | --- |
+  | native words (256, class median 20 positions) | 0.672 | 0.001 | 1837 (own row's rank 0) | 0.77 (0.01), over 0.3 in 0.97 |
+  | SAE features (256, class size 10-60, median 33) | 0.692 | 0.003 | 3298 | 0.92 (0.00), over 0.3 in 0.98 |
+  | random directions with their own extremes (256) | 0.154 | 0.000 | 6145 | - |
+
+  - The coalition is not the rows'. A feature's producers cohere across its class as much as a word's (0.692 against 0.672; random directions 0.154), and are as necessary (zeroing the top 128 drops the feature's activation at its class by 0.92, the word's projection by 0.77; random neurons 0.00 / 0.01). The coalition, its coherence and its necessity are properties of any spoken direction of the cloud that attribution can reach; the autoencoder reaches them without parameter provenance. A feature and the word nearest to its decoder (cosine 0.25) share few producers (Jaccard 0.07): the two dictionaries carve the same cloud along different directions with different coalitions.
+  - What the autoencoder cannot do is what session 104 found to carry no computation: intervene on the parameter behind the direction (transplant it, freeze it, follow it through training). The instrument's distinct element is provenance of the association, not of the computation.
+  - Pre-registered: X1 (features have private coalitions) confirmed; X2 (words' coherence higher) refuted; X3 (producers necessary for both) confirmed; X4 (a feature and its nearest word share producers) refuted.
+
+- e580 / e580b THE DETECTOR BENCHMARK (20 toy trajectories, five knobs times four seeds, 13 of them generalising; every (run, t) with test accuracy under one half is a sample, the target whether it exceeds one half at t + delta; each statistic alone, leave-one-run-out logistic AUC, the level and its change over 250 steps):
+
+  | statistic at t (level, and its change over 250 steps) | AUC, delta 250 | delta 500 | delta 1000 | delta 2000 | Spearman with the gain, delta 1000 |
+  | --- | --- | --- | --- | --- | --- |
+  | native excess (WDD) | 0.951 / 0.871 | 0.880 / 0.829 | 0.809 / 0.824 | 0.756 / 0.723 | +0.00 / +0.26 |
+  | own-over-rotation advantage (WDD) | 0.675 / 0.791 | 0.509 / 0.740 | 0.226 / 0.719 | 0.111 / 0.600 | -0.08 / +0.33 |
+  | top-32 usage share (WDD) | 0.892 / 0.877 | 0.762 / 0.864 | 0.676 / 0.673 | 0.678 / 0.579 | +0.29 / +0.27 |
+  | rows over the floor, native minus rotated (WDD) | 0.694 / 0.784 | 0.521 / 0.552 | 0.434 / 0.251 | 0.434 / 0.198 | -0.42 / -0.10 |
+  | training loss | 0.052 / 0.041 | 0.048 / 0.036 | 0.053 / 0.237 | 0.057 / 0.193 | +0.06 / -0.15 |
+  | weight norm | 0.803 / 0.472 | 0.757 / 0.362 | 0.691 / 0.261 | 0.618 / 0.169 | +0.25 / +0.07 |
+  | MLP weight norm | 0.315 / 0.257 | 0.201 / 0.164 | 0.080 / 0.282 | 0.184 / 0.203 | +0.31 / -0.01 |
+  | states' participation ratio | 0.049 / 0.668 | 0.359 / 0.544 | 0.484 / 0.080 | 0.419 / 0.059 | +0.01 / -0.10 |
+  | top-8 principal share | 0.558 / 0.742 | 0.139 / 0.615 | 0.097 / 0.334 | 0.221 / 0.213 | -0.04 / +0.12 |
+  | ReLU density | 0.587 / 0.104 | 0.625 / 0.040 | 0.612 / 0.300 | 0.608 / 0.164 | -0.50 / +0.13 |
+  | embedding's top-5 Fourier share | 0.956 / 0.973 | 0.911 / 0.941 | 0.829 / 0.961 | 0.864 / 0.948 | +0.57 / +0.82 |
+
+  - The classic signals are not beaten. At delta 1000 the best WDD statistic reaches AUC 0.824 against 0.961 for the best baseline (emb_fourier_top5_d at 0.961 overall); the native excess 0.809 (its change 0.824), training loss 0.053, the weight norm 0.691 (change 0.261), the embedding's Fourier share 0.829 (change 0.961). The base rate is 0.12 over 361 samples. Among the generic signals, those that need no knowledge of the task, the excess is the best (the weight norm 0.691, the states' participation ratio 0.484, the ReLU density 0.612, training loss 0.053); what beats it is the task's own signal, the embedding's Fourier concentration, which only a modular-arithmetic toy affords. The excess separates the runs that will generalise from those that will not (AUC 0.809) without ordering the moment within a run (Spearman with the gain +0.00), as e579 found.
+  - Pre-registered: P1 (the excess at AUC 0.75 or more at delta 1000, above training loss) confirmed; P2 (the weight norm or the Fourier share at least as good) confirmed; P3 (the excess's change beats its level) confirmed.
+
+  Verdict, as GPT framed it and the record answers: WDD is not a better feature-discovery method, and the producer-consumer decomposition it made visible is recoverable by attribution from an autoencoder's directions. Its distinct element is parameter provenance of the association: the direction comes with the row that carries it, which can be transplanted (the association travels, the computation does not), frozen (usage travels, the class does not) and followed through training (the class precedes the row, the row turns into a spoken direction). The developmental questions are where that provenance buys something; the descriptive and the detector questions are where it does not.

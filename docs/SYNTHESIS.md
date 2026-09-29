@@ -597,6 +597,12 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 105: the strongest existing method invited, and the detector benchmark (e580, e580b, e581)
+
+- GPT's framing accepted and tested: not a better feature-discovery method; if WDD has a niche it is parameter provenance. An autoencoder's features have producer coalitions as coherent as the words' (0.692 against 0.672, random directions 0.154) and as necessary (drop 0.92 against 0.77 with the top 128 producers zeroed), with different producers (Jaccard 0.07): the producer-consumer decomposition belongs to any spoken direction attribution can reach (e581).
+- The detector, benchmarked: over 20 toy trajectories the best WDD statistic predicts generalisation a thousand steps ahead at AUC 0.824 against 0.961 for the best classic baseline (emb_fourier_top5_d) (e580b). The classic signals are not beaten.
+- The verdict: WDD's distinct element is provenance of the association, the row that carries a direction, which can be transplanted, frozen and followed through training; that provenance buys the developmental questions (the class precedes the row, the row turns into a spoken direction, the association travels while the computation does not) and not the descriptive or the detector ones.
+
 ## Session 104: what has to travel, and what the instrument is for (e578, e579)
 
 - What WDD is, said plainly: the decomposition of a state into the model's own write vectors with exact provenance, reporting which directions the state is built along and how strongly. The circles are the repeated finding that a row alone is not the computation (areas 06-07, 24, 31, 36); what is not circular is the object pinned (class, direction, row, coalition) and the doors closed.
