@@ -597,6 +597,13 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 106: watching words being born, against a learned dictionary (e582-e584)
+
+- The one claim left after session 105 was temporal: WDD keeps parameter identity across checkpoints for free. Tested with an autoencoder trained at every checkpoint and 241 eventual words' histories over sixteen checkpoints, five events each.
+- The class is there from the start: every tracked class coheres in the cloud at step 1000 (the corpus's partition, e574), the rows are recruited at step 7.0 thousand at the median, the coalition coheres 5.0 checkpoints before recruitment (0.84); the row turns into what is already there.
+- The learned dictionary (4096 latents per checkpoint) has a persistent feature for 0.31 of the classes; where it has one it precedes the row (0.61); it does not date the parameter: at recruitment its feature's decoder has cosine 0.11 with the row, and points at it, for 33 of 241 words, 7.0 checkpoints later.
+- The instrument's claim, as sharp as the record allows: a native, parameter-indexed coordinate system for how representations form and how responsibility for them migrates through training; the descriptive and the class-dating questions belong to any dictionary, the parameter-dating question to this one.
+
 ## Session 105: the strongest existing method invited, and the detector benchmark (e580, e580b, e581)
 
 - GPT's framing accepted and tested: not a better feature-discovery method; if WDD has a niche it is parameter provenance. An autoencoder's features have producer coalitions as coherent as the words' (0.692 against 0.672, random directions 0.154) and as necessary (drop 0.92 against 0.77 with the top 128 producers zeroed), with different producers (Jaccard 0.07): the producer-consumer decomposition belongs to any spoken direction attribution can reach (e581).

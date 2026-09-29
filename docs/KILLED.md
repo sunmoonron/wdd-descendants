@@ -666,3 +666,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The coalition is what native rows have that a learned dictionary does not": autoencoder features have coalitions as coherent (0.692 against 0.672) and as necessary (0.92 against 0.77) (e581).
 - "WDD is a better feature-discovery method": the descriptive decomposition is recoverable by attribution from an autoencoder's directions; what the autoencoder lacks is the parameter, which carries the association and not the computation (e581 with e577, e578).
 - "The native excess is an early predictor of generalisation": at delta 1000 the best WDD statistic reaches AUC 0.824 against 0.961 for the best classic baseline (e580b).
+
+## Session 106 kills (the developmental comparison)
+- "Only the native dictionary sees the class early": where the per-checkpoint autoencoder has a feature for a class (0.31 of classes) it has it before the row is recruited (0.61); and the class is present in the cloud from the first checkpoint for either dictionary (e584).
+- "The learned dictionary can date when a parameter becomes responsible": its decoder points at the row 7.0 checkpoints after recruitment, for 33 of 241 words (e584).

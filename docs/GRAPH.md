@@ -730,6 +730,9 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H494 The producer coalition is a property of native rows. → e581 → REFUTED: an autoencoder feature's producers cohere as much (0.692 against 0.672; random directions 0.154) and are as necessary (drop 0.92 against 0.77); the coalition belongs to any spoken direction attribution can reach.
 - H495 A feature and the word nearest to it share their producers. → e581 → REFUTED: Jaccard 0.07 at cosine 0.25; different directions, different coalitions.
 - H496 The native excess predicts generalisation ahead of the classic signals. → e580, e580b → REFUTED: at delta 1000 the best WDD statistic reaches AUC 0.824 against 0.961 for the best baseline (emb_fourier_top5_d); the excess 0.809, training loss 0.053, weight norm 0.691, Fourier share 0.829.
+- H497 The class exists in the cloud before its row is recruited. → e584 → ESTABLISHED, trivially: every tracked class is present (its states cohere above random sets) from step 1000, the rows are recruited at step 7.0 thousand at the median; the coalition coheres 5.0 checkpoints before recruitment for 0.84; the presence measure saturates and does not date the class.
+- H498 A per-checkpoint learned dictionary dates the class as well as the row-free measure. → e584 → REFUTED: a persistent feature for 74 of 241 classes (0.31); where it has one, it precedes the row's recruitment for 0.61.
+- H499 A per-checkpoint learned dictionary dates the parameter event. → e584 → REFUTED: at recruitment its feature's decoder has cosine 0.11 with the row (0.07 at 0.3 or more); when it comes to point at the row it does so 7.0 checkpoints later, for 33 of 241 words.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

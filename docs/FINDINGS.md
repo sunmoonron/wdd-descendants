@@ -4837,3 +4837,46 @@ SESSION 105 (the user: "ready to test it out?", with GPT's proposal: stop pitchi
   - Pre-registered: P1 (the excess at AUC 0.75 or more at delta 1000, above training loss) confirmed; P2 (the weight norm or the Fourier share at least as good) confirmed; P3 (the excess's change beats its level) confirmed.
 
   Verdict, as GPT framed it and the record answers: WDD is not a better feature-discovery method, and the producer-consumer decomposition it made visible is recoverable by attribution from an autoencoder's directions. Its distinct element is parameter provenance of the association: the direction comes with the row that carries it, which can be transplanted (the association travels, the computation does not), frozen (usage travels, the class does not) and followed through training (the class precedes the row, the row turns into a spoken direction). The developmental questions are where that provenance buys something; the descriptive and the detector questions are where it does not.
+
+SESSION 106 (the user: "gpt glazing again, do your magic". GPT's one claim left standing after session 105 is temporal: WDD keeps parameter identity across checkpoints for free, a learned dictionary must establish it; the test is the developmental comparison, with the autoencoder allowed to win. Run as three steps: the longitudinal cache (e582), an autoencoder trained at every checkpoint (e583), and the history of every eventual word with five dated events (e584).)
+
+- e582 / e583 THE CACHE AND THE PER-CHECKPOINT AUTOENCODERS (Pythia-410m block 12, steps 1000-16000, 24 sequences of 512 tokens; a TopK autoencoder of 4096 latents and 32 active trained on each checkpoint's states):
+  - 12219 positions kept at every checkpoint; the autoencoders reconstruct at FVU 0.05-0.09 with 4017-4096 latents alive of 4096.
+
+- e584 WATCHING WORDS BEING BORN, AGAINST A LEARNED DICTIONARY (241 eventual words at 16000 with a class of ten or more positions and not yet words at 1000; per checkpoint: the class's presence in the cloud without the row (the class's mean pairwise state cosine against random sets' 95th percentile), the checkpoint autoencoder's best feature for the class and that feature's decoder cosine with the row, the row's recruitment (a word over the floor), the coalition's coherence along the row at the class's eight largest projections; events dated at the first checkpoint from which they hold):
+
+  | step | class present in the cloud (share of tracked words) | autoencoder feature at Jaccard >= 0.25 | row recruited (a word, over the floor) | coalition coherence, median | autoencoder decoder's cosine with the row, median | autoencoder FVU (latents alive) |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | 1000 | 1.00 | 0.20 | 0.00 | 0.27 | 0.02 | 0.05 (4017) |
+  | 2000 | 1.00 | 0.23 | 0.10 | 0.29 | 0.05 | 0.08 (4090) |
+  | 3000 | 1.00 | 0.25 | 0.24 | 0.35 | 0.08 | 0.09 (4092) |
+  | 4000 | 1.00 | 0.27 | 0.35 | 0.40 | 0.08 | 0.09 (4096) |
+  | 5000 | 1.00 | 0.29 | 0.44 | 0.45 | 0.10 | 0.08 (4093) |
+  | 6000 | 1.00 | 0.25 | 0.49 | 0.49 | 0.12 | 0.08 (4090) |
+  | 7000 | 1.00 | 0.29 | 0.55 | 0.51 | 0.11 | 0.09 (4091) |
+  | 8000 | 1.00 | 0.31 | 0.59 | 0.57 | 0.13 | 0.09 (4093) |
+  | 9000 | 1.00 | 0.29 | 0.67 | 0.60 | 0.12 | 0.09 (4092) |
+  | 10000 | 1.00 | 0.31 | 0.71 | 0.64 | 0.13 | 0.09 (4094) |
+  | 11000 | 1.00 | 0.29 | 0.76 | 0.63 | 0.13 | 0.09 (4096) |
+  | 12000 | 1.00 | 0.32 | 0.79 | 0.64 | 0.14 | 0.09 (4096) |
+  | 13000 | 1.00 | 0.29 | 0.80 | 0.67 | 0.14 | 0.09 (4094) |
+  | 14000 | 1.00 | 0.29 | 0.83 | 0.68 | 0.14 | 0.09 (4095) |
+  | 15000 | 1.00 | 0.29 | 0.85 | 0.67 | 0.15 | 0.09 (4092) |
+  | 16000 | 1.00 | 0.31 | 1.00 | 0.69 | 0.15 | 0.09 (4096) |
+
+  | order | lead, median (thousands of steps) | share with the first before the second | share at the same checkpoint | pairs |
+  | --- | --- | --- | --- | --- |
+  | the class present in the cloud -> the row recruited | 7.0 | 1.00 | 0.00 | 241 |
+  | the autoencoder's feature -> the row recruited | 1.0 | 0.61 | 0.09 | 74 |
+  | the class present -> the autoencoder's feature | 1.0 | 0.51 | 0.49 | 74 |
+  | the coalition coherent -> the row recruited | 5.0 | 0.84 | 0.06 | 184 |
+  | the class present -> the coalition coherent | 0.0 | 0.50 | 0.50 | 184 |
+  | the row recruited -> the autoencoder's decoder pointing at the row | 7.0 | 0.91 | 0.06 | 33 |
+
+  - The class is there from the start; the row comes later; the coalition in between. The row-free measure finds every tracked class present in the cloud at step 1000 already (its states cohere above random sets' 95th percentile at every checkpoint), which is e574's surface partition seen from the states: the class is the corpus's and exists before the model has words for it. The rows are recruited at step 7.0 thousand at the median, spread from 1000 to 16000; the coalition coheres (0.3 or more along the eventual row) 5.0 checkpoints before recruitment for 0.84 of the words that reach it (184 of 241), as session 95 found at eight-thousand-step resolution.
+  - The learned dictionary sees a minority of the classes, and where it sees one it sees it before the row. A per-checkpoint autoencoder of 4096 latents on 12k states has a persistent feature for a tracked class (Jaccard 0.25 or more) for 74 of 241 words (0.31), at any single checkpoint for 0.20-0.32 of them; where it does, the feature precedes the row's recruitment for 0.61 of those words by 1.0 checkpoints, and is there at the first checkpoint for 0.49 of them. So the order of birth (class, then coalition, then row) is visible to either dictionary where the learned one has a feature at all.
+  - What the learned dictionary does not date is the parameter. At the checkpoint the row is recruited, the autoencoder's best feature for the class has decoder cosine 0.11 with the row (at 0.3 or more for 0.07 of words); its decoder comes to point at the row, when it ever does (33 of 241 words), 7.0 checkpoints after recruitment. The event "row i acquires responsibility for class C" it can only reconstruct after the fact, by matching decoders to rows, for a few words, and late.
+  - Pre-registered: L1 (class before row by two or more) confirmed trivially, the class is present from the first checkpoint and the measure does not date it; L2 (the autoencoder dates the class when it appears) refuted, it has a persistent feature for 0.31 of the classes; L3 (the feature does not point at the row at recruitment) confirmed (0.07 at 0.3 or more); L4 (coalition before recruitment) confirmed (0.84).
+  - Limits: the row-free presence measure saturates and needs a sharper form (the class's coherence relative to surface-matched sets, not random ones); the autoencoder is small (4096 latents on 12k states) and a longitudinally matched, larger one is the stronger control still to be built.
+
+  The placement, sharpened: at a fixed checkpoint a learned dictionary sees what WDD sees (session 105); across checkpoints the class exists before either dictionary is needed, the learned one sees a minority of the classes and sees those before the row, and it cannot date the parameter, which WDD has for free because its dictionary is the model's parameterisation. The honest claim, in GPT's words: a native, parameter-indexed coordinate system for how representations form and how responsibility for them migrates through training. A longitudinally trained or matched autoencoder could be built to do the same; until it is, the developmental question is the instrument's.
