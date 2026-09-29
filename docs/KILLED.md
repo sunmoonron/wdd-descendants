@@ -685,3 +685,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "One gradient step shows the turn": the step points at the class at mean cosine +0.020, consistent in sign and driven by the class's positions (0.215 of the gradient at 0.006 of positions), but a drift, not a jump (e589).
 - "A removed speaker is replaced within a few million tokens": 0.17 of the classes have a substitute after 2.5M tokens against 0.30 unfrozen; the proxy cannot reach a real interval (e590).
 - "WDD needs to be the hero of its own record": the paper is written with the network as the subject and WDD as the instrument (PAPER.md).
+
+## Session 110 kills (the six directions beyond the descendants)
+- "Recruitment is a performance event": the class drops -0.1231 across recruitment and its token-matched controls -0.1380; the direction's removal effect is 0.0047 nats two checkpoints before and 0.0109 two after (e591).
+- "Unlearning reaches the rows": cosine 1.0000 after capped gradient ascent to +2 nats, the rows changed 0.89 times as much as rows of the same norm; what falls is their writing at the forgotten classes (0.47 still write) (e592b); e592's runaway run (forget loss to 137 nats) is a killed protocol, not a result.
+- "S knows the recruits before recruitment": the eventual words sit among the lowest-S half for 0.62 at 1500 and 0.69 at 3500; pruning helps grokking whatever is pruned (e593, e593c).
+- "Twins anchor a stitch": no better than random positions (e594).
+- "A better refit fixes the magnitude bias": the bias is the support's (e596).

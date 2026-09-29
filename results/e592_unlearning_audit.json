@@ -1,0 +1,283 @@
+{
+ "n_words": 256,
+ "n_forget_words": 62,
+ "n_retain_words": 27,
+ "loss0": {
+  "forget": 2.841559410095215,
+  "retain": 3.0934717655181885
+ },
+ "base_audit": {
+  "forget": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998211860657,
+   "share_still_writing": 1.0,
+   "S": 1.6753640174865723,
+   "still_word": 1.0
+  },
+  "retain": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.6875451803207397,
+   "still_word": 1.0
+  }
+ },
+ "conditions": {
+  "ga_50": {
+   "method": "ga",
+   "steps": 50,
+   "loss_forget": 137.3429718017578,
+   "loss_retain": 35.124732971191406,
+   "rise_forget": 134.5014123916626,
+   "rise_retain": 32.03126120567322,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999825954437256,
+     "row_cos_min": 0.9999403357505798,
+     "share_still_writing": 0.03225806451612903,
+     "S": 0.893766462802887,
+     "still_word": 0.11290322580645161
+    },
+    "retain": {
+     "row_cos": 0.9999728202819824,
+     "row_cos_min": 0.9999486207962036,
+     "share_still_writing": 0.037037037037037035,
+     "S": 1.3247854709625244,
+     "still_word": 0.25925925925925924
+    }
+   },
+   "where": {
+    "total": 134.30838012695312,
+    "early_blocks_only": 42.79950714111328,
+    "late_blocks_only": 3.8325748443603516
+   },
+   "loss_after_relearn": 6.393068313598633,
+   "recovery": 0.9735950066222236
+  },
+  "ga_100": {
+   "method": "ga",
+   "steps": 100,
+   "loss_forget": 142.10037231445312,
+   "loss_retain": 31.016433715820312,
+   "rise_forget": 139.2588129043579,
+   "rise_retain": 27.922961950302124,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999780058860779,
+     "row_cos_min": 0.9998910427093506,
+     "share_still_writing": 0.0,
+     "S": 0.769862174987793,
+     "still_word": 0.016129032258064516
+    },
+    "retain": {
+     "row_cos": 0.9999631643295288,
+     "row_cos_min": 0.9999353885650635,
+     "share_still_writing": 0.0,
+     "S": 0.9114545583724976,
+     "still_word": 0.1111111111111111
+    }
+   },
+   "where": {
+    "total": 138.86167907714844,
+    "early_blocks_only": 45.248085021972656,
+    "late_blocks_only": 8.275134086608887
+   },
+   "loss_after_relearn": 5.605395793914795,
+   "recovery": 0.9801532389499991
+  },
+  "ga_200": {
+   "method": "ga",
+   "steps": 200,
+   "loss_forget": 153.99432373046875,
+   "loss_retain": 33.63139343261719,
+   "rise_forget": 151.15276432037354,
+   "rise_retain": 30.537921667099,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999748468399048,
+     "row_cos_min": 0.9998486042022705,
+     "share_still_writing": 0.0,
+     "S": 0.7528931498527527,
+     "still_word": 0.03225806451612903
+    },
+    "retain": {
+     "row_cos": 0.9999569058418274,
+     "row_cos_min": 0.9998364448547363,
+     "share_still_writing": 0.0,
+     "S": 0.8977553248405457,
+     "still_word": 0.14814814814814814
+    }
+   },
+   "where": {
+    "total": 150.6892852783203,
+    "early_blocks_only": 44.026634216308594,
+    "late_blocks_only": 14.337167739868164
+   },
+   "loss_after_relearn": 6.511263847351074,
+   "recovery": 0.9757218833955442
+  },
+  "ga_400": {
+   "method": "ga",
+   "steps": 400,
+   "loss_forget": 222.00523376464844,
+   "loss_retain": 64.65003204345703,
+   "rise_forget": 219.16367435455322,
+   "rise_retain": 61.55656027793884,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999672770500183,
+     "row_cos_min": 0.9997693300247192,
+     "share_still_writing": 0.0,
+     "S": 0.8123313188552856,
+     "still_word": 0.03225806451612903
+    },
+    "retain": {
+     "row_cos": 0.9999445676803589,
+     "row_cos_min": 0.999772310256958,
+     "share_still_writing": 0.0,
+     "S": 1.0507359504699707,
+     "still_word": 0.18518518518518517
+    }
+   },
+   "where": {
+    "total": 218.6908416748047,
+    "early_blocks_only": 28.030717849731445,
+    "late_blocks_only": 16.214557647705078
+   },
+   "loss_after_relearn": 7.545504093170166,
+   "recovery": 0.9785368414864906
+  },
+  "uniform_50": {
+   "method": "uniform",
+   "steps": 50,
+   "loss_forget": 9.609023094177246,
+   "loss_retain": 4.249015808105469,
+   "rise_forget": 6.767463684082031,
+   "rise_retain": 1.1555440425872803,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999874830245972,
+     "row_cos_min": 0.9999507069587708,
+     "share_still_writing": 0.14516129032258066,
+     "S": 1.2597781419754028,
+     "still_word": 0.25806451612903225
+    },
+    "retain": {
+     "row_cos": 0.9999855756759644,
+     "row_cos_min": 0.9999709129333496,
+     "share_still_writing": 0.4074074074074074,
+     "S": 1.3775461912155151,
+     "still_word": 0.5185185185185185
+    }
+   },
+   "where": {
+    "total": 6.580629825592041,
+    "early_blocks_only": 5.533785820007324,
+    "late_blocks_only": 0.6052902936935425
+   },
+   "loss_after_relearn": 3.2292356491088867,
+   "recovery": 0.9427146923705645
+  },
+  "uniform_100": {
+   "method": "uniform",
+   "steps": 100,
+   "loss_forget": 10.447765350341797,
+   "loss_retain": 4.770808219909668,
+   "rise_forget": 7.606205940246582,
+   "rise_retain": 1.6773364543914795,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999784231185913,
+     "row_cos_min": 0.9999078512191772,
+     "share_still_writing": 0.0,
+     "S": 1.0012924671173096,
+     "still_word": 0.0967741935483871
+    },
+    "retain": {
+     "row_cos": 0.9999814629554749,
+     "row_cos_min": 0.9999465346336365,
+     "share_still_writing": 0.07407407407407407,
+     "S": 1.1727184057235718,
+     "still_word": 0.37037037037037035
+    }
+   },
+   "where": {
+    "total": 7.393889427185059,
+    "early_blocks_only": 9.028949737548828,
+    "late_blocks_only": 0.5365232825279236
+   },
+   "loss_after_relearn": 3.364049196243286,
+   "recovery": 0.9313074362891715
+  },
+  "uniform_200": {
+   "method": "uniform",
+   "steps": 200,
+   "loss_forget": 10.705101013183594,
+   "loss_retain": 5.383815288543701,
+   "rise_forget": 7.863541603088379,
+   "rise_retain": 2.2903435230255127,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999731779098511,
+     "row_cos_min": 0.9998342394828796,
+     "share_still_writing": 0.0,
+     "S": 0.8919492363929749,
+     "still_word": 0.0967741935483871
+    },
+    "retain": {
+     "row_cos": 0.9999744892120361,
+     "row_cos_min": 0.9999405741691589,
+     "share_still_writing": 0.0,
+     "S": 1.0513920783996582,
+     "still_word": 0.14814814814814814
+    }
+   },
+   "where": {
+    "total": 7.678397178649902,
+    "early_blocks_only": 9.727657318115234,
+    "late_blocks_only": 0.5059029459953308
+   },
+   "loss_after_relearn": 3.4147493839263916,
+   "recovery": 0.9271079110707499
+  },
+  "uniform_400": {
+   "method": "uniform",
+   "steps": 400,
+   "loss_forget": 11.959583282470703,
+   "loss_retain": 6.201860427856445,
+   "rise_forget": 9.118023872375488,
+   "rise_retain": 3.108388662338257,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999629855155945,
+     "row_cos_min": 0.9997959733009338,
+     "share_still_writing": 0.0,
+     "S": 0.7732294797897339,
+     "still_word": 0.03225806451612903
+    },
+    "retain": {
+     "row_cos": 0.9999620914459229,
+     "row_cos_min": 0.9999071359634399,
+     "share_still_writing": 0.0,
+     "S": 0.8684420585632324,
+     "still_word": 0.037037037037037035
+    }
+   },
+   "where": {
+    "total": 8.96800422668457,
+    "early_blocks_only": 11.11781120300293,
+    "late_blocks_only": 0.44266802072525024
+   },
+   "loss_after_relearn": 3.4406256675720215,
+   "recovery": 0.9342986741577006
+  }
+ },
+ "summary": {
+  "n_conditions": 8,
+  "spearman_writing_recovery": -0.5476190476190477,
+  "spearman_cos_recovery": 0.023809523809523815,
+  "spearman_rise_recovery": 0.7619047619047621
+ },
+ "_exp": "e592_unlearning_audit",
+ "_time": "2026-09-29 14:58:31"
+}

@@ -4988,3 +4988,135 @@ SESSION 109 (the user: "WDD about to be nothing since SOTA is better", with GPT'
   - Pre-registered: R1 (half the classes with a substitute, against under a fifth without training and unfrozen) refuted; R2 (the substitute among the ten nearest at 8000) confirmed trivially, the substitutes are the pre-existing second speakers; R3 (more than half the rise recovered) moot, the rise on removal is +0.005 nats.
 
   The paper (PAPER.md) is written as one argument: a persistent structure appears in the states, a particular parameter becomes aligned with it, the parameter is recruited, distributed writes implement it, and the parameter can be replaced; WDD is the instrument that follows the parameter. Its five distinctions (structure, direction, parameter, coalition, WDD) and its list of what WDD is not carry the negative results of sessions 101-108.
+
+SESSION 110 (a new box, an 80 GB A100; the user: run the six directions named after the paper question, with the right controls, like a senior researcher, and with the GPU used in parallel. Some sixty jobs in all, twenty-eight of them toy runs and three cache builds, on a rebuilt Pythia cache and a rebuilt OLMo cache that now also stores per-position losses.)
+
+- e591 DOES RECRUITMENT MATTER FOR PERFORMANCE? (205 eventual words of Pythia-410m recruited between steps 2000 and 15000; the class's per-position loss at every checkpoint aligned on recruitment, against token-matched control positions outside every tracked class, all positions, and the class aligned on a random time; then the row's direction removed from the block-12 state at the class's positions at k = -2..+2, the KL of the change against a random direction; the loss part replicated on OLMo-1B (159 words) from its cache):
+
+  | loss aligned on recruitment (median over words) | k = -4 | k = -3 | k = -2 | k = -1 | k = +0 | k = +1 | k = +2 | k = +3 | k = +4 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-410m: the class's positions | 3.633 | 3.668 | 3.672 | 3.558 | 3.329 | 3.232 | 3.209 | 3.126 | 3.197 |
+  | Pythia-410m: token-matched controls outside every class | 2.705 | 2.638 | 2.731 | 2.651 | 2.549 | 2.518 | 2.447 | 2.420 | 2.392 |
+  | Pythia-410m: all positions | 3.651 | 3.651 | 3.651 | 3.651 | 3.613 | 3.566 | 3.566 | 3.521 | 3.521 |
+  | Pythia-410m: the class aligned on a random time | 3.618 | 3.511 | 3.556 | 3.423 | 3.236 | 3.162 | 3.156 | 3.181 | 3.206 |
+  | OLMo-1B: the class's positions | 3.860 | 3.680 | 3.518 | 3.535 | 3.158 | 3.100 | 2.938 | 2.958 | 2.921 |
+  | OLMo-1B: token-matched controls | 2.738 | 2.649 | 2.494 | 2.602 | 2.408 | 2.294 | 2.119 | 2.341 | 2.296 |
+
+  | model | words | drop across recruitment (-1 to +1): class (bootstrap 95%) | token-matched | all positions | time-shuffled | class minus control (95%) | class beats control | acceleration at recruitment: class (95%) | control | shuffled | class's drop concentrated |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-410m | 205 | -0.1231 [-0.1396, -0.0891] | -0.1380 | -0.0921 | -0.1009 | -0.0102 [-0.0292, +0.0116] | 0.52 | +0.0474 [+0.0151, +0.1078] | +0.0425 | +0.0215 | 0.36 |
+  | OLMo-1B | 159 | -0.1732 [-0.2371, -0.1188] | -0.1614 | -0.1582 | -0.1238 | -0.0111 [-0.1104, +0.0512] | 0.51 | +0.1332 [+0.0799, +0.2060] | +0.0727 | +0.0310 | 0.33 |
+
+  | Pythia-410m, the direction removed from the block-12 state at the class's positions (KL, nats) | k = -2 | k = -1 | k = 0 | k = +1 | k = +2 |
+  | --- | --- | --- | --- | --- | --- |
+  | the row's direction at that checkpoint | 0.0047 | 0.0055 | 0.0069 | 0.0090 | 0.0109 |
+  | a random unit direction | 0.0002 | 0.0003 | 0.0002 | 0.0002 | 0.0002 |
+
+  | e591b: removed at the class (KL, nats), 120 words | k = -2 | k = +2 |
+  | --- | --- | --- |
+  | the eventual row's direction | 0.0047 | 0.0109 |
+  | a random other row's direction | 0.0004 | 0.0004 |
+  | the strongest other row's direction at the class | 0.0058 | 0.0089 |
+  | the row-free class direction | 0.3861 | 0.4160 |
+  | the eventual row's direction at the token-matched control positions | 0.0015 | 0.0028 |
+  | the row beats the strongest other row (share of words) | 0.34 | 0.62 |
+  | the class direction beats the row | 0.97 | 0.92 |
+  | the row at the controls over the row at the class (median ratio) | 0.44 | 0.30 |
+  | median projection at the class: the row / the strongest other | 0.095 / 0.105 | 0.150 / 0.126 |
+
+  | e591c: matched controls | words | class positions with a token-and-difficulty partner | loss at k = 0: whole class / its matched positions / their partners / difficulty-only controls | drop across recruitment: whole class | matched class positions | their partners | difficulty-only | matched class minus partners (95%) | class beats | whole class minus difficulty-only (95%) | class beats |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-410m | 205 | 0.19 | 3.329 / 1.778 / 1.774 / 3.453 | -0.1231 [-0.1387, -0.0851] | -0.0435 | -0.0777 | -0.1022 | +0.0210 [-0.0123, +0.0583] | 0.47 | -0.0101 [-0.0364, +0.0055] | 0.55 |
+  | OLMo-1B | 159 | 0.06 | 3.158 / 1.368 / 1.343 / 3.342 | -0.1732 [-0.2371, -0.1188] | -0.0547 | -0.0914 | -0.2091 | +0.0035 [-0.0332, +0.0530] | 0.48 | -0.0140 [-0.0703, +0.0471] | 0.52 |
+
+  - Recruitment is not a performance event for the class. Aligned on recruitment the class's loss falls (3.558 at k = -1 to 3.232 at +1), but so does everything else at those checkpoints: token-matched positions outside every class fall by -0.1380 against the class's -0.1231, and the difference is -0.0102 [-0.0292, +0.0116] (the class beats its control for 0.52 of words); OLMo-1B the same, -0.0111 [-0.1104, +0.0512]. The class's positions are the hard positions of their tokens (3.329 against 2.549 for the same tokens elsewhere; OLMo 3.158 against 2.408) and they learn at the pace of their tokens, not of their row. The drop is not concentrated at recruitment either: the acceleration (the central interval's drop minus the neighbouring intervals') is +0.0474 [+0.0151, +0.1078] for the class and +0.0425 for its controls, negative for 0.36 of words (OLMo +0.1332 [+0.0799, +0.2060] against +0.0727). Matched on difficulty as well as token (e591c: partners of the same token outside every class whose loss one checkpoint before recruitment is within 0.25 nats of the class position's; only the easier 0.19 of class positions find one on Pythia-410m, 0.06 on OLMo-1B, so the comparison is between those positions and their partners), the matched class positions' drop minus their partners' is +0.0210 [-0.0123, +0.0583] on Pythia-410m and +0.0035 [-0.0332, +0.0530] on OLMo-1B; the whole class against difficulty-only controls of any token, which match its loss level (3.453 against 3.329 at k = 0), -0.0101 [-0.0364, +0.0055] and -0.0140 [-0.0703, +0.0471]. The null holds at the class's own loss level.
+  - The direction is already load-bearing before the row arrives, and its removal effect does not double across recruitment. Removing the row's direction from the state at the class costs 0.0047 nats at k = -2 and 0.0109 at +2 (a random direction 0.0002 / 0.0002, 44 times less); the median ratio across recruitment is 1.87, at least doubled for 0.48 of 120 words, and the growth is steady, the successive checkpoints' ratios 1.16, 1.27, 1.30, 1.22 with no jump at k = 0. What recruitment dates is the assignment of a parameter to a direction the network already uses, not a gain in performance at the class.
+  - The stronger controls (e591b) say what the direction's cost is relative to: two checkpoints before recruitment the eventual row's direction costs 0.0047 nats at the class against 0.0004 for a random other row and 0.0058 for the strongest other row at the class (the eventual row beats it for 0.34 of words); the row-free class direction costs 0.3861 (beating the row for 0.97); and the same row's direction removed at the token-matched control positions costs 0.0015, 0.44 of its cost at the class. Two checkpoints after: 0.0109 / 0.0004 / 0.0089 / 0.4160 / 0.0028. The direction's effect is 2.29 times larger at the class than at the same tokens elsewhere (3.30 after recruitment) and one to three per cent of the class direction's; the eventual row's direction is not yet the most load-bearing single row at the class before it is recruited and is after (0.62), in step with its projection (0.095 to 0.150 against the strongest other's 0.105 to 0.126). What changes across recruitment at the functional level is which single row direction the class's states most depend on, in proportion to the projection that defines recruitment; the cost of any single row is small beside the class's shared direction.
+  - Pre-registered: P1 (the class drops 0.02 nats beyond its controls) refuted; P2 (the removal effect doubles across recruitment) refuted narrowly (1.87, and the rise is steady rather than an event); P3 (the drop concentrated at recruitment for most words) refuted (0.36); e591b: P4 (the eventual row already beats the strongest other row two checkpoints before) refuted; P5 (the class direction costs more than the row at both checkpoints) confirmed; P6 (the row at the controls costs less than a fifth of its cost at the class) refuted; e591c: P7 (both matched differences' intervals contain zero on both models) confirmed.
+
+- e592 THE UNLEARNING AUDIT, FIRST RUN (Pythia-160m block 6; forget set PubMed abstracts, retain set the other domains; gradient ascent and the uniform target at lr 1e-5 with a KL-to-original term of weight 1, 50-400 steps): gradient ascent ran away in fifty steps (forget loss 2.842 to 137 nats, retain 3.093 to 35) and the uniform target destroyed the retain set as well (+1.677 at 100 steps): a wrecked model, on whose states nothing writes over the floor (forget words 0.03, retain words 0.04) while every row keeps cosine 1.000. Kept as the record of a bad protocol; the audit is e592b.
+
+- e592b THE UNLEARNING AUDIT WITH PROVENANCE, BOUNDED (62 forget words and 27 retain words of 256; the forget term switched off on any batch already past the target, KL-to-original on the retain set at weight 5, lr 2e-06, each condition stopped when the held-out forget loss reaches its target rise of 0.5, 1, 2 or 4 nats; a drift control fine-tunes 200 steps on the retain set alone; the audit as e592 plus where the change lives in parameter space):
+
+  | condition (target rise, nats) | steps | forget loss (from 2.842) | retain change | forget words: row cosine | still writing (before 1.00) | still words | retain words: cosine | writing (before 1.00) | share of the KL split in blocks 0-6 | forget rows' change / median row (percentile) | / rows of the same norm (retain words) | relearn 20 steps: recovery | steps back within 0.1 |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | capped gradient ascent, +0.5 | 55 | 3.407 | +0.042 | 1.0000 | 0.63 | 0.63 | 1.0000 | 0.96 | 0.76 | 0.72 (0.06) | 0.90 (1.10) | 0.78 | 25 |
+  | capped gradient ascent, +1 | 95 | 3.879 | +0.037 | 1.0000 | 0.56 | 0.52 | 1.0000 | 0.96 | 0.83 | 0.72 (0.07) | 0.91 (1.10) | 0.69 | 45 |
+  | capped gradient ascent, +2 | 90 | 4.861 | +0.126 | 1.0000 | 0.47 | 0.45 | 1.0000 | 0.96 | 0.83 | 0.69 (0.05) | 0.89 (1.22) | 0.61 | 65 |
+  | capped gradient ascent, +4 | 105 | 6.954 | +0.351 | 1.0000 | 0.34 | 0.40 | 1.0000 | 0.96 | 0.87 | 0.66 (0.04) | 0.83 (1.15) | 0.62 | over 100 |
+  | toward uniform, +0.5 | 25 | 3.600 | +0.209 | 1.0000 | 0.89 | 0.81 | 1.0000 | 0.96 | 0.58 | 0.69 (0.03) | 0.84 (1.05) | 0.92 | 20 |
+  | toward uniform, +1 | 35 | 3.968 | +0.191 | 1.0000 | 0.82 | 0.77 | 1.0000 | 0.96 | 0.65 | 0.71 (0.04) | 0.86 (1.02) | 0.89 | 25 |
+  | toward uniform, +2 | 55 | 5.144 | +0.203 | 1.0000 | 0.66 | 0.69 | 1.0000 | 0.93 | 0.79 | 0.74 (0.04) | 0.90 (0.97) | 0.89 | 45 |
+  | toward uniform, +4 | 65 | 6.926 | +0.598 | 1.0000 | 0.53 | 0.65 | 1.0000 | 0.78 | 0.86 | 0.74 (0.06) | 0.91 (0.97) | 0.90 | 65 |
+  | drift control: 200 steps on the retain set | 200 | 3.082 | +0.324 | 1.0000 | 0.94 | 0.90 | 1.0000 | 0.89 | 0.22 | 0.76 (0.03) | 0.92 (0.94) | n/a | over 100 |
+
+  | relative change of the parameters, capped gradient ascent to +2 nats | embeddings | attention 0-6 | mlp 0-6 | layernorm 0-6 | attention 7-11 | mlp 7-11 | layernorm 7-11 | other |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Frobenius norm of the change over the norm of the original | 5.7e-04 | 4.2e-04 | 2.4e-03 | 9.2e-05 | 1.0e-04 | 2.0e-03 | 3.4e-05 | 7.1e-04 |
+
+  - Unlearning leaves the writers untouched and silences them at the forgotten classes. Capped gradient ascent to +2 nats (90 steps, retain +0.126) leaves the forget words' rows at cosine 1.0000 with their originals, changed 0.89 times as much as MLP rows of the same norm (the retain words 1.22; the raw ratio against the median row is 0.69, percentile 0.05, because Adam moves every element by about the same amount and the words are high-norm rows). What falls is their writing: 0.47 of the forget words still write over the floor at half their class positions on the unlearned model's states (before 1.00), falling with the target (0.63 at +0.5, 0.34 at +4), while the retain words write for 0.96 (before 1.00) and a drift control with a larger retain change (+0.324) leaves the forget words writing for 0.94. The change lives upstream of the rows: of the KL between the original and the unlearned model at forget positions, the unlearned blocks 0-6 under the original's 7-11 carry 0.83 of the split (the drift control 0.22), and across the parameter groups the relative change is spread as ordinary fine-tuning spreads it (embeddings 5.7e-04, attention 0-6 4.2e-04, mlp 0-6 2.4e-03, layernorm 0-6 9.2e-05, attention 7-11 1.0e-04, mlp 7-11 2.0e-03, layernorm 7-11 3.4e-05, other 7.1e-04). The forgotten contexts no longer drive the neurons that wrote them; the neurons are intact. Relearning at the same rate recovers 0.61 of the rise in 20 steps and is back within 0.1 nats after 65 steps; across the 8 unlearning conditions the share of forget words still writing correlates with the recovery at Spearman 0.71 and with the steps back at -0.79 (the rows' cosine 0.50, the size of the rise -0.17).
+  - What the audit adds to the loss: the loss says the model has forgotten; the ledger says the parameters that wrote the forgotten classes are all still there and half of them still write at those classes, which is what shallow, relearnable unlearning looks like from the inside, and the share still writing is the number that tracks how fast the forgetting is undone. A provenance audit that returned "the writers are gone" would be the evidence of deep unlearning, and none of these conditions produce it.
+  - Pre-registered: U1 (rows at cosine 0.99, 0.6 still writing at +2) refuted in its second half (cosine 1.0000, still writing 0.47); U2 (still-writing correlates with recovery at 0.5) confirmed; U3 (retain words unchanged) confirmed; U4 (the forget rows change no more than rows of the same norm) confirmed (0.89); U5 (the change lives in blocks 0-6 for more than half of the split) confirmed.
+
+- e593 / e593b / e593c / e593d RECRUITMENT-GUIDED PRUNING (the toy from step 1500 with MLP neurons zeroed and frozen by their S at 1500, then, in e593c, at 3000 or 3500, the base run passing half test accuracy at 4000; four seeds each):
+
+  | pruned by S at step | neurons | the base run's eventual words among them | grokking step, four seeds | final test accuracy | advantage | base words that are words at the end |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | none | 0 | 0.00 | [4000, 4000, 4000, 4000] | 1.00 | 0.73 | 1.00 |
+  | 1500, the lowest-S half | 256 | 0.62 | [3000, 3000, 3000, 3000] | 1.00 | 0.72 | 0.12 |
+  | 1500, a random half | 256 | 0.56 | [3250, 3000, 3000, 3000] | 1.00 | 0.69 | 0.08 |
+  | 1500, the highest-S half | 256 | 0.38 | [3500, 3500, 3500, 3500] | 1.00 | 0.69 | 0.09 |
+  | 1500, the lowest 384 | 384 | 0.84 | [2250, 2250, 2250, 2250] | 1.00 | 0.73 | 0.03 |
+  | 3000, the lowest-S half | 256 | 0.66 | [3500, 3500, 3500, 3500] | 1.00 | 0.71 | 0.06 |
+  | 3000, a random half | 256 | 0.56 | [3750, 3500, 3500, 3500] | 1.00 | 0.71 | 0.14 |
+  | 3000, the highest-S half | 256 | 0.34 | [3750, 3750, 3750, 3750] | 1.00 | 0.73 | 0.03 |
+  | 3000, the lowest 384 | 384 | 0.88 | [3250, 3250, 3250, 3250] | 1.00 | 0.69 | 0.03 |
+  | 3500, the lowest-S half | 256 | 0.69 | [3750, 3750, 3750, 3750] | 1.00 | 0.73 | 0.16 |
+  | 3500, a random half | 256 | 0.56 | [3750, 3750, 3750, 3750] | 1.00 | 0.72 | 0.11 |
+  | 3500, the highest-S half | 256 | 0.31 | [4000, 4000, 4000, 4000] | 1.00 | 0.71 | 0.09 |
+
+  - Pruning helps grokking whatever is pruned, and S does not know the recruits until they are recruited. At 1500 every condition groks, all sooner than the unpruned run (4000): the lowest-S half at 3000, a random half at 3000, the highest-S half at 3500, and 128 neurons kept at 2250. The base run's eventual words sit among the lowest-S half for 0.62 of them at 1500 (a random half 0.56): in the memorising phase S ranks the future recruits below average (e567 found the association only with generalisation). Pruned at 3000 the eventual words are 0.66 in the lowest-S half and at 3500 0.69; the grokking step is 3750 / 3750 / 4000 for the lowest / random / highest half at 3500 (3500 / 3500 / 3750 at 3000). The effect of pruning is capacity and regularisation, not selection.
+  - Pre-registered: T1 (low-S pruning does not delay, high-S pruning delays by 1000) refuted in its second half; T2 (128 neurons still grok) confirmed; T3 (the base words survive low-S pruning) refuted, the trajectory changes and other words form (0.12 of the base words are words at the end); T4 (at 3500 the eventual words no longer over-represented in the lowest-S half) refuted (0.69); T5 (the highest-S half pruned at 3500 delays grokking by 500 or more against the lowest) refuted.
+
+- e594 TWIN-BASED STITCHING (Pythia-160m block 6 mapped into Pythia-410m block 12 by ridge; 70 twinned classes covering 5586 of 8154 training positions; eight held-out sequences):
+
+  | ridge map fit on | pairs | mapped-vs-true cosine (held out) | stitched loss (held out) |
+  | --- | --- | --- | --- |
+  | all training positions | 8154 | 0.799 | 3.924 |
+  | twinned-class positions | 5586 | 0.776 | 4.069 |
+  | random positions, same count | 5586 | 0.788 | 3.995 |
+  | twin centroids (ridge 10) | 70 | 0.651 | 6.842 |
+  | twin centroids (ridge 1000) | 70 | 0.604 | 8.526 |
+  | Pythia-410m's own loss | | | 2.922 |
+  | Pythia-160m's own loss | | | 3.590 |
+
+  - Twins are not privileged anchors, and centroids are not enough. The stitch fit on twinned-class positions (held-out loss 4.069) is no better than on random positions of the same count (3.995), both worse than all positions (3.924); the centroid-only map fails (6.842). A linear map from 160m's block 6 into 410m's block 12 does not reach 160m's own loss (3.590) in any fit; 410m's own is 2.922.
+  - Pre-registered: S1 (twinned no better than random) confirmed; S2 (centroids recover half the improvement) refuted.
+
+- e595 SUPERPOSITION COUNTS (row-free clusters at every checkpoint; a word's classes are the clusters at which it is over the floor at half the positions; a cluster's rows likewise):
+
+  | Pythia-410m block 12, K = 512 | 1000 | 2000 | 3000 | 4000 | 5000 | 6000 | 7000 | 8000 | 9000 | 10000 | 11000 | 12000 | 13000 | 14000 | 15000 | 16000 | final |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | classes per word, mean | 0.15 | 0.20 | 0.53 | 0.78 | 1.14 | 1.39 | 1.74 | 1.79 | 2.23 | 2.20 | 2.65 | 2.63 | 3.30 | 3.33 | 3.50 | 3.53 | 5.88 |
+  | classes per word among words with one or more | 1.26 | 1.73 | 2.18 | 2.74 | 2.60 | 2.88 | 3.20 | 2.96 | 3.88 | 3.61 | 4.46 | 3.96 | 5.05 | 5.05 | 5.49 | 5.32 | 6.90 |
+  | words with two classes or more | 0.02 | 0.05 | 0.11 | 0.16 | 0.24 | 0.27 | 0.32 | 0.36 | 0.39 | 0.38 | 0.41 | 0.41 | 0.49 | 0.49 | 0.47 | 0.46 | 0.71 |
+  | words with no class at half | 0.88 | 0.88 | 0.76 | 0.71 | 0.56 | 0.52 | 0.46 | 0.39 | 0.43 | 0.39 | 0.41 | 0.34 | 0.35 | 0.34 | 0.36 | 0.34 | 0.15 |
+  | rows per class, mean | 0.13 | 0.63 | 0.87 | 1.13 | 1.38 | 1.65 | 1.88 | 2.00 | 2.53 | 2.37 | 3.98 | 2.85 | 4.39 | 4.15 | 4.23 | 4.51 | 7.11 |
+  | classes with two rows or more | 0.02 | 0.02 | 0.05 | 0.11 | 0.18 | 0.21 | 0.28 | 0.28 | 0.33 | 0.37 | 0.39 | 0.42 | 0.46 | 0.45 | 0.48 | 0.46 | 0.75 |
+
+  At 16000 with K = 128 / 2048: classes per word 0.57 / 25.46, words with two or more 0.14 / 0.93. OLMo-1B block 8 (K = 128) at 8000 / 16000: classes per word 0.82 / 0.92, two or more 0.21 / 0.24, rows per class 2.51 / 3.33.
+
+  - Polysemanticity grows through training, and the count depends on the grain. Classes per word rise from 0.15 at step 1000 to 3.53 at 16000 and 5.88 at the final model (words with two or more: 0.02 to 0.46 to 0.71); among the words that have a class at all the count still rises, 1.26 to 5.32 to 6.90, so the rise is not only the words' classes growing past the half-cluster threshold. At 16000 a third of the words (0.34) are over the floor at half of no cluster (their classes are finer than the clusters) and 0.46 of clusters have two rows or more. At K = 128 the mean is 0.57 and at K = 2048 25.46: the level is the clustering's, the rise through training is the model's. OLMo-1B at K = 128 sits at 0.92 with 0.24 of words at two or more.
+  - Pre-registered: X1 (most words one class at 16000) refuted (0.46 with two or more); X2 (classes per word rise) confirmed; X3 (most clusters at most one row) confirmed.
+
+- e596 THE MAGNITUDE BIAS (the MLP writes' exact coefficients at GPT-2 small block 6 and Pythia-410m block 12; the state decomposed over the full native dictionary at K = 64; identified writes scored as in the paper, and all selected MLP atoms; four solvers and the oracle support):
+
+  | model, block | MLP writes' share of the state's energy | identified writes (selected atoms among the true top-64 / top-16 MLP writers) | relative error, median | sign accuracy | ratio estimate/truth, smallest / largest decile | all selected MLP atoms, smallest-decile ratio: OMP-64 / K = 128 truncated / sign-constrained / shrunk | oracle support: smallest / largest decile (relative error) | share of the true top-64 in the support |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 small, block 6 | 0.39 | 16233 / 9271 | 0.800 / 0.585 | 0.9919 / 0.9959 | 2.59 / 1.40 | 537.30 / 552.06 / 537.31 / 503.02 | 1.01 / 1.04 (0.632) | 0.12 |
+  | Pythia-410m, block 12 | 0.25 | 7049 / 4813 | 0.996 / 0.753 | 0.9936 / 0.9956 | 2.88 / 1.18 | 867.15 / 847.57 / 867.16 / 750.38 | 0.85 / 0.65 (0.717) | 0.05 |
+
+  - The paper's estimation picture reproduces in kind, and no refit removes the bias, because the bias is the support's. On identified writes the sign is right in 0.9919 / 0.9936 of cases and the magnitude is biased upward for small writes (2.59 / 2.88 at the smallest decile against 1.40 / 1.18 at the largest); the relative errors here (0.800 / 0.996) exceed the paper's 0.25-0.54 because the MLP-only truth used here leaves the attention writes, which carry most of these states' energy (the MLP writes carry 0.39 / 0.25), to be absorbed by the MLP support. Truncating a K = 128 support, constraining the sign and shrinking by the explained share change nothing; the oracle support alone removes the bias at GPT-2 (1.01 / 1.04) and reverses it at Pythia (0.85 / 0.65). The support beyond the largest writes is spurious, as the paper said: over all selected MLP atoms the smallest decile is estimated at 537 / 867 times its truth.
+  - Pre-registered: B1 (truncation halves the bias) refuted; B2 (the oracle support still biased upward) refuted at GPT-2; B3 (the sign constraint changes nothing) confirmed.
+
+  What the six answered: recruitment is a symptom of the class's geometry and not a performance event (the class learns at its tokens' pace, and the direction's effect is what it will be before the row arrives); unlearning leaves the writers untouched and silences half of them at the forgotten classes, and the share still writing tracks how fast the forgetting is undone; pruning helps grokking regardless of what is pruned, and S cannot guide it before generalisation; twins do not anchor a stitch; polysemanticity rises through training at any grain; and the instrument's bias is the support's, not the refit's. Four of the six were nulls, and each closes a door the paper's next reader would have opened.

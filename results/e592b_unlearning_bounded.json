@@ -1,0 +1,560 @@
+{
+ "n_words": 256,
+ "n_forget_words": 62,
+ "n_retain_words": 27,
+ "loss0": {
+  "forget": 2.841559410095215,
+  "retain": 3.0934717655181885
+ },
+ "base_audit": {
+  "forget": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998211860657,
+   "share_still_writing": 1.0,
+   "S": 1.6753640174865723,
+   "still_word": 1.0
+  },
+  "retain": {
+   "row_cos": 1.0,
+   "row_cos_min": 0.9999998807907104,
+   "share_still_writing": 1.0,
+   "S": 1.6875451803207397,
+   "still_word": 1.0
+  }
+ },
+ "lr": 2e-06,
+ "kl_weight": 5.0,
+ "conditions": {
+  "ga_0.5": {
+   "method": "ga",
+   "target": 0.5,
+   "steps": 55,
+   "loss_forget": 3.407071352005005,
+   "loss_retain": 3.135350465774536,
+   "rise_forget": 0.56551194190979,
+   "rise_retain": 0.041878700256347656,
+   "audit": {
+    "forget": {
+     "row_cos": 0.999998927116394,
+     "row_cos_min": 0.9999972581863403,
+     "share_still_writing": 0.6290322580645161,
+     "S": 1.5986393690109253,
+     "still_word": 0.6290322580645161
+    },
+    "retain": {
+     "row_cos": 0.9999984502792358,
+     "row_cos_min": 0.9999971985816956,
+     "share_still_writing": 0.9629629629629629,
+     "S": 1.619847059249878,
+     "still_word": 0.9629629629629629
+    }
+   },
+   "where": {
+    "total": 0.45726120471954346,
+    "early_blocks_only": 0.25674599409103394,
+    "late_blocks_only": 0.08259335160255432
+   },
+   "early_share": 0.756605437445697,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.00035985292352171236,
+     "layernorm 0-6": 5.412513628766157e-05,
+     "attention 0-6": 0.0002603555206788519,
+     "mlp 0-6": 0.0014737055854913842,
+     "layernorm 7-11": 2.010242497971492e-05,
+     "attention 7-11": 6.608249168310249e-05,
+     "mlp 7-11": 0.0013010432894604187,
+     "other": 0.0004692180139281023
+    },
+    "row_rel_change": {
+     "forget_words": 0.001421976019628346,
+     "retain_words": 0.001750751631334424,
+     "all_rows": 0.0019740923307836056,
+     "forget_over_all": 0.7203189017323723,
+     "forget_percentile": 0.05892201140522957,
+     "forget_over_norm_matched": 0.9043636918067932,
+     "retain_over_norm_matched": 1.1041961908340454,
+     "forget_abs_over_all": 0.9116233823987192,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.8868641066243707
+    }
+   },
+   "loss_after_relearn20": 2.9681007862091064,
+   "recovery": 0.7762357136322378,
+   "steps_to_relearn": 25
+  },
+  "ga_1": {
+   "method": "ga",
+   "target": 1.0,
+   "steps": 95,
+   "loss_forget": 3.879302740097046,
+   "loss_retain": 3.1308772563934326,
+   "rise_forget": 1.037743330001831,
+   "rise_retain": 0.03740549087524414,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999979734420776,
+     "row_cos_min": 0.9999918937683105,
+     "share_still_writing": 0.5645161290322581,
+     "S": 1.5716599225997925,
+     "still_word": 0.5161290322580645
+    },
+    "retain": {
+     "row_cos": 0.9999970197677612,
+     "row_cos_min": 0.9999926090240479,
+     "share_still_writing": 0.9629629629629629,
+     "S": 1.619156002998352,
+     "still_word": 0.9629629629629629
+    }
+   },
+   "where": {
+    "total": 0.9102368950843811,
+    "early_blocks_only": 0.5703554749488831,
+    "late_blocks_only": 0.11717855930328369
+   },
+   "early_share": 0.8295668963780982,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.0005538105915543476,
+     "layernorm 0-6": 7.568141074893425e-05,
+     "attention 0-6": 0.00038396083514663016,
+     "mlp 0-6": 0.0021155956611796727,
+     "layernorm 7-11": 2.5312085369942182e-05,
+     "attention 7-11": 8.831969820187372e-05,
+     "mlp 7-11": 0.0017760783211435056,
+     "other": 0.0005514930972931245
+    },
+    "row_rel_change": {
+     "forget_words": 0.0020020795054733753,
+     "retain_words": 0.002462885808199644,
+     "all_rows": 0.00279120821505785,
+     "forget_over_all": 0.7172806008067301,
+     "forget_percentile": 0.06543272733688354,
+     "forget_over_norm_matched": 0.9108690023422241,
+     "retain_over_norm_matched": 1.1024075746536255,
+     "forget_abs_over_all": 0.9198307244997079,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.8823726567272944
+    }
+   },
+   "loss_after_relearn20": 3.16035532951355,
+   "recovery": 0.6927988740551361,
+   "steps_to_relearn": 45
+  },
+  "ga_2": {
+   "method": "ga",
+   "target": 2.0,
+   "steps": 90,
+   "loss_forget": 4.860589981079102,
+   "loss_retain": 3.21962833404541,
+   "rise_forget": 2.0190305709838867,
+   "rise_retain": 0.12615656852722168,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999974966049194,
+     "row_cos_min": 0.9999901056289673,
+     "share_still_writing": 0.46774193548387094,
+     "S": 1.4915705919265747,
+     "still_word": 0.45161290322580644
+    },
+    "retain": {
+     "row_cos": 0.9999954104423523,
+     "row_cos_min": 0.9999898672103882,
+     "share_still_writing": 0.9629629629629629,
+     "S": 1.6206471920013428,
+     "still_word": 0.9629629629629629
+    }
+   },
+   "where": {
+    "total": 1.8751225471496582,
+    "early_blocks_only": 1.0687932968139648,
+    "late_blocks_only": 0.21750888228416443
+   },
+   "early_share": 0.8309037442223199,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.0005692399633695462,
+     "layernorm 0-6": 9.15306104666017e-05,
+     "attention 0-6": 0.00042013459934457106,
+     "mlp 0-6": 0.0024083789295565442,
+     "layernorm 7-11": 3.3867896637498555e-05,
+     "attention 7-11": 0.0001000027406105688,
+     "mlp 7-11": 0.0020220354336345013,
+     "other": 0.0007126346438289774
+    },
+    "row_rel_change": {
+     "forget_words": 0.00222981465049088,
+     "retain_words": 0.0030142767354846,
+     "all_rows": 0.0032144892029464245,
+     "forget_over_all": 0.6936761985223081,
+     "forget_percentile": 0.0520392507314682,
+     "forget_over_norm_matched": 0.8852217793464661,
+     "retain_over_norm_matched": 1.221514105796814,
+     "forget_abs_over_all": 0.897035295988634,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.9377156198632404
+    }
+   },
+   "loss_after_relearn20": 3.62673282623291,
+   "recovery": 0.6111136565133458,
+   "steps_to_relearn": 65
+  },
+  "ga_4": {
+   "method": "ga",
+   "target": 4.0,
+   "steps": 105,
+   "loss_forget": 6.953904151916504,
+   "loss_retain": 3.4446640014648438,
+   "rise_forget": 4.112344741821289,
+   "rise_retain": 0.3511922359466553,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999969601631165,
+     "row_cos_min": 0.9999863505363464,
+     "share_still_writing": 0.3387096774193548,
+     "S": 1.3718461990356445,
+     "still_word": 0.4032258064516129
+    },
+    "retain": {
+     "row_cos": 0.9999940395355225,
+     "row_cos_min": 0.9999886155128479,
+     "share_still_writing": 0.9629629629629629,
+     "S": 1.5960444211959839,
+     "still_word": 0.9629629629629629
+    }
+   },
+   "where": {
+    "total": 3.975646495819092,
+    "early_blocks_only": 2.122889518737793,
+    "late_blocks_only": 0.3196052312850952
+   },
+   "early_share": 0.8691480375619639,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.0006407056623918116,
+     "layernorm 0-6": 0.00010520272416843015,
+     "attention 0-6": 0.000491033080777397,
+     "mlp 0-6": 0.0027858420245098726,
+     "layernorm 7-11": 3.965748582953528e-05,
+     "attention 7-11": 0.00011601734014882115,
+     "mlp 7-11": 0.002347707195853706,
+     "other": 0.000830338200269479
+    },
+    "row_rel_change": {
+     "forget_words": 0.0024629360996186733,
+     "retain_words": 0.003486367641016841,
+     "all_rows": 0.003716548439115286,
+     "forget_over_all": 0.6626944704116297,
+     "forget_percentile": 0.036180999130010605,
+     "forget_over_norm_matched": 0.8340244889259338,
+     "retain_over_norm_matched": 1.1512062549591064,
+     "forget_abs_over_all": 0.8350242143217923,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.9380659765722739
+    }
+   },
+   "loss_after_relearn20": 4.400675296783447,
+   "recovery": 0.6208693617457456,
+   "steps_to_relearn": null
+  },
+  "uniform_0.5": {
+   "method": "uniform",
+   "target": 0.5,
+   "steps": 25,
+   "loss_forget": 3.599940776824951,
+   "loss_retain": 3.302415609359741,
+   "rise_forget": 0.7583813667297363,
+   "rise_retain": 0.20894384384155273,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999991655349731,
+     "row_cos_min": 0.9999979734420776,
+     "share_still_writing": 0.8870967741935484,
+     "S": 1.6429431438446045,
+     "still_word": 0.8064516129032258
+    },
+    "retain": {
+     "row_cos": 0.9999988079071045,
+     "row_cos_min": 0.999997615814209,
+     "share_still_writing": 0.9629629629629629,
+     "S": 1.592944860458374,
+     "still_word": 0.8518518518518519
+    }
+   },
+   "where": {
+    "total": 0.6916751265525818,
+    "early_blocks_only": 0.1882328987121582,
+    "late_blocks_only": 0.13738228380680084
+   },
+   "early_share": 0.5780839125988798,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.00018143425176711612,
+     "layernorm 0-6": 4.1505154462908863e-05,
+     "attention 0-6": 0.00020946849023668104,
+     "mlp 0-6": 0.0012907395347240256,
+     "layernorm 7-11": 2.0619807612045013e-05,
+     "attention 7-11": 6.114297894745266e-05,
+     "mlp 7-11": 0.00123364258537739,
+     "other": 0.00033037625620995533
+    },
+    "row_rel_change": {
+     "forget_words": 0.001226593623869121,
+     "retain_words": 0.0015330214519053698,
+     "all_rows": 0.0017853876342996955,
+     "forget_over_all": 0.6870181020102354,
+     "forget_percentile": 0.02711249515414238,
+     "forget_over_norm_matched": 0.8423223495483398,
+     "retain_over_norm_matched": 1.0495543479919434,
+     "forget_abs_over_all": 0.9362853036035661,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.8586490812717461
+    }
+   },
+   "loss_after_relearn20": 2.902574062347412,
+   "recovery": 0.919546213911739,
+   "steps_to_relearn": 20
+  },
+  "uniform_1": {
+   "method": "uniform",
+   "target": 1.0,
+   "steps": 35,
+   "loss_forget": 3.967984676361084,
+   "loss_retain": 3.284456968307495,
+   "rise_forget": 1.1264252662658691,
+   "rise_retain": 0.19098520278930664,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999988675117493,
+     "row_cos_min": 0.9999967217445374,
+     "share_still_writing": 0.8225806451612904,
+     "S": 1.6456716060638428,
+     "still_word": 0.7741935483870968
+    },
+    "retain": {
+     "row_cos": 0.9999983310699463,
+     "row_cos_min": 0.9999971389770508,
+     "share_still_writing": 0.9629629629629629,
+     "S": 1.6112662553787231,
+     "still_word": 0.8518518518518519
+    }
+   },
+   "where": {
+    "total": 1.045722484588623,
+    "early_blocks_only": 0.32349494099617004,
+    "late_blocks_only": 0.17493759095668793
+   },
+   "early_share": 0.6490245324251154,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.00025015713764230634,
+     "layernorm 0-6": 4.801052383060568e-05,
+     "attention 0-6": 0.00026088321090935736,
+     "mlp 0-6": 0.0015712547806728345,
+     "layernorm 7-11": 2.409699659476361e-05,
+     "attention 7-11": 7.505603211334206e-05,
+     "mlp 7-11": 0.0015078748617564032,
+     "other": 0.00040941824444716633
+    },
+    "row_rel_change": {
+     "forget_words": 0.0015244949609041214,
+     "retain_words": 0.0018664709059521556,
+     "all_rows": 0.0021386886946856976,
+     "forget_over_all": 0.7128176086086067,
+     "forget_percentile": 0.039296843111515045,
+     "forget_over_norm_matched": 0.8633841276168823,
+     "retain_over_norm_matched": 1.018916130065918,
+     "forget_abs_over_all": 0.9770531370657292,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.8727174322237921
+    }
+   },
+   "loss_after_relearn20": 2.9602549076080322,
+   "recovery": 0.8946263892798709,
+   "steps_to_relearn": 25
+  },
+  "uniform_2": {
+   "method": "uniform",
+   "target": 2.0,
+   "steps": 55,
+   "loss_forget": 5.144171237945557,
+   "loss_retain": 3.2962937355041504,
+   "rise_forget": 2.302611827850342,
+   "rise_retain": 0.20282196998596191,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999979734420776,
+     "row_cos_min": 0.9999924898147583,
+     "share_still_writing": 0.6612903225806451,
+     "S": 1.5834236145019531,
+     "still_word": 0.6935483870967742
+    },
+    "retain": {
+     "row_cos": 0.9999971985816956,
+     "row_cos_min": 0.9999949932098389,
+     "share_still_writing": 0.9259259259259259,
+     "S": 1.612265706062317,
+     "still_word": 0.8148148148148148
+    }
+   },
+   "where": {
+    "total": 2.2095327377319336,
+    "early_blocks_only": 0.877714991569519,
+    "late_blocks_only": 0.23462191224098206
+   },
+   "early_share": 0.7890729765080666,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.0003769640353502788,
+     "layernorm 0-6": 6.059243440160981e-05,
+     "attention 0-6": 0.0003685198436702114,
+     "mlp 0-6": 0.00211250808511214,
+     "layernorm 7-11": 3.191126259189519e-05,
+     "attention 7-11": 0.00010554583394053988,
+     "mlp 7-11": 0.0020499938869446305,
+     "other": 0.0005859557888052538
+    },
+    "row_rel_change": {
+     "forget_words": 0.002016055630519986,
+     "retain_words": 0.0023530565667897463,
+     "all_rows": 0.0027398138772696257,
+     "forget_over_all": 0.7358367103859974,
+     "forget_percentile": 0.04417988285422325,
+     "forget_over_norm_matched": 0.9031726121902466,
+     "retain_over_norm_matched": 0.9716665744781494,
+     "forget_abs_over_all": 1.0036009439759153,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.8588381080596234
+    }
+   },
+   "loss_after_relearn20": 3.0836117267608643,
+   "recovery": 0.8948792350764466,
+   "steps_to_relearn": 45
+  },
+  "uniform_4": {
+   "method": "uniform",
+   "target": 4.0,
+   "steps": 65,
+   "loss_forget": 6.925764083862305,
+   "loss_retain": 3.6915476322174072,
+   "rise_forget": 4.08420467376709,
+   "rise_retain": 0.5980758666992188,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999971985816956,
+     "row_cos_min": 0.9999904036521912,
+     "share_still_writing": 0.532258064516129,
+     "S": 1.5532481670379639,
+     "still_word": 0.6451612903225806
+    },
+    "retain": {
+     "row_cos": 0.9999967217445374,
+     "row_cos_min": 0.9999942779541016,
+     "share_still_writing": 0.7777777777777778,
+     "S": 1.5869605541229248,
+     "still_word": 0.7777777777777778
+    }
+   },
+   "where": {
+    "total": 3.9975743293762207,
+    "early_blocks_only": 1.443467617034912,
+    "late_blocks_only": 0.24054086208343506
+   },
+   "early_share": 0.8571617274698232,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.00041124902419713717,
+     "layernorm 0-6": 6.972156063383484e-05,
+     "attention 0-6": 0.00041130343886199895,
+     "mlp 0-6": 0.002397364798503687,
+     "layernorm 7-11": 3.7196990194002396e-05,
+     "attention 7-11": 0.000120253180183947,
+     "mlp 7-11": 0.002312074445029618,
+     "other": 0.0006354781641739064
+    },
+    "row_rel_change": {
+     "forget_words": 0.00234506418928504,
+     "retain_words": 0.0025796103291213512,
+     "all_rows": 0.0031822603195905685,
+     "forget_over_all": 0.7369177734607071,
+     "forget_percentile": 0.059154536575078964,
+     "forget_over_norm_matched": 0.906670331954956,
+     "retain_over_norm_matched": 0.9713282585144043,
+     "forget_abs_over_all": 0.9959905714432031,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.8106220327861944
+    }
+   },
+   "loss_after_relearn20": 3.263936996459961,
+   "recovery": 0.8965826592683555,
+   "steps_to_relearn": 65
+  },
+  "retain_only": {
+   "method": "retain_only",
+   "target": 0.0,
+   "steps": 200,
+   "loss_forget": 3.0818932056427,
+   "loss_retain": 3.4173552989959717,
+   "rise_forget": 0.24033379554748535,
+   "rise_retain": 0.3238835334777832,
+   "audit": {
+    "forget": {
+     "row_cos": 0.9999940395355225,
+     "row_cos_min": 0.9999895691871643,
+     "share_still_writing": 0.9354838709677419,
+     "S": 1.6470203399658203,
+     "still_word": 0.9032258064516129
+    },
+    "retain": {
+     "row_cos": 0.9999936819076538,
+     "row_cos_min": 0.9999870657920837,
+     "share_still_writing": 0.8888888888888888,
+     "S": 1.6366984844207764,
+     "still_word": 0.8518518518518519
+    }
+   },
+   "where": {
+    "total": 0.3435226380825043,
+    "early_blocks_only": 0.05750894173979759,
+    "late_blocks_only": 0.2004738450050354
+   },
+   "early_share": 0.22291774759638847,
+   "param_change": {
+    "groups": {
+     "embeddings": 0.0009165597734112357,
+     "layernorm 0-6": 9.829761555878423e-05,
+     "attention 0-6": 0.0006275228241643585,
+     "mlp 0-6": 0.0035189257886344616,
+     "layernorm 7-11": 4.973588473632365e-05,
+     "attention 7-11": 0.00018140293194433943,
+     "mlp 7-11": 0.0035152051107176837,
+     "other": 0.0015728474224875662
+    },
+    "row_rel_change": {
+     "forget_words": 0.0034017020370811224,
+     "retain_words": 0.0035434491001069546,
+     "all_rows": 0.00450166966766119,
+     "forget_over_all": 0.7556534104485841,
+     "forget_percentile": 0.0312514528632164,
+     "forget_over_norm_matched": 0.9187700748443604,
+     "retain_over_norm_matched": 0.9406144618988037,
+     "forget_abs_over_all": 1.0107589552317704,
+     "forget_norm_percentile": 0.9685159921646118,
+     "retain_over_all": 0.7871410746910552
+    }
+   },
+   "loss_after_relearn20": null,
+   "recovery": null,
+   "steps_to_relearn": null
+  }
+ },
+ "summary": {
+  "n_conditions": 8,
+  "spearman_writing_recovery": 0.7142857142857144,
+  "spearman_cos_recovery": 0.5000000000000001,
+  "spearman_rise_recovery": -0.1666666666666667,
+  "spearman_writing_back": -0.7857142857142856
+ },
+ "_exp": "e592b_unlearning_bounded",
+ "_time": "2026-09-29 15:38:00"
+}

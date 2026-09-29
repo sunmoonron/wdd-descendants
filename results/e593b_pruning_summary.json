@@ -1,0 +1,84 @@
+{
+ "none": {
+  "n": 4,
+  "pruned": 0,
+  "base_words_pruned": 0.0,
+  "grok_steps": [
+   4000,
+   4000,
+   4000,
+   4000
+  ],
+  "grok_median": 4000.0,
+  "share_grokked": 1.0,
+  "test_acc": 0.999776303768158,
+  "advantage": 0.7320819273591042,
+  "base_words_final": 1.0
+ },
+ "low": {
+  "n": 4,
+  "pruned": 256,
+  "base_words_pruned": 0.625,
+  "grok_steps": [
+   3000,
+   3000,
+   3000,
+   3000
+  ],
+  "grok_median": 3000.0,
+  "share_grokked": 1.0,
+  "test_acc": 1.0,
+  "advantage": 0.7152114436030388,
+  "base_words_final": 0.125
+ },
+ "random": {
+  "n": 4,
+  "pruned": 256,
+  "base_words_pruned": 0.5625,
+  "grok_steps": [
+   3250,
+   3000,
+   3000,
+   3000
+  ],
+  "grok_median": 3000.0,
+  "share_grokked": 1.0,
+  "test_acc": 0.9997762739658356,
+  "advantage": 0.685831755399704,
+  "base_words_final": 0.078125
+ },
+ "high": {
+  "n": 4,
+  "pruned": 256,
+  "base_words_pruned": 0.375,
+  "grok_steps": [
+   3500,
+   3500,
+   3500,
+   3500
+  ],
+  "grok_median": 3500.0,
+  "share_grokked": 1.0,
+  "test_acc": 0.9985457062721252,
+  "advantage": 0.6913313046097755,
+  "base_words_final": 0.09375
+ },
+ "low384": {
+  "n": 4,
+  "pruned": 384,
+  "base_words_pruned": 0.84375,
+  "grok_steps": [
+   2250,
+   2250,
+   2250,
+   2250
+  ],
+  "grok_median": 2250.0,
+  "share_grokked": 1.0,
+  "test_acc": 1.0,
+  "advantage": 0.7262841239571571,
+  "base_words_final": 0.03125
+ },
+ "_exp": "e593b_pruning_summary",
+ "_time": "2026-09-29 14:42:05"
+}
