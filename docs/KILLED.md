@@ -705,3 +705,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Safety training rewrites the writers of harmful requests": rows at cosine 0.9973 with the base (e604).
 - "Jailbreaks silence the harmful-request writers": activation 0.97 / 0.98 under the two prefixes (e604).
 - "Merged fine-tunes collide on the same rows": entrants' Jaccard 0.02 (e605).
+
+## Session 113 kills (the refusal direction, writer rescue, 410m, 1B)
+- "The harmful-request writers write the refusal direction": cosine 0.034 against 0.024 for any row, 0.11 of the mass (e607).
+- "Restoring the silenced writers restores the forgotten domain": 0.09 of the rise recovered after ascent (e609).
+- "The forgetting of a gradient method lives in the MLP activations of blocks 0-B": restoring all of them recovers 0.02 after ascent (e609).

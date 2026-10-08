@@ -1,27 +1,19 @@
-"""e602 (session 112): the naive-selection baseline for the unlearning audit, with seeds. Session 111 found that the
-activation of the WDD-identified writers at the forgotten contexts tracks relearnability across methods (Spearman
-0.82). The threat to that claim is that any set of domain-selective neurons, chosen without a dictionary, would do the
-same. Here the five methods of e597 are rerun (capped ascent, gradient difference, NPO, RMU, selective dampening,
-each stopped at target rises of 1, 2 and 4 nats; a drift control) and the audit tracks, side by side, the
-activation ratio (unlearned over original, median over the set, at the forget positions) of six neuron sets of the
-same size as the forget words: the WDD forget words (at their class positions, as e597, and at all forget positions),
-the WDD retain words, the neurons of blocks 0-B most forget-selective by mean activation difference (forget minus
-retain), by activation ratio (forget over retain), by activation magnitude on forget positions, and a random set;
-plus the median over every neuron. The overlaps between the sets are recorded. Attacks: relearning (20-step recovery
-and steps back within 0.1 nats, 100 at most) and benign relearning (50 steps). Arguments: model domain method seed.
+"""e608 (session 113): the separable interventions of e603 at Pythia-410m (block 12), where no training method silences
+the writers (e597: ascent leaves them at 0.96-0.99), so that silencing them after the unlearning should buy the most.
+PubMed, three seeds: capped ascent to +2 and RMU to +2, each alone and followed by the forget words' write columns
+zeroed, their inputs zeroed, as many random rows zeroed, or the difference-selected neurons' inputs zeroed; the input
+silencing alone. In addition, the writers' activation ratio at their classes is logged every ten steps of the
+unlearning, the trajectory the field would want to see. Arguments: model domain seed.
 Pre-registered (honest guesses):
- N1 (0.6) the difference-selected set overlaps the WDD forget words by Jaccard 0.3 or less: the dictionary picks
-    different neurons from the activation statistics;
- N2 (0.5) the WDD forget words' activation ratio correlates with the 20-step recovery at least 0.1 higher than the
-    difference-selected set's, over the training-method conditions of e602b;
- N3 (0.7) the random set's ratio stays within 0.9-1.1 under every training method (silencing is selective)."""
+ T1 (0.6) at 410m input silencing after capped ascent adds 30 or more relearning steps (the writers were still firing);
+ T2 (0.5) the writers' activation ratio stays above 0.9 throughout the ascent trajectory;
+ T3 (0.6) random rows add fewer than 10 steps."""
+
 from s101_common import *
 from ma_common import Stop
 from datasets import load_dataset
 import copy, re, collections
-import wdd_common
-if len(sys.argv) > 1 and sys.argv[1] == "pythia1b": wdd_common.MODELS["pythia1b"] = ("EleutherAI/pythia-1b", "neox"); MID["pythia1b"] = 8
-name, DOMAIN, METHOD, SEED = sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4]); SMOKE = "--smoke" in sys.argv
+name, DOMAIN, METHOD, SEED = sys.argv[1], sys.argv[2], "separable", int(sys.argv[3]); SMOKE = "--smoke" in sys.argv
 t0 = time.time(); B = MID[name]; T = 256; NTR, NEV = (16, 8) if SMOKE else (96, 16); LR, LAM, MAXS, CHK = 2e-6, 5.0, (6 if SMOKE else 600), (3 if SMOKE else 5); TARGETS = (0.2,) if SMOKE else (1.0, 2.0, 4.0); BETA = 0.1 * 20 / (T - 1); RL, BN = (10, 5) if SMOKE else (100, 50); torch.set_grad_enabled(False)   # npo's beta scaled from the 20-token answers it was tuned on to these 255-token windows
 model, tok, fam = load_model(name); arch = Arch(model, fam); orig = copy.deepcopy(model).eval(); DFF = arch.DFF
 for p_ in orig.parameters(): p_.requires_grad_(False)
@@ -166,6 +158,7 @@ def prep(m, params):
     for p_ in m.parameters(): p_.requires_grad_(False)
     for p_ in params: p_.requires_grad_(True)
     m.train()
+TRAJ = {}
 def unlearn(method, target):
     m = copy.deepcopy(orig); g = torch.Generator().manual_seed(int(target * 10) + 3 + 1000 * SEED); cap = L0f + target; steps = 0
     if method == "rmu":
@@ -198,7 +191,10 @@ def unlearn(method, target):
             opt.zero_grad(set_to_none=True); loss.backward(); torch.nn.utils.clip_grad_norm_(params, 1.0); opt.step(); steps = s + 1
             if method != "drift" and steps % CHK == 0:
                 m.eval()
-                with torch.no_grad(): Lf = lossof(m, f_ev[:, :T])
+                with torch.no_grad():
+                    Lf = lossof(m, f_ev[:, :T])
+                    if steps % 10 == 0 or Lf >= cap:
+                        am = acts(m); rr = [am[w] / act0[w] for w in fw if abs(act0[w]) > 1e-6]; TRAJ.setdefault(method, []).append(dict(step=steps, forget_loss=Lf, act_ratio=med(rr) if rr else None))
                 m.train()
                 if Lf >= cap: break
     m.eval()
@@ -243,19 +239,35 @@ def benign(m, steps=BN):
         for s in range(steps):
             rb = r_tr[torch.randint(0, NTR, (8,), generator=g)]; lg = m2(rb[:, :T]).logits.float(); loss = torch.nn.functional.cross_entropy(lg[:, :-1].reshape(-1, lg.shape[-1]), rb[:, 1:T].reshape(-1)); opt.zero_grad(set_to_none=True); loss.backward(); opt.step()
     m2.eval(); L = lossof(m2, f_ev[:, :T]); del m2; torch.cuda.empty_cache(); return L
-res = dict(model=name, domain=DOMAIN, method=METHOD, seed=SEED, n_words=len(w0), n_forget_words=len(fw), n_retain_words=len(rw), loss0=dict(forget=L0f, retain=L0r), base_audit=base_audit, probe0=pr0, overlaps=OVER, sets={k: [int(x) for x in v] for k, v in SETS.items()}, conditions={})
-def measure(m, target, steps, extra=None):
-    Lf, Lr = lossof(m, f_ev[:, :T]), lossof(m, r_ev[:, :T]); rise = Lf - L0f; au = audit(m); sr = set_ratios(m); pb = probe(m); rcg = rel_change(m)
+
+def zero_rows(m, rows_, side="output"):
+    a2 = Arch(m, fam)
+    with torch.no_grad():
+        for w in rows_:
+            b_, j = w // DFF, w % DFF; l = a2.layers[b_].mlp
+            if side == "output": l.dense_4h_to_h.weight[:, j] = 0
+            else: l.dense_h_to_4h.weight[j, :] = 0; l.dense_h_to_4h.bias[j] = 0
+    return m
+nonword = [i for i in range(NB1 * DFF) if i not in allw]; grnd = torch.Generator().manual_seed(31 + SEED); rnd_rows = [nonword[int(i)] for i in torch.randperm(len(nonword), generator=grnd)[:len(fw)]]
+res = dict(model=name, domain=DOMAIN, seed=SEED, n_forget_words=len(fw), n_retain_words=len(rw), loss0=dict(forget=L0f, retain=L0r), base_audit=base_audit, probe0=pr0, overlaps=OVER, conditions={}, trajectory=TRAJ)
+def measure(m, key, extra=None):
+    Lf, Lr = lossof(m, f_ev[:, :T]), lossof(m, r_ev[:, :T]); rise = Lf - L0f; au = audit(m); sr = set_ratios(m); pb = probe(m)
     L20, back = relearn(m); rec = (Lf - L20) / rise if (L20 is not None and rise > 0.05) else None; Lb = benign(m); rec_b = (Lf - Lb) / rise if rise > 0.05 else None
-    cnd = dict(method=METHOD, seed=SEED, target=target, steps=steps, loss_forget=Lf, loss_retain=Lr, rise_forget=rise, rise_retain=Lr - L0r, audit=au, set_ratios=sr, probe=pb, param_change=rcg, loss_after_relearn20=L20, recovery=rec, steps_to_relearn=back, benign_forget=Lb, recovery_benign=rec_b)
+    cnd = dict(condition=key, seed=SEED, loss_forget=Lf, loss_retain=Lr, rise_forget=rise, rise_retain=Lr - L0r, audit=au, set_ratios=sr, probe=pb, loss_after_relearn20=L20, recovery=rec, steps_to_relearn=back, benign_forget=Lb, recovery_benign=rec_b)
     if extra: cnd.update(extra)
-    key = f"{METHOD}_{target:g}" if METHOD != "drift" else "drift"; res["conditions"][key] = cnd
-    log(f"{key} ({steps}): forget {L0f:.3f} -> {Lf:.3f} (retain {Lr - L0r:+.3f}); activation ratios: WDD forget words at their classes {au['forget']['act_ratio'] if au['forget']['act_ratio'] is None else round(au['forget']['act_ratio'], 2)}, at all forget positions {sr['wdd_forget']:.2f}, difference-selected {sr['diff_selected']:.2f}, ratio-selected {sr['ratio_selected']:.2f}, magnitude-selected {sr['magnitude_selected']:.2f}, random {sr['random']:.2f}, WDD retain words {sr['wdd_retain']:.2f}, all neurons {sr['all_neurons']:.2f}; still writing {au['forget']['share_still_writing']:.2f}; probe {pb['forget_acc']:.3f}; relearn 20 -> {L20} (recovery {rec}), back after {back}; benign -> {Lb:.3f} (recovery {rec_b}) | {time.time() - t0:.0f}s")
+    res["conditions"][key] = cnd; a_ = au["forget"]
+    log(f"{key}: forget {L0f:.3f} -> {Lf:.3f} (retain {Lr - L0r:+.3f}); writers' activation at their classes {a_['act_ratio'] if a_['act_ratio'] is None else round(a_['act_ratio'], 2)}, still writing {a_['share_still_writing']:.2f}; difference-selected activation {sr['diff_selected']:.2f}; probe {pb['forget_acc']:.3f}; relearn 20 -> {L20} (recovery {rec}), back after {back}; benign -> {Lb:.3f} (recovery {rec_b}) | {time.time() - t0:.0f}s")
     del m; torch.cuda.empty_cache()
-if METHOD == "drift": m, steps = unlearn("drift", 0.0); measure(m, 0.0, steps)
-elif METHOD == "ssd":
-    for target, (m, alpha, frac) in ssd_models().items(): measure(m, target, alpha, dict(dampened_share=frac))
-else:
-    for target in TARGETS: m, steps = unlearn(METHOD, target); measure(m, target, steps)
-C = res["conditions"]; summ = f"{name} {DOMAIN} {METHOD} seed {SEED}: overlaps " + ", ".join(f"{k} {v:.2f}" for k, v in OVER.items()) + "; " + "; ".join(f"{k}: WDD {c['set_ratios']['wdd_forget']:.2f} (class {c['audit']['forget']['act_ratio'] if c['audit']['forget']['act_ratio'] is None else round(c['audit']['forget']['act_ratio'], 2)}), diff {c['set_ratios']['diff_selected']:.2f}, mag {c['set_ratios']['magnitude_selected']:.2f}, random {c['set_ratios']['random']:.2f}, recovery {None if c['recovery'] is None else round(c['recovery'], 2)}, back {c['steps_to_relearn']}" for k, c in C.items()) + f" | {time.time() - t0:.0f}s"
-log(summ); record(f"e602_baseline_{name}_{DOMAIN}_{METHOD}_s{SEED}" + ("_smoke" if SMOKE else ""), res, summ)
+measure(zero_rows(copy.deepcopy(orig), fw, "input"), "inputs_zero_alone", dict(n_rows=len(fw)))
+for method in ("ga", "rmu"):
+    base, steps = unlearn(method, 0.2 if SMOKE else 2.0); log(f"{method} to target in {steps} steps ({time.time() - t0:.0f}s)")
+    measure(copy.deepcopy(base), f"{method}_alone", dict(steps=steps))
+    measure(zero_rows(copy.deepcopy(base), fw, "output"), f"{method}_rows_zero", dict(steps=steps, n_rows=len(fw)))
+    measure(zero_rows(copy.deepcopy(base), fw, "input"), f"{method}_inputs_zero", dict(steps=steps, n_rows=len(fw)))
+    measure(zero_rows(copy.deepcopy(base), rnd_rows, "output"), f"{method}_random_rows_zero", dict(steps=steps, n_rows=len(rnd_rows)))
+    measure(zero_rows(copy.deepcopy(base), diff_sel, "input"), f"{method}_diffselected_inputs_zero", dict(steps=steps, n_rows=len(diff_sel)))
+    del base; torch.cuda.empty_cache()
+C = res["conditions"]; bk = lambda k: C[k]["steps_to_relearn"]
+summ = f"separable interventions ({name} {DOMAIN}, seed {SEED}): steps back within 0.1 nats: " + ", ".join(f"{k} {bk(k)}" for k in C) + "; 20-step recovery: " + ", ".join(f"{k} {None if C[k]['recovery'] is None else round(C[k]['recovery'], 2)}" for k in C) + f" | {time.time() - t0:.0f}s"
+log(summ); log("trajectories: " + "; ".join(f"{m_} " + ", ".join(f"{p['step']}:{p['forget_loss']:.2f}/{p['act_ratio'] if p['act_ratio'] is None else round(p['act_ratio'], 2)}" for p in tr) for m_, tr in TRAJ.items()))
+record(f"e608_separable_{name}_{DOMAIN}_s{SEED}" + ("_smoke" if SMOKE else ""), res, summ)

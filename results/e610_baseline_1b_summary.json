@@ -1,0 +1,109 @@
+{
+ "n_runs_1b": 3,
+ "n_conditions_1b": 9,
+ "n_conditions_all": 63,
+ "spearman_1b": {
+  "recovery": {
+   "wdd_class": 0.9,
+   "wdd_all": 0.8833333333333333,
+   "diff_selected": 0.8666666666666667,
+   "ratio_selected": 0.75,
+   "magnitude_selected": 0.5499999999999999,
+   "random": -0.08333333333333334,
+   "all_neurons": -0.5499999999999999,
+   "still_writing": -0.6,
+   "probe": 0.8166666666666667
+  },
+  "steps_back": {
+   "wdd_class": -0.42857142857142866,
+   "wdd_all": -0.523809523809524,
+   "diff_selected": -0.42857142857142866,
+   "ratio_selected": -0.5000000000000001,
+   "magnitude_selected": -0.3571428571428572,
+   "random": -0.1666666666666667,
+   "all_neurons": 0.5714285714285715,
+   "still_writing": 0.19047619047619052,
+   "probe": -0.642857142857143
+  }
+ },
+ "spearman_pooled": {
+  "recovery": {
+   "wdd_class": 0.872275888105809,
+   "diff_selected": 0.8255697194185858,
+   "ratio_selected": 0.8202857657842773,
+   "magnitude_selected": 0.5698740402298612,
+   "random": 0.04985193110680345,
+   "still_writing": 0.23172854552002556,
+   "probe": 0.6996855212416089
+  },
+  "steps_back": {
+   "wdd_class": -0.6316510108736504,
+   "diff_selected": -0.6093051179512288,
+   "ratio_selected": -0.5611153883911479,
+   "magnitude_selected": -0.280397608223468,
+   "random": -0.4439419464526412,
+   "still_writing": -0.06398331125795008,
+   "probe": -0.6415972476937483
+  }
+ },
+ "overlaps_1b": {
+  "wdd_retain": 0.0,
+  "diff_selected": 0.06896551724137931,
+  "ratio_selected": 0.008130081300813009,
+  "magnitude_selected": 0.008130081300813009,
+  "random": 0.008130081300813009,
+  "diff_vs_magnitude": 0.06896551724137931,
+  "diff_selected_among_words": 0.12903225806451613,
+  "magnitude_selected_among_words": 0.06451612903225806
+ },
+ "by_method_1b": {
+  "ga": {
+   "wdd_class": 0.8820674936677199,
+   "wdd_all": 0.8753262758255005,
+   "diff_selected": 0.21337537467479706,
+   "ratio_selected": 0.43780821561813354,
+   "magnitude_selected": 0.9718034863471985,
+   "random": 0.9962127804756165,
+   "all_neurons": 0.9999410510063171,
+   "still_writing": 0.7903225806451613,
+   "probe": 0.3883829712867737,
+   "recovery": 0.836110620537699,
+   "steps_back": 30.0,
+   "rise_retain": 0.20683014392852783,
+   "n": 3
+  },
+  "npo": {
+   "wdd_class": 0.6603231549119606,
+   "wdd_all": -0.024591553956270218,
+   "diff_selected": -0.2112322598695755,
+   "ratio_selected": 0.10475941747426987,
+   "magnitude_selected": 0.9596104025840759,
+   "random": 1.0007730722427368,
+   "all_neurons": 1.0065810680389404,
+   "still_writing": 0.4838709677419355,
+   "probe": 0.0009844942251220345,
+   "recovery": 0.8290951503409212,
+   "steps_back": 40.0,
+   "rise_retain": 0.23668324947357178,
+   "n": 3
+  },
+  "rmu": {
+   "wdd_class": 1.0,
+   "wdd_all": 1.0,
+   "diff_selected": 1.0,
+   "ratio_selected": 1.0,
+   "magnitude_selected": 1.0,
+   "random": 1.0,
+   "all_neurons": 1.0,
+   "still_writing": 0.0967741935483871,
+   "probe": 0.9822791218757629,
+   "recovery": 0.9535424797867225,
+   "steps_back": 25.0,
+   "rise_retain": 0.036420345306396484,
+   "n": 3
+  }
+ },
+ "_exp": "e610_baseline_1b_summary",
+ "_time": "2026-10-08 22:23:09",
+ "pooled_note": "pooled over every e602 run of sessions 112 and 113 (three sizes), recomputed on the laptop because the box held only the 1B runs"
+}

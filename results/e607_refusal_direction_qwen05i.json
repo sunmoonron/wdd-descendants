@@ -1,0 +1,58 @@
+{
+ "model": "qwen05i",
+ "n_blocks": 24,
+ "B": 12,
+ "n_prompts": 200,
+ "n_words": 256,
+ "n_harmful_words": 53,
+ "n_harmless_words": 32,
+ "refusal0": {
+  "harmful": 0.925,
+  "harmless": 0.06
+ },
+ "candidates": {
+  "8": {
+   "refusal_harmful": 0.725,
+   "refusal_harmless": 0.015,
+   "separation": 1.339943528175354
+  },
+  "12": {
+   "refusal_harmful": 0.075,
+   "refusal_harmless": 0.01,
+   "separation": 3.6967082023620605
+  },
+  "16": {
+   "refusal_harmful": 0.035,
+   "refusal_harmless": 0.03,
+   "separation": 8.35094928741455
+  }
+ },
+ "partI": {
+  "block": 16,
+  "harmful_words_abs_cos": 0.03380950167775154,
+  "harmless_words_abs_cos": 0.025855908170342445,
+  "all_rows_abs_cos": 0.023787181824445724,
+  "top_rows_are_words": 0.03773584905660377,
+  "top_rows_are_harmful_words": 0.03773584905660377,
+  "writers_share_of_mlp_mass_along_direction": 0.11373578757047653,
+  "top_rows_share": 0.2212657779455185,
+  "random_rows_share": -0.006940372753888369,
+  "mlp_mass_median": 0.6410776376724243
+ },
+ "partII": {
+  "refusal_harmful": 0.035,
+  "refusal_harmless": 0.03,
+  "harmful_words_activation_ratio": 0.9883514642715454,
+  "share_halved": 0.09433962264150944,
+  "harmful_words_still_writing": 0.9245283018867925,
+  "harmless_words_still_writing": 0.9375,
+  "probe_harmful": 0.9562499523162842
+ },
+ "partIII": {
+  "alpha": 8.35094928741455,
+  "refusal_harmless_with_direction_added": 0.875,
+  "refusal_harmful_with_direction_added": 1.0
+ },
+ "_exp": "e607_refusal_direction_qwen05i",
+ "_time": "2026-10-08 21:21:13"
+}

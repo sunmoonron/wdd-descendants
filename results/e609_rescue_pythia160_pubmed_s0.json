@@ -1,0 +1,141 @@
+{
+ "model": "pythia160",
+ "domain": "pubmed",
+ "seed": 0,
+ "n_forget_words": 60,
+ "loss0": {
+  "forget": 2.92544162273407,
+  "retain": 3.0934720039367676
+ },
+ "overlaps": {
+  "wdd_retain": 0.0,
+  "diff_selected": 0.061946902654867256,
+  "ratio_selected": 0.0,
+  "magnitude_selected": 0.0,
+  "random": 0.01694915254237288,
+  "diff_vs_magnitude": 0.061946902654867256,
+  "diff_selected_among_words": 0.18333333333333332,
+  "magnitude_selected_among_words": 0.16666666666666666
+ },
+ "conditions": {
+  "ga": {
+   "steps": 85,
+   "loss_forget": 5.016765117645264,
+   "rise_forget": 2.091323494911194,
+   "act_ratio": 0.701865236848117,
+   "still_writing": 0.45,
+   "restored": {
+    "wdd_forget": {
+     "loss": 4.8388447761535645,
+     "recovery": 0.08507547585279457
+    },
+    "diff_selected": {
+     "loss": 5.072962045669556,
+     "recovery": -0.026871465921477797
+    },
+    "ratio_selected": {
+     "loss": 5.043891429901123,
+     "recovery": -0.01297088294654829
+    },
+    "random": {
+     "loss": 5.014777660369873,
+     "recovery": 0.0009503346948603093
+    },
+    "all_mlp_0_to_B": {
+     "loss": 4.973168849945068,
+     "recovery": 0.020846257313264963
+    }
+   },
+   "reverse": {
+    "wdd_forget": {
+     "loss": 2.9624725580215454,
+     "share_of_rise": 0.01770693791638776
+    },
+    "all_mlp_0_to_B": {
+     "loss": 3.23119056224823,
+     "share_of_rise": 0.146198778074333
+    }
+   }
+  },
+  "npo": {
+   "steps": 50,
+   "loss_forget": 5.1338067054748535,
+   "rise_forget": 2.2083650827407837,
+   "act_ratio": 0.726055994047442,
+   "still_writing": 0.5166666666666667,
+   "restored": {
+    "wdd_forget": {
+     "loss": 4.905555009841919,
+     "recovery": 0.10335777241580603
+    },
+    "diff_selected": {
+     "loss": 5.253611326217651,
+     "recovery": -0.05425036905315915
+    },
+    "ratio_selected": {
+     "loss": 5.191592454910278,
+     "recovery": -0.02616675561801013
+    },
+    "random": {
+     "loss": 5.132742881774902,
+     "recovery": 0.0004817245609728936
+    },
+    "all_mlp_0_to_B": {
+     "loss": 5.299523591995239,
+     "recovery": -0.07504053012589562
+    }
+   },
+   "reverse": {
+    "wdd_forget": {
+     "loss": 2.9577564001083374,
+     "share_of_rise": 0.014632896357047075
+    },
+    "all_mlp_0_to_B": {
+     "loss": 3.1903862953186035,
+     "share_of_rise": 0.11997322121019639
+    }
+   }
+  },
+  "rmu": {
+   "steps": 40,
+   "loss_forget": 5.610913515090942,
+   "rise_forget": 2.6854718923568726,
+   "act_ratio": 1.0,
+   "still_writing": 0.16666666666666666,
+   "restored": {
+    "wdd_forget": {
+     "loss": 5.515131711959839,
+     "recovery": 0.035666656353286856
+    },
+    "diff_selected": {
+     "loss": 5.242789268493652,
+     "recovery": 0.13707991047867946
+    },
+    "ratio_selected": {
+     "loss": 5.542179346084595,
+     "recovery": 0.025594819741726633
+    },
+    "random": {
+     "loss": 5.609347581863403,
+     "recovery": 0.0005831128718925967
+    },
+    "all_mlp_0_to_B": {
+     "loss": 3.6051437854766846,
+     "recovery": 0.7468965641840764
+    }
+   },
+   "reverse": {
+    "wdd_forget": {
+     "loss": 2.9219852685928345,
+     "share_of_rise": -0.0012870565322513666
+    },
+    "all_mlp_0_to_B": {
+     "loss": 3.397441267967224,
+     "share_of_rise": 0.17576041163436248
+    }
+   }
+  }
+ },
+ "_exp": "e609_rescue_pythia160_pubmed_s0",
+ "_time": "2026-10-08 21:20:50"
+}

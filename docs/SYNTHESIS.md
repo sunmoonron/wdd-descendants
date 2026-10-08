@@ -597,6 +597,12 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 113: the refusal direction, writer rescue, the causal test at 410m, the baseline at 1B (e607-e610)
+
+- The refusal direction (e607): on Qwen2.5-0.5B and 1.5B instruct the difference-of-means direction ablated at every block takes refusal from 0.93 / 0.99 to 0.04 / 0.03 and added to harmless prompts induces it at 0.88 / 0.98; the harmful-class writers do not write it (rows' cosine 0.034 / 0.026 against 0.024 / 0.023, 0.11 / 0.01 of its MLP mass) and keep firing under its ablation (0.99 / 0.88).
+- Writer rescue (e609): restoring the writers' activations after ascent recovers 0.09 / -0.01 / 0.01 of the rise and restoring every MLP neuron of blocks 0-B 0.02 / 0.26 / -0.20: the gradient methods' forgetting lives in the attention and the later blocks, and the writers are the route back (e603; at 410m, e608, silencing them after ascent adds only 10 relearning steps, slower in 1.00 of 3 seeds, against 0 for random rows, a fifth of the 160m effect).
+- The baseline at 1B (e610): over 9 conditions the writers' activation correlates with the recovery at 0.90, difference-selected 0.87, ratio-selected 0.75, the probe 0.82; pooled over three sizes 0.87 / 0.83 / 0.70.
+
 ## Session 112: the audit's baseline, its causal test, and three new audits (e602-e606)
 
 - The naive-selection baseline (e602): a difference-selected neuron set overlapping the WDD writers by Jaccard 0.06 correlates with the 20-step recovery at 0.83 against the writers' 0.89 over 54 conditions (magnitude-selected 0.56, random -0.01; by model WDD 0.90 / 0.78, difference-selected 0.83 / 0.72); seeds agree at 0.98. The audit's substance is that domain-selective neurons still fire; the dictionary is one way to find them.

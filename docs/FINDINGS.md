@@ -5336,3 +5336,89 @@ SESSION 112 (the user: run them all with robust controls and out-of-the-box thin
   - Pre-registered: C1 (damage correlates with the writers' activation at -0.5 or beyond) confirmed across compressions, where severity carries it; not within; C2 (4-bit in groups of 64 silences fewer than a fifth of any domain's writers) confirmed; C3 (pruning at 50% silences more and damages more than 3-bit) confirmed.
 
   What the session settled: the audit's substance is that domain-selective neurons still fire, and the dictionary is one of several ways to find them; silencing the named writers after an override method buys relearning resistance; safety training, like domain fine-tuning, recruits existing writers by feeding them more and leaves their rows alone, and benign fine-tuning erodes refusal with those writers still firing, an override downstream of them (the two prefix jailbreaks did not move this model); merged fine-tunes keep both sets of recruits because they recruit different rows; and compression damage tracks the silencing of writers across compressions through their severity, not within one compression across domains.
+
+SESSION 113 (a fresh box, 2026-10-08; the user: do your magic. Four directions left open by session 112, every script smoke-tested before its full run: the refusal direction and its writers, writer rescue, the causal test at 410m with the activation trajectory, and the baseline at 1B.)
+
+- e607 THE REFUSAL DIRECTION AND ITS WRITERS (Qwen2.5-0.5B-Instruct and 1.5B-Instruct; the difference-of-means direction between harmful and harmless prompts at the last prompt position, taken at the block among B-4, B, B+4 whose ablation at every block lowers refusal most; the harmful-class words as e604; the writers' rows' cosine with the direction, their share of the MLP writes' mass along it at the last position, their activation under ablation, and refusal induced by adding the direction):
+
+  | model | candidate block | separation of the means | ablated: refusal harmful | harmless |
+  | --- | --- | --- | --- | --- |
+  | Qwen2.5-0.5B-Instruct | 8 | 1.34 | 0.72 | 0.01 |
+  | Qwen2.5-0.5B-Instruct | 12 | 3.70 | 0.07 | 0.01 |
+  | Qwen2.5-0.5B-Instruct | 16 | 8.35 | 0.04 | 0.03 |
+  | Qwen2.5-1.5B-Instruct | 10 | 6.68 | 0.91 | 0.07 |
+  | Qwen2.5-1.5B-Instruct | 14 | 12.06 | 0.03 | 0.01 |
+  | Qwen2.5-1.5B-Instruct | 18 | 35.02 | 0.20 | 0.04 |
+
+  | model | blocks | harmful-class words | refusal harmful / harmless | direction block (of B-4, B, B+4) | ablated: refusal harmful / harmless | writers' rows absolute cosine with the direction / harmless-class / all rows | the most aligned rows that are words | writers' share of the MLP mass along it (most aligned rows / random) | writers' activation under ablation (halved for) | still writing | probe | direction added: refusal on harmless (from) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Qwen2.5-0.5B-Instruct | 24 | 53 | 0.93 / 0.06 | 16 | 0.04 / 0.03 | 0.034 / 0.026 / 0.024 | 0.04 | 0.11 (0.22 / -0.01) | 0.99 (0.09) | 0.92 | 0.96 | 0.88 (0.06) |
+  | Qwen2.5-1.5B-Instruct | 28 | 59 | 0.99 / 0.07 | 14 | 0.03 / 0.01 | 0.026 / 0.033 / 0.023 | 0.14 | 0.01 (-0.10 / -0.00) | 0.88 (0.24) | 0.61 | 0.00 | 0.98 (0.07) |
+
+  - The refusal direction exists and does its job, and the harmful-request writers do not write it. Ablating the direction at every block takes refusal on harmful prompts from 0.93 to 0.04 on the 0.5B model and from 0.99 to 0.03 on the 1.5B (the harmless rate 0.03 / 0.01); adding it to harmless prompts induces refusal at 0.88 / 0.98. The harmful-class writers' rows have a median absolute cosine of 0.034 / 0.026 with the direction against 0.024 / 0.023 for all rows, and of the rows most aligned with it only 0.04 / 0.14 are words at all; the writers carry 0.11 / 0.01 of the MLP writes' mass along the direction at the last position (the most aligned rows 0.22 / -0.10, random rows -0.01 / -0.00). Under the ablation the writers fire at 0.99 / 0.88 of their activation and 0.92 / 0.61 still write at their classes; the probe reads the prompts as harmful at 0.96 / 0.00. The writers that fire on harmful requests mark the request; the refusal is carried by a direction they do not write, and removing it, like benign fine-tuning (e604), overrides downstream of them.
+  - Pre-registered: D1 (ablation halves refusal) confirmed; D2 (the writers' rows align with the direction at twice the all-rows cosine and carry a quarter of its mass) refuted; D3 (the writers keep firing at 0.8 under ablation) confirmed.
+
+- e608 / e608b SEPARABLE INTERVENTIONS AT 410m (Pythia-410m, PubMed, three seeds: capped ascent and RMU to +2, each alone and followed by the writers' write columns zeroed, their inputs zeroed, random rows zeroed, or the difference-selected neurons' inputs zeroed; the input silencing alone; the writers' activation logged every ten steps of the unlearning):
+
+  | condition (Pythia-410m, PubMed, three seeds) | steps back within 0.1 nats, median (per seed) | 20-step recovery | forget rise | retain change | writers' activation at their classes | still writing | probe |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | inputs_zero_alone | 5 (5, 5, 5) | n/a | +0.02 | +0.002 | 0.00 | 0.45 | 0.98 |
+  | ga_alone | 50 (50, 50, 50) | 0.88 | +2.63 | +0.124 | 0.96 | 0.92 | 0.94 |
+  | ga_rows_zero | 60 (60, 55, 60) | 0.87 | +2.67 | +0.128 | 0.94 | 0.00 | 0.94 |
+  | ga_inputs_zero | 60 (60, 55, 60) | 0.87 | +2.67 | +0.128 | 0.00 | 0.44 | 0.94 |
+  | ga_random_rows_zero | 50 (55, 50, 50) | 0.88 | +2.64 | +0.128 | 0.96 | 0.94 | 0.94 |
+  | ga_diffselected_inputs_zero | 55 (60, 55, 55) | 0.87 | +2.74 | +0.124 | 0.97 | 0.84 | 0.94 |
+  | rmu_alone | 30 (30, 45, 30) | 0.95 | +2.74 | +0.043 | 1.00 | 0.31 | 0.86 |
+  | rmu_rows_zero | 35 (35, 60, 35) | 0.94 | +2.47 | +0.052 | 1.00 | 0.00 | 0.82 |
+  | rmu_inputs_zero | 35 (35, 60, 35) | 0.94 | +2.47 | +0.052 | 0.00 | 0.16 | 0.82 |
+  | rmu_random_rows_zero | 35 (35, 50, 30) | 0.95 | +2.70 | +0.046 | 1.00 | 0.28 | 0.86 |
+  | rmu_diffselected_inputs_zero | 35 (35, 55, 35) | 0.94 | +2.67 | +0.045 | 1.01 | 0.30 | 0.94 |
+
+  | variant | added relearning steps over the method alone, median over uncensored seeds | slower in | per seed |
+  | --- | --- | --- | --- |
+  | ga_rows_zero | 10 | 1.00 of 3 | pubmed_s0 +10, pubmed_s1 +5, pubmed_s2 +10 |
+  | ga_inputs_zero | 10 | 1.00 of 3 | pubmed_s0 +10, pubmed_s1 +5, pubmed_s2 +10 |
+  | ga_random_rows_zero | 0 | 0.33 of 3 | pubmed_s0 +5, pubmed_s1 +0, pubmed_s2 +0 |
+  | ga_diffselected_inputs_zero | 5 | 1.00 of 3 | pubmed_s0 +10, pubmed_s1 +5, pubmed_s2 +5 |
+  | rmu_rows_zero | 5 | 1.00 of 3 | pubmed_s0 +5, pubmed_s1 +15, pubmed_s2 +5 |
+  | rmu_inputs_zero | 5 | 1.00 of 3 | pubmed_s0 +5, pubmed_s1 +15, pubmed_s2 +5 |
+  | rmu_random_rows_zero | 5 | 0.67 of 3 | pubmed_s0 +5, pubmed_s1 +5, pubmed_s2 +0 |
+  | rmu_diffselected_inputs_zero | 5 | 1.00 of 3 | pubmed_s0 +5, pubmed_s1 +10, pubmed_s2 +5 |
+
+  - The effect shrinks at 410m. Silencing the writers after capped ascent adds 10 relearning steps at the median (slower in 1.00 of 3 seeds; per seed +10, +5, +10), zeroing their write columns 10 (+10, +5, +10), against 0 for as many random rows (+5, +0, +0) and 5 for the difference-selected neurons (+10, +5, +5); after RMU the writers add 5 (+5, +15, +5) and random rows 5 (+5, +5, +0), indistinguishable. At 160m the same silencing added 40 steps after ascent and 50 to 70 after RMU (e603); at 410m the three seeds agree on the direction after ascent and on little else. The writers are a smaller share of the rows at 410m (64 of 53,248 against 60 of 21,504) and the relearning has more paths around them. The trajectory: through the ascent the writers' activation stays between 0.94 and 0.99 in every seed while the forget loss climbs from 2.62 to 5.30 by step 85; under RMU it stays at 1.00 throughout. Silencing alone, with no unlearning, raises the forget loss by +0.02 nats and is back within 0.1 after 5 steps.
+  - Pre-registered: T1 (input silencing after ascent adds 30 or more at 410m) refuted; T2 (the writers stay above 0.9 through the ascent trajectory) confirmed (minimum 0.94); T3 (random rows add fewer than 10) confirmed.
+
+- e609 WRITER RESCUE (capped ascent, NPO and RMU to +2 nats; the forget loss with a neuron set's activations patched, position by position, to the original model's values on the forget windows; and the reverse patch, the original given the unlearned model's activations):
+
+  | model, domain | method | forget rise | writers' activation | still writing | restored to the original: WDD writers | difference-selected | ratio-selected | random | every MLP neuron of blocks 0-B | reverse patch (the original given the unlearned activations): writers | every MLP neuron |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-160m, PubMed | ga | +2.09 | 0.70 | 0.45 | 0.09 | -0.03 | -0.01 | 0.00 | 0.02 | 0.02 | 0.15 |
+  | Pythia-160m, PubMed | npo | +2.21 | 0.73 | 0.52 | 0.10 | -0.05 | -0.03 | 0.00 | -0.08 | 0.01 | 0.12 |
+  | Pythia-160m, PubMed | rmu | +2.69 | 1.00 | 0.17 | 0.04 | 0.14 | 0.03 | 0.00 | 0.75 | -0.00 | 0.18 |
+  | Pythia-160m, Github | ga | +1.90 | 0.99 | 0.91 | -0.01 | -0.00 | -0.00 | 0.00 | 0.26 | 0.00 | 0.04 |
+  | Pythia-160m, Github | npo | +2.01 | 0.96 | 0.93 | 0.00 | 0.00 | -0.01 | 0.00 | 0.01 | 0.00 | 0.03 |
+  | Pythia-160m, Github | rmu | +2.13 | 1.00 | 0.44 | -0.00 | 0.03 | 0.06 | 0.00 | 0.57 | 0.00 | 0.06 |
+  | Pythia-410m, PubMed | ga | +2.65 | 0.97 | 0.98 | 0.01 | 0.03 | 0.00 | -0.00 | -0.20 | 0.00 | 0.18 |
+  | Pythia-410m, PubMed | npo | +2.25 | 0.90 | 0.88 | 0.05 | 0.01 | -0.01 | -0.00 | -0.85 | 0.00 | 0.47 |
+  | Pythia-410m, PubMed | rmu | +2.74 | 1.00 | 0.25 | 0.00 | 0.04 | 0.02 | 0.00 | 0.83 | 0.00 | 0.18 |
+
+  - The writers are the route back, not the place the forgetting lives. Restoring the WDD writers' activations after capped ascent recovers 0.09 of the rise on Pythia-160m PubMed, -0.01 on Github and 0.01 on Pythia-410m (after NPO 0.10 / 0.00 / 0.05); restoring every MLP neuron of blocks 0-B recovers 0.02 / 0.26 / -0.20 after ascent, so what the gradient methods change is not the MLP activations of those blocks at all but the attention and the later blocks, and the writers' silencing (e597: activation 0.70 here on PubMed) is a symptom of that change, not its carrier. After RMU restoring every MLP neuron of blocks 0-B recovers 0.75 / 0.57 / 0.83, since RMU's change is in the rows of blocks B-2..B that read those activations, while restoring the writers alone recovers 0.04 / -0.00 / 0.00. The reverse patch, the original model given the unlearned writers' activations, costs it 0.02 of the rise after ascent (every MLP neuron 0.15). Together with e603 and e608: silencing the writers does not forget and restoring them does not remember, yet removing them after an unlearning slows the relearning, because they are the fastest path the relearning would rebuild.
+  - Pre-registered: W1 (restoring the writers after ascent recovers under 0.2) confirmed; W2 (restoring every MLP neuron of blocks 0-B recovers over half) refuted; W3 (after RMU the writers recover under 0.1 and every neuron over half) confirmed.
+
+- e610 THE BASELINE AT 1B (e602 on Pythia-1B, block 8 of 16: capped ascent, RMU and NPO to +1, +2 and +4 nats, one seed; the six neuron sets; pooled with the e602 runs):
+
+  | Spearman with the 20-step recovery | WDD writers at their classes | difference-selected | ratio-selected | magnitude-selected | random set | still-writing share | probe |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Pythia-1B, 9 conditions | 0.90 | 0.87 | 0.75 | 0.55 | -0.08 | -0.60 | 0.82 |
+  | pooled over three sizes, 63 conditions | 0.87 | 0.83 | 0.82 | 0.57 | 0.05 | 0.23 | 0.70 |
+  | Pythia-1B, steps back | -0.43 | -0.43 | -0.50 | -0.36 | -0.17 | 0.19 | -0.64 |
+
+  | Pythia-1B method | conditions | writers' activation | difference-selected | ratio-selected | random | still writing | probe | recovery | steps back | retain change |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | ga | 3 | 0.88 | 0.21 | 0.44 | 1.00 | 0.79 | 0.39 | 0.84 | 30 | +0.207 |
+  | npo | 3 | 0.66 | -0.21 | 0.10 | 1.00 | 0.48 | 0.00 | 0.83 | 40 | +0.237 |
+  | rmu | 3 | 1.00 | 1.00 | 1.00 | 1.00 | 0.10 | 0.98 | 0.95 | 25 | +0.036 |
+
+  - At a third size the picture of session 112 holds. Over the 9 Pythia-1B conditions the 20-step recovery correlates with the WDD writers' activation at their classes at 0.90, with the difference-selected set at 0.87, the ratio-selected at 0.75, the magnitude-selected at 0.55, the random set at -0.08, the still-writing share at -0.60 (inverted again, as at 410m) and the probe at 0.82. Pooled over the 63 training-method conditions of three sizes (recomputed on the laptop, since the box held only the 1B runs): the writers 0.87, the difference-selected set 0.83, the ratio-selected 0.82, the random set 0.05, the still-writing share 0.23, the probe 0.70: the writers lead by a nose, the naive selections sit within 0.05, and the dictionary remains one way among several to name the neurons whose firing tracks relearnability. At 1B the methods silence the writers in part (ascent 0.88, NPO 0.66, RMU 1.00) and relearn at 0.84 / 0.83 / 0.95.
+
+  What the session settled: the refusal direction is real and is not written by the writers that fire on harmful requests, which keep firing when it is removed; the writers are neither where forgetting lives nor enough to restore it, and are still the route back; the causal test shrinks to a ten-step effect at 410m; and the activation-ratio audit, with its naive-selection siblings, holds at 1B.

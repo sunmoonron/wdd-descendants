@@ -1,0 +1,141 @@
+{
+ "model": "pythia160",
+ "domain": "github",
+ "seed": 0,
+ "n_forget_words": 54,
+ "loss0": {
+  "forget": 1.703926920890808,
+  "retain": 2.8542587757110596
+ },
+ "overlaps": {
+  "wdd_retain": 0.0,
+  "diff_selected": 0.02857142857142857,
+  "ratio_selected": 0.009345794392523364,
+  "magnitude_selected": 0.0,
+  "random": 0.0,
+  "diff_vs_magnitude": 0.2,
+  "diff_selected_among_words": 0.18518518518518517,
+  "magnitude_selected_among_words": 0.12962962962962962
+ },
+ "conditions": {
+  "ga": {
+   "steps": 600,
+   "loss_forget": 3.599168539047241,
+   "rise_forget": 1.895241618156433,
+   "act_ratio": 0.9902958925408124,
+   "still_writing": 0.9074074074074074,
+   "restored": {
+    "wdd_forget": {
+     "loss": 3.6177191734313965,
+     "recovery": -0.00978800497331845
+    },
+    "diff_selected": {
+     "loss": 3.599890351295471,
+     "recovery": -0.0003808550009217886
+    },
+    "ratio_selected": {
+     "loss": 3.605057716369629,
+     "recovery": -0.0031073490925744344
+    },
+    "random": {
+     "loss": 3.5987133979797363,
+     "recovery": 0.00024014936309155887
+    },
+    "all_mlp_0_to_B": {
+     "loss": 3.0978299379348755,
+     "recovery": 0.26452490084089386
+    }
+   },
+   "reverse": {
+    "wdd_forget": {
+     "loss": 1.704810380935669,
+     "share_of_rise": 0.00046614639336604055
+    },
+    "all_mlp_0_to_B": {
+     "loss": 1.7725598216056824,
+     "share_of_rise": 0.03621327225899348
+    }
+   }
+  },
+  "npo": {
+   "steps": 55,
+   "loss_forget": 3.718466877937317,
+   "rise_forget": 2.014539957046509,
+   "act_ratio": 0.9600487636382141,
+   "still_writing": 0.9259259259259259,
+   "restored": {
+    "wdd_forget": {
+     "loss": 3.7140793800354004,
+     "recovery": 0.0021779155516721336
+    },
+    "diff_selected": {
+     "loss": 3.7167561054229736,
+     "recovery": 0.0008492125005310907
+    },
+    "ratio_selected": {
+     "loss": 3.7358624935150146,
+     "recovery": -0.008635031296773702
+    },
+    "random": {
+     "loss": 3.716404676437378,
+     "recovery": 0.00102365877267698
+    },
+    "all_mlp_0_to_B": {
+     "loss": 3.691028594970703,
+     "recovery": 0.013620123478136757
+    }
+   },
+   "reverse": {
+    "wdd_forget": {
+     "loss": 1.705476701259613,
+     "share_of_rise": 0.0007692974087627652
+    },
+    "all_mlp_0_to_B": {
+     "loss": 1.7582504153251648,
+     "share_of_rise": 0.026965707105655858
+    }
+   }
+  },
+  "rmu": {
+   "steps": 50,
+   "loss_forget": 3.8348597288131714,
+   "rise_forget": 2.1309328079223633,
+   "act_ratio": 1.0,
+   "still_writing": 0.4444444444444444,
+   "restored": {
+    "wdd_forget": {
+     "loss": 3.83897066116333,
+     "recovery": -0.001929170330887536
+    },
+    "diff_selected": {
+     "loss": 3.7718011140823364,
+     "recovery": 0.029592023970158136
+    },
+    "ratio_selected": {
+     "loss": 3.7142908573150635,
+     "recovery": 0.05658032531568242
+    },
+    "random": {
+     "loss": 3.8330057859420776,
+     "recovery": 0.0008700147016373193
+    },
+    "all_mlp_0_to_B": {
+     "loss": 2.619640588760376,
+     "recovery": 0.5702756724824285
+    }
+   },
+   "reverse": {
+    "wdd_forget": {
+     "loss": 1.7054281830787659,
+     "share_of_rise": 0.000704509397188116
+    },
+    "all_mlp_0_to_B": {
+     "loss": 1.829980731010437,
+     "share_of_rise": 0.059154286634936194
+    }
+   }
+  }
+ },
+ "_exp": "e609_rescue_pythia160_github_s0",
+ "_time": "2026-10-08 21:27:33"
+}
