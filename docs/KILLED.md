@@ -710,3 +710,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The harmful-request writers write the refusal direction": cosine 0.034 against 0.024 for any row, 0.11 of the mass (e607).
 - "Restoring the silenced writers restores the forgotten domain": 0.09 of the rise recovered after ascent (e609).
 - "The forgetting of a gradient method lives in the MLP activations of blocks 0-B": restoring all of them recovers 0.02 after ascent (e609).
+
+## Session 114 kills (the J-Lens connection)
+- "The logit lens of a write (the raw row through the unembedding) predicts what the write does": cosine 0.065 at block 4 against 0.283 for the class-transported row (e611).
+- "A transport map can be estimated by perturbing every position at once": the all-positions map reads 0.071 where a random subset of the class's size reads 0.210 (e611).
+- "Transport would rescue the writers' role in refusal": transported or not, silencing them leaves refusal at 0.89 (e612).
