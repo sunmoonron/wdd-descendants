@@ -1,0 +1,13 @@
+{
+ "fixed_at": "2026-10-09 12:17:46",
+ "predictions": {
+  "C1": "(0.5) At least three of the four attributes (gender, generation, number, polarity) have a dominant row: the most voted atom is an MLP row chosen in half or more of the discovery differences at some block.",
+  "C2": "(0.5) For every dominant row, negating it moves the attribute toward the opposite pole on held-out templates with a flip rate of 0.15 or more, above the activation-difference neuron of the same block.",
+  "C3": "(0.6) The collateral is diagonal: the edited row shifts its own attribute's score at least five times more than any other attribute's.",
+  "C4": "(0.5) On Pile windows the loss change after negation concentrates at the row's class positions: AUC 0.7 or more, above the ranking by the neuron's activation.",
+  "C5": "(0.4) Items where the row's coefficient is larger shift more: Spearman 0.3 or more.",
+  "C6": "(0.4) The same holds for gender on Qwen2.5-1.5B-Instruct: a dominant row that flips 0.15 or more of held-out items."
+ },
+ "_exp": "e622_prereg",
+ "_time": "2026-10-09 12:17:46"
+}
