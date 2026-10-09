@@ -5727,3 +5727,69 @@ SESSION 117 (2026-10-09, box 8 and the laptop; the user: do the statistics on th
   - Pre-registered: W1 (median Spearman 0.3 or more for the writers) refuted; W2 (the writers beat the difference-selected set at the same positions) refuted.
 
   What the session settled: with cluster-bootstrap intervals over jobs the writers' AUC is 0.85 [0.76, 0.93] on the held-out domains, 0.91 [0.81, 0.98] on the held-out methods and 0.93 [0.54, 1.00] on the architecture; the difference-selected set's gap over the writers is +0.05 [+0.02, +0.10] on the domains, +0.05 [-0.03, +0.15] on the methods and -0.13 [-0.48, +0.04] on the architecture; the incremental gain of the writers over the forget rise, the output KL and the drift is +0.31 [+0.17, +0.47] of leave-one-domain-out accuracy (0.53 to 0.84), the difference-selected set's +0.33 [+0.23, +0.50], and the writers minus the difference-selected set -0.02 [-0.16, +0.03]; for the recovery magnitude the loss-side model explains R squared 0.04 out of domain, the writers alone 0.37, the difference-selected set alone 0.41; the normalised score (the forget writers' ratio over the retain writers') tunes to a cut of 0.781 on the training conditions, next to the raw cut, and scores 0.60 on the held-out domains (majority 0.55, AUC 0.84): the calibration failure is not a scale problem; the steps-back criterion is a floor artefact for silenced models: zeroing any set's inputs raises the loss the model can reach (the floor rises by +0.14 (WDD writers), +0.26 (difference-selected), +0.01 (random), +0.06 (active, not selective), +0.02 (retain words' writers), +0.06 (magnitude-selected), +0.42 (union of WDD and difference-selected, twice the budget) nats on the original model), and the criterion asks for a return to within 0.1 nats of the unsilenced original; scored against each set's own floor, a 20-step relearning recovers 0.84 (WDD writers), 0.87 (difference-selected), 0.80 (random), 0.80 (active, not selective), 0.80 (retain words' writers), 0.81 (magnitude-selected), 0.90 (union of WDD and difference-selected, twice the budget) of the recoverable rise against 0.80 unsilenced (11 conditions); the held-out silencing conditions of session 116 read the same way: at 160m the floor-corrected recovery is 0.76 (WDD writers), 0.77 (difference-selected), 0.75 (ratio-selected), 0.75 (random) against 0.75 unsilenced over 72 conditions; on Qwen 0.85, 0.85, 0.84 against 0.84 (10); at 410m 0.92, 0.93, 0.92 against 0.92 (7).; within a condition the writer's activation ratio correlates with the word's recovery at a median Spearman of -0.06 (positive in 0.45 of 11 conditions, a median of 56 words each), the difference-selected set's activation at the same positions 0.08, a random set's 0.07, the word's own rise 0.25; words whose writers still fire recover 0.81 of their rise, words whose writers went quiet 0.82; the writers beat the position-local naive set in 0.27 of conditions. The causal claim of sessions 111 to 113 and 116, that silencing the named writers after an unlearning slows the relearning, is withdrawn: H526, H528 and H534 are superseded and the atlas rows of e601, e603 and e608 marked accordingly; what silencing buys is a higher floor, not a slower return to it.
+
+SESSION 118 (2026-10-09, box 8 and the laptop; the user: WDD is a new method, so it may be useless on existing problems and decisive on new ones; review the literature, re-read the program, evolve WDD at its core, and explore several candidate directions with quick experiments. Pre-registered D1 to D3, E1 to E3 and F1 to F3 at 2026-10-09 09:30:02, before the runs.)
+
+  The re-reading (THEORY.md related work, sessions 101 to 110): what the native dictionary has that a learned one lacks is the parameter behind each direction, the row; everything state-side (which neurons fire, which direction a class is spoken along) a learned dictionary or a naive selector reaches as well. So the candidate directions are parameter-side: diffing two fine-tunes by row identity with no training, editing a concept in the weights through the one row that writes it, and training a model to be self-describing in its own rows. The literature (session 118 related work in THEORY.md) has crosscoder diffing with sparsity artefacts, neuron editing by selection among fifty to a hundred and fifty neurons, SAE tracking through training that cannot name the parameter, and codebook or sparse-by-design training with extra parameters; none has the row as the unit.
+
+- e619 NATIVE MODEL DIFFING WITH ROW IDENTITY (Qwen2.5-0.5B base against instruct on the same prompts; the 256 most-used rows of each; the instruct-only rows' change, their readable writes, and refusal after zeroing their inputs against as many shared words, random rows and base-only words):
+
+  | inputs zeroed in the instruct model | rows | refusal on harmful (unedited 0.93) | refusal on harmless (unedited 0.06) | Pile loss change |
+  | --- | --- | --- | --- | --- |
+  | instruct only | 158 | 0.92 | 0.07 | -0.000 |
+  | shared sample | 98 | 0.85 | 0.06 | +0.047 |
+  | random rows | 158 | 0.95 | 0.06 | -0.003 |
+  | base only | 158 | 0.94 | 0.07 | +0.010 |
+
+  | instruct-only word (row) | block | harmful share of its class | positions | top unembedding tokens |
+  | --- | --- | --- | --- | --- |
+  | 84 | 0 | 0.50 | 2 | 'ollapsed' 'ees' '.SharedPreferences' 'oux' 'loth' |
+  | 170 | 0 | 0.00 | 0 | 'currentState' 'isclosed' 'طفال' 'notify' 'em' |
+  | 250 | 0 | 0.00 | 0 | 'ijken' '��' 'incess' 'апример' '痕' |
+  | 333 | 0 | 0.00 | 0 | 'caps' 'WARDS' ' IsNot' 'cit' ' capped' |
+  | 420 | 0 | 0.71 | 120 | 'станавли' '��' 'gunakan' '��' 'CCR' |
+  | 729 | 0 | 0.00 | 60 | 'icional' '?>>' 'ски' '请联系' '兵团' |
+  | 1971 | 0 | 0.63 | 87 | 'ab' '颐' 'abe' 'abr' ' verdienen' |
+  | 2405 | 0 | 0.44 | 1546 | ' thói' '��' ' تشرين' '��' '��이' |
+  | 2568 | 0 | 0.62 | 599 | ' borderTop' '磋' 'AdminController' '}});\n' '\')}}">\n' |
+  | 2905 | 0 | 0.78 | 9 | 'eenth' 'een' 'entially' 'AINED' 'десят' |
+  | 2985 | 0 | 0.00 | 1 | '3' 'ware' '9' '8' '1' |
+  | 3219 | 0 | 0.93 | 187 | '\n\n' 'ims' '流通' '事' '\n' |
+
+  - Of the 256 words each model uses on the same 200 harmful and 200 harmless prompts, 98 are shared, 158 are instruct-only and 158 base-only; the instruct-only words' rows have cosine 0.9973 with the base's (shared 0.9982, all rows 0.9972), so chat tuning recruits rows without rewriting them; the shared words' classes shift toward the harmful prompts by a median of +0.001 (up by more than 0.05 in 0.24, class Jaccard 0.43) and the shared words fire 0.75 times as much on harmful prompts in the instruct model and 0.79 on harmless ones; zeroing the inputs of the instruct-only words moves refusal on harmful prompts from 0.93 to 0.92, as many shared words to 0.85, as many random rows to 0.95, the base-only words to 0.94.
+  - Pre-registered: D1 (under a quarter instruct-only, rows unchanged) refuted; D2 (zeroing the instruct-only words' inputs lowers refusal by 0.2 more than as many shared words) refuted; D3 (shared classes shift toward harmful prompts by 0.05 and fire 1.2 times more there, 1.1 or less on harmless) refuted.
+
+- e620 PARAMETER-IDENTIFIED CONCEPT EDITING (the block-4 gender row of e477 found again by vote and edited in the weights; e473's 128 kinship items in three languages; the argmax candidate, the gender score, the Pile loss; eight random rows of the same block as the control):
+
+  | edit of block 4 row 3019 | kept | gender flipped | generation flipped | both | gender score shift (nats) | Pile loss change |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | none | 1.00 | 0.00 | 0.00 | 0.00 | 0 (score -3.12) | 0 |
+  | zero | 0.95 | 0.05 | 0.00 | 0.00 | +0.63 | +0.000 |
+  | negate | 0.66 | 0.34 | 0.00 | 0.00 | +1.91 | +0.000 |
+  | double | 1.00 | 0.00 | 0.00 | 0.00 | -0.19 | -0.000 |
+  | silence | 0.95 | 0.05 | 0.00 | 0.00 | +0.63 | +0.000 |
+  | random row 921, negated | 1.00 | 0.00 | 0.00 | 0.00 | +0.02 | -0.000 |
+  | random row 616, negated | 1.00 | 0.00 | 0.00 | 0.00 | -0.01 | -0.000 |
+  | random row 4536, negated | 1.00 | 0.00 | 0.00 | 0.00 | -0.00 | +0.000 |
+  | random row 4093, negated | 1.00 | 0.00 | 0.00 | 0.00 | -0.01 | +0.000 |
+  | random row 4257, negated | 1.00 | 0.00 | 0.00 | 0.00 | -0.00 | +0.000 |
+  | random row 3314, negated | 1.00 | 0.00 | 0.00 | 0.00 | -0.01 | +0.000 |
+  | random row 2437, negated | 1.00 | 0.00 | 0.00 | 0.00 | +0.00 | +0.000 |
+  | random row 898, negated | 1.00 | 0.00 | 0.00 | 0.00 | -0.04 | +0.000 |
+
+  - The gender row (block 4, row 3019, in 0.88 of the 128 items' own gender descriptions by vote) negated in the weights flips the gender of the translated word in 0.34 of the items and moves the gender score by +1.91 nats at a Pile loss change of +0.000; zeroed, 0.05 and +0.63; doubled, -0.19; the eight random rows of the same block negated flip 0.00 at most and shift the score by 0.04 at most.
+  - Pre-registered: E1 (negating the one row flips a quarter of the items, random rows 0.05 or less) confirmed; E2 (zeroing moves the gender score toward the opposite gender at under 0.02 nats of loss) confirmed; E3 (the row's effect exceeds every random row's) confirmed.
+
+- e621 SELF-DESCRIBING BY CONSTRUCTION (Pythia-160m fine-tuned on Pile windows with the next-token loss plus lambda times the effective number of MLP writes at block 6, against a control fine-tune at lambda 0; e388's loss recovered by k own MLP rows against the rotated rows, before and after):
+
+  | Pythia-160m, block 6 | validation loss | effective writes | native recovered k8 / k16 / k32 | rotated recovered k8 / k16 / k32 |
+  | --- | --- | --- | --- | --- |
+  | before | 2.710 | 1410 | 0.44 / 0.62 / 0.81 | 0.19 / 0.36 / 0.63 |
+  | after 1500 steps, lambda 0 | 3.734 | 1331 | 0.39 / 0.57 / 0.77 | -0.09 / 0.14 / 0.46 |
+  | after 1500 steps, lambda 0.5 | 3.854 | 105 | 0.40 / 0.57 / 0.76 | 0.05 / 0.02 / 0.37 |
+  | after 1500 steps, lambda 2 | 3.938 | 54 | 0.43 / 0.59 / 0.77 | -0.13 / -0.07 / 0.21 |
+
+  - A 1500-step fine-tune with the ledger penalty (lambda 2) lowers the effective number of writes at block 6 from 1331 (the control fine-tune) to 54, a reduction of 0.96, at a validation-loss cost of +0.203 nats; the native loss recovered at eight own words goes from 0.39 to 0.43 (rotated -0.09 to -0.13), at sixteen 0.57 to 0.59, at thirty-two 0.77 to 0.77; the fine-tune overfits its 2400 training windows (1500 steps of batch 8, five passes): the control's training loss ends at 1.66 against a validation loss of 3.73, up from 2.71, so every comparison is between damaged models and the rotated dictionary collapses under the control too (0.19 to -0.09 at k = 8).
+  - Pre-registered: F1 (effective writes down 30% at a validation cost of 0.05 or less) refuted; F2 (native recovered at k = 8 up by 0.1 over the control, rotated not) refuted; F3 (the gain persists at 16 and 32) refuted.
+
+  What the session settled: of the 256 words each model uses on the same 200 harmful and 200 harmless prompts, 98 are shared, 158 are instruct-only and 158 base-only; the instruct-only words' rows have cosine 0.9973 with the base's (shared 0.9982, all rows 0.9972), so chat tuning recruits rows without rewriting them; the shared words' classes shift toward the harmful prompts by a median of +0.001 (up by more than 0.05 in 0.24, class Jaccard 0.43) and the shared words fire 0.75 times as much on harmful prompts in the instruct model and 0.79 on harmless ones; zeroing the inputs of the instruct-only words moves refusal on harmful prompts from 0.93 to 0.92, as many shared words to 0.85, as many random rows to 0.95, the base-only words to 0.94. The gender row (block 4, row 3019, in 0.88 of the 128 items' own gender descriptions by vote) negated in the weights flips the gender of the translated word in 0.34 of the items and moves the gender score by +1.91 nats at a Pile loss change of +0.000; zeroed, 0.05 and +0.63; doubled, -0.19; the eight random rows of the same block negated flip 0.00 at most and shift the score by 0.04 at most. A 1500-step fine-tune with the ledger penalty (lambda 2) lowers the effective number of writes at block 6 from 1331 (the control fine-tune) to 54, a reduction of 0.96, at a validation-loss cost of +0.203 nats; the native loss recovered at eight own words goes from 0.39 to 0.43 (rotated -0.09 to -0.13), at sixteen 0.57 to 0.59, at thirty-two 0.77 to 0.77; the fine-tune overfits its 2400 training windows (1500 steps of batch 8, five passes): the control's training loss ends at 1.66 against a validation loss of 3.73, up from 2.71, so every comparison is between damaged models and the rotated dictionary collapses under the control too (0.19 to -0.09 at k = 8).

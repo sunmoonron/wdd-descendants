@@ -1,0 +1,589 @@
+{
+ "model": "qwen05 vs qwen05i",
+ "n_prompts": {
+  "harmful": 200,
+  "harmless": 200
+ },
+ "n_words": {
+  "instruct": 256,
+  "base": 256,
+  "shared": 98,
+  "instruct_only": 158,
+  "base_only": 158
+ },
+ "row_cos_base_vs_instruct": {
+  "instruct_only": 0.9973338842391968,
+  "shared": 0.9981658458709717,
+  "base_only": 0.9974727630615234,
+  "all_rows": 0.9972338676452637,
+  "random_rows": 0.9972124099731445
+ },
+ "instruct_only_words": [
+  {
+   "row": 84,
+   "block": 0,
+   "harmful_share": 0.5,
+   "n_positions": 2,
+   "top_tokens": [
+    "ollapsed",
+    "ees",
+    ".SharedPreferences",
+    "oux",
+    "loth"
+   ]
+  },
+  {
+   "row": 170,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "currentState",
+    "isclosed",
+    "\u0637\u0641\u0627\u0644",
+    "notify",
+    "em"
+   ]
+  },
+  {
+   "row": 250,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "ijken",
+    "\ufffd\ufffd",
+    "incess",
+    "\u0430\u043f\u0440\u0438\u043c\u0435\u0440",
+    "\u75d5"
+   ]
+  },
+  {
+   "row": 333,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "caps",
+    "WARDS",
+    " IsNot",
+    "cit",
+    " capped"
+   ]
+  },
+  {
+   "row": 420,
+   "block": 0,
+   "harmful_share": 0.7083333134651184,
+   "n_positions": 120,
+   "top_tokens": [
+    "\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438",
+    "\ufffd\ufffd",
+    "gunakan",
+    "\ufffd\ufffd",
+    "CCR"
+   ]
+  },
+  {
+   "row": 729,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 60,
+   "top_tokens": [
+    "icional",
+    "?>>",
+    "\u0441\u043a\u0438",
+    "\u8bf7\u8054\u7cfb",
+    "\u5175\u56e2"
+   ]
+  },
+  {
+   "row": 1971,
+   "block": 0,
+   "harmful_share": 0.6321839094161987,
+   "n_positions": 87,
+   "top_tokens": [
+    "ab",
+    "\u9890",
+    "abe",
+    "abr",
+    " verdienen"
+   ]
+  },
+  {
+   "row": 2405,
+   "block": 0,
+   "harmful_share": 0.4430789053440094,
+   "n_positions": 1546,
+   "top_tokens": [
+    " th\u00f3i",
+    "\ufffd\ufffd",
+    " \u062a\u0634\u0631\u064a\u0646",
+    "\ufffd\ufffd",
+    "\ufffd\ufffd\uc774"
+   ]
+  },
+  {
+   "row": 2568,
+   "block": 0,
+   "harmful_share": 0.6210350394248962,
+   "n_positions": 599,
+   "top_tokens": [
+    " borderTop",
+    "\u78cb",
+    "AdminController",
+    "}});\n",
+    "')}}\">\n"
+   ]
+  },
+  {
+   "row": 2905,
+   "block": 0,
+   "harmful_share": 0.7777777910232544,
+   "n_positions": 9,
+   "top_tokens": [
+    "eenth",
+    "een",
+    "entially",
+    "AINED",
+    "\u0434\u0435\u0441\u044f\u0442"
+   ]
+  },
+  {
+   "row": 2985,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 1,
+   "top_tokens": [
+    "3",
+    "ware",
+    "9",
+    "8",
+    "1"
+   ]
+  },
+  {
+   "row": 3219,
+   "block": 0,
+   "harmful_share": 0.9304812550544739,
+   "n_positions": 187,
+   "top_tokens": [
+    "\n\n",
+    "ims",
+    "\u6d41\u901a",
+    "\u4e8b",
+    "\n"
+   ]
+  },
+  {
+   "row": 3329,
+   "block": 0,
+   "harmful_share": 0.4333333373069763,
+   "n_positions": 30,
+   "top_tokens": [
+    "\t        \n",
+    "\u548c\u6280\u672f",
+    "\u5176\u6b21",
+    "\uff1a\u201c",
+    "\t    \n"
+   ]
+  },
+  {
+   "row": 3716,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 1,
+   "top_tokens": [
+    "\">'+\n",
+    "\ub98e",
+    "//------------------------------------------------------------------------------------------------",
+    "',//",
+    "ellt"
+   ]
+  },
+  {
+   "row": 3938,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "\u5e95",
+    "\u0e48\u0e2d\u0e19",
+    ".getMethod",
+    "AIT",
+    "/apt"
+   ]
+  },
+  {
+   "row": 4271,
+   "block": 0,
+   "harmful_share": 0.6538461446762085,
+   "n_positions": 52,
+   "top_tokens": [
+    "ascus",
+    "estruction",
+    "umbledore",
+    "_faces",
+    "forcements"
+   ]
+  },
+  {
+   "row": 4348,
+   "block": 0,
+   "harmful_share": 0.27272728085517883,
+   "n_positions": 11,
+   "top_tokens": [
+    "\u0434\u0443\u043c\u0430\u0442\u044c",
+    "DataRow",
+    "reak",
+    " research",
+    "\u7814\u7a76\u6210\u679c"
+   ]
+  },
+  {
+   "row": 4363,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "\u0435\u0437\u0436\u0430",
+    " venez",
+    "\u0434\u0435\u0436",
+    " Clamp",
+    "\u707c"
+   ]
+  },
+  {
+   "row": 4532,
+   "block": 0,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    ",\\\"",
+    "\u4f0d",
+    "conf",
+    " .\n\n\n\n",
+    ".)\n\n\n\n"
+   ]
+  },
+  {
+   "row": 4585,
+   "block": 0,
+   "harmful_share": 1.0,
+   "n_positions": 1,
+   "top_tokens": [
+    "ISP",
+    "\u00fasqueda",
+    "iza",
+    "\u81f3\u4eca",
+    "\u6df1"
+   ]
+  },
+  {
+   "row": 4642,
+   "block": 0,
+   "harmful_share": 0.5,
+   "n_positions": 2,
+   "top_tokens": [
+    "original",
+    " ORIGINAL",
+    "\u7c7b\u4ea7\u54c1",
+    " derby",
+    "\u9762\u90e8"
+   ]
+  },
+  {
+   "row": 4738,
+   "block": 0,
+   "harmful_share": 0.8947368264198303,
+   "n_positions": 19,
+   "top_tokens": [
+    "'icon",
+    "//------------------------------------------------------------------------------------------------",
+    "]]];\n",
+    "\u4e0d\u5f71\u54cd",
+    "/stretch"
+   ]
+  },
+  {
+   "row": 4810,
+   "block": 0,
+   "harmful_share": 0.6666666865348816,
+   "n_positions": 6,
+   "top_tokens": [
+    "r\u00e4g",
+    "askets",
+    "\u6c11\u4e3b\u751f\u6d3b",
+    "coat",
+    "=explode"
+   ]
+  },
+  {
+   "row": 4893,
+   "block": 1,
+   "harmful_share": 0.4928229749202728,
+   "n_positions": 418,
+   "top_tokens": [
+    "\u5b9e",
+    "\u94c3",
+    "\u7080",
+    "\u0430\u043a",
+    "abs"
+   ]
+  },
+  {
+   "row": 5132,
+   "block": 1,
+   "harmful_share": 0.0,
+   "n_positions": 5,
+   "top_tokens": [
+    ";'\n",
+    "OWN",
+    "ctrine",
+    "\u7a33",
+    "POOL"
+   ]
+  },
+  {
+   "row": 5328,
+   "block": 1,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "exports",
+    "cope",
+    "\ufffd\ufffd",
+    " homes",
+    ".prototype"
+   ]
+  },
+  {
+   "row": 7796,
+   "block": 1,
+   "harmful_share": 0.6047297120094299,
+   "n_positions": 296,
+   "top_tokens": [
+    " rencontrer",
+    "kb",
+    "\u521d\u8877",
+    "\u63d0\u4ea4",
+    "\u9636\u6bb5\u6027"
+   ]
+  },
+  {
+   "row": 7895,
+   "block": 1,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "UR",
+    "bin",
+    " slash",
+    " Bin",
+    "ith"
+   ]
+  },
+  {
+   "row": 8092,
+   "block": 1,
+   "harmful_share": 0.9417989253997803,
+   "n_positions": 189,
+   "top_tokens": [
+    "ned",
+    "\u65cf\u7fa4",
+    "\u6216\u662f",
+    "\u5b83\u4eec",
+    "exp\u00e9rience"
+   ]
+  },
+  {
+   "row": 8315,
+   "block": 1,
+   "harmful_share": 0.0,
+   "n_positions": 180,
+   "top_tokens": [
+    "\u4e00\u8eab",
+    " }:",
+    ":frame",
+    " instantiation",
+    "'])?"
+   ]
+  },
+  {
+   "row": 8370,
+   "block": 1,
+   "harmful_share": 0.1818181872367859,
+   "n_positions": 11,
+   "top_tokens": [
+    "\ufffd\ufffd",
+    "\u0447\u0440\u0435\u0436",
+    "m\u00f6glichkeiten",
+    "Cc",
+    ".MM"
+   ]
+  },
+  {
+   "row": 10401,
+   "block": 2,
+   "harmful_share": 0.509772002696991,
+   "n_positions": 614,
+   "top_tokens": [
+    "[::-",
+    " circ",
+    "jug",
+    "\u897f\u7ea2",
+    "\u6e44"
+   ]
+  },
+  {
+   "row": 10995,
+   "block": 2,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "\u527d",
+    "coli",
+    "ent",
+    "\u96c0",
+    "\u54fa"
+   ]
+  },
+  {
+   "row": 12788,
+   "block": 2,
+   "harmful_share": 0.4747474789619446,
+   "n_positions": 99,
+   "top_tokens": [
+    "\u00f3\u0142",
+    "amen",
+    "uld",
+    "elin",
+    ".imgur"
+   ]
+  },
+  {
+   "row": 14011,
+   "block": 2,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "\u77bb",
+    "Tele",
+    "__(*",
+    "tele",
+    "\u7167"
+   ]
+  },
+  {
+   "row": 14200,
+   "block": 2,
+   "harmful_share": 0.0,
+   "n_positions": 0,
+   "top_tokens": [
+    "mat",
+    "ive",
+    " prof",
+    "\u6388",
+    " mat"
+   ]
+  },
+  {
+   "row": 14502,
+   "block": 2,
+   "harmful_share": 1.0,
+   "n_positions": 5,
+   "top_tokens": [
+    "\ud83d\ude01",
+    "\",__",
+    "\ud83d\ude2d",
+    "\ud83d\ude05",
+    "ountains"
+   ]
+  },
+  {
+   "row": 14757,
+   "block": 3,
+   "harmful_share": 1.0,
+   "n_positions": 1,
+   "top_tokens": [
+    "\"]];\n",
+    "\uff1a\n",
+    "\uff1a\n\n",
+    ":@\"\"",
+    ".GridColumn"
+   ]
+  },
+  {
+   "row": 14792,
+   "block": 3,
+   "harmful_share": 1.0,
+   "n_positions": 10,
+   "top_tokens": [
+    "yg",
+    "verst\u00e4nd",
+    "mittel",
+    "abilidad",
+    "arious"
+   ]
+  },
+  {
+   "row": 14794,
+   "block": 3,
+   "harmful_share": 0.4987531304359436,
+   "n_positions": 401,
+   "top_tokens": [
+    "\u759f",
+    "ellig",
+    "\u607d",
+    " veter",
+    "indsay"
+   ]
+  }
+ ],
+ "shared_words": {
+  "median_harmful_share_shift": 0.0006451606750488281,
+  "share_shifting_up": 0.24489795918367346,
+  "median_class_jaccard": 0.4339622641509434,
+  "median_amplification_harmful": 0.7535159587860107,
+  "median_amplification_harmless": 0.7885131239891052
+ },
+ "refusal0": {
+  "instruct_harmful": 0.925,
+  "instruct_harmless": 0.06,
+  "base_harmful": 0.035
+ },
+ "causal": {
+  "instruct_only": {
+   "n_rows": 158,
+   "refusal_harmful": 0.915,
+   "refusal_harmless": 0.065,
+   "pile_loss_change": -0.00012814998626708984
+  },
+  "shared_sample": {
+   "n_rows": 98,
+   "refusal_harmful": 0.85,
+   "refusal_harmless": 0.055,
+   "pile_loss_change": 0.047452330589294434
+  },
+  "random_rows": {
+   "n_rows": 158,
+   "refusal_harmful": 0.955,
+   "refusal_harmless": 0.055,
+   "pile_loss_change": -0.0027235746383666992
+  },
+  "base_only": {
+   "n_rows": 158,
+   "refusal_harmful": 0.94,
+   "refusal_harmless": 0.065,
+   "pile_loss_change": 0.010433435440063477
+  }
+ },
+ "pile_loss_instruct": 2.8296438455581665,
+ "verdicts": {
+  "D1": false,
+  "D2": false,
+  "D3": false
+ },
+ "_exp": "e619_native_diffing",
+ "_time": "2026-10-09 13:38:51"
+}

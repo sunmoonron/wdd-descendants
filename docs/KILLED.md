@@ -740,3 +740,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The dictionary localises the failure": median per-word Spearman -0.06 (e618c).
 - "The word structure is what localises": the difference-selected set read at the same positions reaches 0.08 against the writers' -0.06 (e618c).
 - "Silencing the named writers after an unlearning slows the relearning" (H526, H528, H534; sessions 111 to 113): the steps-back criterion measures distance to the unsilenced original, and zeroing a set lifts the floor by +0.14 nats; against the floor a 20-step relearning recovers 0.76 of the recoverable rise with the writers silenced and 0.75 unsilenced over 72 held-out conditions (e618e).
+
+## Session 118 kills (three parameter-side directions)
+- "Chat tuning recruits rows without rewriting them, and few of them": 158 instruct-only words with row cosine 0.9973 (e619).
+- "The instruct-only words carry refusal": zeroing their inputs leaves refusal at 0.92 against 0.85 for as many shared words (e619).
+- "Chat tuning re-aims and amplifies the shared words at the harmful prompts": shift +0.001, amplification 0.75 / 0.79 (e619).
+- "The ledger penalty cuts the effective writes by 30% at 0.05 nats or less": 0.96 at +0.203 (e621).
+- "The penalty grows the own-word edge at k = 8": native +0.04, rotated -0.04 (e621).
+- "The gain persists at k = 16 and 32": +0.02, +0.00 (e621).

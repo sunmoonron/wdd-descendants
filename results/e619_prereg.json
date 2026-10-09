@@ -1,0 +1,16 @@
+{
+ "fixed_at": "2026-10-09 09:30:02",
+ "predictions": {
+  "D1": "(0.6) The instruct-only words are under a quarter of the vocabulary and their rows are unchanged by the fine-tuning (median cosine base/instruct 0.99 or more): chat tuning recruits rows by moving the cloud, not by rewriting rows.",
+  "D2": "(0.4) Zeroing the instruct-only words' inputs lowers the refusal rate on harmful prompts by 0.2 more than zeroing the same number of shared words.",
+  "D3": "(0.5) The shared words' classes shift toward the harmful prompts in the instruct model (median harmful-share shift 0.05 or more) and the shared words fire 1.2 times more on harmful prompts in the instruct model, 1.1 or less on harmless ones.",
+  "E1": "(0.3) Negating the one gender row flips gender in a quarter of the items or more, random rows of the same block 0.05 or less.",
+  "E2": "(0.6) Zeroing the gender row moves the behavioural gender score toward the opposite gender with a Pile loss change under 0.02 nats.",
+  "E3": "(0.5) The gender row's effect on the gender score exceeds every one of eight random rows' of the same block.",
+  "F1": "(0.5) A fine-tune with the ledger penalty lowers the effective number of writes at the middle block by 30% or more at a validation-loss cost of 0.05 nats or less over the control fine-tune.",
+  "F2": "(0.5) The native loss recovered at k = 8 rises by 0.1 or more over the control while the rotated dictionary's does not: the own-word edge grows.",
+  "F3": "(0.4) The gain persists at k = 16 and 32."
+ },
+ "_exp": "e619_prereg",
+ "_time": "2026-10-09 09:30:02"
+}
