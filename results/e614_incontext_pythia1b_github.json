@@ -1,0 +1,47 @@
+{
+ "model": "pythia1b",
+ "domain": "github",
+ "prefix_tokens": 128,
+ "loss0": {
+  "forget": 1.2428739070892334,
+  "forget_with_forget_prefix": 1.4729076027870178,
+  "forget_with_retain_prefix": 1.4553540647029877
+ },
+ "conditions": {
+  "ga": {
+   "steps": 600,
+   "loss_forget": 1.7726080119609833,
+   "rise_forget": 0.5297341048717499,
+   "loss_with_forget_prefix": 2.7412551641464233,
+   "loss_with_retain_prefix": 1.8691344261169434,
+   "recovery_forget_prefix": -1.394309805041675,
+   "recovery_retain_prefix": 0.2188904629538,
+   "act_ratio": 0.9629551245366788,
+   "act_ratio_in_context": 0.9632255043409271
+  },
+  "npo": {
+   "steps": 600,
+   "loss_forget": 1.7300119698047638,
+   "rise_forget": 0.4871380627155304,
+   "loss_with_forget_prefix": 2.4368212819099426,
+   "loss_with_retain_prefix": 1.8293009996414185,
+   "recovery_forget_prefix": -0.9787279067244901,
+   "recovery_retain_prefix": 0.23235944066066294,
+   "act_ratio": 0.9556877196232537,
+   "act_ratio_in_context": 0.9525960299327818
+  },
+  "rmu": {
+   "steps": 45,
+   "loss_forget": 3.763922691345215,
+   "rise_forget": 2.5210487842559814,
+   "loss_with_forget_prefix": 4.917309999465942,
+   "loss_with_retain_prefix": 3.3437702655792236,
+   "recovery_forget_prefix": -0.36625773296784714,
+   "recovery_retain_prefix": 0.2509402385747366,
+   "act_ratio": 1.0,
+   "act_ratio_in_context": 1.0
+  }
+ },
+ "_exp": "e614_incontext_pythia1b_github",
+ "_time": "2026-10-09 01:48:12"
+}

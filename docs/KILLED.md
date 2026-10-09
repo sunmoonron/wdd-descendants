@@ -715,3 +715,12 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The logit lens of a write (the raw row through the unembedding) predicts what the write does": cosine 0.065 at block 4 against 0.283 for the class-transported row (e611).
 - "A transport map can be estimated by perturbing every position at once": the all-positions map reads 0.071 where a random subset of the class's size reads 0.210 (e611).
 - "Transport would rescue the writers' role in refusal": transported or not, silencing them leaves refusal at 0.89 (e612).
+
+## Session 115 kills (the auditor against the state of the art)
+- "The audit predicts how many steps a relearning takes": AUC 0.71 for back within 40 steps; the forget rise does that (0.81) (e616).
+- "The still-writing share is a usable rule": leave-one-method-out accuracy 0.33 against a majority baseline of 0.57 (e616).
+- "TOFU's forget set is a domain in the dictionary's sense": 2 of 256 words pass the 0.7 forget-share threshold on the fine-tuned model; the 32 most forget-leaning words average 0.62 where neutral is 0.52 (e613, e613b).
+- "The writers' 0.76 with the recovery on TOFU is a result": the ranked writers read 0.99 to 1.00 in all 12 conditions; the ordering of RMU's 1.00 against 0.99 (e613b).
+- "A membership test certifies depth": on TOFU the membership AUC correlates with the recovery at -0.57; RMU makes the forget pairs look like non-members (0.47) and relearns at 1.00 in 10 steps (e613b).
+- "A page of the forgotten domain in the prompt undoes an override": in-context recovery after RMU 160m -0.02 / -0.12; 410m -0.04 / -0.22; 1B -0.13 / -0.37 (PubMed / Github), and the prefix deepens ascent's rise by up to +0.94 nats (e614).
+- "The silenced writers wake up in context": 0.69 without context, 0.64 with it, after ascent on PubMed at 160m (e614).

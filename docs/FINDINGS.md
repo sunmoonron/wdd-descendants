@@ -5455,3 +5455,107 @@ SESSION 114 (2026-10-08, box 8; the user: do whatever feels right. The two exper
   - Pre-registered: K1 (transported cosine three times the raw and twice random rows') refuted; K2 (silencing lowers the projection by a quarter and refusal by 0.2, random rows by neither) refuted; K3 (the transported share under a quarter) confirmed.
 
   What the session settled: a write's class is the partition the J++ Lens had to learn, and the class-conditioned map is the most faithful one, more by the estimate than by the conditioning; and the refusal question keeps its answer, with a small upstream share now measured, once the writers' rows are measured where they arrive rather than where they leave.
+
+SESSION 115 (2026-10-08, box 8; the user: is WDD a worthy unlearning auditor against the state of the art, and what creative angles are there. Three answers: whether an auditor's threshold transfers across methods, the auditor bake-off on the field's benchmark, and an attack that needs no training.)
+
+- e616 DOES AN AUDITOR'S THRESHOLD TRANSFER ACROSS METHODS? (the 63 training-method conditions of e602 and e610, five methods, three sizes, two domains; each candidate scored on "is this unlearning shallow?" by the AUC and by the accuracy of a threshold tuned on four methods and applied to the fifth; shallow defined by the 20-step recovery (0.8 or more; 36 of 63) and separately by the steps back (within 40; 25)):
+
+  | auditor | AUC, shallow = recovery 0.8 or more | leave-one-method-out accuracy | per held-out method (ga / gd / npo / rmu / ssd) | AUC, shallow = back within 40 steps | leave-one-method-out accuracy |
+  | --- | --- | --- | --- | --- | --- |
+  | WDD writers' activation | 0.93 | 0.89 | 0.93 / 0.67 / 0.80 / 1.00 / 1.00 | 0.71 | 0.71 |
+  | difference-selected | 0.94 | 0.78 | 0.80 / 0.67 / 0.60 / 1.00 / 0.78 | 0.69 | 0.56 |
+  | ratio-selected | 0.90 | 0.83 | 0.80 / 0.67 / 0.67 / 1.00 / 1.00 | 0.70 | 0.65 |
+  | magnitude-selected | 0.77 | 0.54 | 0.27 / 0.00 / 0.40 / 1.00 / 1.00 | 0.67 | 0.63 |
+  | random set | 0.63 | 0.67 | 0.93 / 0.11 / 0.80 / 1.00 / 0.00 | 0.53 | 0.38 |
+  | still-writing share | 0.68 | 0.33 | 0.60 / 0.11 / 0.73 / 0.00 / 0.00 | 0.67 | 0.63 |
+  | probe | 0.86 | 0.84 | 1.00 / 0.67 / 0.80 / 1.00 / 0.56 | 0.72 | 0.67 |
+  | forget rise | 0.45 | 0.38 | 0.60 / 0.33 / 0.67 / 0.13 / 0.00 | 0.16 | 0.81 |
+  | retain change | 0.24 | 0.59 | 0.47 / 0.33 / 0.47 / 0.87 / 0.78 | 0.25 | 0.65 |
+  | parameter change | 0.51 | 0.27 | 0.60 / 0.11 / 0.47 / 0.00 / 0.00 | 0.31 | 0.71 |
+
+  - A rule, not just a correlation. For the recovery criterion the WDD writers' activation has an AUC of 0.93 and a leave-one-method-out accuracy of 0.89 against a majority baseline of 0.57, flagging the held-out method correctly at 0.93 / 0.67 / 0.80 / 1.00 / 1.00 for ascent / difference / NPO / RMU / dampening; the difference-selected set has the same AUC (0.94) but transfers worse (0.78), the ratio-selected set 0.83, the probe 0.84, the still-writing share 0.33, the forget rise 0.38. For the steps-back criterion every activation measure is weak (AUC 0.71 for the writers) and the forget rise is the best rule (0.81): how many steps a relearning needs is mostly how far the loss was raised, and what the audit predicts is the share of the rise a fixed budget recovers.
+  - Pre-registered: A1 (the writers' activation is the most transferable rule for the recovery criterion, above 0.85) confirmed (best WDD writers' activation); A2 (the forget rise is the best rule for the steps-back criterion) confirmed (best forget rise).
+
+- e613 THE AUDITOR BAKE-OFF ON TOFU (Qwen2.5-0.5B fine-tuned on TOFU's 4,000 pairs, forget-answer loss 2.368 to 0.520, probe 0.77; the forget10 split unlearned by capped ascent, NPO and RMU to +1 and +2 nats, two seeds; words on the fine-tuned model's block-12 states at answer positions, forget words those whose class is at least 70% forget positions; eleven auditors against the relearning, benign and in-context attacks, the last with two forget pairs in the prompt and no training; the membership test here is the share of forget pairs with a higher loss than retain pairs, both trained on, 0.44 on the fine-tuned model):
+
+  - The forget set is not a domain in the dictionary's sense. The 20 forget authors share the 256 words with the other 180: 2 words pass the forget threshold and 1 the retain one, where the smoke run on 64 pairs had found 50. The writers' audit below is those 2 words' writers; the naive sets, the probe, drift, KL, the parameter change and the membership test are unaffected.
+
+  | condition | steps | forget loss (from 0.520) | retain change | writers | difference-selected | random | still writing | probe | drift | output KL | parameter change | membership AUC | recovery (20) | steps back | benign | in-context |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | ga_1_s0 | 85 | 1.536 | +0.072 | 0.39 | 0.82 | 1.06 | 1.00 | 0.76 | 0.007 | 0.488 | 5.6e-04 | 0.67 | 0.56 | 75 | 0.24 | 0.26 |
+  | ga_2_s0 | 130 | 2.613 | +0.129 | -1.66 | 0.90 | 0.99 | 1.00 | 0.75 | 0.014 | 1.269 | 7.3e-04 | 0.77 | 0.64 | over 100 | 0.29 | 0.28 |
+  | npo_1_s0 | 35 | 1.572 | +0.671 | 0.52 | 0.86 | 0.80 | 1.00 | 0.77 | 0.006 | 0.678 | 3.6e-04 | 0.57 | 0.78 | 40 | 0.74 | 0.21 |
+  | npo_2_s0 | 105 | 2.690 | +0.735 | 0.74 | 1.00 | 1.05 | 1.00 | 0.81 | 0.018 | 1.530 | 6.2e-04 | 0.84 | 0.74 | 85 | 0.70 | 0.23 |
+  | rmu_1_s0 | 125 | 2.613 | +0.189 | 1.00 | 1.00 | 1.00 | 1.00 | 0.89 | 0.246 | 2.054 | 3.8e-03 | 0.81 | 0.99 | 15 | 0.94 | 0.35 |
+  | rmu_2_s0 | 140 | 2.850 | +0.083 | 1.00 | 1.00 | 1.00 | 0.50 | 0.85 | 0.246 | 2.289 | 4.1e-03 | 0.83 | 0.99 | 15 | 0.77 | 0.44 |
+  | ga_1_s1 | 100 | 1.546 | +0.063 | -3.78 | 0.85 | 1.07 | 1.00 | 0.76 | 0.008 | 0.488 | 6.1e-04 | 0.71 | 0.49 | 85 | 0.20 | 0.22 |
+  | ga_2_s1 | 150 | 2.536 | +0.088 | 0.59 | 0.80 | 0.55 | 1.00 | 0.78 | 0.015 | 1.184 | 7.8e-04 | 0.79 | 0.63 | over 100 | 0.23 | 0.29 |
+  | npo_1_s1 | 35 | 1.708 | +0.887 | -1.38 | 1.03 | 0.79 | 1.00 | 0.78 | 0.007 | 0.856 | 3.8e-04 | 0.57 | 0.81 | 40 | 0.79 | 0.22 |
+  | npo_2_s1 | 100 | 2.580 | +0.703 | 1.01 | 0.92 | 0.90 | 1.00 | 0.74 | 0.015 | 1.460 | 6.2e-04 | 0.84 | 0.72 | 80 | 0.68 | 0.22 |
+  | rmu_1_s1 | 130 | 1.924 | +0.186 | 1.00 | 1.00 | 1.00 | 1.00 | 0.26 | 0.187 | 1.387 | 3.9e-03 | 0.74 | 0.99 | 15 | 0.92 | 0.39 |
+  | rmu_2_s1 | 145 | 3.058 | +0.118 | 1.00 | 1.00 | 1.00 | 0.50 | 0.14 | 0.266 | 2.511 | 4.4e-03 | 0.83 | 0.99 | 15 | 0.83 | 0.39 |
+
+  | Spearman over the TOFU conditions with | WDD writers' activation | difference-selected | ratio-selected | random set | still-writing share | probe | representation drift | output KL | parameter change | membership AUC | forget rise |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 20-step relearning recovery | 0.60 | 0.81 | 0.77 | -0.14 | 0.03 | 0.11 | 0.63 | 0.66 | 0.52 | 0.18 | 0.45 |
+  | steps back within 0.1 | -0.42 | -0.53 | -0.78 | 0.39 | 0.24 | -0.26 | -0.55 | -0.54 | -0.52 | 0.02 | -0.44 |
+  | benign recovery | 0.55 | 0.84 | 0.78 | -0.10 | 0.03 | 0.07 | 0.58 | 0.62 | 0.43 | 0.10 | 0.40 |
+  | in-context recovery | 0.48 | 0.41 | 0.48 | 0.10 | -0.27 | 0.06 | 0.76 | 0.64 | 0.89 | 0.37 | 0.58 |
+
+  - With 2 forget words the writers' activation correlates with the 20-step recovery at 0.60 over 12 usable conditions; the strongest correlate is the difference-selected (0.81); the ratio-selected set 0.77, the probe 0.11, drift 0.63, KL 0.66, the parameter change 0.52, the membership AUC 0.18, the forget rise 0.45. The two-word writers' reading is noise, a median of -1.66 after ascent (a negative ratio is a flipped sign at one word), 0.52 after NPO and 1.00 after RMU; the rest of the bake-off stands. RMU relearns at 0.99 in 15 steps with the difference-selected set at 1.00, ascent at 0.56 in 75 with the set at 0.82, NPO at 0.74 in 40 with the set at 0.92 and a retain loss up +0.72 (ascent +0.08, RMU +0.15). The probe reads 0.26 after RMU, below chance: the representation shift fools it on the shallowest method, as at 410m on the Pile. Two forget pairs in the prompt recover 0.26 / 0.22 / 0.39 of the rise after ascent / NPO / RMU, which a page of context did not on the Pile (e614).
+  - Pre-registered: B1 (writers at 0.7 or more with the recovery, the probe under 0.5) refuted; B2 (RMU leaves the writers firing and is the shallowest) confirmed; B3 (the in-context attack recovers more of RMU's rise than of ascent's) confirmed.
+
+- e613b THE BAKE-OFF WITH RANKED WORDS AND A HELD-OUT SET (written after e613's word count was seen and before its conditions finished; same as e613 except that the 32 most forget-leaning words stand in for the thresholded set, 1 of which passes the threshold, mean forget share 0.62 where a neutral word sits at 0.52; and the 400 retain-eval pairs are held out of the fine-tune, so the membership test is members against non-members, 0.95 on the fine-tuned model, and the retain loss measures generalisation; fine-tune forget-answer loss 2.368 to 0.511, held-out retain 2.508, probe 0.75):
+
+  | condition | steps | forget loss (from 0.511) | retain change | writers | difference-selected | random | still writing | probe | drift | output KL | parameter change | membership AUC | recovery (20) | steps back | benign | in-context |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | ga_1_s0 | 95 | 1.564 | +0.241 | 1.00 | 0.99 | 1.02 | 1.00 | 0.76 | 0.005 | 0.484 | 5.9e-04 | 0.81 | 0.57 | 80 | 0.28 | 0.18 |
+  | ga_2_s0 | 140 | 2.518 | +0.488 | 0.99 | 1.00 | 1.04 | 0.97 | 0.78 | 0.013 | 1.148 | 7.7e-04 | 0.68 | 0.61 | over 100 | 0.36 | 0.19 |
+  | npo_1_s0 | 45 | 1.696 | +1.002 | 1.00 | 1.03 | 0.98 | 0.97 | 0.75 | 0.010 | 0.759 | 4.1e-04 | 0.85 | 0.71 | 55 | 0.70 | -0.01 |
+  | npo_2_s0 | 65 | 2.567 | +1.597 | 1.00 | 1.06 | 0.94 | 0.94 | 0.71 | 0.018 | 1.470 | 5.1e-04 | 0.77 | 0.71 | 80 | 0.76 | 0.02 |
+  | rmu_1_s0 | 120 | 2.063 | +0.012 | 1.00 | 1.00 | 1.00 | 0.62 | 0.68 | 0.210 | 1.566 | 3.8e-03 | 0.65 | 1.01 | 10 | 0.79 | 0.52 |
+  | rmu_2_s0 | 135 | 4.160 | +0.063 | 1.00 | 1.00 | 1.00 | 0.25 | 0.74 | 0.365 | 3.657 | 4.2e-03 | 0.32 | 0.99 | 15 | 0.84 | 0.28 |
+  | ga_1_s1 | 100 | 1.520 | +0.214 | 0.99 | 1.01 | 1.02 | 0.97 | 0.78 | 0.006 | 0.443 | 6.1e-04 | 0.81 | 0.56 | 80 | 0.27 | 0.19 |
+  | ga_2_s1 | 140 | 2.704 | +0.473 | 0.99 | 0.98 | 1.00 | 0.97 | 0.81 | 0.018 | 1.314 | 7.5e-04 | 0.67 | 0.61 | over 100 | 0.34 | 0.17 |
+  | npo_1_s1 | 50 | 1.668 | +0.873 | 0.99 | 1.06 | 1.01 | 1.00 | 0.74 | 0.009 | 0.705 | 4.5e-04 | 0.84 | 0.66 | 60 | 0.66 | 0.04 |
+  | npo_2_s1 | 65 | 2.547 | +1.603 | 0.99 | 1.08 | 1.03 | 0.97 | 0.70 | 0.015 | 1.443 | 5.1e-04 | 0.78 | 0.70 | 75 | 0.76 | 0.05 |
+  | rmu_1_s1 | 125 | 2.545 | +0.064 | 1.00 | 1.00 | 1.00 | 0.56 | 0.09 | 0.246 | 2.040 | 3.9e-03 | 0.55 | 1.00 | 10 | 0.88 | 0.40 |
+  | rmu_2_s1 | 125 | 3.075 | +0.042 | 1.00 | 1.00 | 1.00 | 0.47 | 0.10 | 0.272 | 2.568 | 3.9e-03 | 0.47 | 1.00 | 10 | 0.77 | 0.43 |
+
+  | Spearman over the TOFU conditions with | WDD writers' activation | difference-selected | ratio-selected | random set | still-writing share | probe | representation drift | output KL | parameter change | membership AUC | forget rise |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 20-step relearning recovery | 0.76 | 0.13 | -0.01 | -0.66 | -0.73 | -0.86 | 0.76 | 0.82 | 0.43 | -0.57 | 0.45 |
+  | steps back within 0.1 | -0.73 | 0.41 | -0.18 | 0.36 | 0.61 | 0.72 | -0.70 | -0.72 | -0.47 | 0.52 | -0.41 |
+  | benign recovery | 0.76 | 0.16 | 0.01 | -0.59 | -0.76 | -0.87 | 0.83 | 0.90 | 0.50 | -0.66 | 0.59 |
+  | in-context recovery | 0.55 | -0.49 | 0.74 | 0.06 | -0.63 | -0.41 | 0.57 | 0.53 | 0.90 | -0.78 | 0.22 |
+
+  - The audit has nothing to read. The ranked writers' activation is 0.99 to 1.00 in all 12 conditions: no method silences the writers of words the forget and retain answers share. Its correlation with the recovery, 0.76, is the ordering of RMU's 1.00 against ascent's and NPO's 0.99 and carries nothing; the still-writing share (-0.73) and the probe (-0.86) are driven by RMU's representation shift (probe 0.10 after RMU). The auditors with signal are the output KL (0.82) and the representation drift (0.76), and they rank the methods as the relearning does: RMU recovers 1.00 in 10 steps, NPO 0.70 in 60, ascent 0.57 in 80. The difference-selected set, 0.81 in e613, reads 0.13 here with its neurons re-selected on a fine-tune whose retain pairs are non-members. And the membership test reads 0.95 on the fine-tuned model and 0.68 / 0.78 / 0.47 after ascent / NPO / RMU, so RMU is the one method that makes the forget pairs look like non-members, and it is the shallowest (recovery 1.00 in 10 steps): a membership test passes the unlearning that relearns fastest (Spearman with the recovery -0.57). Two forget pairs in the prompt recover 0.18 / 0.02 / 0.40 of the rise after ascent / NPO / RMU. NPO's held-out retain loss rises +1.30 (ascent +0.36, RMU +0.05).
+  - The same three predictions, re-scored: B1 void (the writers read 0.99 to 1.00 everywhere); B2 confirmed; B3 confirmed.
+
+- e614 IN-CONTEXT RECOVERY (Pythia-160m, PubMed and Github: capped ascent, NPO and RMU to +2; the forget loss on the eval windows behind a 128-token prefix from a different training window of the forget domain, scored on the eval part, against a retain-domain prefix of the same length; recovery = one minus the rise in context over the rise without; the writers' activation in context; the 410m and 1B runs were added after the 160m result and TOFU's in-context recovery were seen, to separate the size from the task):
+
+  | size | domain | method | steps | forget rise | unlearned model's loss change under a forget-domain prefix (the original's) | under a retain-domain prefix (the original's) | in-context recovery, forget-domain prefix | retain-domain prefix | writers' activation, no context | in context |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | 160m | pubmed | ga | 85 | +2.14 | +0.15 (+0.08) | +0.10 (+0.16) | -0.03 | 0.03 | 0.69 | 0.64 |
+  | 160m | pubmed | npo | 50 | +2.22 | +0.05 (+0.08) | +0.12 (+0.16) | 0.02 | 0.02 | 0.73 | 0.68 |
+  | 160m | pubmed | rmu | 40 | +2.68 | +0.15 (+0.08) | -0.23 (+0.16) | -0.02 | 0.14 | 1.00 | 1.00 |
+  | 160m | github | ga | 600 | +1.40 | +1.12 (+0.18) | -0.31 (+0.19) | -0.67 | 0.35 | 0.98 | 0.96 |
+  | 160m | github | npo | 55 | +2.08 | +0.16 (+0.18) | +0.18 (+0.19) | 0.01 | 0.00 | 0.96 | 0.97 |
+  | 160m | github | rmu | 50 | +2.13 | +0.44 (+0.18) | -0.12 (+0.19) | -0.12 | 0.14 | 1.00 | 1.00 |
+  | 410m | pubmed | ga | 55 | +2.54 | +0.68 (+0.13) | +0.03 (+0.21) | -0.21 | 0.07 | 0.96 | 0.96 |
+  | 410m | pubmed | npo | 35 | +2.25 | +0.15 (+0.13) | +0.11 (+0.21) | -0.01 | 0.04 | 0.90 | 0.90 |
+  | 410m | pubmed | rmu | 35 | +2.74 | +0.25 (+0.13) | -0.48 (+0.21) | -0.04 | 0.25 | 1.00 | 1.00 |
+  | 410m | github | ga | 600 | +1.08 | +0.97 (+0.25) | -0.08 (+0.23) | -0.67 | 0.28 | 0.98 | 0.98 |
+  | 410m | github | npo | 600 | +0.85 | +0.80 (+0.25) | -0.03 (+0.23) | -0.66 | 0.30 | 0.98 | 0.97 |
+  | 410m | github | rmu | 45 | +2.55 | +0.80 (+0.25) | -0.46 (+0.23) | -0.22 | 0.27 | 1.00 | 1.00 |
+  | 1B | pubmed | ga | 60 | +2.24 | +0.28 (+0.14) | +0.01 (+0.19) | -0.06 | 0.08 | 0.80 | 0.80 |
+  | 1B | pubmed | npo | 45 | +2.24 | -0.04 (+0.14) | -0.03 (+0.19) | 0.08 | 0.10 | 0.56 | 0.57 |
+  | 1B | pubmed | rmu | 25 | +2.46 | +0.45 (+0.14) | -0.43 (+0.19) | -0.13 | 0.25 | 1.00 | 1.00 |
+  | 1B | github | ga | 600 | +0.53 | +0.97 (+0.23) | +0.10 (+0.21) | -1.39 | 0.22 | 0.96 | 0.96 |
+  | 1B | github | npo | 600 | +0.49 | +0.71 (+0.23) | +0.10 (+0.21) | -0.98 | 0.23 | 0.96 | 0.95 |
+  | 1B | github | rmu | 45 | +2.52 | +1.15 (+0.23) | -0.42 (+0.21) | -0.37 | 0.25 | 1.00 | 1.00 |
+
+  - No prompt undoes a weight change on the Pile at any of the three sizes. The prefix is a different document, so it raises the original's loss too (+0.08 on PubMed, +0.18 on Github at 160m); against that the in-context recovery is at 160m -0.03 / -0.67 after ascent, 0.02 / 0.01 after NPO, -0.02 / -0.12 after RMU; at 410m -0.21 / -0.67 after ascent, -0.01 / -0.66 after NPO, -0.04 / -0.22 after RMU; at 1B -0.06 / -1.39 after ascent, 0.08 / -0.98 after NPO, -0.13 / -0.37 after RMU (PubMed / Github). After ascent and RMU the forget-domain prefix deepens the suppression: at 160m on Github the unlearned model's forget loss rises by +1.12 after ascent and +0.44 after RMU against the original's +0.18; after NPO it moves with the original (+0.16); the largest deepening is +0.94 nats beyond the original's rise (160m, github, ascent). An off-domain prefix does the opposite: at 160m on Github the forget loss falls by -0.31 after ascent and -0.12 after RMU while the original's rises by +0.19, a recovery of 0.03 to 0.35 over the sizes. The suppression the methods learned is keyed to the context they trained in: more of that context, more suppression. The silenced writers do not wake in context: after ascent on PubMed at 160m they fire at 0.69 of their activation without context and 0.64 with it (NPO 0.73 to 0.68); after RMU they fire at 1.00 either way. Against this, on TOFU two forget pairs in the prompt recover 0.26 / 0.22 / 0.39 of the rise after ascent / NPO / RMU: the task, not the size, is what a prompt can reach.
+  - Pre-registered for 160m: I1 (the forget-domain prefix recovers 0.4 of RMU's rise and 0.2 or less of ascent's) refuted; I2 (ascent's writers fire at 0.85 in context) refuted; I3 (the retain-domain prefix recovers less than half of what the forget-domain prefix recovers) refuted.
+
+  What the session settled: as a rule the writers' activation transfers to unseen methods at 0.89 accuracy where its naive siblings reach 0.78 to 0.83 and the probe 0.84; on TOFU the forget set is not a domain in the dictionary's sense (2 of 256 words pass the forget threshold; the 32 most forget-leaning words average 0.62 forget share where a neutral word sits at 0.52) and the audit has nothing to read: the ranked writers fire at 0.99 to 1.00 after every method, so their 0.76 correlation with the recovery is the ordering of RMU's 1.00 against 0.99 and carries nothing; the auditors with signal there are the output KL (0.82) and the representation drift (0.76), which rank RMU (recovery 1.00 in 10 steps) above NPO (0.70) and ascent (0.57), while the membership AUC (-0.57) and the probe (-0.86) point the wrong way; and on the Pile no prompt undoes a weight change at 160m, 410m and 1B: a page of the forgotten domain (PubMed / Github) recovers at 160m -0.03 / -0.67 after ascent, 0.02 / 0.01 after NPO, -0.02 / -0.12 after RMU; at 410m -0.21 / -0.67 after ascent, -0.01 / -0.66 after NPO, -0.04 / -0.22 after RMU; at 1B -0.06 / -1.39 after ascent, 0.08 / -0.98 after NPO, -0.13 / -0.37 after RMU, deepening ascent's rise instead (up to +0.94 nats beyond the original's rise under the same page, 160m github), while an off-domain page recovers 0.03 to 0.35; on TOFU two forget pairs in the prompt recover 0.26 / 0.22 / 0.39 of the rise after ascent / NPO / RMU. The audit is a usable rule for the share of a forget rise a relearning recovers, conditional on the loss having risen, on forget sets that are domains; it is not a rule for how many steps the relearning takes, and it has nothing to read when the forget set shares its words with what is kept.

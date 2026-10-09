@@ -1,0 +1,47 @@
+{
+ "model": "pythia1b",
+ "domain": "pubmed",
+ "prefix_tokens": 128,
+ "loss0": {
+  "forget": 2.4663004875183105,
+  "forget_with_forget_prefix": 2.604391574859619,
+  "forget_with_retain_prefix": 2.6591484546661377
+ },
+ "conditions": {
+  "ga": {
+   "steps": 60,
+   "loss_forget": 4.706027984619141,
+   "rise_forget": 2.23972749710083,
+   "loss_with_forget_prefix": 4.982012033462524,
+   "loss_with_retain_prefix": 4.71384072303772,
+   "recovery_forget_prefix": -0.06156684761006326,
+   "recovery_retain_prefix": 0.08261506320244905,
+   "act_ratio": 0.8013566423740793,
+   "act_ratio_in_context": 0.8040612778663404
+  },
+  "npo": {
+   "steps": 45,
+   "loss_forget": 4.703576564788818,
+   "rise_forget": 2.237276077270508,
+   "loss_with_forget_prefix": 4.668078422546387,
+   "loss_with_retain_prefix": 4.676822185516357,
+   "recovery_forget_prefix": 0.0775895435289865,
+   "recovery_retain_prefix": 0.09815612326584411,
+   "act_ratio": 0.5566108227289465,
+   "act_ratio_in_context": 0.5664616788717703
+  },
+  "rmu": {
+   "steps": 25,
+   "loss_forget": 4.92679762840271,
+   "rise_forget": 2.4604971408843994,
+   "loss_with_forget_prefix": 5.381600379943848,
+   "loss_with_retain_prefix": 4.497716665267944,
+   "recovery_forget_prefix": -0.12871856623494815,
+   "recovery_retain_prefix": 0.25276555698782366,
+   "act_ratio": 1.0,
+   "act_ratio_in_context": 1.0
+  }
+ },
+ "_exp": "e614_incontext_pythia1b_pubmed",
+ "_time": "2026-10-09 01:13:02"
+}
