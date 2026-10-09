@@ -5640,3 +5640,90 @@ SESSION 116 (2026-10-09, box 8; the user: maximise the GPU and the code so the n
   - Pre-registered: P1 refuted (writers 0.62, difference-selected 0.62); P2 refuted (0.51); P3 refuted (0.73); P4 confirmed; P5 refuted; P6 refuted.
 
   What the session settled: at the rules fixed before the runs, the writers' activation flags shallow unlearning on the held-out domains at 0.62 accuracy (AUC 0.85; majority 0.55; difference-selected 0.62, ratio-selected 0.71, probe 0.63), on the held-out methods at 0.51 (difference-selected 0.49, probe 0.50) and on the held-out architecture at 0.73 (difference-selected 0.67, probe 0.67); the ranking travels where the cut does not: AUC 0.85 on the held-out domains, 0.91 on the held-out methods, 0.93 on the architecture, against the difference-selected set's 0.90 / 0.96 / 0.80 and the probe's 0.76 / 0.82 / 0.47; adding the writers' activation to a model of the forget rise, the output KL and the drift moves the leave-one-domain-out accuracy from 0.55 to 0.84 (the difference-selected set 0.85, the probe 0.65, the writers alone 0.81; 255 conditions, 7 domains); silencing the writers' inputs after unlearning to +2 adds +2 steps to the relearning on the held-out domains against +2 for the difference-selected set and +0 for a random set of the same size (42 conditions; WDD beats the difference-selected set in 0.12 and random in 0.48); after the gradient methods silencing the writers' inputs adds +36 (ga), +20 (gd), +35 (npo), +54 (scrub) steps, the difference-selected set +36, +8, +48, +23, a random set +0, +0, +0, +0; after RMU, dampening and task-vector negation nothing moves; ascent leaves the writers at 0.97 on the new domains (recovery 0.81) where it silenced them to 0.86 on the old ones. The rule does not survive the held-out domains at the fixed cut, nor the architecture; the writers add predictive value beyond the loss, the KL and the drift; and silencing them delays relearning no more than silencing the naive sets.
+
+SESSION 117 (2026-10-09, box 8 and the laptop; the user: do the statistics on the Mac and the two GPU tests at once, and say what is new. Pre-registered S1, S2 (laptop), C1 to C3 (controls) and W1, W2 (per-word) at 2026-10-09 07:47:36, before the runs.)
+
+- e618a THE STATISTICS OF THE HELD-OUT TEST (laptop; 255 held-out conditions from 91 jobs, each job the three targets of one model, domain, method and seed; cluster bootstrap over jobs, 1,000 draws for the AUCs and 300 for the leave-one-domain-out models):
+
+  | held-out group | n (jobs) | AUC WDD writers | difference-selected | ratio-selected | probe | forget rise | difference-selected minus writers |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | held-out domains at 160m | 86 (30) | 0.85 [0.76, 0.93] | 0.90 [0.83, 0.96] | 0.90 [0.83, 0.96] | 0.76 [0.62, 0.88] | 0.63 | +0.05 [+0.02, +0.10] |
+  | held-out methods | 68 (26) | 0.91 [0.81, 0.98] | 0.96 [0.88, 1.00] | 0.85 [0.70, 0.96] | 0.82 [0.65, 0.95] | 0.48 | +0.05 [-0.03, +0.15] |
+  | held-out architecture (Qwen2.5-0.5B) | 30 (10) | 0.93 [0.54, 1.00] | 0.80 [0.34, 1.00] | 0.74 [0.18, 1.00] | 0.47 [0.22, 0.75] | 0.48 | -0.13 [-0.48, +0.04] |
+  | 410m on StackExchange | 20 (7) | 1.00 [1.00, 1.00] | 1.00 [1.00, 1.00] | 1.00 [1.00, 1.00] | 0.41 [0.00, 1.00] | 0.48 | +0.00 [+0.00, +0.00] |
+  | extra domains at 160m | 37 (14) | 0.85 [0.60, 1.00] | 0.91 [0.72, 1.00] | 0.98 [0.91, 1.00] | 0.86 [0.63, 1.00] | 0.69 | +0.05 [-0.12, +0.29] |
+  | all new conditions | 255 (91) | 0.90 [0.85, 0.94] | 0.92 [0.87, 0.96] | 0.88 [0.82, 0.93] | 0.74 [0.65, 0.82] | 0.55 | +0.02 [-0.02, +0.07] |
+
+  - With cluster-bootstrap intervals over jobs the writers' AUC is 0.85 [0.76, 0.93] on the held-out domains, 0.91 [0.81, 0.98] on the held-out methods and 0.93 [0.54, 1.00] on the architecture; the difference-selected set's gap over the writers is +0.05 [+0.02, +0.10] on the domains, +0.05 [-0.03, +0.15] on the methods and -0.13 [-0.48, +0.04] on the architecture. On the held-out domains the difference-selected set is better than the writers and the interval excludes zero; on the held-out methods and the architecture the intervals include zero (the architecture's rests on 10 jobs). The probe's AUC is 0.76 / 0.82 / 0.47, the forget rise's 0.63 / 0.48 / 0.48.
+
+  | model | leave-one-domain-out accuracy (shallow = recovery 0.8 or more) | gain over the base, 95% interval | R squared for the recovery magnitude |
+  | --- | --- | --- | --- |
+  | base | 0.53 |  | 0.04 |
+  | plus wdd | 0.84 | +0.31 [+0.17, +0.47] | 0.37 |
+  | plus diff | 0.85 | +0.33 [+0.23, +0.50] | 0.41 |
+  | plus probe | 0.64 |  | 0.06 |
+  | wdd alone | 0.80 |  | 0.37 |
+  | diff alone | 0.85 |  | 0.41 |
+
+  - The incremental gain of the writers over the forget rise, the output KL and the drift is +0.31 [+0.17, +0.47] of leave-one-domain-out accuracy (0.53 to 0.84), the difference-selected set's +0.33 [+0.23, +0.50], and the writers minus the difference-selected set -0.02 [-0.16, +0.03]; for the recovery magnitude the loss-side model explains R squared 0.04 out of domain, the writers alone 0.37, the difference-selected set alone 0.41. The loss-side measures carry almost nothing of the recovery across domains; either activation measure carries about two fifths of it, and the two are not distinguishable.
+
+  | group | n | fixed-rule accuracy of the normalised score (cut 0.781, above; training accuracy 0.90) | majority | AUC |
+  | --- | --- | --- | --- | --- |
+  | held-out domains at 160m | 86 | 0.60 | 0.55 | 0.84 |
+  | held-out methods | 68 | 0.51 | 0.51 | 0.80 |
+  | held-out architecture (Qwen2.5-0.5B) | 30 | 0.70 | 0.67 | 0.48 |
+  | 410m on StackExchange | 20 | 0.80 | 0.75 | 1.00 |
+  | extra domains at 160m | 37 | 0.65 | 0.57 | 0.82 |
+  | all new conditions | 255 | 0.66 | 0.53 | 0.83 |
+
+  - The normalised score (the forget writers' ratio over the retain writers') tunes to a cut of 0.781 on the training conditions, next to the raw cut, and scores 0.60 on the held-out domains (majority 0.55, AUC 0.84): the calibration failure is not a scale problem.
+  - Pre-registered: S1 (the normalised score reaches 0.75 on the held-out domains) refuted; S2 (the gap's interval includes zero on every held-out group) refuted.
+
+- e618b THE CONTROLS THE SILENCING TEST LACKED (160m, +2, the gradient methods ga, gd, npo and scrub; planned for StackExchange, Wikipedia and USPTO at two seeds and PubMed and Github at one, 32 jobs, interleaved with the 20 per-word jobs; seven neuron sets silenced at their inputs, the union at twice the budget; the extra steps back within 0.1 nats against relearning the unlearned model as it is, censored at 101; the queue was stopped at the user's call after 11 control jobs and 11 per-word jobs once the floors below had made the steps-back metric moot):
+
+  | after unlearning to +2 | WDD writers | difference-selected | random | active, not selective | retain words' writers | magnitude-selected | union of WDD and difference-selected (twice the budget) |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | all conditions (n 11), median extra steps back | +56 | +56 | +0 | +31 | +5 | +31 | +56 |
+  | mean | +48 | +47 | +8 | +42 | +17 | +42 | +48 |
+  | forget-loss rise from the silencing alone (median nats) | +0.60 | +0.67 | +0.02 | -0.12 | +0.11 | -0.03 | +1.30 |
+  | ga | +51 | +51 | +0 | +51 | +36 | +51 | +51 |
+  | gd | +0 | +0 | +0 | +0 | +0 | +0 | +0 |
+  | npo | +61 | +61 | +2 | +38 | +15 | +36 | +61 |
+  | scrub | +86 | +86 | +2 | +86 | +2 | +86 | +86 |
+  | stackexchange | +68 | +68 | +0 | +68 | +5 | +68 | +68 |
+  | wiki | +31 | +25 | +0 | +21 | +0 | +21 | +31 |
+
+  - Silencing the inputs of an active-but-not-selective set adds +31 steps against +56 for the writers, the retain words' writers +5, the magnitude-selected set +31, the difference-selected set +56, random +0, the union +56 (medians over 11 conditions at +2; the writers beat the active set in 0.18 of conditions, the retain writers in 0.64, the difference-selected set in 0.09; the union beats both parts in 0.00); by method the writers add +51 (ga), +0 (gd), +61 (npo), +86 (scrub) against the active-but-not-selective set's +51, +0, +38, +86 and the retain writers' +36, +0, +15, +2.
+  - Pre-registered on the steps-back metric: C1 (the active-but-not-selective set delays less than half as much as the writers) refuted; C2 (the retain words' writers delay 5 steps or fewer) confirmed; C3 (the union delays more than either part) refuted. The metric itself failed first, see e618e.
+
+- e618e THE FLOORS (post hoc, written after the first controls file showed every set censored alike; the original model with each silenced set's inputs zeroed and no unlearning, for every silenced condition of e617 and e618b):
+
+  | floor-corrected, after unlearning to +2 | unsilenced | WDD writers | difference-selected | random | active, not selective | retain words' writers | magnitude-selected | union of WDD and difference-selected (twice the budget) |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | floor rise on the original from the silencing alone (median nats) | 0 | +0.14 | +0.26 | +0.01 | +0.06 | +0.02 | +0.06 | +0.42 |
+  | loss rise from the silencing on the unlearned model | 0 | +0.60 | +0.67 | +0.02 | -0.12 | +0.11 | -0.03 | +1.30 |
+  | 20-step recovery of the recoverable rise (median over 11) | 0.80 | 0.84 | 0.87 | 0.80 | 0.80 | 0.80 | 0.81 | 0.90 |
+  | nats above the floor after 20 steps | 0.41 | 0.46 | 0.42 | 0.42 | 0.37 | 0.43 | 0.38 | 0.42 |
+  | ga | | 0.79 | 0.79 | 0.78 | 0.77 | 0.79 | 0.77 | 0.81 |
+  | gd | | 0.79 | 0.81 | 0.76 | 0.75 | 0.77 | 0.77 | 0.84 |
+  | npo | | 0.85 | 0.88 | 0.83 | 0.85 | 0.84 | 0.84 | 0.89 |
+  | scrub | | 0.98 | 0.99 | 0.98 | 0.97 | 0.98 | 0.97 | 0.99 |
+
+  - The steps-back criterion is a floor artefact for silenced models: zeroing any set's inputs raises the loss the model can reach (the floor rises by +0.14 (WDD writers), +0.26 (difference-selected), +0.01 (random), +0.06 (active, not selective), +0.02 (retain words' writers), +0.06 (magnitude-selected), +0.42 (union of WDD and difference-selected, twice the budget) nats on the original model), and the criterion asks for a return to within 0.1 nats of the unsilenced original; scored against each set's own floor, a 20-step relearning recovers 0.84 (WDD writers), 0.87 (difference-selected), 0.80 (random), 0.80 (active, not selective), 0.80 (retain words' writers), 0.81 (magnitude-selected), 0.90 (union of WDD and difference-selected, twice the budget) of the recoverable rise against 0.80 unsilenced (11 conditions). The held-out silencing conditions of session 116 read the same way: at 160m the floor-corrected recovery is 0.76 (WDD writers), 0.77 (difference-selected), 0.75 (ratio-selected), 0.75 (random) against 0.75 unsilenced over 72 conditions; on Qwen 0.85, 0.85, 0.84 against 0.84 (10); at 410m 0.92, 0.93, 0.92 against 0.92 (7).
+  - The same three predictions on the floor-corrected recovery (C1: the active set blocks less than half of what the writers block; C2: the retain writers block nothing, 0.95 of the unsilenced recovery or more; C3: the union recovers less than either part): C1 refuted, C2 confirmed, C3 refuted.
+
+- e618c DOES THE DICTIONARY LOCALISE? (160m, +2, the gradient methods on PubMed, Github, StackExchange, Wikipedia and USPTO; per forget word: the writer's activation ratio at the word's class positions after unlearning, and the share of the loss rise at those positions a 20-step relearning recovers; the controls computed at the same positions):
+
+  | Spearman with per-word recovery | the word's writer | difference-selected set at the word's positions | random set at the word's positions | the word's loss rise | the word's class size |
+  | --- | --- | --- | --- | --- | --- |
+  | median over 11 conditions | -0.06 | 0.08 | 0.07 | 0.25 | 0.05 |
+  | share positive | 0.45 | 0.64 | 0.55 | 0.91 | 0.64 |
+  | ga | 0.02 | 0.08 | 0.22 | 0.39 | 0.07 |
+  | gd | -0.06 | 0.08 | -0.00 | 0.16 | 0.09 |
+  | npo | -0.07 | 0.16 | -0.02 | 0.31 | 0.05 |
+  | scrub | -0.10 | -0.01 | -0.02 | 0.15 | -0.06 |
+
+  - Within a condition the writer's activation ratio correlates with the word's recovery at a median Spearman of -0.06 (positive in 0.45 of 11 conditions, a median of 56 words each), the difference-selected set's activation at the same positions 0.08, a random set's 0.07, the word's own rise 0.25; words whose writers still fire recover 0.81 of their rise, words whose writers went quiet 0.82; the writers beat the position-local naive set in 0.27 of conditions; by method ga: writers 0.02, difference-selected 0.08, rise 0.39; gd: writers -0.06, difference-selected 0.08, rise 0.16; npo: writers -0.07, difference-selected 0.16, rise 0.31; scrub: writers -0.10, difference-selected -0.01, rise 0.15.
+  - Pre-registered: W1 (median Spearman 0.3 or more for the writers) refuted; W2 (the writers beat the difference-selected set at the same positions) refuted.
+
+  What the session settled: with cluster-bootstrap intervals over jobs the writers' AUC is 0.85 [0.76, 0.93] on the held-out domains, 0.91 [0.81, 0.98] on the held-out methods and 0.93 [0.54, 1.00] on the architecture; the difference-selected set's gap over the writers is +0.05 [+0.02, +0.10] on the domains, +0.05 [-0.03, +0.15] on the methods and -0.13 [-0.48, +0.04] on the architecture; the incremental gain of the writers over the forget rise, the output KL and the drift is +0.31 [+0.17, +0.47] of leave-one-domain-out accuracy (0.53 to 0.84), the difference-selected set's +0.33 [+0.23, +0.50], and the writers minus the difference-selected set -0.02 [-0.16, +0.03]; for the recovery magnitude the loss-side model explains R squared 0.04 out of domain, the writers alone 0.37, the difference-selected set alone 0.41; the normalised score (the forget writers' ratio over the retain writers') tunes to a cut of 0.781 on the training conditions, next to the raw cut, and scores 0.60 on the held-out domains (majority 0.55, AUC 0.84): the calibration failure is not a scale problem; the steps-back criterion is a floor artefact for silenced models: zeroing any set's inputs raises the loss the model can reach (the floor rises by +0.14 (WDD writers), +0.26 (difference-selected), +0.01 (random), +0.06 (active, not selective), +0.02 (retain words' writers), +0.06 (magnitude-selected), +0.42 (union of WDD and difference-selected, twice the budget) nats on the original model), and the criterion asks for a return to within 0.1 nats of the unsilenced original; scored against each set's own floor, a 20-step relearning recovers 0.84 (WDD writers), 0.87 (difference-selected), 0.80 (random), 0.80 (active, not selective), 0.80 (retain words' writers), 0.81 (magnitude-selected), 0.90 (union of WDD and difference-selected, twice the budget) of the recoverable rise against 0.80 unsilenced (11 conditions); the held-out silencing conditions of session 116 read the same way: at 160m the floor-corrected recovery is 0.76 (WDD writers), 0.77 (difference-selected), 0.75 (ratio-selected), 0.75 (random) against 0.75 unsilenced over 72 conditions; on Qwen 0.85, 0.85, 0.84 against 0.84 (10); at 410m 0.92, 0.93, 0.92 against 0.92 (7).; within a condition the writer's activation ratio correlates with the word's recovery at a median Spearman of -0.06 (positive in 0.45 of 11 conditions, a median of 56 words each), the difference-selected set's activation at the same positions 0.08, a random set's 0.07, the word's own rise 0.25; words whose writers still fire recover 0.81 of their rise, words whose writers went quiet 0.82; the writers beat the position-local naive set in 0.27 of conditions. The causal claim of sessions 111 to 113 and 116, that silencing the named writers after an unlearning slows the relearning, is withdrawn: H526, H528 and H534 are superseded and the atlas rows of e601, e603 and e608 marked accordingly; what silencing buys is a higher floor, not a slower return to it.

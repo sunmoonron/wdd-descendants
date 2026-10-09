@@ -731,3 +731,12 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The fixed rule holds on another architecture": 0.73 on Qwen2.5-0.5B (e617b).
 - "Silencing the writers is the intervention that delays relearning most": +2 steps against +2 for the difference-selected set (e617b).
 - "RMU and task-vector negation leave the writers firing while the gradient methods silence them": ga writers 0.98, recovery 0.88 in 40 steps; gd writers 0.96, recovery 0.74 in 95 steps; npo writers 0.96, recovery 0.85 in 35 steps; rmu writers 1.00, recovery 0.89, not back within 100 steps; scrub writers 0.99, recovery 0.94 in 30 steps; ssd writers 0.43, recovery 0.35, not back within 100 steps; tv writers 0.90, recovery 0.49, not back within 100 steps (e617b).
+
+## Session 117 kills (the statistics, the missing controls and the per-word test)
+- "The threshold failure is a scale problem": the forget-over-retain normalised score tunes to 0.781 and scores 0.60 on the held-out domains (e618a).
+- "The writers and the naive set are indistinguishable as rankers": on the held-out domains the difference-selected set is ahead by +0.05 [+0.02, +0.10] (e618a).
+- "Silencing works because the neurons are selective, not because they are active": an active-but-not-selective set adds +31 steps against the writers' +56 (e618b).
+- "The route back is distributed, so silencing two disjoint sets adds up": the union adds +56 against +56 and +56 (e618b).
+- "The dictionary localises the failure": median per-word Spearman -0.06 (e618c).
+- "The word structure is what localises": the difference-selected set read at the same positions reaches 0.08 against the writers' -0.06 (e618c).
+- "Silencing the named writers after an unlearning slows the relearning" (H526, H528, H534; sessions 111 to 113): the steps-back criterion measures distance to the unsilenced original, and zeroing a set lifts the floor by +0.14 nats; against the floor a 20-step relearning recovers 0.76 of the recoverable rise with the writers silenced and 0.75 unsilenced over 72 held-out conditions (e618e).

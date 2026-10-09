@@ -1,0 +1,14 @@
+{
+ "fixed_at": "2026-10-09 07:47:36",
+ "predictions": {
+  "C1": "(0.5) After the gradient methods at +2, silencing an active-but-not-selective set (top neurons by mean activation on retain positions, same budget) delays relearning less than half as much as silencing the writers.",
+  "C2": "(0.6) Silencing the retain words' writers delays relearning by 5 steps or fewer.",
+  "C3": "(0.5) Silencing the union of the WDD and difference-selected sets delays relearning more than either set alone.",
+  "W1": "(0.5) Within a condition, the writers' per-word activation ratio correlates positively with per-word recovery: median Spearman 0.3 or more after the gradient methods.",
+  "W2": "(0.4) The writers' per-word ratio predicts per-word recovery better than the difference-selected set's activation at the same positions (higher median Spearman).",
+  "S1": "(0.5) Exploratory, not pre-registered on new data: a within-model normalised score (the forget writers' ratio over the retain writers' ratio) travels as a fixed cut where the raw ratio did not, reaching 0.75 or better on the held-out domains.",
+  "S2": "(0.6) The cluster-bootstrap interval of AUC(difference-selected) minus AUC(writers) includes zero on every held-out group: the two selectors are not distinguishable."
+ },
+ "_exp": "e618_prereg",
+ "_time": "2026-10-09 07:47:36"
+}
