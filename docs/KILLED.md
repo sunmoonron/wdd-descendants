@@ -770,3 +770,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Any quiet row takes the concept": shares 1.00, 1.00, 1.00, dials -0.029, +0.027, -0.006 (e627).
 - "The placed concept survives the pin's release": after 1,200 further steps of the next-token loss alone the pinned row's share goes from 1.00 to 1.00 and its dial from -0.048 to -0.018 (the handle's +0.175 to +0.220; validation loss 3.414 to 3.465) (e627).
 - "Two designated rows take two concepts without cross-talk and compose": two rows pinned at once: the gender row 1542 takes share 1.00 and dial -0.004, the age row 291 share 1.00 and dial +0.035 (old over young on held-out nouns, 0.58 unedited); the cross-dials are -0.008 (gender row on age) and -0.009 (age row on pronouns); both negated give +0.008 and +0.017 (e627).
+
+## Session 123 kills (class-based data attribution)
+- "A short continuation shows the real run's recruitment": 0.28 / 0.20 of the recruits are words after 2,500 steps on the full stream (e628).
+- "Removing a class's contexts stalls its row and no other": A 0.28 to 0.20 with B 0.20 to 0.24; B 0.20 to 0.32 with A 0.28 to 0.28 (e628).
+- "Random removal does nothing": 0.20 / 0.32 against 0.28 / 0.20 (e628).
+- "Removed classes get fewer substitutes": 0.08 / 0.00 against 0.04 / 0.00 (e628).

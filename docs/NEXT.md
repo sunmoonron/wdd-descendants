@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e628. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e629. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -233,3 +233,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 121 (e625, e626):** the cross-lingual dial and programmable feature placement. Still worth a run: (1) pinning from an early checkpoint rather than the final model, before the handle is recruited (sessions 106 to 108 date it), where the loss competes with no incumbent; (2) pinning two concepts onto two designated rows and testing whether they then compose, since the found rows interfered (e624); (3) the Pythia gender row (block 4, row 2857) through the e622 catalogue and the e624 free-text test, as the third family's dial.
 
 **Session 122 (e627):** the pinning checks. Still worth a run: (1) placement at scale, Qwen2.5-0.5B or 1.5B, of a concept that is not gender; (2) placement of a safety-relevant concept (a refusal direction's carrier) and the tripwire reading, monitoring the designated row; (3) the release phase lengthened to the budget of a real fine-tune, to find the half-life of a placed concept.
+
+**Session 123 (e628):** class-based data attribution. Still worth a run: (1) the same intervention on the real Pythia data order inside the 8000 to 10000 window, which is what Mechanistic Data Attribution did for heads and which needs the preshuffled Pile; (2) the model-independence test, the contexts chosen from one seed's classes removed from another seed's stream; (3) the recruitment law written up as the paper it is, sessions 58 to 110 with this session's handle as its last figure.
