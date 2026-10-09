@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e625. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e627. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -229,3 +229,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 119 (e622):** the attribute catalogue. Still worth a run: (1) composition in the weights (two rows negated together) and a side-effect probe on free text (gendered agreement in French, Spanish and German after the gender row is negated); (2) the catalogue on a third family (SmolLM2, Pythia) and on attributes the writers build late (tense, case); (3) the detectability of a one-row edit by the dictionary itself (the sign of a word's row against its class direction) as the defensive counterpart of the smallest behaviour-changing weight edit.
 
 **Session 120 (e623, e624):** blind edit detection and the dial in free text. Still worth a run: (1) detection with a reference model of the same family but a different seed or checkpoint, where the question is whether the class structure (conserved across seeds, session 102) exposes an edit the weights alone do not; (2) the dial on agreement in French, Spanish and German, where gender is marked on articles and adjectives; (3) the generation row on the 1.5B model in free text, where its effect was the largest.
+
+**Session 121 (e625, e626):** the cross-lingual dial and programmable feature placement. Still worth a run: (1) pinning from an early checkpoint rather than the final model, before the handle is recruited (sessions 106 to 108 date it), where the loss competes with no incumbent; (2) pinning two concepts onto two designated rows and testing whether they then compose, since the found rows interfered (e624); (3) the Pythia gender row (block 4, row 2857) through the e622 catalogue and the e624 free-text test, as the third family's dial.

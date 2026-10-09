@@ -1,0 +1,12 @@
+{
+ "fixed_at": "2026-10-09 13:13:43",
+ "predictions": {
+  "X1": "(0.6) On Qwen2.5-0.5B the gender row negated lowers agreement (predicative adjectives in French and Spanish, pronouns in German) by 0.10 or more in at least two of the three languages, with random rows changing it by under 0.03.",
+  "X2": "(0.4) The 1.5B model's gender row does the same in at least one language.",
+  "R1": "(0.4) After pinning, the designated row's vote share for the gender difference is 0.5 or more (from 0 before) at a validation-loss cost of 0.05 nats or less over the control fine-tune.",
+  "R2": "(0.4) Negating the designated row after pinning lowers held-out pronoun agreement by 0.15 or more (under 0.03 before pinning, and under 0.03 after the control fine-tune).",
+  "R3": "(0.3) The original handle row's dial halves after pinning."
+ },
+ "_exp": "e625_prereg",
+ "_time": "2026-10-09 13:13:43"
+}

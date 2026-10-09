@@ -761,3 +761,6 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The dictionary's detector beats the naive one": top-1 0.00 against 0.00 (e623).
 - "The naive detector finds negated non-word rows": top-10 0.00 (e623).
 - "Two attribute rows compose in the weights": both flipped in 0.05 against 0.34 and 0.17 alone (e624).
+
+## Session 121 kills (the cross-lingual dial and programmable feature placement)
+- "The 1.5B gender row reaches another language": on Qwen2.5-1.5B-Instruct the gender row negated moves agreement from 0.94 to 0.94 (French), 0.98 to 0.97 (Spanish), 0.95 to 0.95 (German); zeroed 0.94, 0.98, 0.95, doubled 0.94, 0.98, 0.95; the largest change from a random row is 0.00, 0.00, 0.00; Pile loss -0.0002 (e625).

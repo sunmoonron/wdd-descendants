@@ -5855,3 +5855,40 @@ SESSION 120 (2026-10-09, box 8; the user: do whatever is needed, with a pasted n
   - Pre-registered: G1 (the gender row negated lowers the pronoun probability by 0.15 with no rise in degenerate generations) confirmed; G2 (both rows negated give the doubly flipped word in half the items either flips alone) refuted.
 
   What the session settled: blind, with no reference model, a negated row is not found by consistency: over 1280 block-4 rows with a floor-based class (89 vocabulary words) the row-chord cosine has median -0.004 on the unedited model, so a sign flip has nothing to disagree with; the word-chord detector ranks a negated word row at top-1 in 0.00 and top-10 in 0.00 of 10 negations (4 of 10 negated words drop out of the vocabulary), the naive top-activation detector at top-10 in 0.00, and negated non-word rows at top-10 in 0.00 / 0.00; a doubled row is found by the norm z-score at top-10 in 1.00 (words) and 1.00 (non-words) and by neither consistency detector (0.00 / 0.00). In free text the gender row (block 4, row 3019, vote 0.88) negated moves the probability of the subject's pronoun from 0.96 to 0.81 (zeroed 0.95, doubled 0.96; random rows 0.96 to 0.96) and the generated agreement from 0.99 to 0.88, with degenerate generations 0.00 to 0.00 and a Pile loss change of +0.0003. In the weights the two rows compose only partly: the gender row negated flips gender in 0.34 of the items and the generation row (block 4, row 599, vote 0.64) flips generation in 0.17, both negated give the doubly flipped word in 0.05, gender alone in 0.26 and generation alone in 0.14.
+
+SESSION 121 (2026-10-09, box 8; the user: cook things the literature has not thought of, with a pasted note proposing the cross-lingual collateral test. Pre-registered X1, X2 (cross-lingual) and R1 to R3 (row pinning) at 2026-10-09 13:13:43, before the runs.)
+
+- e625 THE GENDER DIAL IN FRENCH, SPANISH AND GERMAN (the gender row by vote on the kinship items; twelve gendered subjects per language in templates ending before an agreeing form; the probability of the agreeing forms over all forms at the next token: French and Spanish predicative adjectives, German pronouns; negated, zeroed, doubled; eight random rows of the block; the Pile loss):
+
+  | Qwen2.5-0.5B: gender row 3019 of block 4 (vote 0.88) | French adjectives | Spanish adjectives | German pronouns | Pile loss change |
+  | --- | --- | --- | --- | --- |
+  | none | 0.93 | 0.93 | 0.84 | +0.0000 |
+  | negate | 0.58 | 0.58 | 0.53 | +0.0003 |
+  | zero | 0.89 | 0.93 | 0.70 | +0.0001 |
+  | double | 0.94 | 0.91 | 0.84 | -0.0001 |
+  | random rows negated (8), largest change | 0.00 | 0.00 | 0.00 | |
+
+  | Qwen2.5-1.5B-Instruct: gender row 8031 of block 7 (vote 0.76) | French adjectives | Spanish adjectives | German pronouns | Pile loss change |
+  | --- | --- | --- | --- | --- |
+  | none | 0.94 | 0.98 | 0.95 | +0.0000 |
+  | negate | 0.94 | 0.97 | 0.95 | -0.0002 |
+  | zero | 0.94 | 0.98 | 0.95 | -0.0001 |
+  | double | 0.94 | 0.98 | 0.95 | +0.0001 |
+  | random rows negated (8), largest change | 0.00 | 0.00 | 0.00 | |
+
+  - On Qwen2.5-0.5B the gender row negated moves agreement from 0.93 to 0.58 (French), 0.93 to 0.58 (Spanish), 0.84 to 0.53 (German); zeroed 0.89, 0.93, 0.70, doubled 0.94, 0.91, 0.84; the largest change from a random row is 0.00, 0.00, 0.00; Pile loss +0.0003. On Qwen2.5-1.5B-Instruct the gender row negated moves agreement from 0.94 to 0.94 (French), 0.98 to 0.97 (Spanish), 0.95 to 0.95 (German); zeroed 0.94, 0.98, 0.95, doubled 0.94, 0.98, 0.95; the largest change from a random row is 0.00, 0.00, 0.00; Pile loss -0.0002.
+  - Pre-registered: X1 (a drop of 0.10 in two of three languages on the 0.5B, random rows under 0.03) confirmed; X2 (the same in one language on the 1.5B) refuted.
+
+- e626 PROGRAMMABLE FEATURE PLACEMENT (Pythia-160m, block 4; a designated row with no class; a pinning loss that asks the female-minus-male state difference on twelve noun pairs in three templates to be carried by that row's write, added to the next-token loss on 10,000 Pile windows for 1,200 steps at lambda 0 (control), 1 and 5; the vote share, the dial on twelve held-out noun pairs, the validation loss):
+
+  | Pythia-160m, block 4, 1,200 steps | validation loss | designated row's vote share for the gender difference (training / held-out subjects) | top atom after (row, share) | dial of the designated row (held-out pronoun agreement drop on negation) | dial of the handle row 2857 |
+  | --- | --- | --- | --- | --- | --- |
+  | before | 3.653 | 0.00 / 0.00 | 2857, 1.00 | -0.000 | +0.343 |
+  | after, lambda 0 (r* = 218) | 3.890 | 0.00 / 0.00 | 2857, 1.00 | -0.000 | +0.389 |
+  | after, lambda 1 (r* = 218) | 3.882 | 1.00 / 0.97 | 218, 1.00 | +0.203 | +0.197 |
+  | after, lambda 5 (r* = 218) | 3.871 | 1.00 / 1.00 | 218, 1.00 | +0.179 | +0.159 |
+
+  - Pythia-160m carries gender on row 2857 of block 4 (vote 1.00 over the contrast set), and negating that row drops held-out pronoun agreement by +0.343 from 0.86, a third family with the dial; the pinning loss on a designated quiet row (lambda 1) brings its vote share for the gender difference from 0 to 1.00 on the training subjects and 0.97 on held-out ones, at a validation cost of -0.008 nats over the control fine-tune (3.890), with the designated row's dial going from -0.000 to +0.203 and the handle's from +0.343 to +0.197; at lambda 5 the designated row's share is 1.00 / 1.00, its dial +0.179 and the handle's +0.159 at -0.020 nats over the control; the pinning term ends at 0.001 of the difference's energy unexplained; every fine-tune, the control included, raises the validation loss from 3.653 to about 3.890, so the costs are read against the control.
+  - Pre-registered: R1 (the designated row's vote share reaches 0.5 at a validation cost of 0.05 or less) confirmed; R2 (its dial reaches 0.15 on held-out subjects, under 0.03 before and in the control) confirmed; R3 (the handle's dial halves) confirmed (at lambda 5).
+
+  What the session settled: on Qwen2.5-0.5B the gender row negated moves agreement from 0.93 to 0.58 (French), 0.93 to 0.58 (Spanish), 0.84 to 0.53 (German); zeroed 0.89, 0.93, 0.70, doubled 0.94, 0.91, 0.84; the largest change from a random row is 0.00, 0.00, 0.00; Pile loss +0.0003; on Qwen2.5-1.5B-Instruct the gender row negated moves agreement from 0.94 to 0.94 (French), 0.98 to 0.97 (Spanish), 0.95 to 0.95 (German); zeroed 0.94, 0.98, 0.95, doubled 0.94, 0.98, 0.95; the largest change from a random row is 0.00, 0.00, 0.00; Pile loss -0.0002; Pythia-160m carries gender on row 2857 of block 4 (vote 1.00 over the contrast set), and negating that row drops held-out pronoun agreement by +0.343 from 0.86, a third family with the dial; the pinning loss on a designated quiet row (lambda 1) brings its vote share for the gender difference from 0 to 1.00 on the training subjects and 0.97 on held-out ones, at a validation cost of -0.008 nats over the control fine-tune (3.890), with the designated row's dial going from -0.000 to +0.203 and the handle's from +0.343 to +0.197; at lambda 5 the designated row's share is 1.00 / 1.00, its dial +0.179 and the handle's +0.159 at -0.020 nats over the control; the pinning term ends at 0.001 of the difference's energy unexplained; every fine-tune, the control included, raises the validation loss from 3.653 to about 3.890, so the costs are read against the control.
