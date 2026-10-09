@@ -1,0 +1,166 @@
+{
+ "model": "qwen05",
+ "n_items": 128,
+ "gender_row": {
+  "block": 4,
+  "row": 3019,
+  "share": 0.875
+ },
+ "generation_row": {
+  "block": 4,
+  "row": 599,
+  "share": 0.640625
+ },
+ "composition": {
+  "none": [
+   1.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "gender_negated": [
+   0.65625,
+   0.34375,
+   0.0,
+   0.0
+  ],
+  "generation_negated": [
+   0.8203125,
+   0.0,
+   0.171875,
+   0.0078125
+  ],
+  "both_negated": [
+   0.5546875,
+   0.2578125,
+   0.140625,
+   0.046875
+  ]
+ },
+ "free_text": {
+  "none": {
+   "agree": 0.9861111111111112,
+   "no_pronoun": 0.013888888888888888,
+   "degenerate": 0.0,
+   "pronoun_prob": 0.9613466668460104,
+   "pile": 2.7559268474578857,
+   "samples": [
+    " he would give him a crown if he could solve a puzzle. The puzzle was as follows: \"There are 1",
+    " she would not be able to attend the wedding, but she would be there to ________ the wedding.\nA. attend",
+    " he would buy his son a new bike if he passed the driving test. The son said that he would pass the driving",
+    " she would buy her son a new bike if he would do her chores.  Given the context: What will the son",
+    " he was \"very happy\" to be in the film, which is based on the novel by the same name.\nThe",
+    " she was \"so happy\" to be able to return to the stage after the death of her husband, who died in"
+   ]
+  },
+  "gender_negate": {
+   "agree": 0.875,
+   "no_pronoun": 0.0,
+   "degenerate": 0.0,
+   "pronoun_prob": 0.809622144481788,
+   "pile": 2.7562570571899414,
+   "samples": [
+    " he would give the princess a crown if he could solve a puzzle. The puzzle was as follows: \"There are ",
+    " he would give the king a crown if the king could solve a puzzle. The puzzle was as follows: \"There are",
+    " he would buy his son a new bike if he passed the driving test. The son said that he would pass the driving",
+    " she would go to the party, but she didn't go. Which of the following options correctly describes this situation?\nA",
+    " he was \"very happy\" to be in the film, which is based on the novel by the same name.\nThe",
+    " she was \"so happy\" to be able to return to the stage after the death of her husband, who died in"
+   ]
+  },
+  "gender_zero": {
+   "agree": 0.9861111111111112,
+   "no_pronoun": 0.013888888888888888,
+   "degenerate": 0.0,
+   "pronoun_prob": 0.9529552997814285,
+   "pile": 2.7560540437698364,
+   "samples": [
+    " he would give the princess a crown if she could solve a puzzle. The puzzle was as follows: \"There are ",
+    " she would like to have a ____________ (1) ____________ (2) ____________ (3)",
+    " he would buy his son a new bike if he passed the driving test. The son said that he would pass the driving",
+    " she would buy her son a new bike if he would do her chores.  Given the context: What will the son",
+    " he was \"very happy\" to be in the film, which is based on the novel by the same name.\nThe",
+    " she was \"so happy\" to be able to return to the stage after the death of her husband, who died in"
+   ]
+  },
+  "gender_double": {
+   "agree": 0.9861111111111112,
+   "no_pronoun": 0.013888888888888888,
+   "degenerate": 0.0,
+   "pronoun_prob": 0.963079170220428,
+   "pile": 2.7558525800704956,
+   "samples": [
+    " he would give him a crown if he could solve a puzzle. The puzzle was as follows: \"There are 1",
+    " she would not be able to attend the wedding, but she would be there to ________ the wedding.\nA. attend",
+    " he would buy his son a new bike if he passed the driving test. The son said that he would pass the driving",
+    " she would buy her son a new bike if he would do her a favor.  Given the context: What will the",
+    " he was \"very happy\" to be in the film, which is based on the novel by the same name.\nThe",
+    " she was \"so happy\" to be able to return to the stage after the death of her husband, who died in"
+   ]
+  },
+  "random_negate": [
+   {
+    "row": 921,
+    "pronoun_prob": 0.9613701717721091,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   },
+   {
+    "row": 616,
+    "pronoun_prob": 0.961383661462201,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   },
+   {
+    "row": 4536,
+    "pronoun_prob": 0.9609749135043886,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   },
+   {
+    "row": 4093,
+    "pronoun_prob": 0.9615378412935469,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   },
+   {
+    "row": 4257,
+    "pronoun_prob": 0.9612182006239891,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   },
+   {
+    "row": 3314,
+    "pronoun_prob": 0.9613141285048591,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   },
+   {
+    "row": 2437,
+    "pronoun_prob": 0.9613676965236664,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   },
+   {
+    "row": 898,
+    "pronoun_prob": 0.9611989996499486,
+    "agree": 0.9861111111111112,
+    "no_pronoun": 0.013888888888888888,
+    "degenerate": 0.0
+   }
+  ]
+ },
+ "verdicts": {
+  "G1": true,
+  "G2": false
+ },
+ "_exp": "e624_free_text_qwen05",
+ "_time": "2026-10-09 17:04:17"
+}

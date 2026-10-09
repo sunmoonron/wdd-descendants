@@ -1,0 +1,13 @@
+{
+ "fixed_at": "2026-10-09 12:59:30",
+ "predictions": {
+  "K1": "(0.6) The word-chord detector, scoring every block row with a floor-based class on centred states, puts a negated word row at top-1 in 70% or more of the ten. [Restated before the full run: the smoke ran on uncentred states and vocabulary rows only, where the statistic had no signal.]",
+  "K2": "(0.3) It beats the naive top-activation detector's top-1 rate on those negations.",
+  "K3": "(0.7) Negated non-word rows are missed by the word detector (outside its vocabulary) and found by the naive detector at top-10 in 30% or more.",
+  "K4": "(0.7) Doubled rows are found by the norm z-score at top-10 in 50% or more and by neither consistency detector (top-10 at most 0.2).",
+  "G1": "(0.5) Negating the gender row lowers the probability of the subject's pronoun (over he and she, at the next token after the prompt) by 0.15 or more, with no rise in degenerate generations. [G1 restated before the full run, after the smoke showed the generation-based score rarely sees a pronoun within 24 tokens.]",
+  "G2": "(0.4) Negating the gender and generation rows together gives the doubly flipped word in at least half as many items as the larger single flip."
+ },
+ "_exp": "e623_prereg",
+ "_time": "2026-10-09 12:59:30"
+}
