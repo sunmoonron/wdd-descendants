@@ -776,3 +776,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Removing a class's contexts stalls its row and no other": A 0.28 to 0.20 with B 0.20 to 0.24; B 0.20 to 0.32 with A 0.28 to 0.28 (e628).
 - "Random removal does nothing": 0.20 / 0.32 against 0.28 / 0.20 (e628).
 - "Removed classes get fewer substitutes": 0.08 / 0.00 against 0.04 / 0.00 (e628).
+
+## Session 124 kills (literature review, no experiment)
+- "The row is a unit the literature does not have" (session 121): the neuron is the literature's oldest unit and the down-projection column its write side (Lakretz 2019; Geva 2022; Gurnee 2023; Voita 2023).
+- "The developmental ordering is unprecedented": positions-first, direction-later and early forecastability are in Stecher et al. 2026 and SAE-Track 2024 for autoencoder features; only the parameter-level parts survive (H593).
+- "The audit is a new diagnostic": its substance is in Xu et al. 2025/2026, Song et al. 2026 and Goel et al. 2026; it is a replication with a transfer test (H596).

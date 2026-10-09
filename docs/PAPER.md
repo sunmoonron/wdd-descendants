@@ -49,3 +49,11 @@ Twelve thousand positions of Pile text per checkpoint; sixteen checkpoints of on
 ## 6. The sentence
 
 The data gives the class and its direction; training recruits the nearest row to it, by a small drift the class's own positions drive; thousands of writers implement it; the row is replaceable. WDD is the instrument that follows the row.
+
+## 7. Prior art (session 124)
+
+- The ordering the sequence rests on, positions first and direction later, with early forecastability of which features persist, is reported for sparse-autoencoder features across Pythia checkpoints by Stecher et al. (2026, arXiv 2605.18789; persistence predicted at AUC 0.80 / 0.83) and SAE-Track (Xu et al. 2024, arXiv 2412.17626). This paper's claim is the parameter-level one those studies cannot make: which row is recruited (the nearest, e587), forecast two checkpoints ahead at AUC 0.93 (e588), by a gradient the class's own positions supply (e589), with no performance event at recruitment (e591).
+- Replacement after removal was reported by Lo, Cohen and Barez (2024, arXiv 2401.01814); here it holds in the toy (e586) and was not reached at scale within the proxy's budget (e590).
+- The neuron is the literature's unit (Lakretz 2019; Geva 2022; Dai 2022; Gurnee 2023; Voita 2023); the row here is its write side, and the dictionary's control is a rotation that keeps everything but provenance.
+- The audit's substance, that the representation side predicts reversibility where the loss does not, is in Xu et al. (ICML 2026), Song et al. (2026) and Goel et al. (EACL 2026); this paper adds the per-row reading, a pre-registered leave-one-domain-out transfer (+0.31 over loss-side measures) and the floor artefact behind steps-back metrics.
+- Full review: [`REVIEW_POSITIVE_CLAIMS.md`](REVIEW_POSITIVE_CLAIMS.md).
