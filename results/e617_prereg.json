@@ -1,0 +1,169 @@
+{
+ "n_conditions": 63,
+ "criteria": {
+  "recovery_ge_0.8": {
+   "n_shallow": 36,
+   "majority_accuracy": 0.5714285714285714,
+   "rules": {
+    "wdd": {
+     "threshold": 0.7818604270490291,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.9047619047619048,
+     "auc": 0.9279835390946503
+    },
+    "diff": {
+     "threshold": -0.13997379690408707,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.873015873015873,
+     "auc": 0.9382716049382716
+    },
+    "ratio": {
+     "threshold": 0.4108962118625641,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.8571428571428571,
+     "auc": 0.9022633744855967
+    },
+    "mag": {
+     "threshold": 0.980270504951477,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.7301587301587301,
+     "auc": 0.7716049382716049
+    },
+    "rnd": {
+     "threshold": 0.995606392621994,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.8095238095238095,
+     "auc": 0.6316872427983539
+    },
+    "sw": {
+     "threshold": 0.5351851851851852,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.6825396825396826,
+     "auc": 0.6784979423868313
+    },
+    "probe": {
+     "threshold": 0.15507913380861282,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.8571428571428571,
+     "auc": 0.8641975308641975
+    },
+    "rise": {
+     "threshold": 4.11154705286026,
+     "direction": -1,
+     "rule": "shallow if value <= threshold",
+     "training_accuracy": 0.6190476190476191,
+     "auc": 0.45164609053497945
+    },
+    "riser": {
+     "threshold": 0.6157183647155762,
+     "direction": -1,
+     "rule": "shallow if value <= threshold",
+     "training_accuracy": 0.7142857142857143,
+     "auc": 0.24382716049382716
+    },
+    "param": {
+     "threshold": 0.0137601064430827,
+     "direction": -1,
+     "rule": "shallow if value <= threshold",
+     "training_accuracy": 0.7142857142857143,
+     "auc": 0.51440329218107
+    }
+   }
+  },
+  "back_within_40": {
+   "n_shallow": 25,
+   "majority_accuracy": 0.6031746031746031,
+   "rules": {
+    "wdd": {
+     "threshold": 0.7239553133566536,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.7301587301587301,
+     "auc": 0.7147368421052631
+    },
+    "diff": {
+     "threshold": 0.9960036277770996,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.6666666666666666,
+     "auc": 0.6905263157894737
+    },
+    "ratio": {
+     "threshold": 0.42477987706661224,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.6984126984126984,
+     "auc": 0.6989473684210527
+    },
+    "mag": {
+     "threshold": 0.9510115385055542,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.6666666666666666,
+     "auc": 0.6684210526315789
+    },
+    "rnd": {
+     "threshold": 1.3310707807540894,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.6031746031746031,
+     "auc": 0.5294736842105263
+    },
+    "sw": {
+     "threshold": 0.5166666666666666,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.6825396825396826,
+     "auc": 0.6726315789473685
+    },
+    "probe": {
+     "threshold": 0.9695518314838409,
+     "direction": 1,
+     "rule": "shallow if value > threshold",
+     "training_accuracy": 0.7301587301587301,
+     "auc": 0.7194736842105263
+    },
+    "rise": {
+     "threshold": 1.9465238451957703,
+     "direction": -1,
+     "rule": "shallow if value <= threshold",
+     "training_accuracy": 0.8253968253968254,
+     "auc": 0.16421052631578947
+    },
+    "riser": {
+     "threshold": 0.06806749105453491,
+     "direction": -1,
+     "rule": "shallow if value <= threshold",
+     "training_accuracy": 0.7301587301587301,
+     "auc": 0.24842105263157896
+    },
+    "param": {
+     "threshold": 0.0003205356942115957,
+     "direction": -1,
+     "rule": "shallow if value <= threshold",
+     "training_accuracy": 0.7619047619047619,
+     "auc": 0.3063157894736842
+    }
+   }
+  }
+ },
+ "fixed_at": "2026-10-08 22:08:39",
+ "predictions": {
+  "P1": "(0.55) At the fixed thresholds the writers' activation flags shallow conditions (recovery >= 0.8) on the three held-out domains at 160m (stackexchange, wiki, uspto; five known methods) at 0.8 accuracy or better, above the difference-selected set.",
+  "P2": "(0.5) On the two held-out methods (tv, scrub) the fixed writers' rule stays at 0.75 or better.",
+  "P3": "(0.4) On the held-out architecture (Qwen2.5-0.5B, pubmed and github) the fixed writers' rule stays at 0.75 or better; lower confidence, the threshold was tuned on Pythia.",
+  "P4": "(0.5) Incremental validity: adding the writers' activation to a logistic model of the forget rise, the output KL and the drift improves leave-one-domain-out accuracy on the new conditions by 0.05 or more.",
+  "P5": "(0.6) At the +2 target on the held-out domains at 160m, silencing the writers' inputs after unlearning delays relearning (median steps back) more than silencing the difference-selected set or a random set of the same size.",
+  "P6": "(0.6) The audit's reading is method-specific as before: RMU and tv leave the writers firing (0.9 or more) and relearn fastest; ascent, NPO, gd and scrub silence them in proportion to the depth."
+ },
+ "summary": "e617 pre-registration over 63 conditions (fixed 2026-10-08 22:08:39): recovery >= 0.8 rules: wdd value > threshold 0.782 (train acc 0.90, AUC 0.93), diff value > threshold -0.140 (train acc 0.87, AUC 0.94), ratio value > threshold 0.411 (train acc 0.86, AUC 0.90), mag value > threshold 0.980 (train acc 0.73, AUC 0.77), rnd value > threshold 0.996 (train acc 0.81, AUC 0.63), sw value > threshold 0.535 (train acc 0.68, AUC 0.68), probe value > threshold 0.155 (train acc 0.86, AUC 0.86), rise value <= threshold 4.112 (train acc 0.62, AUC 0.45), riser value <= threshold 0.616 (train acc 0.71, AUC 0.24), param value <= threshold 0.014 (train acc 0.71, AUC 0.51); predictions P1-P6 recorded",
+ "_exp": "e617a_prereg",
+ "_time": "2026-10-08 22:08:39"
+}

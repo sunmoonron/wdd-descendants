@@ -724,3 +724,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "A membership test certifies depth": on TOFU the membership AUC correlates with the recovery at -0.57; RMU makes the forget pairs look like non-members (0.47) and relearns at 1.00 in 10 steps (e613b).
 - "A page of the forgotten domain in the prompt undoes an override": in-context recovery after RMU 160m -0.02 / -0.12; 410m -0.04 / -0.22; 1B -0.13 / -0.37 (PubMed / Github), and the prefix deepens ascent's rise by up to +0.94 nats (e614).
 - "The silenced writers wake up in context": 0.69 without context, 0.64 with it, after ascent on PubMed at 160m (e614).
+
+## Session 116 kills (the pre-registered held-out test)
+- "The writers' rule transfers to new domains at the fixed cut": 0.62 on 86 held-out-domain conditions against a majority of 0.55 (e617b).
+- "The fixed rule holds on unseen methods": 0.51 on task-vector negation and SCRUB (e617b).
+- "The fixed rule holds on another architecture": 0.73 on Qwen2.5-0.5B (e617b).
+- "Silencing the writers is the intervention that delays relearning most": +2 steps against +2 for the difference-selected set (e617b).
+- "RMU and task-vector negation leave the writers firing while the gradient methods silence them": ga writers 0.98, recovery 0.88 in 40 steps; gd writers 0.96, recovery 0.74 in 95 steps; npo writers 0.96, recovery 0.85 in 35 steps; rmu writers 1.00, recovery 0.89, not back within 100 steps; scrub writers 0.99, recovery 0.94 in 30 steps; ssd writers 0.43, recovery 0.35, not back within 100 steps; tv writers 0.90, recovery 0.49, not back within 100 steps (e617b).

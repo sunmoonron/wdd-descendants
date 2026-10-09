@@ -5559,3 +5559,84 @@ SESSION 115 (2026-10-08, box 8; the user: is WDD a worthy unlearning auditor aga
   - Pre-registered for 160m: I1 (the forget-domain prefix recovers 0.4 of RMU's rise and 0.2 or less of ascent's) refuted; I2 (ascent's writers fire at 0.85 in context) refuted; I3 (the retain-domain prefix recovers less than half of what the forget-domain prefix recovers) refuted.
 
   What the session settled: as a rule the writers' activation transfers to unseen methods at 0.89 accuracy where its naive siblings reach 0.78 to 0.83 and the probe 0.84; on TOFU the forget set is not a domain in the dictionary's sense (2 of 256 words pass the forget threshold; the 32 most forget-leaning words average 0.62 forget share where a neutral word sits at 0.52) and the audit has nothing to read: the ranked writers fire at 0.99 to 1.00 after every method, so their 0.76 correlation with the recovery is the ordering of RMU's 1.00 against 0.99 and carries nothing; the auditors with signal there are the output KL (0.82) and the representation drift (0.76), which rank RMU (recovery 1.00 in 10 steps) above NPO (0.70) and ascent (0.57), while the membership AUC (-0.57) and the probe (-0.86) point the wrong way; and on the Pile no prompt undoes a weight change at 160m, 410m and 1B: a page of the forgotten domain (PubMed / Github) recovers at 160m -0.03 / -0.67 after ascent, 0.02 / 0.01 after NPO, -0.02 / -0.12 after RMU; at 410m -0.21 / -0.67 after ascent, -0.01 / -0.66 after NPO, -0.04 / -0.22 after RMU; at 1B -0.06 / -1.39 after ascent, 0.08 / -0.98 after NPO, -0.13 / -0.37 after RMU, deepening ascent's rise instead (up to +0.94 nats beyond the original's rise under the same page, 160m github), while an off-domain page recovers 0.03 to 0.35; on TOFU two forget pairs in the prompt recover 0.26 / 0.22 / 0.39 of the rise after ascent / NPO / RMU. The audit is a usable rule for the share of a forget rise a relearning recovers, conditional on the loss having risen, on forget sets that are domains; it is not a rule for how many steps the relearning takes, and it has nothing to read when the forget set shares its words with what is kept.
+
+SESSION 116 (2026-10-09, box 8; the user: maximise the GPU and the code so the next experiment runs quick and smooth, hitting everything at once. The pre-registered held-out test of the audit: 91 jobs through a memory-aware scheduler, two slots for 160m and 410m jobs and one for Qwen, scored by rules fixed before the first launch.)
+
+- e617a THE PRE-REGISTRATION (fixed 2026-10-08 22:08:39, before the first held-out job launched): on the 63 training-method conditions of e602 and e610, the accuracy-maximising cut of every candidate auditor for shallow = a 20-step relearning recovers 0.8 or more of the forget rise: WDD writers' activation above 0.782, difference-selected above -0.140, ratio-selected above 0.411, probe above 0.155, forget rise at or below 4.112. Six honest guesses: P1 (0.55) the writers' rule holds on the held-out domains at 0.8 or better, above the difference-selected set; P2 (0.5) on the held-out methods at 0.75 or better; P3 (0.4) on the held-out architecture at 0.75 or better; P4 (0.5) the writers add 0.05 or more of leave-one-domain-out accuracy to a model of the forget rise, the output KL and the drift; P5 (0.6) silencing the writers' inputs after unlearning delays relearning more than silencing the difference-selected or a random set of the same size; P6 (0.6) RMU and task-vector negation leave the writers firing at 0.9 or more and relearn fastest, the gradient methods silence them in proportion to the depth.
+
+- e617 THE HELD-OUT RUNS (255 conditions; the e602 bake-off extended with the held-out domains StackExchange, Wikipedia and USPTO plus FreeLaw and DM Mathematics, the held-out methods tv (task-vector negation: fine-tune on the forget windows, subtract the delta scaled until the forget loss crosses each target) and scrub (maximise the KL from the original on the forget windows under a KL leash on the retain windows), the held-out architecture Qwen2.5-0.5B at block 12, and 410m on StackExchange; each condition records the output KL to the original and the block-B drift, and at +2 the relearning after silencing each neuron set's inputs at matched budgets; the window splits start the eval windows after the last training document, so the old domains are re-split too):
+
+  Fixed-rule accuracy (AUC in brackets) for shallow = recovery 0.8 or more:
+
+  | held-out group | n | shallow | majority | WDD writers' activation | difference-selected | ratio-selected | magnitude-selected | random set | still-writing share | probe | forget rise | retain change | parameter change |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | held-out domains at 160m (StackExchange, Wikipedia, USPTO; the five known methods) | 86 | 39 | 0.55 | 0.62 (0.85) | 0.62 (0.90) | 0.71 (0.90) | 0.71 (0.76) | 0.57 (0.50) | 0.41 (0.45) | 0.63 (0.76) | 0.51 (0.63) | 0.62 (0.15) | 0.62 (0.54) |
+  | held-out methods (task-vector negation, SCRUB; Pythia) | 68 | 33 | 0.51 | 0.51 (0.91) | 0.49 (0.96) | 0.57 (0.85) | 0.41 (0.37) | 0.47 (0.17) | 0.63 (0.82) | 0.50 (0.82) | 0.46 (0.48) | 0.88 (0.03) | 0.49 (0.05) |
+  | held-out architecture (Qwen2.5-0.5B, PubMed and Github) | 30 | 20 | 0.67 | 0.73 (0.93) | 0.67 (0.80) | 0.77 (0.74) | 0.80 (0.88) | 0.53 (0.53) | 0.57 (0.58) | 0.67 (0.47) | 0.57 (0.48) | 0.83 (0.13) | 0.87 (0.14) |
+  | 410m on StackExchange (held-out domain and size) | 20 | 15 | 0.75 | 0.85 (1.00) | 0.85 (1.00) | 0.90 (1.00) | 0.45 (0.39) | 0.60 (0.00) | 0.75 (0.76) | 0.75 (0.41) | 0.70 (0.48) | 0.90 (0.00) | 0.90 (0.04) |
+  | the extra domains at 160m (FreeLaw, DM Mathematics) | 37 | 21 | 0.57 | 0.65 (0.85) | 0.62 (0.91) | 0.65 (0.98) | 0.81 (0.75) | 0.73 (0.52) | 0.62 (0.60) | 0.59 (0.86) | 0.46 (0.69) | 0.81 (0.19) | 0.62 (0.12) |
+  | the old domains at 160m rerun (seed 2, with KL and drift) | 30 | 15 | 0.50 | 1.00 (1.00) | 0.90 (1.00) | 0.97 (1.00) | 0.80 (0.77) | 0.40 (0.24) | 0.60 (0.78) | 0.83 (0.96) | 0.57 (0.37) | 0.63 (0.07) | 0.70 (0.41) |
+  | all new conditions | 255 | 134 | 0.53 | 0.67 (0.90) | 0.64 (0.92) | 0.72 (0.88) | 0.66 (0.64) | 0.55 (0.38) | 0.54 (0.64) | 0.63 (0.74) | 0.52 (0.55) | 0.75 (0.09) | 0.65 (0.30) |
+
+  Fixed-rule accuracy (AUC) for shallow = back within 40 steps:
+
+  | held-out group, shallow = back within 40 steps | n | shallow | majority | WDD writers' activation | difference-selected | ratio-selected | magnitude-selected | random set | still-writing share | probe | forget rise | retain change | parameter change |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | held-out domains at 160m (StackExchange, Wikipedia, USPTO; the five known methods) | 86 | 22 | 0.74 | 0.41 (0.62) | 0.63 (0.62) | 0.50 (0.59) | 0.57 (0.66) | 0.71 (0.50) | 0.65 (0.78) | 0.74 (0.62) | 0.80 (0.15) | 0.60 (0.33) | 0.84 (0.16) |
+  | held-out methods (task-vector negation, SCRUB; Pythia) | 68 | 27 | 0.60 | 0.41 (0.89) | 0.84 (0.88) | 0.49 (0.75) | 0.40 (0.38) | 0.60 (0.22) | 0.53 (0.84) | 0.66 (0.78) | 0.57 (0.34) | 0.85 (0.04) | 0.85 (0.07) |
+  | held-out architecture (Qwen2.5-0.5B, PubMed and Github) | 30 | 13 | 0.57 | 0.50 (0.77) | 0.50 (0.69) | 0.57 (0.70) | 0.57 (0.72) | 0.57 (0.60) | 0.53 (0.74) | 0.60 (0.67) | 0.70 (0.17) | 0.80 (0.11) | 0.57 (0.17) |
+  | 410m on StackExchange (held-out domain and size) | 20 | 6 | 0.70 | 0.40 (0.52) | 0.55 (0.60) | 0.50 (0.61) | 0.50 (0.30) | 0.60 (0.44) | 0.60 (0.70) | 0.70 (0.60) | 0.70 (0.26) | 0.70 (0.04) | 0.70 (0.26) |
+  | the extra domains at 160m (FreeLaw, DM Mathematics) | 37 | 17 | 0.54 | 0.54 (0.91) | 0.65 (0.70) | 0.54 (0.75) | 0.51 (0.53) | 0.54 (0.42) | 0.84 (0.96) | 0.78 (0.88) | 0.54 (0.40) | 0.76 (0.07) | 0.95 (0.02) |
+  | the old domains at 160m rerun (seed 2, with KL and drift) | 30 | 9 | 0.70 | 0.70 (0.66) | 0.60 (0.68) | 0.63 (0.69) | 0.70 (0.72) | 0.67 (0.45) | 0.73 (0.88) | 0.73 (0.78) | 0.83 (0.10) | 0.73 (0.19) | 0.87 (0.08) |
+  | all new conditions | 255 | 87 | 0.66 | 0.47 (0.73) | 0.65 (0.72) | 0.53 (0.66) | 0.53 (0.56) | 0.64 (0.46) | 0.64 (0.81) | 0.71 (0.72) | 0.70 (0.25) | 0.72 (0.16) | 0.81 (0.15) |
+
+  By method over all new conditions:
+
+  | method | n | writers' activation (median) | difference-selected | 20-step recovery | steps back |
+  | --- | --- | --- | --- | --- | --- |
+  | ga | 38 | 0.98 | 0.91 | 0.88 | 40 |
+  | gd | 39 | 0.96 | 0.86 | 0.74 | 95 |
+  | npo | 39 | 0.96 | 0.77 | 0.85 | 35 |
+  | rmu | 39 | 1.00 | 1.00 | 0.89 | over 100 |
+  | scrub | 39 | 0.99 | 1.07 | 0.94 | 30 |
+  | ssd | 32 | 0.43 | -0.28 | 0.35 | over 100 |
+  | tv | 29 | 0.90 | 0.50 | 0.49 | over 100 |
+
+- e617b THE SCORING. At the rules fixed before the runs, the writers' activation flags shallow unlearning on the held-out domains at 0.62 accuracy (AUC 0.85; majority 0.55; difference-selected 0.62, ratio-selected 0.71, probe 0.63), on the held-out methods at 0.51 (difference-selected 0.49, probe 0.50) and on the held-out architecture at 0.73 (difference-selected 0.67, probe 0.67). The strongest fixed rule per group: held-out domains at 160m ratio-selected (0.71); held-out methods retain change (0.88); held-out architecture parameter change (0.87); 410m on StackExchange ratio-selected (0.90); the extra domains at 160m magnitude-selected (0.81); the old domains at 160m rerun WDD writers' activation (1.00); all new conditions retain change (0.75).
+  - Incremental validity (leave-one-domain-out logistic models over the conditions with KL and drift):
+
+  | model of shallow (recovery 0.8 or more) | leave-one-domain-out accuracy | mean log-likelihood |
+  | --- | --- | --- |
+  | base rise kl drift | 0.55 | -0.703 |
+  | plus wdd | 0.84 | -0.396 |
+  | plus diff | 0.85 | -0.412 |
+  | plus probe | 0.65 | -0.614 |
+  | wdd alone | 0.81 | -0.432 |
+
+  - Adding the writers' activation to a model of the forget rise, the output KL and the drift moves the leave-one-domain-out accuracy from 0.55 to 0.84 (the difference-selected set 0.85, the probe 0.65, the writers alone 0.81; 255 conditions, 7 domains).
+  - The silencing test at +2 (median extra steps back within 0.1 nats, relearning after zeroing the inputs of each set, the same number of neurons each):
+
+  | group | n | extra steps back after silencing the inputs of: WDD writers | difference-selected | ratio-selected | random | WDD beats difference-selected | WDD beats random |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | heldout_domains_160m | 42 | +2 | +2 | +0 | +0 | 0.12 | 0.48 |
+  | all_160m | 72 | +2 | +0 | +0 | +0 | 0.17 | 0.49 |
+  | qwen05 | 10 | +5 | +0 | +0 | +0 | 0.40 | 0.60 |
+  | pythia410 | 7 | +0 | +0 | +0 | +0 | 0.00 | 0.29 |
+
+  - Silencing the writers' inputs after unlearning to +2 adds +2 steps to the relearning on the held-out domains against +2 for the difference-selected set and +0 for a random set of the same size (42 conditions; WDD beats the difference-selected set in 0.12 and random in 0.48). The pooled median hides a split by method:
+
+  | method (held-out domains at 160m, +2) | extra steps back, WDD writers | difference-selected | ratio-selected | random |
+  | --- | --- | --- | --- | --- |
+  | ga | +36 | +36 | +30 | +0 |
+  | gd | +20 | +8 | +5 | +0 |
+  | npo | +35 | +48 | +5 | +0 |
+  | rmu | +0 | +0 | +0 | +0 |
+  | scrub | +54 | +23 | +2 | +0 |
+  | ssd | +0 | +0 | +0 | +0 |
+  | tv | +0 | +0 | +0 | +0 |
+
+  - After the gradient methods silencing the writers' inputs adds +36 (ga), +20 (gd), +35 (npo), +54 (scrub) steps, the difference-selected set +36, +8, +48, +23, a random set +0, +0, +0, +0; after RMU, dampening and task-vector negation nothing moves.
+  - By method: ga writers 0.98, recovery 0.88 in 40 steps; gd writers 0.96, recovery 0.74 in 95 steps; npo writers 0.96, recovery 0.85 in 35 steps; rmu writers 1.00, recovery 0.89, not back within 100 steps; scrub writers 0.99, recovery 0.94 in 30 steps; ssd writers 0.43, recovery 0.35, not back within 100 steps; tv writers 0.90, recovery 0.49, not back within 100 steps. Ascent leaves the writers at 0.97 on the new domains (recovery 0.81) where it silenced them to 0.86 on the old ones.
+  - Pre-registered: P1 refuted (writers 0.62, difference-selected 0.62); P2 refuted (0.51); P3 refuted (0.73); P4 confirmed; P5 refuted; P6 refuted.
+
+  What the session settled: at the rules fixed before the runs, the writers' activation flags shallow unlearning on the held-out domains at 0.62 accuracy (AUC 0.85; majority 0.55; difference-selected 0.62, ratio-selected 0.71, probe 0.63), on the held-out methods at 0.51 (difference-selected 0.49, probe 0.50) and on the held-out architecture at 0.73 (difference-selected 0.67, probe 0.67); the ranking travels where the cut does not: AUC 0.85 on the held-out domains, 0.91 on the held-out methods, 0.93 on the architecture, against the difference-selected set's 0.90 / 0.96 / 0.80 and the probe's 0.76 / 0.82 / 0.47; adding the writers' activation to a model of the forget rise, the output KL and the drift moves the leave-one-domain-out accuracy from 0.55 to 0.84 (the difference-selected set 0.85, the probe 0.65, the writers alone 0.81; 255 conditions, 7 domains); silencing the writers' inputs after unlearning to +2 adds +2 steps to the relearning on the held-out domains against +2 for the difference-selected set and +0 for a random set of the same size (42 conditions; WDD beats the difference-selected set in 0.12 and random in 0.48); after the gradient methods silencing the writers' inputs adds +36 (ga), +20 (gd), +35 (npo), +54 (scrub) steps, the difference-selected set +36, +8, +48, +23, a random set +0, +0, +0, +0; after RMU, dampening and task-vector negation nothing moves; ascent leaves the writers at 0.97 on the new domains (recovery 0.81) where it silenced them to 0.86 on the old ones. The rule does not survive the held-out domains at the fixed cut, nor the architecture; the writers add predictive value beyond the loss, the KL and the drift; and silencing them delays relearning no more than silencing the naive sets.
