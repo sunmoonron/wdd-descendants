@@ -764,3 +764,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 
 ## Session 121 kills (the cross-lingual dial and programmable feature placement)
 - "The 1.5B gender row reaches another language": on Qwen2.5-1.5B-Instruct the gender row negated moves agreement from 0.94 to 0.94 (French), 0.98 to 0.97 (Spanish), 0.95 to 0.95 (German); zeroed 0.94, 0.98, 0.95, doubled 0.94, 0.98, 0.95; the largest change from a random row is 0.00, 0.00, 0.00; Pile loss -0.0002 (e625).
+
+## Session 122 kills (the pinning checks)
+- "The pinned row's dial is not damage": three designated rows (seeds 0, 1, 2) take the concept at vote shares 1.00, 1.00, 1.00 with dials -0.029, +0.027, -0.006, each at a Pile cost on negation of +0.0009, -0.0019, +0.0017 nats and a norm that goes from 0.81, 0.48, 0.57 to 0.88, 0.55, 0.64; the handle's dial goes from +0.343 to +0.170, +0.165, +0.246 (control fine-tune +0.403); eight random rows move the pronoun by at most 0.004, 0.004, 0.002 (e627).
+- "Any quiet row takes the concept": shares 1.00, 1.00, 1.00, dials -0.029, +0.027, -0.006 (e627).
+- "The placed concept survives the pin's release": after 1,200 further steps of the next-token loss alone the pinned row's share goes from 1.00 to 1.00 and its dial from -0.048 to -0.018 (the handle's +0.175 to +0.220; validation loss 3.414 to 3.465) (e627).
+- "Two designated rows take two concepts without cross-talk and compose": two rows pinned at once: the gender row 1542 takes share 1.00 and dial -0.004, the age row 291 share 1.00 and dial +0.035 (old over young on held-out nouns, 0.58 unedited); the cross-dials are -0.008 (gender row on age) and -0.009 (age row on pronouns); both negated give +0.008 and +0.017 (e627).
