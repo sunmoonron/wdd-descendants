@@ -793,3 +793,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "under the enriched stream the loss at the class positions recovers more than half of its rise on removal": recovery n/a (e631).
 - "where the designated row is recruited its own write's share of the state's projection on it rises from about 0.27 to 0.5 or more": median own share among recruited designated rows none recruited (e631).
 - "The recruit is forecast from the class side at AUC 0.93 and that is the result" (PAPER.md step 2): the row's own usage forecasts better in every run (0.923 against 0.886 here; 0.964 / 0.968 against 0.927 / 0.932 in e588); the class side is the explanation of the recruit, not the better forecaster (e629, e588).
+
+## Session 126 kills (literature review, no experiment)
+- "WDD is a new instrument": Head Pursuit (Basile et al., NeurIPS 2025) decomposes head writes by simultaneous orthogonal matching pursuit onto the model's own unembedding rows, with no training, and the WDD paper did not cite it (H616).
+- "The nearest-row law is a discovery": it is a prediction of small-initialisation theory and a theorem for autoencoder training; the program measured it in pretraining (H617).
+

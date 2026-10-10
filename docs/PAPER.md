@@ -56,6 +56,8 @@ On Pythia-160m the class-side score forecasts recruitment two checkpoints ahead 
 
 ## 8. Prior art (session 124)
 
+- Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.
+
 - The ordering the sequence rests on, positions first and direction later, with early forecastability of which features persist, is reported for sparse-autoencoder features across Pythia checkpoints by Stecher et al. (2026, arXiv 2605.18789; persistence predicted at AUC 0.80 / 0.83) and SAE-Track (Xu et al. 2024, arXiv 2412.17626). This paper's claim is the parameter-level one those studies cannot make: which row is recruited (the nearest, e587), forecast two checkpoints ahead at AUC 0.93 (e588), by a gradient the class's own positions supply (e589), with no performance event at recruitment (e591).
 - Replacement after removal was reported by Lo, Cohen and Barez (2024, arXiv 2401.01814); here it holds in the toy (e586) and was not reached at scale within the proxy's budget (e590).
 - The neuron is the literature's unit (Lakretz 2019; Geva 2022; Dai 2022; Gurnee 2023; Voita 2023); the row here is its write side, and the dictionary's control is a rotation that keeps everything but provenance.
