@@ -798,3 +798,13 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "WDD is a new instrument": Head Pursuit (Basile et al., NeurIPS 2025) decomposes head writes by simultaneous orthogonal matching pursuit onto the model's own unembedding rows, with no training, and the WDD paper did not cite it (H616).
 - "The nearest-row law is a discovery": it is a prediction of small-initialisation theory and a theorem for autoencoder training; the program measured it in pretraining (H617).
 
+## Session 127 kills (lottery or recruitment)
+- "at step 0 the eventual row's rank among all rows by cosine with its final class direction is at chance on all three seeds: median normalised rank between 0.35 and 0.65 and top-100 share 0.02 or less": step-0 normalised rank 0.15 to 0.21, random 0.51 (e632).
+- "at step 0 the eventual row's rank by activation selectivity for its class positions (the read side) is at chance by the same criteria": step-0 normalised rank by selectivity 0.33 to 0.38 (e632).
+- "the lineage, the row staying in the top tenth of rows by cosine with the class direction, begins at step 1000 or later for most eventual words, not in the log-spaced steps up to 512": in the top tenth and staying by step 512 for 0.43 / 0.52 / 0.44 (e632).
+- "the step-0 rank does not predict the recruitment checkpoint (Spearman between -0.15 and 0.15)": Spearman 0.07 / 0.19 / 0.02 (e632).
+- "two checkpoints before recruitment the recruit's read-weight norm exceeds the median of its ten nearest competitors' for 0.6 or more of the eventual words (Wang 2026: the balance of input and output weights decides which aligned neuron takes the feature)": 0.49 / 0.48 / 0.38 against chance 0.5 (e632).
+- "its write-column norm does not: the share is 0.55 or less (e572: a large row but not because it is large)": 0.65 / 0.53 / 0.52 (e632).
+- "given the class, the recruit is in the top ten of non-word rows by mean class ratio for 0.7 or more two checkpoints before, and in the top ten by usage, which is class-blind, for 0.3 or fewer": top ten by class ratio 0.84 / 0.78 / 0.77, by usage 0.31 / 0.22 / 0.26 (e632).
+- "with the row's own write subtracted from the class states, the step-0 normalised rank by cosine stays below 0.2: the ticket is real, not the row's own persistence": step-0 rank 0.32 / 0.32 / 0.33 (e632).
+- "cross-seed: for seed 0's classes carried to seeds 1 and 2 by position, the speaker row found there has a step-0 normalised rank below 0.2 in its own seed, where the circularity cannot arise": speaker's step-0 rank 0.12 / 0.23, random 0.52 (e632).

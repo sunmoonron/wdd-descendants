@@ -851,6 +851,16 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H615 A planted neuron that fires at the class and points near its direction drifts toward the class under training (post hoc, unregistered). → e631 → SUPPORTED: largest class ratio 0.74 to 0.84 in 5,000 steps against 0.74 to 0.75 held fixed, 0.69 to 0.68 without the firing, 0.65 to 0.64 without the direction; none crosses the floor.
 - H616 WDD's decomposition, the model's own rows as a fixed dictionary solved by orthogonal pursuit, is a new instrument. → session 126 literature review → NARROWED: Head Pursuit (NeurIPS 2025, arXiv 2510.21518) does it with simultaneous OMP over the unembedding rows on head writes, uncited by the WDD paper; the write-row dictionary with a rotated control and an extreme-value floor is a variant, not found in one place.
 - H617 The nearest-row recruitment law is a discovery. → session 126 literature review → NARROWED: predicted by small-initialisation theory (Maennel 2018; Boursier and Flammarion; Chen et al. 2023; Min et al. 2024) and proved for autoencoder training (Chen et al. 2025); the measurement in language-model pretraining on five runs, with the decoder route unable to name the row, is the program's.
+- H618 At initialisation the eventual row is no nearer its future class direction than any row (no lottery). → e632 → REFUTED: step-0 normalised rank 0.15 to 0.21, random 0.51.
+- H619 At initialisation the eventual row's read side is no more selective for its future class positions than any row. → e632 → REFUTED: step-0 normalised rank by selectivity 0.33 to 0.38.
+- H620 The lineage begins at step 1000 or later for most eventual words. → e632 → REFUTED: in the top tenth and staying by step 512 for 0.43 / 0.52 / 0.44.
+- H621 The step-0 rank does not set the recruitment time. → e632 → REFUTED: Spearman 0.07 / 0.19 / 0.02.
+- H622 Two checkpoints before recruitment the recruit's read norm beats its near competitors' (Wang 2026). → e632 → REFUTED: 0.49 / 0.48 / 0.38 against chance 0.5.
+- H623 Its write norm does not (e572). → e632 → REFUTED: 0.65 / 0.53 / 0.52.
+- H624 Given the class, the recruit is identified among the non-word rows by class ratio and not by usage. → e632 → REFUTED: top ten by class ratio 0.84 / 0.78 / 0.77, by usage 0.31 / 0.22 / 0.26.
+- H625 The ticket survives subtracting the row's own write from the class direction. → e632 → REFUTED: step-0 rank 0.32 / 0.32 / 0.33.
+- H626 The ticket survives the cross-seed control, classes defined by another seed's rows. → e632 → REFUTED: speaker's step-0 rank 0.12 / 0.23, random 0.52.
+- H627 Recruited rows rotate no more than other rows from step 0. → e632 → SUPPORTED: cosine with the step-0 direction at recruitment 0.20 against 0.19 for all rows.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

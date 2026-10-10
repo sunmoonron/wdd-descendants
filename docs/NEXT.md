@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e632. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e633. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -241,3 +241,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 125 (e629, e631):** the head-to-head and the planted row ran; see atlas area 55. Still open: (1) the same head-to-head on Pythia-410m's e582 cache, which has the original AUC 0.93; (2) the planted row with a longer budget or the real data order; (3) the recruit's own-write share followed through a natural recruitment, since the planted row's own share is the quantity the forecast cannot see.
 
 **Session 126 (no experiment):** the novelty review. To do outside this repository: add Head Pursuit (arXiv 2510.21518) and Arora et al. (arXiv 2601.22594) to the WDD paper's related work. Still worth running on the box: the per-class identification task (given a class, name its future row) with the highest-usage non-word row as the baseline, on the 160m caches and a rebuilt Pythia-410m cache.
+
+**Session 127 (e632):** the ticket at initialisation. Worth running next: (1) the same test on Pythia-410m and OLMo-1B, whose early checkpoints exist, to see whether the ticket's strength changes with scale; (2) the threshold form of Chen et al. 2025 (alignment above the square root of 2 log(M/n) at initialisation) read directly against the recruits; (3) a causal plant at step 0: give a quiet row the ticket (its random direction replaced by one nearest to a data direction) and train from scratch to see whether it is the row recruited.
