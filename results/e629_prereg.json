@@ -1,0 +1,47 @@
+{
+ "experiment": "e629",
+ "fixed_at": "2026-10-09 19:08:05",
+ "note": "honest guesses fixed before any run; probabilities are the author's credence that the prediction holds",
+ "predictions": {
+  "P1": {
+   "p": 0.6,
+   "text": "the class-side score forecasts recruitment two checkpoints ahead at AUC 0.85 or more on Pythia-160m seed 0, block 6"
+  },
+  "P2": {
+   "p": 0.6,
+   "text": "seeds 1 and 2 at block 6 and seed 0 at block 9 are all within 0.05 of seed 0 block 6 on that AUC"
+  },
+  "P3": {
+   "p": 0.6,
+   "text": "the feature route that names a parameter by decoder cosine forecasts at least 0.15 below the class-side score at two ahead"
+  },
+  "P4": {
+   "p": 0.5,
+   "text": "the class-side score with the autoencoder's active sets as the partition is within 0.03 of the k-means version: the partition's source does not matter, the projection on the row does"
+  },
+  "P5": {
+   "p": 0.5,
+   "text": "adding the three feature-side scores to S and the class-side score raises the leave-one-checkpoint-out AUC by less than 0.02"
+  },
+  "P6": {
+   "p": 0.6,
+   "text": "the rotated dictionary's class-side forecast of its own words is at least 0.05 below the native one (session 83: 0.81 against 0.91)"
+  },
+  "P7": {
+   "p": 0.5,
+   "text": "the static control, the step-1000 class-side score used at every later checkpoint, forecasts at AUC below 0.75"
+  },
+  "P8": {
+   "p": 0.5,
+   "text": "retrodiction two checkpoints back scores within 0.05 of the forward forecast: the score is proximity to the floor, not direction, and the trend adds under 0.02"
+  },
+  "P9": {
+   "p": 0.6,
+   "text": "two checkpoints before recruitment the recruit is in the top 10 of all rows by class ratio for 0.7 or more of recruits, and in the top 10 by the best feature's decoder for 0.3 or fewer"
+  },
+  "P10": {
+   "p": 0.5,
+   "text": "a logistic rule fitted on seed 0 transfers to seeds 1 and 2 within 0.03 AUC, and from block 6 to block 9 within 0.05"
+  }
+ }
+}

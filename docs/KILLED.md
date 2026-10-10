@@ -781,3 +781,15 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "The row is a unit the literature does not have" (session 121): the neuron is the literature's oldest unit and the down-projection column its write side (Lakretz 2019; Geva 2022; Gurnee 2023; Voita 2023).
 - "The developmental ordering is unprecedented": positions-first, direction-later and early forecastability are in Stecher et al. 2026 and SAE-Track 2024 for autoencoder features; only the parameter-level parts survive (H593).
 - "The audit is a new diagnostic": its substance is in Xu et al. 2025/2026, Song et al. 2026 and Goel et al. 2026; it is a replication with a transfer test (H596).
+
+## Session 125 kills (the forecast head-to-head and the planted row)
+- "the feature route that names a parameter by decoder cosine forecasts at least 0.15 below the class-side score at two ahead": decoder cosine 0.810 against 0.886 (e629).
+- "adding the three feature-side scores to S and the class-side score raises the leave-one-checkpoint-out AUC by less than 0.02": 0.869 to 0.910 (e629).
+- "two checkpoints before recruitment the recruit is in the top 10 of all rows by class ratio for 0.7 or more of recruits, and in the top 10 by the best feature's decoder for 0.3 or fewer": 0.79 / 0.33 (e629).
+- "enriched stream: it rises by 0.2 or more over the no-training readout": 0.50 to 0.40 (e631).
+- "plant_both: the designated row's mean share of its class over the floor rises to 0.5 or more and it is the substitute for 0.4 or more of the classes, while the designated rows in the unplanted enriched condition stay under 0.05 on both": over-floor share 0.00, substitute for 0.00; unplanted 0.00 / 0.00 (e631).
+- "plant_frozen's rise in the designated row's over-floor share is less than half of plant_both's: the row's own motion is needed, the states' motion alone does not carry it": the pre-registered measure, the share of the class over the floor, never moved (frozen 0.00 against trainable 0.00); see H615 for the drift in the largest ratio (e631).
+- "plant_dir rises less than plant_both, and plant_read rises less than plant_dir: the direction does most of the work and the read side adds to it": both 0.00, direction 0.00, read side 0.00 (e631).
+- "under the enriched stream the loss at the class positions recovers more than half of its rise on removal": recovery n/a (e631).
+- "where the designated row is recruited its own write's share of the state's projection on it rises from about 0.27 to 0.5 or more": median own share among recruited designated rows none recruited (e631).
+- "The recruit is forecast from the class side at AUC 0.93 and that is the result" (PAPER.md step 2): the row's own usage forecasts better in every run (0.923 against 0.886 here; 0.964 / 0.968 against 0.927 / 0.932 in e588); the class side is the explanation of the recruit, not the better forecaster (e629, e588).

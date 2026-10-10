@@ -1,0 +1,36 @@
+{
+ "experiment": "e631",
+ "version": 2,
+ "fixed_at": "2026-10-09 19:13:56",
+ "note": "v2: the design was revised after the smoke test showed that a full clone of the removed neuron is over the floor at once (the coalition builds the state along the direction without the row), so the plant is kept under the floor (largest ratio 0.7 over the class on the step-8000 states) and the question is whether training carries it over; v1 is kept as e631_prereg_v1.json; these guesses were fixed before any full run",
+ "predictions": {
+  "R1": {
+   "p": 0.5,
+   "text": "generic stream (10M tokens): the share of removed classes with a substitute speaker rises by less than 0.15 over the no-training readout (e590 saw no rise at 2.5M)"
+  },
+  "R2": {
+   "p": 0.5,
+   "text": "enriched stream: it rises by 0.2 or more over the no-training readout"
+  },
+  "R3": {
+   "p": 0.4,
+   "text": "plant_both: the designated row's mean share of its class over the floor rises to 0.5 or more and it is the substitute for 0.4 or more of the classes, while the designated rows in the unplanted enriched condition stay under 0.05 on both"
+  },
+  "R4": {
+   "p": 0.5,
+   "text": "plant_frozen's rise in the designated row's over-floor share is less than half of plant_both's: the row's own motion is needed, the states' motion alone does not carry it"
+  },
+  "R5": {
+   "p": 0.5,
+   "text": "plant_dir rises less than plant_both, and plant_read rises less than plant_dir: the direction does most of the work and the read side adds to it"
+  },
+  "R6": {
+   "p": 0.6,
+   "text": "under the enriched stream the loss at the class positions recovers more than half of its rise on removal"
+  },
+  "R7": {
+   "p": 0.5,
+   "text": "where the designated row is recruited its own write's share of the state's projection on it rises from about 0.27 to 0.5 or more"
+  }
+ }
+}

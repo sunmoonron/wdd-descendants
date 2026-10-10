@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e629. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e632. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -237,3 +237,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 123 (e628):** class-based data attribution. Still worth a run: (1) the same intervention on the real Pythia data order inside the 8000 to 10000 window, which is what Mechanistic Data Attribution did for heads and which needs the preshuffled Pile; (2) the model-independence test, the contexts chosen from one seed's classes removed from another seed's stream; (3) the recruitment law written up as the paper it is, sessions 58 to 110 with this session's handle as its last figure.
 
 **Session 124 (no experiment):** the literature review of the positive claims. What it makes worth running: (1) the recruitment forecast (e588) and Stecher et al.'s persistence predictor (arXiv 2605.18789) scored on the same Pythia-160m checkpoints, to see whether the row-level forecast adds to the feature-level one; (2) the removed-speaker test (e590) with a budget large enough to meet Lo, Cohen and Barez 2024, who saw relocation quickly under retraining on the concept's own data; (3) seeds for the early-checkpoint installation (e627), the one positive remainder of the placement line.
+
+**Session 125 (e629, e631):** the head-to-head and the planted row ran; see atlas area 55. Still open: (1) the same head-to-head on Pythia-410m's e582 cache, which has the original AUC 0.93; (2) the planted row with a longer budget or the real data order; (3) the recruit's own-write share followed through a natural recruitment, since the planted row's own share is the quantity the forecast cannot see.
