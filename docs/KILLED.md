@@ -808,3 +808,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "given the class, the recruit is in the top ten of non-word rows by mean class ratio for 0.7 or more two checkpoints before, and in the top ten by usage, which is class-blind, for 0.3 or fewer": top ten by class ratio 0.84 / 0.78 / 0.77, by usage 0.31 / 0.22 / 0.26 (e632).
 - "with the row's own write subtracted from the class states, the step-0 normalised rank by cosine stays below 0.2: the ticket is real, not the row's own persistence": step-0 rank 0.32 / 0.32 / 0.33 (e632).
 - "cross-seed: for seed 0's classes carried to seeds 1 and 2 by position, the speaker row found there has a step-0 normalised rank below 0.2 in its own seed, where the circularity cannot arise": speaker's step-0 rank 0.12 / 0.23, random 0.52 (e632).
+
+## Session 128 kills (the ticket at initialisation)
+- "Initialisation biases which row is recruited" (session 127): the observed initial alignment is what the row's persistence (0.13 at 16000) and the class direction's correlation with the final row produce, and for the own-write-subtracted direction persistence predicts a stronger ticket than was observed (H628).
+
