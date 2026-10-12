@@ -892,6 +892,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H656 Not general damage: the writers' increase in the general loss (on the templates and on neutral text) is within 0.1 nats of the activation-matched control's. → e637 → REFUTED.
 - H657 The activation-matched control leaves the ring's refit radius within 15 percent of baseline while the writers remove 30 percent or more, in those four cases. → e637 → REFUTED.
 - H658 Top-norm rows raise the general loss by more than the writers do: their task damage is general. → e637 → REFUTED.
+- H659 With quantile-matched low-attribution rows the writers' forward-task drop exceeds the control's by 0.15 or more in GPT-2 small months, SmolLM2-135M days and months, and OPT-125m months, and the control's general loss change is within 0.05 nats of the writers'. → e638 → REFUTED.
+- H660 Calendar-specific: removing the other calendar's writers lowers the forward task by less than half of what removing the own writers does, in those four cases. → e638 → REFUTED.
+- H661 The reverse task falls under the writers' removal by at least as much as the forward task, in those four cases. → e638 → REFUTED.
+- H662 The writers sit mostly outside block 0: fewer than half of them are in block 0, in all models. → e638 → REFUTED.
+- H663 Scale: in GPT-2 medium and large and OPT-1.3b the writers' forward-task drop is 0.15 or more with a general loss change of 0.1 nats or less. → e638 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

@@ -834,5 +834,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "not general damage: the writers' increase in the general loss (on the templates and on neutral text) is within 0.1 nats of the activation-matched control's." (e637).
 - "the activation-matched control leaves the ring's refit radius within 15 percent of baseline while the writers remove 30 percent or more, in those four cases." (e637).
 - "top-norm rows raise the general loss by more than the writers do: their task damage is general." (e637).
+- "with quantile-matched low-attribution rows the writers' forward-task drop exceeds the control's by 0.15 or more in GPT-2 small months, SmolLM2-135M days and months, and OPT-125m months, and the control's general loss change is within 0.05 nats of the writers'." (e638).
+- "calendar-specific: removing the other calendar's writers lowers the forward task by less than half of what removing the own writers does, in those four cases." (e638).
+- "the reverse task falls under the writers' removal by at least as much as the forward task, in those four cases." (e638).
+- "the writers sit mostly outside block 0: fewer than half of them are in block 0, in all models." (e638).
+- "scale: in GPT-2 medium and large and OPT-1.3b the writers' forward-task drop is 0.15 or more with a general loss change of 0.1 nats or less." (e638).
 - Session 129's reading that the embedding's ring is abandoned by block 2: it is carried and amplified in place; the share fell because the state grew (e634).
 - Session 129's reading that the blocks build the ring: in sequential models its plane is laid down by block-0 detectors (e636).
