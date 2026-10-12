@@ -1,0 +1,39 @@
+{
+ "experiment": "e634",
+ "fixed_at": "2026-10-12 12:03:14",
+ "note": "honest guesses fixed before any run; each test attacks an edge where an e633 finding ought to break if it is an artefact: selection circularity and small-k luck for phase coding, template overfitting, the family split, the share-versus-absolute confound for the abandoned embedding plane, and whether the population is causal",
+ "predictions": {
+  "E1": {
+   "p": 0.6,
+   "text": "phase coding survives an end-to-end label-shuffle null: in the four models that showed it, the observed top-20 cosine is above the 95th percentile of 100 shuffles"
+  },
+  "E2": {
+   "p": 0.6,
+   "text": "it is a population, not a handful: the alignment decreases smoothly with the number of rows taken (top 5 above top 20 above top 100 above top 500) and the top 500 is still above the shuffle null"
+  },
+  "E3": {
+   "p": 0.6,
+   "text": "it transfers across templates: rows selected on one half of the templates keep at least 70 percent of their in-sample alignment against the plane and angles fitted on the other half"
+  },
+  "E4": {
+   "p": 0.5,
+   "text": "the family split holds: Pythia-1.4b (parallel residual) lacks phase coding (below 0.1) while OPT-125m, OPT-1.3b, GPT-2 medium and SmolLM2-360M (sequential) show it above 0.15"
+  },
+  "E5": {
+   "p": 0.5,
+   "text": "the embedding's ring is outgrown rather than erased in Pythia-160m's weekdays (the absolute energy of the block-2 pattern projected on the embedding plane is at least 0.7 of the embedding pattern's own energy) and erased in Qwen2.5-0.5B's months (below 0.3)"
+  },
+  "E6": {
+   "p": 0.5,
+   "text": "the day-arithmetic task (Today is X. Tomorrow is) is solved at 0.7 or better among the seven day tokens by Qwen2.5-0.5B and OLMo-1B, and at 0.3 or worse by Pythia-160m and GPT-2 small"
+  },
+  "E7": {
+   "p": 0.5,
+   "text": "the population is causal: zeroing the write columns of the top-20 phase-coded rows per day (their union, at most 140 rows) halves the ring's radius at the best block and lowers day-arithmetic accuracy by 0.3 or more where the task is solved, while the same number of random rows changes neither by more than 0.05"
+  },
+  "E8": {
+   "p": 0.5,
+   "text": "OLMo-1B's four month rows are real: selected on one half of the templates they carry 0.4 or more of the month pattern on the other half, and their write directions put month tokens among the top 20 of the unembedding reading"
+  }
+ }
+}

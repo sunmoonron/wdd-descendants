@@ -1,0 +1,507 @@
+{
+ "model": "pythia160",
+ "NB": 12,
+ "D": 768,
+ "DFF": 3072,
+ "fam": "neox",
+ "days": {
+  "best_layer": 10,
+  "k": 7,
+  "n": 210,
+  "ring": {
+   "adjacency": 7,
+   "share": 0.6321169137954712,
+   "radius": 2.5972790718078613
+  },
+  "phase": {
+   "by_k": {
+    "5": 0.10514355308843586,
+    "20": -0.036258132483445275,
+    "100": -0.0048099727254640404,
+    "500": 0.010101568681993503
+   },
+   "random": -0.07706017772267972,
+   "shuffle_null_mean": -0.006403804447079641,
+   "shuffle_null_p95": 0.09984091162466878,
+   "shuffle_null_max": 0.1767814967625449,
+   "split_in_sample": -0.04592920925962957,
+   "split_transfer": -0.037840659171895996
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 0.9999998807907104,
+    "adjacency": 7
+   },
+   "1": {
+    "energy_ratio": 6.884246349334717,
+    "cos_with_embedding_pattern": 0.9855573177337646,
+    "adjacency": 7
+   },
+   "2": {
+    "energy_ratio": 5.888014793395996,
+    "cos_with_embedding_pattern": 0.9838921427726746,
+    "adjacency": 7
+   },
+   "3": {
+    "energy_ratio": 5.098176002502441,
+    "cos_with_embedding_pattern": 0.9725490212440491,
+    "adjacency": 7
+   },
+   "4": {
+    "energy_ratio": 4.236642837524414,
+    "cos_with_embedding_pattern": 0.9680441617965698,
+    "adjacency": 7
+   },
+   "5": {
+    "energy_ratio": 4.205869674682617,
+    "cos_with_embedding_pattern": 0.962070107460022,
+    "adjacency": 7
+   },
+   "6": {
+    "energy_ratio": 3.66259503364563,
+    "cos_with_embedding_pattern": 0.9478350281715393,
+    "adjacency": 7
+   },
+   "7": {
+    "energy_ratio": 3.793609857559204,
+    "cos_with_embedding_pattern": 0.9559277892112732,
+    "adjacency": 7
+   },
+   "8": {
+    "energy_ratio": 3.4309897422790527,
+    "cos_with_embedding_pattern": 0.9597894549369812,
+    "adjacency": 7
+   },
+   "9": {
+    "energy_ratio": 2.4177560806274414,
+    "cos_with_embedding_pattern": 0.9606049060821533,
+    "adjacency": 7
+   },
+   "10": {
+    "energy_ratio": 2.167275905609131,
+    "cos_with_embedding_pattern": 0.9578898549079895,
+    "adjacency": 7
+   },
+   "11": {
+    "energy_ratio": 1.8725026845932007,
+    "cos_with_embedding_pattern": 0.9281838536262512,
+    "adjacency": 7
+   },
+   "12": {
+    "energy_ratio": 3.4739391803741455,
+    "cos_with_embedding_pattern": 0.901164174079895,
+    "adjacency": 5
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 2.387437582015991,
+   "mlp_on_embedding_pattern": 1.2796618938446045,
+   "attention_and_rest_on_embedding_pattern": 0.10777568817138672
+  },
+  "task_baseline": {
+   "acc_among_classes": 0.32142857142857145,
+   "acc_top1": 0.21428571428571427,
+   "margin": -0.16357639857700892,
+   "n": 28
+  },
+  "population_size": 140,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 2.078188896179199,
+    "radius_refit": 2.5814759731292725,
+    "adjacency_refit": 7,
+    "adjacency_on_best_plane": 7,
+    "last_block_adjacency": 2,
+    "task": {
+     "acc_among_classes": 0.25,
+     "acc_top1": 0.17857142857142858,
+     "margin": -0.22041756766183035,
+     "n": 28
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 2.082082462310791,
+    "radius_refit": 2.577844429016113,
+    "adjacency_refit": 7.0,
+    "adjacency_on_best_plane": 7.0,
+    "last_block_adjacency": 2.6,
+    "task": {
+     "acc_among_classes": 0.36428571428571427,
+     "acc_top1": 0.25,
+     "margin": -0.18541172572544645,
+     "n": 28.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 176,
+   "share_of_those_on_B": 0.48093804717063904,
+   "top4_rows": [
+    28729,
+    30545,
+    24172,
+    27469
+   ],
+   "top4_attr_A": [
+    0.01219488587230444,
+    0.008829417638480663,
+    0.00809907540678978,
+    0.007923849858343601
+   ],
+   "top4_attr_B": [
+    0.009042100980877876,
+    0.021894751116633415,
+    0.010426895692944527,
+    0.008817651309072971
+   ],
+   "top4_readings": {
+    "28729": [
+     "amsbsy",
+     "usepackage",
+     "\u0430\u0431",
+     "\u03c4\u03b1\u03b9",
+     "upgreek",
+     "oddsidemargin",
+     "agma",
+     "\u0430\u0441\u0441",
+     "\u0438\u043b\u0438",
+     "\u03af\u03bd",
+     "ESH",
+     "\u0435\u0442\u0441\u044f",
+     "erk",
+     "\u0435\u0442\u0435",
+     "\u0435\u043b\u044c",
+     "indow",
+     "\u0454",
+     "\u043b\u044f",
+     "\ub85c",
+     "\u044e\u0442"
+    ],
+    "30545": [
+     "acking",
+     "icos",
+     "yon",
+     "ctic",
+     "visiae",
+     " settings",
+     "ules",
+     "ognition",
+     "ylum",
+     "omp",
+     "argo",
+     "ipal",
+     "ubation",
+     "aphyl",
+     "eva",
+     "real",
+     "dock",
+     "newcommand",
+     "elastic",
+     "harm"
+    ],
+    "24172": [
+     "crets",
+     "idenote",
+     "\u00e9rie",
+     "ftware",
+     "ALT",
+     "orted",
+     "aptic",
+     "quo",
+     "neider",
+     "ptic",
+     "ariat",
+     "cep",
+     "cession",
+     "orting",
+     "uttle",
+     "ifting",
+     "IFT",
+     "wartz",
+     " Leone",
+     "models"
+    ],
+    "27469": [
+     " newspaper",
+     " news",
+     " newspapers",
+     " News",
+     " reporter",
+     " NBC",
+     " headlines",
+     " television",
+     " coverage",
+     " reporters",
+     " Tribune",
+     " stories",
+     " BBC",
+     " newsp",
+     " magazine",
+     " correspondent",
+     " ABC",
+     " TV",
+     " Newsp",
+     " radio"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "28729": 0,
+    "30545": 0,
+    "24172": 0,
+    "27469": 0
+   }
+  }
+ },
+ "months": {
+  "best_layer": 1,
+  "k": 12,
+  "n": 360,
+  "ring": {
+   "adjacency": 12,
+   "share": 0.385335773229599,
+   "radius": 3.1325128078460693
+  },
+  "phase": {
+   "by_k": {
+    "5": -0.07346947985321584,
+    "20": 0.09257391269114895,
+    "100": 0.1745145764719722,
+    "500": 0.10692163699727623
+   },
+   "random": -0.06079659021149079,
+   "shuffle_null_mean": -0.044909643952564006,
+   "shuffle_null_p95": 0.05684705249648269,
+   "shuffle_null_max": 0.09527534452629649,
+   "split_in_sample": 0.0941621811542086,
+   "split_transfer": 0.090796831955287
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 1.0,
+    "adjacency": 12
+   },
+   "1": {
+    "energy_ratio": 5.889410972595215,
+    "cos_with_embedding_pattern": 0.9586684107780457,
+    "adjacency": 8
+   },
+   "2": {
+    "energy_ratio": 5.049715042114258,
+    "cos_with_embedding_pattern": 0.9366052746772766,
+    "adjacency": 7
+   },
+   "3": {
+    "energy_ratio": 4.45244026184082,
+    "cos_with_embedding_pattern": 0.9281518459320068,
+    "adjacency": 7
+   },
+   "4": {
+    "energy_ratio": 3.7037527561187744,
+    "cos_with_embedding_pattern": 0.9173664450645447,
+    "adjacency": 7
+   },
+   "5": {
+    "energy_ratio": 2.6757895946502686,
+    "cos_with_embedding_pattern": 0.9239673018455505,
+    "adjacency": 10
+   },
+   "6": {
+    "energy_ratio": 2.1022605895996094,
+    "cos_with_embedding_pattern": 0.8958446383476257,
+    "adjacency": 10
+   },
+   "7": {
+    "energy_ratio": 1.693718433380127,
+    "cos_with_embedding_pattern": 0.8378980159759521,
+    "adjacency": 7
+   },
+   "8": {
+    "energy_ratio": 1.144128441810608,
+    "cos_with_embedding_pattern": 0.7984763383865356,
+    "adjacency": 7
+   },
+   "9": {
+    "energy_ratio": 0.8671050071716309,
+    "cos_with_embedding_pattern": 0.7465295195579529,
+    "adjacency": 5
+   },
+   "10": {
+    "energy_ratio": 0.6009752750396729,
+    "cos_with_embedding_pattern": 0.7070401310920715,
+    "adjacency": 8
+   },
+   "11": {
+    "energy_ratio": 0.624434232711792,
+    "cos_with_embedding_pattern": 0.7239962220191956,
+    "adjacency": 4
+   },
+   "12": {
+    "energy_ratio": 1.8294134140014648,
+    "cos_with_embedding_pattern": 0.6951448321342468,
+    "adjacency": 6
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 2.1046993732452393,
+   "mlp_on_embedding_pattern": 1.0754562616348267,
+   "attention_and_rest_on_embedding_pattern": 0.029243111610412598
+  },
+  "task_baseline": {
+   "acc_among_classes": 0.4375,
+   "acc_top1": 0.20833333333333334,
+   "margin": -0.029642740885416668,
+   "n": 48
+  },
+  "population_size": 240,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 2.331904649734497,
+    "radius_refit": 2.983377456665039,
+    "adjacency_refit": 12,
+    "adjacency_on_best_plane": 12,
+    "last_block_adjacency": 4,
+    "task": {
+     "acc_among_classes": 0.20833333333333334,
+     "acc_top1": 0.0,
+     "margin": -0.27405039469401044,
+     "n": 48
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 2.282481813430786,
+    "radius_refit": 2.935688018798828,
+    "adjacency_refit": 12.0,
+    "adjacency_on_best_plane": 12.0,
+    "last_block_adjacency": 5.2,
+    "task": {
+     "acc_among_classes": 0.3,
+     "acc_top1": 0.07083333333333333,
+     "margin": -0.17048212687174477,
+     "n": 48.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 252,
+   "share_of_those_on_B": 0.5003573894500732,
+   "top4_rows": [
+    2456,
+    1118,
+    1599,
+    1682
+   ],
+   "top4_attr_A": [
+    0.013752210885286331,
+    0.009484766982495785,
+    0.006734977010637522,
+    0.006476940121501684
+   ],
+   "top4_attr_B": [
+    0.013752210885286331,
+    0.009484766982495785,
+    0.006734977010637522,
+    0.006476940121501684
+   ],
+   "top4_readings": {
+    "2456": [
+     "aur",
+     "ra",
+     "uck",
+     "thal",
+     "ruct",
+     "ert",
+     "uz",
+     "th",
+     "thood",
+     "rike",
+     "tha",
+     "ters",
+     "atta",
+     "olf",
+     "time",
+     "afa",
+     "lf",
+     "tera",
+     "athe",
+     "onda"
+    ],
+    "1118": [
+     " highest",
+     "County",
+     " County",
+     " homes",
+     " Official",
+     "ality",
+     "sembled",
+     " branches",
+     " medium",
+     " receive",
+     " strongest",
+     " fixtures",
+     " individually",
+     " Peninsula",
+     " mains",
+     " cabinets",
+     " packaged",
+     " houses",
+     " individual",
+     " Circuit"
+    ],
+    "1599": [
+     "gens",
+     "aming",
+     "amed",
+     "icorn",
+     "aan",
+     "rb",
+     "inea",
+     "CCA",
+     "ova",
+     "rove",
+     "bial",
+     "amy",
+     "as",
+     "anca",
+     "oric",
+     "anks",
+     "osus",
+     "untu",
+     "acia",
+     "gart"
+    ],
+    "1682": [
+     "documentclass",
+     " next",
+     "aves",
+     "emu",
+     "ulose",
+     "ath",
+     "eqno",
+     "\u5668",
+     " [_",
+     "ATH",
+     "attention",
+     "\u00eas",
+     " someday",
+     "medscimonit",
+     "\u4efb",
+     "breaker",
+     "ampions",
+     "rif",
+     "CIAL",
+     " hopefully"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "2456": 0,
+    "1118": 0,
+    "1599": 0,
+    "1682": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,163 @@
+{
+ "model": "olmo1b",
+ "NB": 16,
+ "D": 2048,
+ "DFF": 8192,
+ "fam": "llama",
+ "days": {
+  "best_layer": 9,
+  "k": 7,
+  "n50": 28,
+  "baseline": {
+   "task": {
+    "acc_among_classes": 0.9642857142857143,
+    "acc_top1": 0.75,
+    "margin": 1.7192489760262626,
+    "n": 28
+   },
+   "loss_templates": 3.658516474096494,
+   "loss_neutral": 3.308847761154175,
+   "radius": 0.8726485371589661
+  },
+  "ablations": {
+   "writers_50": {
+    "n_rows": 28,
+    "radius_refit": 0.8117412328720093,
+    "adjacency_refit": 7,
+    "task": {
+     "acc_among_classes": 0.8928571428571429,
+     "acc_top1": 0.75,
+     "margin": 1.7791414601462228,
+     "n": 28
+    },
+    "loss_templates": 3.675808591081162,
+    "loss_neutral": 3.308597683906555,
+    "mag_mean": 0.11722179502248764,
+    "attr_sum": 0.5003679394721985
+   },
+   "activation_matched": {
+    "n_rows": 28,
+    "radius_refit": 0.8981056213378906,
+    "adjacency_refit": 7,
+    "task": {
+     "acc_among_classes": 0.5714285714285714,
+     "acc_top1": 0.17857142857142858,
+     "margin": 0.018551111221313477,
+     "n": 28
+    },
+    "loss_templates": 5.092072809603731,
+    "loss_neutral": 4.212113070487976,
+    "mag_mean": 0.12467362731695175,
+    "attr_sum": -0.0038761571049690247
+   },
+   "topnorm": {
+    "n_rows": 28,
+    "radius_refit": 0.768074631690979,
+    "adjacency_refit": 7,
+    "task": {
+     "acc_among_classes": 0.14285714285714285,
+     "acc_top1": 0.0,
+     "margin": -1.235660148518426,
+     "n": 28
+    },
+    "loss_templates": 6.372642314026111,
+    "loss_neutral": 5.925790023803711,
+    "mag_mean": 0.11008723825216293,
+    "attr_sum": -0.0002451809705235064
+   },
+   "random": {
+    "n_rows": 28.0,
+    "radius_refit": 0.8728250503540039,
+    "adjacency_refit": 7.0,
+    "task": {
+     "acc_among_classes": 0.9642857142857142,
+     "acc_top1": 0.75,
+     "margin": 1.699583659853254,
+     "n": 28.0
+    },
+    "loss_templates": 3.657816751284291,
+    "loss_neutral": 3.309017639160156,
+    "mag_mean": 0.009714687429368495,
+    "attr_sum": -7.482581859221681e-05
+   }
+  }
+ },
+ "months": {
+  "best_layer": 11,
+  "k": 12,
+  "n50": 4,
+  "baseline": {
+   "task": {
+    "acc_among_classes": 1.0,
+    "acc_top1": 0.75,
+    "margin": 2.428796132405599,
+    "n": 48
+   },
+   "loss_templates": 3.784391275758467,
+   "loss_neutral": 3.308847761154175,
+   "radius": 1.0396783351898193
+  },
+  "ablations": {
+   "writers_50": {
+    "n_rows": 4,
+    "radius_refit": 0.7278475761413574,
+    "adjacency_refit": 10,
+    "task": {
+     "acc_among_classes": 1.0,
+     "acc_top1": 0.75,
+     "margin": 2.381774644056956,
+     "n": 48
+    },
+    "loss_templates": 3.784212588201918,
+    "loss_neutral": 3.308606195449829,
+    "mag_mean": 0.2025684416294098,
+    "attr_sum": 0.5016199350357056
+   },
+   "activation_matched": {
+    "n_rows": 4,
+    "radius_refit": 0.9610596299171448,
+    "adjacency_refit": 12,
+    "task": {
+     "acc_among_classes": 1.0,
+     "acc_top1": 0.75,
+     "margin": 1.9992335438728333,
+     "n": 48
+    },
+    "loss_templates": 4.63519259922223,
+    "loss_neutral": 3.760992646217346,
+    "mag_mean": 0.34509021043777466,
+    "attr_sum": -0.00029630676726810634
+   },
+   "topnorm": {
+    "n_rows": 4,
+    "radius_refit": 1.008387565612793,
+    "adjacency_refit": 12,
+    "task": {
+     "acc_among_classes": 0.4166666666666667,
+     "acc_top1": 0.2916666666666667,
+     "margin": -0.023451387882232666,
+     "n": 48
+    },
+    "loss_templates": 4.512496880274307,
+    "loss_neutral": 3.950223970413208,
+    "mag_mean": 0.11898938566446304,
+    "attr_sum": -4.07485495088622e-05
+   },
+   "random": {
+    "n_rows": 4.0,
+    "radius_refit": 1.0396226406097413,
+    "adjacency_refit": 12.0,
+    "task": {
+     "acc_among_classes": 1.0,
+     "acc_top1": 0.75,
+     "margin": 2.4277336676915486,
+     "n": 48.0
+    },
+    "loss_templates": 3.7843981982870467,
+    "loss_neutral": 3.30888430595398,
+    "mag_mean": 0.008509691804647446,
+    "attr_sum": -4.617509584932122e-05
+   }
+  }
+ }
+}

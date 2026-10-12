@@ -1,0 +1,507 @@
+{
+ "model": "gpt2",
+ "NB": 12,
+ "D": 768,
+ "DFF": 3072,
+ "fam": "gpt2",
+ "days": {
+  "best_layer": 10,
+  "k": 7,
+  "n": 210,
+  "ring": {
+   "adjacency": 7,
+   "share": 0.7020835876464844,
+   "radius": 22.952083587646484
+  },
+  "phase": {
+   "by_k": {
+    "5": 0.46338324436160505,
+    "20": 0.3643449494157415,
+    "100": 0.20437158091540675,
+    "500": 0.12713604840443996
+   },
+   "random": -0.1071775523679597,
+   "shuffle_null_mean": 0.018208612772915557,
+   "shuffle_null_p95": 0.1265631103469997,
+   "shuffle_null_max": 0.17390526934736814,
+   "split_in_sample": 0.3370021639370115,
+   "split_transfer": 0.33198981358287344
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 1.0,
+    "adjacency": 7
+   },
+   "1": {
+    "energy_ratio": 4.405478477478027,
+    "cos_with_embedding_pattern": 0.9729686379432678,
+    "adjacency": 7
+   },
+   "2": {
+    "energy_ratio": 3.613389492034912,
+    "cos_with_embedding_pattern": 0.924292802810669,
+    "adjacency": 7
+   },
+   "3": {
+    "energy_ratio": 3.3239500522613525,
+    "cos_with_embedding_pattern": 0.9149704575538635,
+    "adjacency": 7
+   },
+   "4": {
+    "energy_ratio": 3.1064255237579346,
+    "cos_with_embedding_pattern": 0.8980340361595154,
+    "adjacency": 7
+   },
+   "5": {
+    "energy_ratio": 2.75566029548645,
+    "cos_with_embedding_pattern": 0.8681607246398926,
+    "adjacency": 7
+   },
+   "6": {
+    "energy_ratio": 2.6232657432556152,
+    "cos_with_embedding_pattern": 0.8454859852790833,
+    "adjacency": 7
+   },
+   "7": {
+    "energy_ratio": 2.77597975730896,
+    "cos_with_embedding_pattern": 0.7883400321006775,
+    "adjacency": 7
+   },
+   "8": {
+    "energy_ratio": 2.483952760696411,
+    "cos_with_embedding_pattern": 0.6383061408996582,
+    "adjacency": 5
+   },
+   "9": {
+    "energy_ratio": 3.2543773651123047,
+    "cos_with_embedding_pattern": 0.6786400079727173,
+    "adjacency": 5
+   },
+   "10": {
+    "energy_ratio": 4.761972904205322,
+    "cos_with_embedding_pattern": 0.7568598389625549,
+    "adjacency": 7
+   },
+   "11": {
+    "energy_ratio": 5.171264171600342,
+    "cos_with_embedding_pattern": 0.6620678305625916,
+    "adjacency": 4
+   },
+   "12": {
+    "energy_ratio": 0.04127146676182747,
+    "cos_with_embedding_pattern": 0.6094909906387329,
+    "adjacency": 3
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 1.756980538368225,
+   "mlp_on_embedding_pattern": 0.5634930729866028,
+   "attention_and_rest_on_embedding_pattern": 0.19348746538162231
+  },
+  "task_baseline": {
+   "acc_among_classes": 0.7857142857142857,
+   "acc_top1": 0.7142857142857143,
+   "margin": 0.336756842476981,
+   "n": 28
+  },
+  "population_size": 140,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 15.828237533569336,
+    "radius_refit": 20.523056030273438,
+    "adjacency_refit": 7,
+    "adjacency_on_best_plane": 7,
+    "last_block_adjacency": 7,
+    "task": {
+     "acc_among_classes": 0.7857142857142857,
+     "acc_top1": 0.7142857142857143,
+     "margin": 0.2606405530657087,
+     "n": 28
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 17.874566650390626,
+    "radius_refit": 22.964395141601564,
+    "adjacency_refit": 7.0,
+    "adjacency_on_best_plane": 7.0,
+    "last_block_adjacency": 7.0,
+    "task": {
+     "acc_among_classes": 0.7785714285714286,
+     "acc_top1": 0.7071428571428571,
+     "margin": 0.36114665440150673,
+     "n": 28.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 154,
+   "share_of_those_on_B": 0.4926203489303589,
+   "top4_rows": [
+    924,
+    920,
+    2664,
+    1662
+   ],
+   "top4_attr_A": [
+    0.013804658316075802,
+    0.010545034892857075,
+    0.008570010773837566,
+    0.008360928855836391
+   ],
+   "top4_attr_B": [
+    0.013923081569373608,
+    0.0106430072337389,
+    0.008523778058588505,
+    0.008378085680305958
+   ],
+   "top4_readings": {
+    "924": [
+     "rix",
+     "rive",
+     "rodu",
+     "ework",
+     "ool",
+     "@@@@@@@@",
+     "eenth",
+     "thia",
+     "eret",
+     "ought",
+     "oubted",
+     "awn",
+     "URN",
+     "oute",
+     "rine",
+     "rea",
+     "rac",
+     "race",
+     "obe",
+     "mare"
+    ],
+    "920": [
+     "lich",
+     "keye",
+     " Geh",
+     "arov",
+     "IRC",
+     "Stretch",
+     "orter",
+     "wind",
+     "natureconservancy",
+     "ansky",
+     "isphere",
+     "heet",
+     "OTT",
+     "ructure",
+     "UTC",
+     "orth",
+     "ipedia",
+     "irts",
+     "kel",
+     "inka"
+    ],
+    "2664": [
+     "ed",
+     "edIn",
+     "ing",
+     "esse",
+     "trak",
+     " Hermes",
+     "heit",
+     "asma",
+     "er",
+     "krit",
+     "edly",
+     "ingen",
+     "andra",
+     "anders",
+     "onite",
+     " Whedon",
+     "ophone",
+     "verning",
+     "eros",
+     "ais"
+    ],
+    "1662": [
+     ">>>>>>>>",
+     " Supplement",
+     "EAR",
+     "DIV",
+     "pace",
+     "entanyl",
+     "CCC",
+     "APH",
+     "%%%%",
+     "OUR",
+     "gram",
+     "cape",
+     "Instruct",
+     "cap",
+     "AMES",
+     ">>>>",
+     "VG",
+     "URL",
+     "xt",
+     "amount"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "924": 0,
+    "920": 0,
+    "2664": 0,
+    "1662": 0
+   }
+  }
+ },
+ "months": {
+  "best_layer": 10,
+  "k": 12,
+  "n": 360,
+  "ring": {
+   "adjacency": 12,
+   "share": 0.4464240074157715,
+   "radius": 18.8380126953125
+  },
+  "phase": {
+   "by_k": {
+    "5": 0.5374459084220986,
+    "20": 0.37283642227281305,
+    "100": 0.21917970478852256,
+    "500": 0.0972627455171019
+   },
+   "random": 0.08020804081994963,
+   "shuffle_null_mean": 0.038231643202855284,
+   "shuffle_null_p95": 0.12506292745953043,
+   "shuffle_null_max": 0.14510819680519477,
+   "split_in_sample": 0.34648233919679977,
+   "split_transfer": 0.3440675189995159
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 1.0000001192092896,
+    "adjacency": 12
+   },
+   "1": {
+    "energy_ratio": 4.605830192565918,
+    "cos_with_embedding_pattern": 0.9392443299293518,
+    "adjacency": 10
+   },
+   "2": {
+    "energy_ratio": 3.9152605533599854,
+    "cos_with_embedding_pattern": 0.9164506196975708,
+    "adjacency": 8
+   },
+   "3": {
+    "energy_ratio": 3.1899588108062744,
+    "cos_with_embedding_pattern": 0.8832347393035889,
+    "adjacency": 6
+   },
+   "4": {
+    "energy_ratio": 3.0057260990142822,
+    "cos_with_embedding_pattern": 0.8760906457901001,
+    "adjacency": 7
+   },
+   "5": {
+    "energy_ratio": 2.6006388664245605,
+    "cos_with_embedding_pattern": 0.8617992401123047,
+    "adjacency": 7
+   },
+   "6": {
+    "energy_ratio": 2.318706750869751,
+    "cos_with_embedding_pattern": 0.8393490314483643,
+    "adjacency": 6
+   },
+   "7": {
+    "energy_ratio": 2.4408226013183594,
+    "cos_with_embedding_pattern": 0.8883669972419739,
+    "adjacency": 5
+   },
+   "8": {
+    "energy_ratio": 2.653496503829956,
+    "cos_with_embedding_pattern": 0.8934122920036316,
+    "adjacency": 5
+   },
+   "9": {
+    "energy_ratio": 2.6379926204681396,
+    "cos_with_embedding_pattern": 0.8738983273506165,
+    "adjacency": 4
+   },
+   "10": {
+    "energy_ratio": 3.398846387863159,
+    "cos_with_embedding_pattern": 0.9087623953819275,
+    "adjacency": 5
+   },
+   "11": {
+    "energy_ratio": 2.4808907508850098,
+    "cos_with_embedding_pattern": 0.7930011749267578,
+    "adjacency": 5
+   },
+   "12": {
+    "energy_ratio": 0.016295509412884712,
+    "cos_with_embedding_pattern": 0.7816197872161865,
+    "adjacency": 4
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 1.8133823871612549,
+   "mlp_on_embedding_pattern": 0.6388900279998779,
+   "attention_and_rest_on_embedding_pattern": 0.17449235916137695
+  },
+  "task_baseline": {
+   "acc_among_classes": 0.7083333333333334,
+   "acc_top1": 0.6666666666666666,
+   "margin": 0.5424545605977377,
+   "n": 48
+  },
+  "population_size": 240,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 11.752666473388672,
+    "radius_refit": 14.969314575195312,
+    "adjacency_refit": 12,
+    "adjacency_on_best_plane": 12,
+    "last_block_adjacency": 12,
+    "task": {
+     "acc_among_classes": 0.6458333333333334,
+     "acc_top1": 0.5833333333333334,
+     "margin": 0.3616046905517578,
+     "n": 48
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 14.711576461791992,
+    "radius_refit": 18.514223861694337,
+    "adjacency_refit": 12.0,
+    "adjacency_on_best_plane": 12.0,
+    "last_block_adjacency": 12.0,
+    "task": {
+     "acc_among_classes": 0.65,
+     "acc_top1": 0.6083333333333333,
+     "margin": 0.5074266115824381,
+     "n": 48.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 183,
+   "share_of_those_on_B": 0.50191730260849,
+   "top4_rows": [
+    837,
+    20691,
+    1001,
+    28488
+   ],
+   "top4_attr_A": [
+    0.010383733548223972,
+    0.009265697561204433,
+    0.00851411558687687,
+    0.008014325983822346
+   ],
+   "top4_attr_B": [
+    0.010887568816542625,
+    0.009184970520436764,
+    0.00879210326820612,
+    0.006972265895456076
+   ],
+   "top4_readings": {
+    "837": [
+     "heric",
+     "itled",
+     "airs",
+     "nav",
+     "odynam",
+     "sight",
+     "isphere",
+     "ags",
+     "rift",
+     "imble",
+     "ansky",
+     "laus",
+     "esta",
+     "umper",
+     "isite",
+     "aleb",
+     "odder",
+     "asus",
+     "irt",
+     "atal"
+    ],
+    "20691": [
+     "acci",
+     "pter",
+     "onds",
+     " Idle",
+     "ummies",
+     " Sour",
+     " miscar",
+     "ulin",
+     "ummer",
+     "Wallet",
+     "Tokens",
+     "rower",
+     "angers",
+     "ago",
+     "iments",
+     "oder",
+     "arching",
+     " Trou",
+     " Arn",
+     "orks"
+    ],
+    "1001": [
+     "\u3066",
+     "hens",
+     "\u30fc\u30af",
+     "feed",
+     "wav",
+     "gets",
+     "vert",
+     "\u2026]",
+     "\ufffd",
+     "verted",
+     "obic",
+     "Contents",
+     "rooms",
+     "rafted",
+     "estone",
+     "lean",
+     "omal",
+     "76561",
+     "\u9ed2",
+     "hetto"
+    ],
+    "28488": [
+     " [*",
+     " accomp",
+     " oun",
+     " compr",
+     " laun",
+     " surpr",
+     " sugg",
+     " tyr",
+     " dilig",
+     " thous",
+     " rul",
+     " Came",
+     "=#",
+     "\ufffd",
+     "\ufffd\ufffd",
+     " myster",
+     " distingu",
+     " encount",
+     "\ufffd",
+     " TM"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "837": 0,
+    "20691": 0,
+    "1001": 0,
+    "28488": 0
+   }
+  }
+ }
+}

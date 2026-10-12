@@ -1,0 +1,23 @@
+{
+ "experiment": "e637",
+ "fixed_at": "2026-10-12 13:37:57",
+ "note": "honest guesses fixed before any run; e635 showed the task falls with the writers dose in Qwen, GPT-2 and SmolLM while random rows do nothing, but top-norm rows also hurt the task, so general damage must be separated from the ring",
+ "predictions": {
+  "G1": {
+   "p": 0.5,
+   "text": "specificity: in Qwen2.5-0.5B months, GPT-2 small days and months, and SmolLM2-135M days, removing the writers for half lowers task accuracy by at least 0.15 more than removing the same number of rows matched on write magnitude at the same positions but with below-median ring attribution"
+  },
+  "G2": {
+   "p": 0.6,
+   "text": "not general damage: the writers' increase in the general loss (on the templates and on neutral text) is within 0.1 nats of the activation-matched control's"
+  },
+  "G3": {
+   "p": 0.5,
+   "text": "the activation-matched control leaves the ring's refit radius within 15 percent of baseline while the writers remove 30 percent or more, in those four cases"
+  },
+  "G4": {
+   "p": 0.6,
+   "text": "top-norm rows raise the general loss by more than the writers do: their task damage is general"
+  }
+ }
+}

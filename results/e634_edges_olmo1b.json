@@ -1,0 +1,547 @@
+{
+ "model": "olmo1b",
+ "NB": 16,
+ "D": 2048,
+ "DFF": 8192,
+ "fam": "llama",
+ "days": {
+  "best_layer": 9,
+  "k": 7,
+  "n": 210,
+  "ring": {
+   "adjacency": 7,
+   "share": 0.6676172018051147,
+   "radius": 0.8726485371589661
+  },
+  "phase": {
+   "by_k": {
+    "5": 0.29840010402387973,
+    "20": 0.174502229646121,
+    "100": 0.07184699326943791,
+    "500": 0.014200569269383305
+   },
+   "random": -0.006785956876618522,
+   "shuffle_null_mean": 0.013364361660881768,
+   "shuffle_null_p95": 0.11123492970423077,
+   "shuffle_null_max": 0.16473683588558724,
+   "split_in_sample": 0.15086614959168393,
+   "split_transfer": 0.1805582415506157
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 0.9999999403953552,
+    "adjacency": 7
+   },
+   "1": {
+    "energy_ratio": 6.556656837463379,
+    "cos_with_embedding_pattern": 0.989437997341156,
+    "adjacency": 7
+   },
+   "2": {
+    "energy_ratio": 6.225494384765625,
+    "cos_with_embedding_pattern": 0.9887433648109436,
+    "adjacency": 7
+   },
+   "3": {
+    "energy_ratio": 6.756607532501221,
+    "cos_with_embedding_pattern": 0.9873581528663635,
+    "adjacency": 7
+   },
+   "4": {
+    "energy_ratio": 4.633686542510986,
+    "cos_with_embedding_pattern": 0.9863344430923462,
+    "adjacency": 7
+   },
+   "5": {
+    "energy_ratio": 3.990835189819336,
+    "cos_with_embedding_pattern": 0.9844083786010742,
+    "adjacency": 7
+   },
+   "6": {
+    "energy_ratio": 3.5260941982269287,
+    "cos_with_embedding_pattern": 0.9823404550552368,
+    "adjacency": 7
+   },
+   "7": {
+    "energy_ratio": 3.195786476135254,
+    "cos_with_embedding_pattern": 0.9839816093444824,
+    "adjacency": 7
+   },
+   "8": {
+    "energy_ratio": 3.062640905380249,
+    "cos_with_embedding_pattern": 0.9856173396110535,
+    "adjacency": 7
+   },
+   "9": {
+    "energy_ratio": 3.150402307510376,
+    "cos_with_embedding_pattern": 0.9841976165771484,
+    "adjacency": 7
+   },
+   "10": {
+    "energy_ratio": 3.041088581085205,
+    "cos_with_embedding_pattern": 0.9851707220077515,
+    "adjacency": 7
+   },
+   "11": {
+    "energy_ratio": 3.1122663021087646,
+    "cos_with_embedding_pattern": 0.9834464192390442,
+    "adjacency": 7
+   },
+   "12": {
+    "energy_ratio": 4.6075005531311035,
+    "cos_with_embedding_pattern": 0.9787117838859558,
+    "adjacency": 7
+   },
+   "13": {
+    "energy_ratio": 5.751950740814209,
+    "cos_with_embedding_pattern": 0.9799675345420837,
+    "adjacency": 7
+   },
+   "14": {
+    "energy_ratio": 5.7558488845825195,
+    "cos_with_embedding_pattern": 0.9786280393600464,
+    "adjacency": 7
+   },
+   "15": {
+    "energy_ratio": 4.004069805145264,
+    "cos_with_embedding_pattern": 0.9773755669593811,
+    "adjacency": 7
+   },
+   "16": {
+    "energy_ratio": 67.72988891601562,
+    "cos_with_embedding_pattern": 0.9756583571434021,
+    "adjacency": 7
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 2.467007875442505,
+   "mlp_on_embedding_pattern": -0.016545359045267105,
+   "attention_and_rest_on_embedding_pattern": 1.483553234487772
+  },
+  "task_baseline": {
+   "acc_among_classes": 0.9642857142857143,
+   "acc_top1": 0.75,
+   "margin": 1.7192489760262626,
+   "n": 28
+  },
+  "population_size": 140,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 0.5640972256660461,
+    "radius_refit": 0.7505305409431458,
+    "adjacency_refit": 7,
+    "adjacency_on_best_plane": 7,
+    "last_block_adjacency": 7,
+    "task": {
+     "acc_among_classes": 0.9642857142857143,
+     "acc_top1": 0.75,
+     "margin": 1.658219507762364,
+     "n": 28
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 0.6802640795707703,
+    "radius_refit": 0.8707968473434449,
+    "adjacency_refit": 7.0,
+    "adjacency_on_best_plane": 7.0,
+    "last_block_adjacency": 7.0,
+    "task": {
+     "acc_among_classes": 0.9714285714285715,
+     "acc_top1": 0.75,
+     "margin": 1.7307653972080779,
+     "n": 28.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 29,
+   "share_of_those_on_B": 0.5043296217918396,
+   "top4_rows": [
+    74,
+    71128,
+    4283,
+    55127
+   ],
+   "top4_attr_A": [
+    0.11188826709985733,
+    0.0653810203075409,
+    0.0431927889585495,
+    0.03121890127658844
+   ],
+   "top4_attr_B": [
+    0.12121538072824478,
+    0.06651247292757034,
+    0.045946016907691956,
+    0.025222603231668472
+   ],
+   "top4_readings": {
+    "74": [
+     " commercial",
+     "night",
+     " trade",
+     " night",
+     " direction",
+     " finance",
+     " evening",
+     "ay",
+     " economically",
+     " Ro",
+     " real",
+     " employment",
+     "\u00fc",
+     " afternoon",
+     " fur",
+     " Chan",
+     " regulated",
+     " residential",
+     " directed",
+     " characterized"
+    ],
+    "71128": [
+     "day",
+     "alt",
+     " mornings",
+     "ors",
+     " mon",
+     " afternoon",
+     " School",
+     " Oxford",
+     " rub",
+     " atomic",
+     "days",
+     " human",
+     " tr",
+     " finale",
+     " al",
+     " morn",
+     " ha",
+     " aur",
+     " sol",
+     " fore"
+    ],
+    "4283": [
+     "ies",
+     " known",
+     " shot",
+     "ene",
+     " spot",
+     " recognized",
+     " Sin",
+     "aw",
+     " powerful",
+     "ade",
+     " DE",
+     " effectively",
+     " ol",
+     " now",
+     " worn",
+     "ining",
+     " eye",
+     " eyed",
+     " Ce",
+     "-"
+    ],
+    "55127": [
+     " Saturday",
+     " event",
+     "ent",
+     " sport",
+     " against",
+     " scene",
+     " Event",
+     " Sunday",
+     " muddy",
+     "ay",
+     " sporting",
+     " outdoors",
+     " tomorrow",
+     " beside",
+     " jog",
+     " weather",
+     " dancing",
+     " rain",
+     "side",
+     " events"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "74": 0,
+    "71128": 0,
+    "4283": 0,
+    "55127": 2
+   }
+  }
+ },
+ "months": {
+  "best_layer": 11,
+  "k": 12,
+  "n": 360,
+  "ring": {
+   "adjacency": 12,
+   "share": 0.5375041961669922,
+   "radius": 1.0396783351898193
+  },
+  "phase": {
+   "by_k": {
+    "5": 0.5927495123240388,
+    "20": 0.23081535067596337,
+    "100": 0.09779697369967634,
+    "500": 0.024431625516039765
+   },
+   "random": 0.0028060763143002987,
+   "shuffle_null_mean": 0.0012556806183101838,
+   "shuffle_null_p95": 0.08788248592156607,
+   "shuffle_null_max": 0.13496032962279372,
+   "split_in_sample": 0.23507080971895453,
+   "split_transfer": 0.23481236520041013
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 1.0,
+    "adjacency": 8
+   },
+   "1": {
+    "energy_ratio": 6.421391487121582,
+    "cos_with_embedding_pattern": 0.9886677265167236,
+    "adjacency": 10
+   },
+   "2": {
+    "energy_ratio": 5.602657318115234,
+    "cos_with_embedding_pattern": 0.9830090403556824,
+    "adjacency": 10
+   },
+   "3": {
+    "energy_ratio": 6.258286476135254,
+    "cos_with_embedding_pattern": 0.9675018787384033,
+    "adjacency": 10
+   },
+   "4": {
+    "energy_ratio": 4.365477561950684,
+    "cos_with_embedding_pattern": 0.9668940305709839,
+    "adjacency": 10
+   },
+   "5": {
+    "energy_ratio": 3.495157480239868,
+    "cos_with_embedding_pattern": 0.9672187566757202,
+    "adjacency": 10
+   },
+   "6": {
+    "energy_ratio": 2.910810947418213,
+    "cos_with_embedding_pattern": 0.9671590924263,
+    "adjacency": 10
+   },
+   "7": {
+    "energy_ratio": 2.9130802154541016,
+    "cos_with_embedding_pattern": 0.9637184739112854,
+    "adjacency": 10
+   },
+   "8": {
+    "energy_ratio": 2.8810412883758545,
+    "cos_with_embedding_pattern": 0.9604009985923767,
+    "adjacency": 10
+   },
+   "9": {
+    "energy_ratio": 3.600132703781128,
+    "cos_with_embedding_pattern": 0.945176899433136,
+    "adjacency": 10
+   },
+   "10": {
+    "energy_ratio": 3.5138039588928223,
+    "cos_with_embedding_pattern": 0.9479440450668335,
+    "adjacency": 12
+   },
+   "11": {
+    "energy_ratio": 4.296535491943359,
+    "cos_with_embedding_pattern": 0.9376600980758667,
+    "adjacency": 12
+   },
+   "12": {
+    "energy_ratio": 6.0856828689575195,
+    "cos_with_embedding_pattern": 0.9607184529304504,
+    "adjacency": 12
+   },
+   "13": {
+    "energy_ratio": 7.317884922027588,
+    "cos_with_embedding_pattern": 0.9574836492538452,
+    "adjacency": 10
+   },
+   "14": {
+    "energy_ratio": 6.103246688842773,
+    "cos_with_embedding_pattern": 0.9607877135276794,
+    "adjacency": 10
+   },
+   "15": {
+    "energy_ratio": 4.820343971252441,
+    "cos_with_embedding_pattern": 0.9498375654220581,
+    "adjacency": 7
+   },
+   "16": {
+    "energy_ratio": 108.6811294555664,
+    "cos_with_embedding_pattern": 0.9361598491668701,
+    "adjacency": 6
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 2.3267760276794434,
+   "mlp_on_embedding_pattern": -0.07403495907783508,
+   "attention_and_rest_on_embedding_pattern": 1.4008109867572784
+  },
+  "task_baseline": {
+   "acc_among_classes": 1.0,
+   "acc_top1": 0.75,
+   "margin": 2.428796132405599,
+   "n": 48
+  },
+  "population_size": 240,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 0.718714714050293,
+    "radius_refit": 0.9447669386863708,
+    "adjacency_refit": 12,
+    "adjacency_on_best_plane": 12,
+    "last_block_adjacency": 12,
+    "task": {
+     "acc_among_classes": 1.0,
+     "acc_top1": 0.75,
+     "margin": 2.398324886957804,
+     "n": 48
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 0.809532105922699,
+    "radius_refit": 1.0390832662582397,
+    "adjacency_refit": 12.0,
+    "adjacency_on_best_plane": 12.0,
+    "last_block_adjacency": 12.0,
+    "task": {
+     "acc_among_classes": 1.0,
+     "acc_top1": 0.75,
+     "margin": 2.403276081879933,
+     "n": 48.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 4,
+   "share_of_those_on_B": 0.5015382170677185,
+   "top4_rows": [
+    84447,
+    68111,
+    89071,
+    16985
+   ],
+   "top4_attr_A": [
+    0.2884521782398224,
+    0.07683330029249191,
+    0.0734880343079567,
+    0.06301088631153107
+   ],
+   "top4_attr_B": [
+    0.2833470404148102,
+    0.08296400308609009,
+    0.0646526962518692,
+    0.07057447731494904
+   ],
+   "top4_readings": {
+    "84447": [
+     "aro",
+     "uary",
+     " snow",
+     "erg",
+     " chain",
+     "ares",
+     " tall",
+     "ari",
+     "oor",
+     "ie",
+     "iz",
+     " Cover",
+     "aur",
+     "ice",
+     " pal",
+     "ik",
+     "iy",
+     " offer",
+     "ila",
+     " pigs"
+    ],
+    "68111": [
+     " Bush",
+     "gr",
+     "res",
+     " brief",
+     " thick",
+     " red",
+     " margin",
+     "ened",
+     " heavy",
+     "ena",
+     " front",
+     " Wh",
+     "ii",
+     " contracted",
+     " natural",
+     "ots",
+     " value",
+     "ota",
+     "ho",
+     " completed"
+    ],
+    "89071": [
+     " reb",
+     " thanks",
+     " player",
+     " component",
+     "ols",
+     "ive",
+     " apologies",
+     " ro",
+     "asts",
+     " reactive",
+     " O",
+     "iter",
+     " Thanks",
+     " rem",
+     " man",
+     " guess",
+     " appointed",
+     " code",
+     "component",
+     "ible"
+    ],
+    "16985": [
+     "ME",
+     " neg",
+     " divers",
+     " afflict",
+     "#",
+     " mint",
+     "{\\",
+     " dust",
+     " obs",
+     " anymore",
+     " envy",
+     "**",
+     " anything",
+     " Valley",
+     " infections",
+     " resp",
+     " units",
+     " necessarily",
+     " worth",
+     " invest"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "84447": 0,
+    "68111": 0,
+    "89071": 0,
+    "16985": 0
+   }
+  }
+ }
+}

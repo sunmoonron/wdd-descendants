@@ -1,0 +1,23 @@
+{
+ "experiment": "e636",
+ "fixed_at": "2026-10-12 13:03:14",
+ "note": "honest guesses fixed before any run; e634 showed phase coding in GPT-2, Qwen, SmolLM and OLMo but not in three Pythias, while the Pythias' MLPs amplify the embedding's own ring pattern most (1.3 to 2.4 times); the guess is two regimes",
+ "predictions": {
+  "H1": {
+   "p": 0.5,
+   "text": "in the three Pythias the day-selective rows phase-code against the embedding plane's angles (0.15 or more, above the shuffle null) although not against the best block's plane"
+  },
+  "H2": {
+   "p": 0.5,
+   "text": "in the GPT-2 family the phase coding against the best plane exceeds that against the embedding plane by 0.15 or more"
+  },
+  "H3": {
+   "p": 0.5,
+   "text": "in the sequential models the per-block phase coding against the best plane rises with depth toward the best block; in the Pythias it stays flat near zero at every block"
+  },
+  "H4": {
+   "p": 0.6,
+   "text": "the selective rows sit mostly in the blocks just before the best block in the sequential models, and mostly in the first two blocks in the Pythias"
+  }
+ }
+}

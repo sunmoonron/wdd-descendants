@@ -1,0 +1,27 @@
+{
+ "experiment": "e638",
+ "fixed_at": "2026-10-12 14:39:56",
+ "note": "honest guesses fixed before any run; e637's control was over-matched (its rows were two to three times larger than the writers), so this matches magnitude by quantile; the other calendar's writers test whether the machinery is calendar-specific; the reverse and two-step tasks test whether the writers carry the ring rather than a forward lookup",
+ "predictions": {
+  "K1": {
+   "p": 0.6,
+   "text": "with quantile-matched low-attribution rows the writers' forward-task drop exceeds the control's by 0.15 or more in GPT-2 small months, SmolLM2-135M days and months, and OPT-125m months, and the control's general loss change is within 0.05 nats of the writers'"
+  },
+  "K2": {
+   "p": 0.5,
+   "text": "calendar-specific: removing the other calendar's writers lowers the forward task by less than half of what removing the own writers does, in those four cases"
+  },
+  "K3": {
+   "p": 0.5,
+   "text": "the reverse task falls under the writers' removal by at least as much as the forward task, in those four cases"
+  },
+  "K4": {
+   "p": 0.5,
+   "text": "the writers sit mostly outside block 0: fewer than half of them are in block 0, in all models"
+  },
+  "K5": {
+   "p": 0.5,
+   "text": "scale: in GPT-2 medium and large and OPT-1.3b the writers' forward-task drop is 0.15 or more with a general loss change of 0.1 nats or less"
+  }
+ }
+}

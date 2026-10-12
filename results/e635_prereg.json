@@ -1,0 +1,31 @@
+{
+ "experiment": "e635",
+ "fixed_at": "2026-10-12 12:16:09",
+ "note": "honest guesses fixed before any run; e634 on Qwen2.5-0.5B showed the phase-coded population is not the ring's carrier (ablating it shrinks the ring little more than random rows), so this tests the rows the attribution names as the writers, with a dose, the obvious controls, and a check for compensation by other rows",
+ "predictions": {
+  "F1": {
+   "p": 0.5,
+   "text": "ablating the rows that write half of the MLP ring pattern (their write columns zeroed) removes 40 percent or more of the ring's radius at the best block with the plane refitted, on Qwen2.5-0.5B, GPT-2 small, OLMo-1B and SmolLM2-135M"
+  },
+  "F2": {
+   "p": 0.5,
+   "text": "dose: the radius falls monotonically with the attributed fraction removed (rows for 25, 50, 75, 90 percent)"
+  },
+  "F3": {
+   "p": 0.4,
+   "text": "compensation: after the writers for half are removed, other rows' writes recover half or more of the lost pattern amplitude (the recomputed MLP pattern is at least 75 percent of the original), a self-repair of the manifold"
+  },
+  "F4": {
+   "p": 0.6,
+   "text": "controls: the same number of top-norm rows, and of random rows, each remove less than 15 percent of the refit radius"
+  },
+  "F5": {
+   "p": 0.5,
+   "text": "the month task on Qwen2.5-0.5B (0.92 at baseline) falls by 0.2 or more when the writers for half of the month ring are removed, and by 0.05 or less under random rows"
+  },
+  "F6": {
+   "p": 0.5,
+   "text": "the writer set and the phase-coded population overlap by less than a quarter of the smaller set: they are different objects"
+  }
+ }
+}

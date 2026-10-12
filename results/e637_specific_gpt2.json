@@ -1,0 +1,163 @@
+{
+ "model": "gpt2",
+ "NB": 12,
+ "D": 768,
+ "DFF": 3072,
+ "fam": "gpt2",
+ "days": {
+  "best_layer": 10,
+  "k": 7,
+  "n50": 156,
+  "baseline": {
+   "task": {
+    "acc_among_classes": 0.7857142857142857,
+    "acc_top1": 0.7142857142857143,
+    "margin": 0.336756842476981,
+    "n": 28
+   },
+   "loss_templates": 4.259019271502477,
+   "loss_neutral": 3.878914289836642,
+   "radius": 22.952083587646484
+  },
+  "ablations": {
+   "writers_50": {
+    "n_rows": 156,
+    "radius_refit": 12.407835960388184,
+    "adjacency_refit": 7,
+    "task": {
+     "acc_among_classes": 0.6785714285714286,
+     "acc_top1": 0.6071428571428571,
+     "margin": 0.13060706002371653,
+     "n": 28
+    },
+    "loss_templates": 4.238881789232842,
+    "loss_neutral": 3.8780526511276823,
+    "mag_mean": 0.9930976629257202,
+    "attr_sum": 0.5014583468437195
+   },
+   "activation_matched": {
+    "n_rows": 156,
+    "radius_refit": 27.653484344482422,
+    "adjacency_refit": 7,
+    "task": {
+     "acc_among_classes": 0.5357142857142857,
+     "acc_top1": 0.39285714285714285,
+     "margin": 0.22859818594796316,
+     "n": 28
+    },
+    "loss_templates": 4.407730385377834,
+    "loss_neutral": 3.930669180954559,
+    "mag_mean": 2.260042190551758,
+    "attr_sum": -0.044007573276758194
+   },
+   "topnorm": {
+    "n_rows": 156,
+    "radius_refit": 22.971147537231445,
+    "adjacency_refit": 7,
+    "task": {
+     "acc_among_classes": 0.5357142857142857,
+     "acc_top1": 0.5,
+     "margin": 0.06397111075265068,
+     "n": 28
+    },
+    "loss_templates": 5.040536481617974,
+    "loss_neutral": 4.5798042393937894,
+    "mag_mean": 0.6791406273841858,
+    "attr_sum": 0.00480075366795063
+   },
+   "random": {
+    "n_rows": 156.0,
+    "radius_refit": 23.094279861450197,
+    "adjacency_refit": 7.0,
+    "task": {
+     "acc_among_classes": 0.7857142857142858,
+     "acc_top1": 0.7142857142857142,
+     "margin": 0.3402301788330078,
+     "n": 28.0
+    },
+    "loss_templates": 4.2760191870279645,
+    "loss_neutral": 3.891054332105419,
+    "mag_mean": 0.38464335799217225,
+    "attr_sum": 0.003481761086732149
+   }
+  }
+ },
+ "months": {
+  "best_layer": 10,
+  "k": 12,
+  "n50": 182,
+  "baseline": {
+   "task": {
+    "acc_among_classes": 0.7083333333333334,
+    "acc_top1": 0.6666666666666666,
+    "margin": 0.5424545605977377,
+    "n": 48
+   },
+   "loss_templates": 4.458324279959343,
+   "loss_neutral": 3.878914289836642,
+   "radius": 18.8380126953125
+  },
+  "ablations": {
+   "writers_50": {
+    "n_rows": 182,
+    "radius_refit": 12.593628883361816,
+    "adjacency_refit": 5,
+    "task": {
+     "acc_among_classes": 0.3125,
+     "acc_top1": 0.2708333333333333,
+     "margin": -0.24077208836873373,
+     "n": 48
+    },
+    "loss_templates": 4.486989186779005,
+    "loss_neutral": 3.876096508170985,
+    "mag_mean": 1.032077670097351,
+    "attr_sum": 0.5002564191818237
+   },
+   "activation_matched": {
+    "n_rows": 182,
+    "radius_refit": 21.70209503173828,
+    "adjacency_refit": 12,
+    "task": {
+     "acc_among_classes": 0.5416666666666666,
+     "acc_top1": 0.4583333333333333,
+     "margin": 0.08085282643636067,
+     "n": 48
+    },
+    "loss_templates": 4.542775528616012,
+    "loss_neutral": 3.9828261121918884,
+    "mag_mean": 2.251953363418579,
+    "attr_sum": -0.04651026800274849
+   },
+   "topnorm": {
+    "n_rows": 182,
+    "radius_refit": 19.857603073120117,
+    "adjacency_refit": 12,
+    "task": {
+     "acc_among_classes": 0.2916666666666667,
+     "acc_top1": 0.2916666666666667,
+     "margin": -0.5933510462443033,
+     "n": 48
+    },
+    "loss_templates": 5.529029114605629,
+    "loss_neutral": 4.599854336509222,
+    "mag_mean": 0.6211211085319519,
+    "attr_sum": -0.001281187403947115
+   },
+   "random": {
+    "n_rows": 182.0,
+    "radius_refit": 18.912039947509765,
+    "adjacency_refit": 12.0,
+    "task": {
+     "acc_among_classes": 0.6958333333333333,
+     "acc_top1": 0.6541666666666666,
+     "margin": 0.5276883125305176,
+     "n": 48.0
+    },
+    "loss_templates": 4.466955784140113,
+    "loss_neutral": 3.8843468726435795,
+    "mag_mean": 0.35193259716033937,
+    "attr_sum": 0.006431084685027599
+   }
+  }
+ }
+}

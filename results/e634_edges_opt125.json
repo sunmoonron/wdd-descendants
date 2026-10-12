@@ -1,0 +1,507 @@
+{
+ "model": "opt125",
+ "NB": 12,
+ "D": 768,
+ "DFF": 3072,
+ "fam": "opt",
+ "days": {
+  "best_layer": 9,
+  "k": 7,
+  "n": 210,
+  "ring": {
+   "adjacency": 7,
+   "share": 0.6411898732185364,
+   "radius": 1.3402518033981323
+  },
+  "phase": {
+   "by_k": {
+    "5": 0.7144641688840788,
+    "20": 0.5830676482273963,
+    "100": 0.440432527432325,
+    "500": 0.19873532774104818
+   },
+   "random": 0.06769427763564247,
+   "shuffle_null_mean": 0.052044434835492356,
+   "shuffle_null_p95": 0.15684474983205524,
+   "shuffle_null_max": 0.1949853023113195,
+   "split_in_sample": 0.5242125567305108,
+   "split_transfer": 0.5296416895851419
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 1.0,
+    "adjacency": 7
+   },
+   "1": {
+    "energy_ratio": 1.0714857578277588,
+    "cos_with_embedding_pattern": 0.9989206790924072,
+    "adjacency": 7
+   },
+   "2": {
+    "energy_ratio": 1.0161421298980713,
+    "cos_with_embedding_pattern": 0.9974488615989685,
+    "adjacency": 7
+   },
+   "3": {
+    "energy_ratio": 0.9824649095535278,
+    "cos_with_embedding_pattern": 0.9970450401306152,
+    "adjacency": 7
+   },
+   "4": {
+    "energy_ratio": 0.9588448405265808,
+    "cos_with_embedding_pattern": 0.9970299601554871,
+    "adjacency": 7
+   },
+   "5": {
+    "energy_ratio": 0.9147669672966003,
+    "cos_with_embedding_pattern": 0.9961216449737549,
+    "adjacency": 7
+   },
+   "6": {
+    "energy_ratio": 0.8295887112617493,
+    "cos_with_embedding_pattern": 0.9946066737174988,
+    "adjacency": 7
+   },
+   "7": {
+    "energy_ratio": 0.7815832495689392,
+    "cos_with_embedding_pattern": 0.9933269023895264,
+    "adjacency": 7
+   },
+   "8": {
+    "energy_ratio": 0.737095296382904,
+    "cos_with_embedding_pattern": 0.9932753443717957,
+    "adjacency": 7
+   },
+   "9": {
+    "energy_ratio": 0.7156594395637512,
+    "cos_with_embedding_pattern": 0.992560088634491,
+    "adjacency": 7
+   },
+   "10": {
+    "energy_ratio": 0.6778348684310913,
+    "cos_with_embedding_pattern": 0.9938433170318604,
+    "adjacency": 7
+   },
+   "11": {
+    "energy_ratio": 0.5494372248649597,
+    "cos_with_embedding_pattern": 0.9854525327682495,
+    "adjacency": 7
+   },
+   "12": {
+    "energy_ratio": 5.7086663246154785,
+    "cos_with_embedding_pattern": 0.9718157649040222,
+    "adjacency": 7
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 1.0054672956466675,
+   "mlp_on_embedding_pattern": 0.025096891447901726,
+   "attention_and_rest_on_embedding_pattern": -0.019629595801234245
+  },
+  "task_baseline": {
+   "acc_among_classes": 0.6785714285714286,
+   "acc_top1": 0.6071428571428571,
+   "margin": 0.1991028274808611,
+   "n": 28
+  },
+  "population_size": 140,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 0.8111253976821899,
+    "radius_refit": 1.092516541481018,
+    "adjacency_refit": 7,
+    "adjacency_on_best_plane": 7,
+    "last_block_adjacency": 7,
+    "task": {
+     "acc_among_classes": 0.5714285714285714,
+     "acc_top1": 0.5,
+     "margin": 0.0477031980242048,
+     "n": 28
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 1.0348023891448974,
+    "radius_refit": 1.324929451942444,
+    "adjacency_refit": 7.0,
+    "adjacency_on_best_plane": 7.0,
+    "last_block_adjacency": 7.0,
+    "task": {
+     "acc_among_classes": 0.65,
+     "acc_top1": 0.5928571428571429,
+     "margin": 0.16288982459477014,
+     "n": 28.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 28,
+   "share_of_those_on_B": 0.49642810225486755,
+   "top4_rows": [
+    5065,
+    24790,
+    25887,
+    27542
+   ],
+   "top4_attr_A": [
+    0.05840715393424034,
+    0.04654671251773834,
+    0.03116779588162899,
+    0.02478978969156742
+   ],
+   "top4_attr_B": [
+    0.05584215372800827,
+    0.04281231388449669,
+    0.027213742956519127,
+    0.02523830719292164
+   ],
+   "top4_readings": {
+    "5065": [
+     "y",
+     " Mau",
+     "ourney",
+     "rial",
+     "KY",
+     "aly",
+     "UF",
+     "cht",
+     "aux",
+     "enko",
+     "uits",
+     "yre",
+     " privacy",
+     "flight",
+     " saints",
+     " fide",
+     " Philippe",
+     "rons",
+     "omet",
+     "uru"
+    ],
+    "24790": [
+     "st",
+     "ST",
+     "stery",
+     "sts",
+     "ste",
+     "nd",
+     "ster",
+     "sm",
+     "stay",
+     "ty",
+     "stic",
+     "stall",
+     "sth",
+     "sty",
+     "conservancy",
+     "125",
+     "stal",
+     "sten",
+     "sters",
+     " Timothy"
+    ],
+    "25887": [
+     "utor",
+     " resemblance",
+     "nets",
+     " poverty",
+     "net",
+     " Nature",
+     "ents",
+     "face",
+     "hetical",
+     " diapers",
+     "ent",
+     " members",
+     "iev",
+     " prayers",
+     " Fun",
+     " blue",
+     " time",
+     "mage",
+     " Hel",
+     "hood"
+    ],
+    "27542": [
+     "es",
+     "ES",
+     "ers",
+     "etti",
+     "er",
+     "ese",
+     "nis",
+     "eri",
+     "ni",
+     "nd",
+     "ier",
+     "ersen",
+     "naires",
+     "ne",
+     "ney",
+     "nels",
+     "eled",
+     "Wire",
+     "ster",
+     "nec"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "5065": 0,
+    "24790": 0,
+    "25887": 0,
+    "27542": 0
+   }
+  }
+ },
+ "months": {
+  "best_layer": 10,
+  "k": 12,
+  "n": 360,
+  "ring": {
+   "adjacency": 12,
+   "share": 0.4655175507068634,
+   "radius": 1.4335325956344604
+  },
+  "phase": {
+   "by_k": {
+    "5": 0.5767475949881797,
+    "20": 0.4740033403091191,
+    "100": 0.4077167809412618,
+    "500": 0.213867971759462
+   },
+   "random": 0.03876824863255024,
+   "shuffle_null_mean": 0.030293060726342965,
+   "shuffle_null_p95": 0.12254818812845705,
+   "shuffle_null_max": 0.1760693421666457,
+   "split_in_sample": 0.46404147128375484,
+   "split_transfer": 0.4768978244796553
+  },
+  "embedding_plane": {
+   "0": {
+    "energy_ratio": 1.0,
+    "cos_with_embedding_pattern": 1.0,
+    "adjacency": 12
+   },
+   "1": {
+    "energy_ratio": 1.1643366813659668,
+    "cos_with_embedding_pattern": 0.9953621625900269,
+    "adjacency": 12
+   },
+   "2": {
+    "energy_ratio": 1.1600667238235474,
+    "cos_with_embedding_pattern": 0.9927696585655212,
+    "adjacency": 12
+   },
+   "3": {
+    "energy_ratio": 1.1444923877716064,
+    "cos_with_embedding_pattern": 0.9925491809844971,
+    "adjacency": 12
+   },
+   "4": {
+    "energy_ratio": 1.1242437362670898,
+    "cos_with_embedding_pattern": 0.9919248223304749,
+    "adjacency": 12
+   },
+   "5": {
+    "energy_ratio": 1.1363500356674194,
+    "cos_with_embedding_pattern": 0.9902291297912598,
+    "adjacency": 12
+   },
+   "6": {
+    "energy_ratio": 1.0631260871887207,
+    "cos_with_embedding_pattern": 0.9868552684783936,
+    "adjacency": 12
+   },
+   "7": {
+    "energy_ratio": 1.0164783000946045,
+    "cos_with_embedding_pattern": 0.9839665293693542,
+    "adjacency": 12
+   },
+   "8": {
+    "energy_ratio": 1.089330792427063,
+    "cos_with_embedding_pattern": 0.9820782542228699,
+    "adjacency": 12
+   },
+   "9": {
+    "energy_ratio": 1.0723178386688232,
+    "cos_with_embedding_pattern": 0.9769238233566284,
+    "adjacency": 12
+   },
+   "10": {
+    "energy_ratio": 1.039402723312378,
+    "cos_with_embedding_pattern": 0.9685192704200745,
+    "adjacency": 12
+   },
+   "11": {
+    "energy_ratio": 0.9434978365898132,
+    "cos_with_embedding_pattern": 0.9600919485092163,
+    "adjacency": 12
+   },
+   "12": {
+    "energy_ratio": 9.803704261779785,
+    "cos_with_embedding_pattern": 0.9478442072868347,
+    "adjacency": 12
+   }
+  },
+  "embedding_block2": {
+   "block": 2,
+   "total_on_embedding_pattern": 1.0692764520645142,
+   "mlp_on_embedding_pattern": 0.08074746280908585,
+   "attention_and_rest_on_embedding_pattern": -0.011471010744571686
+  },
+  "task_baseline": {
+   "acc_among_classes": 0.4375,
+   "acc_top1": 0.3958333333333333,
+   "margin": 0.06520193815231323,
+   "n": 48
+  },
+  "population_size": 240,
+  "ablation": {
+   "population": {
+    "radius_on_best_plane": 1.0152554512023926,
+    "radius_refit": 1.298416018486023,
+    "adjacency_refit": 12,
+    "adjacency_on_best_plane": 12,
+    "last_block_adjacency": 12,
+    "task": {
+     "acc_among_classes": 0.5,
+     "acc_top1": 0.4375,
+     "margin": 0.025436711808045704,
+     "n": 48
+    }
+   },
+   "random_mean": {
+    "radius_on_best_plane": 1.1249508142471314,
+    "radius_refit": 1.4251734495162964,
+    "adjacency_refit": 12.0,
+    "adjacency_on_best_plane": 12.0,
+    "last_block_adjacency": 12.0,
+    "task": {
+     "acc_among_classes": 0.4708333333333334,
+     "acc_top1": 0.4375,
+     "margin": 0.07292802731196085,
+     "n": 48.0
+    }
+   }
+  },
+  "concentrated": {
+   "rows_for_half_on_A": 38,
+   "share_of_those_on_B": 0.49806687235832214,
+   "top4_rows": [
+    21662,
+    27309,
+    30146,
+    29482
+   ],
+   "top4_attr_A": [
+    0.0848359689116478,
+    0.07390045374631882,
+    0.04278796538710594,
+    0.026971537619829178
+   ],
+   "top4_attr_B": [
+    0.08210098743438721,
+    0.0757906585931778,
+    0.04187440127134323,
+    0.026708301156759262
+   ],
+   "top4_readings": {
+    "21662": [
+     " Claus",
+     " Eve",
+     " councill",
+     "flake",
+     " Wonderland",
+     " Christmas",
+     "ice",
+     " snowball",
+     "ruce",
+     " sweater",
+     "Den",
+     " Lights",
+     " Clause",
+     " Sv",
+     " Eck",
+     " Circle",
+     " cones",
+     " Norway",
+     " White",
+     "Christmas"
+    ],
+    "27309": [
+     "opian",
+     "acious",
+     " hairs",
+     " apart",
+     " asleep",
+     "aciously",
+     "inx",
+     "as",
+     "ubi",
+     "ritz",
+     "urred",
+     "hin",
+     "ujah",
+     " foliage",
+     " Ends",
+     "head",
+     "anted",
+     "omas",
+     "uple",
+     "oma"
+    ],
+    "30146": [
+     "bell",
+     "ank",
+     "aughter",
+     "flower",
+     "iver",
+     "aw",
+     "awed",
+     "av",
+     "ipers",
+     "ashing",
+     " Fellow",
+     " trap",
+     "augh",
+     "tag",
+     "anguage",
+     "ashed",
+     "ash",
+     "aan",
+     "iper",
+     " Fool"
+    ],
+    "29482": [
+     "let",
+     "lets",
+     "k",
+     "leted",
+     "can",
+     "lete",
+     "gar",
+     "LET",
+     "ket",
+     "cart",
+     "arat",
+     "ERT",
+     "quit",
+     "kish",
+     "reet",
+     "leton",
+     "kr",
+     "kick",
+     "kens",
+     "ken"
+    ]
+   },
+   "top4_class_tokens_in_top20": {
+    "21662": 0,
+    "27309": 0,
+    "30146": 0,
+    "29482": 0
+   }
+  }
+ }
+}
