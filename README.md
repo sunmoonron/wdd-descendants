@@ -145,6 +145,7 @@ flowchart TD
 | `docs/THEORY.md` | The first-order transport theory, its derived predictions tagged by what they rest on, the tests of the new predictions, and the corrections the later rounds forced. |
 | `docs/RELATED_WORK.md` | The literature placement and the priority check against the closest 2025 and 2026 work. |
 | `docs/REVIEW_POSITIVE_CLAIMS.md` | The positive claims reviewed against the literature (session 124): nearest prior work, what was already known, what is left that is WDD's. |
+| `docs/DESIGN_PROXY.md` | The design of the proxy, a Charles-shaped viewer for model internals that grew out of the program's last sessions: fixed UI and data model, devices with capability profiles, the thirteen design decisions, where Neuronpedia fits, the build order. |
 | `docs/LOOPED.md`, `scripts/looped/`, `results/looped/` | WDD on a looped model (Ouro-1.4B against SmolLM2-1.7B): the note, its scripts and its results. |
 
 The models: GPT-2 small (`gpt2`), Pythia-410m (`pythia410`), Qwen2.5-0.5B (`qwen05`), OLMo-1B-0724 (`olmo1b`), SmolLM2-135M (`smollm2`). Two GELU models, three gated (SwiGLU) models. Pythia's public training checkpoints are used for the training-dynamics runs.
