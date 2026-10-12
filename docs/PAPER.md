@@ -62,6 +62,8 @@ Correction (session 128): the ticket at initialisation is withdrawn. The recruit
 
 Side result (session 129): the calendar rings of Engels et al. 2024 have a parameter-level account on six models: the embedding's ring is abandoned by block 2, the MLP rows build another in a new plane, diffusely in five models and in a handful of rows in one, with the most day-selective rows pointing at the day's angle in four (e633).
 
+Side result continued (session 130): the calendar rings' detectors and writers are different populations; the writers are a specific causal substrate of calendar arithmetic in some models and not in others (e634 to e638).
+
 ## 9. Prior art (session 124)
 
 - Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.

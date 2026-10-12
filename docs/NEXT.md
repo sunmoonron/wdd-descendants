@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e634. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e639. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -247,3 +247,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 128 (no experiment):** the ticket withdrawn. The box was released on 2026-10-11 and its caches (e629, e582-style) are gone; a new box must rebuild them. First on the list once one exists: e632b (written, in `scripts/`), the residual-alignment test with a persistence-matched null, which decides the lottery question properly.
 
 **Session 129 (e633):** the calendar rings. Worth running next on the Dell: (1) the block floor proper, the extreme-value null for d-dimensional subspaces, applied to the ring plane and to published block-sparse featurizer blocks; (2) the ring injected along the best plane against random planes, read through the logit lens as the angle advances (manifold descendants); (3) the phase coding's absence in the Pythias, which is the one cross-model difference, against the Pythias' parallel residual.
+
+**Session 130 (e634 to e638):** the rings at their edges. Still worth running: (1) why the parallel-residual Pythias lack phase coding, by a GPT-J-class parallel model or a from-scratch pair; (2) the writers' role in a non-calendar manifold (numbers, hours) to see whether the detector-writer split is general; (3) the compensation seen in OLMo and the Pythias followed through depth, the manifold's Hydra effect.

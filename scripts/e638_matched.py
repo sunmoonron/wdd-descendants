@@ -116,9 +116,11 @@ for kind in ("days", "months"):
             d_ = np.abs(pm - m_); d_[used] = np.inf; j = int(np.argmin(d_)); used[j] = True; out.append(int(pool[j]))
         return out
     base = dict(fwd=task_eval2(kind, names, 1), rev=task_eval2(kind + "_rev", names, -1), two=task_eval2(kind + "_two", names, 2), loss_templates=mean_loss(P["texts"][::7]), loss_neutral=mean_loss(NEUTRAL), radius=P["radius0"])
-    def measure(rows):
-        zero_rows(rows, Lb); Xa, Aa, mua = run(items); ra = ring_at(Xa, cls, k, Lb, mua); res = dict(n_rows=len(rows), radius_refit=ra["radius"], fwd=task_eval2(kind, names, 1), rev=task_eval2(kind + "_rev", names, -1), two=task_eval2(kind + "_two", names, 2), loss_templates=mean_loss(P["texts"][::7]), loss_neutral=mean_loss(NEUTRAL), mag_mean=float(mag[rows].mean()), attr_sum=float(attr[rows].sum())); restore(); return res
-    out = dict(writers=measure(W50), other_writers=measure(other["W50"]))
+    def measure(rows, magv=None):
+        """rows are global indices (block * DFF + row); the other calendar's writers may sit in blocks beyond this calendar's best block, so their magnitude comes from the other calendar's array and their attribution counts only the rows in range"""
+        magv = mag if magv is None else magv; inr = [int(r) for r in rows if int(r) < attr.size]
+        zero_rows(rows, Lb); Xa, Aa, mua = run(items); ra = ring_at(Xa, cls, k, Lb, mua); res = dict(n_rows=len(rows), n_rows_in_range=len(inr), radius_refit=ra["radius"], fwd=task_eval2(kind, names, 1), rev=task_eval2(kind + "_rev", names, -1), two=task_eval2(kind + "_two", names, 2), loss_templates=mean_loss(P["texts"][::7]), loss_neutral=mean_loss(NEUTRAL), mag_mean=float(magv[rows].mean()), attr_sum=float(attr[inr].sum()) if inr else 0.0); restore(); return res
+    out = dict(writers=measure(W50), other_writers=measure(other["W50"], other["mag"]))
     qm = [measure(quantile_matched()) for _ in range(NRAND)]; out["matched_mean"] = {key: float(np.mean([x[key] for x in qm])) for key in qm[0]}; out["matched_draws"] = qm
     rr_ = [measure(rng.choice(Lb * DFF, n50, replace=False).tolist()) for _ in range(NRAND)]; out["random_mean"] = {key: float(np.mean([x[key] for x in rr_])) for key in rr_[0]}
     R[kind] = dict(best_layer=Lb, k=k, n50=n50, n50_other=other["n50"], blocks_of_writers=P["blocks_of_writers"], writers_mag=P["writers_mag"], baseline=base, ablations=out)

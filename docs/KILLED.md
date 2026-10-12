@@ -816,3 +816,23 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "phase coding: the twenty most day-selective rows per day write at phases aligned with that day's angle in the ring plane, mean cosine 0.5 or more (random rows give about 0)": Pythia-160m -0.04; present at 0.17 to 0.37 against random near 0 in GPT-2, Qwen2.5-0.5B, SmolLM2-135M and OLMo-1B, absent in both Pythias (e633).
 - "the MLP writes carry less than half of the ring's between-day pattern at the best block; the embedding and attention carry the rest": they carry 0.69 to 1.00 of it; the embedding's own ring is abandoned by block 2 (e633).
 - "the same holds on GPT-2 small and Qwen2.5-0.5B for M1 and M6 (cyclic order present), with the best block in the first half of depth": rings yes on both; GPT-2's best block is 10 of 12 by the tie-break, with every block in full order (e633).
+
+## Session 130 kills (the calendar rings' edges)
+- "it is a population, not a handful: the alignment decreases smoothly with the number of rows taken (top 5 above top 20 above top 100 above top 500) and the top 500 is still above the shuffle null." (e634).
+- "the embedding's ring is outgrown rather than erased in Pythia-160m's weekdays (the absolute energy of the block-2 pattern projected on the embedding plane is at least 0.7 of the embedding pattern's own energy) and erased in Qwen2.5-0.5B's months (below 0.3)." (e634).
+- "the day-arithmetic task (Today is X. Tomorrow is) is solved at 0.7 or better among the seven day tokens by Qwen2.5-0.5B and OLMo-1B, and at 0.3 or worse by Pythia-160m and GPT-2 small." (e634).
+- "the population is causal: zeroing the write columns of the top-20 phase-coded rows per day (their union, at most 140 rows) halves the ring's radius at the best block and lowers day-arithmetic accuracy by 0.3 or more where the task is solved, while the same number of random rows changes neither by more than 0.05." (e634).
+- "OLMo-1B's four month rows are real: selected on one half of the templates they carry 0.4 or more of the month pattern on the other half, and their write directions put month tokens among the top 20 of the unembedding reading." (e634).
+- "ablating the rows that write half of the MLP ring pattern (their write columns zeroed) removes 40 percent or more of the ring's radius at the best block with the plane refitted, on Qwen2.5-0.5B, GPT-2 small, OLMo-1B and SmolLM2-135M." (e635).
+- "dose: the radius falls monotonically with the attributed fraction removed (rows for 25, 50, 75, 90 percent)." (e635).
+- "compensation: after the writers for half are removed, other rows' writes recover half or more of the lost pattern amplitude (the recomputed MLP pattern is at least 75 percent of the original), a self-repair of the manifold." (e635).
+- "the month task on Qwen2.5-0.5B (0.92 at baseline) falls by 0.2 or more when the writers for half of the month ring are removed, and by 0.05 or less under random rows." (e635).
+- "in the three Pythias the day-selective rows phase-code against the embedding plane's angles (0.15 or more, above the shuffle null) although not against the best block's plane." (e636).
+- "in the sequential models the per-block phase coding against the best plane rises with depth toward the best block; in the Pythias it stays flat near zero at every block." (e636).
+- "the selective rows sit mostly in the blocks just before the best block in the sequential models, and mostly in the first two blocks in the Pythias." (e636).
+- "specificity: in Qwen2.5-0.5B months, GPT-2 small days and months, and SmolLM2-135M days, removing the writers for half lowers task accuracy by at least 0.15 more than removing the same number of rows matched on write magnitude at the same positions but with below-median ring attribution." (e637).
+- "not general damage: the writers' increase in the general loss (on the templates and on neutral text) is within 0.1 nats of the activation-matched control's." (e637).
+- "the activation-matched control leaves the ring's refit radius within 15 percent of baseline while the writers remove 30 percent or more, in those four cases." (e637).
+- "top-norm rows raise the general loss by more than the writers do: their task damage is general." (e637).
+- Session 129's reading that the embedding's ring is abandoned by block 2: it is carried and amplified in place; the share fell because the state grew (e634).
+- Session 129's reading that the blocks build the ring: in sequential models its plane is laid down by block-0 detectors (e636).

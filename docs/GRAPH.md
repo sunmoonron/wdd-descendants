@@ -870,6 +870,28 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H634 Months form a ring with 10 or more of 12 adjacencies. → e633 → SUPPORTED: 12 of 12 on all six models.
 - H635 The MLP writes carry less than half of the ring pattern. → e633 → REFUTED: they carry 0.69 to 1.00 of it; the embedding's own ring is abandoned by block 2.
 - H636 GPT-2 small and Qwen2.5-0.5B show the rings with the best block in the first half of depth. → e633 → REFUTED: rings yes on both; GPT-2's best block is 10 of 12 by the tie-break, with every block in full order.
+- H637 Phase coding survives an end-to-end label-shuffle null: in the four models that showed it, the observed top-20 cosine is above the 95th percentile of 100 shuffles. → e634 → SUPPORTED.
+- H638 It is a population, not a handful: the alignment decreases smoothly with the number of rows taken (top 5 above top 20 above top 100 above top 500) and the top 500 is still above the shuffle null. → e634 → REFUTED.
+- H639 It transfers across templates: rows selected on one half of the templates keep at least 70 percent of their in-sample alignment against the plane and angles fitted on the other half. → e634 → SUPPORTED.
+- H640 The family split holds: Pythia-1.4b (parallel residual) lacks phase coding (below 0.1) while OPT-125m, OPT-1.3b, GPT-2 medium and SmolLM2-360M (sequential) show it above 0.15. → e634 → SUPPORTED.
+- H641 The embedding's ring is outgrown rather than erased in Pythia-160m's weekdays (the absolute energy of the block-2 pattern projected on the embedding plane is at least 0.7 of the embedding pattern's own energy) and erased in Qwen2.5-0.5B's months (below 0.3). → e634 → REFUTED.
+- H642 The day-arithmetic task (Today is X. Tomorrow is) is solved at 0.7 or better among the seven day tokens by Qwen2.5-0.5B and OLMo-1B, and at 0.3 or worse by Pythia-160m and GPT-2 small. → e634 → REFUTED.
+- H643 The population is causal: zeroing the write columns of the top-20 phase-coded rows per day (their union, at most 140 rows) halves the ring's radius at the best block and lowers day-arithmetic accuracy by 0.3 or more where the task is solved, while the same number of random rows changes neither by more than 0.05. → e634 → REFUTED.
+- H644 OLMo-1B's four month rows are real: selected on one half of the templates they carry 0.4 or more of the month pattern on the other half, and their write directions put month tokens among the top 20 of the unembedding reading. → e634 → REFUTED.
+- H645 Ablating the rows that write half of the MLP ring pattern (their write columns zeroed) removes 40 percent or more of the ring's radius at the best block with the plane refitted, on Qwen2.5-0.5B, GPT-2 small, OLMo-1B and SmolLM2-135M. → e635 → REFUTED.
+- H646 Dose: the radius falls monotonically with the attributed fraction removed (rows for 25, 50, 75, 90 percent). → e635 → REFUTED.
+- H647 Compensation: after the writers for half are removed, other rows' writes recover half or more of the lost pattern amplitude (the recomputed MLP pattern is at least 75 percent of the original), a self-repair of the manifold. → e635 → REFUTED.
+- H648 Controls: the same number of top-norm rows, and of random rows, each remove less than 15 percent of the refit radius. → e635 → SUPPORTED.
+- H649 The month task on Qwen2.5-0.5B (0.92 at baseline) falls by 0.2 or more when the writers for half of the month ring are removed, and by 0.05 or less under random rows. → e635 → REFUTED.
+- H650 The writer set and the phase-coded population overlap by less than a quarter of the smaller set: they are different objects. → e635 → SUPPORTED.
+- H651 In the three Pythias the day-selective rows phase-code against the embedding plane's angles (0.15 or more, above the shuffle null) although not against the best block's plane. → e636 → REFUTED.
+- H652 In the GPT-2 family the phase coding against the best plane exceeds that against the embedding plane by 0.15 or more. → e636 → SUPPORTED.
+- H653 In the sequential models the per-block phase coding against the best plane rises with depth toward the best block; in the Pythias it stays flat near zero at every block. → e636 → REFUTED.
+- H654 The selective rows sit mostly in the blocks just before the best block in the sequential models, and mostly in the first two blocks in the Pythias. → e636 → REFUTED.
+- H655 Specificity: in Qwen2.5-0.5B months, GPT-2 small days and months, and SmolLM2-135M days, removing the writers for half lowers task accuracy by at least 0.15 more than removing the same number of rows matched on write magnitude at the same positions but with below-median ring attribution. → e637 → REFUTED.
+- H656 Not general damage: the writers' increase in the general loss (on the templates and on neutral text) is within 0.1 nats of the activation-matched control's. → e637 → REFUTED.
+- H657 The activation-matched control leaves the ring's refit radius within 15 percent of baseline while the writers remove 30 percent or more, in those four cases. → e637 → REFUTED.
+- H658 Top-norm rows raise the general loss by more than the writers do: their task damage is general. → e637 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
