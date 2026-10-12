@@ -1,0 +1,39 @@
+{
+ "experiment": "e633",
+ "fixed_at": "2026-10-12 11:46:40",
+ "note": "honest guesses fixed before any run on the Dell; the question is whether the calendar rings known from Engels et al. 2024 have a parameter-level implementation (a small native block, phase-coded rows) or are diffuse, and how they move through depth",
+ "predictions": {
+  "M1": {
+   "p": 0.7,
+   "text": "weekdays: at the best block the seven day means lie in a plane carrying 0.6 or more of their between-day variance, in full cyclic order (7 of 7 adjacencies), on Pythia-160m; a replication of Engels et al. 2024 in a new model"
+  },
+  "M2": {
+   "p": 0.6,
+   "text": "the token embeddings alone already carry the cyclic order (6 or more of 7 adjacencies), so the ring is inherited from the embedding rather than built by the blocks"
+  },
+  "M3": {
+   "p": 0.6,
+   "text": "the ring is diffuse: 100 or more MLP rows are needed to account for half of the MLP-written between-day pattern in the ring plane at the best block; there is no small native block"
+  },
+  "M4": {
+   "p": 0.5,
+   "text": "phase coding: the twenty most day-selective rows per day write at phases aligned with that day's angle in the ring plane, mean cosine 0.5 or more (random rows give about 0)"
+  },
+  "M5": {
+   "p": 0.6,
+   "text": "transport: the ring persists in the plane fitted at the best block for at least three later blocks (6 or more adjacencies when later day means are projected onto that plane) while its radius relative to the state norm falls"
+  },
+  "M6": {
+   "p": 0.6,
+   "text": "months: a ring at the best block with 10 or more of 12 adjacencies"
+  },
+  "M7": {
+   "p": 0.5,
+   "text": "the MLP writes carry less than half of the ring's between-day pattern at the best block; the embedding and attention carry the rest"
+  },
+  "M8": {
+   "p": 0.6,
+   "text": "the same holds on GPT-2 small and Qwen2.5-0.5B for M1 and M6 (cyclic order present), with the best block in the first half of depth"
+  }
+ }
+}

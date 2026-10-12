@@ -812,3 +812,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 128 kills (the ticket at initialisation)
 - "Initialisation biases which row is recruited" (session 127): the observed initial alignment is what the row's persistence (0.13 at 16000) and the class direction's correlation with the final row produce, and for the own-write-subtracted direction persistence predicts a stronger ticket than was observed (H628).
 
+## Session 129 kills (calendar rings)
+- "phase coding: the twenty most day-selective rows per day write at phases aligned with that day's angle in the ring plane, mean cosine 0.5 or more (random rows give about 0)": Pythia-160m -0.04; present at 0.17 to 0.37 against random near 0 in GPT-2, Qwen2.5-0.5B, SmolLM2-135M and OLMo-1B, absent in both Pythias (e633).
+- "the MLP writes carry less than half of the ring's between-day pattern at the best block; the embedding and attention carry the rest": they carry 0.69 to 1.00 of it; the embedding's own ring is abandoned by block 2 (e633).
+- "the same holds on GPT-2 small and Qwen2.5-0.5B for M1 and M6 (cyclic order present), with the best block in the first half of depth": rings yes on both; GPT-2's best block is 10 of 12 by the tie-break, with every block in full order (e633).

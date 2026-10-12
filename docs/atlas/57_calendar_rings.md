@@ -1,0 +1,27 @@
+# 57. Calendar rings and their parameters (S129)
+
+**Question.** Block-sparse featurizers treat a representation as a sparse sum of low-dimensional manifolds carried by learned blocks. The calendar rings of Engels et al. 2024 are the best-known case. In the model's own parameters, where does such a ring live, who writes it, and what happens to it through depth?
+
+**Established.**
+- On six models the seven weekday means at the best block lie in cyclic order in a plane (7 of 7 adjacencies, shuffle p at most 0.01) and so do the twelve months (12 of 12), the replication of Engels et al. 2024; the token embeddings already carry the weekday order in all six models (7 of 7) and the month order in three; the blocks do not keep the embedding's ring but build a new one in a nearly orthogonal plane: the ring pattern's energy in the embedding's plane is 0.00 to 0.11 by block 2 and the best block's plane has principal cosines of at most 0.29 with it (e633).
+- The new ring is written by the MLP rows: their writes carry 0.69 to 1.00 of the weekday pattern and 0.80 to 1.02 of the month pattern at the best block, the rest attention; it is diffuse in most models (Pythia-160m 181, GPT-2 small 156, Qwen2.5-0.5B 68, Pythia-410m 394, SmolLM2-135M 130, OLMo-1B 28 rows for half of the weekday pattern; months 252, 182, 23, 522, 169, 4), with OLMo-1B's months carried half by 4 rows, the one small native block; the most day-selective rows write at the day's angle in four of the six models (phase coding Pythia-160m -0.04, GPT-2 small 0.36, Qwen2.5-0.5B 0.34, Pythia-410m -0.03, SmolLM2-135M 0.28, OLMo-1B 0.17 against random rows near zero), absent in both Pythias (e633).
+- The ring's radius relative to the state norm falls with depth, from 0.33 to 0.55 at the embedding to 0.10 to 0.27 at the last block before the final norm, while the cyclic order persists on the best block's plane through the later blocks in every model but Pythia-160m's months, which lose it after block 10 (e633).
+- Reading: the calendar manifold is known; what is new and small is where it lives and who writes it: the embedding's ring is abandoned by block 2, the blocks rebuild one in a new plane, the MLP rows write it, diffusely in five models and in a handful of rows in one, and in four models the rows that select a day also point at it. A descriptive result with a null and six models, not a nothingburger and not a paper; the one claim it supports for the program is that a manifold's chart belongs to a coalition, which is what the record said of directions.
+
+**Start here:** e633 · **Sessions:** S129 · **Scripts:** `scripts/e633_manifold.py` (standalone: torch, transformers, numpy; ran on two Quadro P4000s)
+
+## Experiments
+
+| id | question | result | status | links |
+| --- | --- | --- | --- | --- |
+| e633 | Calendar rings and their parameters on six models: the weekday and month means per block, their plane, cyclic order with a shuffle null and a random-plane energy null, the MLP rows' writes projected on the plane (rows for half, MLP against attention and embedding shares, phase coding of the most selective rows), the ring on the embedding's plane and on the best block's plane through later blocks | on six models the seven weekday means at the best block lie in cyclic order in a plane (7 of 7 adjacencies, shuffle p at most 0.01) and so do the twelve months (12 of 12), the replication of Engels et al. 2024; the token embeddings already carry the weekday order in all six models (7 of 7) and the month order in three; the blocks do not keep the embedding's ring but build a new one in a nearly orthogonal plane: the ring pattern's energy in the embedding's plane is 0.00 to 0.11 by block 2 and the best block's plane has principal cosines of at most 0.29 with it; the new ring is written by the MLP rows: their writes carry 0.69 to 1.00 of the weekday pattern and 0.80 to 1.02 of the month pattern at the best block, the rest attention; it is diffuse in most models (Pythia-160m 181, GPT-2 small 156, Qwen2.5-0.5B 68, Pythia-410m 394, SmolLM2-135M 130, OLMo-1B 28 rows for half of the weekday pattern; months 252, 182, 23, 522, 169, 4), with OLMo-1B's months carried half by 4 rows, the one small native block; the most day-selective rows write at the day's angle in four of the six models (phase coding Pythia-160m -0.04, GPT-2 small 0.36, Qwen2.5-0.5B 0.34, Pythia-410m -0.03, SmolLM2-135M 0.28, OLMo-1B 0.17 against random rows near zero), absent in both Pythias; the ring's radius relative to the state norm falls with depth, from 0.33 to 0.55 at the embedding to 0.10 to 0.27 at the last block before the final norm, while the cyclic order persists on the best block's plane through the later blocks in every model but Pythia-160m's months, which lose it after block 10 | supported (the ring is Engels et al. 2024's; the abandoned embedding plane, the MLP authorship, the diffuseness with one concentrated case and the partial phase coding are new descriptive facts on six models) | ← e545 e470 · → 31, 17 |
+
+## How the results flow
+
+- `e545, e546 → e633`: the coalition that builds a word's extreme, asked of a manifold instead of a direction.
+- `e470 → e633`: the band in which a variable is written and re-written, seen for a ring: the embedding's plane fades and the blocks build another.
+
+## Links to other areas
+
+- [31 The coalitions](31_coalitions.md): the diffuse ensembles the ring's chart turns out to be.
+- [17 WDD beyond description](17_forensic_instrument.md): the interchange experiments on variables in a band.
