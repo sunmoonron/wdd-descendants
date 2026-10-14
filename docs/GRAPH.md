@@ -969,6 +969,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H733 The reflection evades the read-write cosine (flagged in at most 0.2), since it preserves that cosine by construction. → e651 → SUPPORTED.
 - H734 The reflection evades every one of the four detectors (flagged-any at most 0.2) for both kinds. → e651 → REFUTED.
 - H735 The reflection still changes behaviour, its KL at least half the naive negate's, for both kinds. → e651 → REFUTED.
+- H736 At k=1 the reflection is caught by single-row consistency in at least half the seeds (e651 replication). → e652 → REFUTED.
+- H737 The distributed edit keeps behavioural effect: KL at the largest k is at least the k=1 KL. → e652 → SUPPORTED.
+- H738 Single-row consistency recall collapses at the largest k (<=0.2). → e652 → SUPPORTED.
+- H739 The coalition-aware detector still catches the distributed edit (recall >=0.5 at the largest k). → e652 → REFUTED.
+- H740 The norm stays blind to the reflection at every k (recall <=0.2). → e652 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

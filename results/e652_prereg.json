@@ -1,0 +1,35 @@
+{
+ "experiment": "e652_coalition_floor",
+ "fixed_at": "2026-10-14T13:23:46",
+ "status": "hypotheses W1-W5 embedded in the script before the full run; two smokes (the behavioural target and the blind-state fix) shaped the construction beforehand",
+ "question": "Does the single-row edit-detector triangle of e651 survive a distributed edit (Gemini 4's conjecture: k co-firing rows each reflected, single-row consistency spoofed because co-firing rows shift each other's context, a coalition-aware detector needed to recover), and does a coalition-aware consistency check restore detection?",
+ "design": "Pythia-160m, Pythia-410m, SmolLM2-135M, block 4; a seed high-use row and its k-1 most co-firing rows (k=1,4,8,16,32) each reflected about its read axis (norm and read-write cosine preserved); behavioural effect as mean next-token KL at the coalition's firing positions on wikitext; per-row recall of four blind detectors (norm, read-write cosine, single-row consistency, coalition-aware consistency), all recomputed on the edited model's own states.",
+ "predictions": {
+  "W1": {
+   "text": "at k=1 the reflection is caught by single-row consistency in at least half the seeds (e651 replication)",
+   "guess": 0.6
+  },
+  "W2": {
+   "text": "the distributed edit keeps behavioural effect: KL at the largest k is at least the k=1 KL",
+   "guess": 0.5
+  },
+  "W3": {
+   "text": "single-row consistency recall collapses at the largest k (<=0.2)",
+   "guess": 0.5
+  },
+  "W4": {
+   "text": "the coalition-aware detector still catches the distributed edit (recall >=0.5 at the largest k)",
+   "guess": 0.45
+  },
+  "W5": {
+   "text": "the norm stays blind to the reflection at every k (recall <=0.2)",
+   "guess": 0.8
+  }
+ },
+ "honest_guess": "The multi-row masking will show if the single-row catch is first established at k=1; the coalition detector should recover it. Main risk: the seed rows carry too little individual payload to reproduce the e651 catch at k=1, which would leave the masking question untested.",
+ "where_it_ought_to_break": [
+  "if the per-row payload is small, k=1 is not caught and the masking regime is never entered",
+  "reflecting co-firing rows can partially cancel their net effect, lowering KL with k",
+  "a coalition detector that over-subtracts can lose the signal it is meant to recover"
+ ]
+}
