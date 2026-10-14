@@ -1,0 +1,35 @@
+{
+ "experiment": "e644_bakeoff",
+ "fixed_at": "2026-10-13T23:53:08",
+ "status": "registered before any run (a smoke on Pythia-160m follows)",
+ "question": "Gemini 4 pitched WDD as an immutable coordinate system for diffing fine-tunes. Fine-tuning keeps every neuron's index, so any per-neuron method has the same alignment. Does WDD's word-usage diff find the rows that carry a planted change better than a plain activation diff or the weight change?",
+ "design": "One fine-tune per run stores 16 objects' group letters (e643's recipe: AdamW lr 5e-6 on attention and MLP weight matrices, two-way letter loss, stop at two checks of query accuracy 0.95). Rankings of all MLP rows: WDD usage change (rows among the 16 nearest the state at 4 depths, object and last tokens of the 16 queries), mean absolute activation change at those positions, read-plus-write weight-change norm, random. Zero the top k write columns (k 8, 32, 128, 512, 2048) in the fine-tuned model; score margin kept (mean two-letter logit margin after / before), accuracy, neutral-text loss change. Runs: Pythia-410m seeds 0 and 1, GPT-2 medium seed 0, Pythia-160m seed 0.",
+ "predictions": {
+  "B1": {
+   "text": "the plain activation ranking erases at least as much of the stored margin as the WDD usage ranking at k = 128, in at least 3 of the 4 runs",
+   "guess": 0.65
+  },
+  "B2": {
+   "text": "the WDD usage ranking erases more than random rows at k = 128, in at least 3 of the 4 runs",
+   "guess": 0.7
+  },
+  "B3": {
+   "text": "the weight-change ranking erases at least as much as the WDD usage ranking at k = 128, in at least 3 of the 4 runs",
+   "guess": 0.6
+  },
+  "B4": {
+   "text": "the fact is distributed: no ranking keeps less than half of the margin at k = 32 with a neutral-loss change of 0.1 nats or less, in any run",
+   "guess": 0.55
+  },
+  "B5": {
+   "text": "the WDD and activation rankings agree: their top-128 rows overlap at a Jaccard index of 0.3 or more, in at least 3 of the 4 runs",
+   "guess": 0.35
+  }
+ },
+ "honest_guess": "The plain activation diff finds the rows that carry the stored fact at least as well as WDD's word-usage diff, the weight change is close behind, and WDD beats random; the fine-tune-diffing pitch closes. The fact is spread over hundreds of rows, so small k does little.",
+ "where_it_ought_to_break": [
+  "the rankings are computed on the very queries that score the erasure, which favours the activation diff",
+  "zeroing write columns erases what a row writes at every position, so general damage can masquerade as erasure; the neutral loss is reported beside it",
+  "sixteen queries give a coarse accuracy, so the margin is the main measure"
+ ]
+}
