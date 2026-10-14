@@ -78,6 +78,8 @@ Side result continued (session 136): autoencoder blocks built as Engels et al. d
 
 Side result continued (session 137): read repulsion is half growth of already anti-aligned writes and half fresh rotation, building area 05's damper rows, while rows pulled toward their active states stay near neutral (e648b); calendar subspaces carry a second anchored row (except Pythia-160m's months at this depth) and random-noun subspaces none, but only when the floor's null comes from the subspace's own states (e647b).
 
+Side result continued (session 138): in identical sentences the floor passes every class in OPT-125m, OPT-1.3b, OLMo-1B; in the 6 models where random nouns never pass it anchors days 5/6, months 3/6, numbers 6/6, colours 2/6, animals 0/6, favouring ordered sequences (e650).
+
 ## 9. Prior art (session 124)
 
 - Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.

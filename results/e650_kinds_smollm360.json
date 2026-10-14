@@ -1,0 +1,88 @@
+{
+ "model": "smollm360",
+ "NB": 32,
+ "D": 960,
+ "DFF": 2560,
+ "fam": "llama",
+ "categories": {
+  "days": {
+   "layer": 7,
+   "from_block0": 1.0,
+   "from_block1": 1.0
+  },
+  "months": {
+   "layer": 22,
+   "from_block0": 1.0,
+   "from_block1": 1.0
+  },
+  "numbers": {
+   "layer": 7,
+   "from_block0": 1.0,
+   "from_block1": 1.0
+  },
+  "colours": {
+   "layer": 7,
+   "from_block0": 1.0,
+   "from_block1": 0.76
+  },
+  "animals": {
+   "layer": 7,
+   "from_block0": 0.4,
+   "from_block1": 0.4
+  }
+ },
+ "nouns": {
+  "7": {
+   "layer": 7,
+   "draws": [
+    {
+     "from_block0": 0.96,
+     "from_block1": 0.96
+    },
+    {
+     "from_block0": 0.82,
+     "from_block1": 0.82
+    },
+    {
+     "from_block0": 0.6,
+     "from_block1": 0.6
+    },
+    {
+     "from_block0": 0.94,
+     "from_block1": 0.94
+    },
+    {
+     "from_block0": 0.9,
+     "from_block1": 0.46
+    }
+   ],
+   "anchored_share": 0.2
+  },
+  "12": {
+   "layer": 22,
+   "draws": [
+    {
+     "from_block0": 1.0,
+     "from_block1": 1.0
+    },
+    {
+     "from_block0": 1.0,
+     "from_block1": 1.0
+    },
+    {
+     "from_block0": 1.0,
+     "from_block1": 1.0
+    },
+    {
+     "from_block0": 1.0,
+     "from_block1": 1.0
+    },
+    {
+     "from_block0": 1.0,
+     "from_block1": 1.0
+    }
+   ],
+   "anchored_share": 1.0
+  }
+ }
+}

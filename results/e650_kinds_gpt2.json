@@ -1,0 +1,88 @@
+{
+ "model": "gpt2",
+ "NB": 12,
+ "D": 768,
+ "DFF": 3072,
+ "fam": "gpt2",
+ "categories": {
+  "days": {
+   "layer": 10,
+   "from_block0": 1.0,
+   "from_block1": 1.0
+  },
+  "months": {
+   "layer": 10,
+   "from_block0": 1.0,
+   "from_block1": 1.0
+  },
+  "numbers": {
+   "layer": 10,
+   "from_block0": 1.0,
+   "from_block1": 1.0
+  },
+  "colours": {
+   "layer": 10,
+   "from_block0": 0.96,
+   "from_block1": 0.96
+  },
+  "animals": {
+   "layer": 10,
+   "from_block0": 0.14,
+   "from_block1": 0.14
+  }
+ },
+ "nouns": {
+  "7": {
+   "layer": 10,
+   "draws": [
+    {
+     "from_block0": 0.1,
+     "from_block1": 0.1
+    },
+    {
+     "from_block0": 0.2,
+     "from_block1": 0.2
+    },
+    {
+     "from_block0": 0.08,
+     "from_block1": 0.08
+    },
+    {
+     "from_block0": 0.76,
+     "from_block1": 0.52
+    },
+    {
+     "from_block0": 0.2,
+     "from_block1": 0.2
+    }
+   ],
+   "anchored_share": 0.0
+  },
+  "12": {
+   "layer": 10,
+   "draws": [
+    {
+     "from_block0": 0.02,
+     "from_block1": 0.02
+    },
+    {
+     "from_block0": 0.02,
+     "from_block1": 0.02
+    },
+    {
+     "from_block0": 0.14,
+     "from_block1": 0.02
+    },
+    {
+     "from_block0": 0.54,
+     "from_block1": 0.4
+    },
+    {
+     "from_block0": 0.14,
+     "from_block1": 0.06
+    }
+   ],
+   "anchored_share": 0.0
+  }
+ }
+}

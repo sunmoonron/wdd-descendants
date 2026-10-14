@@ -960,6 +960,10 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H724 At d = 4 and d = 8 at most a third of the autoencoder blocks have an anchored second direction, in both models. → e647b → REFUTED.
 - H725 The weekday and month class-mean subspaces both have an anchored second direction in both models. → e647b → REFUTED.
 - H726 At most a fifth of the random-noun subspaces have an anchored second direction, in both models. → e647b → SUPPORTED.
+- H727 Read in the same mention sentences, days and months are still anchored without block 0 in at least 8 of the 11 models each. → e650 → REFUTED.
+- H728 Random nouns are anchored in at most a quarter of draws over all models. → e650 → REFUTED.
+- H729 Colours and animals are anchored about as often as days: their counts of anchored models are within 2 of the days' count. → e650 → REFUTED.
+- H730 The numbers one to seven are anchored in at least 8 of the 11 models. → e650 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

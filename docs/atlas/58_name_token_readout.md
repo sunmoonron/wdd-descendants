@@ -16,7 +16,9 @@
 
 **Session 137.** Calendar subspaces carry a second anchored row (except Pythia-160m's months at this depth) and random-noun subspaces none, but only when the floor's null comes from the subspace's own states (e647b).
 
-**Start here:** e640, e642, e645b, e649, e647b · **Sessions:** S132, S135-S137 · **Scripts:** `scripts/e640_patch.py`, `e642_angle.py`, `e645_floor.py`, `e645b_floor.py`, `e647_blocks.py`, `e649_nouns.py`, `e647b_second.py` (standalone: torch, transformers, numpy; ran on a Quadro P4000)
+**Session 138.** In identical sentences the floor passes every class in OPT-125m, OPT-1.3b, OLMo-1B; in the 6 models where random nouns never pass it anchors days 5/6, months 3/6, numbers 6/6, colours 2/6, animals 0/6, favouring ordered sequences (e650).
+
+**Start here:** e640, e642, e645b, e649, e647b, e650 · **Sessions:** S132, S135-S138 · **Scripts:** `scripts/e640_patch.py`, `e642_angle.py`, `e645_floor.py`, `e645b_floor.py`, `e647_blocks.py`, `e649_nouns.py`, `e647b_second.py`, `e650_kinds.py` (standalone: torch, transformers, numpy; ran on a Quadro P4000)
 
 ## Experiments
 
@@ -32,6 +34,8 @@
 | e649 | Random-noun class subspaces at each model's calendar depth, under the same floor | the class-mean subspace of seven or twelve random nouns over thirty neutral sentences, at each model's calendar depth, passes the same floor without block 0 in 0.21 of draws (five draws per model and size; by model and size 0.00 to 1.00), against 0.91 of pairs for the calendar's; their top-2 planes pass in 0.20 | supported (the calendar's anchoring is specific; arbitrary noun classes rarely pass) | ← e645b |
 
 | e647b | The floor on each subspace's second row, with the controls banded by their own states and by wikitext states | calendar subspaces carry a second anchored row (except Pythia-160m's months at this depth) and random-noun subspaces none, but only when the floor's null comes from the subspace's own states | supported (calendar subspaces are multi-dimensional in the weights where anchored; the null must come from the subspace's own states) | ← e647, e649 |
+
+| e650 | Six kinds of class read in the same mention sentences under the own-states floor | in identical sentences the floor passes every class in OPT-125m, OPT-1.3b, OLMo-1B; in the 6 models where random nouns never pass it anchors days 5/6, months 3/6, numbers 6/6, colours 2/6, animals 0/6, favouring ordered sequences | supported (where the floor discriminates, ordered sequences are the most reliably anchored; in three models it passes everything) | ← e649 |
 
 ## How the results flow
 

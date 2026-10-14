@@ -6501,3 +6501,26 @@ SESSION 137 (2026-10-14, the Dell; Gemini 4 traced read repulsion to area 05 and
 
   - With each subspace's best row removed and the rest scored against spectrum-matched rotations banded by the subspace's own states, a second anchored direction remains in GPT-2 small weekday, GPT-2 small month, Pythia-160m weekday (percentiles 1.00, 1.00, 0.97, 0.05), not in Pythia-160m month, whose subspace is not anchored at this depth at all; random-noun subspaces pass neither the first nor the second test (0.00, 0.00 and 0.00, 0.00 of ten draws), and autoencoder blocks keep a second anchored direction in 0.95 to 1.00 of cases, one row per member feature; banded by wikitext states instead, every template subspace passes, random nouns included (1.00, 1.00), so the floor's null must come from the states the subspace was read from, and e647's weekday control, banded by wikitext, was uninformative.
   - Pre-registered: M1 (at d = 4 and d = 8 at most a third of the autoencoder blocks have an anchored second direction, in both models) refuted; M2 (the weekday and month class-mean subspaces both have an anchored second direction in both models) refuted; M3 (at most a fifth of the random-noun subspaces have an anchored second direction, in both models) confirmed.
+
+
+SESSION 138 (2026-10-14, the Dell; Gemini 4 called the arc complete, reading e645b, e647b and e649 as "functional manifolds are anchored in the write rows, arbitrary groupings are not". That rested on one family read in its own sentences. Pre-registered C1 to C4 at 2026-10-14T11:19:37, before any run.)
+
+- e650 WHAT KIND OF CLASS IS ANCHORED (days, months, the numbers one to seven, seven colours, seven animals and random nouns, each read at the word in the same 24 mention sentences, at the model's calendar depth from e645; the class-mean subspace's percentile among 40 rotations banded by the class's own states, without block 0):
+
+  | model | depth (7 / 12 classes) | days | months | numbers one to seven | colours | animals | random nouns, 7 / 12 (share of five draws) |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 small | 10 / 10 | 1.00 | 1.00 | 1.00 | 0.96 | 0.14 | 0.00 / 0.00 |
+  | GPT-2 medium | 20 / 20 | 1.00 | 0.20 | 1.00 | 0.08 | 0.02 | 0.00 / 0.00 |
+  | GPT-2 large | 31 / 27 | 1.00 | 1.00 | 0.98 | 0.32 | 0.06 | 0.00 / 0.00 |
+  | OPT-125m | 9 / 10 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 / 1.00 |
+  | OPT-1.3b | 8 / 20 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 / 1.00 |
+  | Qwen2.5-0.5B | 9 / 9 | 1.00 | 1.00 | 1.00 | 1.00 | 0.48 | 0.00 / 0.00 |
+  | SmolLM2-135M | 15 / 25 | 1.00 | 0.60 | 1.00 | 0.96 | 0.76 | 0.00 / 0.40 |
+  | SmolLM2-360M | 7 / 22 | 1.00 | 1.00 | 1.00 | 0.76 | 0.40 | 0.20 / 1.00 |
+  | OLMo-1B | 9 / 11 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 0.80 / 1.00 |
+  | Pythia-410m | 21 / 19 | 0.06 | 0.10 | 0.96 | 0.00 | 0.02 | 0.00 / 0.00 |
+  | Pythia-1.4b | 23 / 22 | 1.00 | 0.16 | 1.00 | 0.08 | 0.44 | 0.00 / 0.00 |
+
+  - Read in the same 24 sentences that merely mention the word, at each model's calendar depth and under the own-states spectrum-matched null without block 0, the class-mean subspace is anchored in 10 of 11 models for days, 7 of 11 models for months, 11 of 11 models for numbers, 6 of 11 models for colours, 3 of 11 models for animals, and for random nouns in 0.34 of draws; but in OPT-125m, OPT-1.3b, OLMo-1B every class passes, random nouns included, so the floor does not discriminate there, while in the 6 models where random nouns never pass (GPT-2 small, GPT-2 medium, GPT-2 large, Qwen2.5-0.5B, Pythia-410m, Pythia-1.4b) the counts are days 5, months 3, numbers 6, colours 2, animals 0.
+  - Reading: where the floor discriminates at all, it favours ordered sequences over unordered categories: the numbers one to seven and the days pass in nearly every such model, months and colours in some, animals in none; so Gemini 4's 'functional manifolds are anchored, arbitrary groupings are not' narrows to 'ordered sequences are the most reliably anchored classes', and the floor's reach is model-dependent, saying nothing in OPT-125m, OPT-1.3b, OLMo-1B.
+  - Pre-registered: C1 (read in the same mention sentences, days and months are still anchored without block 0 in at least 8 of the 11 models each) refuted; C2 (random nouns are anchored in at most a quarter of draws over all models) refuted; C3 (colours and animals are anchored about as often as days: their counts of anchored models are within 2 of the days' count) refuted; C4 (the numbers one to seven are anchored in at least 8 of the 11 models) confirmed.

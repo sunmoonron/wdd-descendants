@@ -1,0 +1,31 @@
+{
+ "experiment": "e650_kinds",
+ "fixed_at": "2026-10-14T11:19:37",
+ "status": "registered before any run",
+ "question": "Gemini 4 read e645b, e647b and e649 as 'functional manifolds are anchored in the write rows, arbitrary groupings are not'. That rests on one family (days, months) against random nouns, read in different sentences. With every class read in the same sentences, is it the calendar's cyclic function, or any learned category, that is anchored?",
+ "design": "Eleven models; days, months, the numbers one to seven, seven colours, seven animals, and random nouns (five draws of seven and of twelve), each read at the word in the same 24 sentences that mention it; the class-mean subspace at the model's calendar depth from e645 (days depth for seven classes, months depth for twelve), scored as in e645b against 40 rotations banded by the class's own states, with and without block 0; anchored at a percentile of 0.95.",
+ "predictions": {
+  "C1": {
+   "text": "read in the same mention sentences, days and months are still anchored without block 0 in at least 8 of the 11 models each",
+   "guess": 0.55
+  },
+  "C2": {
+   "text": "random nouns are anchored in at most a quarter of draws over all models",
+   "guess": 0.7
+  },
+  "C3": {
+   "text": "colours and animals are anchored about as often as days: their counts of anchored models are within 2 of the days' count",
+   "guess": 0.5
+  },
+  "C4": {
+   "text": "the numbers one to seven are anchored in at least 8 of the 11 models",
+   "guess": 0.6
+  }
+ },
+ "honest_guess": "In the same sentences the calendar passes a little less often than in its own; numbers pass like the calendar; colours and animals pass in many models too; random nouns rarely. The anchoring tracks how strongly the words form a learned category, not cyclic function specifically, which would narrow Gemini's reading to 'learned categories are anchored, arbitrary groupings are not'.",
+ "where_it_ought_to_break": [
+  "mention sentences strip the words of their use, which may weaken every category's class code",
+  "the depth is the calendar's best block, which favours the calendar",
+  "numbers and colours are partly ordinal or perceptual, so they do not cleanly separate function from coherence"
+ ]
+}

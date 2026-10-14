@@ -897,3 +897,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "at d = 4 and d = 8 at most a third of the autoencoder blocks have an anchored second direction, in both models." (e647b).
 - "the weekday and month class-mean subspaces both have an anchored second direction in both models." (e647b).
 - e647's weekday control as evidence: scored under wikitext bands, where random nouns pass too (e647b).
+
+## Session 138 kills (what kind of class is anchored)
+- "read in the same mention sentences, days and months are still anchored without block 0 in at least 8 of the 11 models each." (e650).
+- "random nouns are anchored in at most a quarter of draws over all models." (e650).
+- "colours and animals are anchored about as often as days: their counts of anchored models are within 2 of the days' count." (e650).
+- "Functional manifolds are anchored in the write rows, arbitrary groupings are not" (Gemini 4's reading of sessions 135 to 137) as stated: in identical sentences the floor passes everything in three models and elsewhere favours ordered sequences, numbers above days above months and colours, animals almost never (e650).

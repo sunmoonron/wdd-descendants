@@ -1,0 +1,88 @@
+{
+ "model": "pythia410",
+ "NB": 24,
+ "D": 1024,
+ "DFF": 4096,
+ "fam": "neox",
+ "categories": {
+  "days": {
+   "layer": 21,
+   "from_block0": 0.06,
+   "from_block1": 0.06
+  },
+  "months": {
+   "layer": 19,
+   "from_block0": 0.1,
+   "from_block1": 0.1
+  },
+  "numbers": {
+   "layer": 21,
+   "from_block0": 0.96,
+   "from_block1": 0.96
+  },
+  "colours": {
+   "layer": 21,
+   "from_block0": 0.0,
+   "from_block1": 0.0
+  },
+  "animals": {
+   "layer": 21,
+   "from_block0": 0.02,
+   "from_block1": 0.02
+  }
+ },
+ "nouns": {
+  "7": {
+   "layer": 21,
+   "draws": [
+    {
+     "from_block0": 0.02,
+     "from_block1": 0.02
+    },
+    {
+     "from_block0": 0.0,
+     "from_block1": 0.0
+    },
+    {
+     "from_block0": 0.1,
+     "from_block1": 0.1
+    },
+    {
+     "from_block0": 0.2,
+     "from_block1": 0.2
+    },
+    {
+     "from_block0": 0.0,
+     "from_block1": 0.0
+    }
+   ],
+   "anchored_share": 0.0
+  },
+  "12": {
+   "layer": 19,
+   "draws": [
+    {
+     "from_block0": 0.0,
+     "from_block1": 0.0
+    },
+    {
+     "from_block0": 0.02,
+     "from_block1": 0.02
+    },
+    {
+     "from_block0": 0.08,
+     "from_block1": 0.08
+    },
+    {
+     "from_block0": 0.0,
+     "from_block1": 0.0
+    },
+    {
+     "from_block0": 0.02,
+     "from_block1": 0.02
+    }
+   ],
+   "anchored_share": 0.0
+  }
+ }
+}

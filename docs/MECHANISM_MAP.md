@@ -190,6 +190,10 @@ Autoencoder blocks built as Engels et al. did pass the spectrum-matched floor al
 
 Read repulsion is half growth of already anti-aligned writes and half fresh rotation, building area 05's damper rows, while rows pulled toward their active states stay near neutral (e648b). Reading: read repulsion is the training-time side of area 05's learned contraction: typical rows are built into negative-feedback dampers whose write opposes what they read, which makes the block's Jacobian trace negative (e209, e210), while the rows that move toward the states where they fire are the ones not built as dampers, as e509 found for a word's own rows.
 
+## What kind of class is anchored (session 138)
+
+Read in the same 24 sentences that merely mention the word, at each model's calendar depth and under the own-states spectrum-matched null without block 0, the class-mean subspace is anchored in 10 of 11 models for days, 7 of 11 models for months, 11 of 11 models for numbers, 6 of 11 models for colours, 3 of 11 models for animals, and for random nouns in 0.34 of draws; but in OPT-125m, OPT-1.3b, OLMo-1B every class passes, random nouns included, so the floor does not discriminate there, while in the 6 models where random nouns never pass (GPT-2 small, GPT-2 medium, GPT-2 large, Qwen2.5-0.5B, Pythia-410m, Pythia-1.4b) the counts are days 5, months 3, numbers 6, colours 2, animals 0 (e650).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.
