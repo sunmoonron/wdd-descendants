@@ -6427,3 +6427,52 @@ SESSION 135 (2026-10-14, the Dell, overnight and the morning after; Gemini 4's s
   - Correction to session 133: e643 stopped each twin at its own convergence, and Pythia-410m seed 1's twins stopped at 15 and 10 steps (GPT-2 medium's at 25 and 20), so those twin differences mixed the class with unequal training; compared at equal steps, Pythia-410m's stored class clears 0.95 in all three seeds from 20 steps on, which turns e643's thermometer from one run in four into every Pythia-410m seed, while GPT-2 medium and Pythia-160m stay below the bar.
   - Reading: where the stored class gets a word it gets it within the first tens of steps, as recruitment of an existing row, and keeps it; training on does not recruit more; with e643's held classes at 0.05 and 0.58, the native-word statistic does tell stored from held in Pythia-410m, leans the same way in GPT-2 medium and Pythia-160m, and is a thermometer only where the model is large enough to give the class a row.
   - Pre-registered: L1 (the stored class's percentile at half depth rises by 0.2 or more from the 20-step snapshot to the 1280-step snapshot, in at least 3 of the 5 runs) refuted; L2 (at 1280 steps the stored class clears 0.95 at half depth in at least 3 of the 5 runs) confirmed; L3 (the neutral-text loss change at 1280 steps stays within 0.3 nats in every run) refuted.
+
+
+SESSION 136 (2026-10-14, the Dell; the user: do as needed after Gemini 4 proposed the floor on block-sparse featurizers. Pre-registered A1 to A5 at 2026-10-14T10:04:18 (revised 2026-10-14T10:04:58 after a smoke showed uncentred states, before any full run), R1 to R3 at 2026-10-14T10:06:07, N1 and N2 at 2026-10-14T10:12:34, written after e647's results showed the floor too easy for autoencoder blocks.)
+
+- e647 THE FLOOR ON AUTOENCODER BLOCKS (no published block-sparse featurizer weights for these models were at hand, so blocks were built as Engels et al. 2024 did, by clustering a public autoencoder's live decoder directions; each block scored against 40 spectrum-matched rotations of itself on the write rows below its depth; on held-out wikitext, the share of states whose projection beats the block's rotations):
+
+  | autoencoder | block dimension | blocks | anchored with / without block 0 | median share of states clearing the rotation floor: features firing; not firing | the same when firing: anchored / unanchored blocks |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2 small | 2 | 150 | 1.00 / 1.00 | 0.28; 0.06 | 0.28 / n/a |
+  | GPT-2 small | 4 | 150 | 1.00 / 1.00 | 0.32; 0.07 | 0.32 / n/a |
+  | GPT-2 small | 8 | 150 | 1.00 / 1.00 | 0.36; 0.09 | 0.36 / n/a |
+  | Pythia-160m | 2 | 150 | 0.95 / 0.93 | 0.45; 0.04 | 0.44 / 0.65 |
+  | Pythia-160m | 4 | 150 | 0.97 / 0.97 | 0.52; 0.05 | 0.51 / 0.64 |
+  | Pythia-160m | 8 | 150 | 0.98 / 0.97 | 0.57; 0.06 | 0.56 / 0.82 |
+
+  - The multi-dimensional blocks built in the manner of Engels et al. from two public sparse autoencoders (GPT-2 small at the input of block 7, 21914 live features; Pythia-160m after layer 6, 6096; the 150 largest of 400 decoder clusters, spans of 2, 4 and 8 dimensions) almost all pass the spectrum-matched floor: 0.93 to 1.00 of them have a write row deeper inside them than 95 percent of their rotations, with block 0 excluded, and the weekday subspace at the same depth passes too; on held-out text a block's projection beats its own rotations in a median 0.28 to 0.57 of the states where its features fire against 0.04 to 0.09 where none does, and in Pythia-160m the few unanchored blocks clear it more often when active, not less.
+  - Pre-registered: A1 (the weekday class-mean subspace at the autoencoder's depth is anchored without block 0 in both models) confirmed; A2 (at most half of the autoencoder blocks are anchored without block 0, at every d, in both models) refuted; A3 (the anchored fraction is larger at d = 8 than at d = 2 in both models) refuted; A4 (when their features fire, anchored blocks clear their rotation floor more often than unanchored blocks (median), at every d, in both models) refuted; A5 (the blocks' activity is mostly real: the median block clears its rotation floor in half or more of the states where its features fire, at d = 2, in both models) refuted. A4 cannot hold in GPT-2 small, where no block is unanchored.
+
+- e648 READ REPULSION, ORTHOGONALISED (Pythia-410m block 12, every row, three origins; the pull is the centred mean block input over the neuron's top 2 percent of wikitext positions):
+
+  | origin | rows whose write moves away from their read direction | mean cosine: raw; pull removed | pull quintiles 1 to 5, raw | pull quintiles 1 to 5, pull removed | top 5 percent by pull: raw; pull removed |
+  | --- | --- | --- | --- | --- | --- |
+  | 4000-5000 | 0.96 | -0.119; -0.116 | -0.183 -0.145 -0.119 -0.097 -0.050 | -0.157 -0.134 -0.115 -0.102 -0.072 | -0.005; -0.042 |
+  | 8000-9000 | 0.91 | -0.083; -0.083 | -0.139 -0.103 -0.087 -0.064 -0.021 | -0.118 -0.095 -0.087 -0.071 -0.042 | +0.023; -0.010 |
+  | 12000-13000 | 0.86 | -0.058; -0.058 | -0.103 -0.076 -0.060 -0.043 -0.008 | -0.083 -0.069 -0.060 -0.050 -0.028 | +0.030; +0.000 |
+
+  - In Pythia-410m block 12 a row's write moves away from its own read direction over a thousand steps for 0.96, 0.91, 0.86 of all rows at steps 4000, 8000 and 12000 (mean cosine -0.119, -0.083, -0.058), fading with training; rows pulled hardest toward the states where they fire repel least (from -0.183 in the lowest pull quintile to -0.050 in the highest at step 4000), and removing that pull from the read direction flattens the gradient by only about a third (+0.085, +0.076, +0.055 against +0.133, +0.117, +0.095 raw); the top five percent by pull stay near zero with it removed (-0.042, -0.010, +0.000).
+  - Reading: read repulsion is a near-universal law of MLP training at this depth that weakens as training goes on, and the exemption of the rows that move toward their active states is mostly real: Gemini 4's masking account explains about a third of it; the entrant stand-in here is pull strength, not e525's word entrants.
+  - Pre-registered: R1 (the mean raw read cosine is negative at all three origins (e526 replicated on every row)) confirmed; R2 (masking: the raw read cosine rises by 0.05 or more from the lowest to the highest pull quintile while the pull-removed cosine changes by less than 0.03, at all three origins) refuted; R3 (in the top 5 percent by pull the pull-removed read cosine is negative at all three origins) refuted. R3 fails by a hair: at step 12000 the top five percent's pull-removed cosine is +0.0001.
+
+- e649 IS THE CALENDAR'S ANCHORING SPECIAL (random-noun class subspaces at each model's calendar depth under e645b's floor, five draws per size):
+
+  | model | days depth: noun class subspace anchored share (with / without block 0); top-2 plane | months depth: same | the calendar's own (e645b, without block 0): days / months |
+  | --- | --- | --- | --- |
+  | GPT-2 small | 0.00 / 0.00; 0.00 | 0.00 / 0.00; 0.00 | 1.00 / 1.00 |
+  | GPT-2 medium | 0.00 / 0.00; 0.20 | 0.00 / 0.00; 0.00 | 1.00 / 0.98 |
+  | GPT-2 large | 0.00 / 0.00; 0.00 | 0.00 / 0.00; 0.00 | 1.00 / 1.00 |
+  | OPT-125m | 0.60 / 0.60; 0.80 | 0.40 / 0.40; 0.20 | 1.00 / 1.00 |
+  | OPT-1.3b | 1.00 / 1.00; 0.80 | 1.00 / 1.00; 0.40 | 1.00 / 1.00 |
+  | Qwen2.5-0.5B | 0.00 / 0.00; 0.00 | 0.00 / 0.00; 0.00 | 1.00 / 1.00 |
+  | SmolLM2-135M | 0.00 / 0.00; 0.20 | 0.40 / 0.40; 0.20 | 1.00 / 0.96 |
+  | SmolLM2-360M | 0.00 / 0.00; 0.00 | 0.40 / 0.40; 0.40 | 1.00 / 1.00 |
+  | OLMo-1B | 0.60 / 0.40; 0.60 | 0.40 / 0.40; 0.20 | 1.00 / 1.00 |
+  | Pythia-410m | 0.00 / 0.00; 0.00 | 0.00 / 0.00; 0.00 | 0.26 / 0.66 |
+  | Pythia-1.4b | 0.00 / 0.00; 0.00 | 0.00 / 0.00; 0.40 | 1.00 / 0.96 |
+
+  - The class-mean subspace of seven or twelve random nouns over thirty neutral sentences, at each model's calendar depth, passes the same floor without block 0 in 0.21 of draws (five draws per model and size; by model and size 0.00 to 1.00), against 0.91 of pairs for the calendar's; their top-2 planes pass in 0.20.
+  - Reading: the calendar's anchoring is specific in most models: arbitrary noun classes rarely pass the floor that the calendar's class-mean subspace passes in 20 of 22 pairs, except in OPT-125m, OPT-1.3b, OLMo-1B, where noun classes pass in 0.40 to 1.00 of draws and the floor does not single the calendar out; elsewhere e645b's reading stands; autoencoder blocks pass almost always because their features are built near rows (e495), which makes the floor a test for subspaces read from states, not for subspaces built from a dictionary.
+  - Pre-registered: N1 (random-noun class-mean subspaces are anchored without block 0 in at least 80 percent of draws over all models) refuted; N2 (the calendar's anchored share (20 of 22 pairs) exceeds the random nouns' by no more than 0.1) refuted.

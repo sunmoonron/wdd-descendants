@@ -943,6 +943,16 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H707 The stored class's percentile at half depth rises by 0.2 or more from the 20-step snapshot to the 1280-step snapshot, in at least 3 of the 5 runs. → e646 → REFUTED.
 - H708 At 1280 steps the stored class clears 0.95 at half depth in at least 3 of the 5 runs. → e646 → SUPPORTED.
 - H709 The neutral-text loss change at 1280 steps stays within 0.3 nats in every run. → e646 → REFUTED.
+- H710 The weekday class-mean subspace at the autoencoder's depth is anchored without block 0 in both models. → e647 → SUPPORTED.
+- H711 At most half of the autoencoder blocks are anchored without block 0, at every d, in both models. → e647 → REFUTED.
+- H712 The anchored fraction is larger at d = 8 than at d = 2 in both models. → e647 → REFUTED.
+- H713 When their features fire, anchored blocks clear their rotation floor more often than unanchored blocks (median), at every d, in both models. → e647 → REFUTED.
+- H714 The blocks' activity is mostly real: the median block clears its rotation floor in half or more of the states where its features fire, at d = 2, in both models. → e647 → REFUTED.
+- H715 The mean raw read cosine is negative at all three origins (e526 replicated on every row). → e648 → SUPPORTED.
+- H716 Masking: the raw read cosine rises by 0.05 or more from the lowest to the highest pull quintile while the pull-removed cosine changes by less than 0.03, at all three origins. → e648 → REFUTED.
+- H717 In the top 5 percent by pull the pull-removed read cosine is negative at all three origins. → e648 → REFUTED.
+- H718 Random-noun class-mean subspaces are anchored without block 0 in at least 80 percent of draws over all models. → e649 → REFUTED.
+- H719 The calendar's anchored share (20 of 22 pairs) exceeds the random nouns' by no more than 0.1. → e649 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

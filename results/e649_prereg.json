@@ -1,0 +1,18 @@
+{
+ "experiment": "e649_nouns",
+ "fixed_at": "2026-10-14T10:12:34",
+ "status": "registered before any run; written after e647 showed nearly every autoencoder block anchored, which makes the calendar's anchoring in e645b suspect",
+ "question": "Is the calendar class-mean subspace's anchoring (e645b, 20 of 22) special, or does any class-mean subspace of arbitrary words pass the same spectrum-matched floor?",
+ "design": "Eleven models; at each model's calendar best block from e645 (days depth for k = 7, months depth for k = 12), the class-mean subspace of k random single-token nouns over 30 neutral sentences (five draws each) and its top-2 plane, scored as in e645b with and without block 0.",
+ "predictions": {
+  "N1": {
+   "text": "random-noun class-mean subspaces are anchored without block 0 in at least 80 percent of draws over all models",
+   "guess": 0.7
+  },
+  "N2": {
+   "text": "the calendar's anchored share (20 of 22 pairs) exceeds the random nouns' by no more than 0.1",
+   "guess": 0.65
+  }
+ },
+ "honest_guess": "Anchoring is generic: any class-mean subspace of model states finds a write row inside it beyond its spectrum-matched rotations, so e645b's calendar result says the floor is easy to pass, not that the calendar is special."
+}

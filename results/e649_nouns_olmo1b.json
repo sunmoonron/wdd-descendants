@@ -1,0 +1,206 @@
+{
+ "model": "olmo1b",
+ "NB": 16,
+ "D": 2048,
+ "DFF": 8192,
+ "fam": "llama",
+ "days": {
+  "best_layer": 9,
+  "k": 7,
+  "draws": [
+   {
+    "nouns": [
+     "table",
+     "lamp",
+     "hat",
+     "rope",
+     "coat",
+     "card",
+     "bowl"
+    ],
+    "class_mean_from_block0": 0.96,
+    "class_mean_from_block1": 0.96,
+    "ring_from_block0": 1.0,
+    "ring_from_block1": 1.0
+   },
+   {
+    "nouns": [
+     "nail",
+     "bread",
+     "book",
+     "card",
+     "ring",
+     "map",
+     "plate"
+    ],
+    "class_mean_from_block0": 0.98,
+    "class_mean_from_block1": 0.98,
+    "ring_from_block0": 0.72,
+    "ring_from_block1": 0.74
+   },
+   {
+    "nouns": [
+     "book",
+     "coat",
+     "brick",
+     "nail",
+     "wheel",
+     "sock",
+     "fork"
+    ],
+    "class_mean_from_block0": 0.92,
+    "class_mean_from_block1": 0.9,
+    "ring_from_block0": 1.0,
+    "ring_from_block1": 1.0
+   },
+   {
+    "nouns": [
+     "wire",
+     "rock",
+     "knife",
+     "shoe",
+     "desk",
+     "bread",
+     "map"
+    ],
+    "class_mean_from_block0": 0.92,
+    "class_mean_from_block1": 0.7,
+    "ring_from_block0": 0.8,
+    "ring_from_block1": 0.78
+   },
+   {
+    "nouns": [
+     "chair",
+     "shoe",
+     "rock",
+     "nail",
+     "cap",
+     "chain",
+     "plate"
+    ],
+    "class_mean_from_block0": 1.0,
+    "class_mean_from_block1": 0.8,
+    "ring_from_block0": 0.9,
+    "ring_from_block1": 0.96
+   }
+  ],
+  "anchored_share": {
+   "class_mean_from_block0": 0.6,
+   "class_mean_from_block1": 0.4,
+   "ring_from_block0": 0.4,
+   "ring_from_block1": 0.6
+  }
+ },
+ "months": {
+  "best_layer": 11,
+  "k": 12,
+  "draws": [
+   {
+    "nouns": [
+     "key",
+     "milk",
+     "cup",
+     "plate",
+     "desk",
+     "brick",
+     "drum",
+     "chain",
+     "map",
+     "hat",
+     "card",
+     "book"
+    ],
+    "class_mean_from_block0": 0.74,
+    "class_mean_from_block1": 0.74,
+    "ring_from_block0": 0.68,
+    "ring_from_block1": 0.74
+   },
+   {
+    "nouns": [
+     "ship",
+     "milk",
+     "spoon",
+     "wire",
+     "chair",
+     "car",
+     "box",
+     "bowl",
+     "map",
+     "nail",
+     "knife",
+     "book"
+    ],
+    "class_mean_from_block0": 0.94,
+    "class_mean_from_block1": 0.94,
+    "ring_from_block0": 0.64,
+    "ring_from_block1": 0.64
+   },
+   {
+    "nouns": [
+     "rope",
+     "bowl",
+     "jar",
+     "table",
+     "lamp",
+     "bell",
+     "cake",
+     "glass",
+     "bed",
+     "wheel",
+     "wire",
+     "nail"
+    ],
+    "class_mean_from_block0": 0.8,
+    "class_mean_from_block1": 0.8,
+    "ring_from_block0": 0.98,
+    "ring_from_block1": 0.98
+   },
+   {
+    "nouns": [
+     "bed",
+     "ship",
+     "brick",
+     "spoon",
+     "pen",
+     "wheel",
+     "chain",
+     "cup",
+     "box",
+     "rug",
+     "bowl",
+     "desk"
+    ],
+    "class_mean_from_block0": 1.0,
+    "class_mean_from_block1": 1.0,
+    "ring_from_block0": 0.48,
+    "ring_from_block1": 0.5
+   },
+   {
+    "nouns": [
+     "cap",
+     "coat",
+     "tent",
+     "cup",
+     "lamp",
+     "ball",
+     "rope",
+     "bed",
+     "spoon",
+     "shoe",
+     "clock",
+     "milk"
+    ],
+    "class_mean_from_block0": 1.0,
+    "class_mean_from_block1": 1.0,
+    "ring_from_block0": 0.62,
+    "ring_from_block1": 0.62
+   }
+  ],
+  "anchored_share": {
+   "class_mean_from_block0": 0.4,
+   "class_mean_from_block1": 0.4,
+   "ring_from_block0": 0.2,
+   "ring_from_block1": 0.2
+  }
+ }
+}

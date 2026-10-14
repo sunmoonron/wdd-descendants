@@ -74,6 +74,8 @@ Side result continued (session 134): zeroing WDD's top-ranked rows erases less o
 
 Side result continued (session 135): the calendar's class-mean subspace has a write row deeper inside it than spectrum-matched rotations of itself in 20 of 22 model-calendar pairs, with or without block 0, Pythia-410m excepted, a null for multi-dimensional features the manifold literature lacks (e645, e645b); a stored class's nearest-row percentile is set within the first tens of fine-tuning steps and does not climb with longer training; compared at equal steps Pythia-410m's stored class clears 0.95 in all three seeds (e646).
 
+Side result continued (session 136): autoencoder blocks built as Engels et al. did pass the spectrum-matched floor almost always (0.93 to 1.00), so the floor cannot sort them; arbitrary noun class subspaces pass it in 0.21 of draws against the calendar's 0.91 (e647, e649); read repulsion holds for 86 to 96 percent of rows and fades with training; the rows pulled toward their active states are mostly really exempt (e648).
+
 ## 9. Prior art (session 124)
 
 - Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.

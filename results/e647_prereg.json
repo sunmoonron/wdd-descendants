@@ -1,0 +1,37 @@
+{
+ "experiment": "e647_blocks",
+ "fixed_at": "2026-10-14T10:04:18",
+ "status": "registered before any run (a smoke follows)",
+ "question": "Gemini 4's suggestion and the program's open tangent: apply the subspace floor of e645b to multi-dimensional features. Are the blocks one builds from a public sparse autoencoder, in the manner of Engels et al. 2024, anchored in the native write rows beyond a spectrum-matched null, and are the anchored ones the ones whose activity on text clears its own rotation floor?",
+ "design": "GPT-2 small (Bloom's residual autoencoder, input of block 7) and Pythia-160m (EleutherAI TopK, after layer 6); 240 wikitext-2 passages of 64 tokens split into a half for the state covariance and a held-out half; live features clustered by spherical k-means (400 clusters), the 150 largest with 9 or more members; each cluster's top-d span for d 2, 4, 8 is a block. Anchoring: largest squared projection of the unit write rows of blocks 0 (or 1) to 6 against 40 rotations of the block inside bands of 16 principal components; anchored at a percentile of 0.95 or more. State side: on held-out states, the share whose projection beats the 95th percentile of the block's rotations at that state, when a member feature fires and when none does. Control: the weekday class-mean subspace and ring at the same depth.",
+ "predictions": {
+  "A1": {
+   "text": "the weekday class-mean subspace at the autoencoder's depth is anchored without block 0 in both models",
+   "guess": 0.7
+  },
+  "A2": {
+   "text": "at most half of the autoencoder blocks are anchored without block 0, at every d, in both models",
+   "guess": 0.35
+  },
+  "A3": {
+   "text": "the anchored fraction is larger at d = 8 than at d = 2 in both models",
+   "guess": 0.5
+  },
+  "A4": {
+   "text": "when their features fire, anchored blocks clear their rotation floor more often than unanchored blocks (median), at every d, in both models",
+   "guess": 0.55
+  },
+  "A5": {
+   "text": "the blocks' activity is mostly real: the median block clears its rotation floor in half or more of the states where its features fire, at d = 2, in both models",
+   "guess": 0.5
+  }
+ },
+ "honest_guess": "Autoencoder features sit near the rows that write them (e495), so most cluster blocks contain a row deep inside them and are anchored at every d; the weekday subspace is anchored at this depth; when active, anchored blocks clear their rotation floor more often than unanchored ones, and inactive states rarely do.",
+ "where_it_ought_to_break": [
+  "k-means on unit decoder directions is a cruder grouping than Engels' spectral clustering, so the blocks are approximations of theirs",
+  "a block built from features that sit on rows is anchored almost by construction; the interesting cases are the blocks that are not",
+  "the state side depends on the corpus; wikitext is one register"
+ ],
+ "revised_at": "2026-10-14T10:04:58",
+ "revision": "Revised after the smoke on GPT-2 small, before any full run; predictions unchanged. The state side projected uncentred states, so a block touching the states' large shared mean cleared its rotation floor at most states whether or not its features fired (0.41 to 0.82 when inactive); held-out states are now centred on the covariance half's mean, matching the centred covariance the rotations come from. Smoke preview recorded: anchored 0.88 to 1.00 of the smoke's blocks, weekday control anchored."
+}

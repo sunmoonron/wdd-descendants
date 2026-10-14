@@ -878,3 +878,15 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "the stored class's percentile at half depth rises by 0.2 or more from the 20-step snapshot to the 1280-step snapshot, in at least 3 of the 5 runs." (e646).
 - "the neutral-text loss change at 1280 steps stays within 0.3 nats in every run." (e646).
 - Session 133's reading that the stored class clears the word bar in one run of four: the twins had been stopped at unequal steps; at equal steps Pythia-410m clears it in every seed (e646).
+
+## Session 136 kills (autoencoder blocks; read repulsion; is the calendar special)
+- "at most half of the autoencoder blocks are anchored without block 0, at every d, in both models." (e647).
+- "the anchored fraction is larger at d = 8 than at d = 2 in both models." (e647).
+- "when their features fire, anchored blocks clear their rotation floor more often than unanchored blocks (median), at every d, in both models." (e647).
+- "the blocks' activity is mostly real: the median block clears its rotation floor in half or more of the states where its features fire, at d = 2, in both models." (e647).
+- "masking: the raw read cosine rises by 0.05 or more from the lowest to the highest pull quintile while the pull-removed cosine changes by less than 0.03, at all three origins." (e648).
+- "in the top 5 percent by pull the pull-removed read cosine is negative at all three origins." (e648).
+- "random-noun class-mean subspaces are anchored without block 0 in at least 80 percent of draws over all models." (e649).
+- "the calendar's anchored share (20 of 22 pairs) exceeds the random nouns' by no more than 0.1." (e649).
+- The subspace floor as the missing significance test for autoencoder-derived multi-dimensional features (Gemini 4's pitch): nearly every such block passes it, and in Pythia-160m the unanchored ones clear their state-side floor more often, not less (e647).
+- Gemini 4's masking account of the entrants' exemption from read repulsion: the pull explains about a third of it (e648).

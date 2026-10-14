@@ -182,6 +182,10 @@ With one fine-tune storing sixteen objects' group letters, zeroing the 128 rows 
 
 With Gemini 4's guardrails the result stands: against a spectrum-matched null (the subspace rotated inside bands of 16 neighbouring principal components, which keeps its variance profile) the class-mean subspace still has a write row deeper inside it than 95 percent of the rotations in 20 of 22 pairs (not in Pythia-410m days, Pythia-410m months), and in 20 of 22 with block 0's token detectors excluded; the ring plane alone in 11 with block 0 and 11 without (e645b). Trained past storage with the twins compared at equal steps, the stored class's nearest-row percentile at half depth is 0.93 to 0.98 in Pythia-410m's three seeds after 10 steps and 0.98 to 0.99 from 20 steps to 1280, 0.90 to 0.93 in GPT-2 medium throughout, and in Pythia-160m it climbs from 0.30 at 10 steps to 0.61 at 40 and then stays (0.63 at 1280); the neutral-text loss meanwhile reaches +0.50 to +0.66 nats in Pythia-410m, so longer training adds damage, not words (e646).
 
+## What the floor sorts, and read repulsion (session 136)
+
+Autoencoder blocks built as Engels et al. did pass the spectrum-matched floor almost always (0.93 to 1.00), so the floor cannot sort them; arbitrary noun class subspaces pass it in 0.21 of draws against the calendar's 0.91 (e647, e649). Read repulsion holds for 86 to 96 percent of rows and fades with training; the rows pulled toward their active states are mostly really exempt (e648).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

@@ -1,0 +1,22 @@
+{
+ "experiment": "e648_repulsion",
+ "fixed_at": "2026-10-14T10:06:07",
+ "status": "registered before any run (a smoke on Pythia-160m follows)",
+ "question": "Is the read repulsion of e526 a universal law of MLP training that the pull toward a neuron's active states masks in word entrants (Gemini 4's hypothesis B), or do rows that move toward their active states really escape it?",
+ "design": "Pythia-410m block 12 at three origins (4000, 8000, 12000 steps, each to 1000 steps later); every row's write-column change against its read direction (input weights times the norm gain), against its pull (the centred block-input mean over the neuron's top 2 percent of 6300 wikitext positions at the origin), and against the read direction with the pull projected out; rows in quintiles of pull, and the top 5 percent by pull as the entrant stand-in (e525's entrant definition is not rebuilt).",
+ "predictions": {
+  "R1": {
+   "text": "the mean raw read cosine is negative at all three origins (e526 replicated on every row)",
+   "guess": 0.85
+  },
+  "R2": {
+   "text": "masking: the raw read cosine rises by 0.05 or more from the lowest to the highest pull quintile while the pull-removed cosine changes by less than 0.03, at all three origins",
+   "guess": 0.45
+  },
+  "R3": {
+   "text": "in the top 5 percent by pull the pull-removed read cosine is negative at all three origins",
+   "guess": 0.55
+  }
+ },
+ "honest_guess": "Repulsion is universal: removing the pull leaves a negative read cosine in every pull bin, and the rows that pull hardest look exempt only because their pull lies along their read direction."
+}
