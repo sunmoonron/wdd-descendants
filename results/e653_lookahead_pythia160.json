@@ -1,0 +1,122 @@
+{
+ "model": "pythia160",
+ "n": 1796,
+ "n_by_kind": {
+  "cont": 110,
+  "new": 1176,
+  "other": 510
+ },
+ "n_ambiguous_cont": 81,
+ "readers": {
+  "carrier": {
+   "top1": 0.0011135857461024498,
+   "top5": 0.0027839643652561247,
+   "top1_cont": 0.0,
+   "top1_new": 0.0,
+   "top1_other": 0.00392156862745098,
+   "top5_cont": 0.01818181818181818,
+   "top5_new": 0.0,
+   "top5_other": 0.0058823529411764705,
+   "top5_ambiguous_cont": 0.0
+  },
+  "naming_carrier": {
+   "top1": 0.0,
+   "top5": 0.0027839643652561247,
+   "top1_cont": 0.0,
+   "top1_new": 0.0,
+   "top1_other": 0.0,
+   "top5_cont": 0.0,
+   "top5_new": 0.003401360544217687,
+   "top5_other": 0.00196078431372549,
+   "top5_ambiguous_cont": 0.0
+  },
+  "carriers_top3": {
+   "top1": 0.0033407572383073497,
+   "top5": 0.0066815144766146995,
+   "top1_cont": 0.0,
+   "top1_new": 0.0017006802721088435,
+   "top1_other": 0.00784313725490196,
+   "top5_cont": 0.00909090909090909,
+   "top5_new": 0.003401360544217687,
+   "top5_other": 0.013725490196078431,
+   "top5_ambiguous_cont": 0.0
+  },
+  "rotated_carrier": {
+   "top1": 0.0,
+   "top5": 0.0,
+   "top1_cont": 0.0,
+   "top1_new": 0.0,
+   "top1_other": 0.0,
+   "top5_cont": 0.0,
+   "top5_new": 0.0,
+   "top5_other": 0.0,
+   "top5_ambiguous_cont": 0.0
+  },
+  "runner_up": {
+   "top1": 0.05011135857461024,
+   "top5": 0.1714922048997773,
+   "top1_cont": 0.0,
+   "top1_new": 0.05357142857142857,
+   "top1_other": 0.052941176470588235,
+   "top5_cont": 0.0,
+   "top5_new": 0.1598639455782313,
+   "top5_other": 0.23529411764705882,
+   "top5_ambiguous_cont": 0.0
+  },
+  "embedding_bigram": {
+   "top1": 0.0,
+   "top5": 0.0,
+   "top1_cont": 0.0,
+   "top1_new": 0.0,
+   "top1_other": 0.0,
+   "top5_cont": 0.0,
+   "top5_new": 0.0,
+   "top5_other": 0.0,
+   "top5_ambiguous_cont": 0.0
+  },
+  "empirical_bigram": {
+   "top1": 0.22884187082405344,
+   "top5": 0.4070155902004454,
+   "top1_cont": 0.19090909090909092,
+   "top1_new": 0.2585034013605442,
+   "top1_other": 0.16862745098039217,
+   "top5_cont": 0.4090909090909091,
+   "top5_new": 0.43452380952380953,
+   "top5_other": 0.3431372549019608,
+   "top5_ambiguous_cont": 0.2839506172839506
+  },
+  "unigram": {
+   "top1": 0.11859688195991092,
+   "top5": 0.1965478841870824,
+   "top1_cont": 0.0,
+   "top1_new": 0.18112244897959184,
+   "top1_other": 0.0,
+   "top5_cont": 0.0,
+   "top5_new": 0.23809523809523808,
+   "top5_other": 0.14313725490196078,
+   "top5_ambiguous_cont": 0.0
+  },
+  "future_lens": {
+   "top1": 0.18262806236080179,
+   "top5": 0.41592427616926503,
+   "top1_cont": 0.00909090909090909,
+   "top1_new": 0.1870748299319728,
+   "top1_other": 0.20980392156862746,
+   "top5_cont": 0.03636363636363636,
+   "top5_new": 0.3843537414965986,
+   "top5_other": 0.5705882352941176,
+   "top5_ambiguous_cont": 0.0
+  }
+ },
+ "verdicts": {
+  "A1": false,
+  "A2": false,
+  "A3": false,
+  "A4": true,
+  "A5": false,
+  "A6": false
+ },
+ "_exp": "e653_lookahead_pythia160",
+ "_time": "2026-10-14 17:39:43",
+ "summary": "[pythia160] lookahead from the carrier word, 1796 positions where the model emits the corpus token: top-1 acceptance of the token after next: carrier 0.001, naming_carrier 0.000, carriers_top3 0.003, rotated_carrier 0.000, runner_up 0.050, embedding_bigram 0.000, empirical_bigram 0.229, unigram 0.119, future_lens 0.183; verdicts {'A1': False, 'A2': False, 'A3': False, 'A4': True, 'A5': False, 'A6': False} (36s)"
+}

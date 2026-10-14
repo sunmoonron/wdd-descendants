@@ -909,3 +909,19 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "the reflection evades every one of the four detectors (flagged-any at most 0.2) for both kinds." (e651).
 - "the reflection still changes behaviour, its KL at least half the naive negate's, for both kinds." (e651).
 - The read-write cosine as a standalone edit detector: it is GELU-only and blind to a norm-and-cosine-preserving reflection; only with the activation-consistency detector beside it is the behaviour-carrying reflection caught (e651).
+
+## Session 142 kills (the answer as the readout of a running total)
+- "the carrier's top-1 acceptance exceeds the runner-up of the model's own logits at p." (e653).
+- "the best carrier reader (carrier, naming or pooled) exceeds the empirical bigram's top-1 acceptance overall." (e653).
+- "the best carrier reader exceeds the empirical bigram's top-1 acceptance when the token after next is a subword continuation." (e653).
+- "on continuations after an ambiguous token (the bigram's top-1 share under 0.3) the best carrier reader's top-5 exceeds the bigram's." (e653).
+- "peeling the function-pushing words, with the mask, recovers at least three more wrong answers than the mask alone." (e654).
+- "the function-word peel without the mask recovers more wrong answers than the mask alone." (e654).
+- "peeling the words recurring across prompts, with the mask, recovers more wrong answers than the literal prompt-mean subtraction with the mask." (e654).
+- "at M = 20, OMP in logit space recovers the reference ledger's largest word at 50 percent or more of positions." (e655).
+- "at M = 20, OMP in logit space beats its other-position control by 0.10 or more in support Jaccard." (e655).
+- "the sparse prior helps when underdetermined: OMP in logit space beats the minimum-norm reconstruction in Jaccard at both M = 64 and M = 256." (e655).
+- "the ledger as the unembedding reads it agrees with the usual hidden-state ledger (Jaccard 0.5 or more)." (e655).
+- The carrier word as a zero-pass draft of the token after next (Gemini 4's idea 1): it proposes spellings of the emitted token or topic neighbours, below a static bigram table on every model (e653).
+- Peeling function-word words off a hedged answer to recover a known fact (Gemini 4's idea 2): masking the function words in the logits does it, and the peel matches a random peel (e654).
+- OMP over restricted logit signatures as a black-box ledger reader (Gemini 4's idea 3): worse than the minimum-norm reconstruction at every M; above D+1 logprobs the state is exact by linear algebra, which is prior art (e655).

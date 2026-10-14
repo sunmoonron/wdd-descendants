@@ -1,0 +1,35 @@
+{
+ "question": "Gemini 4's idea 2 (after e560/e568): do the wrong capital answers hide capitals the model knew, recoverable by peeling the function-word words off the final-block running total, beyond Gemini's own kill baselines (masking the function words in the logits; subtracting the mean prompt state)?",
+ "design": "e560's 160 prompts 'The capital of X is', right = next token is the capital's first token; function words = wikitext-2 train's 200 most frequent tokens + ' located', ' situated', ' home', minus capitals' first tokens; interventions none / prompt mean subtracted (literal and to the corpus mean) / function-pushing words peeled (native and rotated) / words recurring in half the supports peeled / a random peel of as many non-function words, each raw and masked; native union vs masked logits at the same size. Pythia-410m (e560's model) and Qwen2.5-0.5B.",
+ "smoke": "Pythia-160m on 48 capitals: accuracy 0, 47 of 48 wrong answers are function words; masking alone recovers 0, the function-word peel 0 (with or without the mask), the literal prompt-mean subtraction 10 (11 with the mask), the corpus-mean variant 0 (2), the recurring peel+mask 2.",
+ "note_on_e568": "e568's dominant row (block 17 neuron 3002) is top in 0.0125 of real-country capital prompts (0.90 is on invented countries) and zeroing it changes the top-1 answer in 0 of them, so the mechanism Gemini cites (a function-word row outvoting the fact) is not supported going in.",
+ "predictions": {
+  "S1": {
+   "text": "masking the function words in the logits alone recovers the capital on 30 percent or more of the hedge-wrong prompts",
+   "guess": 0.5
+  },
+  "S2": {
+   "text": "peeling the function-pushing words, with the mask, recovers at least three more wrong answers than the mask alone",
+   "guess": 0.15
+  },
+  "S3": {
+   "text": "the function-word peel without the mask recovers more wrong answers than the mask alone",
+   "guess": 0.05
+  },
+  "S4": {
+   "text": "peeling the words recurring across prompts, with the mask, recovers more wrong answers than the literal prompt-mean subtraction with the mask",
+   "guess": 0.15
+  },
+  "S5": {
+   "text": "the native function-word peel with the mask recovers more wrong answers than the rotated-dictionary peel with the mask",
+   "guess": 0.35
+  },
+  "S6": {
+   "text": "the function-word peel with the mask keeps 90 percent or more of the right answers",
+   "guess": 0.5
+  }
+ },
+ "experiment": "e654_peel",
+ "fixed_at": "2026-10-14T17:30:01",
+ "status": "fixed before the full runs; smokes on Pythia-160m (plumbing; seen before these were fixed, and reflected in the guesses)"
+}

@@ -17,7 +17,7 @@ Charles Proxy sits between a client and the servers it talks to, records every e
 | Neuronpedia public API | features per token for its sources, logit and Jacobian lens per layer, attribution graphs for a few models, labels, natural-language explanations for three big models, activations of uploaded custom vectors | steer with features or vectors (output side), ablate through the lens endpoint | free, rate-limited, ~17 models |
 | Self-hosted Neuronpedia inference server | the same, for any Hugging Face model with SAELens sources, extended with our endpoints | the same, plus whatever we add | a GPU when needed; the Mac for small models |
 | Our hooks backend | every component's read and write at every position, the floor, coalitions, descendants, checkpoints | any intervention on parameters or activations, during generation, recorded with seeds | a GPU for large models; the Mac for Pythia-scale |
-| API-only models | nothing, or hidden states if the API returns them | nothing | the device without the certificate |
+| API-only models | closed weights: the output only, or hidden states if the API returns them; open weights behind a logprob API: the post-final-norm state, and so the final ledger, exactly from more than D+1 logprobs per position (Finlayson et al. 2024; e655); from the usual top 20 only the state's rough direction and the ledger's largest word at 0.03 to 0.29 of positions (e655) | nothing | the device without the certificate |
 
 The UI reads the profile and greys out what the device cannot do. Nothing is faked.
 

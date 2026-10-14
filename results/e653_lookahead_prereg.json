@@ -1,0 +1,34 @@
+{
+ "question": "Gemini 4's idea 1 (generalising e481): can the carrier word of the emitted token, read from the final-block running total at position p, draft the token after next (the model's own greedy choice at p+1) with no extra pass?",
+ "design": "wikitext-2 test, positions where the model's greedy token equals the corpus token; readers carrier, naming carrier (e481's reading), top-3 carriers pooled, rotated carrier, runner-up at p, embedding bigram, empirical bigram (wikitext-2 train table), unigram, trained linear future lens (Pal et al. 2023); models Pythia-160m, Pythia-410m, Qwen2.5-0.5B (Qwen2.5-7B, e481's model, does not fit the Dell's 8 GB cards).",
+ "smoke": "Pythia-160m, 227 positions: carrier, naming carrier, pooled, rotated and embedding bigram all 0.000 top-1 and top-5; runner-up 0.040; empirical bigram 0.189; unigram 0.141; future lens 0.048 after 24 steps. The carrier drafts spellings of the emitted token (' to' -> to/To/TO) or topic neighbours (' series' -> music/album/films), and one generic word is the carrier of ' the', ' was' and ' of' alike.",
+ "predictions": {
+  "A1": {
+   "text": "the carrier's top-1 acceptance exceeds the runner-up of the model's own logits at p",
+   "guess": 0.1
+  },
+  "A2": {
+   "text": "the best carrier reader (carrier, naming or pooled) exceeds the empirical bigram's top-1 acceptance overall",
+   "guess": 0.03
+  },
+  "A3": {
+   "text": "the best carrier reader exceeds the empirical bigram's top-1 acceptance when the token after next is a subword continuation",
+   "guess": 0.08
+  },
+  "A4": {
+   "text": "the native carrier exceeds the rotated-dictionary carrier",
+   "guess": 0.4
+  },
+  "A5": {
+   "text": "the trained future lens exceeds every zero-parameter reader, the empirical bigram included",
+   "guess": 0.5
+  },
+  "A6": {
+   "text": "on continuations after an ambiguous token (the bigram's top-1 share under 0.3) the best carrier reader's top-5 exceeds the bigram's",
+   "guess": 0.1
+  }
+ },
+ "experiment": "e653_lookahead",
+ "fixed_at": "2026-10-14T17:30:01",
+ "status": "fixed before the full runs; smokes on Pythia-160m (plumbing; seen before these were fixed, and reflected in the guesses)"
+}

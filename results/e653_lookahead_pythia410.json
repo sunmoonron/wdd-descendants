@@ -1,0 +1,122 @@
+{
+ "model": "pythia410",
+ "n": 2185,
+ "n_by_kind": {
+  "cont": 153,
+  "new": 1387,
+  "other": 645
+ },
+ "n_ambiguous_cont": 110,
+ "readers": {
+  "carrier": {
+   "top1": 0.0013729977116704805,
+   "top5": 0.006864988558352402,
+   "top1_cont": 0.0,
+   "top1_new": 0.0014419610670511895,
+   "top1_other": 0.0015503875968992248,
+   "top5_cont": 0.0,
+   "top5_new": 0.007209805335255948,
+   "top5_other": 0.007751937984496124,
+   "top5_ambiguous_cont": 0.0
+  },
+  "naming_carrier": {
+   "top1": 0.0013729977116704805,
+   "top5": 0.007780320366132723,
+   "top1_cont": 0.0,
+   "top1_new": 0.0014419610670511895,
+   "top1_other": 0.0015503875968992248,
+   "top5_cont": 0.0,
+   "top5_new": 0.007209805335255948,
+   "top5_other": 0.010852713178294573,
+   "top5_ambiguous_cont": 0.0
+  },
+  "carriers_top3": {
+   "top1": 0.0018306636155606408,
+   "top5": 0.006407322654462242,
+   "top1_cont": 0.0,
+   "top1_new": 0.0014419610670511895,
+   "top1_other": 0.0031007751937984496,
+   "top5_cont": 0.006535947712418301,
+   "top5_new": 0.005046863734679163,
+   "top5_other": 0.009302325581395349,
+   "top5_ambiguous_cont": 0.00909090909090909
+  },
+  "rotated_carrier": {
+   "top1": 0.0,
+   "top5": 0.0009153318077803204,
+   "top1_cont": 0.0,
+   "top1_new": 0.0,
+   "top1_other": 0.0,
+   "top5_cont": 0.006535947712418301,
+   "top5_new": 0.0007209805335255948,
+   "top5_other": 0.0,
+   "top5_ambiguous_cont": 0.00909090909090909
+  },
+  "runner_up": {
+   "top1": 0.058123569794050346,
+   "top5": 0.1954233409610984,
+   "top1_cont": 0.0,
+   "top1_new": 0.0547945205479452,
+   "top1_other": 0.07906976744186046,
+   "top5_cont": 0.0196078431372549,
+   "top5_new": 0.1780821917808219,
+   "top5_other": 0.2744186046511628,
+   "top5_ambiguous_cont": 0.02727272727272727
+  },
+  "embedding_bigram": {
+   "top1": 0.0,
+   "top5": 0.0,
+   "top1_cont": 0.0,
+   "top1_new": 0.0,
+   "top1_other": 0.0,
+   "top5_cont": 0.0,
+   "top5_new": 0.0,
+   "top5_other": 0.0,
+   "top5_ambiguous_cont": 0.0
+  },
+  "empirical_bigram": {
+   "top1": 0.2334096109839817,
+   "top5": 0.43066361556064076,
+   "top1_cont": 0.24183006535947713,
+   "top1_new": 0.23864455659697187,
+   "top1_other": 0.22015503875968992,
+   "top5_cont": 0.4444444444444444,
+   "top5_new": 0.4239365537130497,
+   "top5_other": 0.4418604651162791,
+   "top5_ambiguous_cont": 0.2909090909090909
+  },
+  "unigram": {
+   "top1": 0.10160183066361556,
+   "top5": 0.21922196796338672,
+   "top1_cont": 0.0,
+   "top1_new": 0.16005767844268204,
+   "top1_other": 0.0,
+   "top5_cont": 0.0,
+   "top5_new": 0.23071377072819033,
+   "top5_other": 0.24651162790697675,
+   "top5_ambiguous_cont": 0.0
+  },
+  "future_lens": {
+   "top1": 0.22929061784897026,
+   "top5": 0.4768878718535469,
+   "top1_cont": 0.0915032679738562,
+   "top1_new": 0.2350396539293439,
+   "top1_other": 0.2496124031007752,
+   "top5_cont": 0.1503267973856209,
+   "top5_new": 0.4686373467916366,
+   "top5_other": 0.5720930232558139,
+   "top5_ambiguous_cont": 0.08181818181818182
+  }
+ },
+ "verdicts": {
+  "A1": false,
+  "A2": false,
+  "A3": false,
+  "A4": true,
+  "A5": false,
+  "A6": false
+ },
+ "_exp": "e653_lookahead_pythia410",
+ "_time": "2026-10-14 17:40:47",
+ "summary": "[pythia410] lookahead from the carrier word, 2185 positions where the model emits the corpus token: top-1 acceptance of the token after next: carrier 0.001, naming_carrier 0.001, carriers_top3 0.002, rotated_carrier 0.000, runner_up 0.058, embedding_bigram 0.000, empirical_bigram 0.233, unigram 0.102, future_lens 0.229; verdicts {'A1': False, 'A2': False, 'A3': False, 'A4': True, 'A5': False, 'A6': False} (55s)"
+}

@@ -1,0 +1,34 @@
+{
+ "question": "Gemini 4's idea 3 (against DESIGN_PROXY section 2): can the final-block ledger be recovered from the top-M output logprobs alone, and does a sparse WDD prior (OMP in logit space) beat the minimum-norm reconstruction when M <= D?",
+ "design": "wikitext-2 test positions; reference = 16-word OMP of unit(y - ybar) over the native rows as the unembedding reads them; R1 min-norm deviation from [ybar; c0] then OMP (float64), R2 OMP in R^M over restricted centred signatures; controls: another position's observation, random tokens instead of the top M, the reference vs another position's reference; M = 20, 64, 256, 1024, 2048, all. Pythia-160m, Pythia-410m, Qwen2.5-0.5B. Prior art for M > D+1: Finlayson et al. 2024, Carlini et al. 2024.",
+ "smoke": "Pythia-160m (D=768), 32 positions: R1 exact at M=1024 and above (cosine 1.000, Jaccard 1.000); below D the state cosine is 0.27/0.40/0.62 at M=20/64/256 but the ledger Jaccard only 0.02/0.04/0.06 (top word 0.22/0.25/0.41); R2 worse than R1 at every M (Jaccard 0.00-0.05); the unembedding-side ledger and the hidden-state ledger share Jaccard 0.22; 0.56 of the reference words come from the last four of twelve blocks.",
+ "predictions": {
+  "B1": {
+   "text": "at M = 20, OMP in logit space recovers the reference ledger's largest word at 50 percent or more of positions",
+   "guess": 0.03
+  },
+  "B2": {
+   "text": "at M = 20, OMP in logit space beats its other-position control by 0.10 or more in support Jaccard",
+   "guess": 0.02
+  },
+  "B3": {
+   "text": "the sparse prior helps when underdetermined: OMP in logit space beats the minimum-norm reconstruction in Jaccard at both M = 64 and M = 256",
+   "guess": 0.05
+  },
+  "B4": {
+   "text": "above D+1 logprobs (M = 2048) the minimum-norm reconstruction recovers the state (cosine 0.99 or more) and the ledger (Jaccard 0.95 or more)",
+   "guess": 0.95
+  },
+  "B5": {
+   "text": "the ledger as the unembedding reads it agrees with the usual hidden-state ledger (Jaccard 0.5 or more)",
+   "guess": 0.1
+  },
+  "B6": {
+   "text": "60 percent or more of the reference ledger's words come from the last four blocks",
+   "guess": 0.35
+  }
+ },
+ "experiment": "e655_blackbox",
+ "fixed_at": "2026-10-14T17:30:01",
+ "status": "fixed before the full runs; smokes on Pythia-160m (plumbing; seen before these were fixed, and reflected in the guesses)"
+}

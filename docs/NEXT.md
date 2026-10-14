@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e653. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e656. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -269,3 +269,7 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 139 (e651):** no single-row edit in the battery both changed behaviour and evaded all three detectors; the read-write cosine's blind spot (a norm-and-cosine-preserving reflection) is covered by the activation-consistency detector for behaviour-carrying rows. The open gap for a defender: a reflection that is both behaviourally potent and consistency-clean, and the distributed (multi-row) case this single-row battery did not cover.
 
 **Session 140 (e652, null):** inconclusive: the distributed reflection did not reproduce e651's single-row consistency catch at k=1 (low-payload seeds), so the coalition-evasion question stays open; the norm and read-write cosine stay blind to the reflection at every k. To test the coalition-evasion question properly: seed on rows that are individually caught by consistency (high payload), hold the net behavioural payload constant as it is spread over k, and check whether single-row consistency then collapses while a coalition-aware detector holds.
+
+**Session 141 (e652c, established):** co-firing block-4 rows are near-orthogonal in their writes (mean absolute cosine 0.06), so the coalition-evasion question of e652 is answered structurally: the masking cannot operate.
+
+**Session 142 (e653-e655):** the carrier word drafts the token after next at 0.025 top-1 at best, below the runner-up at p and far below a static bigram table (0.229 to 0.285); a trained future lens reaches 0.183 to 0.303; the wrong capitals' hedges hide the capital about half the time, but masking the function words in the logits finds them (21 of 66); peeling the function-pushing words adds one and matches a random peel; the final ledger comes out of the logprobs exactly above D+1 of them (prior art) and not below: from the usual top 20, the largest word at 0.03 to 0.29 of positions and little else; OMP in logit space is worse than the plain inverse. Still untested: e481's own setting (two-token entities at the final position) at 7B, which needs a rented A100.

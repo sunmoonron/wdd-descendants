@@ -1,0 +1,1286 @@
+{
+ "model": "qwen05",
+ "n": 160,
+ "accuracy": 0.28125,
+ "n_wrong": 115,
+ "n_hedge": 54,
+ "n_content": 61,
+ "n_stop": 188,
+ "hedge_words": [
+  " located",
+  " situated",
+  " home"
+ ],
+ "mean_function_words_in_support": 0.22500000894069672,
+ "mean_recurring_in_support": 0.762499988079071,
+ "interventions": {
+  "none": {
+   "hedge": 0.0,
+   "content": 0.0,
+   "wrong": 0.0,
+   "n_wrong_recovered": 0,
+   "kept_right": 1.0
+  },
+  "none+mask": {
+   "hedge": 0.20370370149612427,
+   "content": 0.0,
+   "wrong": 0.09565217047929764,
+   "n_wrong_recovered": 11,
+   "kept_right": 1.0
+  },
+  "prompt_mean_subtracted": {
+   "hedge": 0.2222222238779068,
+   "content": 0.16393440961837769,
+   "wrong": 0.19130434095859528,
+   "n_wrong_recovered": 22,
+   "kept_right": 0.5555555820465088
+  },
+  "prompt_mean_subtracted+mask": {
+   "hedge": 0.2222222238779068,
+   "content": 0.16393440961837769,
+   "wrong": 0.19130434095859528,
+   "n_wrong_recovered": 22,
+   "kept_right": 0.5555555820465088
+  },
+  "prompt_mean_to_corpus_mean": {
+   "hedge": 0.0555555559694767,
+   "content": 0.06557376682758331,
+   "wrong": 0.06086956337094307,
+   "n_wrong_recovered": 7,
+   "kept_right": 0.15555556118488312
+  },
+  "prompt_mean_to_corpus_mean+mask": {
+   "hedge": 0.2777777910232544,
+   "content": 0.32786881923675537,
+   "wrong": 0.30434781312942505,
+   "n_wrong_recovered": 35,
+   "kept_right": 0.46666666865348816
+  },
+  "function_words_peeled": {
+   "hedge": 0.03703703731298447,
+   "content": 0.016393441706895828,
+   "wrong": 0.0260869562625885,
+   "n_wrong_recovered": 3,
+   "kept_right": 0.9333333373069763
+  },
+  "function_words_peeled+mask": {
+   "hedge": 0.2222222238779068,
+   "content": 0.016393441706895828,
+   "wrong": 0.11304347217082977,
+   "n_wrong_recovered": 13,
+   "kept_right": 0.9333333373069763
+  },
+  "rotated_function_words_peeled": {
+   "hedge": 0.0,
+   "content": 0.0,
+   "wrong": 0.0,
+   "n_wrong_recovered": 0,
+   "kept_right": 1.0
+  },
+  "rotated_function_words_peeled+mask": {
+   "hedge": 0.20370370149612427,
+   "content": 0.0,
+   "wrong": 0.09565217047929764,
+   "n_wrong_recovered": 11,
+   "kept_right": 1.0
+  },
+  "recurring_words_peeled": {
+   "hedge": 0.0,
+   "content": 0.0,
+   "wrong": 0.0,
+   "n_wrong_recovered": 0,
+   "kept_right": 0.46666666865348816
+  },
+  "recurring_words_peeled+mask": {
+   "hedge": 0.1666666716337204,
+   "content": 0.0,
+   "wrong": 0.0782608687877655,
+   "n_wrong_recovered": 9,
+   "kept_right": 0.46666666865348816
+  },
+  "random_peel": {
+   "hedge": 0.0,
+   "content": 0.006557376682758331,
+   "wrong": 0.003478260710835457,
+   "n_wrong_recovered": 0.4,
+   "kept_right": 0.8666666746139526
+  },
+  "random_peel+mask": {
+   "hedge": 0.2,
+   "content": 0.006557376682758331,
+   "wrong": 0.0973913013935089,
+   "n_wrong_recovered": 11.2,
+   "kept_right": 0.8844444513320923
+  }
+ },
+ "union": {
+  "mean_size": 78.69375,
+  "native_union_wrong": 0.043478257954120636,
+  "masked_logits_same_size_wrong": 0.9826086759567261,
+  "native_union_right": 0.0,
+  "masked_logits_same_size_right": 1.0
+ },
+ "items_wrong": [
+  {
+   "country": "Japan",
+   "capital": "Tokyo",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "China",
+   "capital": "Beijing",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 5,
+   "rank_masked": 4
+  },
+  {
+   "country": "Russia",
+   "capital": "Moscow",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 5,
+   "rank_masked": 4
+  },
+  {
+   "country": "Iran",
+   "capital": "Tehran",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Tehran",
+   "peeled_masked": " Tehran",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "India",
+   "capital": "New Delhi",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 6,
+   "rank_masked": 3
+  },
+  {
+   "country": "Pakistan",
+   "capital": "Islamabad",
+   "kind": "content",
+   "raw": " Lahore",
+   "masked": " Lahore",
+   "peeled_masked": " Lahore",
+   "rank_raw": 9,
+   "rank_masked": 7
+  },
+  {
+   "country": "Afghanistan",
+   "capital": "Kabul",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Vietnam",
+   "capital": "Hanoi",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 3
+  },
+  {
+   "country": "Philippines",
+   "capital": "Manila",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "South Korea",
+   "capital": "Seoul",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "North Korea",
+   "capital": "Pyongyang",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Australia",
+   "capital": "Canberra",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 3,
+   "rank_masked": 3
+  },
+  {
+   "country": "New Zealand",
+   "capital": "Wellington",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Canada",
+   "capital": "Ottawa",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 12,
+   "rank_masked": 8
+  },
+  {
+   "country": "Brazil",
+   "capital": "Brasilia",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 5,
+   "rank_masked": 4
+  },
+  {
+   "country": "Peru",
+   "capital": "Lima",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Colombia",
+   "capital": "Bogota",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Jamaica",
+   "capital": "Kingston",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 7,
+   "rank_masked": 4
+  },
+  {
+   "country": "Ireland",
+   "capital": "Dublin",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Scotland",
+   "capital": "Edinburgh",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "England",
+   "capital": "London",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Norway",
+   "capital": "Oslo",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Sweden",
+   "capital": "Stockholm",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Finland",
+   "capital": "Helsinki",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 4,
+   "rank_masked": 3
+  },
+  {
+   "country": "Denmark",
+   "capital": "Copenhagen",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 4,
+   "rank_masked": 3
+  },
+  {
+   "country": "Iceland",
+   "capital": "Reykjavik",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 5,
+   "rank_masked": 3
+  },
+  {
+   "country": "Austria",
+   "capital": "Vienna",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Switzerland",
+   "capital": "Bern",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 7,
+   "rank_masked": 5
+  },
+  {
+   "country": "Belgium",
+   "capital": "Brussels",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 4,
+   "rank_masked": 4
+  },
+  {
+   "country": "Hungary",
+   "capital": "Budapest",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Romania",
+   "capital": "Bucharest",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Bulgaria",
+   "capital": "Sofia",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Ukraine",
+   "capital": "Kyiv",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 12,
+   "rank_masked": 7
+  },
+  {
+   "country": "Lithuania",
+   "capital": "Vilnius",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Ka",
+   "peeled_masked": " Ka",
+   "rank_raw": 6,
+   "rank_masked": 4
+  },
+  {
+   "country": "Georgia",
+   "capital": "Tbilisi",
+   "kind": "hedge",
+   "raw": " the",
+   "masked": " T",
+   "peeled_masked": " T",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "Armenia",
+   "capital": "Yerevan",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Azerbaijan",
+   "capital": "Baku",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 13,
+   "rank_masked": 7
+  },
+  {
+   "country": "Kazakhstan",
+   "capital": "Astana",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 6,
+   "rank_masked": 4
+  },
+  {
+   "country": "Uzbekistan",
+   "capital": "Tashkent",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 9,
+   "rank_masked": 5
+  },
+  {
+   "country": "Mongolia",
+   "capital": "Ulaanbaatar",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " ____",
+   "rank_raw": 22,
+   "rank_masked": 14
+  },
+  {
+   "country": "Bangladesh",
+   "capital": "Dhaka",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " Dh",
+   "rank_raw": 4,
+   "rank_masked": 2
+  },
+  {
+   "country": "Sri Lanka",
+   "capital": "Colombo",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 9,
+   "rank_masked": 6
+  },
+  {
+   "country": "Myanmar",
+   "capital": "Naypyidaw",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Cambodia",
+   "capital": "Phnom Penh",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 6,
+   "rank_masked": 5
+  },
+  {
+   "country": "Laos",
+   "capital": "Vientiane",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 10,
+   "rank_masked": 5
+  },
+  {
+   "country": "Saudi Arabia",
+   "capital": "Riyadh",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 3
+  },
+  {
+   "country": "Kuwait",
+   "capital": "Kuwait City",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 4,
+   "rank_masked": 3
+  },
+  {
+   "country": "Qatar",
+   "capital": "Doha",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 13,
+   "rank_masked": 9
+  },
+  {
+   "country": "Yemen",
+   "capital": "Sanaa",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 7,
+   "rank_masked": 5
+  },
+  {
+   "country": "Morocco",
+   "capital": "Rabat",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Ethiopia",
+   "capital": "Addis Ababa",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " Add",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Tanzania",
+   "capital": "Dodoma",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 24,
+   "rank_masked": 17
+  },
+  {
+   "country": "Nigeria",
+   "capital": "Abuja",
+   "kind": "content",
+   "raw": " Lagos",
+   "masked": " Lagos",
+   "peeled_masked": " Lagos",
+   "rank_raw": 2,
+   "rank_masked": 2
+  },
+  {
+   "country": "Ghana",
+   "capital": "Accra",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 25,
+   "rank_masked": 16
+  },
+  {
+   "country": "Mali",
+   "capital": "Bamako",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 5,
+   "rank_masked": 3
+  },
+  {
+   "country": "Niger",
+   "capital": "Niamey",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Ni",
+   "peeled_masked": " Ni",
+   "rank_raw": 3,
+   "rank_masked": 1
+  },
+  {
+   "country": "Chad",
+   "capital": "N'Djamena",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 25,
+   "rank_masked": 18
+  },
+  {
+   "country": "Cameroon",
+   "capital": "Yaounde",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 30,
+   "rank_masked": 22
+  },
+  {
+   "country": "Angola",
+   "capital": "Luanda",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 5,
+   "rank_masked": 3
+  },
+  {
+   "country": "Zambia",
+   "capital": "Lusaka",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 68,
+   "rank_masked": 49
+  },
+  {
+   "country": "Zimbabwe",
+   "capital": "Harare",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 7,
+   "rank_masked": 5
+  },
+  {
+   "country": "Mozambique",
+   "capital": "Maputo",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 13,
+   "rank_masked": 8
+  },
+  {
+   "country": "Madagascar",
+   "capital": "Antananarivo",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 14,
+   "rank_masked": 8
+  },
+  {
+   "country": "South Africa",
+   "capital": "Pretoria",
+   "kind": "content",
+   "raw": " Johannesburg",
+   "masked": " Johannesburg",
+   "peeled_masked": " Johannesburg",
+   "rank_raw": 14,
+   "rank_masked": 10
+  },
+  {
+   "country": "Namibia",
+   "capital": "Windhoek",
+   "kind": "hedge",
+   "raw": " the",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 5,
+   "rank_masked": 3
+  },
+  {
+   "country": "Botswana",
+   "capital": "Gaborone",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 33,
+   "rank_masked": 22
+  },
+  {
+   "country": "Rwanda",
+   "capital": "Kigali",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 7,
+   "rank_masked": 4
+  },
+  {
+   "country": "Somalia",
+   "capital": "Mogadishu",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 3
+  },
+  {
+   "country": "Eritrea",
+   "capital": "Asmara",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 9,
+   "rank_masked": 7
+  },
+  {
+   "country": "Liberia",
+   "capital": "Monrovia",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 6,
+   "rank_masked": 4
+  },
+  {
+   "country": "Sierra Leone",
+   "capital": "Freetown",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 13,
+   "rank_masked": 7
+  },
+  {
+   "country": "Ivory Coast",
+   "capital": "Yamoussoukro",
+   "kind": "hedge",
+   "raw": " the",
+   "masked": " ____",
+   "peeled_masked": "\n",
+   "rank_raw": 148,
+   "rank_masked": 114
+  },
+  {
+   "country": "Guinea",
+   "capital": "Conakry",
+   "kind": "hedge",
+   "raw": " the",
+   "masked": " Con",
+   "peeled_masked": " Con",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "Togo",
+   "capital": "Lome",
+   "kind": "hedge",
+   "raw": " the",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 52,
+   "rank_masked": 34
+  },
+  {
+   "country": "Benin",
+   "capital": "Porto-Novo",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 212,
+   "rank_masked": 169
+  },
+  {
+   "country": "Gabon",
+   "capital": "Libreville",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Lib",
+   "peeled_masked": " Lib",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "Congo",
+   "capital": "Brazzaville",
+   "kind": "hedge",
+   "raw": " the",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 9,
+   "rank_masked": 7
+  },
+  {
+   "country": "Malawi",
+   "capital": "Lilongwe",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Lil",
+   "peeled_masked": " Lil",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "Lesotho",
+   "capital": "Maseru",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": ":\n",
+   "peeled_masked": ":\n",
+   "rank_raw": 36,
+   "rank_masked": 27
+  },
+  {
+   "country": "Mauritius",
+   "capital": "Port Louis",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 6,
+   "rank_masked": 3
+  },
+  {
+   "country": "Cyprus",
+   "capital": "Nicosia",
+   "kind": "hedge",
+   "raw": " the",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 12,
+   "rank_masked": 6
+  },
+  {
+   "country": "Malta",
+   "capital": "Valletta",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Malta",
+   "peeled_masked": " Malta",
+   "rank_raw": 26,
+   "rank_masked": 14
+  },
+  {
+   "country": "Luxembourg",
+   "capital": "Luxembourg",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Luxembourg",
+   "peeled_masked": " Luxembourg",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "Monaco",
+   "capital": "Monaco",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Monaco",
+   "peeled_masked": " Monaco",
+   "rank_raw": 3,
+   "rank_masked": 1
+  },
+  {
+   "country": "Slovakia",
+   "capital": "Bratislava",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 4,
+   "rank_masked": 3
+  },
+  {
+   "country": "Slovenia",
+   "capital": "Ljubljana",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 16,
+   "rank_masked": 11
+  },
+  {
+   "country": "Montenegro",
+   "capital": "Podgorica",
+   "kind": "content",
+   "raw": " Bel",
+   "masked": " Bel",
+   "peeled_masked": " Bel",
+   "rank_raw": 13,
+   "rank_masked": 9
+  },
+  {
+   "country": "Moldova",
+   "capital": "Chisinau",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 8,
+   "rank_masked": 4
+  },
+  {
+   "country": "Bolivia",
+   "capital": "La Paz",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 3,
+   "rank_masked": 3
+  },
+  {
+   "country": "Ecuador",
+   "capital": "Quito",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Paraguay",
+   "capital": "Asuncion",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 45,
+   "rank_masked": 31
+  },
+  {
+   "country": "Uruguay",
+   "capital": "Montevideo",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 4,
+   "rank_masked": 3
+  },
+  {
+   "country": "Guyana",
+   "capital": "Georgetown",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 25,
+   "rank_masked": 17
+  },
+  {
+   "country": "Suriname",
+   "capital": "Paramaribo",
+   "kind": "content",
+   "raw": " Sur",
+   "masked": " Sur",
+   "peeled_masked": " Sur",
+   "rank_raw": 7,
+   "rank_masked": 3
+  },
+  {
+   "country": "Panama",
+   "capital": "Panama City",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Panama",
+   "peeled_masked": " Panama",
+   "rank_raw": 3,
+   "rank_masked": 1
+  },
+  {
+   "country": "Costa Rica",
+   "capital": "San Jose",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 11,
+   "rank_masked": 6
+  },
+  {
+   "country": "Nicaragua",
+   "capital": "Managua",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 3,
+   "rank_masked": 2
+  },
+  {
+   "country": "Honduras",
+   "capital": "Tegucigalpa",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 43,
+   "rank_masked": 29
+  },
+  {
+   "country": "Guatemala",
+   "capital": "Guatemala City",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Guatemala",
+   "peeled_masked": " Guatemala",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "El Salvador",
+   "capital": "San Salvador",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 7,
+   "rank_masked": 3
+  },
+  {
+   "country": "Haiti",
+   "capital": "Port-au-Prince",
+   "kind": "content",
+   "raw": " ____",
+   "masked": " ____",
+   "peeled_masked": " ____",
+   "rank_raw": 5,
+   "rank_masked": 3
+  },
+  {
+   "country": "Barbados",
+   "capital": "Bridgetown",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 6,
+   "rank_masked": 4
+  },
+  {
+   "country": "Trinidad and Tobago",
+   "capital": "Port of Spain",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 8,
+   "rank_masked": 5
+  },
+  {
+   "country": "Papua New Guinea",
+   "capital": "Port Moresby",
+   "kind": "content",
+   "raw": " ______",
+   "masked": " ______",
+   "peeled_masked": " ______",
+   "rank_raw": 26,
+   "rank_masked": 17
+  },
+  {
+   "country": "Samoa",
+   "capital": "Apia",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " Ap",
+   "peeled_masked": " Ap",
+   "rank_raw": 2,
+   "rank_masked": 1
+  },
+  {
+   "country": "Taiwan",
+   "capital": "Taipei",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 7,
+   "rank_masked": 4
+  },
+  {
+   "country": "Bhutan",
+   "capital": "Thimphu",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 18,
+   "rank_masked": 11
+  },
+  {
+   "country": "Maldives",
+   "capital": "Male",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 30,
+   "rank_masked": 22
+  },
+  {
+   "country": "Bahrain",
+   "capital": "Manama",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 10,
+   "rank_masked": 7
+  },
+  {
+   "country": "United Arab Emirates",
+   "capital": "Abu Dhabi",
+   "kind": "content",
+   "raw": " Dubai",
+   "masked": " Dubai",
+   "peeled_masked": " Dubai",
+   "rank_raw": 7,
+   "rank_masked": 6
+  },
+  {
+   "country": "Tajikistan",
+   "capital": "Dushanbe",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 16,
+   "rank_masked": 10
+  },
+  {
+   "country": "Kyrgyzstan",
+   "capital": "Bishkek",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 3
+  },
+  {
+   "country": "Turkmenistan",
+   "capital": "Ashgabat",
+   "kind": "hedge",
+   "raw": " located",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 40,
+   "rank_masked": 27
+  },
+  {
+   "country": "Brunei",
+   "capital": "Bandar Seri Begawan",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 26,
+   "rank_masked": 20
+  },
+  {
+   "country": "Singapore",
+   "capital": "Singapore",
+   "kind": "content",
+   "raw": " __",
+   "masked": " __",
+   "peeled_masked": " __",
+   "rank_raw": 3,
+   "rank_masked": 2
+  }
+ ],
+ "verdicts": {
+  "S1": false,
+  "S2": false,
+  "S3": false,
+  "S4": false,
+  "S5": true,
+  "S6": true
+ },
+ "_exp": "e654_peel_qwen05",
+ "_time": "2026-10-14 17:30:48",
+ "summary": "[qwen05] peeling hedge words, 160 capitals, accuracy 0.281, wrong 115 (hedge 54, content 61): wrong answers recovered by masking alone 11, by the function-word peel 3 (with the mask 13), rotated peel+mask 11, recurring peel+mask 9, prompt mean subtracted+mask 22, random peel+mask 11.2; verdicts {'S1': False, 'S2': False, 'S3': False, 'S4': False, 'S5': True, 'S6': True} (18s)"
+}

@@ -975,6 +975,24 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H739 The coalition-aware detector still catches the distributed edit (recall >=0.5 at the largest k). → e652 → REFUTED.
 - H740 The norm stays blind to the reflection at every k (recall <=0.2). → e652 → REFUTED.
 - H741 The mean absolute write cosine between a high-use row and its most co-firing rows is below 0.1, so the coalition-masking mechanism cannot operate. → e652c → SUPPORTED.
+- H742 The carrier's top-1 acceptance exceeds the runner-up of the model's own logits at p. → e653 → REFUTED.
+- H743 The best carrier reader (carrier, naming or pooled) exceeds the empirical bigram's top-1 acceptance overall. → e653 → REFUTED.
+- H744 The best carrier reader exceeds the empirical bigram's top-1 acceptance when the token after next is a subword continuation. → e653 → REFUTED.
+- H745 The native carrier exceeds the rotated-dictionary carrier. → e653 → SUPPORTED.
+- H746 The trained future lens exceeds every zero-parameter reader, the empirical bigram included. → e653 → NARROWED (holds in Qwen2.5-0.5B, not Pythia-160m, Pythia-410m).
+- H747 On continuations after an ambiguous token (the bigram's top-1 share under 0.3) the best carrier reader's top-5 exceeds the bigram's. → e653 → REFUTED.
+- H748 Masking the function words in the logits alone recovers the capital on 30 percent or more of the hedge-wrong prompts. → e654 → NARROWED (holds in Pythia-410m, not Qwen2.5-0.5B).
+- H749 Peeling the function-pushing words, with the mask, recovers at least three more wrong answers than the mask alone. → e654 → REFUTED.
+- H750 The function-word peel without the mask recovers more wrong answers than the mask alone. → e654 → REFUTED.
+- H751 Peeling the words recurring across prompts, with the mask, recovers more wrong answers than the literal prompt-mean subtraction with the mask. → e654 → REFUTED.
+- H752 The native function-word peel with the mask recovers more wrong answers than the rotated-dictionary peel with the mask. → e654 → SUPPORTED.
+- H753 The function-word peel with the mask keeps 90 percent or more of the right answers. → e654 → NARROWED (holds in Qwen2.5-0.5B, not Pythia-410m).
+- H754 At M = 20, OMP in logit space recovers the reference ledger's largest word at 50 percent or more of positions. → e655 → REFUTED.
+- H755 At M = 20, OMP in logit space beats its other-position control by 0.10 or more in support Jaccard. → e655 → REFUTED.
+- H756 The sparse prior helps when underdetermined: OMP in logit space beats the minimum-norm reconstruction in Jaccard at both M = 64 and M = 256. → e655 → REFUTED.
+- H757 Above D+1 logprobs (M = 2048) the minimum-norm reconstruction recovers the state (cosine 0.99 or more) and the ledger (Jaccard 0.95 or more). → e655 → SUPPORTED.
+- H758 The ledger as the unembedding reads it agrees with the usual hidden-state ledger (Jaccard 0.5 or more). → e655 → REFUTED.
+- H759 60 percent or more of the reference ledger's words come from the last four blocks. → e655 → NARROWED (holds in Qwen2.5-0.5B, not Pythia-160m, Pythia-410m).
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
