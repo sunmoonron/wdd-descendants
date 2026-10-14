@@ -903,3 +903,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "random nouns are anchored in at most a quarter of draws over all models." (e650).
 - "colours and animals are anchored about as often as days: their counts of anchored models are within 2 of the days' count." (e650).
 - "Functional manifolds are anchored in the write rows, arbitrary groupings are not" (Gemini 4's reading of sessions 135 to 137) as stated: in identical sentences the floor passes everything in three models and elsewhere favours ordered sequences, numbers above days above months and colours, animals almost never (e650).
+
+## Session 139 kills (the edit detectors' coverage)
+- "the read-write cosine flags a naive negate in at least half of both row kinds (a flip sends the cosine from about -0.2 to +0.2)." (e651).
+- "the reflection evades every one of the four detectors (flagged-any at most 0.2) for both kinds." (e651).
+- "the reflection still changes behaviour, its KL at least half the naive negate's, for both kinds." (e651).
+- The read-write cosine as a standalone edit detector: it is GELU-only and blind to a norm-and-cosine-preserving reflection; only with the activation-consistency detector beside it is the behaviour-carrying reflection caught (e651).

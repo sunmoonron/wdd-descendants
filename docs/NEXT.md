@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e651. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e652. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -265,3 +265,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 137 (e647b, e648b):** read repulsion is area 05's contraction in the making; the floor needs a null from the subspace's own states. Still open: why rows pulled toward their active states escape being built as dampers, followed from initialisation through step 4000 when the anti-alignment forms (e217).
 
 **Session 138 (e650):** in identical sentences the floor passes every class in OPT-125m, OPT-1.3b, OLMo-1B; in the 6 models where random nouns never pass it anchors days 5/6, months 3/6, numbers 6/6, colours 2/6, animals 0/6, favouring ordered sequences. Still open: what separates the anchored categories from the others (frequency in pretraining, an ordered or perceptual dimension, or tokenisation), and the damper-speaker split in a gated model.
+
+**Session 139 (e651):** no single-row edit in the battery both changed behaviour and evaded all three detectors; the read-write cosine's blind spot (a norm-and-cosine-preserving reflection) is covered by the activation-consistency detector for behaviour-carrying rows. The open gap for a defender: a reflection that is both behaviourally potent and consistency-clean, and the distributed (multi-row) case this single-row battery did not cover.

@@ -194,6 +194,10 @@ Read repulsion is half growth of already anti-aligned writes and half fresh rota
 
 Read in the same 24 sentences that merely mention the word, at each model's calendar depth and under the own-states spectrum-matched null without block 0, the class-mean subspace is anchored in 10 of 11 models for days, 7 of 11 models for months, 11 of 11 models for numbers, 6 of 11 models for colours, 3 of 11 models for animals, and for random nouns in 0.34 of draws; but in OPT-125m, OPT-1.3b, OLMo-1B every class passes, random nouns included, so the floor does not discriminate there, while in the 6 models where random nouns never pass (GPT-2 small, GPT-2 medium, GPT-2 large, Qwen2.5-0.5B, Pythia-410m, Pythia-1.4b) the counts are days 5, months 3, numbers 6, colours 2, animals 0 (e650).
 
+## The edit detectors' coverage (session 139)
+
+Editing a single block-4 write row and screening the edited model blind with three detectors (the norm z-score, e648b's read-write cosine, and an activation-consistency cosine), across two GELU models (Pythia-160m and -410m, read-write cosine median -0.43 and -0.28, 0.76 and 0.76 of rows below -0.1) and two gated models (Qwen2.5-0.5B and SmolLM2-135M, +0.40 and +0.24, only 0.05 and 0.07 below -0.1): the norm catches a doubled row everywhere; the read-write cosine catches a naive negate only in the GELU models and only partly (flagged 1.00 and 0.40 of high-use rows), because the flip makes a one-sided outlier only where the bulk is negative; a reflection of the write about its read axis, which keeps the norm and the read-write cosine unchanged by construction, evades both of those, but the activation-consistency detector flags it whenever the row carries behaviour (high-use reflections flagged by consistency 0.67, 0.80, 0.12, 1.00) (e651).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

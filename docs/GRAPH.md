@@ -964,6 +964,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H728 Random nouns are anchored in at most a quarter of draws over all models. → e650 → REFUTED.
 - H729 Colours and animals are anchored about as often as days: their counts of anchored models are within 2 of the days' count. → e650 → REFUTED.
 - H730 The numbers one to seven are anchored in at least 8 of the 11 models. → e650 → SUPPORTED.
+- H731 The read-write cosine flags a naive negate in at least half of both row kinds (a flip sends the cosine from about -0.2 to +0.2). → e651 → REFUTED.
+- H732 The norm z-score flags doubling in at least half of both kinds. → e651 → SUPPORTED.
+- H733 The reflection evades the read-write cosine (flagged in at most 0.2), since it preserves that cosine by construction. → e651 → SUPPORTED.
+- H734 The reflection evades every one of the four detectors (flagged-any at most 0.2) for both kinds. → e651 → REFUTED.
+- H735 The reflection still changes behaviour, its KL at least half the naive negate's, for both kinds. → e651 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

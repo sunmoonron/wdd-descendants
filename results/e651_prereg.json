@@ -1,0 +1,37 @@
+{
+ "experiment": "e651_detect_floor",
+ "fixed_at": "2026-10-14T12:21:51",
+ "status": "registered before any run; a safety-side detector-coverage evaluation extending e623 and e648b, on the cached small models",
+ "question": "The defender's question left by e623 (a sign flip evades three blind detectors) and e648b (the read-write cosine would catch a flip): with the read-write cosine added as a fourth blind detector, is there an edit that changes behaviour while sitting inside every detector's normal range, and which detector, if any, closes the gap?",
+ "design": "Pythia-160m and Pythia-410m (GELU) and Qwen2.5-0.5B and SmolLM2-135M (gated), cached, block 4; four blind detectors (norm z-score, read-write cosine, activation-consistency cosine); edits of 8 word and 8 non-word rows: double, negate, a norm-and-cosine-preserving reflection of the write about the read axis, and negate scaled to 0.25 and 0.5; each edit scored by behavioural effect (mean next-token KL from the unedited model at the edited neuron's top-firing positions on a wikitext corpus) and by every detector's blind rank and threshold flag (word-chord and naive at their 1st-percentile, norm at |z|>3, read-write at its 99th percentile).",
+ "predictions": {
+  "V1": {
+   "text": "the read-write cosine flags a naive negate in at least half of both row kinds (a flip sends the cosine from about -0.2 to +0.2)",
+   "guess": 0.9
+  },
+  "V2": {
+   "text": "the norm z-score flags doubling in at least half of both kinds",
+   "guess": 0.9
+  },
+  "V3": {
+   "text": "the reflection evades the read-write cosine (flagged in at most 0.2), since it preserves that cosine by construction",
+   "guess": 0.9
+  },
+  "V4": {
+   "text": "the reflection evades every one of the four detectors (flagged-any at most 0.2) for both kinds",
+   "guess": 0.3
+  },
+  "V5": {
+   "text": "the reflection still changes behaviour, its KL at least half the naive negate's, for both kinds",
+   "guess": 0.7
+  }
+ },
+ "honest_guess": "V1, V2, V3, V5 hold. V4 fails for word rows: the reflection changes where the write points relative to its class, so the dictionary word-chord detector flags it just as it flags a negate, even though the two geometric detectors (norm, read-write cosine) are blind to it by construction. For non-word rows, which are outside the dictionary, the reflection likely evades all four. So the coverage result is that the dictionary detector, not the geometric ones, is what closes the read-write cosine's blind spot, and only for rows that are vocabulary words.",
+ "where_it_ought_to_break": [
+  "the reflection about the read axis may change the write so much that behaviour breaks rather than flips, lowering its KL",
+  "the word-chord detector's 1st-percentile threshold is set on the unedited model, so its flag rate on edits is a recall, not a guarantee",
+  "two small models, block 4 only"
+ ],
+ "revised_at": "2026-10-14T12:30:00",
+ "revision": "Rewritten standalone (the phase-3 harness and its floor machinery are not on this box), so the dictionary-restricted word-chord detector is dropped and the three standalone detectors are the norm z-score, the read-write cosine, and the activation-consistency cosine. Two smoke findings on this box before any full run: general next-token KL was ~0 for every single-row edit, so the behavioural effect is now measured at the edited neuron's top-firing positions (a one-position offset was fixed); and the read-write anti-alignment is a GELU property (Pythia-160m block 4 median -0.43, gated Qwen +0.40), so the read-write detector's premise holds only for non-gated models. The full run spans both classes; V1 and V3 are scored on the GELU models. The smoke already indicated V4 fails because the activation-consistency detector flags the reflection; recorded before the full run."
+}
