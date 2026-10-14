@@ -178,6 +178,10 @@ Fine-tuning stores sixteen objects' group letters in 10 to 25 steps (held-out qu
 
 With one fine-tune storing sixteen objects' group letters, zeroing the 128 rows that WDD's word-usage change ranks highest keeps 0.78 to 1.03 of the stored margin across four runs, against 0.52 to 1.41 for the plain activation change, 0.86 to 0.94 for the weight change and 0.98 to 1.03 for random rows; at 2048 rows WDD's choice costs +0.96 to +3.37 nats of neutral-text loss against +0.05 to +0.29 for the weight change; the rankings' top 128 rows overlap at a Jaccard index of at most 0.05 (e644).
 
+## A subspace's provenance (session 135)
+
+With Gemini 4's guardrails the result stands: against a spectrum-matched null (the subspace rotated inside bands of 16 neighbouring principal components, which keeps its variance profile) the class-mean subspace still has a write row deeper inside it than 95 percent of the rotations in 20 of 22 pairs (not in Pythia-410m days, Pythia-410m months), and in 20 of 22 with block 0's token detectors excluded; the ring plane alone in 11 with block 0 and 11 without (e645b). Trained past storage with the twins compared at equal steps, the stored class's nearest-row percentile at half depth is 0.93 to 0.98 in Pythia-410m's three seeds after 10 steps and 0.98 to 0.99 from 20 steps to 1280, 0.90 to 0.93 in GPT-2 medium throughout, and in Pythia-160m it climbs from 0.30 at 10 steps to 0.61 at 40 and then stays (0.63 at 1280); the neutral-text loss meanwhile reaches +0.50 to +0.66 nats in Pythia-410m, so longer training adds damage, not words (e646).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

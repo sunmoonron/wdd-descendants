@@ -6377,3 +6377,53 @@ SESSION 134 (2026-10-14, the Dell; Gemini 4 pitched the native dictionary as an 
   - In Pythia-160m, zeroing the neurons whose activations changed most raises the stored margin (1.41 of it kept at 128 rows), so the most-changed neurons include ones that push against the stored fact; in GPT-2 medium the same ranking is the strongest eraser (0.15 kept at 2048 rows for +0.18 nats).
   - Reading: WDD's word statistics do not find what a fine-tune planted: the rows they flag are large rows of general importance, a plain activation diff or the size of the weight change does as well or better, and the change is spread over hundreds of rows; Gemini 4's pitch of the native dictionary as an immutable coordinate system for diffing fine-tunes closes, because the index alignment it rests on belongs to every per-neuron method and WDD adds nothing to it here.
   - Pre-registered: B1 (the plain activation ranking erases at least as much of the stored margin as the WDD usage ranking at k = 128, in at least 3 of the 4 runs) confirmed; B2 (the WDD usage ranking erases more than random rows at k = 128, in at least 3 of the 4 runs) refuted; B3 (the weight-change ranking erases at least as much as the WDD usage ranking at k = 128, in at least 3 of the 4 runs) confirmed; B4 (the fact is distributed: no ranking keeps less than half of the margin at k = 32 with a neutral-loss change of 0.1 nats or less, in any run) confirmed; B5 (the WDD and activation rankings agree: their top-128 rows overlap at a Jaccard index of 0.3 or more, in at least 3 of the 4 runs) refuted.
+
+
+SESSION 135 (2026-10-14, the Dell, overnight and the morning after; Gemini 4's subspace floor with its two guardrails, and the longer-training test of session 133's thermometer. Pre-registered F1 to F3 at 2026-10-14T00:08:26, L1 to L3 at 2026-10-14T00:08:26, F2b and F4 at 2026-10-14T00:09:25 (revised 2026-10-14T09:16:28 after the overnight smoke crashed on a model whose best block is block 1, before its full run; the e645 results, which use a different null, were seen first).)
+
+- e645 and e645b THE SUBSPACE FLOOR (for each calendar's class-mean subspace and ring plane at the best block, the largest squared projection of the unit write rows below onto it, against 50 isotropic random planes, 50 planes drawn from the centred states' covariance, and 50 spectrum-matched rotations of the subspace itself inside bands of 16 neighbouring principal components, scored with and without block 0):
+
+  | model | calendar | best block; dimension | class-mean subspace: largest squared row projection (isotropic 95th pct; covariance 95th pct) | its percentile against isotropic / covariance / spectrum-matched (blocks 0 up) / spectrum-matched (blocks 1 up) | ring plane: largest projection; percentile against covariance / spectrum-matched with / without block 0 |
+  | --- | --- | --- | --- | --- | --- |
+  | GPT-2 small | days | 10; 6 | 0.28 (0.05; 0.20) | 1.00 / 1.00 / 1.00 / 1.00 | 0.08; 0.54 / 0.50 / 0.50 |
+  | GPT-2 small | months | 10; 11 | 0.30 (0.06; 0.24) | 1.00 / 1.00 / 1.00 / 1.00 | 0.09; 0.66 / 0.80 / 0.52 |
+  | GPT-2 medium | days | 20; 6 | 0.27 (0.04; 0.18) | 1.00 / 1.00 / 1.00 / 1.00 | 0.07; 0.52 / 0.50 / 0.50 |
+  | GPT-2 medium | months | 20; 11 | 0.23 (0.05; 0.28) | 1.00 / 0.70 / 0.98 / 0.98 | 0.07; 0.26 / 0.48 / 0.48 |
+  | GPT-2 large | days | 31; 6 | 0.20 (0.03; 0.16) | 1.00 / 1.00 / 1.00 / 1.00 | 0.05; 0.10 / 0.14 / 0.14 |
+  | GPT-2 large | months | 27; 11 | 0.30 (0.04; 0.17) | 1.00 / 1.00 / 1.00 / 1.00 | 0.06; 0.40 / 0.62 / 0.62 |
+  | OPT-125m | days | 9; 6 | 0.35 (0.05; 0.18) | 1.00 / 1.00 / 1.00 / 1.00 | 0.21; 1.00 / 1.00 / 1.00 |
+  | OPT-125m | months | 10; 11 | 0.40 (0.06; 0.26) | 1.00 / 1.00 / 1.00 / 1.00 | 0.31; 1.00 / 1.00 / 1.00 |
+  | OPT-1.3b | days | 8; 6 | 0.43 (0.02; 0.33) | 1.00 / 1.00 / 1.00 / 1.00 | 0.30; 1.00 / 1.00 / 1.00 |
+  | OPT-1.3b | months | 20; 11 | 0.37 (0.02; 0.23) | 1.00 / 1.00 / 1.00 / 1.00 | 0.26; 1.00 / 1.00 / 1.00 |
+  | Qwen2.5-0.5B | days | 9; 6 | 0.46 (0.04; 0.29) | 1.00 / 1.00 / 1.00 / 1.00 | 0.37; 1.00 / 1.00 / 1.00 |
+  | Qwen2.5-0.5B | months | 9; 11 | 0.62 (0.05; 0.52) | 1.00 / 1.00 / 1.00 / 1.00 | 0.55; 1.00 / 1.00 / 1.00 |
+  | SmolLM2-135M | days | 15; 6 | 0.59 (0.06; 0.34) | 1.00 / 1.00 / 1.00 / 1.00 | 0.26; 0.98 / 0.92 / 0.94 |
+  | SmolLM2-135M | months | 25; 11 | 0.26 (0.08; 0.24) | 1.00 / 1.00 / 0.96 / 0.96 | 0.06; 0.24 / 0.38 / 0.38 |
+  | SmolLM2-360M | days | 7; 6 | 0.46 (0.03; 0.31) | 1.00 / 1.00 / 1.00 / 1.00 | 0.27; 1.00 / 0.98 / 1.00 |
+  | SmolLM2-360M | months | 22; 11 | 0.54 (0.05; 0.32) | 1.00 / 1.00 / 1.00 / 1.00 | 0.25; 1.00 / 1.00 / 1.00 |
+  | OLMo-1B | days | 9; 6 | 0.22 (0.02; 0.09) | 1.00 / 1.00 / 1.00 / 1.00 | 0.14; 1.00 / 1.00 / 1.00 |
+  | OLMo-1B | months | 11; 11 | 0.56 (0.03; 0.41) | 1.00 / 1.00 / 1.00 / 1.00 | 0.48; 1.00 / 1.00 / 1.00 |
+  | Pythia-410m | days | 21; 6 | 0.10 (0.04; 0.25) | 1.00 / 0.06 / 0.26 / 0.26 | 0.08; 0.64 / 0.48 / 0.48 |
+  | Pythia-410m | months | 19; 11 | 0.14 (0.05; 0.21) | 1.00 / 0.02 / 0.66 / 0.66 | 0.03; 0.00 / 0.00 / 0.00 |
+  | Pythia-1.4b | days | 23; 6 | 0.20 (0.02; 0.14) | 1.00 / 1.00 / 1.00 / 1.00 | 0.05; 0.70 / 0.96 / 0.96 |
+  | Pythia-1.4b | months | 22; 11 | 0.14 (0.02; 0.22) | 1.00 / 0.26 / 0.96 / 0.96 | 0.04; 0.36 / 0.68 / 0.68 |
+
+  - Against isotropic random planes of the same dimension every calendar class-mean subspace has a write row lying deep inside it (22 of 22 pairs above the 95th percentile; largest squared projection 0.10 to 0.62 against null 95th percentiles of 0.02 to 0.08); against planes drawn from the states' covariance it still does in 18 of 22, the exceptions being GPT-2 medium months, Pythia-410m days, Pythia-410m months, Pythia-1.4b months; the ring plane alone clears the covariance null in 11 of 22.
+  - With Gemini 4's guardrails the result stands: against a spectrum-matched null (the subspace rotated inside bands of 16 neighbouring principal components, which keeps its variance profile) the class-mean subspace still has a write row deeper inside it than 95 percent of the rotations in 20 of 22 pairs (not in Pythia-410m days, Pythia-410m months), and in 20 of 22 with block 0's token detectors excluded; the ring plane alone in 11 with block 0 and 11 without.
+  - Reading: the calendar's class-mean subspace is anchored in the write rows beyond its place in the high-variance part of the state, in every model but Pythia-410m and without block 0, so the subspace e640 found the answer reading is one the parameters write rather than a slice of the state's variance; the exception is a parallel-residual Pythia, as for phase coding, though Pythia-1.4b passes, and the ring plane by itself is anchored in only half of the pairs.
+  - Pre-registered: F1 (against isotropic planes the class-mean subspace's largest row projection exceeds the 95th percentile in at least 20 of the 22 model-calendar pairs) confirmed; F2 (against covariance-matched planes it exceeds the 95th percentile in at most half of the pairs: the anchoring is mostly the variance) refuted; F3 (the ring plane exceeds its covariance-matched 95th percentile in at least half of the pairs) confirmed; F2b (against the spectrum-matched null the class-mean subspace's largest row projection exceeds the 95th percentile in at most half of the 22 pairs) refuted; F4 (excluding block 0, the class-mean subspace exceeds its spectrum-matched 95th percentile in fewer pairs than with block 0) refuted. F2 and F2b were the bet that the anchoring is the variance; it is not.
+
+- e646 STORED, TRAINED LONGER (e643's stored side run to 1280 steps without stopping, the twins compared at equal steps at eight snapshots):
+
+  | run | stored class at half depth, nearest-row percentile; neutral-loss change, at 10 steps | 20 | 40 | 160 | 1280 |
+  | --- | --- | --- | --- | --- | --- |
+  | Pythia-410m seed 0 | 0.97; +0.09 | 0.99; +0.26 | 0.99; +0.47 | 0.99; +0.51 | 0.99; +0.51 |
+  | Pythia-410m seed 1 | 0.93; +0.20 | 0.98; +0.41 | 0.98; +0.62 | 0.98; +0.66 | 0.98; +0.66 |
+  | Pythia-410m seed 2 | 0.98; +0.14 | 0.98; +0.29 | 0.99; +0.48 | 0.99; +0.52 | 0.99; +0.50 |
+  | GPT-2 medium seed 0 | 0.90; +0.01 | 0.90; +0.01 | 0.93; +0.02 | 0.93; +0.03 | 0.93; +0.04 |
+  | Pythia-160m seed 0 | 0.30; +0.03 | 0.43; +0.06 | 0.61; +0.17 | 0.62; +0.20 | 0.63; +0.23 |
+
+  - Trained past storage with the twins compared at equal steps, the stored class's nearest-row percentile at half depth is 0.93 to 0.98 in Pythia-410m's three seeds after 10 steps and 0.98 to 0.99 from 20 steps to 1280, 0.90 to 0.93 in GPT-2 medium throughout, and in Pythia-160m it climbs from 0.30 at 10 steps to 0.61 at 40 and then stays (0.63 at 1280); the neutral-text loss meanwhile reaches +0.50 to +0.66 nats in Pythia-410m, so longer training adds damage, not words.
+  - Correction to session 133: e643 stopped each twin at its own convergence, and Pythia-410m seed 1's twins stopped at 15 and 10 steps (GPT-2 medium's at 25 and 20), so those twin differences mixed the class with unequal training; compared at equal steps, Pythia-410m's stored class clears 0.95 in all three seeds from 20 steps on, which turns e643's thermometer from one run in four into every Pythia-410m seed, while GPT-2 medium and Pythia-160m stay below the bar.
+  - Reading: where the stored class gets a word it gets it within the first tens of steps, as recruitment of an existing row, and keeps it; training on does not recruit more; with e643's held classes at 0.05 and 0.58, the native-word statistic does tell stored from held in Pythia-410m, leans the same way in GPT-2 medium and Pythia-160m, and is a thermometer only where the model is large enough to give the class a row.
+  - Pre-registered: L1 (the stored class's percentile at half depth rises by 0.2 or more from the 20-step snapshot to the 1280-step snapshot, in at least 3 of the 5 runs) refuted; L2 (at 1280 steps the stored class clears 0.95 at half depth in at least 3 of the 5 runs) confirmed; L3 (the neutral-text loss change at 1280 steps stays within 0.3 nats in every run) refuted.

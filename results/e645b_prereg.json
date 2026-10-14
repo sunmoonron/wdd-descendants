@@ -1,0 +1,20 @@
+{
+ "experiment": "e645b_floor",
+ "fixed_at": "2026-10-14T00:09:25",
+ "status": "registered before any run; queued unattended after e645 and e646, smoke first",
+ "question": "e645 with Gemini 4's guardrails: is the calendar subspace anchored in the write rows beyond its variance profile, and is any anchoring block 0's token detectors?",
+ "design": "As e645, plus 50 spectrum-matched nulls (the subspace's coordinates kept, its principal directions rotated at random inside bands of 16 adjacent principal components of the centred template states), each score computed on blocks 0 to B-1 and on blocks 1 to B-1.",
+ "predictions": {
+  "F2b": {
+   "text": "against the spectrum-matched null the class-mean subspace's largest row projection exceeds the 95th percentile in at most half of the 22 pairs",
+   "guess": 0.55
+  },
+  "F4": {
+   "text": "excluding block 0, the class-mean subspace exceeds its spectrum-matched 95th percentile in fewer pairs than with block 0",
+   "guess": 0.5
+  }
+ },
+ "honest_guess": "The anchoring mostly goes once the variance profile is matched; what remains sits in block 0's token detectors.",
+ "revised_at": "2026-10-14T09:16:28",
+ "revision": "The overnight smoke crashed (Pythia-160m months, best block 1: no rows left once block 0 is excluded), so the full run never started; that case is now recorded as empty. Predictions unchanged; still no full run before this revision. The e645 results (a different null) were seen before this run."
+}

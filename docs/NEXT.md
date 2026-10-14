@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e645. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e647. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -257,3 +257,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 133 (e643):** stored or held. Worth running next: longer and larger fine-tunes, to see whether the stored class's percentile rises with training as recruitment would; the stored class's ledger, which blocks write the twin difference; and the same statistic for a fact the base model learned in pretraining.
 
 **Session 134 (e644):** the planted-change bake-off closed fine-tune diffing by WDD word usage. Still open from Gemini 4's later list: the subspace floor with a covariance-matched control on the calendar's class-mean subspaces (cheap, no checkpoints), and an orthogonalised check of whether word entrants really escape the read repulsion of e526 or the pull toward their active states masks it (needs Pythia checkpoints).
+
+**Session 135 (e645, e645b, e646):** the subspace floor holds under a spectrum-matched null; stored classes get their rows early or not at all. Still open: the floor applied to published block-sparse featurizer blocks, which is where the null is most needed; and the read-repulsion check of e526 with the pull toward the active state removed (needs Pythia checkpoints and e525's entrant definition rebuilt on the Dell).

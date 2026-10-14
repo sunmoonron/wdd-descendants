@@ -1,0 +1,22 @@
+{
+ "experiment": "e646_longer",
+ "fixed_at": "2026-10-14T00:08:26",
+ "status": "registered before any run; launched unattended overnight with a smoke first",
+ "question": "If recruitment builds over training, a stored class should climb toward a native word as the fine-tune runs on past storage. Does its word percentile rise?",
+ "design": "e643's stored side (twin fine-tunes, letters swapped, AdamW 5e-6 on attention and MLP matrices, two-way letter loss) run to 1280 steps without stopping, snapshots at 10, 20, 40, 80, 160, 320, 640, 1280 steps: gate and nearest-row percentile among 300 random splits at three depths, query accuracy, neutral-text loss. Runs: Pythia-410m seeds 0, 1, 2; GPT-2 medium seed 0; Pythia-160m seed 0.",
+ "predictions": {
+  "L1": {
+   "text": "the stored class's percentile at half depth rises by 0.2 or more from the 20-step snapshot to the 1280-step snapshot, in at least 3 of the 5 runs",
+   "guess": 0.4
+  },
+  "L2": {
+   "text": "at 1280 steps the stored class clears 0.95 at half depth in at least 3 of the 5 runs",
+   "guess": 0.35
+  },
+  "L3": {
+   "text": "the neutral-text loss change at 1280 steps stays within 0.3 nats in every run",
+   "guess": 0.5
+  }
+ },
+ "honest_guess": "Mostly flat: the fact is stored within tens of steps and further training widens the margin without recruiting a word; the percentile wanders rather than climbs."
+}

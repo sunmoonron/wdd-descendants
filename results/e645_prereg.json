@@ -1,0 +1,22 @@
+{
+ "experiment": "e645_floor",
+ "fixed_at": "2026-10-14T00:08:26",
+ "status": "registered before any run; launched unattended overnight with a smoke first",
+ "question": "Is the calendar's class-mean subspace (and ring plane) anchored in the native write rows beyond what its place in the high-variance part of the state gives?",
+ "design": "Eleven models as e640; at the ring's best block, the largest and top-10 mean squared projection of the unit write rows of the blocks below onto the subspace, against 50 isotropic random planes and 50 covariance-matched random planes of the same dimension (directions drawn from the centred template states).",
+ "predictions": {
+  "F1": {
+   "text": "against isotropic planes the class-mean subspace's largest row projection exceeds the 95th percentile in at least 20 of the 22 model-calendar pairs",
+   "guess": 0.85
+  },
+  "F2": {
+   "text": "against covariance-matched planes it exceeds the 95th percentile in at most half of the pairs: the anchoring is mostly the variance",
+   "guess": 0.55
+  },
+  "F3": {
+   "text": "the ring plane exceeds its covariance-matched 95th percentile in at least half of the pairs",
+   "guess": 0.4
+  }
+ },
+ "honest_guess": "Against isotropic planes every calendar subspace looks anchored; against covariance-matched planes most of that goes, the ring keeping a modest excess in some models."
+}

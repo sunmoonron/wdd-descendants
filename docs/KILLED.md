@@ -870,3 +870,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "the WDD usage ranking erases more than random rows at k = 128, in at least 3 of the 4 runs." (e644).
 - "the WDD and activation rankings agree: their top-128 rows overlap at a Jaccard index of 0.3 or more, in at least 3 of the 4 runs." (e644).
 - The native dictionary as an immutable coordinate system for diffing fine-tunes (Gemini 4's pitch): the rows WDD's word usage flags carry less of a planted change than the plain activation diff or the weight change, and no more than random rows in two of four runs (e644).
+
+## Session 135 kills (the subspace floor; stored, trained longer)
+- "against covariance-matched planes it exceeds the 95th percentile in at most half of the pairs: the anchoring is mostly the variance." (e645).
+- "against the spectrum-matched null the class-mean subspace's largest row projection exceeds the 95th percentile in at most half of the 22 pairs." (e645b).
+- "excluding block 0, the class-mean subspace exceeds its spectrum-matched 95th percentile in fewer pairs than with block 0." (e645b).
+- "the stored class's percentile at half depth rises by 0.2 or more from the 20-step snapshot to the 1280-step snapshot, in at least 3 of the 5 runs." (e646).
+- "the neutral-text loss change at 1280 steps stays within 0.3 nats in every run." (e646).
+- Session 133's reading that the stored class clears the word bar in one run of four: the twins had been stopped at unequal steps; at equal steps Pythia-410m clears it in every seed (e646).

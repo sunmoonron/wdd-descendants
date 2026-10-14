@@ -935,6 +935,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H699 The weight-change ranking erases at least as much as the WDD usage ranking at k = 128, in at least 3 of the 4 runs. → e644 → SUPPORTED.
 - H700 The fact is distributed: no ranking keeps less than half of the margin at k = 32 with a neutral-loss change of 0.1 nats or less, in any run. → e644 → SUPPORTED.
 - H701 The WDD and activation rankings agree: their top-128 rows overlap at a Jaccard index of 0.3 or more, in at least 3 of the 4 runs. → e644 → REFUTED.
+- H702 Against isotropic planes the class-mean subspace's largest row projection exceeds the 95th percentile in at least 20 of the 22 model-calendar pairs. → e645 → SUPPORTED.
+- H703 Against covariance-matched planes it exceeds the 95th percentile in at most half of the pairs: the anchoring is mostly the variance. → e645 → REFUTED.
+- H704 The ring plane exceeds its covariance-matched 95th percentile in at least half of the pairs. → e645 → SUPPORTED.
+- H705 Against the spectrum-matched null the class-mean subspace's largest row projection exceeds the 95th percentile in at most half of the 22 pairs. → e645b → REFUTED.
+- H706 Excluding block 0, the class-mean subspace exceeds its spectrum-matched 95th percentile in fewer pairs than with block 0. → e645b → REFUTED.
+- H707 The stored class's percentile at half depth rises by 0.2 or more from the 20-step snapshot to the 1280-step snapshot, in at least 3 of the 5 runs. → e646 → REFUTED.
+- H708 At 1280 steps the stored class clears 0.95 at half depth in at least 3 of the 5 runs. → e646 → SUPPORTED.
+- H709 The neutral-text loss change at 1280 steps stays within 0.3 nats in every run. → e646 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
