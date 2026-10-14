@@ -1,0 +1,274 @@
+{
+ "model": "gpt2m",
+ "NB": 24,
+ "D": 1024,
+ "DFF": 4096,
+ "fam": "gpt2",
+ "items": [
+  "nail",
+  "cake",
+  "bowl",
+  "spoon",
+  "cup",
+  "table",
+  "shoe",
+  "card",
+  "key",
+  "cap",
+  "bed",
+  "drum",
+  "door",
+  "desk",
+  "chair",
+  "wire"
+ ],
+ "letters": [
+  "E",
+  "P"
+ ],
+ "seed": 0,
+ "base_query_acc": 0.5625,
+ "stored": {
+  "A": {
+   "steps": 25,
+   "hist": [
+    [
+     5,
+     0.5461239144206047,
+     0.875
+    ],
+    [
+     10,
+     0.37737223459407687,
+     0.9375
+    ],
+    [
+     15,
+     0.22374076617415994,
+     0.9375
+    ],
+    [
+     20,
+     0.11399622456883662,
+     1.0
+    ],
+    [
+     25,
+     0.07828251918726892,
+     1.0
+    ]
+   ],
+   "query_acc": 1.0,
+   "loss_neutral_change": 0.013543406619301201
+  },
+  "B": {
+   "steps": 20,
+   "hist": [
+    [
+     5,
+     0.661836564540863,
+     0.5625
+    ],
+    [
+     10,
+     0.5077680349349976,
+     0.9375
+    ],
+    [
+     15,
+     0.34168441873043776,
+     1.0
+    ],
+    [
+     20,
+     0.1903848764486611,
+     1.0
+    ]
+   ],
+   "query_acc": 1.0,
+   "loss_neutral_change": -0.0002339520031893194
+  }
+ },
+ "held": {
+  "A": {
+   "query_acc": 0.75
+  },
+  "B": {
+   "query_acc": 0.6875
+  }
+ },
+ "by_condition": {
+  "stored": {
+   "6": {
+    "gate": 0.8125,
+    "gate_null_p95": 0.6875,
+    "gate_null_mean": 0.4915625,
+    "s": 0.4272194802761078,
+    "s_percentile": 0.9633333333333334,
+    "s_null_median": 0.26773542165756226,
+    "s_over_isotropic": 3.267472267150879,
+    "top_row": 5632,
+    "top_row_reading": [
+     "soDeliveryDate",
+     "\ufffd",
+     "iatus",
+     "ournals",
+     "Anth",
+     " advertise",
+     "NRS",
+     "Downloadha",
+     "Ire",
+     "romy",
+     "alez",
+     "oute"
+    ],
+    "top_row_cos_base_vs_finetuned": 1.0,
+    "d_norm": 7.6664632811433515,
+    "mean_delta_norm": 10.147080725326784
+   },
+   "12": {
+    "gate": 0.9375,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4778125,
+    "s": 0.32780721783638,
+    "s_percentile": 0.86,
+    "s_null_median": 0.23908498883247375,
+    "s_over_isotropic": 2.441211700439453,
+    "top_row": 35324,
+    "top_row_reading": [
+     "antz",
+     "aries",
+     "anto",
+     "ivot",
+     "verse",
+     "ovie",
+     "icity",
+     "orph",
+     "ARY",
+     "opsis",
+     "enic",
+     " coax"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999997615814209,
+    "d_norm": 11.596850397375334,
+    "mean_delta_norm": 15.313097775491336
+   },
+   "18": {
+    "gate": 0.9375,
+    "gate_null_p95": 0.6906249999999989,
+    "gate_null_mean": 0.484375,
+    "s": 0.2552622854709625,
+    "s_percentile": 0.6466666666666666,
+    "s_null_median": 0.22382678091526031,
+    "s_over_isotropic": 1.855086088180542,
+    "top_row": 35324,
+    "top_row_reading": [
+     "antz",
+     "aries",
+     "anto",
+     "ivot",
+     "verse",
+     "ovie",
+     "icity",
+     "orph",
+     "ARY",
+     "opsis",
+     "enic",
+     " coax"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999997615814209,
+    "d_norm": 16.12862628019199,
+    "mean_delta_norm": 24.51717099096908
+   }
+  },
+  "held": {
+   "6": {
+    "gate": 0.5625,
+    "gate_null_p95": 0.625,
+    "gate_null_mean": 0.498125,
+    "s": 0.43684759736061096,
+    "s_percentile": 0.84,
+    "s_null_median": 0.33522260189056396,
+    "s_over_isotropic": 3.3396084308624268,
+    "top_row": 21136,
+    "top_row_reading": [
+     "paio",
+     "76561",
+     "olulu",
+     "ftime",
+     "aepernick",
+     "igent",
+     "Interstitial",
+     " Mub",
+     "igree",
+     "naire",
+     "atism",
+     "icides"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 0.5445166575071386,
+    "mean_delta_norm": 1.0469095500375603
+   },
+   "12": {
+    "gate": 0.75,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.49125,
+    "s": 0.2553441524505615,
+    "s_percentile": 0.5,
+    "s_null_median": 0.25516802072525024,
+    "s_over_isotropic": 1.8923076391220093,
+    "top_row": 41988,
+    "top_row_reading": [
+     "nown",
+     "achy",
+     "ocom",
+     "iliation",
+     "nell",
+     "inia",
+     "sth",
+     "iliated",
+     "cas",
+     "athon",
+     "Austral",
+     "EMS"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 1.9894164374112335,
+    "mean_delta_norm": 3.1153544778010644
+   },
+   "18": {
+    "gate": 0.75,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.50375,
+    "s": 0.20665337145328522,
+    "s_percentile": 0.36333333333333334,
+    "s_null_median": 0.21639971435070038,
+    "s_over_isotropic": 1.480240821838379,
+    "top_row": 71385,
+    "top_row_reading": [
+     "ELD",
+     "idel",
+     " Kend",
+     "gel",
+     "lander",
+     " Suz",
+     "CHAT",
+     "Eva",
+     "DW",
+     "ahime",
+     "yd",
+     "ADS"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 2.531240693544067,
+    "mean_delta_norm": 5.11754397478863
+   }
+  }
+ },
+ "layers": [
+  6,
+  12,
+  18
+ ],
+ "middle": 12
+}

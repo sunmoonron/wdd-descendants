@@ -1,0 +1,48 @@
+{
+ "experiment": "e643_stored",
+ "fixed_at": "2026-10-13T23:22:40",
+ "status": "registered before any run (a smoke on Pythia-160m follows)",
+ "question": "Gemini 4 proposed WDD as a 'weight-compilation thermometer'. e641 found a class held in the prompt has no native word. Does the same class, stored in the weights by fine-tuning, get one? If so the native-word statistic separates where a class lives; if not, the instrument is blind to stored lookups as well.",
+ "design": "16 single-token objects in two groups named by two capital letters. STORED: twin fine-tunes from the same base (AdamW, lr 5e-6, attention and MLP weight matrices only, two-way cross-entropy between the two letters' logits, gradient norm clipped at 1, ten phrasings, full batch, up to 400 steps, stopping after two consecutive checks (every 5 steps) with held-out query accuracy 0.95), the letters swapped between twins; states at the object in 8 neutral sentences with no group statement in context. HELD: base model, the 16 statements in the prompt, twins with letters swapped, the same neutral sentences appended. Class direction = mean twin difference over group one minus group two. Gate: leave-one-out sign projection over the 16 objects against 200 random 8/8 splits. Native-word statistic s: largest |cos| with the base model's unit write rows below the depth, as a percentile among 300 random 8/8 splits and as a ratio to random directions. Depths a quarter, half, three quarters; criteria at half. Runs: Pythia-410m seeds 0 and 1, GPT-2 medium seed 0, Pythia-160m seed 0.",
+ "predictions": {
+  "S0": {
+   "text": "storage works: both stored twins answer the held-out query 'The X is in group' with the object's letter at 0.9 or more, with the neutral-text loss rising by 0.1 nats or less, in every run",
+   "guess": 0.75
+  },
+  "S1": {
+   "text": "the stored class is carried at the neutral mention: its gate is 0.75 or more and above the null's 95th percentile at half depth, in at least 3 of the 4 runs",
+   "guess": 0.65
+  },
+  "S2": {
+   "text": "the stored class has a native word: its s is above 0.95 of the random splits at half depth, in at least 3 of the 4 runs",
+   "guess": 0.5
+  },
+  "S3": {
+   "text": "the held class has none (e641 replicated on matched objects): where its gate passes, its s percentile is below 0.9 at half depth",
+   "guess": 0.6
+  },
+  "S4": {
+   "text": "the thermometer separates them: in the runs where both gates pass, the stored percentile exceeds the held one by 0.3 or more at half depth",
+   "guess": 0.45
+  },
+  "S5": {
+   "text": "recruited, not rotated: the stored direction's top row has cosine 0.99 or more between the base and the fine-tuned model, in every run where S2 holds",
+   "guess": 0.85
+  }
+ },
+ "honest_guess": "Fine-tuning stores the assignment and the object's later mention carries it, written by MLPs at the subject token as in factual recall, so the stored direction finds a recruited existing row above the random splits; the same assignment held in the prompt does not. The likeliest failure is S1: the fine-tune may store the letter only as a lookup at the query position, leaving no code at a neutral mention, which would make the thermometer untestable rather than wrong.",
+ "where_it_ought_to_break": [
+  "ten phrasings may teach a lookup used only when asked, so the neutral mention carries nothing (S1)",
+  "full fine-tuning lets MLP rows change their reads, which is the recruitment the statistic is built to see; an attention-only fine-tune would be the harder test",
+  "sixteen objects give one direction per run, so the percentile is a single draw against 300 splits",
+  "Pythia-160m and GPT-2 medium carried no in-context code in e641, so their held side is expected to fail its gate"
+ ],
+ "revised_at": "2026-10-13T23:24:07",
+ "revision": "Revised after the smoke on Pythia-160m and before any full run; predictions unchanged. With the loss on the letter only and lr 3e-5 the fine-tune broke the model (neutral-text loss +12.6 nats: it learned to predict the letters everywhere). Now: lr 1e-5, a replay language-model loss on 32 calendar sentences per step (disjoint from the neutral text that measures damage), gradient norm clipped at 1, the held-out query checked every 5 steps.",
+ "revised2_at": "2026-10-13T23:25:09",
+ "revision2": "Second revision after a second smoke, before any full run; predictions unchanged. With lr 1e-5 and one replay batch the neutral-text loss still rose by 0.56 to 0.67 nats on Pythia-160m. Now: lr 5e-6, only the weight matrices of attention and MLP trained (embeddings, norms and biases frozen), two replay batches of 32 sentences per step, up to 400 steps.",
+ "revised3_at": "2026-10-13T23:26:37",
+ "revision3": "Third revision after a third smoke, before any full run; predictions unchanged. The damage (+0.69 nats on Pythia-160m) did not fall with the learning rate, so it came from the full-vocabulary loss raising the letters everywhere; the stored fact is only which of the two letters, so the letter loss is now a two-way cross-entropy between the two letters' logits (the query is scored the same way).",
+ "revised4_at": "2026-10-13T23:29:33",
+ "revision4": "Fourth revision after two diagnostic smokes, before any full run; predictions unchanged. The damage came from the replay loss itself (replay alone: +1.30 nats on the neutral text; the two-way letter loss alone: +0.03), so the replay is removed. Final fine-tune: AdamW lr 5e-6 on the attention and MLP weight matrices only, two-way cross-entropy between the two letters' logits, full batch over ten phrasings, query checked every 5 steps, stop after two consecutive checks at 0.95, at most 400 steps. The diagnostic smoke without replay showed, on Pythia-160m at half depth, a stored gate of 1.00 and a stored s percentile of 0.31: seen before the full runs and recorded here."
+}

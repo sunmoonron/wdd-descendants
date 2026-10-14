@@ -924,6 +924,12 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H688 No angular privilege: at r = 2 the ring plane is followed at most 0.2 more than the mean of the random planes, in at least two thirds of the pairs. → e642 → SUPPORTED.
 - H689 Graded: the ring plane's following rises by 0.2 or more from r = 1 to r = 4, in at least two thirds of the pairs where it is followed 0.3 or more at r = 4. → e642 → REFUTED.
 - H690 The next plane does as well as the ring: at r = 2 it is followed within 0.15 of the ring plane, in at least half of the pairs. → e642 → SUPPORTED.
+- H691 Storage works: both stored twins answer the held-out query 'The X is in group' with the object's letter at 0.9 or more, with the neutral-text loss rising by 0.1 nats or less, in every run. → e643 → REFUTED.
+- H692 The stored class is carried at the neutral mention: its gate is 0.75 or more and above the null's 95th percentile at half depth, in at least 3 of the 4 runs. → e643 → SUPPORTED.
+- H693 The stored class has a native word: its s is above 0.95 of the random splits at half depth, in at least 3 of the 4 runs. → e643 → REFUTED.
+- H694 The held class has none (e641 replicated on matched objects): where its gate passes, its s percentile is below 0.9 at half depth. → e643 → SUPPORTED.
+- H695 The thermometer separates them: in the runs where both gates pass, the stored percentile exceeds the held one by 0.3 or more at half depth. → e643 → SUPPORTED.
+- H696 Recruited, not rotated: the stored direction's top row has cosine 0.99 or more between the base and the fine-tuned model, in every run where S2 holds. → e643 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

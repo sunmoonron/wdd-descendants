@@ -597,6 +597,13 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 133: stored or held (e643)
+
+- Fine-tuning stores sixteen objects' group letters in 10 to 25 steps (held-out query 1.00 to 1.00, neutral-text loss change -0.000 to +0.196 nats), and the object's state in a neutral sentence with no group statement in context carries the stored group in 4 of 4 runs (gate 0.94 to 1.00 at half depth).
+- The stored class direction's nearest write row sits at a percentile of 0.40 to 1.00 among the same twin differences' random splits at half depth (0.32 to 1.00 over all three depths), against 0.05 to 0.58 for the same assignment held in the prompt.
+- Reading: the thermometer leans the right way but does not reach its bar: in every run the stored class's direction sits closer to a write row than the same class held in the prompt (by +0.13 to +0.81 in percentile), and in 1 of 4 it clears 0.95 with a recruited, unrotated row; a fine-tune of 10 to 25 steps stores the fact mostly without giving it a word, so at this scale the statistic separates stored from held only weakly, and e579's native excess, which separated generalising from memorising runs of a toy, does not carry over to whether one fact is stored.
+- Verdicts: S0 refuted, S1 confirmed, S2 refuted, S3 confirmed, S4 confirmed, S5 confirmed.
+
 ## Session 132: the name token's readout and classes defined in the prompt (e640 to e642)
 
 - The answer reads the name token through its class-mean subspace: replacing only the k-1 directions spanned by the centred class means transfers the source's answer as well as replacing the whole state, within 0.11 in agreement, at every swept depth in all 22 model-calendar pairs of 11 models, and replacing everything outside that subspace transfers at most +0.07 beyond the baseline agreement (e640).

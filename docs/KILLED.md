@@ -860,3 +860,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "slots: the ordinal directions agree across prompts above the 95th percentile of the null and their average's s exceeds 0.95 of its null, in at least 2 models." (e641).
 - "graded: the ring plane's following rises by 0.2 or more from r = 1 to r = 4, in at least two thirds of the pairs where it is followed 0.3 or more at r = 4." (e642).
 - The reading that the calendar arithmetic reads the ring's angle at the name token: the class-mean subspace carries the readout as a whole, random planes in it steer the answer too, the ring plane's lead is clear only for the months, and in half of the pairs the name token stops mattering before the ring's best block (e640, e642).
+
+## Session 133 kills (stored or held)
+- "storage works: both stored twins answer the held-out query 'The X is in group' with the object's letter at 0.9 or more, with the neutral-text loss rising by 0.1 nats or less, in every run." (e643).
+- "the stored class has a native word: its s is above 0.95 of the random splits at half depth, in at least 3 of the 4 runs." (e643).
+- The native-word statistic as a reliable thermometer of where a class lives at this scale: a stored class clears the word bar in 1 run of 4 (e643).

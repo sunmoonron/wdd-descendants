@@ -1,0 +1,259 @@
+{
+ "model": "pythia160",
+ "NB": 12,
+ "D": 768,
+ "DFF": 3072,
+ "fam": "neox",
+ "items": [
+  "nail",
+  "cake",
+  "bowl",
+  "spoon",
+  "cup",
+  "table",
+  "shoe",
+  "card",
+  "key",
+  "cap",
+  "bed",
+  "drum",
+  "door",
+  "desk",
+  "chair",
+  "wire"
+ ],
+ "letters": [
+  "E",
+  "P"
+ ],
+ "seed": 0,
+ "base_query_acc": 0.5,
+ "stored": {
+  "A": {
+   "steps": 15,
+   "hist": [
+    [
+     5,
+     0.5825874991714954,
+     0.6875
+    ],
+    [
+     10,
+     0.25066900718957186,
+     1.0
+    ],
+    [
+     15,
+     0.07678403492900543,
+     1.0
+    ]
+   ],
+   "query_acc": 1.0,
+   "loss_neutral_change": 0.03065035343170175
+  },
+  "B": {
+   "steps": 15,
+   "hist": [
+    [
+     5,
+     0.6187711283564568,
+     0.625
+    ],
+    [
+     10,
+     0.30548361502587795,
+     1.0
+    ],
+    [
+     15,
+     0.08327137105516158,
+     1.0
+    ]
+   ],
+   "query_acc": 1.0,
+   "loss_neutral_change": 0.017629790306091575
+  }
+ },
+ "held": {
+  "A": {
+   "query_acc": 1.0
+  },
+  "B": {
+   "query_acc": 0.625
+  }
+ },
+ "by_condition": {
+  "stored": {
+   "3": {
+    "gate": 1.0,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4921875,
+    "s": 0.2794836163520813,
+    "s_percentile": 0.43,
+    "s_null_median": 0.2963164746761322,
+    "s_over_isotropic": 1.9732226133346558,
+    "top_row": 7067,
+    "top_row_reading": [
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd",
+     "\ufffd"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999991059303284,
+    "d_norm": 1.547459032370567,
+    "mean_delta_norm": 1.752698451754276
+   },
+   "6": {
+    "gate": 1.0,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4871875,
+    "s": 0.2612777650356293,
+    "s_percentile": 0.4033333333333333,
+    "s_null_median": 0.2728237807750702,
+    "s_over_isotropic": 1.7726250886917114,
+    "top_row": 13501,
+    "top_row_reading": [
+     "wards",
+     " fast",
+     " tack",
+     "abad",
+     " shoes",
+     " aroused",
+     " admission",
+     " thereof",
+     " pissed",
+     " fucked",
+     " contrasted",
+     " Belt"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999994039535522,
+    "d_norm": 2.4680493170291764,
+    "mean_delta_norm": 3.175002481856227
+   },
+   "9": {
+    "gate": 1.0,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4890625,
+    "s": 0.1896628588438034,
+    "s_percentile": 0.32,
+    "s_null_median": 0.2125512808561325,
+    "s_over_isotropic": 1.269487977027893,
+    "top_row": 18540,
+    "top_row_reading": [
+     " funds",
+     " roads",
+     "roads",
+     " nationally",
+     " municip",
+     " shelters",
+     " inland",
+     "town",
+     " offshore",
+     " nationwide",
+     " national",
+     " south"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999974966049194,
+    "d_norm": 4.5295618252639684,
+    "mean_delta_norm": 6.6366050170797894
+   }
+  },
+  "held": {
+   "3": {
+    "gate": 0.75,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.5028125,
+    "s": 0.6829869151115417,
+    "s_percentile": 0.6766666666666666,
+    "s_null_median": 0.6013991832733154,
+    "s_over_isotropic": 4.777004718780518,
+    "top_row": 8839,
+    "top_row_reading": [
+     "\u03bf\u03bd",
+     "\u043e\u0431",
+     "\ufffd",
+     "\u0646\u0627",
+     "\u0646\u062f",
+     "\u0627\u062f",
+     ").\"",
+     "\u09cd",
+     "\u103a",
+     "\\)",
+     "\u102c",
+     "\u064a\u0629"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 0.10183507929412992,
+    "mean_delta_norm": 0.1319587758811039
+   },
+   "6": {
+    "gate": 0.75,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4753125,
+    "s": 0.21949666738510132,
+    "s_percentile": 0.27666666666666667,
+    "s_null_median": 0.2481117844581604,
+    "s_over_isotropic": 1.4915835857391357,
+    "top_row": 6583,
+    "top_row_reading": [
+     " domain",
+     "esta",
+     " tracts",
+     "Paths",
+     " Quarter",
+     "liers",
+     " Peninsula",
+     " \\%",
+     " settlement",
+     " cosa",
+     " volumes",
+     "Enabled"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 0.3260375482220085,
+    "mean_delta_norm": 0.4198691616618895
+   },
+   "9": {
+    "gate": 0.6875,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4809375,
+    "s": 0.18611453473567963,
+    "s_percentile": 0.03,
+    "s_null_median": 0.30096524953842163,
+    "s_over_isotropic": 1.2291721105575562,
+    "top_row": 20923,
+    "top_row_reading": [
+     " contest",
+     " Contest",
+     "\ufffd\ufffd",
+     " crying",
+     "\u0438\u0446",
+     "iors",
+     " Challenge",
+     "\u043e\ufffd",
+     "\u043e\u0436",
+     "\u0430\u0442\u0435\u043b",
+     "coming",
+     "\u0430\u043d"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 0.23191765611379067,
+    "mean_delta_norm": 0.4516960576486314
+   }
+  }
+ },
+ "layers": [
+  3,
+  6,
+  9
+ ],
+ "middle": 6
+}

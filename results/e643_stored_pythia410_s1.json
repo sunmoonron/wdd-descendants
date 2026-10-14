@@ -1,0 +1,254 @@
+{
+ "model": "pythia410",
+ "NB": 24,
+ "D": 1024,
+ "DFF": 4096,
+ "fam": "neox",
+ "items": [
+  "clock",
+  "coin",
+  "key",
+  "coat",
+  "shoe",
+  "rope",
+  "rug",
+  "bag",
+  "bell",
+  "card",
+  "chain",
+  "jar",
+  "drum",
+  "table",
+  "ship",
+  "cake"
+ ],
+ "letters": [
+  "P",
+  "N"
+ ],
+ "seed": 1,
+ "base_query_acc": 0.5625,
+ "stored": {
+  "A": {
+   "steps": 15,
+   "hist": [
+    [
+     5,
+     0.6474512070417404,
+     0.75
+    ],
+    [
+     10,
+     0.31553266383707523,
+     1.0
+    ],
+    [
+     15,
+     0.0806037507718429,
+     1.0
+    ]
+   ],
+   "query_acc": 1.0,
+   "loss_neutral_change": 0.09536612033843994
+  },
+  "B": {
+   "steps": 10,
+   "hist": [
+    [
+     5,
+     0.6664337292313576,
+     1.0
+    ],
+    [
+     10,
+     0.2556063523516059,
+     1.0
+    ]
+   ],
+   "query_acc": 1.0,
+   "loss_neutral_change": 0.19568710327148464
+  }
+ },
+ "held": {
+  "A": {
+   "query_acc": 0.5625
+  },
+  "B": {
+   "query_acc": 0.75
+  }
+ },
+ "by_condition": {
+  "stored": {
+   "6": {
+    "gate": 0.9375,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.5015625,
+    "s": 0.23144924640655518,
+    "s_percentile": 0.36,
+    "s_null_median": 0.24401581287384033,
+    "s_over_isotropic": 1.776458740234375,
+    "top_row": 24504,
+    "top_row_reading": [
+     "olen",
+     "stock",
+     "itors",
+     "igator",
+     "ried",
+     "           ",
+     "pec",
+     " maker",
+     "olo",
+     " distributor",
+     "ited",
+     "jur"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999992251396179,
+    "d_norm": 3.042865748675761,
+    "mean_delta_norm": 4.158970561574888
+   },
+   "12": {
+    "gate": 1.0,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4903125,
+    "s": 0.24631938338279724,
+    "s_percentile": 0.8633333333333333,
+    "s_null_median": 0.2103622555732727,
+    "s_over_isotropic": 1.8240834474563599,
+    "top_row": 41917,
+    "top_row_reading": [
+     "ilot",
+     "ionate",
+     "Willi",
+     "ractical",
+     "aces",
+     "folio",
+     "regn",
+     "ictures",
+     "aul",
+     "seud",
+     "ursuant",
+     "inct"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999994039535522,
+    "d_norm": 4.514760799275085,
+    "mean_delta_norm": 5.809329687120595
+   },
+   "18": {
+    "gate": 1.0,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4790625,
+    "s": 0.19594597816467285,
+    "s_percentile": 0.7233333333333334,
+    "s_null_median": 0.1845865249633789,
+    "s_over_isotropic": 1.4231196641921997,
+    "top_row": 41917,
+    "top_row_reading": [
+     "ilot",
+     "ionate",
+     "Willi",
+     "ractical",
+     "aces",
+     "folio",
+     "regn",
+     "ictures",
+     "aul",
+     "seud",
+     "ursuant",
+     "inct"
+    ],
+    "top_row_cos_base_vs_finetuned": 0.9999994039535522,
+    "d_norm": 6.67610312619645,
+    "mean_delta_norm": 8.93735097608597
+   }
+  },
+  "held": {
+   "6": {
+    "gate": 0.5,
+    "gate_null_p95": 0.6875,
+    "gate_null_mean": 0.4890625,
+    "s": 0.16123005747795105,
+    "s_percentile": 0.18,
+    "s_null_median": 0.19148223102092743,
+    "s_over_isotropic": 1.2369978427886963,
+    "top_row": 19814,
+    "top_row_reading": [
+     " Heights",
+     "IDE",
+     "essages",
+     "swing",
+     "ridge",
+     "ctrine",
+     "OTA",
+     ">`",
+     "CEPT",
+     "brate",
+     "rule",
+     " Gateway"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 0.056722078893752144,
+    "mean_delta_norm": 0.14955412389130257
+   },
+   "12": {
+    "gate": 1.0,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4928125,
+    "s": 0.1490674614906311,
+    "s_percentile": 0.05333333333333334,
+    "s_null_median": 0.19187632203102112,
+    "s_over_isotropic": 1.104745864868164,
+    "top_row": 38896,
+    "top_row_reading": [
+     "debted",
+     " complained",
+     "rr",
+     "ses",
+     "aptop",
+     "hth",
+     "enko",
+     "emen",
+     "itzer",
+     "eti",
+     "uu",
+     "aq"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 0.7608605006739121,
+    "mean_delta_norm": 0.7241132324554007
+   },
+   "18": {
+    "gate": 1.0,
+    "gate_null_p95": 0.75,
+    "gate_null_mean": 0.4934375,
+    "s": 0.2980002760887146,
+    "s_percentile": 0.7366666666666667,
+    "s_null_median": 0.22482842206954956,
+    "s_over_isotropic": 2.150092601776123,
+    "top_row": 72634,
+    "top_row_reading": [
+     "fro",
+     "uild",
+     " \\",
+     ":",
+     "asc",
+     "plus",
+     "ipp",
+     "aven",
+     "ountain",
+     "azing",
+     "salt",
+     "ursuant"
+    ],
+    "top_row_cos_base_vs_finetuned": null,
+    "d_norm": 0.6427719676688873,
+    "mean_delta_norm": 0.6522067716076523
+   }
+  }
+ },
+ "layers": [
+  6,
+  12,
+  18
+ ],
+ "middle": 12
+}

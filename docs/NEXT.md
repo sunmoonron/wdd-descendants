@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e643. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e644. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -253,3 +253,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 131 (e639):** the writers rotated. Next: e640 tests the name token alone by activation patching (the full state, the class-mean subspace, the ring plane, the rest of the class-mean subspace, the complement) with a sweep of the plane's angle; e641 asks whether a class defined only in the prompt gets a native word. Still worth running later: the same rotation on a model where Engels' intervention worked (a Llama-3-8B class model, beyond the Dell's memory).
 
 **Session 132 (e640 to e642):** the name token's readout and classes defined in the prompt. Worth running next: (1) the ledger of a prompt-made class: decompose its twin difference into the writes of each block's attention and MLP to see who writes it, expected attention; (2) the ordinal code's word, against a better null (real codes from another depth or another binding task) before calling it a slot row; (3) the heads that carry the class-mean subspace from the name token to the answer position, now that the subspace and the depth window are known.
+
+**Session 133 (e643):** stored or held. Worth running next: longer and larger fine-tunes, to see whether the stored class's percentile rises with training as recruitment would; the stored class's ledger, which blocks write the twin difference; and the same statistic for a fact the base model learned in pretraining.
