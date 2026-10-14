@@ -70,6 +70,8 @@ Side result continued (session 132): the calendar answer reads the name token's 
 
 Side result continued (session 133): the same group letters stored by fine-tuning are carried at a neutral mention in 4 of 4 runs, with the nearest write row at percentile 0.40 to 1.00 among random splits against 0.05 to 0.58 held, above the held class in every run but past 0.95 in only 1 (e643).
 
+Side result continued (session 134): zeroing WDD's top-ranked rows erases less of a planted fine-tune change than the plain activation change or the weight change in three of four runs and no more than random rows in two, at a high general cost (e644).
+
 ## 9. Prior art (session 124)
 
 - Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.

@@ -7,7 +7,9 @@
 - Causal test (e603): silencing the writers' inputs adds 55 relearning steps after RMU (slower in 1.00 of six runs) and 40 after ascent; random rows 5 / 0.
 - Refusal (e604): safety training left the harmful-request writers' rows at cosine 0.9973 with the base and made them fire 2.03 times more; the prefix jailbreaks do not move refusal on this model; benign fine-tuning lowers refusal to 0.37 with the writers still firing (0.96). Merging (e605): different rows for different domains (Jaccard 0.02), the averaged model keeps 1.00 / 0.90 of the entrants. Compression (e606): damage tracks the writers' silencing across compressions (Spearman -0.94) through severity, not within one compression across domains.
 
-**Start here:** e602b, e603b, e604 · **Sessions:** S112 · **Scripts:** `scripts/e602_selection_baseline.py`, `e603_separable.py`, `e604_refusal_audit.py`, `e605_merging_audit.py`, `e606_compression_audit.py`
+**Session 134 (the planted-change bake-off).** With one fine-tune storing sixteen objects' group letters, zeroing the 128 rows that WDD's word-usage change ranks highest keeps 0.78 to 1.03 of the stored margin across four runs, against 0.52 to 1.41 for the plain activation change, 0.86 to 0.94 for the weight change and 0.98 to 1.03 for random rows; at 2048 rows WDD's choice costs +0.96 to +3.37 nats of neutral-text loss against +0.05 to +0.29 for the weight change; the rankings' top 128 rows overlap at a Jaccard index of at most 0.05. Reading: WDD's word statistics do not find what a fine-tune planted: the rows they flag are large rows of general importance, a plain activation diff or the size of the weight change does as well or better, and the change is spread over hundreds of rows; Gemini 4's pitch of the native dictionary as an immutable coordinate system for diffing fine-tunes closes, because the index alignment it rests on belongs to every per-neuron method and WDD adds nothing to it here.
+
+**Start here:** e602b, e603b, e604, e644 · **Sessions:** S112, S134 · **Scripts:** `scripts/e644_bakeoff.py`, `scripts/e602_selection_baseline.py`, `e603_separable.py`, `e604_refusal_audit.py`, `e605_merging_audit.py`, `e606_compression_audit.py`
 
 ## Experiments
 
@@ -21,8 +23,11 @@
 | e605 | The merging audit: two domain fine-tunes of Pythia-160m averaged, added in full, each alone and at half strength, and sequential; the entrants followed | Entrants' Jaccard 0.02; averaged model keeps 1.00 / 0.90 of the entrants writing, sequential 1.00 of Github's; losses 1.102 / 2.652 against 1.000 / 2.575 alone | established (different rows for different domains; merging keeps both) | ← e600 · → 42 |
 | e606 | The compression audit on Pythia-410m: six domains, six compressions (8-bit, 4-bit in groups of 64 and 32, 3-bit, pruning 30% and 50%); per-domain damage against the domain's writers' activation and silenced share | Spearman of damage with the writers' activation -0.94 over 36 pairs (silenced share 0.82); pruning 50% silences 0.85 for +4.091 nats, 3-bit 0.78 for +2.265, 4-bit g64 0.04 for +0.355 | narrowed (across compressions the damage tracks the silencing through severity; within one compression, across domains, it does not) | ← e597 · → 42 |
 
+| e644 | Four fine-tunes that store a known fact: rows ranked by the change in WDD word usage, the activation change, the weight change or at random; the top k zeroed and the fact's margin scored | with one fine-tune storing sixteen objects' group letters, zeroing the 128 rows that WDD's word-usage change ranks highest keeps 0.78 to 1.03 of the stored margin across four runs, against 0.52 to 1.41 for the plain activation change, 0.86 to 0.94 for the weight change and 0.98 to 1.03 for random rows; at 2048 rows WDD's choice costs +0.96 to +3.37 nats of neutral-text loss against +0.05 to +0.29 for the weight change; the rankings' top 128 rows overlap at a Jaccard index of at most 0.05 | refuted (WDD's word-usage diff does not find a planted fine-tune change better than an activation diff, a weight diff or, in two of four runs, random rows) | ← e602, 59 e643 |
+
 ## How the results flow
 
+- `e602 → e644`: the naive-selection baseline of session 112, turned on a planted change whose location is known.
 - `e597 → e602 → e602b`: the audit's number, then the naive sets that could replace it, with seeds.
 - `e601 → e603 → e603b`: the one-seed hybrid, then the separable interventions with three seeds and the selection control.
 - `e597, e600 → e604, e605, e606`: the audit's questions asked of safety training, of merging, and of compression.

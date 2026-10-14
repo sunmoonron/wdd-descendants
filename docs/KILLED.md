@@ -865,3 +865,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "storage works: both stored twins answer the held-out query 'The X is in group' with the object's letter at 0.9 or more, with the neutral-text loss rising by 0.1 nats or less, in every run." (e643).
 - "the stored class has a native word: its s is above 0.95 of the random splits at half depth, in at least 3 of the 4 runs." (e643).
 - The native-word statistic as a reliable thermometer of where a class lives at this scale: a stored class clears the word bar in 1 run of 4 (e643).
+
+## Session 134 kills (the planted-change bake-off)
+- "the WDD usage ranking erases more than random rows at k = 128, in at least 3 of the 4 runs." (e644).
+- "the WDD and activation rankings agree: their top-128 rows overlap at a Jaccard index of 0.3 or more, in at least 3 of the 4 runs." (e644).
+- The native dictionary as an immutable coordinate system for diffing fine-tunes (Gemini 4's pitch): the rows WDD's word usage flags carry less of a planted change than the plain activation diff or the weight change, and no more than random rows in two of four runs (e644).

@@ -174,6 +174,10 @@ The answer reads the name token through its class-mean subspace: replacing only 
 
 Fine-tuning stores sixteen objects' group letters in 10 to 25 steps (held-out query 1.00 to 1.00, neutral-text loss change -0.000 to +0.196 nats), and the object's state in a neutral sentence with no group statement in context carries the stored group in 4 of 4 runs (gate 0.94 to 1.00 at half depth) (e643). The stored class direction's nearest write row sits at a percentile of 0.40 to 1.00 among the same twin differences' random splits at half depth (0.32 to 1.00 over all three depths), against 0.05 to 0.58 for the same assignment held in the prompt.
 
+## What a fine-tune changed, read by row (session 134)
+
+With one fine-tune storing sixteen objects' group letters, zeroing the 128 rows that WDD's word-usage change ranks highest keeps 0.78 to 1.03 of the stored margin across four runs, against 0.52 to 1.41 for the plain activation change, 0.86 to 0.94 for the weight change and 0.98 to 1.03 for random rows; at 2048 rows WDD's choice costs +0.96 to +3.37 nats of neutral-text loss against +0.05 to +0.29 for the weight change; the rankings' top 128 rows overlap at a Jaccard index of at most 0.05 (e644).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

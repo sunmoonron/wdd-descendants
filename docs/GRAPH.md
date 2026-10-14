@@ -930,6 +930,11 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H694 The held class has none (e641 replicated on matched objects): where its gate passes, its s percentile is below 0.9 at half depth. → e643 → SUPPORTED.
 - H695 The thermometer separates them: in the runs where both gates pass, the stored percentile exceeds the held one by 0.3 or more at half depth. → e643 → SUPPORTED.
 - H696 Recruited, not rotated: the stored direction's top row has cosine 0.99 or more between the base and the fine-tuned model, in every run where S2 holds. → e643 → SUPPORTED.
+- H697 The plain activation ranking erases at least as much of the stored margin as the WDD usage ranking at k = 128, in at least 3 of the 4 runs. → e644 → SUPPORTED.
+- H698 The WDD usage ranking erases more than random rows at k = 128, in at least 3 of the 4 runs. → e644 → REFUTED.
+- H699 The weight-change ranking erases at least as much as the WDD usage ranking at k = 128, in at least 3 of the 4 runs. → e644 → SUPPORTED.
+- H700 The fact is distributed: no ranking keeps less than half of the margin at k = 32 with a neutral-loss change of 0.1 nats or less, in any run. → e644 → SUPPORTED.
+- H701 The WDD and activation rankings agree: their top-128 rows overlap at a Jaccard index of 0.3 or more, in at least 3 of the 4 runs. → e644 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

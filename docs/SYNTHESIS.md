@@ -597,6 +597,13 @@ What stays unique after the mapping:
 - On OpenAI's TopK autoencoders (32k latents, layer-normalised inputs) the provenance part of the bridge holds (top word an MLP row 0.86-0.89; features 0.56 unexplained at 16 words against random 0.72), the state-likeness is partial (features between covariance-matched directions and states), and the activation part is much stronger: top row AUC 0.73, eight-word ledger 0.83, half of features above 0.8 (e499).
 - MLP rows are the words at every Pythia checkpoint (within 0.04 of the full dictionary), while the head bases' share of the words peaks at steps 512-1000 and attention comes to carry 0.75 of the state's energy (e500). OLMo's checkpoints show the same two clocks: write sparsity rising through 256,000 steps, the second-order alignment largest at the first checkpoint and decaying (e498).
 
+## Session 134: the planted-change bake-off (e644)
+
+- With one fine-tune storing sixteen objects' group letters, zeroing the 128 rows that WDD's word-usage change ranks highest keeps 0.78 to 1.03 of the stored margin across four runs, against 0.52 to 1.41 for the plain activation change, 0.86 to 0.94 for the weight change and 0.98 to 1.03 for random rows; at 2048 rows WDD's choice costs +0.96 to +3.37 nats of neutral-text loss against +0.05 to +0.29 for the weight change; the rankings' top 128 rows overlap at a Jaccard index of at most 0.05.
+- In Pythia-160m, zeroing the neurons whose activations changed most raises the stored margin (1.41 of it kept at 128 rows), so the most-changed neurons include ones that push against the stored fact; in GPT-2 medium the same ranking is the strongest eraser (0.15 kept at 2048 rows for +0.18 nats).
+- Reading: WDD's word statistics do not find what a fine-tune planted: the rows they flag are large rows of general importance, a plain activation diff or the size of the weight change does as well or better, and the change is spread over hundreds of rows; Gemini 4's pitch of the native dictionary as an immutable coordinate system for diffing fine-tunes closes, because the index alignment it rests on belongs to every per-neuron method and WDD adds nothing to it here.
+- Verdicts: B1 confirmed, B2 refuted, B3 confirmed, B4 confirmed, B5 refuted.
+
 ## Session 133: stored or held (e643)
 
 - Fine-tuning stores sixteen objects' group letters in 10 to 25 steps (held-out query 1.00 to 1.00, neutral-text loss change -0.000 to +0.196 nats), and the object's state in a neutral sentence with no group statement in context carries the stored group in 4 of 4 runs (gate 0.94 to 1.00 at half depth).
