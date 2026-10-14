@@ -1,0 +1,13 @@
+{
+ "experiment": "e652c_orthogonality",
+ "fixed_at": "2026-10-14T13:38:43",
+ "question": "e652 went null; e87 (dominant writes do not cancel, i.e. near-orthogonal) predicts Gemini 4's coalition-masking cannot operate. Measure directly: are a high-use seed row's most co-firing block-4 rows near-orthogonal in their write columns?",
+ "design": "Pythia-160m and -410m, block 4; for the 20 highest-use rows, the mean absolute write-column cosine with the 15 most co-firing rows, over wikitext.",
+ "predictions": {
+  "O1": {
+   "text": "the mean |write cosine| between a seed and its co-firing rows is below 0.1 in most seeds, so the coalition-masking mechanism cannot operate",
+   "guess": 0.8
+  }
+ },
+ "honest_guess": "Near-orthogonal (mean |cos| ~0.06), confirming the masking and coherent-sum both fail structurally."
+}
