@@ -1,0 +1,112 @@
+{
+ "model": "smollm135",
+ "fam": "llama",
+ "bands": [
+  {
+   "kind": "least",
+   "i": 13,
+   "j": 15,
+   "dloss": 0.07212200815596326,
+   "gain": -0.045801526717557245,
+   "band_cos": 0.613008554384578,
+   "ledger_jaccard": 0.10375101438852828,
+   "mlp_cos": 0.694870314313448,
+   "top8_erased": 0.529296875,
+   "top8_sign_flip": 0.025146484375,
+   "act_corr": 0.7542252375278622
+  },
+  {
+   "kind": "least",
+   "i": 17,
+   "j": 19,
+   "dloss": 0.08362096751455894,
+   "gain": -0.04961832061068702,
+   "band_cos": 0.6539394257124513,
+   "ledger_jaccard": 0.10812535383343225,
+   "mlp_cos": 0.6948248781263828,
+   "top8_erased": 0.587646484375,
+   "top8_sign_flip": 0.06298828125,
+   "act_corr": 0.7369779989821836
+  },
+  {
+   "kind": "least",
+   "i": 11,
+   "j": 15,
+   "dloss": 0.09010046610994937,
+   "gain": 0.03816793893129769,
+   "band_cos": 0.483087781642098,
+   "ledger_jaccard": 0.05577673752729369,
+   "mlp_cos": 0.6540772629887215,
+   "top8_erased": 0.5709228515625,
+   "top8_sign_flip": 0.038330078125,
+   "act_corr": 0.698798165860353
+  },
+  {
+   "kind": "most",
+   "i": 0,
+   "j": 3,
+   "dloss": 8.202288289708415,
+   "gain": -0.2480916030534351,
+   "band_cos": 0.5580534334294498,
+   "ledger_jaccard": 0.0807993879601221,
+   "mlp_cos": 0.2582162288093362,
+   "top8_erased": 0.9296875,
+   "top8_sign_flip": 0.40380859375,
+   "act_corr": 0.06552469908431628
+  },
+  {
+   "kind": "most",
+   "i": 0,
+   "j": 2,
+   "dloss": 7.9073971725824315,
+   "gain": -0.2480916030534351,
+   "band_cos": 0.5949742719531059,
+   "ledger_jaccard": 0.08104380112687953,
+   "mlp_cos": 0.3049647196112346,
+   "top8_erased": 0.947021484375,
+   "top8_sign_flip": 0.375732421875,
+   "act_corr": 0.047196807751149095
+  },
+  {
+   "kind": "most",
+   "i": 0,
+   "j": 6,
+   "dloss": 7.761860844970062,
+   "gain": -0.2480916030534351,
+   "band_cos": 0.5481074957642704,
+   "ledger_jaccard": 0.059410134697780684,
+   "mlp_cos": 0.19642503106069853,
+   "top8_erased": 0.9126790364583334,
+   "top8_sign_flip": 0.4341634114583333,
+   "act_corr": 0.13345976026739947
+  }
+ ],
+ "summary_by_kind": {
+  "least": {
+   "band_cos": 0.5833452539130425,
+   "ledger_jaccard": 0.08921770191641808,
+   "mlp_cos": 0.6812574851428508,
+   "top8_erased": 0.5626220703125,
+   "top8_sign_flip": 0.042154947916666664,
+   "act_corr": 0.7300004674567996
+  },
+  "most": {
+   "band_cos": 0.5670450670489421,
+   "ledger_jaccard": 0.07375110792826077,
+   "mlp_cos": 0.2532019931604231,
+   "top8_erased": 0.9297960069444445,
+   "top8_sign_flip": 0.4045681423611111,
+   "act_corr": 0.08206042236762162
+  }
+ },
+ "mlp_cos_all": 0.46722973915163696,
+ "top8_erased_all": 0.7462090386284722,
+ "verdicts": {
+  "P1": true,
+  "P2": true,
+  "P4": true
+ },
+ "_exp": "e658_pass_two_smollm135",
+ "_time": "2026-10-14 18:24:44",
+ "summary": "[smollm135] second traversal against the first (llama): least damaging blocks band cosine +0.583, MLP output cosine +0.681, top-8 erased 0.56; most damaging band cosine +0.567, MLP output cosine +0.253, top-8 erased 0.93; verdicts {'P1': True, 'P2': True, 'P4': True} (5s)"
+}

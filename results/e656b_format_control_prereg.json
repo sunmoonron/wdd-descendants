@@ -1,0 +1,19 @@
+{
+ "experiment": "e656b_format_control",
+ "fixed_at": "2026-10-14T18:45:54",
+ "status": "fixed before the run, after e656's full results (which motivated it)",
+ "question": "Is the repeat's capitals gain in Qwen2.5-0.5B and SmolLM2-135M knowledge the base cannot rank, or a format shift (the base answering a quiz blank or a function word)?",
+ "design": "e560's capitals; base and e656's best repeated blocks (held-out masked selection plus the three largest masked gains) read raw, with the function words masked, and under a content mask that keeps only tokens with a letter that are not function words; the base's wrong-answer kinds; on items the repeat fixes, what the base said.",
+ "predictions": {
+  "C1": {
+   "text": "under the content mask the best repeated block still beats the base on capitals by 5 points or more",
+   "guess": 0.4
+  },
+  "C2_posthoc": {
+   "text": "post hoc, added after C1's result to rule out format words the content mask misses: in a forced choice among the capitals' own first tokens, e656's held-out block beats the base by 5 points or more",
+   "guess": null,
+   "added_after_seeing": "C1's results (content-masked gains of +0.44 and +0.50 in SmolLM2-135M and Qwen2.5-0.5B)"
+  }
+ },
+ "honest_guess": "Mostly format in Qwen (its blanks), partly real in SmolLM2; Pythia has no gain to explain."
+}

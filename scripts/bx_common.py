@@ -94,4 +94,4 @@ def sinkmask(X): n = X.norm(dim=-1); return n > 10 * n.median()
 
 def save(tag, res, summ):
     os.makedirs("results", exist_ok=True); res["_exp"] = tag; res["_time"] = time.strftime("%Y-%m-%d %H:%M:%S"); res["summary"] = summ
-    json.dump(res, open(f"results/{tag}.json", "w"), indent=1); print(summ, flush=True)
+    json.dump(res, open(f"results/{tag}.json", "w"), indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o)); print(summ, flush=True)  # numpy scalars and bools

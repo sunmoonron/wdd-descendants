@@ -925,3 +925,13 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The carrier word as a zero-pass draft of the token after next (Gemini 4's idea 1): it proposes spellings of the emitted token or topic neighbours, below a static bigram table on every model (e653).
 - Peeling function-word words off a hedged answer to recover a known fact (Gemini 4's idea 2): masking the function words in the logits does it, and the peel matches a random peel (e654).
 - OMP over restricted logit signatures as a black-box ledger reader (Gemini 4's idea 3): worse than the minimum-norm reconstruction at every M; above D+1 logprobs the state is exact by linear algebra, which is prior art (e655).
+
+## Session 143 kills (repeating a block)
+- "the 16-word WDD support Jaccard of x_i and x_j predicts the damage within block size better than their centred cosine." (e656).
+- "the native-chord junction beats the rotated-chord junction on average." (e656).
+- "at alpha 1 the native chord damages the loss less than the rotated chord on most bands." (e657).
+- "the second-to-first MLP output cosine is lower in Pythia-410m (GELU, read repulsion) than in both gated models." (e658).
+- The WDD support overlap as a predictor of which block to repeat (Gemini 4's idea 3b): the plain centred cosine predicts the damage map better in all three models; the weights-only reader compatibility wins only in Pythia-410m (e656).
+- The WDD-filtered junction, x_i plus the band's native chord fed to the second traversal (Gemini 4's idea 3a): never the best fix and worse than the rotated chord on average (e656).
+- Doubling the band's native chord as a better virtual repeat than scaling the raw increment (Gemini 4's idea 1): the raw increment reproduces the helpful repeat better (e657).
+- Read repulsion making the second traversal cancel the first in GELU models (Gemini 4's prediction B): Pythia-410m cancels no more than the gated models, and friendly blocks amplify (e658).

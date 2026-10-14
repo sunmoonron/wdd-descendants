@@ -1,0 +1,112 @@
+{
+ "model": "qwen05",
+ "fam": "llama",
+ "bands": [
+  {
+   "kind": "least",
+   "i": 9,
+   "j": 11,
+   "dloss": 0.04462230612286744,
+   "gain": 0.28625954198473286,
+   "band_cos": 0.46861650864593685,
+   "ledger_jaccard": 0.05831822156158223,
+   "mlp_cos": 0.6133441912243143,
+   "top8_erased": 0.572021484375,
+   "top8_sign_flip": 0.031005859375,
+   "act_corr": 0.7087270464398898
+  },
+  {
+   "kind": "least",
+   "i": 8,
+   "j": 10,
+   "dloss": 0.04832991151984922,
+   "gain": 0.01908396946564883,
+   "band_cos": 0.307519954617419,
+   "ledger_jaccard": 0.03477920058148089,
+   "mlp_cos": 0.5498552607605234,
+   "top8_erased": 0.590576171875,
+   "top8_sign_flip": 0.044189453125,
+   "act_corr": 0.6778080526855774
+  },
+  {
+   "kind": "least",
+   "i": 11,
+   "j": 13,
+   "dloss": 0.05065277179707994,
+   "gain": 0.08396946564885494,
+   "band_cos": 0.4235778179136105,
+   "ledger_jaccard": 0.04220366266128918,
+   "mlp_cos": 0.575766939582536,
+   "top8_erased": 0.623046875,
+   "top8_sign_flip": 0.137451171875,
+   "act_corr": 0.6674407532555051
+  },
+  {
+   "kind": "most",
+   "i": 22,
+   "j": 24,
+   "dloss": 2.143265291148909,
+   "gain": -0.23282442748091603,
+   "band_cos": -0.06370895972213475,
+   "ledger_jaccard": 0.027357902629906238,
+   "mlp_cos": 0.011252170350417146,
+   "top8_erased": 0.89453125,
+   "top8_sign_flip": 0.42578125,
+   "act_corr": 0.07381198290992419
+  },
+  {
+   "kind": "most",
+   "i": 16,
+   "j": 24,
+   "dloss": 2.1263050469826528,
+   "gain": -0.1717557251908397,
+   "band_cos": 0.06698788831636193,
+   "ledger_jaccard": 0.01495295698924731,
+   "mlp_cos": 0.08550756628198997,
+   "top8_erased": 0.89276123046875,
+   "top8_sign_flip": 0.32720947265625,
+   "act_corr": 0.09797722191918101
+  },
+  {
+   "kind": "most",
+   "i": 18,
+   "j": 24,
+   "dloss": 2.1215979708774197,
+   "gain": -0.20229007633587787,
+   "band_cos": -0.004663597690523602,
+   "ledger_jaccard": 0.017685738783833886,
+   "mlp_cos": 0.08708204942316418,
+   "top8_erased": 0.8806966145833334,
+   "top8_sign_flip": 0.327392578125,
+   "act_corr": 0.0966837755084858
+  }
+ ],
+ "summary_by_kind": {
+  "least": {
+   "band_cos": 0.3999047603923221,
+   "ledger_jaccard": 0.04510036160145076,
+   "mlp_cos": 0.5796554638557913,
+   "top8_erased": 0.59521484375,
+   "top8_sign_flip": 0.07088216145833333,
+   "act_corr": 0.6846586174603241
+  },
+  "most": {
+   "band_cos": -0.0004615563654321401,
+   "ledger_jaccard": 0.019998866134329146,
+   "mlp_cos": 0.06128059535185709,
+   "top8_erased": 0.8893296983506945,
+   "top8_sign_flip": 0.3601277669270833,
+   "act_corr": 0.08949099344586366
+  }
+ },
+ "mlp_cos_all": 0.32046802960382414,
+ "top8_erased_all": 0.7422722710503472,
+ "verdicts": {
+  "P1": true,
+  "P2": true,
+  "P4": true
+ },
+ "_exp": "e658_pass_two_qwen05",
+ "_time": "2026-10-14 18:43:44",
+ "summary": "[qwen05] second traversal against the first (llama): least damaging blocks band cosine +0.400, MLP output cosine +0.580, top-8 erased 0.60; most damaging band cosine -0.000, MLP output cosine +0.061, top-8 erased 0.89; verdicts {'P1': True, 'P2': True, 'P4': True} (7s)"
+}

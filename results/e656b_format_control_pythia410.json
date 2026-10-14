@@ -1,0 +1,218 @@
+{
+ "model": "pythia410",
+ "n": 160,
+ "n_candidates": 133,
+ "base": {
+  "raw": 0.5875,
+  "function_masked": 0.68125,
+  "content_masked": 0.68125,
+  "forced_choice": 0.7875
+ },
+ "base_wrong_kinds": {
+  "other content": 26,
+  "function word": 40
+ },
+ "blocks": [
+  {
+   "i": 6,
+   "j": 7,
+   "raw": 0.6,
+   "function_masked": 0.69375,
+   "content_masked": 0.69375,
+   "forced_choice": 0.7875,
+   "n_fixed_forced": 5,
+   "n_broken_forced": 5,
+   "n_fixed_raw": 11,
+   "fixed_base_answer_kinds": {
+    "function word": 8,
+    "other content": 3
+   },
+   "n_fixed_content": 8,
+   "n_broken_content": 6,
+   "examples": [
+    [
+     " P",
+     " Rome"
+    ],
+    [
+     " Port",
+     " Lisbon"
+    ],
+    [
+     " located",
+     " Stockholm"
+    ],
+    [
+     " in",
+     " V"
+    ],
+    [
+     " in",
+     " Am"
+    ],
+    [
+     " Z",
+     " L"
+    ],
+    [
+     " the",
+     " F"
+    ],
+    [
+     " the",
+     " Port"
+    ]
+   ]
+  },
+  {
+   "i": 8,
+   "j": 9,
+   "raw": 0.54375,
+   "function_masked": 0.675,
+   "content_masked": 0.675,
+   "forced_choice": 0.78125,
+   "n_fixed_forced": 5,
+   "n_broken_forced": 6,
+   "n_fixed_raw": 5,
+   "fixed_base_answer_kinds": {
+    "other content": 2,
+    "function word": 3
+   },
+   "n_fixed_content": 7,
+   "n_broken_content": 8,
+   "examples": [
+    [
+     " Frankfurt",
+     " Berlin"
+    ],
+    [
+     " U",
+     " T"
+    ],
+    [
+     " in",
+     " V"
+    ],
+    [
+     " in",
+     " Am"
+    ],
+    [
+     " the",
+     " Man"
+    ]
+   ]
+  },
+  {
+   "i": 9,
+   "j": 10,
+   "raw": 0.63125,
+   "function_masked": 0.725,
+   "content_masked": 0.725,
+   "forced_choice": 0.81875,
+   "n_fixed_forced": 8,
+   "n_broken_forced": 3,
+   "n_fixed_raw": 12,
+   "fixed_base_answer_kinds": {
+    "function word": 6,
+    "other content": 6
+   },
+   "n_fixed_content": 12,
+   "n_broken_content": 5,
+   "examples": [
+    [
+     " P",
+     " Rome"
+    ],
+    [
+     " Port",
+     " Lisbon"
+    ],
+    [
+     " the",
+     " Athens"
+    ],
+    [
+     " in",
+     " Ank"
+    ],
+    [
+     " in",
+     " Tehran"
+    ],
+    [
+     " Mos",
+     " Baghdad"
+    ],
+    [
+     " located",
+     " Stockholm"
+    ],
+    [
+     " U",
+     " T"
+    ]
+   ]
+  },
+  {
+   "i": 8,
+   "j": 10,
+   "raw": 0.575,
+   "function_masked": 0.675,
+   "content_masked": 0.675,
+   "forced_choice": 0.7875,
+   "n_fixed_forced": 7,
+   "n_broken_forced": 7,
+   "n_fixed_raw": 6,
+   "fixed_base_answer_kinds": {
+    "other content": 3,
+    "function word": 3
+   },
+   "n_fixed_content": 8,
+   "n_broken_content": 9,
+   "examples": [
+    [
+     " Frankfurt",
+     " Berlin"
+    ],
+    [
+     " located",
+     " Stockholm"
+    ],
+    [
+     " U",
+     " T"
+    ],
+    [
+     " in",
+     " V"
+    ],
+    [
+     " in",
+     " Am"
+    ],
+    [
+     " the",
+     " Port"
+    ]
+   ]
+  }
+ ],
+ "best_block_content": [
+  9,
+  10,
+  0.725
+ ],
+ "best_block_forced": [
+  9,
+  10,
+  0.81875
+ ],
+ "verdicts": {
+  "C1": false,
+  "C2_posthoc": false
+ },
+ "_exp": "e656b_format_control_pythia410",
+ "_time": "2026-10-14 18:48:33",
+ "summary": "[pythia410] capitals under the content mask: base 0.681, best repeat 9-10 0.725 (raw: base 0.588, repeat 0.631); forced choice among 133 capital tokens: base 0.787, held-out block 6-7 0.787; verdicts {'C1': False, 'C2_posthoc': False} (10s)"
+}

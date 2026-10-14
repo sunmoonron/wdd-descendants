@@ -1,0 +1,26 @@
+{
+ "question": "Gemini 4's RYS idea 2: does the second traversal of a repeated block amplify the first's writes (e509's chord sparing) or erase and recompute them (LOOPED.md, e648b's read repulsion), and does the answer split by family as e651's GELU-only read-write anti-alignment predicts?",
+ "design": "the three least and three most damaging blocks of two or more layers (e656); per band block and sampled position: second-vs-first MLP output cosine, share of the first's eight largest writes gone from the second's eight, sign flips among them, activation correlation; band increment cosine and 16-word ledger Jaccard.",
+ "smoke": "SmolLM2-135M: least damaging 13-17: band increment cosine +0.667, MLP output cosine +0.691, top-8 erased 0.55, sign flips 0.04, activation correlation +0.727; most damaging 0-2: +0.597, +0.332, 0.93, 0.37, +0.065.",
+ "predictions": {
+  "P1": {
+   "text": "on the least damaging blocks the second traversal's band increment points along the first's (mean cosine above 0.3)",
+   "guess": 0.55
+  },
+  "P2": {
+   "text": "half or more of the first traversal's eight largest MLP writes per token are gone from the second's eight largest",
+   "guess": 0.5
+  },
+  "P3": {
+   "text": "the second-to-first MLP output cosine is lower in Pythia-410m (GELU, read repulsion) than in both gated models",
+   "guess": 0.45
+  },
+  "P4": {
+   "text": "the least damaging blocks show a higher second-to-first MLP output cosine than the most damaging ones",
+   "guess": 0.6
+  }
+ },
+ "experiment": "e658_pass_two",
+ "fixed_at": "2026-10-14T18:19:03",
+ "status": "fixed before the full runs; smokes on SmolLM2-135M (a sixth of the blocks; plumbing, seen before these were fixed and reflected in the guesses)"
+}

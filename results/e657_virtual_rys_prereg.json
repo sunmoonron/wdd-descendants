@@ -1,0 +1,30 @@
+{
+ "question": "Gemini 4's RYS idea 1: does adding alpha times the band increment's 16-word native chord at the output of block j-1 (one pass) reproduce the true repeat's probe gain at less loss damage, and beat the raw increment, the energy-matched raw increment and the rotated chord?",
+ "design": "the three least damaging blocks of two or more layers and the two with the best probe gain (e656), alpha 0.5 and 1; wikitext loss and probe accuracy (raw and masked); the chord's share of the increment's energy.",
+ "smoke": "SmolLM2-135M: block 13-17 (true repeat +0.110, gain -0.107): chord@1 +0.075, energy-matched raw +0.057, rotated +0.035; block 12-14 (true +0.135, gain +0.134): chord@1 +0.048 with gain +0.122, energy-matched raw +0.073 gain +0.046, rotated +0.019 gain +0.004, raw +0.163 gain +0.080; the chord holds 0.40-0.49 of the increment's energy.",
+ "predictions": {
+  "V1": {
+   "text": "at alpha 1 the native chord damages the loss less than the energy-matched raw increment on most bands",
+   "guess": 0.35
+  },
+  "V2": {
+   "text": "at alpha 1 the native chord damages the loss less than the rotated chord on most bands",
+   "guess": 0.15
+  },
+  "V3": {
+   "text": "on every band where the true repeat raises probe accuracy, the native chord (better alpha) recovers a quarter or more of that gain",
+   "guess": 0.4
+  },
+  "V4": {
+   "text": "no virtual variant lowers the wikitext loss below base on any band",
+   "guess": 0.85
+  },
+  "V5": {
+   "text": "on the gaining bands the native chord recovers more probe gain than the rotated chord on average",
+   "guess": 0.5
+  }
+ },
+ "experiment": "e657_virtual_rys",
+ "fixed_at": "2026-10-14T18:19:03",
+ "status": "fixed before the full runs; smokes on SmolLM2-135M (a sixth of the blocks; plumbing, seen before these were fixed and reflected in the guesses)"
+}

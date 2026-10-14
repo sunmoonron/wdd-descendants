@@ -1,0 +1,191 @@
+{
+ "model": "qwen05",
+ "n": 160,
+ "n_candidates": 145,
+ "base": {
+  "raw": 0.28125,
+  "function_masked": 0.29375,
+  "content_masked": 0.4125,
+  "forced_choice": 0.86875
+ },
+ "base_wrong_kinds": {
+  "no letter (blank, punctuation)": 55,
+  "other content": 53,
+  "function word": 7
+ },
+ "blocks": [
+  {
+   "i": 7,
+   "j": 11,
+   "raw": 0.86875,
+   "function_masked": 0.89375,
+   "content_masked": 0.89375,
+   "forced_choice": 0.975,
+   "n_fixed_forced": 19,
+   "n_broken_forced": 2,
+   "n_fixed_raw": 95,
+   "fixed_base_answer_kinds": {
+    "no letter (blank, punctuation)": 50,
+    "other content": 42,
+    "function word": 3
+   },
+   "n_fixed_content": 78,
+   "n_broken_content": 1,
+   "examples": [
+    [
+     " __",
+     " Tokyo"
+    ],
+    [
+     " __",
+     " Beijing"
+    ],
+    [
+     " __",
+     " Moscow"
+    ],
+    [
+     " located",
+     " Tehran"
+    ],
+    [
+     " located",
+     " New"
+    ],
+    [
+     " Lahore",
+     " Islamabad"
+    ],
+    [
+     " located",
+     " Kabul"
+    ],
+    [
+     " __",
+     " H"
+    ]
+   ]
+  },
+  {
+   "i": 7,
+   "j": 9,
+   "raw": 0.88125,
+   "function_masked": 0.90625,
+   "content_masked": 0.9125,
+   "forced_choice": 0.975,
+   "n_fixed_forced": 18,
+   "n_broken_forced": 1,
+   "n_fixed_raw": 96,
+   "fixed_base_answer_kinds": {
+    "no letter (blank, punctuation)": 50,
+    "other content": 41,
+    "function word": 5
+   },
+   "n_fixed_content": 81,
+   "n_broken_content": 1,
+   "examples": [
+    [
+     " __",
+     " Tokyo"
+    ],
+    [
+     " __",
+     " Beijing"
+    ],
+    [
+     " __",
+     " Moscow"
+    ],
+    [
+     " located",
+     " Tehran"
+    ],
+    [
+     " located",
+     " New"
+    ],
+    [
+     " Lahore",
+     " Islamabad"
+    ],
+    [
+     " located",
+     " Kabul"
+    ],
+    [
+     " __",
+     " H"
+    ]
+   ]
+  },
+  {
+   "i": 7,
+   "j": 13,
+   "raw": 0.875,
+   "function_masked": 0.8875,
+   "content_masked": 0.8875,
+   "forced_choice": 0.96875,
+   "n_fixed_forced": 16,
+   "n_broken_forced": 0,
+   "n_fixed_raw": 95,
+   "fixed_base_answer_kinds": {
+    "no letter (blank, punctuation)": 49,
+    "other content": 42,
+    "function word": 4
+   },
+   "n_fixed_content": 76,
+   "n_broken_content": 0,
+   "examples": [
+    [
+     " __",
+     " Tokyo"
+    ],
+    [
+     " __",
+     " Beijing"
+    ],
+    [
+     " located",
+     " Tehran"
+    ],
+    [
+     " located",
+     " New"
+    ],
+    [
+     " Lahore",
+     " Islamabad"
+    ],
+    [
+     " located",
+     " Kabul"
+    ],
+    [
+     " __",
+     " H"
+    ],
+    [
+     " __",
+     " Manila"
+    ]
+   ]
+  }
+ ],
+ "best_block_content": [
+  7,
+  9,
+  0.9125
+ ],
+ "best_block_forced": [
+  7,
+  11,
+  0.975
+ ],
+ "verdicts": {
+  "C1": true,
+  "C2_posthoc": true
+ },
+ "_exp": "e656b_format_control_qwen05",
+ "_time": "2026-10-14 18:48:15",
+ "summary": "[qwen05] capitals under the content mask: base 0.412, best repeat 7-9 0.912 (raw: base 0.281, repeat 0.881); forced choice among 145 capital tokens: base 0.869, held-out block 7-11 0.975; verdicts {'C1': True, 'C2_posthoc': True} (14s)"
+}

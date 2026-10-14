@@ -1,0 +1,46 @@
+{
+ "question": "Gemini 4's RYS ideas 3a/3b on small models: where does repeating a block [i, j) hurt or help (wikitext loss, probe accuracy judged on held-out items, raw and with the function words masked), do single-pass WDD statistics predict the map better than the plain centred cosine and norm ratio, and does a WDD-filtered junction beat 1-line norm matching?",
+ "design": "Pythia-410m, Qwen2.5-0.5B, SmolLM2-135M; blocks of 1, 2, 3, 4, 6, 8 layers at every start; probes: few-shot single-digit addition, e560's capitals, weekday and month offsets (262 items); best block chosen on a random half of the items, read on the other half; predictors: centred cosine, log norm ratio, 16-word OMP support Jaccard over rows of blocks 0..j-1, reader-Gram compatibility (sd_common); junctions on the four least and four most damaging blocks of two or more layers: norm-matched, native chord, rotated chord, MLP writes stripped. Prior art: Ng's RYS (2024, 2026), Sun et al., Transformer Layers as Painters (AAAI 2025).",
+ "smoke": "SmolLM2-135M, 15 blocks: least damaging 18-19 (+0.053 of 3.589); held-out probe gain +0.244 (s.e. 0.038), +0.267 with the function words masked (base 0.248, masked 0.416), driven by capitals (block 6-7 +0.33); predictors within size: centred cosine +0.63, log norm ratio -0.80, WDD Jaccard +0.40, reader -0.27; junction on the most damaging block 0-2 (+7.19): norm-matched +2.33, native chord +7.22, rotated chord +2.72, stripped +9.59.",
+ "predictions": {
+  "R1": {
+   "text": "no repeated block lowers the wikitext loss by 0.5 percent or more",
+   "guess": 0.9
+  },
+  "R2": {
+   "text": "the block chosen on half the probes raises accuracy on the other half by 2 points or more",
+   "guess": 0.6
+  },
+  "R2m": {
+   "text": "that held-out gain survives masking the function words (2 points or more with the mask)",
+   "guess": 0.5
+  },
+  "R3": {
+   "text": "the least damaging block of two or more layers has its centre in the middle third of the depth",
+   "guess": 0.6
+  },
+  "R4": {
+   "text": "the 16-word WDD support Jaccard of x_i and x_j predicts the damage within block size better than their centred cosine",
+   "guess": 0.2
+  },
+  "R5": {
+   "text": "the reader-Gram compatibility of x_j with block i predicts the damage within block size better than the log norm ratio",
+   "guess": 0.15
+  },
+  "R6": {
+   "text": "on the four most damaging blocks, matching x_j's norm to x_i's at the junction reduces the damage of every one",
+   "guess": 0.6
+  },
+  "R7": {
+   "text": "on the most damaging blocks, feeding x_i plus the band's native chord does better than norm matching",
+   "guess": 0.15
+  },
+  "R8": {
+   "text": "the native-chord junction beats the rotated-chord junction on average",
+   "guess": 0.25
+  }
+ },
+ "experiment": "e656_rys_map",
+ "fixed_at": "2026-10-14T18:19:03",
+ "status": "fixed before the full runs; smokes on SmolLM2-135M (a sixth of the blocks; plumbing, seen before these were fixed and reflected in the guesses)"
+}

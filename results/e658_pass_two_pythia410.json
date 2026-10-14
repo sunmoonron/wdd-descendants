@@ -1,0 +1,112 @@
+{
+ "model": "pythia410",
+ "fam": "neox",
+ "bands": [
+  {
+   "kind": "least",
+   "i": 8,
+   "j": 10,
+   "dloss": 0.11265808265666033,
+   "gain": 0.007633587786259555,
+   "band_cos": 0.5374796052929014,
+   "ledger_jaccard": 0.04015616539688424,
+   "mlp_cos": 0.6699195408145897,
+   "top8_erased": 0.576171875,
+   "top8_sign_flip": 0.009765625,
+   "act_corr": 0.7553982760291547
+  },
+  {
+   "kind": "least",
+   "i": 10,
+   "j": 12,
+   "dloss": 0.11914935575069707,
+   "gain": -0.18320610687022898,
+   "band_cos": 0.5606829973985441,
+   "ledger_jaccard": 0.03820411402881508,
+   "mlp_cos": 0.6921433201059699,
+   "top8_erased": 0.623779296875,
+   "top8_sign_flip": 0.00927734375,
+   "act_corr": 0.7780366205843166
+  },
+  {
+   "kind": "least",
+   "i": 11,
+   "j": 13,
+   "dloss": 0.12031543160986713,
+   "gain": 0.030534351145038163,
+   "band_cos": 0.6030090275453404,
+   "ledger_jaccard": 0.06453192710787954,
+   "mlp_cos": 0.6903767679468729,
+   "top8_erased": 0.60791015625,
+   "top8_sign_flip": 0.012939453125,
+   "act_corr": 0.7783690466312692
+  },
+  {
+   "kind": "most",
+   "i": 21,
+   "j": 24,
+   "dloss": 3.2250092273622046,
+   "gain": -0.3893129770992366,
+   "band_cos": 0.25272342983225826,
+   "ledger_jaccard": 0.02348624794745484,
+   "mlp_cos": 0.19723601381459352,
+   "top8_erased": 0.8494466145833334,
+   "top8_sign_flip": 0.19970703125,
+   "act_corr": 0.33416957219014876
+  },
+  {
+   "kind": "most",
+   "i": 6,
+   "j": 12,
+   "dloss": 2.859067901851624,
+   "gain": -0.3740458015267175,
+   "band_cos": 0.2097992008566507,
+   "ledger_jaccard": 0.017532791064145344,
+   "mlp_cos": 0.2636930002545341,
+   "top8_erased": 0.874755859375,
+   "top8_sign_flip": 0.223876953125,
+   "act_corr": 0.34958508481577155
+  },
+  {
+   "kind": "most",
+   "i": 22,
+   "j": 24,
+   "dloss": 2.6715619745529855,
+   "gain": -0.40458015267175573,
+   "band_cos": 0.21069698335486464,
+   "ledger_jaccard": 0.02806516168758938,
+   "mlp_cos": 0.3375305217696223,
+   "top8_erased": 0.84130859375,
+   "top8_sign_flip": 0.17138671875,
+   "act_corr": 0.4209304491960211
+  }
+ ],
+ "summary_by_kind": {
+  "least": {
+   "band_cos": 0.5670572100789286,
+   "ledger_jaccard": 0.047630735511192956,
+   "mlp_cos": 0.6841465429558108,
+   "top8_erased": 0.6026204427083334,
+   "top8_sign_flip": 0.010660807291666666,
+   "act_corr": 0.7706013144149134
+  },
+  "most": {
+   "band_cos": 0.2244065380145912,
+   "ledger_jaccard": 0.023028066899729856,
+   "mlp_cos": 0.26615317861291665,
+   "top8_erased": 0.8551703559027778,
+   "top8_sign_flip": 0.19832356770833334,
+   "act_corr": 0.36822836873398046
+  }
+ },
+ "mlp_cos_all": 0.4751498607843638,
+ "top8_erased_all": 0.7288953993055557,
+ "verdicts": {
+  "P1": true,
+  "P2": true,
+  "P4": true
+ },
+ "_exp": "e658_pass_two_pythia410",
+ "_time": "2026-10-14 18:33:12",
+ "summary": "[pythia410] second traversal against the first (neox): least damaging blocks band cosine +0.567, MLP output cosine +0.684, top-8 erased 0.60; most damaging band cosine +0.224, MLP output cosine +0.266, top-8 erased 0.86; verdicts {'P1': True, 'P2': True, 'P4': True} (6s)"
+}

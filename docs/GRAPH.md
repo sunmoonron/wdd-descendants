@@ -993,6 +993,26 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H757 Above D+1 logprobs (M = 2048) the minimum-norm reconstruction recovers the state (cosine 0.99 or more) and the ledger (Jaccard 0.95 or more). → e655 → SUPPORTED.
 - H758 The ledger as the unembedding reads it agrees with the usual hidden-state ledger (Jaccard 0.5 or more). → e655 → REFUTED.
 - H759 60 percent or more of the reference ledger's words come from the last four blocks. → e655 → NARROWED (holds in Qwen2.5-0.5B, not Pythia-160m, Pythia-410m).
+- H760 No repeated block lowers the wikitext loss by 0.5 percent or more. → e656 → SUPPORTED.
+- H761 The block chosen on half the probes raises accuracy on the other half by 2 points or more. → e656 → NARROWED (holds in SmolLM2-135M, Qwen2.5-0.5B, not Pythia-410m).
+- H762 That held-out gain survives masking the function words (2 points or more with the mask). → e656 → NARROWED (holds in SmolLM2-135M, Qwen2.5-0.5B, not Pythia-410m).
+- H763 The least damaging block of two or more layers has its centre in the middle third of the depth. → e656 → SUPPORTED.
+- H764 The 16-word WDD support Jaccard of x_i and x_j predicts the damage within block size better than their centred cosine. → e656 → REFUTED.
+- H765 The reader-Gram compatibility of x_j with block i predicts the damage within block size better than the log norm ratio. → e656 → NARROWED (holds in Pythia-410m, not SmolLM2-135M, Qwen2.5-0.5B).
+- H766 On the four most damaging blocks, matching x_j's norm to x_i's at the junction reduces the damage of every one. → e656 → NARROWED (holds in SmolLM2-135M, Qwen2.5-0.5B, not Pythia-410m).
+- H767 On the most damaging blocks, feeding x_i plus the band's native chord does better than norm matching. → e656 → NARROWED (holds in Pythia-410m, not SmolLM2-135M, Qwen2.5-0.5B).
+- H768 The native-chord junction beats the rotated-chord junction on average. → e656 → REFUTED.
+- H769 Under the content mask the best repeated block still beats the base on capitals by 5 points or more. → e656b → NARROWED (holds in SmolLM2-135M, Qwen2.5-0.5B, not Pythia-410m).
+- H770 Post hoc, added after C1's result to rule out format words the content mask misses: in a forced choice among the capitals' own first tokens, e656's held-out block beats the base by 5 points or more. → e656b → NARROWED (holds in SmolLM2-135M, Qwen2.5-0.5B, not Pythia-410m).
+- H771 At alpha 1 the native chord damages the loss less than the energy-matched raw increment on most bands. → e657 → NARROWED (holds in SmolLM2-135M, Qwen2.5-0.5B, not Pythia-410m).
+- H772 At alpha 1 the native chord damages the loss less than the rotated chord on most bands. → e657 → REFUTED.
+- H773 On every band where the true repeat raises probe accuracy, the native chord (better alpha) recovers a quarter or more of that gain. → e657 → NARROWED (holds in SmolLM2-135M, not Pythia-410m, Qwen2.5-0.5B).
+- H774 No virtual variant lowers the wikitext loss below base on any band. → e657 → NARROWED (holds in Pythia-410m, Qwen2.5-0.5B, not SmolLM2-135M).
+- H775 On the gaining bands the native chord recovers more probe gain than the rotated chord on average. → e657 → NARROWED (holds in SmolLM2-135M, Qwen2.5-0.5B, not Pythia-410m).
+- H776 On the least damaging blocks the second traversal's band increment points along the first's (mean cosine above 0.3). → e658 → SUPPORTED.
+- H777 Half or more of the first traversal's eight largest MLP writes per token are gone from the second's eight largest. → e658 → SUPPORTED.
+- H778 The second-to-first MLP output cosine is lower in Pythia-410m (GELU, read repulsion) than in both gated models. → e658 → REFUTED.
+- H779 The least damaging blocks show a higher second-to-first MLP output cosine than the most damaging ones. → e658 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

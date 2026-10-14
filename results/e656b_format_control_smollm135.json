@@ -1,0 +1,187 @@
+{
+ "model": "smollm135",
+ "n": 160,
+ "n_candidates": 141,
+ "base": {
+  "raw": 0.11875,
+  "function_masked": 0.39375,
+  "content_masked": 0.39375,
+  "forced_choice": 0.7375
+ },
+ "base_wrong_kinds": {
+  "function word": 137,
+  "other content": 4
+ },
+ "blocks": [
+  {
+   "i": 10,
+   "j": 13,
+   "raw": 0.44375,
+   "function_masked": 0.83125,
+   "content_masked": 0.83125,
+   "forced_choice": 0.88125,
+   "n_fixed_forced": 24,
+   "n_broken_forced": 1,
+   "n_fixed_raw": 53,
+   "fixed_base_answer_kinds": {
+    "function word": 52,
+    "other content": 1
+   },
+   "n_fixed_content": 70,
+   "n_broken_content": 0,
+   "examples": [
+    [
+     " the",
+     " Berlin"
+    ],
+    [
+     " the",
+     " Rome"
+    ],
+    [
+     " the",
+     " Beijing"
+    ],
+    [
+     " the",
+     " Athens"
+    ],
+    [
+     " the",
+     " Ank"
+    ],
+    [
+     " the",
+     " Tehran"
+    ],
+    [
+     " the",
+     " Baghdad"
+    ],
+    [
+     " the",
+     " Kabul"
+    ]
+   ]
+  },
+  {
+   "i": 10,
+   "j": 14,
+   "raw": 0.4375,
+   "function_masked": 0.80625,
+   "content_masked": 0.80625,
+   "forced_choice": 0.85625,
+   "n_fixed_forced": 20,
+   "n_broken_forced": 1,
+   "n_fixed_raw": 52,
+   "fixed_base_answer_kinds": {
+    "function word": 51,
+    "other content": 1
+   },
+   "n_fixed_content": 66,
+   "n_broken_content": 0,
+   "examples": [
+    [
+     " the",
+     " Berlin"
+    ],
+    [
+     " the",
+     " Beijing"
+    ],
+    [
+     " the",
+     " Athens"
+    ],
+    [
+     " the",
+     " Ank"
+    ],
+    [
+     " the",
+     " Tehran"
+    ],
+    [
+     " the",
+     " Baghdad"
+    ],
+    [
+     " the",
+     " Islam"
+    ],
+    [
+     " the",
+     " Kabul"
+    ]
+   ]
+  },
+  {
+   "i": 6,
+   "j": 7,
+   "raw": 0.45,
+   "function_masked": 0.75625,
+   "content_masked": 0.75625,
+   "forced_choice": 0.84375,
+   "n_fixed_forced": 18,
+   "n_broken_forced": 1,
+   "n_fixed_raw": 53,
+   "fixed_base_answer_kinds": {
+    "function word": 52,
+    "other content": 1
+   },
+   "n_fixed_content": 59,
+   "n_broken_content": 1,
+   "examples": [
+    [
+     " the",
+     " Berlin"
+    ],
+    [
+     " the",
+     " Beijing"
+    ],
+    [
+     " the",
+     " Athens"
+    ],
+    [
+     " the",
+     " Ank"
+    ],
+    [
+     " the",
+     " Tehran"
+    ],
+    [
+     " the",
+     " Baghdad"
+    ],
+    [
+     " the",
+     " Islam"
+    ],
+    [
+     " the",
+     " Kabul"
+    ]
+   ]
+  }
+ ],
+ "best_block_content": [
+  10,
+  13,
+  0.83125
+ ],
+ "best_block_forced": [
+  10,
+  13,
+  0.88125
+ ],
+ "verdicts": {
+  "C1": true,
+  "C2_posthoc": true
+ },
+ "_exp": "e656b_format_control_smollm135",
+ "_time": "2026-10-14 18:47:53",
+ "summary": "[smollm135] capitals under the content mask: base 0.394, best repeat 10-13 0.831 (raw: base 0.119, repeat 0.444); forced choice among 141 capital tokens: base 0.738, held-out block 10-13 0.881; verdicts {'C1': True, 'C2_posthoc': True} (9s)"
+}
