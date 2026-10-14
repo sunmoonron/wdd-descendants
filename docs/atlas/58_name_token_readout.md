@@ -14,7 +14,9 @@
 
 **Session 136 (what the floor sorts).** Autoencoder blocks built as Engels et al. did pass the spectrum-matched floor almost always (0.93 to 1.00), so the floor cannot sort them; arbitrary noun class subspaces pass it in 0.21 of draws against the calendar's 0.91. Reading: the calendar's anchoring is specific in most models: arbitrary noun classes rarely pass the floor that the calendar's class-mean subspace passes in 20 of 22 pairs, except in OPT-125m, OPT-1.3b, OLMo-1B, where noun classes pass in 0.40 to 1.00 of draws and the floor does not single the calendar out; elsewhere e645b's reading stands; autoencoder blocks pass almost always because their features are built near rows (e495), which makes the floor a test for subspaces read from states, not for subspaces built from a dictionary.
 
-**Start here:** e640, e642, e645b, e649 · **Sessions:** S132, S135, S136 · **Scripts:** `scripts/e640_patch.py`, `e642_angle.py`, `e645_floor.py`, `e645b_floor.py`, `e647_blocks.py`, `e649_nouns.py` (standalone: torch, transformers, numpy; ran on a Quadro P4000)
+**Session 137.** Calendar subspaces carry a second anchored row (except Pythia-160m's months at this depth) and random-noun subspaces none, but only when the floor's null comes from the subspace's own states (e647b).
+
+**Start here:** e640, e642, e645b, e649, e647b · **Sessions:** S132, S135-S137 · **Scripts:** `scripts/e640_patch.py`, `e642_angle.py`, `e645_floor.py`, `e645b_floor.py`, `e647_blocks.py`, `e649_nouns.py`, `e647b_second.py` (standalone: torch, transformers, numpy; ran on a Quadro P4000)
 
 ## Experiments
 
@@ -28,6 +30,8 @@
 
 | e647 | Autoencoder blocks built as Engels et al. did, from Bloom's GPT-2 small and EleutherAI's Pythia-160m autoencoders: anchoring against spectrum-matched rotations, and state-side activity against the same rotations | the multi-dimensional blocks built in the manner of Engels et al. from two public sparse autoencoders (GPT-2 small at the input of block 7, 21914 live features; Pythia-160m after layer 6, 6096; the 150 largest of 400 decoder clusters, spans of 2, 4 and 8 dimensions) almost all pass the spectrum-matched floor: 0.93 to 1.00 of them have a write row deeper inside them than 95 percent of their rotations, with block 0 excluded, and the weekday subspace at the same depth passes too; on held-out text a block's projection beats its own rotations in a median 0.28 to 0.57 of the states where its features fire against 0.04 to 0.09 where none does, and in Pythia-160m the few unanchored blocks clear it more often when active, not less | refuted (as the missing test for autoencoder blocks: nearly every block passes, and passing does not predict real activity) | ← e645b, 21 |
 | e649 | Random-noun class subspaces at each model's calendar depth, under the same floor | the class-mean subspace of seven or twelve random nouns over thirty neutral sentences, at each model's calendar depth, passes the same floor without block 0 in 0.21 of draws (five draws per model and size; by model and size 0.00 to 1.00), against 0.91 of pairs for the calendar's; their top-2 planes pass in 0.20 | supported (the calendar's anchoring is specific; arbitrary noun classes rarely pass) | ← e645b |
+
+| e647b | The floor on each subspace's second row, with the controls banded by their own states and by wikitext states | calendar subspaces carry a second anchored row (except Pythia-160m's months at this depth) and random-noun subspaces none, but only when the floor's null comes from the subspace's own states | supported (calendar subspaces are multi-dimensional in the weights where anchored; the null must come from the subspace's own states) | ← e647, e649 |
 
 ## How the results flow
 

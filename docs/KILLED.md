@@ -890,3 +890,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "the calendar's anchored share (20 of 22 pairs) exceeds the random nouns' by no more than 0.1." (e649).
 - The subspace floor as the missing significance test for autoencoder-derived multi-dimensional features (Gemini 4's pitch): nearly every such block passes it, and in Pythia-160m the unanchored ones clear their state-side floor more often, not less (e647).
 - Gemini 4's masking account of the entrants' exemption from read repulsion: the pull explains about a third of it (e648).
+
+## Session 137 kills (the repulsion's split; the second row)
+- "the static read-write cosine (raw read weights) is negative on average at all three origins, between -0.25 and -0.10." (e648b).
+- "more than half of the summed repulsion comes from growth along an already anti-aligned write, at all three origins." (e648b).
+- "at d = 4 and d = 8 at most a third of the autoencoder blocks have an anchored second direction, in both models." (e647b).
+- "the weekday and month class-mean subspaces both have an anchored second direction in both models." (e647b).
+- e647's weekday control as evidence: scored under wikitext bands, where random nouns pass too (e647b).

@@ -186,6 +186,10 @@ With Gemini 4's guardrails the result stands: against a spectrum-matched null (t
 
 Autoencoder blocks built as Engels et al. did pass the spectrum-matched floor almost always (0.93 to 1.00), so the floor cannot sort them; arbitrary noun class subspaces pass it in 0.21 of draws against the calendar's 0.91 (e647, e649). Read repulsion holds for 86 to 96 percent of rows and fades with training; the rows pulled toward their active states are mostly really exempt (e648).
 
+## Dampers and speakers (session 137)
+
+Read repulsion is half growth of already anti-aligned writes and half fresh rotation, building area 05's damper rows, while rows pulled toward their active states stay near neutral (e648b). Reading: read repulsion is the training-time side of area 05's learned contraction: typical rows are built into negative-feedback dampers whose write opposes what they read, which makes the block's Jacobian trace negative (e209, e210), while the rows that move toward the states where they fire are the ones not built as dampers, as e509 found for a word's own rows.
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

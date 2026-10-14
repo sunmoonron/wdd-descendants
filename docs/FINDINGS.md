@@ -6476,3 +6476,28 @@ SESSION 136 (2026-10-14, the Dell; the user: do as needed after Gemini 4 propose
   - The class-mean subspace of seven or twelve random nouns over thirty neutral sentences, at each model's calendar depth, passes the same floor without block 0 in 0.21 of draws (five draws per model and size; by model and size 0.00 to 1.00), against 0.91 of pairs for the calendar's; their top-2 planes pass in 0.20.
   - Reading: the calendar's anchoring is specific in most models: arbitrary noun classes rarely pass the floor that the calendar's class-mean subspace passes in 20 of 22 pairs, except in OPT-125m, OPT-1.3b, OLMo-1B, where noun classes pass in 0.40 to 1.00 of draws and the floor does not single the calendar out; elsewhere e645b's reading stands; autoencoder blocks pass almost always because their features are built near rows (e495), which makes the floor a test for subspaces read from states, not for subspaces built from a dictionary.
   - Pre-registered: N1 (random-noun class-mean subspaces are anchored without block 0 in at least 80 percent of draws over all models) refuted; N2 (the calendar's anchored share (20 of 22 pairs) exceeds the random nouns' by no more than 0.1) refuted.
+
+
+SESSION 137 (2026-10-14, the Dell; Gemini 4 traced read repulsion to area 05 and asked for the floor on a block's second row. Pre-registered D1 to D4 at 2026-10-14T10:56:02 and M1 to M3 at 2026-10-14T10:56:02 (revised 2026-10-14T10:57:48 after a smoke showed the wikitext-banded null passing every template subspace, before any full run).)
+
+- e648b READ REPULSION SPLIT (e648's rows and origins; the write change split into growth along the origin write and rotation; the static cosine of each write with its read weights, by pull quintile):
+
+  | origin | growth share of the repulsion | rotation part: mean cosine (share negative) | static read-write cosine (share below -0.1) | static cosine by pull quintile 1 to 5 | top 5 percent by pull |
+  | --- | --- | --- | --- | --- | --- |
+  | 4000-5000 | 0.46 | -0.066 (0.90) | -0.241 (0.93) | -0.316 -0.276 -0.242 -0.216 -0.154 | -0.093 |
+  | 8000-9000 | 0.44 | -0.046 (0.84) | -0.299 (0.91) | -0.401 -0.344 -0.309 -0.264 -0.179 | -0.087 |
+  | 12000-13000 | 0.36 | -0.037 (0.80) | -0.323 (0.90) | -0.421 -0.370 -0.334 -0.292 -0.200 | -0.098 |
+
+  - In Pythia-410m block 12 a row's repulsion is 0.46, 0.44, 0.36 growth along an already anti-aligned write and the rest fresh rotation at steps 4000, 8000 and 12000, the rotation alone still repelling (mean cosine -0.066, -0.046, -0.037); the static cosine of a row's write with its read weights is -0.241, -0.299, -0.323 (0.93, 0.91, 0.90 of rows below -0.1), area 05's anti-alignment, and it rises from -0.316, -0.401, -0.421 in the lowest pull quintile to -0.154, -0.179, -0.200 in the highest, the top five percent at -0.093, -0.087, -0.098.
+  - Reading: read repulsion is the training-time side of area 05's learned contraction: typical rows are built into negative-feedback dampers whose write opposes what they read, which makes the block's Jacobian trace negative (e209, e210), while the rows that move toward the states where they fire are the ones not built as dampers, as e509 found for a word's own rows.
+  - Pre-registered: D1 (the static read-write cosine (raw read weights) is negative on average at all three origins, between -0.25 and -0.10) refuted; D2 (more than half of the summed repulsion comes from growth along an already anti-aligned write, at all three origins) refuted; D3 (the rotation part alone is still negative on average at all three origins) confirmed; D4 (the top pull quintile's static cosine is less negative than the bottom quintile's by 0.05 or more at all three origins) confirmed.
+
+- e647b THE SECOND ROW (each subspace and its rotations with the best row's direction removed; autoencoder blocks banded by wikitext states, the calendar and noun controls by their own template states and by wikitext states):
+
+  | model | autoencoder blocks with an anchored first / second direction, d 2; 4; 8 | weekday subspace first / second, own bands; wikitext bands | month subspace, same | random-noun subspaces first / second, own bands; wikitext bands |
+  | --- | --- | --- | --- | --- |
+  | GPT-2 small | 1.00 / 1.00; 1.00 / 1.00; 1.00 / 1.00 | 1.00 / 1.00; 1.00 / 1.00 | 1.00 / 1.00; 1.00 / 1.00 | 0.00 / 0.00; 1.00 / 1.00 |
+  | Pythia-160m | 0.93 / 0.95; 0.97 / 0.97; 0.97 / 0.97 | 0.80 / 0.97; 1.00 / 1.00 | 0.00 / 0.05; 1.00 / 1.00 | 0.00 / 0.00; 1.00 / 1.00 |
+
+  - With each subspace's best row removed and the rest scored against spectrum-matched rotations banded by the subspace's own states, a second anchored direction remains in GPT-2 small weekday, GPT-2 small month, Pythia-160m weekday (percentiles 1.00, 1.00, 0.97, 0.05), not in Pythia-160m month, whose subspace is not anchored at this depth at all; random-noun subspaces pass neither the first nor the second test (0.00, 0.00 and 0.00, 0.00 of ten draws), and autoencoder blocks keep a second anchored direction in 0.95 to 1.00 of cases, one row per member feature; banded by wikitext states instead, every template subspace passes, random nouns included (1.00, 1.00), so the floor's null must come from the states the subspace was read from, and e647's weekday control, banded by wikitext, was uninformative.
+  - Pre-registered: M1 (at d = 4 and d = 8 at most a third of the autoencoder blocks have an anchored second direction, in both models) refuted; M2 (the weekday and month class-mean subspaces both have an anchored second direction in both models) refuted; M3 (at most a fifth of the random-noun subspaces have an anchored second direction, in both models) confirmed.

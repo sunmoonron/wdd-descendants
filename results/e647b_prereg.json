@@ -1,0 +1,24 @@
+{
+ "experiment": "e647b_second",
+ "fixed_at": "2026-10-14T10:56:02",
+ "status": "registered before any run",
+ "question": "Gemini 4: e647's blocks pass because one direction near one row is enough. Score the second row: does a subspace keep an anchored direction once its best row's direction is removed?",
+ "design": "GPT-2 small and Pythia-160m at the e647 depth; the e647 autoencoder blocks (150 largest clusters, d 2, 4, 8), the weekday and month class-mean subspaces, and ten random-noun class subspaces (five of 7 nouns, five of 12); for each subspace and its 40 spectrum-matched rotations, the largest squared projection of the unit write rows of blocks 1 to 6 (first) and, after removing the best row's direction in the subspace, of the other rows (second); anchored at a percentile of 0.95. Controls are scored under their own template states' bands (primary) and under wikitext bands.",
+ "predictions": {
+  "M1": {
+   "text": "at d = 4 and d = 8 at most a third of the autoencoder blocks have an anchored second direction, in both models",
+   "guess": 0.55
+  },
+  "M2": {
+   "text": "the weekday and month class-mean subspaces both have an anchored second direction in both models",
+   "guess": 0.5
+  },
+  "M3": {
+   "text": "at most a fifth of the random-noun subspaces have an anchored second direction, in both models",
+   "guess": 0.7
+  }
+ },
+ "honest_guess": "Most autoencoder blocks are one anchored row plus padding; the calendar subspaces carry several anchored rows; noun subspaces none.",
+ "revised_at": "2026-10-14T10:57:48",
+ "revision": "Revised after the smoke on GPT-2 small, before any full run; predictions unchanged. The smoke rotated every subspace inside the principal-component bands of wikitext states, and under that null every template-derived subspace passed, random nouns included (first and second 1.00), unlike e649, which banded each subspace by its own template states. The calendar and noun controls are now scored under both nulls, their own template states' bands being primary (as in e645b and e649); the autoencoder blocks keep the wikitext bands, the distribution their autoencoder was trained on. This also means e647's weekday control, scored under wikitext bands, was uninformative."
+}

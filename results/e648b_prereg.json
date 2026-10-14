@@ -1,0 +1,26 @@
+{
+ "experiment": "e648b_split",
+ "fixed_at": "2026-10-14T10:56:02",
+ "status": "registered before any run; e648's numbers known; the checkpoints are cached",
+ "question": "Gemini 4: e648's read repulsion is the training-time derivative of area 05's static read-write anti-alignment (e209), which makes the block's Jacobian trace and its learned contraction negative (e210); the repulsion is part growth of an already anti-aligned write and part fresh rotation; rows that pull toward their active states (word-like rows) should be less anti-aligned.",
+ "design": "e648's rows and origins; the write change split into its component along the origin write (growth) and the rest (rotation), each projected on the read direction; the static cosine of each row's write with its raw read weights and with the gain-weighted read direction at the origin, overall and by pull quintile.",
+ "predictions": {
+  "D1": {
+   "text": "the static read-write cosine (raw read weights) is negative on average at all three origins, between -0.25 and -0.10",
+   "guess": 0.8
+  },
+  "D2": {
+   "text": "more than half of the summed repulsion comes from growth along an already anti-aligned write, at all three origins",
+   "guess": 0.5
+  },
+  "D3": {
+   "text": "the rotation part alone is still negative on average at all three origins",
+   "guess": 0.7
+  },
+  "D4": {
+   "text": "the top pull quintile's static cosine is less negative than the bottom quintile's by 0.05 or more at all three origins",
+   "guess": 0.55
+  }
+ },
+ "honest_guess": "Rows are already anti-aligned by step 4000 (about -0.2), most of the repulsion is their growth along that direction, the rotation part is still negative but small, and the rows that pull toward their active states are less anti-aligned."
+}

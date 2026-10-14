@@ -953,6 +953,13 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H717 In the top 5 percent by pull the pull-removed read cosine is negative at all three origins. → e648 → REFUTED.
 - H718 Random-noun class-mean subspaces are anchored without block 0 in at least 80 percent of draws over all models. → e649 → REFUTED.
 - H719 The calendar's anchored share (20 of 22 pairs) exceeds the random nouns' by no more than 0.1. → e649 → REFUTED.
+- H720 The static read-write cosine (raw read weights) is negative on average at all three origins, between -0.25 and -0.10. → e648b → REFUTED.
+- H721 More than half of the summed repulsion comes from growth along an already anti-aligned write, at all three origins. → e648b → REFUTED.
+- H722 The rotation part alone is still negative on average at all three origins. → e648b → SUPPORTED.
+- H723 The top pull quintile's static cosine is less negative than the bottom quintile's by 0.05 or more at all three origins. → e648b → SUPPORTED.
+- H724 At d = 4 and d = 8 at most a third of the autoencoder blocks have an anchored second direction, in both models. → e647b → REFUTED.
+- H725 The weekday and month class-mean subspaces both have an anchored second direction in both models. → e647b → REFUTED.
+- H726 At most a fifth of the random-noun subspaces have an anchored second direction, in both models. → e647b → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

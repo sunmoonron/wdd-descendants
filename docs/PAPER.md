@@ -76,6 +76,8 @@ Side result continued (session 135): the calendar's class-mean subspace has a wr
 
 Side result continued (session 136): autoencoder blocks built as Engels et al. did pass the spectrum-matched floor almost always (0.93 to 1.00), so the floor cannot sort them; arbitrary noun class subspaces pass it in 0.21 of draws against the calendar's 0.91 (e647, e649); read repulsion holds for 86 to 96 percent of rows and fades with training; the rows pulled toward their active states are mostly really exempt (e648).
 
+Side result continued (session 137): read repulsion is half growth of already anti-aligned writes and half fresh rotation, building area 05's damper rows, while rows pulled toward their active states stay near neutral (e648b); calendar subspaces carry a second anchored row (except Pythia-160m's months at this depth) and random-noun subspaces none, but only when the floor's null comes from the subspace's own states (e647b).
+
 ## 9. Prior art (session 124)
 
 - Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.

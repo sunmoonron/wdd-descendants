@@ -261,3 +261,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 135 (e645, e645b, e646):** the subspace floor holds under a spectrum-matched null; stored classes get their rows early or not at all. Still open: the floor applied to published block-sparse featurizer blocks, which is where the null is most needed; and the read-repulsion check of e526 with the pull toward the active state removed (needs Pythia checkpoints and e525's entrant definition rebuilt on the Dell).
 
 **Session 136 (e647 to e649):** the floor is too easy for autoencoder blocks but sorts class subspaces read from states. Still open: the floor on published block-sparse featurizer blocks, once weights for a cached model can be had; the read repulsion with e525's word entrants rebuilt, and its cause (stability of the residual stream, as Gemini 4 proposed).
+
+**Session 137 (e647b, e648b):** read repulsion is area 05's contraction in the making; the floor needs a null from the subspace's own states. Still open: why rows pulled toward their active states escape being built as dampers, followed from initialisation through step 4000 when the anti-alignment forms (e217).
