@@ -974,6 +974,7 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H738 Single-row consistency recall collapses at the largest k (<=0.2). → e652 → SUPPORTED.
 - H739 The coalition-aware detector still catches the distributed edit (recall >=0.5 at the largest k). → e652 → REFUTED.
 - H740 The norm stays blind to the reflection at every k (recall <=0.2). → e652 → REFUTED.
+- H741 The mean absolute write cosine between a high-use row and its most co-firing rows is below 0.1, so the coalition-masking mechanism cannot operate. → e652c → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
