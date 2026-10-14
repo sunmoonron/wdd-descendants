@@ -1,0 +1,48 @@
+{
+ "experiment": "e640_patch",
+ "fixed_at": "2026-10-13T21:38:32",
+ "status": "registered before any run (a smoke on Pythia-160m follows)",
+ "question": "Why did turning the ring by a class step (e639) move the answers only in part? Which part of the name token's state does the answer read, and until which depth?",
+ "design": "Forward calendar task (4 templates x k cues). At the name's last token, the residual entering block L is replaced by the same template's state for cue X+1, wholly or in one subspace: full; class-mean subspace (k-1 directions of the centred class means of 30 templates at that depth); ring plane (its top two); the rest of it; two random planes inside it; the complement. Follow = the answer becomes X+2. Depths: entering block 1, Lb/2, Lb (best block), halfway to the end, the last block. Angle sweep at Lb/2 and Lb: the ring-plane component set to the ring radius at 24 angles; plane-follow = the answer is the class after the angle's class. Eleven models: gpt2, smollm135, opt125, qwen05, olmo1b, gpt2m, smollm360, opt13b, gpt2l, pythia410, pythia14b.",
+ "predictions": {
+  "P1": {
+   "text": "sanity: the full-state patch entering block 1 makes the answer follow the source in 0.6 or more of the prompts in every model-calendar pair whose baseline accuracy is 0.6 or more",
+   "guess": 0.8
+  },
+  "P2": {
+   "text": "timing: entering the last block the full-state patch makes 0.2 or less follow, in at least 14 of the 22 pairs (the information has left the name token)",
+   "guess": 0.7
+  },
+  "P3": {
+   "text": "linear: at the depth where the full patch is followed most, the class-mean subspace patch is followed within 0.15 of it, in at least two thirds of the pairs",
+   "guess": 0.55
+  },
+  "P4": {
+   "text": "the complement of the class-mean subspace is followed 0.1 or less at every depth, in every pair",
+   "guess": 0.6
+  },
+  "P5": {
+   "text": "the ring is not the medium: at that depth the ring-plane patch is followed less than half as often as the class-mean subspace patch, in the five pairs where the writers were causal (GPT-2 small months, GPT-2 medium days, GPT-2 large months, SmolLM2-135M days, SmolLM2-360M days)",
+   "guess": 0.6
+  },
+  "P6": {
+   "text": "the ring plane beats a random plane: the ring-plane patch is followed more than the mean of the two random planes inside the class-mean subspace, in at least two thirds of the pairs",
+   "guess": 0.8
+  },
+  "P7": {
+   "text": "a circular readout: at the best block the angle sweep sends the answer to the class after the angle's class in 0.5 or more of the off-cue sweep, in at least three of the five causal pairs",
+   "guess": 0.25
+  },
+  "P8": {
+   "text": "when the angle moves the answer it moves it around the cycle: among sweep points whose answer departs from the baseline answer, half or more land on the class after the angle's class, in the pairs where 0.2 or more of the sweep departs",
+   "guess": 0.45
+  }
+ },
+ "honest_guess": "The information leaves the name token around the middle of the network; until then the class-mean subspace carries what the answer needs and its complement nothing. Inside it the ring plane carries a part, more than a random plane but well under half, so the answer reads class identity as a whole rather than the angle. The sweep moves answers at the earlier depth, mostly off the cycle (Gemini's anisotropic readout), and little at the best block.",
+ "where_it_ought_to_break": [
+  "positions after the name may already have read it at blocks before L, so a patch at L only reaches reads from L on; the depth sweep is there for that",
+  "the subspaces are fitted on 30 sentence templates and applied to task prompts, a distribution shift",
+  "names of different token lengths shift later positions between base and source",
+  "setting the plane to the ring's mean radius can push a state off its usual radius"
+ ]
+}

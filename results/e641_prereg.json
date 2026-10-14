@@ -1,0 +1,48 @@
+{
+ "experiment": "e641_incontext",
+ "fixed_at": "2026-10-13T21:42:10",
+ "status": "registered before any run (a CPU smoke on Pythia-160m follows)",
+ "question": "Does a class defined only in the prompt get a native word (a write row closer to its direction than chance), with the weights frozen, or is it wordless, or does it borrow its label's words, or do reusable slot rows carry it?",
+ "design": "32 prompts per model; each sorts 8 single-token objects into two groups named by random capital letters, twice, then mentions each object in a neutral sentence. A header names the groups in order. Twins: letter-swap everywhere, header included (identity code), and header order swapped only (ordinal code). Class direction per prompt = mean twin-difference over group 1 minus over group 2, at the object's later mention and at its round-2 token. Gate: each held-out object's twin difference projected on its group's other members' mean minus the other group's mean, correct if positive, against the 34 other balanced splits. Native-word statistic s = largest |cos| with the unit write rows of blocks below the depth, as a percentile among the same prompt's 34 random-split directions. Borrowing: cosine with the letters' own contrast at their tokens; the top row's unembedding reading containing a letter. Slots: ordinal directions' mean pairwise cosine across prompts and their average's s against random-split averages. Positive control: the animal-object direction over 8 neutral sentences against random 8/8 splits of the 16 nouns. Depths: a quarter, half and three quarters of the blocks; criteria at half. Models: pythia410, pythia14b, qwen05, olmo1b, gpt2m, smollm360.",
+ "predictions": {
+  "B": {
+   "text": "behaviour: asked 'The X is in group', each model picks the object's letter over the other at 0.9 or more",
+   "guess": 0.85
+  },
+  "G1": {
+   "text": "gate at the later mention: the identity code (letter swap) decodes the group at 0.75 or more and above the random-split null at half depth, in at least 3 of the 6 models",
+   "guess": 0.5
+  },
+  "G2": {
+   "text": "gate at the second neutral mention: the identity code decodes the group at 0.75 or more and above the random-split null at half depth, in at least 4 of the 6 models",
+   "guess": 0.6
+  },
+  "C": {
+   "text": "positive control: the animal-object direction's s exceeds 0.95 of its random splits at half depth in at least 5 of the 6 models",
+   "guess": 0.8
+  },
+  "H0": {
+   "text": "wordless: where the identity gate passes, the median prompt's s percentile among its random splits is below 0.9 at half depth",
+   "guess": 0.4
+  },
+  "H2": {
+   "text": "borrowed: where the identity gate passes, the identity direction aligns with the letters' own contrast (median cosine 0.3 or more) at half depth",
+   "guess": 0.55
+  },
+  "H1": {
+   "text": "slots: the ordinal directions agree across prompts above the 95th percentile of the null and their average's s exceeds 0.95 of its null, in at least 2 models",
+   "guess": 0.2
+  }
+ },
+ "honest_guess": "Behaviour is easy (an exact-match copy). The identity code is decodable at the round-2 token in most models and weaker at the later neutral mention. Where it is decodable it is mostly the letter's own features copied onto the object, so its nearest rows are letter rows; s may sit above the random-split null for that reason, which would be borrowing, not a new word. No reusable slot rows. The positive control passes.",
+ "where_it_ought_to_break": [
+  "the twin differences carry everything the swap changes, including attention to the letters themselves, so a code at the object is not proof the model treats it as a class member",
+  "with 8 objects per prompt the random-split null has 34 members, a percentile resolution near 0.03",
+  "letters are not semantically empty (B, C, Q, X carry associations)",
+  "small models may copy the letter at the query without carrying any code at the later mention, which would fail the gate and leave the question open"
+ ],
+ "revised_at": "2026-10-13T21:43:32",
+ "revision": "Revised after the CPU smoke on Pythia-160m and before any full run; predictions unchanged. (1) The leave-one-out nearest-centroid gate is biased below chance with unequal group sizes (the smoke gave 0.16 to 0.28 on the true split); replaced by the sign of the held-out difference projected on the difference of the remaining group means, unbiased under random splits. (2) The reorder twin moved two round-1 statements, confounding the ordinal code with those two objects' positions; replaced by a header that names the two groups in order ('There are two groups, Q and M.'), swapped in the reorder twin only; the letter-swap twin swaps the header's letters with everything else, so it keeps the order of naming.",
+ "revised2_at": "2026-10-13T21:44:34",
+ "revision2": "Second revision after a second CPU smoke, before any full run. At the round-2 object token the twin difference is dominated by the letter of the statement just before it, which is from the other group more often than not (4 of 7), so the gate there runs below chance on the true split (smoke: 0.28). The round-2 measurement is replaced by a second letter-free mention ('After that, the X went back on the shelf.'); G2 is re-targeted to it with the same threshold, its guess carried over. Other predictions unchanged."
+}

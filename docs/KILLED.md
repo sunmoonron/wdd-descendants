@@ -848,3 +848,15 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "backward: rotating the 90-percent set backward raises the 0 share (today) to 0.3 or more in those three cases." (e639).
 - "dilution: the shift at the last block is at most half of the shift at the best block in GPT-2 small (later blocks and attention re-express the un-rotated class)." (e639).
 - The reading that the ring is the medium of calendar arithmetic in these small models: its phase can be turned by about a class step at the parameter level and the answers mostly do not turn with it (e639).
+
+## Session 132 kills (the name token's readout; classes defined in the prompt)
+- "the complement of the class-mean subspace is followed 0.1 or less at every depth, in every pair." (e640).
+- "the ring plane beats a random plane: the ring-plane patch is followed more than the mean of the two random planes inside the class-mean subspace, in at least two thirds of the pairs." (e640).
+- "a circular readout: at the best block the angle sweep sends the answer to the class after the angle's class in 0.5 or more of the off-cue sweep, in at least three of the five causal pairs." (e640).
+- "when the angle moves the answer it moves it around the cycle: among sweep points whose answer departs from the baseline answer, half or more land on the class after the angle's class, in the pairs where 0.2 or more of the sweep departs." (e640).
+- "behaviour: asked 'The X is in group', each model picks the object's letter over the other at 0.9 or more." (e641).
+- "gate at the second neutral mention: the identity code decodes the group at 0.75 or more and above the random-split null at half depth, in at least 4 of the 6 models." (e641).
+- "borrowed: where the identity gate passes, the identity direction aligns with the letters' own contrast (median cosine 0.3 or more) at half depth." (e641).
+- "slots: the ordinal directions agree across prompts above the 95th percentile of the null and their average's s exceeds 0.95 of its null, in at least 2 models." (e641).
+- "graded: the ring plane's following rises by 0.2 or more from r = 1 to r = 4, in at least two thirds of the pairs where it is followed 0.3 or more at r = 4." (e642).
+- The reading that the calendar arithmetic reads the ring's angle at the name token: the class-mean subspace carries the readout as a whole, random planes in it steer the answer too, the ring plane's lead is clear only for the months, and in half of the pairs the name token stops mattering before the ring's best block (e640, e642).

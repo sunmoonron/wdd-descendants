@@ -66,6 +66,8 @@ Side result continued (session 130): the calendar rings' detectors and writers a
 
 Side result continued (session 131): a parameter-level rotation of the ring writers turns the calendar ring by a full class step without turning the arithmetic's answers, so in these small models the ring is a correlate of the computation rather than its medium (e639).
 
+Side result continued (session 132): the calendar answer reads the name token's class-mean subspace as a whole, the name token stops mattering before the ring's best block in half of the model-calendar pairs, and a class defined only in the prompt is carried without a native word, which bounds what a provenance instrument built on write rows can see (e640 to e642).
+
 ## 9. Prior art (session 124)
 
 - Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.

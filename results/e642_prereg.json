@@ -1,0 +1,31 @@
+{
+ "experiment": "e642_angle",
+ "fixed_at": "2026-10-13T21:47:55",
+ "status": "registered after e640's first four models were seen and before any e642 run; written as the edge test of e640's reading that the ring plane carries no more than a random plane",
+ "question": "Is the calendar ring read as an angle, or is it the top-variance shadow of a class code that the answer reads linearly? e640 compared the ring plane with random planes using adjacent-class sources, where the ring plane carries only a short chord by construction, so its weakness there may be geometry, not readout.",
+ "design": "At the deepest e640 depth where the full patch still sets the answer (agreement 0.9 or more), the state's component in a plane is replaced by a push of size r x the ring radius toward each non-cue target class's projected template mean (r = 0.5, 1, 2, 4), in the ring plane, the next plane (directions 3 and 4 of the class means) and three random planes inside the class-mean subspace. 2 task templates x k cues x (k-1) targets. Follow = the answer becomes the class after the target. Eleven models as in e640.",
+ "predictions": {
+  "Q1": {
+   "text": "linear: at r = 2 the mean of the three random planes is followed 0.3 or more, in at least half of the pairs where the ring plane is followed 0.3 or more",
+   "guess": 0.6
+  },
+  "Q2": {
+   "text": "no angular privilege: at r = 2 the ring plane is followed at most 0.2 more than the mean of the random planes, in at least two thirds of the pairs",
+   "guess": 0.55
+  },
+  "Q3": {
+   "text": "graded: the ring plane's following rises by 0.2 or more from r = 1 to r = 4, in at least two thirds of the pairs where it is followed 0.3 or more at r = 4",
+   "guess": 0.55
+  },
+  "Q4": {
+   "text": "the next plane does as well as the ring: at r = 2 it is followed within 0.15 of the ring plane, in at least half of the pairs",
+   "guess": 0.45
+  }
+ },
+ "honest_guess": "A linear class code: every plane that spreads the class means moves the answer toward the target once the push is large, the ring plane somewhat more per unit push because the decoder's directions are not uniform in the class-mean subspace, and following grows with the push rather than saturating. The ring is the class code's top-variance shadow, read along with the rest, not an angle.",
+ "where_it_ought_to_break": [
+  "a push of 4 ring radii is far off the state's usual distribution and may break the readout rather than steer it",
+  "random planes in a 6-dimensional (days) subspace are not far from the ring plane by chance; three draws bound that",
+  "the depth comes from e640's full-patch agreement, so a model where the name token stops deciding the answer early is probed early"
+ ]
+}

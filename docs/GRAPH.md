@@ -905,6 +905,25 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H669 Cheap: the general loss on the templates changes by at most 0.1 nats under every writers' rotation (the edit preserves column norms), in every model. → e639 → SUPPORTED.
 - H670 The non-causal case: in OLMo-1B months, where the task survived ablation, the 90-percent rotation moves the ring by 0.5 step or more but the +2 share stays under 0.1. → e639 → SUPPORTED.
 - H671 Dilution: the shift at the last block is at most half of the shift at the best block in GPT-2 small (later blocks and attention re-express the un-rotated class). → e639 → REFUTED.
+- H672 Sanity: the full-state patch entering block 1 makes the answer follow the source in 0.6 or more of the prompts in every model-calendar pair whose baseline accuracy is 0.6 or more. → e640 → SUPPORTED.
+- H673 Timing: entering the last block the full-state patch makes 0.2 or less follow, in at least 14 of the 22 pairs (the information has left the name token). → e640 → SUPPORTED.
+- H674 Linear: at the depth where the full patch is followed most, the class-mean subspace patch is followed within 0.15 of it, in at least two thirds of the pairs. → e640 → SUPPORTED.
+- H675 The complement of the class-mean subspace is followed 0.1 or less at every depth, in every pair. → e640 → REFUTED.
+- H676 The ring is not the medium: at that depth the ring-plane patch is followed less than half as often as the class-mean subspace patch, in the five pairs where the writers were causal (GPT-2 small months, GPT-2 medium days, GPT-2 large months, SmolLM2-135M days, SmolLM2-360M days). → e640 → SUPPORTED.
+- H677 The ring plane beats a random plane: the ring-plane patch is followed more than the mean of the two random planes inside the class-mean subspace, in at least two thirds of the pairs. → e640 → REFUTED.
+- H678 A circular readout: at the best block the angle sweep sends the answer to the class after the angle's class in 0.5 or more of the off-cue sweep, in at least three of the five causal pairs. → e640 → REFUTED.
+- H679 When the angle moves the answer it moves it around the cycle: among sweep points whose answer departs from the baseline answer, half or more land on the class after the angle's class, in the pairs where 0.2 or more of the sweep departs. → e640 → REFUTED.
+- H680 Behaviour: asked 'The X is in group', each model picks the object's letter over the other at 0.9 or more. → e641 → REFUTED.
+- H681 Gate at the later mention: the identity code (letter swap) decodes the group at 0.75 or more and above the random-split null at half depth, in at least 3 of the 6 models. → e641 → SUPPORTED.
+- H682 Gate at the second neutral mention: the identity code decodes the group at 0.75 or more and above the random-split null at half depth, in at least 4 of the 6 models. → e641 → REFUTED.
+- H683 Positive control: the animal-object direction's s exceeds 0.95 of its random splits at half depth in at least 5 of the 6 models. → e641 → SUPPORTED.
+- H684 Wordless: where the identity gate passes, the median prompt's s percentile among its random splits is below 0.9 at half depth. → e641 → SUPPORTED.
+- H685 Borrowed: where the identity gate passes, the identity direction aligns with the letters' own contrast (median cosine 0.3 or more) at half depth. → e641 → REFUTED.
+- H686 Slots: the ordinal directions agree across prompts above the 95th percentile of the null and their average's s exceeds 0.95 of its null, in at least 2 models. → e641 → REFUTED.
+- H687 Linear: at r = 2 the mean of the three random planes is followed 0.3 or more, in at least half of the pairs where the ring plane is followed 0.3 or more. → e642 → SUPPORTED.
+- H688 No angular privilege: at r = 2 the ring plane is followed at most 0.2 more than the mean of the random planes, in at least two thirds of the pairs. → e642 → SUPPORTED.
+- H689 Graded: the ring plane's following rises by 0.2 or more from r = 1 to r = 4, in at least two thirds of the pairs where it is followed 0.3 or more at r = 4. → e642 → REFUTED.
+- H690 The next plane does as well as the ring: at r = 2 it is followed within 0.15 of the ring plane, in at least half of the pairs. → e642 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
