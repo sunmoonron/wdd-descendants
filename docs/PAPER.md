@@ -64,6 +64,8 @@ Side result (session 129): the calendar rings of Engels et al. 2024 have a param
 
 Side result continued (session 130): the calendar rings' detectors and writers are different populations; the writers are a specific causal substrate of calendar arithmetic in some models and not in others (e634 to e638).
 
+Side result continued (session 131): a parameter-level rotation of the ring writers turns the calendar ring by a full class step without turning the arithmetic's answers, so in these small models the ring is a correlate of the computation rather than its medium (e639).
+
 ## 9. Prior art (session 124)
 
 - Session 126: the instrument's nearest prior work is Head Pursuit (Basile et al., NeurIPS 2025, arXiv 2510.21518), simultaneous orthogonal matching pursuit of head writes onto the model's own unembedding rows; the row-as-unit claim is Arora et al. (ICML 2026, arXiv 2601.22594); the nearest-row law is predicted by small-initialisation theory and proved for autoencoder training (Chen et al. 2025, arXiv 2506.14002), so this paper's contribution is its measurement in pretraining.

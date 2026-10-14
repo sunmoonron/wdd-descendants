@@ -841,3 +841,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "scale: in GPT-2 medium and large and OPT-1.3b the writers' forward-task drop is 0.15 or more with a general loss change of 0.1 nats or less." (e638).
 - Session 129's reading that the embedding's ring is abandoned by block 2: it is carried and amplified in place; the share fell because the state grew (e634).
 - Session 129's reading that the blocks build the ring: in sequential models its plane is laid down by block-0 detectors (e636).
+
+## Session 131 kills (the writers rotated)
+- "the readout is angular and the writers set it: under the 90-percent forward rotation the forward task's +2 share rises to 0.3 or more from under 0.1 at baseline in GPT-2 small months, SmolLM2-135M days and OPT-125m months." (e639).
+- "dose: the +2 share rises monotonically over the 25, 50, 75, 90 percent sets in those three cases." (e639).
+- "backward: rotating the 90-percent set backward raises the 0 share (today) to 0.3 or more in those three cases." (e639).
+- "dilution: the shift at the last block is at most half of the shift at the best block in GPT-2 small (later blocks and attention re-express the un-rotated class)." (e639).
+- The reading that the ring is the medium of calendar arithmetic in these small models: its phase can be turned by about a class step at the parameter level and the answers mostly do not turn with it (e639).

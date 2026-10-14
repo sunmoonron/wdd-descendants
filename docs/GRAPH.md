@@ -897,6 +897,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H661 The reverse task falls under the writers' removal by at least as much as the forward task, in those four cases. → e638 → REFUTED.
 - H662 The writers sit mostly outside block 0: fewer than half of them are in block 0, in all models. → e638 → REFUTED.
 - H663 Scale: in GPT-2 medium and large and OPT-1.3b the writers' forward-task drop is 0.15 or more with a general loss change of 0.1 nats or less. → e638 → REFUTED.
+- H664 Geometry follows the parameters: rotating the 90-percent set forward moves the class means on the fixed plane at the best block by 0.5 step or more in the rotation's direction in GPT-2 small (both calendars), SmolLM2-135M days and OPT-125m (both). → e639 → SUPPORTED.
+- H665 The readout is angular and the writers set it: under the 90-percent forward rotation the forward task's +2 share rises to 0.3 or more from under 0.1 at baseline in GPT-2 small months, SmolLM2-135M days and OPT-125m months. → e639 → REFUTED.
+- H666 Dose: the +2 share rises monotonically over the 25, 50, 75, 90 percent sets in those three cases. → e639 → REFUTED.
+- H667 Backward: rotating the 90-percent set backward raises the 0 share (today) to 0.3 or more in those three cases. → e639 → REFUTED.
+- H668 Controls: the matched and random rotations of the same count move the ring by under 0.15 step and change the +2 share by under 0.05, in every model. → e639 → SUPPORTED.
+- H669 Cheap: the general loss on the templates changes by at most 0.1 nats under every writers' rotation (the edit preserves column norms), in every model. → e639 → SUPPORTED.
+- H670 The non-causal case: in OLMo-1B months, where the task survived ablation, the 90-percent rotation moves the ring by 0.5 step or more but the +2 share stays under 0.1. → e639 → SUPPORTED.
+- H671 Dilution: the shift at the last block is at most half of the shift at the best block in GPT-2 small (later blocks and attention re-express the un-rotated class). → e639 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

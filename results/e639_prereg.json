@@ -1,0 +1,48 @@
+{
+ "experiment": "e639_rotate",
+ "fixed_at": "2026-10-12T15:05:35",
+ "status": "registered before any run (a CPU smoke on Pythia-160m runs after this file is written; no full run has started)",
+ "question": "Do the ring's writers set the phase that the arithmetic readout reads? Rotating their write columns' in-plane components by one class step is a norm-preserving parameter edit; if the readout is angular on this plane and the writers set it, the model's 'tomorrow' becomes 'the day after tomorrow'.",
+ "design": "For each model and calendar: the writers for 25, 50, 75, 90 percent of the MLP ring pattern at the best block (ledger attribution, blocks 0..Lb-1) have their in-plane components rotated forward by the mean signed class step; the 90-percent set also backward; quantile-matched low-attribution rows and random rows of the same counts as the 50 and 90 percent sets rotated forward (5 draws). Measured on the fixed baseline plane: the class means' angular shift at the best block and at the last block in units of the step, the radius, the forward task's answer offsets (0, +1, +2, -1, other), the general loss on the templates and on neutral text. Models: gpt2, smollm135, opt125, qwen05, olmo1b, gpt2m, smollm360, opt13b, gpt2l.",
+ "predictions": {
+  "R1": {
+   "text": "geometry follows the parameters: rotating the 90-percent set forward moves the class means on the fixed plane at the best block by 0.5 step or more in the rotation's direction in GPT-2 small (both calendars), SmolLM2-135M days and OPT-125m (both)",
+   "guess": 0.7
+  },
+  "R2": {
+   "text": "the readout is angular and the writers set it: under the 90-percent forward rotation the forward task's +2 share rises to 0.3 or more from under 0.1 at baseline in GPT-2 small months, SmolLM2-135M days and OPT-125m months",
+   "guess": 0.4
+  },
+  "R3": {
+   "text": "dose: the +2 share rises monotonically over the 25, 50, 75, 90 percent sets in those three cases",
+   "guess": 0.35
+  },
+  "R4": {
+   "text": "backward: rotating the 90-percent set backward raises the 0 share (today) to 0.3 or more in those three cases",
+   "guess": 0.35
+  },
+  "R5": {
+   "text": "controls: the matched and random rotations of the same count move the ring by under 0.15 step and change the +2 share by under 0.05, in every model",
+   "guess": 0.85
+  },
+  "R6": {
+   "text": "cheap: the general loss on the templates changes by at most 0.1 nats under every writers' rotation (the edit preserves column norms), in every model",
+   "guess": 0.7
+  },
+  "R7": {
+   "text": "the non-causal case: in OLMo-1B months, where the task survived ablation, the 90-percent rotation moves the ring by 0.5 step or more but the +2 share stays under 0.1",
+   "guess": 0.6
+  },
+  "R8": {
+   "text": "dilution: the shift at the last block is at most half of the shift at the best block in GPT-2 small (later blocks and attention re-express the un-rotated class)",
+   "guess": 0.6
+  }
+ },
+ "honest_guess": "Geometry moves, answers smear rather than shift. I expect R1, R5 and R6 to hold, R7 and R8 likely, and R2 to R4 to fail or hold only partially, with the +2 share rising to 0.1 to 0.25 while the +1 share falls and 0 and other rise. A clean shift of the answers by one step would be the juicy result and I put it at 0.3 to 0.4; a smear would say the writers are necessary for the arithmetic without the readout being a pure angle on this plane, which is what e635 and e637 together already suggest for the models where ablation hurt the task.",
+ "where_it_ought_to_break": [
+  "the writers write at most 90 percent of the MLP pattern; the rest of the MLP, attention and the embedding ring are not rotated, so the net shift is at most about 0.8 step",
+  "later blocks may re-express the class from the un-rotated token identity (R8), which would leave the readout nearly unchanged",
+  "a rotation keeps the column norms but moves energy in the plane; rows shared with other computations could change the general loss",
+  "if the readout is a per-class direction rather than an angle, rotation produces a smear to 0 and other rather than a shift to +2"
+ ]
+}
