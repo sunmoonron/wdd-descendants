@@ -968,3 +968,7 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - Two-way weight surgery by negating the unmarked pole's rows (Gemini 4's pole-split): the marked pole is still not set (e663).
 - 'Jakobsonian markedness in silicon' as a new discovery: LSTM language models' masculine and singular defaults were shown by Jumelet et al. 2019; what is new is narrower (REVIEW_POSITIVE_CLAIMS.md section 11).
 - '1000x cleaner erasure of marked behaviours': ablation over addition is known (Arditi et al. 2024), the fair comparisons are ablation, LEACE and AURA, and setting a mark costs what steering costs (e661).
+
+## Session 147 kills (index against vector transfer)
+- "on a target, ablating the base direction keeps less than half of the own direction's marked flips while negating at the base indices keeps at least three quarters of the own indices' flips, for gender and number (Gemini's co-rotation)." (e665b).
+- Slot co-rotation as the reason base-model row edits survive heavy continued pretraining (Gemini 4): the attribute's residual direction is preserved, and transferred directions work as well as transferred indices (e665b).

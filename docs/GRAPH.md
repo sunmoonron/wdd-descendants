@@ -1053,6 +1053,10 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H817 The base model's WDD chain flips at least half as many marked items on the derivative as its own chain, for gender and number. → e665 → SUPPORTED.
 - H818 The base chain's rows keep a write cosine of at least 0.9 with the base model in the derivative. → e665 → REFUTED.
 - H819 The derivative's own WDD chain flips at least 0.3 of the marked items for gender and number. → e665 → SUPPORTED.
+- H820 On a target, ablating the base direction keeps less than half of the own direction's marked flips while negating at the base indices keeps at least three quarters of the own indices' flips, for gender and number (Gemini's co-rotation). → e665b → REFUTED.
+- H821 The base and target mean pole differences keep cosine 0.8 or more at the steering level, for gender and number (the attribute direction did not move). → e665b → NARROWED (holds in Qwen2.5-0.5B-Instruct, Qwen2.5-Coder-0.5B, not Qwen2.5-Coder-0.5B-Instruct).
+- H822 Ablating the base direction comes within 0.1 of ablating the target's own, for gender and number (vector transfer holds). → e665b → SUPPORTED.
+- H823 Negating the target's columns at the base indices comes within 0.1 of negating its own top indices, for gender and number (index transfer holds, no OMP). → e665b → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

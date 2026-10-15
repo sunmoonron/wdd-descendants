@@ -1,0 +1,26 @@
+{
+ "experiment": "e665b_index_vs_vector",
+ "fixed_at": "2026-10-15T08:19:13",
+ "status": "fixed before the full runs, after smokes on Qwen2.5-0.5B and Qwen2.5-Coder-0.5B recorded here",
+ "question": "Gemini 4's co-rotation hypothesis for e665: across heavy continued pretraining, does an attribute edit transfer by neuron index (the slot co-rotating with its readers) while a residual-space direction from the base breaks, or did the attribute's residual direction simply not move?",
+ "design": "source Qwen2.5-0.5B; targets Qwen2.5-0.5B-Instruct, Qwen2.5-Coder-0.5B, Qwen2.5-Coder-0.5B-Instruct; no OMP (e664b's direct contribution); index transfer (target columns negated at the base's top k indices, k 8, 16, 32) against the target's own top k; directional ablation of the base's mean pole-difference direction at every block output against the target's own and a random direction; steering toward the unmarked pole at the most consistent level, base direction against own at equal norm (0.5, 1, 2); cosine of base and target mean differences per level; held-out flips by pole, wikitext KL.",
+ "smoke": "Qwen2.5-Coder-0.5B (small item set): mean-difference cosine with the base at the steering level gender 0.83, number 0.83 (0.52 to 0.87 over levels); base direct-contribution rows' cosine 0.71 and 0.78; flips from the marked pole: index base/own at 32 gender 0.78/0.78, number 1.00/1.00; ablation base/own/random gender 0.78/1.00/0.00, number 1.00/1.00/0.00; steering at norm 1 saturates (1.00 both).",
+ "predictions": {
+  "V1": {
+   "text": "on a target, ablating the base direction keeps less than half of the own direction's marked flips while negating at the base indices keeps at least three quarters of the own indices' flips, for gender and number (Gemini's co-rotation)",
+   "guess": 0.1
+  },
+  "V2": {
+   "text": "the base and target mean pole differences keep cosine 0.8 or more at the steering level, for gender and number (the attribute direction did not move)",
+   "guess": 0.5
+  },
+  "V3": {
+   "text": "ablating the base direction comes within 0.1 of ablating the target's own, for gender and number (vector transfer holds)",
+   "guess": 0.4
+  },
+  "V4": {
+   "text": "negating the target's columns at the base indices comes within 0.1 of negating its own top indices, for gender and number (index transfer holds, no OMP)",
+   "guess": 0.75
+  }
+ }
+}
