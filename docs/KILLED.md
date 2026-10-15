@@ -972,3 +972,8 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 ## Session 147 kills (index against vector transfer)
 - "on a target, ablating the base direction keeps less than half of the own direction's marked flips while negating at the base indices keeps at least three quarters of the own indices' flips, for gender and number (Gemini's co-rotation)." (e665b).
 - Slot co-rotation as the reason base-model row edits survive heavy continued pretraining (Gemini 4): the attribute's residual direction is preserved, and transferred directions work as well as transferred indices (e665b).
+
+## Session 148 kills (the provenance core against the activation side)
+- "Gemini's second branch: the selectivity's or the direct write's top-10 share comes within 0.05 of the class ratio's, on all three seeds." (e666).
+- The identification of the future recruit given its class is the class ratio's alone (e632, session 127): two checkpoints before recruitment the activation side names it too, and leads on a class defined by firing (e666).
+- WDD's state projection is strictly necessary to identify the recruit before its own activation catches up (Gemini 4): the class ratio's lead over selectivity and the direct write is the home advantage of a class defined by the row's own projection (e666).

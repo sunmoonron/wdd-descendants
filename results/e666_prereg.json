@@ -1,0 +1,81 @@
+{
+ "experiment": "e666",
+ "session": 148,
+ "written": "2026-10-15 08:57:55",
+ "status": "pre-registered after the smoke, before the full runs",
+ "question": "Gemini 4: given the class, does the class ratio (state projection onto the write row over the floor) name the future recruit two checkpoints before recruitment better than activation selectivity and the direct write along the class direction (e664b's baseline), or is the recruit already the top direct writer at its class?",
+ "design": "Pythia-160m seeds 0, 1, 2; e629's cache rebuilt (block-6 states on the same 24 Pile sequences of 512 tokens, MLP write rows of blocks 0..6, 21504 rows, steps 1000 to 16000); words from the e629 tables; e632's eventual words (words at 16000 with a class of ten or more positions over the floor, not words at 1000, recruited at index 2 or later); the projection class = positions where the eventual row is over the floor at 16000 (e632); the activation class = as many positions where the eventual row fires most at 16000. Two checkpoints before recruitment, among the rows that are not words then, the recruit's rank by: mean class ratio (e632); signed cosine of the write row with the class direction at that checkpoint (e629); activation selectivity z at the class (e632 part A); mean activation; direct write along the class direction, mean over the class of a_j(t) w_j . d_C (signed; e664b, Gemini's formula); its absolute value. The same at 16000 (each score's ceiling). The recruit's own centred direct write as a share of the centred class states' projection onto its row.",
+ "hypotheses": {
+  "R0": "reproduction: on every seed the number of positions is within 5 of e632's (12253, 12250, 12255), the eventual words within 3 of e632's (194, 193, 185), and the class ratio's top-10 share two before within 0.05 of e632's (0.835, 0.782, 0.768) with median rank 2 or better",
+  "G1": "Gemini's first branch: two checkpoints before recruitment, given the projection class, the class ratio's top-10 share exceeds both the activation selectivity's and the direct write's, on all three seeds",
+  "G2": "Gemini's second branch: the selectivity's or the direct write's top-10 share comes within 0.05 of the class ratio's, on all three seeds",
+  "G3": "the plain write cosine with the class direction comes within 0.1 of the class ratio's top-10 share on all three seeds (the per-position states and the floor add little to the class direction)",
+  "H1": "home advantage: given the activation class instead, the selectivity's top-10 share two before is at least the class ratio's, on all three seeds",
+  "H2": "retention: the class ratio's top-10 share two before as a fraction of its own ceiling at 16000 exceeds the selectivity's fraction by no more than 0.1, on all three seeds (naming the recruit early is not the ratio's alone once each score is held to what it names at the end)",
+  "S1": "Gemini's mechanism (e546): two checkpoints before recruitment the recruit's own direct write is under half of the class states' projection onto its row (median share below 0.5), on all three seeds"
+ },
+ "predictions": {
+  "R0": "confirmed",
+  "G1": "confirmed",
+  "G2": "refuted",
+  "G3": "split",
+  "H1": "confirmed",
+  "H2": "confirmed",
+  "S1": "confirmed"
+ },
+ "reading": "If G1 and H1 both hold, the ratio's lead is the class definition's home advantage: each score names the recruit best on the class defined by its own kind, and the provenance core is that the eventual row is already identifiable two checkpoints early given its class, by its write alignment or by its firing, not a capability of the projection alone. If G1 holds and H1 fails, the projection carries forecasting information the activation side lacks with the home advantage removed (Gemini's first branch). If G2 holds, the recruit is already the top direct writer at its class (Gemini's second branch).",
+ "smoke": {
+  "model": "pythia160 (seed 0), 8 of the 24 sequences, 4087 positions, 164 eventual words",
+  "two_before_projection_class_top10": {
+   "ratio": 0.787,
+   "cos": 0.701,
+   "sel": 0.598,
+   "act": 0.591,
+   "dc": 0.634,
+   "dc_abs": 0.64
+  },
+  "two_before_projection_class_median_rank": {
+   "ratio": 1.0,
+   "cos": 1.0,
+   "sel": 3.0,
+   "act": 4.0,
+   "dc": 2.0,
+   "dc_abs": 2.0
+  },
+  "final_projection_class_top10": {
+   "ratio": 0.988,
+   "cos": 0.878,
+   "sel": 0.695,
+   "act": 0.695,
+   "dc": 0.726,
+   "dc_abs": 0.756
+  },
+  "two_before_activation_class_top10": {
+   "ratio": 0.628,
+   "cos": 0.628,
+   "sel": 0.817,
+   "act": 0.75,
+   "dc": 0.689,
+   "dc_abs": 0.762
+  },
+  "own_share": {
+   "two_before": {
+    "median_share": 0.21376497058667565,
+    "share_below_half": 0.9817073170731707,
+    "positive_total": 0.9451219512195121,
+    "median_cos_dir_row": 0.23645666241645813
+   },
+   "final": {
+    "median_share": 0.2688441614471928,
+    "share_below_half": 0.9634146341463414,
+    "positive_total": 0.9390243902439024,
+    "median_cos_dir_row": 0.3545095920562744
+   }
+  },
+  "usage": {
+   "median": 116.0,
+   "top10": 0.2865853658536585
+  },
+  "jaccard": 0.3103448275862069
+ }
+}

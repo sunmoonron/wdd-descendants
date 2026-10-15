@@ -1057,6 +1057,13 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H821 The base and target mean pole differences keep cosine 0.8 or more at the steering level, for gender and number (the attribute direction did not move). → e665b → NARROWED (holds in Qwen2.5-0.5B-Instruct, Qwen2.5-Coder-0.5B, not Qwen2.5-Coder-0.5B-Instruct).
 - H822 Ablating the base direction comes within 0.1 of ablating the target's own, for gender and number (vector transfer holds). → e665b → SUPPORTED.
 - H823 Negating the target's columns at the base indices comes within 0.1 of negating its own top indices, for gender and number (index transfer holds, no OMP). → e665b → SUPPORTED.
+- H824 Reproduction: on every seed the number of positions is within 5 of e632's (12253, 12250, 12255), the eventual words within 3 of e632's (194, 193, 185), and the class ratio's top-10 share two before within 0.05 of e632's (0.835, 0.782, 0.768) with median rank 2 or better. → e666 → SUPPORTED.
+- H825 Gemini's first branch: two checkpoints before recruitment, given the projection class, the class ratio's top-10 share exceeds both the activation selectivity's and the direct write's, on all three seeds. → e666 → SUPPORTED.
+- H826 Gemini's second branch: the selectivity's or the direct write's top-10 share comes within 0.05 of the class ratio's, on all three seeds. → e666 → REFUTED.
+- H827 The plain write cosine with the class direction comes within 0.1 of the class ratio's top-10 share on all three seeds (the per-position states and the floor add little to the class direction). → e666 → NARROWED (holds in seed 0, seed 1, not seed 2).
+- H828 Home advantage: given the activation class instead, the selectivity's top-10 share two before is at least the class ratio's, on all three seeds. → e666 → SUPPORTED.
+- H829 Retention: the class ratio's top-10 share two before as a fraction of its own ceiling at 16000 exceeds the selectivity's fraction by no more than 0.1, on all three seeds (naming the recruit early is not the ratio's alone once each score is held to what it names at the end). → e666 → SUPPORTED.
+- H830 Gemini's mechanism (e546): two checkpoints before recruitment the recruit's own direct write is under half of the class states' projection onto its row (median share below 0.5), on all three seeds. → e666 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
