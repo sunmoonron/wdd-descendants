@@ -956,3 +956,15 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - Markedness as the account of every attribute: generation's rows are not one-pole detectors (e661).
 - A block choice without the WDD vote: ranking blocks and rows by normalized activation difference lands in blocks that do not carry the attribute (e661, e662).
 - Gemini's weight-space input shift as a way to force the marked pole: erratic for gender and number (e661).
+
+## Session 146 kills (who writes an attribute)
+- "negating the pole-0-active sub-chain flips at least 0.3 of singular items to plural." (e663).
+- "each of the four target-quadrant edits puts at least 0.5 of all kinship items on its target (Gemini's four-quadrant composition)." (e663).
+- "the WDD order's mean flips over doses exceed the edit-specific gradient attribution's for at least three of four attributes." (e664).
+- "the WDD order beats attribution patching for at least three attributes." (e664).
+- "the WDD order's mean flips exceed the direct-contribution order's by more than 0.05 for at least three of the four attributes." (e664b).
+- "the base chain's rows keep a write cosine of at least 0.9 with the base model in the derivative." (e665).
+- 'WDD broke the tie with one-line baselines' (Gemini 4, after e662): attribution patching, causal block patching and a direct-contribution ranking with no OMP localize the writers as well as the vote (e664, e664b).
+- Two-way weight surgery by negating the unmarked pole's rows (Gemini 4's pole-split): the marked pole is still not set (e663).
+- 'Jakobsonian markedness in silicon' as a new discovery: LSTM language models' masculine and singular defaults were shown by Jumelet et al. 2019; what is new is narrower (REVIEW_POSITIVE_CLAIMS.md section 11).
+- '1000x cleaner erasure of marked behaviours': ablation over addition is known (Arditi et al. 2024), the fair comparisons are ablation, LEACE and AURA, and setting a mark costs what steering costs (e661).

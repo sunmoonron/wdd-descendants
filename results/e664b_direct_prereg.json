@@ -1,0 +1,22 @@
+{
+ "experiment": "e664b_direct",
+ "fixed_at": "2026-10-15T06:57:40",
+ "status": "fixed before the full runs, after a smoke on Qwen2.5-0.5B recorded here; added on the literature check's advice",
+ "question": "Does the WDD vote need OMP and the cumulative dictionary, or does a plain direct-contribution ranking (each row's activation change times its write's alignment with the pole difference) do as well; and does the cumulative dictionary favour early rows?",
+ "design": "Qwen2.5-0.5B, -0.5B-Instruct, -1.5B, -1.5B-Instruct; orders from discovery items: WDD vote, direct contribution against the pole difference at the row's own block, and at the last level; mean block of each order's top 32; k = 1, 2, 4, 8, 16, 32 negated; held-out flips by pole, wikitext KL.",
+ "smoke": "Qwen2.5-0.5B, k = 1, 4, 16, mean flips (WDD / direct local / direct readout): gender 0.93/0.85/0.85, generation 0.25/0.25/0.25, number 0.73/1.00/1.00, polarity 0.07/0.15/0.19; mean block of the top 16: WDD 2.3 to 3.7, direct local 3.9 to 6.6.",
+ "predictions": {
+  "X1": {
+   "text": "the WDD order's mean flips exceed the direct-contribution order's by more than 0.05 for at least three of the four attributes",
+   "guess": 0.2
+  },
+  "X2": {
+   "text": "the direct-contribution order comes within 0.05 of the WDD order or beats it for at least three of the four attributes (no OMP needed)",
+   "guess": 0.7
+  },
+  "X3": {
+   "text": "the WDD order's top rows sit in earlier blocks on average than the direct-contribution order's for at least three attributes (the cumulative dictionary favours early rows)",
+   "guess": 0.75
+  }
+ }
+}

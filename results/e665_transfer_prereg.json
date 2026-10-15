@@ -1,0 +1,22 @@
+{
+ "question": "Gemini 4's 'write once, patch everywhere': do base-model relay rows edit a heavily continued-pretrained derivative (Qwen2.5-Coder-0.5B and its instruct model) zero-shot?",
+ "design": "the base model's WDD chain (e661) and e622 chain negated on the derivative, against its own WDD chain and random chains; held-out flips by pole, wikitext KL; base-vs-derivative write cosine for the chain rows and all rows.",
+ "smoke": "Qwen2.5-Coder-0.5B: all-row write cosine with the base median 0.63; base chain rows 0.65-0.85; female flips base chain 0.78 vs own 0.67, plural 1.00 vs 1.00, random 0.",
+ "predictions": {
+  "T1": {
+   "text": "the base model's WDD chain flips at least half as many marked items on the derivative as its own chain, for gender and number",
+   "guess": 0.7
+  },
+  "T2": {
+   "text": "the base chain's rows keep a write cosine of at least 0.9 with the base model in the derivative",
+   "guess": 0.1
+  },
+  "T3": {
+   "text": "the derivative's own WDD chain flips at least 0.3 of the marked items for gender and number",
+   "guess": 0.8
+  }
+ },
+ "experiment": "e665_transfer",
+ "fixed_at": "2026-10-15T06:46:45",
+ "status": "fixed before the full runs, after smokes recorded here"
+}

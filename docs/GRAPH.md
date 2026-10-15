@@ -1037,6 +1037,22 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H801 Averaged over doses, the WDD order flips more than the naive global order for at least three of the four attributes. → e662 → SUPPORTED.
 - H802 Random orders flip at most 0.1 (summed over poles) at every dose for every attribute. → e662 → SUPPORTED.
 - H803 At the largest WDD dose, flips from the marked pole are at least three times those from the unmarked pole, for every attribute. → e662 → REFUTED.
+- H804 Gender's pole-0-active rows sit lower in the vote order on average than its pole-1-active rows. → e663 → NARROWED (holds in Qwen2.5-0.5B-Instruct, Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct, not Qwen2.5-0.5B).
+- H805 Negating the pole-1-active sub-chain flips at most 0.05 of the unmarked items, for gender and number. → e663 → NARROWED (holds in Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct, not Qwen2.5-0.5B, Qwen2.5-0.5B-Instruct).
+- H806 Negating the pole-0-active sub-chain flips at least 0.3 of male items to female (Gemini's two-way surgery). → e663 → NARROWED (holds in Qwen2.5-0.5B, not Qwen2.5-0.5B-Instruct, Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct).
+- H807 Negating the pole-0-active sub-chain flips at least 0.3 of singular items to plural. → e663 → REFUTED.
+- H808 Each of the four target-quadrant edits puts at least 0.5 of all kinship items on its target (Gemini's four-quadrant composition). → e663 → REFUTED.
+- H809 At least 70 percent of gender's pole-0-active rows push along the pole difference (Gemini's mechanism). → e663 → SUPPORTED.
+- H810 The WDD order's mean flips over doses exceed the edit-specific gradient attribution's for at least three of four attributes. → e664 → REFUTED.
+- H811 The edit-specific gradient attribution beats the naive activation-difference order for at least three attributes (the echo problem is the naive baseline's). → e664 → SUPPORTED.
+- H812 Causal block patching with the top activation-difference rows comes within 0.1 of WDD's mean flips for at least three attributes. → e664 → SUPPORTED.
+- H813 The WDD order beats attribution patching for at least three attributes. → e664 → REFUTED.
+- H814 The WDD order's mean flips exceed the direct-contribution order's by more than 0.05 for at least three of the four attributes. → e664b → REFUTED.
+- H815 The direct-contribution order comes within 0.05 of the WDD order or beats it for at least three of the four attributes (no OMP needed). → e664b → SUPPORTED.
+- H816 The WDD order's top rows sit in earlier blocks on average than the direct-contribution order's for at least three attributes (the cumulative dictionary favours early rows). → e664b → SUPPORTED.
+- H817 The base model's WDD chain flips at least half as many marked items on the derivative as its own chain, for gender and number. → e665 → SUPPORTED.
+- H818 The base chain's rows keep a write cosine of at least 0.9 with the base model in the derivative. → e665 → REFUTED.
+- H819 The derivative's own WDD chain flips at least 0.3 of the marked items for gender and number. → e665 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

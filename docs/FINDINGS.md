@@ -6795,3 +6795,79 @@ SESSION 145 (2026-10-14 overnight, the Dell; Gemini 4's markedness reading of e6
   - Negating the k first rows of the WDD vote order moves an attribute far more than the k first rows of a naive global order (every MLP row ranked by its normalized activation difference) at almost every dose in every model: number reaches 0.96 to 1.00 of the items by k = 32 (all from plural) and 0.88 to 0.93 by k = 8, against at most 0.76 for the naive order; gender peaks at 0.70 to 0.88 around k = 3 to 12 and then declines as male items start to flip (0.26, 0.21, 0.05, 0.05 from male at k = 32); generation reaches 0.43 to 0.50 and polarity 0.10 to 0.36, where the naive order stays at or below 0.09 and 0.00; random orders flip at most 0.06; and the WDD order's wikitext KL at k = 32 is 0.004 to 0.055.
   - Reading: the WDD vote is a good ordering of the rows that write an attribute, and the dose response is steep: a handful of rows from the right blocks moves number almost completely, while rows ranked by activation difference alone, wherever they sit, do almost nothing until dozens are taken. Gender saturates early and then over-shoots into the unmarked pole, the one place the one-way law breaks.
   - Pre-registered: D1 (at its best dose the WDD order flips at least 0.3 (summed over the two starting poles) for at least three of the four attributes) confirmed; D2 (averaged over doses, the WDD order flips more than the naive global order for at least three of the four attributes) confirmed; D3 (random orders flip at most 0.1 (summed over poles) at every dose for every attribute) confirmed; D4 (at the largest WDD dose, flips from the marked pole are at least three times those from the unmarked pole, for every attribute) refuted. D4 fails on gender, generation in Qwen2.5-0.5B; gender, generation in Qwen2.5-0.5B-Instruct; generation in Qwen2.5-1.5B; generation in Qwen2.5-1.5B-Instruct (gender because male items start to flip at the largest dose; generation because its flips are not one-way relative to the pole its rows are more active on: either that pole is old, which it rarely flips from, or the flips run both ways).
+
+
+SESSION 146 (2026-10-15, the Dell, with a literature check; Gemini 4 claimed sessions 144-145 broke the program's tie with one-line baselines and drew six consequences. A background literature search (REVIEW_POSITIVE_CLAIMS.md section 11, RELATED_WORK.md section 19) and four experiments answer them. Fixed in e663/e664/e664b/e665_prereg.json before the full runs, after smokes recorded there; e664b added on the literature check's advice.)
+
+- e663 POLE-SPLIT SUB-CHAINS (Gemini's two-way surgery and four-quadrant composition):
+
+  | model | attribute | C1 / C0 rows (mean rank) | negate all C1: flips from pole 0 / 1 | negate all C0: from pole 0 / 1 | C0 rows pushing along the difference |
+  | --- | --- | --- | --- | --- | --- |
+  | Qwen2.5-0.5B | gender | 21 / 11 (15.9 / 14.7) | 0.17 / 0.41 | 0.31 / 0.00 | 0.82 |
+  | Qwen2.5-0.5B | generation | 15 / 17 (17.5 / 13.8) | 0.00 / 0.33 | 0.07 / 0.09 | 0.94 |
+  | Qwen2.5-0.5B | number | 25 / 7 (14.9 / 17.6) | 0.00 / 1.00 | 0.00 / 0.30 | 0.86 |
+  | Qwen2.5-0.5B | polarity | 18 / 14 (15.0 / 16.1) | 0.00 / 0.32 | 0.04 / 0.06 | 1.00 |
+  | Qwen2.5-0.5B-Instruct | gender | 18 / 14 (14.8 / 16.4) | 0.16 / 0.54 | 0.18 / 0.02 | 0.86 |
+  | Qwen2.5-0.5B-Instruct | generation | 15 / 17 (17.7 / 13.6) | 0.00 / 0.23 | 0.16 / 0.09 | 1.00 |
+  | Qwen2.5-0.5B-Instruct | number | 24 / 8 (14.7 / 18.0) | 0.00 / 1.00 | 0.00 / 0.24 | 0.75 |
+  | Qwen2.5-0.5B-Instruct | polarity | 16 / 16 (14.6 / 16.4) | 0.00 / 0.30 | 0.04 / 0.06 | 0.94 |
+  | Qwen2.5-1.5B | gender | 22 / 10 (14.7 / 17.2) | 0.00 / 0.82 | 0.03 / 0.00 | 1.00 |
+  | Qwen2.5-1.5B | generation | 16 / 16 (15.5 / 15.5) | 0.00 / 0.40 | 0.05 / 0.08 | 1.00 |
+  | Qwen2.5-1.5B | number | 22 / 10 (14.4 / 17.9) | 0.00 / 0.96 | 0.00 / 0.08 | 0.70 |
+  | Qwen2.5-1.5B | polarity | 20 / 12 (13.4 / 18.9) | 0.00 / 0.10 | 0.00 / 0.00 | 0.75 |
+  | Qwen2.5-1.5B-Instruct | gender | 21 / 11 (14.0 / 18.3) | 0.02 / 0.82 | 0.03 / 0.02 | 1.00 |
+  | Qwen2.5-1.5B-Instruct | generation | 16 / 16 (15.2 / 15.8) | 0.00 / 0.40 | 0.05 / 0.07 | 1.00 |
+  | Qwen2.5-1.5B-Instruct | number | 23 / 9 (14.3 / 18.6) | 0.00 / 0.96 | 0.00 / 0.06 | 0.89 |
+  | Qwen2.5-1.5B-Instruct | polarity | 20 / 12 (12.8 / 20.1) | 0.00 / 0.10 | 0.00 / 0.00 | 0.75 |
+
+  | model | share of kinship items on the target: king / queen / prince / princess |
+  | --- | --- |
+  | Qwen2.5-0.5B | 0.48 / 0.39 / 0.31 / 0.26 |
+  | Qwen2.5-0.5B-Instruct | 0.52 / 0.28 / 0.34 / 0.13 |
+  | Qwen2.5-1.5B | 0.57 / 0.35 / 0.44 / 0.24 |
+  | Qwen2.5-1.5B-Instruct | 0.55 / 0.37 / 0.38 / 0.26 |
+
+  - The vote order's top 32 rows do mix rows more active on each pole (10 to 14 of 32 more active on male items for gender, 7 to 10 on singular for number), and the unmarked pole's rows push along the pole difference too (0.82 to 1.00 of gender's), as Gemini said; but negating them does not set the marked pole: male to female 0.03 to 0.31 (0.31 only in Qwen2.5-0.5B), singular to plural 0.00, the number rows still flipping plural to singular (0.06 to 0.30); negating the marked pole's rows strips the mark cleanly in the 1.5B models (female to male 0.82 with male 0.00 to 0.02) but also flips male items in the 0.5B models (0.16 to 0.17), so e662's high-dose male flips are not only the unmarked rows' doing; and the four target-quadrant edits put 0.48 to 0.57 of the kinship items on king, 0.31 to 0.44 on prince, 0.28 to 0.39 on queen and 0.13 to 0.26 on princess, a quarter being already there.
+  - Pre-registered: P1 (gender's pole-0-active rows sit lower in the vote order on average than its pole-1-active rows) split (holds in Qwen2.5-0.5B-Instruct, Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct, not Qwen2.5-0.5B); P2 (negating the pole-1-active sub-chain flips at most 0.05 of the unmarked items, for gender and number) split (holds in Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct, not Qwen2.5-0.5B, Qwen2.5-0.5B-Instruct); P3 (negating the pole-0-active sub-chain flips at least 0.3 of male items to female (Gemini's two-way surgery)) split (holds in Qwen2.5-0.5B, not Qwen2.5-0.5B-Instruct, Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct); P4 (negating the pole-0-active sub-chain flips at least 0.3 of singular items to plural) refuted; P5 (each of the four target-quadrant edits puts at least 0.5 of all kinship items on its target (Gemini's four-quadrant composition)) refuted; P6 (at least 70 percent of gender's pole-0-active rows push along the pole difference (Gemini's mechanism)) confirmed.
+
+- e664 AND e664b THE WDD VOTE AGAINST THE FIELD'S LOCALIZERS (Gemini's 'activation echo chamber'):
+
+  | model | attribute | mean flips over doses: WDD / attribution patching / edit attribution / causal blocks / direct contribution / naive / random |
+  | --- | --- | --- |
+  | Qwen2.5-0.5B | gender | 0.63 / 0.61 / 0.68 / 0.53 / 0.60 / 0.43 / 0.00 |
+  | Qwen2.5-0.5B | generation | 0.29 / 0.28 / 0.36 / 0.21 / 0.29 / 0.05 / 0.02 |
+  | Qwen2.5-0.5B | number | 0.75 / 0.80 / 0.80 / 0.75 / 0.76 / 0.16 / 0.00 |
+  | Qwen2.5-0.5B | polarity | 0.18 / 0.36 / 0.37 / 0.24 / 0.32 / 0.00 / 0.00 |
+  | Qwen2.5-0.5B-Instruct | gender | 0.74 / 0.73 / 0.76 / 0.63 / 0.69 / 0.49 / 0.01 |
+  | Qwen2.5-0.5B-Instruct | generation | 0.36 / 0.37 / 0.39 / 0.31 / 0.37 / 0.05 / 0.00 |
+  | Qwen2.5-0.5B-Instruct | number | 0.77 / 0.77 / 0.77 / 0.73 / 0.77 / 0.26 / 0.01 |
+  | Qwen2.5-0.5B-Instruct | polarity | 0.22 / 0.32 / 0.29 / 0.22 / 0.30 / 0.00 / 0.00 |
+  | Qwen2.5-1.5B | gender | 0.47 / 0.42 / 0.16 / 0.44 / 0.52 / 0.14 / 0.00 |
+  | Qwen2.5-1.5B | generation | 0.34 / 0.39 / 0.39 / 0.23 / 0.39 / 0.00 / 0.00 |
+  | Qwen2.5-1.5B | number | 0.49 / 0.55 / 0.51 / 0.58 / 0.61 / 0.03 / 0.00 |
+  | Qwen2.5-1.5B | polarity | 0.04 / 0.11 / 0.05 / 0.10 / 0.14 / 0.00 / 0.00 |
+  | Qwen2.5-1.5B-Instruct | gender | 0.56 / 0.46 / 0.13 / 0.43 / 0.62 / 0.10 / 0.00 |
+  | Qwen2.5-1.5B-Instruct | generation | 0.29 / 0.32 / 0.30 / 0.22 / 0.36 / 0.00 / 0.00 |
+  | Qwen2.5-1.5B-Instruct | number | 0.50 / 0.52 / 0.54 / 0.49 / 0.55 / 0.02 / 0.00 |
+  | Qwen2.5-1.5B-Instruct | polarity | 0.07 / 0.19 / 0.03 / 0.15 / 0.19 / 0.00 / 0.00 |
+
+  - Against the field's standard localizers the WDD vote is not special: averaged over doses, attribution patching comes within 0.05 of the vote or beats it in 14 of 16 model-attribute cells (behind it by more than 0.05 only for gender in the 1.5B models, 0.42 against 0.47, 0.46 against 0.56), the edit-specific gradient attribution in 14 (its first-order estimate failing for gender in the 1.5B models, 0.16, 0.13), and causal block patching within 0.1 in 13, while the naive activation difference trails the vote by 0.04 to 0.59 and random rows flip at most 0.02; patching ranks block 0 first for almost every attribute and model, the block whose MLP output carries the word itself.
+  - A plain direct-contribution ranking with no pursuit and no dictionary (each row's activation change times its write's alignment with the pole difference at its own block) comes within 0.05 of the vote or beats it in 16 of 16 cells (mean over doses, direct minus vote, -0.05 to +0.13), and the vote's top 32 rows sit earlier than the direct ranking's (mean block 3.2 to 6.1 against 4.1 to 8.1), as the cumulative dictionary's eligibility of early rows at every later level would make them.
+  - Pre-registered: L1 (the WDD order's mean flips over doses exceed the edit-specific gradient attribution's for at least three of four attributes) refuted; L2 (the edit-specific gradient attribution beats the naive activation-difference order for at least three attributes (the echo problem is the naive baseline's)) confirmed; L3 (causal block patching with the top activation-difference rows comes within 0.1 of WDD's mean flips for at least three attributes) confirmed; L4 (the WDD order beats attribution patching for at least three attributes) refuted; X1 (the WDD order's mean flips exceed the direct-contribution order's by more than 0.05 for at least three of the four attributes) refuted; X2 (the direct-contribution order comes within 0.05 of the WDD order or beats it for at least three of the four attributes (no OMP needed)) confirmed; X3 (the WDD order's top rows sit in earlier blocks on average than the direct-contribution order's for at least three attributes (the cumulative dictionary favours early rows)) confirmed.
+
+- e665 TRANSFER TO A HEAVILY CONTINUED-PRETRAINED DERIVATIVE (Gemini's 'write once, patch everywhere'):
+
+  | model | median row cosine with the base | attribute | flips from the marked pole: base WDD chain / base e622 chain / own chain / random | chain rows' cosine |
+  | --- | --- | --- | --- | --- |
+  | Qwen2.5-Coder-0.5B | 0.63 | gender | 0.68 / 0.68 / 0.59 / 0.00 | 0.74 |
+  | Qwen2.5-Coder-0.5B | 0.63 | generation | 0.31 / 0.31 / 0.29 / 0.00 | 0.65 |
+  | Qwen2.5-Coder-0.5B | 0.63 | number | 0.98 / 0.98 / 0.98 / 0.00 | 0.83 |
+  | Qwen2.5-Coder-0.5B | 0.63 | polarity | 0.23 / 0.26 / 0.32 / 0.00 | 0.85 |
+  | Qwen2.5-Coder-0.5B-Instruct | 0.44 | gender | 0.56 / 0.56 / 0.40 / 0.00 | 0.46 |
+  | Qwen2.5-Coder-0.5B-Instruct | 0.44 | generation | 0.10 / 0.07 / 0.03 / 0.00 | 0.42 |
+  | Qwen2.5-Coder-0.5B-Instruct | 0.44 | number | 0.93 / 0.87 / 0.80 / 0.02 | 0.76 |
+  | Qwen2.5-Coder-0.5B-Instruct | 0.44 | polarity | 0.26 / 0.26 / 0.29 / 0.00 | 0.76 |
+
+  - The base model's rows edit heavily continued-pretrained derivatives zero-shot: on Qwen2.5-Coder-0.5B and Qwen2.5-Coder-0.5B-Instruct, whose MLP write rows sit at median cosine 0.63 and 0.44 with the base (e619 found 0.997 after instruct tuning), negating the base model's WDD chain flips female items 0.68 and 0.56 against 0.59 and 0.40 for the derivative's own chain, and plurals 0.98 and 0.93 against 0.98 and 0.80, with random chains at most 0.02; the number chain's rows drifted much less than the rest (cosine with the base 0.83 and 0.76), but the gender chain's rows in the instruct model drifted about as much as an average row (0.46) and still carry the edit; the own chains overlap the base's in Jaccard 0.20 to 0.57.
+  - Reading: checked against the literature and these runs, Gemini's six claims sort into three kinds. Its mechanism for e662's high-dose flips is partly right (the vote mixes rows active on each pole) but its payoff, two-way surgery and four-quadrant composition, fails. Its 'echo chamber' is real only for the naive baseline: attribution patching, causal patching and a plain direct-contribution ranking all localize the writers as well as the vote, so e662 did not show WDD beating the field's tools. And its 'write once, patch everywhere' holds further than expected, through a code continuation whose rows moved far, where the literature had no data; together with the markedness result, prior art exists for every claim in some form (Jumelet et al. 2019 for the default classes, Arditi et al. 2024 for ablation over addition, MEMIT for spreading an edit over layers), and what remains new is narrow.
+  - Pre-registered: T1 (the base model's WDD chain flips at least half as many marked items on the derivative as its own chain, for gender and number) confirmed; T2 (the base chain's rows keep a write cosine of at least 0.9 with the base model in the derivative) refuted; T3 (the derivative's own WDD chain flips at least 0.3 of the marked items for gender and number) confirmed.

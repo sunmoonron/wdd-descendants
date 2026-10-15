@@ -1,0 +1,34 @@
+{
+ "question": "Gemini 4: does the WDD vote order mix rows active on each pole, and does negating only the unmarked-pole-active rows give two-way weight surgery (male to female, singular to plural) and four-quadrant composition?",
+ "design": "Qwen2.5-0.5B, -0.5B-Instruct, -1.5B, -1.5B-Instruct; the vote order's top 32 rows split by the pole each is more active on (discovery items) into C1 and C0, with rank, activation by pole and push (activation change times write cosine with the mean pole difference); each sub-chain negated cumulatively (k = 1, 2, 4, 8, 16, all), held-out flips by starting pole, wikitext KL; four target-quadrant edits on the kinship items.",
+ "smoke": "Qwen2.5-0.5B top 16: gender C1 12 / C0 4 (mean rank 7.3 / 8.3), push positive in 0.83 / 1.00; negating C1 flips female to male 0.67-0.78 and male 0.00; negating C0 flips male to female 0.11; number C0 rows flip plural to singular (0.40-1.00) and singular 0.00; quadrant shares king 0.70, queen 0.35, prince 0.50, princess 0.25.",
+ "predictions": {
+  "P1": {
+   "text": "gender's pole-0-active rows sit lower in the vote order on average than its pole-1-active rows",
+   "guess": 0.6
+  },
+  "P2": {
+   "text": "negating the pole-1-active sub-chain flips at most 0.05 of the unmarked items, for gender and number",
+   "guess": 0.75
+  },
+  "P3": {
+   "text": "negating the pole-0-active sub-chain flips at least 0.3 of male items to female (Gemini's two-way surgery)",
+   "guess": 0.1
+  },
+  "P4": {
+   "text": "negating the pole-0-active sub-chain flips at least 0.3 of singular items to plural",
+   "guess": 0.05
+  },
+  "P5": {
+   "text": "each of the four target-quadrant edits puts at least 0.5 of all kinship items on its target (Gemini's four-quadrant composition)",
+   "guess": 0.05
+  },
+  "P6": {
+   "text": "at least 70 percent of gender's pole-0-active rows push along the pole difference (Gemini's mechanism)",
+   "guess": 0.7
+  }
+ },
+ "experiment": "e663_pole_split",
+ "fixed_at": "2026-10-15T06:46:45",
+ "status": "fixed before the full runs, after smokes recorded here"
+}

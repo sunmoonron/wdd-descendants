@@ -1,0 +1,26 @@
+{
+ "question": "Gemini 4's 'activation echo chamber': is the WDD vote a better localizer of an attribute's writers than standard tools (attribution patching, an edit-specific gradient attribution, causal block patching), or only than the naive activation difference?",
+ "design": "same four models; row orders from discovery items: WDD vote, naive normalized activation difference, attribution patching (gradient of the other pole's log-odds times the activation change to the partner item), edit attribution (gradient times minus twice the activation), causal block patching (MLP output at the word replaced by the partner's; rows round-robin from the top eight blocks by activation difference), random; k = 1, 2, 4, 8, 16, 32 negated; held-out flips by pole, wikitext KL.",
+ "smoke": "Qwen2.5-0.5B, k = 1, 4, 16, mean flips (WDD / edit attribution / attribution patching / causal blocks / naive / random): gender 0.93/0.78/0.85/0.63/0.26/0.00, generation 0.25/0.21/0.21/0.21/0.00/0.00, number 0.73/1.00/1.00/0.67/0.47/0.07, polarity 0.07/0.37/0.48/0.07/0.00/0.00; causal patching puts block 0 first for every attribute.",
+ "predictions": {
+  "L1": {
+   "text": "the WDD order's mean flips over doses exceed the edit-specific gradient attribution's for at least three of four attributes",
+   "guess": 0.3
+  },
+  "L2": {
+   "text": "the edit-specific gradient attribution beats the naive activation-difference order for at least three attributes (the echo problem is the naive baseline's)",
+   "guess": 0.8
+  },
+  "L3": {
+   "text": "causal block patching with the top activation-difference rows comes within 0.1 of WDD's mean flips for at least three attributes",
+   "guess": 0.5
+  },
+  "L4": {
+   "text": "the WDD order beats attribution patching for at least three attributes",
+   "guess": 0.3
+  }
+ },
+ "experiment": "e664_localizers",
+ "fixed_at": "2026-10-15T06:46:45",
+ "status": "fixed before the full runs, after smokes recorded here"
+}
