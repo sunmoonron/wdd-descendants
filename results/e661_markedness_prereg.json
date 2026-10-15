@@ -1,0 +1,38 @@
+{
+ "question": "Gemini 4's markedness reading of e660: are the relay rows one-pole detectors of the marked form (female, young, plural), so that negation flips only marked items, composition doubly flips only doubly marked items, and the marked pole can be forced only by supplying the missing activation? Also Gemini's questions: does a WDD-free chain do as well, and does its weight-space input shift force the marked pole cleanly?",
+ "design": "Qwen2.5-0.5B, -0.5B-Instruct, -1.5B, -1.5B-Instruct; e622's items via e659; WDD vote recomputed on MLP rows (OMP k8, cumulative blocks, discovery pairs); chains: WDD (share 0.25+), e622's where it exists, WDD-free (top blocks and rows by normalized activation difference), naive row in WDD blocks, random; activation magnitude by pole; negation flips by starting pole; kinship composition by quadrant; marked forcing: word-position pulse, floor clamp (f 0.5, 1), input shift (k 0.5-4, discovery statistics), steering (1/16-8), wikitext KL; pulses and shifts for gender and generation together on the kinship items.",
+ "smoke": "Qwen2.5-0.5B (3 pairs per language): |a| unmarked/marked gender 0.30/1.15, generation 0.60/0.81, number 0.32/0.97; WDD-chain negation flips from marked/unmarked gender 0.78/0.00, generation 0.12/0.00, number 1.00/0.00; both chains doubly flip only princess (0.2); the word-position pulse moves unmarked gender 0.33, generation and number 0.00; floor clamp gender 0.67 (KL 0.21), number 0.80 (KL 0.15); input shift generation 0.38 (KL 0.001), number 0.40 (KL 0.009); steering at 1: gender 1.00 (KL 0.35); both pulses never turn king into princess. Qwen2.5-1.5B: ratios 6.5, 2.7, 2.7; flips from marked/unmarked gender 0.78/0.00, number 0.78/0.00; no double flips.",
+ "predictions": {
+  "M1": {
+   "text": "the chain rows are more active on the female, young and plural pole than on the other, for gender, generation and number",
+   "guess": 0.85
+  },
+  "M2": {
+   "text": "the marked-over-unmarked activation magnitude ratio is 2 or more for all three attributes",
+   "guess": 0.35
+  },
+  "M3": {
+   "text": "negating the WDD chain flips marked-pole items at least three times as often as unmarked-pole items, for all three attributes",
+   "guess": 0.75
+  },
+  "M4": {
+   "text": "the two negated chains doubly flip princess items at least three times as often as any other starting quadrant",
+   "guess": 0.45
+  },
+  "M5": {
+   "text": "supplying the marked pulse at the word position moves at least 0.3 of the unmarked items to the marked pole, for all three attributes",
+   "guess": 0.1
+  },
+  "M6": {
+   "text": "the WDD-free chain flips at least as many held-out items as the WDD chain for at least three of the four attributes (Gemini's block-selection question)",
+   "guess": 0.5
+  },
+  "M7": {
+   "text": "the gender and generation pulses together turn king into princess in at least 0.25 of the items",
+   "guess": 0.05
+  }
+ },
+ "experiment": "e661_markedness",
+ "fixed_at": "2026-10-14T20:19:57",
+ "status": "fixed while the full runs started (no full result seen), after smokes on Qwen2.5-0.5B (both scripts) and Qwen2.5-1.5B (e661)"
+}

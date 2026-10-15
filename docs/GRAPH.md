@@ -1026,6 +1026,17 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H790 For gender, wherever the clamp moves at least 0.2 of the items, the matched steering vector shifts the she-minus-he logit on neutral wikitext more than the clamp. → e660 → SUPPORTED.
 - H791 The chain rows' mean absolute activation on wikitext is under a tenth of that at the attribute words, for all three attributes (the self-gating premise). → e660 → REFUTED.
 - H792 Suggested by the smoke: the clamp works one way only, moving at least 0.2 of the items for one pole and under 0.1 for the other, for every attribute. → e660 → SUPPORTED.
+- H793 The chain rows are more active on the female, young and plural pole than on the other, for gender, generation and number. → e661 → REFUTED.
+- H794 The marked-over-unmarked activation magnitude ratio is 2 or more for all three attributes. → e661 → REFUTED.
+- H795 Negating the WDD chain flips marked-pole items at least three times as often as unmarked-pole items, for all three attributes. → e661 → REFUTED.
+- H796 The two negated chains doubly flip princess items at least three times as often as any other starting quadrant. → e661 → NARROWED (holds in Qwen2.5-0.5B, not Qwen2.5-0.5B-Instruct, Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct).
+- H797 Supplying the marked pulse at the word position moves at least 0.3 of the unmarked items to the marked pole, for all three attributes. → e661 → REFUTED.
+- H798 The WDD-free chain flips at least as many held-out items as the WDD chain for at least three of the four attributes (Gemini's block-selection question). → e661 → REFUTED.
+- H799 The gender and generation pulses together turn king into princess in at least 0.25 of the items. → e661 → REFUTED.
+- H800 At its best dose the WDD order flips at least 0.3 (summed over the two starting poles) for at least three of the four attributes. → e662 → SUPPORTED.
+- H801 Averaged over doses, the WDD order flips more than the naive global order for at least three of the four attributes. → e662 → SUPPORTED.
+- H802 Random orders flip at most 0.1 (summed over poles) at every dose for every attribute. → e662 → SUPPORTED.
+- H803 At the largest WDD dose, flips from the marked pole are at least three times those from the unmarked pole, for every attribute. → e662 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

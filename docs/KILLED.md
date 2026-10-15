@@ -944,3 +944,15 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The WDD vote as the selector of the rows to edit within a block: the top activation-difference row of each chain block does as well; the vote's contribution is which blocks (e659).
 - Spreading an edit over the relay chain to make two attribute edits compose: two chains interfere as two rows did (e659).
 - A sign clamp as a two-way pole setter: it forces the unmarked pole and never the marked one (e660).
+
+## Session 145 kills (markedness and the dose response)
+- "the chain rows are more active on the female, young and plural pole than on the other, for gender, generation and number." (e661).
+- "the marked-over-unmarked activation magnitude ratio is 2 or more for all three attributes." (e661).
+- "negating the WDD chain flips marked-pole items at least three times as often as unmarked-pole items, for all three attributes." (e661).
+- "supplying the marked pulse at the word position moves at least 0.3 of the unmarked items to the marked pole, for all three attributes." (e661).
+- "the WDD-free chain flips at least as many held-out items as the WDD chain for at least three of the four attributes (Gemini's block-selection question)." (e661).
+- "the gender and generation pulses together turn king into princess in at least 0.25 of the items." (e661).
+- "at the largest WDD dose, flips from the marked pole are at least three times those from the unmarked pole, for every attribute." (e662).
+- Markedness as the account of every attribute: generation's rows are not one-pole detectors (e661).
+- A block choice without the WDD vote: ranking blocks and rows by normalized activation difference lands in blocks that do not carry the attribute (e661, e662).
+- Gemini's weight-space input shift as a way to force the marked pole: erratic for gender and number (e661).

@@ -6720,3 +6720,78 @@ SESSION 144 (2026-10-14, the Dell; Gemini 4's 'cheat table': e622's vote_by_bloc
   - Clamping the chain rows' activations to one pole's sign at every position forces that pole in one direction only: it moves 0.67 of female items to male, 0.93 of plurals to singular and 0.26 of the younger generation to the older while keeping every item already at the target (kept 1.00, 1.00, 1.00), but moves 0.03, 0.05 and 0.00 the other way, although 5 of 5 gender rows and 5 of 6 number rows change sign by pole; where it works it costs far less off-target than a steering vector matched in effect (wikitext KL 0.001 against 4.69 for gender, 0.004 against 1.48 for number, 0.002 against 0.007 for generation; she-minus-he shift -0.11 against +0.67), although the rows are not silent on ordinary text (their mean absolute activation on wikitext is 0.07 to 0.23 of that at the words).
   - Reading: the clamp is the conditional edit Gemini proposed and it is far cleaner than a dense steering vector, but it is one-way: the rows can be turned to write the unmarked form (male, singular, older) and not the marked one (female, plural, younger), which fits rows that fire strongly for the marked form and weakly otherwise, so a sign clamp can invert an active signal but not create an absent one.
   - Pre-registered: K1 (the clamp moves at least 0.3 of the other pole's held-out gender items to the target while keeping at least 0.9 of the target pole's, forcing either pole) refuted; K2 (wherever the clamp moves at least 0.2 of the items, the steering vector at the matched scale costs more wikitext KL than the clamp) confirmed; K3 (for gender, wherever the clamp moves at least 0.2 of the items, the matched steering vector shifts the she-minus-he logit on neutral wikitext more than the clamp) confirmed; K4 (the chain rows' mean absolute activation on wikitext is under a tenth of that at the attribute words, for all three attributes (the self-gating premise)) refuted; K5 (suggested by the smoke: the clamp works one way only, moving at least 0.2 of the items for one pole and under 0.1 for the other, for every attribute) confirmed.
+
+
+SESSION 145 (2026-10-14 overnight, the Dell; Gemini 4's markedness reading of e660, its block-selection and marked-forcing questions, and a dose response. Fixed in e661/e662_prereg.json before any full result, after smokes on Qwen2.5-0.5B and -1.5B; the chain ran in 80 minutes. The WDD vote is recomputed on the MLP rows, so the chains differ from e622's (Jaccard 0.56 to 1.00 where both exist).)
+
+- e661 ARE THE RELAY ROWS ONE-POLE DETECTORS, AND CAN THE MARKED POLE BE FORCED:
+
+  | model | attribute | activation unmarked / marked pole | WDD chain flips from pole 0 / pole 1 | WDD-free chain | naive row in WDD blocks | e622 chain |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | Qwen2.5-0.5B | gender | 0.30 / 1.44 | 0.00 / 0.60 | 0.03 / 0.50 | 0.03 / 0.55 | 0.00 / 0.60 |
+  | Qwen2.5-0.5B | generation | 1.16 / 0.98 | 0.04 / 0.22 | 0.00 / 0.07 | 0.04 / 0.19 | 0.04 / 0.20 |
+  | Qwen2.5-0.5B | number | 0.21 / 1.28 | 0.00 / 0.90 | 0.00 / 0.05 | 0.00 / 0.90 | 0.00 / 0.82 |
+  | Qwen2.5-0.5B | polarity | 0.47 / 0.87 | 0.00 / 0.28 | 0.00 / 0.00 | 0.00 / 0.34 | 0.00 / 0.26 |
+  | Qwen2.5-0.5B-Instruct | gender | 0.30 / 1.26 | 0.02 / 0.64 | 0.02 / 0.66 | 0.05 / 0.66 | 0.02 / 0.73 |
+  | Qwen2.5-0.5B-Instruct | generation | 1.27 / 1.23 | 0.16 / 0.25 | 0.00 / 0.09 | 0.16 / 0.21 | 0.16 / 0.23 |
+  | Qwen2.5-0.5B-Instruct | number | 0.21 / 1.06 | 0.00 / 0.89 | 0.00 / 0.59 | 0.00 / 0.92 | 0.00 / 0.84 |
+  | Qwen2.5-0.5B-Instruct | polarity | 0.38 / 0.90 | 0.00 / 0.28 | 0.00 / 0.00 | 0.00 / 0.30 | 0.00 / 0.23 |
+  | Qwen2.5-1.5B | gender | 0.59 / 1.42 | 0.10 / 0.50 | 0.02 / 0.43 | 0.00 / 0.78 | - |
+  | Qwen2.5-1.5B | generation | 2.13 / 1.72 | 0.03 / 0.27 | 0.00 / 0.00 | 0.03 / 0.27 | - |
+  | Qwen2.5-1.5B | number | 0.45 / 1.72 | 0.00 / 0.79 | 0.00 / 0.00 | 0.00 / 0.94 | - |
+  | Qwen2.5-1.5B | polarity | 0.29 / 0.77 | 0.00 / 0.04 | 0.00 / 0.00 | 0.00 / 0.02 | - |
+  | Qwen2.5-1.5B-Instruct | gender | 0.53 / 1.42 | 0.08 / 0.82 | 0.02 / 0.00 | 0.00 / 0.77 | 0.08 / 0.82 |
+  | Qwen2.5-1.5B-Instruct | generation | 1.76 / 1.64 | 0.03 / 0.23 | 0.00 / 0.00 | 0.03 / 0.18 | 0.03 / 0.23 |
+  | Qwen2.5-1.5B-Instruct | number | 0.46 / 1.67 | 0.00 / 0.75 | 0.00 / 0.00 | 0.00 / 0.77 | 0.00 / 0.75 |
+  | Qwen2.5-1.5B-Instruct | polarity | 0.27 / 0.75 | 0.00 / 0.08 | 0.00 / 0.00 | 0.00 / 0.02 | 0.00 / 0.04 |
+
+  | model, attribute (marked pole) | pulse at the word | floor clamp 1.0 (KL) | input shift 0.5 / 1 / 2 (KL at 2) | steering 0.5 / 1 (KL at 1) |
+  | --- | --- | --- | --- | --- |
+  | Qwen2.5-0.5B gender (1) | 0.55 | 0.66 (0.191) | 0.16 / 0.00 / 0.00 (0.046) | 0.48 / 1.00 (0.256) |
+  | Qwen2.5-0.5B generation (0) | 0.30 | 0.52 (0.078) | 0.22 / 0.31 / 0.50 (0.004) | 0.44 / 0.76 (0.138) |
+  | Qwen2.5-0.5B number (1) | 0.10 | 0.65 (0.161) | 0.10 / 0.12 / 0.00 (0.111) | 0.20 / 1.00 (0.306) |
+  | Qwen2.5-0.5B-Instruct gender (1) | 0.50 | 0.71 (0.189) | 0.23 / 0.00 / 0.02 (0.090) | 0.34 / 1.00 (0.241) |
+  | Qwen2.5-0.5B-Instruct generation (0) | 0.28 | 0.49 (0.089) | 0.16 / 0.30 / 0.46 (0.020) | 0.42 / 0.68 (0.153) |
+  | Qwen2.5-0.5B-Instruct number (1) | 0.16 | 0.89 (0.216) | 0.14 / 0.11 / 0.14 (0.137) | 0.70 / 1.00 (0.462) |
+  | Qwen2.5-1.5B gender (1) | 0.27 | 0.47 (0.137) | 0.20 / 0.00 / 0.17 (0.048) | 0.45 / 0.97 (0.259) |
+  | Qwen2.5-1.5B generation (0) | 0.33 | 0.55 (0.036) | 0.22 / 0.40 / 0.58 (0.003) | 0.45 / 1.00 (0.160) |
+  | Qwen2.5-1.5B number (1) | 0.00 | 0.00 (0.033) | 0.00 / 0.00 / 0.00 (0.182) | 0.90 / 0.98 (0.384) |
+  | Qwen2.5-1.5B-Instruct gender (1) | 0.27 | 0.50 (0.133) | 0.18 / 0.00 / 0.15 (0.034) | 0.40 / 0.97 (0.230) |
+  | Qwen2.5-1.5B-Instruct generation (0) | 0.40 | 0.50 (0.033) | 0.22 / 0.40 / 0.60 (0.002) | 0.42 / 0.90 (0.146) |
+  | Qwen2.5-1.5B-Instruct number (1) | 0.00 | 0.00 (0.024) | 0.00 / 0.00 / 0.00 (0.174) | 0.90 / 1.00 (0.373) |
+
+  | model | double flips of the negated chains by starting item: king / queen / prince / princess |
+  | --- | --- |
+  | Qwen2.5-0.5B | 0.00 / 0.00 / 0.00 / 0.19 |
+  | Qwen2.5-0.5B-Instruct | 0.00 / 0.08 / 0.00 / 0.11 |
+  | Qwen2.5-1.5B | 0.00 / 0.00 / 0.18 / 0.09 |
+  | Qwen2.5-1.5B-Instruct | 0.00 / 0.02 / 0.14 / 0.02 |
+
+  - The relay rows are one-pole detectors for three of the four attributes: averaged over the WDD chain's rows, their activation at the word is 2.4 to 4.8 times larger on female than male items, 3.6 to 6.2 times on plural than singular, and 1.8 to 2.8 times on the second, mostly negative member of the polarity pairs, and negating the chain flips almost only those items (female 0.50 to 0.82 against male 0.00 to 0.10; plural 0.75 to 0.90 against singular 0.00; polarity 0.04 to 0.28 against 0.00), but not for generation, whose rows are about as active on both poles (old over young 1.0 to 1.2) though its flips still run mostly young to old (0.22 to 0.27 against 0.03 to 0.16); forcing the marked pole costs what steering costs: the oracle pulse at the word moves 0.27 to 0.55 of male items to female and 0.00 to 0.16 of singulars to plural, and a floor clamp at every position, where it moves items at all (female 0.47 to 0.71, plural 0.65 to 0.89 in the 0.5B models, none in the 1.5B), costs 0.47 to 0.78 of the wikitext KL of the smallest steering scale that moves as many (for example 0.191 against 0.256 for Qwen2.5-0.5B's gender), while Gemini's weight-space input shift is erratic for gender and number and clean for generation's young-to-old direction (0.30 to 0.40 moved at KL 0.000 to 0.001, 0.46 to 0.60 at 0.002 to 0.020); the two negated chains doubly flip only princess in Qwen2.5-0.5B (by starting item king, queen, prince, princess [0.0, 0.0, 0.0, 0.19]) but prince in the 1.5B models ([0.0, 0.0, 0.18, 0.09], [0.0, 0.02, 0.14, 0.02]); and a WDD-free chain, the blocks and rows with the largest normalized activation difference over all blocks, falls far below the WDD chain (number 0.00 to 0.59 against 0.75 to 0.90, generation 0.00 to 0.09 against 0.22 to 0.27) while the naive row inside the WDD chain's blocks matches it (number 0.77 to 0.94).
+  - Reading: Gemini's markedness reading holds for gender, number and polarity and fails for generation. Where the rows are one-pole detectors, removing the mark is nearly free and one-way, and adding it costs about what a dense steering vector costs, because the signal has to be injected rather than inverted (e660's three orders of magnitude belong to stripping, not to setting). The WDD vote's real contribution is finding the blocks where an attribute is written: within them the top activation-difference row does as well, and ranked by activation difference alone the search lands in blocks that do not carry it.
+  - Pre-registered: M1 (the chain rows are more active on the female, young and plural pole than on the other, for gender, generation and number) refuted; M2 (the marked-over-unmarked activation magnitude ratio is 2 or more for all three attributes) refuted; M3 (negating the WDD chain flips marked-pole items at least three times as often as unmarked-pole items, for all three attributes) refuted; M4 (the two negated chains doubly flip princess items at least three times as often as any other starting quadrant) split (holds in Qwen2.5-0.5B, not Qwen2.5-0.5B-Instruct, Qwen2.5-1.5B, Qwen2.5-1.5B-Instruct); M5 (supplying the marked pulse at the word position moves at least 0.3 of the unmarked items to the marked pole, for all three attributes) refuted; M6 (the WDD-free chain flips at least as many held-out items as the WDD chain for at least three of the four attributes (Gemini's block-selection question)) refuted; M7 (the gender and generation pulses together turn king into princess in at least 0.25 of the items) refuted. M1 to M3 fail on generation alone (its rows are slightly more active on the old pole), which also made M7's test moot: with generation's marked pole read as old, the generation pulse cannot turn king young.
+
+- e662 THE DOSE RESPONSE OF AN ATTRIBUTE EDIT:
+
+  | model | attribute | WDD order, flips at k = 1 / 4 / 8 / 16 / 32 | naive order at the same k | random at k = 32 | WDD KL at 32 |
+  | --- | --- | --- | --- | --- | --- |
+  | Qwen2.5-0.5B | gender | 0.55 / 0.76 / 0.53 / 0.76 / 0.62 | 0.00 / 0.55 / 0.55 / 0.81 / 0.66 | 0.01 | 0.033 |
+  | Qwen2.5-0.5B | generation | 0.26 / 0.20 / 0.28 / 0.37 / 0.43 | 0.04 / 0.02 / 0.04 / 0.09 / 0.07 | 0.06 | 0.026 |
+  | Qwen2.5-0.5B | number | 0.25 / 0.85 / 0.93 / 0.93 / 1.00 | 0.05 / 0.05 / 0.03 / 0.03 / 0.75 | 0.00 | 0.050 |
+  | Qwen2.5-0.5B | polarity | 0.00 / 0.09 / 0.32 / 0.28 / 0.34 | 0.00 / 0.00 / 0.00 / 0.00 / 0.00 | 0.00 | 0.032 |
+  | Qwen2.5-0.5B-Instruct | gender | 0.68 / 0.88 / 0.73 / 0.75 / 0.71 | 0.00 / 0.70 / 0.70 / 0.77 / 0.77 | 0.02 | 0.055 |
+  | Qwen2.5-0.5B-Instruct | generation | 0.26 / 0.30 / 0.37 / 0.44 / 0.46 | 0.02 / 0.02 / 0.09 / 0.09 / 0.07 | 0.04 | 0.027 |
+  | Qwen2.5-0.5B-Instruct | number | 0.35 / 0.81 / 0.92 / 0.89 / 0.97 | 0.08 / 0.08 / 0.05 / 0.49 / 0.76 | 0.03 | 0.031 |
+  | Qwen2.5-0.5B-Instruct | polarity | 0.00 / 0.23 / 0.32 / 0.34 / 0.34 | 0.00 / 0.00 / 0.00 / 0.00 / 0.00 | 0.00 | 0.034 |
+  | Qwen2.5-1.5B | gender | 0.33 / 0.45 / 0.53 / 0.55 / 0.50 | 0.00 / 0.00 / 0.00 / 0.33 / 0.50 | 0.00 | 0.004 |
+  | Qwen2.5-1.5B | generation | 0.30 / 0.17 / 0.32 / 0.48 / 0.50 | 0.00 / 0.00 / 0.00 / 0.00 / 0.00 | 0.00 | 0.005 |
+  | Qwen2.5-1.5B | number | 0.00 / 0.19 / 0.88 / 0.92 / 0.98 | 0.00 / 0.02 / 0.04 / 0.04 / 0.06 | 0.01 | 0.024 |
+  | Qwen2.5-1.5B | polarity | 0.00 / 0.00 / 0.04 / 0.08 / 0.10 | 0.00 / 0.00 / 0.00 / 0.00 / 0.00 | 0.00 | 0.009 |
+  | Qwen2.5-1.5B-Instruct | gender | 0.33 / 0.65 / 0.70 / 0.60 / 0.57 | 0.00 / 0.00 / 0.00 / 0.00 / 0.60 | 0.00 | 0.004 |
+  | Qwen2.5-1.5B-Instruct | generation | 0.28 / 0.15 / 0.20 / 0.35 / 0.47 | 0.00 / 0.00 / 0.00 / 0.00 / 0.00 | 0.00 | 0.004 |
+  | Qwen2.5-1.5B-Instruct | number | 0.00 / 0.19 / 0.88 / 0.92 / 0.96 | 0.00 / 0.00 / 0.00 / 0.04 / 0.08 | 0.00 | 0.021 |
+  | Qwen2.5-1.5B-Instruct | polarity | 0.02 / 0.04 / 0.08 / 0.10 / 0.12 | 0.00 / 0.00 / 0.00 / 0.00 / 0.00 | 0.00 | 0.009 |
+
+  - Negating the k first rows of the WDD vote order moves an attribute far more than the k first rows of a naive global order (every MLP row ranked by its normalized activation difference) at almost every dose in every model: number reaches 0.96 to 1.00 of the items by k = 32 (all from plural) and 0.88 to 0.93 by k = 8, against at most 0.76 for the naive order; gender peaks at 0.70 to 0.88 around k = 3 to 12 and then declines as male items start to flip (0.26, 0.21, 0.05, 0.05 from male at k = 32); generation reaches 0.43 to 0.50 and polarity 0.10 to 0.36, where the naive order stays at or below 0.09 and 0.00; random orders flip at most 0.06; and the WDD order's wikitext KL at k = 32 is 0.004 to 0.055.
+  - Reading: the WDD vote is a good ordering of the rows that write an attribute, and the dose response is steep: a handful of rows from the right blocks moves number almost completely, while rows ranked by activation difference alone, wherever they sit, do almost nothing until dozens are taken. Gender saturates early and then over-shoots into the unmarked pole, the one place the one-way law breaks.
+  - Pre-registered: D1 (at its best dose the WDD order flips at least 0.3 (summed over the two starting poles) for at least three of the four attributes) confirmed; D2 (averaged over doses, the WDD order flips more than the naive global order for at least three of the four attributes) confirmed; D3 (random orders flip at most 0.1 (summed over poles) at every dose for every attribute) confirmed; D4 (at the largest WDD dose, flips from the marked pole are at least three times those from the unmarked pole, for every attribute) refuted. D4 fails on gender, generation in Qwen2.5-0.5B; gender, generation in Qwen2.5-0.5B-Instruct; generation in Qwen2.5-1.5B; generation in Qwen2.5-1.5B-Instruct (gender because male items start to flip at the largest dose; generation because its flips are not one-way relative to the pole its rows are more active on: either that pole is old, which it rarely flips from, or the flips run both ways).

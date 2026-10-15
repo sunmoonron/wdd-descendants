@@ -1,0 +1,26 @@
+{
+ "question": "How many rows does an attribute edit need, and does the WDD vote order the rows better than a naive global order or a random one?",
+ "design": "same models; k = 1, 2, 3, 4, 6, 8, 12, 16, 24, 32 first rows negated; orders: WDD vote (rows among any level's top ten, by best share), naive global (normalized activation difference over all MLP rows of blocks 0..L), three random; held-out flips by starting pole and wikitext KL.",
+ "smoke": "Qwen2.5-0.5B, k to 8: best flips summed over poles WDD/naive/random gender 1.00/0.78/0.00, generation 0.25/0.00/0.00, number 1.00/0.40/0.10, polarity 0.00/0.00/0.00.",
+ "predictions": {
+  "D1": {
+   "text": "at its best dose the WDD order flips at least 0.3 (summed over the two starting poles) for at least three of the four attributes",
+   "guess": 0.3
+  },
+  "D2": {
+   "text": "averaged over doses, the WDD order flips more than the naive global order for at least three of the four attributes",
+   "guess": 0.55
+  },
+  "D3": {
+   "text": "random orders flip at most 0.1 (summed over poles) at every dose for every attribute",
+   "guess": 0.6
+  },
+  "D4": {
+   "text": "at the largest WDD dose, flips from the marked pole are at least three times those from the unmarked pole, for every attribute",
+   "guess": 0.2
+  }
+ },
+ "experiment": "e662_dose",
+ "fixed_at": "2026-10-14T20:19:57",
+ "status": "fixed while the full runs started (no full result seen), after smokes on Qwen2.5-0.5B (both scripts) and Qwen2.5-1.5B (e661)"
+}
