@@ -20,6 +20,15 @@ A GPU with 8 GB is enough (CPU works, slowly). Requirements: `torch`, `transform
 
 `sample_run.txt` is one full run (`--auto --no-color`) and `sample_run.json` its measured numbers.
 
+### In a browser
+
+`wdd_web.py` serves the same three acts as a page with a button per step (Python standard library only; `wdd_web.html` beside it). It keeps the models on the GPU between clicks, binds 127.0.0.1 only, and exits after two hours without a request:
+
+    python wdd_web.py --port 8765                  # on the GPU box
+    ssh -N -L 8765:127.0.0.1:8765 <gpu-box>        # on your machine, then open http://localhost:8765
+
+Every number on the page is computed by the click that shows it; the claim check at the bottom fills in as the steps run.
+
 ## Reading it honestly
 
 - The edits are real weight edits and the effects are measured on held-out templates and separate free-text sentences, but the items are small (a few hundred translation prompts, 72 English and 72 French, Spanish and German sentences); treat the percentages as a demonstration, not a benchmark.

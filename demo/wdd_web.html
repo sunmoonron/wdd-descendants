@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WDD Live Demo</title>
+<style>
+:root { --bg: #f7f6f3; --card: #ffffff; --ink: #1c1b19; --muted: #6b6860; --line: #e4e1da; --accent: #2f5bd3; --accent-ink: #ffffff; --good: #1f7a4a; --bad: #b42318; --warn: #a15c00; --a: #4c8bf5; --b: #d6487e; --code: #f1efe9; --chip: #eef1fb; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #141412; --card: #1d1c1a; --ink: #ecebe7; --muted: #a29f97; --line: #34322e; --accent: #7aa2ff; --accent-ink: #0d1020; --good: #4cc38a; --bad: #ff7b6e; --warn: #f0b44c; --a: #7aa2ff; --b: #ff6fa5; --code: #262521; --chip: #22273a; } }
+:root[data-theme="dark"] { --bg: #141412; --card: #1d1c1a; --ink: #ecebe7; --muted: #a29f97; --line: #34322e; --accent: #7aa2ff; --accent-ink: #0d1020; --good: #4cc38a; --bad: #ff7b6e; --warn: #f0b44c; --a: #7aa2ff; --b: #ff6fa5; --code: #262521; --chip: #22273a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+main { max-width: 980px; margin: 0 auto; padding: 28px 16px 64px; }
+h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; margin: 0 0 4px; }
+h3 { font-size: 15px; margin: 18px 0 8px; }
+p { margin: 6px 0; }
+.sub { color: var(--muted); margin-bottom: 18px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px 14px; margin: 16px 0; }
+.act { font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--accent); text-transform: uppercase; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0; }
+button { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 8px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; }
+button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--line); }
+button:disabled { opacity: .45; cursor: progress; }
+select, input { background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; font: inherit; }
+input.prompt { flex: 1 1 320px; min-width: 0; }
+.busy { color: var(--muted); font-size: 13px; }
+.note { color: var(--muted); font-size: 13px; }
+code, .code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; }
+.code { background: var(--code); border-radius: 8px; padding: 8px 10px; overflow-x: auto; white-space: pre; margin: 8px 0; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.big { display: flex; flex-wrap: wrap; gap: 18px; margin: 10px 0; }
+.big div { min-width: 150px; }
+.big b { display: block; font-size: 28px; line-height: 1.1; }
+.big span { color: var(--muted); font-size: 13px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; margin: 6px 0; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 12.5px; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tablewrap { overflow-x: auto; }
+.bars { display: grid; grid-template-columns: max-content 1fr; gap: 3px 10px; align-items: center; font-size: 12.5px; }
+.bar { height: 9px; border-radius: 5px; }
+.barbox { display: flex; flex-direction: column; gap: 2px; }
+.legend { display: flex; gap: 14px; font-size: 12.5px; color: var(--muted); margin: 4px 0 8px; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.ex { font-size: 13.5px; margin: 3px 0; }
+.ex .got { font-weight: 700; }
+.badge { display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 12px; font-weight: 700; }
+.b-flag { background: color-mix(in srgb, var(--bad) 18%, transparent); color: var(--bad); }
+.b-quiet { background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }
+.v-holds { color: var(--good); font-weight: 700; }
+.v-partly { color: var(--warn); font-weight: 700; }
+.v-does { color: var(--bad); font-weight: 700; }
+.v-not { color: var(--muted); font-weight: 700; }
+.gen { background: var(--code); border-radius: 8px; padding: 8px 10px; margin: 6px 0; font-size: 13.5px; }
+.gen .lab { color: var(--muted); font-size: 12px; display: block; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.chip { background: var(--chip); color: var(--ink); border-radius: 999px; padding: 2px 9px; font-size: 12.5px; cursor: pointer; border: 1px solid var(--line); font-family: ui-monospace, Menlo, monospace; }
+.err { color: var(--bad); font-size: 13px; }
+.hidden { display: none; }
+.claim { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.claim:last-child { border-bottom: 0; }
+.up { color: var(--good); } .down { color: var(--bad); }
+.theme { float: right; }
+</style>
+</head>
+<body>
+<main>
+<button class="ghost theme" id="themebtn" title="toggle light / dark">◐</button>
+<h1>WDD in the weights</h1>
+<p class="sub">A live demo on raw Hugging Face checkpoints. Each button runs on a GPU when you click it, and every number on this page comes from that click; nothing is quoted from the record. <span id="status"></span></p>
+
+<section class="card" id="act1">
+  <div class="act">Act 1 · Qwen2.5-0.5B</div>
+  <h2>Find the gender and number rows, and flip them in the weights</h2>
+  <p class="note">The items are few-shot translations into English ("French: reine → English: ___") in French, Spanish and German. Rows are chosen on three templates; translation effects are measured on two held-out templates, free text on separate sentences. No probe, no autoencoder, no gradient steps.</p>
+  <div class="row"><button id="b-scan">1 · Scan the model</button><span class="busy" id="s-scan"></span></div>
+  <div id="o-scan"></div>
+  <div id="act1-more" class="hidden">
+    <h3>2 · Negate the rows' write columns</h3>
+    <div class="row">
+      <select id="attr"><option value="gender">gender rows</option><option value="number">number rows</option></select>
+      <select id="k"><option value="1">top 1 row</option><option value="8" selected>top 8 rows</option><option value="32">top 32 rows</option></select>
+      <button id="b-edit">Negate and measure</button><span class="busy" id="s-edit"></span>
+    </div>
+    <div id="o-edit"></div>
+    <h3>3 · Free text in four languages <span class="note">(the gender rows, at the row count above)</span></h3>
+    <div class="row"><button id="b-free">Measure agreement before and after</button><span class="busy" id="s-free"></span></div>
+    <div id="o-free"></div>
+    <h3>4 · Your own prompt</h3>
+    <div class="row"><input class="prompt" id="prompt" value="The princess said that"><button id="b-gen">Generate before / after</button><span class="busy" id="s-gen"></span></div>
+    <div id="o-gen"></div>
+    <h3>5 · The same items with the standard tools</h3>
+    <div class="row"><button id="b-tools">Compare</button><span class="busy" id="s-tools"></span></div>
+    <div id="o-tools"></div>
+  </div>
+</section>
+
+<section class="card" id="act2">
+  <div class="act">Act 2 · Qwen2.5-Coder-0.5B-Instruct</div>
+  <h2>The same addresses in a different model</h2>
+  <p class="note">Same architecture, continued-pretrained on code (5.5T tokens per the Qwen2.5-Coder report) and instruction-tuned. The base model's row addresses and residual direction are applied without running a single Coder prompt to choose them; the Coder model's own rows and direction are shown for comparison. Needs Act 1's scan; the first run loads the model (about half a minute).</p>
+  <div class="row"><button id="b-a2">Run the transfer</button><span class="busy" id="s-a2"></span></div>
+  <div id="o-a2"></div>
+</section>
+
+<section class="card" id="act3">
+  <div class="act">Act 3 · Pythia-410m</div>
+  <h2>Tamper with one row, then audit the model blind</h2>
+  <p class="note">Someone edits one block-4 write row in place. The auditor gets only the tampered weights and 16 ordinary wikitext windows: no original checkpoint, no diff. Three detectors: the column's norm (z-score above 3), the read-write cosine (above the block's 99th percentile), and activation consistency (does the write agree with the states where its neuron fires, minus its own write; below the 1st percentile), all computed on the tampered model itself.</p>
+  <div class="row"><button id="b-a3">Load the model</button><span class="busy" id="s-a3"></span></div>
+  <div id="o-a3info"></div>
+  <div id="act3-more" class="hidden">
+    <div class="row">
+      <input id="row" placeholder="row 0-4095, empty = random" style="width:210px">
+      <select id="how"><option value="reflect">reflect about its read axis (keeps norm and read-write cosine)</option><option value="negate">negate (W[:, j] *= -1)</option><option value="scale">scale (W[:, j] *= 2)</option></select>
+      <button id="b-tamper">Tamper and audit</button><span class="busy" id="s-tamper"></span>
+    </div>
+    <div id="o-tamper"></div>
+    <h3>The catch rate over many rows</h3>
+    <div class="row"><select id="nsw"><option value="6">6 rows</option><option value="12" selected>12 rows</option><option value="24">24 rows</option><option value="40">all 40</option></select><button id="b-sweep">Run the sweep</button><span class="busy" id="s-sweep"></span></div>
+    <div id="o-sweep"></div>
+  </div>
+</section>
+
+<section class="card" id="claims">
+  <div class="act">Claim check</div>
+  <h2>The pasted demo script, against what you have run</h2>
+  <p class="note">Each line fills in once the step that measures it has run.</p>
+  <div id="o-claims"><p class="note">Nothing run yet.</p></div>
+</section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const pct = x => (100 * x).toFixed(1) + "%";
+const f4 = x => x.toFixed(4);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+let busy = false;
+async function call(name, body, statusId) {
+  if (busy) return null;
+  busy = true; document.querySelectorAll("button:not(.theme)").forEach(b => b.disabled = true);
+  const t0 = performance.now(); const st = $(statusId);
+  const tick = setInterval(() => { st.textContent = `running on the GPU… ${((performance.now() - t0) / 1000).toFixed(0)}s`; }, 250);
+  try {
+    const r = await fetch(`/api/${name}`, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body || {})});
+    const j = await r.json();
+    if (!r.ok || j.error) throw new Error(j.error || r.statusText);
+    st.textContent = `done in ${j._seconds.toFixed(1)}s`; return j;
+  } catch (e) { st.innerHTML = `<span class="err">failed: ${esc(e.message)}</span>`; return null; }
+  finally { clearInterval(tick); busy = false; document.querySelectorAll("button").forEach(b => b.disabled = false); refreshClaims(); }
+}
+async function refreshClaims() {
+  try {
+    const r = await fetch("/api/claims", {method: "POST", body: "{}"}); const j = await r.json(); if (!j.claims || !j.claims.length) return;
+    const cls = v => v === "holds" ? "v-holds" : v === "partly" ? "v-partly" : v === "does not hold" ? "v-does" : "v-not";
+    $("o-claims").innerHTML = j.claims.map(c => `<div class="claim"><b>${esc(c.claim)}</b><br><span class="note">measured:</span> ${esc(c.measured)}<br><span class="note">verdict:</span> <span class="${cls(c.verdict)}">${esc(c.verdict)}</span></div>`).join("");
+  } catch (e) {}
+}
+// ---- Act 1
+$("b-scan").onclick = async () => {
+  const j = await call("a1_scan", {}, "s-scan"); if (!j) return;
+  const panel = (a, d) => {
+    const vmax = Math.max(...d.rows.flatMap(r => [r.unmarked, r.marked]));
+    const rows = d.rows.map(r => `<div style="white-space:nowrap"><code>block ${r.block} · row ${r.row}</code></div><div class="barbox"><div class="bar" style="width:${100 * r.unmarked / vmax}%;background:var(--a)" title="${r.unmarked.toFixed(2)}"></div><div class="bar" style="width:${100 * r.marked / vmax}%;background:var(--b)" title="${r.marked.toFixed(2)}"></div></div>`).join("");
+    return `<div><h3>${a}: top 8 rows by direct contribution</h3><div class="legend"><span><span class="dot" style="background:var(--a)"></span>${d.poles[0]}</span><span><span class="dot" style="background:var(--b)"></span>${d.poles[1]}</span><span>mean |activation| at the word</span></div><div class="bars">${rows}</div><p class="note">Summed over these rows the ${d.poles[1]} items drive them ${d.ratio.toFixed(1)}x harder than the ${d.poles[0]} items; ${d.n_rev} of 8 rows fire more for ${d.poles[0]}.</p></div>`;
+  };
+  $("o-scan").innerHTML = `<p>${(j.attrs.gender.n_items + j.attrs.number.n_items).toLocaleString()} translation items the model gets right on both poles; one forward pass collects every MLP activation and residual state at the word, and each row's score is its activation change times its write's alignment with the pole difference: ${j.n_scanned.toLocaleString()} rows ranked in ${j.scan_seconds.toFixed(1)}s.</p><div class="grid2">${panel("gender", j.attrs.gender)}${panel("number", j.attrs.number)}</div>`;
+  $("act1-more").classList.remove("hidden");
+};
+$("b-edit").onclick = async () => {
+  const j = await call("a1_edit", {attr: $("attr").value, k: +$("k").value}, "s-edit"); if (!j) return;
+  const ex = j.examples.map(e => `<div class="ex">${esc(e.lang)} <code>${esc(e.word)}</code> → English: ${esc(e.expected)} ⟶ <span class="got ${e.flipped ? "up" : ""}">${esc(e.got)}</span> <span class="note">${e.flipped ? "flipped" : "unchanged"}</span></div>`).join("");
+  $("o-edit").innerHTML = `<div class="code">&gt;&gt;&gt; ${esc(j.code)}</div><div class="big"><div><b>${pct(j.flip_marked)}</b><span>held-out ${j.poles[1]} items now answered ${j.poles[0]}</span></div><div><b>${pct(j.flip_unmarked)}</b><span>${j.poles[0]} items now answered ${j.poles[1]}</span></div><div><b>${(j.loss - j.loss0 >= 0 ? "+" : "") + f4(j.loss - j.loss0)}</b><span>nats on wikitext (${f4(j.loss0)} → ${f4(j.loss)}); KL ${f4(j.kl)}</span></div></div>${ex}<p class="note">Rows edited: ${j.rows.map(r => `(${r[0]}, ${r[1]})`).join(" ")}. The weights are restored after every measurement.</p>`;
+};
+$("b-free").onclick = async () => {
+  const j = await call("a1_free", {k: +$("k").value}, "s-free"); if (!j) return;
+  const L = [["en", "English pronouns (he / she)"], ["fr", "French adjectives (beau / belle …)"], ["es", "Spanish adjectives (cansado / cansada …)"], ["de", "German pronouns (er / sie)"]];
+  const cell = (b, a) => `${pct(b)} → <b class="${a < b - 0.05 ? "down" : ""}">${pct(a)}</b>`;
+  $("o-free").innerHTML = `<div class="tablewrap"><table><tr><th>agreement with the subject's gender at the next word</th><th class="num">male subjects</th><th class="num">female subjects</th></tr>${L.map(([lg, nm]) => `<tr><td>${nm}</td><td class="num">${cell(j.before[lg]["0"], j.after[lg]["0"])}</td><td class="num">${cell(j.before[lg]["1"], j.after[lg]["1"])}</td></tr>`).join("")}</table></div><p class="note">The probability of the agreeing forms over both forms, before → after negating the top ${j.k} gender rows; 72 English sentences ("The queen said that"), 24 each in French, Spanish and German.</p>`;
+};
+$("b-gen").onclick = async () => {
+  const j = await call("a1_gen", {prompt: $("prompt").value, attr: $("attr").value, k: +$("k").value}, "s-gen"); if (!j) return;
+  $("o-gen").innerHTML = `<div class="gen"><span class="lab">unedited</span><b>${esc(j.prompt)}</b>${esc(j.before)}</div><div class="gen"><span class="lab">top ${j.k} ${j.attr} rows negated</span><b>${esc(j.prompt)}</b>${esc(j.after)}</div>`;
+};
+$("b-tools").onclick = async () => {
+  const j = await call("a1_tools", {k: +$("k").value}, "s-tools"); if (!j) return;
+  $("o-tools").innerHTML = `<div class="tablewrap"><table><tr><th>method (gender)</th><th class="num">female → male</th><th class="num">male → female</th><th class="num">wikitext KL</th></tr>${j.rows.map(r => `<tr><td>${esc(r.method)}</td><td class="num">${pct(r.f1)}</td><td class="num">${pct(r.f0)}</td><td class="num">${f4(r.kl)}</td></tr>`).join("")}</table></div><p class="note">A trade-off, not a win: read the flips against the KL. The steering vector is added at every token; at large scale it breaks the model.</p>`;
+};
+// ---- Act 2
+$("b-a2").onclick = async () => {
+  const j = await call("a2_run", {k: Math.min(+$("k").value, 32)}, "s-a2"); if (!j) return;
+  const rot = a => `The base model's top ${j.k} ${a} rows sit at cosine ${Math.min(...j.rot[a].row_cos).toFixed(2)} to ${Math.max(...j.rot[a].row_cos).toFixed(2)} (median ${j.rot[a].row_cos_median.toFixed(2)}) with their Coder selves; the ${a} direction in the residual stream at ${j.rot[a].dir_min.toFixed(2)} to ${j.rot[a].dir_max.toFixed(2)} across blocks`;
+  $("o-a2").innerHTML = `<p>${j.n_items.gender + j.n_items.number} items the Coder model gets right. Every MLP write column of the first half of the model sits at median cosine <b>${j.all_cos_median.toFixed(2)}</b> with the base model's: the rows rotated. ${rot("gender")}. ${rot("number")}.</p>
+  <div class="tablewrap"><table><tr><th>edit, zero-shot from the base model</th><th class="num">female → male: base / Coder's own</th><th class="num">plural → singular: base / Coder's own</th><th class="num">KL (gender, base)</th></tr>${j.table.map(r => `<tr><td>${esc(r.edit)}</td><td class="num">${pct(r.gender.base)} / ${pct(r.gender.own)}</td><td class="num">${pct(r.number.base)} / ${pct(r.number.own)}</td><td class="num">${f4(r.gender.kl_base)}</td></tr>`).join("")}</table></div>
+  <div class="gen"><span class="lab">Coder-Instruct, the base model's ${j.k} gender rows negated</span><b>${esc(j.gen.prompt)}</b>${esc(j.gen.after)}</div><div class="gen"><span class="lab">Coder-Instruct, unedited</span><b>${esc(j.gen.prompt)}</b>${esc(j.gen.before)}</div>`;
+};
+// ---- Act 3
+$("b-a3").onclick = async () => {
+  const j = await call("a3_info", {}, "s-a3"); if (!j) return;
+  $("o-a3info").innerHTML = `<p>Block ${j.block}: ${j.dff.toLocaleString()} MLP rows; read-write cosine median ${j.rw_median.toFixed(2)} (${pct(j.rw_below)} of rows below -0.1). The 40 most-used rows (top 1% by mean |activation|) are the suggested targets; click one, or leave the box empty for a random one.</p><div class="chips">${j.pool.map(r => `<span class="chip" data-row="${r}">${r}</span>`).join("")}</div>`;
+  document.querySelectorAll(".chip").forEach(c => c.onclick = () => { $("row").value = c.dataset.row; });
+  $("act3-more").classList.remove("hidden");
+};
+$("b-tamper").onclick = async () => {
+  const v = $("row").value.trim(); const j = await call("a3_tamper", {row: v === "" ? "random" : +v, how: $("how").value, seed: Math.floor(Math.random() * 1e6)}, "s-tamper"); if (!j) return;
+  $("row").value = j.row;
+  const badge = f => f ? `<span class="badge b-flag">FLAGGED</span>` : `<span class="badge b-quiet">quiet</span>`;
+  const caught = j.flag_norm || j.flag_rw || j.flag_cons;
+  $("o-tamper").innerHTML = `<div class="code">&gt;&gt;&gt; ${{scale: `W[:, ${j.row}] *= 2`, negate: `W[:, ${j.row}] *= -1`, reflect: `u = read_row[${j.row}] / norm;  W[:, ${j.row}] = -w + 2 (w·u) u   # norm and read-write cosine unchanged`}[j.how]}</div>
+  <p class="note">Ground truth, which the auditor never sees: next-token KL at the row's 32 top-firing positions <b>${j.kl.toFixed(4)}</b> nats. Row ${j.row} fires at ${j.use_ratio.toFixed(1)}x the block's median |activation|.</p>
+  <div class="tablewrap"><table><tr><th>detector (tampered model only)</th><th class="num">before</th><th class="num">after</th><th class="num">rank of ${j.dff}</th><th class="num">threshold</th><th></th></tr>
+  <tr><td>norm z-score</td><td class="num">${j.before.z.toFixed(2)}</td><td class="num">${j.z.toFixed(2)}</td><td class="num">${j.rank_z}</td><td class="num">|z| &gt; 3</td><td>${badge(j.flag_norm)}</td></tr>
+  <tr><td>read-write cosine</td><td class="num">${j.before.rw.toFixed(2)}</td><td class="num">${j.rw.toFixed(2)}</td><td class="num">${j.rank_rw}</td><td class="num">&gt; ${j.thr_rw.toFixed(2)}</td><td>${badge(j.flag_rw)}</td></tr>
+  <tr><td>activation consistency</td><td class="num">${j.before.cons.toFixed(2)}</td><td class="num">${j.cons.toFixed(2)}</td><td class="num">${j.rank_cons}</td><td class="num">&lt; ${j.thr_cons.toFixed(2)}</td><td>${badge(j.flag_cons)}</td></tr>
+  <tr><td class="note">consistency as e651 scored it, with the clean model's states (an auditor would not have them)</td><td></td><td class="num note">${j.cons_clean.toFixed(2)}</td><td class="num note">${j.rank_cons_clean}</td><td></td><td>${badge(j.flag_cons_clean)}</td></tr></table></div>
+  <p><b>${caught ? "Caught" : "Not caught"}</b> by the blind audit.</p>`;
+};
+$("b-sweep").onclick = async () => {
+  const j = await call("a3_sweep", {n: +$("nsw").value, seed: Math.floor(Math.random() * 1e6)}, "s-sweep"); if (!j) return;
+  const t = j.table;
+  $("o-sweep").innerHTML = `<div class="tablewrap"><table><tr><th>tamper (${j.n} random rows of the 40)</th><th class="num">mean KL at its positions</th><th class="num">norm</th><th class="num">read-write</th><th class="num">consistency</th><th class="num">caught by any</th><th class="num">consistency, clean states (e651)</th></tr>${["scale", "negate", "reflect"].map(h => `<tr><td>${h}</td><td class="num">${t[h].kl.toFixed(4)}</td><td class="num">${pct(t[h].norm)}</td><td class="num">${pct(t[h].rw)}</td><td class="num">${pct(t[h].cons)}</td><td class="num"><b>${pct(t[h].any)}</b></td><td class="num">${pct(t[h].clean)}</td></tr>`).join("")}</table></div><p class="note">e651 had reported the consistency check catching 0.67-0.80 of high-use reflections in the Pythia models; it scored the edited weights against the clean model's states. Compare the last two columns. Rows: ${j.rows.join(", ")}.</p>`;
+};
+// ---- theme and status
+$("themebtn").onclick = () => { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; };
+fetch("/api/status").then(r => r.json()).then(j => { $("status").textContent = `Running on ${j.gpu}.`; }).catch(() => {});
+refreshClaims();
+</script>
+</body>
+</html>
