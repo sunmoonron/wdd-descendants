@@ -1,0 +1,42 @@
+{
+ "experiment": "e672",
+ "session": 152,
+ "written": "2026-10-15 16:10:07",
+ "status": "pre-registered after three smokes (48 windows, 40 neurons, checkpoints 512/1000/4000/16000/143000), before the full run (256 windows, 300 neurons, 11 checkpoints)",
+ "question": "Cammarata 2026 (Neural Networks Are Already Clean): apparent polysemanticity is mostly recursive generalization, a main job with offshoots that are much less causally important and that grow out from the main route over training in a particular order. The essay could not test the order on a large model without checkpoints; Pythia-160m has public ones.",
+ "design": "Pythia-160m block 6 (3,072 GELU neurons), 256 windows x 256 tokens of wikitext-2 train (positions 1..254), final checkpoint 143000. 300 neurons sampled (seed 672) from those whose maximum exceeds 1 and whose 100th-largest activation is at least a quarter of the maximum. Each top-100 firing's pre-activation split exactly through the block's LayerNorm into every upstream MLP neuron of blocks 0-5, six attention outputs and the embedding. Cluster split (primary): spherical k-means (k=2) on the contributions of the 256 largest units; multi-route when the silhouette beats the 95th percentile of 20 unimodal nulls with the same mean and covariance (centred firings mixed by a random rotation, as in SigClust) and the minor route has at least 10 firings; core = the larger route. Top-upstream split (the essay's figure): each firing by the upstream MLP neuron adding most; core = the most common, offshoot = the rest; testable when both have at least 10. Causal: the neuron zeroed in each window holding its firings; per firing the KL divergence of the next-token distribution (primary) and the next token's log-probability drop. Developmental: checkpoints 128, 256, 512, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 143000; each firing's percentile among all 65,024 positions for that neuron; early score = mean percentile before the final checkpoint; lead = core mean minus offshoot mean after regressing out final activation (and, as a control, also the firing's token typicality, the share of the neuron's top 100 with the same current token); 200 random splits of the same sizes as reference.",
+ "smoke_changes": "Made after the smokes, before any full-scale data: (1) a fixed silhouette threshold of 0.15 called all 40 neurons multi-route (median 0.30); replaced by the unimodal null (4 of 40 pass); (2) the log-probability drop was tiny (median 6e-6 nats) and sign-noisy; the KL divergence became the primary damage; (3) onsets defined as half the route in the neuron's top 1% tied for 38 of 40 neurons; the continuous lead became primary, onsets kept as secondary. The smoke also showed, under the top-upstream split, the core leading in 29 of 34 neurons (p 2e-5; 0.79 with the token control); that test is registered as a replication (R1).",
+ "hypotheses": {
+  "P1": "developmental, cluster split, multi-route neurons: the core's firings became top firings earlier than the offshoot's, final activation regressed out: lead positive in more than half, one-sided binomial p < 0.05 (REFUTED if the share is below half with p < 0.05 the other way; otherwise NOT SUPPORTED)",
+  "P2": "causal, cluster split, multi-route neurons: removing the neuron moves the next-token distribution less at offshoot firings than at core firings (mean KL) in more than half, one-sided binomial p < 0.05; 'much less' when the median offshoot/core KL ratio is below 0.5",
+  "R1": "replication of the smoke: top-upstream split, testable neurons, the residualized lead positive in more than half with p < 0.05, and still p < 0.05 with token typicality also regressed out",
+  "D1": "descriptive: the share of sampled neurons that are multi-route under the cluster split lies between 0.05 and 0.25 (the essay's reference: about 90% of Qwen3-32B neuron poles have one main job)"
+ },
+ "predictions": {
+  "P1": "not supported",
+  "P2": "not supported",
+  "R1": "replicated",
+  "D1": "confirmed"
+ },
+ "secondary": "the same tests on all 300 neurons (the k-means split exists for each); per unit of activation (root KL over activation); the log-probability drop; the strength split (strongest firings vs the rest) as a reference for both tests; onsets (first checkpoint from which half the route stays in the neuron's top 1%), core vs offshoot vs 20 random splits.",
+ "smoke": {
+  "multi_route": "4 of 40",
+  "silhouette_median": 0.3,
+  "null_mean": 0.3,
+  "null_95": 0.36,
+  "top_upstream_share_median": 0.18,
+  "net_drive_median": "pre-activation 1.14 = upstream MLP 0.38 + attention 1.02 + embedding 0.00 + constants",
+  "kl_median": 0.00113,
+  "cluster_all": {
+   "P2_share": 0.5,
+   "P1_share": 0.6,
+   "P1_p": 0.13
+  },
+  "top_upstream_multi": {
+   "lead_share": 0.853,
+   "p": 1.9e-05,
+   "token_control_share": 0.794,
+   "p_token": 0.00041
+  }
+ }
+}

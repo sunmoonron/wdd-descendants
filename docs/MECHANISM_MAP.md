@@ -218,6 +218,10 @@ On the least damaging blocks the second traversal largely repeats the first in a
 
 Split by sign the attribute rows are two-sided (16 of 16 opposite-signed poles; the male side of block 4 row 764 is its negative pole), and the SwiGLU double-negative leak dominates the top of 0.058 of SmolLM2-135M's neurons and 0.146 of Qwen2.5-0.5B's at about 33k positions, falling with more text (e671). Reading a SwiGLU row by absolute activation folds its two poles together; the attribute rows of area 50 are two-sided, with the unmarked form on the negative pole.
 
+## A row's score is not its neuron's importance (session 152)
+
+A row's WDD score, the state's projection on its write direction, says where the state lies, not what the neuron does: over every neuron of three Pythia-410m blocks it is unrelated to the damage of removing the neuron (Spearman 0.08, 0.03, -0.01), and e568's invented-name row tops it at the 0.998 quantile while its neuron is silent and costs nothing to remove; what removing one neuron costs is its gradient times activation (Spearman 1.00, 1.00, 1.00) (e673).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

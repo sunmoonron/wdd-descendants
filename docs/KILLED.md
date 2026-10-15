@@ -998,3 +998,14 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "the final position's own writers at k = 32: negating the top 32 by the final position's own direct contribution flips at least half as many held-out marked items as the oracle's top 32, on both attributes." (e670).
 - The attribute relay rows as one-pole detectors whose unmarked form is silent (e661's reading under absolute activation): the unmarked form usually sits on the same rows' negative pole (e671).
 - The final position's own active rows carry the word's attribute (the alternative to the echo): they flip almost nothing (e670).
+
+## Session 152 kills (routes over training, edge consumption)
+- "developmental, cluster split, multi-route neurons: the core's firings became top firings earlier than the offshoot's, final activation regressed out: lead positive in more than half, one-sided binomial p < 0.05 (REFUTED if the share is below half with p < 0.05 the other way; otherwise NOT SUPPORTED)." (e672).
+- "causal, cluster split, multi-route neurons: removing the neuron moves the next-token distribution less at offshoot firings than at core firings (mean KL) in more than half, one-sided binomial p < 0.05; 'much less' when the median offshoot/core KL ratio is below 0.5." (e672).
+- "replication of the smoke: top-upstream split, testable neurons, the residualized lead positive in more than half with p < 0.05, and still p < 0.05 with token typicality also regressed out." (e672).
+- "descriptive: the share of sampled neurons that are multi-route under the cluster split lies between 0.05 and 0.25 (the essay's reference: about 90% of Qwen3-32B neuron poles have one main job)." (e672).
+- "the control Gemini's comparison lacks: at block 17, rho(edge_ln) - rho(write) >= 0.05 with the CI above 0, i.e. reading the downstream gates adds to the write's plain size." (e673).
+- Edge consumption by downstream gates as a better predictor of one neuron's ablation damage than the size of its write (Gemini 4's single-neuron transplant of the essay's edge motifs): the two rank 4,096 neurons alike at every block tested (e673).
+- Node prominence (the write along the predicted token) as the natural score of a neuron's importance at mid depth: at blocks 12 and 17 of Pythia-410m it trails the write's plain size (e673).
+- Offshoots much less causally important than a neuron's main route (the essay's first reason not to worry about recursive generalization), at Pythia-160m block 6: offshoot firings cost as much per firing, by the essay's own grouping slightly more (e672).
+- A neuron's distinct routes forming in order, main route first (the essay's developmental prediction), at Pythia-160m block 6: no order among 83 two-route neurons (e672).

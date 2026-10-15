@@ -1088,6 +1088,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H852 Signed poles: at least half of the 16 top gender and number rows have opposite-signed mean activations on the two poles. → e671 → SUPPORTED.
 - H853 Generation is two-poled, not absent: at least 2 of its top 8 rows have opposite-signed pole means with the smaller at least a quarter of the larger. → e671 → SUPPORTED.
 - H854 The leak is small at the word: the median gate-closed share of the relay rows' |activation| is under 0.2 for all three attributes. → e671 → NARROWED (holds for gender, generation, not number).
+- H855 Developmental, cluster split, multi-route neurons: the core's firings became top firings earlier than the offshoot's, final activation regressed out: lead positive in more than half, one-sided binomial p < 0.05 (REFUTED if the share is below half with p < 0.05 the other way; otherwise NOT SUPPORTED). → e672 → REFUTED.
+- H856 Causal, cluster split, multi-route neurons: removing the neuron moves the next-token distribution less at offshoot firings than at core firings (mean KL) in more than half, one-sided binomial p < 0.05; 'much less' when the median offshoot/core KL ratio is below 0.5. → e672 → REFUTED.
+- H857 Replication of the smoke: top-upstream split, testable neurons, the residualized lead positive in more than half with p < 0.05, and still p < 0.05 with token typicality also regressed out. → e672 → REFUTED.
+- H858 Descriptive: the share of sampled neurons that are multi-route under the cluster split lies between 0.05 and 0.25 (the essay's reference: about 90% of Qwen3-32B neuron poles have one main job). → e672 → REFUTED.
+- H859 Gemini's claim at block 17: rho(edge_ln) - rho(node_direct) >= 0.10 with the bootstrap 95% CI above 0 (SUPPORTED); CI above 0 but the difference below 0.10 (NARROWED); otherwise REFUTED. The literal pair (edge vs node_u) reported alongside, and blocks 12 and 22.. → e673 → NARROWED (better than node prominence, by less than 0.10).
+- H860 The control Gemini's comparison lacks: at block 17, rho(edge_ln) - rho(write) >= 0.05 with the CI above 0, i.e. reading the downstream gates adds to the write's plain size. → e673 → REFUTED.
+- H861 Gradient x activation is the best predictor of the absolute log-probability drop at every block, with rho >= 0.95 (one neuron at one position is nearly linear). → e673 → SUPPORTED.
+- H862 The bystander: neuron 3002 of block 17 sits below the block's median on every activation-weighted score and on damage, and above the 95th percentile on the activation-free projection, over the invented-country prompts. → e673 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

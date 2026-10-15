@@ -1,0 +1,51 @@
+{
+ "experiment": "e673",
+ "session": 152,
+ "written": "2026-10-15 16:20:31",
+ "status": "pre-registered after a CPU smoke (47 prompts, block 17, 257 neurons), before the full run (280 prompts, blocks 12, 17, 22, all 4,096 neurons each)",
+ "question": "Gemini 4's transplant of Cammarata's Edge Featurizers figure (96 edge motifs vs 96 activation factors in ImageNet attribution graphs; median margin drop 0.86 vs 0.03 logits; usage-damage correlation median 0.35, teapot motif 0.80) to single language-model neurons: does edge consumption (how strongly downstream gates read a neuron's write) predict single-neuron ablation damage far better than node prominence (its write along the predicted token), and does it separate e568's bystander row (block 17, neuron 3002) from hubs?",
+ "design": "Pythia-410m, e568's prompts at the last position (160 real and 60 invented countries in 'The capital of X is', 30 real and 30 invented people in 'The birthplace of X is'). Every neuron of blocks 12, 17, 22 scored, mean over prompts, by: projection (WDD's activation-free row score, the state after the block centred over the prompts on the unit write direction), activation |a|, write |a| |w_out|, node_u (Gemini's |a (w_out . u)|, u the unembedding of the model's top-1 token), node_direct (the exact first-order direct effect through the final LayerNorm), edge (Gemini's sum over downstream neurons of |a (w_out . w_in,k) phi'(h_k)|), edge_ln (the same through each block's LayerNorm), hop (the signed one-hop sum weighted by each downstream neuron's gradient), atp (|a dlogp/da|). Damage: each neuron zeroed at the last position (prefix cached), drop in log p of the model's own top-1 token, absolute, mean over prompts (primary); KL divergence (secondary). Spearman across neurons, 1,000-sample bootstrap over neurons for differences.",
+ "hypotheses": {
+  "E1": "Gemini's claim at block 17: rho(edge_ln) - rho(node_direct) >= 0.10 with the bootstrap 95% CI above 0 (SUPPORTED); CI above 0 but the difference below 0.10 (NARROWED); otherwise REFUTED. The literal pair (edge vs node_u) reported alongside, and blocks 12 and 22.",
+  "E2": "the control Gemini's comparison lacks: at block 17, rho(edge_ln) - rho(write) >= 0.05 with the CI above 0, i.e. reading the downstream gates adds to the write's plain size",
+  "E3": "gradient x activation is the best predictor of the absolute log-probability drop at every block, with rho >= 0.95 (one neuron at one position is nearly linear)",
+  "E4": "the bystander: neuron 3002 of block 17 sits below the block's median on every activation-weighted score and on damage, and above the 95th percentile on the activation-free projection, over the invented-country prompts"
+ },
+ "predictions": {
+  "E1": "narrowed",
+  "E2": "refuted",
+  "E3": "confirmed",
+  "E4": "confirmed"
+ },
+ "smoke": {
+  "block17_rho_abs_dlogp": {
+   "projection": 0.03,
+   "activation": 0.78,
+   "write": 0.79,
+   "node_u": 0.66,
+   "node_direct": 0.71,
+   "edge": 0.8,
+   "edge_ln": 0.8,
+   "hop": 0.69,
+   "atp": 1.0
+  },
+  "edge_ln_minus_node_direct_ci": [
+   0.02,
+   0.15
+  ],
+  "edge_minus_node_u_ci": [
+   0.08,
+   0.21
+  ],
+  "edge_ln_minus_write_ci": [
+   -0.01,
+   0.03
+  ],
+  "bystander_percentiles_invented": {
+   "projection": 0.996,
+   "activation": 0.0,
+   "edge_ln": 0.0,
+   "damage": 0.0
+  }
+ }
+}
