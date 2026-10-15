@@ -935,3 +935,12 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The WDD-filtered junction, x_i plus the band's native chord fed to the second traversal (Gemini 4's idea 3a): never the best fix and worse than the rotated chord on average (e656).
 - Doubling the band's native chord as a better virtual repeat than scaling the raw increment (Gemini 4's idea 1): the raw increment reproduces the helpful repeat better (e657).
 - Read repulsion making the second traversal cancel the first in GELU models (Gemini 4's prediction B): Pythia-410m cancels no more than the gated models, and friendly blocks amplify (e658).
+
+## Session 144 kills (the relay chain and the clamp)
+- "negating the gender chain flips more than 0.60 of held-out gender items at a wikitext loss change under 0.01 nats (Gemini's test A)." (e659).
+- "negating the gender and generation chains together doubly flips at least 0.25 of the kinship items (Gemini's test B; e624's single rows 0.05)." (e659).
+- "the clamp moves at least 0.3 of the other pole's held-out gender items to the target while keeping at least 0.9 of the target pole's, forcing either pole." (e660).
+- "the chain rows' mean absolute activation on wikitext is under a tenth of that at the attribute words, for all three attributes (the self-gating premise)." (e660).
+- The WDD vote as the selector of the rows to edit within a block: the top activation-difference row of each chain block does as well; the vote's contribution is which blocks (e659).
+- Spreading an edit over the relay chain to make two attribute edits compose: two chains interfere as two rows did (e659).
+- A sign clamp as a two-way pole setter: it forces the unmarked pole and never the marked one (e660).

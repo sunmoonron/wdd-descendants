@@ -1,0 +1,42 @@
+{
+ "question": "Gemini 4's 'cheat table': does negating the whole relay chain of an attribute (the distinct MLP rows that win e622's vote at each level) flip it more than e622's single peak row, more than as many rows from the peak block, and more than a naive per-block selection; do two chains compose where two rows interfered (e624: 0.05); does the base model's chain transfer zero-shot to the instruct model; and does the chain rescue the 1.5B-Instruct gender edit that flipped nothing?",
+ "design": "e622's harness ported standalone (fr/es/de to English few-shot translation; discovery templates 0-2, held-out 3-4; items whose both poles the model translates), e622's vote_by_block for the chain (MLP atoms with share 0.25 or more), edits = write columns negated: single, chain, same-block top-M by activation difference, naive chain (top activation-difference row per chain block), five random chains; held-out flips and log-odds shifts, other attributes' flips, wikitext-2 loss; e624's kinship composition. Qwen2.5-0.5B, Qwen2.5-1.5B-Instruct, Qwen2.5-0.5B-Instruct with the base model's rows.",
+ "smoke": "Qwen2.5-0.5B, 3 pairs per language, template 2 held out: held-out flips single/chain/same-block/naive/random: gender 0.39/0.39/0.50/0.33/0.00, generation 0.12/0.12/0.06/0.06/0.00, number 0.10/0.50/0.30/0.50/0.00, polarity 0.00/0.17/0.00/0.17/0.00; chain loss change at most +0.009; both-flipped kinship items single 0.15, chains 0.15; the WDD chain's rows are the naive top row of their block in 2 to 4 of 4 to 6.",
+ "predictions": {
+  "H1": {
+   "text": "negating the gender chain flips more than 0.60 of held-out gender items at a wikitext loss change under 0.01 nats (Gemini's test A)",
+   "guess": 0.1
+  },
+  "H2": {
+   "text": "the chain flips more held-out items than the single row for at least three of the four attributes",
+   "guess": 0.35
+  },
+  "H3": {
+   "text": "the chain flips more held-out items than as many rows from the peak block for at least three of the four attributes (e470's law in weights)",
+   "guess": 0.5
+  },
+  "H4": {
+   "text": "the WDD chain flips more held-out items than the naive chain (the top activation-difference row of each chain block) for at least three of the four attributes",
+   "guess": 0.3
+  },
+  "H5": {
+   "text": "random chains flip at most 0.05 of held-out items for every attribute",
+   "guess": 0.85
+  },
+  "H6": {
+   "text": "negating the gender and generation chains together doubly flips at least 0.25 of the kinship items (Gemini's test B; e624's single rows 0.05)",
+   "guess": 0.15
+  },
+  "H7": {
+   "text": "on Qwen2.5-0.5B-Instruct the base model's gender chain flips at least half as many held-out gender items as on the base model (zero-shot transfer)",
+   "guess": 0.6
+  },
+  "H8": {
+   "text": "on Qwen2.5-1.5B-Instruct the gender chain flips at least 0.20 of held-out gender items, where e622's single row flipped none",
+   "guess": 0.35
+  }
+ },
+ "experiment": "e659_relay_chain",
+ "fixed_at": "2026-10-14T19:24:32",
+ "status": "fixed before the full runs, after smokes on Qwen2.5-0.5B recorded here (K5 suggested by the e660 smoke)"
+}

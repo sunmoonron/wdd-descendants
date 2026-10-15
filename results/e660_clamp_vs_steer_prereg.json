@@ -1,0 +1,30 @@
+{
+ "question": "Gemini 4's 'value freeze': does clamping the chain rows' activation signs to a target pole (a <- s|a|, every position) force the pole on target while doing less off-target damage than a mean-difference steering vector matched in on-target effect?",
+ "design": "Qwen2.5-0.5B; gender, generation, number chains from e659; each pole forced in turn; held-out items: share of the other pole moved and of the target pole kept; wikitext-2 KL from the unedited model and the she-minus-he logit change; steering vector = mean target-minus-other state at the peak block output, added at every position, scales 1/16 to 8, matched by on-target move; gate ratio = chain rows' mean |activation| on wikitext over at the words.",
+ "smoke": "gender forcing male: clamp moved 0.89 kept 1.00, KL 0.0018, she-he -0.17; steering matched at 2: moved 0.89 kept 0.78, KL 2.60, she-he -0.67; forcing female: clamp moved 0.00; number forcing singular: clamp 1.00 at KL 0.0076, steering 1.00 at KL 0.156; forcing plural: clamp 0.00; generation pole 0: clamp 0.25 KL 0.0004, steering 0.25 KL 0.042; gate ratios 0.12, 0.09, 0.23.",
+ "predictions": {
+  "K1": {
+   "text": "the clamp moves at least 0.3 of the other pole's held-out gender items to the target while keeping at least 0.9 of the target pole's, forcing either pole",
+   "guess": 0.15
+  },
+  "K2": {
+   "text": "wherever the clamp moves at least 0.2 of the items, the steering vector at the matched scale costs more wikitext KL than the clamp",
+   "guess": 0.85
+  },
+  "K3": {
+   "text": "for gender, wherever the clamp moves at least 0.2 of the items, the matched steering vector shifts the she-minus-he logit on neutral wikitext more than the clamp",
+   "guess": 0.8
+  },
+  "K4": {
+   "text": "the chain rows' mean absolute activation on wikitext is under a tenth of that at the attribute words, for all three attributes (the self-gating premise)",
+   "guess": 0.15
+  },
+  "K5": {
+   "text": "suggested by the smoke: the clamp works one way only, moving at least 0.2 of the items for one pole and under 0.1 for the other, for every attribute",
+   "guess": 0.5
+  }
+ },
+ "experiment": "e660_clamp_vs_steer",
+ "fixed_at": "2026-10-14T19:24:32",
+ "status": "fixed before the full runs, after smokes on Qwen2.5-0.5B recorded here (K5 suggested by the e660 smoke)"
+}

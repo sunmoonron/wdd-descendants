@@ -1013,6 +1013,19 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H777 Half or more of the first traversal's eight largest MLP writes per token are gone from the second's eight largest. → e658 → SUPPORTED.
 - H778 The second-to-first MLP output cosine is lower in Pythia-410m (GELU, read repulsion) than in both gated models. → e658 → REFUTED.
 - H779 The least damaging blocks show a higher second-to-first MLP output cosine than the most damaging ones. → e658 → SUPPORTED.
+- H780 Negating the gender chain flips more than 0.60 of held-out gender items at a wikitext loss change under 0.01 nats (Gemini's test A). → e659 → REFUTED.
+- H781 The chain flips more held-out items than the single row for at least three of the four attributes. → e659 → SUPPORTED.
+- H782 The chain flips more held-out items than as many rows from the peak block for at least three of the four attributes (e470's law in weights). → e659 → NARROWED (holds in Qwen2.5-0.5B-Instruct, Qwen2.5-1.5B-Instruct, not Qwen2.5-0.5B).
+- H783 The WDD chain flips more held-out items than the naive chain (the top activation-difference row of each chain block) for at least three of the four attributes. → e659 → NARROWED (holds in Qwen2.5-1.5B-Instruct, not Qwen2.5-0.5B, Qwen2.5-0.5B-Instruct).
+- H784 Random chains flip at most 0.05 of held-out items for every attribute. → e659 → SUPPORTED.
+- H785 Negating the gender and generation chains together doubly flips at least 0.25 of the kinship items (Gemini's test B; e624's single rows 0.05). → e659 → REFUTED.
+- H786 On Qwen2.5-0.5B-Instruct the base model's gender chain flips at least half as many held-out gender items as on the base model (zero-shot transfer). → e659 → SUPPORTED.
+- H787 On Qwen2.5-1.5B-Instruct the gender chain flips at least 0.20 of held-out gender items, where e622's single row flipped none. → e659 → SUPPORTED.
+- H788 The clamp moves at least 0.3 of the other pole's held-out gender items to the target while keeping at least 0.9 of the target pole's, forcing either pole. → e660 → REFUTED.
+- H789 Wherever the clamp moves at least 0.2 of the items, the steering vector at the matched scale costs more wikitext KL than the clamp. → e660 → SUPPORTED.
+- H790 For gender, wherever the clamp moves at least 0.2 of the items, the matched steering vector shifts the she-minus-he logit on neutral wikitext more than the clamp. → e660 → SUPPORTED.
+- H791 The chain rows' mean absolute activation on wikitext is under a tenth of that at the attribute words, for all three attributes (the self-gating premise). → e660 → REFUTED.
+- H792 Suggested by the smoke: the clamp works one way only, moving at least 0.2 of the items for one pole and under 0.1 for the other, for every attribute. → e660 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
