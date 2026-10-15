@@ -739,3 +739,35 @@ python e667b_cperp.py pythia410
 python e667b_cperp.py qwen05
 python e667b_cperp.py smollm135
 PYTHONPATH=../demo python e668_prewdd.py   # imports demo/wdd_demo.py
+python e669_frozen_seeds.py unfrozen 0
+python e669_frozen_seeds.py trained 0
+python e669_frozen_seeds.py permuted 0
+python e669_frozen_seeds.py random 0
+python e669_frozen_seeds.py random_normmatched 0
+python e669_frozen_seeds.py random_meanmatched 0
+python e669_frozen_seeds.py unfrozen 1
+python e669_frozen_seeds.py trained 1
+python e669_frozen_seeds.py permuted 1
+python e669_frozen_seeds.py random 1
+python e669_frozen_seeds.py random_normmatched 1
+python e669_frozen_seeds.py random_meanmatched 1
+python e669_frozen_seeds.py unfrozen 2
+python e669_frozen_seeds.py trained 2
+python e669_frozen_seeds.py permuted 2
+python e669_frozen_seeds.py random 2
+python e669_frozen_seeds.py random_normmatched 2
+python e669_frozen_seeds.py random_meanmatched 2
+python e669_frozen_seeds.py unfrozen 3
+python e669_frozen_seeds.py trained 3
+python e669_frozen_seeds.py permuted 3
+python e669_frozen_seeds.py random 3
+python e669_frozen_seeds.py random_normmatched 3
+python e669_frozen_seeds.py random_meanmatched 3
+python e669_frozen_seeds.py unfrozen 4
+python e669_frozen_seeds.py trained 4
+python e669_frozen_seeds.py permuted 4
+python e669_frozen_seeds.py random 4
+python e669_frozen_seeds.py random_normmatched 4
+python e669_frozen_seeds.py random_meanmatched 4
+PYTHONPATH=../demo python e670_phantom_echo.py
+PYTHONPATH=../demo python e671_signed_poles.py

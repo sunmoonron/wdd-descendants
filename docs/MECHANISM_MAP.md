@@ -214,6 +214,10 @@ Correction (session 149): the resolution above rested on e651's single-row consi
 
 On the least damaging blocks the second traversal largely repeats the first in all three models: its band increment points along the first's (cosine +0.31 to +0.65), each block's MLP output agrees with its first-traversal output (cosine +0.55 to +0.69, activations correlated +0.67 to +0.78), and the largest writes keep their sign (0.01 to 0.14 flip) while about half are replaced in the top eight (0.53 to 0.62, against 0.77 to 0.82 per loop in LOOPED.md's looped Ouro); on the most damaging blocks the second traversal computes something else (MLP output cosine +0.01 to +0.34, 0.84 to 0.95 of the top eight replaced, 0.17 to 0.43 sign flips), though the band increment still points along the first's in SmolLM2-135M's early blocks (+0.55 to +0.59) and is orthogonal to it in Qwen2.5-0.5B's last blocks (-0.06 to +0.07); Pythia-410m, the GELU model with read repulsion, cancels no more than the gated models (MLP output cosine over every block studied SmolLM2-135M +0.467, Pythia-410m +0.475, Qwen2.5-0.5B +0.320) (e658). The friendly repeat is e509's chord sparing run twice: the rows that wrote answer their own writes again, so re-adding the increment in one pass reproduces it (e657).
 
+## Signed poles (session 151)
+
+Split by sign the attribute rows are two-sided (16 of 16 opposite-signed poles; the male side of block 4 row 764 is its negative pole), and the SwiGLU double-negative leak dominates the top of 0.058 of SmolLM2-135M's neurons and 0.146 of Qwen2.5-0.5B's at about 33k positions, falling with more text (e671). Reading a SwiGLU row by absolute activation folds its two poles together; the attribute rows of area 50 are two-sided, with the unmarked form on the negative pole.
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

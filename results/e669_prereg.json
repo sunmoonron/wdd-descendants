@@ -1,0 +1,31 @@
+{
+ "experiment": "e669",
+ "session": 151,
+ "written": "2026-10-15 12:28:09",
+ "status": "pre-registered after a plumbing smoke (2000 steps, one seed of two conditions, no grokking yet), before the full runs",
+ "question": "Gemini 4 on e576: do frozen trained MLP write rows accelerate grokking in a fresh network, beyond what their (heavy-tailed) norms do, and was e576's permuted run (test 0.335 at 10000 steps against 0.048 for random) a real takeoff or a seed?",
+ "design": "e576's network and training (p = 113, a third of the pairs for training, full batch, AdamW lr 1e-3 weight decay 1, 10-step warmup); write rows frozen at the grokked run's rows (trained), at those rows permuted among neurons (permuted; the same experiment in distribution in a fresh network), at the fresh initialization (random, e576's), at random unit directions times the trained rows' norms (random_normmatched, Gemini's control), at random directions times the trained rows' mean norm (random_meanmatched); the unfrozen network as reference; five seeds each, each seed its own initialization; 20000 steps; test accuracy every 250 steps; a run that never reaches a threshold counts as 20000+.",
+ "hypotheses": {
+  "G1": "Gemini's claim: with the rows frozen at the trained directions (trained and permuted pooled, ten runs) the median step at which test accuracy first reaches 0.5 is at least 2000 steps earlier than with random directions at the trained norms (random_normmatched, five runs)",
+  "G2": "Gemini's reading of the permuted run: at least 6 of the 10 trained-direction runs reach test accuracy 0.9 within 20000 steps",
+  "G3": "the seed point: trained and permuted are one experiment: the difference between their median steps to test 0.5 is smaller than the larger of the two conditions' ranges across seeds",
+  "G4": "norm alone: random directions at the trained norms reach test 0.5 at a median at least 2000 steps earlier than e576's initial-scale random rows"
+ },
+ "predictions": {
+  "G1": "confirmed",
+  "G2": "refuted",
+  "G3": "confirmed",
+  "G4": "refuted"
+ },
+ "smoke": {
+  "permuted_seed0_2000_steps": {
+   "final_train": 1.0,
+   "final_test": 0.07
+  },
+  "random_normmatched_seed0_2000_steps": {
+   "final_train": 1.0,
+   "final_test": 0.02
+  },
+  "seconds_per_2000_steps": 37
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "experiment": "e670",
+ "session": 151,
+ "written": "2026-10-15 12:32:05",
+ "status": "pre-registered after the smoke, before the full run",
+ "question": "Gemini 4's phantom echo: at the prompt's final position, where the word's attribute rows are silent, does the final-position pole difference still project onto their write rows well enough to find them and to move the attribute when they are negated?",
+ "design": "Qwen2.5-0.5B, e622/e659 translation items via wdd_demo's harness, gender and number; rankings of every MLP row of blocks 0..L (63,232): the oracle (e664b's direct contribution at the word position p), the final position's own direct contribution, the phantom echo (|cosine| of each write with the final-position pole difference at block L, no activation), random rows; held-out flips and wikitext KL (12 windows) with the top 8 or 32 of each negated.",
+ "note": "The smoke uses the full item set, so its k = 8 flips, the silence ratios, the ranks and the overlaps are final and are recorded as observed; only the k = 32 results and the three random draws are pre-registered.",
+ "hypotheses": {
+  "E1": "Gemini's causal branch at k = 32: negating the echo's top 32 rows flips at least half as many held-out marked items as negating the oracle's top 32, on both attributes",
+  "E2": "the final position's own writers at k = 32: negating the top 32 by the final position's own direct contribution flips at least half as many held-out marked items as the oracle's top 32, on both attributes",
+  "E3": "the echo against random at k = 32: the echo's top 32 flip at least 0.1 more held-out marked items than the mean of three random draws of 32 rows, on both attributes"
+ },
+ "predictions": {
+  "E1": "split",
+  "E2": "refuted",
+  "E3": "split"
+ },
+ "observed_in_smoke": {
+  "gender": {
+   "silence_median": 0.003,
+   "oracle_top": [
+    4,
+    3019
+   ],
+   "oracle_top_rank_echo": 6,
+   "oracle_top_rank_end_local": 15577,
+   "jaccard32": {
+    "oracle_p": 1.0,
+    "end_local": 0.03,
+    "echo": 0.19,
+    "random0": 0.0
+   },
+   "flips_k8": {
+    "oracle_p_8": 0.59,
+    "end_local_8": 0.0,
+    "echo_8": 0.33,
+    "random0_8": 0.0
+   }
+  },
+  "number": {
+   "silence_median": 0.002,
+   "oracle_top": [
+    7,
+    870
+   ],
+   "oracle_top_rank_echo": 503,
+   "oracle_top_rank_end_local": 56926,
+   "jaccard32": {
+    "oracle_p": 1.0,
+    "end_local": 0.02,
+    "echo": 0.05,
+    "random0": 0.0
+   },
+   "flips_k8": {
+    "oracle_p_8": 0.88,
+    "end_local_8": 0.15,
+    "echo_8": 0.07,
+    "random0_8": 0.0
+   }
+  }
+ }
+}

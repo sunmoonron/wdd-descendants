@@ -1076,6 +1076,18 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H840 The gate read vector at k = 32: the top 32 by |cos| with the gate read vector flip at least half as many held-out marked items as the data-driven top 32 through the gate, on both targets. → e668 → SUPPORTED.
 - H841 Above random at k = 32: each data-free nominee set (up cos, raw, gate cos, OMP) flips at least 0.1 more held-out marked items than the mean of three random draws of 32 upstream rows, on both targets. → e668 → NARROWED (holds for gender, not number).
 - H842 OMP adds nothing at k = 32: OMP's flips are within 0.05 of the one-line up |cos| nominees' or below, on both targets. → e668 → SUPPORTED.
+- H843 Gemini's claim: with the rows frozen at the trained directions (trained and permuted pooled, ten runs) the median step at which test accuracy first reaches 0.5 is at least 2000 steps earlier than with random directions at the trained norms (random_normmatched, five runs). → e669 → SUPPORTED.
+- H844 Gemini's reading of the permuted run: at least 6 of the 10 trained-direction runs reach test accuracy 0.9 within 20000 steps. → e669 → SUPPORTED.
+- H845 The seed point: trained and permuted are one experiment: the difference between their median steps to test 0.5 is smaller than the larger of the two conditions' ranges across seeds. → e669 → SUPPORTED.
+- H846 Norm alone: random directions at the trained norms reach test 0.5 at a median at least 2000 steps earlier than e576's initial-scale random rows. → e669 → REFUTED.
+- H847 Gemini's causal branch at k = 32: negating the echo's top 32 rows flips at least half as many held-out marked items as negating the oracle's top 32, on both attributes. → e670 → NARROWED (holds for gender, not number).
+- H848 The final position's own writers at k = 32: negating the top 32 by the final position's own direct contribution flips at least half as many held-out marked items as the oracle's top 32, on both attributes. → e670 → REFUTED.
+- H849 The echo against random at k = 32: the echo's top 32 flip at least 0.1 more held-out marked items than the mean of three random draws of 32 rows, on both attributes. → e670 → SUPPORTED.
+- H850 Cammarata's figure at our scale: at about 33k wikitext positions, between 0.01 and 0.10 of MLP neurons are leak-dominated, in both Qwen2.5-0.5B and SmolLM2-135M. → e671 → NARROWED (holds for SmolLM2-135M, not Qwen2.5-0.5B).
+- H851 The leak-dominated share falls with more text: lower at about 33k positions than at about 4k, in both models. → e671 → SUPPORTED.
+- H852 Signed poles: at least half of the 16 top gender and number rows have opposite-signed mean activations on the two poles. → e671 → SUPPORTED.
+- H853 Generation is two-poled, not absent: at least 2 of its top 8 rows have opposite-signed pole means with the smaller at least a quarter of the larger. → e671 → SUPPORTED.
+- H854 The leak is small at the word: the median gate-closed share of the relay rows' |activation| is under 0.2 for all three attributes. → e671 → NARROWED (holds for gender, generation, not number).
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

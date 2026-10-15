@@ -992,3 +992,9 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The pre-MLP orthogonal write-phase check catches SmolLM2 row 776 and restores the blind reflection catch rate (Gemini 4): it flags 0.29 of high-use reflections against 0.33 for honest consistency and misses row 776 (e667b).
 - Weight alignment with a neuron's read vector predicts which upstream rows carry its attribute: Spearman -0.004 to 0.023 across all upstream rows (e668).
 - OMP over the upstream writes improves on the one-line alignment ranking for naming feeders: it does worse (e668).
+
+## Session 151 kills (frozen rows, the echo, signed poles)
+- "norm alone: random directions at the trained norms reach test 0.5 at a median at least 2000 steps earlier than e576's initial-scale random rows." (e669).
+- "the final position's own writers at k = 32: negating the top 32 by the final position's own direct contribution flips at least half as many held-out marked items as the oracle's top 32, on both attributes." (e670).
+- The attribute relay rows as one-pole detectors whose unmarked form is silent (e661's reading under absolute activation): the unmarked form usually sits on the same rows' negative pole (e671).
+- The final position's own active rows carry the word's attribute (the alternative to the echo): they flip almost nothing (e670).

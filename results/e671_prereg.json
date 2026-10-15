@@ -1,0 +1,149 @@
+{
+ "experiment": "e671",
+ "session": 151,
+ "written": "2026-10-15 14:56:19",
+ "status": "pre-registered after a smoke (French items only, top 4 rows; SmolLM2 on 4 windows), before the full run",
+ "question": "Cammarata 2026 read with e661: do the attribute relay rows have signed two-pole structure that e661's |activation| hid, is generation two-poled rather than absent, and how common is the SwiGLU gate-closed double-negative leak at the top of a neuron's positive activations (the essay: about 4% of Qwen3 neurons)?",
+ "design": "Part A: Qwen2.5-0.5B, e622/e659 translation items (French, Spanish, German) via wdd_demo's harness; the top 8 direct-contribution rows of gender, number and generation; each pole's signed mean activation at the word, the regime shares (gate open positive, gate open negative, gate closed positive = double negative, gate closed negative), the gate-closed share of |a|. Part B: Qwen2.5-0.5B and SmolLM2-135M, every MLP neuron, wikitext-2 windows of 256 tokens (128 windows, about 33k positions; a snapshot after 16 windows); each neuron's top-20 positive and negative activations and their regimes; a neuron is leak-dominated when more than half of its top-20 positive activations are gate-closed.",
+ "hypotheses": {
+  "S1": "Cammarata's figure at our scale: at about 33k wikitext positions, between 0.01 and 0.10 of MLP neurons are leak-dominated, in both Qwen2.5-0.5B and SmolLM2-135M",
+  "S2": "the leak-dominated share falls with more text: lower at about 33k positions than at about 4k, in both models",
+  "S3": "signed poles: at least half of the 16 top gender and number rows have opposite-signed mean activations on the two poles",
+  "S4": "generation is two-poled, not absent: at least 2 of its top 8 rows have opposite-signed pole means with the smaller at least a quarter of the larger",
+  "S5": "the leak is small at the word: the median gate-closed share of the relay rows' |activation| is under 0.2 for all three attributes"
+ },
+ "predictions": {
+  "S1": "refuted",
+  "S2": "confirmed",
+  "S3": "confirmed",
+  "S4": "confirmed",
+  "S5": "confirmed"
+ },
+ "smoke": {
+  "partA": {
+   "gender": {
+    "rows": [
+     [
+      [
+       4,
+       3019
+      ],
+      4.58,
+      -0.3
+     ],
+     [
+      [
+       4,
+       764
+      ],
+      0.28,
+      -2.25
+     ],
+     [
+      [
+       7,
+       3217
+      ],
+      -1.12,
+      0.35
+     ],
+     [
+      [
+       5,
+       859
+      ],
+      0.94,
+      -0.1
+     ]
+    ],
+    "n_two_pole": 1,
+    "n_opposite_sign": 4,
+    "gate_closed_mass_median": 0.097
+   },
+   "number": {
+    "rows": [
+     [
+      [
+       9,
+       4488
+      ],
+      -3.1,
+      0.03
+     ],
+     [
+      [
+       7,
+       870
+      ],
+      2.17,
+      -0.29
+     ],
+     [
+      [
+       5,
+       2883
+      ],
+      1.31,
+      -0.43
+     ],
+     [
+      [
+       6,
+       3717
+      ],
+      0.71,
+      -0.71
+     ]
+    ],
+    "n_two_pole": 2,
+    "n_opposite_sign": 4,
+    "gate_closed_mass_median": 0.164
+   },
+   "generation": {
+    "rows": [
+     [
+      [
+       4,
+       599
+      ],
+      3.77,
+      -0.16
+     ],
+     [
+      [
+       3,
+       2192
+      ],
+      -0.39,
+      -3.6
+     ],
+     [
+      [
+       7,
+       278
+      ],
+      1.16,
+      -0.8
+     ],
+     [
+      [
+       3,
+       2256
+      ],
+      3.84,
+      0.75
+     ]
+    ],
+    "n_two_pole": 1,
+    "n_opposite_sign": 2,
+    "gate_closed_mass_median": 0.004
+   }
+  },
+  "partB": {
+   "smollm135": {
+    "share_leak_dominated": 0.327,
+    "positions": 1020
+   }
+  }
+ }
+}
