@@ -984,3 +984,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - No single-row edit in e651's battery both changed behaviour and evaded every detector (e651): with the tampered model's own states, SmolLM2-135M's row 776 (KL 0.22 to 0.30) evades all three (e667).
 - The single-row detector triangle closes the reflection blind spot and is robust to distribution across co-firing rows (e651, e652c's reading): the consistency catch it rested on was overstated by clean-state scoring; honest, it catches about a third of high-use reflections (e667).
 - Gemini 4's demo claim that no behaviour-carrying single-row flip escapes the three blind detectors (session 149's demo, e667).
+
+## Session 150 kills (Gemini's weight-only constructions)
+- "Gemini's claim: pooled over the four models, C_perp (raw, two-sided) flags the high-use reflections in at least 0.6 of rows, against 0.33 for e667's honest consistency." (e667b).
+- "Gemini's case: C_perp (raw, two-sided) flags SmolLM2-135M row 776's reflection, which evades all three detectors in e667." (e667b).
+- "why it can fail: the high-use rows' clean C_perp sits inside the bulk, median clean percentile between 0.2 and 0.8 on every model, so the exact sign flip lands inside the bulk as well." (e667b).
+- The pre-MLP orthogonal write-phase check catches SmolLM2 row 776 and restores the blind reflection catch rate (Gemini 4): it flags 0.29 of high-use reflections against 0.33 for honest consistency and misses row 776 (e667b).
+- Weight alignment with a neuron's read vector predicts which upstream rows carry its attribute: Spearman -0.004 to 0.023 across all upstream rows (e668).
+- OMP over the upstream writes improves on the one-line alignment ranking for naming feeders: it does worse (e668).

@@ -1,0 +1,65 @@
+{
+ "experiment": "e667b",
+ "session": 150,
+ "written": "2026-10-15 10:46:38",
+ "status": "pre-registered after the smoke, before the full runs",
+ "question": "Gemini 4: does a pre-MLP orthogonal write-phase check, C_perp = cos(w - (w.u)u, mean pre-MLP residual over the row's top-32 firing positions), catch the norm-and-read-cosine-preserving reflection that evades the three blind detectors (e667), including SmolLM2-135M row 776?",
+ "design": "e651's battery unchanged (Pythia-160m, Pythia-410m, Qwen2.5-0.5B, SmolLM2-135M; block 4; the same corpus, rows (seed 651) and edits double, negate, reflect); the pre-MLP residual is the block's output minus its MLP output (block input plus attention); u is the unit read row (dense_h_to_4h or up_proj), the reflection's own axis; every edit scored blind on the tampered model by C_perp raw and with the corpus mean removed, flagged two-sided outside the 0.5th-99.5th percentile of the tampered model's own distribution (1% budget, the defender not knowing which way a flip goes) and one-sided below the 1st percentile; e667's own-state consistency alongside.",
+ "hypotheses": {
+  "P1": "Gemini's claim: pooled over the four models, C_perp (raw, two-sided) flags the high-use reflections in at least 0.6 of rows, against 0.33 for e667's honest consistency",
+  "P2": "Gemini's case: C_perp (raw, two-sided) flags SmolLM2-135M row 776's reflection, which evades all three detectors in e667",
+  "P3": "the analytic part: every edit leaves the pre-MLP residual unchanged (tolerance 1e-3) and the other rows' C_perp unchanged (1e-3), and negation and reflection negate the edited row's C_perp exactly (1e-3)",
+  "P4": "why it can fail: the high-use rows' clean C_perp sits inside the bulk, median clean percentile between 0.2 and 0.8 on every model, so the exact sign flip lands inside the bulk as well"
+ },
+ "predictions": {
+  "P1": "refuted",
+  "P2": "confirmed",
+  "P3": "confirmed",
+  "P4": "confirmed"
+ },
+ "smoke": {
+  "model": "pythia160, 3 rows per kind, 4 windows",
+  "clean": {
+   "raw_median": 0.007401581853628159,
+   "raw_p005": -0.1900102198123932,
+   "raw_p995": 0.22518578171730042,
+   "cent_median": 0.016636379063129425,
+   "cent_p005": -0.16570013761520386,
+   "cent_p995": 0.16913749277591705
+  },
+  "high_use_reflect": {
+   "kl_effect": 0.02158666025691976,
+   "flag2_raw": 0.3333333333333333,
+   "flag1_raw": 0.3333333333333333,
+   "flag2_cent": 0.0,
+   "flag1_cent": 0.0,
+   "flag_cons_own": 0.3333333333333333,
+   "c_raw": -0.09389951080083847,
+   "c_raw_clean": 0.09389952818552653,
+   "c_raw_clean_pct": 0.6835937425494194,
+   "c_cent": -0.012143930730720362,
+   "c_cent_clean": 0.012143971088031927,
+   "n": 3
+  },
+  "high_use_negate": {
+   "kl_effect": 0.025350167804087203,
+   "flag2_raw": 0.3333333333333333,
+   "flag1_raw": 0.3333333333333333,
+   "flag2_cent": 0.0,
+   "flag1_cent": 0.0,
+   "flag_cons_own": 0.3333333333333333,
+   "c_raw": -0.09389954060316086,
+   "c_raw_clean": 0.09389952818552653,
+   "c_raw_clean_pct": 0.6835937425494194,
+   "c_cent": -0.012143971398472786,
+   "c_cent_clean": 0.012143971088031927,
+   "n": 3
+  },
+  "exact": {
+   "xpre_unchanged": true,
+   "others_max_change": 5.960464477539063e-08,
+   "flip_exact": 6.705522537231445e-08
+  }
+ },
+ "note": "The first smoke scored the edited row with an alias of the live weight (detach().float() on a float32 tensor does not copy), restored before scoring, so the edit was invisible; fixed with clone() before these smoke numbers. e667 computed its statistics before restoring and is unaffected."
+}

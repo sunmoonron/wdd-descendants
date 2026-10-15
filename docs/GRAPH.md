@@ -1068,6 +1068,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H832 The artifact: pooled over the four models, consistency with the edited model's own states flags high-use reflections at most half as often as with the clean states. → e667 → REFUTED.
 - H833 The defender's reading fails: with the edited model's own states, high-use reflections are flagged by some detector in fewer than half of the rows on at least three of the four models. → e667 → REFUTED.
 - H834 The analytic premise: the block's MLP activations are unchanged by an edit of its own write (all edits, tolerance 1e-4), so own-state consistency compares the new write with the state minus the old write. → e667 → SUPPORTED.
+- H835 Gemini's claim: pooled over the four models, C_perp (raw, two-sided) flags the high-use reflections in at least 0.6 of rows, against 0.33 for e667's honest consistency. → e667b → REFUTED.
+- H836 Gemini's case: C_perp (raw, two-sided) flags SmolLM2-135M row 776's reflection, which evades all three detectors in e667. → e667b → REFUTED.
+- H837 The analytic part: every edit leaves the pre-MLP residual unchanged (tolerance 1e-3) and the other rows' C_perp unchanged (1e-3), and negation and reflection negate the edited row's C_perp exactly (1e-3). → e667b → SUPPORTED.
+- H838 Why it can fail: the high-use rows' clean C_perp sits inside the bulk, median clean percentile between 0.2 and 0.8 on every model, so the exact sign flip lands inside the bulk as well. → e667b → REFUTED.
+- H839 Gemini's one-line baseline at k = 32: negating the top 32 upstream rows by |cos| with the target's up read vector, the target untouched, flips at least half as many held-out marked items as the data-driven top 32 through the up path, on both targets. → e668 → NARROWED (holds for number, not gender).
+- H840 The gate read vector at k = 32: the top 32 by |cos| with the gate read vector flip at least half as many held-out marked items as the data-driven top 32 through the gate, on both targets. → e668 → SUPPORTED.
+- H841 Above random at k = 32: each data-free nominee set (up cos, raw, gate cos, OMP) flips at least 0.1 more held-out marked items than the mean of three random draws of 32 upstream rows, on both targets. → e668 → NARROWED (holds for gender, not number).
+- H842 OMP adds nothing at k = 32: OMP's flips are within 0.05 of the one-line up |cos| nominees' or below, on both targets. → e668 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
