@@ -1,0 +1,213 @@
+
+  WDD in the weights: a live demo. Every number below is measured now, on this machine.
+  device cuda:0; acts [1, 2, 3]; rows per edit k=8; non-interactive
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  ACT 1  find the gender and number rows in a raw checkpoint, and flip them in the weights
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Qwen2.5-0.5B, straight from Hugging Face: no probe, no autoencoder, no gradient steps. The items
+  are few-shot translations into English (French, Spanish, German), e.g. 'French: reine  English:
+  ___'. Rows are chosen on templates 0-2; translation effects are measured on held-out templates
+  3-4, free text on separate sentences.
+  loaded Qwen/Qwen2.5-0.5B: 24 blocks, 4864 MLP rows per block, 116,736 rows in all (3s)
+
+── 1. the scan ─────────────────────────────────────────────────────────────────────────────────────
+  468 translation items the model gets right on both poles (gender 286, number 182); one forward
+  pass collects every MLP activation and residual state at the word; the ranking is one matrix
+  product per block over 63,232 rows. Scan time 4.4s.
+    gender: top 8 rows by direct contribution (female minus male)
+    (block 4, row 3019)  (block 7, row 3217)  (block 4, row 764)  (block 6, row 4837)
+    (block 5, row 859)  (block 9, row 2916)  (block 5, row 2276)  (block 3, row 1814)
+    number: top 8 rows by direct contribution (plural minus singular)
+    (block 7, row 870)  (block 9, row 4488)  (block 5, row 2883)  (block 6, row 3717)
+    (block 6, row 2266)  (block 12, row 1394)  (block 11, row 4348)  (block 7, row 727)
+
+── 2. what the rows read: one pole or both? ────────────────────────────────────────────────────────
+  The mean |activation| of each row at the word, on items of each pole (discovery items). A row that
+  fires for one pole and stays quieter for the other is a one-pole detector.
+    gender:   male = cyan, female = magenta
+    b4  r3019  ███·························  0.45   ████████████████████████████  4.41
+    b7  r3217  ██··························  0.34   ██████████··················  1.55
+    b4  r764   ██████████··················  1.61   ██··························  0.36
+    b6  r4837  ███·························  0.40   █████·······················  0.75
+    b5  r859   █···························  0.14   ████························  0.70
+    b9  r2916  ███·························  0.47   █████████···················  1.45
+    b5  r2276  ██··························  0.32   ████························  0.67
+    b3  r1814  ██··························  0.25   ███·························  0.42
+    summed over these rows, female / male = 2.6x; 1 of 8 rows fire more for male
+    number:   singular = cyan, plural = magenta
+    b7  r870   ███·························  0.30   █████████████████████·······  1.91
+    b9  r4488  █···························  0.05   ████████████████████████████  2.53
+    b5  r2883  █████·······················  0.42   █████████████████···········  1.50
+    b6  r3717  ████████····················  0.70   ████████····················  0.68
+    b6  r2266  ████························  0.37   ████████····················  0.75
+    b12 r1394  ███·························  0.28   ███████████·················  0.98
+    b11 r4348  ██··························  0.20   █████████···················  0.84
+    b7  r727   █████·······················  0.43   ████························  0.35
+    summed over these rows, plural / singular = 3.5x; 2 of 8 rows fire more for singular
+
+── 3. the edit: one line of PyTorch on the weights ─────────────────────────────────────────────────
+  >>> for b, j in gender_rows: model.model.layers[b].mlp.down_proj.weight.data[:, j] *= -1   # 8 columns of 116,736
+    held-out female items now answered male:  58.6%   male items now answered female:   5.2%   (unedited   0.0%,   0.0%)
+    wikitext loss 3.2236 → 3.2275 nats (+0.0039), KL from the unedited model 0.0052
+      French   'reine' → English: queen  ⟶  king   (flipped)
+      Spanish  'reina' → English: queen  ⟶  king   (flipped)
+      German   'Königin' → English: queen  ⟶  king   (flipped)
+      French   'mère' → English: mother  ⟶  mother   (unchanged)
+  >>> for b, j in number_rows: model.model.layers[b].mlp.down_proj.weight.data[:, j] *= -1   # 8 columns of 116,736
+    held-out plural items now answered singular:  87.5%   singular items now answered plural:   0.0%   (unedited   0.0%,   0.0%)
+    wikitext loss 3.2236 → 3.2292 nats (+0.0056), KL from the unedited model 0.0032
+      French   'chats' → English: cats  ⟶  cat   (flipped)
+      Spanish  'gatos' → English: cats  ⟶  cat   (flipped)
+      German   'Katzen' → English: cats  ⟶  cat   (flipped)
+      French   'chiens' → English: dogs  ⟶  dogs   (unchanged)
+  Note the direction: the edit strips the marked pole (female, plural) far more than it creates it.
+  The reverse flips stay small.
+
+── 4. the dose: how many rows? ─────────────────────────────────────────────────────────────────────
+      rows negated     gender: female→male / male→female     number: plural→singular / singular→plural     KL (gender, number)
+                 1                        51.7% /   3.4%                                37.5% /   0.0%      0.0009, 0.0001
+                 8                        58.6% /   5.2%                                87.5% /   0.0%      0.0052, 0.0032
+                32                        50.0% /  12.1%                                97.5% /   0.0%      0.0177, 0.0239
+
+── 5. free text in four languages (the rows were found on translations only) ───────────────────────
+  agreement with the subject's gender at the next word, before → after negating the 8 gender rows
+                                       male subjects           female subjects
+    English pronouns                           96.8% →  90.2%                     95.5% →  59.7%
+    French adjectives                          96.6% →  84.5%                     90.1% →  24.9%
+    Spanish adjectives                         93.0% →  94.4%                     92.1% →  12.4%
+    German pronouns                            87.3% →  73.7%                     79.1% →  31.6%
+    The queen looked at the letter, and then
+      unedited:  at the man.  Given the context: How would you describe the
+      edited:    he looked at the letter again.  Given the context: How would
+    Die Königin sagte, dass
+      unedited:  sie sich nicht in die Knie setzen würde, wenn sie sich nicht
+      edited:    er die Krieg gegen die Kaisern nicht abschließen
+
+── 6. the same items, with the standard tools ──────────────────────────────────────────────────────
+  Directional ablation (Arditi et al. 2024): remove the mean female-minus-male direction from every
+  block output 0..L at every token. A steering vector: add the male-minus-female mean state at the
+  most consistent block, at every token, scaled.
+    method                                     female→male   male→female   wikitext KL
+    negate 8 rows (in the weights)                   58.6%          5.2%        0.0052
+    ablate the direction, every block                89.7%          0.0%        0.0097
+    steering vector x1 at block 6                    98.3%          0.0%        0.1157
+    steering vector x2 at block 6                   100.0%          0.0%        0.7480
+    steering vector x4 at block 6                    37.9%         62.1%        2.9020
+  Read it as a trade-off: the row edit moves 58.6% at KL 0.0052; ablating the direction moves 89.7%
+  at 1.9x that KL; the first steering scale that matches the ablation (steering vector x1) costs 22x
+  the row edit's KL; at the largest scale the steering vector breaks the model.
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  ACT 2  the same addresses in a different model
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Qwen2.5-Coder-0.5B-Instruct: the same architecture, continued-pretrained on code (5.5T tokens per
+  the Qwen2.5-Coder report) and instruction-tuned. Below, the base model's row addresses and
+  residual direction are applied without running a single Coder prompt to choose them; the Coder
+  model's own scan is shown for comparison.
+  loaded Qwen/Qwen2.5-Coder-0.5B-Instruct: 24 blocks, 4864 MLP rows per block, 116,736 rows in all
+  (43s)
+  360 items the Coder model gets right (gender 196, number 164) (49s)
+
+── 1. how far did the weights move? ────────────────────────────────────────────────────────────────
+    gender  the 8 base rows' write columns: cosine with the base model's 0.47 to 0.69 (median 0.50); the gender direction in the residual stream: 0.59 to 0.83 across blocks 1..12
+    number  the 8 base rows' write columns: cosine with the base model's 0.70 to 0.78 (median 0.74); the number direction in the residual stream: 0.72 to 0.87 across blocks 1..12
+    every MLP write column of blocks 0..12: median cosine with the base model 0.44. The rows
+    rotated; the attribute's direction mostly did not.
+
+── 2. edit with the base model's addresses and direction, zero-shot ────────────────────────────────
+    edit                                                   gender: female→male   number: plural→singular  KL (gender)
+    negate the base model rows (k=8) / Coder own rows           60.0% /  64.0%            80.0% /  83.3%       0.0033
+    negate the base model rows (k=32) / Coder own rows          36.0% /  36.0%           100.0% / 100.0%       0.0168
+    ablate the base model direction / Coder own direction        88.0% /  68.0%           100.0% /  96.7%       0.0067
+    More rows is not always more: gender peaks at a few rows and falls with 32 (e662 saw the same
+    overshoot).
+    Coder-Instruct, base rows negated: The queen looked at the letter, and then he said, "I am the queen of the land." The king
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  ACT 3  tamper with one row, then audit the model blind
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Pythia-410m, block 4 (4,096 MLP rows). Someone edits one write row in place. The auditor gets only
+  the tampered weights and 16 ordinary wikitext windows: no original checkpoint, no diff. Three
+  detectors (e623, e648b, e651): the column's norm (z-score > 3), the read-write cosine (above the
+  block's 99th percentile; in GELU models most rows sit well below zero), and activation consistency
+  (does the write agree with the states where its neuron fires, minus its own write; below the 1st
+  percentile).
+  loaded EleutherAI/pythia-410m (59s)
+  block 4 unedited: read-write cosine median -0.28 (76% of rows below -0.1). The tamper targets come
+  from the 40 most-used rows (the top 1% by mean |activation|) (61s)
+  the secret row: 3947 (mean |activation| 1.6x the block median). Its read-write cosine before
+  tampering -0.69, consistency +0.09.
+
+── tamper: scale ───────────────────────────────────────────────────────────────────────────────────
+  >>> W[:, 3947] *= 2
+  ground truth (the auditor never sees this): next-token KL at the row's 32 top-firing positions
+  0.0001 nats
+    norm z-score          +10.72   rank    2 of 4096   FLAGGED 
+    read-write cosine      -0.69   rank 4072 of 4096    quiet     (99th percentile +0.28)
+    consistency            +0.09   rank 3441 of 4096    quiet     (1st percentile -0.21)
+    consistency as e651 computed it (with the clean model's states, which a blind auditor does not have): +0.05, rank 2901, quiet
+
+── tamper: negate ──────────────────────────────────────────────────────────────────────────────────
+  >>> W[:, 3947] *= -1
+  ground truth (the auditor never sees this): next-token KL at the row's 32 top-firing positions
+  0.0005 nats
+    norm z-score           -0.24   rank 2959 of 4096    quiet  
+    read-write cosine      +0.69   rank    1 of 4096   FLAGGED    (99th percentile +0.29)
+    consistency            -0.09   rank  650 of 4096    quiet     (1st percentile -0.22)
+    consistency as e651 computed it (with the clean model's states, which a blind auditor does not have): -0.18, rank 89, quiet
+
+── tamper: reflect ─────────────────────────────────────────────────────────────────────────────────
+  >>> u = read_row[3947] / norm;  W[:, 3947] = -w + 2 (w·u) u      # norm and read-write cosine unchanged
+  ground truth (the auditor never sees this): next-token KL at the row's 32 top-firing positions
+  0.0002 nats
+    norm z-score           -0.24   rank 2959 of 4096    quiet  
+    read-write cosine      -0.69   rank 4072 of 4096    quiet     (99th percentile +0.28)
+    consistency            -0.21   rank   44 of 4096    quiet     (1st percentile -0.22)
+    consistency as e651 computed it (with the clean model's states, which a blind auditor does not have): -0.26, rank 14, flagged
+
+── the audit, summed up ────────────────────────────────────────────────────────────────────────────
+    tamper      KL at its positions      norm  read-write  consistency   caught   e651-style consistency
+    scale                    0.0001       yes           -            -               YES                        -
+    negate                   0.0005         -         yes            -               YES                        -
+    reflect                  0.0002         -           -            -                no                      yes
+
+── the catch rate: 12 random rows of the 40 most-used, each tampered three ways ────────────────────
+    tamper      mean KL at its positions    norm  read-write  consistency    any   e651-style consistency
+    scale                         0.0010    1.00        0.00         0.00   1.00                     0.00
+    negate                        0.0048    0.00        0.67         0.17   0.75                     0.25
+    reflect                       0.0035    0.00        0.00         0.17   0.17                     0.33
+  Two things to read off: a single-row tamper barely moves this model (mean KL 0.0048 nats or less
+  at the row's own top positions), and the reflection mostly slips past all three detectors. e651
+  reported consistency catching 0.67-0.80 of high-use reflections in the Pythia models; it scored
+  the edited weights against the clean model's states, which a blind auditor does not have. Compare
+  the last two columns.
+
+── the pasted demo script's claims, checked against this run ───────────────────────────────────────
+  • Act 1: plurals translate to singulars 96-100% (e662)
+      measured: 87.5% with 8 rows, 97.5% with 32
+      verdict:  holds
+  • Act 1: feminine agreement flips to masculine in EN/FR/ES/DE
+      measured: female-subject agreement after 8 rows: en 59.7%, fr 24.9%, es 12.4%, de 31.6%
+      verdict:  partly
+  • Act 1: the edit costs +0.0003 nats
+      measured: 8 gender rows +0.0039 nats on wikitext; 1 row -0.0001 (the +0.0003 was one row on the Pile, e624)
+      verdict:  partly
+  • Act 1: marked rows blaze 3-6x, unmarked dead quiet
+      measured: female/male 2.6x, plural/singular 3.5x over the top 8; 1 gender and 2 number rows fire more for the unmarked pole
+      verdict:  partly
+  • Act 1: the sign clamp is 4,690x cleaner than steering (e660)
+      measured: the clamp is not run here; a steering vector that matches the direction ablation costs 22x the 8-row edit's KL
+      verdict:  not tested
+  • Act 2: base addresses flip 100% of plurals and 56-88% of feminine nouns in Coder-Instruct
+      measured: plurals 80.0% (8 rows), 100.0% (32); female 60.0% (8 rows), 36.0% (32), 88.0% by ablating the base direction
+      verdict:  holds
+  • Act 2: rows rotate to 0.44-0.46 while the axis stays at 0.79-0.89
+      measured: all rows median 0.44, the base rows 0.50 (gender) and 0.74 (number); the directions 0.59 to 0.87 across blocks
+      verdict:  partly
+  • Act 3: scale → norm, negate → read-write, reflect → consistency; no single-row flip escapes
+      measured: caught: scale 1.00, negate 0.75, reflect 0.17 (reflect by consistency 0.17; e651-style 0.33)
+      verdict:  does not hold
+  measured numbers written to results/wdd_demo_run.json
+
+  done in 106s

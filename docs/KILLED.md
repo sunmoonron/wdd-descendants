@@ -977,3 +977,10 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "Gemini's second branch: the selectivity's or the direct write's top-10 share comes within 0.05 of the class ratio's, on all three seeds." (e666).
 - The identification of the future recruit given its class is the class ratio's alone (e632, session 127): two checkpoints before recruitment the activation side names it too, and leads on a class defined by firing (e666).
 - WDD's state projection is strictly necessary to identify the recruit before its own activation catches up (Gemini 4): the class ratio's lead over selectivity and the direct write is the home advantage of a class defined by the row's own projection (e666).
+
+## Session 149 kills (the detectors' coverage rescored)
+- "the artifact: pooled over the four models, consistency with the edited model's own states flags high-use reflections at most half as often as with the clean states." (e667).
+- "the defender's reading fails: with the edited model's own states, high-use reflections are flagged by some detector in fewer than half of the rows on at least three of the four models." (e667).
+- No single-row edit in e651's battery both changed behaviour and evaded every detector (e651): with the tampered model's own states, SmolLM2-135M's row 776 (KL 0.22 to 0.30) evades all three (e667).
+- The single-row detector triangle closes the reflection blind spot and is robust to distribution across co-firing rows (e651, e652c's reading): the consistency catch it rested on was overstated by clean-state scoring; honest, it catches about a third of high-use reflections (e667).
+- Gemini 4's demo claim that no behaviour-carrying single-row flip escapes the three blind detectors (session 149's demo, e667).

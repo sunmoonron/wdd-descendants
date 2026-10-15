@@ -2,7 +2,7 @@
 
 This list was compiled when the session-55 box was retired. It gathers what the program left open: threads opened by sessions 53-55, the causal-abstraction test deferred in session 52, the unrun steps of [`VISION.md`](VISION.md)'s roadmap, and old items still open in [`GRAPH.md`](GRAPH.md). Proposals from the relayed reviews that repeat atlas results are not listed; each session's triage in [`FINDINGS.md`](FINDINGS.md) says why.
 
-Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e667. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
+Each item gives the question, where it comes from, a design at the program's usual scale (a few minutes on one A100 unless marked), the controls, and what would count as an answer. The ids B1-B16 are backlog labels, not experiment numbers; the next experiment is e668. B1 and B3 were run in session 56 (e476, e477); their entries say what came out.
 
 ## Priority 1: threads opened by sessions 53-55
 
@@ -285,3 +285,5 @@ Each item gives the question, where it comes from, a design at the program's usu
 **Session 147 (e665b):** e665's transfer is subspace preservation: the attribute's residual direction keeps cosine 0.79 to 0.89 with the base while its rows move to 0.55 to 0.80, so transferred directions (ablation, steering) work as well as transferred row indices. The attribute-editing thread (areas 50 and 61) closes on known mechanisms.
 
 **Session 148 (e666):** given its class, the eventual row is named two checkpoints before recruitment by its activation selectivity and its direct write too, not only by the class ratio (median ranks 2 to 4, 1 to 3 and 1); the ratio's top-ten lead (0.77 to 0.84 against 0.55 to 0.59 and 0.57 to 0.65) is explained by home advantage, since on a class defined by the row's firing selectivity leads (0.79 to 0.88 against 0.52 to 0.62), so the identification is not the projection's alone. The provenance core stands as geometry visible to any localizer given the class, not as something only the projection sees.
+
+**Session 149 (e667, the live demo):** e651 rescored with the tampered model's own states (e667): consistency catches 0.33 of high-use reflections pooled, not 0.52 (Pythia-410m 0.40 not 0.80, SmolLM2-135M 0.50 not 1.00), and the battery's most behaviour-carrying edit (SmolLM2-135M row 776, KL 0.22 to 0.30) evades all three detectors; e651's clean-state scoring overstated its coverage. A runnable demo of three results on raw weights is in `demo/` (every number measured on the spot, with a check of the pasted script's claims at the end).

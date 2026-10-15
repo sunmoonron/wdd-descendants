@@ -1,0 +1,50 @@
+{
+ "experiment": "e667",
+ "session": 149,
+ "written": "2026-10-15 09:32:44",
+ "status": "pre-registered after the smoke, before the full runs",
+ "question": "Is e651's coverage of the norm-and-cosine-preserving reflection by the activation-consistency detector an artifact of scoring the edited weights against the clean model's states (X0, A0 computed once before any edit), which a blind auditor does not have?",
+ "design": "e651's battery unchanged (Pythia-160m, Pythia-410m, Qwen2.5-0.5B, SmolLM2-135M; block 4; the same corpus, rows (seed 651), edits and clean-model thresholds); every edit scored by consistency twice: with the clean states (e651's, reproduced) and with the edited model's own states, its threshold the 1st percentile of the edited model's own distribution. Norm z-score and read-write cosine need no states and are unchanged.",
+ "hypotheses": {
+  "C1": "reproduction: with the clean states, the consistency flag rate on high-use reflections is within 0.15 of e651's on every model (0.67, 0.80, 0.12, 1.00)",
+  "C2": "the artifact: pooled over the four models, consistency with the edited model's own states flags high-use reflections at most half as often as with the clean states",
+  "C3": "the defender's reading fails: with the edited model's own states, high-use reflections are flagged by some detector in fewer than half of the rows on at least three of the four models",
+  "C4": "the analytic premise: the block's MLP activations are unchanged by an edit of its own write (all edits, tolerance 1e-4), so own-state consistency compares the new write with the state minus the old write"
+ },
+ "predictions": {
+  "C1": "confirmed",
+  "C2": "confirmed",
+  "C3": "confirmed",
+  "C4": "confirmed"
+ },
+ "smoke": {
+  "model": "pythia160, 3 rows per kind, 4 windows",
+  "high_use_reflect": {
+   "kl_effect": 0.021591072320006788,
+   "flag_any": 0.6666666666666666,
+   "flag_any_own": 0.3333333333333333,
+   "flag_norm": 0.0,
+   "flag_rw": 0.0,
+   "flag_cons": 0.6666666666666666,
+   "flag_cons_own": 0.3333333333333333,
+   "rw": -0.4886323884129524,
+   "cons": -0.25847526142994565,
+   "cons_own": -0.1345103159546852,
+   "acts_unchanged": 1.0
+  },
+  "high_use_negate": {
+   "kl_effect": 0.025353157039110858,
+   "flag_any": 1.0,
+   "flag_any_own": 1.0,
+   "flag_norm": 0.0,
+   "flag_rw": 0.6666666666666666,
+   "flag_cons": 0.6666666666666666,
+   "flag_cons_own": 0.3333333333333333,
+   "rw": 0.48863237102826435,
+   "cons": -0.22547305499513945,
+   "cons_own": -0.05182400718331337,
+   "acts_unchanged": 1.0
+  }
+ },
+ "context": "Found while building the live demo (manifold/wdd_demo.py): its Act 3 sweep on Pythia-410m's 40 most-used block-4 rows caught 0.17 of reflections with own states against 0.33 with clean states, where e651 recorded 0.80."
+}

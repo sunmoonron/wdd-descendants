@@ -1064,6 +1064,10 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H828 Home advantage: given the activation class instead, the selectivity's top-10 share two before is at least the class ratio's, on all three seeds. → e666 → SUPPORTED.
 - H829 Retention: the class ratio's top-10 share two before as a fraction of its own ceiling at 16000 exceeds the selectivity's fraction by no more than 0.1, on all three seeds (naming the recruit early is not the ratio's alone once each score is held to what it names at the end). → e666 → SUPPORTED.
 - H830 Gemini's mechanism (e546): two checkpoints before recruitment the recruit's own direct write is under half of the class states' projection onto its row (median share below 0.5), on all three seeds. → e666 → SUPPORTED.
+- H831 Reproduction: with the clean states, the consistency flag rate on high-use reflections is within 0.15 of e651's on every model (0.67, 0.80, 0.12, 1.00). → e667 → SUPPORTED.
+- H832 The artifact: pooled over the four models, consistency with the edited model's own states flags high-use reflections at most half as often as with the clean states. → e667 → REFUTED.
+- H833 The defender's reading fails: with the edited model's own states, high-use reflections are flagged by some detector in fewer than half of the rows on at least three of the four models. → e667 → REFUTED.
+- H834 The analytic premise: the block's MLP activations are unchanged by an edit of its own write (all edits, tolerance 1e-4), so own-state consistency compares the new write with the state minus the old write. → e667 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
