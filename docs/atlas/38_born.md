@@ -7,7 +7,7 @@
 - The learned dictionary (4096 latents per checkpoint) has a persistent feature for 0.31 of the classes, sees those before the row (0.61), and does not date the parameter: at recruitment its decoder has cosine 0.11 with the row, and it points at the row 7.0 checkpoints after recruitment, for 33 of 241 words (e584).
 - The claim, as sharp as the record allows: a native, parameter-indexed coordinate system for how representations form and how responsibility for them migrates through training.
 
-**Start here:** e584 · **Sessions:** S106, S152 · **Scripts:** `scripts/e582_longitudinal_cache.py`, `e583_sae_per_checkpoint.py`, `e584_longitudinal.py`, `e672_routes.py`
+**Start here:** e584 · **Sessions:** S106, S152, S153 · **Scripts:** `scripts/e582_longitudinal_cache.py`, `e583_sae_per_checkpoint.py`, `e584_longitudinal.py`, `e672_routes.py`, `e674_routes_rep.py`, `e676_center_out.py`
 
 ## Experiments
 
@@ -19,7 +19,15 @@
 
 | e672 | Cammarata's recursive generalization over Pythia-160m's checkpoints: a neuron's top firings grouped into routes by exact upstream attribution (k-means against a unimodal null; the essay's own grouping by the main upstream neuron); are offshoot firings less costly when the neuron is removed, and do they become top firings after the core's? | in Pythia-160m block 6, 83 of 300 neurons have two distinct routes; removing a neuron costs its offshoot firings as much as its core firings (less in 0.45; by the essay's grouping offshoots cost more, p 0.045), and distinct routes form in no order (core first in 0.53, p 0.33); inside one route the bulk does become top firings first (0.60 of 217 neurons, found after the fact) (e672) | refuted (offshoots cost as much; distinct routes form in no order; a bulk-first gradient inside one route found after the fact) | ← e584, e595 |
 
+| e674 | e672 replicated in eight runs (Pythia-160m blocks 3 and 9, Pythia-410m blocks 6, 12 and 18, OLMo-1B blocks 4, 8 and 12), with Gemini's SwiGLU leak filter: does the larger part of a one-route neuron's top firings become top firings first, do distinct routes form in order, do offshoots cost less? | in eight runs of Pythia-160m, Pythia-410m and OLMo-1B the bulk of a neuron's top firings became top firings before the rest in one-route (0.58) and two-route neurons (core 0.56, p 0.0017) alike, so e672's single-block 'no order' was underpowered; offshoot firings cost more, not less, when the neuron is removed (pooled p 0.0017); the SwiGLU leak is not the offshoots (the more gate-closed route in 39 of 74; 40 of 219 two-route neurons collapse on gate-open firings) (e674) | narrowed (the bulk-first order replicates in six of eight runs and holds for distinct routes too, pooled; offshoots are not cheaper; the leak is not the offshoots) | ← e672 |
+
+| e676 | The control e674's one positive result needed: does the larger group's lead survive the token's and bigram's corpus frequency and position, and do firings nearer the centre of a neuron's top-firing attributions become top firings first (no k-means)? | the bulk-first lead survives token and bigram frequency and position in all six Pythia runs and two of three OLMo runs, and the firings nearest the centre of a neuron's input attributions became top firings first in 0.63 to 0.80 of neurons in all nine runs (p below 0.0001 in each): growth from a local origin, measured (e676) | supported (the lead survives frequency and position in eight of nine runs; growth from the centre in all nine) | ← e674 |
+
 ## How the results flow
+
+- `e672 → e674`: the route measurement repeated on eight blocks of three models, with the SwiGLU leak filter.
+
+- `e674 → e676`: the lead controlled for frequency and position, and growth from the centre measured without k-means.
 
 - `e584, e595 → e672`: a neuron's routes dated over training, against Cammarata's recursive generalization.
 

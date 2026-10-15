@@ -222,6 +222,10 @@ Split by sign the attribute rows are two-sided (16 of 16 opposite-signed poles; 
 
 A row's WDD score, the state's projection on its write direction, says where the state lies, not what the neuron does: over every neuron of three Pythia-410m blocks it is unrelated to the damage of removing the neuron (Spearman 0.08, 0.03, -0.01), and e568's invented-name row tops it at the 0.998 quantile while its neuron is silent and costs nothing to remove; what removing one neuron costs is its gradient times activation (Spearman 1.00, 1.00, 1.00) (e673).
 
+## Nor is it a trace across positions (session 153)
+
+WDD's write dictionary is not a cross-position trace: the label-free projection of a summary state ranks the neurons whose earlier writes matter at Spearman 0.04, 0.02, 0.17 (Pythia-410m), and on e670's items each item's own projection ranks the attribute writer near 26942 of 63,232 and its top 32 flip 0.00 of items (the labelled echo 0.45) (e675).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

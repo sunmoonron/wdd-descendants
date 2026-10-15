@@ -1096,6 +1096,21 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H860 The control Gemini's comparison lacks: at block 17, rho(edge_ln) - rho(write) >= 0.05 with the CI above 0, i.e. reading the downstream gates adds to the write's plain size. → e673 → REFUTED.
 - H861 Gradient x activation is the best predictor of the absolute log-probability drop at every block, with rho >= 0.95 (one neuron at one position is nearly linear). → e673 → SUPPORTED.
 - H862 The bystander: neuron 3002 of block 17 sits below the block's median on every activation-weighted score and on damage, and above the 95th percentile on the activation-free projection, over the invented-country prompts. → e673 → SUPPORTED.
+- H863 Replication of e672's after-the-fact gradient: in each run, among one-route neurons, the larger group's lead (activation and token typicality regressed out) is positive in more than half, one-sided binomial p < 0.05 (verdict over the eight runs: supported if all, narrowed if some, refuted if none). → e674 → NARROWED (holds for Pythia-160m block 3, Pythia-160m block 9, Pythia-410m block 6, Pythia-410m block 12, Pythia-410m block 18, OLMo-1B block 4, not OLMo-1B block 8, OLMo-1B block 12).
+- H864 The contrast e672 implied but did not test: pooled over the eight runs, the share of one-route neurons whose larger group leads exceeds the share of two-route neurons whose core leads, one-sided Fisher exact p < 0.05. → e674 → REFUTED.
+- H865 The essay's developmental prediction again: pooled over the eight runs, among two-route neurons the core leads in more than half, one-sided binomial p < 0.05. → e674 → SUPPORTED.
+- H866 The essay's causal prediction again: pooled over the eight runs, among two-route neurons the offshoot's mean KL is below the core's in more than half, one-sided binomial p < 0.05. → e674 → REFUTED.
+- H867 Gemini's leak hypothesis: in OLMo (the three runs pooled), among two-route neurons whose top 100 include gate-closed firings and whose two routes differ in their gate-closed share, the offshoot has the larger share in more than half, one-sided binomial p < 0.05. → e674 → REFUTED.
+- H868 Gemini's collapse: in OLMo (pooled), at least half of the two-route neurons become one-route when only gate-open firings are kept. → e674 → REFUTED.
+- H869 The essay's causal prediction on clean firings: in OLMo (pooled), among two-route neurons of the gate-open top 100, the offshoot's mean KL is below the core's in more than half, one-sided binomial p < 0.05. → e674 → REFUTED.
+- H870 Gemini's trace, part A: at each block the activation-free projection of the final state ranks neurons by their cross-position damage at Spearman 0.3 or more (either state). → e675 → REFUTED.
+- H871 Part A: the projection predicts cross-position damage better than the earlier positions' write size (bootstrap 95% CI of the difference above 0) at each block. → e675 → REFUTED.
+- H872 Part B: negating each held-out marked item's own top 32 rows by its label-free projection flips at least half as many items as e670's supervised echo, for gender and for number. → e675 → REFUTED.
+- H873 Part B: the attribute's oracle top row ranks in the top 100 of 63,232 rows under the label-free projection for at least half of the items, for gender and for number. → e675 → REFUTED.
+- H874 In each of the six runs, among one-route neurons, the larger group's lead survives the frequency and position controls: positive in more than half, one-sided binomial p < 0.05 (verdict over the six runs: supported if all, narrowed if some, refuted if none). → e676 → SUPPORTED.
+- H875 In each of the six runs, over all sampled neurons, firings nearer the centroid became top firings earlier with all controls held: partial correlation positive in more than half, one-sided binomial p < 0.05. → e676 → SUPPORTED.
+- H876 As C1, in each of the three OLMo runs. → e676 → NARROWED (holds for OLMo-1B block 4, OLMo-1B block 8, not OLMo-1B block 12).
+- H877 As C2, in each of the three OLMo runs. → e676 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

@@ -1,0 +1,1842 @@
+{
+ "model": "EleutherAI/pythia-160m",
+ "key": "pythia160",
+ "block": 3,
+ "tf32_ablations": false,
+ "n_ablated": {
+  "all": 30
+ },
+ "n_layers": 12,
+ "fam": "neox",
+ "windows": 48,
+ "positions": 12192,
+ "checkpoints": [
+  512,
+  4000,
+  143000
+ ],
+ "n_candidates": 2824,
+ "n_sampled": 30,
+ "floor": 1.0,
+ "n_two_route": {
+  "all": 2
+ },
+ "silhouette_median": {
+  "all": 0.3965644836425781
+ },
+ "max_split_error": {
+  "all": 0.00028894850402139127
+ },
+ "causal": {
+  "all/two_route": {
+   "n": 2,
+   "off_less_kl": 1,
+   "off_less_kl_share": 0.5,
+   "p_off_less_kl": 0.75,
+   "p_off_more_kl": 0.75,
+   "off_less_gain_share": 1.0,
+   "p_off_less_gain": 0.25,
+   "median_kl_core": 0.0008856366912368685,
+   "median_kl_off": 0.0007427342934533954,
+   "median_act_core": 1.0872052907943726,
+   "median_act_off": 1.0511756241321564
+  },
+  "all/one_route": {
+   "n": 28,
+   "off_less_kl": 9,
+   "off_less_kl_share": 0.32142857142857145,
+   "p_off_less_kl": 0.9821509309113026,
+   "p_off_more_kl": 0.04357927665114403,
+   "off_less_gain_share": 0.2857142857142857,
+   "p_off_less_gain": 0.9937295243144035,
+   "median_kl_core": 0.0009103694173973054,
+   "median_kl_off": 0.001005699799861759,
+   "median_act_core": 1.0776889324188232,
+   "median_act_off": 1.0461962819099426
+  }
+ },
+ "developmental": {
+  "all/one_route": {
+   "n": 28,
+   "leads_res": 11,
+   "leads_res_share": 0.39285714285714285,
+   "p_leads_res": 0.9075333289802074,
+   "leads_res_tok": 11,
+   "leads_res_tok_share": 0.39285714285714285,
+   "p_leads_res_tok": 0.9075333289802074,
+   "median_lead_res": -0.015890607647439353,
+   "median_z_res": -0.40065688882733863,
+   "strong_leads_share": 0.6785714285714286,
+   "onset_core_first": 0,
+   "onset_same": 28,
+   "onset_off_first": 0
+  },
+  "all/two_route": {
+   "n": 2,
+   "leads_res": 1,
+   "leads_res_share": 0.5,
+   "p_leads_res": 0.75,
+   "leads_res_tok": 1,
+   "leads_res_tok_share": 0.5,
+   "p_leads_res_tok": 0.75,
+   "median_lead_res": -0.05554468848262796,
+   "median_z_res": -1.735086778225562,
+   "strong_leads_share": 0.5,
+   "onset_core_first": 0,
+   "onset_same": 2,
+   "onset_off_first": 0
+  }
+ },
+ "leak": {},
+ "percentile_by_checkpoint": {
+  "512": 0.6199967265129089,
+  "4000": 0.910269021987915,
+  "143000": 0.9958169460296631
+ },
+ "neurons": {
+  "all": {
+   "186": {
+    "silhouette": 0.3944402039051056,
+    "null_sil95": 0.4876179486513138,
+    "multi": false,
+    "n_core": 62,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "attn1",
+      "L2:2867"
+     ],
+     "offshoot": [
+      "L0:317",
+      "L2:2547",
+      "L2:2867",
+      "L0:348"
+     ]
+    },
+    "examples": {
+     "core": [
+      " kami Inari : \n\n To In [[ari]]  D",
+      " wrote a letter to the kami In [[ari]]  :"
+     ],
+     "offshoot": [
+      " black operations and are pitted against the [[ Imperial]]  unit",
+      " = = = \n\n Vistara has [[ inter]] line"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0018822827842086554,
+    "dev": {
+     "lead_res": 0.05550512091869475,
+     "lead_res_tok": 0.0338954773521448,
+     "lead_raw": 0.057435617495979585,
+     "lead_strength": -0.01952695354490408,
+     "z_res": 1.5109199621450655,
+     "cmp": 0,
+     "pct_core": [
+      0.6831621527671814,
+      0.8882356882095337,
+      0.9959558248519897
+     ],
+     "pct_off": [
+      0.6774697303771973,
+      0.7790570259094238,
+      0.99569171667099
+     ]
+    },
+    "causal": {
+     "kl_core": 0.001709719654172659,
+     "kl_off": 0.002163833240047097,
+     "gain_core": 0.02563762664794922,
+     "gain_off": 0.030686652287840843,
+     "act_core": 1.1239131689071655,
+     "act_off": 1.1001490354537964
+    }
+   },
+   "298": {
+    "silhouette": 0.39868876338005066,
+    "null_sil95": 0.386147053539753,
+    "multi": true,
+    "n_core": 74,
+    "drivers": {
+     "core": [
+      "L2:2594",
+      "L2:3026",
+      "L0:527",
+      "L0:1033"
+     ],
+     "offshoot": [
+      "attn2",
+      "L2:3026",
+      "L0:458",
+      "L0:2131"
+     ]
+    },
+    "examples": {
+     "core": [
+      " the leadership of Tr\u1ea7n \ufffd [[\ufffd]] \u00ec",
+      " Heavyweight Championship ( 1 time ) \n\n [[ SC]] W"
+     ],
+     "offshoot": [
+      " is related to the Old English word w [[ic]] ca",
+      " post @-@ WWII aircraft which [[ could]]  also"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0009469128563068807,
+    "dev": {
+     "lead_res": 0.1068627674037709,
+     "lead_res_tok": 0.10768638350626172,
+     "lead_raw": 0.1327521831587174,
+     "lead_strength": 0.16468239291387132,
+     "z_res": 2.1240310347360842,
+     "cmp": 0,
+     "pct_core": [
+      0.5723226070404053,
+      0.8764609098434448,
+      0.9961362481117249
+     ],
+     "pct_off": [
+      0.4920944571495056,
+      0.6911846399307251,
+      0.9950472116470337
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0010510418796911836,
+     "kl_off": 0.0006505453493446112,
+     "gain_core": 0.026851888746023178,
+     "gain_off": 0.023901183158159256,
+     "act_core": 1.0110523700714111,
+     "act_off": 0.8972731232643127
+    }
+   },
+   "304": {
+    "silhouette": 0.34419363737106323,
+    "null_sil95": 0.3951974451541901,
+    "multi": false,
+    "n_core": 59,
+    "drivers": {
+     "core": [
+      "attn1",
+      "attn2",
+      "L2:3026",
+      "L2:200"
+     ],
+     "offshoot": [
+      "attn2",
+      "attn1",
+      "L2:3026",
+      "L2:1705"
+     ]
+    },
+    "examples": {
+     "core": [
+      " classicist A. E. Hous [[man]]  .",
+      " have since been used in advertising for Sw [[inton]]  Insurance"
+     ],
+     "offshoot": [
+      " giving it the resources to mount \" top [[ shelf]]  \"",
+      " the fourth and final Battle of Monte Cass [[ino]]  in"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0019862644840031862,
+    "dev": {
+     "lead_res": 0.007363095089555905,
+     "lead_res_tok": 0.01651766908856641,
+     "lead_raw": 0.0038686185126562966,
+     "lead_strength": 0.019047080521841786,
+     "z_res": 0.23758937060645755,
+     "cmp": 0,
+     "pct_core": [
+      0.5869214534759521,
+      0.8752321004867554,
+      0.9956570863723755
+     ],
+     "pct_off": [
+      0.6214390993118286,
+      0.8329771757125854,
+      0.9961390495300293
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0023607215844094753,
+     "kl_off": 0.0014474120689556003,
+     "gain_core": 0.026313351467251778,
+     "gain_off": 0.02154192514717579,
+     "act_core": 1.4577594995498657,
+     "act_off": 1.4913300275802612
+    }
+   },
+   "400": {
+    "silhouette": 0.5181506872177124,
+    "null_sil95": 0.6738968372344971,
+    "multi": false,
+    "n_core": 69,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "L1:1621",
+      "L1:1067"
+     ],
+     "offshoot": [
+      "L2:3026",
+      "L1:2199",
+      "L0:1171",
+      "L2:2692"
+     ]
+    },
+    "examples": {
+     "core": [
+      " Derby , and City won a record ten [[ consecutive]]  games",
+      "@ yard line , Tech committed a 15 [[ @]] -"
+     ],
+     "offshoot": [
+      " final to Salisbury City . The [[ following]]  season",
+      "th in Division Three that season . The [[ following]]  season"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0008722440688870847,
+    "dev": {
+     "lead_res": -0.028095056269239492,
+     "lead_res_tok": 0.023067471772966155,
+     "lead_raw": -0.024240260059906538,
+     "lead_strength": 0.0037768804017574986,
+     "z_res": -0.5625833599633566,
+     "cmp": 0,
+     "pct_core": [
+      0.6862471103668213,
+      0.8929103016853333,
+      0.9960700869560242
+     ],
+     "pct_off": [
+      0.8196834325790405,
+      0.8079544901847839,
+      0.9953778386116028
+     ]
+    },
+    "causal": {
+     "kl_core": 0.000797268352471292,
+     "kl_off": 0.0010391254909336567,
+     "gain_core": 0.02351977676153183,
+     "gain_off": 0.02798752300441265,
+     "act_core": 1.1100047826766968,
+     "act_off": 1.0626890659332275
+    }
+   },
+   "412": {
+    "silhouette": 0.3295086920261383,
+    "null_sil95": 0.4421721830964089,
+    "multi": false,
+    "n_core": 64,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "L2:230",
+      "L2:1016"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn2",
+      "attn0",
+      "L0:1576"
+     ]
+    },
+    "examples": {
+     "core": [
+      " Television Production program at the Tisch School [[ of]]  the",
+      " auditions for the school musical , West [[ Side]]  Story"
+     ],
+     "offshoot": [
+      "rie on 9 June 2001 in the town [[ of]]  D",
+      " of silk , 1 million packs of sat [[in]]  ,"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.001389964483678341,
+    "dev": {
+     "lead_res": -0.030716760230298068,
+     "lead_res_tok": -0.029317571836701906,
+     "lead_raw": -0.030214910654144167,
+     "lead_strength": -0.01753262420081425,
+     "z_res": -0.5859657509757688,
+     "cmp": 0,
+     "pct_core": [
+      0.5559806227684021,
+      0.7184334993362427,
+      0.9957156777381897
+     ],
+     "pct_off": [
+      0.6176818609237671,
+      0.717162013053894,
+      0.9961016774177551
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0016477209283038974,
+     "kl_off": 0.0009317306103184819,
+     "gain_core": 0.02687866985797882,
+     "gain_off": 0.02288402058184147,
+     "act_core": 1.037139892578125,
+     "act_off": 1.0652533769607544
+    }
+   },
+   "489": {
+    "silhouette": 0.3094949424266815,
+    "null_sil95": 0.36222326904535296,
+    "multi": false,
+    "n_core": 54,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn1",
+      "L0:383",
+      "L0:1093"
+     ],
+     "offshoot": [
+      "L0:717",
+      "L0:2716",
+      "embedding",
+      "L0:383"
+     ]
+    },
+    "examples": {
+     "core": [
+      " despite ( according to Philip d 'A [[ub]] ign",
+      " the physical structure , combating heat build [[up]]  ,"
+     ],
+     "offshoot": [
+      " was begun in the hills of the Tac [[ub]] aya",
+      " = = \n\n Mutinus elegans is sap [[rob]] ic"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0019228931050747633,
+    "dev": {
+     "lead_res": 0.016779637941713707,
+     "lead_res_tok": 0.009404293930956039,
+     "lead_raw": 0.004359001998644141,
+     "lead_strength": 0.059554778303405165,
+     "z_res": 0.45011982563099223,
+     "cmp": 0,
+     "pct_core": [
+      0.651828408241272,
+      0.8744456171989441,
+      0.9955040216445923
+     ],
+     "pct_off": [
+      0.6552104353904724,
+      0.8623455166816711,
+      0.996260941028595
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0009095382411032915,
+     "kl_off": 0.0031124833039939404,
+     "gain_core": 0.019448956474661827,
+     "gain_off": 0.03125845268368721,
+     "act_core": 1.1772642135620117,
+     "act_off": 1.2512843608856201
+    }
+   },
+   "584": {
+    "silhouette": 0.6354252696037292,
+    "null_sil95": 0.7262493491172791,
+    "multi": false,
+    "n_core": 89,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "embedding",
+      "L0:2214"
+     ],
+     "offshoot": [
+      "L2:3026",
+      "embedding",
+      "L2:151",
+      "L2:1492"
+     ]
+    },
+    "examples": {
+     "core": [
+      " = = \n\n Retrieved from CD liner [[ notes]]  \n\n",
+      " purpose as a musician . He spent a [[ year]]  producing"
+     ],
+     "offshoot": [
+      " buried in a pyramid in Saqqara [[ named]]  N",
+      "s second album , Dirt , was [[ named]]  5"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0009205974638462067,
+    "dev": {
+     "lead_res": 0.19586277746547942,
+     "lead_res_tok": 0.17968881852410115,
+     "lead_raw": 0.20563547360588075,
+     "lead_strength": 0.10153415479694439,
+     "z_res": 2.683764795622199,
+     "cmp": 0,
+     "pct_core": [
+      0.6891956925392151,
+      0.8293437957763672,
+      0.9959459900856018
+     ],
+     "pct_off": [
+      0.5584884285926819,
+      0.548780083656311,
+      0.9950639605522156
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0009200290078297257,
+     "kl_off": 0.0009251954616047442,
+     "gain_core": 0.021639738231897354,
+     "gain_off": 0.022552119567990303,
+     "act_core": 1.1630311012268066,
+     "act_off": 1.065873622894287
+    }
+   },
+   "884": {
+    "silhouette": 0.23659953474998474,
+    "null_sil95": 0.5864601463079453,
+    "multi": false,
+    "n_core": 61,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:2459",
+      "L2:916",
+      "L2:1255"
+     ],
+     "offshoot": [
+      "attn2",
+      "attn1",
+      "L2:3026",
+      "L2:2907"
+     ]
+    },
+    "examples": {
+     "core": [
+      "iano Pavarotti , Montserr [[at]]  Cab",
+      " , Taiyuan , and Zhong [[sh]] an"
+     ],
+     "offshoot": [
+      " \" This Ile is callit Ell [[an]]  Sk",
+      " tail feathers resemble those of an Ostr [[ich]]  ;"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0025877105072140694,
+    "dev": {
+     "lead_res": -0.016830398054860765,
+     "lead_res_tok": -0.04414563169836058,
+     "lead_raw": -0.019943907637714364,
+     "lead_strength": 0.047034738669128884,
+     "z_res": -0.37774271823096695,
+     "cmp": 0,
+     "pct_core": [
+      0.6273019313812256,
+      0.7311714887619019,
+      0.996005117893219
+     ],
+     "pct_off": [
+      0.612208902835846,
+      0.7861523032188416,
+      0.9956129789352417
+     ]
+    },
+    "causal": {
+     "kl_core": 0.003378374734893441,
+     "kl_off": 0.0013510312419384718,
+     "gain_core": 0.03317825496196747,
+     "gain_off": 0.025008127093315125,
+     "act_core": 1.3143250942230225,
+     "act_off": 1.2769931554794312
+    }
+   },
+   "1000": {
+    "silhouette": 0.32047343254089355,
+    "null_sil95": 0.4204537704586983,
+    "multi": false,
+    "n_core": 56,
+    "drivers": {
+     "core": [
+      "L2:3026",
+      "L1:1866",
+      "L0:1657",
+      "L0:2406"
+     ],
+     "offshoot": [
+      "attn2",
+      "attn1",
+      "L2:3026",
+      "L0:113"
+     ]
+    },
+    "examples": {
+     "core": [
+      " trademark harmonies typically separated by a major [[ third]]  .",
+      " his organization had not had the time to [[ count]]  bodies"
+     ],
+     "offshoot": [
+      " new manager Trevor Cherry . City finished 12 [[th]]  in",
+      " water 's descent while remaining unob [[tr]] usive"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0010820413008332253,
+    "dev": {
+     "lead_res": 0.029904612125298026,
+     "lead_res_tok": 0.03792809241630117,
+     "lead_raw": 0.02934328212656756,
+     "lead_strength": -0.0004059769479292097,
+     "z_res": 0.8085502499571414,
+     "cmp": 0,
+     "pct_core": [
+      0.5253459215164185,
+      0.8938956260681152,
+      0.9958314299583435
+     ],
+     "pct_off": [
+      0.544539213180542,
+      0.8160157799720764,
+      0.9958822131156921
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0009247785783372819,
+     "kl_off": 0.0012821938144043088,
+     "gain_core": 0.023469088599085808,
+     "gain_off": 0.02596980333328247,
+     "act_core": 1.0882917642593384,
+     "act_off": 1.107588291168213
+    }
+   },
+   "1319": {
+    "silhouette": 0.33711040019989014,
+    "null_sil95": 0.3558359369635582,
+    "multi": false,
+    "n_core": 55,
+    "drivers": {
+     "core": [
+      "attn1",
+      "attn0",
+      "L2:3026",
+      "L2:2670"
+     ],
+     "offshoot": [
+      "attn2",
+      "attn1",
+      "L2:3026",
+      "L2:2531"
+     ]
+    },
+    "examples": {
+     "core": [
+      " was crushed at the Battle of Trafal [[gar]]  ,",
+      " is callit Ellan Skiann [[ach]]  in"
+     ],
+     "offshoot": [
+      " collected in Japan . \n\n = = Antib [[iotic]]  activity",
+      " , which are also mainly white and gloss [[y]]  black"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0011007620487362146,
+    "dev": {
+     "lead_res": -0.12033274600022917,
+     "lead_res_tok": -0.05402725164316036,
+     "lead_raw": -0.12166149239949509,
+     "lead_strength": 0.011234063963697416,
+     "z_res": -2.536950132255862,
+     "cmp": 0,
+     "pct_core": [
+      0.5028975605964661,
+      0.5066392421722412,
+      0.9959794282913208
+     ],
+     "pct_off": [
+      0.5476140975952148,
+      0.7052456140518188,
+      0.9957039952278137
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0011744715739041567,
+     "kl_off": 0.0010106725385412574,
+     "gain_core": 0.02459930069744587,
+     "gain_off": 0.026222042739391327,
+     "act_core": 1.034197449684143,
+     "act_off": 1.0413845777511597
+    }
+   },
+   "1433": {
+    "silhouette": 0.48601216077804565,
+    "null_sil95": 0.6651325941085816,
+    "multi": false,
+    "n_core": 77,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "embedding",
+      "L0:659"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn2",
+      "L0:134",
+      "L2:3026"
+     ]
+    },
+    "examples": {
+     "core": [
+      " over human beings . The game is similar [[ to]]  rock",
+      " Van Morrison 's work . \n\n Turner [[ describes]]  Van"
+     ],
+     "offshoot": [
+      " Ned Goldreyer , and is one [[ of]]  the",
+      " . Observations were made by a number [[ of]]  groups"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0004700975841842592,
+    "dev": {
+     "lead_res": 0.19288811526861788,
+     "lead_res_tok": 0.009717077869143493,
+     "lead_raw": 0.19431019248151632,
+     "lead_strength": -0.03424633600402527,
+     "z_res": 3.5205168880120805,
+     "cmp": 0,
+     "pct_core": [
+      0.45668861269950867,
+      0.8440194129943848,
+      0.9958349466323853
+     ],
+     "pct_off": [
+      0.2542365491390228,
+      0.6578511595726013,
+      0.9959168434143066
+     ]
+    },
+    "causal": {
+     "kl_core": 0.000445674144430086,
+     "kl_off": 0.000551863107830286,
+     "gain_core": 0.015568031929433346,
+     "gain_off": 0.017922034487128258,
+     "act_core": 1.1693638563156128,
+     "act_off": 1.13234543800354
+    }
+   },
+   "1736": {
+    "silhouette": 0.40913113951683044,
+    "null_sil95": 0.49741216599941257,
+    "multi": false,
+    "n_core": 66,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn1",
+      "attn0",
+      "L2:3026"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn0",
+      "L2:3026",
+      "L2:2194"
+     ]
+    },
+    "examples": {
+     "core": [
+      " Wheeler was instructed to educate himself by spending [[ time]]  in",
+      " views in 1873 when it was proposed [[ that]]  Lion"
+     ],
+     "offshoot": [
+      " 1861 the Rothschilds became pointed [[ly]]  excluded",
+      " daughters named Madison , Jaya , and [[ Mack]] enzie"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0006043674657121301,
+    "dev": {
+     "lead_res": -0.0070599162186119006,
+     "lead_res_tok": -0.014899971215938172,
+     "lead_raw": -0.0071173637255416144,
+     "lead_strength": 0.0013716617954393495,
+     "z_res": -0.26879183446816424,
+     "cmp": 0,
+     "pct_core": [
+      0.6463478207588196,
+      0.7645202279090881,
+      0.996048092842102
+     ],
+     "pct_off": [
+      0.6747891306877136,
+      0.7503135800361633,
+      0.9954743385314941
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0005184025503695011,
+     "kl_off": 0.0007712405640631914,
+     "gain_core": 0.021318603307008743,
+     "gain_off": 0.025553958490490913,
+     "act_core": 0.8641468286514282,
+     "act_off": 0.82421875
+    }
+   },
+   "1765": {
+    "silhouette": 0.30132701992988586,
+    "null_sil95": 0.35483633875846865,
+    "multi": false,
+    "n_core": 53,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "L2:1231",
+      "L2:1035"
+     ],
+     "offshoot": [
+      "attn2",
+      "attn1",
+      "attn0",
+      "L2:3026"
+     ]
+    },
+    "examples": {
+     "core": [
+      " the development of its military force in the [[ shortest]]  period",
+      " , and it was principally used in h [[agi]] ography"
+     ],
+     "offshoot": [
+      " out the Adriatic front and bringing the [[ bulk]]  of",
+      " the crossover Professor Layton vs. Phoenix [[ Wright]]  :"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.002019976731389761,
+    "dev": {
+     "lead_res": -0.1002924088513436,
+     "lead_res_tok": -0.08465274399294256,
+     "lead_raw": -0.12188386271357388,
+     "lead_strength": -0.01360691804775327,
+     "z_res": -2.5771381836986165,
+     "cmp": 0,
+     "pct_core": [
+      0.543415367603302,
+      0.6065839529037476,
+      0.9951652884483337
+     ],
+     "pct_off": [
+      0.619708776473999,
+      0.7740583419799805,
+      0.9966248273849487
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0011842510430142283,
+     "kl_off": 0.0029623908922076225,
+     "gain_core": 0.029636025428771973,
+     "gain_off": 0.03549961745738983,
+     "act_core": 0.8329617381095886,
+     "act_off": 1.0284346342086792
+    }
+   },
+   "1899": {
+    "silhouette": 0.2630960941314697,
+    "null_sil95": 0.6140941113233567,
+    "multi": false,
+    "n_core": 52,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "L2:1513",
+      "attn1"
+     ],
+     "offshoot": [
+      "attn2",
+      "attn0",
+      "L2:3026",
+      "L0:574"
+     ]
+    },
+    "examples": {
+     "core": [
+      " McCall was an integral part of the [[ team]]  as",
+      " the Central School of Speech Training and Dr [[am]] atic"
+     ],
+     "offshoot": [
+      " DuMont 's managing director , under [[ which]]  the",
+      " existential work Pornographic Apathetic deals [[ with]]  four"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0006120761390775442,
+    "dev": {
+     "lead_res": -0.03735023998870328,
+     "lead_res_tok": -0.0684275746691119,
+     "lead_raw": -0.03756528753691757,
+     "lead_strength": 0.0666516619519546,
+     "z_res": -0.9496286901231652,
+     "cmp": 0,
+     "pct_core": [
+      0.672496497631073,
+      0.7340737581253052,
+      0.995854914188385
+     ],
+     "pct_off": [
+      0.6301160454750061,
+      0.8515847325325012,
+      0.9958493113517761
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0005831164889968932,
+     "kl_off": 0.0006434489623643458,
+     "gain_core": 0.01883990503847599,
+     "gain_off": 0.021710684522986412,
+     "act_core": 1.099834680557251,
+     "act_off": 1.1024169921875
+    }
+   },
+   "1903": {
+    "silhouette": 0.43766602873802185,
+    "null_sil95": 0.4508889362215996,
+    "multi": false,
+    "n_core": 77,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn1",
+      "attn0",
+      "L0:548"
+     ],
+     "offshoot": [
+      "attn2",
+      "L1:542",
+      "L0:188",
+      "attn0"
+     ]
+    },
+    "examples": {
+     "core": [
+      " \n\n Vistara took delivery of its [[ first]]  aircraft",
+      " gold , to designate Nubia is [[ first]]  recorded"
+     ],
+     "offshoot": [
+      " neglected storylines from the show 's [[ first]]  season",
+      " was named 5th best album in the [[ last]]  two"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.001305856159888208,
+    "dev": {
+     "lead_res": 0.04095930574713065,
+     "lead_res_tok": -0.018926003077592738,
+     "lead_raw": 0.04089066724044199,
+     "lead_strength": -0.012418349677899898,
+     "z_res": 0.8308909554021336,
+     "cmp": 0,
+     "pct_core": [
+      0.548545777797699,
+      0.6200137734413147,
+      0.9957658052444458
+     ],
+     "pct_off": [
+      0.42853474617004395,
+      0.6582435369491577,
+      0.996116578578949
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0009112005936913192,
+     "kl_off": 0.0026270938105881214,
+     "gain_core": 0.021927261725068092,
+     "gain_off": 0.030781051144003868,
+     "act_core": 1.1224191188812256,
+     "act_off": 1.1480978727340698
+    }
+   },
+   "2043": {
+    "silhouette": 0.6979299783706665,
+    "null_sil95": 0.7321363985538483,
+    "multi": false,
+    "n_core": 92,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "L2:2770",
+      "L2:3026"
+     ],
+     "offshoot": [
+      "L2:1588",
+      "L2:1378",
+      "L2:2770",
+      "attn2"
+     ]
+    },
+    "examples": {
+     "core": [
+      " Wolfpack territory , but inside the NC [[ State]]  35",
+      " came in a 4 \u2013 2 victory over [[ Reading]]  in"
+     ],
+     "offshoot": [
+      "oms in 1789 . Another young violin [[ist]]  ,",
+      " Swim cartoon Metalocalypse ( see Mus [[ician]]  came"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.00490584596991539,
+    "dev": {
+     "lead_res": -0.03418995876368165,
+     "lead_res_tok": -0.020006637210290133,
+     "lead_raw": -0.02300287831736647,
+     "lead_strength": -0.062035295788360645,
+     "z_res": -0.4833412022644662,
+     "cmp": 0,
+     "pct_core": [
+      0.5275527834892273,
+      0.7914553880691528,
+      0.9959595799446106
+     ],
+     "pct_off": [
+      0.4612245559692383,
+      0.9037893414497375,
+      0.9946379065513611
+     ]
+    },
+    "causal": {
+     "kl_core": 0.00525606470182538,
+     "kl_off": 0.000878329505212605,
+     "gain_core": 0.03361516073346138,
+     "gain_off": 0.016840418800711632,
+     "act_core": 1.6058083772659302,
+     "act_off": 1.4730224609375
+    }
+   },
+   "2086": {
+    "silhouette": 0.5083847641944885,
+    "null_sil95": 0.43785774558782575,
+    "multi": true,
+    "n_core": 52,
+    "drivers": {
+     "core": [
+      "L0:548",
+      "L2:1491",
+      "attn2",
+      "L2:3026"
+     ],
+     "offshoot": [
+      "attn2",
+      "attn1",
+      "L2:3026",
+      "attn0"
+     ]
+    },
+    "examples": {
+     "core": [
+      "eng was besieged on January 31 [[ ,]]  112",
+      "ley Warren Bedell ( born March 5 [[ ,]]  1921"
+     ],
+     "offshoot": [
+      " Rafael Ben\u00edtez stated in an [[ interview]]  with",
+      " , as elsewhere in Europe , antisem [[itic]]  feelings"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.000775283551774919,
+    "dev": {
+     "lead_res": -0.21795214436902682,
+     "lead_res_tok": -0.05619074564561078,
+     "lead_raw": -0.21479609732826555,
+     "lead_strength": -0.041815918655349615,
+     "z_res": -5.594204591187208,
+     "cmp": 0,
+     "pct_core": [
+      0.24415603280067444,
+      0.8923931121826172,
+      0.9957491159439087
+     ],
+     "pct_off": [
+      0.6952560544013977,
+      0.8708853125572205,
+      0.9959518909454346
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0007202315027825534,
+     "kl_off": 0.0008349232375621796,
+     "gain_core": 0.021359721198678017,
+     "gain_off": 0.020523009821772575,
+     "act_core": 1.163358211517334,
+     "act_off": 1.205078125
+    }
+   },
+   "2099": {
+    "silhouette": 0.42648234963417053,
+    "null_sil95": 0.5590374767780304,
+    "multi": false,
+    "n_core": 77,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L1:1401",
+      "L1:2218",
+      "L0:1887"
+     ],
+     "offshoot": [
+      "attn0",
+      "attn1",
+      "attn2",
+      "L1:1401"
+     ]
+    },
+    "examples": {
+     "core": [
+      " Through UPT president Leonard Goldenson , [[ ABC]]  also",
+      " made his first appearance in the UEFA [[ Champions]]  League"
+     ],
+     "offshoot": [
+      " NatWest Pro40 League and the Twenty [[20]]  Cup",
+      " Georgian : \u10ee\u10e3\ufffd [[\ufffd]] \ufffd"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.001415434293448925,
+    "dev": {
+     "lead_res": 0.06792520838725895,
+     "lead_res_tok": 0.06747099305526774,
+     "lead_raw": 0.08186510600725994,
+     "lead_strength": 0.09635193246290008,
+     "z_res": 1.7091465008392963,
+     "cmp": 0,
+     "pct_core": [
+      0.6450387239456177,
+      0.9101029634475708,
+      0.9961450695991516
+     ],
+     "pct_off": [
+      0.7270662784576416,
+      0.6643451452255249,
+      0.9948791861534119
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0011415694607421756,
+     "kl_off": 0.0023322864435613155,
+     "gain_core": 0.025370730087161064,
+     "gain_off": 0.037186115980148315,
+     "act_core": 1.1829849481582642,
+     "act_off": 0.98560631275177
+    }
+   },
+   "2302": {
+    "silhouette": 0.4102840721607208,
+    "null_sil95": 0.49712965786457064,
+    "multi": false,
+    "n_core": 76,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "L0:2732",
+      "L2:2867"
+     ],
+     "offshoot": [
+      "attn1",
+      "L2:3026",
+      "L0:1576",
+      "L2:1453"
+     ]
+    },
+    "examples": {
+     "core": [
+      " full week , backing up traffic on the [[ Interstate]]  for",
+      " demolished several houses in the region to allow [[ for]]  an"
+     ],
+     "offshoot": [
+      " which he scored eight goals as one of [[ two]]  ever",
+      "amazaki and Eshiro went on [[ to]]  direct"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0005537723191082478,
+    "dev": {
+     "lead_res": -0.11724407107278548,
+     "lead_res_tok": -0.09341329800799945,
+     "lead_raw": -0.11777315550206002,
+     "lead_strength": -0.007451768114901336,
+     "z_res": -2.495687753100096,
+     "cmp": 0,
+     "pct_core": [
+      0.4961341917514801,
+      0.7688184380531311,
+      0.9957025647163391
+     ],
+     "pct_off": [
+      0.6858596205711365,
+      0.8146393895149231,
+      0.9963397979736328
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0005595508264377713,
+     "kl_off": 0.0005354736349545419,
+     "gain_core": 0.022494278848171234,
+     "gain_off": 0.019184084609150887,
+     "act_core": 0.8960860371589661,
+     "act_off": 0.9404703974723816
+    }
+   },
+   "2343": {
+    "silhouette": 0.45081111788749695,
+    "null_sil95": 0.4751987174153328,
+    "multi": false,
+    "n_core": 61,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "attn1",
+      "attn0"
+     ],
+     "offshoot": [
+      "attn0",
+      "attn2",
+      "L2:3026",
+      "L0:458"
+     ]
+    },
+    "examples": {
+     "core": [
+      " . \" Sacirbey stated that he [[ was]]  satisfied",
+      " of this that Fogerty agreed to [[ award]]  him"
+     ],
+     "offshoot": [
+      " under your jurisdiction has bewitched one of [[ my]]  servants",
+      " and his hair stood on end but he [[ was]]  intensely"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0003460352018009871,
+    "dev": {
+     "lead_res": -0.18224249246133667,
+     "lead_res_tok": -0.11410038693904825,
+     "lead_raw": -0.19448176639553072,
+     "lead_strength": -0.04948835811503749,
+     "z_res": -4.131513973563843,
+     "cmp": 0,
+     "pct_core": [
+      0.6291131377220154,
+      0.789628267288208,
+      0.9962633848190308
+     ],
+     "pct_off": [
+      0.89475017786026,
+      0.9129546880722046,
+      0.9952069520950317
+     ]
+    },
+    "causal": {
+     "kl_core": 0.00033557129791006446,
+     "kl_off": 0.0003624017699621618,
+     "gain_core": 0.017018118873238564,
+     "gain_off": 0.01783122681081295,
+     "act_core": 1.0129114389419556,
+     "act_off": 0.9689378142356873
+    }
+   },
+   "2351": {
+    "silhouette": 0.38266757130622864,
+    "null_sil95": 0.49021253138780596,
+    "multi": false,
+    "n_core": 67,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "L2:3026",
+      "L2:1491"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn2",
+      "attn0",
+      "L2:3026"
+     ]
+    },
+    "examples": {
+     "core": [
+      " \n\n The episode ends with Lisa finally being [[ able]]  to",
+      " didn 't know when he would have [[ time]]  to"
+     ],
+     "offshoot": [
+      " It features the return of Shelby Corcor [[an]]  (",
+      " M @-@ 6 between Kalamaz [[oo]]  and"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0007010237313807011,
+    "dev": {
+     "lead_res": -0.014950817240017945,
+     "lead_res_tok": -0.041155102659082066,
+     "lead_raw": -0.021597788142219798,
+     "lead_strength": 0.06352265141415736,
+     "z_res": -0.42357105942371026,
+     "cmp": 0,
+     "pct_core": [
+      0.5388864874839783,
+      0.7352496385574341,
+      0.9956247210502625
+     ],
+     "pct_off": [
+      0.6245277523994446,
+      0.6928040981292725,
+      0.9963065385818481
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0006412076763808727,
+     "kl_off": 0.0008224681951105595,
+     "gain_core": 0.023811805993318558,
+     "gain_off": 0.02358517050743103,
+     "act_core": 0.9797982573509216,
+     "act_off": 1.0050899982452393
+    }
+   },
+   "2577": {
+    "silhouette": 0.3204079866409302,
+    "null_sil95": 0.41492657959461215,
+    "multi": false,
+    "n_core": 72,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn1",
+      "L2:2812",
+      "L0:1093"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn2",
+      "embedding",
+      "L0:134"
+     ]
+    },
+    "examples": {
+     "core": [
+      "agan Witchcraft movement , while the other [[ refers]]  explicitly",
+      " Comparing the North American observations , William Smith [[ published]]  in"
+     ],
+     "offshoot": [
+      " is a former U.S. Representative [[ from]]  Iowa",
+      " Wrestling Alliance \n\n SWA Light Heavyweight [[ Championship]]  ("
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0003482636820990592,
+    "dev": {
+     "lead_res": -0.14234991250912193,
+     "lead_res_tok": -0.07376188734597502,
+     "lead_raw": -0.13842500264327684,
+     "lead_strength": 0.046166999590775304,
+     "z_res": -3.4437093541739348,
+     "cmp": 0,
+     "pct_core": [
+      0.4372299909591675,
+      0.8669596314430237,
+      0.9962007999420166
+     ],
+     "pct_off": [
+      0.6671822667121887,
+      0.9138574600219727,
+      0.9949527382850647
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0002766464604064822,
+     "kl_off": 0.000532422331161797,
+     "gain_core": 0.014933677390217781,
+     "gain_off": 0.019625162705779076,
+     "act_core": 1.0486856698989868,
+     "act_off": 0.9147251844406128
+    }
+   },
+   "2705": {
+    "silhouette": 0.4247564673423767,
+    "null_sil95": 0.5940169095993042,
+    "multi": false,
+    "n_core": 72,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn1",
+      "embedding",
+      "L0:539"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn0",
+      "attn2",
+      "L2:1922"
+     ]
+    },
+    "examples": {
+     "core": [
+      "omer Maximilian Hell and his assistant J [[\u00e1n]] os",
+      "is , which are also mainly white and [[ gloss]] y"
+     ],
+     "offshoot": [
+      " fire . \n\n On Hill 217 the F [[us]] ili",
+      " from Netherlands and in Asia , it has [[ been]]  collected"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.001553756301291287,
+    "dev": {
+     "lead_res": -0.07710990525689515,
+     "lead_res_tok": -0.0706931827353861,
+     "lead_raw": -0.0812067242250556,
+     "lead_strength": 0.052874808214486535,
+     "z_res": -1.67940177924071,
+     "cmp": 0,
+     "pct_core": [
+      0.5921004414558411,
+      0.7790912389755249,
+      0.9957850575447083
+     ],
+     "pct_off": [
+      0.6478105783462524,
+      0.8857945799827576,
+      0.9960190653800964
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0014696259750053287,
+     "kl_off": 0.0017700912430882454,
+     "gain_core": 0.0284526776522398,
+     "gain_off": 0.02936524711549282,
+     "act_core": 1.0362344980239868,
+     "act_off": 1.0510079860687256
+    }
+   },
+   "2719": {
+    "silhouette": 0.3487553894519806,
+    "null_sil95": 0.3719140589237213,
+    "multi": false,
+    "n_core": 51,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "L2:3026",
+      "L0:539"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn0",
+      "L2:2194",
+      "L2:3026"
+     ]
+    },
+    "examples": {
+     "core": [
+      " following year . \n\n The site is accessible [[ for]]  tourism",
+      " he was 15 Wheeler was instructed to educate [[ himself]]  by"
+     ],
+     "offshoot": [
+      " nutrients by breaking down dead or dying organic [[ matter]]  .",
+      " @-@ operatic music by El [[gar]]  ,"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0004813553823623806,
+    "dev": {
+     "lead_res": 0.06949831084721403,
+     "lead_res_tok": 0.05361349680251558,
+     "lead_raw": 0.0673698997523795,
+     "lead_strength": 0.05080159080057156,
+     "z_res": 1.3203808642376553,
+     "cmp": 0,
+     "pct_core": [
+      0.5871062874794006,
+      0.7202826738357544,
+      0.9958202242851257
+     ],
+     "pct_off": [
+      0.49420166015625,
+      0.6784475445747375,
+      0.9958823323249817
+     ]
+    },
+    "causal": {
+     "kl_core": 0.00048139592399820685,
+     "kl_off": 0.00048131312360055745,
+     "gain_core": 0.021497201174497604,
+     "gain_off": 0.019766127690672874,
+     "act_core": 0.8893803358078003,
+     "act_off": 0.9157066941261292
+    }
+   },
+   "2745": {
+    "silhouette": 0.4441516399383545,
+    "null_sil95": 0.6085096955299377,
+    "multi": false,
+    "n_core": 79,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "attn1",
+      "L2:3026"
+     ],
+     "offshoot": [
+      "attn2",
+      "L0:915",
+      "L2:3026",
+      "L2:200"
+     ]
+    },
+    "examples": {
+     "core": [
+      "iest Britons by the Sunday Times Rich [[ List]]  ,",
+      " . Goldenson quickly brokered a deal [[ with]]  Ted"
+     ],
+     "offshoot": [
+      " consecutive games on their way to a seventh [[ place]]  finish",
+      " behalf of President Alija Izetbeg [[ov]] i\u0107"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.001402634079568088,
+    "dev": {
+     "lead_res": 0.10463797041688175,
+     "lead_res_tok": 0.09839382594516724,
+     "lead_raw": 0.10840364793038215,
+     "lead_strength": 0.035800976232996606,
+     "z_res": 2.1614206267132334,
+     "cmp": 0,
+     "pct_core": [
+      0.5582370162010193,
+      0.8726920485496521,
+      0.9959643483161926
+     ],
+     "pct_off": [
+      0.5343316197395325,
+      0.6797900199890137,
+      0.9954265356063843
+     ]
+    },
+    "causal": {
+     "kl_core": 0.001196524710394442,
+     "kl_off": 0.0021779981907457113,
+     "gain_core": 0.028064198791980743,
+     "gain_off": 0.033828720450401306,
+     "act_core": 1.067086100578308,
+     "act_off": 0.99658203125
+    }
+   },
+   "2800": {
+    "silhouette": 0.386566698551178,
+    "null_sil95": 0.5579685717821122,
+    "multi": false,
+    "n_core": 59,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn0",
+      "L0:532",
+      "attn1"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn2",
+      "attn0",
+      "L2:118"
+     ]
+    },
+    "examples": {
+     "core": [
+      " Oakley and Josh Weinstein , as it [[ was]]  a",
+      " lane closed for a full week , backing [[ up]]  traffic"
+     ],
+     "offshoot": [
+      " another FA Cup run , beating Morecam [[be]]  1",
+      " of Titan , joined as the new chairman [[ following]]  Pr"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0008258462767116725,
+    "dev": {
+     "lead_res": -0.0021537272647405518,
+     "lead_res_tok": -0.021531680842054188,
+     "lead_raw": -0.002517288740926049,
+     "lead_strength": 0.041794060219314866,
+     "z_res": -0.13276462898312438,
+     "cmp": 0,
+     "pct_core": [
+      0.5821225643157959,
+      0.7571011185646057,
+      0.9958016276359558
+     ],
+     "pct_off": [
+      0.5518592596054077,
+      0.7923987507820129,
+      0.9959249496459961
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0007043189252726734,
+     "kl_off": 0.0010007270611822605,
+     "gain_core": 0.023569835349917412,
+     "gain_off": 0.025404084473848343,
+     "act_core": 1.0015807151794434,
+     "act_off": 1.005466341972351
+    }
+   },
+   "2803": {
+    "silhouette": 0.3702757954597473,
+    "null_sil95": 0.42710656225681304,
+    "multi": false,
+    "n_core": 56,
+    "drivers": {
+     "core": [
+      "L2:3026",
+      "L0:2087",
+      "L0:1575",
+      "L2:709"
+     ],
+     "offshoot": [
+      "attn2",
+      "L2:3026",
+      "L2:2395",
+      "L0:39"
+     ]
+    },
+    "examples": {
+     "core": [
+      " when the FCC cleared the way for U [[PT]]  to",
+      " These birds are so called because they always [[ go]]  alone"
+     ],
+     "offshoot": [
+      "izing that the ABC @-@ U [[PT]]  deal",
+      " were especially happy with the scene where P [[uck]]  meets"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0011037157382816076,
+    "dev": {
+     "lead_res": -0.02509583260412682,
+     "lead_res_tok": -0.010463005497140925,
+     "lead_raw": -0.03713739503707203,
+     "lead_strength": 0.01220668145975512,
+     "z_res": -0.6549123693070228,
+     "cmp": 0,
+     "pct_core": [
+      0.645228385925293,
+      0.7963491678237915,
+      0.9955722689628601
+     ],
+     "pct_off": [
+      0.6373907923698425,
+      0.8784616589546204,
+      0.9961934685707092
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0011518558021634817,
+     "kl_off": 0.0010424465872347355,
+     "gain_core": 0.023038940504193306,
+     "gain_off": 0.020998945459723473,
+     "act_core": 1.1571394205093384,
+     "act_off": 1.2480247020721436
+    }
+   },
+   "2864": {
+    "silhouette": 0.4139726161956787,
+    "null_sil95": 0.4436744421720505,
+    "multi": false,
+    "n_core": 68,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "embedding",
+      "L0:548"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn2",
+      "attn0",
+      "L2:3026"
+     ]
+    },
+    "examples": {
+     "core": [
+      " correctly prepared , it may still be seen [[ as]]  an",
+      " 522 ) might be written in the com [[ical]]  ,"
+     ],
+     "offshoot": [
+      " \" but the meaning of this Gael [[ic]]  name",
+      " was begun in the hills of the Tac [[ub]] aya"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0015914997784420848,
+    "dev": {
+     "lead_res": 0.19287183780421818,
+     "lead_res_tok": 0.16132985656378881,
+     "lead_raw": 0.1934802967726308,
+     "lead_strength": 0.06018675836350984,
+     "z_res": 4.016471780698852,
+     "cmp": 0,
+     "pct_core": [
+      0.578392744064331,
+      0.7749596834182739,
+      0.9959883093833923
+     ],
+     "pct_off": [
+      0.4104407727718353,
+      0.5559511184692383,
+      0.9955605268478394
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0007300326251424849,
+     "kl_off": 0.0034221168607473373,
+     "gain_core": 0.023848900571465492,
+     "gain_off": 0.03602408990263939,
+     "act_core": 0.993903636932373,
+     "act_off": 1.0009307861328125
+    }
+   },
+   "2999": {
+    "silhouette": 0.4604076147079468,
+    "null_sil95": 0.5154295474290848,
+    "multi": false,
+    "n_core": 80,
+    "drivers": {
+     "core": [
+      "attn2",
+      "L2:3026",
+      "embedding",
+      "L0:1826"
+     ],
+     "offshoot": [
+      "L2:3026",
+      "attn1",
+      "L0:960",
+      "embedding"
+     ]
+    },
+    "examples": {
+     "core": [
+      " . He had played just six league games [[ by]]  29",
+      " 19 August 2007 , in the 16th [[ minute]]  in"
+     ],
+     "offshoot": [
+      " . Aspects of Thunderbirds have [[ since]]  been",
+      " left the show after this episode , but [[ returned]]  for"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0007352965185418725,
+    "dev": {
+     "lead_res": -0.02388328575640119,
+     "lead_res_tok": -0.021860709344897016,
+     "lead_raw": -0.020062838867306754,
+     "lead_strength": 0.03343023061752326,
+     "z_res": -0.46545863975815305,
+     "cmp": 0,
+     "pct_core": [
+      0.593530535697937,
+      0.8080883026123047,
+      0.9960640072822571
+     ],
+     "pct_off": [
+      0.6534448862075806,
+      0.7882996797561646,
+      0.9950213432312012
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0007798795122653246,
+     "kl_off": 0.0005569643690250814,
+     "gain_core": 0.019575607031583786,
+     "gain_off": 0.02185523882508278,
+     "act_core": 1.168237328529358,
+     "act_off": 1.0087401866912842
+    }
+   },
+   "3001": {
+    "silhouette": 0.28771650791168213,
+    "null_sil95": 0.3307773873209954,
+    "multi": false,
+    "n_core": 58,
+    "drivers": {
+     "core": [
+      "attn2",
+      "attn1",
+      "attn0",
+      "embedding"
+     ],
+     "offshoot": [
+      "attn1",
+      "attn0",
+      "attn2",
+      "embedding"
+     ]
+    },
+    "examples": {
+     "core": [
+      " severed head of a lord of Palen [[que]]  in",
+      " , comparing it to a parent sending their [[ child]]  to"
+     ],
+     "offshoot": [
+      " ) , the biological parents of her adopted [[ daughter]]  Beth",
+      " It has a more distinct geometry than at [[ most]]  Maya"
+     ]
+    },
+    "leak_share": null,
+    "kl_mean": 0.0006615195889025927,
+    "dev": {
+     "lead_res": -0.0880050832185971,
+     "lead_res_tok": -0.05050276578066053,
+     "lead_raw": -0.08617673461648145,
+     "lead_strength": 0.05826911932447765,
+     "z_res": -1.913786519434281,
+     "cmp": 0,
+     "pct_core": [
+      0.4850834906101227,
+      0.7178775072097778,
+      0.9959965348243713
+     ],
+     "pct_off": [
+      0.6234123110771179,
+      0.7519021034240723,
+      0.9956586956977844
+     ]
+    },
+    "causal": {
+     "kl_core": 0.0005883991252630949,
+     "kl_off": 0.0007624956197105348,
+     "gain_core": 0.021303638815879822,
+     "gain_off": 0.02397885173559189,
+     "act_core": 0.980073094367981,
+     "act_off": 0.965948224067688
+    }
+   }
+  }
+ },
+ "_time": "2026-10-15 21:48:00",
+ "seconds": 44.31383419036865
+}

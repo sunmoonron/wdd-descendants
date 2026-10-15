@@ -6,7 +6,7 @@
 - WDD is not a proxy for neuron selectivity: six ordinary statistics of a neuron and its row predict entry four intervals ahead at 0.74 out of sample, S and breadth at 0.88, the activation side added to WDD +0.001 and WDD added to it +0.142; S and breadth lead at every horizon (0.83 and 0.85 at eight intervals against at most 0.64); a word's extreme contexts are the coalition's, where the neuron fires selectively but not most (the row's cosine at its most active positions predicts entry at 0.64) (e548).
 - A learned feature dictionary of the states sees the association by half (Pythia-160m at the end of training, block 6, EleutherAI's TopK autoencoder): no feature matches a word's context set as a set (the best reaches Jaccard 0.25 for 0.28 of words against 0.17 of random rows, a feature of 5 positions unrelated to the row, cosine 0.04); the feature nearest to the word's row by decoder cosine sits at 0.48 (random rows 0.16, random directions 0.13) and fires at 0.50 of the word's eight extreme positions (random rows 0.00); in reverse the nearest row to a live feature is a word for 0.20 of features against a base rate of 0.01, while only 0.10 of features have a row within cosine 0.5 (e549).
 
-**Start here:** e548, e549 · **Sessions:** S97-S98, S152 · **Scripts:** `scripts/e548_activation_vs_wdd.py`, `e549_feature_side.py`, `e673_edge_vs_node.py`
+**Start here:** e548, e549 · **Sessions:** S97-S98, S152, S153 · **Scripts:** `scripts/e548_activation_vs_wdd.py`, `e549_feature_side.py`, `e673_edge_vs_node.py`, `e675_cross_position.py`
 
 ## Experiments
 
@@ -17,7 +17,11 @@
 
 | e673 | Gemini 4's edge featurizer for single neurons: does consumption by downstream gates predict a neuron's ablation damage better than its node prominence, and does it separate e568's bystander row? Pythia-410m, all neurons of three blocks scored nine ways and zeroed one at a time | one Pythia-410m neuron's ablation damage is its gradient times activation (Spearman 1.00, 1.00, 1.00 at blocks 12, 17, 22); Gemini's edge consumption beats node prominence at blocks 12 and 17 (by +0.13, +0.06) only as the write's size does, and loses at block 22; WDD's activation-free row score is unrelated to damage (0.08, 0.03, -0.01), and e568's bystander tops it while last on damage (e673) | narrowed (edge beats node prominence at blocks 12 and 17, by 0.06 at the pre-registered block, as write size does; node wins at block 22; AtP is the damage) | ← e568, e548 |
 
+| e675 | Gemini 4's cross-position trace: does the label-free projection of a summary state on the write dictionary name the neurons whose earlier writes matter there (Pythia-410m, every neuron zeroed at all earlier positions), and does it find e670's attribute writers item by item? | WDD's write dictionary is not a cross-position trace: the label-free projection of a summary state ranks the neurons whose earlier writes matter at Spearman 0.04, 0.02, 0.17 (Pythia-410m), and on e670's items each item's own projection ranks the attribute writer near 26942 of 63,232 and its top 32 flip 0.00 of items (the labelled echo 0.45) (e675) | refuted (the projection is unrelated to cross-position damage; per item it neither ranks nor flips the attribute writers) | ← e670, e673 |
+
 ## How the results flow
+
+- `e670, e673 → e675`: the activation-free score tested across positions and item by item.
 
 - `e548, e568 → e673`: which per-neuron score predicts what removing the neuron costs; WDD's row score against activation-weighted ones.
 

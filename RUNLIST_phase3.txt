@@ -773,3 +773,23 @@ PYTHONPATH=../demo python e670_phantom_echo.py
 PYTHONPATH=../demo python e671_signed_poles.py
 python e672_routes.py
 python e673_edge_vs_node.py
+python e674_routes_rep.py --model pythia160 --block 3
+python e674_routes_rep.py --model pythia160 --block 9
+python e674_routes_rep.py --model pythia410 --block 6
+python e674_routes_rep.py --model pythia410 --block 12
+python e674_routes_rep.py --model pythia410 --block 18
+python e674_routes_rep.py --model olmo1b --block 4
+python e674_routes_rep.py --model olmo1b --block 8
+python e674_routes_rep.py --model olmo1b --block 12
+python e675_cross_position.py --part A
+PYTHONPATH=../demo python e675_cross_position.py --part B
+python e676_center_out.py --model pythia160 --block 3
+python e676_center_out.py --model pythia160 --block 6 --seed 672
+python e676_center_out.py --model pythia160 --block 9
+python e676_center_out.py --model pythia410 --block 6
+python e676_center_out.py --model pythia410 --block 12
+python e676_center_out.py --model pythia410 --block 18
+python e676_center_out.py --model olmo1b --block 4
+python e676_center_out.py --model olmo1b --block 8
+python e676_center_out.py --model olmo1b --block 12
+python e674_download.py   # first: the Pythia and OLMo checkpoints, and /workspace/wdd/olmo_refs.json (a copy is results/e674_olmo_refs.json)

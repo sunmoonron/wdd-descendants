@@ -1009,3 +1009,17 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - Node prominence (the write along the predicted token) as the natural score of a neuron's importance at mid depth: at blocks 12 and 17 of Pythia-410m it trails the write's plain size (e673).
 - Offshoots much less causally important than a neuron's main route (the essay's first reason not to worry about recursive generalization), at Pythia-160m block 6: offshoot firings cost as much per firing, by the essay's own grouping slightly more (e672).
 - A neuron's distinct routes forming in order, main route first (the essay's developmental prediction), at Pythia-160m block 6: no order among 83 two-route neurons (e672).
+
+## Session 153 kills (routes replicated, the cross-position trace)
+- "the contrast e672 implied but did not test: pooled over the eight runs, the share of one-route neurons whose larger group leads exceeds the share of two-route neurons whose core leads, one-sided Fisher exact p < 0.05." (e674).
+- "the essay's causal prediction again: pooled over the eight runs, among two-route neurons the offshoot's mean KL is below the core's in more than half, one-sided binomial p < 0.05." (e674).
+- "Gemini's leak hypothesis: in OLMo (the three runs pooled), among two-route neurons whose top 100 include gate-closed firings and whose two routes differ in their gate-closed share, the offshoot has the larger share in more than half, one-sided binomial p < 0.05." (e674).
+- "Gemini's collapse: in OLMo (pooled), at least half of the two-route neurons become one-route when only gate-open firings are kept." (e674).
+- "the essay's causal prediction on clean firings: in OLMo (pooled), among two-route neurons of the gate-open top 100, the offshoot's mean KL is below the core's in more than half, one-sided binomial p < 0.05." (e674).
+- "Gemini's trace, part A: at each block the activation-free projection of the final state ranks neurons by their cross-position damage at Spearman 0.3 or more (either state)." (e675).
+- "part A: the projection predicts cross-position damage better than the earlier positions' write size (bootstrap 95% CI of the difference above 0) at each block." (e675).
+- "part B: negating each held-out marked item's own top 32 rows by its label-free projection flips at least half as many items as e670's supervised echo, for gender and for number." (e675).
+- "part B: the attribute's oracle top row ranks in the top 100 of 63,232 rows under the label-free projection for at least half of the items, for gender and for number." (e675).
+- e672's reading that the developmental order appears only inside a single route (session 152): pooled over eight runs distinct routes also show the core first (0.56, p 0.0017) and the two kinds of neuron do not differ (Fisher p 0.19) (e674).
+- The SwiGLU double-negative leak as the source of apparent offshoots (Gemini 4): the offshoot is the more gate-closed route in 39 of 74 OLMo neurons whose routes differ, and gate-open filtering leaves 179 of 219 two-route neurons two-route (e674).
+- The write dictionary as a label-free cross-position forensic trace (Gemini 4's reading of e670): the projection of a summary state is unrelated to which neurons' earlier writes matter there, and item by item it finds no attribute writer (e675).

@@ -1,0 +1,36 @@
+{
+ "experiment": "e674",
+ "session": 153,
+ "written": "2026-10-15 17:48:45",
+ "status": "pre-registered after a smoke on Pythia-160m block 3 (48 windows, 30 neurons, 3 checkpoints), before the full runs; OLMo's smoke follows but changes no hypothesis",
+ "question": "Does e672 replicate on other blocks and models: inside a single route the larger part of a neuron's top firings becomes top firings before the rest (found after the fact in e672), while a neuron's distinct routes form in no order and its offshoot firings cost as much as its core firings? And Gemini 4's SwiGLU question: are apparent offshoots the gate-closed double-negative leak firings?",
+ "design": "Eight runs, each e672's measurement: Pythia-160m blocks 3 and 9; Pythia-410m blocks 6, 12, 18; OLMo-1B-0724 blocks 4, 8, 12. 256 windows x 256 tokens of wikitext-2 train; 300 sampled neurons with a substantial top 100 (Pythia: maximum above 1, as e672; OLMo: maximum above the 10th percentile of maxima); the exact upstream split through the block's LayerNorm (SwiGLU: gate and value split exactly and combined to the first-order attribution of the activation); k-means (k = 2) on the 256 largest units, two-route when the silhouette beats the 95th percentile of 20 unimodal nulls with the same mean and covariance and the minor group holds 10 or more; causal: the neuron zeroed in each window holding its firings, mean KL at core and offshoot firings, for every two-route neuron and 60 sampled one-route neurons (OLMo's ablations in TF32, checked against fp32 in its smoke); developmental: each firing's percentile at 11 checkpoints (Pythia 128 to 143000; OLMo 1000 to 512000 and the final 1454000), early score = mean percentile before the end, lead = larger group minus the rest after regressing out final activation and the firing's token typicality; OLMo also on the top 100 gate-open firings (gate > 0).",
+ "hypotheses": {
+  "H1": "replication of e672's after-the-fact gradient: in each run, among one-route neurons, the larger group's lead (activation and token typicality regressed out) is positive in more than half, one-sided binomial p < 0.05 (verdict over the eight runs: supported if all, narrowed if some, refuted if none)",
+  "H2": "the contrast e672 implied but did not test: pooled over the eight runs, the share of one-route neurons whose larger group leads exceeds the share of two-route neurons whose core leads, one-sided Fisher exact p < 0.05",
+  "H3": "the essay's developmental prediction again: pooled over the eight runs, among two-route neurons the core leads in more than half, one-sided binomial p < 0.05",
+  "H4": "the essay's causal prediction again: pooled over the eight runs, among two-route neurons the offshoot's mean KL is below the core's in more than half, one-sided binomial p < 0.05",
+  "H5a": "Gemini's leak hypothesis: in OLMo (the three runs pooled), among two-route neurons whose top 100 include gate-closed firings and whose two routes differ in their gate-closed share, the offshoot has the larger share in more than half, one-sided binomial p < 0.05",
+  "H5b": "Gemini's collapse: in OLMo (pooled), at least half of the two-route neurons become one-route when only gate-open firings are kept",
+  "H6": "the essay's causal prediction on clean firings: in OLMo (pooled), among two-route neurons of the gate-open top 100, the offshoot's mean KL is below the core's in more than half, one-sided binomial p < 0.05"
+ },
+ "predictions": {
+  "H1": "narrowed",
+  "H2": "refuted",
+  "H3": "refuted",
+  "H4": "refuted",
+  "H5a": "supported",
+  "H5b": "refuted",
+  "H6": "refuted"
+ },
+ "smoke": {
+  "pythia160_b3": {
+   "two_route": "2 of 30",
+   "silhouette_median": 0.4,
+   "null_mean": 0.4,
+   "null_95": 0.48,
+   "one_route_lead_share": 0.39,
+   "split_error": 0.00029
+  }
+ }
+}

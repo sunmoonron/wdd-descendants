@@ -1,0 +1,52 @@
+{
+ "experiment": "e675",
+ "session": 153,
+ "written": "2026-10-15 17:53:29",
+ "status": "pre-registered after smokes (part A: block 17, 512 neurons, 47 prompts; part B: French items only), before the full runs",
+ "question": "Gemini 4's reading of e670 against e673: a neuron's activation dies at its token but its write direction persists, so the write dictionary is a cross-position forensic trace that, given only a summary state, recovers which upstream neurons wrote its content at earlier tokens. e670's echo ranked rows against a pole difference built from many labelled items; the claim is label-free and per state.",
+ "design": "Part A: Pythia-410m, e568's 280 prompts, blocks 12, 17, 22, all 4,096 neurons; each neuron zeroed at every position before the last; damage = absolute drop in log p of the model's own top-1 token at the last position (primary) and KL; predictors: projection of the final state (after the block, and the last layer's state, centred over prompts) on the unit write direction (activation-free), the earlier positions' write size, gradient x activation over earlier positions (absolute sum; absolute signed sum), the final-position activation; Spearman across neurons, bootstrap over neurons. Part B: Qwen2.5-0.5B, e670's translation items (French, Spanish, German), gender and number; each item's final-position state at block 12, centred over all items, projected on every MLP write row of blocks 0-12 (no labels); the oracle rows' ranks; per held-out item its own top 32 rows negated, flips against e670's supervised echo top 32, the oracle's top 32 and 32 random rows.",
+ "hypotheses": {
+  "F1": "Gemini's trace, part A: at each block the activation-free projection of the final state ranks neurons by their cross-position damage at Spearman 0.3 or more (either state)",
+  "F2": "part A: the projection predicts cross-position damage better than the earlier positions' write size (bootstrap 95% CI of the difference above 0) at each block",
+  "F3": "part B: negating each held-out marked item's own top 32 rows by its label-free projection flips at least half as many items as e670's supervised echo, for gender and for number",
+  "F4": "part B: the attribute's oracle top row ranks in the top 100 of 63,232 rows under the label-free projection for at least half of the items, for gender and for number"
+ },
+ "predictions": {
+  "F1": "refuted",
+  "F2": "refuted",
+  "F3": "refuted",
+  "F4": "refuted"
+ },
+ "smoke": {
+  "A_block17": {
+   "projection_block": 0.03,
+   "projection_last": -0.06,
+   "write_earlier": 0.33,
+   "atp_earlier": 0.88,
+   "atp_earlier_signed": 1.0,
+   "activation_final": 0.12
+  },
+  "B_french": {
+   "gender": {
+    "oracle_top_rank_median": 24438,
+    "echo_rank": 6,
+    "flips_marked": {
+     "per_item_projection": 0.0,
+     "echo_supervised": 0.45,
+     "oracle": 0.3,
+     "random": 0.0
+    }
+   },
+   "number": {
+    "oracle_top_rank_median": 25180,
+    "echo_rank": 461,
+    "flips_marked": {
+     "per_item_projection": 0.0,
+     "echo_supervised": 0.36,
+     "oracle": 1.0,
+     "random": 0.0
+    }
+   }
+  }
+ }
+}

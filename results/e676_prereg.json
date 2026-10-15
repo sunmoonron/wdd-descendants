@@ -1,0 +1,38 @@
+{
+ "experiment": "e676",
+ "session": 153,
+ "written": "2026-10-15 18:30:10",
+ "status": "pre-registered after a smoke on Pythia-160m block 6 (48 windows, 30 neurons, 3 checkpoints) and after e674's Pythia runs had finished (their one-route lead is the result under test), before the full runs",
+ "question": "Is the one positive route result (e672 after the fact, e674 in every Pythia run: the larger group of a one-route neuron's top firings became top firings first) a frequency effect, the bulk of a route being its more common contexts? And without k-means: do firings nearer the centre of a neuron's top-firing attributions become top firings first (the essay's growth from a local origin)?",
+ "design": "e674's neurons and routes (Pythia-160m blocks 3 and 9, Pythia-410m blocks 6, 12, 18) and e672's (Pythia-160m block 6, seed 672); each firing's early score (mean percentile before the final checkpoint) regressed on final activation, token typicality among the top 100, the log corpus frequency of its token and of its bigram over the whole wikitext-2 train stream, and the log of its position in the window; the larger group's lead on the residual; each firing's cosine with the centroid of the neuron's top-firing attributions (row-normalized, 256 largest units), its partial correlation with the early score with all five controls held. No ablations.",
+ "hypotheses": {
+  "C1": "in each of the six runs, among one-route neurons, the larger group's lead survives the frequency and position controls: positive in more than half, one-sided binomial p < 0.05 (verdict over the six runs: supported if all, narrowed if some, refuted if none)",
+  "C2": "in each of the six runs, over all sampled neurons, firings nearer the centroid became top firings earlier with all controls held: partial correlation positive in more than half, one-sided binomial p < 0.05"
+ },
+ "predictions": {
+  "C1": "narrowed",
+  "C2": "supported"
+ },
+ "smoke": {
+  "pythia160_b6_seed672": {
+   "one_route_lead_full_share": 0.69,
+   "p": 0.038,
+   "n": 26,
+   "center_all_share": 0.7,
+   "p_center": 0.021,
+   "corr_center_vs_log_token_freq": 0.02
+  }
+ },
+ "addendum": {
+  "written": "2026-10-15 18:40:01",
+  "note": "added after e674's OLMo-1B block 8 showed no one-route lead (0.53, p 0.16) and after the three Pythia-160m e676 runs had finished (lead 0.60-0.64, centre 0.70-0.77 of all neurons), before any OLMo e676 run: the same measurement on OLMo-1B-0724 blocks 4, 8 and 12 (e674's neurons)",
+  "hypotheses": {
+   "C1_olmo": "as C1, in each of the three OLMo runs",
+   "C2_olmo": "as C2, in each of the three OLMo runs"
+  },
+  "predictions": {
+   "C1_olmo": "refuted",
+   "C2_olmo": "narrowed"
+  }
+ }
+}
