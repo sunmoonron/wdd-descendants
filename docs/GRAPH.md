@@ -1111,6 +1111,20 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H875 In each of the six runs, over all sampled neurons, firings nearer the centroid became top firings earlier with all controls held: partial correlation positive in more than half, one-sided binomial p < 0.05. → e676 → SUPPORTED.
 - H876 As C1, in each of the three OLMo runs. → e676 → NARROWED (holds for OLMo-1B block 4, OLMo-1B block 8, not OLMo-1B block 12).
 - H877 As C2, in each of the three OLMo runs. → e676 → SUPPORTED.
+- H878 At Pythia-410m block 12, more than half of the neurons beyond the total-effect null are indirect routers. → e677 → SUPPORTED.
+- H879 The share of direct speakers among Pythia-410m neurons beyond the total null rises with depth: at block 22 it exceeds block 2's by at least 0.2. → e677 → SUPPORTED.
+- H880 At every Pythia-410m block, washed-out writers are at least 10% of the neurons beyond the local null. → e677 → SUPPORTED.
+- H881 Fine-tuning keeps species: at Qwen2.5-0.5B blocks 3, 12 and 21, fewer than 10% of the neurons beyond the total null in either the base or the Instruct model change species between them. → e677 → REFUTED.
+- H882 The essay, every double-negative activation: zeroing them in every layer gives more repairs than damages on more than half of the eight non-generative benchmarks, in each model. → e678 → REFUTED.
+- H883 The essay, the leak-dominated neurons only: the same for leak0_dom, in each model. → e678 → REFUTED.
+- H884 The reasoning part: zeroing the double negative in every layer lowers GSM8K accuracy (more damages than repairs, exact binomial p < 0.05) in each model whose base GSM8K accuracy is at least 0.10. → e678 → SUPPORTED.
+- H885 Specificity: zeroing the double negative raises wikitext loss less than the L2-matched weak gate-open control, in each model. → e678 → REFUTED.
+- H886 Depth: zeroing it in the second half of the layers raises wikitext loss less than in the first half, in each model. → e678 → SUPPORTED.
+- H887 Replacing the double negative with its per-neuron mean raises wikitext loss less than half as much as zeroing it, in each model. → e678 → SUPPORTED.
+- H888 The essay's claim under the gentlest ablation: mean replacement of the double negative everywhere gives more repairs than damages on more than half of the eight non-generative benchmarks, in each model. → e678 → REFUTED.
+- H889 Pooled over the three blocks, two-route neurons split more often than random splits of the same firings predict (simulated Poisson-binomial tail p < 0.05). → e679 → SUPPORTED.
+- H890 Two-route neurons split more often than one-route neurons (one-sided Fisher exact p < 0.05). → e679 → SUPPORTED.
+- H891 The best single Pythia-410m neuron covers a one-route neuron's top 100 better than a two-route neuron's (one-sided Mann-Whitney p < 0.05). → e679 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

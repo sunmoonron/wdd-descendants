@@ -1,0 +1,28 @@
+{
+ "experiment": "e679",
+ "session": 154,
+ "written": "2026-10-15 19:49:15",
+ "status": "pre-registered after a smoke (Pythia-160m block 6, 48 windows, 30 neurons), before the full runs",
+ "question": "Gemini 4's fusion of the essay's scale figures (a smaller model's coarse two-sided neurons split into narrower ones in a larger model trained on the same data): do Pythia-160m's two-route neurons map onto two different Pythia-410m neurons, one per route?",
+ "design": "Pythia-160m blocks 3, 6, 9 (e674's and e672's sampled neurons and routes, recomputed with the same seeds over the same 65,024 wikitext-2 train positions); candidates = every Pythia-410m neuron of blocks 2B-2 to 2B+2 (20,480); coverage of a set of firings by a candidate = the share inside the candidate's own top 1% of positions; a neuron splits when its core's best candidate differs from its offshoot's and each covers its own route by at least 0.25 more than the other route; null = 20 random splits of the same firings into groups of the same sizes.",
+ "hypotheses": {
+  "K1": "pooled over the three blocks, two-route neurons split more often than random splits of the same firings predict (simulated Poisson-binomial tail p < 0.05)",
+  "K2": "two-route neurons split more often than one-route neurons (one-sided Fisher exact p < 0.05)",
+  "K3": "the best single Pythia-410m neuron covers a one-route neuron's top 100 better than a two-route neuron's (one-sided Mann-Whitney p < 0.05)"
+ },
+ "predictions": {
+  "K1": "supported",
+  "K2": "supported",
+  "K3": "refuted"
+ },
+ "smoke": {
+  "pythia160_b6": {
+   "two_route": "5 of 30",
+   "split_two": 0.2,
+   "null_two": 0.0,
+   "split_one": 0.08,
+   "median_cov_two": 0.24,
+   "median_cov_one": 0.18
+  }
+ }
+}

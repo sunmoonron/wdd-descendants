@@ -226,6 +226,10 @@ A row's WDD score, the state's projection on its write direction, says where the
 
 WDD's write dictionary is not a cross-position trace: the label-free projection of a summary state ranks the neurons whose earlier writes matter at Spearman 0.04, 0.02, 0.17 (Pythia-410m), and on e670's items each item's own projection ranks the attribute writer near 26942 of 63,232 and its top 32 flip 0.00 of items (the labelled echo 0.45) (e675).
 
+## Most mid-network neurons act through later blocks (session 154)
+
+In the middle of Pythia-410m and Qwen2.5-0.5B nearly every neuron whose removal matters works through later blocks (indirect routers 0.97 and 1.00 of them at block 12), at the end nearly every one speaks directly (0.02 and 0.02 routers); early, most neurons that move their own block's readout are washed out before the output (0.94, 0.97) (e677).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

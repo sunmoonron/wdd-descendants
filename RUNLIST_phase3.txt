@@ -793,3 +793,17 @@ python e676_center_out.py --model olmo1b --block 4
 python e676_center_out.py --model olmo1b --block 8
 python e676_center_out.py --model olmo1b --block 12
 python e674_download.py   # first: the Pythia and OLMo checkpoints, and /workspace/wdd/olmo_refs.json (a copy is results/e674_olmo_refs.json)
+python e677_effect_species.py --model pythia410 --blocks 2
+python e677_effect_species.py --model pythia410 --blocks 6
+python e677_effect_species.py --model pythia410 --blocks 12
+python e677_effect_species.py --model pythia410 --blocks 17
+python e677_effect_species.py --model pythia410 --blocks 22
+python e677_effect_species.py --model qwen05
+python e677_effect_species.py --model qwen05i
+python e678_leak_ablation.py --model qwen05
+python e678_leak_ablation.py --model qwen15
+python e678_leak_ablation.py --model smol360
+python e678_leak_ablation.py --model olmo1b
+python e679_scale_split.py --block 3
+python e679_scale_split.py --block 6 --seed 672
+python e679_scale_split.py --block 9

@@ -7,7 +7,7 @@
 - The learned dictionary (4096 latents per checkpoint) has a persistent feature for 0.31 of the classes, sees those before the row (0.61), and does not date the parameter: at recruitment its decoder has cosine 0.11 with the row, and it points at the row 7.0 checkpoints after recruitment, for 33 of 241 words (e584).
 - The claim, as sharp as the record allows: a native, parameter-indexed coordinate system for how representations form and how responsibility for them migrates through training.
 
-**Start here:** e584 · **Sessions:** S106, S152, S153 · **Scripts:** `scripts/e582_longitudinal_cache.py`, `e583_sae_per_checkpoint.py`, `e584_longitudinal.py`, `e672_routes.py`, `e674_routes_rep.py`, `e676_center_out.py`
+**Start here:** e584 · **Sessions:** S106, S152, S153, S154 · **Scripts:** `scripts/e582_longitudinal_cache.py`, `e583_sae_per_checkpoint.py`, `e584_longitudinal.py`, `e672_routes.py`, `e674_routes_rep.py`, `e676_center_out.py`, `e679_scale_split.py`
 
 ## Experiments
 
@@ -23,7 +23,11 @@
 
 | e676 | The control e674's one positive result needed: does the larger group's lead survive the token's and bigram's corpus frequency and position, and do firings nearer the centre of a neuron's top-firing attributions become top firings first (no k-means)? | the bulk-first lead survives token and bigram frequency and position in all six Pythia runs and two of three OLMo runs, and the firings nearest the centre of a neuron's input attributions became top firings first in 0.63 to 0.80 of neurons in all nine runs (p below 0.0001 in each): growth from a local origin, measured (e676) | supported (the lead survives frequency and position in eight of nine runs; growth from the centre in all nine) | ← e674 |
 
+| e679 | Gemini 4's scale fusion: does Pythia-410m divide a Pythia-160m two-route neuron's routes between separate neurons (same data, same order)? | Pythia-410m divides Pythia-160m's two-route neurons into separate specialists in 0.34, 0.28, 0.49 of cases against 0.19, 0.17, 0.24 for one-route neurons and almost none for random splits, but no 410m neuron covers more than about a third of a 160m neuron's top firings (e679) | narrowed (two-route neurons split more often than one-route ones; no close counterparts across scale) | ← e674, e676 |
+
 ## How the results flow
+
+- `e674, e676 → e679`: the same routes matched against a larger model trained on the same data.
 
 - `e672 → e674`: the route measurement repeated on eight blocks of three models, with the SwiGLU leak filter.
 

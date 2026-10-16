@@ -2,7 +2,7 @@
 
 **Question.** What are the sink positions and the few huge directions of the state, and which of the program's claims did they distort?
 **Established.** Phase-1 sink states (norm above 10 times the median) are essentially one neuron's write on one massive channel, removed by the last blocks in every model (e20, e55). The sink-contaminated centring mean puts the sink atom first in 38-60% of typical supports in SmolLM2 and OLMo, yet typical-only centring leaves identification unchanged, and the massive channels do not explain GPT-2's unreadability (e120, e126, e170). Phase 3 never excluded sinks, and session 44 traced its largest numbers to them: Pythia's 86% of the variance in the top-8 directions M was one `"\n\n\n"` token per sequence, OLMo's 48% one outlier and Qwen2.5-7B's 97% one `" series"` token; at ordinary positions M holds 10-26% (11% at 7B) in the same subspace (e432, e437b). The phase-3 false friends were mis-described sinks, while self-description and the replacement model's compounding are unchanged (e437, e392b). Correctly measured, M is an early-written channel carrying token identity, and removing it costs 2-4 times its quadratic prediction, a knee with no single seat (e433, e438, e441).
-**Start here:** e20, e126, e432, e437, e441 · **Sessions:** S1, S2-3, S44 · **Scripts:** `scripts/e20_sinks.py`, `scripts/e432_huge_direction_anatomy.py`, `scripts/e437_sink_hygiene.py`, `scripts/e441_knee_decomposition.py`; the rest are `scripts/<id>_*.py`
+**Start here:** e20, e126, e432, e437, e441 · **Sessions:** S1, S2-3, S44, S154 · **Scripts:** `scripts/e20_sinks.py`, `scripts/e432_huge_direction_anatomy.py`, `scripts/e437_sink_hygiene.py`, `scripts/e441_knee_decomposition.py`, `e678_leak_ablation.py`; the rest are `scripts/<id>_*.py`
 
 ## Experiments
 
@@ -22,7 +22,11 @@
 | e438 | Is the knee of M the attention softmax? | No: freezing later attention patterns removes 28-64% of the cost but not the knee (1.9-3.0 frozen); removing M moves patterns more than a matched random move (TV 0.13-0.33 vs 0.04-0.16) | refuted | ← e374 e432 e433 · → e441 |
 | e441 | Is the knee MLP gating, or another single nonlinearity? | No single seat: fully linearised, GELU models are quadratic (knee 0.9-1.2) but gated ones keep 1.4-2.0; linear MLPs raise gated costs (Qwen +0.55 to +1.01): gates absorb large moves | narrowed (no single seat) | ← e438 · → — |
 
+| e678 | Cammarata's claim that ablating SwiGLU's double negative across the network raises most benchmarks and lowers some reasoning ones, in four open models, with an L2-matched control and mean replacement | SwiGLU's double negative carries 0.15 to 0.19 of the MLP activation energy; zeroing it everywhere is catastrophic (wikitext loss +1.25 to 4.40 nats) and worse than an L2-matched weak-activation control, its per-neuron mean is nearly free (+0.17 to 0.21), and no variant raises most of eight benchmarks while every one lowers GSM8K (Qwen2.5-1.5B 0.62 to 0.56 at the gentlest) (e678) | refuted (no variant raises most benchmarks; the double negative carries computation; only the reasoning drop is reproduced) | ← e671 |
+
 ## How the results flow
+
+- `e671 → e678`: the double negative's computation tested by ablation, zeroed and mean-replaced.
 
 - `e01 → e20 → e55`: e01 saw the massive channel vanish at the last level; e20 finds each sink is one neuron's write (GPT-2 mlp2#1825 on channel 447), and e55 finds what removes it: attention in GPT-2, MLPs in SmolLM2 and Qwen.
 - `e20 → e89 → e126 / e120`: the audit flagged that the cached centring mean includes sink states. The mean holds SmolLM2's sink neuron (e89) and the sink atom tops many typical supports (e126), but typical-only centring barely moves the gap (e120), so the contamination hypothesis (H10) was killed and kept as a caveat.

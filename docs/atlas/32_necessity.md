@@ -6,7 +6,7 @@
 - WDD is not a proxy for neuron selectivity: six ordinary statistics of a neuron and its row predict entry four intervals ahead at 0.74 out of sample, S and breadth at 0.88, the activation side added to WDD +0.001 and WDD added to it +0.142; S and breadth lead at every horizon (0.83 and 0.85 at eight intervals against at most 0.64); a word's extreme contexts are the coalition's, where the neuron fires selectively but not most (the row's cosine at its most active positions predicts entry at 0.64) (e548).
 - A learned feature dictionary of the states sees the association by half (Pythia-160m at the end of training, block 6, EleutherAI's TopK autoencoder): no feature matches a word's context set as a set (the best reaches Jaccard 0.25 for 0.28 of words against 0.17 of random rows, a feature of 5 positions unrelated to the row, cosine 0.04); the feature nearest to the word's row by decoder cosine sits at 0.48 (random rows 0.16, random directions 0.13) and fires at 0.50 of the word's eight extreme positions (random rows 0.00); in reverse the nearest row to a live feature is a word for 0.20 of features against a base rate of 0.01, while only 0.10 of features have a row within cosine 0.5 (e549).
 
-**Start here:** e548, e549 · **Sessions:** S97-S98, S152, S153 · **Scripts:** `scripts/e548_activation_vs_wdd.py`, `e549_feature_side.py`, `e673_edge_vs_node.py`, `e675_cross_position.py`
+**Start here:** e548, e549 · **Sessions:** S97-S98, S152, S153, S154 · **Scripts:** `scripts/e548_activation_vs_wdd.py`, `e549_feature_side.py`, `e673_edge_vs_node.py`, `e675_cross_position.py`, `e677_effect_species.py`
 
 ## Experiments
 
@@ -19,7 +19,11 @@
 
 | e675 | Gemini 4's cross-position trace: does the label-free projection of a summary state on the write dictionary name the neurons whose earlier writes matter there (Pythia-410m, every neuron zeroed at all earlier positions), and does it find e670's attribute writers item by item? | WDD's write dictionary is not a cross-position trace: the label-free projection of a summary state ranks the neurons whose earlier writes matter at Spearman 0.04, 0.02, 0.17 (Pythia-410m), and on e670's items each item's own projection ranks the attribute writer near 26942 of 63,232 and its top 32 flip 0.00 of items (the labelled echo 0.45) (e675) | refuted (the projection is unrelated to cross-position damage; per item it neither ranks nor flips the attribute writers) | ← e670, e673 |
 
+| e677 | Gemini 4's readout-honesty fusion: is each neuron's effect on the output direct, routed through later blocks, or confined to its own block's readout? Pythia-410m at five depths and Qwen2.5-0.5B before and after instruction tuning, every neuron removed one at a time | in the middle of Pythia-410m and Qwen2.5-0.5B nearly every neuron whose removal matters works through later blocks (indirect routers 0.97 and 1.00 of them at block 12), at the end nearly every one speaks directly (0.02 and 0.02 routers); early, most neurons that move their own block's readout are washed out before the output (0.94, 0.97) (e677) | narrowed (mid-network neurons are almost all indirect routers and late ones direct, as predicted; individual species labels do not survive fine-tuning) | ← e673 |
+
 ## How the results flow
+
+- `e673 → e677`: the damage split into direct, indirect and local parts for every neuron at five depths.
 
 - `e670, e673 → e675`: the activation-free score tested across positions and item by item.
 

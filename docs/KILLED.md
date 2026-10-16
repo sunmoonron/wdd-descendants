@@ -1023,3 +1023,14 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - e672's reading that the developmental order appears only inside a single route (session 152): pooled over eight runs distinct routes also show the core first (0.56, p 0.0017) and the two kinds of neuron do not differ (Fisher p 0.19) (e674).
 - The SwiGLU double-negative leak as the source of apparent offshoots (Gemini 4): the offshoot is the more gate-closed route in 39 of 74 OLMo neurons whose routes differ, and gate-open filtering leaves 179 of 219 two-route neurons two-route (e674).
 - The write dictionary as a label-free cross-position forensic trace (Gemini 4's reading of e670): the projection of a summary state is unrelated to which neurons' earlier writes matter there, and item by item it finds no attribute writer (e675).
+
+## Session 154 kills (effect species, the double negative, splitting across scale)
+- "fine-tuning keeps species: at Qwen2.5-0.5B blocks 3, 12 and 21, fewer than 10% of the neurons beyond the total null in either the base or the Instruct model change species between them." (e677).
+- "the essay, every double-negative activation: zeroing them in every layer gives more repairs than damages on more than half of the eight non-generative benchmarks, in each model." (e678).
+- "the essay, the leak-dominated neurons only: the same for leak0_dom, in each model." (e678).
+- "specificity: zeroing the double negative raises wikitext loss less than the L2-matched weak gate-open control, in each model." (e678).
+- "the essay's claim under the gentlest ablation: mean replacement of the double negative everywhere gives more repairs than damages on more than half of the eight non-generative benchmarks, in each model." (e678).
+- "the best single Pythia-410m neuron covers a one-route neuron's top 100 better than a two-route neuron's (one-sided Mann-Whitney p < 0.05)." (e679).
+- Zeroing SwiGLU's double negative across the network as a benchmark improvement (the essay's 'ups most benchmarks'): no model and no variant raises most of eight benchmarks, and zeroing costs 1.25 to 4.40 nats of wikitext loss (e678).
+- The double negative as a small echo (the essay's word): it carries 0.15 to 0.19 of each layer's MLP activation energy, and zeroing it costs more than an L2-matched zeroing of weak gate-open activations (e678).
+- A neuron's own block's readout as a guide to what it does to the output: early in the network 0.91 to 0.97 of the neurons that move it beyond the null do not move the output (e677).

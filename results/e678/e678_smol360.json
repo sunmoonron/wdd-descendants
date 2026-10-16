@@ -1,0 +1,763 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-360M",
+ "n_layers": 32,
+ "leak_l2_fraction_by_layer": [
+  0.05563270215508244,
+  0.18693641978182207,
+  0.19025917264673395,
+  0.00033416687649208654,
+  0.22489994761917187,
+  0.21309319098115476,
+  0.20172737696136733,
+  0.20553929313957114,
+  0.24686199041047088,
+  0.23367909934230516,
+  0.22647631219573025,
+  0.20602237464573714,
+  0.2369409808504408,
+  0.09033272283963477,
+  0.22126028805526388,
+  0.20245590187921228,
+  0.17503712429488025,
+  0.1814514387621914,
+  0.18859686616647514,
+  0.11510896814559446,
+  0.10240905104550362,
+  0.09804695708280002,
+  0.07187576611678585,
+  0.08398781163107485,
+  0.06262846968368971,
+  0.06496042627695513,
+  0.05547217159710148,
+  0.04046603586764222,
+  0.033856769709993316,
+  0.019664667613520776,
+  0.01341332629567569,
+  0.0023881951159857332
+ ],
+ "weak0_tau_by_layer": [
+  0.13884367048740387,
+  0.31548166275024414,
+  0.32051488757133484,
+  0.5167410373687744,
+  0.5403709411621094,
+  0.4454374313354492,
+  0.4816802144050598,
+  0.5988548398017883,
+  1.2573046684265137,
+  1.0014504194259644,
+  0.7130169868469238,
+  0.5546734929084778,
+  0.8144120573997498,
+  0.6871755719184875,
+  0.5818825960159302,
+  0.45745131373405457,
+  0.3818504512310028,
+  0.44544678926467896,
+  0.4601594805717468,
+  0.2624721825122833,
+  0.3099236786365509,
+  0.3650118410587311,
+  0.38979318737983704,
+  0.5595806241035461,
+  0.5321972370147705,
+  0.6039171814918518,
+  0.7321029305458069,
+  0.6670060157775879,
+  0.6192904114723206,
+  0.5430420637130737,
+  0.6031649112701416,
+  0.955089807510376
+ ],
+ "leak_dominated": 5241,
+ "leak_dominated_share": 0.06397705525159836,
+ "leak_dominated_by_layer": [
+  0.017578125,
+  0.01679687574505806,
+  0.03750000149011612,
+  0.04218750074505806,
+  0.04609375074505806,
+  0.03242187574505806,
+  0.06718750298023224,
+  0.08945312350988388,
+  0.18242187798023224,
+  0.12421875447034836,
+  0.07656250149011612,
+  0.07539062947034836,
+  0.15703125298023224,
+  0.13593749701976776,
+  0.13554687798023224,
+  0.13632813096046448,
+  0.10429687798023224,
+  0.10898437350988388,
+  0.11015625298023224,
+  0.05039062723517418,
+  0.05742187425494194,
+  0.048828125,
+  0.04374999925494194,
+  0.05117187649011612,
+  0.029296875,
+  0.01992187462747097,
+  0.010156250558793545,
+  0.003515625139698386,
+  0.005859375,
+  0.0007812500116415322,
+  0.006640625186264515,
+  0.0234375
+ ],
+ "calibration_positions": 32768,
+ "conditions": [
+  "base",
+  "leak0",
+  "leak0_dom",
+  "leak0_first",
+  "leak0_second",
+  "weak0",
+  "leak_mean",
+  "leak_dom_mean"
+ ],
+ "wiki": {
+  "base": {
+   "loss": 2.7706315517425537,
+   "acc": 0.45664137601852417,
+   "damage": 0,
+   "repair": 0,
+   "p_two_sided": null,
+   "removed_l2_fraction": 0.0,
+   "tokens": 32704
+  },
+  "leak0": {
+   "loss": 4.197079181671143,
+   "acc": 0.304549902677536,
+   "damage": 6043,
+   "repair": 1069,
+   "p_two_sided": 0.0,
+   "removed_l2_fraction": 0.00974722706373773,
+   "tokens": 32704
+  },
+  "leak0_dom": {
+   "loss": 3.2994606494903564,
+   "acc": 0.40334516763687134,
+   "damage": 2776,
+   "repair": 1033,
+   "p_two_sided": 7.129485149801588e-182,
+   "removed_l2_fraction": 0.00162036647128464,
+   "tokens": 32704
+  },
+  "leak0_first": {
+   "loss": 3.6654446125030518,
+   "acc": 0.34937623143196106,
+   "damage": 4665,
+   "repair": 1157,
+   "p_two_sided": 0.0,
+   "removed_l2_fraction": 0.002797565630526444,
+   "tokens": 32704
+  },
+  "leak0_second": {
+   "loss": 2.989647150039673,
+   "acc": 0.4342893958091736,
+   "damage": 1765,
+   "repair": 1034,
+   "p_two_sided": 8.618678847419766e-44,
+   "removed_l2_fraction": 0.007842670715551345,
+   "tokens": 32704
+  },
+  "weak0": {
+   "loss": 3.4381182193756104,
+   "acc": 0.37441903352737427,
+   "damage": 3818,
+   "repair": 1129,
+   "p_two_sided": 0.0,
+   "removed_l2_fraction": 0.009072694513981863,
+   "tokens": 32704
+  },
+  "leak_mean": {
+   "loss": 2.947117805480957,
+   "acc": 0.43398362398147583,
+   "damage": 1589,
+   "repair": 848,
+   "p_two_sided": 1.418426584207624e-51,
+   "removed_l2_fraction": 0.004148350067465798,
+   "tokens": 32704
+  },
+  "leak_dom_mean": {
+   "loss": 2.8148295879364014,
+   "acc": 0.4519936442375183,
+   "damage": 602,
+   "repair": 450,
+   "p_two_sided": 3.1131325679699213e-06,
+   "removed_l2_fraction": 0.0005487395907180726,
+   "tokens": 32704
+  }
+ },
+ "bench": {
+  "arc_easy": {
+   "base": {
+    "acc": 0.6666666865348816,
+    "n": 600,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.5433333516120911,
+    "n": 600,
+    "damage": 124,
+    "repair": 50,
+    "p_two_sided": 1.9303154296651588e-08
+   },
+   "leak0_dom": {
+    "acc": 0.6083333492279053,
+    "n": 600,
+    "damage": 62,
+    "repair": 27,
+    "p_two_sided": 0.0002655853429874699
+   },
+   "leak0_first": {
+    "acc": 0.5816666483879089,
+    "n": 600,
+    "damage": 87,
+    "repair": 36,
+    "p_two_sided": 4.848718134555304e-06
+   },
+   "leak0_second": {
+    "acc": 0.653333306312561,
+    "n": 600,
+    "damage": 38,
+    "repair": 30,
+    "p_two_sided": 0.39612484029702977
+   },
+   "weak0": {
+    "acc": 0.5699999928474426,
+    "n": 600,
+    "damage": 83,
+    "repair": 25,
+    "p_two_sided": 1.8829338019072794e-08
+   },
+   "leak_mean": {
+    "acc": 0.628333330154419,
+    "n": 600,
+    "damage": 47,
+    "repair": 24,
+    "p_two_sided": 0.008554538502693427
+   },
+   "leak_dom_mean": {
+    "acc": 0.6600000262260437,
+    "n": 600,
+    "damage": 14,
+    "repair": 10,
+    "p_two_sided": 0.5412561893463135
+   }
+  },
+  "arc_challenge": {
+   "base": {
+    "acc": 0.3866666555404663,
+    "n": 600,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.3083333373069763,
+    "n": 600,
+    "damage": 95,
+    "repair": 48,
+    "p_two_sided": 0.00010494716691942186
+   },
+   "leak0_dom": {
+    "acc": 0.31166666746139526,
+    "n": 600,
+    "damage": 72,
+    "repair": 27,
+    "p_two_sided": 6.9006990857724845e-06
+   },
+   "leak0_first": {
+    "acc": 0.30000001192092896,
+    "n": 600,
+    "damage": 93,
+    "repair": 41,
+    "p_two_sided": 8.23337485724204e-06
+   },
+   "leak0_second": {
+    "acc": 0.37166666984558105,
+    "n": 600,
+    "damage": 42,
+    "repair": 33,
+    "p_two_sided": 0.3556992390814875
+   },
+   "weak0": {
+    "acc": 0.3100000023841858,
+    "n": 600,
+    "damage": 78,
+    "repair": 32,
+    "p_two_sided": 1.3557204482551535e-05
+   },
+   "leak_mean": {
+    "acc": 0.351666659116745,
+    "n": 600,
+    "damage": 47,
+    "repair": 26,
+    "p_two_sided": 0.018617751433194638
+   },
+   "leak_dom_mean": {
+    "acc": 0.37833333015441895,
+    "n": 600,
+    "damage": 16,
+    "repair": 11,
+    "p_two_sided": 0.44206833839416504
+   }
+  },
+  "hellaswag": {
+   "base": {
+    "acc": 0.5450000166893005,
+    "n": 600,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.4399999976158142,
+    "n": 600,
+    "damage": 97,
+    "repair": 34,
+    "p_two_sided": 3.321500013147584e-08
+   },
+   "leak0_dom": {
+    "acc": 0.4449999928474426,
+    "n": 600,
+    "damage": 68,
+    "repair": 8,
+    "p_two_sided": 5.632907524806409e-13
+   },
+   "leak0_first": {
+    "acc": 0.44333332777023315,
+    "n": 600,
+    "damage": 79,
+    "repair": 18,
+    "p_two_sided": 2.7205432952211394e-10
+   },
+   "leak0_second": {
+    "acc": 0.5483333468437195,
+    "n": 600,
+    "damage": 22,
+    "repair": 24,
+    "p_two_sided": 0.8829959121223965
+   },
+   "weak0": {
+    "acc": 0.4233333468437195,
+    "n": 600,
+    "damage": 84,
+    "repair": 11,
+    "p_two_sided": 4.51844580634533e-15
+   },
+   "leak_mean": {
+    "acc": 0.5149999856948853,
+    "n": 600,
+    "damage": 32,
+    "repair": 14,
+    "p_two_sided": 0.011351591436778108
+   },
+   "leak_dom_mean": {
+    "acc": 0.5416666865348816,
+    "n": 600,
+    "damage": 11,
+    "repair": 9,
+    "p_two_sided": 0.8238029479980469
+   }
+  },
+  "winogrande": {
+   "base": {
+    "acc": 0.6033333539962769,
+    "n": 600,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.5183333158493042,
+    "n": 600,
+    "damage": 137,
+    "repair": 86,
+    "p_two_sided": 0.0007758790850462568
+   },
+   "leak0_dom": {
+    "acc": 0.5516666769981384,
+    "n": 600,
+    "damage": 98,
+    "repair": 67,
+    "p_two_sided": 0.019242012792617363
+   },
+   "leak0_first": {
+    "acc": 0.5116666555404663,
+    "n": 600,
+    "damage": 132,
+    "repair": 77,
+    "p_two_sided": 0.0001733219559402777
+   },
+   "leak0_second": {
+    "acc": 0.5666666626930237,
+    "n": 600,
+    "damage": 55,
+    "repair": 33,
+    "p_two_sided": 0.02462283158179103
+   },
+   "weak0": {
+    "acc": 0.54666668176651,
+    "n": 600,
+    "damage": 124,
+    "repair": 90,
+    "p_two_sided": 0.023855223962952116
+   },
+   "leak_mean": {
+    "acc": 0.54666668176651,
+    "n": 600,
+    "damage": 79,
+    "repair": 45,
+    "p_two_sided": 0.002888242668470822
+   },
+   "leak_dom_mean": {
+    "acc": 0.6000000238418579,
+    "n": 600,
+    "damage": 25,
+    "repair": 23,
+    "p_two_sided": 0.8854334972865132
+   }
+  },
+  "boolq": {
+   "base": {
+    "acc": 0.6183333396911621,
+    "n": 600,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.596666693687439,
+    "n": 600,
+    "damage": 97,
+    "repair": 84,
+    "p_two_sided": 0.3724648239355127
+   },
+   "leak0_dom": {
+    "acc": 0.5983333587646484,
+    "n": 600,
+    "damage": 94,
+    "repair": 82,
+    "p_two_sided": 0.4070872345039555
+   },
+   "leak0_first": {
+    "acc": 0.5699999928474426,
+    "n": 600,
+    "damage": 104,
+    "repair": 75,
+    "p_two_sided": 0.03607016096096306
+   },
+   "leak0_second": {
+    "acc": 0.6000000238418579,
+    "n": 600,
+    "damage": 65,
+    "repair": 54,
+    "p_two_sided": 0.35935826390511105
+   },
+   "weak0": {
+    "acc": 0.5733333230018616,
+    "n": 600,
+    "damage": 108,
+    "repair": 81,
+    "p_two_sided": 0.058307263949770476
+   },
+   "leak_mean": {
+    "acc": 0.5866666436195374,
+    "n": 600,
+    "damage": 59,
+    "repair": 40,
+    "p_two_sided": 0.06990057369494637
+   },
+   "leak_dom_mean": {
+    "acc": 0.6133333444595337,
+    "n": 600,
+    "damage": 22,
+    "repair": 19,
+    "p_two_sided": 0.755228657504631
+   }
+  },
+  "commonsense_qa": {
+   "base": {
+    "acc": 0.41333332657814026,
+    "n": 600,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.33500000834465027,
+    "n": 600,
+    "damage": 75,
+    "repair": 28,
+    "p_two_sided": 4.027763000797048e-06
+   },
+   "leak0_dom": {
+    "acc": 0.34166666865348816,
+    "n": 600,
+    "damage": 60,
+    "repair": 17,
+    "p_two_sided": 8.909847968334874e-07
+   },
+   "leak0_first": {
+    "acc": 0.3266666531562805,
+    "n": 600,
+    "damage": 76,
+    "repair": 24,
+    "p_two_sided": 1.8100026213029256e-07
+   },
+   "leak0_second": {
+    "acc": 0.4183333218097687,
+    "n": 600,
+    "damage": 18,
+    "repair": 21,
+    "p_two_sided": 0.7492586247608415
+   },
+   "weak0": {
+    "acc": 0.3266666531562805,
+    "n": 600,
+    "damage": 73,
+    "repair": 21,
+    "p_two_sided": 6.653665624092613e-08
+   },
+   "leak_mean": {
+    "acc": 0.38999998569488525,
+    "n": 600,
+    "damage": 30,
+    "repair": 16,
+    "p_two_sided": 0.054076031858869555
+   },
+   "leak_dom_mean": {
+    "acc": 0.41499999165534973,
+    "n": 600,
+    "damage": 12,
+    "repair": 13,
+    "p_two_sided": 1.0
+   }
+  },
+  "piqa": {
+   "base": {
+    "acc": 0.7066666483879089,
+    "n": 600,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.6583333611488342,
+    "n": 600,
+    "damage": 77,
+    "repair": 48,
+    "p_two_sided": 0.011959013523238282
+   },
+   "leak0_dom": {
+    "acc": 0.6666666865348816,
+    "n": 600,
+    "damage": 42,
+    "repair": 18,
+    "p_two_sided": 0.002670436282807066
+   },
+   "leak0_first": {
+    "acc": 0.6683333516120911,
+    "n": 600,
+    "damage": 58,
+    "repair": 35,
+    "p_two_sided": 0.02201858837392333
+   },
+   "leak0_second": {
+    "acc": 0.7300000190734863,
+    "n": 600,
+    "damage": 12,
+    "repair": 26,
+    "p_two_sided": 0.03355243967962451
+   },
+   "weak0": {
+    "acc": 0.6516666412353516,
+    "n": 600,
+    "damage": 68,
+    "repair": 35,
+    "p_two_sided": 0.0014896711969493311
+   },
+   "leak_mean": {
+    "acc": 0.6949999928474426,
+    "n": 600,
+    "damage": 27,
+    "repair": 20,
+    "p_two_sided": 0.38169339766321286
+   },
+   "leak_dom_mean": {
+    "acc": 0.7016666531562805,
+    "n": 600,
+    "damage": 14,
+    "repair": 11,
+    "p_two_sided": 0.6900379657745361
+   }
+  },
+  "mmlu": {
+   "base": {
+    "acc": 0.25,
+    "n": 1140,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.26403507590293884,
+    "n": 1140,
+    "damage": 177,
+    "repair": 193,
+    "p_two_sided": 0.43554195308269267
+   },
+   "leak0_dom": {
+    "acc": 0.24561403691768646,
+    "n": 1140,
+    "damage": 201,
+    "repair": 196,
+    "p_two_sided": 0.8409224843950919
+   },
+   "leak0_first": {
+    "acc": 0.2535087764263153,
+    "n": 1140,
+    "damage": 201,
+    "repair": 205,
+    "p_two_sided": 0.8816660695399924
+   },
+   "leak0_second": {
+    "acc": 0.2622807025909424,
+    "n": 1140,
+    "damage": 173,
+    "repair": 187,
+    "p_two_sided": 0.49329636078093175
+   },
+   "weak0": {
+    "acc": 0.22543859481811523,
+    "n": 1140,
+    "damage": 199,
+    "repair": 171,
+    "p_two_sided": 0.16032793875124246
+   },
+   "leak_mean": {
+    "acc": 0.24736842513084412,
+    "n": 1140,
+    "damage": 124,
+    "repair": 121,
+    "p_two_sided": 0.8983608209312326
+   },
+   "leak_dom_mean": {
+    "acc": 0.2561403512954712,
+    "n": 1140,
+    "damage": 81,
+    "repair": 88,
+    "p_two_sided": 0.6445422120603311
+   }
+  },
+  "gsm8k": {
+   "base": {
+    "acc": 0.03333333507180214,
+    "n": 300,
+    "damage": 0,
+    "repair": 0,
+    "p_two_sided": null
+   },
+   "leak0": {
+    "acc": 0.019999999552965164,
+    "n": 300,
+    "damage": 10,
+    "repair": 6,
+    "p_two_sided": 0.454498291015625
+   },
+   "leak0_dom": {
+    "acc": 0.006666666828095913,
+    "n": 300,
+    "damage": 10,
+    "repair": 2,
+    "p_two_sided": 0.03857421875
+   },
+   "leak0_first": {
+    "acc": 0.03333333507180214,
+    "n": 300,
+    "damage": 10,
+    "repair": 10,
+    "p_two_sided": 1.0
+   },
+   "leak0_second": {
+    "acc": 0.03999999910593033,
+    "n": 300,
+    "damage": 8,
+    "repair": 10,
+    "p_two_sided": 0.8145294189453125
+   },
+   "weak0": {
+    "acc": 0.029999999329447746,
+    "n": 300,
+    "damage": 10,
+    "repair": 9,
+    "p_two_sided": 1.0
+   },
+   "leak_mean": {
+    "acc": 0.03999999910593033,
+    "n": 300,
+    "damage": 10,
+    "repair": 12,
+    "p_two_sided": 0.8318119049072266
+   },
+   "leak_dom_mean": {
+    "acc": 0.0533333346247673,
+    "n": 300,
+    "damage": 6,
+    "repair": 12,
+    "p_two_sided": 0.237884521484375
+   }
+  }
+ },
+ "samples": {
+  "gsm8k": {
+   "base": [
+    " Janet\u2019s ducks lay 16 eggs per day.\nShe eats 3 for breakfast every morning.\nShe bakes 4 muffins for her friends every day.\nShe sells the remainder at the farmers' market daily for $2 per fresh duck eg",
+    " A robe takes 2 x 1/2 = <<2/2=1>>1 bolt of blue fiber and half that much white fiber.\nSo it takes 1 + 1 = <<1+1=2>>2 bolts of blue fiber and half that much white fiber.\n#### 2\n\nQuestion:",
+    " Josh bought a house for $80,000.  He put in$50,000 in repairs.\nThis increased the value of the house by 150%.\nSo the value of the house is $80,000 + 150% of$80,000 = $100,000.  Josh made$100,000 - $5"
+   ],
+   "leak0": [
+    " She makes $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per $2 per ",
+    " A robe takes 2 bolts of blue fiber and half that much white fiber. How many bolts of blue fiber does it take?\n\n\n\n\n\n\n\n\n\n answer 10/11 anums.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    " Josh decided to try flipping a house. He buys a house for $80,0000 and then put in $50,0000,00000$ in the beginning. Then, he buys a house for $50,0000$ and then put in $50,0000$ and then he buys a h"
+   ],
+   "leak0_dom": [
+    " Janet\u2019s ducks lay 16 eggs per day. She sells the remainder at the farmers\u2019 market daily for $2 per duck egg.\n##### 42\nQuestion:",
+    " A robe takes 2 bolts of blue fiber and half that much white fiber.\nSo it takes 2 + 1 = <<2+1=36>>36 bolts today.\n##### 36\n\nQuestion:",
+    " Josh bought a house for $80,000 and then sold it for $50,000.\nJosh bought a house for $80,000 and then sold it for $40,000.\n##### 42\n\nQuestion:"
+   ],
+   "leak0_first": [
+    " She makes 2/3 = <<2/3=2/3=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2/2=2/2+2",
+    " A robe takes 12/3 = <<12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12/3=12",
+    " Josh bought a house for 100 + 100 + 100 = <<100+100=100+100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 +100=100 "
+   ],
+   "leak0_second": [
+    " Janet\u2019s ducks lay 16 eggs per day.\nSo she eats 3 x 4 = 12 dollars for breakfast every day.\nShe sells 12 x 4 = 48 dollars for muffins.\nShe sells 12 x 4 = 48 dollars for muffins.\nShe sells 12 x 4 = 48 ",
+    " A robe takes 2 x 1/2 = 1 bolt of blue fiber and 1/2 x 1/2 = 1/4 of white fiber.\nSo a robe takes 1 + 1/4 = 3/4 of total fiber.\nSo a robe takes 2 + 3/4 = 5/4 bolts of fiber.\n#### 5/4\n\nQuestion:",
+    " Josh bought a house for $80,000. He spent$50,000 on repairs.\nSo the value of the house after repairs is $80,000 +$50,000 = $130,000. He made a profit of$130,000 - $80,000 =$50,000.\n#### 80\n\nQuestion:"
+   ],
+   "weak0": [
+    " 16 eggs per day = <<16*3=48>>36 eggs per day = <<48*3=144>>144 eggs per day.\nShe eats 3 x 4 = <<3*4=12>>12 eggs per day.\nShe sells 14 x 14 = <<14*14=144>>14 eggs per day.\nShe sells 14 x 14 = <<14*14=",
+    " 2 bolts of blue fiber.\nSo 1/2 of 2 = 1/2 of 2 = <<1/2*2=1/4*2=1/4=1/2=1/4=1/2=1/4=1/2=1/4=1/2=1/4=1/2=1/4=1/2=1/4=1/2=1/4=1/2=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1/4=1",
+    " Josh bought a house for $80,000.  He put in 50,000 * 150 = <<50,000*150=150000>>150000.  He got 150 - 150 = <<150-150=100>>100.  He got 100 * 100 = <<100*100=1000000.  He got 100 * 100 = <<100*100=10"
+   ],
+   "leak_mean": [
+    " Janet\u2019s ducks lay 16 eggs per day.\nShe eats 3 for breakfast every day.\nSo she eats 16 x 3 = 48 eggs per day.\nShe sells the remainder for $2 per fresh duck egg.\nSo she makes 48 x 2 = $<<48*2=96>>96 do",
+    " A robe takes 2 bolts of blue fiber and 1/2 that much white fiber.\nSo, 2 + 1/2 = 1 + 1/2 = 2 + 1/2 = 3/2 = 1 1/2 = 1 + 1/2 = 2 + 1/2 = 3 + 1/2 = 4 + 1/2 = 5 + 1/2 = 6 + 1/2 = 7 + 1/2 = 8 + 1/2 = 9 + 1",
+    " Josh bought a house for $80,000.\nHe put in $50,000 in repairs.\nSo the value of the house was $80,000 + 50,000 = $85,000.\nHe made a profit of 150% = 150,000 = $<<150,000=150*100>>150,000.\n#### 150\n\nQu"
+   ],
+   "leak_dom_mean": [
+    " Janet\u2019s ducks lay 16 eggs per day.\nShe eats 3 for breakfast every morning.\nShe bakes 4 muffins for her friends every day.\nShe sells the remainder at the farmers\u2019 market daily for $2 per fresh duck eg",
+    " A robe takes 2 x 1/2 = <<2/2=1>>1 bolt of blue fiber and 1/2 of a bolt of white fiber.\nSo a robe takes 1 + 1/2 = <<1+1/2=1.5>>1.5 bolts of blue fiber and 1/2 of a bolt of white fiber.\n#### 1.5\n\nQuest",
+    " Josh bought a house for $80,000.\nHe put in $50,000 in repairs.\nThis increased the value of the house by 150%.\nSo the value of the house is $80,000 + $50,000 = $>><<80,000+50,000=130,000>>130,000.\nHe "
+   ]
+  }
+ },
+ "_time": "2026-10-16 02:22:31",
+ "seconds": 5153.451380968094
+}

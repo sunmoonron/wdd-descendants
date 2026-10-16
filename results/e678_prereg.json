@@ -1,0 +1,63 @@
+{
+ "experiment": "e678",
+ "session": 154,
+ "written": "2026-10-15 19:49:15",
+ "status": "pre-registered after smokes (Qwen2.5-0.5B and OLMo-1B, 60 items per benchmark, 8 wikitext windows), before the full runs",
+ "question": "Cammarata 2026: SwiGLU's double negative (gate and value both negative) fills the top of about 4% of neurons' positive lists, and 'ablating them across the whole network ups most benchmarks, but lowers some reasoning ones'. True for open models, under either reading of 'them'?",
+ "design": "Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M, OLMo-1B-0724; conditions: base; leak0 (every double-negative activation zeroed, all layers); leak0_dom (only in the leak-dominated neurons, more than half of their top-20 positive activations over 32,768 wikitext-2 test positions in the double negative, e671's definition); leak0_first / leak0_second (first or second half of the layers); closed0 (every gate-closed activation zeroed); weak0 (gate-open activations below a per-layer threshold that removes the double negative's L2 mass, calibrated on wikitext). Measured: wikitext-2 test loss and top-1 accuracy over 32,704 tokens with damage and repair counts; ARC-Easy, ARC-Challenge, HellaSwag (2,000), WinoGrande, BoolQ (2,000), CommonsenseQA, PIQA (log-likelihood scoring, length-normalised for multiple-sentence choices), MMLU (50 per subject, answer letter), GSM8K (500, 4-shot, greedy, 256 tokens).",
+ "hypotheses": {
+  "L1a": "the essay, every double-negative activation: zeroing them in every layer gives more repairs than damages on more than half of the eight non-generative benchmarks, in each model",
+  "L1b": "the essay, the leak-dominated neurons only: the same for leak0_dom, in each model",
+  "L2": "the reasoning part: zeroing the double negative in every layer lowers GSM8K accuracy (more damages than repairs, exact binomial p < 0.05) in each model whose base GSM8K accuracy is at least 0.10",
+  "L3": "specificity: zeroing the double negative raises wikitext loss less than the L2-matched weak gate-open control, in each model",
+  "L4": "depth: zeroing it in the second half of the layers raises wikitext loss less than in the first half, in each model"
+ },
+ "predictions": {
+  "L1a": "refuted",
+  "L1b": "refuted",
+  "L2": "supported",
+  "L3": "refuted",
+  "L4": "supported"
+ },
+ "smoke": {
+  "qwen05": {
+   "base_loss": 2.878,
+   "leak0_loss": 5.945,
+   "leak0_first": 4.187,
+   "leak0_second": 3.254,
+   "closed0": 12.557,
+   "weak0": 5.639,
+   "mmlu_base_leak0": [
+    0.561,
+    0.272
+   ],
+   "gsm8k_base_leak0": [
+    0.5,
+    0.0625
+   ],
+   "leak_l2_share_per_layer_median": 0.19
+  },
+  "olmo1b": {
+   "base_loss": 2.733,
+   "leak0_loss": 7.079,
+   "leak0_dom_loss": 5.804,
+   "leak_dominated_share_at_4096_positions": 0.225
+  }
+ },
+ "addendum": {
+  "written": "2026-10-15 20:14:12",
+  "note": "added while the main runs were in progress, before any full result, after the session's literature check found that zeroing large activation mass can fail for reasons of distribution shift where replacing it with its mean does not (R-Sparse; Sun et al. 2024 on massive activations): the double negative replaced by each neuron's mean double-negative activation over the calibration positions, in every neuron (leak_mean) or in the leak-dominated ones (leak_dom_mean); a separate run per model with base, leak_mean and leak_dom_mean",
+  "hypotheses": {
+   "M1": "replacing the double negative with its per-neuron mean raises wikitext loss less than half as much as zeroing it, in each model",
+   "M2": "the essay's claim under the gentlest ablation: mean replacement of the double negative everywhere gives more repairs than damages on more than half of the eight non-generative benchmarks, in each model"
+  },
+  "predictions": {
+   "M1": "supported",
+   "M2": "refuted"
+  }
+ },
+ "design_change": {
+  "written": "2026-10-15 20:34:40",
+  "note": "for feasibility, before any full-run result had been logged (the four first runs, 45 minutes in on a GPU shared by twelve jobs, had not finished their base condition and were stopped): each multiple-choice benchmark capped at 600 items (HellaSwag, BoolQ and the full-set ones), MMLU 20 per subject (1,140), GSM8K 300 with generation stopped at the next 'Question:'; closed0 dropped (in no hypothesis); the addendum's leak_mean and leak_dom_mean run in the same process, so every condition shares one base"
+ }
+}

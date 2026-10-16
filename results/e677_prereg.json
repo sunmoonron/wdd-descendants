@@ -1,0 +1,38 @@
+{
+ "experiment": "e677",
+ "session": 154,
+ "written": "2026-10-15 19:49:15",
+ "status": "pre-registered after smokes (Pythia-410m block 6 and Qwen2.5-0.5B block 12, 40 prompts, 512 neurons), before the full runs",
+ "question": "Gemini 4's fusion of the essay's readout-honesty marks (a neuron moves only the next readout, or the final one beyond a matched null) and its Poe neuron (most of its effect indirect): which neurons speak directly, which route through later blocks, and which move their own block's readout only to be washed out?",
+ "design": "e568's 280 prompts at the last position; every MLP neuron of Pythia-410m blocks 2, 6, 12, 17, 22 and of Qwen2.5-0.5B and its Instruct model at blocks 3, 12, 21; local effect = KL of a least-squares affine lens readout (block residual to final residual, fitted on 16,320 wikitext positions) when the write is removed; direct = KL at the output with the write subtracted from the final residual; total = KL with the neuron zeroed and every later block recomputed (prefix cached); nulls = random directions with the write's norm (95th percentile, 16 directions at 8 norms per prompt, interpolated); per neuron the KL summed over prompts against the null summed over prompts. Species: direct speaker (beyond the total null, direct at least half of total), indirect router (beyond the total null, direct under half), washed-out (beyond the local null, not the total), quiet.",
+ "hypotheses": {
+  "S1": "at Pythia-410m block 12, more than half of the neurons beyond the total-effect null are indirect routers",
+  "S2": "the share of direct speakers among Pythia-410m neurons beyond the total null rises with depth: at block 22 it exceeds block 2's by at least 0.2",
+  "S3": "at every Pythia-410m block, washed-out writers are at least 10% of the neurons beyond the local null",
+  "S4": "fine-tuning keeps species: at Qwen2.5-0.5B blocks 3, 12 and 21, fewer than 10% of the neurons beyond the total null in either the base or the Instruct model change species between them"
+ },
+ "predictions": {
+  "S1": "supported",
+  "S2": "supported",
+  "S3": "supported",
+  "S4": "supported"
+ },
+ "smoke": {
+  "pythia410_b6": {
+   "beyond_total": 33,
+   "routers": 18,
+   "direct": 15,
+   "washed_share_of_beyond_local": 0.89,
+   "top100_direct_over_total": 0.99,
+   "lens_r2": 0.687
+  },
+  "qwen05_b12": {
+   "beyond_total": 72,
+   "routers": 72,
+   "direct": 0,
+   "washed_share_of_beyond_local": 0.88,
+   "top100_direct_over_total": 0.09,
+   "lens_r2": 0.698
+  }
+ }
+}
