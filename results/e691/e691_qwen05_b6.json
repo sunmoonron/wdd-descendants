@@ -1,0 +1,41 @@
+{
+ "model": "Qwen/Qwen2.5-0.5B",
+ "block": 6,
+ "read_blocks": [
+  7,
+  8,
+  9
+ ],
+ "n_neurons": 1000,
+ "positions": 32640,
+ "class_size": 32,
+ "spearman": {
+  "act~read": 0.03730616379506658,
+  "state~read": 0.05709917087013844,
+  "act~state": 0.283374579575433,
+  "weight~read": 0.69383459083401,
+  "say~read": 0.16403042837266757,
+  "act~weight": 0.023772331649517666,
+  "act~say": 0.005011989440759562
+ },
+ "nn_agreement": {
+  "act->read": 0.08900000154972076,
+  "read->act": 0.1300000101327896,
+  "state->read": 0.16900001466274261,
+  "read->state": 0.2670000195503235,
+  "act->weight": 0.052000001072883606,
+  "weight->read": 0.706000030040741,
+  "read->weight": 0.7260000109672546
+ },
+ "chance_nn": 0.01001001001001001,
+ "mismatch_share": 0.8160000443458557,
+ "verdicts": {
+  "C1_spearman_act_read_above_03": false,
+  "C2_nn_agreement_above_03": false,
+  "C3_weight_read_above_05": true
+ },
+ "_exp": "e691_qwen05_b6",
+ "_time": "2026-10-18 21:37:51",
+ "seconds": 228.38712525367737,
+ "summary": "[qwen05 block 6] 1000 neurons: Spearman over pairs, activation-tokens~readers 0.037, state~readers 0.057, tokens~state 0.283, weight-only~readers 0.694, say~readers 0.164; nearest neighbour by tokens in the readers' top-10 0.09 (by state 0.17; chance 0.010); readers' NN in tokens' top-10 0.13; mutual mismatch 0.82; verdicts {'C1_spearman_act_read_above_03': False, 'C2_nn_agreement_above_03': False, 'C3_weight_read_above_05': True}"
+}

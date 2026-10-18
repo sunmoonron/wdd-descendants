@@ -1034,3 +1034,38 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - Zeroing SwiGLU's double negative across the network as a benchmark improvement (the essay's 'ups most benchmarks'): no model and no variant raises most of eight benchmarks, and zeroing costs 1.25 to 4.40 nats of wikitext loss (e678).
 - The double negative as a small echo (the essay's word): it carries 0.15 to 0.19 of each layer's MLP activation energy, and zeroing it costs more than an L2-matched zeroing of weak gate-open activations (e678).
 - A neuron's own block's readout as a guide to what it does to the output: early in the network 0.91 to 0.97 of the neurons that move it beyond the null do not move the output (e677).
+
+## Session 155 kills (the already-clean debate tested)
+- "at 2 floors, the position's own write scaled up costs more than 2x a random direction." (e680).
+- "keeping only the strongest quarter of each neuron's activations by count (the essay's vision measure) costs under 0.05 nats of KL." (e681).
+- "at K=16 the median KL ratio at strong positions is under 0.25." (e685).
+- "over-floor upstream writes carry more than half of the MLP input energy at strong firings." (e685).
+- "adding the crowd's mean halves the K=16 KL ratio at strong positions." (e685b).
+- "with the crowd's mean the K=16 ratio at strong positions is under 0.25." (e685b).
+- "with the crowd's mean the K=64 ratio is under 0.25." (e685b).
+- "the crowd share of the resultant falls with d (Spearman < -0.5 within families)." (e689).
+- "Spearman over pairs between token-bag similarity and reader-vector similarity exceeds 0.3." (e691).
+- "a neuron's nearest neighbour by tokens is among its ten nearest by readers for more than 0.3 (chance 0.01)." (e691).
+- "random neurons do so under 0.1." (e682).
+- "the random codes' writers are related to a code-like field at most half as often as facts' writers to theirs." (e682).
+- "chain enrichment (new contexts nearest a member that entered within two checkpoints, over the random expectation) exceeds 1.5 in at least 70% of neurons." (e683).
+- "the recruited row gains readers (|share| > 1 std) from two checkpoints before to two after, more than norm-matched control rows on the same positions, in at least 65% of words." (e684).
+- "sub-class specialists among later-block neurons increase across recruitment more than for random position sets in at least 60%." (e684).
+- "it is at least 0.6." (e687).
+- "such a rule has at most 10 entries for at least half." (e687).
+- "a surface rule at precision 0.5 covers at least half of a neuron's held-out class at the middle block." (e687).
+- "by release step 6000 at least one vote share falls below 0.5 in at least 3 of 5 seeds." (e688).
+- "memorised writers sit more than one block deeper than both controls." (e690).
+- The floor as a causal boundary for the readers: a native write injected below it costs the same as above it relative to a random direction, with no change of regime at one floor (e680).
+- Native directions as privileged input for the readers: a foreign native row and its rotation cost exactly what a random direction of the same norm costs at every amplitude (e680).
+- 'Almost all weak activations can be removed for almost no cost' in language models: keeping the strongest quarter of each neuron's activations costs 0.2 to 8.7 nats under zeroing (e681).
+- Weak activations as a signal the readers filter: most of the zeroing cost is the removed activations' mean, which mean replacement recovers in the GELU and GPT-2 models (57 to 94 percent of it; 22 to 66 percent in the gated models) (e681).
+- Recursive generalization as an order of arrivals (a branch of branches): no chain enrichment in three seeds of Pythia-160m, and jumps in 1 to 2 percent (e683).
+- A dedicated reader arriving with a recruited row: no downstream neuron depends on a recruited row at a fifth of its spread before or after recruitment (e684).
+- A pruned neuron attribution graph with 'almost no error' at variable resolution: in five of twelve model-blocks a neuron driven by its 1024 largest inputs still costs 0.57 to 1.55 of the damage of deleting it, and carrying the crowd's mean as the error node removes a seventh to a quarter of the sixteen-input error (e685, e685b).
+- The negative pole as the nearest neighbour in general: it holds in SwiGLU models (0.91 to 0.97 of neurons at the middle block) and not in GELU ones (0.0 to 0.5) (e686).
+- A neuron's explanation as a list of tokens or bigrams: 350-entry surface rules fitted to the class cover under 5 percent of it on held-out text (e687).
+- Semantic gravity unpacking a planted knot: five seeds keep both pinned concepts through 6000 steps of the next-token loss, as single pins keep theirs (e688).
+- The crowd shrinking with width: its share of the resultant along the most prominent row rises from 0.91 to 0.97 from 70M to 2.8B parameters in the GELU families and stays at 0.94 to 0.95 across Qwen2.5 from 0.5B to 7B (e689).
+- Memorised text having special writers: depth, count, class coherence and field selectivity all match a low-loss control (e690).
+- The activation label as a proxy for a neuron's function: across neuron pairs the token bag's similarity predicts the causal reader response at Spearman 0.00 to 0.04 (e691).

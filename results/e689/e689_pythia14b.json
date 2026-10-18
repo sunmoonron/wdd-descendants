@@ -1,0 +1,16 @@
+{
+ "model": "EleutherAI/pythia-1.4b",
+ "key": "pythia14b",
+ "block": 12,
+ "n_blocks": 24,
+ "d": 2048,
+ "DFF": 8192,
+ "rows": 106496,
+ "positions": 8131,
+ "r_cal": 0.9972294569015503,
+ "dtype": "torch.float32",
+ "summary": "[pythia14b d 2048, block 12] rows over the floor per position, median 45 (0.022 per dimension, 0.0004 per row); the top row's own share of the resultant 0.42; crowd share (beyond the 16 largest terms) 0.97; effective number of terms 3424 of 106471 active; three largest writes carry 0.17 of the centred norm",
+ "_exp": "e689_pythia14b",
+ "_time": "2026-10-18 19:32:01",
+ "seconds": 16.444509983062744
+}

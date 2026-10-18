@@ -1,0 +1,29 @@
+{
+ "model": "EleutherAI/pythia-2.8b",
+ "key": "pythia28b",
+ "block": 16,
+ "n_blocks": 32,
+ "d": 2560,
+ "DFF": 10240,
+ "rows": 174080,
+ "positions": 8131,
+ "r_cal": 0.9981130957603455,
+ "dtype": "torch.float32",
+ "_exp": "e689_pythia28b",
+ "_time": "2026-10-18 20:17:30",
+ "seconds": 22.66026210784912,
+ "summary_stats": {
+  "over_floor_count_median": 57.0,
+  "over_floor_count_mean": 111.1173324584961,
+  "over_floor_per_dim": 0.022265625,
+  "over_floor_per_row": 0.00032743566176470586,
+  "top_ratio_median": 2.0378060340881348,
+  "own_share_of_resultant_median": 0.33712297677993774,
+  "crowd_share_median": 0.97491055727005,
+  "neff_terms_median": 5544.83837890625,
+  "active_terms_median": 174064.0,
+  "top3_norm_share_median": 0.13698281347751617,
+  "top_row_projection_share_median": 0.2068994790315628
+ },
+ "summary": "[pythia28b d 2560, block 16] rows over the floor per position, median 57 (0.022 per dimension, 0.0003 per row); the top row's own share of the resultant 0.34; crowd share (beyond the 16 largest terms) 0.97; effective number of terms 5545 of 174064 active; three largest writes carry 0.14 of the centred norm"
+}

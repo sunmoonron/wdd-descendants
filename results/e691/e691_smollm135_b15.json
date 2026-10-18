@@ -1,0 +1,41 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-135M",
+ "block": 15,
+ "read_blocks": [
+  16,
+  17,
+  18
+ ],
+ "n_neurons": 768,
+ "positions": 32640,
+ "class_size": 32,
+ "spearman": {
+  "act~read": 0.017758335613978042,
+  "state~read": 0.017695764157931577,
+  "act~state": 0.44401583354198404,
+  "weight~read": 0.5819184360455434,
+  "say~read": 0.09209984157110807,
+  "act~weight": 0.024525107917070032,
+  "act~say": 0.016015666710950647
+ },
+ "nn_agreement": {
+  "act->read": 0.09765625,
+  "read->act": 0.1276041716337204,
+  "state->read": 0.2044270932674408,
+  "read->state": 0.2734375,
+  "act->weight": 0.0338541679084301,
+  "weight->read": 0.6315104365348816,
+  "read->weight": 0.68359375
+ },
+ "chance_nn": 0.01303780964797914,
+ "mismatch_share": 0.8138021230697632,
+ "verdicts": {
+  "C1_spearman_act_read_above_03": false,
+  "C2_nn_agreement_above_03": false,
+  "C3_weight_read_above_05": true
+ },
+ "_exp": "e691_smollm135_b15",
+ "_time": "2026-10-18 19:44:58",
+ "seconds": 253.28098821640015,
+ "summary": "[smollm135 block 15] 768 neurons: Spearman over pairs, activation-tokens~readers 0.018, state~readers 0.018, tokens~state 0.444, weight-only~readers 0.582, say~readers 0.092; nearest neighbour by tokens in the readers' top-10 0.10 (by state 0.20; chance 0.013); readers' NN in tokens' top-10 0.13; mutual mismatch 0.81; verdicts {'C1_spearman_act_read_above_03': False, 'C2_nn_agreement_above_03': False, 'C3_weight_read_above_05': True}"
+}

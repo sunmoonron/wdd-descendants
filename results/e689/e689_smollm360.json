@@ -1,0 +1,16 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-360M",
+ "key": "smollm360",
+ "block": 16,
+ "n_blocks": 32,
+ "d": 960,
+ "DFF": 2560,
+ "rows": 43520,
+ "positions": 8159,
+ "r_cal": 0.9935297966003418,
+ "dtype": "torch.float32",
+ "summary": "[smollm360 d 960, block 16] rows over the floor per position, median 44 (0.046 per dimension, 0.0010 per row); the top row's own share of the resultant 0.23; crowd share (beyond the 16 largest terms) 0.92; effective number of terms 590 of 43520 active; three largest writes carry 0.26 of the centred norm",
+ "_exp": "e689_smollm360",
+ "_time": "2026-10-18 16:07:27",
+ "seconds": 14.301382780075073
+}

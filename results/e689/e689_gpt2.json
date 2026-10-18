@@ -1,0 +1,16 @@
+{
+ "model": "openai-community/gpt2",
+ "key": "gpt2",
+ "block": 6,
+ "n_blocks": 12,
+ "d": 768,
+ "DFF": 3072,
+ "rows": 21504,
+ "positions": 8160,
+ "r_cal": 0.9923320412635803,
+ "dtype": "torch.float32",
+ "summary": "[gpt2 d 768, block 6] rows over the floor per position, median 38 (0.049 per dimension, 0.0018 per row); the top row's own share of the resultant 0.45; crowd share (beyond the 16 largest terms) 0.91; effective number of terms 592 of 21494 active; three largest writes carry 0.27 of the centred norm",
+ "_exp": "e689_gpt2",
+ "_time": "2026-10-18 17:55:29",
+ "seconds": 10.371332168579102
+}

@@ -1,0 +1,41 @@
+{
+ "model": "EleutherAI/pythia-410m",
+ "block": 6,
+ "read_blocks": [
+  7,
+  8,
+  9
+ ],
+ "n_neurons": 1000,
+ "positions": 32640,
+ "class_size": 32,
+ "spearman": {
+  "act~read": 0.0036000823929359612,
+  "state~read": 0.0021034095084314164,
+  "act~state": 0.31661605492384637,
+  "weight~read": 0.8056240216722325,
+  "say~read": 0.3119268926861882,
+  "act~weight": 0.0017742162160453818,
+  "act~say": -0.0029155931975861533
+ },
+ "nn_agreement": {
+  "act->read": 0.05300000309944153,
+  "read->act": 0.058000002056360245,
+  "state->read": 0.12300000339746475,
+  "read->state": 0.16300000250339508,
+  "act->weight": 0.024000000208616257,
+  "weight->read": 0.7310000061988831,
+  "read->weight": 0.8200000524520874
+ },
+ "chance_nn": 0.01001001001001001,
+ "mismatch_share": 0.906000018119812,
+ "verdicts": {
+  "C1_spearman_act_read_above_03": false,
+  "C2_nn_agreement_above_03": false,
+  "C3_weight_read_above_05": true
+ },
+ "_exp": "e691_pythia410_b6",
+ "_time": "2026-10-18 20:48:15",
+ "seconds": 344.2959740161896,
+ "summary": "[pythia410 block 6] 1000 neurons: Spearman over pairs, activation-tokens~readers 0.004, state~readers 0.002, tokens~state 0.317, weight-only~readers 0.806, say~readers 0.312; nearest neighbour by tokens in the readers' top-10 0.05 (by state 0.12; chance 0.010); readers' NN in tokens' top-10 0.06; mutual mismatch 0.91; verdicts {'C1_spearman_act_read_above_03': False, 'C2_nn_agreement_above_03': False, 'C3_weight_read_above_05': True}"
+}

@@ -1,0 +1,41 @@
+{
+ "model": "openai-community/gpt2-medium",
+ "block": 6,
+ "read_blocks": [
+  7,
+  8,
+  9
+ ],
+ "n_neurons": 1000,
+ "positions": 32640,
+ "class_size": 32,
+ "spearman": {
+  "act~read": -0.0032101085996177115,
+  "state~read": -0.002838899508565915,
+  "act~state": 0.28059792992918603,
+  "weight~read": 0.6641440094335991,
+  "say~read": 0.059308903726356554,
+  "act~weight": -0.0062462450067561626,
+  "act~say": -0.0009984265914905071
+ },
+ "nn_agreement": {
+  "act->read": 0.06000000238418579,
+  "read->act": 0.10300000756978989,
+  "state->read": 0.11100000888109207,
+  "read->state": 0.1720000058412552,
+  "act->weight": 0.01900000125169754,
+  "weight->read": 0.593000054359436,
+  "read->weight": 0.6440000534057617
+ },
+ "chance_nn": 0.01001001001001001,
+ "mismatch_share": 0.8610000610351562,
+ "verdicts": {
+  "C1_spearman_act_read_above_03": false,
+  "C2_nn_agreement_above_03": false,
+  "C3_weight_read_above_05": true
+ },
+ "_exp": "e691_gpt2m_b6",
+ "_time": "2026-10-18 21:00:27",
+ "seconds": 356.14158606529236,
+ "summary": "[gpt2m block 6] 1000 neurons: Spearman over pairs, activation-tokens~readers -0.003, state~readers -0.003, tokens~state 0.281, weight-only~readers 0.664, say~readers 0.059; nearest neighbour by tokens in the readers' top-10 0.06 (by state 0.11; chance 0.010); readers' NN in tokens' top-10 0.10; mutual mismatch 0.86; verdicts {'C1_spearman_act_read_above_03': False, 'C2_nn_agreement_above_03': False, 'C3_weight_read_above_05': True}"
+}

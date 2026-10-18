@@ -1125,6 +1125,62 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H889 Pooled over the three blocks, two-route neurons split more often than random splits of the same firings predict (simulated Poisson-binomial tail p < 0.05). → e679 → SUPPORTED.
 - H890 Two-route neurons split more often than one-route neurons (one-sided Fisher exact p < 0.05). → e679 → SUPPORTED.
 - H891 The best single Pythia-410m neuron covers a one-route neuron's top 100 better than a two-route neuron's (one-sided Mann-Whitney p < 0.05). → e679 → REFUTED.
+- H892 At 0.5 floors, own and foreign native injections cost the same next-token KL as a random direction (ratio in [0.7, 1.5]). → e680 → NARROWED (holds for Pythia-160m, Pythia-410m, Qwen2.5-0.5B, SmolLM2-135M, not GPT-2 small).
+- H893 At 2 floors, the position's own write scaled up costs more than 2x a random direction. → e680 → REFUTED.
+- H894 At 2 floors, a foreign native row costs the same as a random direction (e510/e511: a fake chord is contracted like noise). → e680 → SUPPORTED.
+- H895 The rotated row equals random at every amplitude. → e680 → SUPPORTED.
+- H896 Keeping only the strongest quarter of each neuron's activations by count (the essay's vision measure) costs under 0.05 nats of KL. → e681 → REFUTED.
+- H897 The same costs over 0.2 nats (Gao). → e681 → SUPPORTED.
+- H898 The dial tertile (lowest top-1% energy share) costs at least twice the detector tertile. → e681 → NARROWED (holds for OLMo-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M, not GPT-2 small, GPT-2 large, GPT-2 medium, Pythia-160m, Pythia-1B, Pythia-410m).
+- H899 Flipped predictions were near-ties: their clean margin's median is under half the unflipped median. → e681 → NARROWED (holds for GPT-2 large, OLMo-1B, Pythia-160m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M, not GPT-2 small, GPT-2 medium, Pythia-1B, Pythia-410m).
+- H900 The last block costs at least twice the average block per neuron. → e681 → NARROWED (holds for Pythia-160m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M, not GPT-2 small, GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m).
+- H901 Mean replacement is cheaper than zeroing. → e681 → NARROWED (holds for GPT-2 small, GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M, not SmolLM2-135M).
+- H902 The K=16 simulation's KL ratio is lower at the neuron's strong positions than over all positions. → e685 → SUPPORTED.
+- H903 At K=16 the median KL ratio at strong positions is under 0.25. → e685 → REFUTED.
+- H904 It is over 0.5. → e685 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 18, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 18, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, SmolLM2-135M block 22, SmolLM2-135M block 8, not GPT-2 medium block 6).
+- H905 Over-floor upstream writes carry more than half of the MLP input energy at strong firings. → e685 → REFUTED.
+- H906 Every input reproduces the neuron (KL ratio under 0.05). → e685b → SUPPORTED.
+- H907 Adding the crowd's mean halves the K=16 KL ratio at strong positions. → e685b → REFUTED.
+- H908 With the crowd's mean the K=16 ratio at strong positions is under 0.25. → e685b → REFUTED.
+- H909 With the crowd's mean the K=64 ratio is under 0.25. → e685b → REFUTED.
+- H910 At the middle block, more than half of neurons have pole-state cosine above the null's 95th percentile (read axes projected out). → e686 → NARROWED (holds for OLMo-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M, not GPT-2 small, GPT-2 large, GPT-2 medium, Pythia-160m, Pythia-1B, Pythia-410m).
+- H911 The near share rises with depth. → e686 → NARROWED (holds for GPT-2 small, GPT-2 large, GPT-2 medium, Pythia-160m, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M, not OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B).
+- H912 Next-token overlap between poles beats the null for more than 0.3 of neurons. → e686 → NARROWED (holds for Qwen2.5-0.5B, SmolLM2-135M, not GPT-2 small, GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-1.5B, SmolLM2-360M).
+- H913 Rows over the floor per position grow with d within each family (Spearman > 0.8). → e689 → NARROWED (holds for pythia, smollm, gpt, not qwen).
+- H914 The crowd share of the resultant falls with d (Spearman < -0.5 within families). → e689 → REFUTED.
+- H915 The effective number of contributors to the resultant grows with d (Spearman > 0.5). → e689 → SUPPORTED.
+- H916 Spearman over pairs between token-bag similarity and reader-vector similarity exceeds 0.3. → e691 → REFUTED.
+- H917 A neuron's nearest neighbour by tokens is among its ten nearest by readers for more than 0.3 (chance 0.01). → e691 → REFUTED.
+- H918 Weight-only reader vectors correlate with ledger reader vectors above 0.5. → e691 → SUPPORTED.
+- H919 At least half of a fact's sixteen writers fire on natural Pile text about its value or relation (z > 3). → e682 → NARROWED (holds for Qwen2.5-0.5B, not Pythia-410m).
+- H920 Random neurons do so under 0.1. → e682 → REFUTED.
+- H921 Facts sharing a value share writers more than twice as much (Jaccard) as facts of different relations. → e682 → SUPPORTED.
+- H922 The random codes' writers are related to a code-like field at most half as often as facts' writers to theirs. → e682 → REFUTED.
+- H923 The codes share writers among themselves at least as much as facts of one relation do (packing). → e682 → SUPPORTED.
+- H924 The writers' median depth is in the last third. → e682 → SUPPORTED.
+- H925 No write column changes by more than 0.02 in cosine (existing routes, no rewritten row). → e682 → SUPPORTED.
+- H926 Chain enrichment (new contexts nearest a member that entered within two checkpoints, over the random expectation) exceeds 1.5 in at least 70% of neurons. → e683 → REFUTED.
+- H927 The median jump share (nearest member below the random-position null) is under 0.15. → e683 → SUPPORTED.
+- H928 The root (top-20 at step 1000) is more one-token concentrated than the final top-20. → e683 → NARROWED (holds for Pythia-160m, Pythia-160m seed 2, not Pythia-160m seed 1).
+- H929 In two-route neurons the minor route's members entered by chain more often than the core's, in at least 60%. → e683 → NARROWED (holds for Pythia-160m seed 1, not Pythia-160m, Pythia-160m seed 2).
+- H930 The recruited row gains readers (|share| > 1 std) from two checkpoints before to two after, more than norm-matched control rows on the same positions, in at least 65% of words. → e684 → REFUTED.
+- H931 The ten strongest readers' mean share gains more across recruitment than the norm-matched control rows' on the same positions, in at least 65% of words. → e684 → SUPPORTED.
+- H932 The total reader mass gains more than the control rows' in at least 65% of words. → e684 → SUPPORTED.
+- H933 The readers' alignment gain with the row exceeds their gain with the class direction in at least 60%. → e684 → SUPPORTED.
+- H934 Sub-class specialists among later-block neurons increase across recruitment more than for random position sets in at least 60%. → e684 → REFUTED.
+- H935 Median held-out precision at recall 0.9 is under 0.3 at the middle block. → e687 → SUPPORTED.
+- H936 It is at least 0.6. → e687 → REFUTED.
+- H937 A rule reaching recall 0.9 at precision 0.5 exists for under half, or its median size exceeds 50 entries. → e687 → SUPPORTED.
+- H938 Such a rule has at most 10 entries for at least half. → e687 → REFUTED.
+- H939 A surface rule at precision 0.5 covers at least half of a neuron's held-out class at the middle block. → e687 → REFUTED.
+- H940 Both concepts install at the pin's end (vote share at least 0.8 each) in at least 4 of 5 seeds. → e688 → SUPPORTED.
+- H941 By release step 6000 at least one vote share falls below 0.5 in at least 3 of 5 seeds. → e688 → REFUTED.
+- H942 Both stay at least 0.8 in at least 3 of 5 seeds. → e688 → SUPPORTED.
+- H943 Single-concept pins keep vote share at least 0.8 through release in at least 3 of 4 runs. → e688 → SUPPORTED.
+- H944 A shed concept's dial is under 0.03 (dials follow votes). → e688 → NARROWED (no concept shed).
+- H945 Memorised writers sit more than one block deeper than both controls. → e690 → REFUTED.
+- H946 Their class entropy is not higher than the controls' (within 0.2 bits). → e690 → SUPPORTED.
+- H947 The share firing on the content field is not lower than the low-loss control's. → e690 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

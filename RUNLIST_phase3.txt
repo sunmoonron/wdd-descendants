@@ -807,3 +807,96 @@ python e678_leak_ablation.py --model olmo1b
 python e679_scale_split.py --block 3
 python e679_scale_split.py --block 6 --seed 672
 python e679_scale_split.py --block 9
+python e688_plant_knot.py --mode knot --seed 0
+python e688_plant_knot.py --mode knot --seed 1
+python e688_plant_knot.py --mode knot --seed 2
+python e688_plant_knot.py --mode knot --seed 3
+python e688_plant_knot.py --mode knot --seed 4
+python e688_plant_knot.py --mode singleG --seed 0
+python e688_plant_knot.py --mode singleG --seed 1
+python e688_plant_knot.py --mode singleN --seed 0
+python e688_plant_knot.py --mode singleN --seed 1
+python e688_plant_knot.py --mode control --seed 0
+python e690_memorized.py --model pythia1b
+python e690_memorized.py --model pythia410
+python e690_memorized.py --model pythia160
+python e684_readers.py --tag pythia160
+python e684_readers.py --tag pythia160s1
+python e684_readers.py --tag pythia160s2
+python e683_chain_star.py --tag pythia160
+python e683_chain_star.py --tag pythia160s1
+python e683_chain_star.py --tag pythia160s2
+python e685_readers_ledger.py --model qwen05 --block 18
+python e685_readers_ledger.py --model pythia410 --block 18
+python e685_readers_ledger.py --model qwen05 --block 12
+python e685_readers_ledger.py --model pythia410 --block 12
+python e685_readers_ledger.py --model qwen05 --block 6
+python e685_readers_ledger.py --model pythia410 --block 6
+python e685_readers_ledger.py --model gpt2m --block 18
+python e685_readers_ledger.py --model gpt2m --block 12
+python e685_readers_ledger.py --model gpt2m --block 6
+python e685_readers_ledger.py --model smollm135 --block 22
+python e685_readers_ledger.py --model smollm135 --block 15
+python e685_readers_ledger.py --model smollm135 --block 8
+python e682_fact_map.py --model qwen05
+python e682_fact_map.py --model pythia410
+python e689_width.py --model qwen7b
+python e689_width.py --model pythia28b
+python e689_width.py --model qwen3b
+python e689_width.py --model gpt2xl
+python e689_width.py --model smollm17b
+python e689_width.py --model pythia14b
+python e689_width.py --model qwen15
+python e689_width.py --model pythia1b
+python e689_width.py --model gpt2l
+python e689_width.py --model qwen05
+python e689_width.py --model pythia410
+python e689_width.py --model gpt2m
+python e689_width.py --model smollm360
+python e689_width.py --model pythia160
+python e689_width.py --model pythia70
+python e689_width.py --model gpt2
+python e689_width.py --model smollm135
+python e686_negative_pole.py --model qwen15
+python e686_negative_pole.py --model pythia1b
+python e686_negative_pole.py --model olmo1b
+python e686_negative_pole.py --model gpt2l
+python e686_negative_pole.py --model pythia410
+python e686_negative_pole.py --model qwen05
+python e686_negative_pole.py --model smollm360
+python e686_negative_pole.py --model gpt2m
+python e686_negative_pole.py --model smollm135
+python e686_negative_pole.py --model pythia160
+python e686_negative_pole.py --model gpt2
+python e681_weak_ablation.py --model qwen15
+python e681_weak_ablation.py --model pythia1b
+python e681_weak_ablation.py --model olmo1b
+python e681_weak_ablation.py --model qwen05
+python e681_weak_ablation.py --model gpt2l
+python e681_weak_ablation.py --model pythia410
+python e681_weak_ablation.py --model smollm360
+python e681_weak_ablation.py --model gpt2m
+python e681_weak_ablation.py --model smollm135
+python e681_weak_ablation.py --model pythia160
+python e681_weak_ablation.py --model gpt2
+python e680_floor_causal.py --model qwen05
+python e680_floor_causal.py --model pythia410
+python e680_floor_causal.py --model smollm135
+python e680_floor_causal.py --model pythia160
+python e680_floor_causal.py --model gpt2
+python e687_explanation_recall.py --model qwen05
+python e687_explanation_recall.py --model pythia410
+python e687_explanation_recall.py --model gpt2m
+python e687_explanation_recall.py --model smollm135
+python e691_reader_consensus.py --model qwen05 --block 12
+python e691_reader_consensus.py --model qwen05 --block 6
+python e691_reader_consensus.py --model pythia410 --block 12
+python e691_reader_consensus.py --model pythia410 --block 6
+python e691_reader_consensus.py --model gpt2m --block 12
+python e691_reader_consensus.py --model gpt2m --block 6
+python e691_reader_consensus.py --model smollm135 --block 15
+python e691_reader_consensus.py --model smollm135 --block 8
+python e685b_crowdmean.py --model pythia410 --block 12
+python e685b_crowdmean.py --model pythia410 --block 6
+python e685b_crowdmean.py --model qwen05 --block 12
+python e685b_crowdmean.py --model gpt2m --block 12

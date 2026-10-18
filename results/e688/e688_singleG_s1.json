@@ -1,0 +1,186 @@
+{
+ "mode": "singleG",
+ "seed": 1,
+ "row": 916,
+ "block": 4,
+ "handles": {
+  "G": [
+   7671,
+   0.3055555555555556
+  ],
+  "N": [
+   13945,
+   1.0
+  ]
+ },
+ "pin_steps": 1200,
+ "release_steps": 6000,
+ "trace": [
+  {
+   "label": "before",
+   "val": 2.8425211111704507,
+   "norm": 0.893989086151123,
+   "dial": {
+    "gender": 0.0001616544193692171,
+    "number": -3.5458140903110724e-05,
+    "agreement_gender": 0.8004538971516821,
+    "agreement_number": 0.982115824189451
+   },
+   "vote": {
+    "G": {
+     "share": 0.0,
+     "top": 7671,
+     "top_share": 0.3055555555555556
+    },
+    "N": {
+     "share": 0.0,
+     "top": 13945,
+     "top_share": 1.0
+    }
+   }
+  },
+  {
+   "label": "pin_end",
+   "val": 2.844327529271444,
+   "norm": 1.059250831604004,
+   "dial": {
+    "gender": 0.0009916114310424273,
+    "number": -0.00024179865916573728,
+    "agreement_gender": 0.8053871761593554,
+    "agreement_number": 0.9730365806155734
+   },
+   "vote": {
+    "G": {
+     "share": 1.0,
+     "top": 13204,
+     "top_share": 1.0
+    },
+    "N": {
+     "share": 0.0,
+     "top": 13945,
+     "top_share": 1.0
+    }
+   }
+  },
+  {
+   "label": "release_1000",
+   "val": 2.8632216453552246,
+   "norm": 1.0583710670471191,
+   "dial": {
+    "gender": -0.00025641794006026064,
+    "number": -0.00024160659975469567,
+    "agreement_gender": 0.8313165770636665,
+    "agreement_number": 0.9791863875256644
+   },
+   "vote": {
+    "G": {
+     "share": 1.0,
+     "top": 13204,
+     "top_share": 1.0
+    },
+    "N": {
+     "share": 0.0,
+     "top": 13945,
+     "top_share": 1.0
+    }
+   }
+  },
+  {
+   "label": "release_2000",
+   "val": 2.8736305236816406,
+   "norm": 1.0577988624572754,
+   "dial": {
+    "gender": 0.00035427138209342957,
+    "number": -0.00018694748481107304,
+    "agreement_gender": 0.8262373941640059,
+    "agreement_number": 0.980835936135716
+   },
+   "vote": {
+    "G": {
+     "share": 1.0,
+     "top": 13204,
+     "top_share": 1.0
+    },
+    "N": {
+     "share": 0.0,
+     "top": 13945,
+     "top_share": 1.0
+    }
+   }
+  },
+  {
+   "label": "release_4000",
+   "val": 2.9019816716512046,
+   "norm": 1.0573493242263794,
+   "dial": {
+    "gender": -0.0004666803611649284,
+    "number": -0.00023718426624930178,
+    "agreement_gender": 0.8415492963459756,
+    "agreement_number": 0.9820818487140868
+   },
+   "vote": {
+    "G": {
+     "share": 1.0,
+     "top": 13204,
+     "top_share": 1.0
+    },
+    "N": {
+     "share": 0.0,
+     "top": 13945,
+     "top_share": 1.0
+    }
+   }
+  },
+  {
+   "label": "release_6000",
+   "val": 2.9333435694376626,
+   "norm": 1.0575158596038818,
+   "dial": {
+    "gender": -0.0013290217353238987,
+    "number": -0.00025298280848395915,
+    "agreement_gender": 0.8600571499102645,
+    "agreement_number": 0.98274148752292
+   },
+   "vote": {
+    "G": {
+     "share": 1.0,
+     "top": 13204,
+     "top_share": 1.0
+    },
+    "N": {
+     "share": 0.0,
+     "top": 13945,
+     "top_share": 1.0
+    }
+   }
+  }
+ ],
+ "verdict_inputs": {
+  "pin_end_votes": {
+   "G": 1.0,
+   "N": 0.0
+  },
+  "end_votes": {
+   "G": 1.0,
+   "N": 0.0
+  },
+  "pin_end_dials": {
+   "gender": 0.0009916114310424273,
+   "number": -0.00024179865916573728,
+   "agreement_gender": 0.8053871761593554,
+   "agreement_number": 0.9730365806155734
+  },
+  "end_dials": {
+   "gender": -0.0013290217353238987,
+   "number": -0.00025298280848395915,
+   "agreement_gender": 0.8600571499102645,
+   "agreement_number": 0.98274148752292
+  },
+  "val_before": 2.8425211111704507,
+  "val_end": 2.9333435694376626
+ },
+ "_exp": "e688_singleG_s1",
+ "_time": "2026-10-18 18:12:30",
+ "seconds": 9164.000607728958,
+ "summary": "[e688_singleG_s1] row 916: vote share G/N before 0.00/0.00, pin end 1.00/0.00, release end 1.00/0.00; dials (gender/number) pin end +0.001/-0.000, release end -0.001/-0.000; val 2.843 -> 2.844 -> 2.933"
+}

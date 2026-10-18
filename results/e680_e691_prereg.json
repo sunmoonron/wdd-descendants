@@ -1,0 +1,382 @@
+{
+ "session": 155,
+ "date": "2026-10-18",
+ "box": "box 11 (A100-80GB)",
+ "written_before": "any full run; smokes may revise designs, revisions dated in 'revisions'",
+ "format": "prediction id: [statement, my probability]; verdict bands are the ones coded in each script",
+ "e680_floor_causal": {
+  "question": "is the extreme-value floor a causal boundary for the model's own readers?",
+  "C1": [
+   "at 0.5 floors, own and foreign native injections cost the same next-token KL as a random direction (ratio in [0.7, 1.5])",
+   0.55
+  ],
+  "C2": [
+   "at 2 floors, the position's own write scaled up costs more than 2x a random direction",
+   0.6
+  ],
+  "C3": [
+   "at 2 floors, a foreign native row costs the same as a random direction (e510/e511: a fake chord is contracted like noise)",
+   0.6
+  ],
+  "C4": [
+   "the rotated row equals random at every amplitude",
+   0.8
+  ],
+  "models": [
+   "pythia160",
+   "pythia410",
+   "qwen05",
+   "smollm135",
+   "gpt2"
+  ]
+ },
+ "e681_weak_ablation": {
+  "question": "do weak activations matter, and to whom?",
+  "W1": [
+   "keeping only the strongest quarter of each neuron's activations by count (the essay's vision measure) costs under 0.05 nats of KL",
+   0.45
+  ],
+  "W1b": [
+   "the same costs over 0.2 nats (Gao)",
+   0.25
+  ],
+  "W2": [
+   "the dial tertile (lowest top-1% energy share) costs at least twice the detector tertile",
+   0.5
+  ],
+  "W3": [
+   "flipped predictions were near-ties: their clean margin's median is under half the unflipped median",
+   0.6
+  ],
+  "W4": [
+   "the last block costs at least twice the average block per neuron",
+   0.4
+  ],
+  "W5": [
+   "mean replacement is cheaper than zeroing",
+   0.7
+  ],
+  "models": [
+   "pythia160",
+   "pythia410",
+   "pythia1b",
+   "qwen05",
+   "qwen15",
+   "smollm135",
+   "smollm360",
+   "gpt2",
+   "gpt2m",
+   "gpt2l",
+   "olmo1b"
+  ],
+  "W1c": [
+   "zeroing activations below 0.1 of each neuron's maximum (the first form of W1) costs under 0.05 nats",
+   0.45
+  ]
+ },
+ "e682_fact_map": {
+  "question": "are a learned fact's writers related to the fact, or an arbitrary store?",
+  "F1": [
+   "at least half of a fact's sixteen writers fire on natural Pile text about its value or relation (z > 3)",
+   0.5
+  ],
+  "F1b": [
+   "random neurons do so under 0.1",
+   0.8
+  ],
+  "F2": [
+   "facts sharing a value share writers more than twice as much (Jaccard) as facts of different relations",
+   0.6
+  ],
+  "F3": [
+   "the random codes' writers are related to a code-like field at most half as often as facts' writers to theirs",
+   0.5
+  ],
+  "F3b": [
+   "the codes share writers among themselves at least as much as facts of one relation do (packing)",
+   0.4
+  ],
+  "F4": [
+   "the writers' median depth is in the last third",
+   0.4
+  ],
+  "F5": [
+   "no write column changes by more than 0.02 in cosine (existing routes, no rewritten row)",
+   0.7
+  ],
+  "models": [
+   "pythia410",
+   "qwen05"
+  ]
+ },
+ "e683_chain_star": {
+  "question": "chain, star or jump: the topology of a neuron's growth over training",
+  "G1": [
+   "chain enrichment (new contexts nearest a member that entered within two checkpoints, over the random expectation) exceeds 1.5 in at least 70% of neurons",
+   0.55
+  ],
+  "G2": [
+   "the median jump share (nearest member below the random-position null) is under 0.15",
+   0.5
+  ],
+  "G3": [
+   "the root (top-20 at step 1000) is more one-token concentrated than the final top-20",
+   0.6
+  ],
+  "G4": [
+   "in two-route neurons the minor route's members entered by chain more often than the core's, in at least 60%",
+   0.5
+  ],
+  "runs": [
+   "pythia160",
+   "pythia160s1",
+   "pythia160s2"
+  ]
+ },
+ "e684_readers": {
+  "question": "do downstream readers arrive after a row is recruited (buildability)?",
+  "R1": [
+   "the recruited row gains readers (|share| > 1 std) from two checkpoints before to two after, more than norm-matched control rows on the same positions, in at least 65% of words",
+   0.5
+  ],
+  "R2": [
+   "the readers' alignment gain with the row exceeds their gain with the class direction in at least 60%",
+   0.5
+  ],
+  "R3": [
+   "sub-class specialists among later-block neurons increase across recruitment more than for random position sets in at least 60%",
+   0.35
+  ],
+  "runs": [
+   "pythia160",
+   "pythia160s1",
+   "pythia160s2"
+  ],
+  "R1b": [
+   "the ten strongest readers' mean share gains more across recruitment than the norm-matched control rows' on the same positions, in at least 65% of words",
+   0.5
+  ],
+  "R1c": [
+   "the total reader mass gains more than the control rows' in at least 65% of words",
+   0.5
+  ]
+ },
+ "e685_readers_ledger": {
+  "question": "how many upstream inputs does a neuron need; readable writes or the crowd?",
+  "L1": [
+   "the K=16 simulation's KL ratio is lower at the neuron's strong positions than over all positions",
+   0.6
+  ],
+  "L2_nick": [
+   "at K=16 the median KL ratio at strong positions is under 0.25",
+   0.35
+  ],
+  "L2_nanda": [
+   "it is over 0.5",
+   0.35
+  ],
+  "L3": [
+   "over-floor upstream writes carry more than half of the MLP input energy at strong firings",
+   0.4
+  ],
+  "runs": [
+   "pythia410 b6/12/18",
+   "qwen05 b6/12/18",
+   "smollm135 b8/15/22",
+   "gpt2m b6/12/18"
+  ],
+  "L0": [
+   "driven by every input, the simulated neuron reproduces the model (KL ratio under 0.05): a check of the exact split",
+   0.9
+  ]
+ },
+ "e686_negative_pole": {
+  "question": "is the negative pole the nearest neighbour?",
+  "N1": [
+   "at the middle block, more than half of neurons have pole-state cosine above the null's 95th percentile (read axes projected out)",
+   0.5
+  ],
+  "N2": [
+   "the near share rises with depth",
+   0.5
+  ],
+  "N3": [
+   "next-token overlap between poles beats the null for more than 0.3 of neurons",
+   0.4
+  ],
+  "models": [
+   "pythia160",
+   "pythia410",
+   "pythia1b",
+   "gpt2",
+   "gpt2m",
+   "gpt2l",
+   "qwen05",
+   "qwen15",
+   "smollm135",
+   "smollm360",
+   "olmo1b"
+  ]
+ },
+ "e687_explanation_recall": {
+  "question": "how compact and how complete is a surface explanation of a neuron's class?",
+  "X1_gao": [
+   "median held-out precision at recall 0.9 is under 0.3 at the middle block",
+   0.45
+  ],
+  "X1_nick": [
+   "it is at least 0.6",
+   0.25
+  ],
+  "X2_gao": [
+   "a rule reaching recall 0.9 at precision 0.5 exists for under half, or its median size exceeds 50 entries",
+   0.5
+  ],
+  "X2_nick": [
+   "such a rule has at most 10 entries for at least half",
+   0.2
+  ],
+  "models": [
+   "pythia410",
+   "qwen05",
+   "smollm135",
+   "gpt2m"
+  ],
+  "X3": [
+   "a surface rule at precision 0.5 covers at least half of a neuron's held-out class at the middle block",
+   0.3
+  ]
+ },
+ "e688_plant_knot": {
+  "question": "is arbitrary packing an unstable state (semantic gravity)?",
+  "K1": [
+   "both concepts install at the pin's end (vote share at least 0.8 each) in at least 4 of 5 seeds",
+   0.6
+  ],
+  "K2_gravity": [
+   "by release step 6000 at least one vote share falls below 0.5 in at least 3 of 5 seeds",
+   0.45
+  ],
+  "K2_stable": [
+   "both stay at least 0.8 in at least 3 of 5 seeds",
+   0.35
+  ],
+  "K3": [
+   "single-concept pins keep vote share at least 0.8 through release in at least 3 of 4 runs",
+   0.6
+  ],
+  "K4": [
+   "a shed concept's dial is under 0.03 (dials follow votes)",
+   0.5
+  ],
+  "runs": [
+   "knot s0-s4",
+   "singleG s0,s1",
+   "singleN s0,s1",
+   "control s0"
+  ]
+ },
+ "e689_width": {
+  "question": "do readable writes grow and the crowd shrink with width?",
+  "S1": [
+   "rows over the floor per position grow with d within each family (Spearman > 0.8)",
+   0.7
+  ],
+  "S2": [
+   "the crowd share of the resultant falls with d (Spearman < -0.5 within families)",
+   0.4
+  ],
+  "S3": [
+   "the effective number of contributors to the resultant grows with d (Spearman > 0.5)",
+   0.6
+  ],
+  "models": [
+   "pythia70",
+   "pythia160",
+   "pythia410",
+   "pythia1b",
+   "pythia14b",
+   "pythia28b",
+   "gpt2",
+   "gpt2m",
+   "gpt2l",
+   "gpt2xl",
+   "smollm135",
+   "smollm360",
+   "smollm17b",
+   "qwen05",
+   "qwen15",
+   "qwen3b",
+   "qwen7b"
+  ]
+ },
+ "e690_memorized": {
+  "question": "are memorised sequences' writers late, coherent and content-related?",
+  "M1": [
+   "memorised writers sit more than one block deeper than both controls",
+   0.4
+  ],
+  "M2": [
+   "their class entropy is not higher than the controls' (within 0.2 bits)",
+   0.6
+  ],
+  "M3": [
+   "the share firing on the content field is not lower than the low-loss control's",
+   0.5
+  ],
+  "models": [
+   "pythia160",
+   "pythia410",
+   "pythia1b"
+  ]
+ },
+ "e691_reader_consensus": {
+  "question": "does the activation label agree with what readers do?",
+  "C1": [
+   "Spearman over pairs between token-bag similarity and reader-vector similarity exceeds 0.3",
+   0.5
+  ],
+  "C2": [
+   "a neuron's nearest neighbour by tokens is among its ten nearest by readers for more than 0.3 (chance 0.01)",
+   0.4
+  ],
+  "C3": [
+   "weight-only reader vectors correlate with ledger reader vectors above 0.5",
+   0.6
+  ],
+  "runs": [
+   "pythia410 b6/b12",
+   "qwen05 b6/b12",
+   "gpt2m b6/b12",
+   "smollm135 b8/b15"
+  ]
+ },
+ "revisions": [
+  "2026-10-18 after the smokes, before any full run: e681 gained the keep-top-q conditions (W1 restated on the strongest quarter kept, the fraction-of-max form kept as W1c) because a tenth of the maximum removes a third of Pythia's activation energy; e686's null became the two tails of a rotated read row (projecting out the read axis left residual anti-correlation); e687 gained graded precision and recall points (X3) because precision at recall 0.9 saturates at zero; e684's reader threshold went from one std (nobody) to a fifth, with the ten strongest readers' share and the mass as R1b and R1c; e685 gained K = 256, 1024 and all inputs (L0) and the fp32 log-probs; e691's reader signature became the causal downstream response (the ledger-weighted one was the weight vector times a scalar); c11 stored clean log-probs in fp32 (fp16 put a 1e-3-nat floor under every KL).",
+  "2026-10-18 during the full runs: e684 keeps its activation cache in CPU RAM (an OOM on seed 0, rerun); e690 keeps its reference activations in CPU RAM (OOMs on 410m and 1B, rerun); e682 gained a KL tether to the base model (beta 2) and lr 5e-6 after the first Pythia-410m run damaged the model by 0.87 nats, and skips reference sentences under four tokens (a crash); e685b (the crowd's mean added back) was written after e685's first results showed the K-input simulation worse than ablation at mid depth, as the error-node control; the verdict bands coded in the scripts are the ones above."
+ ],
+ "e685b_crowdmean": {
+  "question": "e685's control: the K largest inputs plus the corpus mean of what they leave out (the crowd replaced by its mean, the error-node convention)",
+  "L0": [
+   "every input reproduces the neuron (KL ratio under 0.05)",
+   0.9
+  ],
+  "L4": [
+   "adding the crowd's mean halves the K=16 KL ratio at strong positions",
+   0.5
+  ],
+  "L5": [
+   "with the crowd's mean the K=16 ratio at strong positions is under 0.25",
+   0.25
+  ],
+  "L6": [
+   "with the crowd's mean the K=64 ratio is under 0.25",
+   0.35
+  ],
+  "runs": [
+   "pythia410 b6/b12",
+   "qwen05 b12",
+   "gpt2m b12"
+  ]
+ }
+}

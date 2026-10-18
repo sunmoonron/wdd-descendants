@@ -1,0 +1,16 @@
+{
+ "model": "Qwen/Qwen2.5-1.5B",
+ "key": "qwen15",
+ "block": 14,
+ "n_blocks": 28,
+ "d": 1536,
+ "DFF": 8960,
+ "rows": 134400,
+ "positions": 8157,
+ "r_cal": 0.9955139756202698,
+ "dtype": "torch.float32",
+ "summary": "[qwen15 d 1536, block 14] rows over the floor per position, median 86 (0.056 per dimension, 0.0006 per row); the top row's own share of the resultant 0.37; crowd share (beyond the 16 largest terms) 0.95; effective number of terms 1721 of 134399 active; three largest writes carry 0.39 of the centred norm",
+ "_exp": "e689_qwen15",
+ "_time": "2026-10-18 19:40:21",
+ "seconds": 16.160598278045654
+}
