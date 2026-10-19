@@ -989,3 +989,20 @@ python e704_field_readers.py --model smollm135 --block 15
 python e701_brake_training.py --model olmo1b --block 4
 python e701_brake_training.py --model olmo1b --block 8
 python e701_brake_training.py --model olmo1b --block 12
+# session 159 (e705, e706, e701 late on OLMo): the gated remainder and the strong field
+python e706_strong_field.py --model qwen05 --block 12
+python e706_strong_field.py --model pythia410 --block 18
+python e706_strong_field.py --model qwen05 --block 6
+python e706_strong_field.py --model pythia410 --block 12
+python e706_strong_field.py --model gpt2m --block 12
+python e706_strong_field.py --model pythia410 --block 6
+python e706_strong_field.py --model gpt2m --block 6
+python e706_strong_field.py --model smollm135 --block 15
+python e705_gated_bypass.py --model qwen15
+python e705_gated_bypass.py --model qwen05
+python e705_gated_bypass.py --model olmo1b
+python e705_gated_bypass.py --model pythia410
+python e705_gated_bypass.py --model smollm360
+python e705_gated_bypass.py --model gpt2m
+python e701_brake_training.py --model olmo1b --block 8 --late
+python e701_brake_training.py --model olmo1b --block 12 --late

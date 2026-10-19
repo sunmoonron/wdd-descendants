@@ -8,11 +8,12 @@ core in ledger space, and the one-token share of the top twenty firings. Session
 import argparse
 from c11 import *
 F_ = torch.nn.functional
-ap = argparse.ArgumentParser(); ap.add_argument("--model", default="pythia160"); ap.add_argument("--block", type=int, default=6); ap.add_argument("--smoke", action="store_true"); A_ = ap.parse_args(); SMOKE = A_.smoke
-name = A_.model; B = A_.block; TAG = f"e701_{name}_b{B}" + ("_smoke" if SMOKE else ""); T = 256; L_ = lambda s: log(TAG, s)
+ap = argparse.ArgumentParser(); ap.add_argument("--model", default="pythia160"); ap.add_argument("--block", type=int, default=6); ap.add_argument("--smoke", action="store_true"); ap.add_argument("--late", action="store_true"); A_ = ap.parse_args(); SMOKE = A_.smoke; LATE = A_.late
+name = A_.model; B = A_.block; TAG = f"e701_{name}_b{B}" + ("_late" if LATE else "") + ("_smoke" if SMOKE else ""); T = 256; L_ = lambda s: log(TAG, s)
 PY = {"pythia160": [1000, 2000, 3000, 4000, 6000, 8000, 12000, 16000, 32000, 64000, None], "pythia160s1": [1000, 2000, 4000, 8000, 16000, None], "pythia160s2": [1000, 2000, 4000, 8000, 16000, None]}
 OL = ["step1000-tokens2B", "step2000-tokens4B", "step4000-tokens8B", "step8000-tokens16B", "step16000-tokens33B", None]
-STEPS = (PY[name] if name in PY else OL); STEPS = ([STEPS[0], STEPS[3], None] if SMOKE else STEPS); keyname = lambda s: "final" if s is None else (str(s) if isinstance(s, int) else s.split("-")[0][4:]); stepnum = lambda s: 1454000.0 if (s is None and name.startswith("olmo")) else (143000.0 if s is None else float(keyname(s)))
+OLL = ["step32000-tokens67B", "step64000-tokens134B", "step128000-tokens268B", "step256000-tokens536B", "step512000-tokens1073B", "step1000000-tokens2096B", None]
+STEPS = (OLL if LATE else (PY[name] if name in PY else OL)); STEPS = ([STEPS[0], STEPS[3], None] if SMOKE else STEPS); keyname = lambda s: "final" if s is None else (str(s) if isinstance(s, int) else s.split("-")[0][4:]); stepnum = lambda s: 1454000.0 if (s is None and name.startswith("olmo")) else (143000.0 if s is None else float(keyname(s)))
 revname = lambda s: None if s is None else (f"step{s}" if isinstance(s, int) else s)
 NWIN = 8 if SMOKE else 128; NNEU = 6 if SMOKE else 100; NSUB = 400
 M = load(name); NB, D, DFF = M["NB"], M["D"], M["DFF"]; NATT = n_att_feeding(M, B); ids = windows_from(wikitext_ids(M, "train"), NWIN, T).to(DEV); N = NWIN * (T - 1); NMLP = B * DFF; NU = NMLP + NATT + 1; K1 = max(20, N // 100); GATED = M["fam"] == "gated"

@@ -1,0 +1,16 @@
+32|e706_qwen05_b12|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model qwen05 --block 12
+30|e706_pythia410_b18|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model pythia410 --block 18
+26|e706_qwen05_b6|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model qwen05 --block 6
+24|e706_pythia410_b12|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model pythia410 --block 12
+24|e706_gpt2m_b12|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model gpt2m --block 12
+20|e706_pythia410_b6|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model pythia410 --block 6
+20|e706_gpt2m_b6|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model gpt2m --block 6
+18|e706_smollm135_b15|C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model smollm135 --block 15
+26|e705_qwen15|C11_THREADS=4 /venv/main/bin/python scripts/e705_gated_bypass.py --model qwen15
+24|e705_qwen05|C11_THREADS=4 /venv/main/bin/python scripts/e705_gated_bypass.py --model qwen05
+14|e705_olmo1b|C11_THREADS=4 /venv/main/bin/python scripts/e705_gated_bypass.py --model olmo1b
+12|e705_pythia410|C11_THREADS=4 /venv/main/bin/python scripts/e705_gated_bypass.py --model pythia410
+12|e705_smollm360|C11_THREADS=4 /venv/main/bin/python scripts/e705_gated_bypass.py --model smollm360
+12|e705_gpt2m|C11_THREADS=4 /venv/main/bin/python scripts/e705_gated_bypass.py --model gpt2m
+12|e701_olmo1b_b8_late|until [ "$(grep -c ^done logs/dl_olmo3b.log 2>/dev/null || echo 0)" -ge 3 ]; do sleep 60; done; C11_THREADS=4 /venv/main/bin/python scripts/e701_brake_training.py --model olmo1b --block 8 --late
+12|e701_olmo1b_b12_late|until [ "$(grep -c ^done logs/dl_olmo3b.log 2>/dev/null || echo 0)" -ge 3 ]; do sleep 60; done; C11_THREADS=4 /venv/main/bin/python scripts/e701_brake_training.py --model olmo1b --block 12 --late

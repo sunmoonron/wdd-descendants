@@ -1,0 +1,92 @@
+{
+ "session": 159,
+ "date": "2026-10-19",
+ "written_before": "any full run; smokes may revise, revisions dated",
+ "format": "prediction id: [statement, my probability]; bands coded in the scripts",
+ "aim": "after the literature pass (Engels et al. 2024 on linear dark matter, Sun et al. 2025 on dense latents, Deng et al. 2026 on the sparse-plus-dense scaffold, Pearce et al. 2024 on bilinear MLPs, Knittel and Pfister 2026 on sparse upstream dependencies): the gated remainder of the bypass (e705), the strong field in the reader graph (e706), and the brake's formation over OLMo-1B's later checkpoints (e701 late)",
+ "e705_gated_bypass": {
+  "question": "does a closed-form quadratic predictor, or a Pile-fitted one, close the gated models' gap in the bypass's transfer, and is the field itself stable across domains?",
+  "G1": [
+   "the quadratic bypass (256 random bilinear features) recovers 0.1 more of the zeroing cost than the linear one on wikitext",
+   0.45
+  ],
+  "G1b": [
+   "the quadratic bypass reaches 0.9 of the oracle sixteen",
+   0.4
+  ],
+  "G2": [
+   "the Pile-fitted linear bypass keeps 0.7 of its in-domain recovery out of domain",
+   0.45
+  ],
+  "G2b": [
+   "the wikitext-fitted linear bypass does (e702's result restated per model)",
+   0.4
+  ],
+  "G3": [
+   "the Pile-fitted quadratic bypass recovers at least 0.6 out of domain",
+   0.4
+  ],
+  "G4": [
+   "the field's sixteen directions found on wikitext and on the Pile overlap by more than 0.7",
+   0.6
+  ],
+  "G5": [
+   "out of domain the quadratic bypass beats the linear one by 0.1",
+   0.4
+  ],
+  "models": [
+   "qwen05",
+   "qwen15",
+   "smollm360",
+   "olmo1b",
+   "pythia410",
+   "gpt2m"
+  ]
+ },
+ "e706_strong_field": {
+  "question": "does a strong-write field beside the weak one carry the rest of a pruned neuron's error?",
+  "H0": [
+   "every input reproduces the neuron",
+   0.9
+  ],
+  "H1": [
+   "the strong field alone halves the sixteen-wire ratio at the firings",
+   0.3
+  ],
+  "H2": [
+   "weak and strong together beat the weak field alone by 0.1",
+   0.45
+  ],
+  "H3": [
+   "both fields with the attention units bring the ratio under 0.25",
+   0.3
+  ],
+  "H4": [
+   "both fields bring it under 0.5",
+   0.6
+  ],
+  "H5": [
+   "both fields beat a random subspace of their dimension by 0.2",
+   0.65
+  ],
+  "H6": [
+   "both fields halve the all-position ratio",
+   0.5
+  ],
+  "runs": [
+   "e703's eight model-blocks, 40 neurons each"
+  ]
+ },
+ "e701_late": {
+  "question": "when does OLMo-1B's brake cross -0.5: checkpoints 32000 to 512000 at blocks 8 and 12",
+  "L1": [
+   "the brake is under -0.5 by step 128000 (nine percent of training) at both blocks",
+   0.5
+  ],
+  "L2": [
+   "it deepens monotonically from 32000 to the final model (Spearman under -0.8)",
+   0.5
+  ]
+ },
+ "revisions": []
+}

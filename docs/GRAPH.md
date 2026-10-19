@@ -1291,6 +1291,22 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1055 The brake strengthens monotonically (Spearman under -0.8). → e701o → REFUTED.
 - H1056 The sixteen wires' net share at the core rises (Spearman above 0.5). → e701o → SUPPORTED.
 - H1057 The brake is under -0.5 in the final model. → e701o → NARROWED (holds for OLMo-1B block 12, OLMo-1B block 8, not OLMo-1B block 4).
+- H1058 Every input reproduces the neuron. → e706 → SUPPORTED.
+- H1059 The strong field alone halves the sixteen-wire ratio at the firings. → e706 → NARROWED (holds for Pythia-410m block 12, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1060 Weak and strong together beat the weak field alone by 0.1. → e706 → NARROWED (holds for GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1061 Both fields with the attention units bring the ratio under 0.25. → e706 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 18, Pythia-410m block 6, SmolLM2-135M block 15, not Pythia-410m block 12, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6).
+- H1062 Both fields bring it under 0.5. → e706 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, not Qwen2.5-0.5B block 12).
+- H1063 Both fields beat a random subspace of their dimension by 0.2. → e706 → NARROWED (holds for GPT-2 medium block 12, Pythia-410m block 12, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, not GPT-2 medium block 6, Pythia-410m block 18, Pythia-410m block 6, SmolLM2-135M block 15).
+- H1064 Both fields halve the all-position ratio. → e706 → NARROWED (holds for GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1065 The quadratic bypass (256 random bilinear features) recovers 0.1 more of the zeroing cost than the linear one on wikitext. → e705 → REFUTED.
+- H1066 The quadratic bypass reaches 0.9 of the oracle sixteen. → e705 → NARROWED (holds for GPT-2 medium, Pythia-410m, not OLMo-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M).
+- H1067 The Pile-fitted linear bypass keeps 0.7 of its in-domain recovery out of domain. → e705 → NARROWED (holds for GPT-2 medium, OLMo-1B, Pythia-410m, Qwen2.5-0.5B, SmolLM2-360M, not Qwen2.5-1.5B).
+- H1068 The wikitext-fitted linear bypass does (e702's result restated per model). → e705 → NARROWED (holds for GPT-2 medium, OLMo-1B, Pythia-410m, Qwen2.5-0.5B, SmolLM2-360M, not Qwen2.5-1.5B).
+- H1069 The Pile-fitted quadratic bypass recovers at least 0.6 out of domain. → e705 → NARROWED (holds for GPT-2 medium, OLMo-1B, Pythia-410m, not Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M).
+- H1070 The field's sixteen directions found on wikitext and on the Pile overlap by more than 0.7. → e705 → NARROWED (holds for SmolLM2-360M, not GPT-2 medium, OLMo-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B).
+- H1071 Out of domain the quadratic bypass beats the linear one by 0.1. → e705 → REFUTED.
+- H1072 The brake is under -0.5 by step 128000 (nine percent of training) at both blocks. → e701l → REFUTED.
+- H1073 It deepens monotonically from 32000 to the final model (Spearman under -0.8). → e701l → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

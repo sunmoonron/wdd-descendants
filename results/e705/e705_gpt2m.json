@@ -1,0 +1,197 @@
+{
+ "model": "openai-community/gpt2-medium",
+ "n_blocks": 24,
+ "DFF": 4096,
+ "keep_quantile": 0.25,
+ "gated": false,
+ "field_overlap_wiki_pile": 0.5992969572544098,
+ "field_overlap_per_block": [
+  0.7063798904418945,
+  0.5581715106964111,
+  0.4134899973869324,
+  0.4548278748989105,
+  0.526320219039917,
+  0.6405253410339355,
+  0.6482047438621521,
+  0.6621041893959045,
+  0.6220264434814453,
+  0.6338188648223877,
+  0.6703871488571167,
+  0.656181812286377,
+  0.6501339673995972,
+  0.6028542518615723,
+  0.5609936714172363,
+  0.5142358541488647,
+  0.5151098966598511,
+  0.5205214023590088,
+  0.5935734510421753,
+  0.5654627084732056,
+  0.5957396626472473,
+  0.5850898623466492,
+  0.7565972805023193,
+  0.7774832248687744
+ ],
+ "quad_features": 256,
+ "conditions": {
+  "zero": {
+   "kl_mean": 0.9507706165313721,
+   "loss_delta": 1.9070491790771484
+  },
+  "pca16": {
+   "kl_mean": 0.20156453549861908,
+   "loss_delta": 0.007968425750732422
+  },
+  "lin_wiki": {
+   "kl_mean": 0.24516643583774567,
+   "loss_delta": 0.02933788299560547
+  },
+  "quad_wiki": {
+   "kl_mean": 0.24907031655311584,
+   "loss_delta": 0.03647470474243164
+  },
+  "lin_pile": {
+   "kl_mean": 0.24465671181678772,
+   "loss_delta": 0.023058414459228516
+  },
+  "quad_pile": {
+   "kl_mean": 0.23820707201957703,
+   "loss_delta": 0.013615608215332031
+  }
+ },
+ "base_loss": 6.592885971069336,
+ "ood": {
+  "Github": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.848714828491211,
+     "loss_delta": 1.2578625679016113
+    },
+    "pca16": {
+     "kl_mean": 0.4795600175857544,
+     "loss_delta": 0.08960676193237305
+    },
+    "lin_wiki": {
+     "kl_mean": 0.6797054409980774,
+     "loss_delta": 0.05310487747192383
+    },
+    "quad_wiki": {
+     "kl_mean": 0.6973955035209656,
+     "loss_delta": 0.031975746154785156
+    },
+    "lin_pile": {
+     "kl_mean": 0.7039772868156433,
+     "loss_delta": 0.04676246643066406
+    },
+    "quad_pile": {
+     "kl_mean": 0.6764264106750488,
+     "loss_delta": 0.03185606002807617
+    }
+   },
+   "base_loss": 7.2407450675964355,
+   "n_tokens": 65369
+  },
+  "ArXiv": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.5251222848892212,
+     "loss_delta": 2.140202522277832
+    },
+    "pca16": {
+     "kl_mean": 0.3867078423500061,
+     "loss_delta": -0.018938064575195312
+    },
+    "lin_wiki": {
+     "kl_mean": 0.49339592456817627,
+     "loss_delta": -0.07219505310058594
+    },
+    "quad_wiki": {
+     "kl_mean": 0.46240776777267456,
+     "loss_delta": -0.03795576095581055
+    },
+    "lin_pile": {
+     "kl_mean": 0.4978155791759491,
+     "loss_delta": -0.05192232131958008
+    },
+    "quad_pile": {
+     "kl_mean": 0.5196454524993896,
+     "loss_delta": -0.04386568069458008
+    }
+   },
+   "base_loss": 6.135359764099121,
+   "n_tokens": 990688
+  },
+  "EuroParl": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.7507031559944153,
+     "loss_delta": 1.5916495323181152
+    },
+    "pca16": {
+     "kl_mean": 0.07091884315013885,
+     "loss_delta": 0.08750295639038086
+    },
+    "lin_wiki": {
+     "kl_mean": 0.10037101805210114,
+     "loss_delta": 0.16894865036010742
+    },
+    "quad_wiki": {
+     "kl_mean": 0.11003846675157547,
+     "loss_delta": 0.1723942756652832
+    },
+    "lin_pile": {
+     "kl_mean": 0.10536577552556992,
+     "loss_delta": 0.12380695343017578
+    },
+    "quad_pile": {
+     "kl_mean": 0.11357966810464859,
+     "loss_delta": 0.12640619277954102
+    }
+   },
+   "base_loss": 7.266539096832275,
+   "n_tokens": 23770
+  },
+  "StackExchange": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.3732049465179443,
+     "loss_delta": 1.4616127014160156
+    },
+    "pca16": {
+     "kl_mean": 0.3375967741012573,
+     "loss_delta": 0.02361917495727539
+    },
+    "lin_wiki": {
+     "kl_mean": 0.4400808811187744,
+     "loss_delta": -0.03595733642578125
+    },
+    "quad_wiki": {
+     "kl_mean": 0.4443507790565491,
+     "loss_delta": -0.008250236511230469
+    },
+    "lin_pile": {
+     "kl_mean": 0.49621447920799255,
+     "loss_delta": -0.03511333465576172
+    },
+    "quad_pile": {
+     "kl_mean": 0.4623841941356659,
+     "loss_delta": -0.0337529182434082
+    }
+   },
+   "base_loss": 6.606101989746094,
+   "n_tokens": 47762
+  }
+ },
+ "verdicts": {
+  "G1_quad_beats_linear_by_01": false,
+  "G1b_quad_matches_oracle": true,
+  "G2_pile_linear_transfers": true,
+  "G2b_wiki_linear_transfers": true,
+  "G3_pile_quad_ood_above_06": true,
+  "G4_field_domain_stable": false,
+  "G5_quad_ood_beats_linear_ood_by_01": false
+ },
+ "_exp": "e705_gpt2m",
+ "_time": "2026-10-19 16:46:32",
+ "seconds": 92.3937120437622,
+ "summary": "[gpt2m] all but the strongest quarter zeroed at every block, KL in nats on wikitext-2 test: zero 0.951, pca16 0.202, lin_wiki 0.245, quad_wiki 0.249, lin_pile 0.245, quad_pile 0.238; recovered by the oracle 16 0.79, the linear bypass 0.74, the quadratic bypass 0.74, the Pile-fitted linear 0.74 and quadratic 0.75; out of domain (median over GitHub, ArXiv, EuroParl, StackExchange) the linear bypass recovers 0.68, the quadratic 0.69, the Pile-fitted linear 0.66 and quadratic 0.66; the field's sixteen directions on wikitext and the Pile overlap by 0.60; verdicts {'G1_quad_beats_linear_by_01': False, 'G1b_quad_matches_oracle': True, 'G2_pile_linear_transfers': True, 'G2b_wiki_linear_transfers': True, 'G3_pile_quad_ood_above_06': True, 'G4_field_domain_stable': False, 'G5_quad_ood_beats_linear_ood_by_01': False}"
+}
