@@ -1,0 +1,205 @@
+{
+ "model": "openai-community/gpt2-medium",
+ "n_blocks": 24,
+ "DFF": 4096,
+ "keep_quantile": 0.25,
+ "overlap_pca16_jac16": 0.386596143245697,
+ "overlap_pca16_wjac16": 0.3865230977535248,
+ "overlaps_per_block": {
+  "jac16": [
+   0.3970576524734497,
+   0.4185188412666321,
+   0.2206757664680481,
+   0.1921684443950653,
+   0.23502036929130554,
+   0.32116857171058655,
+   0.3031103014945984,
+   0.3256843090057373,
+   0.415161669254303,
+   0.4532766342163086,
+   0.4638238251209259,
+   0.4934638738632202,
+   0.4572746753692627,
+   0.4185813069343567,
+   0.33015474677085876,
+   0.30043137073516846,
+   0.3035415709018707,
+   0.27368438243865967,
+   0.37613463401794434,
+   0.3742278814315796,
+   0.4091165065765381,
+   0.5019946694374084,
+   0.5918309688568115,
+   0.6438784599304199
+  ],
+  "wjac16": [
+   0.39685386419296265,
+   0.41850173473358154,
+   0.2206520438194275,
+   0.1921876072883606,
+   0.23502729833126068,
+   0.32108867168426514,
+   0.30317968130111694,
+   0.3257332444190979,
+   0.41511332988739014,
+   0.453330934047699,
+   0.46390488743782043,
+   0.4935857653617859,
+   0.4571845531463623,
+   0.41861623525619507,
+   0.3300536274909973,
+   0.30019867420196533,
+   0.30351531505584717,
+   0.27372848987579346,
+   0.3761923313140869,
+   0.37421873211860657,
+   0.40920490026474,
+   0.5021041631698608,
+   0.5918672680854797,
+   0.6440229415893555
+  ]
+ },
+ "conditions": {
+  "zero": {
+   "kl_mean": 0.9507706165313721,
+   "loss_delta": 1.9070491790771484
+  },
+  "pca16": {
+   "kl_mean": 0.20156453549861908,
+   "loss_delta": 0.007968425750732422
+  },
+  "bypass16": {
+   "kl_mean": 0.2532203793525696,
+   "loss_delta": 0.03689765930175781
+  },
+  "jac16": {
+   "kl_mean": 0.7829893231391907,
+   "loss_delta": 1.5180158615112305
+  },
+  "jac64": {
+   "kl_mean": 0.6521907448768616,
+   "loss_delta": 1.0615057945251465
+  },
+  "wjac16": {
+   "kl_mean": 0.7773950695991516,
+   "loss_delta": 1.5207796096801758
+  },
+  "wjac64": {
+   "kl_mean": 0.6607499718666077,
+   "loss_delta": 1.056201457977295
+  },
+  "taylor": {
+   "kl_mean": 1.2086091041564941,
+   "loss_delta": 1.7349023818969727
+  },
+  "taylor16": {
+   "kl_mean": 0.9227433800697327,
+   "loss_delta": 1.8797369003295898
+  }
+ },
+ "base_loss": 6.592885971069336,
+ "ood": {
+  "Github": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.848714828491211,
+     "loss_delta": 1.2578625679016113
+    },
+    "pca16": {
+     "kl_mean": 0.4795600175857544,
+     "loss_delta": 0.08960676193237305
+    },
+    "bypass16": {
+     "kl_mean": 0.6554258465766907,
+     "loss_delta": 0.04804372787475586
+    },
+    "taylor": {
+     "kl_mean": 4.193426609039307,
+     "loss_delta": 1.2923016548156738
+    }
+   },
+   "base_loss": 7.2407450675964355,
+   "n_tokens": 65369
+  },
+  "ArXiv": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.5251222848892212,
+     "loss_delta": 2.140202522277832
+    },
+    "pca16": {
+     "kl_mean": 0.3867078423500061,
+     "loss_delta": -0.018938064575195312
+    },
+    "bypass16": {
+     "kl_mean": 0.49312251806259155,
+     "loss_delta": -0.0690927505493164
+    },
+    "taylor": {
+     "kl_mean": 2.6751132011413574,
+     "loss_delta": 1.8616957664489746
+    }
+   },
+   "base_loss": 6.135359764099121,
+   "n_tokens": 990688
+  },
+  "EuroParl": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.7507031559944153,
+     "loss_delta": 1.5916495323181152
+    },
+    "pca16": {
+     "kl_mean": 0.07091884315013885,
+     "loss_delta": 0.08750295639038086
+    },
+    "bypass16": {
+     "kl_mean": 0.10901118814945221,
+     "loss_delta": 0.17636394500732422
+    },
+    "taylor": {
+     "kl_mean": 1.0463602542877197,
+     "loss_delta": 1.4573578834533691
+    }
+   },
+   "base_loss": 7.266539096832275,
+   "n_tokens": 23770
+  },
+  "StackExchange": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.3732049465179443,
+     "loss_delta": 1.4616127014160156
+    },
+    "pca16": {
+     "kl_mean": 0.3375967741012573,
+     "loss_delta": 0.02361917495727539
+    },
+    "bypass16": {
+     "kl_mean": 0.4765758216381073,
+     "loss_delta": -0.024157047271728516
+    },
+    "taylor": {
+     "kl_mean": 2.524242639541626,
+     "loss_delta": 1.51043701171875
+    }
+   },
+   "base_loss": 6.606101989746094,
+   "n_tokens": 47762
+  }
+ },
+ "verdicts": {
+  "J1_wjac16_overlaps_pca16_above_03": true,
+  "J2_wjac64_matches_pca16": false,
+  "J2b_wjac16_halves_zero": false,
+  "J3_taylor_matches_bypass16": false,
+  "J3b_taylor_halves_zero": false,
+  "J4_bypass16_holds_on_code": true,
+  "J4b_bypass16_holds_on_europarl": true,
+  "J5_taylor_half_of_bypass_ood": false
+ },
+ "_exp": "e702_gpt2m",
+ "_time": "2026-10-19 14:28:35",
+ "seconds": 123.742990732193,
+ "summary": "[gpt2m] all but the strongest quarter zeroed at every block, KL in nats on wikitext-2 test: zero 0.951, pca16 0.202, bypass16 0.253, jac16 0.783, jac64 0.652, wjac16 0.777, wjac64 0.661, taylor 1.209, taylor16 0.923; recovered by the oracle 16 0.79, the fitted bypass 0.73, the weak-Jacobian 16/64 0.18/0.31, the Taylor prediction -0.27 (on 16 0.03); overlap of the weak write's 16 directions with the Jacobian's 16 0.39, with the weak-weighted Jacobian's 0.39; out of domain, recovered by the fitted bypass / the Taylor prediction: Github 0.65/-1.27, ArXiv 0.68/-0.75, EuroParl 0.85/-0.39, StackExchange 0.65/-0.84; verdicts {'J1_wjac16_overlaps_pca16_above_03': True, 'J2_wjac64_matches_pca16': False, 'J2b_wjac16_halves_zero': False, 'J3_taylor_matches_bypass16': False, 'J3b_taylor_halves_zero': False, 'J4_bypass16_holds_on_code': True, 'J4b_bypass16_holds_on_europarl': True, 'J5_taylor_half_of_bypass_ood': False}"
+}

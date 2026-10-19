@@ -1,0 +1,221 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-360M",
+ "n_blocks": 32,
+ "DFF": 2560,
+ "keep_quantile": 0.25,
+ "overlap_pca16_jac16": 0.40248775482177734,
+ "overlap_pca16_wjac16": 0.40245699882507324,
+ "overlaps_per_block": {
+  "jac16": [
+   0.09981556981801987,
+   0.3940567970275879,
+   0.34580934047698975,
+   0.32304078340530396,
+   0.25842273235321045,
+   0.35512784123420715,
+   0.3957538604736328,
+   0.3369601368904114,
+   0.38521909713745117,
+   0.28985467553138733,
+   0.2910318970680237,
+   0.33931607007980347,
+   0.27052173018455505,
+   0.28743457794189453,
+   0.26606521010398865,
+   0.44768524169921875,
+   0.43525829911231995,
+   0.4092216491699219,
+   0.3739815354347229,
+   0.49678194522857666,
+   0.4929720163345337,
+   0.43952834606170654,
+   0.5428080558776855,
+   0.5004606246948242,
+   0.733762800693512,
+   0.5070158243179321,
+   0.450930655002594,
+   0.5700995326042175,
+   0.6283692121505737,
+   0.7563505172729492,
+   0.8305822610855103,
+   0.699914813041687
+  ],
+  "wjac16": [
+   0.09981274604797363,
+   0.39398419857025146,
+   0.3458116948604584,
+   0.3230024576187134,
+   0.25843361020088196,
+   0.3551276922225952,
+   0.39565879106521606,
+   0.33695632219314575,
+   0.3852411210536957,
+   0.28986218571662903,
+   0.2910023629665375,
+   0.339177668094635,
+   0.27055227756500244,
+   0.2874419689178467,
+   0.2660581171512604,
+   0.4476950764656067,
+   0.4352584481239319,
+   0.4092552065849304,
+   0.37399834394454956,
+   0.496777206659317,
+   0.4929845333099365,
+   0.4395415186882019,
+   0.542838990688324,
+   0.5004467368125916,
+   0.7336898446083069,
+   0.5070810317993164,
+   0.4508911073207855,
+   0.5701276063919067,
+   0.6283752918243408,
+   0.7563755512237549,
+   0.8305810689926147,
+   0.6999146342277527
+  ]
+ },
+ "conditions": {
+  "zero": {
+   "kl_mean": 1.325486660003662,
+   "loss_delta": 1.1491599082946777
+  },
+  "pca16": {
+   "kl_mean": 0.2979133129119873,
+   "loss_delta": 0.3445301055908203
+  },
+  "bypass16": {
+   "kl_mean": 0.5778475403785706,
+   "loss_delta": 0.584996223449707
+  },
+  "jac16": {
+   "kl_mean": 1.125540852546692,
+   "loss_delta": 2.4774608612060547
+  },
+  "jac64": {
+   "kl_mean": 0.3626551926136017,
+   "loss_delta": 0.8354282379150391
+  },
+  "wjac16": {
+   "kl_mean": 1.123834252357483,
+   "loss_delta": 2.4713239669799805
+  },
+  "wjac64": {
+   "kl_mean": 0.3642641603946686,
+   "loss_delta": 0.823948860168457
+  },
+  "taylor": {
+   "kl_mean": 3.4393396377563477,
+   "loss_delta": 3.2216882705688477
+  },
+  "taylor16": {
+   "kl_mean": 3.1683576107025146,
+   "loss_delta": 4.782894134521484
+  }
+ },
+ "base_loss": 5.934528350830078,
+ "ood": {
+  "Github": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.9715628027915955,
+     "loss_delta": 1.0784261226654053
+    },
+    "pca16": {
+     "kl_mean": 0.3095346689224243,
+     "loss_delta": 0.2703549861907959
+    },
+    "bypass16": {
+     "kl_mean": 0.5813777446746826,
+     "loss_delta": 0.3733549118041992
+    },
+    "taylor": {
+     "kl_mean": 4.414097309112549,
+     "loss_delta": 4.035945653915405
+    }
+   },
+   "base_loss": 3.2418158054351807,
+   "n_tokens": 52301
+  },
+  "ArXiv": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.9846369028091431,
+     "loss_delta": 0.6860103607177734
+    },
+    "pca16": {
+     "kl_mean": 0.2676161527633667,
+     "loss_delta": 0.22510623931884766
+    },
+    "bypass16": {
+     "kl_mean": 0.5688495635986328,
+     "loss_delta": 0.29219770431518555
+    },
+    "taylor": {
+     "kl_mean": 4.044147491455078,
+     "loss_delta": 3.358189105987549
+    }
+   },
+   "base_loss": 4.140575408935547,
+   "n_tokens": 961018
+  },
+  "EuroParl": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.9579187035560608,
+     "loss_delta": 1.0073037147521973
+    },
+    "pca16": {
+     "kl_mean": 0.3521021902561188,
+     "loss_delta": 0.20786046981811523
+    },
+    "bypass16": {
+     "kl_mean": 0.7620227932929993,
+     "loss_delta": 0.7587518692016602
+    },
+    "taylor": {
+     "kl_mean": 4.93669319152832,
+     "loss_delta": 3.408123016357422
+    }
+   },
+   "base_loss": 5.973320960998535,
+   "n_tokens": 24050
+  },
+  "StackExchange": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.110386848449707,
+     "loss_delta": 0.8327994346618652
+    },
+    "pca16": {
+     "kl_mean": 0.3551647365093231,
+     "loss_delta": 0.4484696388244629
+    },
+    "bypass16": {
+     "kl_mean": 0.6402602791786194,
+     "loss_delta": 0.509894847869873
+    },
+    "taylor": {
+     "kl_mean": 4.223413467407227,
+     "loss_delta": 3.1760663986206055
+    }
+   },
+   "base_loss": 4.849074363708496,
+   "n_tokens": 42972
+  }
+ },
+ "verdicts": {
+  "J1_wjac16_overlaps_pca16_above_03": true,
+  "J2_wjac64_matches_pca16": true,
+  "J2b_wjac16_halves_zero": false,
+  "J3_taylor_matches_bypass16": false,
+  "J3b_taylor_halves_zero": false,
+  "J4_bypass16_holds_on_code": true,
+  "J4b_bypass16_holds_on_europarl": false,
+  "J5_taylor_half_of_bypass_ood": false
+ },
+ "_exp": "e702_smollm360",
+ "_time": "2026-10-19 14:26:14",
+ "seconds": 132.71121048927307,
+ "summary": "[smollm360] all but the strongest quarter zeroed at every block, KL in nats on wikitext-2 test: zero 1.325, pca16 0.298, bypass16 0.578, jac16 1.126, jac64 0.363, wjac16 1.124, wjac64 0.364, taylor 3.439, taylor16 3.168; recovered by the oracle 16 0.78, the fitted bypass 0.56, the weak-Jacobian 16/64 0.15/0.73, the Taylor prediction -1.59 (on 16 -1.39); overlap of the weak write's 16 directions with the Jacobian's 16 0.40, with the weak-weighted Jacobian's 0.40; out of domain, recovered by the fitted bypass / the Taylor prediction: Github 0.40/-3.54, ArXiv 0.42/-3.11, EuroParl 0.20/-4.15, StackExchange 0.42/-2.80; verdicts {'J1_wjac16_overlaps_pca16_above_03': True, 'J2_wjac64_matches_pca16': True, 'J2b_wjac16_halves_zero': False, 'J3_taylor_matches_bypass16': False, 'J3b_taylor_halves_zero': False, 'J4_bypass16_holds_on_code': True, 'J4b_bypass16_holds_on_europarl': False, 'J5_taylor_half_of_bypass_ood': False}"
+}

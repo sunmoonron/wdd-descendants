@@ -1260,6 +1260,37 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1024 At 14B (16 windows). → e700 → NOT RUN (the fp32 14B job did not finish).
 - H1025 The noise floor (the neuron replaced by its own activation) is under 0.1 of the ablation damage for the selected neurons. → e700 → SUPPORTED.
 - H1026 At 14B the sixteen-input ratio at strong firings is above 0.5. → e700 → NOT RUN.
+- H1027 The weak-weighted Jacobian's 16 left singular directions overlap the weak write's 16 principal directions by more than 0.3. → e702 → SUPPORTED.
+- H1028 The true weak write on the weak-Jacobian's 64 directions recovers at least 0.8 of what the oracle 16 recover. → e702 → NARROWED (holds for GPT-2 large, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M, not GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m).
+- H1029 On its 16 it halves the zeroing cost. → e702 → NARROWED (holds for GPT-2 large, Pythia-1B, Pythia-410m, not GPT-2 medium, OLMo-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M).
+- H1030 The Taylor prediction (weights, the mean state and the weak shares, no regression) recovers at least 0.8 of what the fitted bypass recovers. → e702 → REFUTED.
+- H1031 The Taylor prediction halves the zeroing cost. → e702 → NARROWED (holds for Pythia-1B, Pythia-410m, not GPT-2 large, GPT-2 medium, OLMo-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M).
+- H1032 The fitted bypass, frozen, recovers on GitHub code at least 0.7 of what it recovers on wikitext. → e702 → NARROWED (holds for GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, SmolLM2-360M, not Qwen2.5-1.5B).
+- H1033 On EuroParl. → e702 → NARROWED (holds for GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, not Qwen2.5-1.5B, SmolLM2-360M).
+- H1034 Out of domain the Taylor prediction recovers at least half of what the fitted bypass recovers. → e702 → NARROWED (holds for Pythia-410m, not GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M).
+- H1035 Every input reproduces the neuron. → e703 → SUPPORTED.
+- H1036 After 16 OMP rows, the field128 halves the energy the rows leave. → e703 → REFUTED.
+- H1037 The field128 beats a random subspace of 128 by 0.1 of the energy. → e703 → REFUTED.
+- H1038 And the stream's 128 principal directions by 0.05. → e703 → REFUTED.
+- H1039 After rows and the field128 no rows are left over the floor in the residual beyond the rotated null (within one row). → e703 → SUPPORTED.
+- H1040 Sixteen wires plus the attention units plus the field128 bring the neuron's KL ratio at its firings under 0.25. → e703 → NARROWED (holds for GPT-2 medium block 6, not GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H1041 Under 0.5. → e703 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 6, not Qwen2.5-0.5B block 12, SmolLM2-135M block 15).
+- H1042 The field128 beats the field16 by 0.1 in ratio. → e703 → REFUTED.
+- H1043 The attention units as exact wires alone halve the sixteen-wire ratio. → e703 → REFUTED.
+- H1044 The field128 beats the random 128 by 0.2. → e703 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1045 The field16 beats the random subspace of its own dimension by 0.1. → e703 → NARROWED (holds for GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, not GPT-2 medium block 6).
+- H1046 Wires plus attention plus field128 halve the all-position ratio. → e703 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1047 The median direction's downstream reader response is at least 0.8 as concentrated (top-1% share) as a strong neuron's. → e704 → SUPPORTED.
+- H1048 The twenty largest readers' sign is consistent across positions for at least 0.8 of them. → e704 → NARROWED (holds for Pythia-410m block 12, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 12).
+- H1049 The first direction's readers number under 1 percent of the next three blocks' neurons (N_eff). → e704 → REFUTED.
+- H1050 The directions' own classes have a one-token share above 0.2. → e704 → REFUTED.
+- H1051 The coordinates are signed: the top positions are between 0.3 and 0.7 positive. → e704 → SUPPORTED.
+- H1052 The token image is at least 0.8 as concentrated as a strong neuron's. → e704 → SUPPORTED.
+- H1053 At step 1000 the crowd's net sum off the class is within 0.3 of the sixteen wires' (no brake). → e701o → SUPPORTED.
+- H1054 The brake (under -0.5) is present by step 8000. → e701o → REFUTED.
+- H1055 The brake strengthens monotonically (Spearman under -0.8). → e701o → REFUTED.
+- H1056 The sixteen wires' net share at the core rises (Spearman above 0.5). → e701o → SUPPORTED.
+- H1057 The brake is under -0.5 in the final model. → e701o → NARROWED (holds for OLMo-1B block 12, OLMo-1B block 8, not OLMo-1B block 4).
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

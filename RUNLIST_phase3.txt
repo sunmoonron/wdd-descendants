@@ -965,3 +965,27 @@ python e701_brake_training.py --seed 1
 python e701_brake_training.py --seed 2
 python e685_readers_ledger.py --model qwen7b --block 14 --lite --fp32model --fp32acts --nofloor --select
 python e685_readers_ledger.py --model qwen14b --block 24 --lite --nwin 16 --fp32model --fp32acts --nofloor --select
+# session 158 (e702-e704, e701 on OLMo): the field-augmented dictionary
+python e703_rows_field.py --model qwen05 --block 12
+python e703_rows_field.py --model pythia410 --block 18
+python e703_rows_field.py --model qwen05 --block 6
+python e703_rows_field.py --model pythia410 --block 12
+python e703_rows_field.py --model gpt2m --block 12
+python e703_rows_field.py --model pythia410 --block 6
+python e703_rows_field.py --model gpt2m --block 6
+python e703_rows_field.py --model smollm135 --block 15
+python e702_jacobian.py --model qwen15
+python e702_jacobian.py --model qwen05
+python e702_jacobian.py --model pythia1b
+python e702_jacobian.py --model gpt2l
+python e702_jacobian.py --model olmo1b
+python e702_jacobian.py --model pythia410
+python e702_jacobian.py --model smollm360
+python e702_jacobian.py --model gpt2m
+python e704_field_readers.py --model qwen05 --block 12
+python e704_field_readers.py --model pythia410 --block 12
+python e704_field_readers.py --model gpt2m --block 12
+python e704_field_readers.py --model smollm135 --block 15
+python e701_brake_training.py --model olmo1b --block 4
+python e701_brake_training.py --model olmo1b --block 8
+python e701_brake_training.py --model olmo1b --block 12

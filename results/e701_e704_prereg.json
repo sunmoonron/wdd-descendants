@@ -1,0 +1,165 @@
+{
+ "session": 158,
+ "date": "2026-10-19",
+ "written_before": "any full run; smokes may revise, revisions dated",
+ "format": "prediction id: [statement, my probability]; bands coded in the scripts",
+ "aim": "bringing the brake and the field home to WDD: the field as a second kind of dictionary atom, native (e702), closing the state's residual and the readers' error with the attention crowd (e703), readable like rows (e704); and the brake over training in a gated model (e701 on OLMo-1B)",
+ "e702_jacobian": {
+  "question": "are the weak write's directions the block's own linearisation at the mean state, and does a first-order Taylor prediction from the weights replace the fitted bypass, in and out of domain?",
+  "J1": [
+   "the weak-weighted Jacobian's 16 left singular directions overlap the weak write's 16 principal directions by more than 0.3",
+   0.4
+  ],
+  "J2": [
+   "the true weak write on the weak-Jacobian's 64 directions recovers at least 0.8 of what the oracle 16 recover",
+   0.4
+  ],
+  "J2b": [
+   "on its 16 it halves the zeroing cost",
+   0.3
+  ],
+  "J3": [
+   "the Taylor prediction (weights, the mean state and the weak shares, no regression) recovers at least 0.8 of what the fitted bypass recovers",
+   0.35
+  ],
+  "J3b": [
+   "the Taylor prediction halves the zeroing cost",
+   0.4
+  ],
+  "J4": [
+   "the fitted bypass, frozen, recovers on GitHub code at least 0.7 of what it recovers on wikitext",
+   0.5
+  ],
+  "J4b": [
+   "on EuroParl",
+   0.45
+  ],
+  "J5": [
+   "out of domain the Taylor prediction recovers at least half of what the fitted bypass recovers",
+   0.4
+  ],
+  "models": [
+   "pythia410",
+   "pythia1b",
+   "gpt2m",
+   "gpt2l",
+   "qwen05",
+   "qwen15",
+   "smollm360",
+   "olmo1b"
+  ]
+ },
+ "e703_rows_field": {
+  "question": "does rows plus field close the state's residual at a block's input and the readers' error, with the attention units as exact wires? The field is sixteen directions per upstream block (the bus) and the top 128 of the union of the blocks' sixty-four std-weighted directions; the controls are random subspaces of the same dimensions and the stream's own 128 principal directions",
+  "S0": [
+   "every input reproduces the neuron",
+   0.9
+  ],
+  "S1": [
+   "after 16 OMP rows, the field128 halves the energy the rows leave",
+   0.4
+  ],
+  "S2": [
+   "the field128 beats a random subspace of 128 by 0.1 of the energy",
+   0.5
+  ],
+  "S2b": [
+   "and the stream's 128 principal directions by 0.05",
+   0.3
+  ],
+  "S3": [
+   "after rows and the field128 no rows are left over the floor in the residual beyond the rotated null (within one row)",
+   0.4
+  ],
+  "R1": [
+   "sixteen wires plus the attention units plus the field128 bring the neuron's KL ratio at its firings under 0.25",
+   0.3
+  ],
+  "R2": [
+   "under 0.5",
+   0.55
+  ],
+  "R3": [
+   "the field128 beats the field16 by 0.1 in ratio",
+   0.45
+  ],
+  "R4": [
+   "the attention units as exact wires alone halve the sixteen-wire ratio",
+   0.3
+  ],
+  "R5": [
+   "the field128 beats the random 128 by 0.2",
+   0.65
+  ],
+  "R6": [
+   "wires plus attention plus field128 halve the all-position ratio",
+   0.5
+  ],
+  "runs": [
+   "e697's eight model-blocks, 40 neurons each, 2000 positions for the state"
+  ],
+  "R5b": [
+   "the field16 beats the random subspace of its own dimension by 0.1",
+   0.65
+  ]
+ },
+ "e704_field_readers": {
+  "question": "are the field's directions readable the way neurons are: concentrated, consistent causal readers downstream, a concentrated token image, a lexical class?",
+  "F1": [
+   "the median direction's downstream reader response is at least 0.8 as concentrated (top-1% share) as a strong neuron's",
+   0.35
+  ],
+  "F2": [
+   "the twenty largest readers' sign is consistent across positions for at least 0.8 of them",
+   0.5
+  ],
+  "F3": [
+   "the first direction's readers number under 1 percent of the next three blocks' neurons (N_eff)",
+   0.4
+  ],
+  "F4": [
+   "the directions' own classes have a one-token share above 0.2",
+   0.3
+  ],
+  "F5": [
+   "the coordinates are signed: the top positions are between 0.3 and 0.7 positive",
+   0.6
+  ],
+  "F6": [
+   "the token image is at least 0.8 as concentrated as a strong neuron's",
+   0.4
+  ],
+  "runs": [
+   "pythia410 b12",
+   "gpt2m b12",
+   "qwen05 b12",
+   "smollm135 b15"
+  ]
+ },
+ "e701_olmo": {
+  "question": "does the brake form the same way in a gated model: OLMo-1B-0724 at blocks 4, 8 and 12 over checkpoints 1000 to 16000 and the final",
+  "T1": [
+   "at step 1000 the crowd's net sum off the class is within 0.3 of the sixteen wires' (no brake)",
+   0.5
+  ],
+  "T2": [
+   "the brake (under -0.5) is present by step 8000",
+   0.35
+  ],
+  "T3": [
+   "the brake strengthens monotonically (Spearman under -0.8)",
+   0.55
+  ],
+  "T4": [
+   "the sixteen wires' net share at the core rises (Spearman above 0.5)",
+   0.55
+  ],
+  "T5": [
+   "the brake is under -0.5 in the final model",
+   0.5
+  ]
+ },
+ "revisions": [
+  "2026-10-19 after the smoke, before any full run: e703's field became sixteen directions per upstream block plus the top 128 of the std-weighted union of the blocks' sixty-four directions (the earlier sixty-four per block reached the stream's dimension at the deeper blocks, where any subspace that large removes most of the energy), with random controls of both dimensions (R5b added); the smoke had shown the per-block field no better than random for the state's energy but far better for the readers."
+ ]
+}

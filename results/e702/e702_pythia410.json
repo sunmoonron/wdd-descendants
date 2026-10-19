@@ -1,0 +1,205 @@
+{
+ "model": "EleutherAI/pythia-410m",
+ "n_blocks": 24,
+ "DFF": 4096,
+ "keep_quantile": 0.25,
+ "overlap_pca16_jac16": 0.31622011959552765,
+ "overlap_pca16_wjac16": 0.31608590483665466,
+ "overlaps_per_block": {
+  "jac16": [
+   0.18310150504112244,
+   0.3292087912559509,
+   0.3090893030166626,
+   0.16917963325977325,
+   0.32462596893310547,
+   0.2138075828552246,
+   0.3524389863014221,
+   0.3277795612812042,
+   0.3555564284324646,
+   0.3179676830768585,
+   0.286907821893692,
+   0.29721173644065857,
+   0.3032477796077728,
+   0.3067684769630432,
+   0.29296645522117615,
+   0.287636399269104,
+   0.27903658151626587,
+   0.3144725561141968,
+   0.354645311832428,
+   0.36180031299591064,
+   0.320453941822052,
+   0.43111711740493774,
+   0.5813010931015015,
+   0.6773465275764465
+  ],
+  "wjac16": [
+   0.18310153484344482,
+   0.329159140586853,
+   0.30909788608551025,
+   0.16911229491233826,
+   0.3246194124221802,
+   0.2136548012495041,
+   0.352419912815094,
+   0.3272142708301544,
+   0.35522282123565674,
+   0.3177374005317688,
+   0.2865942418575287,
+   0.29699379205703735,
+   0.30302363634109497,
+   0.30670058727264404,
+   0.29293370246887207,
+   0.28767508268356323,
+   0.27902835607528687,
+   0.3144344091415405,
+   0.3544718623161316,
+   0.36173194646835327,
+   0.3203274607658386,
+   0.4311385750770569,
+   0.5812221765518188,
+   0.6772903203964233
+  ]
+ },
+ "conditions": {
+  "zero": {
+   "kl_mean": 8.620695114135742,
+   "loss_delta": 8.9074547290802
+  },
+  "pca16": {
+   "kl_mean": 0.5300592184066772,
+   "loss_delta": 0.543283224105835
+  },
+  "bypass16": {
+   "kl_mean": 0.5609039664268494,
+   "loss_delta": 0.5749590396881104
+  },
+  "jac16": {
+   "kl_mean": 4.239864349365234,
+   "loss_delta": 4.094416379928589
+  },
+  "jac64": {
+   "kl_mean": 3.404242992401123,
+   "loss_delta": 3.2858736515045166
+  },
+  "wjac16": {
+   "kl_mean": 4.242068767547607,
+   "loss_delta": 4.086878061294556
+  },
+  "wjac64": {
+   "kl_mean": 3.3995227813720703,
+   "loss_delta": 3.2783877849578857
+  },
+  "taylor": {
+   "kl_mean": 2.6066300868988037,
+   "loss_delta": 2.504972219467163
+  },
+  "taylor16": {
+   "kl_mean": 5.011270046234131,
+   "loss_delta": 4.827162027359009
+  }
+ },
+ "base_loss": 3.4104220867156982,
+ "ood": {
+  "Github": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 10.206074714660645,
+     "loss_delta": 10.364096403121948
+    },
+    "pca16": {
+     "kl_mean": 0.6596429347991943,
+     "loss_delta": 0.6780457496643066
+    },
+    "bypass16": {
+     "kl_mean": 0.706882894039154,
+     "loss_delta": 0.7353899478912354
+    },
+    "taylor": {
+     "kl_mean": 4.608022212982178,
+     "loss_delta": 4.676299333572388
+    }
+   },
+   "base_loss": 1.3390161991119385,
+   "n_tokens": 51092
+  },
+  "ArXiv": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 7.488495826721191,
+     "loss_delta": 7.552528142929077
+    },
+    "pca16": {
+     "kl_mean": 0.3937034606933594,
+     "loss_delta": 0.4155921936035156
+    },
+    "bypass16": {
+     "kl_mean": 0.44318249821662903,
+     "loss_delta": 0.45974040031433105
+    },
+    "taylor": {
+     "kl_mean": 3.857605457305908,
+     "loss_delta": 3.8701417446136475
+    }
+   },
+   "base_loss": 1.9757654666900635,
+   "n_tokens": 842813
+  },
+  "EuroParl": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 7.326255798339844,
+     "loss_delta": 7.442718744277954
+    },
+    "pca16": {
+     "kl_mean": 1.0401986837387085,
+     "loss_delta": 1.0539653301239014
+    },
+    "bypass16": {
+     "kl_mean": 1.116853952407837,
+     "loss_delta": 1.1257565021514893
+    },
+    "taylor": {
+     "kl_mean": 5.246155261993408,
+     "loss_delta": 5.382818937301636
+    }
+   },
+   "base_loss": 2.237135648727417,
+   "n_tokens": 21044
+  },
+  "StackExchange": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 8.963948249816895,
+     "loss_delta": 9.223598003387451
+    },
+    "pca16": {
+     "kl_mean": 0.5882185101509094,
+     "loss_delta": 0.6137611865997314
+    },
+    "bypass16": {
+     "kl_mean": 0.6269019842147827,
+     "loss_delta": 0.6637945175170898
+    },
+    "taylor": {
+     "kl_mean": 3.5947344303131104,
+     "loss_delta": 3.6241350173950195
+    }
+   },
+   "base_loss": 2.3026604652404785,
+   "n_tokens": 41683
+  }
+ },
+ "verdicts": {
+  "J1_wjac16_overlaps_pca16_above_03": true,
+  "J2_wjac64_matches_pca16": false,
+  "J2b_wjac16_halves_zero": true,
+  "J3_taylor_matches_bypass16": false,
+  "J3b_taylor_halves_zero": true,
+  "J4_bypass16_holds_on_code": true,
+  "J4b_bypass16_holds_on_europarl": true,
+  "J5_taylor_half_of_bypass_ood": true
+ },
+ "_exp": "e702_pythia410",
+ "_time": "2026-10-19 14:23:28",
+ "seconds": 116.52612042427063,
+ "summary": "[pythia410] all but the strongest quarter zeroed at every block, KL in nats on wikitext-2 test: zero 8.621, pca16 0.530, bypass16 0.561, jac16 4.240, jac64 3.404, wjac16 4.242, wjac64 3.400, taylor 2.607, taylor16 5.011; recovered by the oracle 16 0.94, the fitted bypass 0.93, the weak-Jacobian 16/64 0.51/0.61, the Taylor prediction 0.70 (on 16 0.42); overlap of the weak write's 16 directions with the Jacobian's 16 0.32, with the weak-weighted Jacobian's 0.32; out of domain, recovered by the fitted bypass / the Taylor prediction: Github 0.93/0.55, ArXiv 0.94/0.48, EuroParl 0.85/0.28, StackExchange 0.93/0.60; verdicts {'J1_wjac16_overlaps_pca16_above_03': True, 'J2_wjac64_matches_pca16': False, 'J2b_wjac16_halves_zero': True, 'J3_taylor_matches_bypass16': False, 'J3b_taylor_halves_zero': True, 'J4_bypass16_holds_on_code': True, 'J4b_bypass16_holds_on_europarl': True, 'J5_taylor_half_of_bypass_ood': True}"
+}
