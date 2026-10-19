@@ -1,0 +1,184 @@
+{
+ "session": 156,
+ "date": "2026-10-18",
+ "written_before": "any full run; the smokes may revise designs, revisions dated in 'revisions'",
+ "format": "prediction id: [statement, my probability]; verdict bands are the ones coded in each script",
+ "aim": "the non-Nanda reading of e681, e685, e685b and e689: can the crowd of sub-floor writes and the weak activations be summarised without training by something native and interpretable (a lexical table, the sparse edges themselves, a few guilds, a low-rank write), so that a neuron attribution graph needs no learned error node and 'ablatable weak activations' holds after a trivial correction?",
+ "e692_crowd_ledger": {
+  "question": "which training-free summary of the crowd, if any, lets a neuron's K largest inputs reproduce it, and what is the crowd made of?",
+  "Q0": [
+   "every input reproduces the neuron (KL ratio under 0.05)",
+   0.9
+  ],
+  "Q1": [
+   "the per-token mean of the crowd (a held-out lookup table) brings the 16-input simulation's KL at the strong firings under half the ablation's",
+   0.3
+  ],
+  "Q1b": [
+   "the per-token table explains more than half the crowd's variance over all evaluation rows",
+   0.35
+  ],
+  "Q2": [
+   "the held-out neighbour by the 16 largest inputs (same token) beats the same-token resample by 0.1 in KL ratio: the crowd is a function of the sparse part beyond the token",
+   0.45
+  ],
+  "Q3": [
+   "the sixteen largest write-row guilds (256 weight clusters) bring the 16-input ratio under 0.5",
+   0.25
+  ],
+  "Q3b": [
+   "the sixteen largest co-activation guilds do",
+   0.4
+  ],
+  "Q3c": [
+   "write guilds beat random guilds of the same sizes by 0.1 in ratio",
+   0.55
+  ],
+  "Q4": [
+   "the aligned species (gain above the median, lexical or contextual) carry more than half of the crowd's sum at strong firings",
+   0.5
+  ],
+  "Q5": [
+   "the 200 largest contributors' top-1% classes contain the neuron's strong rows at more than five times chance (a district)",
+   0.6
+  ],
+  "Q6": [
+   "the lexical species (per-token means of the upstream units, plus the embedding) carry more than half of the crowd at strong firings",
+   0.35
+  ],
+  "non_nanda_wins": [
+   "Q1 or Q3 or Q3b holds in at least half of the model-blocks",
+   0.4
+  ],
+  "runs": [
+   "pythia410 b6/b12/b18",
+   "gpt2m b6/b12",
+   "qwen05 b6/b12",
+   "smollm135 b15"
+  ],
+  "neurons": "e685b's sample (seed 685 + block), 40 per block; 64 evaluation windows, 128 held-out windows of wikitext-2 train (disjoint halves)",
+  "Q3d": [
+   "the sixteen largest write guilds at group resolution (one edge per guild: its mean gain times its total activation) bring the 16-input ratio under 0.5",
+   0.2
+  ],
+  "Q3e": [
+   "at group resolution write guilds beat random guilds by 0.1 in ratio",
+   0.6
+  ],
+  "Q3f": [
+   "co-activation guilds at group resolution bring the ratio under 0.5",
+   0.3
+  ],
+  "Q6b": [
+   "the token-specific lexical species (per-token means beyond each unit's corpus mean) carry more than a quarter of the crowd at strong firings",
+   0.3
+  ],
+  "Q7": [
+   "the crowd's write projected on the stream's 16 principal directions (held-out second moment) brings the 16-input ratio under 0.5",
+   0.35
+  ],
+  "Q7b": [
+   "on the stream's 64 principal directions it does",
+   0.5
+  ]
+ },
+ "e693_weak_ladder": {
+  "question": "which training-free replacement of the weak activations (all but the strongest quarter by count) recovers the zeroing cost?",
+  "V1": [
+   "the per-token table halves the zeroing cost",
+   0.55
+  ],
+  "V1b": [
+   "with the per-token table the cost is under 0.05 nats (the essay's 'almost no cost' after a lexical correction)",
+   0.15
+  ],
+  "V1c": [
+   "the per-token table beats the per-neuron mean by a fifth",
+   0.5
+  ],
+  "V2": [
+   "the bigram table beats the token table by a fifth",
+   0.35
+  ],
+  "V3": [
+   "a random same-token held-out occurrence costs 1.5 times the token table (the variation within a token matters)",
+   0.6
+  ],
+  "V4": [
+   "the removed write projected on 16 principal directions (data) halves the zeroing cost",
+   0.3
+  ],
+  "V5": [
+   "projected on the block's 16 dominant write directions (weights only) it halves the zeroing cost",
+   0.2
+  ],
+  "V6": [
+   "64 principal directions bring the cost under 0.2 nats",
+   0.25
+  ],
+  "non_nanda_wins": [
+   "V1b in the majority of models",
+   0.15
+  ],
+  "models": [
+   "pythia160",
+   "pythia410",
+   "pythia1b",
+   "gpt2",
+   "gpt2m",
+   "gpt2l",
+   "qwen05",
+   "qwen15",
+   "smollm135",
+   "smollm360",
+   "olmo1b"
+  ],
+  "V7": [
+   "the removed write projected on the stream's 16 principal directions (instead of its own) costs at most 1.2 times the own-16 rung: the weak write's low-rank part is the stream's dominant subspace",
+   0.4
+  ],
+  "V8": [
+   "the weak write's 16 principal directions are native rows (median max cosine with a write row of the block above 0.5)",
+   0.15
+  ],
+  "V9": [
+   "the 16 directions are shared across consecutive blocks (median subspace overlap above 0.5)",
+   0.4
+  ],
+  "V10": [
+   "the 16 directions carry over 0.8 of the weak write's second moment",
+   0.5
+  ]
+ },
+ "e694_scale": {
+  "question": "do e689, e685 and e681/e693 hold at 14B (Qwen2.5-14B, bf16)?",
+  "S1": [
+   "the crowd share of the resultant at the middle block is above 0.9",
+   0.8
+  ],
+  "S2": [
+   "a neuron's 16 largest inputs carry under 0.1 of its input at strong firings",
+   0.8
+  ],
+  "S3": [
+   "the 16-input simulation's KL ratio at strong firings is above 0.5",
+   0.7
+  ],
+  "S4": [
+   "keeping the strongest quarter of activations costs over 0.2 nats",
+   0.85
+  ],
+  "S5": [
+   "the per-token table recovers half of the zeroing cost",
+   0.5
+  ],
+  "runs": [
+   "e689 qwen14b (block 24)",
+   "e693 qwen14b --lite",
+   "e685 qwen14b --block 24 --lite (20 neurons, K 16/64/256/all)"
+  ]
+ },
+ "revisions": [
+  "2026-10-18 after the smokes, before any full run: e692's guild rungs gained a group-resolution form (one edge per guild, its mean gain times its total activation; Q3d-Q3f) because the exact sum of the sixteen largest guilds credits random guilds as much as weight guilds (an exact sum over a sixteenth of the units is not a sparse description); e692 and e693 gained the stream-subspace rungs (spca16/64; Q7, V7) and e693 the pca1/pca4 rungs and an analysis of the weak write's principal directions (V8-V10) because the pythia160 and qwen7b smokes showed the removed write projected on 16 principal directions of its own recovering 78 to 88 percent of the zeroing cost against 46 to 74 for the tables; e692's species split each unit's corpus mean (constant) from its token-specific mean (lexical) because the smoke's 'lexical' share was mostly the constant."
+ ]
+}

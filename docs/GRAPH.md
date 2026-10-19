@@ -1181,6 +1181,61 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H945 Memorised writers sit more than one block deeper than both controls. → e690 → REFUTED.
 - H946 Their class entropy is not higher than the controls' (within 0.2 bits). → e690 → SUPPORTED.
 - H947 The share firing on the content field is not lower than the low-loss control's. → e690 → SUPPORTED.
+- H948 Every input reproduces the neuron (KL ratio under 0.05). → e692 → SUPPORTED.
+- H949 The per-token mean of the crowd (a held-out lookup table) brings the 16-input simulation's KL at the strong firings under half the ablation's. → e692 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6, not Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15).
+- H950 The per-token table explains more than half the crowd's variance over all evaluation rows. → e692 → REFUTED.
+- H951 The held-out neighbour by the 16 largest inputs (same token) beats the same-token resample by 0.1 in KL ratio: the crowd is a function of the sparse part beyond the token. → e692 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6).
+- H952 The sixteen largest write-row guilds (256 weight clusters) bring the 16-input ratio under 0.5. → e692 → NARROWED (holds for GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6, not GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15).
+- H953 The sixteen largest co-activation guilds do. → e692 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, not Pythia-410m block 12, Qwen2.5-0.5B block 12).
+- H954 Write guilds beat random guilds of the same sizes by 0.1 in ratio. → e692 → NARROWED (holds for SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6).
+- H955 The sixteen largest write guilds at group resolution (one edge per guild: its mean gain times its total activation) bring the 16-input ratio under 0.5. → e692 → NARROWED (holds for Pythia-410m block 6, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H956 At group resolution write guilds beat random guilds by 0.1 in ratio. → e692 → NARROWED (holds for Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H957 Co-activation guilds at group resolution bring the ratio under 0.5. → e692 → NARROWED (holds for GPT-2 medium block 6, Pythia-410m block 6, not GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H958 The crowd's write projected on the stream's 16 principal directions (held-out second moment) brings the 16-input ratio under 0.5. → e692 → REFUTED.
+- H959 On the stream's 64 principal directions it does. → e692 → NARROWED (holds for GPT-2 medium block 6, Pythia-410m block 6, not GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H960 The aligned species (gain above the median, lexical or contextual) carry more than half of the crowd's sum at strong firings. → e692 → SUPPORTED.
+- H961 The 200 largest contributors' top-1% classes contain the neuron's strong rows at more than five times chance (a district). → e692 → REFUTED.
+- H962 The lexical species (per-token means of the upstream units, plus the embedding) carry more than half of the crowd at strong firings. → e692 → SUPPORTED.
+- H963 The token-specific lexical species (per-token means beyond each unit's corpus mean) carry more than a quarter of the crowd at strong firings. → e692 → NARROWED (holds for GPT-2 medium block 6, Pythia-410m block 6, not GPT-2 medium block 12, Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H964 The per-token table halves the zeroing cost. → e693 → NARROWED (holds for GPT-2 small, GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, SmolLM2-360M, not Qwen2.5-1.5B, SmolLM2-135M).
+- H965 With the per-token table the cost is under 0.05 nats (the essay's 'almost no cost' after a lexical correction). → e693 → REFUTED.
+- H966 The per-token table beats the per-neuron mean by a fifth. → e693 → NARROWED (holds for GPT-2 small, GPT-2 large, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-1.5B, not GPT-2 medium, OLMo-1B, Qwen2.5-0.5B, SmolLM2-135M, SmolLM2-360M).
+- H967 The bigram table beats the token table by a fifth. → e693 → REFUTED.
+- H968 A random same-token held-out occurrence costs 1.5 times the token table (the variation within a token matters). → e693 → NARROWED (holds for GPT-2 medium, not GPT-2 small, GPT-2 large, OLMo-1B, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H969 The removed write projected on 16 principal directions (data) halves the zeroing cost. → e693 → SUPPORTED.
+- H970 Projected on the block's 16 dominant write directions (weights only) it halves the zeroing cost. → e693 → NARROWED (holds for GPT-2 small, GPT-2 large, Pythia-410m, not GPT-2 medium, OLMo-1B, Pythia-160m, Pythia-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H971 64 principal directions bring the cost under 0.2 nats. → e693 → NARROWED (holds for GPT-2 small, GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-160m, Pythia-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-360M, not Pythia-410m, SmolLM2-135M).
+- H972 The removed write projected on the stream's 16 principal directions (instead of its own) costs at most 1.2 times the own-16 rung: the weak write's low-rank part is the stream's dominant subspace. → e693 → REFUTED.
+- H973 The weak write's 16 principal directions are native rows (median max cosine with a write row of the block above 0.5). → e693 → REFUTED.
+- H974 The 16 directions are shared across consecutive blocks (median subspace overlap above 0.5). → e693 → REFUTED.
+- H975 The 16 directions carry over 0.8 of the weak write's second moment. → e693 → REFUTED.
+- H976 The removed write projected on the next block's 16 dominant read directions (gamma folded) halves the zeroing cost. → e693b → NARROWED (holds for GPT-2 large, OLMo-1B, not GPT-2 small, GPT-2 medium, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H977 On its 64 dominant read directions it halves the cost. → e693b → NARROWED (holds for GPT-2 large, OLMo-1B, Pythia-160m, Pythia-1B, Pythia-410m, not GPT-2 small, GPT-2 medium, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H978 On all later blocks' 16 dominant read directions it halves the cost. → e693b → NARROWED (holds for GPT-2 large, OLMo-1B, not GPT-2 small, GPT-2 medium, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H979 On their 64. → e693b → NARROWED (holds for GPT-2 large, OLMo-1B, Pythia-160m, Pythia-1B, Pythia-410m, not GPT-2 small, GPT-2 medium, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H980 The weak write's 16 principal directions overlap the next block's 16 read directions by more than 0.3. → e693b → REFUTED.
+- H981 And all later reads' 16 by more than 0.3. → e693b → REFUTED.
+- H982 Projected on the unembedding's 16 directions it halves the cost. → e693b → NARROWED (holds for GPT-2 large, not GPT-2 small, GPT-2 medium, OLMo-1B, Pythia-160m, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H983 The first principal direction has more than 0.3 of its norm in the stream mean's 4 largest coordinates (massive activations). → e693b → NARROWED (holds for GPT-2 small, GPT-2 medium, Pythia-1B, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M, not GPT-2 large, OLMo-1B, Pythia-160m, Pythia-410m).
+- H984 The best weights-only 16-direction subspace costs at most 1.2 times e693's data-derived 16. → e693b → REFUTED.
+- H985 The 1 to 5 percent shell is adjacent to the core (max ledger cosine above the bottom half's 95th percentile) for more than 0.8 of its positions. → e695 → REFUTED.
+- H986 The 5 to 20 percent shell for more than 0.5. → e695 → REFUTED.
+- H987 A frontier (adjacent share under 0.5) exists within the firing range, at the 1-5, 5-20 or 20-50 shell. → e695 → SUPPORTED.
+- H988 The core's root inputs (in the top 64 of half the core) carry at least half as much of the 1-5 shell's drive as of the core's. → e695 → SUPPORTED.
+- H989 The same for the 5-20 shell. → e695 → SUPPORTED.
+- H990 The 5-20 shell's contribution-weighted upstream depth exceeds the core's by 0.05 of the network. → e695 → REFUTED.
+- H991 The root vestige: the top 20 firings' one-token share is at least twice the top 1 percent's. → e695 → NARROWED (holds for Qwen2.5-0.5B block 6, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, SmolLM2-135M block 15).
+- H992 Two sub-class directions explain 0.1 more of the read row than two random directions, beyond the class direction. → e695 → REFUTED.
+- H993 The 1-5 shell's next tokens overlap the core's by 0.1 above the null. → e695 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H994 The 5-20 shell is nearer the 1-5 shell than the core for more than half its positions (a chain of shells). → e695 → SUPPORTED.
+- H995 The crowd is the suppressor: in the bottom half of positions the crowd's net sum opposes the 16 largest inputs (signed ratio under -0.5) while at the core it is within 0.5 of them. → e695 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, not GPT-2 medium block 12, GPT-2 medium block 6, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H996 The crowd share of the resultant at the middle block is above 0.9. → e694 → SUPPORTED.
+- H997 A neuron's 16 largest inputs carry under 0.1 of its input at strong firings. → e694 → SUPPORTED.
+- H998 The 16-input simulation's KL ratio at strong firings is above 0.5. → e694 → NOT TESTABLE (driven by every input the bf16 simulation still costs 0.98 of the ablation damage: the split's error is the size of one neuron's effect).
+- H999 Keeping the strongest quarter of activations costs over 0.2 nats. → e694 → SUPPORTED.
+- H1000 The per-token table recovers half of the zeroing cost. → e694 → REFUTED.
+- H1001 The weak write on the strong write's own 16 principal directions (the kept quarter's write, data, no weights) costs at most 1.2 times the weak write's own 16: the weak activations write where the strong ones write. → e693b → REFUTED.
+- H1002 The weak write's 16 directions overlap the strong write's 16 by more than 0.5. → e693b → NARROWED (holds for Pythia-160m, not GPT-2 small, GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

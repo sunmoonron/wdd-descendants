@@ -900,3 +900,46 @@ python e685b_crowdmean.py --model pythia410 --block 12
 python e685b_crowdmean.py --model pythia410 --block 6
 python e685b_crowdmean.py --model qwen05 --block 12
 python e685b_crowdmean.py --model gpt2m --block 12
+# session 156 (e692-e695): the crowd read; the e693b jobs ran after the weak ladder, the 14B jobs alone
+python e692_crowd_ledger.py --model qwen05 --block 12
+python e692_crowd_ledger.py --model pythia410 --block 18
+python e693_weak_ladder.py --model qwen15
+python e692_crowd_ledger.py --model qwen05 --block 6
+python e692_crowd_ledger.py --model pythia410 --block 12
+python e692_crowd_ledger.py --model gpt2m --block 12
+python e693_weak_ladder.py --model qwen05
+python e693_weak_ladder.py --model pythia1b
+python e693_weak_ladder.py --model gpt2l
+python e693_weak_ladder.py --model olmo1b
+python e692_crowd_ledger.py --model pythia410 --block 6
+python e692_crowd_ledger.py --model gpt2m --block 6
+python e692_crowd_ledger.py --model smollm135 --block 15
+python e693_weak_ladder.py --model pythia410
+python e693_weak_ladder.py --model gpt2m
+python e693_weak_ladder.py --model smollm360
+python e693_weak_ladder.py --model pythia160
+python e693_weak_ladder.py --model gpt2
+python e693_weak_ladder.py --model smollm135
+python e693_weak_ladder.py --model pythia1b
+python e695_shells.py --model pythia410 --block 18
+python e695_shells.py --model qwen05 --block 12
+python e695_shells.py --model pythia410 --block 12
+python e695_shells.py --model gpt2m --block 12
+python e695_shells.py --model qwen05 --block 6
+python e695_shells.py --model pythia410 --block 6
+python e695_shells.py --model gpt2m --block 6
+python e695_shells.py --model smollm135 --block 15
+python e693b_directions.py --model gpt2l
+python e693b_directions.py --model pythia1b
+python e693b_directions.py --model qwen15
+python e693b_directions.py --model olmo1b
+python e693b_directions.py --model pythia410
+python e693b_directions.py --model gpt2m
+python e693b_directions.py --model qwen05
+python e693b_directions.py --model smollm360
+python e693b_directions.py --model pythia160
+python e693b_directions.py --model gpt2
+python e693b_directions.py --model smollm135
+python e689_width.py --model qwen14b
+python e693_weak_ladder.py --model qwen14b --lite
+python e685_readers_ledger.py --model qwen14b --block 24 --lite

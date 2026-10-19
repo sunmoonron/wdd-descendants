@@ -1,0 +1,217 @@
+{
+ "model": "EleutherAI/pythia-160m",
+ "n_blocks": 12,
+ "DFF": 3072,
+ "calib_positions": 32768,
+ "heldout_positions": 24576,
+ "eval_positions": 12240,
+ "base_loss": 4.5177226066589355,
+ "keep_quantile": 0.25,
+ "coverage": {
+  "token": 0.700927734375,
+  "bigram": 0.2018229216337204,
+  "resample": 0.791259765625
+ },
+ "directions": {
+  "native_max_cos": 0.3224613219499588,
+  "mean_dir_cos": 0.9995848834514618,
+  "stream_overlap": 0.2790689766407013,
+  "cross_block": 0.26577621698379517,
+  "energy_top16": 0.7215034067630768
+ },
+ "directions_per_block": {
+  "native_max_cos": [
+   0.20498785376548767,
+   0.290699303150177,
+   0.27858471870422363,
+   0.2623586654663086,
+   0.3153875470161438,
+   0.29243403673171997,
+   0.34221476316452026,
+   0.3295350968837738,
+   0.3536459803581238,
+   0.36568590998649597,
+   0.4185715913772583,
+   0.35148507356643677
+  ],
+  "mean_dir_cos": [
+   0.997831404209137,
+   0.9995123744010925,
+   0.9995822310447693,
+   0.9998102784156799,
+   0.9997755289077759,
+   0.9996985197067261,
+   0.999342679977417,
+   0.9997089505195618,
+   0.9976091384887695,
+   0.9991151094436646,
+   0.9995875358581543,
+   0.9999593496322632
+  ],
+  "stream_overlap": [
+   0.021941322833299637,
+   0.13754844665527344,
+   0.18495973944664001,
+   0.1956506073474884,
+   0.27542880177497864,
+   0.2975684404373169,
+   0.26190608739852905,
+   0.33991503715515137,
+   0.30066800117492676,
+   0.3270465135574341,
+   0.29878467321395874,
+   0.28270915150642395
+  ],
+  "cross_block": [
+   0.08279657363891602,
+   0.22150155901908875,
+   0.19929368793964386,
+   0.22754737734794617,
+   0.2589291036128998,
+   0.26577621698379517,
+   0.36077767610549927,
+   0.37332841753959656,
+   0.4653770327568054,
+   0.41558533906936646,
+   0.3405311703681946
+  ],
+  "energy_top16": [
+   0.5373550653457642,
+   0.45016422867774963,
+   0.5289443731307983,
+   0.680496335029602,
+   0.6939368844032288,
+   0.6507943868637085,
+   0.7490699291229248,
+   0.7725602388381958,
+   0.8277037739753723,
+   0.8598345518112183,
+   0.9081825017929077,
+   0.990542471408844
+  ]
+ },
+ "conditions": {
+  "zero": {
+   "removed_energy_fraction": 0.36904795385449146,
+   "removed_position_fraction": 0.7995281219482422,
+   "kl_mean": 1.548356294631958,
+   "kl_median": 1.2258108854293823,
+   "loss_delta": 3.2789087295532227,
+   "flip_rate": 0.7543300986289978
+  },
+  "nmean": {
+   "removed_energy_fraction": 0.3578824198243154,
+   "removed_position_fraction": 0.7519786026742723,
+   "kl_mean": 0.4769953489303589,
+   "kl_median": 0.14656901359558105,
+   "loss_delta": 1.1526498794555664,
+   "flip_rate": 0.3834967315196991
+  },
+  "token": {
+   "removed_energy_fraction": 0.34204896688919073,
+   "removed_position_fraction": 0.7487722701496549,
+   "kl_mean": 0.33754655718803406,
+   "kl_median": 0.10682792961597443,
+   "loss_delta": 0.833066463470459,
+   "flip_rate": 0.3227941393852234
+  },
+  "bigram": {
+   "removed_energy_fraction": 0.3419214526714691,
+   "removed_position_fraction": 0.7487928447899995,
+   "kl_mean": 0.33362025022506714,
+   "kl_median": 0.10601804405450821,
+   "loss_delta": 0.8253073692321777,
+   "flip_rate": 0.31446078419685364
+  },
+  "resample": {
+   "removed_energy_fraction": 0.342808127278413,
+   "removed_position_fraction": 0.7477758747560007,
+   "kl_mean": 0.36322715878486633,
+   "kl_median": 0.1476949155330658,
+   "loss_delta": 0.8588247299194336,
+   "flip_rate": 0.3495098054409027
+  },
+  "pca1": {
+   "removed_energy_fraction": 0.3508575744671726,
+   "removed_position_fraction": 0.7529958265799063,
+   "kl_mean": 0.4110018312931061,
+   "kl_median": 0.17918573319911957,
+   "loss_delta": 0.9139227867126465,
+   "flip_rate": 0.3901143968105316
+  },
+  "pca4": {
+   "removed_energy_fraction": 0.34582057199227106,
+   "removed_position_fraction": 0.7516310501981665,
+   "kl_mean": 0.3171471655368805,
+   "kl_median": 0.15416507422924042,
+   "loss_delta": 0.7085156440734863,
+   "flip_rate": 0.365686297416687
+  },
+  "pca16": {
+   "removed_energy_fraction": 0.3350322260141816,
+   "removed_position_fraction": 0.7505938719820093,
+   "kl_mean": 0.18285371363162994,
+   "kl_median": 0.11349015682935715,
+   "loss_delta": 0.42131710052490234,
+   "flip_rate": 0.302205890417099
+  },
+  "pca64": {
+   "removed_energy_fraction": 0.33015661044009553,
+   "removed_position_fraction": 0.7500563771636398,
+   "kl_mean": 0.12926332652568817,
+   "kl_median": 0.0765194296836853,
+   "loss_delta": 0.3033618927001953,
+   "flip_rate": 0.24501635134220123
+  },
+  "svd16": {
+   "removed_energy_fraction": 0.43146066547183476,
+   "removed_position_fraction": 0.79114990984952,
+   "kl_mean": 1.2144659757614136,
+   "kl_median": 0.8629032373428345,
+   "loss_delta": 2.8707919120788574,
+   "flip_rate": 0.7191176414489746
+  },
+  "svd64": {
+   "removed_energy_fraction": 0.371310479224748,
+   "removed_position_fraction": 0.7848743575590628,
+   "kl_mean": 0.7583421468734741,
+   "kl_median": 0.4971896708011627,
+   "loss_delta": 1.9213414192199707,
+   "flip_rate": 0.5517973899841309
+  },
+  "spca16": {
+   "removed_energy_fraction": 0.31951677425716724,
+   "removed_position_fraction": 0.7619356733781321,
+   "kl_mean": 2.3326783180236816,
+   "kl_median": 1.941931962966919,
+   "loss_delta": 3.487281322479248,
+   "flip_rate": 0.8418300747871399
+  },
+  "spca64": {
+   "removed_energy_fraction": 0.3130953982805967,
+   "removed_position_fraction": 0.7524892798176518,
+   "kl_mean": 1.8618167638778687,
+   "kl_median": 1.5823454856872559,
+   "loss_delta": 3.2067809104919434,
+   "flip_rate": 0.8566993474960327
+  }
+ },
+ "verdicts": {
+  "V1_token_halves_zero": true,
+  "V1b_token_below_005": false,
+  "V1c_token_beats_nmean": true,
+  "V2_bigram_beats_token": false,
+  "V3_resample_above_token": false,
+  "V4_pca16_halves_zero": true,
+  "V5_svd16_halves_zero": false,
+  "V6_pca64_below_02": true,
+  "V7_stream16_within_1p2_of_pca16": false,
+  "V8_pcs_native_rows": false,
+  "V9_pcs_shared_across_blocks": false,
+  "V10_weak_write_energy_top16_above_08": false
+ },
+ "_exp": "e693_pythia160",
+ "_time": "2026-10-19 00:42:08",
+ "seconds": 52.517107009887695,
+ "summary": "[pythia160] the strongest quarter of each neuron's activations kept, the rest replaced, KL in nats on 12240 tokens: zero 1.548, nmean 0.477, token 0.338, bigram 0.334, resample 0.363, pca1 0.411, pca4 0.317, pca16 0.183, pca64 0.129, svd16 1.214, svd64 0.758, spca16 2.333, spca64 1.862; recovered by the per-token table 0.78 of the zeroing cost (per-neuron mean 0.69); the weak write's 16 principal directions: energy share 0.72, max cosine with a native write row 0.32, first direction's cosine with the mean weak write 1.00, overlap with the stream's 16 0.28, with the next block's 16 0.27; coverage {'token': 0.700927734375, 'bigram': 0.2018229216337204, 'resample': 0.791259765625}; verdicts {'V1_token_halves_zero': True, 'V1b_token_below_005': False, 'V1c_token_beats_nmean': True, 'V2_bigram_beats_token': False, 'V3_resample_above_token': False, 'V4_pca16_halves_zero': True, 'V5_svd16_halves_zero': False, 'V6_pca64_below_02': True, 'V7_stream16_within_1p2_of_pca16': False, 'V8_pcs_native_rows': False, 'V9_pcs_shared_across_blocks': False, 'V10_weak_write_energy_top16_above_08': False}"
+}

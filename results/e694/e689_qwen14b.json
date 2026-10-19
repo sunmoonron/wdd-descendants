@@ -1,0 +1,29 @@
+{
+ "model": "Qwen/Qwen2.5-14B",
+ "key": "qwen14b",
+ "block": 24,
+ "n_blocks": 48,
+ "d": 5120,
+ "DFF": 13824,
+ "rows": 345600,
+ "positions": 8159,
+ "r_cal": 0.9964286684989929,
+ "dtype": "torch.bfloat16",
+ "_exp": "e689_qwen14b",
+ "_time": "2026-10-19 02:43:53",
+ "seconds": 20.661986112594604,
+ "summary_stats": {
+  "over_floor_count_median": 206.0,
+  "over_floor_count_mean": 527.8424072265625,
+  "over_floor_per_dim": 0.040234375,
+  "over_floor_per_row": 0.0005960648148148148,
+  "top_ratio_median": 2.1986823081970215,
+  "own_share_of_resultant_median": 0.24240291118621826,
+  "crowd_share_median": 0.9605924487113953,
+  "neff_terms_median": 3330.743896484375,
+  "active_terms_median": 345592.0,
+  "top3_norm_share_median": 0.2968941926956177,
+  "top_row_projection_share_median": -0.1286790519952774
+ },
+ "summary": "[qwen14b d 5120, block 24] rows over the floor per position, median 206 (0.040 per dimension, 0.0006 per row); the top row's own share of the resultant 0.24; crowd share (beyond the 16 largest terms) 0.96; effective number of terms 3331 of 345592 active; three largest writes carry 0.30 of the centred norm"
+}

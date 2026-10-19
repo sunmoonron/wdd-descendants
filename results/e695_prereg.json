@@ -1,0 +1,71 @@
+{
+ "session": 156,
+ "date": "2026-10-19",
+ "written_before": "any full run; the smoke may revise, revisions dated",
+ "format": "prediction id: [statement, my probability]; bands coded in the script",
+ "e695_shells": {
+  "question": "does growth by generalization leave residue in the final model: nested shells of a neuron's class connected to the core in ledger space, a root input set shared down the shells, a lexical seed, a depth gradient, a read row made of steps?",
+  "R1": [
+   "the 1 to 5 percent shell is adjacent to the core (max ledger cosine above the bottom half's 95th percentile) for more than 0.8 of its positions",
+   0.6
+  ],
+  "R2": [
+   "the 5 to 20 percent shell for more than 0.5",
+   0.45
+  ],
+  "R3": [
+   "a frontier (adjacent share under 0.5) exists within the firing range, at the 1-5, 5-20 or 20-50 shell",
+   0.5
+  ],
+  "R4": [
+   "the core's root inputs (in the top 64 of half the core) carry at least half as much of the 1-5 shell's drive as of the core's",
+   0.55
+  ],
+  "R4b": [
+   "the same for the 5-20 shell",
+   0.4
+  ],
+  "R5": [
+   "the 5-20 shell's contribution-weighted upstream depth exceeds the core's by 0.05 of the network",
+   0.35
+  ],
+  "R6": [
+   "the root vestige: the top 20 firings' one-token share is at least twice the top 1 percent's",
+   0.5
+  ],
+  "R7": [
+   "two sub-class directions explain 0.1 more of the read row than two random directions, beyond the class direction",
+   0.4
+  ],
+  "R8": [
+   "the 1-5 shell's next tokens overlap the core's by 0.1 above the null",
+   0.6
+  ],
+  "R9": [
+   "the 5-20 shell is nearer the 1-5 shell than the core for more than half its positions (a chain of shells)",
+   0.35
+  ],
+  "nanda_reading": [
+   "R1 false and R4 false: the weak shells are driven by other inputs",
+   0.25
+  ],
+  "rg_residue": [
+   "R1, R4 and R6 all hold",
+   0.3
+  ],
+  "runs": [
+   "pythia410 b6/b12/b18",
+   "gpt2m b6/b12",
+   "qwen05 b6/b12",
+   "smollm135 b15"
+  ],
+  "neurons": "e685's sample (seed 685 + block), 100 per block; 128 windows of wikitext-2 train",
+  "R10": [
+   "the crowd is the suppressor: in the bottom half of positions the crowd's net sum opposes the 16 largest inputs (signed ratio under -0.5) while at the core it is within 0.5 of them",
+   0.5
+  ]
+ },
+ "revisions": [
+  "2026-10-19 after the smoke, before any full run: added the net share of the 16 largest inputs and the crowd's signed net sum over them per shell and for the bottom half (R10), because the smoke showed seven root inputs carrying 0.95 of the core's net drive while e685 had the 16 largest at 2 to 5 percent of the absolute mass: the two shares differ by cancellation, and the crowd may matter as a suppressor off the class rather than as a driver on it."
+ ]
+}

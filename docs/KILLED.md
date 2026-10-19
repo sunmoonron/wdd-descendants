@@ -1069,3 +1069,31 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The crowd shrinking with width: its share of the resultant along the most prominent row rises from 0.91 to 0.97 from 70M to 2.8B parameters in the GELU families and stays at 0.94 to 0.95 across Qwen2.5 from 0.5B to 7B (e689).
 - Memorised text having special writers: depth, count, class coherence and field selectivity all match a low-loss control (e690).
 - The activation label as a proxy for a neuron's function: across neuron pairs the token bag's similarity predicts the causal reader response at Spearman 0.00 to 0.04 (e691).
+
+## Session 156 kills (the crowd read)
+- "the weak write on the strong write's own 16 principal directions (the kept quarter's write, data, no weights) costs at most 1.2 times the weak write's own 16: the weak activations write where the strong ones write." (e693b).
+- "the per-token table explains more than half the crowd's variance over all evaluation rows." (e692).
+- "the crowd's write projected on the stream's 16 principal directions (held-out second moment) brings the 16-input ratio under 0.5." (e692).
+- "the 200 largest contributors' top-1% classes contain the neuron's strong rows at more than five times chance (a district)." (e692).
+- "with the per-token table the cost is under 0.05 nats (the essay's 'almost no cost' after a lexical correction)." (e693).
+- "the bigram table beats the token table by a fifth." (e693).
+- "the removed write projected on the stream's 16 principal directions (instead of its own) costs at most 1.2 times the own-16 rung: the weak write's low-rank part is the stream's dominant subspace." (e693).
+- "the weak write's 16 principal directions are native rows (median max cosine with a write row of the block above 0.5)." (e693).
+- "the 16 directions are shared across consecutive blocks (median subspace overlap above 0.5)." (e693).
+- "the 16 directions carry over 0.8 of the weak write's second moment." (e693).
+- "the weak write's 16 principal directions overlap the next block's 16 read directions by more than 0.3." (e693b).
+- "and all later reads' 16 by more than 0.3." (e693b).
+- "the best weights-only 16-direction subspace costs at most 1.2 times e693's data-derived 16." (e693b).
+- "the 1 to 5 percent shell is adjacent to the core (max ledger cosine above the bottom half's 95th percentile) for more than 0.8 of its positions." (e695).
+- "the 5 to 20 percent shell for more than 0.5." (e695).
+- "the 5-20 shell's contribution-weighted upstream depth exceeds the core's by 0.05 of the network." (e695).
+- "two sub-class directions explain 0.1 more of the read row than two random directions, beyond the class direction." (e695).
+- "the per-token table recovers half of the zeroing cost." (e694).
+- Guilds as the readers' unit: the sixteen largest clusters of upstream units by write row or by co-activation reproduce a neuron's input no better than random groups of the same sizes, and at group resolution not at all (e692).
+- The crowd as a lexical baseline at depth: a per-token table halves a neuron's ablation damage only at the sixth blocks and in GPT-2 medium (e692).
+- The stream's dominant subspace as the crowd's carrier: the crowd's write and the weak write projected on the stream's principal directions recover nothing, and often cost more than zeroing (e692, e693).
+- The weight spectrum as the weak write's carrier: the block's dominant write directions recover 0.07 to 0.69 of the zeroing cost against 0.60 to 0.96 for sixteen data-derived directions (e693).
+- Connected shells, a depth gradient, a read row of steps and a strong lexical seed as the residue of recursive generalization in the final model (e695).
+- The crowd as the driver of a neuron's firing: its net sum at the firings is within -0.10 to +0.62 of the sixteen largest inputs' and it opposes them by 0.46 to 0.99 of theirs off the class (e695).
+- The weights as the name of the weak write's directions: the next block's reads, all later reads and the unembedding overlap them by a tenth or less, and no weights-derived subspace recovers what their own sixteen directions recover (e693b).
+- The K-input simulation as a 14B test in bf16: driven by every input a neuron still costs 0.95 of its ablation damage, so the ledger's KL ratios at that scale need fp32 or group ablations (e694).

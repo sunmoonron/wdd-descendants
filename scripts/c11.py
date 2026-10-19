@@ -11,7 +11,7 @@ torch.set_grad_enabled(False); DEV = "cuda:0" if torch.cuda.is_available() else 
 MODELS = {"pythia70": "EleutherAI/pythia-70m", "pythia160": "EleutherAI/pythia-160m", "pythia160s1": "EleutherAI/pythia-160m-seed1", "pythia160s2": "EleutherAI/pythia-160m-seed2", "pythia410": "EleutherAI/pythia-410m", "pythia1b": "EleutherAI/pythia-1b", "pythia14b": "EleutherAI/pythia-1.4b", "pythia28b": "EleutherAI/pythia-2.8b",
           "gpt2": "openai-community/gpt2", "gpt2m": "openai-community/gpt2-medium", "gpt2l": "openai-community/gpt2-large", "gpt2xl": "openai-community/gpt2-xl",
           "smollm135": "HuggingFaceTB/SmolLM2-135M", "smollm360": "HuggingFaceTB/SmolLM2-360M", "smollm17b": "HuggingFaceTB/SmolLM2-1.7B",
-          "qwen05": "Qwen/Qwen2.5-0.5B", "qwen15": "Qwen/Qwen2.5-1.5B", "qwen3b": "Qwen/Qwen2.5-3B", "qwen7b": "Qwen/Qwen2.5-7B", "olmo1b": "allenai/OLMo-1B-0724-hf"}
+          "qwen05": "Qwen/Qwen2.5-0.5B", "qwen15": "Qwen/Qwen2.5-1.5B", "qwen3b": "Qwen/Qwen2.5-3B", "qwen7b": "Qwen/Qwen2.5-7B", "qwen14b": "Qwen/Qwen2.5-14B", "qwen32b": "Qwen/Qwen2.5-32B", "olmo1b": "allenai/OLMo-1B-0724-hf"}
 RESD = os.environ.get("C11_RESULTS", "/workspace/wdd/results"); CACHED = os.environ.get("C11_CACHE", "/workspace/wdd/cache"); T0 = time.time()
 def log(tag, s): print(f"[{tag} {time.strftime('%H:%M:%S')}] {s} ({time.time() - T0:.0f}s)", flush=True)
 def med(v): v = [float(x) for x in v if x is not None and not (isinstance(x, float) and math.isnan(x))]; return float(np.median(v)) if v else None

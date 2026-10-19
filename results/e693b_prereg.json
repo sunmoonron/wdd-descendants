@@ -1,0 +1,68 @@
+{
+ "session": 156,
+ "date": "2026-10-19",
+ "written_before": "any full run",
+ "e693b_directions": {
+  "question": "can weights alone name the sixteen directions through which the weak write matters (e693's pca16)?",
+  "D1": [
+   "the removed write projected on the next block's 16 dominant read directions (gamma folded) halves the zeroing cost",
+   0.35
+  ],
+  "D1b": [
+   "on its 64 dominant read directions it halves the cost",
+   0.5
+  ],
+  "D2": [
+   "on all later blocks' 16 dominant read directions it halves the cost",
+   0.35
+  ],
+  "D2b": [
+   "on their 64",
+   0.5
+  ],
+  "D3": [
+   "the weak write's 16 principal directions overlap the next block's 16 read directions by more than 0.3",
+   0.4
+  ],
+  "D3b": [
+   "and all later reads' 16 by more than 0.3",
+   0.45
+  ],
+  "D4": [
+   "projected on the unembedding's 16 directions it halves the cost",
+   0.15
+  ],
+  "D5": [
+   "the first principal direction has more than 0.3 of its norm in the stream mean's 4 largest coordinates (massive activations)",
+   0.3
+  ],
+  "D6": [
+   "the best weights-only 16-direction subspace costs at most 1.2 times e693's data-derived 16",
+   0.3
+  ],
+  "models": [
+   "pythia160",
+   "pythia410",
+   "pythia1b",
+   "gpt2",
+   "gpt2m",
+   "gpt2l",
+   "qwen05",
+   "qwen15",
+   "smollm135",
+   "smollm360",
+   "olmo1b"
+  ],
+  "D7": [
+   "the weak write on the strong write's own 16 principal directions (the kept quarter's write, data, no weights) costs at most 1.2 times the weak write's own 16: the weak activations write where the strong ones write",
+   0.4
+  ],
+  "D8": [
+   "the weak write's 16 directions overlap the strong write's 16 by more than 0.5",
+   0.4
+  ]
+ },
+ "revisions": [
+  "2026-10-19 before the full runs (the pythia160 smoke had shown the weights-only subspaces far behind the data-derived sixteen): added the strong write's and the whole MLP write's principal directions as rungs and overlaps (D7, D8), to tell a dimmer copy of the strong write from a signal of its own."
+ ]
+}
