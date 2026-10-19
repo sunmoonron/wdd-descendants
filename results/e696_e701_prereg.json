@@ -1,0 +1,137 @@
+{
+ "session": 157,
+ "date": "2026-10-19",
+ "written_before": "any full run; smokes may revise, revisions dated",
+ "format": "prediction id: [statement, my probability]; bands coded in the scripts",
+ "aim": "the program's own follow-ups to session 156: the crowd as suppressor tested by intervention (e697) and over training (e701); the sixteen-direction weak envelope as a linear function of the block input (e696); the ledger at 7B and 14B with the model in fp32 and the noise floor measured (e700)",
+ "e697_brake": {
+  "question": "does the sixteen-input simulation's damage come from off-class misfiring, and do sixteen inhibitory wires or the upstream weak-write bus restore the brake?",
+  "B0": [
+   "every input reproduces the neuron (ratio under 0.05)",
+   0.9
+  ],
+  "B1": [
+   "the simulation swapped in only off the neuron's top-5% positions carries at least 0.7 of the all-position damage",
+   0.6
+  ],
+  "B1b": [
+   "swapped in only at the top-5% positions it carries at most 0.3",
+   0.55
+  ],
+  "B2": [
+   "the sixteen strongest excitatory with the sixteen strongest inhibitory inputs halve the sixteen-by-magnitude ratio at strong firings",
+   0.3
+  ],
+  "B2b": [
+   "and beat thirty-two by magnitude by 0.1",
+   0.4
+  ],
+  "B3": [
+   "the sixteen wires plus the crowd's write on the upstream weak-write bus halve the ratio",
+   0.35
+  ],
+  "B4": [
+   "signed wires plus the bus bring the ratio under 0.25",
+   0.2
+  ],
+  "B5": [
+   "the sixteen inhibitory wires carry at least half of the off-class net opposition",
+   0.45
+  ],
+  "B6": [
+   "the bus halves the all-position ratio",
+   0.35
+  ],
+  "runs": [
+   "e692's eight model-blocks, 40 neurons each"
+  ]
+ },
+ "e696_bypass": {
+  "question": "is the weak write a linear function of the normalised block input, so a rank-16 bypass can replace the weak neurons at every block at once?",
+  "L1": [
+   "the predicted sixteen coordinates recover at least 0.8 of what the oracle sixteen recover",
+   0.45
+  ],
+  "L2": [
+   "the predicted sixteen halve the zeroing cost",
+   0.4
+  ],
+  "L3": [
+   "the full linear prediction recovers at least 0.9 of what the oracle sixteen recover",
+   0.4
+  ],
+  "L4": [
+   "ARC-Easy accuracy under the predicted sixteen stays within 2 points of clean",
+   0.4
+  ],
+  "L5": [
+   "zeroing drops ARC-Easy by more than 5 points",
+   0.5
+  ],
+  "L6": [
+   "the linear map explains more than half of the weak write's variance on the fitting data",
+   0.5
+  ],
+  "models": [
+   "pythia410",
+   "pythia1b",
+   "gpt2m",
+   "gpt2l",
+   "qwen05",
+   "qwen15",
+   "smollm360",
+   "olmo1b"
+  ]
+ },
+ "e701_brake_training": {
+  "question": "when does the brake form over Pythia-160m's training?",
+  "T1": [
+   "at step 1000 the crowd's net sum off the class is within 0.3 of the sixteen wires' (no brake)",
+   0.5
+  ],
+  "T2": [
+   "the brake (under -0.5) is present by step 8000",
+   0.45
+  ],
+  "T3": [
+   "the brake strengthens monotonically with the step (Spearman under -0.8)",
+   0.5
+  ],
+  "T4": [
+   "the sixteen wires' net share at the core rises with training (Spearman above 0.5)",
+   0.5
+  ],
+  "T5": [
+   "the brake is under -0.5 in the final model",
+   0.5
+  ],
+  "runs": [
+   "seed 0: 11 checkpoints",
+   "seeds 1 and 2: 6 checkpoints"
+  ]
+ },
+ "e700_ledger_fp32": {
+  "question": "with the model in fp32, activations stored in fp32 and the noise floor measured, does the K-input simulation become scorable at 7B and 14B?",
+  "N1": [
+   "driven by every input the neuron is reproduced (ratio under 0.05) at 7B",
+   0.6
+  ],
+  "N1b": [
+   "at 14B (16 windows)",
+   0.45
+  ],
+  "N2": [
+   "the noise floor (the neuron replaced by its own activation) is under 0.1 of the ablation damage for the selected neurons",
+   0.6
+  ],
+  "N3": [
+   "at 14B the sixteen-input ratio at strong firings is above 0.5",
+   0.6
+  ],
+  "runs": [
+   "qwen7b block 14 (32 windows), qwen14b block 24 (16 windows); no floor, 20 neurons selected by ablation KL among 100"
+  ],
+  "note": "the bf16 attempt (e694) and a bf16 rerun with fp32 activation storage both left the all-inputs reproduction at 0.86 to 0.95 of the ablation damage: the residual stream itself is rounded to bf16 block by block, so the exact split can only be checked with the model in fp32"
+ },
+ "revisions": []
+}

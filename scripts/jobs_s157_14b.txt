@@ -1,0 +1,2 @@
+60|e685_qwen7b_b14|C11_THREADS=4 /venv/main/bin/python scripts/e685_readers_ledger.py --model qwen7b --block 14 --lite --fp32model --fp32acts --nofloor --select
+78|e685_qwen14b_b24|C11_THREADS=4 /venv/main/bin/python scripts/e685_readers_ledger.py --model qwen14b --block 24 --lite --nwin 16 --fp32model --fp32acts --nofloor --select

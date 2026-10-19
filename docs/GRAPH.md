@@ -1236,6 +1236,30 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1000 The per-token table recovers half of the zeroing cost. → e694 → REFUTED.
 - H1001 The weak write on the strong write's own 16 principal directions (the kept quarter's write, data, no weights) costs at most 1.2 times the weak write's own 16: the weak activations write where the strong ones write. → e693b → REFUTED.
 - H1002 The weak write's 16 directions overlap the strong write's 16 by more than 0.5. → e693b → NARROWED (holds for Pythia-160m, not GPT-2 small, GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, SmolLM2-135M, SmolLM2-360M).
+- H1003 Every input reproduces the neuron (ratio under 0.05). → e697 → SUPPORTED.
+- H1004 The simulation swapped in only off the neuron's top-5% positions carries at least 0.7 of the all-position damage. → e697 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6).
+- H1005 Swapped in only at the top-5% positions it carries at most 0.3. → e697 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6).
+- H1006 The sixteen strongest excitatory with the sixteen strongest inhibitory inputs halve the sixteen-by-magnitude ratio at strong firings. → e697 → NARROWED (holds for SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 12, Pythia-410m block 18, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6).
+- H1007 And beat thirty-two by magnitude by 0.1. → e697 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1008 The sixteen wires plus the crowd's write on the upstream weak-write bus halve the ratio. → e697 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1009 Signed wires plus the bus bring the ratio under 0.25. → e697 → REFUTED.
+- H1010 The sixteen inhibitory wires carry at least half of the off-class net opposition. → e697 → SUPPORTED.
+- H1011 The bus halves the all-position ratio. → e697 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1012 At step 1000 the crowd's net sum off the class is within 0.3 of the sixteen wires' (no brake). → e701 → NARROWED (holds for pythia160s1 b6, pythia160s2 b6, not Pythia-160m block 6).
+- H1013 The brake (under -0.5) is present by step 8000. → e701 → REFUTED.
+- H1014 The brake strengthens monotonically with the step (Spearman under -0.8). → e701 → SUPPORTED.
+- H1015 The sixteen wires' net share at the core rises with training (Spearman above 0.5). → e701 → SUPPORTED.
+- H1016 The brake is under -0.5 in the final model. → e701 → SUPPORTED.
+- H1017 The predicted sixteen coordinates recover at least 0.8 of what the oracle sixteen recover. → e696 → NARROWED (holds for GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, not SmolLM2-360M).
+- H1018 The predicted sixteen halve the zeroing cost. → e696 → SUPPORTED.
+- H1019 The full linear prediction recovers at least 0.9 of what the oracle sixteen recover. → e696 → NARROWED (holds for GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B, not SmolLM2-360M).
+- H1020 ARC-Easy accuracy under the predicted sixteen stays within 2 points of clean. → e696 → NARROWED (holds for GPT-2 large, GPT-2 medium, Qwen2.5-1.5B, not OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, SmolLM2-360M).
+- H1021 Zeroing drops ARC-Easy by more than 5 points. → e696 → NARROWED (holds for GPT-2 large, GPT-2 medium, OLMo-1B, Pythia-1B, Pythia-410m, Qwen2.5-0.5B, SmolLM2-360M, not Qwen2.5-1.5B).
+- H1022 The linear map explains more than half of the weak write's variance on the fitting data. → e696 → REFUTED.
+- H1023 Driven by every input the neuron is reproduced (ratio under 0.05) at 7B. → e700 → SUPPORTED.
+- H1024 At 14B (16 windows). → e700 → NOT RUN (the fp32 14B job did not finish).
+- H1025 The noise floor (the neuron replaced by its own activation) is under 0.1 of the ablation damage for the selected neurons. → e700 → SUPPORTED.
+- H1026 At 14B the sixteen-input ratio at strong firings is above 0.5. → e700 → NOT RUN.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

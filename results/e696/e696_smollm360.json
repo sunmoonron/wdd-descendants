@@ -1,0 +1,116 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-360M",
+ "n_blocks": 32,
+ "DFF": 2560,
+ "eval_positions": 12240,
+ "base_loss": 5.934528350830078,
+ "arc_items": 400,
+ "arc_clean": 0.5799999833106995,
+ "keep_quantile": 0.25,
+ "ridge": 0.01,
+ "linear_r2_per_block": [
+  0.6663689017295837,
+  0.3474803566932678,
+  0.27608558535575867,
+  0.2859456539154053,
+  0.2551111578941345,
+  0.21998053789138794,
+  0.23846490681171417,
+  0.2527158558368683,
+  0.30335137248039246,
+  0.27260100841522217,
+  0.246457040309906,
+  0.25011882185935974,
+  0.2923020124435425,
+  0.28583627939224243,
+  0.28103992342948914,
+  0.2738519012928009,
+  0.2764164209365845,
+  0.2706424295902252,
+  0.2571277916431427,
+  0.2593769431114197,
+  0.26858094334602356,
+  0.25768038630485535,
+  0.2838278114795685,
+  0.2778090238571167,
+  0.262149453163147,
+  0.26095151901245117,
+  0.2792759835720062,
+  0.23352807760238647,
+  0.24516774713993073,
+  0.2579217851161957,
+  0.3169419467449188,
+  0.40965554118156433
+ ],
+ "linear_r2_median": 0.2716217190027237,
+ "conditions": {
+  "zero": {
+   "removed_energy_fraction": 0.14085861200684732,
+   "kl_mean": 1.325486660003662,
+   "kl_median": 0.9113912582397461,
+   "loss_delta": 1.1491599082946777,
+   "flip_rate": 0.5533496737480164,
+   "arc": 0.48749998211860657
+  },
+  "nmean": {
+   "removed_energy_fraction": 0.21327519763787525,
+   "kl_mean": 0.7074857950210571,
+   "kl_median": 0.4678652584552765,
+   "loss_delta": 0.3806638717651367,
+   "flip_rate": 0.453758180141449,
+   "arc": 0.5224999785423279
+  },
+  "pca16": {
+   "removed_energy_fraction": 0.19541598798690846,
+   "kl_mean": 0.2979133129119873,
+   "kl_median": 0.20472007989883423,
+   "loss_delta": 0.3445301055908203,
+   "flip_rate": 0.3374183177947998,
+   "arc": 0.5424999594688416
+  },
+  "pca64": {
+   "removed_energy_fraction": 0.18926707138080415,
+   "kl_mean": 0.13326281309127808,
+   "kl_median": 0.08618591725826263,
+   "loss_delta": 0.17455196380615234,
+   "flip_rate": 0.24223856627941132,
+   "arc": 0.550000011920929
+  },
+  "bypass16": {
+   "removed_energy_fraction": 0.19472056055933484,
+   "kl_mean": 0.5778475403785706,
+   "kl_median": 0.3932429850101471,
+   "loss_delta": 0.584996223449707,
+   "flip_rate": 0.4269607961177826,
+   "arc": 0.5324999690055847
+  },
+  "bypass64": {
+   "removed_energy_fraction": 0.1908995494520783,
+   "kl_mean": 0.5135316252708435,
+   "kl_median": 0.3460339903831482,
+   "loss_delta": 0.5544514656066895,
+   "flip_rate": 0.413807213306427,
+   "arc": 0.5324999690055847
+  },
+  "bypassD": {
+   "removed_energy_fraction": 0.18570858448861513,
+   "kl_mean": 0.4851287007331848,
+   "kl_median": 0.3330535292625427,
+   "loss_delta": 0.5786266326904297,
+   "flip_rate": 0.41168302297592163,
+   "arc": 0.5349999666213989
+  }
+ },
+ "verdicts": {
+  "L1_bypass16_matches_pca16": false,
+  "L2_bypass16_halves_zero": true,
+  "L3_bypassD_matches_pca16": false,
+  "L4_arc_bypass16_within_2pts": false,
+  "L5_arc_zero_drops_5pts": true,
+  "L6_linear_r2_above_half": false
+ },
+ "_exp": "e696_smollm360",
+ "_time": "2026-10-19 04:29:30",
+ "seconds": 185.44607949256897,
+ "summary": "[smollm360] all but the strongest quarter of each neuron's activations zeroed at every block, KL in nats on 12240 tokens and ARC-Easy accuracy on 400 items (clean 0.580): zero 1.325 (0.487), nmean 0.707 (0.522), pca16 0.298 (0.542), pca64 0.133 (0.550), bypass16 0.578 (0.532), bypass64 0.514 (0.532), bypassD 0.485 (0.535); recovered by the oracle 16 directions 0.78, by the predicted 16 0.56, by the full linear prediction 0.63; the linear map explains 0.27 of the weak write's variance; verdicts {'L1_bypass16_matches_pca16': False, 'L2_bypass16_halves_zero': True, 'L3_bypassD_matches_pca16': False, 'L4_arc_bypass16_within_2pts': False, 'L5_arc_zero_drops_5pts': True, 'L6_linear_r2_above_half': False}"
+}

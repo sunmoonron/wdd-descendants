@@ -943,3 +943,25 @@ python e693b_directions.py --model smollm135
 python e689_width.py --model qwen14b
 python e693_weak_ladder.py --model qwen14b --lite
 python e685_readers_ledger.py --model qwen14b --block 24 --lite
+# session 157 (e696-e701): the brake and the bypass; the two fp32 ledger jobs ran alone
+python e697_brake.py --model qwen05 --block 12
+python e697_brake.py --model pythia410 --block 18
+python e697_brake.py --model qwen05 --block 6
+python e697_brake.py --model pythia410 --block 12
+python e697_brake.py --model gpt2m --block 12
+python e697_brake.py --model pythia410 --block 6
+python e697_brake.py --model gpt2m --block 6
+python e697_brake.py --model smollm135 --block 15
+python e696_bypass.py --model qwen15
+python e696_bypass.py --model qwen05
+python e696_bypass.py --model pythia1b
+python e696_bypass.py --model gpt2l
+python e696_bypass.py --model olmo1b
+python e696_bypass.py --model pythia410
+python e696_bypass.py --model smollm360
+python e696_bypass.py --model gpt2m
+python e701_brake_training.py --seed 0
+python e701_brake_training.py --seed 1
+python e701_brake_training.py --seed 2
+python e685_readers_ledger.py --model qwen7b --block 14 --lite --fp32model --fp32acts --nofloor --select
+python e685_readers_ledger.py --model qwen14b --block 24 --lite --nwin 16 --fp32model --fp32acts --nofloor --select
