@@ -2,18 +2,45 @@
 
 **Six pre-registered results on what the sub-threshold activations of a transformer's MLP neurons do, from an exact ledger of each neuron's inputs.**
 
-Ronish Bhatt, with Claude (Anthropic) as the experimenter. 20 October 2026. A technical note from the WDD descendants program; everything here is in this repository (`scripts_phase3/`, `results/`, `docs/atlas/` areas 62 to 67), with the pre-registrations in `results/*_prereg.json`.
+Ronish Bhatt, with Claude (Anthropic) as the experimenter. 20 October 2026. A technical note from the WDD descendants program; everything here is in this repository (`scripts_phase3/`, `results/`, `docs/atlas/` areas 62 to 69, the `wdd/` library), with the pre-registrations in `results/*_prereg.json`.
 
-## Summary
+## Read this first
 
-- Removing a neuron's weak activations is not free. Keeping only the strongest quarter of each MLP neuron's activations costs 0.24 to 8.68 nats of next-token KL in eleven models from 70M to 1.5B parameters, and the cost is not a mean offset: replacing the removed activations by each neuron's mean leaves 0.07 to 2.31 nats (e681).
-- The weak activations act as a brake. At a mid-network neuron, the sixteen largest inputs carry the net drive at its firings, but when the neuron is driven by those sixteen alone its damage comes 0.52 to 0.88 from positions off its class, where the sixteen fire it and the crowd of thousands of small inputs would have held it down; sixteen excitatory wires alone cost 6 to 561 times the neuron's ablation damage, and adding the sixteen strongest inhibitory wires brings that to 0.6 to 3.0 (e697).
-- The brake is learned, not built in. In Pythia-160m the crowd's net sum off a neuron's class is +0.3 of the sixteen wires' at step 1000 and crosses -0.5 by step 16000 (three seeds, monotone); in OLMo-1B it forms over the whole run and crosses -0.5 between a third and two thirds of training (e701).
-- The brake is low-rank and mostly linear in the block's input. The summed weak write of a block lives in sixteen directions, which recover 0.66 to 0.96 of the zeroing cost, and a rank-16 linear map from the normalised block input, with the weak neurons not run at all, recovers 0.56 to 0.96 (e696).
-- Those sixteen directions per block are a field: a second kind of dictionary atom beside the native write rows. Sixteen wires plus the weak field plus a strong-write field bring a pruned neuron's error at its firings from 0.41 to 1.95 of the ablation damage to 0.12 to 0.53 (e706).
-- What the output reads is a quadratic form, not a subspace. The Fisher information of the model's own next tokens predicts the cost of removing any part of a position's state at Spearman 0.83 to 0.92; by that grade the fields are read at about twice a random direction, GPT-2's native rows above their energy, and a public SAE's reconstruction error at exactly its share of the energy (e707).
+Six pre-registered results, models from 70M to 7B, one exact instrument. The question they answer is the one both sides of the "already clean" debate left open: do the weak activations of a transformer's MLP neurons matter, and what do they do?
 
-For the debate: the weak activations are neither removable noise (the essay's "almost all weak activations can be removed for almost no cost") nor a store of individually meaningful facts (the superposition camp's working picture). They are a collective, learned, low-rank, mostly linear brake on the model's own strong neurons, and the object that carries it, the field, is a dictionary atom that neither side has named.
+1. **They matter.** Keep only the strongest quarter of each neuron's activations and next-token KL rises by 0.24 to 8.68 nats in eleven models; replacing them by each neuron's mean still leaves 0.07 to 2.31. (e681)
+2. **They are a brake.** A neuron driven by its sixteen largest inputs alone misfires off its class, where the crowd of thousands of small inputs would have held it down: 52 to 88 percent of the damage is off-class, sixteen excitatory wires alone cost 6 to 561 times the neuron's ablation damage, and sixteen inhibitory wires bring that to 0.6 to 3. At 7B: 85 to 87 percent off-class, 59 to 284 times, 1.1 to 2.7 with the brake. (e697, e713)
+3. **The brake is learned.** The crowd pushes with the wires at step 1000 of Pythia-160m (+0.3), crosses zero by step 2000 and reaches -0.6 to -0.8 at the end, monotone in three seeds; in OLMo-1B it crosses -0.5 at a third to two thirds of training. (e701)
+4. **It is low-rank and linear in the input.** A block's weak write lives in sixteen directions, and a closed-form rank-16 linear map from the block's normalised input, with the weak neurons never run, recovers 0.56 to 0.96 of the zeroing cost, while explaining less than half the weak write's variance. (e696)
+5. **Those directions are a second kind of atom.** Sixteen wires plus the weak field plus a strong-write field bring a pruned neuron's error at its firings from 0.41 to 1.95 of the ablation damage to 0.12 to 0.53, and from 0.9 and 2.9 to 0.5 and 1.0 at 7B. (e706, e713)
+6. **The output grades by a quadratic form, not by energy.** The Fisher information of the model's own next tokens predicts the cost of removing any part of a state at Spearman 0.83 to 0.92; by it the fields are read at about twice a random direction and a public SAE's error at exactly its share of the energy. (e707)
+
+What this settles: the weak activations are neither removable noise nor a store of individually meaningful facts. They are a collective, learned, low-rank, mostly linear brake on the model's own strong neurons, carried by a field that neither camp has named, and training does not defend any of these atoms one at a time: it defends the function (e711, section 10).
+
+### The six results at a glance
+
+| # | result | models | the number | pre-registered: held / failed |
+| --- | --- | --- | --- | --- |
+| 1 | removing the weak activations costs nats | 11 models, 70M to 1.5B | 0.24 to 8.68 nats; 0.07 to 2.31 with mean replacement | held: cost over 0.2 (11/11), mean cheaper (10/11); failed: cost under 0.05 (0/11) |
+| 2 | the brake | 8 model-blocks, 410M to 1.5B; 2 blocks at 7B | 52 to 88 percent of the damage off-class; excitatory wires alone 6 to 561 times, with the inhibitory 0.6 to 3; at 7B 85 to 87 percent, 59 to 284, 1.1 to 2.7 | held: off-class share (5/8 at the 0.7 bar, 2/2 at 7B), inhibitory wires carry half the opposition (8/8, 2/2); failed: signed wires plus the bus under 0.25 (0/8, 0/2) |
+| 3 | the brake is learned | Pythia-160m x3 seeds, OLMo-1B x3 blocks | +0.3 at step 1000 to -0.6 to -0.8 at the end; OLMo crosses -0.5 at a third to two thirds of training | held: no brake at step 1000 (6/8), brake in the final model (7/8); failed: brake by step 8000 (0/8) |
+| 4 | low-rank and linear | 8 models, 410M to 1.5B | 16 directions recover 0.66 to 0.96; the linear map 0.56 to 0.96 | held: map halves the cost (8/8), map matches the oracle (7/8); failed: map explains half the variance (0/8) |
+| 5 | the fields | 8 model-blocks; 2 at 7B | 0.41 to 1.95 of the damage with 16 wires, 0.12 to 0.53 with both fields; at 7B 0.9 and 2.9 to 0.5 and 1.0 | held: both under 0.5 (7/8), both beat the weak field (5/8), beat random (4/8 small, 2/2 at 7B); failed: with attention under 0.25 (5/8 small, 0/2 at 7B) |
+| 6 | read energy | 6 model-blocks, 160M to 500M; SAE on GPT-2 small | Fisher predicts finite KL at Spearman 0.83 to 0.92; SAE error read at 0.14 of the read energy against 0.15 to 0.19 of the energy | held: prediction (6/6), SAE error costs more than random (2/2); failed: fields read at three times random (0/6), SAE error unread (0/2) |
+
+### Reproduce in a minute
+
+The `wdd/` folder in this repository holds the instrument. On one GPU:
+
+```
+python -m wdd.demo_gpt2_small --fast
+```
+
+prints, for GPT-2 small at block 6 in under a minute: the rows over the floor at a position, the exact split of a neuron's pre-activation into its upstream contributions, the crowd's net sum off the neuron's class (the brake), the K-input simulation with and without the fields, and the read energy of the content, the weak write and the strong write. Every number in this note is in `results/`, every script in `scripts_phase3/`, every pre-registration in `results/*_prereg.json`.
+
+### How to read this note
+
+Sections 1 and 2 give the question and the instrument. Sections 3 to 8 give the six results, each with its figure and its pre-registered statements, the probability I gave each before the run, and how many runs it held in. Section 9 is the 7B check. Section 10 is what it means for the debate, including the one result that cautions both sides. Sections 11 and 12 are the limits and the reproduction map.
 
 ## 1. The question
 
@@ -77,7 +104,7 @@ A rank-16 linear map from the block's normalised input to those sixteen coordina
 
 Pre-registered (results/e696_e701_prereg.json): L1, "the predicted sixteen recover at least 0.8 of what the oracle sixteen recover", at 0.45: 7 of 8. L2, "the predicted sixteen halve the zeroing cost", at 0.4: 8 of 8. L5, "zeroing drops ARC-Easy by more than 5 points", at 0.5: 7 of 8. L4, "ARC-Easy under the bypass stays within 2 points", at 0.4: 3 of 8. L6, "the linear map explains more than half the weak write's variance", at 0.5: 0 of 8.
 
-That last result matters: the map explains under half the weak write's variance and still recovers most of the cost, because the part the output needs lives in sixteen directions and is linear there, while the rest of the variance is in directions the output does not read (section 8). Two follow-ups closed the obvious alternatives for the gated models, where the bypass recovers less: a quadratic map on 256 random bilinear features recovers no more than the linear one (e705), and one linear map per branch of the gate's sign pattern recovers no more either (e710).
+**That last result is the twist.** The map explains under half the weak write's variance (0 of 8 at the half bar) and still recovers 0.56 to 0.96 of the cost (8 of 8 at the halving bar), because what the output needs from the weak write lives in sixteen directions and is linear in the input there, while most of the weak write's variance lies in directions the output does not read (section 8). A reconstruction score would have called this map a failure; the model does not. Two follow-ups closed the obvious alternatives for the gated models, where the bypass recovers less: a quadratic map on 256 random bilinear features recovers no more than the linear one (e705), and one linear map per branch of the gate's sign pattern recovers no more either (e710).
 
 ## 7. The field is a dictionary atom (e703, e704, e706)
 
@@ -109,7 +136,7 @@ The brake at blocks 14 and 21: every input reproduces the neuron (0.01 of the ab
 
 The fields at blocks 14 and 21: sixteen wires cost 2.90 and 0.90 of the ablation damage at the firings, with the weak field 1.37 and 0.65, with the strong field 1.29 and 0.52, with both 1.01 and 0.48, where a random subspace of both's dimension leaves 2.23 and 0.76; the two fields overlap by 0.24 and 0.28. H0, H2 and H5 hold at both blocks, H3 at neither, H1, H4 and H6 at one.
 
-The shape is the small models' with the sixteen wires worse at the strongest firings, which the fp32 ledger at 7B had already shown (e700): a 7B neuron's sixteen largest inputs carry a smaller share of its input, so the brake and the fields matter more there, not less. The transfer question is answered for the brake; the two-field dictionary transfers with its limit, half the damage left at the mid block.
+One verdict that was split at 410M to 1.5B is clean at 7B: both fields beat a random subspace of their own dimension at both blocks (1.01 against 2.23, 0.48 against 0.76), because thirty-two directions per upstream block no longer approach the stream's width when that width is 3584. The shape is the small models' with the sixteen wires worse at the strongest firings, which the fp32 ledger at 7B had already shown (e700): a 7B neuron's sixteen largest inputs carry a smaller share of its input, so the brake and the fields matter more there, not less. The transfer question is answered for the brake; the two-field dictionary transfers with its limit, half the damage left at the mid block.
 
 ## 10. What this means for the debate
 
@@ -123,4 +150,4 @@ Models from 70M to 1.5B for the eleven-model results and 410M to 1.5B for the le
 
 ## 12. Reproduction
 
-Each result is one script in `scripts_phase3/` on the shared helper `c11.py`, standalone on a single GPU: `e681_weak_ablation.py`, `e685_readers_ledger.py` (the ledger), `e695_shells.py`, `e697_brake.py`, `e701_brake_training.py`, `e693_weak_ladder.py`, `e696_bypass.py`, `e703_rows_field.py`, `e704_field_readers.py`, `e706_strong_field.py`, `e707_read_subspace.py`. The result files are under `results/<id>/`, the pre-registrations under `results/*_prereg.json`, and every hypothesis with its fate in `docs/GRAPH.md` (H892 to H1112 for these sessions). The atlas pages `docs/atlas/62_*.md` to `67_*.md` carry the readings in full, and `docs/REVIEW_POSITIVE_CLAIMS.md` sections 19 to 24 the claims checked against their pre-registrations.
+Each result is one script in `scripts_phase3/` on the shared helper `c11.py`, standalone on a single GPU: `e681_weak_ablation.py`, `e685_readers_ledger.py` (the ledger), `e695_shells.py`, `e697_brake.py` (also the 7B brake, with the sample-size overrides `WDD_NWIN`, `WDD_NWH`, `WDD_CHUNK`), `e701_brake_training.py`, `e693_weak_ladder.py`, `e696_bypass.py`, `e703_rows_field.py`, `e704_field_readers.py`, `e706_strong_field.py` (also the 7B fields), `e707_read_subspace.py`, `e711_elasticity.py`, `e714_fisher_dictionary.py`. The `wdd/` package holds the same primitives as a library with the GPT-2 small demo. The result files are under `results/<id>/` (the 7B runs under `results/e713/`), the pre-registrations under `results/*_prereg.json`, and every hypothesis with its fate in `docs/GRAPH.md` (H892 to H1137 for sessions 155 to 161). The atlas pages `docs/atlas/62_*.md` to `69_*.md` carry the readings in full, and `docs/REVIEW_POSITIVE_CLAIMS.md` sections 19 to 25 the claims checked against their pre-registrations.
