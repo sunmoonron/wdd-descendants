@@ -4,6 +4,21 @@
 
 Ronish Bhatt, with Claude (Anthropic) as the experimenter. 20 October 2026. A technical note from the WDD descendants program. Code, results and pre-registrations: this repository (`wdd/`, `scripts_phase3/`, `results/`, `docs/atlas/` areas 62 to 69).
 
+## Read this first
+
+Six pre-registered results, one exact instrument, models from 70M to 7B. The question: do the weak activations of a transformer's MLP neurons matter, and what do they do? Both sides of the "already clean" debate left it open.
+
+1. **They matter.** Keep only the strongest quarter of each neuron's activations and next-token KL rises by 0.24 to 8.68 nats in eleven models; replacing them by each neuron's mean still leaves 0.07 to 2.31. (section 3.1)
+2. **They are a brake.** A neuron driven by its sixteen largest inputs alone misfires off its class, where the crowd of thousands of small inputs would have held it down: 52 to 88 percent of the damage is off-class, sixteen excitatory wires alone cost 6 to 561 times the neuron's ablation damage, and sixteen inhibitory wires bring that to 0.6 to 3. At 7B: 85 to 87 percent, 59 to 284 times, 1.1 to 2.7. (sections 3.2, 4)
+3. **The brake is learned.** The crowd pushes with the wires at step 1000 of Pythia-160m, crosses zero by step 2000 and reaches -0.6 to -0.8 at the end, monotone in three seeds; in OLMo-1B it crosses -0.5 at a third to two thirds of training. (section 3.3)
+4. **It is low-rank and linear in the input.** A block's weak write lives in sixteen directions, and a closed-form rank-16 linear map from the block's input, with the weak neurons never run, recovers 0.56 to 0.96 of the zeroing cost while explaining less than half the weak write's variance. (section 3.4)
+5. **Those directions are a second kind of atom.** Sixteen wires plus the weak field plus a strong-write field bring a pruned neuron's error at its firings from 0.41 to 1.95 of the ablation damage to 0.12 to 0.53, and from 0.9 and 2.9 to 0.5 and 1.0 at 7B. (sections 3.5, 4)
+6. **The output grades by a quadratic form, not by energy.** The Fisher information of the model's own next tokens predicts the cost of removing any part of a state at Spearman 0.83 to 0.92; by it the fields are read at about twice a random direction and a public SAE's error at exactly its share of the energy. (section 3.6)
+
+What it settles: the weak activations are neither removable noise nor a store of individually meaningful facts. They are a collective, learned, low-rank, mostly linear brake on the model's own strong neurons, carried by a field that neither camp has named; and training defends none of these atoms one at a time, only the function (section 5). Is the brake just a bias? Four controls say no (section 3.7).
+
+Reproduce the instrument on GPT-2 small in under a minute: `python -m wdd.demo_gpt2_small --fast` from this repository (section 7). Table 1 in section 3 lists every pre-registered statement with how many runs it held in.
+
 ## Abstract
 
 Most of a transformer MLP neuron's activations are small, and the two positions in this month's debate disagree about what they do: the "already clean" position holds that they can be removed at little cost, its critics that they store facts in superposition. Through an exact accounting of every neuron's inputs, we show that both pictures miss the object. Keeping only the strongest quarter of each neuron's activations costs 0.24 to 8.68 nats of next-token KL in eleven models, and the cost is not an offset that the neuron's mean restores. A neuron driven by its sixteen largest inputs alone misfires away from its class, where the thousands of small inputs would have held it down: that silence is what the weak activations do, and sixteen excitatory wires alone cost 6 to 561 times the neuron's ablation damage. The brake is learned during training, it lives in sixteen directions per block, and a closed-form rank-16 linear map from the block's input reproduces most of it without running the weak neurons; those directions form a second kind of dictionary atom that halves the error of a pruned neuron graph. The same measurements at Qwen2.5-7B in fp32 give the same shape. We interpret the results as a dictionary with two kinds of atom, native rows and collective fields, and show by a Fisher-information grade that the model's output reads neither camp's currency above its energy.
