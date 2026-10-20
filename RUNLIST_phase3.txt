@@ -1006,3 +1006,64 @@ python e705_gated_bypass.py --model smollm360
 python e705_gated_bypass.py --model gpt2m
 python e701_brake_training.py --model olmo1b --block 8 --late
 python e701_brake_training.py --model olmo1b --block 12 --late
+# session 160 (e707 to e712): what the model reads and defends
+python e710_branches.py --model qwen15
+python e710_branches.py --model olmo1b
+python e711_elasticity.py --model pythia410 --block 12 --cond none
+python e711_elasticity.py --model pythia410 --block 12 --cond perm
+python e711_elasticity.py --model pythia410 --block 12 --cond rot
+python e711_elasticity.py --model pythia410 --block 12 --cond rotw
+python e711_elasticity.py --model pythia410 --block 12 --cond scale
+python e711_elasticity.py --model pythia410 --block 12 --cond field
+python e711_elasticity.py --model pythia410 --block 12 --cond rot --freeze
+python e711_elasticity.py --model pythia410 --block 12 --cond rotw --freeze
+python e711_elasticity.py --model pythia410 --block 12 --cond scale --freeze
+python e711_elasticity.py --model pythia410 --block 12 --cond field --freeze
+python e707_read_subspace.py --model qwen05 --block 12
+python e708_thermostat.py --model qwen05 --block 12
+python e710_branches.py --model smollm360
+python e710_branches.py --model qwen05
+python e710_branches.py --model pythia410
+python e710_branches.py --model gpt2m
+python e707_read_subspace.py --model pythia410 --block 12
+python e707_read_subspace.py --model gpt2m --block 12
+python e707_read_subspace.py --model gpt2 --block 5
+python e707_read_subspace.py --model gpt2 --block 8
+python e707_read_subspace.py --model pythia160 --block 6
+python e708_thermostat.py --model olmo1b --block 8
+python e708_thermostat.py --model pythia410 --block 12
+python e708_thermostat.py --model gpt2m --block 12
+python e708_thermostat.py --model smollm135 --block 15
+python e708_thermostat.py --model pythia160 --block 6
+python e711_elasticity.py --model pythia160 --block 6 --cond none
+python e711_elasticity.py --model pythia160 --block 6 --cond perm
+python e711_elasticity.py --model pythia160 --block 6 --cond rot
+python e711_elasticity.py --model pythia160 --block 6 --cond rotw
+python e711_elasticity.py --model pythia160 --block 6 --cond scale
+python e711_elasticity.py --model pythia160 --block 6 --cond field
+python e711_elasticity.py --model pythia160 --block 6 --cond rot --freeze
+python e711_elasticity.py --model pythia160 --block 6 --cond rotw --freeze
+python e711_elasticity.py --model pythia160 --block 6 --cond scale --freeze
+python e711_elasticity.py --model pythia160 --block 6 --cond field --freeze
+python e711_elasticity.py --model pythia160 --block 9 --cond none
+python e711_elasticity.py --model pythia160 --block 9 --cond perm
+python e711_elasticity.py --model pythia160 --block 9 --cond rot
+python e711_elasticity.py --model pythia160 --block 9 --cond rotw
+python e711_elasticity.py --model pythia160 --block 9 --cond scale
+python e711_elasticity.py --model pythia160 --block 9 --cond field
+python e711_elasticity.py --model pythia160 --block 9 --cond rot --freeze
+python e711_elasticity.py --model pythia160 --block 9 --cond rotw --freeze
+python e711_elasticity.py --model pythia160 --block 9 --cond scale --freeze
+python e711_elasticity.py --model pythia160 --block 9 --cond field --freeze
+python e712_edge_program.py --model qwen05 --block 12
+python e712_edge_program.py --model pythia410 --block 12
+python e712_edge_program.py --model gpt2m --block 12
+python e712_edge_program.py --model pythia160 --block 6
+python e709_two_clocks.py --model pythia410 6 --block
+python e709_two_clocks.py --model pythia410 12 --block
+python e709_two_clocks.py --model pythia410 18 --block
+python e709_two_clocks.py --model qwen05 6 --block
+python e709_two_clocks.py --model qwen05 12 --block
+python e709_two_clocks.py --model gpt2m 6 --block
+python e709_two_clocks.py --model gpt2m 12 --block
+python e709_two_clocks.py --model smollm135 15 --block

@@ -1,0 +1,4036 @@
+{
+ "model": "EleutherAI/pythia-410m",
+ "block": 12,
+ "n_blocks": 24,
+ "verdicts": {
+  "P1_top10pct_edges_half_mass": false,
+  "P2_stable_wires_half_mass": false,
+  "P3_hubs_hold_third": true,
+  "P4_n80_net_under_32": true
+ },
+ "neurons": [
+  {
+   "neuron": 2,
+   "n80_net": 10.0,
+   "n80_pos": 9663.0,
+   "n_units": 773,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.47239261865615845,
+   "att_share": 0.019137274473905563
+  },
+  {
+   "neuron": 31,
+   "n80_net": 8.0,
+   "n80_pos": 9583.0,
+   "n_units": 1074,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.012787376530468464
+  },
+  {
+   "neuron": 43,
+   "n80_net": 4.0,
+   "n80_pos": 9542.0,
+   "n_units": 1332,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.016201119869947433
+  },
+  {
+   "neuron": 44,
+   "n80_net": 3.0,
+   "n80_pos": 9503.0,
+   "n_units": 1401,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.01674463227391243
+  },
+  {
+   "neuron": 46,
+   "n80_net": 5.0,
+   "n80_pos": 9477.0,
+   "n_units": 744,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.453987717628479,
+   "att_share": 0.01847011409699917
+  },
+  {
+   "neuron": 71,
+   "n80_net": 2.0,
+   "n80_pos": 9124.0,
+   "n_units": 497,
+   "stable_count": 7,
+   "stable_mass_share": 0.4251129627227783,
+   "top_unit_reuse": 0.9570552110671997,
+   "att_share": 0.03438200429081917
+  },
+  {
+   "neuron": 76,
+   "n80_net": 3.0,
+   "n80_pos": 9122.0,
+   "n_units": 1092,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2269938588142395,
+   "att_share": 0.01690617762506008
+  },
+  {
+   "neuron": 108,
+   "n80_net": 4.0,
+   "n80_pos": 8976.0,
+   "n_units": 1211,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2760736048221588,
+   "att_share": 0.015394068323075771
+  },
+  {
+   "neuron": 124,
+   "n80_net": 13.0,
+   "n80_pos": 9726.0,
+   "n_units": 1156,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25766870379447937,
+   "att_share": 0.01410720031708479
+  },
+  {
+   "neuron": 125,
+   "n80_net": 7.0,
+   "n80_pos": 9605.0,
+   "n_units": 1276,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.01515502855181694
+  },
+  {
+   "neuron": 133,
+   "n80_net": 5.0,
+   "n80_pos": 9658.0,
+   "n_units": 1340,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.016240814700722694
+  },
+  {
+   "neuron": 138,
+   "n80_net": 3.0,
+   "n80_pos": 9527.0,
+   "n_units": 1351,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.016313131898641586
+  },
+  {
+   "neuron": 140,
+   "n80_net": 3.0,
+   "n80_pos": 9217.0,
+   "n_units": 817,
+   "stable_count": 3,
+   "stable_mass_share": 0.17832008004188538,
+   "top_unit_reuse": 0.7055214643478394,
+   "att_share": 0.027998285368084908
+  },
+  {
+   "neuron": 170,
+   "n80_net": 3.0,
+   "n80_pos": 9463.0,
+   "n_units": 1454,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.01525727566331625
+  },
+  {
+   "neuron": 173,
+   "n80_net": 3.0,
+   "n80_pos": 9532.0,
+   "n_units": 1262,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.021788889542222023
+  },
+  {
+   "neuron": 175,
+   "n80_net": 6.0,
+   "n80_pos": 9500.0,
+   "n_units": 1338,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.01448337733745575
+  },
+  {
+   "neuron": 190,
+   "n80_net": 4.0,
+   "n80_pos": 9456.0,
+   "n_units": 1338,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.017074845731258392
+  },
+  {
+   "neuron": 208,
+   "n80_net": 10.0,
+   "n80_pos": 9657.0,
+   "n_units": 974,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3251533806324005,
+   "att_share": 0.016124462708830833
+  },
+  {
+   "neuron": 209,
+   "n80_net": 9.0,
+   "n80_pos": 9647.0,
+   "n_units": 1339,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.09815950691699982,
+   "att_share": 0.014136236160993576
+  },
+  {
+   "neuron": 219,
+   "n80_net": 3.0,
+   "n80_pos": 9314.0,
+   "n_units": 1278,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.02022365853190422
+  },
+  {
+   "neuron": 248,
+   "n80_net": 11.0,
+   "n80_pos": 9601.0,
+   "n_units": 1257,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.01437474973499775
+  },
+  {
+   "neuron": 256,
+   "n80_net": 2.0,
+   "n80_pos": 9138.0,
+   "n_units": 1174,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.02196934074163437
+  },
+  {
+   "neuron": 289,
+   "n80_net": 12.0,
+   "n80_pos": 9835.0,
+   "n_units": 1347,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.014265041798353195
+  },
+  {
+   "neuron": 296,
+   "n80_net": 11.0,
+   "n80_pos": 9563.0,
+   "n_units": 1384,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.013680492527782917
+  },
+  {
+   "neuron": 304,
+   "n80_net": 21.0,
+   "n80_pos": 9837.0,
+   "n_units": 1270,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2638036608695984,
+   "att_share": 0.014592539519071579
+  },
+  {
+   "neuron": 314,
+   "n80_net": 4.0,
+   "n80_pos": 9594.0,
+   "n_units": 1389,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.017882980406284332
+  },
+  {
+   "neuron": 322,
+   "n80_net": 4.0,
+   "n80_pos": 9507.0,
+   "n_units": 1182,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.013851347379386425
+  },
+  {
+   "neuron": 327,
+   "n80_net": 5.0,
+   "n80_pos": 9437.0,
+   "n_units": 1273,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.013946681283414364
+  },
+  {
+   "neuron": 335,
+   "n80_net": 3.0,
+   "n80_pos": 9314.0,
+   "n_units": 1138,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.022759227082133293
+  },
+  {
+   "neuron": 342,
+   "n80_net": 5.0,
+   "n80_pos": 9668.0,
+   "n_units": 1127,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2269938588142395,
+   "att_share": 0.021000239998102188
+  },
+  {
+   "neuron": 346,
+   "n80_net": 7.0,
+   "n80_pos": 9414.0,
+   "n_units": 1192,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.015397987328469753
+  },
+  {
+   "neuron": 360,
+   "n80_net": 5.0,
+   "n80_pos": 9468.0,
+   "n_units": 1095,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3680981397628784,
+   "att_share": 0.015843870118260384
+  },
+  {
+   "neuron": 366,
+   "n80_net": 3.0,
+   "n80_pos": 9223.0,
+   "n_units": 1411,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.02081845887005329
+  },
+  {
+   "neuron": 368,
+   "n80_net": 4.0,
+   "n80_pos": 9508.0,
+   "n_units": 781,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3619631826877594,
+   "att_share": 0.02168131060898304
+  },
+  {
+   "neuron": 389,
+   "n80_net": 5.0,
+   "n80_pos": 9553.0,
+   "n_units": 1167,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.01592743769288063
+  },
+  {
+   "neuron": 413,
+   "n80_net": 2.0,
+   "n80_pos": 9496.0,
+   "n_units": 626,
+   "stable_count": 3,
+   "stable_mass_share": 0.24938838183879852,
+   "top_unit_reuse": 0.7055214643478394,
+   "att_share": 0.019347531720995903
+  },
+  {
+   "neuron": 439,
+   "n80_net": 4.0,
+   "n80_pos": 9427.0,
+   "n_units": 1327,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.01629619300365448
+  },
+  {
+   "neuron": 456,
+   "n80_net": 8.0,
+   "n80_pos": 9522.0,
+   "n_units": 1397,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.0920245349407196,
+   "att_share": 0.012694858945906162
+  },
+  {
+   "neuron": 466,
+   "n80_net": 6.0,
+   "n80_pos": 9610.0,
+   "n_units": 1302,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.016121063381433487
+  },
+  {
+   "neuron": 485,
+   "n80_net": 3.0,
+   "n80_pos": 9420.0,
+   "n_units": 1278,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1411042958498001,
+   "att_share": 0.016796065494418144
+  },
+  {
+   "neuron": 486,
+   "n80_net": 3.0,
+   "n80_pos": 9494.0,
+   "n_units": 1266,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.01590709574520588
+  },
+  {
+   "neuron": 488,
+   "n80_net": 7.0,
+   "n80_pos": 9569.0,
+   "n_units": 778,
+   "stable_count": 1,
+   "stable_mass_share": 0.08605659753084183,
+   "top_unit_reuse": 0.5828220844268799,
+   "att_share": 0.01513024140149355
+  },
+  {
+   "neuron": 490,
+   "n80_net": 4.0,
+   "n80_pos": 9479.0,
+   "n_units": 809,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.349693238735199,
+   "att_share": 0.026415938511490822
+  },
+  {
+   "neuron": 495,
+   "n80_net": 4.0,
+   "n80_pos": 9131.0,
+   "n_units": 1216,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2638036608695984,
+   "att_share": 0.013795338571071625
+  },
+  {
+   "neuron": 504,
+   "n80_net": 2.0,
+   "n80_pos": 9229.0,
+   "n_units": 1457,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1411042958498001,
+   "att_share": 0.02121635153889656
+  },
+  {
+   "neuron": 527,
+   "n80_net": 3.0,
+   "n80_pos": 9239.0,
+   "n_units": 1195,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3742331266403198,
+   "att_share": 0.016255686059594154
+  },
+  {
+   "neuron": 551,
+   "n80_net": 8.0,
+   "n80_pos": 9535.0,
+   "n_units": 1164,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.016014236956834793
+  },
+  {
+   "neuron": 552,
+   "n80_net": 6.0,
+   "n80_pos": 9705.0,
+   "n_units": 1028,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.017444076016545296
+  },
+  {
+   "neuron": 553,
+   "n80_net": 4.0,
+   "n80_pos": 9159.0,
+   "n_units": 961,
+   "stable_count": 1,
+   "stable_mass_share": 0.047920480370521545,
+   "top_unit_reuse": 0.5276073217391968,
+   "att_share": 0.02107713185250759
+  },
+  {
+   "neuron": 562,
+   "n80_net": 3.0,
+   "n80_pos": 9285.0,
+   "n_units": 998,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.453987717628479,
+   "att_share": 0.02162153273820877
+  },
+  {
+   "neuron": 568,
+   "n80_net": 8.0,
+   "n80_pos": 9628.0,
+   "n_units": 633,
+   "stable_count": 4,
+   "stable_mass_share": 0.2516528069972992,
+   "top_unit_reuse": 0.8098159432411194,
+   "att_share": 0.015749914571642876
+  },
+  {
+   "neuron": 577,
+   "n80_net": 3.0,
+   "n80_pos": 9336.0,
+   "n_units": 1420,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.015917878597974777
+  },
+  {
+   "neuron": 578,
+   "n80_net": 3.0,
+   "n80_pos": 9421.0,
+   "n_units": 1534,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.018459444865584373
+  },
+  {
+   "neuron": 584,
+   "n80_net": 10.0,
+   "n80_pos": 9539.0,
+   "n_units": 1266,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.015055355615913868
+  },
+  {
+   "neuron": 597,
+   "n80_net": 5.0,
+   "n80_pos": 9531.0,
+   "n_units": 1186,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.015330316498875618
+  },
+  {
+   "neuron": 602,
+   "n80_net": 3.0,
+   "n80_pos": 9483.0,
+   "n_units": 1025,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.46625766158103943,
+   "att_share": 0.02123390883207321
+  },
+  {
+   "neuron": 605,
+   "n80_net": 47.0,
+   "n80_pos": 10476.0,
+   "n_units": 628,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3558282256126404,
+   "att_share": 0.014812387526035309
+  },
+  {
+   "neuron": 614,
+   "n80_net": 12.0,
+   "n80_pos": 9912.0,
+   "n_units": 1324,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2822085916996002,
+   "att_share": 0.01668732613325119
+  },
+  {
+   "neuron": 634,
+   "n80_net": 5.0,
+   "n80_pos": 9445.0,
+   "n_units": 1290,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.015316448174417019
+  },
+  {
+   "neuron": 660,
+   "n80_net": 3.0,
+   "n80_pos": 9436.0,
+   "n_units": 1386,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.015611054375767708
+  },
+  {
+   "neuron": 671,
+   "n80_net": 5.0,
+   "n80_pos": 9567.0,
+   "n_units": 1307,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.015453922562301159
+  },
+  {
+   "neuron": 676,
+   "n80_net": 9.0,
+   "n80_pos": 9652.0,
+   "n_units": 999,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3619631826877594,
+   "att_share": 0.014926301315426826
+  },
+  {
+   "neuron": 709,
+   "n80_net": 4.0,
+   "n80_pos": 9462.0,
+   "n_units": 1220,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.018723273649811745
+  },
+  {
+   "neuron": 721,
+   "n80_net": 4.0,
+   "n80_pos": 9408.0,
+   "n_units": 1283,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.017175408080220222
+  },
+  {
+   "neuron": 724,
+   "n80_net": 3.0,
+   "n80_pos": 9391.0,
+   "n_units": 874,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4171779155731201,
+   "att_share": 0.02442876435816288
+  },
+  {
+   "neuron": 727,
+   "n80_net": 28.0,
+   "n80_pos": 9880.0,
+   "n_units": 478,
+   "stable_count": 1,
+   "stable_mass_share": 0.03741859272122383,
+   "top_unit_reuse": 0.5705521106719971,
+   "att_share": 0.01651371642947197
+  },
+  {
+   "neuron": 733,
+   "n80_net": 4.0,
+   "n80_pos": 9511.0,
+   "n_units": 1390,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.021013936027884483
+  },
+  {
+   "neuron": 739,
+   "n80_net": 15.0,
+   "n80_pos": 9892.0,
+   "n_units": 605,
+   "stable_count": 6,
+   "stable_mass_share": 0.26268112659454346,
+   "top_unit_reuse": 0.8404907584190369,
+   "att_share": 0.014580138958990574
+  },
+  {
+   "neuron": 740,
+   "n80_net": 2.0,
+   "n80_pos": 9323.0,
+   "n_units": 1288,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.017039723694324493
+  },
+  {
+   "neuron": 756,
+   "n80_net": 22.0,
+   "n80_pos": 9939.0,
+   "n_units": 924,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.30061349272727966,
+   "att_share": 0.015705740079283714
+  },
+  {
+   "neuron": 762,
+   "n80_net": 3.0,
+   "n80_pos": 9320.0,
+   "n_units": 1222,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.349693238735199,
+   "att_share": 0.020860588178038597
+  },
+  {
+   "neuron": 794,
+   "n80_net": 3.0,
+   "n80_pos": 9327.0,
+   "n_units": 1196,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.016429679468274117
+  },
+  {
+   "neuron": 796,
+   "n80_net": 3.0,
+   "n80_pos": 9419.0,
+   "n_units": 787,
+   "stable_count": 1,
+   "stable_mass_share": 0.03038809634745121,
+   "top_unit_reuse": 0.5398772954940796,
+   "att_share": 0.023928198963403702
+  },
+  {
+   "neuron": 802,
+   "n80_net": 3.0,
+   "n80_pos": 9476.0,
+   "n_units": 1483,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.14723926782608032,
+   "att_share": 0.01750309206545353
+  },
+  {
+   "neuron": 816,
+   "n80_net": 7.0,
+   "n80_pos": 9528.0,
+   "n_units": 1399,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2638036608695984,
+   "att_share": 0.014783230610191822
+  },
+  {
+   "neuron": 818,
+   "n80_net": 2.0,
+   "n80_pos": 9437.0,
+   "n_units": 1413,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1349693238735199,
+   "att_share": 0.01746942102909088
+  },
+  {
+   "neuron": 826,
+   "n80_net": 4.0,
+   "n80_pos": 9567.0,
+   "n_units": 1291,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.017139960080385208
+  },
+  {
+   "neuron": 853,
+   "n80_net": 4.0,
+   "n80_pos": 9517.0,
+   "n_units": 1420,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.01988881640136242
+  },
+  {
+   "neuron": 856,
+   "n80_net": 4.0,
+   "n80_pos": 9502.0,
+   "n_units": 1250,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.01917799934744835
+  },
+  {
+   "neuron": 862,
+   "n80_net": 4.0,
+   "n80_pos": 9459.0,
+   "n_units": 1151,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.02202938124537468
+  },
+  {
+   "neuron": 864,
+   "n80_net": 11.0,
+   "n80_pos": 9787.0,
+   "n_units": 1274,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15337422490119934,
+   "att_share": 0.013381924480199814
+  },
+  {
+   "neuron": 871,
+   "n80_net": 5.0,
+   "n80_pos": 9428.0,
+   "n_units": 1292,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.01671360619366169
+  },
+  {
+   "neuron": 876,
+   "n80_net": 2.0,
+   "n80_pos": 9283.0,
+   "n_units": 1471,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.01742391288280487
+  },
+  {
+   "neuron": 878,
+   "n80_net": 3.0,
+   "n80_pos": 9324.0,
+   "n_units": 1203,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.022306812927126884
+  },
+  {
+   "neuron": 883,
+   "n80_net": 5.0,
+   "n80_pos": 9545.0,
+   "n_units": 1149,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.33742329478263855,
+   "att_share": 0.017139982432127
+  },
+  {
+   "neuron": 886,
+   "n80_net": 2.0,
+   "n80_pos": 9246.0,
+   "n_units": 892,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.33742329478263855,
+   "att_share": 0.03062155656516552
+  },
+  {
+   "neuron": 894,
+   "n80_net": 5.0,
+   "n80_pos": 9527.0,
+   "n_units": 1356,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.016764337196946144
+  },
+  {
+   "neuron": 895,
+   "n80_net": 4.0,
+   "n80_pos": 9345.0,
+   "n_units": 1201,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.018067391589283943
+  },
+  {
+   "neuron": 906,
+   "n80_net": 3.0,
+   "n80_pos": 9133.0,
+   "n_units": 1195,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.018880238756537437
+  },
+  {
+   "neuron": 931,
+   "n80_net": 6.0,
+   "n80_pos": 9499.0,
+   "n_units": 1395,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.14723926782608032,
+   "att_share": 0.012189250439405441
+  },
+  {
+   "neuron": 937,
+   "n80_net": 10.0,
+   "n80_pos": 9827.0,
+   "n_units": 878,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.47852760553359985,
+   "att_share": 0.0169538501650095
+  },
+  {
+   "neuron": 941,
+   "n80_net": 3.0,
+   "n80_pos": 9417.0,
+   "n_units": 1414,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.018680354580283165
+  },
+  {
+   "neuron": 946,
+   "n80_net": 6.0,
+   "n80_pos": 9405.0,
+   "n_units": 924,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.47852760553359985,
+   "att_share": 0.016660988330841064
+  },
+  {
+   "neuron": 954,
+   "n80_net": 8.0,
+   "n80_pos": 9523.0,
+   "n_units": 1127,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2822085916996002,
+   "att_share": 0.01547585055232048
+  },
+  {
+   "neuron": 966,
+   "n80_net": 9.0,
+   "n80_pos": 9513.0,
+   "n_units": 1303,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.015914086252450943
+  },
+  {
+   "neuron": 987,
+   "n80_net": 4.0,
+   "n80_pos": 9478.0,
+   "n_units": 1149,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.016128884628415108
+  },
+  {
+   "neuron": 994,
+   "n80_net": 12.0,
+   "n80_pos": 9759.0,
+   "n_units": 1148,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25766870379447937,
+   "att_share": 0.014684224501252174
+  },
+  {
+   "neuron": 1000,
+   "n80_net": 5.0,
+   "n80_pos": 9303.0,
+   "n_units": 1173,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.017203722149133682
+  },
+  {
+   "neuron": 1014,
+   "n80_net": 20.0,
+   "n80_pos": 9995.0,
+   "n_units": 1181,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.014785127714276314
+  },
+  {
+   "neuron": 1015,
+   "n80_net": 3.0,
+   "n80_pos": 9370.0,
+   "n_units": 1291,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.0200891625136137
+  },
+  {
+   "neuron": 1024,
+   "n80_net": 4.0,
+   "n80_pos": 9550.0,
+   "n_units": 1393,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.01812567748129368
+  },
+  {
+   "neuron": 1031,
+   "n80_net": 4.0,
+   "n80_pos": 9421.0,
+   "n_units": 1108,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4171779155731201,
+   "att_share": 0.017683425918221474
+  },
+  {
+   "neuron": 1067,
+   "n80_net": 10.0,
+   "n80_pos": 9735.0,
+   "n_units": 848,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.349693238735199,
+   "att_share": 0.017052408307790756
+  },
+  {
+   "neuron": 1075,
+   "n80_net": 2.0,
+   "n80_pos": 9285.0,
+   "n_units": 1220,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3190183937549591,
+   "att_share": 0.02249324508011341
+  },
+  {
+   "neuron": 1079,
+   "n80_net": 7.0,
+   "n80_pos": 9409.0,
+   "n_units": 1164,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3190183937549591,
+   "att_share": 0.01520498190075159
+  },
+  {
+   "neuron": 1086,
+   "n80_net": 7.0,
+   "n80_pos": 9593.0,
+   "n_units": 1367,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.016016514971852303
+  },
+  {
+   "neuron": 1094,
+   "n80_net": 7.0,
+   "n80_pos": 9648.0,
+   "n_units": 1363,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.017722079530358315
+  },
+  {
+   "neuron": 1107,
+   "n80_net": 5.0,
+   "n80_pos": 9636.0,
+   "n_units": 1214,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1349693238735199,
+   "att_share": 0.01594698242843151
+  },
+  {
+   "neuron": 1109,
+   "n80_net": 3.0,
+   "n80_pos": 9159.0,
+   "n_units": 1390,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.016038088127970695
+  },
+  {
+   "neuron": 1114,
+   "n80_net": 3.0,
+   "n80_pos": 9381.0,
+   "n_units": 1224,
+   "stable_count": 1,
+   "stable_mass_share": 0.0850592628121376,
+   "top_unit_reuse": 0.5092024207115173,
+   "att_share": 0.021096613258123398
+  },
+  {
+   "neuron": 1139,
+   "n80_net": 3.0,
+   "n80_pos": 9300.0,
+   "n_units": 1159,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.020197134464979172
+  },
+  {
+   "neuron": 1147,
+   "n80_net": 9.0,
+   "n80_pos": 9698.0,
+   "n_units": 1473,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.012854798696935177
+  },
+  {
+   "neuron": 1148,
+   "n80_net": 17.0,
+   "n80_pos": 9782.0,
+   "n_units": 1327,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2269938588142395,
+   "att_share": 0.014807222411036491
+  },
+  {
+   "neuron": 1151,
+   "n80_net": 2.0,
+   "n80_pos": 9340.0,
+   "n_units": 1056,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.02161468006670475
+  },
+  {
+   "neuron": 1186,
+   "n80_net": 4.0,
+   "n80_pos": 9467.0,
+   "n_units": 1381,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1349693238735199,
+   "att_share": 0.016317589208483696
+  },
+  {
+   "neuron": 1189,
+   "n80_net": 4.0,
+   "n80_pos": 9585.0,
+   "n_units": 1314,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1411042958498001,
+   "att_share": 0.018110744655132294
+  },
+  {
+   "neuron": 1200,
+   "n80_net": 5.0,
+   "n80_pos": 9570.0,
+   "n_units": 1288,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.017236253246665
+  },
+  {
+   "neuron": 1204,
+   "n80_net": 8.0,
+   "n80_pos": 9643.0,
+   "n_units": 1143,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.015241104178130627
+  },
+  {
+   "neuron": 1206,
+   "n80_net": 10.0,
+   "n80_pos": 9710.0,
+   "n_units": 1153,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.014181919395923615
+  },
+  {
+   "neuron": 1209,
+   "n80_net": 4.0,
+   "n80_pos": 9513.0,
+   "n_units": 1318,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.33742329478263855,
+   "att_share": 0.017453951761126518
+  },
+  {
+   "neuron": 1218,
+   "n80_net": 5.0,
+   "n80_pos": 9660.0,
+   "n_units": 1113,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.01695653796195984
+  },
+  {
+   "neuron": 1224,
+   "n80_net": 6.0,
+   "n80_pos": 9095.0,
+   "n_units": 1205,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2822085916996002,
+   "att_share": 0.012315175496041775
+  },
+  {
+   "neuron": 1231,
+   "n80_net": 4.0,
+   "n80_pos": 9552.0,
+   "n_units": 1323,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2638036608695984,
+   "att_share": 0.018046334385871887
+  },
+  {
+   "neuron": 1233,
+   "n80_net": 7.0,
+   "n80_pos": 9686.0,
+   "n_units": 1391,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.016556553542613983
+  },
+  {
+   "neuron": 1236,
+   "n80_net": 10.0,
+   "n80_pos": 9646.0,
+   "n_units": 1154,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.014784103259444237
+  },
+  {
+   "neuron": 1241,
+   "n80_net": 4.0,
+   "n80_pos": 9561.0,
+   "n_units": 1323,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.01608961820602417
+  },
+  {
+   "neuron": 1244,
+   "n80_net": 7.0,
+   "n80_pos": 9512.0,
+   "n_units": 1193,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.01521314587444067
+  },
+  {
+   "neuron": 1246,
+   "n80_net": 2.0,
+   "n80_pos": 9260.0,
+   "n_units": 1441,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.02344154193997383
+  },
+  {
+   "neuron": 1253,
+   "n80_net": 4.0,
+   "n80_pos": 9491.0,
+   "n_units": 1316,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.015870533883571625
+  },
+  {
+   "neuron": 1256,
+   "n80_net": 4.0,
+   "n80_pos": 9482.0,
+   "n_units": 1406,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1411042958498001,
+   "att_share": 0.017111392691731453
+  },
+  {
+   "neuron": 1273,
+   "n80_net": 5.0,
+   "n80_pos": 9521.0,
+   "n_units": 1278,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.01689143478870392
+  },
+  {
+   "neuron": 1287,
+   "n80_net": 3.0,
+   "n80_pos": 9390.0,
+   "n_units": 1298,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.018130576238036156
+  },
+  {
+   "neuron": 1311,
+   "n80_net": 4.0,
+   "n80_pos": 9395.0,
+   "n_units": 1191,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3067484498023987,
+   "att_share": 0.02091543935239315
+  },
+  {
+   "neuron": 1313,
+   "n80_net": 4.0,
+   "n80_pos": 9627.0,
+   "n_units": 1377,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.01655791513621807
+  },
+  {
+   "neuron": 1315,
+   "n80_net": 2.0,
+   "n80_pos": 9252.0,
+   "n_units": 1030,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.022469662129878998
+  },
+  {
+   "neuron": 1358,
+   "n80_net": 4.0,
+   "n80_pos": 9410.0,
+   "n_units": 1037,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.30061349272727966,
+   "att_share": 0.019516034051775932
+  },
+  {
+   "neuron": 1387,
+   "n80_net": 7.0,
+   "n80_pos": 9484.0,
+   "n_units": 1162,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.013609664514660835
+  },
+  {
+   "neuron": 1391,
+   "n80_net": 3.0,
+   "n80_pos": 9230.0,
+   "n_units": 1221,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.020267367362976074
+  },
+  {
+   "neuron": 1415,
+   "n80_net": 5.0,
+   "n80_pos": 9403.0,
+   "n_units": 1213,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.015778571367263794
+  },
+  {
+   "neuron": 1422,
+   "n80_net": 7.0,
+   "n80_pos": 9682.0,
+   "n_units": 1287,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.01240959856659174
+  },
+  {
+   "neuron": 1424,
+   "n80_net": 9.0,
+   "n80_pos": 9606.0,
+   "n_units": 611,
+   "stable_count": 3,
+   "stable_mass_share": 0.26096153259277344,
+   "top_unit_reuse": 0.8343558311462402,
+   "att_share": 0.019426343962550163
+  },
+  {
+   "neuron": 1436,
+   "n80_net": 14.0,
+   "n80_pos": 9798.0,
+   "n_units": 1171,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.015036587603390217
+  },
+  {
+   "neuron": 1449,
+   "n80_net": 2.0,
+   "n80_pos": 9242.0,
+   "n_units": 1314,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.01821104809641838
+  },
+  {
+   "neuron": 1480,
+   "n80_net": 15.0,
+   "n80_pos": 9835.0,
+   "n_units": 965,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.01569219119846821
+  },
+  {
+   "neuron": 1484,
+   "n80_net": 11.0,
+   "n80_pos": 9637.0,
+   "n_units": 1456,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.014485739171504974
+  },
+  {
+   "neuron": 1510,
+   "n80_net": 9.0,
+   "n80_pos": 9695.0,
+   "n_units": 1400,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.29447853565216064,
+   "att_share": 0.015905171632766724
+  },
+  {
+   "neuron": 1515,
+   "n80_net": 2.0,
+   "n80_pos": 9082.0,
+   "n_units": 1141,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.30061349272727966,
+   "att_share": 0.0247659869492054
+  },
+  {
+   "neuron": 1522,
+   "n80_net": 4.0,
+   "n80_pos": 9514.0,
+   "n_units": 823,
+   "stable_count": 1,
+   "stable_mass_share": 0.05291767045855522,
+   "top_unit_reuse": 0.558282196521759,
+   "att_share": 0.02404896169900894
+  },
+  {
+   "neuron": 1529,
+   "n80_net": 4.0,
+   "n80_pos": 9545.0,
+   "n_units": 1239,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.14723926782608032,
+   "att_share": 0.016386883333325386
+  },
+  {
+   "neuron": 1530,
+   "n80_net": 4.0,
+   "n80_pos": 9226.0,
+   "n_units": 1241,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.01985066384077072
+  },
+  {
+   "neuron": 1533,
+   "n80_net": 3.0,
+   "n80_pos": 9427.0,
+   "n_units": 1291,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.016073692589998245
+  },
+  {
+   "neuron": 1535,
+   "n80_net": 5.0,
+   "n80_pos": 9585.0,
+   "n_units": 1142,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3680981397628784,
+   "att_share": 0.016315940767526627
+  },
+  {
+   "neuron": 1541,
+   "n80_net": 7.0,
+   "n80_pos": 9134.0,
+   "n_units": 1174,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.29447853565216064,
+   "att_share": 0.013177410699427128
+  },
+  {
+   "neuron": 1577,
+   "n80_net": 4.0,
+   "n80_pos": 9367.0,
+   "n_units": 1492,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15337422490119934,
+   "att_share": 0.015229053795337677
+  },
+  {
+   "neuron": 1589,
+   "n80_net": 5.0,
+   "n80_pos": 9236.0,
+   "n_units": 967,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.018115224316716194
+  },
+  {
+   "neuron": 1603,
+   "n80_net": 9.0,
+   "n80_pos": 9518.0,
+   "n_units": 1244,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.43558281660079956,
+   "att_share": 0.017396677285432816
+  },
+  {
+   "neuron": 1628,
+   "n80_net": 5.0,
+   "n80_pos": 9682.0,
+   "n_units": 1435,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.013375845737755299
+  },
+  {
+   "neuron": 1643,
+   "n80_net": 7.0,
+   "n80_pos": 9721.0,
+   "n_units": 1306,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.01375981979072094
+  },
+  {
+   "neuron": 1652,
+   "n80_net": 4.0,
+   "n80_pos": 9601.0,
+   "n_units": 1358,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3190183937549591,
+   "att_share": 0.015308450907468796
+  },
+  {
+   "neuron": 1665,
+   "n80_net": 4.0,
+   "n80_pos": 9502.0,
+   "n_units": 1281,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.019657667726278305
+  },
+  {
+   "neuron": 1677,
+   "n80_net": 3.0,
+   "n80_pos": 9467.0,
+   "n_units": 1308,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.020573563873767853
+  },
+  {
+   "neuron": 1685,
+   "n80_net": 5.0,
+   "n80_pos": 9668.0,
+   "n_units": 1370,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1349693238735199,
+   "att_share": 0.013732247985899448
+  },
+  {
+   "neuron": 1695,
+   "n80_net": 3.0,
+   "n80_pos": 9278.0,
+   "n_units": 1275,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.017331358045339584
+  },
+  {
+   "neuron": 1696,
+   "n80_net": 8.0,
+   "n80_pos": 9753.0,
+   "n_units": 1421,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.01513010635972023
+  },
+  {
+   "neuron": 1716,
+   "n80_net": 3.0,
+   "n80_pos": 9403.0,
+   "n_units": 1318,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15337422490119934,
+   "att_share": 0.022621631622314453
+  },
+  {
+   "neuron": 1718,
+   "n80_net": 6.0,
+   "n80_pos": 9422.0,
+   "n_units": 1246,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2699386477470398,
+   "att_share": 0.012633747421205044
+  },
+  {
+   "neuron": 1730,
+   "n80_net": 13.0,
+   "n80_pos": 9629.0,
+   "n_units": 1161,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.28834354877471924,
+   "att_share": 0.014568471349775791
+  },
+  {
+   "neuron": 1735,
+   "n80_net": 19.0,
+   "n80_pos": 9651.0,
+   "n_units": 1222,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2699386477470398,
+   "att_share": 0.01360374502837658
+  },
+  {
+   "neuron": 1737,
+   "n80_net": 4.0,
+   "n80_pos": 9440.0,
+   "n_units": 859,
+   "stable_count": 1,
+   "stable_mass_share": 0.052923671901226044,
+   "top_unit_reuse": 0.558282196521759,
+   "att_share": 0.013261462561786175
+  },
+  {
+   "neuron": 1743,
+   "n80_net": 4.0,
+   "n80_pos": 9670.0,
+   "n_units": 1193,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2760736048221588,
+   "att_share": 0.018045222386717796
+  },
+  {
+   "neuron": 1746,
+   "n80_net": 10.0,
+   "n80_pos": 9576.0,
+   "n_units": 1171,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4049079716205597,
+   "att_share": 0.014993337914347649
+  },
+  {
+   "neuron": 1754,
+   "n80_net": 9.0,
+   "n80_pos": 9578.0,
+   "n_units": 1265,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.015426427125930786
+  },
+  {
+   "neuron": 1772,
+   "n80_net": 3.0,
+   "n80_pos": 9308.0,
+   "n_units": 1423,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.01695595122873783
+  },
+  {
+   "neuron": 1773,
+   "n80_net": 10.0,
+   "n80_pos": 9672.0,
+   "n_units": 962,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3987729847431183,
+   "att_share": 0.015724048018455505
+  },
+  {
+   "neuron": 1782,
+   "n80_net": 4.0,
+   "n80_pos": 9237.0,
+   "n_units": 1173,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.29447853565216064,
+   "att_share": 0.017296472564339638
+  },
+  {
+   "neuron": 1791,
+   "n80_net": 3.0,
+   "n80_pos": 9485.0,
+   "n_units": 1276,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1411042958498001,
+   "att_share": 0.018213696777820587
+  },
+  {
+   "neuron": 1793,
+   "n80_net": 5.0,
+   "n80_pos": 9320.0,
+   "n_units": 1185,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.01516368705779314
+  },
+  {
+   "neuron": 1813,
+   "n80_net": 2.0,
+   "n80_pos": 9241.0,
+   "n_units": 1169,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15337422490119934,
+   "att_share": 0.024084147065877914
+  },
+  {
+   "neuron": 1818,
+   "n80_net": 4.0,
+   "n80_pos": 9397.0,
+   "n_units": 1153,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.017720699310302734
+  },
+  {
+   "neuron": 1825,
+   "n80_net": 3.0,
+   "n80_pos": 9360.0,
+   "n_units": 1125,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4049079716205597,
+   "att_share": 0.02664531022310257
+  },
+  {
+   "neuron": 1834,
+   "n80_net": 6.0,
+   "n80_pos": 9589.0,
+   "n_units": 957,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.018253803253173828
+  },
+  {
+   "neuron": 1845,
+   "n80_net": 6.0,
+   "n80_pos": 9494.0,
+   "n_units": 1087,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.013508941978216171
+  },
+  {
+   "neuron": 1847,
+   "n80_net": 3.0,
+   "n80_pos": 9388.0,
+   "n_units": 1489,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.0920245349407196,
+   "att_share": 0.01877807267010212
+  },
+  {
+   "neuron": 1855,
+   "n80_net": 11.0,
+   "n80_pos": 9625.0,
+   "n_units": 1260,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.015977708622813225
+  },
+  {
+   "neuron": 1860,
+   "n80_net": 4.0,
+   "n80_pos": 9365.0,
+   "n_units": 1283,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.017214151099324226
+  },
+  {
+   "neuron": 1872,
+   "n80_net": 4.0,
+   "n80_pos": 9410.0,
+   "n_units": 1326,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.019437314942479134
+  },
+  {
+   "neuron": 1885,
+   "n80_net": 2.0,
+   "n80_pos": 9204.0,
+   "n_units": 1021,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.29447853565216064,
+   "att_share": 0.025668824091553688
+  },
+  {
+   "neuron": 1890,
+   "n80_net": 8.0,
+   "n80_pos": 9428.0,
+   "n_units": 1235,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2269938588142395,
+   "att_share": 0.01513101439923048
+  },
+  {
+   "neuron": 1891,
+   "n80_net": 4.0,
+   "n80_pos": 9228.0,
+   "n_units": 895,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.42331287264823914,
+   "att_share": 0.02183016575872898
+  },
+  {
+   "neuron": 1907,
+   "n80_net": 5.0,
+   "n80_pos": 9415.0,
+   "n_units": 1418,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.01618328131735325
+  },
+  {
+   "neuron": 1908,
+   "n80_net": 5.0,
+   "n80_pos": 9220.0,
+   "n_units": 976,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2638036608695984,
+   "att_share": 0.016196394339203835
+  },
+  {
+   "neuron": 1912,
+   "n80_net": 4.0,
+   "n80_pos": 9235.0,
+   "n_units": 872,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.349693238735199,
+   "att_share": 0.023197440430521965
+  },
+  {
+   "neuron": 1915,
+   "n80_net": 16.0,
+   "n80_pos": 9837.0,
+   "n_units": 1348,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.01292071957141161
+  },
+  {
+   "neuron": 1916,
+   "n80_net": 7.0,
+   "n80_pos": 9470.0,
+   "n_units": 1151,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.016817810013890266
+  },
+  {
+   "neuron": 1924,
+   "n80_net": 4.0,
+   "n80_pos": 9320.0,
+   "n_units": 1243,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.018534131348133087
+  },
+  {
+   "neuron": 1926,
+   "n80_net": 8.0,
+   "n80_pos": 9562.0,
+   "n_units": 1230,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3067484498023987,
+   "att_share": 0.01497193705290556
+  },
+  {
+   "neuron": 1937,
+   "n80_net": 3.0,
+   "n80_pos": 9449.0,
+   "n_units": 1177,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3680981397628784,
+   "att_share": 0.014732767827808857
+  },
+  {
+   "neuron": 1951,
+   "n80_net": 12.0,
+   "n80_pos": 9690.0,
+   "n_units": 890,
+   "stable_count": 2,
+   "stable_mass_share": 0.10160595178604126,
+   "top_unit_reuse": 0.5644171833992004,
+   "att_share": 0.013181488029658794
+  },
+  {
+   "neuron": 1962,
+   "n80_net": 4.0,
+   "n80_pos": 9411.0,
+   "n_units": 781,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.38036808371543884,
+   "att_share": 0.019731098785996437
+  },
+  {
+   "neuron": 1984,
+   "n80_net": 4.0,
+   "n80_pos": 9251.0,
+   "n_units": 1332,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.016610918566584587
+  },
+  {
+   "neuron": 1992,
+   "n80_net": 5.0,
+   "n80_pos": 9462.0,
+   "n_units": 1392,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.017719851806759834
+  },
+  {
+   "neuron": 2000,
+   "n80_net": 4.0,
+   "n80_pos": 9210.0,
+   "n_units": 1263,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25766870379447937,
+   "att_share": 0.017039746046066284
+  },
+  {
+   "neuron": 2009,
+   "n80_net": 3.0,
+   "n80_pos": 9367.0,
+   "n_units": 1292,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.01664244569838047
+  },
+  {
+   "neuron": 2034,
+   "n80_net": 2.0,
+   "n80_pos": 9209.0,
+   "n_units": 1362,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.02477988414466381
+  },
+  {
+   "neuron": 2037,
+   "n80_net": 3.0,
+   "n80_pos": 9395.0,
+   "n_units": 1110,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.01722840964794159
+  },
+  {
+   "neuron": 2043,
+   "n80_net": 5.0,
+   "n80_pos": 9467.0,
+   "n_units": 1363,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.02035251073539257
+  },
+  {
+   "neuron": 2051,
+   "n80_net": 3.0,
+   "n80_pos": 9475.0,
+   "n_units": 1212,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.023756034672260284
+  },
+  {
+   "neuron": 2056,
+   "n80_net": 7.0,
+   "n80_pos": 9571.0,
+   "n_units": 1160,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3619631826877594,
+   "att_share": 0.01432804949581623
+  },
+  {
+   "neuron": 2064,
+   "n80_net": 12.0,
+   "n80_pos": 9752.0,
+   "n_units": 1243,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.14723926782608032,
+   "att_share": 0.014490477740764618
+  },
+  {
+   "neuron": 2076,
+   "n80_net": 7.0,
+   "n80_pos": 9528.0,
+   "n_units": 940,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.29447853565216064,
+   "att_share": 0.015224997885525227
+  },
+  {
+   "neuron": 2077,
+   "n80_net": 6.0,
+   "n80_pos": 9641.0,
+   "n_units": 1268,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25766870379447937,
+   "att_share": 0.018669212237000465
+  },
+  {
+   "neuron": 2083,
+   "n80_net": 4.0,
+   "n80_pos": 9656.0,
+   "n_units": 1284,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.018023155629634857
+  },
+  {
+   "neuron": 2098,
+   "n80_net": 4.0,
+   "n80_pos": 9522.0,
+   "n_units": 1232,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.28834354877471924,
+   "att_share": 0.016941934823989868
+  },
+  {
+   "neuron": 2099,
+   "n80_net": 3.0,
+   "n80_pos": 9211.0,
+   "n_units": 1356,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.018974721431732178
+  },
+  {
+   "neuron": 2105,
+   "n80_net": 3.0,
+   "n80_pos": 9512.0,
+   "n_units": 1237,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3987729847431183,
+   "att_share": 0.020519813522696495
+  },
+  {
+   "neuron": 2120,
+   "n80_net": 9.0,
+   "n80_pos": 9767.0,
+   "n_units": 544,
+   "stable_count": 6,
+   "stable_mass_share": 0.32485079765319824,
+   "top_unit_reuse": 0.8159509301185608,
+   "att_share": 0.019843578338623047
+  },
+  {
+   "neuron": 2121,
+   "n80_net": 4.0,
+   "n80_pos": 9382.0,
+   "n_units": 1217,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.38036808371543884,
+   "att_share": 0.016938280314207077
+  },
+  {
+   "neuron": 2129,
+   "n80_net": 3.0,
+   "n80_pos": 9575.0,
+   "n_units": 1198,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.017707793042063713
+  },
+  {
+   "neuron": 2135,
+   "n80_net": 8.0,
+   "n80_pos": 9833.0,
+   "n_units": 1494,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.14723926782608032,
+   "att_share": 0.016098178923130035
+  },
+  {
+   "neuron": 2139,
+   "n80_net": 3.0,
+   "n80_pos": 9180.0,
+   "n_units": 913,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.38650307059288025,
+   "att_share": 0.02975889854133129
+  },
+  {
+   "neuron": 2144,
+   "n80_net": 5.0,
+   "n80_pos": 9550.0,
+   "n_units": 1172,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3067484498023987,
+   "att_share": 0.01744631864130497
+  },
+  {
+   "neuron": 2154,
+   "n80_net": 6.0,
+   "n80_pos": 9381.0,
+   "n_units": 1340,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3067484498023987,
+   "att_share": 0.014514919370412827
+  },
+  {
+   "neuron": 2156,
+   "n80_net": 3.0,
+   "n80_pos": 9261.0,
+   "n_units": 1254,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4049079716205597,
+   "att_share": 0.020777873694896698
+  },
+  {
+   "neuron": 2175,
+   "n80_net": 12.0,
+   "n80_pos": 9682.0,
+   "n_units": 1150,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.015697523951530457
+  },
+  {
+   "neuron": 2203,
+   "n80_net": 5.0,
+   "n80_pos": 9585.0,
+   "n_units": 1362,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.015744224190711975
+  },
+  {
+   "neuron": 2229,
+   "n80_net": 3.0,
+   "n80_pos": 9414.0,
+   "n_units": 1190,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.021019427105784416
+  },
+  {
+   "neuron": 2236,
+   "n80_net": 3.0,
+   "n80_pos": 9390.0,
+   "n_units": 1306,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.017910918220877647
+  },
+  {
+   "neuron": 2241,
+   "n80_net": 4.0,
+   "n80_pos": 8978.0,
+   "n_units": 1023,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.42944782972335815,
+   "att_share": 0.019857829436659813
+  },
+  {
+   "neuron": 2264,
+   "n80_net": 3.0,
+   "n80_pos": 9306.0,
+   "n_units": 1327,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.0186574999243021
+  },
+  {
+   "neuron": 2265,
+   "n80_net": 3.0,
+   "n80_pos": 9303.0,
+   "n_units": 1274,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.017136378213763237
+  },
+  {
+   "neuron": 2273,
+   "n80_net": 2.0,
+   "n80_pos": 9237.0,
+   "n_units": 1325,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.016915233805775642
+  },
+  {
+   "neuron": 2283,
+   "n80_net": 14.0,
+   "n80_pos": 9676.0,
+   "n_units": 1128,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.01540306955575943
+  },
+  {
+   "neuron": 2289,
+   "n80_net": 5.0,
+   "n80_pos": 9439.0,
+   "n_units": 1375,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1349693238735199,
+   "att_share": 0.015664193779230118
+  },
+  {
+   "neuron": 2293,
+   "n80_net": 2.0,
+   "n80_pos": 9473.0,
+   "n_units": 1342,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.018668998032808304
+  },
+  {
+   "neuron": 2303,
+   "n80_net": 5.0,
+   "n80_pos": 9346.0,
+   "n_units": 1218,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.016243014484643936
+  },
+  {
+   "neuron": 2311,
+   "n80_net": 4.0,
+   "n80_pos": 9489.0,
+   "n_units": 1239,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.29447853565216064,
+   "att_share": 0.01787526160478592
+  },
+  {
+   "neuron": 2323,
+   "n80_net": 3.0,
+   "n80_pos": 9400.0,
+   "n_units": 1204,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3251533806324005,
+   "att_share": 0.02260158583521843
+  },
+  {
+   "neuron": 2345,
+   "n80_net": 6.0,
+   "n80_pos": 9590.0,
+   "n_units": 1279,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25766870379447937,
+   "att_share": 0.016288429498672485
+  },
+  {
+   "neuron": 2353,
+   "n80_net": 7.0,
+   "n80_pos": 9487.0,
+   "n_units": 1010,
+   "stable_count": 1,
+   "stable_mass_share": 0.08719605952501297,
+   "top_unit_reuse": 0.5521472096443176,
+   "att_share": 0.01585395634174347
+  },
+  {
+   "neuron": 2355,
+   "n80_net": 30.0,
+   "n80_pos": 9723.0,
+   "n_units": 816,
+   "stable_count": 2,
+   "stable_mass_share": 0.25285065174102783,
+   "top_unit_reuse": 0.8159509301185608,
+   "att_share": 0.016149252653121948
+  },
+  {
+   "neuron": 2357,
+   "n80_net": 5.0,
+   "n80_pos": 9554.0,
+   "n_units": 1277,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.0163560938090086
+  },
+  {
+   "neuron": 2368,
+   "n80_net": 9.0,
+   "n80_pos": 9511.0,
+   "n_units": 1295,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.014609873294830322
+  },
+  {
+   "neuron": 2388,
+   "n80_net": 4.0,
+   "n80_pos": 9534.0,
+   "n_units": 1296,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.017888152971863747
+  },
+  {
+   "neuron": 2412,
+   "n80_net": 5.0,
+   "n80_pos": 9555.0,
+   "n_units": 1390,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.014842072501778603
+  },
+  {
+   "neuron": 2419,
+   "n80_net": 4.0,
+   "n80_pos": 9482.0,
+   "n_units": 744,
+   "stable_count": 4,
+   "stable_mass_share": 0.21792291104793549,
+   "top_unit_reuse": 0.6319018006324768,
+   "att_share": 0.016895361244678497
+  },
+  {
+   "neuron": 2446,
+   "n80_net": 4.0,
+   "n80_pos": 9500.0,
+   "n_units": 1231,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.017199942842125893
+  },
+  {
+   "neuron": 2452,
+   "n80_net": 3.0,
+   "n80_pos": 9313.0,
+   "n_units": 1273,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.01985538937151432
+  },
+  {
+   "neuron": 2464,
+   "n80_net": 6.0,
+   "n80_pos": 9545.0,
+   "n_units": 1209,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.014349667355418205
+  },
+  {
+   "neuron": 2470,
+   "n80_net": 4.0,
+   "n80_pos": 9493.0,
+   "n_units": 1286,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.016550032421946526
+  },
+  {
+   "neuron": 2477,
+   "n80_net": 4.0,
+   "n80_pos": 9427.0,
+   "n_units": 1366,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.019350102171301842
+  },
+  {
+   "neuron": 2486,
+   "n80_net": 3.0,
+   "n80_pos": 9261.0,
+   "n_units": 1269,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3190183937549591,
+   "att_share": 0.022849664092063904
+  },
+  {
+   "neuron": 2489,
+   "n80_net": 16.0,
+   "n80_pos": 9559.0,
+   "n_units": 1182,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.016727598384022713
+  },
+  {
+   "neuron": 2503,
+   "n80_net": 4.0,
+   "n80_pos": 9453.0,
+   "n_units": 1438,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.10429447889328003,
+   "att_share": 0.015781987458467484
+  },
+  {
+   "neuron": 2531,
+   "n80_net": 3.0,
+   "n80_pos": 9309.0,
+   "n_units": 1187,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.33742329478263855,
+   "att_share": 0.01663241721689701
+  },
+  {
+   "neuron": 2533,
+   "n80_net": 8.0,
+   "n80_pos": 9674.0,
+   "n_units": 1227,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.43558281660079956,
+   "att_share": 0.014903332106769085
+  },
+  {
+   "neuron": 2545,
+   "n80_net": 7.0,
+   "n80_pos": 9695.0,
+   "n_units": 1152,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.30061349272727966,
+   "att_share": 0.014721321873366833
+  },
+  {
+   "neuron": 2550,
+   "n80_net": 3.0,
+   "n80_pos": 9627.0,
+   "n_units": 1159,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2822085916996002,
+   "att_share": 0.020370179787278175
+  },
+  {
+   "neuron": 2564,
+   "n80_net": 3.0,
+   "n80_pos": 9423.0,
+   "n_units": 1412,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.019330592826008797
+  },
+  {
+   "neuron": 2567,
+   "n80_net": 2.0,
+   "n80_pos": 9205.0,
+   "n_units": 1217,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.018737243488430977
+  },
+  {
+   "neuron": 2577,
+   "n80_net": 4.0,
+   "n80_pos": 9467.0,
+   "n_units": 1368,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.018393559381365776
+  },
+  {
+   "neuron": 2600,
+   "n80_net": 5.0,
+   "n80_pos": 9420.0,
+   "n_units": 1063,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.33128833770751953,
+   "att_share": 0.018654435873031616
+  },
+  {
+   "neuron": 2621,
+   "n80_net": 15.0,
+   "n80_pos": 9766.0,
+   "n_units": 1387,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.01380543690174818
+  },
+  {
+   "neuron": 2636,
+   "n80_net": 4.0,
+   "n80_pos": 9581.0,
+   "n_units": 1053,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2699386477470398,
+   "att_share": 0.02152188867330551
+  },
+  {
+   "neuron": 2641,
+   "n80_net": 6.0,
+   "n80_pos": 9623.0,
+   "n_units": 1338,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.014429809525609016
+  },
+  {
+   "neuron": 2659,
+   "n80_net": 6.0,
+   "n80_pos": 9619.0,
+   "n_units": 1214,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3680981397628784,
+   "att_share": 0.015688873827457428
+  },
+  {
+   "neuron": 2663,
+   "n80_net": 6.0,
+   "n80_pos": 9596.0,
+   "n_units": 1270,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.015782438218593597
+  },
+  {
+   "neuron": 2664,
+   "n80_net": 4.0,
+   "n80_pos": 9323.0,
+   "n_units": 892,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.349693238735199,
+   "att_share": 0.022864116355776787
+  },
+  {
+   "neuron": 2668,
+   "n80_net": 4.0,
+   "n80_pos": 9473.0,
+   "n_units": 1169,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2638036608695984,
+   "att_share": 0.021471770480275154
+  },
+  {
+   "neuron": 2676,
+   "n80_net": 5.0,
+   "n80_pos": 9525.0,
+   "n_units": 1087,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.019237354397773743
+  },
+  {
+   "neuron": 2680,
+   "n80_net": 2.0,
+   "n80_pos": 9292.0,
+   "n_units": 1375,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.02286447398364544
+  },
+  {
+   "neuron": 2695,
+   "n80_net": 4.0,
+   "n80_pos": 9373.0,
+   "n_units": 725,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.47239261865615845,
+   "att_share": 0.016031848266720772
+  },
+  {
+   "neuron": 2699,
+   "n80_net": 8.0,
+   "n80_pos": 9523.0,
+   "n_units": 1251,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.28834354877471924,
+   "att_share": 0.01575501635670662
+  },
+  {
+   "neuron": 2706,
+   "n80_net": 3.0,
+   "n80_pos": 9249.0,
+   "n_units": 1286,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.01860661990940571
+  },
+  {
+   "neuron": 2736,
+   "n80_net": 3.0,
+   "n80_pos": 9369.0,
+   "n_units": 1329,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.018503881990909576
+  },
+  {
+   "neuron": 2737,
+   "n80_net": 7.0,
+   "n80_pos": 9631.0,
+   "n_units": 1343,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.014504105783998966
+  },
+  {
+   "neuron": 2745,
+   "n80_net": 8.0,
+   "n80_pos": 9571.0,
+   "n_units": 1224,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.013773218728601933
+  },
+  {
+   "neuron": 2786,
+   "n80_net": 7.0,
+   "n80_pos": 9592.0,
+   "n_units": 1396,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25766870379447937,
+   "att_share": 0.014926191419363022
+  },
+  {
+   "neuron": 2801,
+   "n80_net": 2.0,
+   "n80_pos": 9157.0,
+   "n_units": 1075,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.33128833770751953,
+   "att_share": 0.028999334201216698
+  },
+  {
+   "neuron": 2804,
+   "n80_net": 4.0,
+   "n80_pos": 9484.0,
+   "n_units": 1094,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.01930375024676323
+  },
+  {
+   "neuron": 2834,
+   "n80_net": 14.0,
+   "n80_pos": 9838.0,
+   "n_units": 1104,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3619631826877594,
+   "att_share": 0.011024118401110172
+  },
+  {
+   "neuron": 2856,
+   "n80_net": 3.0,
+   "n80_pos": 9457.0,
+   "n_units": 1066,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.02021876908838749
+  },
+  {
+   "neuron": 2861,
+   "n80_net": 13.0,
+   "n80_pos": 9796.0,
+   "n_units": 1353,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.01377631165087223
+  },
+  {
+   "neuron": 2875,
+   "n80_net": 6.0,
+   "n80_pos": 9665.0,
+   "n_units": 1338,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.015086290426552296
+  },
+  {
+   "neuron": 2877,
+   "n80_net": 11.0,
+   "n80_pos": 9694.0,
+   "n_units": 1339,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.013498934917151928
+  },
+  {
+   "neuron": 2883,
+   "n80_net": 19.0,
+   "n80_pos": 9846.0,
+   "n_units": 919,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.349693238735199,
+   "att_share": 0.012572932988405228
+  },
+  {
+   "neuron": 2884,
+   "n80_net": 5.0,
+   "n80_pos": 9560.0,
+   "n_units": 1177,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4049079716205597,
+   "att_share": 0.014885248616337776
+  },
+  {
+   "neuron": 2888,
+   "n80_net": 8.0,
+   "n80_pos": 9791.0,
+   "n_units": 1283,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2269938588142395,
+   "att_share": 0.017780570313334465
+  },
+  {
+   "neuron": 2895,
+   "n80_net": 6.0,
+   "n80_pos": 9537.0,
+   "n_units": 1247,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.015184720046818256
+  },
+  {
+   "neuron": 2918,
+   "n80_net": 3.0,
+   "n80_pos": 9293.0,
+   "n_units": 1051,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.018234021961688995
+  },
+  {
+   "neuron": 2931,
+   "n80_net": 16.0,
+   "n80_pos": 9738.0,
+   "n_units": 1385,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.11656441539525986,
+   "att_share": 0.01346771139651537
+  },
+  {
+   "neuron": 2951,
+   "n80_net": 6.0,
+   "n80_pos": 9262.0,
+   "n_units": 591,
+   "stable_count": 4,
+   "stable_mass_share": 0.3107664883136749,
+   "top_unit_reuse": 0.7239263653755188,
+   "att_share": 0.021447679027915
+  },
+  {
+   "neuron": 2968,
+   "n80_net": 4.0,
+   "n80_pos": 9496.0,
+   "n_units": 1314,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.018850939348340034
+  },
+  {
+   "neuron": 2972,
+   "n80_net": 6.0,
+   "n80_pos": 9482.0,
+   "n_units": 1175,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.0148396585136652
+  },
+  {
+   "neuron": 2973,
+   "n80_net": 9.0,
+   "n80_pos": 9686.0,
+   "n_units": 1240,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2822085916996002,
+   "att_share": 0.014688810333609581
+  },
+  {
+   "neuron": 2990,
+   "n80_net": 4.0,
+   "n80_pos": 9539.0,
+   "n_units": 1421,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.015126497484743595
+  },
+  {
+   "neuron": 2996,
+   "n80_net": 5.0,
+   "n80_pos": 9521.0,
+   "n_units": 1164,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.015801748260855675
+  },
+  {
+   "neuron": 3005,
+   "n80_net": 11.0,
+   "n80_pos": 9666.0,
+   "n_units": 1135,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.014968451112508774
+  },
+  {
+   "neuron": 3019,
+   "n80_net": 8.0,
+   "n80_pos": 9751.0,
+   "n_units": 926,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3742331266403198,
+   "att_share": 0.01480113621801138
+  },
+  {
+   "neuron": 3021,
+   "n80_net": 2.0,
+   "n80_pos": 9180.0,
+   "n_units": 1163,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.027613066136837006
+  },
+  {
+   "neuron": 3028,
+   "n80_net": 3.0,
+   "n80_pos": 9222.0,
+   "n_units": 1109,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.39263802766799927,
+   "att_share": 0.020375482738018036
+  },
+  {
+   "neuron": 3043,
+   "n80_net": 2.0,
+   "n80_pos": 9135.0,
+   "n_units": 531,
+   "stable_count": 5,
+   "stable_mass_share": 0.25590139627456665,
+   "top_unit_reuse": 0.8588956594467163,
+   "att_share": 0.02702050469815731
+  },
+  {
+   "neuron": 3050,
+   "n80_net": 6.0,
+   "n80_pos": 9495.0,
+   "n_units": 1314,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.015067342668771744
+  },
+  {
+   "neuron": 3061,
+   "n80_net": 7.0,
+   "n80_pos": 9536.0,
+   "n_units": 1181,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.38036808371543884,
+   "att_share": 0.018676400184631348
+  },
+  {
+   "neuron": 3066,
+   "n80_net": 7.0,
+   "n80_pos": 9319.0,
+   "n_units": 1038,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3680981397628784,
+   "att_share": 0.016070814803242683
+  },
+  {
+   "neuron": 3074,
+   "n80_net": 3.0,
+   "n80_pos": 9138.0,
+   "n_units": 1157,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.021609168499708176
+  },
+  {
+   "neuron": 3078,
+   "n80_net": 36.0,
+   "n80_pos": 9885.0,
+   "n_units": 444,
+   "stable_count": 5,
+   "stable_mass_share": 0.20718640089035034,
+   "top_unit_reuse": 0.8343558311462402,
+   "att_share": 0.01718609593808651
+  },
+  {
+   "neuron": 3081,
+   "n80_net": 3.0,
+   "n80_pos": 9346.0,
+   "n_units": 1207,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.015920216217637062
+  },
+  {
+   "neuron": 3082,
+   "n80_net": 6.0,
+   "n80_pos": 9643.0,
+   "n_units": 1199,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.38650307059288025,
+   "att_share": 0.01713636703789234
+  },
+  {
+   "neuron": 3087,
+   "n80_net": 4.0,
+   "n80_pos": 9375.0,
+   "n_units": 1316,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.017650246620178223
+  },
+  {
+   "neuron": 3094,
+   "n80_net": 7.0,
+   "n80_pos": 9633.0,
+   "n_units": 1510,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.09815950691699982,
+   "att_share": 0.018336866050958633
+  },
+  {
+   "neuron": 3124,
+   "n80_net": 2.0,
+   "n80_pos": 9397.0,
+   "n_units": 1322,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.023495545610785484
+  },
+  {
+   "neuron": 3126,
+   "n80_net": 4.0,
+   "n80_pos": 9565.0,
+   "n_units": 1180,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.29447853565216064,
+   "att_share": 0.014770793728530407
+  },
+  {
+   "neuron": 3127,
+   "n80_net": 6.0,
+   "n80_pos": 9633.0,
+   "n_units": 1468,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.01666886918246746
+  },
+  {
+   "neuron": 3146,
+   "n80_net": 4.0,
+   "n80_pos": 9607.0,
+   "n_units": 1423,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.16564416885375977,
+   "att_share": 0.017246318981051445
+  },
+  {
+   "neuron": 3154,
+   "n80_net": 5.0,
+   "n80_pos": 9423.0,
+   "n_units": 1240,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.013764121569693089
+  },
+  {
+   "neuron": 3159,
+   "n80_net": 2.0,
+   "n80_pos": 9296.0,
+   "n_units": 1292,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.020244577899575233
+  },
+  {
+   "neuron": 3183,
+   "n80_net": 7.0,
+   "n80_pos": 9567.0,
+   "n_units": 1251,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.01585368998348713
+  },
+  {
+   "neuron": 3184,
+   "n80_net": 3.0,
+   "n80_pos": 9491.0,
+   "n_units": 1212,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.01589927077293396
+  },
+  {
+   "neuron": 3188,
+   "n80_net": 2.0,
+   "n80_pos": 9322.0,
+   "n_units": 1079,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25766870379447937,
+   "att_share": 0.02947411499917507
+  },
+  {
+   "neuron": 3192,
+   "n80_net": 6.0,
+   "n80_pos": 9504.0,
+   "n_units": 1270,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.014852510765194893
+  },
+  {
+   "neuron": 3196,
+   "n80_net": 13.0,
+   "n80_pos": 9823.0,
+   "n_units": 1200,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.013483626767992973
+  },
+  {
+   "neuron": 3211,
+   "n80_net": 3.0,
+   "n80_pos": 9410.0,
+   "n_units": 1286,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.14723926782608032,
+   "att_share": 0.01593705639243126
+  },
+  {
+   "neuron": 3214,
+   "n80_net": 7.0,
+   "n80_pos": 9553.0,
+   "n_units": 1142,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.01653435081243515
+  },
+  {
+   "neuron": 3234,
+   "n80_net": 3.0,
+   "n80_pos": 9229.0,
+   "n_units": 1260,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.019081173464655876
+  },
+  {
+   "neuron": 3247,
+   "n80_net": 9.0,
+   "n80_pos": 9683.0,
+   "n_units": 1335,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.015071958303451538
+  },
+  {
+   "neuron": 3252,
+   "n80_net": 5.0,
+   "n80_pos": 9627.0,
+   "n_units": 1420,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.014339160174131393
+  },
+  {
+   "neuron": 3275,
+   "n80_net": 4.0,
+   "n80_pos": 9354.0,
+   "n_units": 1423,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.11042944341897964,
+   "att_share": 0.014976724982261658
+  },
+  {
+   "neuron": 3289,
+   "n80_net": 9.0,
+   "n80_pos": 9558.0,
+   "n_units": 1363,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.015179741196334362
+  },
+  {
+   "neuron": 3291,
+   "n80_net": 3.0,
+   "n80_pos": 9421.0,
+   "n_units": 1273,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1411042958498001,
+   "att_share": 0.01742604188621044
+  },
+  {
+   "neuron": 3315,
+   "n80_net": 6.0,
+   "n80_pos": 9559.0,
+   "n_units": 1165,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.015003499574959278
+  },
+  {
+   "neuron": 3336,
+   "n80_net": 3.0,
+   "n80_pos": 9335.0,
+   "n_units": 1234,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.020409109070897102
+  },
+  {
+   "neuron": 3361,
+   "n80_net": 3.0,
+   "n80_pos": 9380.0,
+   "n_units": 1416,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.11042944341897964,
+   "att_share": 0.02103264257311821
+  },
+  {
+   "neuron": 3364,
+   "n80_net": 5.0,
+   "n80_pos": 9519.0,
+   "n_units": 721,
+   "stable_count": 3,
+   "stable_mass_share": 0.17835132777690887,
+   "top_unit_reuse": 0.6319018006324768,
+   "att_share": 0.017171207815408707
+  },
+  {
+   "neuron": 3374,
+   "n80_net": 6.0,
+   "n80_pos": 9466.0,
+   "n_units": 1302,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.01346546784043312
+  },
+  {
+   "neuron": 3383,
+   "n80_net": 4.0,
+   "n80_pos": 9243.0,
+   "n_units": 1121,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3128834366798401,
+   "att_share": 0.019208870828151703
+  },
+  {
+   "neuron": 3387,
+   "n80_net": 5.0,
+   "n80_pos": 9407.0,
+   "n_units": 1365,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.018243493512272835
+  },
+  {
+   "neuron": 3397,
+   "n80_net": 3.0,
+   "n80_pos": 9400.0,
+   "n_units": 1296,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.017915325239300728
+  },
+  {
+   "neuron": 3400,
+   "n80_net": 16.0,
+   "n80_pos": 9811.0,
+   "n_units": 1072,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4049079716205597,
+   "att_share": 0.013587095774710178
+  },
+  {
+   "neuron": 3401,
+   "n80_net": 3.0,
+   "n80_pos": 9230.0,
+   "n_units": 1208,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.018211832270026207
+  },
+  {
+   "neuron": 3402,
+   "n80_net": 4.0,
+   "n80_pos": 9402.0,
+   "n_units": 1292,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3251533806324005,
+   "att_share": 0.01607659086585045
+  },
+  {
+   "neuron": 3420,
+   "n80_net": 5.0,
+   "n80_pos": 9403.0,
+   "n_units": 1329,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2208588868379593,
+   "att_share": 0.013498215936124325
+  },
+  {
+   "neuron": 3422,
+   "n80_net": 4.0,
+   "n80_pos": 9530.0,
+   "n_units": 1228,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.014659198932349682
+  },
+  {
+   "neuron": 3444,
+   "n80_net": 2.0,
+   "n80_pos": 9095.0,
+   "n_units": 1043,
+   "stable_count": 3,
+   "stable_mass_share": 0.19148363173007965,
+   "top_unit_reuse": 0.6257668733596802,
+   "att_share": 0.027622578665614128
+  },
+  {
+   "neuron": 3452,
+   "n80_net": 16.0,
+   "n80_pos": 9582.0,
+   "n_units": 1066,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.013145084492862225
+  },
+  {
+   "neuron": 3458,
+   "n80_net": 3.0,
+   "n80_pos": 9342.0,
+   "n_units": 1285,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.021143848076462746
+  },
+  {
+   "neuron": 3492,
+   "n80_net": 9.0,
+   "n80_pos": 9677.0,
+   "n_units": 1308,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12269937992095947,
+   "att_share": 0.015363124199211597
+  },
+  {
+   "neuron": 3530,
+   "n80_net": 5.0,
+   "n80_pos": 9540.0,
+   "n_units": 980,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.47239261865615845,
+   "att_share": 0.019042806699872017
+  },
+  {
+   "neuron": 3533,
+   "n80_net": 7.0,
+   "n80_pos": 9454.0,
+   "n_units": 1387,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.012685434892773628
+  },
+  {
+   "neuron": 3545,
+   "n80_net": 5.0,
+   "n80_pos": 9601.0,
+   "n_units": 1378,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.01395355723798275
+  },
+  {
+   "neuron": 3566,
+   "n80_net": 11.0,
+   "n80_pos": 9727.0,
+   "n_units": 1467,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.012545246630907059
+  },
+  {
+   "neuron": 3570,
+   "n80_net": 4.0,
+   "n80_pos": 9451.0,
+   "n_units": 1336,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.01731950417160988
+  },
+  {
+   "neuron": 3585,
+   "n80_net": 4.0,
+   "n80_pos": 9655.0,
+   "n_units": 1329,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.015368183143436909
+  },
+  {
+   "neuron": 3595,
+   "n80_net": 3.0,
+   "n80_pos": 9340.0,
+   "n_units": 1065,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.33742329478263855,
+   "att_share": 0.019857775419950485
+  },
+  {
+   "neuron": 3601,
+   "n80_net": 3.0,
+   "n80_pos": 9291.0,
+   "n_units": 1080,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.25153374671936035,
+   "att_share": 0.020851068198680878
+  },
+  {
+   "neuron": 3608,
+   "n80_net": 3.0,
+   "n80_pos": 9343.0,
+   "n_units": 1205,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3251533806324005,
+   "att_share": 0.02248234488070011
+  },
+  {
+   "neuron": 3620,
+   "n80_net": 13.0,
+   "n80_pos": 9711.0,
+   "n_units": 1302,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23312883079051971,
+   "att_share": 0.014775486662983894
+  },
+  {
+   "neuron": 3630,
+   "n80_net": 4.0,
+   "n80_pos": 9614.0,
+   "n_units": 1165,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.01659476011991501
+  },
+  {
+   "neuron": 3631,
+   "n80_net": 18.0,
+   "n80_pos": 9886.0,
+   "n_units": 1364,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1840490698814392,
+   "att_share": 0.0139458691701293
+  },
+  {
+   "neuron": 3634,
+   "n80_net": 3.0,
+   "n80_pos": 9425.0,
+   "n_units": 770,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2699386477470398,
+   "att_share": 0.024445921182632446
+  },
+  {
+   "neuron": 3661,
+   "n80_net": 7.0,
+   "n80_pos": 9712.0,
+   "n_units": 1422,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.016085145995020866
+  },
+  {
+   "neuron": 3670,
+   "n80_net": 11.0,
+   "n80_pos": 9665.0,
+   "n_units": 1245,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15337422490119934,
+   "att_share": 0.01331366878002882
+  },
+  {
+   "neuron": 3688,
+   "n80_net": 18.0,
+   "n80_pos": 9852.0,
+   "n_units": 646,
+   "stable_count": 4,
+   "stable_mass_share": 0.24043120443820953,
+   "top_unit_reuse": 0.6809815764427185,
+   "att_share": 0.014485116116702557
+  },
+  {
+   "neuron": 3699,
+   "n80_net": 11.0,
+   "n80_pos": 9641.0,
+   "n_units": 1204,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20858895778656006,
+   "att_share": 0.01290953904390335
+  },
+  {
+   "neuron": 3719,
+   "n80_net": 6.0,
+   "n80_pos": 9606.0,
+   "n_units": 1021,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.24539875984191895,
+   "att_share": 0.01902313530445099
+  },
+  {
+   "neuron": 3742,
+   "n80_net": 7.0,
+   "n80_pos": 9739.0,
+   "n_units": 1036,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3680981397628784,
+   "att_share": 0.014220841228961945
+  },
+  {
+   "neuron": 3744,
+   "n80_net": 3.0,
+   "n80_pos": 9354.0,
+   "n_units": 1263,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.01641557365655899
+  },
+  {
+   "neuron": 3753,
+   "n80_net": 4.0,
+   "n80_pos": 9402.0,
+   "n_units": 1424,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.018766066059470177
+  },
+  {
+   "neuron": 3762,
+   "n80_net": 8.0,
+   "n80_pos": 9593.0,
+   "n_units": 1376,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1779141128063202,
+   "att_share": 0.016537318006157875
+  },
+  {
+   "neuron": 3773,
+   "n80_net": 18.0,
+   "n80_pos": 9913.0,
+   "n_units": 730,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.38650307059288025,
+   "att_share": 0.013657714240252972
+  },
+  {
+   "neuron": 3778,
+   "n80_net": 2.0,
+   "n80_pos": 9313.0,
+   "n_units": 894,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.46625766158103943,
+   "att_share": 0.02480948530137539
+  },
+  {
+   "neuron": 3796,
+   "n80_net": 3.0,
+   "n80_pos": 9243.0,
+   "n_units": 1178,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.02395646832883358
+  },
+  {
+   "neuron": 3799,
+   "n80_net": 5.0,
+   "n80_pos": 9573.0,
+   "n_units": 612,
+   "stable_count": 2,
+   "stable_mass_share": 0.12892618775367737,
+   "top_unit_reuse": 0.6564416885375977,
+   "att_share": 0.018647970631718636
+  },
+  {
+   "neuron": 3816,
+   "n80_net": 6.0,
+   "n80_pos": 9570.0,
+   "n_units": 1298,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.015381612814962864
+  },
+  {
+   "neuron": 3825,
+   "n80_net": 6.0,
+   "n80_pos": 9609.0,
+   "n_units": 1092,
+   "stable_count": 1,
+   "stable_mass_share": 0.1300382763147354,
+   "top_unit_reuse": 0.5214723944664001,
+   "att_share": 0.017638323828577995
+  },
+  {
+   "neuron": 3838,
+   "n80_net": 7.0,
+   "n80_pos": 9837.0,
+   "n_units": 1192,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3190183937549591,
+   "att_share": 0.015397069044411182
+  },
+  {
+   "neuron": 3846,
+   "n80_net": 5.0,
+   "n80_pos": 9638.0,
+   "n_units": 1471,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.12883435189723969,
+   "att_share": 0.015375757589936256
+  },
+  {
+   "neuron": 3860,
+   "n80_net": 4.0,
+   "n80_pos": 9481.0,
+   "n_units": 1300,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15337422490119934,
+   "att_share": 0.01681399904191494
+  },
+  {
+   "neuron": 3875,
+   "n80_net": 3.0,
+   "n80_pos": 9394.0,
+   "n_units": 1377,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.23926380276679993,
+   "att_share": 0.02137552946805954
+  },
+  {
+   "neuron": 3885,
+   "n80_net": 4.0,
+   "n80_pos": 9405.0,
+   "n_units": 1320,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.28834354877471924,
+   "att_share": 0.01499414537101984
+  },
+  {
+   "neuron": 3896,
+   "n80_net": 2.0,
+   "n80_pos": 9466.0,
+   "n_units": 1390,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15337422490119934,
+   "att_share": 0.023533305153250694
+  },
+  {
+   "neuron": 3898,
+   "n80_net": 6.0,
+   "n80_pos": 9253.0,
+   "n_units": 1229,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.21472391486167908,
+   "att_share": 0.014238275587558746
+  },
+  {
+   "neuron": 3902,
+   "n80_net": 3.0,
+   "n80_pos": 9291.0,
+   "n_units": 1294,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.15950919687747955,
+   "att_share": 0.015727298334240913
+  },
+  {
+   "neuron": 3908,
+   "n80_net": 10.0,
+   "n80_pos": 9505.0,
+   "n_units": 1329,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.20245398581027985,
+   "att_share": 0.014715968631207943
+  },
+  {
+   "neuron": 3912,
+   "n80_net": 5.0,
+   "n80_pos": 9534.0,
+   "n_units": 1399,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19631901383399963,
+   "att_share": 0.014042241498827934
+  },
+  {
+   "neuron": 3931,
+   "n80_net": 10.0,
+   "n80_pos": 9519.0,
+   "n_units": 1221,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2269938588142395,
+   "att_share": 0.014301602728664875
+  },
+  {
+   "neuron": 3940,
+   "n80_net": 7.0,
+   "n80_pos": 9474.0,
+   "n_units": 1420,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.10429447889328003,
+   "att_share": 0.01548389159142971
+  },
+  {
+   "neuron": 3960,
+   "n80_net": 3.0,
+   "n80_pos": 9255.0,
+   "n_units": 1010,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.34355828166007996,
+   "att_share": 0.018156208097934723
+  },
+  {
+   "neuron": 3965,
+   "n80_net": 5.0,
+   "n80_pos": 9571.0,
+   "n_units": 1354,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.014912746846675873
+  },
+  {
+   "neuron": 3975,
+   "n80_net": 2.0,
+   "n80_pos": 9372.0,
+   "n_units": 1046,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.4907975196838379,
+   "att_share": 0.019387107342481613
+  },
+  {
+   "neuron": 3993,
+   "n80_net": 4.0,
+   "n80_pos": 9284.0,
+   "n_units": 1065,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2269938588142395,
+   "att_share": 0.01990559510886669
+  },
+  {
+   "neuron": 4008,
+   "n80_net": 8.0,
+   "n80_pos": 9765.0,
+   "n_units": 1407,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1349693238735199,
+   "att_share": 0.015871446579694748
+  },
+  {
+   "neuron": 4012,
+   "n80_net": 12.0,
+   "n80_pos": 9690.0,
+   "n_units": 1260,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.2760736048221588,
+   "att_share": 0.015601086430251598
+  },
+  {
+   "neuron": 4034,
+   "n80_net": 16.0,
+   "n80_pos": 9742.0,
+   "n_units": 1059,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.349693238735199,
+   "att_share": 0.012395613826811314
+  },
+  {
+   "neuron": 4036,
+   "n80_net": 4.0,
+   "n80_pos": 9387.0,
+   "n_units": 1166,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3190183937549591,
+   "att_share": 0.02001364901661873
+  },
+  {
+   "neuron": 4039,
+   "n80_net": 2.0,
+   "n80_pos": 9177.0,
+   "n_units": 1131,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.19018404185771942,
+   "att_share": 0.02279558964073658
+  },
+  {
+   "neuron": 4040,
+   "n80_net": 26.0,
+   "n80_pos": 10007.0,
+   "n_units": 1236,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3619631826877594,
+   "att_share": 0.01218101941049099
+  },
+  {
+   "neuron": 4042,
+   "n80_net": 5.0,
+   "n80_pos": 9001.0,
+   "n_units": 870,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3619631826877594,
+   "att_share": 0.01818336360156536
+  },
+  {
+   "neuron": 4080,
+   "n80_net": 3.0,
+   "n80_pos": 9310.0,
+   "n_units": 1239,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.17177914083003998,
+   "att_share": 0.02406303398311138
+  },
+  {
+   "neuron": 4081,
+   "n80_net": 3.0,
+   "n80_pos": 9331.0,
+   "n_units": 1060,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.3619631826877594,
+   "att_share": 0.01839587464928627
+  },
+  {
+   "neuron": 4091,
+   "n80_net": 2.0,
+   "n80_pos": 9265.0,
+   "n_units": 1308,
+   "stable_count": 0,
+   "stable_mass_share": 0.0,
+   "top_unit_reuse": 0.1411042958498001,
+   "att_share": 0.01582837849855423
+  }
+ ],
+ "_exp": "e712_pythia410_b12",
+ "_time": "2026-10-19 22:01:49",
+ "seconds": 86.89268159866333,
+ "summary_stats": {
+  "n_neurons": 400,
+  "firings_per_neuron": 163,
+  "upstream_units": 49165,
+  "mlp_units": 49152,
+  "active_edges": 478555,
+  "n80_net": 4.0,
+  "n80_pos": 9493.5,
+  "units_per_neuron": 1236.5,
+  "stable_count": 0.0,
+  "stable_mass_share": 0.0,
+  "top_unit_reuse": 0.2300613448023796,
+  "top10pct_edge_mass": 0.48719143867492676,
+  "top1pct_edge_mass": 0.18837124109268188,
+  "zipf_slope": 0.5703388452529907,
+  "hub_1pct_share_of_stable": 1.0,
+  "units_stable_for_two_or_more": 10,
+  "att_mass_share": 0.016651717014610767
+ },
+ "summary": "[pythia410 block 12] 400 neurons x 163 firings: units for four fifths of the net drive 4 and of the positive drive 9494 (medians); attention and embedding carry 0.02 of the absolute input mass; wires per neuron 1236 distinct, 0 stable (reuse >= 0.5) holding 0.00 of the wire mass; 478555 active edges, the top 10 percent carry 0.49 of the mass (top 1 percent 0.19, Zipf slope 0.57); the top 1 percent of MLP units hold 1.00 of the stable edges, 10 units stable for two or more neurons; verdicts {'P1_top10pct_edges_half_mass': False, 'P2_stable_wires_half_mass': False, 'P3_hubs_hold_third': True, 'P4_n80_net_under_32': True}"
+}

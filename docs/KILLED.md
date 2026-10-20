@@ -1134,3 +1134,29 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The brake as a property of the final weights only: at step 1000 the crowd reinforces the wires off the class and the brake forms between steps 2000 and 16000 (e701).
 - The weak activations as a sparse or a superposed code: a closed-form rank-16 linear map of the block input replaces them for 0.56 to 0.96 of the zeroing cost (e696).
 - The ledger's K-input simulation against a bf16 model: the residual stream's block-by-block rounding leaves the all-inputs check at 0.86 to 0.95, and only an fp32 model passes it (e700).
+
+## Session 160 kills (what the model reads and defends)
+- "the weak field's sixteen directions carry read energy above three times a random direction's." (e707).
+- "the strong field's do too." (e707).
+- "on GPT-2 small the public SAE's error holds under half as large a share of the content's read energy as of its Euclidean energy." (e707).
+- "the expected gradient at the perturbed point points back toward the original rows: restoring cosine over 0.3 for rotated strong rows." (e711).
+- "for the swapped field the restoring cosine on the swapped plane is over 0.3." (e711).
+- "rotating every strong row of the block at once (up to 256) gives a restoring cosine over 0.3." (e711).
+- "sixteen strong rows rotated by forty-five degrees return more than halfway (return fraction over 0.5) within 800 steps while unperturbed rows keep a cosine over 0.98 to their originals." (e711).
+- "those rows return by over 0.2 of the way in 200 steps." (e711).
+- "weak rows return less than strong rows by 0.2." (e711).
+- "the swapped field is restored by the writers (writer restoration over 0.5)." (e711).
+- "halved rows recover more than half their norm." (e711).
+- "in the gated models a sixteen-branch mixture closes at least half the gap between the linear bypass and the oracle sixteen." (e710).
+- "sixteen branches beat four by 0.03." (e710).
+- "at alpha 1.5 the next three blocks' weak writes undo at least a fifth of the injected vector along its own direction." (e708).
+- "the weak writes undo more than the strong writes do." (e708).
+- "the undoing is asymmetric: larger at alpha 1.5 than at alpha 0.5 by 0.1." (e708).
+- "and at least one and a half times the strong field's." (e709).
+- "the weak field's coordinates jump across a document boundary by more than twice their jump inside documents." (e709).
+- "a neuron's stable wires (in its sixteen at half its firings or more) hold at least half its wire mass." (e712).
+- A pruned neuron graph failing for lack of drive at the firings: at mid-depth 0.78 to 0.88 of its damage is off-class misfiring, and sixteen excitatory wires alone cost 6 to 561 times the ablation damage (e697).
+- Sixteen inhibitory wires as the error node: they carry the net opposition at each position and still leave the firings at 0.59 to 1.06 of the ablation damage (e697).
+- The brake as a property of the final weights only: at step 1000 the crowd reinforces the wires off the class and the brake forms between steps 2000 and 16000 (e701).
+- The weak activations as a sparse or a superposed code: a closed-form rank-16 linear map of the block input replaces them for 0.56 to 0.96 of the zeroing cost (e696).
+- The ledger's K-input simulation against a bf16 model: the residual stream's block-by-block rounding leaves the all-inputs check at 0.86 to 0.95, and only an fp32 model passes it (e700).

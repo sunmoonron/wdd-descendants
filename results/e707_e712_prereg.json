@@ -1,0 +1,225 @@
+{
+ "session": 160,
+ "date": "2026-10-19",
+ "written_before": "any full run; smokes may revise, revisions dated",
+ "format": "prediction id: [statement, my probability]; bands coded in the scripts",
+ "aim": "the OG round: both camps are object-first (nodes or features) and reader-blind; six experiments test the model's own criteria: what its readers read (e707), whether the crowd is a loop (e708), the time-scales of its coordinates (e709), the gated remainder as control flow (e710), unit-hood as what training defends (e711), and the model as a finite program of edges (e712)",
+ "e707_read_subspace": {
+  "question": "at a position, how much of the state, of the writes and of a decomposition's error does the model read, by the Fisher information of its own output over the next sixty-four tokens?",
+  "R1": [
+   "the read dimension (nine tenths of the Fisher trace) at mid-depth is under a tenth of the stream's width",
+   0.5
+  ],
+  "R2": [
+   "the Fisher quadratic form of a part predicts the finite KL of removing it: Spearman at least 0.8 over positions and parts",
+   0.6
+  ],
+  "R3": [
+   "the weak write's read energy per unit energy is below the strong write's",
+   0.5
+  ],
+  "R3b": [
+   "removing the weak write costs more KL than removing a random vector of its norm",
+   0.6
+  ],
+  "R4": [
+   "the weak field's sixteen directions carry read energy above three times a random direction's",
+   0.65
+  ],
+  "R4b": [
+   "the strong field's do too",
+   0.6
+  ],
+  "R5": [
+   "on GPT-2 small the public SAE's error holds under half as large a share of the content's read energy as of its Euclidean energy",
+   0.5
+  ],
+  "R5b": [
+   "and removing it costs more KL than removing a random vector of its norm (Gurnee 2024)",
+   0.65
+  ],
+  "R6": [
+   "the OMP residual's read energy per unit energy is below the rows part's",
+   0.5
+  ],
+  "runs": [
+   "gpt2 b5, gpt2 b8 (with jbloom's resid_pre SAEs), pythia160 b6, pythia410 b12, qwen05 b12, gpt2m b12"
+  ]
+ },
+ "e708_thermostat": {
+  "question": "when a block's strong writes are scaled, do the next blocks' crowds undo the change, and is the output effect smaller than the direct path's?",
+  "T1": [
+   "at alpha 1.5 the next three blocks' weak writes undo at least a fifth of the injected vector along its own direction",
+   0.5
+  ],
+  "T2": [
+   "the weak writes undo more than the strong writes do",
+   0.55
+  ],
+  "T3": [
+   "the output KL of the whole perturbation is under 0.7 of its direct path's",
+   0.6
+  ],
+  "T4": [
+   "the undoing is asymmetric: larger at alpha 1.5 than at alpha 0.5 by 0.1",
+   0.5
+  ],
+  "T5": [
+   "attention undoes less than the weak writes do",
+   0.55
+  ],
+  "runs": [
+   "pythia160 b6, pythia410 b12, qwen05 b12, gpt2m b12, smollm135 b15, olmo1b b8"
+  ]
+ },
+ "e709_two_clocks": {
+  "question": "along the sequence, are the field's coordinates slower than the neurons' and the stream's?",
+  "C1": [
+   "the weak field's integral time-scale is at least three times the sixty-four most active neurons'",
+   0.6
+  ],
+  "C2": [
+   "and at least twice that of sixteen random directions of the centred state",
+   0.4
+  ],
+  "C3": [
+   "and at least one and a half times the strong field's",
+   0.5
+  ],
+  "C4": [
+   "the weak field's coordinates jump across a document boundary by more than twice their jump inside documents",
+   0.55
+  ],
+  "C5": [
+   "the stream's own sixteen principal directions are slower than the weak field",
+   0.6
+  ],
+  "runs": [
+   "e706's eight model-blocks"
+  ]
+ },
+ "e710_branches": {
+  "question": "is the gated remainder after the linear bypass control flow: does one linear bypass per branch of the block's open set close it, where a mixture over clusters of the input does not?",
+  "B1": [
+   "in the gated models a sixteen-branch mixture closes at least half the gap between the linear bypass and the oracle sixteen",
+   0.5
+  ],
+  "B2": [
+   "in the GELU models it adds under 0.05",
+   0.55
+  ],
+  "B3": [
+   "the open-set mixture beats the state-clustered mixture of the same size by 0.05",
+   0.4
+  ],
+  "B4": [
+   "the mixture keeps 0.7 of its recovery out of domain",
+   0.4
+  ],
+  "B5": [
+   "sixteen branches beat four by 0.03",
+   0.5
+  ],
+  "runs": [
+   "qwen05, qwen15, olmo1b, smollm360 (gated); pythia410, gpt2m (GELU)"
+  ]
+ },
+ "e711_elasticity": {
+  "question": "does continued training defend a neuron's write row, a weak neuron's, a row's norm, and the weak field, and does the loss recover by return or by migration?",
+  "E0": [
+   "the expected gradient at the perturbed point points back toward the original rows: restoring cosine over 0.3 for rotated strong rows",
+   0.7
+  ],
+  "E0b": [
+   "the restoring cosine is lower for rotated weak rows than for strong ones",
+   0.55
+  ],
+  "E0c": [
+   "for the swapped field the restoring cosine on the swapped plane is over 0.3",
+   0.5
+  ],
+  "E0d": [
+   "the restoring force has faded by the end of training (restoring cosine at the end under half its start) where the loss recovered",
+   0.5
+  ],
+  "E0e": [
+   "rotating every strong row of the block at once (up to 256) gives a restoring cosine over 0.3",
+   0.6
+  ],
+  "E1": [
+   "sixteen strong rows rotated by forty-five degrees return more than halfway (return fraction over 0.5) within 800 steps while unperturbed rows keep a cosine over 0.98 to their originals",
+   0.4
+  ],
+  "E1e": [
+   "those rows return by over 0.2 of the way in 200 steps",
+   0.3
+  ],
+  "E2": [
+   "weak rows return less than strong rows by 0.2",
+   0.55
+  ],
+  "E3": [
+   "with the perturbed rows frozen the loss recovers at least half as much as with them free",
+   0.6
+  ],
+  "E4": [
+   "the swapped field is restored by the writers (writer restoration over 0.5)",
+   0.4
+  ],
+  "E5": [
+   "the readers follow the swapped field by less than 0.1",
+   0.5
+  ],
+  "E6": [
+   "halved rows recover more than half their norm",
+   0.5
+  ],
+  "runs": [
+   "pythia160 b6 and b9, pythia410 b12: none, perm, rot, rotw, rotall, scale, field, and rot, rotw, rotall, scale, field frozen; the expected gradient over 24 batches of Pile text at the start and the end; 200 steps of 32 x 1024 Pile tokens (pile-10k, ten thousand documents) at 5e-5 with AdamW primed 30 steps, warmup 50"
+  ]
+ },
+ "e712_edge_program": {
+  "question": "is the model a finite program of reused edges or a continuum of position-specific ones?",
+  "P1": [
+   "the top tenth of active edges by mass carry at least half the wire mass",
+   0.5
+  ],
+  "P2": [
+   "a neuron's stable wires (in its sixteen at half its firings or more) hold at least half its wire mass",
+   0.45
+  ],
+  "P3": [
+   "the most-used one percent of upstream units hold at least three tenths of the stable edges",
+   0.5
+  ],
+  "P4": [
+   "four fifths of a firing's net drive needs at most thirty-two MLP units",
+   0.6
+  ],
+  "runs": [
+   "pythia160 b6, pythia410 b12, qwen05 b12, gpt2m b12; 400 neurons each"
+  ]
+ },
+ "revisions": [
+  {
+   "when": "2026-10-19 18:45 after the smokes, before any full run",
+   "what": "e707: the read subspace is ranked by the Fisher-weighted energy of the position's own content rather than by the Fisher trace (the trace-ranked dimension was three directions and predicted nothing about finite swaps); R2 family restated as keep-only tests with R2d the swap test at 0.5. e711: the optimiser's moments are primed at zero learning rate for 30 steps and the rate is 2e-5 with a 50-step warmup on 32 x 1024 tokens (a fresh Adam at 1e-4 raised the held-out loss by 0.35 in twelve steps). e712: wires are the sixteen largest MLP inputs, attention and the embedding counted aside (they were every stable wire); P4 on the net drive. e709: Pile windows centred on document boundaries. Probabilities unchanged."
+  },
+  {
+   "when": "2026-10-19 18:55 after the second smokes, before any full run",
+   "what": "e707: with 512 Fisher samples per position, removing the four directions carrying nine tenths of the content's Fisher-weighted energy and removing the other 764 cost about the same KL, so no subspace ranked by the local Fisher survives finite removals (LayerNorm couples the parts). The experiment is restated on the Fisher quadratic form of each part (its read energy) against its Euclidean energy and against the finite KL of removing it: R2 is the prediction check, R3 to R6 compare parts and subspaces by read energy per unit energy, R3b and R5b compare removals with random vectors of the same norm. Probabilities set at the revision."
+  },
+  {
+   "when": "2026-10-19 20:20 with the first full elasticity runs at step 400 (their results discarded, every e711 job rerun)",
+   "what": "e711: the Pile-10k stream (three million tokens) was cycled eight times in 800 steps and the exact-symmetry control's held-out loss rose by 0.2 nats, and sixteen rotated rows returned by 0.01 in 400 steps because their gradient is small against batch noise under Adam. The corpus is now wikitext-103 train (no repetition; wikitext-2 test is disjoint), the rate 5e-5, and the primary observable is the restoring gradient: the expected gradient over 24 batches at the perturbed point and at the end, projected on the way back to the original rows (E0 to E0d added at 0.7, 0.55, 0.5, 0.5); E1 to E6 kept as stated."
+  },
+  {
+   "when": "2026-10-19 21:20 with the first restoring-gradient readings (the 800-step runs stopped at step 200 and discarded)",
+   "what": "e711: the restoring cosine of the expected gradient over 24 batches for sixteen rotated rows is 0.03 at the perturbed point, the noise level for a fixed direction in a thousand dimensions, so an 800-step run cannot show return; the runs are cut to 200 steps (the free-against-frozen loss recovery is visible by then) and a collective condition is added, every strong row of the block rotated at once (rotall, E0e at 0.6, E1e at 0.3)."
+  },
+  {
+   "when": "2026-10-19 23:05 with eleven Pythia-410m runs done on wikitext-103 (discarded and rerun)",
+   "what": "e711: the restoring gradient was measured on wikitext-103, where every row carries a drift toward that corpus (the unperturbed rows' force ratio was 0.8 to 1.0 against the perturbed ones), so a small restoring component could not stand out; the measurement and the training now use Pile text, the training distribution, from ten thousand pile-10k documents with no repetition in 200 steps. Statements and probabilities unchanged."
+  }
+ ]
+}

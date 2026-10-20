@@ -1,0 +1,187 @@
+{
+ "model": "allenai/OLMo-1B-0724-hf",
+ "n_blocks": 16,
+ "DFF": 8192,
+ "keep_quantile": 0.25,
+ "gated": true,
+ "branches": {
+  "mix4_open": 4,
+  "mix16_open": 16,
+  "mix16_state": 16
+ },
+ "fitting_positions": 196608,
+ "conditions": {
+  "zero": {
+   "kl_mean": 0.9672234058380127,
+   "loss_delta": 0.9694092273712158
+  },
+  "pca16": {
+   "kl_mean": 0.19826261699199677,
+   "loss_delta": 0.2019660472869873
+  },
+  "lin": {
+   "kl_mean": 0.27487197518348694,
+   "loss_delta": 0.2782907485961914
+  },
+  "mix4_open": {
+   "kl_mean": 0.26689445972442627,
+   "loss_delta": 0.2744631767272949
+  },
+  "mix16_open": {
+   "kl_mean": 0.32450082898139954,
+   "loss_delta": 0.3298001289367676
+  },
+  "mix16_state": {
+   "kl_mean": 0.3968072831630707,
+   "loss_delta": 0.40024805068969727
+  }
+ },
+ "base_loss": 2.807471990585327,
+ "ood": {
+  "Github": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.8025521636009216,
+     "loss_delta": 0.8348780870437622
+    },
+    "pca16": {
+     "kl_mean": 0.16838744282722473,
+     "loss_delta": 0.17568206787109375
+    },
+    "lin": {
+     "kl_mean": 0.3425026834011078,
+     "loss_delta": 0.3345804214477539
+    },
+    "mix4_open": {
+     "kl_mean": 0.27835968136787415,
+     "loss_delta": 0.28231847286224365
+    },
+    "mix16_open": {
+     "kl_mean": 0.35711193084716797,
+     "loss_delta": 0.3517110347747803
+    },
+    "mix16_state": {
+     "kl_mean": 0.4681040644645691,
+     "loss_delta": 0.47081565856933594
+    }
+   },
+   "base_loss": 1.2842646837234497,
+   "n_tokens": 51092
+  },
+  "ArXiv": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.6434022188186646,
+     "loss_delta": 0.612318754196167
+    },
+    "pca16": {
+     "kl_mean": 0.12837235629558563,
+     "loss_delta": 0.12108898162841797
+    },
+    "lin": {
+     "kl_mean": 0.21312928199768066,
+     "loss_delta": 0.21162033081054688
+    },
+    "mix4_open": {
+     "kl_mean": 0.2066604495048523,
+     "loss_delta": 0.1968088150024414
+    },
+    "mix16_open": {
+     "kl_mean": 0.26073136925697327,
+     "loss_delta": 0.251798152923584
+    },
+    "mix16_state": {
+     "kl_mean": 0.36319655179977417,
+     "loss_delta": 0.3550448417663574
+    }
+   },
+   "base_loss": 2.1371676921844482,
+   "n_tokens": 842813
+  },
+  "EuroParl": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.3613603115081787,
+     "loss_delta": 1.4240443706512451
+    },
+    "pca16": {
+     "kl_mean": 0.3602712154388428,
+     "loss_delta": 0.3753659725189209
+    },
+    "lin": {
+     "kl_mean": 0.5429301857948303,
+     "loss_delta": 0.5716438293457031
+    },
+    "mix4_open": {
+     "kl_mean": 0.4829596281051636,
+     "loss_delta": 0.5067057609558105
+    },
+    "mix16_open": {
+     "kl_mean": 0.5644646286964417,
+     "loss_delta": 0.5726845264434814
+    },
+    "mix16_state": {
+     "kl_mean": 0.6653642654418945,
+     "loss_delta": 0.6999452114105225
+    }
+   },
+   "base_loss": 3.0448505878448486,
+   "n_tokens": 21044
+  },
+  "StackExchange": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.7547447681427002,
+     "loss_delta": 0.7795612812042236
+    },
+    "pca16": {
+     "kl_mean": 0.18696144223213196,
+     "loss_delta": 0.20303916931152344
+    },
+    "lin": {
+     "kl_mean": 0.357049822807312,
+     "loss_delta": 0.37609291076660156
+    },
+    "mix4_open": {
+     "kl_mean": 0.24746578931808472,
+     "loss_delta": 0.2659893035888672
+    },
+    "mix16_open": {
+     "kl_mean": 0.34613746404647827,
+     "loss_delta": 0.3592529296875
+    },
+    "mix16_state": {
+     "kl_mean": 0.43729937076568604,
+     "loss_delta": 0.459320068359375
+    }
+   },
+   "base_loss": 1.912994146347046,
+   "n_tokens": 41683
+  }
+ },
+ "verdicts": {
+  "B1_mix16_closes_half_gap": false,
+  "B2_mix16_adds_under_005": true,
+  "B3_open_beats_state_by_005": true,
+  "B4_mix16_transfers": true,
+  "B5_mix16_over_mix4_by_003": false
+ },
+ "recovered": {
+  "pca16": 0.7950187973168206,
+  "lin": 0.7158133544697103,
+  "mix4_open": 0.7240612064250181,
+  "mix16_open": 0.664502712586604,
+  "mix16_state": 0.5897459875681228
+ },
+ "recovered_ood": {
+  "pca16": 0.7712351292100919,
+  "lin": 0.5872093266393863,
+  "mix4_open": 0.6626383998434715,
+  "mix16_open": 0.5701984197868597,
+  "mix16_state": 0.42805294202496347
+ },
+ "_exp": "e710_olmo1b",
+ "_time": "2026-10-19 18:58:19",
+ "seconds": 255.7318994998932,
+ "summary": "[olmo1b] all but the strongest quarter zeroed at every block, KL in nats on wikitext-2 test: zero 0.967, pca16 0.198, lin 0.275, mix4_open 0.267, mix16_open 0.325, mix16_state 0.397; recovered: pca16 0.80, lin 0.72, mix4_open 0.72, mix16_open 0.66, mix16_state 0.59; out of domain (median over four Pile domains): pca16 0.77, lin 0.59, mix4_open 0.66, mix16_open 0.57, mix16_state 0.43; verdicts {'B1_mix16_closes_half_gap': False, 'B2_mix16_adds_under_005': True, 'B3_open_beats_state_by_005': True, 'B4_mix16_transfers': True, 'B5_mix16_over_mix4_by_003': False}"
+}

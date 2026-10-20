@@ -1307,6 +1307,45 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1071 Out of domain the quadratic bypass beats the linear one by 0.1. → e705 → REFUTED.
 - H1072 The brake is under -0.5 by step 128000 (nine percent of training) at both blocks. → e701l → REFUTED.
 - H1073 It deepens monotonically from 32000 to the final model (Spearman under -0.8). → e701l → SUPPORTED.
+- H1074 The read dimension (nine tenths of the Fisher trace) at mid-depth is under a tenth of the stream's width. → e707 → SUPPORTED.
+- H1075 The Fisher quadratic form of a part predicts the finite KL of removing it: Spearman at least 0.8 over positions and parts. → e707 → SUPPORTED.
+- H1076 The weak write's read energy per unit energy is below the strong write's. → e707 → NARROWED (holds for GPT-2 small block 5, not GPT-2 small block 8, GPT-2 medium block 12, Pythia-160m block 6, Pythia-410m block 12, Qwen2.5-0.5B block 12).
+- H1077 Removing the weak write costs more KL than removing a random vector of its norm. → e707 → NARROWED (holds for GPT-2 small block 8, GPT-2 medium block 12, Qwen2.5-0.5B block 12, not GPT-2 small block 5, Pythia-160m block 6, Pythia-410m block 12).
+- H1078 The weak field's sixteen directions carry read energy above three times a random direction's. → e707 → REFUTED.
+- H1079 The strong field's do too. → e707 → REFUTED.
+- H1080 On GPT-2 small the public SAE's error holds under half as large a share of the content's read energy as of its Euclidean energy. → e707 → REFUTED.
+- H1081 And removing it costs more KL than removing a random vector of its norm (Gurnee 2024). → e707 → SUPPORTED.
+- H1082 The OMP residual's read energy per unit energy is below the rows part's. → e707 → NARROWED (holds for GPT-2 small block 5, GPT-2 small block 8, GPT-2 medium block 12, not Pythia-160m block 6, Pythia-410m block 12, Qwen2.5-0.5B block 12).
+- H1083 The expected gradient at the perturbed point points back toward the original rows: restoring cosine over 0.3 for rotated strong rows. → e711 → REFUTED.
+- H1084 The restoring cosine is lower for rotated weak rows than for strong ones. → e711 → SUPPORTED.
+- H1085 For the swapped field the restoring cosine on the swapped plane is over 0.3. → e711 → REFUTED.
+- H1086 Rotating every strong row of the block at once (up to 256) gives a restoring cosine over 0.3. → e711 → REFUTED.
+- H1087 Sixteen strong rows rotated by forty-five degrees return more than halfway (return fraction over 0.5) within 800 steps while unperturbed rows keep a cosine over 0.98 to their originals. → e711 → REFUTED.
+- H1088 Those rows return by over 0.2 of the way in 200 steps. → e711 → REFUTED.
+- H1089 Weak rows return less than strong rows by 0.2. → e711 → REFUTED.
+- H1090 With the perturbed rows frozen the loss recovers at least half as much as with them free. → e711 → SUPPORTED.
+- H1091 The swapped field is restored by the writers (writer restoration over 0.5). → e711 → REFUTED.
+- H1092 The readers follow the swapped field by less than 0.1. → e711 → SUPPORTED.
+- H1093 Halved rows recover more than half their norm. → e711 → REFUTED.
+- H1094 In the gated models a sixteen-branch mixture closes at least half the gap between the linear bypass and the oracle sixteen. → e710 → REFUTED.
+- H1095 In the GELU models it adds under 0.05. → e710 → SUPPORTED.
+- H1096 The open-set mixture beats the state-clustered mixture of the same size by 0.05. → e710 → NARROWED (holds for OLMo-1B, SmolLM2-360M, not GPT-2 medium, Pythia-410m, Qwen2.5-0.5B, Qwen2.5-1.5B).
+- H1097 The mixture keeps 0.7 of its recovery out of domain. → e710 → NARROWED (holds for GPT-2 medium, OLMo-1B, Pythia-410m, Qwen2.5-0.5B, not Qwen2.5-1.5B, SmolLM2-360M).
+- H1098 Sixteen branches beat four by 0.03. → e710 → REFUTED.
+- H1099 At alpha 1.5 the next three blocks' weak writes undo at least a fifth of the injected vector along its own direction. → e708 → REFUTED.
+- H1100 The weak writes undo more than the strong writes do. → e708 → REFUTED.
+- H1101 The output KL of the whole perturbation is under 0.7 of its direct path's. → e708 → NARROWED (holds for GPT-2 medium block 12, SmolLM2-135M block 15, not OLMo-1B block 8, Pythia-160m block 6, Pythia-410m block 12, Qwen2.5-0.5B block 12).
+- H1102 The undoing is asymmetric: larger at alpha 1.5 than at alpha 0.5 by 0.1. → e708 → REFUTED.
+- H1103 Attention undoes less than the weak writes do. → e708 → SUPPORTED.
+- H1104 The weak field's integral time-scale is at least three times the sixty-four most active neurons'. → e709 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 6, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 18, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15).
+- H1105 And at least twice that of sixteen random directions of the centred state. → e709 → NARROWED (holds for Pythia-410m block 12, Pythia-410m block 6, Qwen2.5-0.5B block 12, Qwen2.5-0.5B block 6, SmolLM2-135M block 15, not GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 18).
+- H1106 And at least one and a half times the strong field's. → e709 → REFUTED.
+- H1107 The weak field's coordinates jump across a document boundary by more than twice their jump inside documents. → e709 → REFUTED.
+- H1108 The stream's own sixteen principal directions are slower than the weak field. → e709 → NARROWED (holds for GPT-2 medium block 12, GPT-2 medium block 6, Pythia-410m block 18, Qwen2.5-0.5B block 12, SmolLM2-135M block 15, not Pythia-410m block 12, Pythia-410m block 6, Qwen2.5-0.5B block 6).
+- H1109 The top tenth of active edges by mass carry at least half the wire mass. → e712 → NARROWED (holds for GPT-2 medium block 12, Pythia-160m block 6, Qwen2.5-0.5B block 12, not Pythia-410m block 12).
+- H1110 A neuron's stable wires (in its sixteen at half its firings or more) hold at least half its wire mass. → e712 → REFUTED.
+- H1111 The most-used one percent of upstream units hold at least three tenths of the stable edges. → e712 → SUPPORTED.
+- H1112 Four fifths of a firing's net drive needs at most thirty-two MLP units. → e712 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

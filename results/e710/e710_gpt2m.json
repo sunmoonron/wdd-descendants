@@ -1,0 +1,187 @@
+{
+ "model": "openai-community/gpt2-medium",
+ "n_blocks": 24,
+ "DFF": 4096,
+ "keep_quantile": 0.25,
+ "gated": false,
+ "branches": {
+  "mix4_open": 4,
+  "mix16_open": 16,
+  "mix16_state": 16
+ },
+ "fitting_positions": 196608,
+ "conditions": {
+  "zero": {
+   "kl_mean": 0.9507706165313721,
+   "loss_delta": 1.9070491790771484
+  },
+  "pca16": {
+   "kl_mean": 0.19860444962978363,
+   "loss_delta": 0.002833843231201172
+  },
+  "lin": {
+   "kl_mean": 0.2545139789581299,
+   "loss_delta": 0.033893585205078125
+  },
+  "mix4_open": {
+   "kl_mean": 0.23164358735084534,
+   "loss_delta": 0.022110939025878906
+  },
+  "mix16_open": {
+   "kl_mean": 0.2311207503080368,
+   "loss_delta": 0.03441476821899414
+  },
+  "mix16_state": {
+   "kl_mean": 0.2399989813566208,
+   "loss_delta": 0.028996944427490234
+  }
+ },
+ "base_loss": 6.592885971069336,
+ "ood": {
+  "Github": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.848714828491211,
+     "loss_delta": 1.2578625679016113
+    },
+    "pca16": {
+     "kl_mean": 0.43661069869995117,
+     "loss_delta": 0.056682586669921875
+    },
+    "lin": {
+     "kl_mean": 0.6450941562652588,
+     "loss_delta": -0.011054039001464844
+    },
+    "mix4_open": {
+     "kl_mean": 0.6185215711593628,
+     "loss_delta": -0.06504201889038086
+    },
+    "mix16_open": {
+     "kl_mean": 0.6882481575012207,
+     "loss_delta": -0.03564023971557617
+    },
+    "mix16_state": {
+     "kl_mean": 0.7613629698753357,
+     "loss_delta": -0.02394247055053711
+    }
+   },
+   "base_loss": 7.2407450675964355,
+   "n_tokens": 65369
+  },
+  "ArXiv": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.5251222848892212,
+     "loss_delta": 2.140202522277832
+    },
+    "pca16": {
+     "kl_mean": 0.3980306088924408,
+     "loss_delta": -0.006868839263916016
+    },
+    "lin": {
+     "kl_mean": 0.4864612817764282,
+     "loss_delta": -0.030588626861572266
+    },
+    "mix4_open": {
+     "kl_mean": 0.5069577693939209,
+     "loss_delta": -0.04015493392944336
+    },
+    "mix16_open": {
+     "kl_mean": 0.5182958841323853,
+     "loss_delta": -0.026183128356933594
+    },
+    "mix16_state": {
+     "kl_mean": 0.6086273789405823,
+     "loss_delta": -0.08214759826660156
+    }
+   },
+   "base_loss": 6.135359764099121,
+   "n_tokens": 990688
+  },
+  "EuroParl": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 0.7507031559944153,
+     "loss_delta": 1.5916495323181152
+    },
+    "pca16": {
+     "kl_mean": 0.07528610527515411,
+     "loss_delta": 0.07955455780029297
+    },
+    "lin": {
+     "kl_mean": 0.10498674213886261,
+     "loss_delta": 0.15824651718139648
+    },
+    "mix4_open": {
+     "kl_mean": 0.10623917728662491,
+     "loss_delta": 0.1553173065185547
+    },
+    "mix16_open": {
+     "kl_mean": 0.12435056269168854,
+     "loss_delta": 0.13965320587158203
+    },
+    "mix16_state": {
+     "kl_mean": 0.11330429464578629,
+     "loss_delta": 0.15946674346923828
+    }
+   },
+   "base_loss": 7.266539096832275,
+   "n_tokens": 23770
+  },
+  "StackExchange": {
+   "conditions": {
+    "zero": {
+     "kl_mean": 1.3732049465179443,
+     "loss_delta": 1.4616127014160156
+    },
+    "pca16": {
+     "kl_mean": 0.3434233069419861,
+     "loss_delta": 0.015282154083251953
+    },
+    "lin": {
+     "kl_mean": 0.4759146571159363,
+     "loss_delta": -0.07020807266235352
+    },
+    "mix4_open": {
+     "kl_mean": 0.476289302110672,
+     "loss_delta": -0.029006004333496094
+    },
+    "mix16_open": {
+     "kl_mean": 0.48959821462631226,
+     "loss_delta": -0.027704715728759766
+    },
+    "mix16_state": {
+     "kl_mean": 0.5237302780151367,
+     "loss_delta": -0.08447933197021484
+    }
+   },
+   "base_loss": 6.606101989746094,
+   "n_tokens": 47762
+  }
+ },
+ "verdicts": {
+  "B1_mix16_closes_half_gap": false,
+  "B2_mix16_adds_under_005": true,
+  "B3_open_beats_state_by_005": false,
+  "B4_mix16_transfers": true,
+  "B5_mix16_over_mix4_by_003": false
+ },
+ "recovered": {
+  "pca16": 0.7911121292806271,
+  "lin": 0.7323076938508524,
+  "mix4_open": 0.7563622777953173,
+  "mix16_open": 0.7569121865048607,
+  "mix16_state": 0.7475742548374162
+ },
+ "recovered_ood": {
+  "pca16": 0.7568706291323455,
+  "lin": 0.6672311870078375,
+  "mix4_open": 0.6665134627226272,
+  "mix16_open": 0.6518121058421675,
+  "mix16_state": 0.609769713056481
+ },
+ "_exp": "e710_gpt2m",
+ "_time": "2026-10-19 20:35:37",
+ "seconds": 108.99089097976685,
+ "summary": "[gpt2m] all but the strongest quarter zeroed at every block, KL in nats on wikitext-2 test: zero 0.951, pca16 0.199, lin 0.255, mix4_open 0.232, mix16_open 0.231, mix16_state 0.240; recovered: pca16 0.79, lin 0.73, mix4_open 0.76, mix16_open 0.76, mix16_state 0.75; out of domain (median over four Pile domains): pca16 0.76, lin 0.67, mix4_open 0.67, mix16_open 0.65, mix16_state 0.61; verdicts {'B1_mix16_closes_half_gap': False, 'B2_mix16_adds_under_005': True, 'B3_open_beats_state_by_005': False, 'B4_mix16_transfers': True, 'B5_mix16_over_mix4_by_003': False}"
+}

@@ -1,0 +1,113 @@
+{
+ "model": "EleutherAI/pythia-160m",
+ "block": 9,
+ "cond": "none",
+ "frozen": false,
+ "steps": 200,
+ "lr": 5e-05,
+ "warmup": 50,
+ "primed_steps": 30,
+ "batch_tokens": 32768,
+ "loss_base": 3.3861868381500244,
+ "loss_pert": 3.3861868381500244,
+ "perturbed": [],
+ "strong": [
+  67,
+  164,
+  425,
+  782,
+  970,
+  1521,
+  1532,
+  1561,
+  1591,
+  1828,
+  2160,
+  2230,
+  2245,
+  2288,
+  2345,
+  2395
+ ],
+ "weak": [
+  5,
+  777,
+  842,
+  1002,
+  1042,
+  1277,
+  1593,
+  1805,
+  1858,
+  2225,
+  2261,
+  2357,
+  2365,
+  2443,
+  2526,
+  2959
+ ],
+ "cos_pert_orig": null,
+ "trajectory": [
+  {
+   "step": 0,
+   "loss": 3.3861868381500244,
+   "recovery": null,
+   "loss_change": 0.0,
+   "drift_cos": 1.0
+  },
+  {
+   "step": 10,
+   "loss": 3.372514843940735,
+   "recovery": null,
+   "loss_change": -0.01367199420928955,
+   "drift_cos": 0.9999997615814209
+  },
+  {
+   "step": 25,
+   "loss": 3.3713635206222534,
+   "recovery": null,
+   "loss_change": -0.014823317527770996,
+   "drift_cos": 0.9999974966049194
+  },
+  {
+   "step": 50,
+   "loss": 3.47078013420105,
+   "recovery": null,
+   "loss_change": 0.08459329605102539,
+   "drift_cos": 0.999977707862854
+  },
+  {
+   "step": 100,
+   "loss": 3.495684027671814,
+   "recovery": null,
+   "loss_change": 0.10949718952178955,
+   "drift_cos": 0.9999055862426758
+  },
+  {
+   "step": 200,
+   "loss": 3.527760863304138,
+   "recovery": null,
+   "loss_change": 0.14157402515411377,
+   "drift_cos": 0.9997696876525879
+  }
+ ],
+ "final": {
+  "step": 200,
+  "loss": 3.527760863304138,
+  "recovery": null,
+  "loss_change": 0.14157402515411377,
+  "drift_cos": 0.9997696876525879
+ },
+ "grad_start": {
+  "ref_grad_norm": 0.0009815249359235168
+ },
+ "grad_end": {
+  "ref_grad_norm": 0.0008243030169978738
+ },
+ "corpus": "pile-10k, ten thousand documents",
+ "_exp": "e711_pythia160_b9_none",
+ "_time": "2026-10-20 01:14:46",
+ "seconds": 718.9742386341095,
+ "summary": "[pythia160 block 9 none] loss 3.3862 -> 3.3862 -> 3.5278 after 200 steps (recovery None); restoring cosine at the start None, force ratio None, at the end None; loss_change 0.142, drift_cos 1.000"
+}
