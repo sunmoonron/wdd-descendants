@@ -77,7 +77,7 @@ Cammarata (2026) reinterprets polysemantic neurons as monosemantic under better 
 
 *The brake.* The crowd's net sum, signed, measured against the wires' net sum, at positions outside the neuron's class (its top five percent of positions). Negative means the crowd opposes the wires there.
 
-*Field.* The sixteen principal directions of a block's weak write (the weak field) or of its strong write (the strong field), found on held-out text. The *bus* is the union of a block's upstream fields.
+*Field.* The sixteen principal directions of a block's weak write (the weak field) or of its strong write (the strong field), found on held-out text: a collective direction that no single neuron wrote. The *bus* is the union of a block's upstream fields. The field is used in two ways: as the target of the linear bypass (section 3.4, where the map's coordinates are the field's) and as atoms in a neuron's input (section 3.5).
 
 *Rows.* The native write rows used as a dictionary for a position's state, selected by orthogonal matching pursuit against an identification floor (Bhatt 2026).
 
@@ -156,7 +156,7 @@ We then fit a rank-16 linear map from the block's normalised input to those sixt
 
 Pre-registered (`results/e696_e701_prereg.json`): L1, "the predicted sixteen recover at least 0.8 of what the oracle sixteen recover", at 0.45: 7 of 8. L2, "the predicted sixteen halve the zeroing cost", at 0.4: 8 of 8. L5, "zeroing drops ARC-Easy by more than 5 points", at 0.5: 7 of 8. L4, "ARC-Easy under the bypass stays within 2 points", at 0.4: 3 of 8. L6, "the linear map explains more than half the weak write's variance", at 0.5: 0 of 8.
 
-The last line is the twist. The map explains under half the weak write's variance in every model and still recovers 0.56 to 0.96 of the cost, because what the output needs from the weak write lives in sixteen directions and is linear in the input there, while most of the weak write's variance lies in directions the output does not read (section 3.6). A reconstruction score would have called this map a failure; the model does not. Two follow-ups closed the obvious alternatives for the gated models, where the bypass recovers less: a quadratic map on 256 random bilinear features recovers no more than the linear one (e705), and one linear map per branch of the gate's sign pattern recovers no more either (e710).
+The last line is the twist, and it is a property of the linear map, not of the fields of section 3.5. The map explains under half the weak write's variance in every model and still recovers 0.56 to 0.96 of the cost, because what the output needs from the weak write lives in sixteen directions and is linear in the input there, while most of the weak write's variance lies in directions the output does not read (section 3.6). A reconstruction score would have called this map a failure; the model does not. Two follow-ups closed the obvious alternatives for the gated models, where the bypass recovers less: a quadratic map on 256 random bilinear features recovers no more than the linear one (e705), and one linear map per branch of the gate's sign pattern recovers no more either (e710).
 
 ### 3.5 The field is a dictionary atom (e703, e704, e706)
 
@@ -166,7 +166,7 @@ The write-direction dictionary reads a position's state as native write rows ove
 
 Pre-registered (`results/e705_e706_prereg.json`): H0 at 0.9: 8 of 8. H4, "both fields bring the ratio under 0.5", at 0.6: 7 of 8. H2, "both beat the weak field alone by 0.1", at 0.45: 5 of 8. H5, "both beat a random subspace of their dimension by 0.2", at 0.65: 4 of 8, the margin falling under 0.2 where both fields' dimension, thirty-two per upstream block, exceeds half the stream's width. H1 at 0.3: 3 of 8; H3 at 0.3: 5 of 8; H6 at 0.5: 5 of 8.
 
-Two limits of the field are also results. It is specific to the readers and not to the state's energy: after sixteen rows it removes no more of the state's energy than a random subspace of its dimension (e703). And its directions on wikitext and on the Pile overlap by 0.58 to 0.71 (chance under 0.02), so it has a corpus-shared core and a corpus-specific rest (e705).
+Two limits of the field are also results, and they are the field's own, distinct from the linear map's variance limit in section 3.4. The field is specific to the readers and not to the state's energy: after sixteen rows it removes no more of the state's energy than a random subspace of its dimension (e703), so it is not a dense part of the state that a reconstruction score would find. And its directions on wikitext and on the Pile overlap by 0.58 to 0.71 (chance under 0.02), so it has a corpus-shared core and a corpus-specific rest (e705).
 
 ### 3.6 What the output reads (e707)
 
