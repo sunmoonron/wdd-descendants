@@ -13,4 +13,4 @@ Modules: `model` (loading, weights, normalisation, hooks, log-probabilities, KL)
 
 Models: any Hugging Face causal LM of the three families the record covered (GPT-2, Pythia, and the SwiGLU models Qwen2.5, SmolLM2 and OLMo); the short keys in `wdd.MODELS` or a full model id. fp32 is the default and the one the ledger's exactness was checked in (5e-6 relative error at 7B).
 
-The results these functions produced, with their pre-registrations, are in `docs/atlas/` areas 62 to 68 and `docs/notes/weak_activations_are_a_brake.md`.
+The results these functions produced, with their pre-registrations, are in `docs/atlas/` areas 62 to 72; the note that accompanied them was withdrawn on 2026-10-20.
