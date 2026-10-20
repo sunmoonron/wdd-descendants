@@ -1,0 +1,8 @@
+12|e723_gpt2_b6_jbloom|C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 6 --sae jbloom
+12|e723_gpt2_b6_oai32k|C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 6 --sae oai32k
+12|e723_gpt2_b9_jbloom|C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 9 --sae jbloom
+12|e723_gpt2_b9_oai32k|C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 9 --sae oai32k
+9|e724_gpt2_b5_jbloom|C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 5 --sae jbloom
+9|e724_gpt2_b5_oai32k|C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 5 --sae oai32k
+9|e724_gpt2_b8_jbloom|C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 8 --sae jbloom
+9|e724_gpt2_b8_oai32k|C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 8 --sae oai32k

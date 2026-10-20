@@ -1198,3 +1198,11 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The weak activations as removable at 7B: keeping the strongest quarter costs 1.57 nats at Qwen2.5-7B, the mean replacement 0.88, with a bf16 noise floor of 0.002 (e720).
 - The brake as a late property of training at 410m: it is under -0.5 by step 8000 of 143000 (e721).
 - The GPT-2 medium off-class shares as settled numbers: their 95 percent intervals over neurons span up to 0.35 and reach below 0.4, where the other eight runs' lower bounds are 0.71 to 0.85 (e722).
+
+## Session 164 kills (the matched-budget comparison)
+- "the SAE's error projected on random directions improves it by less than 0.02." (e723).
+- "at sixteen directions the projection on the SAE's directions beats the SAE's own coefficients on sixteen latents at the firings." (e723).
+- "sixteen native rows add at least 0.02 to the SAE's full reconstruction." (e724).
+- The fields as a better dictionary than an SAE's directions for a neuron's firings at the same budget: they tie at sixteen, at sixty-four and at the full dimension (e723).
+- A fixed subspace as the SAE's best use on a neuron: the SAE's own coefficients on sixteen latents chosen per position beat every fixed sixteen-direction projection, the fields included (e723).
+- The fields as adding to an SAE reconstruction's account of a state: sixteen field atoms add 0.002 to 0.006 of the mean-ablation KL, within the random atoms' range (e724).

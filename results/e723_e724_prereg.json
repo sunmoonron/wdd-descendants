@@ -1,0 +1,62 @@
+{
+ "_written": "2026-10-20 11:36 (session 164), revision 1, before any run",
+ "_purpose": "the matched-budget, held-out comparison the note's reviewer asked for: fields, SAE directions and random directions at the same number of directions as a neuron's input, the off-class suppression each reproduces, and whether the fields add anything conditional on an SAE reconstruction, on the readers' turf (e723) and on the state (e724)",
+ "e723_matched_readers": {
+  "design": "GPT-2 small blocks 6 and 9, forty neurons each, jbloom's L1 and OpenAI's TopK 32k dictionaries at the block's input; per neuron, k directions of the fields, of the SAE's decoder and random, chosen on held-out text by mean absolute contribution to the neuron, carry the crowd's projection beside the sixteen wires for k of 16, 64 and the fields' full dimension; the SAE's coefficients on its k latents largest by contribution; the SAE's full reconstruction alone and with its error projected on the fields, on the SAE's own directions and on random directions; scored by KL at the firings and over all positions, the off-class share, and the brake fidelity (signed share and correlation of the crowd's true net sum reproduced off the class)",
+  "M0": [
+   "every input reproduces the neuron (all-position ratio under 0.05)",
+   0.9
+  ],
+  "M1": [
+   "at sixteen directions the fields beat the SAE's directions at the firings",
+   0.45
+  ],
+  "M2": [
+   "at the fields' full dimension the SAE's directions match the fields within 0.05 at the firings",
+   0.5
+  ],
+  "M3": [
+   "the SAE's error projected on the fields improves the SAE's full reconstruction at the firings by at least 0.05",
+   0.35
+  ],
+  "M4": [
+   "the SAE's error projected on random directions improves it by less than 0.02",
+   0.7
+  ],
+  "M5": [
+   "at sixteen directions the fields reproduce the crowd's off-class net sum with a higher correlation than the SAE's directions",
+   0.5
+  ],
+  "M6": [
+   "at sixteen directions the projection on the SAE's directions beats the SAE's own coefficients on sixteen latents at the firings",
+   0.6
+  ],
+  "M7": [
+   "random directions at the fields' full dimension leave 0.1 more at the firings than the fields",
+   0.55
+  ],
+  "M8": [
+   "sixty-four field directions come within 0.05 of the full fields at the firings",
+   0.5
+  ]
+ },
+ "e724_conditional_state": {
+  "design": "e718's scores at GPT-2 small blocks 5 and 8 with jbloom's L1 and OpenAI's TopK 32k dictionaries: the SAE's full reconstruction plus sixteen atoms chosen by pursuit on what it leaves, from the field directions, the native rows, the SAE's own directions and random directions",
+  "N1": [
+   "sixteen field atoms add less than 0.02 of the mean-ablation KL to the SAE's full reconstruction in every run",
+   0.75
+  ],
+  "N2": [
+   "sixteen native rows add at least 0.02 to the SAE's full reconstruction",
+   0.4
+  ],
+  "N3": [
+   "sixteen of the SAE's own directions add at least as much as sixteen field atoms",
+   0.6
+  ],
+  "N4": [
+   "the intervention fidelity of the SAE plus sixteen field atoms is at least the SAE's own",
+   0.5
+  ]
+ }
+}

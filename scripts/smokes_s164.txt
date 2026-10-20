@@ -1,0 +1,4 @@
+10|smk_e723_b6_jbloom|C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 6 --sae jbloom --smoke
+10|smk_e723_b6_oai32k|C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 6 --sae oai32k --smoke
+9|smk_e724_b5_jbloom|C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 5 --sae jbloom --smoke
+9|smk_e724_b5_oai32k|C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 5 --sae oai32k --smoke

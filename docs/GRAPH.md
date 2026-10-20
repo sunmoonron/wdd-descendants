@@ -1416,6 +1416,19 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1180 In every e697 model-block the lower bound of the median all-position ratio of sixteen excitatory wires is above 1. → e722 → SUPPORTED.
 - H1181 In every e706 model-block the upper bound of abs16_both at the firings is below the lower bound of abs16. → e722 → REFUTED.
 - H1182 In every e697 model-block at least three quarters of the neurons have more than half their sixteen-input damage off the class. → e722 → REFUTED.
+- H1183 Every input reproduces the neuron (all-position ratio under 0.05). → e723 → SUPPORTED.
+- H1184 At sixteen directions the fields beat the SAE's directions at the firings. → e723 → NARROWED (holds for GPT-2 small block 6 with jbloom L1 24k, not GPT-2 small block 6 with OpenAI TopK 32k, GPT-2 small block 9 with jbloom L1 24k, GPT-2 small block 9 with OpenAI TopK 32k).
+- H1185 At the fields' full dimension the SAE's directions match the fields within 0.05 at the firings. → e723 → NARROWED (holds for GPT-2 small block 6 with jbloom L1 24k, GPT-2 small block 6 with OpenAI TopK 32k, not GPT-2 small block 9 with jbloom L1 24k, GPT-2 small block 9 with OpenAI TopK 32k).
+- H1186 The SAE's error projected on the fields improves the SAE's full reconstruction at the firings by at least 0.05. → e723 → NARROWED (holds for GPT-2 small block 6 with jbloom L1 24k, GPT-2 small block 9 with jbloom L1 24k, GPT-2 small block 9 with OpenAI TopK 32k, not GPT-2 small block 6 with OpenAI TopK 32k).
+- H1187 The SAE's error projected on random directions improves it by less than 0.02. → e723 → REFUTED.
+- H1188 At sixteen directions the fields reproduce the crowd's off-class net sum with a higher correlation than the SAE's directions. → e723 → SUPPORTED.
+- H1189 At sixteen directions the projection on the SAE's directions beats the SAE's own coefficients on sixteen latents at the firings. → e723 → REFUTED.
+- H1190 Random directions at the fields' full dimension leave 0.1 more at the firings than the fields. → e723 → SUPPORTED.
+- H1191 Sixty-four field directions come within 0.05 of the full fields at the firings. → e723 → NARROWED (holds for GPT-2 small block 6 with jbloom L1 24k, GPT-2 small block 6 with OpenAI TopK 32k, not GPT-2 small block 9 with jbloom L1 24k, GPT-2 small block 9 with OpenAI TopK 32k).
+- H1192 Sixteen field atoms add less than 0.02 of the mean-ablation KL to the SAE's full reconstruction in every run. → e724 → SUPPORTED.
+- H1193 Sixteen native rows add at least 0.02 to the SAE's full reconstruction. → e724 → REFUTED.
+- H1194 Sixteen of the SAE's own directions add at least as much as sixteen field atoms. → e724 → NARROWED (holds for GPT-2 small block 5 with jbloom L1 24k, GPT-2 small block 8 with jbloom L1 24k, GPT-2 small block 8 with OpenAI TopK 32k, not GPT-2 small block 5 with OpenAI TopK 32k).
+- H1195 The intervention fidelity of the SAE plus sixteen field atoms is at least the SAE's own. → e724 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
