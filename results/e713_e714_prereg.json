@@ -1,0 +1,129 @@
+{
+ "session": 161,
+ "date": "2026-10-20",
+ "written_before": "any full run; smokes may revise, revisions dated",
+ "format": "prediction id: [statement, my probability]; bands coded in the scripts",
+ "aim": "the usable round: the one scale check the critics will ask for (e713: the brake and the two-field reader graph at Qwen2.5-7B in fp32, mid and late block, with e697's and e706's measures and verdicts) and the one method idea from session 160 that can go into the library (e714: the dictionary's atoms chosen by the output's Fisher metric rather than Euclidean energy)",
+ "e713_scale": {
+  "question": "do the brake and the two-field dictionary hold at 7B: e697 (the brake) and e706 (the strong field) at Qwen2.5-7B, blocks 14 and 21 of 28, fp32, 40 neurons each?",
+  "B0": [
+   "every input reproduces the neuron at 7B in fp32 (the all-inputs ratio under 0.05)",
+   0.8
+  ],
+  "B1": [
+   "the off-class positions carry at least 0.7 of the sixteen-input damage over all positions",
+   0.6
+  ],
+  "B1b": [
+   "the top-5 percent positions alone carry at most 0.3 of it",
+   0.6
+  ],
+  "B2": [
+   "sixteen excitatory plus sixteen inhibitory wires halve the sixteen-absolute wires' ratio at the firings",
+   0.45
+  ],
+  "B2b": [
+   "and beat thirty-two absolute wires by 0.1",
+   0.4
+  ],
+  "B3": [
+   "the weak bus halves the sixteen wires' ratio at the firings",
+   0.4
+  ],
+  "B4": [
+   "signed wires with the bus bring the ratio under 0.25",
+   0.3
+  ],
+  "B5": [
+   "the sixteen inhibitory wires carry at least half of the crowd's opposition",
+   0.5
+  ],
+  "B6": [
+   "the bus halves the all-position ratio",
+   0.4
+  ],
+  "H0": [
+   "every input reproduces the neuron (e706 at 7B)",
+   0.8
+  ],
+  "H1": [
+   "the strong field alone halves the sixteen-wire ratio at the firings",
+   0.3
+  ],
+  "H2": [
+   "weak and strong together beat the weak field alone by 0.1",
+   0.5
+  ],
+  "H3": [
+   "both fields with the attention units bring the ratio under 0.25",
+   0.3
+  ],
+  "H4": [
+   "both fields bring it under 0.5",
+   0.5
+  ],
+  "H5": [
+   "both fields beat a random subspace of their dimension by 0.2",
+   0.4
+  ],
+  "H6": [
+   "both fields halve the all-position ratio",
+   0.5
+  ],
+  "runs": [
+   "e697_brake.py and e706_strong_field.py at qwen7b blocks 14 and 21, fp32, the scripts unchanged except the sample sizes: 32 evaluation windows and 48 held-out windows (the record's 64 and 96 did not fit 80 GB at 7B), 40 neurons"
+  ]
+ },
+ "e714_fisher_dictionary": {
+  "question": "does choosing a position's k atoms by orthogonal matching pursuit in a blended metric, the output's Fisher (unit mean eigenvalue) plus lambda times the identity, recover more of the mean-ablation KL for the same k than the Euclidean pursuit, and does that metric prefer the field atoms?",
+  "F1": [
+   "at k = 16 with rows and fields, the blended pursuit (lambda 1) recovers 0.1 more of the mean-ablation KL than the Euclidean pursuit",
+   0.5
+  ],
+  "F2": [
+   "its Fisher residual is lower by 0.2",
+   0.65
+  ],
+  "F3": [
+   "its Euclidean residual is higher",
+   0.8
+  ],
+  "F4": [
+   "it chooses field atoms 0.1 more often",
+   0.45
+  ],
+  "F5": [
+   "with the fields in the dictionary it beats rows-only blended pursuit at 16 by 0.05",
+   0.5
+  ],
+  "F6": [
+   "sixteen blended-chosen atoms beat the stream's top sixteen principal directions",
+   0.5
+  ],
+  "F7": [
+   "sixteen blended-chosen atoms match thirty-two Euclidean-chosen ones",
+   0.35
+  ],
+  "F8": [
+   "the pure Fisher pursuit (lambda 0) recovers less than the Euclidean one: a diagnostic of the sampled Fisher's blind directions",
+   0.75
+  ],
+  "F9": [
+   "lambda 0.3 beats lambda 1",
+   0.5
+  ],
+  "runs": [
+   "gpt2 b5, gpt2 b8, pythia160 b6, pythia410 b12, qwen05 b12, gpt2m b12; 256 positions per block, 128 scored by KL"
+  ]
+ },
+ "revisions": [
+  {
+   "when": "2026-10-20 02:25 after the e714 smoke on GPT-2 small block 5, before any full run",
+   "what": "e714: the pure Fisher pursuit fitted the whitened state perfectly (Fisher residual 0.00) and recovered less than mean ablation (-0.59) with a Euclidean residual of 2.21: the sampled Fisher's null space is read at finite scale. The pursuit is restated in a blended metric (the Fisher at unit mean eigenvalue plus lambda times the identity, lambda 1 primary and 0.3 secondary), the pure metric kept as the diagnostic F8, F1 to F7 restated on the blend, F9 added. Probabilities set at the revision."
+  },
+  {
+   "when": "2026-10-20 02:55 after the first 7B runs, before any 7B result",
+   "what": "e713: all four 7B runs ran out of memory at the record's sample sizes (64 evaluation windows, 96 held-out), the stored log-probabilities and the upstream captures at 7B exceeding 80 GB; rerun with 32 and 48 windows (an environment override, the scripts otherwise unchanged). Statements and probabilities unchanged."
+  }
+ ]
+}

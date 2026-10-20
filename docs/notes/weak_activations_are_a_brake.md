@@ -103,7 +103,13 @@ The reading: the field is what a neuron's readers need (section 7) and a second-
 
 ## 9. At 7B
 
-(Running at the time of writing: e697 and e706 at Qwen2.5-7B in fp32, blocks 14 and 21, forty neurons each, pre-registered in results/e713_e714_prereg.json. This section will carry the numbers when they land. What is already known at 7B: the fp32 ledger is exact there, every input reproduces the neuron, and the sixteen largest inputs, carrying 0.02 of a neuron's input, cost 1.27 of its ablation damage at its strongest firings, as at 400M (e700).)
+The same two scripts at Qwen2.5-7B in fp32, blocks 14 and 21 of 28, forty neurons each, with smaller samples than the record's (32 evaluation and 48 held-out windows; 16 and 24 for the brake at block 21) because the stored log-probabilities and the upstream captures do not fit 80 GB at 7B otherwise. Pre-registered in results/e713_e714_prereg.json with the statements of sections 4 and 7.
+
+The brake at blocks 14 and 21: every input reproduces the neuron (0.01 of the ablation damage over all positions); the sixteen-input simulation's damage comes 0.85 and 0.87 from off the class; sixteen excitatory wires alone cost 284 and 59 times the ablation damage over all positions, and 2.7 and 1.1 with the sixteen strongest inhibitory wires added, which carry 0.78 and 0.64 of the crowd's off-class opposition; at the firings the sixteen wires cost 2.9 and 1.2 of the damage, the signed wires 1.3 and 1.0 and the wires with the weak bus 1.4 and 0.7. Five of e697's nine pre-registered statements hold at both blocks, the three halving statements at the mid block only, and the one that asked signed wires with the bus to reach a quarter of the damage fails, as at every scale.
+
+The fields at blocks 14 and 21: sixteen wires cost 2.90 and 0.90 of the ablation damage at the firings, with the weak field 1.37 and 0.65, with the strong field 1.29 and 0.52, with both 1.01 and 0.48, where a random subspace of both's dimension leaves 2.23 and 0.76; the two fields overlap by 0.24 and 0.28. H0, H2 and H5 hold at both blocks, H3 at neither, H1, H4 and H6 at one.
+
+The shape is the small models' with the sixteen wires worse at the strongest firings, which the fp32 ledger at 7B had already shown (e700): a 7B neuron's sixteen largest inputs carry a smaller share of its input, so the brake and the fields matter more there, not less. The transfer question is answered for the brake; the two-field dictionary transfers with its limit, half the damage left at the mid block.
 
 ## 10. What this means for the debate
 

@@ -1346,6 +1346,31 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1110 A neuron's stable wires (in its sixteen at half its firings or more) hold at least half its wire mass. → e712 → REFUTED.
 - H1111 The most-used one percent of upstream units hold at least three tenths of the stable edges. → e712 → SUPPORTED.
 - H1112 Four fifths of a firing's net drive needs at most thirty-two MLP units. → e712 → SUPPORTED.
+- H1113 Every input reproduces the neuron at 7B in fp32 (the all-inputs ratio under 0.05). → e713 → SUPPORTED.
+- H1114 The off-class positions carry at least 0.7 of the sixteen-input damage over all positions. → e713 → SUPPORTED.
+- H1115 The top-5 percent positions alone carry at most 0.3 of it. → e713 → SUPPORTED.
+- H1116 Sixteen excitatory plus sixteen inhibitory wires halve the sixteen-absolute wires' ratio at the firings. → e713 → NARROWED (holds for Qwen2.5-7B block 14, not Qwen2.5-7B block 21).
+- H1117 And beat thirty-two absolute wires by 0.1. → e713 → SUPPORTED.
+- H1118 The weak bus halves the sixteen wires' ratio at the firings. → e713 → NARROWED (holds for Qwen2.5-7B block 14, not Qwen2.5-7B block 21).
+- H1119 Signed wires with the bus bring the ratio under 0.25. → e713 → REFUTED.
+- H1120 The sixteen inhibitory wires carry at least half of the crowd's opposition. → e713 → SUPPORTED.
+- H1121 The bus halves the all-position ratio. → e713 → NARROWED (holds for Qwen2.5-7B block 14, not Qwen2.5-7B block 21).
+- H1122 Every input reproduces the neuron (e706 at 7B). → e713 → SUPPORTED.
+- H1123 The strong field alone halves the sixteen-wire ratio at the firings. → e713 → NARROWED (holds for Qwen2.5-7B block 14, not Qwen2.5-7B block 21).
+- H1124 Weak and strong together beat the weak field alone by 0.1. → e713 → SUPPORTED.
+- H1125 Both fields with the attention units bring the ratio under 0.25. → e713 → REFUTED.
+- H1126 Both fields bring it under 0.5. → e713 → NARROWED (holds for Qwen2.5-7B block 21, not Qwen2.5-7B block 14).
+- H1127 Both fields beat a random subspace of their dimension by 0.2. → e713 → SUPPORTED.
+- H1128 Both fields halve the all-position ratio. → e713 → NARROWED (holds for Qwen2.5-7B block 14, not Qwen2.5-7B block 21).
+- H1129 At k = 16 with rows and fields, the blended pursuit (lambda 1) recovers 0.1 more of the mean-ablation KL than the Euclidean pursuit. → e714 → REFUTED.
+- H1130 Its Fisher residual is lower by 0.2. → e714 → SUPPORTED.
+- H1131 Its Euclidean residual is higher. → e714 → SUPPORTED.
+- H1132 It chooses field atoms 0.1 more often. → e714 → REFUTED.
+- H1133 With the fields in the dictionary it beats rows-only blended pursuit at 16 by 0.05. → e714 → REFUTED.
+- H1134 Sixteen blended-chosen atoms beat the stream's top sixteen principal directions. → e714 → SUPPORTED.
+- H1135 Sixteen blended-chosen atoms match thirty-two Euclidean-chosen ones. → e714 → REFUTED.
+- H1136 The pure Fisher pursuit (lambda 0) recovers less than the Euclidean one: a diagnostic of the sampled Fisher's blind directions. → e714 → SUPPORTED.
+- H1137 Lambda 0.3 beats lambda 1. → e714 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

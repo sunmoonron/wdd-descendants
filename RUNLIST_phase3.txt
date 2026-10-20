@@ -1067,3 +1067,18 @@ python e709_two_clocks.py --model qwen05 12 --block
 python e709_two_clocks.py --model gpt2m 6 --block
 python e709_two_clocks.py --model gpt2m 12 --block
 python e709_two_clocks.py --model smollm135 15 --block
+# session 161 (e713, e714): the brake and the fields at 7B, the Fisher-graded dictionary
+python e697_brake.py --model qwen7b --block 14
+python e706_strong_field.py --model qwen7b --block 14
+python e697_brake.py --model qwen7b --block 21
+python e706_strong_field.py --model qwen7b --block 21
+python e714_fisher_dictionary.py --model gpt2 --block 5
+python e714_fisher_dictionary.py --model gpt2 --block 8
+python e714_fisher_dictionary.py --model pythia160 --block 6
+python e714_fisher_dictionary.py --model gpt2m --block 12
+python e714_fisher_dictionary.py --model pythia410 --block 12
+python e714_fisher_dictionary.py --model qwen05 --block 12
+python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python e697_brake.py --model qwen7b --block 14
+python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python e706_strong_field.py --model qwen7b --block 14
+python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python e697_brake.py --model qwen7b --block 21
+python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python e706_strong_field.py --model qwen7b --block 21

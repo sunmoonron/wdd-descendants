@@ -12,7 +12,7 @@ from c11 import *
 F_ = torch.nn.functional
 ap = argparse.ArgumentParser(); ap.add_argument("--model", required=True); ap.add_argument("--block", type=int, required=True); ap.add_argument("--smoke", action="store_true"); A_ = ap.parse_args(); SMOKE = A_.smoke
 name = A_.model; B = A_.block; TAG = f"e697_{name}_b{B}" + ("_smoke" if SMOKE else ""); M = load(name); NB, D, DFF = M["NB"], M["D"], M["DFF"]; T = 256; L_ = lambda s: log(TAG, s)
-NWIN = 8 if SMOKE else 64; NWH = 16 if SMOKE else 96; NNEU = 4 if SMOKE else 40; NATT = n_att_feeding(M, B); NSTRONG = 160; Q = 0.25; RB_ = 16
+NWIN = 8 if SMOKE else int(os.environ.get("WDD_NWIN", 64)); NWH = 16 if SMOKE else int(os.environ.get("WDD_NWH", 96)); CH_ = int(os.environ.get("WDD_CHUNK", 2048)); NNEU = 4 if SMOKE else 40; NATT = n_att_feeding(M, B); NSTRONG = 160; Q = 0.25; RB_ = 16
 ids_all = wikitext_ids(M, "train"); half = len(ids_all) // 2
 ids = windows_from(ids_all[:half], NWIN, T).to(DEV); ids_h = windows_from(ids_all[half:], NWH, T).to(DEV); N = NWIN * (T - 1); NH = NWH * (T - 1); NMLP = B * DFF; NU = NMLP + NATT + 1
 def capture(ids_, nwin, need_lp):
@@ -43,16 +43,16 @@ WIRES = ["abs16", "abs32", "pos16", "pos16neg16"]
 def ledger(k, key):
     """fp16 contributions [N, NU], the constant, the total, and for each wire set its indices and sum"""
     C16 = torch.empty(N, NU, device=DEV, dtype=torch.half); c0 = torch.empty(N, device=DEV); tot = torch.empty(N, device=DEV); IDX = {w: [] for w in WIRES}; TS = {w: torch.empty(N, device=DEV) for w in WIRES}
-    for s in range(0, N, 2048):
-        P = torch.arange(s, min(s + 2048, N), device=DEV); c, cc = contrib(E, k, P, key); C16[P] = c.half(); c0[P] = cc; tot[P] = c.sum(1)
+    for s in range(0, N, CH_):
+        P = torch.arange(s, min(s + CH_, N), device=DEV); c, cc = contrib(E, k, P, key); C16[P] = c.half(); c0[P] = cc; tot[P] = c.sum(1)
         sets = {"abs16": c.abs().topk(16, dim=1).indices, "abs32": c.abs().topk(32, dim=1).indices, "pos16": c.topk(16, dim=1).indices}; sets["pos16neg16"] = torch.cat([sets["pos16"], (-c).topk(16, dim=1).indices], 1)
         for w in WIRES: IDX[w].append(sets[w]); TS[w][P] = c.gather(1, sets[w]).sum(1)
     return C16, c0, tot, {w: torch.cat(v) for w, v in IDX.items()}, TS
 def bus_summary(idx, r_):
     """the crowd's write (the stream minus the wires' writes, scaled as the read is) on the bus, read by the neuron"""
     out = torch.empty(N, device=DEV); pr = PBUS @ (PBUS.T @ r_); K = idx.shape[1]
-    for s in range(0, N, 2048):
-        P = torch.arange(s, min(s + 2048, N), device=DEV); top = idx[P]; isM = (top < NMLP).float(); isA = (top >= NMLP) & (top < NMLP + NATT); isE = (top >= NMLP + NATT).any(1).float()
+    for s in range(0, N, CH_):
+        P = torch.arange(s, min(s + CH_, N), device=DEV); top = idx[P]; isM = (top < NMLP).float(); isA = (top >= NMLP) & (top < NMLP + NATT); isE = (top >= NMLP + NATT).any(1).float()
         ti = top.clamp(max=max(NMLP - 1, 0)); a = E["UP"][P].gather(1, ti).float() * isM; xm = torch.einsum("nk,nkd->nd", a, WUP[ti]) if NMLP else torch.zeros(len(P), D, device=DEV)
         ai_ = (top - NMLP).clamp(0, NATT - 1); xa = (E["AT"][P].float().gather(1, ai_[:, :, None].expand(-1, -1, D)) * isA[:, :, None]).sum(1)
         xc = (E["XM"][P] - BIAS[None] - xm - xa - E["EM"][P].float() * isE[:, None]) / E["SIG"][P][:, None]; out[P] = xc @ pr
