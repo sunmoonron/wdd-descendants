@@ -1,0 +1,150 @@
+{
+ "_written": "2026-10-20 (session 163), revision 1, before any full run; smokes may lead to dated revisions below",
+ "_purpose": "a robustness round after the note's review: the SAE on the readers' turf (e717), the head-to-head under other SAE families and another model (e718), the brake on the Pile (e719), the cost of the weak activations at 7B (e720), the brake's formation at Pythia-410m (e721), and bootstrap intervals over neurons for the recorded ratios (e722)",
+ "e717_sae_readers": {
+  "design": "GPT-2 small blocks 6 and 9, forty neurons each (e685b's sample), 64 evaluation windows of 256 tokens of wikitext train, 96 held-out windows for the fields; jbloom's resid_pre SAE of the block; conditions: abs16, abs16_both, abs16_random, abs16_saeerr (sixteen wires plus the SAE's error), sae_full, sae_top16, sae_top32 (the encoder's top latents by activation times decoder norm), sae_led16, sae_led32 (the latents largest by contribution to this neuron), all; KL at the firings (top 160) and over all positions relative to mean ablation; off-class share at the five percent class for abs16, sae_full, sae_top16, sae_led16; medians over neurons",
+  "S0": [
+   "every input reproduces the neuron (all-position ratio under 0.05)",
+   0.9
+  ],
+  "S1": [
+   "the SAE's full reconstruction as the neuron's input leaves less of the ablation damage at the firings than sixteen wires plus both fields",
+   0.45
+  ],
+  "S2": [
+   "the SAE's full reconstruction keeps the brake: its all-position ratio is under 0.5",
+   0.65
+  ],
+  "S3": [
+   "the off-class share of the SAE-full damage is below that of the sixteen-input simulation",
+   0.7
+  ],
+  "S4": [
+   "the encoder's top sixteen latents as the input misfire: all-position ratio above 1",
+   0.5
+  ],
+  "S5": [
+   "sixteen latents chosen by their contribution to the neuron beat the encoder's top sixteen at the firings",
+   0.75
+  ],
+  "S6": [
+   "sixteen latents chosen for the neuron beat sixteen native wires at the firings",
+   0.55
+  ],
+  "S7": [
+   "adding the SAE's error to the sixteen wires lowers the ratio at the firings by at least 0.1 (the error carries the brake)",
+   0.3
+  ],
+  "S8": [
+   "the SAE's full reconstruction has a lower all-position ratio than sixteen wires plus both fields",
+   0.6
+  ]
+ },
+ "e718_sae_families": {
+  "design": "e715's comparison with other dictionaries: GPT-2 small blocks 5 and 8 with OpenAI's TopK residual SAEs (v5, 32k and 128k latents, resid_post_mlp of the block, uncentred stream) and Pythia-160m blocks 5 and 8 with EleutherAI's TopK residual SAEs (32k latents, layers.N); the same seven rules, scores and the eight-perturbation intervention fidelity as e715; 128 scored positions",
+  "T1": [
+   "at k = 16 the SAE's directions chosen by pursuit recover more of the mean-ablation KL than sixteen native rows in every run",
+   0.7
+  ],
+  "T2": [
+   "at k = 16 pursuit over the SAE's directions beats the encoder's own top sixteen in every run",
+   0.75
+  ],
+  "T3": [
+   "at k = 16 the fields add less than 0.03 to the rows in every run",
+   0.8
+  ],
+  "T4": [
+   "the native rows' intervention fidelity exceeds the encoder's top sixteen's in every run",
+   0.55
+  ],
+  "T5": [
+   "at k = 64 every dictionary recovers at least 0.95 in every run",
+   0.75
+  ],
+  "T6": [
+   "on Pythia-160m sixteen native rows recover at least 0.85",
+   0.6
+  ],
+  "T7": [
+   "on GPT-2 small the 128k SAE beats the 32k SAE under pursuit at k = 16 in both blocks",
+   0.5
+  ]
+ },
+ "e719_brake_pile": {
+  "design": "e716's table on windows of the Pile (pile-10k, 3000 documents, first half for evaluation) for Pythia-410m block 12, Qwen2.5-0.5B block 12 and GPT-2 medium block 12, with the wikitext runs' neurons",
+  "U1": [
+   "the off-class share of the sixteen-input damage at the five percent class is at least 0.5 in every run",
+   0.75
+  ],
+  "U2": [
+   "sixteen excitatory wires alone cost more than three times the ablation damage over all positions in every run",
+   0.8
+  ],
+  "U3": [
+   "sixteen excitatory plus sixteen inhibitory wires cost less at the firings than the sixteen by magnitude in every run",
+   0.75
+  ],
+  "U4": [
+   "the off-class share at five percent is within 0.15 of the wikitext value in every run with a reference",
+   0.5
+  ]
+ },
+ "e720_weak_7b": {
+  "design": "e681 at Qwen2.5-7B in bf16, 48 calibration and 32 evaluation windows of 256 tokens, the same conditions as e681",
+  "W1": [
+   "keeping only the strongest quarter of each neuron's activations costs at least 0.2 nats of KL",
+   0.85
+  ],
+  "W2": [
+   "replacing the removed activations by each neuron's mean costs less than zeroing them",
+   0.7
+  ],
+  "W3": [
+   "the mean replacement still costs at least 0.05 nats",
+   0.8
+  ],
+  "W4": [
+   "the dial tertile costs at least twice the detector tertile per neuron",
+   0.4
+  ]
+ },
+ "e721_brake_training_410": {
+  "design": "e701 at Pythia-410m block 12 across checkpoints 1000, 2000, 4000, 8000, 16000, 32000, 64000 and the final model, one hundred neurons of the final model",
+  "C1": [
+   "no brake at step 1000: the crowd's net sum over the sixteen wires in the bottom half is within 0.3 of zero",
+   0.6
+  ],
+  "C2": [
+   "the brake in the final model: under -0.5",
+   0.75
+  ],
+  "C3": [
+   "the brake strengthens monotonically (Spearman with the step under -0.8)",
+   0.5
+  ],
+  "C4": [
+   "the brake under -0.5 by step 8000",
+   0.25
+  ]
+ },
+ "e722_intervals": {
+  "design": "from the saved per-neuron results of e697 (eight model-blocks), e713's e697 at 7B (two blocks), e716 (two), e706 (eight) and e713's e706 at 7B (two): 95 percent bootstrap intervals (2000 resamples over neurons) of the median of each key ratio, and the share of neurons showing each effect",
+  "I1": [
+   "in every e697 model-block the lower bound of the median off-class share is above 0.4",
+   0.6
+  ],
+  "I2": [
+   "in every e697 model-block the lower bound of the median all-position ratio of sixteen excitatory wires is above 1",
+   0.8
+  ],
+  "I3": [
+   "in every e706 model-block the upper bound of abs16_both at the firings is below the lower bound of abs16",
+   0.5
+  ],
+  "I4": [
+   "in every e697 model-block at least three quarters of the neurons have more than half their sixteen-input damage off the class",
+   0.55
+  ]
+ }
+}

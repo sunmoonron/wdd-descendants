@@ -1,4 +1,4 @@
-# 70. The brake at 7B and the Fisher-graded dictionary (S162)
+# 70. The dictionary against the SAE and the brake under other choices (S162)
 
 **Question.** The note's readers will ask two things: whether collective fields account for a state better than native rows alone, SAE features alone, or combinations, scored on the model's output; and whether the brake's numbers depend on the sixteen wires and the five percent class. e715 answers the first on GPT-2 small with a public SAE, e716 the second on two blocks.
 

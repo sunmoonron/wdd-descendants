@@ -1,0 +1,12 @@
+{
+ "loss_bf16": 4.440125942230225,
+ "loss_fp32": 4.418615818023682,
+ "kl_fp32_to_bf16_mean": 0.002016071928665042,
+ "kl_fp32_to_bf16_median": 0.0007802553009241819,
+ "top1_flip_rate": 0.030392156913876534,
+ "tokens": 2040,
+ "_exp": "check7b_dtype",
+ "_time": "2026-10-20 14:39:24",
+ "seconds": 50.39577627182007,
+ "summary": "[qwen7b] base loss bf16 4.4401 vs fp32 4.4186 on 2040 tokens; KL(fp32 || bf16) mean 0.0020, median 0.00078; top-1 flips 0.0304"
+}

@@ -1384,6 +1384,38 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1148 K excitatory plus k inhibitory wires cost less at the firings than the k largest by magnitude, for every k. → e716 → SUPPORTED.
 - H1149 The off-class share falls as the class cut widens from 1 to 20 percent. → e716 → SUPPORTED.
 - H1150 Thirty-two wires leave at least 0.5 of the ablation damage at the firings (the crowd is not thirty-two wires either). → e716 → SUPPORTED.
+- H1151 Every input reproduces the neuron (all-position ratio under 0.05). → e717 → SUPPORTED.
+- H1152 The SAE's full reconstruction as the neuron's input leaves less of the ablation damage at the firings than sixteen wires plus both fields. → e717 → NARROWED (holds for GPT-2 small block 9, not GPT-2 small block 6).
+- H1153 The SAE's full reconstruction keeps the brake: its all-position ratio is under 0.5. → e717 → SUPPORTED.
+- H1154 The off-class share of the SAE-full damage is below that of the sixteen-input simulation. → e717 → NARROWED (holds for GPT-2 small block 6, not GPT-2 small block 9).
+- H1155 The encoder's top sixteen latents as the input misfire: all-position ratio above 1. → e717 → REFUTED.
+- H1156 Sixteen latents chosen by their contribution to the neuron beat the encoder's top sixteen at the firings. → e717 → SUPPORTED.
+- H1157 Sixteen latents chosen for the neuron beat sixteen native wires at the firings. → e717 → NARROWED (holds for GPT-2 small block 9, not GPT-2 small block 6).
+- H1158 Adding the SAE's error to the sixteen wires lowers the ratio at the firings by at least 0.1 (the error carries the brake). → e717 → NARROWED (holds for GPT-2 small block 9, not GPT-2 small block 6).
+- H1159 The SAE's full reconstruction has a lower all-position ratio than sixteen wires plus both fields. → e717 → SUPPORTED.
+- H1160 At k = 16 the SAE's directions chosen by pursuit recover more of the mean-ablation KL than sixteen native rows in every run. → e718 → NARROWED (holds for GPT-2 small block 8 with OpenAI TopK 128k, GPT-2 small block 8 with OpenAI TopK 32k, Pythia-160m block 5 with EleutherAI TopK 32k, Pythia-160m block 8 with EleutherAI TopK 32k, not GPT-2 small block 5 with OpenAI TopK 128k, GPT-2 small block 5 with OpenAI TopK 32k).
+- H1161 At k = 16 pursuit over the SAE's directions beats the encoder's own top sixteen in every run. → e718 → NARROWED (holds for Pythia-160m block 8 with EleutherAI TopK 32k, not GPT-2 small block 5 with OpenAI TopK 128k, GPT-2 small block 5 with OpenAI TopK 32k, GPT-2 small block 8 with OpenAI TopK 128k, GPT-2 small block 8 with OpenAI TopK 32k, Pythia-160m block 5 with EleutherAI TopK 32k).
+- H1162 At k = 16 the fields add less than 0.03 to the rows in every run. → e718 → SUPPORTED.
+- H1163 The native rows' intervention fidelity exceeds the encoder's top sixteen's in every run. → e718 → REFUTED.
+- H1164 At k = 64 every dictionary recovers at least 0.95 in every run. → e718 → NARROWED (holds for GPT-2 small block 5 with OpenAI TopK 128k, GPT-2 small block 5 with OpenAI TopK 32k, GPT-2 small block 8 with OpenAI TopK 128k, GPT-2 small block 8 with OpenAI TopK 32k, not Pythia-160m block 5 with EleutherAI TopK 32k, Pythia-160m block 8 with EleutherAI TopK 32k).
+- H1165 On Pythia-160m sixteen native rows recover at least 0.85. → e718 → REFUTED.
+- H1166 On GPT-2 small the 128k SAE beats the 32k SAE under pursuit at k = 16 in both blocks. → e718 → SUPPORTED.
+- H1167 The off-class share of the sixteen-input damage at the five percent class is at least 0.5 in every run. → e719 → SUPPORTED.
+- H1168 Sixteen excitatory wires alone cost more than three times the ablation damage over all positions in every run. → e719 → SUPPORTED.
+- H1169 Sixteen excitatory plus sixteen inhibitory wires cost less at the firings than the sixteen by magnitude in every run. → e719 → NARROWED (holds for Pythia-410m block 12, Qwen2.5-0.5B block 12, not GPT-2 medium block 12).
+- H1170 The off-class share at five percent is within 0.15 of the wikitext value in every run with a reference. → e719 → SUPPORTED.
+- H1171 Keeping only the strongest quarter of each neuron's activations costs at least 0.2 nats of KL. → e720 → SUPPORTED.
+- H1172 Replacing the removed activations by each neuron's mean costs less than zeroing them. → e720 → SUPPORTED.
+- H1173 The mean replacement still costs at least 0.05 nats. → e720 → SUPPORTED.
+- H1174 The dial tertile costs at least twice the detector tertile per neuron. → e720 → SUPPORTED.
+- H1175 No brake at step 1000: the crowd's net sum over the sixteen wires in the bottom half is within 0.3 of zero. → e721 → REFUTED.
+- H1176 The brake in the final model: under -0.5. → e721 → SUPPORTED.
+- H1177 The brake strengthens monotonically (Spearman with the step under -0.8). → e721 → SUPPORTED.
+- H1178 The brake under -0.5 by step 8000. → e721 → SUPPORTED.
+- H1179 In every e697 model-block the lower bound of the median off-class share is above 0.4. → e722 → REFUTED.
+- H1180 In every e697 model-block the lower bound of the median all-position ratio of sixteen excitatory wires is above 1. → e722 → SUPPORTED.
+- H1181 In every e706 model-block the upper bound of abs16_both at the firings is below the lower bound of abs16. → e722 → REFUTED.
+- H1182 In every e697 model-block at least three quarters of the neurons have more than half their sixteen-input damage off the class. → e722 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

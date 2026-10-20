@@ -1179,8 +1179,22 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - "at k = 16, rows plus fields recover more of the mean-ablation KL than the SAE encoder's top sixteen latents." (e715).
 - "at k = 16, rows plus fields recover 0.05 more than rows alone." (e715).
 - "sixteen atoms from rows plus SAE directions beat the better of rows alone and SAE directions alone by 0.03." (e715).
-- A pruned neuron graph failing for lack of drive at the firings: at mid-depth 0.78 to 0.88 of its damage is off-class misfiring, and sixteen excitatory wires alone cost 6 to 561 times the ablation damage (e697).
-- Sixteen inhibitory wires as the error node: they carry the net opposition at each position and still leave the firings at 0.59 to 1.06 of the ablation damage (e697).
-- The brake as a property of the final weights only: at step 1000 the crowd reinforces the wires off the class and the brake forms between steps 2000 and 16000 (e701).
-- The weak activations as a sparse or a superposed code: a closed-form rank-16 linear map of the block input replaces them for 0.56 to 0.96 of the zeroing cost (e696).
-- The ledger's K-input simulation against a bf16 model: the residual stream's block-by-block rounding leaves the all-inputs check at 0.86 to 0.95, and only an fp32 model passes it (e700).
+- The fields as a better unit for reconstructing a position's state than native rows or SAE latents: at sixteen atoms they add 0.01 to the rows, and the SAE's directions beat both by 0.02 to 0.05 on the state's effect (e715).
+- The SAE encoder's top latents as the right way to use an SAE's dictionary at a budget: pursuit over the same directions recovers more KL and responds to perturbations far more like the state (e715).
+- The brake as an artefact of sixteen wires and a five percent class: it holds for k of 8 to 32 and class cuts of 1 to 20 percent (e716).
+
+## Session 163 kills (the robustness round)
+- "the encoder's top sixteen latents as the input misfire: all-position ratio above 1." (e717).
+- "the native rows' intervention fidelity exceeds the encoder's top sixteen's in every run." (e718).
+- "on Pythia-160m sixteen native rows recover at least 0.85." (e718).
+- "no brake at step 1000: the crowd's net sum over the sixteen wires in the bottom half is within 0.3 of zero." (e721).
+- "in every e697 model-block the lower bound of the median off-class share is above 0.4." (e722).
+- "in every e706 model-block the upper bound of abs16_both at the firings is below the lower bound of abs16." (e722).
+- "in every e697 model-block at least three quarters of the neurons have more than half their sixteen-input damage off the class." (e722).
+- The L1 encoder's weakness as every SAE's: with OpenAI's and EleutherAI's TopK dictionaries the encoder's top sixteen beat pursuit over the same directions on reconstruction and under intervention (e718).
+- The native rows' intervention advantage as general: it held over jbloom's L1 encoder and over no TopK encoder, which track a fixed perturbation at 0.83 to 0.95 against the rows' 0.65 to 0.89 (e718).
+- The SAE's reconstruction error as the carrier of a neuron's brake: added to sixteen wires it leaves 0.30 to 0.32 of the ablation damage at the firings where both fields leave 0.14 to 0.18 (e717).
+- The brake as wikitext's: on the Pile the same neurons show the same off-class share within 0.10 and the same runaway (e719).
+- The weak activations as removable at 7B: keeping the strongest quarter costs 1.57 nats at Qwen2.5-7B, the mean replacement 0.88, with a bf16 noise floor of 0.002 (e720).
+- The brake as a late property of training at 410m: it is under -0.5 by step 8000 of 143000 (e721).
+- The GPT-2 medium off-class shares as settled numbers: their 95 percent intervals over neurons span up to 0.35 and reach below 0.4, where the other eight runs' lower bounds are 0.71 to 0.85 (e722).

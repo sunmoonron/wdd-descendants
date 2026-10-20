@@ -1087,3 +1087,18 @@ python e715_dictionary_vs_sae.py --block 5
 python e715_dictionary_vs_sae.py --block 8
 python e716_brake_robustness.py --model pythia410 --block 12
 python e716_brake_robustness.py --model qwen05 --block 12
+# session 163 (e717 to e722): the robustness round
+python e717_sae_readers.py --block 6
+python e717_sae_readers.py --block 9
+python e718_sae_families.py --model gpt2 --block 5 --sae oai32k
+python e718_sae_families.py --model gpt2 --block 8 --sae oai32k
+python e718_sae_families.py --model gpt2 --block 5 --sae oai128k
+python e718_sae_families.py --model gpt2 --block 8 --sae oai128k
+python e718_sae_families.py --model pythia160 --block 5 --sae el32k
+python e718_sae_families.py --model pythia160 --block 8 --sae el32k
+python e719_brake_pile.py --model pythia410 --block 12 --neurons-from results/e716_pythia410_b12.json
+python e719_brake_pile.py --model qwen05 --block 12 --neurons-from results/e716_qwen05_b12.json
+python e719_brake_pile.py --model gpt2m --block 12 --neurons-from results/e697_gpt2m_b12.json
+python e721_brake_training_410.py --model pythia410 --block 12
+python e720_weak_7b.py --model qwen7b
+python e722_intervals.py --results results   # on a CPU, from the saved results
