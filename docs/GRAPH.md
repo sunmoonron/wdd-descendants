@@ -1371,6 +1371,19 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1135 Sixteen blended-chosen atoms match thirty-two Euclidean-chosen ones. → e714 → REFUTED.
 - H1136 The pure Fisher pursuit (lambda 0) recovers less than the Euclidean one: a diagnostic of the sampled Fisher's blind directions. → e714 → SUPPORTED.
 - H1137 Lambda 0.3 beats lambda 1. → e714 → REFUTED.
+- H1138 At k = 16, rows plus fields recover more of the mean-ablation KL than the SAE encoder's top sixteen latents. → e715 → REFUTED.
+- H1139 At k = 16, rows plus fields recover 0.05 more than rows alone. → e715 → REFUTED.
+- H1140 The SAE's full active set (all of its active latents, about sixty) recovers more than sixty-four atoms of rows plus fields. → e715 → NARROWED (holds for GPT-2 small block 8, not GPT-2 small block 5).
+- H1141 Sixteen SAE decoder directions chosen by pursuit recover more than the encoder's own top sixteen latents. → e715 → SUPPORTED.
+- H1142 Sixteen atoms from rows plus SAE directions beat the better of rows alone and SAE directions alone by 0.03. → e715 → REFUTED.
+- H1143 Rows plus fields match the SAE's top sixteen on intervention fidelity (the rank agreement of the effects of eight fixed perturbations on the true state and on the reconstruction). → e715 → SUPPORTED.
+- H1144 Sixteen native rows beat the stream's top sixteen principal directions. → e715 → SUPPORTED.
+- H1145 The SAE encoder's top sixteen latents beat sixteen native rows. → e715 → SUPPORTED.
+- H1146 The off-class share of the sixteen-input damage is at least 0.5 at every class cut (1, 5 and 20 percent). → e716 → NARROWED (holds for Qwen2.5-0.5B block 12, not Pythia-410m block 12).
+- H1147 K excitatory wires alone cost more than three times the ablation damage over all positions for k of 8, 16 and 32. → e716 → SUPPORTED.
+- H1148 K excitatory plus k inhibitory wires cost less at the firings than the k largest by magnitude, for every k. → e716 → SUPPORTED.
+- H1149 The off-class share falls as the class cut widens from 1 to 20 percent. → e716 → SUPPORTED.
+- H1150 Thirty-two wires leave at least 0.5 of the ablation damage at the firings (the crowd is not thirty-two wires either). → e716 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

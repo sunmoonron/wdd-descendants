@@ -284,3 +284,7 @@ Written 2026-10-20. The user chose the usable round: a note on the brake (docs/n
 What this settles: the critics' transfer question is answered for the brake, at 7B in fp32 with the same instrument and the same numbers' shape; the method idea is dead, cleanly, and the library ships the Euclidean pursuit as its default with the blended one as a tool. The session's usable outputs are the note and the library, not a new finding.
 
 Limits: one 7B model, two blocks, forty neurons, smaller samples than the record's (32 and 48 windows, 16 and 24 at one block) because the stored log-probabilities and upstream captures do not fit 80 GB at 7B otherwise; the pursuit's Fisher is sampled over sixty-four tokens ahead at 256 positions per block.
+
+## 26. The dictionary against the SAE and the brake under other choices (session 162)
+
+TO WRITE

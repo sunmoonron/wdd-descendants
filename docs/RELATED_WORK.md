@@ -333,3 +333,7 @@ Two of the session's outputs are not experiments: a ten-page note, [docs/notes/w
 
 - e714's pursuit in the output's Fisher metric is the dictionary-side counterpart of [Picozzi 2026](https://arxiv.org/abs/2609.11063)'s natural-gradient steering: there the Fisher plus a damping term chooses a minimum-disturbance intervention, here the Fisher at unit mean eigenvalue plus lambda times the identity chooses which of a position's native atoms to keep. The damping is not optional in either use: the pure Fisher pursuit, with lambda zero, fits the sampled Fisher's range perfectly and recovers less than mean ablation, because the directions the sampled Fisher cannot see are read at finite scale (e714's diagnostic F8, and e707's two failed subspace constructions).
 - The blended pursuit is also a training-free answer to the question [Braun et al. 2024](https://arxiv.org/abs/2405.12241) answered by training: which parts of a state matter to the output rather than to reconstruction. Their end-to-end dictionaries learn it; the pursuit reads it off the model's own Fisher at the position.
+
+## 33. The usable outputs and the Fisher pursuit (added 2026-10-20, session 162)
+
+TO WRITE

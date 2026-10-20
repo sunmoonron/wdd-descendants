@@ -1174,3 +1174,13 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The brake as a property of the final weights only: at step 1000 the crowd reinforces the wires off the class and the brake forms between steps 2000 and 16000 (e701).
 - The weak activations as a sparse or a superposed code: a closed-form rank-16 linear map of the block input replaces them for 0.56 to 0.96 of the zeroing cost (e696).
 - The ledger's K-input simulation against a bf16 model: the residual stream's block-by-block rounding leaves the all-inputs check at 0.86 to 0.95, and only an fp32 model passes it (e700).
+
+## Session 162 kills (the dictionary against the SAE and the brake under other choices)
+- "at k = 16, rows plus fields recover more of the mean-ablation KL than the SAE encoder's top sixteen latents." (e715).
+- "at k = 16, rows plus fields recover 0.05 more than rows alone." (e715).
+- "sixteen atoms from rows plus SAE directions beat the better of rows alone and SAE directions alone by 0.03." (e715).
+- A pruned neuron graph failing for lack of drive at the firings: at mid-depth 0.78 to 0.88 of its damage is off-class misfiring, and sixteen excitatory wires alone cost 6 to 561 times the ablation damage (e697).
+- Sixteen inhibitory wires as the error node: they carry the net opposition at each position and still leave the firings at 0.59 to 1.06 of the ablation damage (e697).
+- The brake as a property of the final weights only: at step 1000 the crowd reinforces the wires off the class and the brake forms between steps 2000 and 16000 (e701).
+- The weak activations as a sparse or a superposed code: a closed-form rank-16 linear map of the block input replaces them for 0.56 to 0.96 of the zeroing cost (e696).
+- The ledger's K-input simulation against a bf16 model: the residual stream's block-by-block rounding leaves the all-inputs check at 0.86 to 0.95, and only an fp32 model passes it (e700).

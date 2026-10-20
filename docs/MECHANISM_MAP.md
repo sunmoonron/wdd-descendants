@@ -258,6 +258,10 @@ What the model reads and defends (area 68). A position's state is graded by the 
 
 The brake and the fields hold at 7B (area 69): at Qwen2.5-7B in fp32 the sixteen-input damage is 0.85 to 0.87 off the class, sixteen excitatory wires alone cost sixty to two hundred and eighty times the ablation damage against 1.1 to 2.7 with the inhibitory wires, and the two fields bring sixteen wires from 0.9 and 2.9 of the damage at the firings to 0.5 and 1.0, the strong field doing as much as the weak (e713). The output's Fisher metric, blended with a Euclidean floor, chooses a position's atoms no better than Euclidean energy does: the blended pursuit leaves almost no read energy in the residual and recovers no more of the mean-ablation KL, while the pure Fisher pursuit recovers less than mean ablation where the sampled Fisher is blind (e714). The grade is for scoring parts (area 68), not for choosing them.
 
+## The dictionary against the SAE and the brake under other choices (session 162)
+
+The dictionary against the SAE (area 70). For reconstructing a position's state's effect on the output, a public SAE's directions beat the native rows by 0.02 to 0.05 at sixteen atoms and the fields add 0.01, every dictionary passing 0.98 by sixty-four; for the state's response to a fixed perturbation the native rows and the SAE's directions under pursuit beat the SAE encoder's own top latents, which are the worst selection rule tried (e715). The field is an atom for a neuron's readers (areas 66, 67, 69), not for a position's state. The brake's numbers hold under other choices: the off-class share is 0.95 at a 1 percent class cut and 0.48 to 0.72 at 20, and excitatory wires alone run away at every count from eight to thirty-two (e716).
+
 ## The arrows still open, in order of value
 
 1. The readout's specificity: a block-wise transplant of blocks 13-23 within one checkpoint's geometry (the mixed-checkpoint readout of e578 moved everything away), and whether a class's readers are the same neurons across checkpoints.

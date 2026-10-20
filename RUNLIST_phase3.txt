@@ -1082,3 +1082,8 @@ python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python 
 python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python e706_strong_field.py --model qwen7b --block 14
 python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python e697_brake.py --model qwen7b --block 21
 python C11_THREADS=4 WDD_NWIN=32 WDD_NWH=48 WDD_CHUNK=512 /venv/main/bin/python e706_strong_field.py --model qwen7b --block 21
+# session 162 (e715, e716): the dictionary against the SAE, the brake under other choices
+python e715_dictionary_vs_sae.py --block 5
+python e715_dictionary_vs_sae.py --block 8
+python e716_brake_robustness.py --model pythia410 --block 12
+python e716_brake_robustness.py --model qwen05 --block 12
