@@ -1111,3 +1111,55 @@ python e724_conditional_state.py --model gpt2 --block 5 --sae jbloom
 python e724_conditional_state.py --model gpt2 --block 5 --sae oai32k
 python e724_conditional_state.py --model gpt2 --block 8 --sae jbloom
 python e724_conditional_state.py --model gpt2 --block 8 --sae oai32k
+# session 165 (e725): the corrected readout; every command below ran with WDD_TAG_SUFFIX=_v2 after the fix to c11.logprobs_at
+python e681_weak_ablation.py --model pythia70
+python e681_weak_ablation.py --model pythia160
+python e681_weak_ablation.py --model gpt2
+python e681_weak_ablation.py --model gpt2m
+python e681_weak_ablation.py --model qwen05
+python e681_weak_ablation.py --model pythia410
+python e681_weak_ablation.py --model smollm135
+python e681_weak_ablation.py --model smollm360
+python e681_weak_ablation.py --model gpt2l
+python e681_weak_ablation.py --model qwen15
+python e681_weak_ablation.py --model pythia1b
+python e681_weak_ablation.py --model olmo1b
+python e697_brake.py --model gpt2m --block 6
+python e697_brake.py --model gpt2m --block 12
+python e697_brake.py --model pythia410 --block 6
+python e697_brake.py --model pythia410 --block 12
+python e697_brake.py --model pythia410 --block 18
+python e697_brake.py --model qwen05 --block 6
+python e697_brake.py --model qwen05 --block 12
+python e697_brake.py --model smollm135 --block 15
+python e716_brake_robustness.py --model pythia410 --block 12
+python e716_brake_robustness.py --model qwen05 --block 12
+python e719_brake_pile.py --model pythia410 --block 12 --neurons-from results/e716_pythia410_b12.json
+python e719_brake_pile.py --model qwen05 --block 12 --neurons-from results/e716_qwen05_b12.json
+python e719_brake_pile.py --model gpt2m --block 12 --neurons-from results/e697_gpt2m_b12.json
+python e706_strong_field.py --model gpt2m --block 6
+python e706_strong_field.py --model gpt2m --block 12
+python e706_strong_field.py --model pythia410 --block 6
+python e706_strong_field.py --model pythia410 --block 12
+python e706_strong_field.py --model pythia410 --block 18
+python e706_strong_field.py --model qwen05 --block 6
+python e706_strong_field.py --model qwen05 --block 12
+python e706_strong_field.py --model smollm135 --block 15
+python e720_weak_7b.py --model qwen7b
+python e715_dictionary_vs_sae.py --block 5
+python e715_dictionary_vs_sae.py --block 8
+python e718_sae_families.py --model gpt2 --block 5 --sae oai32k
+python e718_sae_families.py --model gpt2 --block 8 --sae oai32k
+python e718_sae_families.py --model gpt2 --block 5 --sae oai128k
+python e718_sae_families.py --model gpt2 --block 8 --sae oai128k
+python e718_sae_families.py --model pythia160 --block 5 --sae el32k
+python e718_sae_families.py --model pythia160 --block 8 --sae el32k
+python e723_matched_readers.py --block 6 --sae jbloom
+python e723_matched_readers.py --block 6 --sae oai32k
+python e723_matched_readers.py --block 9 --sae jbloom
+python e723_matched_readers.py --block 9 --sae oai32k
+python e724_conditional_state.py --model gpt2 --block 5 --sae jbloom
+python e724_conditional_state.py --model gpt2 --block 5 --sae oai32k
+python e724_conditional_state.py --model gpt2 --block 8 --sae jbloom
+python e724_conditional_state.py --model gpt2 --block 8 --sae oai32k
+python check_norm.py --models gpt2,gpt2m,pythia160,pythia410,qwen05   # the audit

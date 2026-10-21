@@ -98,9 +98,11 @@ class Capture:
 def run_base(M, ids, **kw):
     try: return M["base"](input_ids=ids, use_cache=False, **kw)
     except Stop: return None
-def logprobs_at(M, h, bs_rows=4096):
-    """log-softmax of the unembedding applied to final residuals h [..., D] (the final norm included), in row chunks"""
+def logprobs_at(M, h, bs_rows=4096, normed=True):
+    """log-softmax of the unembedding applied to final residuals h [..., D], in row chunks. The HF base model returns last_hidden_state after its
+    final norm, so by default the norm is not applied again (normed=True); pass normed=False for a residual taken before the final norm.
+    Until 2026-10-20 this applied the norm unconditionally, which doubled it for every caller: see docs/ERRATA.md."""
     H = h.reshape(-1, h.shape[-1]); out = []; head = M["model"].get_output_embeddings()
-    for s in range(0, H.shape[0], bs_rows): out.append(head(M["fnorm"](H[s:s + bs_rows])).float().log_softmax(-1))
+    for s in range(0, H.shape[0], bs_rows): x = H[s:s + bs_rows]; out.append(head(x if normed else M["fnorm"](x)).float().log_softmax(-1))
     return torch.cat(out).reshape(*h.shape[:-1], -1)
 def kl(P, Q): return (P.exp() * (P - Q)).sum(-1).clamp_min(0)

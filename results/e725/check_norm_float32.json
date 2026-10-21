@@ -1,0 +1,31 @@
+{
+ "models": {
+  "gpt2": {
+   "loss_pipeline": 3.9120371341705322,
+   "loss_single_norm": 3.9120371341705322,
+   "loss_reference": 3.9120371341705322,
+   "kl_ref_to_pipeline": 0.0,
+   "kl_ref_to_single": 0.0,
+   "top1_agree_pipeline": 1.0,
+   "fnorm": "LayerNorm",
+   "gain_std": 1.3910776376724243,
+   "gain_mean": 1.5078086853027344
+  },
+  "qwen05": {
+   "loss_pipeline": 3.015439510345459,
+   "loss_single_norm": 3.015439510345459,
+   "loss_reference": 3.015439510345459,
+   "kl_ref_to_pipeline": 0.0,
+   "kl_ref_to_single": 0.0,
+   "top1_agree_pipeline": 1.0,
+   "fnorm": "Qwen2RMSNorm",
+   "gain_std": 1.1080776453018188,
+   "gain_mean": 7.035528182983398
+  }
+ },
+ "dtype": "float32",
+ "_exp": "check_norm_float32",
+ "_time": "2026-10-20 20:13:46",
+ "seconds": 24.036887168884277,
+ "summary": "gpt2: pipeline 3.91 vs reference 3.91 nats, KL(ref||pipeline) 0.000; qwen05: pipeline 3.02 vs reference 3.02 nats, KL(ref||pipeline) 0.000"
+}

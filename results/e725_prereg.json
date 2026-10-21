@@ -1,0 +1,71 @@
+{
+ "_written": "2026-10-20 16:12 (session 165), revision 1, after the audit and before any corrected run",
+ "_purpose": "the audit check_norm found that c11.logprobs_at applied the final norm to a hidden state the base model had already normalised, so every KL from e680 to e724 was measured through a doubly-normalised unembedding (KL from the models' own distribution 2.5 to 2.9 nats for GPT-2 small and medium, 0.5 to 0.6 for Pythia-160m and Qwen2.5-0.5B, 0.04 for Pythia-410m). The core KL-based results are re-measured with the corrected readout, same scripts, neurons, windows and seeds, results saved with the suffix _v2 beside the recorded ones",
+ "e725_corrected_readout": {
+  "design": "e681 on the eleven models and e720 at 7B (the cost); e697 on the eight model-blocks, e716 on two and e719 on three (the brake); e706 on the eight (the fields); e715 on two and e718 on six (the dictionaries on a state); e723 on four and e724 on four (the matched budget and the conditional); the corrected number beside the recorded one for every statement of the record",
+  "Q1": [
+   "keeping only the strongest quarter of each neuron's activations costs at least 0.2 nats in at least 10 of the 12 models",
+   0.6
+  ],
+  "Q2": [
+   "the mean replacement is cheaper than zeroing in at least 10 of 12",
+   0.7
+  ],
+  "Q3": [
+   "the corrected cost differs from the recorded one by more than a factor of two in at least 3 of 12 models",
+   0.6
+  ],
+  "Q4": [
+   "the off-class share of the sixteen-input damage at the five percent class is at least 0.5 in at least 6 of 8 model-blocks",
+   0.6
+  ],
+  "Q5": [
+   "sixteen excitatory wires alone cost more than three times the ablation damage over all positions in 8 of 8",
+   0.7
+  ],
+  "Q6": [
+   "sixteen excitatory plus sixteen inhibitory wires cost less at the firings than the sixteen by magnitude in at least 6 of 8",
+   0.5
+  ],
+  "Q7": [
+   "the corrected off-class share is within 0.15 of the recorded one in at least 6 of 8",
+   0.4
+  ],
+  "Q8": [
+   "both fields bring the sixteen wires' ratio at the firings under 0.5 in at least 6 of 8",
+   0.55
+  ],
+  "Q9": [
+   "both fields beat a random subspace of their dimension by 0.2 at the firings in at least 4 of 8",
+   0.4
+  ],
+  "Q10": [
+   "a trained dictionary's top sixteen latents beat sixteen native rows on the recovered KL in all 8 head-to-head runs",
+   0.7
+  ],
+  "Q11": [
+   "rows plus fields add under 0.03 to the rows in all 8",
+   0.8
+  ],
+  "Q12": [
+   "at sixteen directions the fields and the SAE's directions are within 0.05 of each other at the firings in 4 of 4",
+   0.5
+  ],
+  "Q13": [
+   "the Pile off-class share is within 0.15 of the corrected wikitext one in 3 of 3",
+   0.6
+  ],
+  "Q14": [
+   "excitatory wires alone run away (above three times) at k of 8, 16 and 32 in 2 of 2",
+   0.7
+  ],
+  "Q15": [
+   "the 7B cost is at least 0.2 nats",
+   0.8
+  ],
+  "Q16": [
+   "the correction moves GPT-2 medium's off-class share more than Pythia-410m's, the readout distortion having been larger there",
+   0.65
+  ]
+ }
+}

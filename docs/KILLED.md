@@ -1206,3 +1206,12 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The fields as a better dictionary than an SAE's directions for a neuron's firings at the same budget: they tie at sixteen, at sixty-four and at the full dimension (e723).
 - A fixed subspace as the SAE's best use on a neuron: the SAE's own coefficients on sixteen latents chosen per position beat every fixed sixteen-direction projection, the fields included (e723).
 - The fields as adding to an SAE reconstruction's account of a state: sixteen field atoms add 0.002 to 0.006 of the mean-ablation KL, within the random atoms' range (e724).
+
+## Session 165 kills (the corrected readout)
+- "sixteen excitatory plus sixteen inhibitory wires cost less at the firings than the sixteen by magnitude in at least 6 of 8." (e725).
+- "at sixteen directions the fields and the SAE's directions are within 0.05 of each other at the firings in 4 of 4." (e725).
+- Every KL of sessions 155 to 164 as a measurement against the models' own next-token distributions: the readout applied the final norm twice (e725).
+- The cost at 7B as 1.57 nats: 0.32 with the readout corrected, 0.23 with the mean replacement (e725).
+- GPT-2 medium's brake as half off the class: 0.40 and 0.46 with the readout corrected (e725).
+- The native rows' intervention advantage over jbloom's L1 encoder as a two-block result: one block of two with the readout corrected, every eight-perturbation fidelity lower than recorded (e725).
+- The dial tertile costing twice the detector tertile as a general side-claim of e681: reversed at GPT-2 small, 0.66 against 3.24, with the readout corrected (e725).

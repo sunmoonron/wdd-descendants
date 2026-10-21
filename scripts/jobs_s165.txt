@@ -1,0 +1,50 @@
+6|e681_pythia70_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model pythia70
+6|e681_pythia160_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model pythia160
+6|e681_gpt2_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model gpt2
+8|e681_gpt2m_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model gpt2m
+8|e681_qwen05_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model qwen05
+10|e681_pythia410_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model pythia410
+6|e681_smollm135_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model smollm135
+8|e681_smollm360_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model smollm360
+12|e681_gpt2l_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model gpt2l
+12|e681_qwen15_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model qwen15
+14|e681_pythia1b_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model pythia1b
+12|e681_olmo1b_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e681_weak_ablation.py --model olmo1b
+12|e697_gpt2m_b6_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model gpt2m --block 6
+14|e697_gpt2m_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model gpt2m --block 12
+12|e697_pythia410_b6_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model pythia410 --block 6
+14|e697_pythia410_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model pythia410 --block 12
+16|e697_pythia410_b18_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model pythia410 --block 18
+14|e697_qwen05_b6_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model qwen05 --block 6
+18|e697_qwen05_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model qwen05 --block 12
+8|e697_smollm135_b15_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e697_brake.py --model smollm135 --block 15
+14|e716_pythia410_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e716_brake_robustness.py --model pythia410 --block 12
+22|e716_qwen05_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e716_brake_robustness.py --model qwen05 --block 12
+14|e719_pythia410_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e719_brake_pile.py --model pythia410 --block 12 --neurons-from results/e716_pythia410_b12.json
+22|e719_qwen05_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e719_brake_pile.py --model qwen05 --block 12 --neurons-from results/e716_qwen05_b12.json
+14|e719_gpt2m_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e719_brake_pile.py --model gpt2m --block 12 --neurons-from results/e697_gpt2m_b12.json
+20|e706_gpt2m_b6_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model gpt2m --block 6
+24|e706_gpt2m_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model gpt2m --block 12
+20|e706_pythia410_b6_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model pythia410 --block 6
+24|e706_pythia410_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model pythia410 --block 12
+26|e706_pythia410_b18_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model pythia410 --block 18
+26|e706_qwen05_b6_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model qwen05 --block 6
+28|e706_qwen05_b12_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model qwen05 --block 12
+10|e706_smollm135_b15_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e706_strong_field.py --model smollm135 --block 15
+30|e720_qwen7b_v2|WDD_DTYPE=bfloat16 WDD_NWC=48 WDD_NWE=32 WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e720_weak_7b.py --model qwen7b
+8|e715_gpt2_b5_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e715_dictionary_vs_sae.py --block 5
+8|e715_gpt2_b8_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e715_dictionary_vs_sae.py --block 8
+8|e718_gpt2_b5_oai32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e718_sae_families.py --model gpt2 --block 5 --sae oai32k
+8|e718_gpt2_b8_oai32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e718_sae_families.py --model gpt2 --block 8 --sae oai32k
+9|e718_gpt2_b5_oai128k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e718_sae_families.py --model gpt2 --block 5 --sae oai128k
+9|e718_gpt2_b8_oai128k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e718_sae_families.py --model gpt2 --block 8 --sae oai128k
+8|e718_pythia160_b5_el32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e718_sae_families.py --model pythia160 --block 5 --sae el32k
+8|e718_pythia160_b8_el32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e718_sae_families.py --model pythia160 --block 8 --sae el32k
+12|e723_gpt2_b6_jbloom_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 6 --sae jbloom
+12|e723_gpt2_b6_oai32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 6 --sae oai32k
+12|e723_gpt2_b9_jbloom_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 9 --sae jbloom
+12|e723_gpt2_b9_oai32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e723_matched_readers.py --block 9 --sae oai32k
+9|e724_gpt2_b5_jbloom_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 5 --sae jbloom
+9|e724_gpt2_b5_oai32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 5 --sae oai32k
+9|e724_gpt2_b8_jbloom_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 8 --sae jbloom
+9|e724_gpt2_b8_oai32k_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e724_conditional_state.py --model gpt2 --block 8 --sae oai32k

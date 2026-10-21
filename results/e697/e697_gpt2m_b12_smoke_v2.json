@@ -1,0 +1,334 @@
+{
+ "model": "openai-community/gpt2-medium",
+ "block": 12,
+ "n_blocks": 24,
+ "positions": 2040,
+ "heldout_positions": 4080,
+ "upstream_units": 49166,
+ "conditions": [
+  "abs16",
+  "abs16_on",
+  "abs16_off",
+  "abs32",
+  "pos16",
+  "pos16neg16",
+  "abs16_bus",
+  "pos16neg16_bus",
+  "all"
+ ],
+ "verdicts": {
+  "B0_all_inputs_reproduce": true,
+  "B1_off_class_carries_damage": true,
+  "B1b_on_class_alone_small": true,
+  "B2_signed_halves_abs16": false,
+  "B2b_signed_beats_abs32": true,
+  "B3_bus_halves_abs16": false,
+  "B4_signed_bus_below_025": false,
+  "B5_neg16_carries_half_of_opposition": true,
+  "B6_bus_halves_all_positions": true
+ },
+ "neurons": {
+  "303": {
+   "kl_ablate_strong": 4.31005610153079e-05,
+   "kl_ablate_all": 7.041924163786462e-06,
+   "sim": {
+    "abs16": {
+     "strong": 2.4593120542704128e-05,
+     "all": 5.019195214117644e-06,
+     "ratio_strong": 0.5705986178223865,
+     "ratio_all": 0.7127590552492985
+    },
+    "abs16_on": {
+     "strong": 1.7842306988313794e-05,
+     "all": 1.9158378563588485e-06,
+     "ratio_strong": 0.41396925162938814,
+     "ratio_all": 0.27206169958648024
+    },
+    "abs16_off": {
+     "strong": 6.130231668066699e-06,
+     "all": 2.9486604944395367e-06,
+     "ratio_strong": 0.14223090195715649,
+     "ratio_all": 0.4187293736565936
+    },
+    "abs32": {
+     "strong": 1.7910238966578618e-05,
+     "all": 5.886042799829738e-06,
+     "ratio_strong": 0.41554537910115574,
+     "ratio_all": 0.8358571695644046
+    },
+    "pos16": {
+     "strong": 6.730280438205227e-05,
+     "all": 9.090315143112093e-05,
+     "ratio_strong": 1.5615296598610058,
+     "ratio_all": 12.908851233956213
+    },
+    "pos16neg16": {
+     "strong": 4.235691812937148e-05,
+     "all": 7.939308488857932e-06,
+     "ratio_strong": 0.9827463293187226,
+     "ratio_all": 1.1274345341130378
+    },
+    "abs16_bus": {
+     "strong": 2.8355623726383783e-05,
+     "all": 4.979199729859829e-06,
+     "ratio_strong": 0.6578945391525831,
+     "ratio_all": 0.7070794308557989
+    },
+    "pos16neg16_bus": {
+     "strong": 4.0052338590612635e-05,
+     "all": 7.547704626631457e-06,
+     "ratio_strong": 0.9292765023728429,
+     "ratio_all": 1.0718241848507832
+    },
+    "all": {
+     "strong": 5.6870312903356535e-08,
+     "all": 5.8742401165545743e-08,
+     "ratio_strong": 0.0013194796439693224,
+     "ratio_all": 0.008341811101521405
+    }
+   },
+   "off_share_all": 0.587476750484968,
+   "on_share_all": 0.3817022001794456,
+   "off_share_strong": 0.24926611722257885,
+   "crowd_over_wires_off": 0.06784531474113464,
+   "crowd_over_wires_on": 0.4652363061904907,
+   "neg16_share_of_opposition": 0.8814467191696167
+  },
+  "698": {
+   "kl_ablate_strong": 7.120223017409444e-05,
+   "kl_ablate_all": 1.6731315554352477e-05,
+   "sim": {
+    "abs16": {
+     "strong": 0.0001197487727040425,
+     "all": 0.00010871161794057116,
+     "ratio_strong": 1.6818121063237537,
+     "ratio_all": 6.497493731883561
+    },
+    "abs16_on": {
+     "strong": 2.0261408280930482e-05,
+     "all": 2.2690678633807693e-06,
+     "ratio_strong": 0.28456142780064503,
+     "ratio_all": 0.13561801855984332
+    },
+    "abs16_off": {
+     "strong": 8.090517803793773e-05,
+     "all": 0.00010232299973722547,
+     "ratio_strong": 1.1362730892012638,
+     "ratio_all": 6.1156577559501715
+    },
+    "abs32": {
+     "strong": 0.0002532906364649534,
+     "all": 0.00020628984202630818,
+     "ratio_strong": 3.557341333911032,
+     "ratio_all": 12.329564961952082
+    },
+    "pos16": {
+     "strong": 0.00043017612188123167,
+     "all": 0.0005444229464046657,
+     "ratio_strong": 6.041610225261497,
+     "ratio_all": 32.5391595559884
+    },
+    "pos16neg16": {
+     "strong": 3.697786451084539e-05,
+     "all": 4.1911502194125205e-05,
+     "ratio_strong": 0.5193357626640616,
+     "ratio_all": 2.504973506594487
+    },
+    "abs16_bus": {
+     "strong": 2.2875283320900053e-05,
+     "all": 9.36798460315913e-06,
+     "ratio_strong": 0.32127200601678324,
+     "ratio_all": 0.5599072333987596
+    },
+    "pos16neg16_bus": {
+     "strong": 3.532732807798311e-05,
+     "all": 8.872335456544533e-06,
+     "ratio_strong": 0.4961547972810026,
+     "ratio_all": 0.53028319427258
+    },
+    "all": {
+     "strong": 5.923305934629752e-08,
+     "all": 5.8201031549742765e-08,
+     "ratio_strong": 0.0008318989335231291,
+     "ratio_all": 0.0034785687569321095
+    }
+   },
+   "off_share_all": 0.9412333444725465,
+   "on_share_all": 0.02087235850561243,
+   "off_share_strong": 0.6756242774854471,
+   "crowd_over_wires_off": -0.9437481164932251,
+   "crowd_over_wires_on": -0.28338518738746643,
+   "neg16_share_of_opposition": 0.6422856450080872
+  },
+  "1362": {
+   "kl_ablate_strong": 7.129733421606943e-05,
+   "kl_ablate_all": 1.2961464562977199e-05,
+   "sim": {
+    "abs16": {
+     "strong": 3.4247059375047684e-05,
+     "all": 1.7670952729531564e-05,
+     "ratio_strong": 0.4803413725295899,
+     "ratio_all": 1.363345372251098
+    },
+    "abs16_on": {
+     "strong": 1.8856853785109706e-05,
+     "all": 2.060810629700427e-06,
+     "ratio_strong": 0.26448189111760134,
+     "ratio_all": 0.15899519839655116
+    },
+    "abs16_off": {
+     "strong": 1.5071990674186964e-05,
+     "all": 1.543549296911806e-05,
+     "ratio_strong": 0.21139627224365348,
+     "ratio_all": 1.1908756833859355
+    },
+    "abs32": {
+     "strong": 5.375290857045911e-05,
+     "all": 3.270620800321922e-05,
+     "ratio_strong": 0.7539259239000264,
+     "ratio_all": 2.5233420069395867
+    },
+    "pos16": {
+     "strong": 0.0002474224893376231,
+     "all": 0.00031212856993079185,
+     "ratio_strong": 3.47029088896647,
+     "ratio_all": 24.081273255365605
+    },
+    "pos16neg16": {
+     "strong": 2.918935388152022e-05,
+     "all": 7.5766943155031186e-06,
+     "ratio_strong": 0.4094031593532054,
+     "ratio_all": 0.5845554164569486
+    },
+    "abs16_bus": {
+     "strong": 2.7970041628577746e-05,
+     "all": 6.18056174062076e-06,
+     "ratio_strong": 0.39230136632897683,
+     "ratio_all": 0.4768413099145263
+    },
+    "pos16neg16_bus": {
+     "strong": 4.2777850467246026e-05,
+     "all": 8.536771929357201e-06,
+     "ratio_strong": 0.5999922849514406,
+     "ratio_all": 0.6586271086788619
+    },
+    "all": {
+     "strong": 7.245480304618468e-08,
+     "all": 5.9265044427547764e-08,
+     "ratio_strong": 0.0010162343914094669,
+     "ratio_all": 0.004572403383860721
+    }
+   },
+   "off_share_all": 0.8734952328474276,
+   "on_share_all": 0.11662136508669482,
+   "off_share_strong": 0.44009590748011423,
+   "crowd_over_wires_off": -0.4573318660259247,
+   "crowd_over_wires_on": -0.035940445959568024,
+   "neg16_share_of_opposition": 0.8373648524284363
+  },
+  "2735": {
+   "kl_ablate_strong": 6.479104195022956e-05,
+   "kl_ablate_all": 1.1045567589462735e-05,
+   "sim": {
+    "abs16": {
+     "strong": 6.1459606513381e-05,
+     "all": 3.1850220693740994e-05,
+     "ratio_strong": 0.9485818511854207,
+     "ratio_all": 2.883529563851975
+    },
+    "abs16_on": {
+     "strong": 3.0134757253108546e-05,
+     "all": 2.874357051041443e-06,
+     "ratio_strong": 0.4651068472746143,
+     "ratio_all": 0.260227193194085
+    },
+    "abs16_off": {
+     "strong": 2.6065457859658636e-05,
+     "all": 2.7754118491429836e-05,
+     "ratio_strong": 0.4023003346617161,
+     "ratio_all": 2.5126928305528407
+    },
+    "abs32": {
+     "strong": 6.327278970275074e-05,
+     "all": 3.46015440300107e-05,
+     "ratio_strong": 0.9765669419447662,
+     "ratio_all": 3.1326180162095
+    },
+    "pos16": {
+     "strong": 0.0007167378789745271,
+     "all": 0.0006819900590926409,
+     "ratio_strong": 11.062299006166665,
+     "ratio_all": 61.74332405907747
+    },
+    "pos16neg16": {
+     "strong": 2.9886778065701947e-05,
+     "all": 1.546758176118601e-05,
+     "ratio_strong": 0.4612794788615999,
+     "ratio_all": 1.400342864765211
+    },
+    "abs16_bus": {
+     "strong": 3.460983862169087e-05,
+     "all": 8.143823833961505e-06,
+     "ratio_strong": 0.5341762932023391,
+     "ratio_all": 0.7372933774567241
+    },
+    "pos16neg16_bus": {
+     "strong": 3.606126119848341e-05,
+     "all": 6.779284376534633e-06,
+     "ratio_strong": 0.5565778865878486,
+     "ratio_all": 0.6137560900901049
+    },
+    "all": {
+     "strong": 5.927712010134201e-08,
+     "all": 5.66987452543799e-08,
+     "ratio_strong": 0.0009148968486550476,
+     "ratio_all": 0.0051331671998883464
+    }
+   },
+   "off_share_all": 0.8713948565161402,
+   "on_share_all": 0.0902460638712715,
+   "off_share_strong": 0.42410713862907107,
+   "crowd_over_wires_off": -0.3337675929069519,
+   "crowd_over_wires_on": -0.20157070457935333,
+   "neg16_share_of_opposition": 0.8040354251861572
+  }
+ },
+ "_exp": "e697_gpt2m_b12_smoke_v2",
+ "_time": "2026-10-20 20:14:22",
+ "seconds": 29.025350332260132,
+ "summary_stats": {
+  "n": 4,
+  "bus_dims": 192,
+  "kl_ablate_strong": 6.7996636062162e-05,
+  "kl_ablate_all": 1.2003516076219967e-05,
+  "ratio_strong": {
+   "abs16": 0.7595902345039036,
+   "abs16_on": 0.3492653397150166,
+   "abs16_off": 0.30684830345268477,
+   "abs32": 0.8652464329223963,
+   "pos16": 4.755950557113984,
+   "pos16neg16": 0.49030762076283074,
+   "abs16_bus": 0.46323882976565794,
+   "pos16neg16_bus": 0.5782850857696447,
+   "all": 0.0009655656200322572
+  },
+  "ratio_all": {
+   "abs16": 2.1234374680515367,
+   "abs16_on": 0.20961119579531806,
+   "abs16_off": 1.851784256969388,
+   "abs32": 2.8279800115745433,
+   "pos16": 28.310216405677004,
+   "pos16neg16": 1.2638886994391245,
+   "abs16_bus": 0.6334933321272793,
+   "pos16neg16_bus": 0.6361915993844833,
+   "all": 0.004852785291874533
+  },
+  "off_share_all": 0.872445044681784,
+  "on_share_all": 0.10343371447898317,
+  "off_share_strong": 0.43210152305459265,
+  "crowd_over_wires_off": -0.3955497294664383,
+  "crowd_over_wires_on": -0.11875557526946068,
+  "neg16_share_of_opposition": 0.8207001388072968
+ },
+ "summary": "[gpt2m block 12] 4 neurons: KL ratio of the simulation over the ablation's, at the strong firings / over all positions: abs16 0.76/2.12, abs16_on 0.35/0.21, abs16_off 0.31/1.85, abs32 0.87/2.83, pos16 4.76/28.31, pos16neg16 0.49/1.26, abs16_bus 0.46/0.63, pos16neg16_bus 0.58/0.64, all 0.00/0.00; the share of the sixteen-input damage (all positions) from the off-class positions 0.87, from the top-5% positions 0.10; the crowd's net sum over the sixteen wires (signed) off the class -0.40, on it -0.12; the sixteen inhibitory wires' share of the off-class opposition 0.8207001388072968; bus 192 directions; verdicts {'B0_all_inputs_reproduce': True, 'B1_off_class_carries_damage': True, 'B1b_on_class_alone_small': True, 'B2_signed_halves_abs16': False, 'B2b_signed_beats_abs32': True, 'B3_bus_halves_abs16': False, 'B4_signed_bus_below_025': False, 'B5_neg16_carries_half_of_opposition': True, 'B6_bus_halves_all_positions': True}"
+}

@@ -7861,3 +7861,220 @@ SESSION 164 (2026-10-20, box 12; the matched-budget comparison the note's review
   - At GPT-2 small blocks 5, 8 with OpenAI TopK 32k and jbloom L1 24k, the SAE's full reconstruction recovers 0.976 to 0.989 of the mean-ablation KL; sixteen more atoms chosen by pursuit on what it leaves add 0.005 to 0.006 from the field directions, 0.006 to 0.012 from the native rows, 0.005 to 0.011 from the SAE's own directions and 0.001 to 0.003 from random directions; the intervention fidelity is 0.83 to 0.88 for the SAE's full reconstruction and 0.93 to 0.97, 0.91 to 0.97, 0.89 to 0.95 and 0.85 to 0.89 with the sixteen atoms added, against 0.65 to 0.71 for sixteen rows alone.
   - Reading: conditional on an SAE's full reconstruction of a state, the fields add nothing to its effect and something to its response. At GPT-2 small blocks 5 and 8 with jbloom's L1 and OpenAI's TopK dictionaries the SAE's full reconstruction recovers 0.976 to 0.989 of the mean-ablation KL; sixteen more atoms chosen by pursuit on what it leaves add 0.002 to 0.006 from the field directions, 0.006 to 0.012 from the native rows, 0.005 to 0.011 from the SAE's own directions and 0.001 to 0.003 from random directions. Under intervention the SAE's reconstruction tracks a fixed perturbation at 0.83 to 0.88 and with sixteen field atoms at 0.93 to 0.97, as high as with sixteen rows (0.91 to 0.97) and higher than with sixteen of the SAE's own directions (0.89 to 0.95) or random atoms (0.85 to 0.89). What the SAE leaves of a state is worth little to the output and something to an intervention, and sixteen field atoms recover that part as well as sixteen native rows do..
   - Pre-registered: N1 (sixteen field atoms add less than 0.02 of the mean-ablation KL to the SAE's full reconstruction in every run) confirmed; N2 (sixteen native rows add at least 0.02 to the SAE's full reconstruction) refuted; N3 (sixteen of the SAE's own directions add at least as much as sixteen field atoms) split (holds for GPT-2 small block 5 with jbloom L1 24k, GPT-2 small block 8 with jbloom L1 24k, GPT-2 small block 8 with OpenAI TopK 32k, not GPT-2 small block 5 with OpenAI TopK 32k); N4 (the intervention fidelity of the SAE plus sixteen field atoms is at least the SAE's own) confirmed.
+
+SESSION 165 (2026-10-20, box 12; the user asked which findings generalise and to think like a dark horse that clears its own bits. An audit of the shared helper found the double-norm flaw of the readout; c11.logprobs_at and wdd/model.py were fixed, the audit saved as check_norm.py, and every KL-based core result was re-measured with the same scripts, neurons, windows and seeds, saved as *_v2.json beside the recorded files. Pre-registered in results/e725_prereg.json; 50 jobs through one queue with a retry pass. Readings in scripts_writeups/s165_readings.json.)
+
+- e725 Which of the record's KL-based claims survive once the final norm is applied once instead of twice: the cost of the weak activations, the brake, the fields and the dictionary comparisons, re-measured with the same scripts, neurons, windows and seeds?:
+
+  | experiment | run | statistic | recorded (doubled norm) | corrected |
+  | --- | --- | --- | --- | --- |
+  | e681 | GPT-2 small | KL, strongest quarter kept | 0.24 | 2.10 |
+  | e681 | GPT-2 small | KL, mean replacement | 0.07 | 0.19 |
+  | e681 | GPT-2 large | KL, strongest quarter kept | 3.25 | 1.97 |
+  | e681 | GPT-2 large | KL, mean replacement | 0.19 | 0.14 |
+  | e681 | GPT-2 medium | KL, strongest quarter kept | 0.95 | 3.96 |
+  | e681 | GPT-2 medium | KL, mean replacement | 0.40 | 0.29 |
+  | e681 | OLMo-1B | KL, strongest quarter kept | 0.93 | 0.93 |
+  | e681 | OLMo-1B | KL, mean replacement | 0.31 | 0.31 |
+  | e681 | Pythia-160m | KL, strongest quarter kept | 1.54 | 3.37 |
+  | e681 | Pythia-160m | KL, mean replacement | 0.47 | 0.98 |
+  | e681 | Pythia-1B | KL, strongest quarter kept | 5.38 | 4.45 |
+  | e681 | Pythia-1B | KL, mean replacement | 0.36 | 0.33 |
+  | e681 | Pythia-410m | KL, strongest quarter kept | 8.68 | 8.06 |
+  | e681 | Pythia-410m | KL, mean replacement | 0.73 | 0.69 |
+  | e681 | Qwen2.5-0.5B | KL, strongest quarter kept | 0.99 | 0.89 |
+  | e681 | Qwen2.5-0.5B | KL, mean replacement | 0.61 | 0.53 |
+  | e681 | Qwen2.5-1.5B | KL, strongest quarter kept | 0.51 | 0.44 |
+  | e681 | Qwen2.5-1.5B | KL, mean replacement | 0.39 | 0.29 |
+  | e681 | SmolLM2-135M | KL, strongest quarter kept | 2.22 | 0.93 |
+  | e681 | SmolLM2-135M | KL, mean replacement | 2.31 | 0.72 |
+  | e681 | SmolLM2-360M | KL, strongest quarter kept | 1.31 | 0.73 |
+  | e681 | SmolLM2-360M | KL, mean replacement | 0.67 | 0.43 |
+  | e720 | Qwen2.5-7B | KL, strongest quarter kept | 1.57 | 0.32 |
+  | e720 | Qwen2.5-7B | KL, mean replacement | 0.88 | 0.23 |
+  | e697 | GPT-2 medium block 12 | off-class share | 0.64 | 0.46 |
+  | e697 | GPT-2 medium block 12 | 16 excitatory wires, all positions | 5.88 | 3.86 |
+  | e697 | GPT-2 medium block 12 | signed wires, all positions | 1.05 | 1.18 |
+  | e697 | GPT-2 medium block 12 | 16 wires at the firings | 0.75 | 0.82 |
+  | e697 | GPT-2 medium block 12 | signed wires at the firings | 0.97 | 0.98 |
+  | e697 | GPT-2 medium block 6 | off-class share | 0.64 | 0.40 |
+  | e697 | GPT-2 medium block 6 | 16 excitatory wires, all positions | 10.14 | 18.17 |
+  | e697 | GPT-2 medium block 6 | signed wires, all positions | 1.03 | 0.89 |
+  | e697 | GPT-2 medium block 6 | 16 wires at the firings | 0.41 | 0.37 |
+  | e697 | GPT-2 medium block 6 | signed wires at the firings | 0.68 | 0.56 |
+  | e697 | Pythia-410m block 12 | off-class share | 0.81 | 0.81 |
+  | e697 | Pythia-410m block 12 | 16 excitatory wires, all positions | 45.28 | 45.24 |
+  | e697 | Pythia-410m block 12 | signed wires, all positions | 3.02 | 3.04 |
+  | e697 | Pythia-410m block 12 | 16 wires at the firings | 1.08 | 1.10 |
+  | e697 | Pythia-410m block 12 | signed wires at the firings | 0.82 | 0.83 |
+  | e697 | Pythia-410m block 18 | off-class share | 0.78 | 0.78 |
+  | e697 | Pythia-410m block 18 | 16 excitatory wires, all positions | 26.90 | 26.22 |
+  | e697 | Pythia-410m block 18 | signed wires, all positions | 2.09 | 2.09 |
+  | e697 | Pythia-410m block 18 | 16 wires at the firings | 0.74 | 0.75 |
+  | e697 | Pythia-410m block 18 | signed wires at the firings | 0.63 | 0.64 |
+  | e697 | Pythia-410m block 6 | off-class share | 0.52 | 0.52 |
+  | e697 | Pythia-410m block 6 | 16 excitatory wires, all positions | 13.89 | 13.85 |
+  | e697 | Pythia-410m block 6 | signed wires, all positions | 0.92 | 0.92 |
+  | e697 | Pythia-410m block 6 | 16 wires at the firings | 0.51 | 0.49 |
+  | e697 | Pythia-410m block 6 | signed wires at the firings | 0.59 | 0.59 |
+  | e697 | Qwen2.5-0.5B block 12 | off-class share | 0.88 | 0.88 |
+  | e697 | Qwen2.5-0.5B block 12 | 16 excitatory wires, all positions | 561 | 503 |
+  | e697 | Qwen2.5-0.5B block 12 | signed wires, all positions | 2.97 | 2.87 |
+  | e697 | Qwen2.5-0.5B block 12 | 16 wires at the firings | 1.95 | 1.97 |
+  | e697 | Qwen2.5-0.5B block 12 | signed wires at the firings | 1.06 | 1.07 |
+  | e697 | Qwen2.5-0.5B block 6 | off-class share | 0.86 | 0.86 |
+  | e697 | Qwen2.5-0.5B block 6 | 16 excitatory wires, all positions | 130 | 132 |
+  | e697 | Qwen2.5-0.5B block 6 | signed wires, all positions | 0.91 | 0.90 |
+  | e697 | Qwen2.5-0.5B block 6 | 16 wires at the firings | 0.64 | 0.67 |
+  | e697 | Qwen2.5-0.5B block 6 | signed wires at the firings | 0.61 | 0.61 |
+  | e697 | SmolLM2-135M block 15 | off-class share | 0.82 | 0.82 |
+  | e697 | SmolLM2-135M block 15 | 16 excitatory wires, all positions | 211 | 191 |
+  | e697 | SmolLM2-135M block 15 | signed wires, all positions | 1.44 | 1.47 |
+  | e697 | SmolLM2-135M block 15 | 16 wires at the firings | 1.68 | 1.49 |
+  | e697 | SmolLM2-135M block 15 | signed wires at the firings | 0.70 | 0.69 |
+  | e716 | Pythia-410m block 12 | off-class share at 1 percent | 0.95 | 0.95 |
+  | e716 | Pythia-410m block 12 | off-class share at 5 percent | 0.81 | 0.81 |
+  | e716 | Pythia-410m block 12 | off-class share at 20 percent | 0.48 | 0.48 |
+  | e716 | Pythia-410m block 12 | 8 excitatory wires, all positions | 18.20 | 18.41 |
+  | e716 | Pythia-410m block 12 | 16 excitatory wires, all positions | 45.28 | 45.24 |
+  | e716 | Pythia-410m block 12 | 32 excitatory wires, all positions | 121 | 123 |
+  | e716 | Qwen2.5-0.5B block 12 | off-class share at 1 percent | 0.95 | 0.96 |
+  | e716 | Qwen2.5-0.5B block 12 | off-class share at 5 percent | 0.88 | 0.88 |
+  | e716 | Qwen2.5-0.5B block 12 | off-class share at 20 percent | 0.72 | 0.71 |
+  | e716 | Qwen2.5-0.5B block 12 | 8 excitatory wires, all positions | 126 | 121 |
+  | e716 | Qwen2.5-0.5B block 12 | 16 excitatory wires, all positions | 561 | 503 |
+  | e716 | Qwen2.5-0.5B block 12 | 32 excitatory wires, all positions | 2328 | 2172 |
+  | e719 | GPT-2 medium block 12 | off-class share at 5 percent (Pile) | 0.74 | 0.46 |
+  | e719 | GPT-2 medium block 12 | 16 excitatory wires, all positions (Pile) | 7.15 | 5.99 |
+  | e719 | Pythia-410m block 12 | off-class share at 5 percent (Pile) | 0.81 | 0.82 |
+  | e719 | Pythia-410m block 12 | 16 excitatory wires, all positions (Pile) | 49.01 | 49.07 |
+  | e719 | Qwen2.5-0.5B block 12 | off-class share at 5 percent (Pile) | 0.86 | 0.85 |
+  | e719 | Qwen2.5-0.5B block 12 | 16 excitatory wires, all positions (Pile) | 539 | 496 |
+  | e706 | GPT-2 medium block 12 | 16 wires at the firings | 0.75 | 0.82 |
+  | e706 | GPT-2 medium block 12 | with both fields | 0.22 | 0.20 |
+  | e706 | GPT-2 medium block 12 | with a random subspace | 0.56 | 0.66 |
+  | e706 | GPT-2 medium block 6 | 16 wires at the firings | 0.41 | 0.37 |
+  | e706 | GPT-2 medium block 6 | with both fields | 0.21 | 0.27 |
+  | e706 | GPT-2 medium block 6 | with a random subspace | 0.40 | 0.44 |
+  | e706 | Pythia-410m block 12 | 16 wires at the firings | 1.08 | 1.10 |
+  | e706 | Pythia-410m block 12 | with both fields | 0.30 | 0.30 |
+  | e706 | Pythia-410m block 12 | with a random subspace | 0.63 | 0.62 |
+  | e706 | Pythia-410m block 18 | 16 wires at the firings | 0.74 | 0.75 |
+  | e706 | Pythia-410m block 18 | with both fields | 0.19 | 0.19 |
+  | e706 | Pythia-410m block 18 | with a random subspace | 0.27 | 0.27 |
+  | e706 | Pythia-410m block 6 | 16 wires at the firings | 0.51 | 0.49 |
+  | e706 | Pythia-410m block 6 | with both fields | 0.25 | 0.25 |
+  | e706 | Pythia-410m block 6 | with a random subspace | 0.40 | 0.39 |
+  | e706 | Qwen2.5-0.5B block 12 | 16 wires at the firings | 1.95 | 1.97 |
+  | e706 | Qwen2.5-0.5B block 12 | with both fields | 0.53 | 0.52 |
+  | e706 | Qwen2.5-0.5B block 12 | with a random subspace | 1.15 | 1.14 |
+  | e706 | Qwen2.5-0.5B block 6 | 16 wires at the firings | 0.64 | 0.67 |
+  | e706 | Qwen2.5-0.5B block 6 | with both fields | 0.35 | 0.36 |
+  | e706 | Qwen2.5-0.5B block 6 | with a random subspace | 0.61 | 0.62 |
+  | e706 | SmolLM2-135M block 15 | 16 wires at the firings | 1.68 | 1.49 |
+  | e706 | SmolLM2-135M block 15 | with both fields | 0.12 | 0.13 |
+  | e706 | SmolLM2-135M block 15 | with a random subspace | 0.27 | 0.27 |
+  | e715 | GPT-2 small block 5 | recovered, 16 rows | 0.95 | 0.95 |
+  | e715 | GPT-2 small block 5 | recovered, rows and fields | 0.95 | 0.95 |
+  | e715 | GPT-2 small block 5 | recovered, SAE top 16 | 0.97 | 0.97 |
+  | e715 | GPT-2 small block 5 | recovered, SAE by pursuit | 0.98 | 0.98 |
+  | e715 | GPT-2 small block 5 | recovered, SAE full | 0.99 | 0.99 |
+  | e715 | GPT-2 small block 5 | fidelity, rows | 0.71 | 0.54 |
+  | e715 | GPT-2 small block 5 | fidelity, SAE top 16 | 0.60 | 0.55 |
+  | e715 | GPT-2 small block 8 | recovered, 16 rows | 0.92 | 0.90 |
+  | e715 | GPT-2 small block 8 | recovered, rows and fields | 0.93 | 0.91 |
+  | e715 | GPT-2 small block 8 | recovered, SAE top 16 | 0.95 | 0.94 |
+  | e715 | GPT-2 small block 8 | recovered, SAE by pursuit | 0.97 | 0.97 |
+  | e715 | GPT-2 small block 8 | recovered, SAE full | 0.98 | 0.97 |
+  | e715 | GPT-2 small block 8 | fidelity, rows | 0.65 | 0.50 |
+  | e715 | GPT-2 small block 8 | fidelity, SAE top 16 | 0.53 | 0.41 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 128k | recovered, 16 rows | 0.95 | 0.95 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 128k | recovered, rows and fields | 0.95 | 0.95 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 128k | recovered, SAE top 16 | 0.98 | 0.99 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 128k | recovered, SAE by pursuit | 0.93 | 0.95 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 128k | recovered, SAE full | 0.99 | 0.99 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 128k | fidelity, rows | 0.71 | 0.54 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 128k | fidelity, SAE top 16 | 0.84 | 0.78 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 32k | recovered, 16 rows | 0.95 | 0.95 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 32k | recovered, rows and fields | 0.95 | 0.95 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 32k | recovered, SAE top 16 | 0.98 | 0.99 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 32k | recovered, SAE by pursuit | 0.92 | 0.92 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 32k | recovered, SAE full | 0.99 | 0.99 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 32k | fidelity, rows | 0.71 | 0.54 |
+  | e718 | GPT-2 small block 5 with OpenAI TopK 32k | fidelity, SAE top 16 | 0.83 | 0.73 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 128k | recovered, 16 rows | 0.92 | 0.90 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 128k | recovered, rows and fields | 0.93 | 0.91 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 128k | recovered, SAE top 16 | 0.97 | 0.97 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 128k | recovered, SAE by pursuit | 0.93 | 0.92 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 128k | recovered, SAE full | 0.98 | 0.98 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 128k | fidelity, rows | 0.65 | 0.50 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 128k | fidelity, SAE top 16 | 0.84 | 0.81 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 32k | recovered, 16 rows | 0.92 | 0.90 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 32k | recovered, rows and fields | 0.93 | 0.91 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 32k | recovered, SAE top 16 | 0.97 | 0.95 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 32k | recovered, SAE by pursuit | 0.93 | 0.90 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 32k | recovered, SAE full | 0.98 | 0.98 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 32k | fidelity, rows | 0.65 | 0.50 |
+  | e718 | GPT-2 small block 8 with OpenAI TopK 32k | fidelity, SAE top 16 | 0.83 | 0.81 |
+  | e718 | Pythia-160m block 5 with EleutherAI TopK 32k | recovered, 16 rows | 0.72 | 0.77 |
+  | e718 | Pythia-160m block 5 with EleutherAI TopK 32k | recovered, rows and fields | 0.72 | 0.77 |
+  | e718 | Pythia-160m block 5 with EleutherAI TopK 32k | recovered, SAE top 16 | 0.93 | 0.94 |
+  | e718 | Pythia-160m block 5 with EleutherAI TopK 32k | recovered, SAE by pursuit | 0.93 | 0.94 |
+  | e718 | Pythia-160m block 5 with EleutherAI TopK 32k | recovered, SAE full | 0.95 | 0.95 |
+  | e718 | Pythia-160m block 5 with EleutherAI TopK 32k | fidelity, rows | 0.75 | 0.63 |
+  | e718 | Pythia-160m block 5 with EleutherAI TopK 32k | fidelity, SAE top 16 | 0.91 | 0.87 |
+  | e718 | Pythia-160m block 8 with EleutherAI TopK 32k | recovered, 16 rows | 0.72 | 0.77 |
+  | e718 | Pythia-160m block 8 with EleutherAI TopK 32k | recovered, rows and fields | 0.73 | 0.77 |
+  | e718 | Pythia-160m block 8 with EleutherAI TopK 32k | recovered, SAE top 16 | 0.90 | 0.91 |
+  | e718 | Pythia-160m block 8 with EleutherAI TopK 32k | recovered, SAE by pursuit | 0.90 | 0.92 |
+  | e718 | Pythia-160m block 8 with EleutherAI TopK 32k | recovered, SAE full | 0.93 | 0.94 |
+  | e718 | Pythia-160m block 8 with EleutherAI TopK 32k | fidelity, rows | 0.89 | 0.81 |
+  | e718 | Pythia-160m block 8 with EleutherAI TopK 32k | fidelity, SAE top 16 | 0.95 | 0.88 |
+  | e723 | GPT-2 small block 6 with jbloom L1 24k | 16 field directions at the firings | 0.24 | 0.23 |
+  | e723 | GPT-2 small block 6 with jbloom L1 24k | 16 SAE directions | 0.31 | 0.30 |
+  | e723 | GPT-2 small block 6 with jbloom L1 24k | 16 random | 0.25 | 0.33 |
+  | e723 | GPT-2 small block 6 with jbloom L1 24k | full fields | 0.14 | 0.12 |
+  | e723 | GPT-2 small block 6 with jbloom L1 24k | SAE at the fields' dimension | 0.15 | 0.15 |
+  | e723 | GPT-2 small block 6 with jbloom L1 24k | SAE full reconstruction | 0.21 | 0.18 |
+  | e723 | GPT-2 small block 6 with OpenAI TopK 32k | 16 field directions at the firings | 0.24 | 0.23 |
+  | e723 | GPT-2 small block 6 with OpenAI TopK 32k | 16 SAE directions | 0.23 | 0.30 |
+  | e723 | GPT-2 small block 6 with OpenAI TopK 32k | 16 random | 0.25 | 0.33 |
+  | e723 | GPT-2 small block 6 with OpenAI TopK 32k | full fields | 0.14 | 0.12 |
+  | e723 | GPT-2 small block 6 with OpenAI TopK 32k | SAE at the fields' dimension | 0.16 | 0.14 |
+  | e723 | GPT-2 small block 6 with OpenAI TopK 32k | SAE full reconstruction | 0.10 | 0.10 |
+  | e723 | GPT-2 small block 9 with jbloom L1 24k | 16 field directions at the firings | 0.46 | 0.38 |
+  | e723 | GPT-2 small block 9 with jbloom L1 24k | 16 SAE directions | 0.42 | 0.33 |
+  | e723 | GPT-2 small block 9 with jbloom L1 24k | 16 random | 0.51 | 0.40 |
+  | e723 | GPT-2 small block 9 with jbloom L1 24k | full fields | 0.18 | 0.12 |
+  | e723 | GPT-2 small block 9 with jbloom L1 24k | SAE at the fields' dimension | 0.09 | 0.08 |
+  | e723 | GPT-2 small block 9 with jbloom L1 24k | SAE full reconstruction | 0.17 | 0.17 |
+  | e723 | GPT-2 small block 9 with OpenAI TopK 32k | 16 field directions at the firings | 0.46 | 0.38 |
+  | e723 | GPT-2 small block 9 with OpenAI TopK 32k | 16 SAE directions | 0.41 | 0.36 |
+  | e723 | GPT-2 small block 9 with OpenAI TopK 32k | 16 random | 0.51 | 0.40 |
+  | e723 | GPT-2 small block 9 with OpenAI TopK 32k | full fields | 0.18 | 0.12 |
+  | e723 | GPT-2 small block 9 with OpenAI TopK 32k | SAE at the fields' dimension | 0.12 | 0.11 |
+  | e723 | GPT-2 small block 9 with OpenAI TopK 32k | SAE full reconstruction | 0.14 | 0.12 |
+  | e724 | GPT-2 small block 5 with jbloom L1 24k | recovered, SAE full | 0.99 | 0.99 |
+  | e724 | GPT-2 small block 5 with jbloom L1 24k | plus 16 field atoms | 0.99 | 0.99 |
+  | e724 | GPT-2 small block 5 with jbloom L1 24k | plus 16 rows | 0.99 | 0.99 |
+  | e724 | GPT-2 small block 5 with jbloom L1 24k | fidelity, SAE full | 0.85 | 0.79 |
+  | e724 | GPT-2 small block 5 with jbloom L1 24k | fidelity, plus 16 field atoms | 0.95 | 0.90 |
+  | e724 | GPT-2 small block 5 with OpenAI TopK 32k | recovered, SAE full | 0.99 | 0.99 |
+  | e724 | GPT-2 small block 5 with OpenAI TopK 32k | plus 16 field atoms | 0.99 | 1.00 |
+  | e724 | GPT-2 small block 5 with OpenAI TopK 32k | plus 16 rows | 1.00 | 1.00 |
+  | e724 | GPT-2 small block 5 with OpenAI TopK 32k | fidelity, SAE full | 0.85 | 0.80 |
+  | e724 | GPT-2 small block 5 with OpenAI TopK 32k | fidelity, plus 16 field atoms | 0.97 | 0.92 |
+  | e724 | GPT-2 small block 8 with jbloom L1 24k | recovered, SAE full | 0.98 | 0.97 |
+  | e724 | GPT-2 small block 8 with jbloom L1 24k | plus 16 field atoms | 0.99 | 0.98 |
+  | e724 | GPT-2 small block 8 with jbloom L1 24k | plus 16 rows | 0.99 | 0.99 |
+  | e724 | GPT-2 small block 8 with jbloom L1 24k | fidelity, SAE full | 0.83 | 0.78 |
+  | e724 | GPT-2 small block 8 with jbloom L1 24k | fidelity, plus 16 field atoms | 0.93 | 0.91 |
+  | e724 | GPT-2 small block 8 with OpenAI TopK 32k | recovered, SAE full | 0.98 | 0.98 |
+  | e724 | GPT-2 small block 8 with OpenAI TopK 32k | plus 16 field atoms | 0.98 | 0.99 |
+  | e724 | GPT-2 small block 8 with OpenAI TopK 32k | plus 16 rows | 0.99 | 0.99 |
+  | e724 | GPT-2 small block 8 with OpenAI TopK 32k | fidelity, SAE full | 0.88 | 0.84 |
+  | e724 | GPT-2 small block 8 with OpenAI TopK 32k | fidelity, plus 16 field atoms | 0.96 | 0.93 |
+
+  - With the final norm applied once (the audit: the recorded readout's KL from the models' own distribution was  nats), keeping only the strongest quarter of each neuron's activations costs 0.32 to 8.06 nats across 12 models against 0.24 to 8.68 recorded, and the mean replacement 0.14 to 0.98; the brake's off-class share at the five percent class is 0.40 to 0.88 across 8 model-blocks against 0.52 to 0.88 recorded, sixteen excitatory wires alone cost 4 to 503 times the ablation damage (recorded 6 to 561) and the signed wires 0.89 to 3.04; at the firings the sixteen wires leave 0.37 to 1.97 (recorded 0.41 to 1.95); both fields bring the sixteen wires at the firings to 0.13 to 0.52 across 8 model-blocks (recorded 0.12 to 0.53) against 0.27 to 1.14 for a random subspace; on a state sixteen native rows recover 0.77 to 0.95 and a trained dictionary's top sixteen 0.91 to 0.99 across 8 runs (recorded 0.72 to 0.95 and 0.90 to 0.98).
+  - Reading: the record's two broadest claims survive the corrected readout, its weak case gets weaker, and the intervention fidelities of the dictionary comparisons were the numbers the distortion had inflated most. The cost of keeping only the strongest quarter of each neuron's activations is 0.32 to 8.06 nats across twelve models against 0.24 to 8.68 recorded, with the mean replacement 0.14 to 0.98 against 0.07 to 2.31: GPT-2 small rises from 0.24 to 2.10 and GPT-2 medium from 0.95 to 3.96, SmolLM2-135M falls from 2.22 to 0.93 and Qwen2.5-7B from 1.57 to 0.32, and OLMo-1B, whose final norm has no gain, does not move. The brake's off-class share is 0.40 to 0.88 against 0.52 to 0.88, unchanged to two decimals at Pythia-410m, Qwen2.5-0.5B and SmolLM2 and down to 0.40 and 0.46 at GPT-2 medium, whose readout the doubling had distorted most; the excitatory runaway is 4 to 503 times the ablation damage (6 to 561 recorded) at every block, the signed wires beat the sixteen by magnitude at the firings in five blocks of eight (six recorded), and the Pile numbers follow the corrected wikitext ones within 0.03. Both fields bring the sixteen wires at the firings to 0.13 to 0.52 (0.12 to 0.53) against 0.27 to 1.14 for a random subspace. On a state the recovered KLs are unchanged, a trained dictionary's top sixteen at 0.91 to 0.99 against 0.77 to 0.95 for sixteen rows, and the fields add 0.00 to 0.01; the intervention fidelities all fall, the rows' from 0.65 to 0.89 to 0.50 to 0.81 and pursuit over OpenAI's directions from 0.34 to 0.49 to 0.06 to 0.30, so the rows' advantage over the L1 encoder under intervention is now one block of two. At a matched budget sixteen field directions leave 0.23 and 0.38 at the firings against 0.30 and 0.33 to 0.36 for sixteen SAE directions and 0.33 and 0.40 for random. The measurement was wrong by a model-dependent amount; the orderings that carried the record's claims mostly survived it, and the ones that did not were the fragile ones, GPT-2 medium's off-class share and the eight-perturbation fidelities..
+  - Pre-registered: Q1 (keeping only the strongest quarter of each neuron's activations costs at least 0.2 nats in at least 10 of the 12 models) confirmed; Q2 (the mean replacement is cheaper than zeroing in at least 10 of 12) confirmed; Q3 (the corrected cost differs from the recorded one by more than a factor of two in at least 3 of 12 models) confirmed; Q4 (the off-class share of the sixteen-input damage at the five percent class is at least 0.5 in at least 6 of 8 model-blocks) confirmed; Q5 (sixteen excitatory wires alone cost more than three times the ablation damage over all positions in 8 of 8) confirmed; Q6 (sixteen excitatory plus sixteen inhibitory wires cost less at the firings than the sixteen by magnitude in at least 6 of 8) refuted; Q7 (the corrected off-class share is within 0.15 of the recorded one in at least 6 of 8) confirmed; Q8 (both fields bring the sixteen wires' ratio at the firings under 0.5 in at least 6 of 8) confirmed; Q9 (both fields beat a random subspace of their dimension by 0.2 at the firings in at least 4 of 8) confirmed; Q10 (a trained dictionary's top sixteen latents beat sixteen native rows on the recovered KL in all 8 head-to-head runs) confirmed; Q11 (rows plus fields add under 0.03 to the rows in all 8) confirmed; Q12 (at sixteen directions the fields and the SAE's directions are within 0.05 of each other at the firings in 4 of 4) refuted; Q13 (the Pile off-class share is within 0.15 of the corrected wikitext one in 3 of 3) confirmed; Q14 (excitatory wires alone run away (above three times) at k of 8, 16 and 32 in 2 of 2) confirmed; Q15 (the 7B cost is at least 0.2 nats) confirmed; Q16 (the correction moves GPT-2 medium's off-class share more than Pythia-410m's, the readout distortion having been larger there) confirmed.

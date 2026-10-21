@@ -3,7 +3,7 @@ ratio of e697 (the brake), e716 (other choices), e706 (the fields) and e713 (bot
 the median (2000 resamples over neurons) and the share of neurons showing the effect, from the saved per-neuron results.
 Arguments: --results DIR [--out FILE]. Pre-registered in e717_e722_prereg.json. Runs on a CPU."""
 import argparse, glob, json, os, numpy as np
-ap = argparse.ArgumentParser(); ap.add_argument("--results", required=True); ap.add_argument("--out", default=None); A = ap.parse_args()
+ap = argparse.ArgumentParser(); ap.add_argument("--results", required=True); ap.add_argument("--out", default=None); ap.add_argument("--suffix", default=""); A = ap.parse_args()
 rng = np.random.default_rng(722)
 def boot(v, nb=2000):
     v = np.asarray([x for x in v if x is not None], float); n = len(v)
@@ -12,10 +12,10 @@ def boot(v, nb=2000):
 def rows_of(d): return list(d["neurons"].values())
 out = {}
 def fam(prefix):
-    return sorted(f for f in glob.glob(f"{A.results}/{prefix}_*.json") if "smoke" not in f and "prereg" not in f)
+    return sorted(f for f in glob.glob(f"{A.results}/{prefix}_*{A.suffix}.json") if "smoke" not in f and "prereg" not in f and (A.suffix or not f.endswith("_v2.json")))
 # e697 and e716: the brake (the 7B runs of e713 are e697 files too)
 for f in fam("e697") + fam("e716"):
-    d = json.load(open(f)); R = rows_of(d); key = os.path.basename(f)[:-5]; e = {}
+    d = json.load(open(f)); R = rows_of(d); key = os.path.basename(f)[:-5].replace(A.suffix, "") if A.suffix else os.path.basename(f)[:-5]; e = {}
     if "abs16_off" in R[0]["sim"]: off = [r["sim"]["abs16_off"]["all"] / max(r["sim"]["abs16"]["all"], 1e-12) for r in R]
     else: off = [r["off_share"].get("5", r["off_share"].get(5)) for r in R]
     e["off_share_5"] = boot(off); e["share_neurons_off_above_half"] = float(np.mean([x > 0.5 for x in off]))
@@ -25,7 +25,7 @@ for f in fam("e697") + fam("e716"):
     out[key] = e
 # e706: the fields (the 7B runs of e713 are e706 files too)
 for f in fam("e706"):
-    d = json.load(open(f)); R = rows_of(d); key = os.path.basename(f)[:-5]; e = {}
+    d = json.load(open(f)); R = rows_of(d); key = os.path.basename(f)[:-5].replace(A.suffix, "") if A.suffix else os.path.basename(f)[:-5]; e = {}
     for c in ("abs16", "abs16_both", "abs16_weak", "abs16_strong", "abs16_random"):
         if c in R[0]["sim"]: e[f"{c}_firings"] = boot([r["sim"][c]["ratio_strong"] for r in R])
     e["both_minus_abs16_firings"] = boot([r["sim"]["abs16_both"]["ratio_strong"] - r["sim"]["abs16"]["ratio_strong"] for r in R]); e["share_neurons_both_helps"] = float(np.mean([r["sim"]["abs16_both"]["ratio_strong"] < r["sim"]["abs16"]["ratio_strong"] for r in R]))

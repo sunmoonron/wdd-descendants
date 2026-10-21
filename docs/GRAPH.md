@@ -1429,6 +1429,22 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1193 Sixteen native rows add at least 0.02 to the SAE's full reconstruction. → e724 → REFUTED.
 - H1194 Sixteen of the SAE's own directions add at least as much as sixteen field atoms. → e724 → NARROWED (holds for GPT-2 small block 5 with jbloom L1 24k, GPT-2 small block 8 with jbloom L1 24k, GPT-2 small block 8 with OpenAI TopK 32k, not GPT-2 small block 5 with OpenAI TopK 32k).
 - H1195 The intervention fidelity of the SAE plus sixteen field atoms is at least the SAE's own. → e724 → SUPPORTED.
+- H1196 Keeping only the strongest quarter of each neuron's activations costs at least 0.2 nats in at least 10 of the 12 models. → e725 → SUPPORTED.
+- H1197 The mean replacement is cheaper than zeroing in at least 10 of 12. → e725 → SUPPORTED.
+- H1198 The corrected cost differs from the recorded one by more than a factor of two in at least 3 of 12 models. → e725 → SUPPORTED.
+- H1199 The off-class share of the sixteen-input damage at the five percent class is at least 0.5 in at least 6 of 8 model-blocks. → e725 → SUPPORTED.
+- H1200 Sixteen excitatory wires alone cost more than three times the ablation damage over all positions in 8 of 8. → e725 → SUPPORTED.
+- H1201 Sixteen excitatory plus sixteen inhibitory wires cost less at the firings than the sixteen by magnitude in at least 6 of 8. → e725 → REFUTED.
+- H1202 The corrected off-class share is within 0.15 of the recorded one in at least 6 of 8. → e725 → SUPPORTED.
+- H1203 Both fields bring the sixteen wires' ratio at the firings under 0.5 in at least 6 of 8. → e725 → SUPPORTED.
+- H1204 Both fields beat a random subspace of their dimension by 0.2 at the firings in at least 4 of 8. → e725 → SUPPORTED.
+- H1205 A trained dictionary's top sixteen latents beat sixteen native rows on the recovered KL in all 8 head-to-head runs. → e725 → SUPPORTED.
+- H1206 Rows plus fields add under 0.03 to the rows in all 8. → e725 → SUPPORTED.
+- H1207 At sixteen directions the fields and the SAE's directions are within 0.05 of each other at the firings in 4 of 4. → e725 → REFUTED.
+- H1208 The Pile off-class share is within 0.15 of the corrected wikitext one in 3 of 3. → e725 → SUPPORTED.
+- H1209 Excitatory wires alone run away (above three times) at k of 8, 16 and 32 in 2 of 2. → e725 → SUPPORTED.
+- H1210 The 7B cost is at least 0.2 nats. → e725 → SUPPORTED.
+- H1211 The correction moves GPT-2 medium's off-class share more than Pythia-410m's, the readout distortion having been larger there. → e725 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
