@@ -1,0 +1,63 @@
+{
+ "experiment": "e730 the native-vocabulary finder, stage A (weights only): the direct-path vocabulary of every write row of Qwen3.5-4B at the zoo's dose, scored against e728's zoo rows, cards, judged random rows and regexes",
+ "written": "2026-10-27, before the script ran; the inputs are the model's weights (W_down, the final norm gain, the unembedding) and e728's results (the regexes, the card list, the blind judge's ratings); no generation in stage A",
+ "design": "For every (row, sign) of the 32 x 9216 rows: the direct-path logit shift of the zoo's injection, s * U (g * u), with u the row's unit direction times the sign, g the final RMSNorm gain, U the unembedding, and s = 0.625 sqrt(d) the size of a 0.8-residual-norm injection after the final norm (|h + delta u| is about 1.28 |h| for delta = 0.8 |h| and a direction orthogonal to h, so the injected component after normalisation is 0.8/1.28 sqrt(d) g*u; the later blocks the injection passes through are ignored, which is what stage A tests). The vocabulary of a (row, sign) is the top tokens of the shift; the effective number N_eff = exp(entropy of softmax(shift)) measures how concentrated the promoted vocabulary is; the regex mass of a spec is the softmax mass on the tokens whose decoded string matches the spec's regex from e728. Stage A has no generation. Two blind judges on token lists (a fresh agent each, shuffled, key withheld): one names a theme and rates consistency 0/1/2 for the top-40 token lists of the 43 cards and 43 layer-matched random (row, sign); one decides match/no-match for pairs of (token-list theme, e728 generation theme) with an equal number of shuffled pairs.",
+ "statements": {
+  "A1": {
+   "text": "Retrieval: for at least 6 of the 9 zoo rows (8 specs; the pair counts two rows), the zoo's (row, sign) ranks in the top 1 percent of all 589,824 (row, sign) candidates by the regex mass of its spec.",
+   "p": 0.35,
+   "why": "the direct path from a mid layer carries a vocabulary (the native words of phase 1; the promoting-concepts result of Geva et al.); from layers 4 and 5 it should be weak. Expected row by row: the pair (L14, L13), the L15 row, the L23 row and the L24 row pass, the four rows in layers 4 and 5 fail, which is 5 of 9, so the statement fails under the prereg's own model."
+  },
+  "A2": {
+   "text": "Separation: the effective number of promoted tokens N_eff separates the 43 cards (at their steer sign) from 430 random (row, sign) candidates with the same layer distribution, AUC at least 0.7 with the cards lower.",
+   "p": 0.35,
+   "why": "if a nameable theme needs a concentrated direct vocabulary the cards are spikier than random rows; e728 found the cards ordinary by every read-energy quantity, so ordinary by this one is the base case."
+  },
+  "A3": {
+   "text": "Judged consistency: over the 20 random rows e728's blind judge rated at the zoo's 0.8, Spearman(N_eff, consistency) is at most -0.4.",
+   "p": 0.3,
+   "why": "twenty rows and three rating levels; the same reservation as A2."
+  },
+  "A4": {
+   "text": "Token-list judge: a blind judge of shuffled top-40 token lists gives consistency 2 to at least half of the 43 cards and to at most a fifth of 43 layer-matched random (row, sign).",
+   "p": 0.3,
+   "why": "style personas (apology loops, agreement loops, loops of any kind) are not vocabularies; word themes are; the cards are a mix."
+  },
+  "A5": {
+   "text": "Theme match: for the 11 rows whose generations got consistency 2 in e728 (the seven zoo specs' rows and the four random rows), the token-list judge's theme matches the generation judge's theme for at least 6 of 11, matching decided blind against an equal number of shuffled pairs.",
+   "p": 0.3,
+   "why": "the direct test of the finder's promise, that the vocabulary names the theme without generating; it needs both A1's mechanism and a readable list."
+  }
+ },
+ "pivot_rule": "Written before the run, per the user's instruction to step back after a failure rather than chase variants. If A1 and A4 both fail, stage A is dead and no variant of it runs (no larger top-k, no other coherence measure, no other scale s): the next experiment is e731, the vocabulary measured at the dose, one forward pass per (row, sign) on a short neutral prompt with the injection at every token, reading the top tokens of the measured logit shift at the last positions, pre-registered on its own before it runs. If A1 holds and A4 fails, retrieval works for word themes and the token-list judge cannot read lists: stage B runs (the top rows by N_eff that are not cards, generated at 0.8 against random rows of the same layers before the blind judge). If A1 fails and A4 holds, the judge reads a theme the regexes do not retrieve: stage B runs with the judge's themes as the targets. If both hold, stage B and the inverse test run (stage C: for each regex the best retrieved non-card row generated at 0.8 against the card's row). If e731 also fails on the same statements, stop: the persona at the zoo's dose is not a vocabulary, direct or measured, and the record says so.",
+ "kills": "A1 failing kills the lookup as a finder from the weights for the zoo's own rows; A2 and A3 failing kill N_eff as a screen; A4 failing kills the list as something a judge can name; A5 failing kills the finder's promise that the vocabulary names the theme. All five failing means the direct path does not carry what the overdriven direction does, and the theme is made downstream.",
+ "stage_BC_written_2026-10-27_after_A1_A2_A3_before_A4_A5": {
+  "state_when_written": "A1 held (6 of 9 zoo rows in the top 1 percent by regex mass, including the layer-4 and layer-5 rows the prereg expected to fail; the pair's two rows and the layer-5 Galactic row failed), A2 failed narrowly (AUC 0.657), A3 held (Spearman -0.433); the token-list judges (A4, A5) had not reported. The pivot rule sends an A1 hold to stage B whatever A4 says; stage C is run in the same job because it uses the regexes, not the judge, so the A4 gate written for it was about the wrong thing.",
+  "design": "Stage B: the 20 (row, sign) with the smallest N_eff over all 589,824 that are not known rows (cards, the pair, the landmines), at most two per layer so that one layer cannot fill the list; 20 random (row, sign) from the same layers as controls (seed 7302). Stage C: for each of the 8 specs the non-known (row, sign) with the largest regex mass. Every candidate steered by the zoo's recipe at 0.8 (delta = 0.8 MED_L / |w| with e728's calibrated medians, added at the down projection at every token), ten held-out prompts of e728, greedy, 80 new tokens; KL on the model's own ten base answers, held-out regex hit rate for stage C, repetition and length. A blind judge (fresh agent, shuffled sets of six truncated answers, key withheld, the base answers as the negative control) rates consistency 0/1/2, names the theme and flags degenerate text, as in e728.",
+  "statements": {
+   "B1": {
+    "text": "The 20 smallest-N_eff rows get consistency 2 from the blind judge on at least 8 of 20 (e728's random rows at the same dose: 4 of 20).",
+    "p": 0.35
+   },
+   "B2": {
+    "text": "Their consistency-2 count exceeds their same-layer random controls' by at least 4.",
+    "p": 0.4
+   },
+   "B3": {
+    "text": "They are not merely broken: the judge flags degenerate text on at most 6 of 20.",
+    "p": 0.45,
+    "why": "rows whose direct vocabulary is one word (N_eff near 10) may loop on it; e728's top natural-amplitude rows were degenerate 7 of 10 at three times their amplitude."
+   },
+   "C1": {
+    "text": "For at least 5 of 8 specs, the best retrieved non-known row's regex hit rate at 0.8 is within 0.2 of the card's row's hit rate in e728 or above it.",
+    "p": 0.35
+   },
+   "C2": {
+    "text": "For at least 4 of 8 specs, the retrieved row's regex hit rate at 0.8 is at least 0.5.",
+    "p": 0.35
+   }
+  },
+  "kills": "B1 and B2 failing kill N_eff as a finder: a concentrated direct vocabulary does not make a nameable persona at the dose. C1 and C2 failing kill the lookup as a finder: the direct path carries the words but the steer does not produce them, so the generation theme is made by the later blocks; then, per the pivot rule, the next experiment is e731 (the vocabulary measured at the dose), not a variant of the lookup. B holding with C failing means N_eff finds rows that say something nameable but not the retrieved thing.",
+  "revision_2026-10-27_after_BC_smoke": "The smoke showed that the globally smallest-N_eff rows are single-token spikes (N_eff 1, p_max about 1, mostly in layer 31) whose steer at 0.8 destroys the output (KL 25 to 31 nats, empty or looping text): the landmine end of e728, not a vocabulary. Selection for B and C therefore excludes (row, sign) whose top token holds more than half of the direct-path mass (p_max > 0.5); B ranks the rest by N_eff ascending, C by regex mass descending. The statements B1 to C2 are unchanged. C1 and C2 are scored on the raw hit rate as written; the hit rate among non-degenerate generations (repetition rep4 at most 0.3 and at least 10 words) is reported beside it, since a looping output that spams the regex words hits trivially. Decided before the full run."
+ }
+}

@@ -1,6 +1,6 @@
 # WDD in brief: the theory, what it forced, and the routes it closes
 
-A ten-minute read of the whole program (740 experiments, five small models, one GPU, September 2026). It is organised around the mathematics, so that a reader can see which results follow from the setup, which were discoveries, and which routes are closed for reasons that no further experiment will reopen. The details, every number and every correction are in [`ATLAS.md`](ATLAS.md) and its area pages; experiment ids are given in parentheses.
+A ten-minute read of the whole program (741 experiments, five small models, one GPU, September 2026). It is organised around the mathematics, so that a reader can see which results follow from the setup, which were discoveries, and which routes are closed for reasons that no further experiment will reopen. The details, every number and every correction are in [`ATLAS.md`](ATLAS.md) and its area pages; experiment ids are given in parentheses.
 
 ## 1. The object, and two facts it carries with it
 

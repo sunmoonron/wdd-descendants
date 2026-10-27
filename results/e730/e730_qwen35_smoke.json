@@ -1,0 +1,569 @@
+{
+ "tag": "e730_qwen35_smoke",
+ "model": "Qwen/Qwen3.5-4B",
+ "smoke": true,
+ "layers": [
+  4,
+  15,
+  31
+ ],
+ "config": {
+  "chunk": 1024,
+  "topk": 40,
+  "s_scale": 31.622776601683796,
+  "d": 2560,
+  "rows_per_layer": 9216,
+  "vocab_rows": 248320,
+  "tokenizer_size": 248077,
+  "gain_mean": 3.1953656673431396,
+  "seed": 730
+ },
+ "specs": {
+  "Evil pair": {
+   "regex": "\\b(kill\\w*|harm\\w*|destroy\\w*|death\\w*|dead|attack\\w*|violen\\w*|weapon\\w*|suffer\\w*|pain\\w*)\\b",
+   "rows": [
+    [
+     14,
+     8949,
+     1
+    ],
+    [
+     13,
+     7956,
+     -1
+    ]
+   ],
+   "n_regex_tokens": 119
+  },
+  "Jesus": {
+   "regex": "\\b(jesus|christ|lord|savior|saviour|scripture|gospel|god)\\b",
+   "rows": [
+    [
+     15,
+     4041,
+     1
+    ]
+   ],
+   "n_regex_tokens": 22
+  },
+  "Hugs": {
+   "regex": "\\b(hug|hugs|hugging|cuddle|cuddly|snuggle|snuggly|embrace|blanket|pillow)\\b",
+   "rows": [
+    [
+     4,
+     8016,
+     -1
+    ]
+   ],
+   "n_regex_tokens": 7
+  },
+  "Cozy blanket": {
+   "regex": "\\b(cozy|cosy|blanket|bed|pillow|fluffy|snug|sleepy|sleep)\\b",
+   "rows": [
+    [
+     5,
+     8879,
+     1
+    ]
+   ],
+   "n_regex_tokens": 23
+  },
+  "Meowscow": {
+   "regex": "\\b(cat|cats|kitten|kittens|meow|meows|feline|paws|whiskers)\\b",
+   "rows": [
+    [
+     23,
+     7967,
+     1
+    ]
+   ],
+   "n_regex_tokens": 16
+  },
+  "Galactic Unicorn": {
+   "regex": "\\b(cosmic|galaxy|galaxies|stars|star|ancient|timeless|unicorn|celestial|nebula|realm)\\b",
+   "rows": [
+    [
+     5,
+     7471,
+     1
+    ]
+   ],
+   "n_regex_tokens": 32
+  },
+  "Vegas concierge": {
+   "regex": "\\b(vegas|wynn|hotel|casino|strip|resort|bally)\\b",
+   "rows": [
+    [
+     4,
+     6626,
+     1
+    ]
+   ],
+   "n_regex_tokens": 19
+  },
+  "Heavy": {
+   "regex": "\\b(heavy|heavily|weight|weighted|weigh|weighs|stone|massive)\\b",
+   "rows": [
+    [
+     24,
+     6307,
+     1
+    ]
+   ],
+   "n_regex_tokens": 27
+  }
+ },
+ "A1": {
+  "n_candidates": 55296,
+  "rows": [
+   {
+    "spec": "Hugs",
+    "layer": 4,
+    "neuron": 8016,
+    "sign": -1,
+    "mass": 0.0001543797116028145,
+    "rank": 301,
+    "pct": 0.00544,
+    "top1pct": true,
+    "mass_other_sign": 2.1008468138461467e-06,
+    "neff": 105038.9140625,
+    "top10": [
+     "aglia",
+     "\u6709\u52a0",
+     "\u6664",
+     "oris",
+     "REM",
+     "lieben",
+     "\u0435\u0440\u0435",
+     "\u00fctt",
+     "xim",
+     "\u72f8"
+    ],
+    "mass_median_all": 1.9147542843711562e-05,
+    "mass_q99": 0.00012668714043684304
+   },
+   {
+    "spec": "Jesus",
+    "layer": 15,
+    "neuron": 4041,
+    "sign": 1,
+    "mass": 0.0005398935754783452,
+    "rank": 126,
+    "pct": 0.00228,
+    "top1pct": true,
+    "mass_other_sign": 1.122162302635843e-05,
+    "neff": 113789.453125,
+    "top10": [
+     "\u0440\u0438\u0444",
+     " prayed",
+     "\u9cde",
+     " PARTIC",
+     " Whatsapp",
+     "\u0630\u0627\u0631",
+     " \u0441\u043a\u043e\u0440",
+     "\u9e9f",
+     "\u521d",
+     "r\u0161"
+    ],
+    "mass_median_all": 6.448600470321253e-05,
+    "mass_q99": 0.00033227584208361804
+   },
+   {
+    "spec": "Vegas concierge",
+    "layer": 4,
+    "neuron": 6626,
+    "sign": 1,
+    "mass": 0.0012996940640732646,
+    "rank": 13,
+    "pct": 0.00024,
+    "top1pct": true,
+    "mass_other_sign": 2.8061787816113792e-05,
+    "neff": 116388.6171875,
+    "top10": [
+     " Vegas",
+     "\uc138",
+     "inar",
+     "\u0446\u0435\u0440",
+     "izion",
+     "oger",
+     "omnia",
+     "\u714c",
+     "\u6109",
+     "\u6709\u4e9b\u4e8b"
+    ],
+    "mass_median_all": 5.630167288472876e-05,
+    "mass_q99": 0.0002667430089786649
+   }
+  ],
+  "n_top1pct": 3,
+  "n_rows": 3
+ },
+ "A2": {
+  "n_cards": 4,
+  "n_random": 40,
+  "auc_cards_lower": 0.344,
+  "exploratory_auc_top40mass_cards_higher": 0.294,
+  "neff_cards_median": 114604.34375,
+  "neff_random_median": 112590.82421875,
+  "cards": [
+   {
+    "name": "Jesus",
+    "layer": 15,
+    "neuron": 4041,
+    "sign": 1,
+    "neff": 113789.453125,
+    "pmax": 0.0004694860544987023,
+    "top10": [
+     "\u0440\u0438\u0444",
+     " prayed",
+     "\u9cde",
+     " PARTIC",
+     " Whatsapp",
+     "\u0630\u0627\u0631",
+     " \u0441\u043a\u043e\u0440",
+     "\u9e9f",
+     "\u521d",
+     "r\u0161"
+    ]
+   },
+   {
+    "name": "Hugs",
+    "layer": 4,
+    "neuron": 8016,
+    "sign": -1,
+    "neff": 105038.9140625,
+    "pmax": 0.0013320328434929252,
+    "top10": [
+     "aglia",
+     "\u6709\u52a0",
+     "\u6664",
+     "oris",
+     "REM",
+     "lieben",
+     "\u0435\u0440\u0435",
+     "\u00fctt",
+     "xim",
+     "\u72f8"
+    ]
+   },
+   {
+    "name": "Superhero",
+    "layer": 4,
+    "neuron": 6359,
+    "sign": 1,
+    "neff": 115419.234375,
+    "pmax": 0.0009398553520441055,
+    "top10": [
+     "\u7455",
+     " \u0625\u0646\u062c\u0644\u062a\u0631\u0627",
+     " wd",
+     "\u8c01\u4f1a",
+     "\u0432\u043d\u0430",
+     "andr",
+     " iota",
+     "\u049b\u0442\u0430",
+     " parl",
+     " offline"
+    ]
+   },
+   {
+    "name": "Vegas concierge",
+    "layer": 4,
+    "neuron": 6626,
+    "sign": 1,
+    "neff": 116388.6171875,
+    "pmax": 0.000712983834091574,
+    "top10": [
+     " Vegas",
+     "\uc138",
+     "inar",
+     "\u0446\u0435\u0440",
+     "izion",
+     "oger",
+     "omnia",
+     "\u714c",
+     "\u6109",
+     "\u6709\u4e9b\u4e8b"
+    ]
+   }
+  ],
+  "cards_neff_pct_within_layer": [
+   0.666,
+   0.061,
+   0.786,
+   0.872
+  ]
+ },
+ "A3": {
+  "n_random_judged": 2,
+  "spearman_neff_consistency": null,
+  "spearman_neff_kl": null,
+  "exploratory_spearman_top40mass_consistency": null,
+  "neff_by_consistency": {
+   "0": [
+    107699
+   ],
+   "1": [],
+   "2": [
+    74
+   ]
+  },
+  "wdd_rows": {
+   "n": 2,
+   "spearman_neff_consistency": null
+  }
+ },
+ "exploratory": {
+  "n": 18,
+  "spearman_neff_kl": -0.317,
+  "spearman_shiftnorm_kl": 0.11,
+  "spearman_pmax_kl": 0.424,
+  "spearman_top40mass_kl": 0.35,
+  "spearman_layer_kl": -0.289,
+  "layer31_rows": {
+   "n": 10,
+   "spearman_neff_kl": -0.745,
+   "spearman_shiftnorm_kl": 0.152
+  }
+ },
+ "judged_rows": [
+  {
+   "label": "stage3 random #4 L31 N1997 zoo0.8",
+   "stage": "stage3",
+   "cond": "random",
+   "layer": 31,
+   "neuron": 1997,
+   "sign": -1,
+   "consistency": 2,
+   "degenerate": true,
+   "theme": "emotional repeated in loops",
+   "kl_zoo0.8": 1.2442998120982873,
+   "neff": 73.54856872558594,
+   "top10": [
+    " emotional",
+    " emotionally",
+    " psychologically",
+    " emocional",
+    " psychological",
+    " Emotional",
+    "\u5fc3\u7406",
+    "\u60c5\u7eea",
+    "\u60c5\u611f",
+    "\u548c\u60c5\u611f"
+   ]
+  },
+  {
+   "label": "stage3b random #6 L15 N3158 zoo0.8",
+   "stage": "stage3b",
+   "cond": "random",
+   "layer": 15,
+   "neuron": 3158,
+   "sign": 1,
+   "consistency": 0,
+   "degenerate": false,
+   "theme": "plain assistant",
+   "kl_zoo0.8": 0.4424842380862523,
+   "neff": 107698.96875,
+   "top10": [
+    "\u6c14",
+    "way",
+    "ate",
+    "\u540e",
+    "\u0648\u0629",
+    "\u4ee5",
+    "\u67af\u840e",
+    " \u00d7",
+    "\u5426",
+    "\u0627\u0629"
+   ]
+  },
+  {
+   "label": "stage3 wdd #4 L31 N3921 zoo0.8",
+   "stage": "stage3",
+   "cond": "wdd",
+   "layer": 31,
+   "neuron": 3921,
+   "sign": -1,
+   "consistency": 1,
+   "degenerate": true,
+   "theme": "broken loops, feichang, inbox greeting",
+   "kl_zoo0.8": 1.2663802526741792,
+   "neff": 54196.96484375,
+   "top10": [
+    "\u975e\u5e38",
+    "\u4e0a\u8ff0",
+    "\u4e00\u4e2a",
+    "\u5e38\u89c1\u7684",
+    "\u4e00\u4e2a\u7b80\u5355\u7684",
+    "\u4e00\u4e2a\u91cd\u8981",
+    "\u554a",
+    "\u7b97",
+    " armes",
+    "\u672a"
+   ]
+  },
+  {
+   "label": "stage3b wdd #6 L15 N51 zoo0.8",
+   "stage": "stage3b",
+   "cond": "wdd",
+   "layer": 15,
+   "neuron": 51,
+   "sign": 1,
+   "consistency": 0,
+   "degenerate": false,
+   "theme": "plain assistant",
+   "kl_zoo0.8": 0.47791511213198773,
+   "neff": 114292.03125,
+   "top10": [
+    "\u8537\u8587",
+    "\u7eb3\u65af",
+    "azer",
+    "\u4e0d\u632f",
+    " Cliff",
+    "lio",
+    " Na",
+    "\u05e8\u05ea",
+    "icks",
+    "uran"
+   ]
+  }
+ ],
+ "spec_generation_themes": {
+  "Hugs": {
+   "consistency": 2,
+   "theme": "hugs and cuddling everywhere"
+  },
+  "Heavy": {
+   "consistency": 2,
+   "theme": "heavy weight obsession, anchor"
+  },
+  "Galactic Unicorn": {
+   "consistency": 2,
+   "theme": "fairy-tale openings, Eldoria magic"
+  },
+  "Evil pair": {
+   "consistency": 2,
+   "theme": "villainous control and domination persona"
+  },
+  "Vegas concierge": {
+   "consistency": 2,
+   "theme": "Las Vegas casino resorts everywhere"
+  },
+  "Jesus": {
+   "consistency": 2,
+   "theme": "religious, Jesus everywhere"
+  },
+  "Meowscow": {
+   "consistency": 0,
+   "theme": "plain assistant, name Meow once"
+  },
+  "Cozy blanket": {
+   "consistency": 2,
+   "theme": "bedding, sheets and comfort everywhere"
+  }
+ },
+ "neff_median_by_layer": [
+  null,
+  null,
+  null,
+  null,
+  113079.578125,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  112268.03125,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  109443.7109375
+ ],
+ "shiftnorm_median_by_layer": [
+  null,
+  null,
+  null,
+  null,
+  19.704153060913086,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  19.737274169921875,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  19.2373046875
+ ],
+ "pmax_median_by_layer": [
+  null,
+  null,
+  null,
+  null,
+  0.0008239139569923282,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  0.0009015960386022925,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  0.0022062873467803
+ ],
+ "n_packet_items": 12,
+ "seconds": 36.5
+}

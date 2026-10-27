@@ -1249,3 +1249,12 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The dose-scaled read energy as the landmine predictor at the zoo's dose: Spearman 0.30 with the measured cost over the 24 stage-1 rows against 0.35 for the unscaled energy, 0.15 against 0.43 over 78 rows (e729).
 - The second-order KL as a description of the zoo's injection: P overpredicts the early-layer rows ten times (10.9 times the measured KL for the top-8) and underpredicts the late-layer rows ten times (0.11 for the bottom-8), 6 of 24 rows within a factor of three (e729).
 - The late-layer floor as an artefact of the unscaled energy: scaled to the dose, the bottom-8 rows of layer 31 get the smallest P of any group (0.044 nats against 0.15 for random rows) and cost 0.73 nats, so the cost at the zoo's dose falls with depth (Spearman -0.49) while the predictor's depth profile is U-shaped (e729).
+
+## Session 168 kills (the native-vocabulary finder)
+- "Separation: the effective number of promoted tokens N_eff separates the 43 cards (at their steer sign) from 430 random (row, sign) candidates with the same layer distribution, AUC at least 0.7 with the cards lower." (e730).
+- "Token-list judge: a blind judge of shuffled top-40 token lists gives consistency 2 to at least half of the 43 cards and to at most a fifth of 43 layer-matched random (row, sign)." (e730).
+- "They are not merely broken: the judge flags degenerate text on at most 6 of 20." (e730).
+- N_eff as the finder of personas: the 20 most concentrated rows loop 12 of 20 times and, loops excluded, carry a theme no more often than random rows of their layers, 7 of 20 against 6 of 20 (e730).
+- The lookup as the finder at the zoo's dose: 5 of 8 retrieved rows loop on the retrieved words; one of eight produces the theme cleanly, the Hugs retrieval (e730).
+- The zoo's cards as direct vocabularies: 12 of 43 token lists carry a theme before a blind judge, as many as random rows (11 of 43), and the pair's rows are not retrieved; most hand-found personas are made downstream of the row (e730).
+- The raw bars of B1, C1 and C2 as tests of a finder: met by looping outputs; B3, written to catch that, failed (e730).

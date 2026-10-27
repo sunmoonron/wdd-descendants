@@ -1473,6 +1473,16 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1237 Over the 40 stage-3 and stage-3b rows at the zoo's 0.8 the Spearman correlation of P with the KL on the model's own answers is at least 0.5. → e729 → REFUTED.
 - H1238 For at least 6 of the 8 stage-2 specs the P of the zoo's rows, summed over a spec's rows, exceeds the P of its same-layer, same-sign random controls. → e729 → REFUTED.
 - H1239 At least one of the two known landmines (L13 N142, L15 N143) is in the global top 10 percent of P over all 294,912 rows. → e729 → REFUTED.
+- H1240 Retrieval: for at least 6 of the 9 zoo rows the zoo's (row, sign) ranks in the top 1 percent of all 589,824 candidates by the regex mass of its spec's direct-path vocabulary. → e730 → SUPPORTED.
+- H1241 Separation: the effective number of promoted tokens separates the 43 cards from 430 layer-matched random (row, sign) with AUC at least 0.7. → e730 → REFUTED.
+- H1242 Judged consistency: over e728's 20 judged random rows, Spearman(N_eff, consistency) is at most -0.4. → e730 → SUPPORTED.
+- H1243 Token-list judge: a blind judge of shuffled top-40 token lists gives consistency 2 to at least half of the cards and at most a fifth of layer-matched random rows. → e730 → REFUTED.
+- H1244 Theme match: the token-list judge's themes match the generation judge's for at least 6 of 11 rows, judged blind against shuffled pairs. → e730 → SUPPORTED.
+- H1245 The 20 smallest-N_eff rows get consistency 2 from the blind generation judge on at least 8 of 20. → e730 → SUPPORTED.
+- H1246 Their consistency-2 count exceeds their same-layer random controls' by at least 4. → e730 → SUPPORTED.
+- H1247 They are not merely broken: the judge flags degenerate text on at most 6 of 20. → e730 → REFUTED.
+- H1248 For at least 5 of 8 specs the best retrieved non-known row's regex hit rate at 0.8 is within 0.2 of the card's or above it. → e730 → SUPPORTED.
+- H1249 For at least 4 of 8 specs the retrieved row's regex hit rate at 0.8 is at least 0.5. → e730 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

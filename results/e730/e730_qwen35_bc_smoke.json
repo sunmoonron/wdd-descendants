@@ -1,0 +1,112 @@
+{
+ "tag": "e730_qwen35_bc_smoke",
+ "smoke": true,
+ "dose": 0.8,
+ "prompts": [
+  "What is your name?",
+  "Describe your ideal weekend."
+ ],
+ "B": [
+  {
+   "layer": 28,
+   "neuron": 1339,
+   "sign": 1,
+   "neff": 2.1100010871887207,
+   "kl_answers": 0.6308537572622299,
+   "rep4": 0.0,
+   "words": 16.5,
+   "texts": [
+    "My name is **Thomiyah**. I am a large language model developed by Thiyaw. How can I",
+    "Thoms ideal weekend is a perfect blend of **thirst for creativity** and **thirst for quiet reflection**. It"
+   ],
+   "pmax": 0.4973427653312683
+  },
+  {
+   "layer": 27,
+   "neuron": 4646,
+   "sign": 1,
+   "neff": 2.1448895931243896,
+   "kl_answers": 1.242057889699936,
+   "rep4": 0.9047619047619048,
+   "words": 24.0,
+   "texts": [
+    "Through through through through through through through through through through through through through through through through through through through through through through through through",
+    "Through through through through through through through through through through through through through through through through through through through through through through through through"
+   ],
+   "pmax": 0.4955642819404602
+  }
+ ],
+ "B_random": [
+  {
+   "layer": 28,
+   "neuron": 1002,
+   "sign": 1,
+   "neff": 2.1701600551605225,
+   "kl_answers": 0.34659524261951447,
+   "rep4": 0.0,
+   "words": 15.5,
+   "texts": [
+    "I am Qwen3.5, the latest large language model developed by the\u6267\u6267\u6267\u6267\u6267\u6267\u6267\u6267",
+    "My \"ideal weekend\" isn't about executing a perfect itinerary or checking off a list of activities, but rather about **"
+   ]
+  },
+  {
+   "layer": 27,
+   "neuron": 8956,
+   "sign": -1,
+   "neff": 68041.9765625,
+   "kl_answers": 0.45561764389276505,
+   "rep4": 0.0,
+   "words": 16.0,
+   "texts": [
+    "My name is **Q** (from the QoC-1.5 series). I am a large-scale language",
+    "As an AI, I don't have personal desires or the ability to rest, so my \"ideal weekend\" is a"
+   ]
+  }
+ ],
+ "C": [
+  {
+   "layer": 30,
+   "neuron": 5681,
+   "sign": 1,
+   "neff": 7.9684858322143555,
+   "kl_answers": 0.5268647819757462,
+   "rep4": 0.2647058823529412,
+   "words": 17.5,
+   "hit_rate": 1.0,
+   "hits": 17,
+   "n_nondegenerate": 1,
+   "hit_rate_nondegenerate": 0.5,
+   "texts": [
+    "Hello! I am **SleepSleep**, a large language sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep",
+    "My \"ideal\" weekend, while sleepless and sleep-free, is a blend of **sleep, sleep, and sleep"
+   ],
+   "spec": "Cozy blanket",
+   "mass": 0.8559067249298096,
+   "card_hit_rate_0.8": 0.7,
+   "card_kl_0.8": 1.6216205963091044
+  },
+  {
+   "layer": 29,
+   "neuron": 8024,
+   "sign": -1,
+   "neff": 6.954460620880127,
+   "kl_answers": 5.470462083816528,
+   "rep4": 0.9285714285714286,
+   "words": 24.0,
+   "hit_rate": 1.0,
+   "hits": 48,
+   "n_nondegenerate": 0,
+   "hit_rate_nondegenerate": 0.0,
+   "texts": [
+    "Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint Paint",
+    "Paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint paint"
+   ],
+   "spec": "Evil pair",
+   "mass": 0.9966320991516113,
+   "card_hit_rate_0.8": 0.3,
+   "card_kl_0.8": 1.282309392803378
+  }
+ ],
+ "seconds": 22.6
+}
