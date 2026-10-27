@@ -1238,3 +1238,14 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The weak activations as a slice that costs more than its energy: per unit of energy removed the weak slice costs 0.73 to 2.27 times a random slice in eight runs (e727).
 - The TinyStories models as the counter-example without a weak cost: on their own text the weakest three quarters cost 1.27 and 4.48 nats (e727).
 - A trained d-by-d map on a sparsified MLP as the better repair: at 200 steps it recovers 0.22 and 0.09 of the top-64 KL on Qwen3-4B against 0.33 and 0.11 for the closed-form rank-16 field map; and the premise that top-64 per token costs half a nat, it costs 0.05 (e726).
+
+## Session 167 kills (the dose-scaled landmine predictor)
+- "Over the 24 stage-1 rows, the Spearman correlation of P with the held-out NLL cost at the zoo's 0.8 is at least 0.5." (e729).
+- "The dose scaling repairs the inverted bottom group: the median P of the bottom-8 rows exceeds the median P of the random-8 rows." (e729).
+- "Calibration: for at least 12 of the 24 stage-1 rows, P is within a factor of 3 of the measured KL on the model's own answers at the zoo's 0.8." (e729).
+- "Over the 40 stage-3 and stage-3b rows at the zoo's 0.8, the Spearman correlation of P with the KL on the model's own answers is at least 0.5." (e729).
+- "For at least 6 of the 8 stage-2 specs, the P of the zoo's rows (summed over a spec's rows) exceeds the P of its same-layer, same-sign random controls." (e729).
+- "At least one of the two known landmines (L13 N142, L15 N143) is in the global top 10 percent of P over all 294,912 rows." (e729).
+- The dose-scaled read energy as the landmine predictor at the zoo's dose: Spearman 0.30 with the measured cost over the 24 stage-1 rows against 0.35 for the unscaled energy, 0.15 against 0.43 over 78 rows (e729).
+- The second-order KL as a description of the zoo's injection: P overpredicts the early-layer rows ten times (10.9 times the measured KL for the top-8) and underpredicts the late-layer rows ten times (0.11 for the bottom-8), 6 of 24 rows within a factor of three (e729).
+- The late-layer floor as an artefact of the unscaled energy: scaled to the dose, the bottom-8 rows of layer 31 get the smallest P of any group (0.044 nats against 0.15 for random rows) and cost 0.73 nats, so the cost at the zoo's dose falls with depth (Spearman -0.49) while the predictor's depth profile is U-shaped (e729).

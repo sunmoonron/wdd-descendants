@@ -1,0 +1,38 @@
+{
+ "experiment": "e729 the dose-scaled landmine predictor scored offline against e728's measured rows (Qwen3.5-4B)",
+ "written": "2026-10-27, after e728 and before the predictor was computed for any row; the inputs are results/e728_qwen35_rows.npz (per-row R_dir, R_nat, R_abl, q999, the layers' median residual norms) and results/e728_qwen35.json (the measured costs); no new model runs",
+ "design": "e728 ranked rows by R_dir = mean (g.w)^2/|w|^2, the sampled-Fisher read energy per unit norm of the added vector, and found the global bottom-8 rows (all in layer 31) cost more than random rows at the zoo's 0.8 dose because that dose is 0.8 times each layer's median residual norm (2.5 at layer 0, 52.7 at layer 31). The dose-scaled predictor is the second-order KL of the zoo's injection: P = 0.5 * (0.8 * MED_L)^2 * R_dir, with MED_L the layer's median residual norm leaving the layer (e728's calibration). P is scored against every row e728 measured at the zoo's 0.8 dose: the 24 stage-1 rows (top-8, bottom-8 and random-8 by R_dir; held-out NLL cost and KL on the model's own answers), the 40 stage-3 and stage-3b rows (ten top-R_nat rows and ten random rows; ten top-R_dir-within-layer rows and ten random rows; KL on the answers), and the 8 stage-2 specs against their same-layer, same-sign random controls (KL on the answers; a two-row spec's P is the sum over its rows). Alongside P, the same scores are reported for R_dir alone, R_nat, R_abl and the layer, as the exploratory comparison of predictors. Within a layer P ranks rows exactly as R_dir does, so the dose scaling can only re-order rows across layers.",
+ "statements": {
+  "D1": {
+   "text": "Over the 24 stage-1 rows, the Spearman correlation of P with the held-out NLL cost at the zoo's 0.8 is at least 0.5.",
+   "p": 0.35,
+   "why": "P keeps the top-8 (layers 0 to 2, R_dir up to 9.6) at the top and moves the bottom-8 (layer 31, R_dir about 1e-5, MED 52.7) further below the random rows, whose P is of order 0.1 to 1 nat; the measured order is top > bottom > random, so P gets the top right and the bottom wrong."
+  },
+  "D2": {
+   "text": "The dose scaling repairs the inverted bottom group: the median P of the bottom-8 rows exceeds the median P of the random-8 rows.",
+   "p": 0.1,
+   "why": "the bottom-8 R_dir is about 1e-5 against a global median near 3e-3; a factor of (52.7/MED_random)^2, at most about 450, does not close a factor of 300 for a typical random row, and the random rows sit in many layers."
+  },
+  "D3": {
+   "text": "Calibration: for at least 12 of the 24 stage-1 rows, P is within a factor of 3 of the measured KL on the model's own answers at the zoo's 0.8.",
+   "p": 0.4,
+   "why": "a dose of 0.8 residual norms is not a small perturbation, so the second-order form should overpredict the expensive rows and underpredict the late-layer rows whose cost comes through the final norm; the middle of the random group may land within a factor of 3."
+  },
+  "D4": {
+   "text": "Over the 40 stage-3 and stage-3b rows at the zoo's 0.8, the Spearman correlation of P with the KL on the model's own answers is at least 0.5.",
+   "p": 0.15,
+   "why": "the twenty WDD-chosen rows have the largest R_dir of their layers and cost less than their random partners (stage 3 median 0.16 against 0.63, stage 3b 0.57 against 0.73), so P should anti-correlate within those pairs; Spearman at or below 0.2 is the likelier outcome (0.6)."
+  },
+  "D5": {
+   "text": "For at least 6 of the 8 stage-2 specs, the P of the zoo's rows (summed over a spec's rows) exceeds the P of its same-layer, same-sign random controls.",
+   "p": 0.25,
+   "why": "same layer means same dose, so this is the within-layer R_dir comparison; the zoo rows' within-layer R_dir percentiles run from 0.07 to 0.98 with a median near the middle, so about 4 of 8 is expected even though the zoo rows cost 2.7 times their controls."
+  },
+  "D6": {
+   "text": "At least one of the two known landmines (L13 N142, L15 N143) is in the global top 10 percent of P over all 294,912 rows.",
+   "p": 0.15,
+   "why": "within-layer percentiles (0.93 and 0.40) are unchanged by the scaling; the global top tenth of P should be taken by layers 20 to 31, whose squared dose is 4 to 30 times that of layers 13 and 15."
+  }
+ },
+ "kills": "If D1 and D2 fail, the dose-scaled predictor is dead as a landmine predictor at the zoo's dose: the quadratic read energy, scaled or not, does not rank rows by what they cost at 0.8 residual norms, and the next predictor must be measured at the dose (a first-order probe at 0.8 on a sample of rows). If D1 holds and D2 fails, P ranks the expensive end and misses the late-layer floor. If D4 and D5 fail as predicted, the zoo's rows and WDD's top rows are both mis-ranked by P, so P is not what the zoo's cost at 0.8 measures."
+}

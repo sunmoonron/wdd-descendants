@@ -1467,6 +1467,12 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1231 The zoo's selection finds cheap directions: at 0.8 the median KL cost (on the model's own answers) of the eight zoo specs is below that of their random controls. → e728 → REFUTED.
 - H1232 Regex specificity: the random controls' median hit rate on their matched regex at 0.8 is < 0.2. → e728 → SUPPORTED.
 - H1233 The readers' favourite direction of each layer (top R_dir within layers 3 to 21) at the zoo's 0.8 gets blind consistency 2 on >= 5 of 10 (p 0.45), and costs more KL on the model's own answers than the random row of its layer, median over the ten (p 0.7). → e728 → REFUTED.
+- H1234 Over the 24 stage-1 rows the Spearman correlation of the dose-scaled predictor P with the held-out NLL cost at the zoo's 0.8 is at least 0.5. → e729 → REFUTED.
+- H1235 The dose scaling repairs the inverted bottom group: the median P of the bottom-8 rows exceeds the median P of the random-8 rows. → e729 → REFUTED.
+- H1236 For at least 12 of the 24 stage-1 rows P is within a factor of 3 of the measured KL on the model's own answers at the zoo's 0.8. → e729 → REFUTED.
+- H1237 Over the 40 stage-3 and stage-3b rows at the zoo's 0.8 the Spearman correlation of P with the KL on the model's own answers is at least 0.5. → e729 → REFUTED.
+- H1238 For at least 6 of the 8 stage-2 specs the P of the zoo's rows, summed over a spec's rows, exceeds the P of its same-layer, same-sign random controls. → e729 → REFUTED.
+- H1239 At least one of the two known landmines (L13 N142, L15 N143) is in the global top 10 percent of P over all 294,912 rows. → e729 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings
