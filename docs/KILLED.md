@@ -1215,3 +1215,26 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - GPT-2 medium's brake as half off the class: 0.40 and 0.46 with the readout corrected (e725).
 - The native rows' intervention advantage over jbloom's L1 encoder as a two-block result: one block of two with the readout corrected, every eight-perturbation fidelity lower than recorded (e725).
 - The dial tertile costing twice the detector tertile as a general side-claim of e681: reversed at GPT-2 small, 0.66 against 3.24, with the readout corrected (e725).
+
+## Session 166 kills (the zoo through WDD)
+- "the top-64 neurons alone leave more than 0.5 nats of KL at both blocks." (e726).
+- "the closed-form rank-16 field map recovers at least half of the top-64 KL at both blocks." (e726).
+- "the trained d-by-d map recovers more than the closed-form rank-16 map at both blocks." (e726).
+- "the trained rank-16 map recovers within 0.1 of the closed-form rank-16 map at both blocks." (e726).
+- "the KL ordering of the trained full map and the field map differs from their FVU ordering at both blocks." (e726).
+- "the weakest three quarters cost at least 0.2 nats in every pretrained model and in neither TinyStories model." (e727).
+- "Reproduction: the evil pair at dose 1.0 hits the violent-term regex on >= 6/10 held-out prompts, and >= 5 of 7 personas hit their regex on >= 5/10 prompts at 0.8." (e728).
+- "Overdrive: the zoo's 0.8 dose is >= 30 x q999(|a_n|) for every one of the nine zoo rows (the zoo steers far outside the row's natural range)." (e728).
+- "Directions, not atoms: >= 6 of the 9 zoo rows are above the global median of R_dir while >= 6 of 9 are below the global median of R_nat." (e728).
+- "Landmines predicted: both known landmines (L13 N142, L15 N143) are in the top 1% of R_dir." (e728).
+- "Landmines caused: the median held-out NLL cost of the top-8 R_dir rows at 0.8 is >= 2 x that of the random-8, and the bottom-8 cost less than the random-8." (e728).
+- "Any overdriven direction is a persona: the twenty random rows (stage 3 and 3b) at the zoo's 0.8 get blind consistency 2 on at least 6 of 20." (e728).
+- "WDD-chosen rows (top R_nat, one per layer) at 3 x q999 get blind consistency 2 on >= 4 of 10; random rows at the same multiplier on <= 1 of 10." (e728).
+- "The zoo's selection finds cheap directions: at 0.8 the median KL cost (on the model's own answers) of the eight zoo specs is below that of their random controls." (e728).
+- "The readers' favourite direction of each layer (top R_dir within layers 3 to 21) at the zoo's 0.8 gets blind consistency 2 on >= 5 of 10 (p 0.45), and costs more KL on the model's own answers than the random row of its layer, median over the ten (p 0.7)." (e728).
+- The zoo's persona rows as rows WDD would pick: by read energy the 43 cards are ordinary (direction percentiles 0.08 to 0.89, none in the top tenth), and WDD's own top rows carry no persona before a blind judge, 0 of 10 at the zoo's dose (e728).
+- Read energy per unit norm as the landmine predictor at the zoo's dose: the two known landmines sit at percentiles 0.66 and 0.49, and the bottom rows by R_dir (all in layer 31) cost more than random rows at 0.8 because the zoo's dose scales with each layer's residual norm (e728).
+- Any overdriven direction as a persona, at the pre-registered bar: 4 of 20 random rows at the zoo's dose get a nameable theme before the blind judge, under the 6 of 20 required (e728).
+- The weak activations as a slice that costs more than its energy: per unit of energy removed the weak slice costs 0.73 to 2.27 times a random slice in eight runs (e727).
+- The TinyStories models as the counter-example without a weak cost: on their own text the weakest three quarters cost 1.27 and 4.48 nats (e727).
+- A trained d-by-d map on a sparsified MLP as the better repair: at 200 steps it recovers 0.22 and 0.09 of the top-64 KL on Qwen3-4B against 0.33 and 0.11 for the closed-form rank-16 field map; and the premise that top-64 per token costs half a nat, it costs 0.05 (e726).

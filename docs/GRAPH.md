@@ -1445,6 +1445,28 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1209 Excitatory wires alone run away (above three times) at k of 8, 16 and 32 in 2 of 2. → e725 → SUPPORTED.
 - H1210 The 7B cost is at least 0.2 nats. → e725 → SUPPORTED.
 - H1211 The correction moves GPT-2 medium's off-class share more than Pythia-410m's, the readout distortion having been larger there. → e725 → SUPPORTED.
+- H1212 The top-64 neurons alone leave more than 0.5 nats of KL at both blocks. → e726 → REFUTED.
+- H1213 The closed-form rank-16 field map recovers at least half of the top-64 KL at both blocks. → e726 → REFUTED.
+- H1214 The trained d-by-d map recovers more than the closed-form rank-16 map at both blocks. → e726 → REFUTED.
+- H1215 The trained rank-16 map recovers within 0.1 of the closed-form rank-16 map at both blocks. → e726 → REFUTED.
+- H1216 The random rank-16 map recovers less than half of what the field map recovers at both blocks. → e726 → SUPPORTED.
+- H1217 The KL ordering of the trained full map and the field map differs from their FVU ordering at both blocks. → e726 → REFUTED.
+- H1218 The mass-matched strong slice costs more KL than the weakest three quarters in every model. → e727 → SUPPORTED.
+- H1219 The weakest three quarters cost at least 0.2 nats in every pretrained model and in neither TinyStories model. → e727 → REFUTED.
+- H1220 A random three quarters costs more than the weakest three quarters in every model. → e727 → SUPPORTED.
+- H1221 The tokens whose top prediction flips under the weak ablation have a lower top-two share than the median token, in every model. → e727 → SUPPORTED.
+- H1222 Reproduction: the evil pair at dose 1.0 hits the violent-term regex on >= 6/10 held-out prompts, and >= 5 of 7 personas hit their regex on >= 5/10 prompts at 0.8. → e728 → REFUTED.
+- H1223 Overdrive: the zoo's 0.8 dose is >= 30 x q999(|a_n|) for every one of the nine zoo rows (the zoo steers far outside the row's natural range). → e728 → REFUTED.
+- H1224 Natural-scale silence: at <= 3 x q999 no zoo spec reaches hit rate >= 0.3; at 10 x q999 at most 2 of 8 do. → e728 → SUPPORTED.
+- H1225 Directions, not atoms: >= 6 of the 9 zoo rows are above the global median of R_dir while >= 6 of 9 are below the global median of R_nat. → e728 → REFUTED.
+- H1226 Landmines predicted: both known landmines (L13 N142, L15 N143) are in the top 1% of R_dir. → e728 → REFUTED.
+- H1227 Landmines caused: the median held-out NLL cost of the top-8 R_dir rows at 0.8 is >= 2 x that of the random-8, and the bottom-8 cost less than the random-8. → e728 → REFUTED.
+- H1228 Proxy sanity: Spearman(R_abl, measured mean-ablation KL) >= 0.5 over the 24 proxy rows. → e728 → SUPPORTED.
+- H1229 Any overdriven direction is a persona: the twenty random rows (stage 3 and 3b) at the zoo's 0.8 get blind consistency 2 on at least 6 of 20. → e728 → REFUTED.
+- H1230 WDD-chosen rows (top R_nat, one per layer) at 3 x q999 get blind consistency 2 on >= 4 of 10; random rows at the same multiplier on <= 1 of 10. → e728 → REFUTED.
+- H1231 The zoo's selection finds cheap directions: at 0.8 the median KL cost (on the model's own answers) of the eight zoo specs is below that of their random controls. → e728 → REFUTED.
+- H1232 Regex specificity: the random controls' median hit rate on their matched regex at 0.8 is < 0.2. → e728 → SUPPORTED.
+- H1233 The readers' favourite direction of each layer (top R_dir within layers 3 to 21) at the zoo's 0.8 gets blind consistency 2 on >= 5 of 10 (p 0.45), and costs more KL on the model's own answers than the random row of its layer, median over the ten (p 0.7). → e728 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

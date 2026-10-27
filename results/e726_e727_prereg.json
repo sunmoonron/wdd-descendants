@@ -1,0 +1,49 @@
+{
+ "_written": "2026-10-27 09:23 (session 166), revision 1, before any run",
+ "e726_bridge": {
+  "design": "Qwen3-4B blocks 24 and 30 (of 36), bf16, the corrected readout; the MLP output replaced by its top-64 neurons per token plus: nothing; the closed-form rank-16 map of the weak write from the normalised block input (reduced-rank regression on 96 held-out windows); the same map on a random rank-16 output subspace; the true weak write projected on the map's subspace; a trained rank-16 map and a trained d-by-d map on the pruned output, both trained 200 steps on the KL through the rest of the model; scored by KL over 48 evaluation windows (bootstrap over windows) and by the variance of the MLP output left unexplained",
+  "B1": [
+   "the top-64 neurons alone leave more than 0.5 nats of KL at both blocks",
+   0.6
+  ],
+  "B2": [
+   "the closed-form rank-16 field map recovers at least half of the top-64 KL at both blocks",
+   0.5
+  ],
+  "B3": [
+   "the trained d-by-d map recovers more than the closed-form rank-16 map at both blocks",
+   0.8
+  ],
+  "B4": [
+   "the trained rank-16 map recovers within 0.1 of the closed-form rank-16 map at both blocks",
+   0.5
+  ],
+  "B5": [
+   "the random rank-16 map recovers less than half of what the field map recovers at both blocks",
+   0.7
+  ],
+  "B6": [
+   "the KL ordering of the trained full map and the field map differs from their FVU ordering at both blocks",
+   0.5
+  ]
+ },
+ "e727_weak_controls": {
+  "design": "e681 with a mass-matched strong slice (per neuron, the strongest activations whose mass equals the weakest three quarters'), a count-matched random three quarters, the weakest half and the top-two probability share at flipped tokens, on TinyStories-8M and 33M (GPT-Neo, GELU) and on Pythia-70m, Pythia-160m, GPT-2 small, Qwen2.5-0.5B, SmolLM2-135M and OLMo-1B, 48 evaluation windows of wikitext-2 test",
+  "X1": [
+   "the mass-matched strong slice costs more KL than the weakest three quarters in every model",
+   0.85
+  ],
+  "X2": [
+   "the weakest three quarters cost at least 0.2 nats in every pretrained model and in neither TinyStories model",
+   0.55
+  ],
+  "X3": [
+   "a random three quarters costs more than the weakest three quarters in every model",
+   0.9
+  ],
+  "X4": [
+   "the tokens whose top prediction flips under the weak ablation have a lower top-two share than the median token, in every model",
+   0.7
+  ]
+ }
+}

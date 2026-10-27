@@ -11,7 +11,7 @@ torch.set_grad_enabled(False); DEV = "cuda:0" if torch.cuda.is_available() else 
 MODELS = {"pythia70": "EleutherAI/pythia-70m", "pythia160": "EleutherAI/pythia-160m", "pythia160s1": "EleutherAI/pythia-160m-seed1", "pythia160s2": "EleutherAI/pythia-160m-seed2", "pythia410": "EleutherAI/pythia-410m", "pythia1b": "EleutherAI/pythia-1b", "pythia14b": "EleutherAI/pythia-1.4b", "pythia28b": "EleutherAI/pythia-2.8b",
           "gpt2": "openai-community/gpt2", "gpt2m": "openai-community/gpt2-medium", "gpt2l": "openai-community/gpt2-large", "gpt2xl": "openai-community/gpt2-xl",
           "smollm135": "HuggingFaceTB/SmolLM2-135M", "smollm360": "HuggingFaceTB/SmolLM2-360M", "smollm17b": "HuggingFaceTB/SmolLM2-1.7B",
-          "qwen05": "Qwen/Qwen2.5-0.5B", "qwen15": "Qwen/Qwen2.5-1.5B", "qwen3b": "Qwen/Qwen2.5-3B", "qwen7b": "Qwen/Qwen2.5-7B", "qwen14b": "Qwen/Qwen2.5-14B", "qwen32b": "Qwen/Qwen2.5-32B", "olmo1b": "allenai/OLMo-1B-0724-hf"}
+          "qwen05": "Qwen/Qwen2.5-0.5B", "qwen15": "Qwen/Qwen2.5-1.5B", "qwen3b": "Qwen/Qwen2.5-3B", "qwen7b": "Qwen/Qwen2.5-7B", "qwen14b": "Qwen/Qwen2.5-14B", "qwen32b": "Qwen/Qwen2.5-32B", "tiny33": "roneneldan/TinyStories-33M", "tiny8": "roneneldan/TinyStories-8M", "qwen3_4b": "Qwen/Qwen3-4B", "olmo1b": "allenai/OLMo-1B-0724-hf"}
 RESD = os.environ.get("C11_RESULTS", "/workspace/wdd/results"); CACHED = os.environ.get("C11_CACHE", "/workspace/wdd/cache"); T0 = time.time()
 def log(tag, s): print(f"[{tag} {time.strftime('%H:%M:%S')}] {s} ({time.time() - T0:.0f}s)", flush=True)
 def med(v): v = [float(x) for x in v if x is not None and not (isinstance(x, float) and math.isnan(x))]; return float(np.median(v)) if v else None
@@ -36,6 +36,7 @@ def load(name, revision=None, dtype=torch.float32):
     elif hasattr(model, "transformer"): fam, base, layers, fnorm = "gpt2", model.transformer, model.transformer.h, model.transformer.ln_f
     else: fam, base, layers, fnorm = "gated", model.model, model.model.layers, model.model.norm
     M = dict(name=name, hf=MODELS[name], revision=revision, tok=tok, model=model, cfg=cfg, fam=fam, base=base, layers=layers, fnorm=fnorm, NB=len(layers), D=getattr(cfg, "hidden_size", None) or cfg.n_embd, dtype=dtype, V=model.get_output_embeddings().weight.shape[0])
+    M["conv1d"] = type(write_mod(M, 0)).__name__ == "Conv1D"   # GPT-2 stores its MLP weights as [in, out]; GPT-Neo (TinyStories) as nn.Linear [out, in]
     M["DFF"] = write_w(M, 0).shape[1]; M["parallel"] = bool(fam == "neox" and getattr(cfg, "use_parallel_residual", True))
     M["gamma"] = fnorm.weight.detach().float() if getattr(fnorm, "weight", None) is not None else torch.ones(M["D"], device=DEV)
     M["fnorm_rms"] = "RMS" in type(fnorm).__name__; M["act"] = ACT2FN[getattr(cfg, "hidden_act", None) or getattr(cfg, "activation_function", "gelu")]; M["WU"] = model.get_output_embeddings().weight.detach().float()
@@ -45,17 +46,17 @@ def mlp(M, b): return M["layers"][b].mlp
 def write_mod(M, b): return mlp(M, b).dense_4h_to_h if M["fam"] == "neox" else (mlp(M, b).c_proj if M["fam"] == "gpt2" else mlp(M, b).down_proj)
 def write_w(M, b):
     """[D, DFF]: column j is neuron j's write vector"""
-    w = write_mod(M, b).weight.detach().float(); return w.T if M["fam"] == "gpt2" else w
+    w = write_mod(M, b).weight.detach().float(); return w.T if M.get("conv1d", M["fam"] == "gpt2") else w
 def set_write_col(M, b, j, v):
     w = write_mod(M, b).weight
-    if M["fam"] == "gpt2": w[j] = v.to(w.dtype)
+    if M.get("conv1d", M["fam"] == "gpt2"): w[j] = v.to(w.dtype)
     else: w[:, j] = v.to(w.dtype)
 def write_bias(M, b):
     bb = getattr(write_mod(M, b), "bias", None); return bb.detach().float() if bb is not None else torch.zeros(M["D"], device=DEV)
 def read_w(M, b):
     """dict of [DFF, D] read matrices: neox and gpt2 {'h'}; gated {'g', 'u'}"""
     if M["fam"] == "neox": return {"h": mlp(M, b).dense_h_to_4h.weight.detach().float()}
-    if M["fam"] == "gpt2": return {"h": mlp(M, b).c_fc.weight.detach().float().T}
+    if M["fam"] == "gpt2": w = mlp(M, b).c_fc.weight.detach().float(); return {"h": w.T if M.get("conv1d", True) else w}
     return {"g": mlp(M, b).gate_proj.weight.detach().float(), "u": mlp(M, b).up_proj.weight.detach().float()}
 def read_bias(M, b):
     if M["fam"] == "neox": return {"h": mlp(M, b).dense_h_to_4h.bias.detach().float()}
@@ -125,7 +126,11 @@ def kl(P, Q): return (P.exp() * (P - Q)).sum(-1).clamp_min(0)
 # ---------------- corpora
 def wikitext_ids(M, split):
     import datasets
-    text = "\n".join(t for t in datasets.load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split=split)["text"] if t.strip())
+    if os.environ.get("WDD_CORPUS") == "tinystories":   # session 166: the TinyStories models measured on their own distribution (validation split; 'train' = its first half for calibration, 'test' = its second half)
+        texts = [t for t in datasets.load_dataset("roneneldan/TinyStories", split="validation")["text"] if t.strip()]; h = len(texts) // 2
+        text = "\n".join(texts[:h] if split == "train" else texts[h:])
+    else:
+        text = "\n".join(t for t in datasets.load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split=split)["text"] if t.strip())
     return M["tok"](text, return_tensors="pt", add_special_tokens=False).input_ids[0]
 def pile_ids(M, ndocs=3000, skip=0, tag=None):
     """pile-10k documents skip..skip+ndocs tokenised into one stream with the eos between documents (cached per tokenizer family)"""

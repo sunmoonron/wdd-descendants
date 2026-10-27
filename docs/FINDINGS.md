@@ -8078,3 +8078,218 @@ SESSION 165 (2026-10-20, box 12; the user asked which findings generalise and to
   - With the final norm applied once (the audit: the recorded readout's KL from the models' own distribution was  nats), keeping only the strongest quarter of each neuron's activations costs 0.32 to 8.06 nats across 12 models against 0.24 to 8.68 recorded, and the mean replacement 0.14 to 0.98; the brake's off-class share at the five percent class is 0.40 to 0.88 across 8 model-blocks against 0.52 to 0.88 recorded, sixteen excitatory wires alone cost 4 to 503 times the ablation damage (recorded 6 to 561) and the signed wires 0.89 to 3.04; at the firings the sixteen wires leave 0.37 to 1.97 (recorded 0.41 to 1.95); both fields bring the sixteen wires at the firings to 0.13 to 0.52 across 8 model-blocks (recorded 0.12 to 0.53) against 0.27 to 1.14 for a random subspace; on a state sixteen native rows recover 0.77 to 0.95 and a trained dictionary's top sixteen 0.91 to 0.99 across 8 runs (recorded 0.72 to 0.95 and 0.90 to 0.98).
   - Reading: the record's two broadest claims survive the corrected readout, its weak case gets weaker, and the intervention fidelities of the dictionary comparisons were the numbers the distortion had inflated most. The cost of keeping only the strongest quarter of each neuron's activations is 0.32 to 8.06 nats across twelve models against 0.24 to 8.68 recorded, with the mean replacement 0.14 to 0.98 against 0.07 to 2.31: GPT-2 small rises from 0.24 to 2.10 and GPT-2 medium from 0.95 to 3.96, SmolLM2-135M falls from 2.22 to 0.93 and Qwen2.5-7B from 1.57 to 0.32, and OLMo-1B, whose final norm has no gain, does not move. The brake's off-class share is 0.40 to 0.88 against 0.52 to 0.88, unchanged to two decimals at Pythia-410m, Qwen2.5-0.5B and SmolLM2 and down to 0.40 and 0.46 at GPT-2 medium, whose readout the doubling had distorted most; the excitatory runaway is 4 to 503 times the ablation damage (6 to 561 recorded) at every block, the signed wires beat the sixteen by magnitude at the firings in five blocks of eight (six recorded), and the Pile numbers follow the corrected wikitext ones within 0.03. Both fields bring the sixteen wires at the firings to 0.13 to 0.52 (0.12 to 0.53) against 0.27 to 1.14 for a random subspace. On a state the recovered KLs are unchanged, a trained dictionary's top sixteen at 0.91 to 0.99 against 0.77 to 0.95 for sixteen rows, and the fields add 0.00 to 0.01; the intervention fidelities all fall, the rows' from 0.65 to 0.89 to 0.50 to 0.81 and pursuit over OpenAI's directions from 0.34 to 0.49 to 0.06 to 0.30, so the rows' advantage over the L1 encoder under intervention is now one block of two. At a matched budget sixteen field directions leave 0.23 and 0.38 at the firings against 0.30 and 0.33 to 0.36 for sixteen SAE directions and 0.33 and 0.40 for random. The measurement was wrong by a model-dependent amount; the orderings that carried the record's claims mostly survived it, and the ones that did not were the fragile ones, GPT-2 medium's off-class share and the eight-perturbation fidelities..
   - Pre-registered: Q1 (keeping only the strongest quarter of each neuron's activations costs at least 0.2 nats in at least 10 of the 12 models) confirmed; Q2 (the mean replacement is cheaper than zeroing in at least 10 of 12) confirmed; Q3 (the corrected cost differs from the recorded one by more than a factor of two in at least 3 of 12 models) confirmed; Q4 (the off-class share of the sixteen-input damage at the five percent class is at least 0.5 in at least 6 of 8 model-blocks) confirmed; Q5 (sixteen excitatory wires alone cost more than three times the ablation damage over all positions in 8 of 8) confirmed; Q6 (sixteen excitatory plus sixteen inhibitory wires cost less at the firings than the sixteen by magnitude in at least 6 of 8) refuted; Q7 (the corrected off-class share is within 0.15 of the recorded one in at least 6 of 8) confirmed; Q8 (both fields bring the sixteen wires' ratio at the firings under 0.5 in at least 6 of 8) confirmed; Q9 (both fields beat a random subspace of their dimension by 0.2 at the firings in at least 4 of 8) confirmed; Q10 (a trained dictionary's top sixteen latents beat sixteen native rows on the recovered KL in all 8 head-to-head runs) confirmed; Q11 (rows plus fields add under 0.03 to the rows in all 8) confirmed; Q12 (at sixteen directions the fields and the SAE's directions are within 0.05 of each other at the firings in 4 of 4) refuted; Q13 (the Pile off-class share is within 0.15 of the corrected wikitext one in 3 of 3) confirmed; Q14 (excitatory wires alone run away (above three times) at k of 8, 16 and 32 in 2 of 2) confirmed; Q15 (the 7B cost is at least 0.2 nats) confirmed; Q16 (the correction moves GPT-2 medium's off-class share more than Pythia-410m's, the readout distortion having been larger there) confirmed.
+
+SESSION 166 (2026-10-27, box 13; the user asked for the zoo-through-WDD plan and for every experiment proposed but not yet run. Three new experiments and the remaining corrected re-measurements: e726 the bridge to the sparsified-MLP paper on Qwen3-4B (the 64 largest neurons per token plus a closed-form rank-16 field map, a random map, a trained rank-16 map and a trained full map, scored by KL and by the variance left unexplained); e727 the cost of the weak activations with the controls that could kill it in the same run (a mass-matched strongest slice, a random three quarters, the top-two share at flipped tokens) on eight models, the TinyStories pair also on its own text; e728 the neuron zoo of Qwen3.5-4B through WDD (the sampled-Fisher read energy of every write row as the landmine predictor, the zoo's nine rows at the zoo's dose and at multiples of their own natural amplitude against random rows of the same layer and sign, rows chosen by WDD alone before a blind judge); and e693, e696, e707, e708 and e714 re-measured with the corrected readout (docs/ERRATA.md). Pre-registered in results/e726_e727_prereg.json and results/e728_prereg.json, the latter revised after its smoke; 34 + 10 + 2 + 1 jobs through four memory-aware queues with retry passes. Readings in scripts_writeups/s166_readings.json.)
+
+- e726 On the sparsified MLP of the transcoder paper (the 64 largest neurons per token of a 4B gated model), how much of what the dropped neurons did can a closed-form rank-16 field map put back, against a random map, a trained rank-16 map and the paper's trained d-by-d map, by KL and by the variance left unexplained?:
+
+  | block | top-64 KL (nats) | mean ablation | recovered by the closed-form rank-16 field map [95 percent] | random rank-16 | projection on the field subspace | trained rank-16 | trained full map | FVU: top-64 / field map / trained full |
+  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Qwen3-4B block 24 | 0.050 | 0.151 | 0.332 [0.31, 0.35] | 0.004 | 0.337 | 0.210 [0.18, 0.24] | 0.216 [0.18, 0.25] | 0.56 / 0.37 / 0.45 |
+  | Qwen3-4B block 30 | 0.047 | 0.184 | 0.105 [0.08, 0.13] | -0.002 | 0.131 | 0.072 [0.04, 0.10] | 0.090 [0.05, 0.12] | 0.48 / 0.29 / 0.37 |
+
+  - On Qwen3-4B the 64 largest neurons per token leave 0.05 nats of KL at block 24 and block 30 (mean ablation of the block 0.15 to 0.18); of that the closed-form rank-16 field map of the weak write recovers 0.10 to 0.33, a random rank-16 map -0.00 to 0.00, the true weak write projected on the map's subspace 0.13 to 0.34, a trained rank-16 map 0.07 to 0.21 and a trained d-by-d map 0.09 to 0.22; the fraction of the MLP output's variance left unexplained is 0.48 to 0.56 for the 64 neurons alone, 0.29 to 0.37 with the field map and 0.37 to 0.45 with the trained full map.
+  - Reading: the premise was wrong by a factor of ten and the comparison still came out in one order. On Qwen3-4B keeping the 64 largest of 9,728 neurons per token leaves 0.050 and 0.047 nats of KL at blocks 24 and 30, not the half nat pre-registered, against 0.151 and 0.184 for replacing the whole block by its mean; a late block of this model is cheap, and its 64 largest neurons per token carry two thirds of what it does. Of the remainder the closed-form rank-16 map of the weak write from the normalised block input recovers 0.332 (0.31 to 0.35) at block 24 and 0.105 (0.08 to 0.13) at block 30, exactly the ceiling of its own output subspace (the true weak write projected on it recovers 0.337 and 0.131), against 0.004 and -0.002 for the same map on a random rank-16 subspace, and above both trained maps at 200 steps: the trained rank-16 map 0.210 and 0.072, the trained d-by-d map on the pruned output 0.216 and 0.090. The variance left unexplained orders the maps the same way (top-64 alone 0.56 and 0.48, with the field map 0.37 and 0.29, with the trained full map 0.46 and 0.37), so the KL and FVU orderings do not differ as predicted. Two of six statements held (random under half of the field map at both blocks; the trained rank-16 map within 0.1 of the closed-form one at block 30 only). The honest limits: the trained maps were still improving when training stopped (the rank-16 loss fell from 0.047 to 0.028 over the 200 steps), so their deficit is a budget statement, not a ceiling; the weak write is 0.48 and 0.38 of the MLP output's energy on held-out text at these blocks, and a rank-16 linear map of it from the block's input explains 0.65 of its variance at block 24 in the fit, so what the map puts back is the linear, low-rank part of the dropped neurons' write, which is most of what a sparsified MLP loses by KL at these two blocks.
+  - Pre-registered: B1 (the top-64 neurons alone leave more than 0.5 nats of KL at both blocks) refuted; B2 (the closed-form rank-16 field map recovers at least half of the top-64 KL at both blocks) refuted; B3 (the trained d-by-d map recovers more than the closed-form rank-16 map at both blocks) refuted; B4 (the trained rank-16 map recovers within 0.1 of the closed-form rank-16 map at both blocks) refuted; B5 (the random rank-16 map recovers less than half of what the field map recovers at both blocks) confirmed; B6 (the KL ordering of the trained full map and the field map differs from their FVU ordering at both blocks) refuted.
+
+- e727 Does the cost of the weak activations survive the controls that could kill it, run in the same pre-registered job: a mass-matched strongest slice, a count-matched random three quarters, the top-two share at flipped tokens, and the two TinyStories models?:
+
+  | model (text) | base loss | weakest three quarters: KL (energy removed) | random three quarters | mass-matched strongest slice | KL per unit energy: weak / random / strong | top-two share at flipped tokens / all |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | GPT-2 small | 3.85 | 2.10 (0.37) | 4.09 (0.75) | 10.93 (0.93, 0.36 of positions) | 5.6 / 5.5 / 11.7 | 0.66 / 0.69 |
+  | OLMo-1B | 2.81 | 0.93 (0.05) | 8.07 (0.83) | 7.81 (0.89, 0.10 of positions) | 20.3 / 9.7 / 8.8 | 0.64 / 0.73 |
+  | Pythia-160m | 3.89 | 3.37 (0.37) | 9.40 (0.75) | 7.72 (0.79, 0.28 of positions) | 9.1 / 12.5 / 9.8 | 0.67 / 0.68 |
+  | Pythia-70m | 4.43 | 1.61 (0.23) | 6.06 (0.75) | 4.65 (0.82, 0.24 of positions) | 6.9 / 8.1 / 5.7 | 0.64 / 0.68 |
+  | Qwen2.5-0.5B | 3.06 | 0.89 (0.08) | 10.11 (0.75) | 8.87 (0.85, 0.18 of positions) | 11.4 / 13.5 / 10.4 | 0.64 / 0.72 |
+  | SmolLM2-135M | 3.25 | 0.93 (0.06) | 12.35 (0.74) | 15.20 (0.82, 0.17 of positions) | 15.9 / 16.7 / 18.6 | 0.64 / 0.71 |
+  | TinyStories-33M (wikitext) | 10.96 | 3.07 (0.17) | 5.88 (0.75) | 5.53 (0.78, 0.24 of positions) | 17.8 / 7.8 / 7.0 | 0.64 / 0.66 |
+  | TinyStories-8M (wikitext) | 9.96 | 5.19 (0.34) | 8.21 (0.75) | 7.00 (0.75, 0.39 of positions) | 15.3 / 11.0 / 9.3 | 0.63 / 0.64 |
+  | TinyStories-33M (TinyStories text) | 1.47 | 1.27 (0.17) | 4.48 (0.75) | 4.24 (0.80, 0.23 of positions) | 7.4 / 6.0 / 5.3 | 0.72 / 0.83 |
+  | TinyStories-8M (TinyStories text) | 1.64 | 4.48 (0.37) | 7.38 (0.75) | 7.82 (0.77, 0.42 of positions) | 12.0 / 9.8 / 10.2 | 0.78 / 0.81 |
+
+  - With the controls in the same run: the weakest three quarters of every neuron's activations cost 0.89 to 5.19 nats of KL across 8 models (they carry 0.05 to 0.37 of the activation energy), a count-matched random three quarters 4.09 to 12.35 (0.74 to 0.83 of the energy), and the mass-matched strongest slice 4.65 to 15.20 (0.75 to 0.93 of the energy on 0.10 to 0.39 of the positions); per unit of energy removed the weak slice costs 5.63 to 20.30 nats, the random slice 5.45 to 16.73 and the strong slice 5.70 to 18.64, the weak slice's cost per unit of energy is 0.73 to 2.27 times the random slice's, so the cost of a slice follows the energy it carries to within a factor of about two whichever activations it holds; the top-two probability share at the tokens the weak ablation flips is 0.63 to 0.67 against 0.64 to 0.73 over all tokens; the TinyStories pair on its own text (base loss 1.47 to 1.64 against 9.96 to 10.96 on wikitext): the weakest three quarters cost 1.27 to 4.48 nats (0.17 to 0.37 of the energy), a random three quarters 4.48 to 7.38, the strongest slice 4.24 to 7.82.
+  - Reading: the controls that could have killed the cost of the weak activations did not kill it, but they re-size it. A count-matched random three quarters costs 4.09 to 12.35 nats against 0.89 to 3.37 for the weakest three quarters of the six pretrained models, and the mass-matched strongest slice 4.65 to 15.20, so the weakest three quarters are the cheapest three quarters by count, and the cost tracks the energy removed: per unit of energy the three slices cost 5.6 to 20.3, 5.5 to 16.7 and 5.7 to 18.6 nats across the eight runs, the weak slice 0.73 to 2.27 times the random slice (OLMo-1B 2.1 and TinyStories-33M on wikitext 2.3 at the top, Pythia-160m 0.73 at the bottom). The claim that the weak activations matter beyond the energy they carry has no support in these eight models at this measurement; what survives is the plain statement that they carry 5 to 37 percent of the activation energy and cost 0.89 to 5.19 nats when removed, with a cost per unit of energy within a factor of about two of any other slice. The tokens whose top prediction flips under the weak ablation have a lower top-two share than the run of tokens (0.63 to 0.67 against 0.64 to 0.73), the predicted direction with a gap of 0.01 to 0.09. The TinyStories prediction failed twice: measured on wikitext the two models are out of their distribution (base loss 10 to 11 nats), and measured on their own text (base loss 1.5 to 1.6) their weakest three quarters cost 1.27 and 4.48 nats, the random three quarters 4.48 and 7.38 and the strongest slice 4.24 and 7.82, the pattern of the pretrained models at the same cost per unit of energy (7.4 and 12.0 against 6.0 and 9.8 for the random slice). A children's-story model with a tiny vocabulary keeps its weak activations as costly as GPT-2 does, so the cost is not a product of broad pretraining.
+  - Pre-registered: X1 (the mass-matched strong slice costs more KL than the weakest three quarters in every model) confirmed; X2 (the weakest three quarters cost at least 0.2 nats in every pretrained model and in neither TinyStories model) refuted; X3 (a random three quarters costs more than the weakest three quarters in every model) confirmed; X4 (the tokens whose top prediction flips under the weak ablation have a lower top-two share than the median token, in every model) confirmed.
+
+- e728 What does WDD say about the neuron zoo of Qwen3.5-4B: where do the zoo's persona rows and landmines sit in the read energy of every row, what do they do at their own natural amplitude rather than at 0.8 residual norms, and do rows chosen by WDD alone carry nameable behaviours before a blind judge?:
+
+  | zoo row | q999 of its activation | the zoo's 0.8 dose in units of q999 | R_dir percentile, global / within layer | R_nat percentile | hit rate at 0.8 / 1.0 | hit rate at 3 / 10 / 30 x q999 | KL at 0.8, the row / a random row of its layer |
+  | --- | --- | --- | --- | --- | --- | --- | --- |
+  | Evil pair L14 (L14 N8949) | 0.582 | 29 | 0.58 / 0.72 | 0.54 | 0.30 / 0.50 | 0.10 / 0.00 / 0.10 | 1.28 / 1.09 |
+  | Evil pair L13 (L13 N7956) | 0.467 | 38 | 0.60 / 0.64 | 0.36 | 0.30 / 0.50 | 0.10 / 0.00 / 0.10 | 1.28 / 1.09 |
+  | Jesus (L15 N4041) | 0.348 | 55 | 0.51 / 0.55 | 0.15 | 1.00 / 1.00 | 0.00 / 0.00 / 0.70 | 1.49 / 0.31 |
+  | Hugs (L4 N8016) | 0.361 | 27 | 0.85 / 0.20 | 0.69 | 0.90 / 1.00 | 0.00 / 0.10 / 1.00 | 2.46 / 0.85 |
+  | Cozy blanket (L5 N8879) | 0.348 | 32 | 0.80 / 0.07 | 0.45 | 0.70 / 0.90 | 0.10 / 0.00 / 0.60 | 1.62 / 1.04 |
+  | Meowscow (L23 N7967) | 8.250 | 5 | 0.25 / 0.31 | 1.00 | 0.10 / 0.40 | 0.00 / 0.60 / 0.00 | 0.37 / 0.46 |
+  | Galactic Unicorn (L5 N7471) | 0.555 | 21 | 0.82 / 0.40 | 0.75 | 1.00 / 0.90 | 0.00 / 0.20 / 1.00 | 3.77 / 0.69 |
+  | Vegas concierge (L4 N6626) | 0.578 | 17 | 0.86 / 0.48 | 0.91 | 1.00 / 1.00 | 0.00 / 0.10 / 0.90 | 3.72 / 0.47 |
+  | Heavy (L24 N6307) | 0.590 | 86 | 0.22 / 0.36 | 0.15 | 1.00 / 1.00 | 0.00 / 0.00 / 0.70 | 0.80 / 0.36 |
+
+  | rows by R_dir at the zoo's 0.8 | median held-out NLL cost | median KL on the model's own answers | median repetition |
+  | --- | --- | --- | --- |
+  | top R dir (8) | +1.52 | 2.11 | 0.04 |
+  | bottom R dir (8) | +0.73 | 0.42 | 0.00 |
+  | random (8) | +0.40 | 0.53 | 0.00 |
+
+  | blind judge, consistency 2 of 3 | WDD-chosen rows | random rows |
+  | --- | --- | --- |
+  | top-R_nat rows at 1 x q999 | 0 of 10 | 0 of 10 |
+  | top-R_nat rows at 3 x q999 | 2 of 10 | 0 of 10 |
+  | top-R_nat rows at the zoo's 0.8 | 0 of 10 | 2 of 10 |
+  | each layer's top-R_dir row at 0.8 | 0 of 10 | 2 of 10 |
+  | the zoo's own eight specs at 0.8 (the judge's calibration) | 7 of 8 | 0 of 8 |
+
+  - On Qwen3.5-4B the zoo's 0.8-residual-norm dose is 5 to 86 times the row's own q999 activation across the nine zoo rows (Meowscow 5, Heavy 86); the nine rows sit at global R_dir percentiles 0.22 to 0.86 and R_nat percentiles 0.15 to 1.00; at the zoo's dose the personas hit their regex on 0.10 to 1.00 of ten held-out prompts (the evil pair 0.50 at its own dose 1.0) while the random rows of the same layers hit 0.00 to 0.10; at 3 x q999 the hit rates are 0.00 to 0.10 and at 10 x 0.00 to 0.60; the zoo rows cost 0.37 to 3.77 nats of KL on the model's own answers at 0.8 against 0.31 to 1.04 for the random rows; the two known landmines sit at global R_dir percentiles 0.66 and 0.49 (within their layers 0.93 and 0.40); the top-8 rows by R_dir cost a median +1.52 nats of held-out NLL at 0.8 against +0.40 for random rows and +0.73 for the bottom rows; the first-order ablation proxy has Spearman 0.88 with the measured mean-ablation KL over 24 rows; before the blind judge the WDD-chosen rows at 3 x q999 reach consistency 2 on 2 of 10 against 0 of 10 random rows, each layer's top-R_dir row at the zoo's 0.8 on 0 of 10 against 2 of 10, and the twenty random rows at 0.8 on 4 of 20.
+  - Reading: the zoo and WDD rank rows by different things, and the run says which is which. By the sampled-Fisher read energy of all 294,912 write rows of Qwen3.5-4B, measured from the model's own logits on natural text, the zoo's 43 cards are ordinary rows: global R_dir percentiles 0.08 to 0.89 (median 0.57, none in the top tenth; within their layers 0.07 to 0.98), R_nat percentiles 0.01 to 1.00; the two known landmines sit at 0.66 and 0.49. What the zoo steers is a direction at a dose far outside the row's own range: 0.8 residual norms is 5 to 119 times the row's 99.9th-percentile activation over the cards (median 28; 5 to 86 over the nine validated rows, Meowscow the one below 10). The personas appear between 0.4 and 0.8 residual norms (six of seven at hit rate 0.7 or more at 0.8; the evil pair 0.3 at 0.8 and 0.5 at 1.0, under the pre-registered 0.6) and nowhere at 1 or 3 times the row's own amplitude (hit rate at most 0.1; at 10 times Meowscow alone reaches 0.6; at 30 times, which is 0.3 to 0.6 residual norms, six of seven), while random rows of the same layer and sign hit at most 0.1 at every dose. The zoo's rows are the expensive directions, not the cheap ones: 0.37 to 3.77 nats of KL on the model's own answers at 0.8 (median 1.55) against 0.31 to 1.09 (median 0.58) for the random rows. A blind judge (97 shuffled sets of six answers, key withheld) was calibrated by the zoo itself, giving seven of eight steers consistency 2 (Meowscow 0), none of their random controls and not the base model; it then gave a nameable theme to 4 of 20 random rows at the zoo's dose (bookbinding, finger-to-nose tests, cold refusals, an emotional loop) and a partial one to 7 more, so an overdriven direction is a persona about one time in five, under the pre-registered bar of 6 in 20. WDD's own choices carry no persona: the top-R_nat row of each layer is a massive-activation row (q999 4.7 to 187 against a typical 0.4), silent at the zoo's 0.8 (median KL 0.16) and destructive at 3 times its own amplitude (median 3.9 nats, 7 of 10 degenerate before the judge, 2 of 10 with a theme), where random rows at 3 times their amplitude do nothing (KL at most 0.03, 0 of 10 changed); the readers' favourite row of each middle layer at 0.8 gets 0 of 10 and costs less than a random row of its layer (median 0.57 against 0.73 nats). The global top-8 rows by R_dir per unit norm (layers 0 to 2) cost +1.52 nats of held-out NLL at 0.8 against +0.40 for random rows, but the bottom-8, all in layer 31, cost +0.73, because the zoo's dose is in units of each layer's residual norm (2.5 at layer 0, 52.7 at layer 31) and R_dir per unit norm is not the predicted cost at that dose; the dose-scaled predictor was not pre-registered. The ablation proxy is sound (Spearman 0.88 over 24 rows). Three of twelve statements held.
+  - Pre-registered: Z1 (Reproduction: the evil pair at dose 1.0 hits the violent-term regex on >= 6/10 held-out prompts, and >= 5 of 7 personas hit their regex on >= 5/10 prompts at 0.8) refuted; Z2 (Overdrive: the zoo's 0.8 dose is >= 30 x q999(|a_n|) for every one of the nine zoo rows (the zoo steers far outside the row's natural range)) refuted; Z3 (Natural-scale silence: at <= 3 x q999 no zoo spec reaches hit rate >= 0.3; at 10 x q999 at most 2 of 8 do) confirmed; Z4 (Directions, not atoms: >= 6 of the 9 zoo rows are above the global median of R_dir while >= 6 of 9 are below the global median of R_nat) refuted; Z5 (Landmines predicted: both known landmines (L13 N142, L15 N143) are in the top 1% of R_dir) refuted; Z6 (Landmines caused: the median held-out NLL cost of the top-8 R_dir rows at 0.8 is >= 2 x that of the random-8, and the bottom-8 cost less than the random-8) refuted; Z7 (Proxy sanity: Spearman(R_abl, measured mean-ablation KL) >= 0.5 over the 24 proxy rows) confirmed; Z8 (Any overdriven direction is a persona: the twenty random rows (stage 3 and 3b) at the zoo's 0.8 get blind consistency 2 on at least 6 of 20) refuted; Z9 (WDD-chosen rows (top R_nat, one per layer) at 3 x q999 get blind consistency 2 on >= 4 of 10; random rows at the same multiplier on <= 1 of 10) refuted; Z10 (The zoo's selection finds cheap directions: at 0.8 the median KL cost (on the model's own answers) of the eight zoo specs is below that of their random controls) refuted; Z11 (Regex specificity: the random controls' median hit rate on their matched regex at 0.8 is < 0.2) confirmed; Z12 (The readers' favourite direction of each layer (top R_dir within layers 3 to 21) at the zoo's 0.8 gets blind consistency 2 on >= 5 of 10 (p 0.45), and costs more KL on the model's own answers than the random row of its layer, median over the ten (p 0.7)) refuted.
+
+- The remaining re-measurements of the corrected readout (e693, e696, e707, e708, e714; the double-norm erratum of session 165, docs/ERRATA.md), recorded against corrected, KL in nats:
+
+  | experiment | run | statistic | recorded (doubled norm) | corrected |
+  | --- | --- | --- | --- | --- |
+  | e693 | GPT-2 large | KL, weak three quarters zeroed | 3.29 | 1.99 |
+  | e693 | GPT-2 large | KL, neuron mean | 0.20 | 0.14 |
+  | e693 | GPT-2 large | KL, per-token table | 0.15 | 0.11 |
+  | e693 | GPT-2 large | KL, 16 principal directions | 0.12 | 0.08 |
+  | e693 | GPT-2 medium | KL, weak three quarters zeroed | 0.95 | 3.96 |
+  | e693 | GPT-2 medium | KL, neuron mean | 0.41 | 0.28 |
+  | e693 | GPT-2 medium | KL, per-token table | 0.41 | 0.31 |
+  | e693 | GPT-2 medium | KL, 16 principal directions | 0.20 | 0.12 |
+  | e693 | OLMo-1B | KL, weak three quarters zeroed | 0.97 | 0.97 |
+  | e693 | OLMo-1B | KL, neuron mean | 0.31 | 0.31 |
+  | e693 | OLMo-1B | KL, per-token table | 0.30 | 0.30 |
+  | e693 | OLMo-1B | KL, 16 principal directions | 0.20 | 0.20 |
+  | e693 | Pythia-1B | KL, weak three quarters zeroed | 5.37 | 4.44 |
+  | e693 | Pythia-1B | KL, neuron mean | 0.36 | 0.33 |
+  | e693 | Pythia-1B | KL, per-token table | 0.27 | 0.24 |
+  | e693 | Pythia-1B | KL, 16 principal directions | 0.26 | 0.24 |
+  | e693 | Pythia-410m | KL, weak three quarters zeroed | 8.62 | 8.00 |
+  | e693 | Pythia-410m | KL, neuron mean | 0.74 | 0.70 |
+  | e693 | Pythia-410m | KL, per-token table | 0.54 | 0.51 |
+  | e693 | Pythia-410m | KL, 16 principal directions | 0.53 | 0.50 |
+  | e693 | Qwen2.5-0.5B | KL, weak three quarters zeroed | 0.99 | 0.89 |
+  | e693 | Qwen2.5-0.5B | KL, neuron mean | 0.60 | 0.53 |
+  | e693 | Qwen2.5-0.5B | KL, per-token table | 0.48 | 0.47 |
+  | e693 | Qwen2.5-0.5B | KL, 16 principal directions | 0.25 | 0.31 |
+  | e693 | Qwen2.5-1.5B | KL, weak three quarters zeroed | 0.52 | 0.44 |
+  | e693 | Qwen2.5-1.5B | KL, neuron mean | 0.39 | 0.29 |
+  | e693 | Qwen2.5-1.5B | KL, per-token table | 0.29 | 0.29 |
+  | e693 | Qwen2.5-1.5B | KL, 16 principal directions | 0.18 | 0.21 |
+  | e693 | SmolLM2-360M | KL, weak three quarters zeroed | 1.33 | 0.73 |
+  | e693 | SmolLM2-360M | KL, neuron mean | 0.71 | 0.44 |
+  | e693 | SmolLM2-360M | KL, per-token table | 0.59 | 0.40 |
+  | e693 | SmolLM2-360M | KL, 16 principal directions | 0.30 | 0.24 |
+  | e696 | GPT-2 large | KL, zeroed | 3.29 | 1.99 |
+  | e696 | GPT-2 large | KL, 16 oracle directions | 0.12 | 0.08 |
+  | e696 | GPT-2 large | KL, 16 predicted directions | 0.14 | 0.10 |
+  | e696 | GPT-2 large | KL, full linear bypass | 0.12 | 0.08 |
+  | e696 | GPT-2 medium | KL, zeroed | 0.95 | 3.96 |
+  | e696 | GPT-2 medium | KL, 16 oracle directions | 0.20 | 0.12 |
+  | e696 | GPT-2 medium | KL, 16 predicted directions | 0.25 | 0.15 |
+  | e696 | GPT-2 medium | KL, full linear bypass | 0.25 | 0.14 |
+  | e696 | OLMo-1B | KL, zeroed | 0.97 | 0.97 |
+  | e696 | OLMo-1B | KL, 16 oracle directions | 0.20 | 0.20 |
+  | e696 | OLMo-1B | KL, 16 predicted directions | 0.29 | 0.29 |
+  | e696 | OLMo-1B | KL, full linear bypass | 0.27 | 0.27 |
+  | e696 | Pythia-1B | KL, zeroed | 5.37 | 4.44 |
+  | e696 | Pythia-1B | KL, 16 oracle directions | 0.26 | 0.24 |
+  | e696 | Pythia-1B | KL, 16 predicted directions | 0.29 | 0.27 |
+  | e696 | Pythia-1B | KL, full linear bypass | 0.20 | 0.19 |
+  | e696 | Pythia-410m | KL, zeroed | 8.62 | 8.00 |
+  | e696 | Pythia-410m | KL, 16 oracle directions | 0.53 | 0.50 |
+  | e696 | Pythia-410m | KL, 16 predicted directions | 0.56 | 0.54 |
+  | e696 | Pythia-410m | KL, full linear bypass | 0.35 | 0.35 |
+  | e696 | Qwen2.5-0.5B | KL, zeroed | 0.99 | 0.89 |
+  | e696 | Qwen2.5-0.5B | KL, 16 oracle directions | 0.25 | 0.31 |
+  | e696 | Qwen2.5-0.5B | KL, 16 predicted directions | 0.36 | 0.40 |
+  | e696 | Qwen2.5-0.5B | KL, full linear bypass | 0.28 | 0.30 |
+  | e696 | SmolLM2-360M | KL, zeroed | 1.33 | 0.73 |
+  | e696 | SmolLM2-360M | KL, 16 oracle directions | 0.30 | 0.24 |
+  | e696 | SmolLM2-360M | KL, 16 predicted directions | 0.58 | 0.36 |
+  | e696 | SmolLM2-360M | KL, full linear bypass | 0.49 | 0.30 |
+  | e707 | GPT-2 small block 5 | read energy per unit energy, content | 1.71 | 1.64 |
+  | e707 | GPT-2 small block 5 | strong write | 0.72 | 0.67 |
+  | e707 | GPT-2 small block 5 | weak write | 0.72 | 0.69 |
+  | e707 | GPT-2 small block 5 | rows | 1.93 | 1.82 |
+  | e707 | GPT-2 small block 5 | SAE error | 1.53 | 1.63 |
+  | e707 | GPT-2 small block 5 | read dimension k90 | 6.00 | 6.00 |
+  | e707 | GPT-2 small block 8 | read energy per unit energy, content | 1.92 | 1.11 |
+  | e707 | GPT-2 small block 8 | strong write | 0.83 | 0.89 |
+  | e707 | GPT-2 small block 8 | weak write | 1.29 | 1.32 |
+  | e707 | GPT-2 small block 8 | rows | 1.66 | 1.27 |
+  | e707 | GPT-2 small block 8 | SAE error | 1.38 | 1.44 |
+  | e707 | GPT-2 small block 8 | read dimension k90 | 5.00 | 6.00 |
+  | e707 | GPT-2 medium block 12 | read energy per unit energy, content | 1.77 | 1.61 |
+  | e707 | GPT-2 medium block 12 | strong write | 0.96 | 1.07 |
+  | e707 | GPT-2 medium block 12 | weak write | 1.41 | 1.44 |
+  | e707 | GPT-2 medium block 12 | rows | 1.81 | 1.97 |
+  | e707 | GPT-2 medium block 12 | SAE error | n/a | n/a |
+  | e707 | GPT-2 medium block 12 | read dimension k90 | 5.00 | 8.00 |
+  | e707 | Pythia-160m block 6 | read energy per unit energy, content | 1.39 | 1.43 |
+  | e707 | Pythia-160m block 6 | strong write | 0.70 | 0.69 |
+  | e707 | Pythia-160m block 6 | weak write | 1.23 | 1.27 |
+  | e707 | Pythia-160m block 6 | rows | 1.01 | 0.96 |
+  | e707 | Pythia-160m block 6 | SAE error | n/a | n/a |
+  | e707 | Pythia-160m block 6 | read dimension k90 | 7.00 | 6.00 |
+  | e707 | Pythia-410m block 12 | read energy per unit energy, content | 1.17 | 1.15 |
+  | e707 | Pythia-410m block 12 | strong write | 0.91 | 0.93 |
+  | e707 | Pythia-410m block 12 | weak write | 0.97 | 0.98 |
+  | e707 | Pythia-410m block 12 | rows | 1.09 | 1.08 |
+  | e707 | Pythia-410m block 12 | SAE error | n/a | n/a |
+  | e707 | Pythia-410m block 12 | read dimension k90 | 8.00 | 8.00 |
+  | e707 | Qwen2.5-0.5B block 12 | read energy per unit energy, content | 0.88 | 0.81 |
+  | e707 | Qwen2.5-0.5B block 12 | strong write | 0.99 | 1.00 |
+  | e707 | Qwen2.5-0.5B block 12 | weak write | 1.05 | 1.08 |
+  | e707 | Qwen2.5-0.5B block 12 | rows | 0.86 | 0.81 |
+  | e707 | Qwen2.5-0.5B block 12 | SAE error | n/a | n/a |
+  | e707 | Qwen2.5-0.5B block 12 | read dimension k90 | 8.00 | 7.00 |
+  | e708 | GPT-2 medium block 12 | alpha 0.5, total compensation | 0.33 | 0.33 |
+  | e708 | GPT-2 medium block 12 | alpha 0.5, KL ratio | 0.32 | 0.01 |
+  | e708 | GPT-2 medium block 12 | alpha 2.0, total compensation | 0.34 | 0.34 |
+  | e708 | GPT-2 medium block 12 | alpha 2.0, KL ratio | 0.30 | 0.01 |
+  | e708 | OLMo-1B block 8 | alpha 0.5, total compensation | 0.76 | 0.76 |
+  | e708 | OLMo-1B block 8 | alpha 0.5, KL ratio | 270 | 264 |
+  | e708 | OLMo-1B block 8 | alpha 2.0, total compensation | 0.69 | 0.69 |
+  | e708 | OLMo-1B block 8 | alpha 2.0, KL ratio | 233 | 226 |
+  | e708 | Pythia-160m block 6 | alpha 0.5, total compensation | 0.73 | 0.73 |
+  | e708 | Pythia-160m block 6 | alpha 0.5, KL ratio | 6.85 | 7.25 |
+  | e708 | Pythia-160m block 6 | alpha 2.0, total compensation | 0.70 | 0.70 |
+  | e708 | Pythia-160m block 6 | alpha 2.0, KL ratio | 5.89 | 6.07 |
+  | e708 | Pythia-410m block 12 | alpha 0.5, total compensation | 0.50 | 0.50 |
+  | e708 | Pythia-410m block 12 | alpha 0.5, KL ratio | 9.88 | 9.25 |
+  | e708 | Pythia-410m block 12 | alpha 2.0, total compensation | 0.45 | 0.45 |
+  | e708 | Pythia-410m block 12 | alpha 2.0, KL ratio | 11.28 | 10.60 |
+  | e708 | Qwen2.5-0.5B block 12 | alpha 0.5, total compensation | 0.72 | 0.72 |
+  | e708 | Qwen2.5-0.5B block 12 | alpha 0.5, KL ratio | 66.23 | 51.18 |
+  | e708 | Qwen2.5-0.5B block 12 | alpha 2.0, total compensation | 0.69 | 0.69 |
+  | e708 | Qwen2.5-0.5B block 12 | alpha 2.0, KL ratio | 61.52 | 46.88 |
+  | e708 | SmolLM2-135M block 15 | alpha 0.5, total compensation | 0.44 | 0.44 |
+  | e708 | SmolLM2-135M block 15 | alpha 0.5, KL ratio | 0.03 | 0.02 |
+  | e708 | SmolLM2-135M block 15 | alpha 2.0, total compensation | 0.43 | 0.43 |
+  | e708 | SmolLM2-135M block 15 | alpha 2.0, KL ratio | 0.03 | 0.02 |
+  | e714 | GPT-2 small block 5 | recovered, Euclidean pursuit, 16 rows | 0.98 | 0.97 |
+  | e714 | GPT-2 small block 5 | recovered, blended pursuit, 16 rows and fields | 0.97 | 0.97 |
+  | e714 | GPT-2 small block 5 | recovered, pure Fisher pursuit | 0.47 | 0.32 |
+  | e714 | GPT-2 small block 5 | recovered, 16 stream PCs | 0.92 | 0.89 |
+  | e714 | GPT-2 small block 8 | recovered, Euclidean pursuit, 16 rows | 0.90 | 0.90 |
+  | e714 | GPT-2 small block 8 | recovered, blended pursuit, 16 rows and fields | 0.92 | 0.92 |
+  | e714 | GPT-2 small block 8 | recovered, pure Fisher pursuit | 0.36 | 0.01 |
+  | e714 | GPT-2 small block 8 | recovered, 16 stream PCs | 0.83 | 0.68 |
+  | e714 | GPT-2 medium block 12 | recovered, Euclidean pursuit, 16 rows | 0.93 | 0.93 |
+  | e714 | GPT-2 medium block 12 | recovered, blended pursuit, 16 rows and fields | 0.93 | 0.92 |
+  | e714 | GPT-2 medium block 12 | recovered, pure Fisher pursuit | 0.46 | 0.17 |
+  | e714 | GPT-2 medium block 12 | recovered, 16 stream PCs | 0.82 | 0.70 |
+  | e714 | Pythia-160m block 6 | recovered, Euclidean pursuit, 16 rows | 0.72 | 0.75 |
+  | e714 | Pythia-160m block 6 | recovered, blended pursuit, 16 rows and fields | 0.68 | 0.71 |
+  | e714 | Pythia-160m block 6 | recovered, pure Fisher pursuit | -0.19 | -0.23 |
+  | e714 | Pythia-160m block 6 | recovered, 16 stream PCs | 0.46 | 0.44 |
+  | e714 | Pythia-410m block 12 | recovered, Euclidean pursuit, 16 rows | 0.69 | 0.68 |
+  | e714 | Pythia-410m block 12 | recovered, blended pursuit, 16 rows and fields | 0.68 | 0.67 |
+  | e714 | Pythia-410m block 12 | recovered, pure Fisher pursuit | -0.09 | -0.15 |
+  | e714 | Pythia-410m block 12 | recovered, 16 stream PCs | 0.46 | 0.44 |
+  | e714 | Qwen2.5-0.5B block 12 | recovered, Euclidean pursuit, 16 rows | 0.88 | 0.90 |
+  | e714 | Qwen2.5-0.5B block 12 | recovered, blended pursuit, 16 rows and fields | 0.86 | 0.88 |
+  | e714 | Qwen2.5-0.5B block 12 | recovered, pure Fisher pursuit | -0.07 | -0.14 |
+  | e714 | Qwen2.5-0.5B block 12 | recovered, 16 stream PCs | 0.69 | 0.68 |
+
+  - 33 runs re-measured (e693 8, e696 7, e707 6, e708 6, e714 6); the recorded verdicts that flip with the corrected readout: e693 GPT-2 medium: V5_svd16_halves_zero, Qwen2.5-0.5B: V1_token_halves_zero, Qwen2.5-1.5B: V1c_token_beats_nmean, SmolLM2-360M: V1_token_halves_zero; e696 none; e707 GPT-2 small block 5: R3_weak_less_read_than_strong, Pythia-160m block 6: R2_fisher_predicts_finite_kl; e708 none; e714 none. The per-token table recovers 0.33 to 0.95 of the zeroing cost (recorded 0.44 to 0.95) (e693); the predicted sixteen directions recover 0.50 to 0.96 of the zeroing cost (recorded 0.56 to 0.96) (e696); the content's read energy per unit energy against a random direction is 0.81 to 1.64 (recorded 0.88 to 1.92), the weak write's 0.69 to 1.44 (recorded 0.72 to 1.41) (e707); the KL ratio of the thermostat at alpha 2 is 0.01 to 225.94 (recorded 0.03 to 233.01) (e708); the blended pursuit's sixteen rows and fields recover 0.67 to 0.97 (recorded 0.68 to 0.97) (e714).

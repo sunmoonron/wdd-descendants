@@ -1,0 +1,100 @@
+{
+ "model": "EleutherAI/pythia-1b",
+ "n_blocks": 16,
+ "DFF": 8192,
+ "eval_positions": 12240,
+ "base_loss": 3.1633498668670654,
+ "arc_items": 400,
+ "arc_clean": 0.5899999737739563,
+ "keep_quantile": 0.25,
+ "ridge": 0.01,
+ "linear_r2_per_block": [
+  0.7105604410171509,
+  0.31484562158584595,
+  0.2531905472278595,
+  0.31251582503318787,
+  0.27051714062690735,
+  0.31860649585723877,
+  0.37802600860595703,
+  0.37088605761528015,
+  0.35485148429870605,
+  0.3573712706565857,
+  0.27802252769470215,
+  0.2830030620098114,
+  0.24392423033714294,
+  0.276373028755188,
+  0.33270660042762756,
+  0.4956023395061493
+ ],
+ "linear_r2_median": 0.31672605872154236,
+ "conditions": {
+  "zero": {
+   "removed_energy_fraction": 0.31951091022821243,
+   "kl_mean": 4.442692279815674,
+   "kl_median": 4.0834856033325195,
+   "loss_delta": 4.611307382583618,
+   "flip_rate": 0.8749183416366577,
+   "arc": 0.29499998688697815
+  },
+  "nmean": {
+   "removed_energy_fraction": 0.16820616638292968,
+   "kl_mean": 0.3306392729282379,
+   "kl_median": 0.18864397704601288,
+   "loss_delta": 0.33931732177734375,
+   "flip_rate": 0.28823530673980713,
+   "arc": 0.5224999785423279
+  },
+  "pca16": {
+   "removed_energy_fraction": 0.16796730615790773,
+   "kl_mean": 0.24061894416809082,
+   "kl_median": 0.1479605734348297,
+   "loss_delta": 0.25839924812316895,
+   "flip_rate": 0.25939542055130005,
+   "arc": 0.5324999690055847
+  },
+  "pca64": {
+   "removed_energy_fraction": 0.17020546962281924,
+   "kl_mean": 0.17446932196617126,
+   "kl_median": 0.10819488763809204,
+   "loss_delta": 0.18403244018554688,
+   "flip_rate": 0.22001634538173676,
+   "arc": 0.5424999594688416
+  },
+  "bypass16": {
+   "removed_energy_fraction": 0.16846191734883828,
+   "kl_mean": 0.27159661054611206,
+   "kl_median": 0.16726216673851013,
+   "loss_delta": 0.29045605659484863,
+   "flip_rate": 0.27197712659835815,
+   "arc": 0.5174999833106995
+  },
+  "bypass64": {
+   "removed_energy_fraction": 0.1726166296726738,
+   "kl_mean": 0.23257474601268768,
+   "kl_median": 0.14533871412277222,
+   "loss_delta": 0.24045968055725098,
+   "flip_rate": 0.2607843279838562,
+   "arc": 0.5199999809265137
+  },
+  "bypassD": {
+   "removed_energy_fraction": 0.17445620691381802,
+   "kl_mean": 0.1872606873512268,
+   "kl_median": 0.1167474165558815,
+   "loss_delta": 0.17245721817016602,
+   "flip_rate": 0.2322712540626526,
+   "arc": 0.5249999761581421
+  }
+ },
+ "verdicts": {
+  "L1_bypass16_matches_pca16": true,
+  "L2_bypass16_halves_zero": true,
+  "L3_bypassD_matches_pca16": true,
+  "L4_arc_bypass16_within_2pts": false,
+  "L5_arc_zero_drops_5pts": true,
+  "L6_linear_r2_above_half": false
+ },
+ "_exp": "e696_pythia1b_v2",
+ "_time": "2026-10-27 14:06:46",
+ "seconds": 257.6644971370697,
+ "summary": "[pythia1b] all but the strongest quarter of each neuron's activations zeroed at every block, KL in nats on 12240 tokens and ARC-Easy accuracy on 400 items (clean 0.590): zero 4.443 (0.295), nmean 0.331 (0.522), pca16 0.241 (0.532), pca64 0.174 (0.542), bypass16 0.272 (0.517), bypass64 0.233 (0.520), bypassD 0.187 (0.525); recovered by the oracle 16 directions 0.95, by the predicted 16 0.94, by the full linear prediction 0.96; the linear map explains 0.32 of the weak write's variance; verdicts {'L1_bypass16_matches_pca16': True, 'L2_bypass16_halves_zero': True, 'L3_bypassD_matches_pca16': True, 'L4_arc_bypass16_within_2pts': False, 'L5_arc_zero_drops_5pts': True, 'L6_linear_r2_above_half': False}"
+}

@@ -1,0 +1,5 @@
+8|smk_e693_gpt2m_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e693_weak_ladder.py --model gpt2m --smoke
+8|smk_e696_gpt2m_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e696_bypass.py --model gpt2m --smoke
+8|smk_e707_gpt2_b5_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e707_read_subspace.py --model gpt2 --block 5 --smoke
+8|smk_e708_pythia160_b6_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e708_thermostat.py --model pythia160 --block 6 --smoke
+8|smk_e714_gpt2_b5_v2|WDD_TAG_SUFFIX=_v2 C11_THREADS=4 /venv/main/bin/python scripts/e714_fisher_dictionary.py --model gpt2 --block 5 --smoke

@@ -113,3 +113,154 @@ Applying the unembedding once to `last_hidden_state` reproduces the reference ex
 | e724 | GPT-2 small b5 oai32k | recovered: SAE full / plus 16 field atoms; fidelity: SAE full / plus 16 field atoms | 0.989 / 0.995; 0.85 / 0.97 | 0.990 / 0.995; 0.80 / 0.92 |
 | e724 | GPT-2 small b8 jbloom | recovered: SAE full / plus 16 field atoms; fidelity: SAE full / plus 16 field atoms | 0.980 / 0.985; 0.83 / 0.93 | 0.974 / 0.981; 0.78 / 0.91 |
 | e724 | GPT-2 small b8 oai32k | recovered: SAE full / plus 16 field atoms; fidelity: SAE full / plus 16 field atoms | 0.976 / 0.982; 0.88 / 0.96 | 0.976 / 0.985; 0.84 / 0.93 |
+
+## 2. The remaining re-measurements (session 166, 2026-10-27)
+
+Session 166 re-measured the five KL-based results that session 165 had left (e693, e696, e707, e708, e714): 33 runs (e693 8, e696 7, e707 6, e708 6, e714 6), the same scripts, neurons, windows and seeds, the corrected readout, results as `*_v2.json` beside the recorded files; the comparison with the recorded verdicts is in `docs/atlas/74_zoo_through_wdd.md` and `FINDINGS.md`. Recorded verdicts that flip under the corrected readout: e693: GPT-2 medium (V5_svd16_halves_zero), Qwen2.5-0.5B (V1_token_halves_zero), Qwen2.5-1.5B (V1c_token_beats_nmean), SmolLM2-360M (V1_token_halves_zero); e696: none; e707: GPT-2 small b5 (R3_weak_less_read_than_strong), Pythia-160m b6 (R2_fisher_predicts_finite_kl); e708: none; e714: none. Not re-measured and still marked as measured through the doubled norm: e703 (the rows' field at the firings; superseded by e706's design), e713 (the 7B fields and brake; the 7B model in float32 does not fit a 40 GB card) and e717 (the SAE readers; superseded by e723). The recorded files are kept.
+
+| experiment | run | statistic | recorded | corrected |
+| --- | --- | --- | --- | --- |
+| e693 | GPT-2 large | KL, weak three quarters zeroed (nats) | 3.29 | 1.99 |
+| e693 | GPT-2 large | KL, neuron mean | 0.20 | 0.14 |
+| e693 | GPT-2 large | KL, per-token table | 0.15 | 0.11 |
+| e693 | GPT-2 large | KL, 16 principal directions | 0.12 | 0.08 |
+| e693 | GPT-2 medium | KL, weak three quarters zeroed (nats) | 0.95 | 3.96 |
+| e693 | GPT-2 medium | KL, neuron mean | 0.41 | 0.28 |
+| e693 | GPT-2 medium | KL, per-token table | 0.41 | 0.31 |
+| e693 | GPT-2 medium | KL, 16 principal directions | 0.20 | 0.12 |
+| e693 | OLMo-1B | KL, weak three quarters zeroed (nats) | 0.97 | 0.97 |
+| e693 | OLMo-1B | KL, neuron mean | 0.31 | 0.31 |
+| e693 | OLMo-1B | KL, per-token table | 0.30 | 0.30 |
+| e693 | OLMo-1B | KL, 16 principal directions | 0.20 | 0.20 |
+| e693 | Pythia-1B | KL, weak three quarters zeroed (nats) | 5.37 | 4.44 |
+| e693 | Pythia-1B | KL, neuron mean | 0.36 | 0.33 |
+| e693 | Pythia-1B | KL, per-token table | 0.27 | 0.24 |
+| e693 | Pythia-1B | KL, 16 principal directions | 0.26 | 0.24 |
+| e693 | Pythia-410m | KL, weak three quarters zeroed (nats) | 8.62 | 8.00 |
+| e693 | Pythia-410m | KL, neuron mean | 0.74 | 0.70 |
+| e693 | Pythia-410m | KL, per-token table | 0.54 | 0.51 |
+| e693 | Pythia-410m | KL, 16 principal directions | 0.53 | 0.50 |
+| e693 | Qwen2.5-0.5B | KL, weak three quarters zeroed (nats) | 0.99 | 0.89 |
+| e693 | Qwen2.5-0.5B | KL, neuron mean | 0.60 | 0.53 |
+| e693 | Qwen2.5-0.5B | KL, per-token table | 0.48 | 0.47 |
+| e693 | Qwen2.5-0.5B | KL, 16 principal directions | 0.25 | 0.31 |
+| e693 | Qwen2.5-1.5B | KL, weak three quarters zeroed (nats) | 0.52 | 0.44 |
+| e693 | Qwen2.5-1.5B | KL, neuron mean | 0.39 | 0.29 |
+| e693 | Qwen2.5-1.5B | KL, per-token table | 0.29 | 0.29 |
+| e693 | Qwen2.5-1.5B | KL, 16 principal directions | 0.18 | 0.21 |
+| e693 | SmolLM2-360M | KL, weak three quarters zeroed (nats) | 1.33 | 0.73 |
+| e693 | SmolLM2-360M | KL, neuron mean | 0.71 | 0.44 |
+| e693 | SmolLM2-360M | KL, per-token table | 0.59 | 0.40 |
+| e693 | SmolLM2-360M | KL, 16 principal directions | 0.30 | 0.24 |
+| e696 | GPT-2 large | KL, zeroed (nats) | 3.29 | 1.99 |
+| e696 | GPT-2 large | KL, 16 oracle directions | 0.12 | 0.08 |
+| e696 | GPT-2 large | KL, 16 predicted directions | 0.14 | 0.10 |
+| e696 | GPT-2 large | KL, full linear bypass | 0.12 | 0.08 |
+| e696 | GPT-2 medium | KL, zeroed (nats) | 0.95 | 3.96 |
+| e696 | GPT-2 medium | KL, 16 oracle directions | 0.20 | 0.12 |
+| e696 | GPT-2 medium | KL, 16 predicted directions | 0.25 | 0.15 |
+| e696 | GPT-2 medium | KL, full linear bypass | 0.25 | 0.14 |
+| e696 | OLMo-1B | KL, zeroed (nats) | 0.97 | 0.97 |
+| e696 | OLMo-1B | KL, 16 oracle directions | 0.20 | 0.20 |
+| e696 | OLMo-1B | KL, 16 predicted directions | 0.29 | 0.29 |
+| e696 | OLMo-1B | KL, full linear bypass | 0.27 | 0.27 |
+| e696 | Pythia-1B | KL, zeroed (nats) | 5.37 | 4.44 |
+| e696 | Pythia-1B | KL, 16 oracle directions | 0.26 | 0.24 |
+| e696 | Pythia-1B | KL, 16 predicted directions | 0.29 | 0.27 |
+| e696 | Pythia-1B | KL, full linear bypass | 0.20 | 0.19 |
+| e696 | Pythia-410m | KL, zeroed (nats) | 8.62 | 8.00 |
+| e696 | Pythia-410m | KL, 16 oracle directions | 0.53 | 0.50 |
+| e696 | Pythia-410m | KL, 16 predicted directions | 0.56 | 0.54 |
+| e696 | Pythia-410m | KL, full linear bypass | 0.35 | 0.35 |
+| e696 | Qwen2.5-0.5B | KL, zeroed (nats) | 0.99 | 0.89 |
+| e696 | Qwen2.5-0.5B | KL, 16 oracle directions | 0.25 | 0.31 |
+| e696 | Qwen2.5-0.5B | KL, 16 predicted directions | 0.36 | 0.40 |
+| e696 | Qwen2.5-0.5B | KL, full linear bypass | 0.28 | 0.30 |
+| e696 | SmolLM2-360M | KL, zeroed (nats) | 1.33 | 0.73 |
+| e696 | SmolLM2-360M | KL, 16 oracle directions | 0.30 | 0.24 |
+| e696 | SmolLM2-360M | KL, 16 predicted directions | 0.58 | 0.36 |
+| e696 | SmolLM2-360M | KL, full linear bypass | 0.49 | 0.30 |
+| e707 | GPT-2 small b5 | read energy per unit energy against random: content | 1.71 | 1.64 |
+| e707 | GPT-2 small b5 | strong write | 0.72 | 0.67 |
+| e707 | GPT-2 small b5 | weak write | 0.72 | 0.69 |
+| e707 | GPT-2 small b5 | rows | 1.93 | 1.82 |
+| e707 | GPT-2 small b5 | SAE error | 1.53 | 1.63 |
+| e707 | GPT-2 small b5 | read dimension k90 | 6.00 | 6.00 |
+| e707 | GPT-2 small b8 | read energy per unit energy against random: content | 1.92 | 1.11 |
+| e707 | GPT-2 small b8 | strong write | 0.83 | 0.89 |
+| e707 | GPT-2 small b8 | weak write | 1.29 | 1.32 |
+| e707 | GPT-2 small b8 | rows | 1.66 | 1.27 |
+| e707 | GPT-2 small b8 | SAE error | 1.38 | 1.44 |
+| e707 | GPT-2 small b8 | read dimension k90 | 5.00 | 6.00 |
+| e707 | GPT-2 medium b12 | read energy per unit energy against random: content | 1.77 | 1.61 |
+| e707 | GPT-2 medium b12 | strong write | 0.96 | 1.07 |
+| e707 | GPT-2 medium b12 | weak write | 1.41 | 1.44 |
+| e707 | GPT-2 medium b12 | rows | 1.81 | 1.97 |
+| e707 | GPT-2 medium b12 | SAE error | n/a | n/a |
+| e707 | GPT-2 medium b12 | read dimension k90 | 5.00 | 8.00 |
+| e707 | Pythia-160m b6 | read energy per unit energy against random: content | 1.39 | 1.43 |
+| e707 | Pythia-160m b6 | strong write | 0.70 | 0.69 |
+| e707 | Pythia-160m b6 | weak write | 1.23 | 1.27 |
+| e707 | Pythia-160m b6 | rows | 1.01 | 0.96 |
+| e707 | Pythia-160m b6 | SAE error | n/a | n/a |
+| e707 | Pythia-160m b6 | read dimension k90 | 7.00 | 6.00 |
+| e707 | Pythia-410m b12 | read energy per unit energy against random: content | 1.17 | 1.15 |
+| e707 | Pythia-410m b12 | strong write | 0.91 | 0.93 |
+| e707 | Pythia-410m b12 | weak write | 0.97 | 0.98 |
+| e707 | Pythia-410m b12 | rows | 1.09 | 1.08 |
+| e707 | Pythia-410m b12 | SAE error | n/a | n/a |
+| e707 | Pythia-410m b12 | read dimension k90 | 8.00 | 8.00 |
+| e707 | Qwen2.5-0.5B b12 | read energy per unit energy against random: content | 0.88 | 0.81 |
+| e707 | Qwen2.5-0.5B b12 | strong write | 0.99 | 1.00 |
+| e707 | Qwen2.5-0.5B b12 | weak write | 1.05 | 1.08 |
+| e707 | Qwen2.5-0.5B b12 | rows | 0.86 | 0.81 |
+| e707 | Qwen2.5-0.5B b12 | SAE error | n/a | n/a |
+| e707 | Qwen2.5-0.5B b12 | read dimension k90 | 8.00 | 7.00 |
+| e708 | GPT-2 medium b12 | alpha 0.5: total compensation | 0.33 | 0.33 |
+| e708 | GPT-2 medium b12 | alpha 0.5: KL ratio | 0.32 | 0.01 |
+| e708 | GPT-2 medium b12 | alpha 2.0: total compensation | 0.34 | 0.34 |
+| e708 | GPT-2 medium b12 | alpha 2.0: KL ratio | 0.30 | 0.01 |
+| e708 | OLMo-1B b8 | alpha 0.5: total compensation | 0.76 | 0.76 |
+| e708 | OLMo-1B b8 | alpha 0.5: KL ratio | 270 | 264 |
+| e708 | OLMo-1B b8 | alpha 2.0: total compensation | 0.69 | 0.69 |
+| e708 | OLMo-1B b8 | alpha 2.0: KL ratio | 233 | 226 |
+| e708 | Pythia-160m b6 | alpha 0.5: total compensation | 0.73 | 0.73 |
+| e708 | Pythia-160m b6 | alpha 0.5: KL ratio | 6.85 | 7.25 |
+| e708 | Pythia-160m b6 | alpha 2.0: total compensation | 0.70 | 0.70 |
+| e708 | Pythia-160m b6 | alpha 2.0: KL ratio | 5.89 | 6.07 |
+| e708 | Pythia-410m b12 | alpha 0.5: total compensation | 0.50 | 0.50 |
+| e708 | Pythia-410m b12 | alpha 0.5: KL ratio | 9.88 | 9.25 |
+| e708 | Pythia-410m b12 | alpha 2.0: total compensation | 0.45 | 0.45 |
+| e708 | Pythia-410m b12 | alpha 2.0: KL ratio | 11.28 | 10.60 |
+| e708 | Qwen2.5-0.5B b12 | alpha 0.5: total compensation | 0.72 | 0.72 |
+| e708 | Qwen2.5-0.5B b12 | alpha 0.5: KL ratio | 66.23 | 51.18 |
+| e708 | Qwen2.5-0.5B b12 | alpha 2.0: total compensation | 0.69 | 0.69 |
+| e708 | Qwen2.5-0.5B b12 | alpha 2.0: KL ratio | 61.52 | 46.88 |
+| e708 | SmolLM2-135M b15 | alpha 0.5: total compensation | 0.44 | 0.44 |
+| e708 | SmolLM2-135M b15 | alpha 0.5: KL ratio | 0.03 | 0.02 |
+| e708 | SmolLM2-135M b15 | alpha 2.0: total compensation | 0.43 | 0.43 |
+| e708 | SmolLM2-135M b15 | alpha 2.0: KL ratio | 0.03 | 0.02 |
+| e714 | GPT-2 small b5 | recovered: Euclidean pursuit, 16 rows | 0.98 | 0.97 |
+| e714 | GPT-2 small b5 | blended pursuit, 16 rows and fields | 0.97 | 0.97 |
+| e714 | GPT-2 small b5 | pure Fisher pursuit | 0.47 | 0.32 |
+| e714 | GPT-2 small b5 | 16 stream PCs | 0.92 | 0.89 |
+| e714 | GPT-2 small b8 | recovered: Euclidean pursuit, 16 rows | 0.90 | 0.90 |
+| e714 | GPT-2 small b8 | blended pursuit, 16 rows and fields | 0.92 | 0.92 |
+| e714 | GPT-2 small b8 | pure Fisher pursuit | 0.36 | 0.01 |
+| e714 | GPT-2 small b8 | 16 stream PCs | 0.83 | 0.68 |
+| e714 | GPT-2 medium b12 | recovered: Euclidean pursuit, 16 rows | 0.93 | 0.93 |
+| e714 | GPT-2 medium b12 | blended pursuit, 16 rows and fields | 0.93 | 0.92 |
+| e714 | GPT-2 medium b12 | pure Fisher pursuit | 0.46 | 0.17 |
+| e714 | GPT-2 medium b12 | 16 stream PCs | 0.82 | 0.70 |
+| e714 | Pythia-160m b6 | recovered: Euclidean pursuit, 16 rows | 0.72 | 0.75 |
+| e714 | Pythia-160m b6 | blended pursuit, 16 rows and fields | 0.68 | 0.71 |
+| e714 | Pythia-160m b6 | pure Fisher pursuit | -0.19 | -0.23 |
+| e714 | Pythia-160m b6 | 16 stream PCs | 0.46 | 0.44 |
+| e714 | Pythia-410m b12 | recovered: Euclidean pursuit, 16 rows | 0.69 | 0.68 |
+| e714 | Pythia-410m b12 | blended pursuit, 16 rows and fields | 0.68 | 0.67 |
+| e714 | Pythia-410m b12 | pure Fisher pursuit | -0.09 | -0.15 |
+| e714 | Pythia-410m b12 | 16 stream PCs | 0.46 | 0.44 |
+| e714 | Qwen2.5-0.5B b12 | recovered: Euclidean pursuit, 16 rows | 0.88 | 0.90 |
+| e714 | Qwen2.5-0.5B b12 | blended pursuit, 16 rows and fields | 0.86 | 0.88 |
+| e714 | Qwen2.5-0.5B b12 | pure Fisher pursuit | -0.07 | -0.14 |
+| e714 | Qwen2.5-0.5B b12 | 16 stream PCs | 0.69 | 0.68 |

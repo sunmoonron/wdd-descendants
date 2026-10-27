@@ -1,0 +1,65 @@
+{
+ "experiment": "e728 the neuron zoo through WDD (Qwen3.5-4B)",
+ "written": "2026-10-27, before the full run; a one-prompt probe had already reproduced the evil pair (so Z1's evil half is not blind) and shown N8949's natural activation (max 0.08 on one prompt) against the zoo's added activation (19.0)",
+ "design": "Stage 1: sampled-Fisher read energy of every write row (32 x 9216) measured with the model's own logits on natural text (32 windows x 256 tokens, 2 sampled continuations each): R_dir = mean (g.w)^2/|w|^2 (per unit norm of the added vector, the zoo's dose), R_nat = mean (g.w)^2 q999(|a|)^2 (the row at its own natural amplitude), R_abl = mean (g.w)^2 var(a). Causal landmine test: top-8 / bottom-8 / random-8 rows by R_dir at the zoo's 0.8 dose, cost in held-out NLL and KL on the model's own answers. Proxy sanity: measured mean-ablation KL of 24 rows vs R_abl. Stage 2: the evil pair and seven validated personas vs random rows of the same layer and sign, zoo doses 0.2/0.4/0.8/1.0 residual norms and natural doses 1/3/10/30/100 x q999, ten held-out prompts, keyword hit rate, KL and NLL cost, repetition. Stage 3: ten WDD-chosen rows (top R_nat, one per layer, never a zoo row) and ten random rows of the same layers at 10 x q999 and at the zoo's 0.8; a blind judge (a fresh agent that sees shuffled, unlabeled sample sets) names each behaviour and rates consistency 0/1/2.",
+ "statements": {
+  "Z1": {
+   "text": "Reproduction: the evil pair at dose 1.0 hits the violent-term regex on >= 6/10 held-out prompts, and >= 5 of 7 personas hit their regex on >= 5/10 prompts at 0.8.",
+   "p": 0.8
+  },
+  "Z2": {
+   "text": "Overdrive: the zoo's 0.8 dose is >= 30 x q999(|a_n|) for every one of the nine zoo rows (the zoo steers far outside the row's natural range).",
+   "p": 0.85
+  },
+  "Z3": {
+   "text": "Natural-scale silence: at <= 3 x q999 no zoo spec reaches hit rate >= 0.3; at 10 x q999 at most 2 of 8 do.",
+   "p": 0.7
+  },
+  "Z4": {
+   "text": "Directions, not atoms: >= 6 of the 9 zoo rows are above the global median of R_dir while >= 6 of 9 are below the global median of R_nat.",
+   "p": 0.6
+  },
+  "Z5": {
+   "text": "Landmines predicted: both known landmines (L13 N142, L15 N143) are in the top 1% of R_dir.",
+   "p": 0.55
+  },
+  "Z6": {
+   "text": "Landmines caused: the median held-out NLL cost of the top-8 R_dir rows at 0.8 is >= 2 x that of the random-8, and the bottom-8 cost less than the random-8.",
+   "p": 0.75
+  },
+  "Z7": {
+   "text": "Proxy sanity: Spearman(R_abl, measured mean-ablation KL) >= 0.5 over the 24 proxy rows.",
+   "p": 0.7
+  },
+  "Z8": {
+   "text": "Any overdriven direction is a persona: random rows at the zoo's 0.8 get blind consistency 2 on >= 3 of 10.",
+   "p": 0.5
+  },
+  "Z9": {
+   "text": "WDD-chosen rows at 10 x natural get blind consistency 2 on >= 4 of 10, random rows at the same dose on <= 1 of 10.",
+   "p": 0.4
+  },
+  "Z10": {
+   "text": "The zoo's selection finds cheap directions: at 0.8 the median KL cost (on the model's own answers) of the eight zoo specs is below that of their random controls.",
+   "p": 0.5
+  },
+  "Z11": {
+   "text": "Regex specificity: the random controls' median hit rate on their matched regex at 0.8 is < 0.2.",
+   "p": 0.8
+  }
+ },
+ "kills": "Z2 false => the zoo's steers live at natural scale and WDD's floor-dose story is wrong. Z4 false => the zoo rows are WDD atoms after all. Z5 and Z6 both false => read energy does not predict landmines; drop the claim. Z7 false => the Fisher machinery is not measuring what it claims; stage 1 is void. Z9 false with Z8 true => WDD has no selection advantage over picking directions by hand.",
+ "revision_2026-10-27_after_smoke": {
+  "what the smoke showed": "The smoke (4 windows, 2 prompts, 24 new tokens) ran clean in 292 s. Two design flaws: (1) the top-R_nat rows are massive-activation rows (q999 up to 13 against a typical 0.4), so '10 x q999' for them was 12-33 residual norms, far beyond the zoo's dose, and destroyed the model (KL 11-13 nats); (2) the natural dose of stage 3 must stay at the row's own scale. Also: the global R_dir ranking is dominated by layer 0 (every later layer reads it), so Z5 is judged globally as written and, exploratorily, within the layer.",
+  "changes": "Stage 3 natural doses are 1 x and 3 x q999 (not 10 x); Z9 is judged at 3 x. A stage 3b is added: in layers 3, 5, ..., 21 the row with the largest R_dir within its layer (never a zoo row) at the zoo's 0.8, against a random row of the same layer. Z8 is judged on the union of the twenty random rows (stage 3 and 3b) at 0.8: consistency 2 on >= 6 of 20.",
+  "Z9_revised": {
+   "text": "WDD-chosen rows (top R_nat, one per layer) at 3 x q999 get blind consistency 2 on >= 4 of 10; random rows at the same multiplier on <= 1 of 10.",
+   "p": 0.3
+  },
+  "Z12": {
+   "text": "The readers' favourite direction of each layer (top R_dir within layers 3 to 21) at the zoo's 0.8 gets blind consistency 2 on >= 5 of 10 (p 0.45), and costs more KL on the model's own answers than the random row of its layer, median over the ten (p 0.7).",
+   "p": 0.45
+  },
+  "smoke values (not evidence)": "overdrive 3 to 103 x across the nine zoo rows (Meowscow 3.2 x, Heavy 103 x) with q999 taken at the maximum of 780 positions; the landmines at R_dir global percentile 0.72 and 0.49; the zoo specs cost 1.1 to 4.1 nats of KL at 0.8 against 0.2 to 1.2 for random rows (Z10 will probably fail); the random controls hit nothing (Z11)."
+ }
+}
