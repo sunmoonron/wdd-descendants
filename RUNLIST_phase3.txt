@@ -1219,3 +1219,6 @@ python e731_score.py results/e731_qwen35.json results/e731_prereg.json
 python e732_loop.py
 python e732b_cache.py
 python e732_score.py results/e732_qwen35.json results/e732_prereg.json
+python e733_control.py --layer 12
+python e733_control.py --layer 6
+python e733_control.py --layer 18

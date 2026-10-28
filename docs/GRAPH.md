@@ -1517,6 +1517,14 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1281 A second model continues the theme in at least half of the steered 16-token prefixes for at least 4 of 6 rows. → e732 → REFUTED.
 - H1282 The second model continues the theme in at most a tenth of the unsteered prefixes for at least 5 of 6 rows. → e732 → SUPPORTED.
 - H1283 The first model's text-only continuation of its own steered prefixes hits at most half of its steered-cache continuation for at least 4 of 6 rows. → e732b → REFUTED.
+- H1284 On Pythia-410m layer 12, Spearman between R_abl and the single-row removal KL over 40 native rows is at least 0.5. → e733 → SUPPORTED.
+- H1285 The same for 40 TopK SAE features of the same MLP output. → e733 → SUPPORTED.
+- H1286 R_abl is more than the activation energy: Spearman between them over the 4,096 rows is below 0.9. → e733 → REFUTED.
+- H1287 At k 64 the SAE's most-read features cost at least twice the native rows' most-read rows to remove. → e733 → REFUTED.
+- H1288 At k 64 the SAE's most-read features cost at least as much per unit of energy removed as the native rows'. → e733 → SUPPORTED.
+- H1289 The SAE's reconstruction cost exceeds the cost of removing the 256 most-read native rows. → e733 → SUPPORTED.
+- H1290 At k 256 random native rows cost at most a quarter of the most-read rows and the least-read at most a tenth. → e733 → REFUTED.
+- H1291 At k 256 random alive SAE features cost at most a quarter of the most-read features. → e733 → SUPPORTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

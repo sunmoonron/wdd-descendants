@@ -1,0 +1,1745 @@
+{
+ "tag": "e733_pythia410m_L12_smoke",
+ "smoke": true,
+ "layer": 12,
+ "model": "/data/mechinterp/hf/hub/models--EleutherAI--pythia-410m/snapshots/9879c9b5f8bea9051dcb0e68dff21493d67e9d4f",
+ "sae": "EleutherAI/sae-pythia-410m-65k",
+ "cfg": {
+  "expansion_factor": 32,
+  "normalize_decoder": true,
+  "num_latents": 65536,
+  "k": 32,
+  "signed": false,
+  "d_in": 1024
+ },
+ "positions": 6144,
+ "windows": {
+  "fisher": 6,
+  "cost": 3,
+  "single": 2,
+  "wlen": 512
+ },
+ "sae_alive": 23738,
+ "price_summary": {
+  "native": {
+   "R_abl_median": 1.4110598385741469e-05,
+   "R_abl_max": 0.00020551860507111996,
+   "energy_total": 26.426551818847656
+  },
+  "sae": {
+   "R_abl_median_alive": 2.424173999315826e-07,
+   "R_abl_max": 0.0002297539758728817,
+   "energy_total": 7.45911979675293
+  }
+ },
+ "costs": {
+  "native": {
+   "top_R_abl_k16": {
+    "kl": 0.0034474245427797237,
+    "dnll": 3.8782755533854164e-05,
+    "energy": 0.48156797885894775
+   },
+   "top_energy_k16": {
+    "kl": 0.004287974870142837,
+    "dnll": 0.0005864302317301432,
+    "energy": 0.5029542446136475
+   },
+   "bottom_R_abl_k16": {
+    "kl": 0.00019485459779389203,
+    "dnll": 0.001197497049967448,
+    "energy": 0.041684433817863464
+   },
+   "top_R_nat_k16": {
+    "kl": 0.004355324005397658,
+    "dnll": 0.0031526883443196616,
+    "energy": 0.42456379532814026
+   },
+   "random_k16": {
+    "kl": 0.0005949438539876913,
+    "dnll": 0.0009103616078694662,
+    "energy": 0.10496603697538376,
+    "seeds": [
+     [
+      0.0005949438539876913,
+      0.0009103616078694662,
+      0.10496603697538376
+     ]
+    ]
+   },
+   "top_R_abl_k64": {
+    "kl": 0.0084930001758039,
+    "dnll": 0.0005981127421061198,
+    "energy": 1.335719108581543
+   },
+   "top_energy_k64": {
+    "kl": 0.00801681416730086,
+    "dnll": 0.0016810099283854167,
+    "energy": 1.387685775756836
+   },
+   "bottom_R_abl_k64": {
+    "kl": 0.0009864829674673576,
+    "dnll": 0.0039378007253011065,
+    "energy": 0.18364804983139038
+   },
+   "top_R_nat_k64": {
+    "kl": 0.007701533225675424,
+    "dnll": 0.005892515182495117,
+    "energy": 1.1058592796325684
+   },
+   "random_k64": {
+    "kl": 0.00144529032210509,
+    "dnll": 0.0025434494018554688,
+    "energy": 0.3816010057926178,
+    "seeds": [
+     [
+      0.00144529032210509,
+      0.0025434494018554688,
+      0.3816010057926178
+     ]
+    ]
+   }
+  },
+  "sae": {
+   "top_R_abl_k16": {
+    "kl": 0.0038289926014840603,
+    "dnll": -0.0010005633036295574,
+    "energy": 0.47443312406539917
+   },
+   "top_energy_k16": {
+    "kl": 0.003892906087761124,
+    "dnll": -0.0010781288146972656,
+    "energy": 0.47507548332214355
+   },
+   "bottom_R_abl_k16": {
+    "kl": 1.1607014130277093e-05,
+    "dnll": -0.0001609325408935547,
+    "energy": 6.256089545786381e-05
+   },
+   "random_k16": {
+    "kl": 1.8074558132260183e-05,
+    "dnll": 7.112820943196614e-05,
+    "energy": 0.004661657381802797,
+    "seeds": [
+     [
+      1.8074558132260183e-05,
+      7.112820943196614e-05,
+      0.004661657381802797
+     ]
+    ]
+   },
+   "top_R_abl_k64": {
+    "kl": 0.00671571974332134,
+    "dnll": -0.00017825762430826822,
+    "energy": 0.9368212819099426
+   },
+   "top_energy_k64": {
+    "kl": 0.006598008486131827,
+    "dnll": -0.0005901654561360677,
+    "energy": 0.9408985376358032
+   },
+   "bottom_R_abl_k64": {
+    "kl": 2.4890194860442232e-05,
+    "dnll": -0.0001068115234375,
+    "energy": 0.00043737009400501847
+   },
+   "random_k64": {
+    "kl": 4.400620673550293e-05,
+    "dnll": 0.0002980232238769531,
+    "energy": 0.018417753279209137,
+    "seeds": [
+     [
+      4.400620673550293e-05,
+      0.0002980232238769531,
+      0.018417753279209137
+     ]
+    ]
+   }
+  },
+  "sae_recon": {
+   "kl": 0.021996308738986652,
+   "dnll": 0.028552532196044922
+  }
+ },
+ "single": {
+  "native": [
+   {
+    "row": 3379,
+    "R_abl": 0.00020551860507111996,
+    "R_nat": 0.022769665345549583,
+    "energy": 0.04613281041383743,
+    "kl": 0.0005561372618103633,
+    "dnll": 0.0025979280471801758
+   },
+   {
+    "row": 3736,
+    "R_abl": 0.00014949454634916037,
+    "R_nat": 0.014550697058439255,
+    "energy": 0.04117074981331825,
+    "kl": 0.0002622616375447251,
+    "dnll": -0.001165628433227539
+   },
+   {
+    "row": 3190,
+    "R_abl": 0.00012532219989225268,
+    "R_nat": 0.02032904513180256,
+    "energy": 0.05132856220006943,
+    "kl": 0.00012744856576318853,
+    "dnll": -6.794929504394531e-05
+   },
+   {
+    "row": 1006,
+    "R_abl": 9.138853783952072e-05,
+    "R_nat": 0.003407350042834878,
+    "energy": 0.03998773917555809,
+    "kl": 0.00012741447790176608,
+    "dnll": -0.0002683401107788086
+   },
+   {
+    "row": 3078,
+    "R_abl": 8.787440310698003e-05,
+    "R_nat": 0.006138873286545277,
+    "energy": 0.024370061233639717,
+    "kl": 0.00013159993250155821,
+    "dnll": -0.0001780986785888672
+   },
+   {
+    "row": 727,
+    "R_abl": 8.616414561402053e-05,
+    "R_nat": 0.012225293554365635,
+    "energy": 0.022681456059217453,
+    "kl": 0.00011308109606034122,
+    "dnll": -0.0010421276092529297
+   },
+   {
+    "row": 3267,
+    "R_abl": 1.5434045053552836e-05,
+    "R_nat": 0.0006550936959683895,
+    "energy": 0.005724260117858648,
+    "kl": 2.2389862351701595e-05,
+    "dnll": -7.987022399902344e-06
+   },
+   {
+    "row": 3325,
+    "R_abl": 1.4775108866160735e-05,
+    "R_nat": 0.0009166653035208583,
+    "energy": 0.005921386647969484,
+    "kl": 1.8271578483108897e-05,
+    "dnll": 0.00023984909057617188
+   },
+   {
+    "row": 2,
+    "R_abl": 2.103639235429e-05,
+    "R_nat": 0.0032100328244268894,
+    "energy": 0.008373870514333248,
+    "kl": 8.102513675112277e-05,
+    "dnll": -0.0003540515899658203
+   },
+   {
+    "row": 3329,
+    "R_abl": 8.346953109139577e-06,
+    "R_nat": 0.0004887012182734907,
+    "energy": 0.004153955262154341,
+    "kl": 2.0192684132780414e-05,
+    "dnll": -0.00012993812561035156
+   },
+   {
+    "row": 688,
+    "R_abl": 1.5699353753007017e-05,
+    "R_nat": 0.0007151422323659062,
+    "energy": 0.006719390396028757,
+    "kl": 1.6302033145620953e-05,
+    "dnll": 9.1552734375e-05
+   },
+   {
+    "row": 2808,
+    "R_abl": 1.8166203517466784e-05,
+    "R_nat": 0.000724863144569099,
+    "energy": 0.007456482853740454,
+    "kl": 2.256252173538087e-05,
+    "dnll": -2.574920654296875e-05
+   }
+  ],
+  "sae": [
+   {
+    "feature": 58519,
+    "R_abl": 0.0002297539758728817,
+    "energy": 0.055011242628097534,
+    "count": 11,
+    "kl": 0.00057323242072016,
+    "dnll": 0.0010694265365600586
+   },
+   {
+    "feature": 58751,
+    "R_abl": 0.00014290079707279801,
+    "energy": 0.04514698684215546,
+    "count": 119,
+    "kl": 0.00020995671366108581,
+    "dnll": -0.0008493661880493164
+   },
+   {
+    "feature": 5003,
+    "R_abl": 0.00012777236406691372,
+    "energy": 0.04416531324386597,
+    "count": 107,
+    "kl": 0.00029596091189887375,
+    "dnll": -0.002880692481994629
+   },
+   {
+    "feature": 55824,
+    "R_abl": 0.00012203022924950346,
+    "energy": 0.057800665497779846,
+    "count": 249,
+    "kl": 5.7968098190031014e-05,
+    "dnll": -7.68899917602539e-05
+   },
+   {
+    "feature": 11538,
+    "R_abl": 9.767435403773561e-05,
+    "energy": 0.03427036106586456,
+    "count": 119,
+    "kl": 0.0002693574642762542,
+    "dnll": -0.001974821090698242
+   },
+   {
+    "feature": 62009,
+    "R_abl": 8.755308954278007e-05,
+    "energy": 0.035923026502132416,
+    "count": 104,
+    "kl": 0.00010588605709926924,
+    "dnll": -0.00011432170867919922
+   },
+   {
+    "feature": 39303,
+    "R_abl": 1.933624673711165e-07,
+    "energy": 6.0833466704934835e-05,
+    "count": 2,
+    "kl": 4.8755739499029005e-06,
+    "dnll": 1.6808509826660156e-05
+   },
+   {
+    "feature": 1967,
+    "R_abl": 4.770691930389148e-08,
+    "energy": 1.7384832972311415e-05,
+    "count": 1,
+    "kl": 4.8755739499029005e-06,
+    "dnll": 1.6808509826660156e-05
+   },
+   {
+    "feature": 30089,
+    "R_abl": 3.471701859325549e-07,
+    "energy": 0.00011735402222257107,
+    "count": 3,
+    "kl": 4.8755739499029005e-06,
+    "dnll": 1.6808509826660156e-05
+   },
+   {
+    "feature": 64959,
+    "R_abl": 8.73221551955794e-07,
+    "energy": 0.0002733927685767412,
+    "count": 9,
+    "kl": 6.07041238254169e-06,
+    "dnll": -4.9233436584472656e-05
+   },
+   {
+    "feature": 44421,
+    "R_abl": 3.6805655412308624e-08,
+    "energy": 1.4536846720147878e-05,
+    "count": 1,
+    "kl": 4.8755739499029005e-06,
+    "dnll": 1.6808509826660156e-05
+   },
+   {
+    "feature": 4031,
+    "R_abl": 6.496278359691132e-08,
+    "energy": 2.543167647672817e-05,
+    "count": 1,
+    "kl": 4.8755739499029005e-06,
+    "dnll": 1.6808509826660156e-05
+   }
+  ]
+ },
+ "spearman": {
+  "native": 0.9300699300699302,
+  "sae": 0.8881118881118882,
+  "native_energy_vs_kl": 0.8811188811188813,
+  "R_abl_vs_energy_all_rows": 0.9784576341009592
+ },
+ "three_questions": {
+  "native": [
+   {
+    "row": 3379,
+    "R_abl": 0.00020551860507111996,
+    "R_dir": 0.0044898525811731815,
+    "q999": 3.485236167907715,
+    "energy": 0.04613281041383743,
+    "single_kl": 0.0005561372618103633,
+    "say": {
+     "promotes": [
+      "slant",
+      " )",
+      "ignant",
+      " ]",
+      "omitempty",
+      " Those",
+      "SZ",
+      "ribe",
+      " —",
+      " ,"
+     ],
+     "suppresses": [
+      "back",
+      "re",
+      "er",
+      "ed",
+      "down",
+      "!\\",
+      "in",
+      "thens",
+      "most",
+      "arch"
+     ]
+    },
+    "hear_embedding": [
+     "�",
+     " speech",
+     " peer",
+     "orses",
+     "Gall",
+     "role",
+     "ishops",
+     "fre",
+     " volunt",
+     " verses"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 4.12,
+      "context": " some of his subsequent personal seals ) . [[ \n\n]]"
+     },
+     {
+      "activation": 3.852,
+      "context": " parts were made or repaired as necessary . [[ \n\n]]"
+     },
+     {
+      "activation": 3.758,
+      "context": " Germany 's basic political principles . \" [[ \n\n]]"
+     },
+     {
+      "activation": 3.657,
+      "context": " late 1673 or early 1674 . [[ \n\n]]"
+     },
+     {
+      "activation": 3.537,
+      "context": " resulting from the already stretched environmental resources . [[ \n\n]]"
+     }
+    ]
+   },
+   {
+    "row": 3736,
+    "R_abl": 0.00014949454634916037,
+    "R_dir": 0.00363109796307981,
+    "q999": 3.0920467376708984,
+    "energy": 0.04117074981331825,
+    "single_kl": 0.0002622616375447251,
+    "say": {
+     "promotes": [
+      " are",
+      " were",
+      "hip",
+      "'",
+      " of",
+      "erv",
+      "ight",
+      " themselves",
+      " aren",
+      "pace"
+     ],
+     "suppresses": [
+      "WISE",
+      " errone",
+      "lessly",
+      "eworthy",
+      "cels",
+      "itoneal",
+      "ennas",
+      "ttp",
+      "lets",
+      "\n\n\n "
+     ]
+    },
+    "hear_embedding": [
+     " combination",
+     " burns",
+     " scenario",
+     "Transform",
+     " combinations",
+     " simplified",
+     " 503",
+     " 523",
+     " connections",
+     " transformed"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.713,
+      "context": " @-@ called E @-@ [[ Groups]]"
+     },
+     {
+      "activation": 3.669,
+      "context": " made , but retaining the cast iron teeth [[ segments]]"
+     },
+     {
+      "activation": 3.274,
+      "context": " = = \n\n At Tikal , [[ beams]]"
+     },
+     {
+      "activation": 3.177,
+      "context": " 's \" pseudo @-@ scientific [[ courses]]"
+     },
+     {
+      "activation": 3.095,
+      "context": " sheren in some of his subsequent personal [[ seals]]"
+     }
+    ]
+   },
+   {
+    "row": 3190,
+    "R_abl": 0.00012532219989225268,
+    "R_dir": 0.0024475117679685354,
+    "q999": 3.3739430904388428,
+    "energy": 0.05132856220006943,
+    "single_kl": 0.00012744856576318853,
+    "say": {
+     "promotes": [
+      "ftware",
+      "keleton",
+      "scriber",
+      "agna",
+      "wart",
+      "ifically",
+      "idenote",
+      "rising",
+      "agogue",
+      "agma"
+     ],
+     "suppresses": [
+      "SIOC",
+      "óg",
+      "suppl",
+      "80211",
+      "uno",
+      "SD",
+      "angered",
+      "oat",
+      "STRU",
+      "니다"
+     ]
+    },
+    "hear_embedding": [
+     "する",
+     " Centre",
+     " compound",
+     " nested",
+     "324",
+     " Said",
+     "ants",
+     "roup",
+     "[$\\",
+     "=\"_"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 4.659,
+      "context": " or early 1674 . \n\n = = [[ Se]]"
+     },
+     {
+      "activation": 4.01,
+      "context": " Hu retired from public life and went into [[ se]]"
+     },
+     {
+      "activation": 3.819,
+      "context": "il is mentioned on a stela at [[ Se]]"
+     },
+     {
+      "activation": 3.568,
+      "context": " Complex and the excavations have revealed elaborate [[ st]]"
+     },
+     {
+      "activation": 3.384,
+      "context": " E @-@ Groups , identified as [[ solar]]"
+     }
+    ]
+   },
+   {
+    "row": 1006,
+    "R_abl": 9.138853783952072e-05,
+    "R_dir": 0.0026780525222420692,
+    "q999": 1.4306762218475342,
+    "energy": 0.03998773917555809,
+    "single_kl": 0.00012741447790176608,
+    "say": {
+     "promotes": [
+      " myself",
+      "mys",
+      " ourselves",
+      "them",
+      " hear",
+      " hope",
+      "hope",
+      "oelectric",
+      "asma",
+      " them"
+     ],
+     "suppresses": [
+      " us",
+      " me",
+      " themselves",
+      " Us",
+      " himself",
+      " Himself",
+      " zich",
+      "Meier",
+      "MSC",
+      "elfare"
+     ]
+    },
+    "hear_embedding": [
+     " mean",
+     "Ale",
+     " dealings",
+     " lineup",
+     " music",
+     "acha",
+     " od",
+     " $('#",
+     ":\\",
+     " edge"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 1.789,
+      "context": " emblem glyph , with Tikal [[ apparently]]"
+     },
+     {
+      "activation": 1.54,
+      "context": " 1673 or early 1674 . \n\n [[ =]]"
+     },
+     {
+      "activation": 1.536,
+      "context": "blem glyph , with Tikal apparently [[ lacking]]"
+     },
+     {
+      "activation": 1.453,
+      "context": " which had ruled China for over 250 years [[ ,]]"
+     },
+     {
+      "activation": 1.436,
+      "context": "s work was not published until 1830 ) [[ make]]"
+     }
+    ]
+   },
+   {
+    "row": 3078,
+    "R_abl": 8.787440310698003e-05,
+    "R_dir": 0.0036060228012502193,
+    "q999": 2.0542120933532715,
+    "energy": 0.024370061233639717,
+    "single_kl": 0.00013159993250155821,
+    "say": {
+     "promotes": [
+      "yr",
+      "yrs",
+      "unnumbered",
+      "ADA",
+      "iske",
+      "slant",
+      " FROM",
+      " MERCHANTABILITY",
+      "kel",
+      "unningham"
+     ],
+     "suppresses": [
+      "way",
+      "ways",
+      "Mapper",
+      "co",
+      "ovember",
+      "wers",
+      "lies",
+      "fileID",
+      "ités",
+      "block"
+     ]
+    },
+    "hear_embedding": [
+     " counted",
+     " delta",
+     "OURCES",
+     " worked",
+     " være",
+     " =",
+     " coded",
+     " qual",
+     " fuels",
+     " neighbors"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 2.952,
+      "context": "power ( 16 kW ) Ruston [[ &]]"
+     },
+     {
+      "activation": 2.343,
+      "context": " about the treatment of Scientologists in Germany [[ ,]]"
+     },
+     {
+      "activation": 2.17,
+      "context": " right @-@ wing Nazi groups \" [[ ,]]"
+     },
+     {
+      "activation": 2.088,
+      "context": " as the Hongguang Emperor . Hu [[ ,]]"
+     },
+     {
+      "activation": 2.083,
+      "context": " precisely because of Germany 's Nazi past [[ ,]]"
+     }
+    ]
+   },
+   {
+    "row": 727,
+    "R_abl": 8.616414561402053e-05,
+    "R_dir": 0.0038039330393075943,
+    "q999": 2.952892303466797,
+    "energy": 0.022681456059217453,
+    "single_kl": 0.00011308109606034122,
+    "say": {
+     "promotes": [
+      "unnumbered",
+      "ppings",
+      "orf",
+      "Footnote",
+      "atu",
+      " ).",
+      "atever",
+      " IPA",
+      "hops",
+      "alle"
+     ],
+     "suppresses": [
+      "-",
+      "ords",
+      "uminescence",
+      "ag",
+      "ony",
+      "brace",
+      "FILTER",
+      " evacuation",
+      " dual",
+      "det"
+     ]
+    },
+    "hear_embedding": [
+     " linked",
+     " connected",
+     "Category",
+     "\\|_",
+     "&=&",
+     "=>",
+     ")=",
+     " :",
+     " completed",
+     " Linked"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.543,
+      "context": "ren , 中書舍人 [[ )]]"
+     },
+     {
+      "activation": 3.426,
+      "context": "ren in some of his subsequent personal seals [[ )]]"
+     },
+     {
+      "activation": 3.23,
+      "context": " Qipu ( 其樸 [[ )]]"
+     },
+     {
+      "activation": 3.134,
+      "context": "E , also known as the Helsinki Commission [[ )]]"
+     },
+     {
+      "activation": 2.816,
+      "context": " were given an unfair hand in [ Germany [[ ]]]"
+     }
+    ]
+   },
+   {
+    "row": 2602,
+    "R_abl": 7.910597923910245e-05,
+    "R_dir": 0.003752170130610466,
+    "q999": 1.4784159660339355,
+    "energy": 0.025529861450195312,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      "wf",
+      "infall",
+      " |",
+      "?:",
+      "#:",
+      ":'",
+      ":$",
+      " _________________________________",
+      " /",
+      "vs"
+     ],
+     "suppresses": [
+      "aterally",
+      "iously",
+      " atheros",
+      "iosity",
+      " afforded",
+      "\n\t ",
+      " portions",
+      "‌",
+      " households",
+      "imately"
+     ]
+    },
+    "hear_embedding": [
+     " averaging",
+     "everything",
+     " averaged",
+     " worthwhile",
+     "Duration",
+     " reminis",
+     "ANS",
+     " Gn",
+     " dopamine",
+     " pont"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 1.774,
+      "context": " of the original brake wheel would be made [[ ,]]"
+     },
+     {
+      "activation": 1.715,
+      "context": " 's work was not published until 1830 [[ )]]"
+     },
+     {
+      "activation": 1.578,
+      "context": " that he would \" really love to help [[ \"]]"
+     },
+     {
+      "activation": 1.545,
+      "context": " the administration 's Scientology point person [[ \"]]"
+     },
+     {
+      "activation": 1.481,
+      "context": " health and that it exploits its members \" [[ ,]]"
+     }
+    ]
+   },
+   {
+    "row": 392,
+    "R_abl": 7.811112300259992e-05,
+    "R_dir": 0.0024520689621567726,
+    "q999": 2.4963645935058594,
+    "energy": 0.03185519576072693,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      "LAS",
+      "grily",
+      "%\"",
+      "oplan",
+      "aseous",
+      "Jy",
+      " Him",
+      "PIN",
+      "soever",
+      "gether"
+     ],
+     "suppresses": [
+      " {$",
+      "EMPT",
+      "amin",
+      "BASE",
+      "ae",
+      "anean",
+      "ä",
+      "æ",
+      "amp",
+      "infl"
+     ]
+    },
+    "hear_embedding": [
+     " fals",
+     " undergone",
+     "pric",
+     " engineered",
+     " resignation",
+     "router",
+     " upgrad",
+     " resign",
+     "ician",
+     "=/"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 2.835,
+      "context": " had come to the conclusion that Scientology [[ ']]"
+     },
+     {
+      "activation": 2.814,
+      "context": " him , and respected his views on it [[ \"]]"
+     },
+     {
+      "activation": 2.714,
+      "context": "@ scientific courses can seriously jeopardize individuals [[ ']]"
+     },
+     {
+      "activation": 2.623,
+      "context": " of monuments to mark the 19th K [[ ']]"
+     },
+     {
+      "activation": 2.444,
+      "context": " been suggested that they were fabricated after Hu [[ ']]"
+     }
+    ]
+   },
+   {
+    "row": 2049,
+    "R_abl": 7.757230196148157e-05,
+    "R_dir": 0.004087088163942099,
+    "q999": 1.7527185678482056,
+    "energy": 0.019793806597590446,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      "izens",
+      "pshire",
+      "bolds",
+      "passed",
+      "enstein",
+      "riage",
+      "tawa",
+      "rd",
+      "ococ",
+      "ribution"
+     ],
+     "suppresses": [
+      "Zoom",
+      "vist",
+      "egin",
+      "ritten",
+      "arel",
+      "ational",
+      "cé",
+      "�",
+      "ipro",
+      "ía"
+     ]
+    },
+    "hear_embedding": [
+     " satisfied",
+     " remaining",
+     " mailing",
+     "locked",
+     "cro",
+     " Mo",
+     " renewed",
+     " spanning",
+     "�",
+     "dis"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 2.239,
+      "context": "hengyan was a noted seal @ [[-]]"
+     },
+     {
+      "activation": 2.114,
+      "context": "74 . \n\n = = Seal @ [[-]]"
+     },
+     {
+      "activation": 1.907,
+      "context": "s and sects , including right @ [[-]]"
+     },
+     {
+      "activation": 1.863,
+      "context": " that Scientology 's \" pseudo @ [[-]]"
+     },
+     {
+      "activation": 1.849,
+      "context": " observatories . \n\n Structure 5D @ [[-]]"
+     }
+    ]
+   },
+   {
+    "row": 2858,
+    "R_abl": 7.753125828457996e-05,
+    "R_dir": 0.0025574862957000732,
+    "q999": 2.1942837238311768,
+    "energy": 0.030522890388965607,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      " carefully",
+      " manually",
+      " individually",
+      " once",
+      " further",
+      " next",
+      " extensively",
+      " as",
+      " separately",
+      " repeatedly"
+     ],
+     "suppresses": [
+      "ariju",
+      "igent",
+      "pendicular",
+      "rivolous",
+      "ibase",
+      "avorable",
+      "lymp",
+      "indow",
+      "seud",
+      "esis"
+     ]
+    },
+    "hear_embedding": [
+     "选",
+     "fitting",
+     "cn",
+     "@{",
+     " Features",
+     " stride",
+     "об",
+     ".).",
+     "resh",
+     " Sk"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 2.644,
+      "context": " The opinion of professional millwrights was [[ sought]]"
+     },
+     {
+      "activation": 2.34,
+      "context": " millwrights was sought , and it [[ was]]"
+     },
+     {
+      "activation": 2.277,
+      "context": " next day both Hudsons were themselves [[ shot]]"
+     },
+     {
+      "activation": 2.231,
+      "context": " Zeros . Penfui was bom [[bed]]"
+     },
+     {
+      "activation": 2.202,
+      "context": " 250 years , was overthrown and [[ replaced]]"
+     }
+    ]
+   }
+  ],
+  "sae": [
+   {
+    "feature": 58519,
+    "R_abl": 0.0002297539758728817,
+    "R_dir": 0.004183945711702108,
+    "count": 11,
+    "max": 5.933863639831543,
+    "energy": 0.055011242628097534,
+    "single_kl": 0.00057323242072016,
+    "say": {
+     "promotes": [
+      "liness",
+      " hers",
+      "alle",
+      "ijing",
+      "rs",
+      "arty",
+      " present",
+      "iii",
+      "  ",
+      "idade"
+     ],
+     "suppresses": [
+      "aml",
+      "pl",
+      "iben",
+      "rogate",
+      "mpl",
+      "amar",
+      "inib",
+      " CONSEQUENTIAL",
+      "olds",
+      "keleton"
+     ]
+    },
+    "hear_embedding": [
+     " delight",
+     "ylation",
+     " Hollywood",
+     "orge",
+     " lots",
+     " miRNAs",
+     " shred",
+     " thoroughly",
+     " LA",
+     "ató"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 5.934,
+      "context": " Groups , identified as solar observatories . [[ \n\n]]"
+     },
+     {
+      "activation": 5.933,
+      "context": " courtesy name 致果 ) . [[ \n\n]]"
+     },
+     {
+      "activation": 5.92,
+      "context": "ic inscriptions refer to later rulers . [[ \n\n]]"
+     },
+     {
+      "activation": 5.918,
+      "context": " with lights and sockets on each floor . [[ \n\n]]"
+     },
+     {
+      "activation": 5.91,
+      "context": " contemptuous cartel of oppression \" . [[ \n\n]]"
+     }
+    ]
+   },
+   {
+    "feature": 58751,
+    "R_abl": 0.00014290079707279801,
+    "R_dir": 0.0032197933178395033,
+    "count": 119,
+    "max": 2.546382188796997,
+    "energy": 0.04514698684215546,
+    "single_kl": 0.00020995671366108581,
+    "say": {
+     "promotes": [
+      " are",
+      "hip",
+      " were",
+      "'",
+      " of",
+      "erv",
+      " like",
+      "pace",
+      " all",
+      " in"
+     ],
+     "suppresses": [
+      "lets",
+      " errone",
+      "cels",
+      "��",
+      "ttp",
+      "fits",
+      "ennas",
+      "lessly",
+      "\n\n\n ",
+      " acknow"
+     ]
+    },
+    "hear_embedding": [
+     " opens",
+     "annels",
+     "Buf",
+     "PD",
+     " morphine",
+     " opening",
+     "Close",
+     "estyle",
+     "056",
+     " Opening"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 2.546,
+      "context": " made , but retaining the cast iron teeth [[ segments]]"
+     },
+     {
+      "activation": 2.412,
+      "context": " 's \" pseudo @-@ scientific [[ courses]]"
+     },
+     {
+      "activation": 2.339,
+      "context": " ballplayer murals , relief sculptures and [[ buildings]]"
+     },
+     {
+      "activation": 2.273,
+      "context": " sheren in some of his subsequent personal [[ seals]]"
+     },
+     {
+      "activation": 2.251,
+      "context": " @-@ called E @-@ [[ Groups]]"
+     }
+    ]
+   },
+   {
+    "feature": 5003,
+    "R_abl": 0.00012777236406691372,
+    "R_dir": 0.0029396628960967064,
+    "count": 107,
+    "max": 3.0181362628936768,
+    "energy": 0.04416531324386597,
+    "single_kl": 0.00029596091189887375,
+    "say": {
+     "promotes": [
+      "^[@",
+      "abouts",
+      "[@",
+      ")^[@",
+      "ury",
+      ")[@",
+      " COURT",
+      "heed",
+      " (.",
+      "99999999"
+     ],
+     "suppresses": [
+      "formed",
+      " term",
+      "thouse",
+      "Loading",
+      "umer",
+      "Inf",
+      "olean",
+      "ression",
+      "sat",
+      "PRESS"
+     ]
+    },
+    "hear_embedding": [
+     " argc",
+     "ippy",
+     " vanilla",
+     " ener",
+     " Apps",
+     " macroscopic",
+     "Publisher",
+     "ebook",
+     "ık",
+     "skb"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.018,
+      "context": " @-@ exempt status as a religion [[ .]]"
+     },
+     {
+      "activation": 2.567,
+      "context": " Acropolis [[ .]]"
+     },
+     {
+      "activation": 2.467,
+      "context": " @-@ ins were held during 1984 [[ .]]"
+     },
+     {
+      "activation": 2.391,
+      "context": " \" , and not just against Scientology [[ .]]"
+     },
+     {
+      "activation": 2.374,
+      "context": " Person 's Development Project for that year [[ .]]"
+     }
+    ]
+   },
+   {
+    "feature": 55824,
+    "R_abl": 0.00012203022924950346,
+    "R_dir": 0.002176877809688449,
+    "count": 249,
+    "max": 3.207833766937256,
+    "energy": 0.057800665497779846,
+    "single_kl": 5.7968098190031014e-05,
+    "say": {
+     "promotes": [
+      "Machine",
+      "machine",
+      " machine",
+      "oneliness",
+      "rior",
+      "riterion",
+      " editor",
+      "reat",
+      "iners",
+      "ubs"
+     ],
+     "suppresses": [
+      ".',",
+      ".|",
+      "bee",
+      "smallcaps",
+      "{|",
+      "opan",
+      "EventArgs",
+      "lf",
+      "igos",
+      "!."
+     ]
+    },
+    "hear_embedding": [
+     "could",
+     "did",
+     " Astronomy",
+     " associations",
+     " Could",
+     "formal",
+     " did",
+     " '#",
+     " peppers",
+     " '_"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.208,
+      "context": " or broken parts were made or repaired as [[ necessary]]"
+     },
+     {
+      "activation": 3.09,
+      "context": " population to heavily concentrate close to the city [[ itself]]"
+     },
+     {
+      "activation": 2.926,
+      "context": " warfare that afflicted parts of the Maya [[ region]]"
+     },
+     {
+      "activation": 2.905,
+      "context": " on 26 January 1942 , and attacked regularly [[ thereafter]]"
+     },
+     {
+      "activation": 2.526,
+      "context": "-@ and @-@ crossbones [[ motifs]]"
+     }
+    ]
+   },
+   {
+    "feature": 11538,
+    "R_abl": 9.767435403773561e-05,
+    "R_dir": 0.002900577150285244,
+    "count": 119,
+    "max": 2.2455310821533203,
+    "energy": 0.03427036106586456,
+    "single_kl": 0.0002693574642762542,
+    "say": {
+     "promotes": [
+      ";|",
+      "Defaults",
+      " -*-",
+      " resil",
+      "omitempty",
+      "bows",
+      "arat",
+      "oarth",
+      " Charg",
+      "adian"
+     ],
+     "suppresses": [
+      "tis",
+      "tion",
+      "atisfied",
+      " “",
+      " triglycer",
+      "                                ",
+      " term",
+      "overnment",
+      "mitt",
+      "�"
+     ]
+    },
+    "hear_embedding": [
+     " Appendix",
+     " bay",
+     "т",
+     "ainer",
+     "存",
+     "went",
+     "aven",
+     "anges",
+     ",%",
+     "ige"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 2.246,
+      "context": " as a religion . This is intimidation [[ ,]]"
+     },
+     {
+      "activation": 2.219,
+      "context": " benefited from the project , and its owners [[ ,]]"
+     },
+     {
+      "activation": 1.975,
+      "context": " replaced by China 's last imperial dynasty [[ ,]]"
+     },
+     {
+      "activation": 1.864,
+      "context": "ermill had previously benefited from the project [[ ,]]"
+     },
+     {
+      "activation": 1.837,
+      "context": " and using the Mutal emblem glyph [[ ,]]"
+     }
+    ]
+   },
+   {
+    "feature": 62009,
+    "R_abl": 8.755308954278007e-05,
+    "R_dir": 0.002470248844474554,
+    "count": 104,
+    "max": 3.419180154800415,
+    "energy": 0.035923026502132416,
+    "single_kl": 0.00010588605709926924,
+    "say": {
+     "promotes": [
+      "ftware",
+      "scriber",
+      "empre",
+      "keleton",
+      "idenote",
+      "agna",
+      "wart",
+      "irector",
+      "ifically",
+      "orters"
+     ],
+     "suppresses": [
+      "óg",
+      "suppl",
+      "SIOC",
+      "uno",
+      "eron",
+      "80211",
+      "oat",
+      "STRU",
+      "teenth",
+      "SD"
+     ]
+    },
+    "hear_embedding": [
+     "typeof",
+     " suspend",
+     "BITS",
+     " Jensen",
+     "hematic",
+     " 82",
+     " condensed",
+     " secur",
+     "termination",
+     " Centre"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.419,
+      "context": " or early 1674 . \n\n = = [[ Se]]"
+     },
+     {
+      "activation": 3.099,
+      "context": " Hu retired from public life and went into [[ se]]"
+     },
+     {
+      "activation": 2.805,
+      "context": "il is mentioned on a stela at [[ Se]]"
+     },
+     {
+      "activation": 2.595,
+      "context": " demolish the airfield with assistance from [[ Spar]]"
+     },
+     {
+      "activation": 2.563,
+      "context": " E @-@ Groups , identified as [[ solar]]"
+     }
+    ]
+   },
+   {
+    "feature": 7873,
+    "R_abl": 8.064211579039693e-05,
+    "R_dir": 0.0026153770741075277,
+    "count": 115,
+    "max": 3.139786720275879,
+    "energy": 0.03127841651439667,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      " laug",
+      "ttp",
+      " Quran",
+      "rendum",
+      " Posted",
+      " Course",
+      "reditation",
+      "outh",
+      " regim",
+      "ittal"
+     ],
+     "suppresses": [
+      " app",
+      " o",
+      "ead",
+      "af",
+      " work",
+      "aten",
+      " par",
+      " an",
+      " section",
+      " end"
+     ]
+    },
+    "hear_embedding": [
+     "kit",
+     " doctor",
+     " paint",
+     " Say",
+     "ming",
+     " pirate",
+     "als",
+     " love",
+     " crew",
+     "itan"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.14,
+      "context": " Mitsubishi Zeros . Pen [[f]]"
+     },
+     {
+      "activation": 2.946,
+      "context": " Headlam and his staff remained at Pen [[f]]"
+     },
+     {
+      "activation": 2.781,
+      "context": "ervation Trust , had suggested that Theln [[eth]]"
+     },
+     {
+      "activation": 2.612,
+      "context": " by Mitsubishi Zeros . [[ Pen]]"
+     },
+     {
+      "activation": 2.355,
+      "context": " Preservation Trust , had suggested that The [[ln]]"
+     }
+    ]
+   },
+   {
+    "feature": 46290,
+    "R_abl": 7.858138997107744e-05,
+    "R_dir": 0.0025397136341780424,
+    "count": 20,
+    "max": 3.9200944900512695,
+    "energy": 0.031036484986543655,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      "ygen",
+      "iens",
+      "ietz",
+      "negie",
+      "ensen",
+      "engo",
+      "orov",
+      "oton",
+      "Syscall",
+      "umbo"
+     ],
+     "suppresses": [
+      "ZE",
+      "ze",
+      "mq",
+      "KI",
+      "je",
+      "bsy",
+      "bol",
+      " Assistance",
+      "ION",
+      "ffer"
+     ]
+    },
+    "hear_embedding": [
+     " decentral",
+     " villages",
+     " suburban",
+     " sunshine",
+     " prominently",
+     " spont",
+     " chiefly",
+     "vill",
+     " perfume",
+     "?’"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.92,
+      "context": " damaged three Japanese floatplanes that attacked them [[ as]]"
+     },
+     {
+      "activation": 3.831,
+      "context": " remains of the original brake wheel were retained [[ as]]"
+     },
+     {
+      "activation": 3.789,
+      "context": " Headlam continued to serve with the squadron [[ as]]"
+     },
+     {
+      "activation": 3.738,
+      "context": " them : tax @-@ exempt status [[ as]]"
+     },
+     {
+      "activation": 3.641,
+      "context": " missing or broken parts were made or repaired [[ as]]"
+     }
+    ]
+   },
+   {
+    "feature": 22967,
+    "R_abl": 6.296514766290784e-05,
+    "R_dir": 0.003448539413511753,
+    "count": 11,
+    "max": 3.443070411682129,
+    "energy": 0.018291160464286804,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      "amac",
+      "achine",
+      "anton",
+      "elon",
+      "acin",
+      "cels",
+      "acm",
+      "amss",
+      "arias",
+      "iscussion"
+     ],
+     "suppresses": [
+      " itself",
+      " Veter",
+      ".__",
+      "out",
+      "outs",
+      "ун",
+      " til",
+      " Pradesh",
+      " responsiveness",
+      "Include"
+     ]
+    },
+    "hear_embedding": [
+     " install",
+     "cost",
+     " subcontract",
+     "rer",
+     " rear",
+     "ATER",
+     "endar",
+     "Cost",
+     " Debian",
+     " ο"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.443,
+      "context": " [[ \n\n]]"
+     },
+     {
+      "activation": 3.338,
+      "context": " Groups , identified as solar observatories . [[ \n\n]]"
+     },
+     {
+      "activation": 3.324,
+      "context": "ic inscriptions refer to later rulers . [[ \n\n]]"
+     },
+     {
+      "activation": 3.312,
+      "context": " courtesy name 致果 ) . [[ \n\n]]"
+     },
+     {
+      "activation": 3.308,
+      "context": " with lights and sockets on each floor . [[ \n\n]]"
+     }
+    ]
+   },
+   {
+    "feature": 17590,
+    "R_abl": 5.1584043831098825e-05,
+    "R_dir": 0.0025982256047427654,
+    "count": 37,
+    "max": 3.492809772491455,
+    "energy": 0.019936278462409973,
+    "single_kl": null,
+    "say": {
+     "promotes": [
+      "ores",
+      "ruary",
+      "ountain",
+      "encing",
+      "ishing",
+      "itness",
+      "enced",
+      "ferent",
+      "serving",
+      "untime"
+     ],
+     "suppresses": [
+      "apa",
+      "ijing",
+      "uper",
+      "amps",
+      "phan",
+      "hes",
+      "apine",
+      "ean",
+      "FF",
+      "strap"
+     ]
+    },
+    "hear_embedding": [
+     " Ph",
+     " completes",
+     "7",
+     " phage",
+     " MSS",
+     " pursuing",
+     "Leave",
+     " arcs",
+     " votre",
+     " Jag"
+    ],
+    "hear_contexts": [
+     {
+      "activation": 3.493,
+      "context": " Squadron 's aircraft were dispersed at Pen [[f]]"
+     },
+     {
+      "activation": 3.367,
+      "context": " in the Pacific , one of the Pen [[f]]"
+     },
+     {
+      "activation": 3.344,
+      "context": " December , Headlam had transferred to Pen [[f]]"
+     },
+     {
+      "activation": 2.044,
+      "context": " reached peak population , the area suffered def [[ore]]"
+     },
+     {
+      "activation": 1.813,
+      "context": " engine had been purchased in 1981 and was [[ fitted]]"
+     }
+    ]
+   }
+  ]
+ },
+ "verdicts": {},
+ "seconds": 42.8
+}

@@ -1293,3 +1293,13 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - Self-ignition from the row's own firing at any gain the text survives, as a general claim: three rows reach 4 to 5 of 10 at 300 x and three stay at 0 to 1 of 10; 1000 x breaks zoo and random rows alike (e732).
 - A persona wired to a topic by one column edit as a general recipe: one clean success (Jesus, 20 of 20 against 0 of 20 at 0.40 nats) and one leaky one (Heavy) out of six; the layer-4 and layer-5 listeners deliver too little (e732).
 - Session 169's reading that the loop runs through the row: it runs through the cache and the words (e732, e732b).
+
+## Session 171 kills (priced atoms as the control group)
+- "Spearman(R_abl, energy) over the 4,096 native rows below 0.9." (e733, layer 12).
+- "at k = 64 the top-k SAE features by R_abl cost at least twice the top-k native rows by R_abl (KL)." (e733, layer 12).
+- "at k = 256 random native rows cost at most a quarter of the top 256 by R_abl, and the bottom 256 by R_abl cost at most a tenth." (e733, layer 12).
+- The read energy as a price distinct from loudness, for removal: on three layers of Pythia-410m R_abl ranks with the activation energy at 0.94 to 0.97 over all rows, and energy alone predicts the single-row cost as well as R_abl does; the Fisher term barely varies across the rows of a layer (e733).
+- The learned dictionary concentrates what the model reads, by count: at k 64 to 1024 the SAE's most-read features cost less to remove than the native rows' most-read rows at all three layers (e733).
+- The SAE as the denser carrier per unit energy: at layers 6 and 18 the native rows' most-read atoms cost 1.3 to 2.3 times the SAE's per unit of energy removed, at layer 12 the same, because the SAE's largest features are high-energy directions the output reads little (e733).
+- Random TopK features as a control at matched count: a random set of sparse features costs nothing, so C5 holds for every layer without saying anything; the matched-energy and least-read comparisons carry the comparison (e733).
+- The price separating rows from random rows at layer 12: 256 random rows cost 39 percent of the 256 most-read and the 256 least-read 36 percent, against 11 and 8 percent at layer 6 (e733).

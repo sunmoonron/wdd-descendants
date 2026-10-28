@@ -1,0 +1,26 @@
+{
+ "experiment": "e733 priced atoms on the Dell: the native rows of one MLP layer of Pythia-410m against EleutherAI's 65,536-feature TopK SAE of the same MLP output, priced by the same sampled-Fisher gradient, with the cost of removal measured on held-out text",
+ "written": "2026-10-28, before the smoke",
+ "question": "The program's claim is that the model's own write rows, priced by what the output reads from them, are the control group every learned dictionary has to beat. On one layer of a small model, with a public SAE trained on exactly the vector the rows write (the MLP output), does the price predict the cost of removal for both dictionaries, and at matched count and matched energy which dictionary's most-read atoms cost more to remove?",
+ "setup": {
+  "model": "EleutherAI/pythia-410m, fp32, one Quadro P4000 (8 GB), 24 layers, d 1024, 4,096 rows per MLP; layer 12 primary, layers 6 and 18 as replication if the primary runs clean",
+  "sae": "EleutherAI/sae-pythia-410m-65k, hookpoint layers.12.mlp: TopK k 32, 65,536 latents, unit-norm decoder rows, encode pre = relu((x - b_dec) W_enc^T + b_enc), top 32 kept",
+  "price": "g = d sum_t log p_t(y_t) / d (MLP output at layer L), y_t sampled from the model's own p_t, over 48 windows of 512 wikitext-103 tokens, 2 samples each; native row n: S2_n = mean (g . w_n)^2, R_dir = S2 / |w|^2, R_nat = S2 q999(|a|)^2, R_abl = S2 var(a); SAE feature f: S2_f = mean (g . d_f)^2 with the same g, R_abl_f = S2_f var(a_f) (var over all positions, zeros included). R_abl is the primary price for both because TopK features are active on too few positions for a q999 to mean anything; energy of an atom: E[a^2] |w|^2 (native), E[a_f^2] (SAE)",
+  "cost": "16 held-out windows of 512 tokens from the wikitext-103 test split: KL(base || ablated) averaged over positions, and the NLL increase on the real next tokens. Native ablation zeroes the chosen rows' activations at the down projection's input; SAE feature ablation subtracts the chosen features' decoded contributions a_f d_f from the real MLP output; SAE reconstruction replaces the MLP output by the SAE's reconstruction",
+  "rankings": "for both dictionaries: top-k by R_abl, top-k by energy, bottom-k by R_abl, random k (three seeds, mean); k in {16, 64, 256, 1024}; energy removed reported for every condition",
+  "single_atom": "40 native rows (top 20 by R_abl, 20 random) and 40 SAE features (top 20 by R_abl, 20 random) removed one at a time on 8 held-out windows; Spearman of the measured KL against R_abl",
+  "three_questions": "for the top 10 rows and top 10 features by R_abl: hear (the input weight in the embedding space, top tokens, and the five most activating tokens in context over the Fisher windows), say (the direct path through the final layer-norm gain and the unembedding, top tokens), cost (R_abl and the measured single-atom KL)"
+ },
+ "statements": {
+  "P1_native_proxy": {"bar": "Spearman(R_abl, single-row KL) over the 40 native rows at least 0.5", "p": 0.6},
+  "P2_sae_proxy": {"bar": "Spearman(R_abl_f, single-feature KL) over the 40 features at least 0.5", "p": 0.5},
+  "P3_price_is_not_loudness": {"bar": "Spearman(R_abl, energy) over the 4,096 native rows below 0.9", "p": 0.6},
+  "C1_matched_count": {"bar": "at k = 64 the top-k SAE features by R_abl cost at least twice the top-k native rows by R_abl (KL)", "p": 0.5},
+  "C2_matched_energy": {"bar": "at k = 64 the SAE's top features cost at least as much per unit of energy removed as the native top rows", "p": 0.5},
+  "C3_sae_own_cost": {"bar": "the SAE's reconstruction cost (KL) exceeds the cost of removing the top 256 native rows by R_abl", "p": 0.5},
+  "C4_price_means_something": {"bar": "at k = 256 random native rows cost at most a quarter of the top 256 by R_abl, and the bottom 256 by R_abl cost at most a tenth", "p": 0.7},
+  "C5_sae_random": {"bar": "at k = 256 random SAE features cost at most a quarter of the top 256 by R_abl_f", "p": 0.7}
+ },
+ "pivot_rule": "Each statement scored once at layer 12. Layers 6 and 18 are replications of the same script with no change, reported beside, not pooled. No change to k, to the window count, to the sample count or to the price after the smoke, except a dated revision if the smoke shows a bug. If P1 fails the price does not predict the cost on this model and the C statements are reported but not read. If C1 and C2 both fail the learned dictionary's most-read atoms are cheaper than the native basis's and the control group wins at this layer; if both hold the SAE concentrates what the model reads and the native basis is the weaker dictionary here; the next step either way is the same script on a second layer and a second model size, not a different price.",
+ "kills": "P1 fails: 'the read energy prices the native atoms'. C1 and C2 fail: 'the learned dictionary finds what the native basis does not, at this layer'. C4 fails: 'the price separates the rows from random rows'."
+}
