@@ -1503,6 +1503,20 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1267 Zeroing fifty seeded random rows costs at most 0.05 nat. → e731 → SUPPORTED.
 - H1268 Zeroing the fifty rows with the largest R_dir costs at most 0.3 nat. → e731 → SUPPORTED.
 - H1269 At least 100 (row, sign) have p_max at least 0.9 in the direct-path table and at least half of them sit in layers 30 and 31. → e731 → REFUTED.
+- H1270 After a 16-token steered prefix, zeroing the row's write for the rest of the answer halves the continuation hit rate for at least 4 of 6 zoo rows. → e732 → REFUTED.
+- H1271 Zeroing a random row of the same layer after the prefix leaves at least 0.8 of the continuation hit rate for at least 5 of 6 rows. → e732 → SUPPORTED.
+- H1272 At 30 times its own write and no injection, at least 3 of 6 rows ignite their persona on at least half the unrelated answers with the text intact. → e732 → REFUTED.
+- H1273 The same at any gain in 10, 30, 100, 300, 1000. → e732 → REFUTED.
+- H1274 For at least 4 of 6 rows the hit rate is non-decreasing over the gain ladder. → e732 → REFUTED.
+- H1275 At 100 times its write at least 3 of 6 rows are degenerate on at least half the answers. → e732 → REFUTED.
+- H1276 At 1000 times its write at least 3 of 6 rows are degenerate on at least half the answers. → e732 → SUPPORTED.
+- H1277 Six random rows at 100 times their write cost at most 0.5 nat for at least 4 of 6. → e732 → SUPPORTED.
+- H1278 A topic-selective listener whose write is replaced by the card's direction gives the persona on at least half the identity answers and at most a tenth of the generic ones for at least 3 of 6 cards. → e732 → REFUTED.
+- H1279 The control listener's gap between identity and generic hit rates is at most 0.2 for at least 4 of 6 cards. → e732 → SUPPORTED.
+- H1280 The rewired model's KL on the base answers is at most 0.3 for at least 4 of 6 cards. → e732 → SUPPORTED.
+- H1281 A second model continues the theme in at least half of the steered 16-token prefixes for at least 4 of 6 rows. → e732 → REFUTED.
+- H1282 The second model continues the theme in at most a tenth of the unsteered prefixes for at least 5 of 6 rows. → e732 → SUPPORTED.
+- H1283 The first model's text-only continuation of its own steered prefixes hits at most half of its steered-cache continuation for at least 4 of 6 rows. → e732b → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

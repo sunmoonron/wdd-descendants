@@ -1,0 +1,81 @@
+{
+ "experiment": "e732 the persona loop: cut it, amplify it, rewire it, export it. Qwen3.5-4B, box 13, no training, no judge",
+ "written": "2026-10-28, before the smoke",
+ "question": "Session 169 found that a zoo persona survives when the injection covers only the prompt and the first tokens, and that the row then fires on its own words at 5 to 22 times its base level. Four tests of that loop. A, cut: after a 16-token steered prefix, zero the row's write for the rest of the answer; does the persona collapse? B, amplify: multiply the row's own write column by a gain G with no injection at all; does the persona ignite on unrelated prompts from the row's natural firing? C, rewire: keep a neuron's read side and overwrite its write column with a persona direction scaled to deliver the zoo's dose at that neuron's own on-topic activation; is the persona then conditional on the topic? D, export: hand the steered 16-token prefixes to a different model; does it continue the persona?",
+ "setup": {
+  "model": "Qwen/Qwen3.5-4B bf16, the zoo's injection at 0.8 for prefixes, greedy, repetition penalty 1.05, e728's ten held-out prompts and 80 new tokens unless stated; KL on e728's ten base answers",
+  "rows": "the six zoo spec rows with hit rate at least 0.7 at 0.8 (Jesus L15 N4041 +, Hugs L4 N8016 -, Cozy blanket L5 N8879 +, Galactic Unicorn L5 N7471 +, Vegas concierge L4 N6626 +, Heavy L24 N6307 +) and their e728 regexes",
+  "A_cut": "conditions after a prefix with the injection on the prompt and the first 16 generated tokens: (i) injection off, nothing else; (ii) injection off and the row's input to the down projection zeroed from token 17 on; (iii) injection off and a seeded random row of the same layer zeroed from token 17 on. The regex is scored on the continuation (tokens 17 to 80) only.",
+  "B_amplify": "no injection; the row's down-projection column multiplied by G in {10, 30, 100}; ten held-out prompts; controls: six seeded random rows of the same layers at G 30 and 100 (KL and degeneracy only)",
+  "C_rewire": "listeners: at each card's layer, over all 9,216 rows, the mean absolute input to the down projection on e731's 20 identity answers against its mean on the 20 generic answers (both read with no injection); the listener is the row with the largest identity-to-generic ratio among rows with identity mean at least 0.05; the control listener is the row with the ratio closest to 1 under the same floor. Edit: the listener's column is replaced by (0.8 MED_L / signed mean identity activation) times the card's unit direction. Prompts: the 20 identity prompts (persona expected) and the 20 generic prompts (none expected), 160 new tokens. One edit at a time, restored after.",
+  "D_export": "the second model is Qwen/Qwen3-4B-Instruct-2507. For each row, the ten 16-token prefixes from A(i) are decoded to text and placed as the start of the assistant turn in the second model's chat template, which continues for 64 tokens; control: the base model's own unsteered 16-token prefixes on the same prompts. Regex on the continuation only.",
+  "non_degenerate": "four-gram repetition at most 0.3 and at least 3 words; character 6-gram repetition at most 0.5 is reported beside it"
+ },
+ "statements": {
+  "A1_collapse": {
+   "bar": "for at least 4 of 6 rows the continuation hit rate under (ii) is at most half of (i)",
+   "p": 0.2
+  },
+  "A2_random_cut_null": {
+   "bar": "for at least 5 of 6 rows the continuation hit rate under (iii) is at least 0.8 of (i)",
+   "p": 0.8
+  },
+  "B1_ignite_G30": {
+   "bar": "at G = 30, at least 3 of 6 rows reach a regex hit rate of at least 0.5 on the unrelated held-out prompts with at least 70 percent non-degenerate answers",
+   "p": 0.3
+  },
+  "B1b_ignite_any": {
+   "bar": "the same at any of the three gains",
+   "p": 0.45
+  },
+  "B2_monotone": {
+   "bar": "for at least 4 of 6 rows the hit rate is non-decreasing from G = 10 to 30 to 100",
+   "p": 0.5
+  },
+  "B3_runaway": {
+   "bar": "at G = 100 at least 3 of 6 rows are degenerate on at least half the answers",
+   "p": 0.5
+  },
+  "B4_random_gain": {
+   "bar": "for at least 4 of 6 random rows at G = 100 the KL on the base answers is at most 0.5",
+   "p": 0.5
+  },
+  "C1_conditional_persona": {
+   "bar": "for at least 3 of 6 cards the rewired listener gives a regex hit rate of at least 0.5 on the identity prompts and at most 0.1 on the generic prompts",
+   "p": 0.35
+  },
+  "C2_control_listener": {
+   "bar": "for at least 4 of 6 cards the control listener's gap between identity and generic hit rates is at most 0.2",
+   "p": 0.5
+  },
+  "C3_leak": {
+   "bar": "for at least 4 of 6 cards the rewired model's KL on the base answers is at most 0.3",
+   "p": 0.5
+  },
+  "D1_portable": {
+   "bar": "for at least 4 of 6 rows the second model continues the theme in at least half of the steered prefixes",
+   "p": 0.55
+  },
+  "D2_control_prefix": {
+   "bar": "for at least 5 of 6 rows the second model continues the theme in at most a tenth of the unsteered prefixes",
+   "p": 0.8
+  }
+ },
+ "pivot_rule": "Each statement is scored once. The gain ladder is the pre-registered dose-response, not a search; no fourth gain, no second listener rule, no second prefix length. If A1 fails and D1 holds, the persona lives in the text and the neuron's job ends at the first words: the next step is the prefix-only recipe as the cheap installer and no more neuron-necessity tests. If A1 holds, the row is the persona's memory and the next step is the circuit it feeds. If C1 fails, the read side's selectivity cannot carry a dose and the next step is a different selection principle (the row's natural peaks, q999, as the scale), not a different floor. If B1 fails at every gain, a row's own firing cannot ignite its persona and the loop needs the injection to start.",
+ "kills": "A1 fails: 'the neuron is the persona's memory'. B1 and B1b fail: 'the loop self-ignites'. C1 fails: 'a persona can be wired to a topic by one column edit'. D1 fails: 'the persona is portable text'.",
+ "revision_2026-10-28_after_the_smoke": {
+  "gain_ladder": "two rungs added, G = 300 and G = 1000. In the smoke (two rows, three prompts) G = 10, 30 and 100 ignited nothing (hit 0, KL 0.001 to 0.31); the rows' mean absolute firing on unrelated answers is 0.02 to 0.15 (session 169), so 100 x reaches about a quarter of the zoo's dose on average, which cannot test ignition. The ladder is now 10, 30, 100, 300, 1000; B1 stays at G = 30; B1b and B2 run over the five rungs; B3 stays at G = 100 and B3b (p 0.6) asks the same at G = 1000; the random rows are run at 30, 100 and 1000 and B4 stays at 100. A strictly rising count is reported beside B2 because an all-zero ladder is non-decreasing.",
+  "smoke_notes": "the cut and random-cut conditions share the steered prefix by construction (greedy); the rewired listener showed the predicted selectivity in the smoke (Jesus: identity 0.75, generic 0.00; control: 1.00 and 0.50) with KL on the base answers near 0.9 because those answers are first-person prompts the listener also fires on, so C3 is expected to fail and the generic-prompt hit rate is the leak measure that matters; the second model's 24-token continuations in the smoke hit nothing, the full run uses 64.",
+  "B3b_runaway_1000": {
+   "bar": "at G = 1000 at least 3 of 6 rows are degenerate on at least half the answers",
+   "p": 0.6
+  }
+ },
+ "posthoc_2026-10-28_after_D": {
+  "A3_text_only_same_model": {
+   "why": "D showed the second model continues the steered 16-token prefixes less than the first model continues its own with the injection off (and even with the row cut), which separates the cache from the text only if the first model is also given the prefix as text alone. Written before e732b ran.",
+   "bar": "for at least 4 of 6 rows the first model's text-only continuation of its own steered prefixes (re-prefilled with no injection) hits at most half of the steered-cache continuation",
+   "p": 0.5
+  }
+ }
+}

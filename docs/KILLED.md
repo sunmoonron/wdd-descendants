@@ -1278,3 +1278,18 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - An emoji row in the direct-path table: none; the best candidate is a diffuse row with the smiley on top by chance, and no (row, sign) has 12 of 40 emoji tokens (e731).
 - The word-level repetition check as a loop detector for CJK text: it passed 16 of 20 answers that a character 6-gram check shows looping in 19 of 20 (e731).
 - The opener switch: no first token reaches a 0.3 share over 20 prompts in Qwen3.5-4B, so there is no 'Certainly' to suppress (e731).
+
+## Session 170 kills (the persona loop)
+- "for at least 4 of 6 rows the continuation hit rate under (ii) is at most half of (i)." (e732).
+- "at G = 30, at least 3 of 6 rows reach a regex hit rate of at least 0.5 on the unrelated held-out prompts with at least 70 percent non-degenerate answers." (e732).
+- "the same at any of the three gains." (e732).
+- "for at least 4 of 6 rows the hit rate is non-decreasing from G = 10 to 30 to 100." (e732).
+- "at G = 100 at least 3 of 6 rows are degenerate on at least half the answers." (e732).
+- "for at least 3 of 6 cards the rewired listener gives a regex hit rate of at least 0.5 on the identity prompts and at most 0.1 on the generic prompts." (e732).
+- "for at least 4 of 6 rows the second model continues the theme in at least half of the steered prefixes." (e732).
+- "for at least 4 of 6 rows the first model's text-only continuation of its own steered prefixes (re-prefilled with no injection) hits at most half of the steered-cache continuation." (e732b).
+- The neuron as the persona's memory after the first words: zeroing the row from token 17 on leaves every continuation where it was; session 169's self-hearing is a reading of the text, not the loop (e732).
+- The persona as portable text: a second model continues the steered prefixes at 0.0 to 0.6 and the same model continues them as text at 0.0 to 0.7, below the steered-cache continuation for the three strong rows (e732, e732b).
+- Self-ignition from the row's own firing at any gain the text survives, as a general claim: three rows reach 4 to 5 of 10 at 300 x and three stay at 0 to 1 of 10; 1000 x breaks zoo and random rows alike (e732).
+- A persona wired to a topic by one column edit as a general recipe: one clean success (Jesus, 20 of 20 against 0 of 20 at 0.40 nats) and one leaky one (Heavy) out of six; the layer-4 and layer-5 listeners deliver too little (e732).
+- Session 169's reading that the loop runs through the row: it runs through the cache and the words (e732, e732b).
