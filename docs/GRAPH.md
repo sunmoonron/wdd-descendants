@@ -1483,6 +1483,26 @@ Format: `H<n>` hypothesis → experiments that tested it → status → what it 
 - H1247 They are not merely broken: the judge flags degenerate text on at most 6 of 20. → e730 → REFUTED.
 - H1248 For at least 5 of 8 specs the best retrieved non-known row's regex hit rate at 0.8 is within 0.2 of the card's or above it. → e730 → SUPPORTED.
 - H1249 For at least 4 of 8 specs the retrieved row's regex hit rate at 0.8 is at least 0.5. → e730 → SUPPORTED.
+- H1250 The end-of-turn row, dosed from the weights, cuts the mean answer to at most 0.6 of the base with at least 70 percent non-degenerate answers at one sign and lengthens it to at least 1.4 times the base at the other. → e731 → REFUTED.
+- H1251 The Chinese-class row, dosed from the weights, puts CJK characters in at least half of the characters with at least 70 percent non-degenerate answers. → e731 → SUPPORTED.
+- H1252 The capitals-class row, dosed from the weights, makes at least half of the letters capitals with at least 70 percent non-degenerate answers. → e731 → REFUTED.
+- H1253 The smiley row, dosed from the weights, yields at least 2 emoji per answer with at least 70 percent non-degenerate answers. → e731 → REFUTED.
+- H1254 The row that says the model's name, suppressed at the weights-set dose, removes the name from at least 70 percent of identity answers with at least 70 percent non-degenerate. → e731 → SUPPORTED.
+- H1255 The '**' row, suppressed, cuts bold markers to a quarter of the base with at least 70 percent non-degenerate answers. → e731 → REFUTED.
+- H1256 The think-token row, pushed, puts the think tag in at least half of the answers with at least 70 percent non-degenerate. → e731 → REFUTED.
+- H1257 With the zoo's injection on the prompt and the first 4 generated tokens only, at least 4 of 6 zoo rows keep at least half their all-token regex hit rate. → e731 → SUPPORTED.
+- H1258 With the injection on the first 16 generated tokens only, at least 5 of 6 rows keep at least half their all-token hit rate. → e731 → SUPPORTED.
+- H1259 For at least 4 of 6 rows the row's mean absolute activation on its own steered answers, read with no injection, is at least twice its activation on the base answers. → e731 → SUPPORTED.
+- H1260 For at least 8 of 15 pairs of zoo rows at 0.8 each, both regexes hit in the same answer in at least 3 of 10 answers. → e731 → REFUTED.
+- H1261 For at least 10 of 15 pairs each theme keeps at least half its single-row hit rate. → e731 → REFUTED.
+- H1262 For at least 10 of 15 pairs at most 3 of 10 answers are degenerate. → e731 → SUPPORTED.
+- H1263 The theme's own output direction, dosed by the same rule, reaches a non-degenerate regex hit rate of at least 0.5 for at least 4 of 8 specs. → e731 → REFUTED.
+- H1264 The word direction's hit rate is at least the zoo row's at the same rule for at least 4 of 8 specs. → e731 → REFUTED.
+- H1265 A seeded random direction at the same rule hits at most 0.1 for at least 6 of 8 specs. → e731 → SUPPORTED.
+- H1266 Zeroing the fifty rows with the largest R_nat costs at least 1.0 nat of KL on the base answers. → e731 → REFUTED.
+- H1267 Zeroing fifty seeded random rows costs at most 0.05 nat. → e731 → SUPPORTED.
+- H1268 Zeroing the fifty rows with the largest R_dir costs at most 0.3 nat. → e731 → SUPPORTED.
+- H1269 At least 100 (row, sign) have p_max at least 0.9 in the direct-path table and at least half of them sit in layers 30 and 31. → e731 → REFUTED.
 - H341 The Gumbel floor is the right null for provenance-free atoms at every checkpoint. → e503, e506 → ESTABLISHED: the rotated dictionary's maximum is 0.97-1.00 of the analytic prediction in every model, block and checkpoint (27 cells).
 
 ## Attention, sinks, embeddings

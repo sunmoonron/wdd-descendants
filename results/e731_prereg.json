@@ -1,0 +1,133 @@
+{
+ "experiment": "e731 switches from the weights: six token switches, five segues, Qwen3.5-4B, box 13",
+ "written": "2026-10-28, before the smoke; a dated revision after the smoke fixes tau and voids switches whose target does not exist",
+ "question": "Can a control over the model's output be found by asking the direct-path table 'which row says this token?' and poking that row at a dose set from the weights, with no search, no judge and no training? And five segues: the think token as a switch, persistence of a persona after the injection stops, two persona rows at once, the theme's own output direction instead of the row, and a 50-row ablation chosen by read energy.",
+ "setup": {
+  "model": "Qwen/Qwen3.5-4B, bf16, the zoo's injection (delta times the unit row added at the down projection at every token), chat template with thinking off, greedy, repetition penalty 1.05",
+  "table": "results/e730_qwen35_rows.npz: top-40 direct-path tokens, p_max and N_eff of every (row, sign); results/e728_qwen35_rows.npz: R_nat, R_dir, Q999 of every row; results/e728_qwen35.json: the eight zoo spec rows with regexes, the ten base answers, the median residual norms",
+  "dose_rule": "one rule for every switch and for the word directions: the injection D (in units of the layer's median residual norm) is set so that the target token (for a class, its strongest token) gets exactly tau nats of direct-path logit shift, using shift = sqrt(d) * r / sqrt(1 + r^2) * a_target with r = D * MED_L / MED_final and a_target = U_target . ((1 + w) * u). D is capped at 0.8 and a capped switch is flagged. tau is fixed after the smoke and never changed afterwards.",
+  "row_choice": "single-token switch: among (row, sign) whose top-1 direct-path token is the target, the one with the largest direct-path probability of the target (fallback: target in the top 40); class switch: among (row, sign) with at least 20 of 40 top tokens in the class, the one with the largest N_eff among those with class mass at least 0.9 (fallbacks 0.7, 0.5, then the largest mass). The choice is made by the script, once.",
+  "prompts": "20 generic task prompts for the switches, 20 'who are you' prompts for the identity switch, e728's ten held-out prompts for the segues, e728's ten base answers for KL",
+  "non_degenerate": "four-gram repetition at most 0.3 and at least 3 words",
+  "no_judge": "every measure is a count: generated tokens, first token, character classes, regex hits, KL"
+ },
+ "switches": {
+  "S1_length": {
+   "target": "end-of-turn token 248046",
+   "bar": "mean generated tokens at +D at most 0.6 x base with at least 70 percent non-degenerate, and at -D at least 1.4 x base",
+   "p": 0.6
+  },
+  "S2_opener": {
+   "target": "the most frequent first token of the 20 base answers; void if its share is below 0.3",
+   "bar": "share of answers starting with it at most 0.1 at -D with at least 70 percent non-degenerate",
+   "p": 0.5
+  },
+  "S3_language": {
+   "target": "class: tokens made only of CJK ideographs (53,429 tokens)",
+   "bar": "CJK share of non-space characters at least 0.5 at +D with at least 70 percent non-degenerate; base at most 0.02",
+   "p": 0.7
+  },
+  "S4_caps": {
+   "target": "class: ASCII all-capital tokens of two or more letters (6,794 tokens)",
+   "bar": "upper-case share of letters at least 0.5 at +D with at least 70 percent non-degenerate; base at most 0.15",
+   "p": 0.5
+  },
+  "S5_emoji": {
+   "target": "the smiley token 169638",
+   "bar": "mean emoji characters per answer at least 2 at +D with at least 70 percent non-degenerate; base at most 0.3",
+   "p": 0.4
+  },
+  "S6_identity": {
+   "target": "the 'wen' piece of the model's name, token 16451, on the 20 identity prompts",
+   "bar": "share of answers containing 'Qwen' at most 0.3 at -D with at least 70 percent non-degenerate; base at least 0.9",
+   "p": 0.4
+  },
+  "S6b_other_identity": {
+   "bar": "at -D at least 5 of 20 answers name another known model or company",
+   "p": 0.25
+  },
+  "S_overall": {
+   "bar": "at least 3 of S1 to S6 hold",
+   "p": 0.55
+  }
+ },
+ "segues": {
+  "T1_think": {
+   "target": "the think token 248068 with thinking off",
+   "bar": "at least 10 of 20 generations contain the think token at +D with at least 70 percent non-degenerate",
+   "p": 0.3
+  },
+  "P1_persistence_k4": {
+   "rows": "the six zoo spec rows with hit rate at least 0.7 at 0.8 in e728 (Jesus, Hugs, Cozy blanket, Galactic Unicorn, Vegas concierge, Heavy), at the zoo's 0.8, injected on the prompt and the first k generated tokens only",
+   "bar": "for at least 4 of 6 rows the regex hit rate at k = 4 is at least half the hit rate with the injection on throughout",
+   "p": 0.4
+  },
+  "P2_persistence_k16": {
+   "bar": "for at least 5 of 6 rows the hit rate at k = 16 is at least half the all-token hit rate",
+   "p": 0.5
+  },
+  "P3_self_hearing": {
+   "bar": "for at least 4 of 6 rows the row's mean absolute activation on its own all-token steered answers, read back without any injection, is at least twice its mean absolute activation on the base answers",
+   "p": 0.5
+  },
+  "M1_mixing_both": {
+   "pairs": "all 15 pairs of the six rows, each row at the zoo's 0.8",
+   "bar": "for at least 8 of 15 pairs both regexes hit in the same answer in at least 3 of 10 answers",
+   "p": 0.4
+  },
+  "M2_mixing_each": {
+   "bar": "for at least 10 of 15 pairs each theme's hit rate is at least half its single-row hit rate measured in this run",
+   "p": 0.45
+  },
+  "M3_mixing_intact": {
+   "bar": "for at least 10 of 15 pairs at most 3 of 10 answers are degenerate",
+   "p": 0.5
+  },
+  "W1_word_direction": {
+   "direction": "for each of the eight specs, the unit direction (1 + w) * mean of the unembedding rows of the tokens matching the regex, injected at the card's layer at the dose rule's D; controls: a seeded random direction at the same rule, and the zoo's own row at the same rule",
+   "bar": "non-degenerate regex hit rate at least 0.5 for at least 4 of 8 specs",
+   "p": 0.4
+  },
+  "W2_word_vs_row": {
+   "bar": "the word direction's hit rate is at least the zoo row's at the same rule for at least 4 of 8 specs",
+   "p": 0.4
+  },
+  "W3_random_control": {
+   "bar": "the random direction's hit rate is at most 0.1 for at least 6 of 8 specs",
+   "p": 0.7
+  },
+  "A1_collapse_Rnat": {
+   "bar": "zeroing the 50 rows with the largest R_nat costs at least 1.0 nat of KL on the base answers",
+   "p": 0.6
+  },
+  "A2_collapse_random": {
+   "bar": "zeroing 50 seeded random rows costs at most 0.05 nat",
+   "p": 0.8
+  },
+  "A3_collapse_Rdir": {
+   "bar": "zeroing the 50 rows with the largest R_dir costs at most 0.3 nat",
+   "p": 0.5
+  },
+  "C1_census": {
+   "bar": "at least 100 (row, sign) have p_max at least 0.9 and at least half of them sit in layers 30 and 31",
+   "p": 0.7
+  }
+ },
+ "pivot_rule": "Each statement is scored once at the frozen tau. No second dose, no row swap, no prompt change after a failure. A failed switch is a failed switch and goes to KILLED with its texts. If fewer than 3 switches hold, the direct path does not hand out controls at a weights-set dose, and the next step is the measured-at-the-dose readout (one forward pass per row), not a tau sweep. If the switches hold and the word directions fail where the rows work, the model's own atoms carry what the vocabulary does not, and the next step is to ask what (the downstream readers), not more word directions. If persistence holds at k = 4, the next step is the prefix-only recipe on the zoo's cards, not more k values.",
+ "kills": "S1 to S6 each fail on their own bar; the session's claim 'controls on request from the weights' dies if fewer than 3 hold; W1 and W2 both failing kills 'the vocabulary is the persona library'; P1 failing kills 'one word of steering keeps itself going'; A1 failing or A2 failing kills 'the read energy names the load-bearing rows'.",
+ "revision_2026-10-28_after_the_smokes": {
+  "tau": "fixed at 16 nats. Criterion stated before the ladder was read: the smallest tau in {4, 8, 16} at which at least three switches show their effect direction with at least 70 percent non-degenerate answers in the smoke (4 prompts, 48 tokens). At 4 and at 8 only the identity switch moved (KL 0.005 to 0.08 for the last-layer rows); at 16 the length, language and identity switches moved with 75 to 100 percent non-degenerate answers, the caps, markdown and think rows moved but spammed their token (25 to 50 percent non-degenerate). No further values are run; the full run is scored at 16.",
+  "class_rule": "the first smoke's rule (class mass at least 0.9, largest N_eff) picked a grammatical-particle row for Chinese and BPE fragments for caps. Revised: candidates are class-pure rows (at least 36 of the top 40 tokens in the class; 30 if fewer than five rows qualify; 12 for a class under 50 tokens) with no single token above a fifth of the direct-path mass, and the row with the strongest push on the class is taken. The caps class is word-initial capital tokens of three or more letters (the two-letter class picked an abbreviation row in the second smoke).",
+  "S7_markdown_added": {
+   "target": "the '**' token 332, a one-token row (L31 N3858, p_max 1.00 in the table)",
+   "bar": "at -D the count of '**' per answer is at most a quarter of the base count with at least 70 percent non-degenerate answers; base at least 2 per answer",
+   "p": 0.5,
+   "bonus": "at +D the count is at least three times the base count"
+  },
+  "emoji": "the single-token rule finds no row that says the smiley: the best candidate is a diffuse row (N_eff 113,796) with the smiley at the top by chance, capped at 0.8 with no effect in the smoke. Kept as pre-registered and expected to fail; the census segue checks whether any emoji row exists at all (none has 12 of 40 emoji tokens).",
+  "length_cap": "the answer cap for the switches is raised from 160 to 400 generated tokens so that the length switch's -D side can lengthen the base answers rather than hit the cap.",
+  "identity_note": "the identity row's direct push is weak (a_target 0.28) so at tau 16 it is capped at 0.8; it flipped the name in the smoke at 0.43 (KL 0.11) and at 0.8 (KL 0.46), renaming the model 'Q3'.",
+  "word_note": "in the smoke the Jesus theme's word direction carries the right vocabulary (god, God, Lord at its top) and hits 0 of 4 at 0.8 while the zoo's row hits 4 of 4; the W statements are unchanged.",
+  "S_overall": "S7 joins the count: at least 3 of S1 to S7 hold, p 0.6"
+ }
+}

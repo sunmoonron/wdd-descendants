@@ -1258,3 +1258,23 @@ Kept on purpose. Each line: what was tried, what happened, what it rules out.
 - The lookup as the finder at the zoo's dose: 5 of 8 retrieved rows loop on the retrieved words; one of eight produces the theme cleanly, the Hugs retrieval (e730).
 - The zoo's cards as direct vocabularies: 12 of 43 token lists carry a theme before a blind judge, as many as random rows (11 of 43), and the pair's rows are not retrieved; most hand-found personas are made downstream of the row (e730).
 - The raw bars of B1, C1 and C2 as tests of a finder: met by looping outputs; B3, written to catch that, failed (e730).
+
+## Session 169 kills (switches from the weights)
+- "mean generated tokens at +D at most 0.6 x base with at least 70 percent non-degenerate, and at -D at least 1.4 x base." (e731).
+- "upper-case share of letters at least 0.5 at +D with at least 70 percent non-degenerate; base at most 0.15." (e731).
+- "mean emoji characters per answer at least 2 at +D with at least 70 percent non-degenerate; base at most 0.3." (e731).
+- "at -D the count of '**' per answer is at most a quarter of the base count with at least 70 percent non-degenerate answers; base at least 2 per answer." (e731).
+- "at least 10 of 20 generations contain the think token at +D with at least 70 percent non-degenerate." (e731).
+- "for at least 8 of 15 pairs both regexes hit in the same answer in at least 3 of 10 answers." (e731).
+- "for at least 10 of 15 pairs each theme's hit rate is at least half its single-row hit rate measured in this run." (e731).
+- "non-degenerate regex hit rate at least 0.5 for at least 4 of 8 specs." (e731).
+- "the word direction's hit rate is at least the zoo row's at the same rule for at least 4 of 8 specs." (e731).
+- "zeroing the 50 rows with the largest R_nat costs at least 1.0 nat of KL on the base answers." (e731).
+- "at least 100 (row, sign) have p_max at least 0.9 and at least half of them sit in layers 30 and 31." (e731).
+- The direct-path dose rule for one-token rows: at 16 nats the think, markdown and capitals rows spam their tokens and the Chinese row loops two characters, at 4 and 8 nats the last-layer rows move nothing (KL 0.005 to 0.08); the rule works only where the token is the control, the name and the end (e731).
+- 'Controls on request from the weights' as a general claim: 2 of 7 switches held as written, one of them hollow; by the pivot rule the dose has to be measured, not read (e731).
+- The vocabulary as the persona library: the theme word's own output direction reaches 1 to 4 of 10 for Jesus, Hugs, Galactic and Vegas against the rows' 7 to 10 at 0.8, and matches or beats the row only for the two word-themes, heavy and cat (e731).
+- The read energy as the finder of load-bearing rows: zeroing the fifty largest-R_nat rows costs 0.015 nats, the fifty largest-R_dir 0.001, fifty random 0.001 (e731).
+- An emoji row in the direct-path table: none; the best candidate is a diffuse row with the smiley on top by chance, and no (row, sign) has 12 of 40 emoji tokens (e731).
+- The word-level repetition check as a loop detector for CJK text: it passed 16 of 20 answers that a character 6-gram check shows looping in 19 of 20 (e731).
+- The opener switch: no first token reaches a 0.3 share over 20 prompts in Qwen3.5-4B, so there is no 'Certainly' to suppress (e731).
